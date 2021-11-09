@@ -1,0 +1,15 @@
+[package]
+name = "sns-code-examples"
+version = "0.1.0"
+authors = ["Russell Cohen <rcoh@amazon.com>", "Doug Schwartz <dougsch@amazon.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+aws-config = { path = "../../sdk/aws-config" }
+aws-sdk-sns = { package = "aws-sdk-sns", path = "../../sdk/sns" }
+aws-types = { path = "../../sdk/aws-types" }
+tokio = { version = "1", features = ["full"] }
+structopt = { version = "0.3", default-features = false }
+tracing-subscriber = "0.2.18"

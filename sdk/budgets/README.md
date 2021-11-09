@@ -35,8 +35,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.0.23-alpha"
-aws-sdk-budgets = "0.0.23-alpha"
+aws-config = "0.0.24-alpha"
+aws-sdk-budgets = "0.0.24-alpha"
 tokio = { version = "1", features = ["full"] }
 ```
 

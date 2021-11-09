@@ -1,0 +1,16 @@
+[package]
+name = "ses-code-examples"
+version = "0.1.0"
+authors = ["Russell Cohen <rcoh@amazon.com>", "Doug Schwartz <dougsch@amazon.com>"]
+edition = "2018"
+
+[dependencies]
+aws-config = { path = "../../sdk/aws-config" }
+ses = { package = "aws-sdk-sesv2", path = "../../sdk/sesv2" }
+
+aws-types = { path = "../../sdk/aws-types" }
+
+tokio = { version = "1", features = ["full"] }
+
+structopt = { version = "0.3", default-features = false }
+tracing-subscriber = "0.2.18"

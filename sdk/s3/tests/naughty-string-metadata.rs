@@ -15,6 +15,7 @@ const NAUGHTY_STRINGS: &str = include_str!("blns/blns.txt");
 // // A useful way to find leaks in the signing system that requires an actual S3 bucket to test with
 // // If you want to use this, update the credentials to be your credentials and change the bucket name
 // // to your bucket
+// // NOTE: this won't actually succeed, you'll get a 400 back from S3 because the headers are too long.
 // #[tokio::test]
 // async fn test_metadata_field_against_naughty_strings_list() -> Result<(), aws_sdk_s3::Error> {
 //     // re-add `aws-config = { path = "../../build/aws-sdk/aws-config" }` to this project's Cargo.toml
@@ -95,7 +96,7 @@ async fn test_s3_signer_with_naughty_string_metadata() -> Result<(), aws_sdk_s3:
 
     // This is a snapshot test taken from a known working test result
     let snapshot_signature =
-        "Signature=849f8737d8e8239a349d74af5b2c1d24be43a199e591bd2fc9db7d8a62f49d71";
+        "Signature=8dfa41f2db599a9fba53393b0ae5da646e5e452fa3685f7a1487d6eade5ec5c8";
     assert!(
         auth_header
             .to_str()
