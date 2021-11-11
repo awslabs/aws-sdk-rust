@@ -102,8 +102,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.0.24-alpha"
-aws-sdk-proton = "0.0.24-alpha"
+aws-config = "0.0.25-alpha"
+aws-sdk-proton = "0.0.25-alpha"
 tokio = { version = "1", features = ["full"] }
 ```
 

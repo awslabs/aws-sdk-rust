@@ -1,3 +1,10 @@
+v0.0.25-alpha (November 11th, 2021)
+===================================
+
+No changes since last release except for version bumping since older versions
+of the AWS SDK were failing to compile with the `0.27.0-alpha.2` version chosen
+for some of the supporting crates.
+
 v0.0.24-alpha (November 9th, 2021)
 ==================================
 **Breaking Changes**
