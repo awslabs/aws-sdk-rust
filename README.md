@@ -10,7 +10,6 @@ The SDK is code generated from [Smithy models](https://awslabs.github.io/smithy/
 
 > Examples are availble for many services and operations, check out the [examples folder](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
 
-
 The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio) as a dependency within your Rust project to execute asynchronous code.
 
 1. Create a new Rust project: `cargo new sdk-example`
@@ -73,10 +72,6 @@ You can provide feedback or report a bug  by submitting a **GitHub issue**. This
 ### Contributing
 
 If you are interested in contributing to the SDK, please take a look at [CONTRIBUTING](CONTRIBUTING.md)
-
-## AWS Services Supported
-
-The SDK currently does not provide support for every AWS service. You can see all the services currently supported on [AWS_SERVICES_SUPPORTED](AWS_SERVICES_SUPPORTED.md)
 
 ## Supported Rust Versions (MSRV)
 
