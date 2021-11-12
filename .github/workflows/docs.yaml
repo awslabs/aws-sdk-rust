@@ -22,19 +22,3 @@ jobs:
         env: 
           RUSTDOCFLAGS: "--enable-index-page -Zunstable-options"
         working-directory: sdk
-      - name: Push the docs
-        if: ${{ github.ref == 'refs/heads/main' }}
-        run: |
-          ls
-          git checkout -B gh-pages
-          ls
-          rm -rf docs
-          mv docs-new/doc docs
-          # temporary hack since this file is too large for GitHub pages
-          rm docs/search-index.js
-          git config --local user.email "docs-action@github.com"
-          git config --local user.name "GitHub Action (docs)"
-          git add docs
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git commit -m 'Add docs'
-          git push -f origin gh-pages
