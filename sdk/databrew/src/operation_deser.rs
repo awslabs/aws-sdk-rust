@@ -641,6 +641,94 @@ pub fn parse_create_recipe_job_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_ruleset_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateRulesetOutput, crate::error::CreateRulesetError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateRulesetError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateRulesetError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => {
+            crate::error::CreateRulesetError {
+                meta: generic,
+                kind: crate::error::CreateRulesetErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRulesetError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ServiceQuotaExceededException" => crate::error::CreateRulesetError {
+            meta: generic,
+            kind: crate::error::CreateRulesetErrorKind::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRulesetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::CreateRulesetError {
+            meta: generic,
+            kind: crate::error::CreateRulesetErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRulesetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateRulesetError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_ruleset_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateRulesetOutput, crate::error::CreateRulesetError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_ruleset_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_ruleset(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateRulesetError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_schedule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateScheduleOutput, crate::error::CreateScheduleError> {
@@ -1083,6 +1171,93 @@ pub fn parse_delete_recipe_version_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_ruleset_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteRulesetOutput, crate::error::DeleteRulesetError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteRulesetError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteRulesetError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => {
+            crate::error::DeleteRulesetError {
+                meta: generic,
+                kind: crate::error::DeleteRulesetErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRulesetError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceNotFoundException" => crate::error::DeleteRulesetError {
+            meta: generic,
+            kind: crate::error::DeleteRulesetErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRulesetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::DeleteRulesetError {
+            meta: generic,
+            kind: crate::error::DeleteRulesetErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRulesetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteRulesetError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_ruleset_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteRulesetOutput, crate::error::DeleteRulesetError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_ruleset_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_delete_ruleset(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteRulesetError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_schedule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteScheduleOutput, crate::error::DeleteScheduleError> {
@@ -1491,6 +1666,74 @@ pub fn parse_describe_recipe_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_ruleset_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeRulesetOutput, crate::error::DescribeRulesetError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeRulesetError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeRulesetError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFoundException" => crate::error::DescribeRulesetError {
+            meta: generic,
+            kind: crate::error::DescribeRulesetErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRulesetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::DescribeRulesetError {
+            meta: generic,
+            kind: crate::error::DescribeRulesetErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRulesetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeRulesetError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_ruleset_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeRulesetOutput, crate::error::DescribeRulesetError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_ruleset_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_ruleset(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeRulesetError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_schedule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeScheduleOutput, crate::error::DescribeScheduleError>
@@ -1885,6 +2128,74 @@ pub fn parse_list_recipe_versions_response(
             output,
         )
         .map_err(crate::error::ListRecipeVersionsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_rulesets_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListRulesetsOutput, crate::error::ListRulesetsError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListRulesetsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListRulesetsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFoundException" => crate::error::ListRulesetsError {
+            meta: generic,
+            kind: crate::error::ListRulesetsErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRulesetsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::ListRulesetsError {
+            meta: generic,
+            kind: crate::error::ListRulesetsErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRulesetsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListRulesetsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_rulesets_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListRulesetsOutput, crate::error::ListRulesetsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_rulesets_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_rulesets(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListRulesetsError::unhandled)?;
         output.build()
     })
 }
@@ -3047,6 +3358,74 @@ pub fn parse_update_recipe_job_response(
             output,
         )
         .map_err(crate::error::UpdateRecipeJobError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_ruleset_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateRulesetOutput, crate::error::UpdateRulesetError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateRulesetError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateRulesetError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFoundException" => crate::error::UpdateRulesetError {
+            meta: generic,
+            kind: crate::error::UpdateRulesetErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRulesetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::UpdateRulesetError {
+            meta: generic,
+            kind: crate::error::UpdateRulesetErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRulesetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UpdateRulesetError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_ruleset_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateRulesetOutput, crate::error::UpdateRulesetError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_ruleset_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_ruleset(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateRulesetError::unhandled)?;
         output.build()
     })
 }

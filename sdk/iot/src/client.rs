@@ -3425,7 +3425,7 @@ pub mod fluent_builders {
         /// <p>
         /// The epoch timestamp in seconds at which this suppression expires.
         /// </p>
-        pub fn expiration_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn expiration_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.expiration_date(inp);
             self
         }
@@ -3434,7 +3434,7 @@ pub mod fluent_builders {
         /// </p>
         pub fn set_expiration_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_expiration_date(input);
             self
@@ -14690,7 +14690,7 @@ pub mod fluent_builders {
         }
         /// <p>A filter to limit results to those found after the specified time. You must
         /// specify either the startTime and endTime or the taskId, but not both.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
@@ -14698,14 +14698,14 @@ pub mod fluent_builders {
         /// specify either the startTime and endTime or the taskId, but not both.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
         }
         /// <p>A filter to limit results to those found before the specified time. You must
         /// specify either the startTime and endTime or the taskId, but not both.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
@@ -14713,7 +14713,7 @@ pub mod fluent_builders {
         /// specify either the startTime and endTime or the taskId, but not both.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -14970,27 +14970,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify this filter to limit results to tasks that began on or after a specific date and time.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
         /// <p>Specify this filter to limit results to tasks that began on or after a specific date and time.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
         }
         /// <p>Specify this filter to limit results to tasks that were completed or canceled on or before a specific date and time.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
         /// <p>Specify this filter to limit results to tasks that were completed or canceled on or before a specific date and time.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -15194,7 +15194,7 @@ pub mod fluent_builders {
         /// <p>The beginning of the time period. Audit information is retained for a
         /// limited time (90 days). Requesting a start time prior to what is retained
         /// results in an "InvalidRequestException".</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
@@ -15203,20 +15203,20 @@ pub mod fluent_builders {
         /// results in an "InvalidRequestException".</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
         }
         /// <p>The end of the time period.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
         /// <p>The end of the time period.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -15971,7 +15971,7 @@ pub mod fluent_builders {
         /// A filter to limit results to those found after the specified time. You must
         /// specify either the startTime and endTime or the taskId, but not both.
         /// </p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
@@ -15981,7 +15981,7 @@ pub mod fluent_builders {
         /// </p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
@@ -15989,7 +15989,7 @@ pub mod fluent_builders {
         /// <p>
         /// The end of the time period for which ML Detect mitigation actions executions are returned.
         /// </p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
@@ -15998,7 +15998,7 @@ pub mod fluent_builders {
         /// </p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -16122,7 +16122,7 @@ pub mod fluent_builders {
         /// A filter to limit results to those found after the specified time. You must
         /// specify either the startTime and endTime or the taskId, but not both.
         /// </p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
@@ -16132,7 +16132,7 @@ pub mod fluent_builders {
         /// </p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
@@ -16140,7 +16140,7 @@ pub mod fluent_builders {
         /// <p>
         /// The end of the time period for which ML Detect mitigation actions tasks are returned.
         /// </p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
@@ -16149,7 +16149,7 @@ pub mod fluent_builders {
         /// </p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -19977,27 +19977,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The start time for the alerts to be listed.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
         /// <p>The start time for the alerts to be listed.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
         }
         /// <p>The end time for the alerts to be listed.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
         /// <p>The end time for the alerts to be listed.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -22993,7 +22993,7 @@ pub mod fluent_builders {
         /// <p>
         /// The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to.
         /// </p>
-        pub fn expiration_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn expiration_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.expiration_date(inp);
             self
         }
@@ -23002,7 +23002,7 @@ pub mod fluent_builders {
         /// </p>
         pub fn set_expiration_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_expiration_date(input);
             self
@@ -25917,7 +25917,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -25940,7 +25946,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

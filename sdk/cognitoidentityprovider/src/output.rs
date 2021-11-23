@@ -6148,9 +6148,9 @@ pub struct AdminGetUserOutput {
     /// <p>An array of name-value pairs representing user attributes.</p>
     pub user_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
     /// <p>The date the user was created.</p>
-    pub user_create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub user_create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the user was last modified.</p>
-    pub user_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub user_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates that the status is enabled.</p>
     pub enabled: bool,
     /// <p>The user status. Can be one of the following:</p>
@@ -6203,11 +6203,11 @@ impl AdminGetUserOutput {
         self.user_attributes.as_deref()
     }
     /// <p>The date the user was created.</p>
-    pub fn user_create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn user_create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.user_create_date.as_ref()
     }
     /// <p>The date the user was last modified.</p>
-    pub fn user_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn user_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.user_last_modified_date.as_ref()
     }
     /// <p>Indicates that the status is enabled.</p>
@@ -6285,8 +6285,8 @@ pub mod admin_get_user_output {
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) user_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
-        pub(crate) user_create_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) user_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) user_create_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) user_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) user_status: std::option::Option<crate::model::UserStatusType>,
         pub(crate) mfa_options: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
@@ -6324,27 +6324,27 @@ pub mod admin_get_user_output {
             self
         }
         /// <p>The date the user was created.</p>
-        pub fn user_create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn user_create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.user_create_date = Some(input);
             self
         }
         /// <p>The date the user was created.</p>
         pub fn set_user_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.user_create_date = input;
             self
         }
         /// <p>The date the user was last modified.</p>
-        pub fn user_last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn user_last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.user_last_modified_date = Some(input);
             self
         }
         /// <p>The date the user was last modified.</p>
         pub fn set_user_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.user_last_modified_date = input;
             self

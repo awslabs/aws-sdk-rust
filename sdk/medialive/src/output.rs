@@ -4516,7 +4516,7 @@ pub struct DescribeInputDeviceThumbnailOutput {
     /// The unique, cacheable version of this thumbnail.
     pub e_tag: std::option::Option<std::string::String>,
     /// The date and time the thumbnail was last updated at the device.
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeInputDeviceThumbnailOutput {
     /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
@@ -4536,7 +4536,7 @@ impl DescribeInputDeviceThumbnailOutput {
         self.e_tag.as_deref()
     }
     /// The date and time the thumbnail was last updated at the device.
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
 }
@@ -4561,7 +4561,7 @@ pub mod describe_input_device_thumbnail_output {
         pub(crate) content_type: std::option::Option<crate::model::ContentType>,
         pub(crate) content_length: std::option::Option<i64>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
@@ -4611,14 +4611,14 @@ pub mod describe_input_device_thumbnail_output {
             self
         }
         /// The date and time the thumbnail was last updated at the device.
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// The date and time the thumbnail was last updated at the device.
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self

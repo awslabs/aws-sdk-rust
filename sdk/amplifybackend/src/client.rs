@@ -106,6 +106,13 @@ where
     pub fn create_backend_config(&self) -> fluent_builders::CreateBackendConfig<C, M, R> {
         fluent_builders::CreateBackendConfig::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `CreateBackendStorage` operation.
+    ///
+    /// See [`CreateBackendStorage`](crate::client::fluent_builders::CreateBackendStorage) for more information about the
+    /// operation and its arguments.
+    pub fn create_backend_storage(&self) -> fluent_builders::CreateBackendStorage<C, M, R> {
+        fluent_builders::CreateBackendStorage::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `CreateToken` operation.
     ///
     /// See [`CreateToken`](crate::client::fluent_builders::CreateToken) for more information about the
@@ -133,6 +140,13 @@ where
     /// operation and its arguments.
     pub fn delete_backend_auth(&self) -> fluent_builders::DeleteBackendAuth<C, M, R> {
         fluent_builders::DeleteBackendAuth::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteBackendStorage` operation.
+    ///
+    /// See [`DeleteBackendStorage`](crate::client::fluent_builders::DeleteBackendStorage) for more information about the
+    /// operation and its arguments.
+    pub fn delete_backend_storage(&self) -> fluent_builders::DeleteBackendStorage<C, M, R> {
+        fluent_builders::DeleteBackendStorage::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DeleteToken` operation.
     ///
@@ -185,6 +199,13 @@ where
     pub fn get_backend_job(&self) -> fluent_builders::GetBackendJob<C, M, R> {
         fluent_builders::GetBackendJob::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `GetBackendStorage` operation.
+    ///
+    /// See [`GetBackendStorage`](crate::client::fluent_builders::GetBackendStorage) for more information about the
+    /// operation and its arguments.
+    pub fn get_backend_storage(&self) -> fluent_builders::GetBackendStorage<C, M, R> {
+        fluent_builders::GetBackendStorage::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `GetToken` operation.
     ///
     /// See [`GetToken`](crate::client::fluent_builders::GetToken) for more information about the
@@ -199,12 +220,26 @@ where
     pub fn import_backend_auth(&self) -> fluent_builders::ImportBackendAuth<C, M, R> {
         fluent_builders::ImportBackendAuth::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `ImportBackendStorage` operation.
+    ///
+    /// See [`ImportBackendStorage`](crate::client::fluent_builders::ImportBackendStorage) for more information about the
+    /// operation and its arguments.
+    pub fn import_backend_storage(&self) -> fluent_builders::ImportBackendStorage<C, M, R> {
+        fluent_builders::ImportBackendStorage::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `ListBackendJobs` operation.
     ///
     /// See [`ListBackendJobs`](crate::client::fluent_builders::ListBackendJobs) for more information about the
     /// operation and its arguments.
     pub fn list_backend_jobs(&self) -> fluent_builders::ListBackendJobs<C, M, R> {
         fluent_builders::ListBackendJobs::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListS3Buckets` operation.
+    ///
+    /// See [`ListS3Buckets`](crate::client::fluent_builders::ListS3Buckets) for more information about the
+    /// operation and its arguments.
+    pub fn list_s3_buckets(&self) -> fluent_builders::ListS3Buckets<C, M, R> {
+        fluent_builders::ListS3Buckets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `RemoveAllBackends` operation.
     ///
@@ -247,6 +282,13 @@ where
     /// operation and its arguments.
     pub fn update_backend_job(&self) -> fluent_builders::UpdateBackendJob<C, M, R> {
         fluent_builders::UpdateBackendJob::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UpdateBackendStorage` operation.
+    ///
+    /// See [`UpdateBackendStorage`](crate::client::fluent_builders::UpdateBackendStorage) for more information about the
+    /// operation and its arguments.
+    pub fn update_backend_storage(&self) -> fluent_builders::UpdateBackendStorage<C, M, R> {
+        fluent_builders::UpdateBackendStorage::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
@@ -445,12 +487,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backend_environment_name(input);
             self
         }
-        /// <p>The resource configuration for the create backend request.</p>
+        /// <p>The resource configuration for creating backend storage.</p>
         pub fn resource_config(mut self, inp: crate::model::ResourceConfig) -> Self {
             self.inner = self.inner.resource_config(inp);
             self
         }
-        /// <p>The resource configuration for the create backend request.</p>
+        /// <p>The resource configuration for creating backend storage.</p>
         pub fn set_resource_config(
             mut self,
             input: std::option::Option<crate::model::ResourceConfig>,
@@ -773,6 +815,118 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_backend_manager_app_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateBackendStorage`.
+    ///
+    /// <p>Creates a backend storage resource.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateBackendStorage<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_backend_storage_input::Builder,
+    }
+    impl<C, M, R> CreateBackendStorage<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateBackendStorage`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateBackendStorageOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateBackendStorageError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateBackendStorageInputOperationOutputAlias,
+                crate::output::CreateBackendStorageOutput,
+                crate::error::CreateBackendStorageError,
+                crate::input::CreateBackendStorageInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The app ID.</p>
+        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(inp);
+            self
+        }
+        /// <p>The app ID.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_app_id(input);
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(inp);
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn set_backend_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_backend_environment_name(input);
+            self
+        }
+        /// <p>The resource configuration for creating backend storage.</p>
+        pub fn resource_config(
+            mut self,
+            inp: crate::model::CreateBackendStorageResourceConfig,
+        ) -> Self {
+            self.inner = self.inner.resource_config(inp);
+            self
+        }
+        /// <p>The resource configuration for creating backend storage.</p>
+        pub fn set_resource_config(
+            mut self,
+            input: std::option::Option<crate::model::CreateBackendStorageResourceConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_config(input);
+            self
+        }
+        /// <p>The name of the storage resource.</p>
+        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(inp);
+            self
+        }
+        /// <p>The name of the storage resource.</p>
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_name(input);
             self
         }
     }
@@ -1131,6 +1285,115 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_resource_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteBackendStorage`.
+    ///
+    /// <p>Removes the specified backend storage resource.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteBackendStorage<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_backend_storage_input::Builder,
+    }
+    impl<C, M, R> DeleteBackendStorage<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteBackendStorage`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteBackendStorageOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteBackendStorageError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteBackendStorageInputOperationOutputAlias,
+                crate::output::DeleteBackendStorageOutput,
+                crate::error::DeleteBackendStorageError,
+                crate::input::DeleteBackendStorageInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The app ID.</p>
+        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(inp);
+            self
+        }
+        /// <p>The app ID.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_app_id(input);
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(inp);
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn set_backend_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_backend_environment_name(input);
+            self
+        }
+        /// <p>The name of the storage resource.</p>
+        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(inp);
+            self
+        }
+        /// <p>The name of the storage resource.</p>
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_name(input);
+            self
+        }
+        /// <p>The name of the storage service.</p>
+        pub fn service_name(mut self, inp: crate::model::ServiceName) -> Self {
+            self.inner = self.inner.service_name(inp);
+            self
+        }
+        /// <p>The name of the storage service.</p>
+        pub fn set_service_name(
+            mut self,
+            input: std::option::Option<crate::model::ServiceName>,
+        ) -> Self {
+            self.inner = self.inner.set_service_name(input);
             self
         }
     }
@@ -1787,6 +2050,102 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetBackendStorage`.
+    ///
+    /// <p>Gets details for a backend storage resource.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetBackendStorage<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_backend_storage_input::Builder,
+    }
+    impl<C, M, R> GetBackendStorage<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetBackendStorage`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetBackendStorageOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetBackendStorageError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetBackendStorageInputOperationOutputAlias,
+                crate::output::GetBackendStorageOutput,
+                crate::error::GetBackendStorageError,
+                crate::input::GetBackendStorageInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The app ID.</p>
+        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(inp);
+            self
+        }
+        /// <p>The app ID.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_app_id(input);
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(inp);
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn set_backend_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_backend_environment_name(input);
+            self
+        }
+        /// <p>The name of the storage resource.</p>
+        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(inp);
+            self
+        }
+        /// <p>The name of the storage resource.</p>
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_name(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetToken`.
     ///
     /// <p>Gets the challenge token based on the given appId and sessionId.</p>
@@ -1999,6 +2358,112 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ImportBackendStorage`.
+    ///
+    /// <p>Imports an existing backend storage resource.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ImportBackendStorage<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::import_backend_storage_input::Builder,
+    }
+    impl<C, M, R> ImportBackendStorage<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ImportBackendStorage`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ImportBackendStorageOutput,
+            aws_smithy_http::result::SdkError<crate::error::ImportBackendStorageError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ImportBackendStorageInputOperationOutputAlias,
+                crate::output::ImportBackendStorageOutput,
+                crate::error::ImportBackendStorageError,
+                crate::input::ImportBackendStorageInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The app ID.</p>
+        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(inp);
+            self
+        }
+        /// <p>The app ID.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_app_id(input);
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(inp);
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn set_backend_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_backend_environment_name(input);
+            self
+        }
+        /// <p>The name of the S3 bucket.</p>
+        pub fn bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(inp);
+            self
+        }
+        /// <p>The name of the S3 bucket.</p>
+        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bucket_name(input);
+            self
+        }
+        /// <p>The name of the storage service.</p>
+        pub fn service_name(mut self, inp: crate::model::ServiceName) -> Self {
+            self.inner = self.inner.service_name(inp);
+            self
+        }
+        /// <p>The name of the storage service.</p>
+        pub fn set_service_name(
+            mut self,
+            input: std::option::Option<crate::model::ServiceName>,
+        ) -> Self {
+            self.inner = self.inner.set_service_name(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListBackendJobs`.
     ///
     /// <p>Lists the jobs for the backend of an Amplify app.</p>
@@ -2129,6 +2594,76 @@ pub mod fluent_builders {
         /// <p>Filters the list of response objects to include only those with the specified status.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_status(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListS3Buckets`.
+    ///
+    /// <p>The list of S3 buckets in your account.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListS3Buckets<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_s3_buckets_input::Builder,
+    }
+    impl<C, M, R> ListS3Buckets<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListS3Buckets`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListS3BucketsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListS3BucketsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListS3BucketsInputOperationOutputAlias,
+                crate::output::ListS3BucketsOutput,
+                crate::error::ListS3BucketsError,
+                crate::input::ListS3BucketsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Reserved for future use.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>Reserved for future use.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2699,12 +3234,130 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateBackendStorage`.
+    ///
+    /// <p>Updates an existing backend storage resource.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateBackendStorage<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_backend_storage_input::Builder,
+    }
+    impl<C, M, R> UpdateBackendStorage<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateBackendStorage`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateBackendStorageOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateBackendStorageError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateBackendStorageInputOperationOutputAlias,
+                crate::output::UpdateBackendStorageOutput,
+                crate::error::UpdateBackendStorageError,
+                crate::input::UpdateBackendStorageInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The app ID.</p>
+        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(inp);
+            self
+        }
+        /// <p>The app ID.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_app_id(input);
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(inp);
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn set_backend_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_backend_environment_name(input);
+            self
+        }
+        /// <p>The resource configuration for updating backend storage.</p>
+        pub fn resource_config(
+            mut self,
+            inp: crate::model::UpdateBackendStorageResourceConfig,
+        ) -> Self {
+            self.inner = self.inner.resource_config(inp);
+            self
+        }
+        /// <p>The resource configuration for updating backend storage.</p>
+        pub fn set_resource_config(
+            mut self,
+            input: std::option::Option<crate::model::UpdateBackendStorageResourceConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_config(input);
+            self
+        }
+        /// <p>The name of the storage resource.</p>
+        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(inp);
+            self
+        }
+        /// <p>The name of the storage resource.</p>
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_name(input);
+            self
+        }
+    }
 }
 impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -2727,7 +3380,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

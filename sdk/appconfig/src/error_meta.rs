@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>The request could not be processed because of conflict in the current state of the
     /// resource.</p>
@@ -14,7 +14,7 @@ pub enum Error {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The number of hosted configuration versions exceeds the limit for the AppConfig
+    /// <p>The number of hosted configuration versions exceeds the limit for the AppConfig hosted
     /// configuration store. Delete one or more versions and try again.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// An unhandled error occurred.

@@ -118,22 +118,22 @@ pub fn serialize_structure_crate_input_create_model_input(
     if let Some(var_32) = &input.training_data_start_time {
         object
             .key("TrainingDataStartTime")
-            .instant(var_32, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_32, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_33) = &input.training_data_end_time {
         object
             .key("TrainingDataEndTime")
-            .instant(var_33, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_33, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_34) = &input.evaluation_data_start_time {
         object
             .key("EvaluationDataStartTime")
-            .instant(var_34, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_34, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_35) = &input.evaluation_data_end_time {
         object
             .key("EvaluationDataEndTime")
-            .instant(var_35, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_35, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_36) = &input.role_arn {
         object.key("RoleArn").string(var_36);
@@ -296,12 +296,12 @@ pub fn serialize_structure_crate_input_list_inference_executions_input(
     if let Some(var_62) = &input.data_start_time_after {
         object
             .key("DataStartTimeAfter")
-            .instant(var_62, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_62, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_63) = &input.data_end_time_before {
         object
             .key("DataEndTimeBefore")
-            .instant(var_63, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_63, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_64) = &input.status {
         object.key("Status").string(var_64.as_str());

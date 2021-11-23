@@ -878,7 +878,7 @@ pub struct Permission {
     /// issued.</p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the permission was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The AWS service or entity that holds the permission. At this time, the only valid
     /// principal is <code>acm.amazonaws.com</code>.</p>
     pub principal: std::option::Option<std::string::String>,
@@ -896,7 +896,7 @@ impl Permission {
         self.certificate_authority_arn.as_deref()
     }
     /// <p>The time at which the permission was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The AWS service or entity that holds the permission. At this time, the only valid
@@ -936,7 +936,7 @@ pub mod permission {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) principal: std::option::Option<std::string::String>,
         pub(crate) source_account: std::option::Option<std::string::String>,
         pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::ActionType>>,
@@ -959,14 +959,14 @@ pub mod permission {
             self
         }
         /// <p>The time at which the permission was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time at which the permission was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1124,9 +1124,9 @@ pub struct CertificateAuthority {
     /// <p>The AWS account ID that owns the certificate authority.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>Date and time at which your private CA was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Date and time at which your private CA was last updated.</p>
-    pub last_state_change_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_state_change_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Type of your private CA.</p>
     pub r#type: std::option::Option<crate::model::CertificateAuthorityType>,
     /// <p>Serial number of your private CA.</p>
@@ -1134,9 +1134,9 @@ pub struct CertificateAuthority {
     /// <p>Status of your private CA.</p>
     pub status: std::option::Option<crate::model::CertificateAuthorityStatus>,
     /// <p>Date and time before which your private CA certificate is not valid.</p>
-    pub not_before: std::option::Option<aws_smithy_types::Instant>,
+    pub not_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Date and time after which your private CA certificate is not valid.</p>
-    pub not_after: std::option::Option<aws_smithy_types::Instant>,
+    pub not_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Reason the request to create your private CA failed.</p>
     pub failure_reason: std::option::Option<crate::model::FailureReason>,
     /// <p>Your private CA configuration.</p>
@@ -1147,7 +1147,7 @@ pub struct CertificateAuthority {
     pub revocation_configuration: std::option::Option<crate::model::RevocationConfiguration>,
     /// <p>The period during which a deleted CA can be restored. For more information, see the
     /// <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a> action. </p>
-    pub restorable_until: std::option::Option<aws_smithy_types::Instant>,
+    pub restorable_until: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Defines a cryptographic key management compliance standard used for handling CA keys. </p>
     /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
     /// <p>Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
@@ -1171,11 +1171,11 @@ impl CertificateAuthority {
         self.owner_account.as_deref()
     }
     /// <p>Date and time at which your private CA was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Date and time at which your private CA was last updated.</p>
-    pub fn last_state_change_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_state_change_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_state_change_at.as_ref()
     }
     /// <p>Type of your private CA.</p>
@@ -1191,11 +1191,11 @@ impl CertificateAuthority {
         self.status.as_ref()
     }
     /// <p>Date and time before which your private CA certificate is not valid.</p>
-    pub fn not_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn not_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.not_before.as_ref()
     }
     /// <p>Date and time after which your private CA certificate is not valid.</p>
-    pub fn not_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn not_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.not_after.as_ref()
     }
     /// <p>Reason the request to create your private CA failed.</p>
@@ -1217,7 +1217,7 @@ impl CertificateAuthority {
     }
     /// <p>The period during which a deleted CA can be restored. For more information, see the
     /// <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a> action. </p>
-    pub fn restorable_until(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn restorable_until(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.restorable_until.as_ref()
     }
     /// <p>Defines a cryptographic key management compliance standard used for handling CA keys. </p>
@@ -1267,19 +1267,19 @@ pub mod certificate_authority {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) owner_account: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_state_change_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_state_change_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) r#type: std::option::Option<crate::model::CertificateAuthorityType>,
         pub(crate) serial: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::CertificateAuthorityStatus>,
-        pub(crate) not_before: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) not_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) not_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) not_after: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<crate::model::FailureReason>,
         pub(crate) certificate_authority_configuration:
             std::option::Option<crate::model::CertificateAuthorityConfiguration>,
         pub(crate) revocation_configuration:
             std::option::Option<crate::model::RevocationConfiguration>,
-        pub(crate) restorable_until: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) restorable_until: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) key_storage_security_standard:
             std::option::Option<crate::model::KeyStorageSecurityStandard>,
     }
@@ -1314,27 +1314,27 @@ pub mod certificate_authority {
             self
         }
         /// <p>Date and time at which your private CA was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>Date and time at which your private CA was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>Date and time at which your private CA was last updated.</p>
-        pub fn last_state_change_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_state_change_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_state_change_at = Some(input);
             self
         }
         /// <p>Date and time at which your private CA was last updated.</p>
         pub fn set_last_state_change_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_state_change_at = input;
             self
@@ -1376,27 +1376,27 @@ pub mod certificate_authority {
             self
         }
         /// <p>Date and time before which your private CA certificate is not valid.</p>
-        pub fn not_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn not_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.not_before = Some(input);
             self
         }
         /// <p>Date and time before which your private CA certificate is not valid.</p>
         pub fn set_not_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.not_before = input;
             self
         }
         /// <p>Date and time after which your private CA certificate is not valid.</p>
-        pub fn not_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn not_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.not_after = Some(input);
             self
         }
         /// <p>Date and time after which your private CA certificate is not valid.</p>
         pub fn set_not_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.not_after = input;
             self
@@ -1450,7 +1450,7 @@ pub mod certificate_authority {
         }
         /// <p>The period during which a deleted CA can be restored. For more information, see the
         /// <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a> action. </p>
-        pub fn restorable_until(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn restorable_until(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.restorable_until = Some(input);
             self
         }
@@ -1458,7 +1458,7 @@ pub mod certificate_authority {
         /// <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a> action. </p>
         pub fn set_restorable_until(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.restorable_until = input;
             self

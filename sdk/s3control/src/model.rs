@@ -2805,7 +2805,7 @@ impl AsRef<str> for TransitionStorageClass {
 pub struct Transition {
     /// <p>Indicates when objects are transitioned to the specified storage class.
     /// The date value must be in ISO 8601 format. The time is always midnight UTC.</p>
-    pub date: std::option::Option<aws_smithy_types::Instant>,
+    pub date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the number of days after creation when objects are transitioned to the specified storage class.
     /// The value must be a positive integer.</p>
     pub days: i32,
@@ -2815,7 +2815,7 @@ pub struct Transition {
 impl Transition {
     /// <p>Indicates when objects are transitioned to the specified storage class.
     /// The date value must be in ISO 8601 format. The time is always midnight UTC.</p>
-    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>Indicates the number of days after creation when objects are transitioned to the specified storage class.
@@ -2843,20 +2843,20 @@ pub mod transition {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) days: std::option::Option<i32>,
         pub(crate) storage_class: std::option::Option<crate::model::TransitionStorageClass>,
     }
     impl Builder {
         /// <p>Indicates when objects are transitioned to the specified storage class.
         /// The date value must be in ISO 8601 format. The time is always midnight UTC.</p>
-        pub fn date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date = Some(input);
             self
         }
         /// <p>Indicates when objects are transitioned to the specified storage class.
         /// The date value must be in ISO 8601 format. The time is always midnight UTC.</p>
-        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
+        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.date = input;
             self
         }
@@ -3160,7 +3160,7 @@ impl LifecycleRuleAndOperator {
 pub struct LifecycleExpiration {
     /// <p>Indicates at what date the object is to be deleted. Should be in GMT ISO 8601
     /// format.</p>
-    pub date: std::option::Option<aws_smithy_types::Instant>,
+    pub date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
     pub days: i32,
     /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set
@@ -3171,7 +3171,7 @@ pub struct LifecycleExpiration {
 impl LifecycleExpiration {
     /// <p>Indicates at what date the object is to be deleted. Should be in GMT ISO 8601
     /// format.</p>
-    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
@@ -3203,20 +3203,20 @@ pub mod lifecycle_expiration {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) days: std::option::Option<i32>,
         pub(crate) expired_object_delete_marker: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>Indicates at what date the object is to be deleted. Should be in GMT ISO 8601
         /// format.</p>
-        pub fn date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date = Some(input);
             self
         }
         /// <p>Indicates at what date the object is to be deleted. Should be in GMT ISO 8601
         /// format.</p>
-        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
+        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.date = input;
             self
         }
@@ -3550,9 +3550,9 @@ impl ObjectLambdaContentTransformation {
         &self,
     ) -> std::result::Result<&crate::model::AwsLambdaTransformation, &Self> {
         if let ObjectLambdaContentTransformation::AwsLambda(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`AwsLambda`](crate::model::ObjectLambdaContentTransformation::AwsLambda).
@@ -3878,7 +3878,7 @@ pub struct RegionalBucket {
     /// <p></p>
     pub public_access_block_enabled: bool,
     /// <p>The creation date of the regional bucket</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Outposts ID of the regional bucket.</p>
     pub outpost_id: std::option::Option<std::string::String>,
 }
@@ -3896,7 +3896,7 @@ impl RegionalBucket {
         self.public_access_block_enabled
     }
     /// <p>The creation date of the regional bucket</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The Outposts ID of the regional bucket.</p>
@@ -3927,7 +3927,7 @@ pub mod regional_bucket {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
         pub(crate) public_access_block_enabled: std::option::Option<bool>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) outpost_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3962,14 +3962,14 @@ pub mod regional_bucket {
             self
         }
         /// <p>The creation date of the regional bucket</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The creation date of the regional bucket</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -4014,7 +4014,7 @@ pub struct MultiRegionAccessPointReport {
     /// Multi-Region Access Points</a>.</p>
     pub alias: std::option::Option<std::string::String>,
     /// <p>When the Multi-Region Access Point create request was received.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account.
     /// You can enable the configuration options in any combination. For more information about
     /// when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -4043,7 +4043,7 @@ impl MultiRegionAccessPointReport {
         self.alias.as_deref()
     }
     /// <p>When the Multi-Region Access Point create request was received.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account.
@@ -4090,7 +4090,7 @@ pub mod multi_region_access_point_report {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) alias: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) public_access_block:
             std::option::Option<crate::model::PublicAccessBlockConfiguration>,
         pub(crate) status: std::option::Option<crate::model::MultiRegionAccessPointStatus>,
@@ -4122,14 +4122,14 @@ pub mod multi_region_access_point_report {
             self
         }
         /// <p>When the Multi-Region Access Point create request was received.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>When the Multi-Region Access Point create request was received.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -4390,9 +4390,9 @@ pub struct JobListDescriptor {
     /// <p>The specified job's current status.</p>
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p>A timestamp indicating when the specified job was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp indicating when the specified job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
-    pub termination_date: std::option::Option<aws_smithy_types::Instant>,
+    pub termination_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Describes the total number of tasks that the specified job has run, the number of tasks
     /// that succeeded, and the number of tasks that failed.</p>
     pub progress_summary: std::option::Option<crate::model::JobProgressSummary>,
@@ -4419,11 +4419,11 @@ impl JobListDescriptor {
         self.status.as_ref()
     }
     /// <p>A timestamp indicating when the specified job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp indicating when the specified job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
-    pub fn termination_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn termination_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.termination_date.as_ref()
     }
     /// <p>Describes the total number of tasks that the specified job has run, the number of tasks
@@ -4457,8 +4457,8 @@ pub mod job_list_descriptor {
         pub(crate) operation: std::option::Option<crate::model::OperationName>,
         pub(crate) priority: std::option::Option<i32>,
         pub(crate) status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) termination_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) termination_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) progress_summary: std::option::Option<crate::model::JobProgressSummary>,
     }
     impl Builder {
@@ -4516,27 +4516,27 @@ pub mod job_list_descriptor {
             self
         }
         /// <p>A timestamp indicating when the specified job was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A timestamp indicating when the specified job was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>A timestamp indicating when the specified job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
-        pub fn termination_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn termination_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.termination_date = Some(input);
             self
         }
         /// <p>A timestamp indicating when the specified job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
         pub fn set_termination_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.termination_date = input;
             self
@@ -5412,7 +5412,7 @@ impl EstablishedMultiRegionAccessPointPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AsyncOperation {
     /// <p>The time that the request was sent to the service.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The specific operation for the asynchronous request.</p>
     pub operation: std::option::Option<crate::model::AsyncOperationName>,
     /// <p>The request token associated with the request.</p>
@@ -5426,7 +5426,7 @@ pub struct AsyncOperation {
 }
 impl AsyncOperation {
     /// <p>The time that the request was sent to the service.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The specific operation for the asynchronous request.</p>
@@ -5468,7 +5468,7 @@ pub mod async_operation {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) operation: std::option::Option<crate::model::AsyncOperationName>,
         pub(crate) request_token_arn: std::option::Option<std::string::String>,
         pub(crate) request_parameters: std::option::Option<crate::model::AsyncRequestParameters>,
@@ -5477,14 +5477,14 @@ pub mod async_operation {
     }
     impl Builder {
         /// <p>The time that the request was sent to the service.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time that the request was sent to the service.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -6416,14 +6416,14 @@ pub struct JobDescriptor {
     /// <p>Contains the configuration information for the job-completion report if you requested one in the <code>Create Job</code> request.</p>
     pub report: std::option::Option<crate::model::JobReport>,
     /// <p>A timestamp indicating when this job was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp indicating when this job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
-    pub termination_date: std::option::Option<aws_smithy_types::Instant>,
+    pub termination_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role
     /// assigned to run the tasks for this job.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp when this job was suspended, if it has been suspended.</p>
-    pub suspended_date: std::option::Option<aws_smithy_types::Instant>,
+    pub suspended_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason why the specified job was suspended. A job is only suspended if you create it through the Amazon S3 console. When you create the job, it enters
     /// the <code>Suspended</code> state to await confirmation before running. After you confirm the job, it automatically exits the <code>Suspended</code> state.</p>
     pub suspended_cause: std::option::Option<std::string::String>,
@@ -6479,11 +6479,11 @@ impl JobDescriptor {
         self.report.as_ref()
     }
     /// <p>A timestamp indicating when this job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp indicating when this job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
-    pub fn termination_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn termination_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.termination_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role
@@ -6492,7 +6492,7 @@ impl JobDescriptor {
         self.role_arn.as_deref()
     }
     /// <p>The timestamp when this job was suspended, if it has been suspended.</p>
-    pub fn suspended_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn suspended_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.suspended_date.as_ref()
     }
     /// <p>The reason why the specified job was suspended. A job is only suspended if you create it through the Amazon S3 console. When you create the job, it enters
@@ -6542,10 +6542,10 @@ pub mod job_descriptor {
         pub(crate) status_update_reason: std::option::Option<std::string::String>,
         pub(crate) failure_reasons: std::option::Option<std::vec::Vec<crate::model::JobFailure>>,
         pub(crate) report: std::option::Option<crate::model::JobReport>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) termination_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) termination_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) suspended_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) suspended_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) suspended_cause: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6693,27 +6693,27 @@ pub mod job_descriptor {
             self
         }
         /// <p>A timestamp indicating when this job was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A timestamp indicating when this job was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>A timestamp indicating when this job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
-        pub fn termination_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn termination_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.termination_date = Some(input);
             self
         }
         /// <p>A timestamp indicating when this job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
         pub fn set_termination_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.termination_date = input;
             self
@@ -6731,14 +6731,14 @@ pub mod job_descriptor {
             self
         }
         /// <p>The timestamp when this job was suspended, if it has been suspended.</p>
-        pub fn suspended_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn suspended_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.suspended_date = Some(input);
             self
         }
         /// <p>The timestamp when this job was suspended, if it has been suspended.</p>
         pub fn set_suspended_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.suspended_date = input;
             self
@@ -7498,13 +7498,13 @@ impl S3SetObjectRetentionOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Retention {
     /// <p>The date when the applied Object Lock retention will expire on all objects set by the Batch Operations job.</p>
-    pub retain_until_date: std::option::Option<aws_smithy_types::Instant>,
+    pub retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Object Lock retention mode to be applied to all objects in the Batch Operations job.</p>
     pub mode: std::option::Option<crate::model::S3ObjectLockRetentionMode>,
 }
 impl S3Retention {
     /// <p>The date when the applied Object Lock retention will expire on all objects set by the Batch Operations job.</p>
-    pub fn retain_until_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn retain_until_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.retain_until_date.as_ref()
     }
     /// <p>The Object Lock retention mode to be applied to all objects in the Batch Operations job.</p>
@@ -7526,19 +7526,19 @@ pub mod s3_retention {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) retain_until_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) mode: std::option::Option<crate::model::S3ObjectLockRetentionMode>,
     }
     impl Builder {
         /// <p>The date when the applied Object Lock retention will expire on all objects set by the Batch Operations job.</p>
-        pub fn retain_until_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn retain_until_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.retain_until_date = Some(input);
             self
         }
         /// <p>The date when the applied Object Lock retention will expire on all objects set by the Batch Operations job.</p>
         pub fn set_retain_until_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.retain_until_date = input;
             self
@@ -8782,7 +8782,7 @@ pub struct S3CopyObjectOperation {
     /// <p></p>
     pub metadata_directive: std::option::Option<crate::model::S3MetadataDirective>,
     /// <p></p>
-    pub modified_since_constraint: std::option::Option<aws_smithy_types::Instant>,
+    pub modified_since_constraint: std::option::Option<aws_smithy_types::DateTime>,
     /// <p></p>
     pub new_object_metadata: std::option::Option<crate::model::S3ObjectMetadata>,
     /// <p></p>
@@ -8796,7 +8796,7 @@ pub struct S3CopyObjectOperation {
     /// <p></p>
     pub storage_class: std::option::Option<crate::model::S3StorageClass>,
     /// <p></p>
-    pub un_modified_since_constraint: std::option::Option<aws_smithy_types::Instant>,
+    pub un_modified_since_constraint: std::option::Option<aws_smithy_types::DateTime>,
     /// <p></p>
     pub sse_aws_kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies the folder prefix into which you would like the objects to be copied. For
@@ -8810,7 +8810,7 @@ pub struct S3CopyObjectOperation {
     pub object_lock_mode: std::option::Option<crate::model::S3ObjectLockMode>,
     /// <p>The date when the applied object retention configuration expires on all objects in
     /// the Batch Operations job.</p>
-    pub object_lock_retain_until_date: std::option::Option<aws_smithy_types::Instant>,
+    pub object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with
     /// server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code>
     /// causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
@@ -8840,7 +8840,7 @@ impl S3CopyObjectOperation {
         self.metadata_directive.as_ref()
     }
     /// <p></p>
-    pub fn modified_since_constraint(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn modified_since_constraint(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_since_constraint.as_ref()
     }
     /// <p></p>
@@ -8866,7 +8866,7 @@ impl S3CopyObjectOperation {
         self.storage_class.as_ref()
     }
     /// <p></p>
-    pub fn un_modified_since_constraint(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn un_modified_since_constraint(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.un_modified_since_constraint.as_ref()
     }
     /// <p></p>
@@ -8891,7 +8891,9 @@ impl S3CopyObjectOperation {
     }
     /// <p>The date when the applied object retention configuration expires on all objects in
     /// the Batch Operations job.</p>
-    pub fn object_lock_retain_until_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn object_lock_retain_until_date(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.object_lock_retain_until_date.as_ref()
     }
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with
@@ -8949,19 +8951,19 @@ pub mod s3_copy_object_operation {
             std::option::Option<crate::model::S3CannedAccessControlList>,
         pub(crate) access_control_grants: std::option::Option<std::vec::Vec<crate::model::S3Grant>>,
         pub(crate) metadata_directive: std::option::Option<crate::model::S3MetadataDirective>,
-        pub(crate) modified_since_constraint: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) modified_since_constraint: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) new_object_metadata: std::option::Option<crate::model::S3ObjectMetadata>,
         pub(crate) new_object_tagging: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
         pub(crate) redirect_location: std::option::Option<std::string::String>,
         pub(crate) requester_pays: std::option::Option<bool>,
         pub(crate) storage_class: std::option::Option<crate::model::S3StorageClass>,
-        pub(crate) un_modified_since_constraint: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) un_modified_since_constraint: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) sse_aws_kms_key_id: std::option::Option<std::string::String>,
         pub(crate) target_key_prefix: std::option::Option<std::string::String>,
         pub(crate) object_lock_legal_hold_status:
             std::option::Option<crate::model::S3ObjectLockLegalHoldStatus>,
         pub(crate) object_lock_mode: std::option::Option<crate::model::S3ObjectLockMode>,
-        pub(crate) object_lock_retain_until_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) bucket_key_enabled: std::option::Option<bool>,
     }
     impl Builder {
@@ -9031,14 +9033,14 @@ pub mod s3_copy_object_operation {
             self
         }
         /// <p></p>
-        pub fn modified_since_constraint(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn modified_since_constraint(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.modified_since_constraint = Some(input);
             self
         }
         /// <p></p>
         pub fn set_modified_since_constraint(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.modified_since_constraint = input;
             self
@@ -9116,14 +9118,14 @@ pub mod s3_copy_object_operation {
             self
         }
         /// <p></p>
-        pub fn un_modified_since_constraint(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn un_modified_since_constraint(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.un_modified_since_constraint = Some(input);
             self
         }
         /// <p></p>
         pub fn set_un_modified_since_constraint(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.un_modified_since_constraint = input;
             self
@@ -9189,7 +9191,7 @@ pub mod s3_copy_object_operation {
         }
         /// <p>The date when the applied object retention configuration expires on all objects in
         /// the Batch Operations job.</p>
-        pub fn object_lock_retain_until_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn object_lock_retain_until_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.object_lock_retain_until_date = Some(input);
             self
         }
@@ -9197,7 +9199,7 @@ pub mod s3_copy_object_operation {
         /// the Batch Operations job.</p>
         pub fn set_object_lock_retain_until_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.object_lock_retain_until_date = input;
             self
@@ -9406,7 +9408,7 @@ pub struct S3ObjectMetadata {
     /// <p></p>
     pub content_type: std::option::Option<std::string::String>,
     /// <p></p>
-    pub http_expires_date: std::option::Option<aws_smithy_types::Instant>,
+    pub http_expires_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p></p>
     pub requester_charged: bool,
     /// <p></p>
@@ -9449,7 +9451,7 @@ impl S3ObjectMetadata {
         self.content_type.as_deref()
     }
     /// <p></p>
-    pub fn http_expires_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn http_expires_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.http_expires_date.as_ref()
     }
     /// <p></p>
@@ -9494,7 +9496,7 @@ pub mod s3_object_metadata {
         pub(crate) content_length: std::option::Option<i64>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
         pub(crate) content_type: std::option::Option<std::string::String>,
-        pub(crate) http_expires_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) http_expires_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) requester_charged: std::option::Option<bool>,
         pub(crate) sse_algorithm: std::option::Option<crate::model::S3SseAlgorithm>,
     }
@@ -9607,14 +9609,14 @@ pub mod s3_object_metadata {
             self
         }
         /// <p></p>
-        pub fn http_expires_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn http_expires_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.http_expires_date = Some(input);
             self
         }
         /// <p></p>
         pub fn set_http_expires_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.http_expires_date = input;
             self

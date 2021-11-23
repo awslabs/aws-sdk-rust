@@ -1529,12 +1529,12 @@ pub fn serialize_structure_crate_model_document_classification_job_filter(
     if let Some(var_317) = &input.submit_time_before {
         object
             .key("SubmitTimeBefore")
-            .instant(var_317, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_317, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_318) = &input.submit_time_after {
         object
             .key("SubmitTimeAfter")
-            .instant(var_318, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_318, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -1552,12 +1552,12 @@ pub fn serialize_structure_crate_model_document_classifier_filter(
     if let Some(var_321) = &input.submit_time_before {
         object
             .key("SubmitTimeBefore")
-            .instant(var_321, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_321, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_322) = &input.submit_time_after {
         object
             .key("SubmitTimeAfter")
-            .instant(var_322, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_322, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -1575,12 +1575,12 @@ pub fn serialize_structure_crate_model_dominant_language_detection_job_filter(
     if let Some(var_325) = &input.submit_time_before {
         object
             .key("SubmitTimeBefore")
-            .instant(var_325, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_325, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_326) = &input.submit_time_after {
         object
             .key("SubmitTimeAfter")
-            .instant(var_326, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_326, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -1598,12 +1598,12 @@ pub fn serialize_structure_crate_model_endpoint_filter(
     if let Some(var_329) = &input.creation_time_before {
         object
             .key("CreationTimeBefore")
-            .instant(var_329, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_329, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_330) = &input.creation_time_after {
         object
             .key("CreationTimeAfter")
-            .instant(var_330, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_330, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -1621,12 +1621,12 @@ pub fn serialize_structure_crate_model_entities_detection_job_filter(
     if let Some(var_333) = &input.submit_time_before {
         object
             .key("SubmitTimeBefore")
-            .instant(var_333, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_333, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_334) = &input.submit_time_after {
         object
             .key("SubmitTimeAfter")
-            .instant(var_334, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_334, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -1644,12 +1644,12 @@ pub fn serialize_structure_crate_model_entity_recognizer_filter(
     if let Some(var_337) = &input.submit_time_before {
         object
             .key("SubmitTimeBefore")
-            .instant(var_337, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_337, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_338) = &input.submit_time_after {
         object
             .key("SubmitTimeAfter")
-            .instant(var_338, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_338, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -1667,12 +1667,12 @@ pub fn serialize_structure_crate_model_events_detection_job_filter(
     if let Some(var_341) = &input.submit_time_before {
         object
             .key("SubmitTimeBefore")
-            .instant(var_341, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_341, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_342) = &input.submit_time_after {
         object
             .key("SubmitTimeAfter")
-            .instant(var_342, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_342, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -1690,12 +1690,12 @@ pub fn serialize_structure_crate_model_key_phrases_detection_job_filter(
     if let Some(var_345) = &input.submit_time_before {
         object
             .key("SubmitTimeBefore")
-            .instant(var_345, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_345, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_346) = &input.submit_time_after {
         object
             .key("SubmitTimeAfter")
-            .instant(var_346, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_346, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -1713,12 +1713,12 @@ pub fn serialize_structure_crate_model_pii_entities_detection_job_filter(
     if let Some(var_349) = &input.submit_time_before {
         object
             .key("SubmitTimeBefore")
-            .instant(var_349, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_349, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_350) = &input.submit_time_after {
         object
             .key("SubmitTimeAfter")
-            .instant(var_350, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_350, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -1736,12 +1736,12 @@ pub fn serialize_structure_crate_model_sentiment_detection_job_filter(
     if let Some(var_353) = &input.submit_time_before {
         object
             .key("SubmitTimeBefore")
-            .instant(var_353, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_353, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_354) = &input.submit_time_after {
         object
             .key("SubmitTimeAfter")
-            .instant(var_354, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_354, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -1759,12 +1759,12 @@ pub fn serialize_structure_crate_model_topics_detection_job_filter(
     if let Some(var_357) = &input.submit_time_before {
         object
             .key("SubmitTimeBefore")
-            .instant(var_357, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_357, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_358) = &input.submit_time_after {
         object
             .key("SubmitTimeAfter")
-            .instant(var_358, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_358, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

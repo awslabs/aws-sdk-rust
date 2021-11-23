@@ -9,7 +9,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_complete_multipart_upload_inp
         let mut root = writer
             .start_el("CompleteMultipartUpload")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_completed_multipart_upload(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_completed_multipart_upload(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -24,7 +24,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_create_bucket_input_create_bu
         let mut root = writer
             .start_el("CreateBucketConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_create_bucket_configuration(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_create_bucket_configuration(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -39,7 +39,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_delete_objects_input_delete(
         let mut root = writer
             .start_el("Delete")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_delete(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_delete(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -54,7 +54,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_accelerate_configu
         let mut root = writer
             .start_el("AccelerateConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_accelerate_configuration(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_accelerate_configuration(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -69,7 +69,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_acl_input_access_c
         let mut root = writer
             .start_el("AccessControlPolicy")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_access_control_policy(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_access_control_policy(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -84,7 +84,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_analytics_configur
         let mut root = writer
             .start_el("AnalyticsConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_analytics_configuration(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_analytics_configuration(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -99,7 +99,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_cors_input_cors_co
         let mut root = writer
             .start_el("CORSConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_cors_configuration(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_cors_configuration(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -115,7 +115,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_encryption_input_s
             .start_el("ServerSideEncryptionConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_server_side_encryption_configuration(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(out.into_bytes())
@@ -132,7 +132,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_intelligent_tierin
             .start_el("IntelligentTieringConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_intelligent_tiering_configuration(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(out.into_bytes())
@@ -148,7 +148,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_inventory_configur
         let mut root = writer
             .start_el("InventoryConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_inventory_configuration(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_inventory_configuration(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -163,9 +163,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_lifecycle_configur
         let mut root = writer
             .start_el("LifecycleConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_bucket_lifecycle_configuration(
-            &&input, root,
-        )?
+        crate::xml_ser::serialize_structure_crate_model_bucket_lifecycle_configuration(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -180,7 +178,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_logging_input_buck
         let mut root = writer
             .start_el("BucketLoggingStatus")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_bucket_logging_status(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_bucket_logging_status(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -195,7 +193,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_metrics_configurat
         let mut root = writer
             .start_el("MetricsConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_metrics_configuration(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_metrics_configuration(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -210,7 +208,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_notification_confi
         let mut root = writer
             .start_el("NotificationConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_notification_configuration(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_notification_configuration(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -225,7 +223,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_ownership_controls
         let mut root = writer
             .start_el("OwnershipControls")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_ownership_controls(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_ownership_controls(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -240,7 +238,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_replication_input_
         let mut root = writer
             .start_el("ReplicationConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_replication_configuration(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_replication_configuration(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -255,9 +253,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_request_payment_in
         let mut root = writer
             .start_el("RequestPaymentConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_request_payment_configuration(
-            &&input, root,
-        )?
+        crate::xml_ser::serialize_structure_crate_model_request_payment_configuration(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -272,7 +268,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_tagging_input_tagg
         let mut root = writer
             .start_el("Tagging")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_tagging(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_tagging(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -287,7 +283,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_versioning_input_v
         let mut root = writer
             .start_el("VersioningConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_versioning_configuration(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_versioning_configuration(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -302,7 +298,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_website_input_webs
         let mut root = writer
             .start_el("WebsiteConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_website_configuration(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_website_configuration(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -317,7 +313,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_object_acl_input_access_c
         let mut root = writer
             .start_el("AccessControlPolicy")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_access_control_policy(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_access_control_policy(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -332,7 +328,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_object_legal_hold_input_l
         let mut root = writer
             .start_el("LegalHold")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_object_lock_legal_hold(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_object_lock_legal_hold(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -347,7 +343,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_object_lock_configuration
         let mut root = writer
             .start_el("ObjectLockConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_object_lock_configuration(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_object_lock_configuration(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -362,7 +358,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_object_retention_input_re
         let mut root = writer
             .start_el("Retention")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_object_lock_retention(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_object_lock_retention(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -377,7 +373,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_object_tagging_input_tagg
         let mut root = writer
             .start_el("Tagging")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_tagging(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_tagging(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -393,7 +389,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_public_access_block_input
             .start_el("PublicAccessBlockConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_public_access_block_configuration(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(out.into_bytes())
@@ -409,7 +405,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_restore_object_input_restore_
         let mut root = writer
             .start_el("RestoreRequest")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_restore_request(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_restore_request(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -438,25 +434,25 @@ pub fn serialize_structure_crate_input_select_object_content_input(
         let inner_writer = scope
             .start_el("InputSerialization")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_input_serialization(&var_3, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_input_serialization(var_3, inner_writer)?
     }
     if let Some(var_4) = &input.output_serialization {
         let inner_writer = scope
             .start_el("OutputSerialization")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_output_serialization(&var_4, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_output_serialization(var_4, inner_writer)?
     }
     if let Some(var_5) = &input.request_progress {
         let inner_writer = scope
             .start_el("RequestProgress")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_request_progress(&var_5, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_request_progress(var_5, inner_writer)?
     }
     if let Some(var_6) = &input.scan_range {
         let inner_writer = scope
             .start_el("ScanRange")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_scan_range(&var_6, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_scan_range(var_6, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -475,7 +471,7 @@ pub fn serialize_structure_crate_model_completed_multipart_upload(
                     .start_el("Part")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
                 crate::xml_ser::serialize_structure_crate_model_completed_part(
-                    &list_item_8,
+                    list_item_8,
                     inner_writer,
                 )?
             }
@@ -515,7 +511,7 @@ pub fn serialize_structure_crate_model_delete(
                     .start_el("Object")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
                 crate::xml_ser::serialize_structure_crate_model_object_identifier(
-                    &list_item_11,
+                    list_item_11,
                     inner_writer,
                 )?
             }
@@ -565,7 +561,7 @@ pub fn serialize_structure_crate_model_access_control_policy(
                 let inner_writer = inner_writer
                     .start_el("Grant")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-                crate::xml_ser::serialize_structure_crate_model_grant(&list_item_14, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_grant(list_item_14, inner_writer)?
             }
         }
     }
@@ -573,7 +569,7 @@ pub fn serialize_structure_crate_model_access_control_policy(
         let inner_writer = scope
             .start_el("Owner")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_owner(&var_15, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_owner(var_15, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -596,14 +592,14 @@ pub fn serialize_structure_crate_model_analytics_configuration(
         let inner_writer = scope
             .start_el("Filter")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_union_crate_model_analytics_filter(&var_17, inner_writer)?
+        crate::xml_ser::serialize_union_crate_model_analytics_filter(var_17, inner_writer)?
     }
     if let Some(var_18) = &input.storage_class_analysis {
         let inner_writer = scope
             .start_el("StorageClassAnalysis")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_storage_class_analysis(
-            &var_18,
+            var_18,
             inner_writer,
         )?
     }
@@ -624,7 +620,7 @@ pub fn serialize_structure_crate_model_cors_configuration(
                     .start_el("CORSRule")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
                 crate::xml_ser::serialize_structure_crate_model_cors_rule(
-                    &list_item_20,
+                    list_item_20,
                     inner_writer,
                 )?
             }
@@ -647,7 +643,7 @@ pub fn serialize_structure_crate_model_server_side_encryption_configuration(
                     .start_el("Rule")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
                 crate::xml_ser::serialize_structure_crate_model_server_side_encryption_rule(
-                    &list_item_22,
+                    list_item_22,
                     inner_writer,
                 )?
             }
@@ -675,7 +671,7 @@ pub fn serialize_structure_crate_model_intelligent_tiering_configuration(
             .start_el("Filter")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_intelligent_tiering_filter(
-            &var_24,
+            var_24,
             inner_writer,
         )?
     }
@@ -692,10 +688,7 @@ pub fn serialize_structure_crate_model_intelligent_tiering_configuration(
                 let inner_writer = scope
                     .start_el("Tiering")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-                crate::xml_ser::serialize_structure_crate_model_tiering(
-                    &list_item_27,
-                    inner_writer,
-                )?
+                crate::xml_ser::serialize_structure_crate_model_tiering(list_item_27, inner_writer)?
             }
         }
     }
@@ -713,10 +706,7 @@ pub fn serialize_structure_crate_model_inventory_configuration(
         let inner_writer = scope
             .start_el("Destination")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_inventory_destination(
-            &var_28,
-            inner_writer,
-        )?
+        crate::xml_ser::serialize_structure_crate_model_inventory_destination(var_28, inner_writer)?
     }
     {
         let mut inner_writer = scope
@@ -729,7 +719,7 @@ pub fn serialize_structure_crate_model_inventory_configuration(
         let inner_writer = scope
             .start_el("Filter")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_inventory_filter(&var_29, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_inventory_filter(var_29, inner_writer)?
     }
     if let Some(var_30) = &input.id {
         let mut inner_writer = scope
@@ -764,7 +754,7 @@ pub fn serialize_structure_crate_model_inventory_configuration(
         let inner_writer = scope
             .start_el("Schedule")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_inventory_schedule(&var_34, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_inventory_schedule(var_34, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -783,7 +773,7 @@ pub fn serialize_structure_crate_model_bucket_lifecycle_configuration(
                     .start_el("Rule")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
                 crate::xml_ser::serialize_structure_crate_model_lifecycle_rule(
-                    &list_item_36,
+                    list_item_36,
                     inner_writer,
                 )?
             }
@@ -803,7 +793,7 @@ pub fn serialize_structure_crate_model_bucket_logging_status(
         let inner_writer = scope
             .start_el("LoggingEnabled")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_logging_enabled(&var_37, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_logging_enabled(var_37, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -826,7 +816,7 @@ pub fn serialize_structure_crate_model_metrics_configuration(
         let inner_writer = scope
             .start_el("Filter")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_union_crate_model_metrics_filter(&var_39, inner_writer)?
+        crate::xml_ser::serialize_union_crate_model_metrics_filter(var_39, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -845,7 +835,7 @@ pub fn serialize_structure_crate_model_notification_configuration(
                     .start_el("TopicConfiguration")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
                 crate::xml_ser::serialize_structure_crate_model_topic_configuration(
-                    &list_item_41,
+                    list_item_41,
                     inner_writer,
                 )?
             }
@@ -858,7 +848,7 @@ pub fn serialize_structure_crate_model_notification_configuration(
                     .start_el("QueueConfiguration")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
                 crate::xml_ser::serialize_structure_crate_model_queue_configuration(
-                    &list_item_43,
+                    list_item_43,
                     inner_writer,
                 )?
             }
@@ -871,7 +861,7 @@ pub fn serialize_structure_crate_model_notification_configuration(
                     .start_el("CloudFunctionConfiguration")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
                 crate::xml_ser::serialize_structure_crate_model_lambda_function_configuration(
-                    &list_item_45,
+                    list_item_45,
                     inner_writer,
                 )?
             }
@@ -894,7 +884,7 @@ pub fn serialize_structure_crate_model_ownership_controls(
                     .start_el("Rule")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
                 crate::xml_ser::serialize_structure_crate_model_ownership_controls_rule(
-                    &list_item_47,
+                    list_item_47,
                     inner_writer,
                 )?
             }
@@ -924,7 +914,7 @@ pub fn serialize_structure_crate_model_replication_configuration(
                     .start_el("Rule")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
                 crate::xml_ser::serialize_structure_crate_model_replication_rule(
-                    &list_item_50,
+                    list_item_50,
                     inner_writer,
                 )?
             }
@@ -967,7 +957,7 @@ pub fn serialize_structure_crate_model_tagging(
                 let inner_writer = inner_writer
                     .start_el("Tag")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-                crate::xml_ser::serialize_structure_crate_model_tag(&list_item_53, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_tag(list_item_53, inner_writer)?
             }
         }
     }
@@ -1009,20 +999,20 @@ pub fn serialize_structure_crate_model_website_configuration(
         let inner_writer = scope
             .start_el("ErrorDocument")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_error_document(&var_56, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_error_document(var_56, inner_writer)?
     }
     if let Some(var_57) = &input.index_document {
         let inner_writer = scope
             .start_el("IndexDocument")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_index_document(&var_57, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_index_document(var_57, inner_writer)?
     }
     if let Some(var_58) = &input.redirect_all_requests_to {
         let inner_writer = scope
             .start_el("RedirectAllRequestsTo")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_redirect_all_requests_to(
-            &var_58,
+            var_58,
             inner_writer,
         )?
     }
@@ -1037,7 +1027,7 @@ pub fn serialize_structure_crate_model_website_configuration(
                     .start_el("RoutingRule")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
                 crate::xml_ser::serialize_structure_crate_model_routing_rule(
-                    &list_item_60,
+                    list_item_60,
                     inner_writer,
                 )?
             }
@@ -1081,7 +1071,7 @@ pub fn serialize_structure_crate_model_object_lock_configuration(
         let inner_writer = scope
             .start_el("Rule")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_object_lock_rule(&var_63, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_object_lock_rule(var_63, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1107,7 +1097,7 @@ pub fn serialize_structure_crate_model_object_lock_retention(
             .finish();
         inner_writer.data(
             var_65
-                .fmt(aws_smithy_types::instant::Format::DateTime)
+                .fmt(aws_smithy_types::date_time::Format::DateTime)?
                 .as_ref(),
         );
     }
@@ -1176,7 +1166,7 @@ pub fn serialize_structure_crate_model_restore_request(
             .start_el("GlacierJobParameters")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_glacier_job_parameters(
-            &var_66,
+            var_66,
             inner_writer,
         )?
     }
@@ -1205,13 +1195,13 @@ pub fn serialize_structure_crate_model_restore_request(
         let inner_writer = scope
             .start_el("SelectParameters")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_select_parameters(&var_70, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_select_parameters(var_70, inner_writer)?
     }
     if let Some(var_71) = &input.output_location {
         let inner_writer = scope
             .start_el("OutputLocation")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_output_location(&var_71, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_output_location(var_71, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1227,7 +1217,7 @@ pub fn serialize_structure_crate_model_input_serialization(
         let inner_writer = scope
             .start_el("CSV")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_csv_input(&var_72, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_csv_input(var_72, inner_writer)?
     }
     if let Some(var_73) = &input.compression_type {
         let mut inner_writer = scope
@@ -1240,13 +1230,13 @@ pub fn serialize_structure_crate_model_input_serialization(
         let inner_writer = scope
             .start_el("JSON")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_json_input(&var_74, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_json_input(var_74, inner_writer)?
     }
     if let Some(var_75) = &input.parquet {
         let inner_writer = scope
             .start_el("Parquet")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_parquet_input(&var_75, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_parquet_input(var_75, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1262,13 +1252,13 @@ pub fn serialize_structure_crate_model_output_serialization(
         let inner_writer = scope
             .start_el("CSV")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_csv_output(&var_76, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_csv_output(var_76, inner_writer)?
     }
     if let Some(var_77) = &input.json {
         let inner_writer = scope
             .start_el("JSON")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_json_output(&var_77, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_json_output(var_77, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1373,7 +1363,7 @@ pub fn serialize_structure_crate_model_grant(
         let inner_writer = scope
             .start_el("Grantee")
             .write_ns("http://www.w3.org/2001/XMLSchema-instance", Some("xsi"));
-        crate::xml_ser::serialize_structure_crate_model_grantee(&var_81, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_grantee(var_81, inner_writer)?
     }
     if let Some(var_82) = &input.permission {
         let mut inner_writer = scope
@@ -1427,14 +1417,14 @@ pub fn serialize_union_crate_model_analytics_filter(
             let inner_writer = scope_writer
                 .start_el("Tag")
                 .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-            crate::xml_ser::serialize_structure_crate_model_tag(&inner, inner_writer)?
+            crate::xml_ser::serialize_structure_crate_model_tag(inner, inner_writer)?
         }
         crate::model::AnalyticsFilter::And(inner) => {
             let inner_writer = scope_writer
                 .start_el("And")
                 .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
             crate::xml_ser::serialize_structure_crate_model_analytics_and_operator(
-                &inner,
+                inner,
                 inner_writer,
             )?
         }
@@ -1458,7 +1448,7 @@ pub fn serialize_structure_crate_model_storage_class_analysis(
             .start_el("DataExport")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_storage_class_analysis_data_export(
-            &var_85,
+            var_85,
             inner_writer,
         )?
     }
@@ -1546,7 +1536,7 @@ pub fn serialize_structure_crate_model_server_side_encryption_rule(
             .start_el("ApplyServerSideEncryptionByDefault")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_server_side_encryption_by_default(
-            &var_95,
+            var_95,
             inner_writer,
         )?
     }
@@ -1579,14 +1569,14 @@ pub fn serialize_structure_crate_model_intelligent_tiering_filter(
         let inner_writer = scope
             .start_el("Tag")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_tag(&var_97, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_tag(var_97, inner_writer)?
     }
     if let Some(var_98) = &input.and {
         let inner_writer = scope
             .start_el("And")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_intelligent_tiering_and_operator(
-            &var_98,
+            var_98,
             inner_writer,
         )?
     }
@@ -1629,7 +1619,7 @@ pub fn serialize_structure_crate_model_inventory_destination(
             .start_el("S3BucketDestination")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_inventory_s3_bucket_destination(
-            &var_100,
+            var_100,
             inner_writer,
         )?
     }
@@ -1681,10 +1671,7 @@ pub fn serialize_structure_crate_model_lifecycle_rule(
         let inner_writer = scope
             .start_el("Expiration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_lifecycle_expiration(
-            &var_103,
-            inner_writer,
-        )?
+        crate::xml_ser::serialize_structure_crate_model_lifecycle_expiration(var_103, inner_writer)?
     }
     if let Some(var_104) = &input.id {
         let mut inner_writer = scope
@@ -1704,7 +1691,7 @@ pub fn serialize_structure_crate_model_lifecycle_rule(
         let inner_writer = scope
             .start_el("Filter")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_union_crate_model_lifecycle_rule_filter(&var_106, inner_writer)?
+        crate::xml_ser::serialize_union_crate_model_lifecycle_rule_filter(var_106, inner_writer)?
     }
     if let Some(var_107) = &input.status {
         let mut inner_writer = scope
@@ -1720,7 +1707,7 @@ pub fn serialize_structure_crate_model_lifecycle_rule(
                     .start_el("Transition")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
                 crate::xml_ser::serialize_structure_crate_model_transition(
-                    &list_item_109,
+                    list_item_109,
                     inner_writer,
                 )?
             }
@@ -1733,7 +1720,7 @@ pub fn serialize_structure_crate_model_lifecycle_rule(
                     .start_el("NoncurrentVersionTransition")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
                 crate::xml_ser::serialize_structure_crate_model_noncurrent_version_transition(
-                    &list_item_111,
+                    list_item_111,
                     inner_writer,
                 )?
             }
@@ -1744,7 +1731,7 @@ pub fn serialize_structure_crate_model_lifecycle_rule(
             .start_el("NoncurrentVersionExpiration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_noncurrent_version_expiration(
-            &var_112,
+            var_112,
             inner_writer,
         )?
     }
@@ -1753,7 +1740,7 @@ pub fn serialize_structure_crate_model_lifecycle_rule(
             .start_el("AbortIncompleteMultipartUpload")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_abort_incomplete_multipart_upload(
-            &var_113,
+            var_113,
             inner_writer,
         )?
     }
@@ -1785,7 +1772,7 @@ pub fn serialize_structure_crate_model_logging_enabled(
                     .start_el("Grant")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
                 crate::xml_ser::serialize_structure_crate_model_target_grant(
-                    &list_item_116,
+                    list_item_116,
                     inner_writer,
                 )?
             }
@@ -1819,7 +1806,7 @@ pub fn serialize_union_crate_model_metrics_filter(
             let inner_writer = scope_writer
                 .start_el("Tag")
                 .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-            crate::xml_ser::serialize_structure_crate_model_tag(&inner, inner_writer)?
+            crate::xml_ser::serialize_structure_crate_model_tag(inner, inner_writer)?
         }
         crate::model::MetricsFilter::AccessPointArn(inner) => {
             let mut inner_writer = scope_writer
@@ -1833,7 +1820,7 @@ pub fn serialize_union_crate_model_metrics_filter(
                 .start_el("And")
                 .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
             crate::xml_ser::serialize_structure_crate_model_metrics_and_operator(
-                &inner,
+                inner,
                 inner_writer,
             )?
         }
@@ -1882,7 +1869,7 @@ pub fn serialize_structure_crate_model_topic_configuration(
             .start_el("Filter")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_notification_configuration_filter(
-            &var_122,
+            var_122,
             inner_writer,
         )?
     }
@@ -1926,7 +1913,7 @@ pub fn serialize_structure_crate_model_queue_configuration(
             .start_el("Filter")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_notification_configuration_filter(
-            &var_127,
+            var_127,
             inner_writer,
         )?
     }
@@ -1970,7 +1957,7 @@ pub fn serialize_structure_crate_model_lambda_function_configuration(
             .start_el("Filter")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_notification_configuration_filter(
-            &var_132,
+            var_132,
             inner_writer,
         )?
     }
@@ -2026,7 +2013,7 @@ pub fn serialize_structure_crate_model_replication_rule(
         let inner_writer = scope
             .start_el("Filter")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_union_crate_model_replication_rule_filter(&var_136, inner_writer)?
+        crate::xml_ser::serialize_union_crate_model_replication_rule_filter(var_136, inner_writer)?
     }
     if let Some(var_137) = &input.status {
         let mut inner_writer = scope
@@ -2040,7 +2027,7 @@ pub fn serialize_structure_crate_model_replication_rule(
             .start_el("SourceSelectionCriteria")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_source_selection_criteria(
-            &var_138,
+            var_138,
             inner_writer,
         )?
     }
@@ -2049,7 +2036,7 @@ pub fn serialize_structure_crate_model_replication_rule(
             .start_el("ExistingObjectReplication")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_existing_object_replication(
-            &var_139,
+            var_139,
             inner_writer,
         )?
     }
@@ -2057,14 +2044,14 @@ pub fn serialize_structure_crate_model_replication_rule(
         let inner_writer = scope
             .start_el("Destination")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_destination(&var_140, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_destination(var_140, inner_writer)?
     }
     if let Some(var_141) = &input.delete_marker_replication {
         let inner_writer = scope
             .start_el("DeleteMarkerReplication")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_delete_marker_replication(
-            &var_141,
+            var_141,
             inner_writer,
         )?
     }
@@ -2164,13 +2151,13 @@ pub fn serialize_structure_crate_model_routing_rule(
         let inner_writer = scope
             .start_el("Condition")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_condition(&var_148, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_condition(var_148, inner_writer)?
     }
     if let Some(var_149) = &input.redirect {
         let inner_writer = scope
             .start_el("Redirect")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_redirect(&var_149, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_redirect(var_149, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2186,7 +2173,7 @@ pub fn serialize_structure_crate_model_object_lock_rule(
         let inner_writer = scope
             .start_el("DefaultRetention")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_default_retention(&var_150, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_default_retention(var_150, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2219,7 +2206,7 @@ pub fn serialize_structure_crate_model_select_parameters(
         let inner_writer = scope
             .start_el("InputSerialization")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_input_serialization(&var_152, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_input_serialization(var_152, inner_writer)?
     }
     if let Some(var_153) = &input.expression_type {
         let mut inner_writer = scope
@@ -2239,10 +2226,7 @@ pub fn serialize_structure_crate_model_select_parameters(
         let inner_writer = scope
             .start_el("OutputSerialization")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_output_serialization(
-            &var_155,
-            inner_writer,
-        )?
+        crate::xml_ser::serialize_structure_crate_model_output_serialization(var_155, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2258,7 +2242,7 @@ pub fn serialize_structure_crate_model_output_location(
         let inner_writer = scope
             .start_el("S3")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_s3_location(&var_156, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_s3_location(var_156, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2477,7 +2461,7 @@ pub fn serialize_structure_crate_model_analytics_and_operator(
                 let inner_writer = scope
                     .start_el("Tag")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-                crate::xml_ser::serialize_structure_crate_model_tag(&list_item_177, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_tag(list_item_177, inner_writer)?
             }
         }
     }
@@ -2503,7 +2487,7 @@ pub fn serialize_structure_crate_model_storage_class_analysis_data_export(
             .start_el("Destination")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_analytics_export_destination(
-            &var_179,
+            var_179,
             inner_writer,
         )?
     }
@@ -2554,7 +2538,7 @@ pub fn serialize_structure_crate_model_intelligent_tiering_and_operator(
                 let inner_writer = scope
                     .start_el("Tag")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-                crate::xml_ser::serialize_structure_crate_model_tag(&list_item_184, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_tag(list_item_184, inner_writer)?
             }
         }
     }
@@ -2600,10 +2584,7 @@ pub fn serialize_structure_crate_model_inventory_s3_bucket_destination(
         let inner_writer = scope
             .start_el("Encryption")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_inventory_encryption(
-            &var_189,
-            inner_writer,
-        )?
+        crate::xml_ser::serialize_structure_crate_model_inventory_encryption(var_189, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2622,7 +2603,7 @@ pub fn serialize_structure_crate_model_lifecycle_expiration(
             .finish();
         inner_writer.data(
             var_190
-                .fmt(aws_smithy_types::instant::Format::DateTime)
+                .fmt(aws_smithy_types::date_time::Format::DateTime)?
                 .as_ref(),
         );
     }
@@ -2663,14 +2644,14 @@ pub fn serialize_union_crate_model_lifecycle_rule_filter(
             let inner_writer = scope_writer
                 .start_el("Tag")
                 .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-            crate::xml_ser::serialize_structure_crate_model_tag(&inner, inner_writer)?
+            crate::xml_ser::serialize_structure_crate_model_tag(inner, inner_writer)?
         }
         crate::model::LifecycleRuleFilter::And(inner) => {
             let inner_writer = scope_writer
                 .start_el("And")
                 .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
             crate::xml_ser::serialize_structure_crate_model_lifecycle_rule_and_operator(
-                &inner,
+                inner,
                 inner_writer,
             )?
         }
@@ -2698,7 +2679,7 @@ pub fn serialize_structure_crate_model_transition(
             .finish();
         inner_writer.data(
             var_191
-                .fmt(aws_smithy_types::instant::Format::DateTime)
+                .fmt(aws_smithy_types::date_time::Format::DateTime)?
                 .as_ref(),
         );
     }
@@ -2791,7 +2772,7 @@ pub fn serialize_structure_crate_model_target_grant(
         let inner_writer = scope
             .start_el("Grantee")
             .write_ns("http://www.w3.org/2001/XMLSchema-instance", Some("xsi"));
-        crate::xml_ser::serialize_structure_crate_model_grantee(&var_194, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_grantee(var_194, inner_writer)?
     }
     if let Some(var_195) = &input.permission {
         let mut inner_writer = scope
@@ -2823,7 +2804,7 @@ pub fn serialize_structure_crate_model_metrics_and_operator(
                 let inner_writer = scope
                     .start_el("Tag")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-                crate::xml_ser::serialize_structure_crate_model_tag(&list_item_198, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_tag(list_item_198, inner_writer)?
             }
         }
     }
@@ -2848,7 +2829,7 @@ pub fn serialize_structure_crate_model_notification_configuration_filter(
         let inner_writer = scope
             .start_el("S3Key")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_s3_key_filter(&var_200, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_s3_key_filter(var_200, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2871,14 +2852,14 @@ pub fn serialize_union_crate_model_replication_rule_filter(
             let inner_writer = scope_writer
                 .start_el("Tag")
                 .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-            crate::xml_ser::serialize_structure_crate_model_tag(&inner, inner_writer)?
+            crate::xml_ser::serialize_structure_crate_model_tag(inner, inner_writer)?
         }
         crate::model::ReplicationRuleFilter::And(inner) => {
             let inner_writer = scope_writer
                 .start_el("And")
                 .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
             crate::xml_ser::serialize_structure_crate_model_replication_rule_and_operator(
-                &inner,
+                inner,
                 inner_writer,
             )?
         }
@@ -2904,7 +2885,7 @@ pub fn serialize_structure_crate_model_source_selection_criteria(
             .start_el("SseKmsEncryptedObjects")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_sse_kms_encrypted_objects(
-            &var_201,
+            var_201,
             inner_writer,
         )?
     }
@@ -2913,7 +2894,7 @@ pub fn serialize_structure_crate_model_source_selection_criteria(
             .start_el("ReplicaModifications")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_replica_modifications(
-            &var_202,
+            var_202,
             inner_writer,
         )?
     }
@@ -2970,7 +2951,7 @@ pub fn serialize_structure_crate_model_destination(
             .start_el("AccessControlTranslation")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_access_control_translation(
-            &var_207,
+            var_207,
             inner_writer,
         )?
     }
@@ -2979,7 +2960,7 @@ pub fn serialize_structure_crate_model_destination(
             .start_el("EncryptionConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_encryption_configuration(
-            &var_208,
+            var_208,
             inner_writer,
         )?
     }
@@ -2987,13 +2968,13 @@ pub fn serialize_structure_crate_model_destination(
         let inner_writer = scope
             .start_el("ReplicationTime")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_replication_time(&var_209, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_replication_time(var_209, inner_writer)?
     }
     if let Some(var_210) = &input.metrics {
         let inner_writer = scope
             .start_el("Metrics")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_metrics(&var_210, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_metrics(var_210, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -3140,7 +3121,7 @@ pub fn serialize_structure_crate_model_s3_location(
         let inner_writer = scope
             .start_el("Encryption")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_encryption(&var_222, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_encryption(var_222, inner_writer)?
     }
     if let Some(var_223) = &input.canned_acl {
         let mut inner_writer = scope
@@ -3159,7 +3140,7 @@ pub fn serialize_structure_crate_model_s3_location(
                 let inner_writer = inner_writer
                     .start_el("Grant")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-                crate::xml_ser::serialize_structure_crate_model_grant(&list_item_225, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_grant(list_item_225, inner_writer)?
             }
         }
     }
@@ -3167,7 +3148,7 @@ pub fn serialize_structure_crate_model_s3_location(
         let inner_writer = scope
             .start_el("Tagging")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_tagging(&var_226, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_tagging(var_226, inner_writer)?
     }
     if let Some(var_227) = &input.user_metadata {
         let mut inner_writer = scope
@@ -3180,7 +3161,7 @@ pub fn serialize_structure_crate_model_s3_location(
                     .start_el("MetadataEntry")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
                 crate::xml_ser::serialize_structure_crate_model_metadata_entry(
-                    &list_item_228,
+                    list_item_228,
                     inner_writer,
                 )?
             }
@@ -3208,7 +3189,7 @@ pub fn serialize_structure_crate_model_analytics_export_destination(
             .start_el("S3BucketDestination")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_analytics_s3_bucket_destination(
-            &var_230,
+            var_230,
             inner_writer,
         )?
     }
@@ -3226,13 +3207,13 @@ pub fn serialize_structure_crate_model_inventory_encryption(
         let inner_writer = scope
             .start_el("SSE-S3")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_sses3(&var_231, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_sses3(var_231, inner_writer)?
     }
     if let Some(var_232) = &input.ssekms {
         let inner_writer = scope
             .start_el("SSE-KMS")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_ssekms(&var_232, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_ssekms(var_232, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -3257,7 +3238,7 @@ pub fn serialize_structure_crate_model_lifecycle_rule_and_operator(
                 let inner_writer = scope
                     .start_el("Tag")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-                crate::xml_ser::serialize_structure_crate_model_tag(&list_item_235, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_tag(list_item_235, inner_writer)?
             }
         }
     }
@@ -3278,7 +3259,7 @@ pub fn serialize_structure_crate_model_s3_key_filter(
                     .start_el("FilterRule")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
                 crate::xml_ser::serialize_structure_crate_model_filter_rule(
-                    &list_item_237,
+                    list_item_237,
                     inner_writer,
                 )?
             }
@@ -3307,7 +3288,7 @@ pub fn serialize_structure_crate_model_replication_rule_and_operator(
                 let inner_writer = scope
                     .start_el("Tag")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-                crate::xml_ser::serialize_structure_crate_model_tag(&list_item_240, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_tag(list_item_240, inner_writer)?
             }
         }
     }
@@ -3401,7 +3382,7 @@ pub fn serialize_structure_crate_model_replication_time(
             .start_el("Time")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_replication_time_value(
-            &var_246,
+            var_246,
             inner_writer,
         )?
     }
@@ -3427,7 +3408,7 @@ pub fn serialize_structure_crate_model_metrics(
             .start_el("EventThreshold")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_replication_time_value(
-            &var_248,
+            var_248,
             inner_writer,
         )?
     }

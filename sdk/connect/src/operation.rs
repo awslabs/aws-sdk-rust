@@ -537,6 +537,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRoutingProfile {
     }
 }
 
+/// Operation shape for `CreateSecurityProfile`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_security_profile`](crate::client::Client::create_security_profile).
+///
+/// See [`crate::client::fluent_builders::CreateSecurityProfile`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateSecurityProfile {
+    _private: (),
+}
+impl CreateSecurityProfile {
+    /// Creates a new builder-style object to manufacture [`CreateSecurityProfileInput`](crate::input::CreateSecurityProfileInput)
+    pub fn builder() -> crate::input::create_security_profile_input::Builder {
+        crate::input::create_security_profile_input::Builder::default()
+    }
+    /// Creates a new `CreateSecurityProfile` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateSecurityProfile {
+    type Output = std::result::Result<
+        crate::output::CreateSecurityProfileOutput,
+        crate::error::CreateSecurityProfileError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_security_profile_error(response)
+        } else {
+            crate::operation_deser::parse_create_security_profile_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateUseCase`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -769,6 +803,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteQuickConnect {
     }
 }
 
+/// Operation shape for `DeleteSecurityProfile`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_security_profile`](crate::client::Client::delete_security_profile).
+///
+/// See [`crate::client::fluent_builders::DeleteSecurityProfile`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteSecurityProfile {
+    _private: (),
+}
+impl DeleteSecurityProfile {
+    /// Creates a new builder-style object to manufacture [`DeleteSecurityProfileInput`](crate::input::DeleteSecurityProfileInput)
+    pub fn builder() -> crate::input::delete_security_profile_input::Builder {
+        crate::input::delete_security_profile_input::Builder::default()
+    }
+    /// Creates a new `DeleteSecurityProfile` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteSecurityProfile {
+    type Output = std::result::Result<
+        crate::output::DeleteSecurityProfileOutput,
+        crate::error::DeleteSecurityProfileError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_security_profile_error(response)
+        } else {
+            crate::operation_deser::parse_delete_security_profile_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteUseCase`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -897,6 +965,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAgentStatus {
             crate::operation_deser::parse_describe_agent_status_error(response)
         } else {
             crate::operation_deser::parse_describe_agent_status_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeContact`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_contact`](crate::client::Client::describe_contact).
+///
+/// See [`crate::client::fluent_builders::DescribeContact`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeContact {
+    _private: (),
+}
+impl DescribeContact {
+    /// Creates a new builder-style object to manufacture [`DescribeContactInput`](crate::input::DescribeContactInput)
+    pub fn builder() -> crate::input::describe_contact_input::Builder {
+        crate::input::describe_contact_input::Builder::default()
+    }
+    /// Creates a new `DescribeContact` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeContact {
+    type Output = std::result::Result<
+        crate::output::DescribeContactOutput,
+        crate::error::DescribeContactError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_contact_error(response)
+        } else {
+            crate::operation_deser::parse_describe_contact_response(response)
         }
     }
 }
@@ -1167,6 +1269,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRoutingProfile {
             crate::operation_deser::parse_describe_routing_profile_error(response)
         } else {
             crate::operation_deser::parse_describe_routing_profile_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeSecurityProfile`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_security_profile`](crate::client::Client::describe_security_profile).
+///
+/// See [`crate::client::fluent_builders::DescribeSecurityProfile`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeSecurityProfile {
+    _private: (),
+}
+impl DescribeSecurityProfile {
+    /// Creates a new builder-style object to manufacture [`DescribeSecurityProfileInput`](crate::input::DescribeSecurityProfileInput)
+    pub fn builder() -> crate::input::describe_security_profile_input::Builder {
+        crate::input::describe_security_profile_input::Builder::default()
+    }
+    /// Creates a new `DescribeSecurityProfile` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeSecurityProfile {
+    type Output = std::result::Result<
+        crate::output::DescribeSecurityProfileOutput,
+        crate::error::DescribeSecurityProfileError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_security_profile_error(response)
+        } else {
+            crate::operation_deser::parse_describe_security_profile_response(response)
         }
     }
 }
@@ -1810,6 +1946,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContactFlows {
     }
 }
 
+/// Operation shape for `ListContactReferences`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_contact_references`](crate::client::Client::list_contact_references).
+///
+/// See [`crate::client::fluent_builders::ListContactReferences`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListContactReferences {
+    _private: (),
+}
+impl ListContactReferences {
+    /// Creates a new builder-style object to manufacture [`ListContactReferencesInput`](crate::input::ListContactReferencesInput)
+    pub fn builder() -> crate::input::list_contact_references_input::Builder {
+        crate::input::list_contact_references_input::Builder::default()
+    }
+    /// Creates a new `ListContactReferences` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListContactReferences {
+    type Output = std::result::Result<
+        crate::output::ListContactReferencesOutput,
+        crate::error::ListContactReferencesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_contact_references_error(response)
+        } else {
+            crate::operation_deser::parse_list_contact_references_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListHoursOfOperations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2308,6 +2478,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSecurityKeys {
             crate::operation_deser::parse_list_security_keys_error(response)
         } else {
             crate::operation_deser::parse_list_security_keys_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListSecurityProfilePermissions`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_security_profile_permissions`](crate::client::Client::list_security_profile_permissions).
+///
+/// See [`crate::client::fluent_builders::ListSecurityProfilePermissions`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListSecurityProfilePermissions {
+    _private: (),
+}
+impl ListSecurityProfilePermissions {
+    /// Creates a new builder-style object to manufacture [`ListSecurityProfilePermissionsInput`](crate::input::ListSecurityProfilePermissionsInput)
+    pub fn builder() -> crate::input::list_security_profile_permissions_input::Builder {
+        crate::input::list_security_profile_permissions_input::Builder::default()
+    }
+    /// Creates a new `ListSecurityProfilePermissions` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListSecurityProfilePermissions {
+    type Output = std::result::Result<
+        crate::output::ListSecurityProfilePermissionsOutput,
+        crate::error::ListSecurityProfilePermissionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_security_profile_permissions_error(response)
+        } else {
+            crate::operation_deser::parse_list_security_profile_permissions_response(response)
         }
     }
 }
@@ -2913,6 +3117,38 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAgentStatus {
     }
 }
 
+/// Operation shape for `UpdateContact`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_contact`](crate::client::Client::update_contact).
+///
+/// See [`crate::client::fluent_builders::UpdateContact`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateContact {
+    _private: (),
+}
+impl UpdateContact {
+    /// Creates a new builder-style object to manufacture [`UpdateContactInput`](crate::input::UpdateContactInput)
+    pub fn builder() -> crate::input::update_contact_input::Builder {
+        crate::input::update_contact_input::Builder::default()
+    }
+    /// Creates a new `UpdateContact` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateContact {
+    type Output =
+        std::result::Result<crate::output::UpdateContactOutput, crate::error::UpdateContactError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_contact_error(response)
+        } else {
+            crate::operation_deser::parse_update_contact_response(response)
+        }
+    }
+}
+
 /// Operation shape for `UpdateContactAttributes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -3011,6 +3247,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateContactFlowName {
             crate::operation_deser::parse_update_contact_flow_name_error(response)
         } else {
             crate::operation_deser::parse_update_contact_flow_name_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateContactSchedule`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_contact_schedule`](crate::client::Client::update_contact_schedule).
+///
+/// See [`crate::client::fluent_builders::UpdateContactSchedule`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateContactSchedule {
+    _private: (),
+}
+impl UpdateContactSchedule {
+    /// Creates a new builder-style object to manufacture [`UpdateContactScheduleInput`](crate::input::UpdateContactScheduleInput)
+    pub fn builder() -> crate::input::update_contact_schedule_input::Builder {
+        crate::input::update_contact_schedule_input::Builder::default()
+    }
+    /// Creates a new `UpdateContactSchedule` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateContactSchedule {
+    type Output = std::result::Result<
+        crate::output::UpdateContactScheduleOutput,
+        crate::error::UpdateContactScheduleError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_contact_schedule_error(response)
+        } else {
+            crate::operation_deser::parse_update_contact_schedule_response(response)
         }
     }
 }
@@ -3491,6 +3761,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRoutingProfileQueu
             crate::operation_deser::parse_update_routing_profile_queues_error(response)
         } else {
             crate::operation_deser::parse_update_routing_profile_queues_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateSecurityProfile`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_security_profile`](crate::client::Client::update_security_profile).
+///
+/// See [`crate::client::fluent_builders::UpdateSecurityProfile`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateSecurityProfile {
+    _private: (),
+}
+impl UpdateSecurityProfile {
+    /// Creates a new builder-style object to manufacture [`UpdateSecurityProfileInput`](crate::input::UpdateSecurityProfileInput)
+    pub fn builder() -> crate::input::update_security_profile_input::Builder {
+        crate::input::update_security_profile_input::Builder::default()
+    }
+    /// Creates a new `UpdateSecurityProfile` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateSecurityProfile {
+    type Output = std::result::Result<
+        crate::output::UpdateSecurityProfileOutput,
+        crate::error::UpdateSecurityProfileError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_security_profile_error(response)
+        } else {
+            crate::operation_deser::parse_update_security_profile_response(response)
         }
     }
 }

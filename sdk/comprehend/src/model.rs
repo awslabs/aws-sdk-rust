@@ -1614,9 +1614,9 @@ pub struct TopicsDetectionJobProperties {
     /// <p>A description for the status of a job.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the topic detection job was submitted for processing.</p>
-    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the topic detection job was completed.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The input data configuration supplied when you created the topic detection
     /// job.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
@@ -1681,11 +1681,11 @@ impl TopicsDetectionJobProperties {
         self.message.as_deref()
     }
     /// <p>The time that the topic detection job was submitted for processing.</p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time that the topic detection job was completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The input data configuration supplied when you created the topic detection
@@ -1762,8 +1762,8 @@ pub mod topics_detection_job_properties {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
         pub(crate) number_of_topics: std::option::Option<i32>,
@@ -1846,27 +1846,27 @@ pub mod topics_detection_job_properties {
             self
         }
         /// <p>The time that the topic detection job was submitted for processing.</p>
-        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time = Some(input);
             self
         }
         /// <p>The time that the topic detection job was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the topic detection job was completed.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time that the topic detection job was completed.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -2024,11 +2024,11 @@ pub struct TopicsDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Only returns jobs submitted before the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Only returns jobs submitted after the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TopicsDetectionJobFilter {
     /// <p></p>
@@ -2043,13 +2043,13 @@ impl TopicsDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Only returns jobs submitted before the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_before.as_ref()
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Only returns jobs submitted after the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
     }
 }
@@ -2071,8 +2071,8 @@ pub mod topics_detection_job_filter {
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p></p>
@@ -2103,7 +2103,7 @@ pub mod topics_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Only returns jobs submitted before the specified time. Jobs are returned in descending order,
         /// newest to oldest.</p>
-        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_before = Some(input);
             self
         }
@@ -2112,7 +2112,7 @@ pub mod topics_detection_job_filter {
         /// newest to oldest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -2120,7 +2120,7 @@ pub mod topics_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Only returns jobs submitted after the specified time. Jobs are returned in ascending order,
         /// oldest to newest.</p>
-        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_after = Some(input);
             self
         }
@@ -2129,7 +2129,7 @@ pub mod topics_detection_job_filter {
         /// oldest to newest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_after = input;
             self
@@ -2177,9 +2177,9 @@ pub struct SentimentDetectionJobProperties {
     /// <p>A description of the status of a job.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the sentiment detection job was submitted for processing.</p>
-    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the sentiment detection job ended.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The input data configuration that you supplied when you created the sentiment detection
     /// job.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
@@ -2243,11 +2243,11 @@ impl SentimentDetectionJobProperties {
         self.message.as_deref()
     }
     /// <p>The time that the sentiment detection job was submitted for processing.</p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time that the sentiment detection job ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The input data configuration that you supplied when you created the sentiment detection
@@ -2323,8 +2323,8 @@ pub mod sentiment_detection_job_properties {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -2407,27 +2407,27 @@ pub mod sentiment_detection_job_properties {
             self
         }
         /// <p>The time that the sentiment detection job was submitted for processing.</p>
-        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time = Some(input);
             self
         }
         /// <p>The time that the sentiment detection job was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the sentiment detection job ended.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time that the sentiment detection job ended.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -2586,11 +2586,11 @@ pub struct SentimentDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SentimentDetectionJobFilter {
     /// <p>Filters on the name of the job.</p>
@@ -2605,13 +2605,13 @@ impl SentimentDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_before.as_ref()
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
     }
 }
@@ -2633,8 +2633,8 @@ pub mod sentiment_detection_job_filter {
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Filters on the name of the job.</p>
@@ -2665,7 +2665,7 @@ pub mod sentiment_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
         /// oldest to newest.</p>
-        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_before = Some(input);
             self
         }
@@ -2674,7 +2674,7 @@ pub mod sentiment_detection_job_filter {
         /// oldest to newest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -2682,7 +2682,7 @@ pub mod sentiment_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
         /// newest to oldest.</p>
-        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_after = Some(input);
             self
         }
@@ -2691,7 +2691,7 @@ pub mod sentiment_detection_job_filter {
         /// newest to oldest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_after = input;
             self
@@ -2739,9 +2739,9 @@ pub struct PiiEntitiesDetectionJobProperties {
     /// <p>A description of the status of a job.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the PII entities detection job was submitted for processing.</p>
-    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the PII entities detection job completed.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The input properties for a PII entities detection job.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>The output data configuration that you supplied when you created the PII entities
@@ -2793,11 +2793,11 @@ impl PiiEntitiesDetectionJobProperties {
         self.message.as_deref()
     }
     /// <p>The time that the PII entities detection job was submitted for processing.</p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time that the PII entities detection job completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The input properties for a PII entities detection job.</p>
@@ -2861,8 +2861,8 @@ pub mod pii_entities_detection_job_properties {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::PiiOutputDataConfig>,
         pub(crate) redaction_config: std::option::Option<crate::model::RedactionConfig>,
@@ -2945,27 +2945,27 @@ pub mod pii_entities_detection_job_properties {
             self
         }
         /// <p>The time that the PII entities detection job was submitted for processing.</p>
-        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time = Some(input);
             self
         }
         /// <p>The time that the PII entities detection job was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the PII entities detection job completed.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time that the PII entities detection job completed.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -3180,11 +3180,11 @@ pub struct PiiEntitiesDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PiiEntitiesDetectionJobFilter {
     /// <p>Filters on the name of the job.</p>
@@ -3199,13 +3199,13 @@ impl PiiEntitiesDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_before.as_ref()
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
     }
 }
@@ -3227,8 +3227,8 @@ pub mod pii_entities_detection_job_filter {
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Filters on the name of the job.</p>
@@ -3259,7 +3259,7 @@ pub mod pii_entities_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
         /// oldest to newest.</p>
-        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_before = Some(input);
             self
         }
@@ -3268,7 +3268,7 @@ pub mod pii_entities_detection_job_filter {
         /// oldest to newest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -3276,7 +3276,7 @@ pub mod pii_entities_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
         /// newest to oldest.</p>
-        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_after = Some(input);
             self
         }
@@ -3285,7 +3285,7 @@ pub mod pii_entities_detection_job_filter {
         /// newest to oldest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_after = input;
             self
@@ -3333,9 +3333,9 @@ pub struct KeyPhrasesDetectionJobProperties {
     /// <p>A description of the status of a job.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the key phrases detection job was submitted for processing.</p>
-    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the key phrases detection job completed.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The input data configuration that you supplied when you created the key phrases detection
     /// job.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
@@ -3399,11 +3399,11 @@ impl KeyPhrasesDetectionJobProperties {
         self.message.as_deref()
     }
     /// <p>The time that the key phrases detection job was submitted for processing.</p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time that the key phrases detection job completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The input data configuration that you supplied when you created the key phrases detection
@@ -3479,8 +3479,8 @@ pub mod key_phrases_detection_job_properties {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -3563,27 +3563,27 @@ pub mod key_phrases_detection_job_properties {
             self
         }
         /// <p>The time that the key phrases detection job was submitted for processing.</p>
-        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time = Some(input);
             self
         }
         /// <p>The time that the key phrases detection job was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the key phrases detection job completed.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time that the key phrases detection job completed.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -3742,11 +3742,11 @@ pub struct KeyPhrasesDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl KeyPhrasesDetectionJobFilter {
     /// <p>Filters on the name of the job.</p>
@@ -3761,13 +3761,13 @@ impl KeyPhrasesDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_before.as_ref()
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
     }
 }
@@ -3789,8 +3789,8 @@ pub mod key_phrases_detection_job_filter {
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Filters on the name of the job.</p>
@@ -3821,7 +3821,7 @@ pub mod key_phrases_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
         /// oldest to newest.</p>
-        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_before = Some(input);
             self
         }
@@ -3830,7 +3830,7 @@ pub mod key_phrases_detection_job_filter {
         /// oldest to newest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -3838,7 +3838,7 @@ pub mod key_phrases_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
         /// newest to oldest.</p>
-        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_after = Some(input);
             self
         }
@@ -3847,7 +3847,7 @@ pub mod key_phrases_detection_job_filter {
         /// newest to oldest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_after = input;
             self
@@ -3894,9 +3894,9 @@ pub struct EventsDetectionJobProperties {
     /// <p>A description of the status of the events detection job.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the events detection job was submitted for processing.</p>
-    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the events detection job completed.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The input data configuration that you supplied when you created the events detection
     /// job.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
@@ -3942,11 +3942,11 @@ impl EventsDetectionJobProperties {
         self.message.as_deref()
     }
     /// <p>The time that the events detection job was submitted for processing.</p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time that the events detection job completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The input data configuration that you supplied when you created the events detection
@@ -4002,8 +4002,8 @@ pub mod events_detection_job_properties {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -4083,27 +4083,27 @@ pub mod events_detection_job_properties {
             self
         }
         /// <p>The time that the events detection job was submitted for processing.</p>
-        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time = Some(input);
             self
         }
         /// <p>The time that the events detection job was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the events detection job completed.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time that the events detection job completed.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -4223,11 +4223,11 @@ pub struct EventsDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EventsDetectionJobFilter {
     /// <p>Filters on the name of the events detection job.</p>
@@ -4242,13 +4242,13 @@ impl EventsDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_before.as_ref()
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
     }
 }
@@ -4270,8 +4270,8 @@ pub mod events_detection_job_filter {
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Filters on the name of the events detection job.</p>
@@ -4302,7 +4302,7 @@ pub mod events_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
         /// oldest to newest.</p>
-        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_before = Some(input);
             self
         }
@@ -4311,7 +4311,7 @@ pub mod events_detection_job_filter {
         /// oldest to newest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -4319,7 +4319,7 @@ pub mod events_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
         /// newest to oldest.</p>
-        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_after = Some(input);
             self
         }
@@ -4328,7 +4328,7 @@ pub mod events_detection_job_filter {
         /// newest to oldest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_after = input;
             self
@@ -4360,7 +4360,7 @@ pub struct EntityRecognizerSummary {
     /// <p> The number of versions you created.</p>
     pub number_of_versions: std::option::Option<i32>,
     /// <p> The time that the latest entity recognizer version was submitted for processing.</p>
-    pub latest_version_created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub latest_version_created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The version name you assigned to the latest entity recognizer version.</p>
     pub latest_version_name: std::option::Option<std::string::String>,
     /// <p> Provides the status of the latest entity recognizer version.</p>
@@ -4376,7 +4376,7 @@ impl EntityRecognizerSummary {
         self.number_of_versions
     }
     /// <p> The time that the latest entity recognizer version was submitted for processing.</p>
-    pub fn latest_version_created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn latest_version_created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_version_created_at.as_ref()
     }
     /// <p> The version name you assigned to the latest entity recognizer version.</p>
@@ -4407,7 +4407,7 @@ pub mod entity_recognizer_summary {
     pub struct Builder {
         pub(crate) recognizer_name: std::option::Option<std::string::String>,
         pub(crate) number_of_versions: std::option::Option<i32>,
-        pub(crate) latest_version_created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) latest_version_created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) latest_version_name: std::option::Option<std::string::String>,
         pub(crate) latest_version_status: std::option::Option<crate::model::ModelStatus>,
     }
@@ -4436,14 +4436,14 @@ pub mod entity_recognizer_summary {
             self
         }
         /// <p> The time that the latest entity recognizer version was submitted for processing.</p>
-        pub fn latest_version_created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn latest_version_created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.latest_version_created_at = Some(input);
             self
         }
         /// <p> The time that the latest entity recognizer version was submitted for processing.</p>
         pub fn set_latest_version_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.latest_version_created_at = input;
             self
@@ -4590,13 +4590,13 @@ pub struct EntityRecognizerProperties {
     /// <p> A description of the status of the recognizer.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the recognizer was submitted for processing.</p>
-    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the recognizer creation completed.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that training of the entity recognizer started.</p>
-    pub training_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub training_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that training of the entity recognizer was completed.</p>
-    pub training_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub training_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The input data properties of an entity recognizer.</p>
     pub input_data_config: std::option::Option<crate::model::EntityRecognizerInputDataConfig>,
     /// <p> Provides information about an entity recognizer.</p>
@@ -4659,19 +4659,19 @@ impl EntityRecognizerProperties {
         self.message.as_deref()
     }
     /// <p>The time that the recognizer was submitted for processing.</p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time that the recognizer creation completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The time that training of the entity recognizer started.</p>
-    pub fn training_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn training_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_start_time.as_ref()
     }
     /// <p>The time that training of the entity recognizer was completed.</p>
-    pub fn training_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn training_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_end_time.as_ref()
     }
     /// <p>The input data properties of an entity recognizer.</p>
@@ -4766,10 +4766,10 @@ pub mod entity_recognizer_properties {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
         pub(crate) status: std::option::Option<crate::model::ModelStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) training_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) training_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) training_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) training_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) input_data_config:
             std::option::Option<crate::model::EntityRecognizerInputDataConfig>,
         pub(crate) recognizer_metadata: std::option::Option<crate::model::EntityRecognizerMetadata>,
@@ -4829,53 +4829,53 @@ pub mod entity_recognizer_properties {
             self
         }
         /// <p>The time that the recognizer was submitted for processing.</p>
-        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time = Some(input);
             self
         }
         /// <p>The time that the recognizer was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the recognizer creation completed.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time that the recognizer creation completed.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
         }
         /// <p>The time that training of the entity recognizer started.</p>
-        pub fn training_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn training_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.training_start_time = Some(input);
             self
         }
         /// <p>The time that training of the entity recognizer started.</p>
         pub fn set_training_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.training_start_time = input;
             self
         }
         /// <p>The time that training of the entity recognizer was completed.</p>
-        pub fn training_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn training_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.training_end_time = Some(input);
             self
         }
         /// <p>The time that training of the entity recognizer was completed.</p>
         pub fn set_training_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.training_end_time = input;
             self
@@ -6648,11 +6648,11 @@ pub struct EntityRecognizerFilter {
     /// <p>Filters the list of entities based on the time that the list was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filters the list of entities based on the time that the list was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EntityRecognizerFilter {
     /// <p>The status of an entity recognizer.</p>
@@ -6666,13 +6666,13 @@ impl EntityRecognizerFilter {
     /// <p>Filters the list of entities based on the time that the list was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_before.as_ref()
     }
     /// <p>Filters the list of entities based on the time that the list was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
     }
 }
@@ -6694,8 +6694,8 @@ pub mod entity_recognizer_filter {
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ModelStatus>,
         pub(crate) recognizer_name: std::option::Option<std::string::String>,
-        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The status of an entity recognizer.</p>
@@ -6724,7 +6724,7 @@ pub mod entity_recognizer_filter {
         /// <p>Filters the list of entities based on the time that the list was submitted for processing.
         /// Returns only jobs submitted before the specified time. Jobs are returned in descending order,
         /// newest to oldest.</p>
-        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_before = Some(input);
             self
         }
@@ -6733,7 +6733,7 @@ pub mod entity_recognizer_filter {
         /// newest to oldest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -6741,7 +6741,7 @@ pub mod entity_recognizer_filter {
         /// <p>Filters the list of entities based on the time that the list was submitted for processing.
         /// Returns only jobs submitted after the specified time. Jobs are returned in ascending order,
         /// oldest to newest.</p>
-        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_after = Some(input);
             self
         }
@@ -6750,7 +6750,7 @@ pub mod entity_recognizer_filter {
         /// oldest to newest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_after = input;
             self
@@ -6798,9 +6798,9 @@ pub struct EntitiesDetectionJobProperties {
     /// <p>A description of the status of a job.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the entities detection job was submitted for processing.</p>
-    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the entities detection job completed</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
     pub entity_recognizer_arn: std::option::Option<std::string::String>,
     /// <p>The input data configuration that you supplied when you created the entities detection
@@ -6866,11 +6866,11 @@ impl EntitiesDetectionJobProperties {
         self.message.as_deref()
     }
     /// <p>The time that the entities detection job was submitted for processing.</p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time that the entities detection job completed</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
@@ -6951,8 +6951,8 @@ pub mod entities_detection_job_properties {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) entity_recognizer_arn: std::option::Option<std::string::String>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
@@ -7036,27 +7036,27 @@ pub mod entities_detection_job_properties {
             self
         }
         /// <p>The time that the entities detection job was submitted for processing.</p>
-        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time = Some(input);
             self
         }
         /// <p>The time that the entities detection job was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the entities detection job completed</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time that the entities detection job completed</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -7229,11 +7229,11 @@ pub struct EntitiesDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EntitiesDetectionJobFilter {
     /// <p>Filters on the name of the job.</p>
@@ -7248,13 +7248,13 @@ impl EntitiesDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_before.as_ref()
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
     }
 }
@@ -7276,8 +7276,8 @@ pub mod entities_detection_job_filter {
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Filters on the name of the job.</p>
@@ -7308,7 +7308,7 @@ pub mod entities_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
         /// oldest to newest.</p>
-        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_before = Some(input);
             self
         }
@@ -7317,7 +7317,7 @@ pub mod entities_detection_job_filter {
         /// oldest to newest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -7325,7 +7325,7 @@ pub mod entities_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
         /// newest to oldest.</p>
-        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_after = Some(input);
             self
         }
@@ -7334,7 +7334,7 @@ pub mod entities_detection_job_filter {
         /// newest to oldest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_after = input;
             self
@@ -7380,9 +7380,9 @@ pub struct EndpointProperties {
     /// <p>The number of inference units currently used by the model using this endpoint.</p>
     pub current_inference_units: std::option::Option<i32>,
     /// <p>The creation date and time of the endpoint.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the endpoint was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that
     /// grants Amazon Comprehend read access to trained custom models encrypted with a customer
     /// managed key (ModelKmsKeyId).</p>
@@ -7424,11 +7424,11 @@ impl EndpointProperties {
         self.current_inference_units
     }
     /// <p>The creation date and time of the endpoint.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time that the endpoint was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that
@@ -7475,8 +7475,8 @@ pub mod endpoint_properties {
         pub(crate) desired_model_arn: std::option::Option<std::string::String>,
         pub(crate) desired_inference_units: std::option::Option<i32>,
         pub(crate) current_inference_units: std::option::Option<i32>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
         pub(crate) desired_data_access_role_arn: std::option::Option<std::string::String>,
     }
@@ -7566,27 +7566,27 @@ pub mod endpoint_properties {
             self
         }
         /// <p>The creation date and time of the endpoint.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The creation date and time of the endpoint.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The date and time that the endpoint was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time that the endpoint was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -7728,9 +7728,9 @@ pub struct EndpointFilter {
     /// Updating, Deleting, Failed.</p>
     pub status: std::option::Option<crate::model::EndpointStatus>,
     /// <p>Specifies a date before which the returned endpoint or endpoints were created.</p>
-    pub creation_time_before: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies a date after which the returned endpoint or endpoints were created.</p>
-    pub creation_time_after: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EndpointFilter {
     /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
@@ -7743,11 +7743,11 @@ impl EndpointFilter {
         self.status.as_ref()
     }
     /// <p>Specifies a date before which the returned endpoint or endpoints were created.</p>
-    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>Specifies a date after which the returned endpoint or endpoints were created.</p>
-    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
 }
@@ -7769,8 +7769,8 @@ pub mod endpoint_filter {
     pub struct Builder {
         pub(crate) model_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::EndpointStatus>,
-        pub(crate) creation_time_before: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) creation_time_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
@@ -7799,27 +7799,27 @@ pub mod endpoint_filter {
             self
         }
         /// <p>Specifies a date before which the returned endpoint or endpoints were created.</p>
-        pub fn creation_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time_before = Some(input);
             self
         }
         /// <p>Specifies a date before which the returned endpoint or endpoints were created.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time_before = input;
             self
         }
         /// <p>Specifies a date after which the returned endpoint or endpoints were created.</p>
-        pub fn creation_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time_after = Some(input);
             self
         }
         /// <p>Specifies a date after which the returned endpoint or endpoints were created.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time_after = input;
             self
@@ -7867,9 +7867,9 @@ pub struct DominantLanguageDetectionJobProperties {
     /// <p>A description for the status of a job.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the dominant language detection job was submitted for processing.</p>
-    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the dominant language detection job completed.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The input data configuration that you supplied when you created the dominant language
     /// detection job.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
@@ -7932,11 +7932,11 @@ impl DominantLanguageDetectionJobProperties {
         self.message.as_deref()
     }
     /// <p>The time that the dominant language detection job was submitted for processing.</p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time that the dominant language detection job completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The input data configuration that you supplied when you created the dominant language
@@ -8008,8 +8008,8 @@ pub mod dominant_language_detection_job_properties {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
         pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
@@ -8091,27 +8091,27 @@ pub mod dominant_language_detection_job_properties {
             self
         }
         /// <p>The time that the dominant language detection job was submitted for processing.</p>
-        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time = Some(input);
             self
         }
         /// <p>The time that the dominant language detection job was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the dominant language detection job completed.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time that the dominant language detection job completed.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -8258,11 +8258,11 @@ pub struct DominantLanguageDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DominantLanguageDetectionJobFilter {
     /// <p>Filters on the name of the job.</p>
@@ -8277,13 +8277,13 @@ impl DominantLanguageDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_before.as_ref()
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
     }
 }
@@ -8305,8 +8305,8 @@ pub mod dominant_language_detection_job_filter {
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Filters on the name of the job.</p>
@@ -8337,7 +8337,7 @@ pub mod dominant_language_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
         /// oldest to newest.</p>
-        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_before = Some(input);
             self
         }
@@ -8346,7 +8346,7 @@ pub mod dominant_language_detection_job_filter {
         /// oldest to newest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -8354,7 +8354,7 @@ pub mod dominant_language_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
         /// newest to oldest.</p>
-        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_after = Some(input);
             self
         }
@@ -8363,7 +8363,7 @@ pub mod dominant_language_detection_job_filter {
         /// newest to oldest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_after = input;
             self
@@ -8395,7 +8395,7 @@ pub struct DocumentClassifierSummary {
     /// <p>The number of versions you created.</p>
     pub number_of_versions: std::option::Option<i32>,
     /// <p>The time that the latest document classifier version was submitted for processing.</p>
-    pub latest_version_created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub latest_version_created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version name you assigned to the latest document classifier version.</p>
     pub latest_version_name: std::option::Option<std::string::String>,
     /// <p>Provides the status of the latest document classifier version.</p>
@@ -8411,7 +8411,7 @@ impl DocumentClassifierSummary {
         self.number_of_versions
     }
     /// <p>The time that the latest document classifier version was submitted for processing.</p>
-    pub fn latest_version_created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn latest_version_created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_version_created_at.as_ref()
     }
     /// <p>The version name you assigned to the latest document classifier version.</p>
@@ -8442,7 +8442,7 @@ pub mod document_classifier_summary {
     pub struct Builder {
         pub(crate) document_classifier_name: std::option::Option<std::string::String>,
         pub(crate) number_of_versions: std::option::Option<i32>,
-        pub(crate) latest_version_created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) latest_version_created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) latest_version_name: std::option::Option<std::string::String>,
         pub(crate) latest_version_status: std::option::Option<crate::model::ModelStatus>,
     }
@@ -8471,14 +8471,14 @@ pub mod document_classifier_summary {
             self
         }
         /// <p>The time that the latest document classifier version was submitted for processing.</p>
-        pub fn latest_version_created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn latest_version_created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.latest_version_created_at = Some(input);
             self
         }
         /// <p>The time that the latest document classifier version was submitted for processing.</p>
         pub fn set_latest_version_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.latest_version_created_at = input;
             self
@@ -8544,16 +8544,16 @@ pub struct DocumentClassifierProperties {
     /// <p>Additional information about the status of the classifier.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the document classifier was submitted for training.</p>
-    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that training the document classifier completed.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the time when the training starts on documentation classifiers. You are billed
     /// for the time interval between this time and the value of TrainingEndTime. </p>
-    pub training_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub training_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that training of the document classifier was completed. Indicates the time when
     /// the training completes on documentation classifiers. You are billed for the time interval
     /// between this time and the value of TrainingStartTime.</p>
-    pub training_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub training_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The input data configuration that you supplied when you created the document classifier
     /// for training.</p>
     pub input_data_config: std::option::Option<crate::model::DocumentClassifierInputDataConfig>,
@@ -8627,22 +8627,22 @@ impl DocumentClassifierProperties {
         self.message.as_deref()
     }
     /// <p>The time that the document classifier was submitted for training.</p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time that training the document classifier completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Indicates the time when the training starts on documentation classifiers. You are billed
     /// for the time interval between this time and the value of TrainingEndTime. </p>
-    pub fn training_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn training_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_start_time.as_ref()
     }
     /// <p>The time that training of the document classifier was completed. Indicates the time when
     /// the training completes on documentation classifiers. You are billed for the time interval
     /// between this time and the value of TrainingStartTime.</p>
-    pub fn training_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn training_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_end_time.as_ref()
     }
     /// <p>The input data configuration that you supplied when you created the document classifier
@@ -8752,10 +8752,10 @@ pub mod document_classifier_properties {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
         pub(crate) status: std::option::Option<crate::model::ModelStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) training_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) training_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) training_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) training_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) input_data_config:
             std::option::Option<crate::model::DocumentClassifierInputDataConfig>,
         pub(crate) output_data_config:
@@ -8822,34 +8822,34 @@ pub mod document_classifier_properties {
             self
         }
         /// <p>The time that the document classifier was submitted for training.</p>
-        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time = Some(input);
             self
         }
         /// <p>The time that the document classifier was submitted for training.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that training the document classifier completed.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time that training the document classifier completed.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
         }
         /// <p>Indicates the time when the training starts on documentation classifiers. You are billed
         /// for the time interval between this time and the value of TrainingEndTime. </p>
-        pub fn training_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn training_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.training_start_time = Some(input);
             self
         }
@@ -8857,7 +8857,7 @@ pub mod document_classifier_properties {
         /// for the time interval between this time and the value of TrainingEndTime. </p>
         pub fn set_training_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.training_start_time = input;
             self
@@ -8865,7 +8865,7 @@ pub mod document_classifier_properties {
         /// <p>The time that training of the document classifier was completed. Indicates the time when
         /// the training completes on documentation classifiers. You are billed for the time interval
         /// between this time and the value of TrainingStartTime.</p>
-        pub fn training_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn training_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.training_end_time = Some(input);
             self
         }
@@ -8874,7 +8874,7 @@ pub mod document_classifier_properties {
         /// between this time and the value of TrainingStartTime.</p>
         pub fn set_training_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.training_end_time = input;
             self
@@ -10103,11 +10103,11 @@ pub struct DocumentClassifierFilter {
     /// <p>Filters the list of classifiers based on the time that the classifier was submitted for
     /// processing. Returns only classifiers submitted before the specified time. Classifiers are
     /// returned in ascending order, oldest to newest.</p>
-    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filters the list of classifiers based on the time that the classifier was submitted for
     /// processing. Returns only classifiers submitted after the specified time. Classifiers are
     /// returned in descending order, newest to oldest.</p>
-    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DocumentClassifierFilter {
     /// <p>Filters the list of classifiers based on status.</p>
@@ -10121,13 +10121,13 @@ impl DocumentClassifierFilter {
     /// <p>Filters the list of classifiers based on the time that the classifier was submitted for
     /// processing. Returns only classifiers submitted before the specified time. Classifiers are
     /// returned in ascending order, oldest to newest.</p>
-    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_before.as_ref()
     }
     /// <p>Filters the list of classifiers based on the time that the classifier was submitted for
     /// processing. Returns only classifiers submitted after the specified time. Classifiers are
     /// returned in descending order, newest to oldest.</p>
-    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
     }
 }
@@ -10149,8 +10149,8 @@ pub mod document_classifier_filter {
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ModelStatus>,
         pub(crate) document_classifier_name: std::option::Option<std::string::String>,
-        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Filters the list of classifiers based on status.</p>
@@ -10179,7 +10179,7 @@ pub mod document_classifier_filter {
         /// <p>Filters the list of classifiers based on the time that the classifier was submitted for
         /// processing. Returns only classifiers submitted before the specified time. Classifiers are
         /// returned in ascending order, oldest to newest.</p>
-        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_before = Some(input);
             self
         }
@@ -10188,7 +10188,7 @@ pub mod document_classifier_filter {
         /// returned in ascending order, oldest to newest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -10196,7 +10196,7 @@ pub mod document_classifier_filter {
         /// <p>Filters the list of classifiers based on the time that the classifier was submitted for
         /// processing. Returns only classifiers submitted after the specified time. Classifiers are
         /// returned in descending order, newest to oldest.</p>
-        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_after = Some(input);
             self
         }
@@ -10205,7 +10205,7 @@ pub mod document_classifier_filter {
         /// returned in descending order, newest to oldest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_after = input;
             self
@@ -10253,9 +10253,9 @@ pub struct DocumentClassificationJobProperties {
     /// <p>A description of the status of the job.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the document classification job was submitted for processing.</p>
-    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the document classification job completed.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
     pub document_classifier_arn: std::option::Option<std::string::String>,
     /// <p>The input data configuration that you supplied when you created the document
@@ -10319,11 +10319,11 @@ impl DocumentClassificationJobProperties {
         self.message.as_deref()
     }
     /// <p>The time that the document classification job was submitted for processing.</p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time that the document classification job completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
@@ -10399,8 +10399,8 @@ pub mod document_classification_job_properties {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) document_classifier_arn: std::option::Option<std::string::String>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
@@ -10483,27 +10483,27 @@ pub mod document_classification_job_properties {
             self
         }
         /// <p>The time that the document classification job was submitted for processing.</p>
-        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time = Some(input);
             self
         }
         /// <p>The time that the document classification job was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the document classification job completed.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time that the document classification job completed.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -10662,11 +10662,11 @@ pub struct DocumentClassificationJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DocumentClassificationJobFilter {
     /// <p>Filters on the name of the job.</p>
@@ -10680,13 +10680,13 @@ impl DocumentClassificationJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_before.as_ref()
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
     }
 }
@@ -10708,8 +10708,8 @@ pub mod document_classification_job_filter {
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Filters on the name of the job.</p>
@@ -10738,7 +10738,7 @@ pub mod document_classification_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
         /// oldest to newest.</p>
-        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_before = Some(input);
             self
         }
@@ -10747,7 +10747,7 @@ pub mod document_classification_job_filter {
         /// oldest to newest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -10755,7 +10755,7 @@ pub mod document_classification_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
         /// newest to oldest.</p>
-        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_after = Some(input);
             self
         }
@@ -10764,7 +10764,7 @@ pub mod document_classification_job_filter {
         /// newest to oldest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_after = input;
             self

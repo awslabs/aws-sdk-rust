@@ -35,6 +35,117 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateAwsAccountWithP
     }
 }
 
+/// Operation shape for `AssociateMulticastGroupWithFuotaTask`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`associate_multicast_group_with_fuota_task`](crate::client::Client::associate_multicast_group_with_fuota_task).
+///
+/// See [`crate::client::fluent_builders::AssociateMulticastGroupWithFuotaTask`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct AssociateMulticastGroupWithFuotaTask {
+    _private: (),
+}
+impl AssociateMulticastGroupWithFuotaTask {
+    /// Creates a new builder-style object to manufacture [`AssociateMulticastGroupWithFuotaTaskInput`](crate::input::AssociateMulticastGroupWithFuotaTaskInput)
+    pub fn builder() -> crate::input::associate_multicast_group_with_fuota_task_input::Builder {
+        crate::input::associate_multicast_group_with_fuota_task_input::Builder::default()
+    }
+    /// Creates a new `AssociateMulticastGroupWithFuotaTask` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for AssociateMulticastGroupWithFuotaTask {
+    type Output = std::result::Result<
+        crate::output::AssociateMulticastGroupWithFuotaTaskOutput,
+        crate::error::AssociateMulticastGroupWithFuotaTaskError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_associate_multicast_group_with_fuota_task_error(response)
+        } else {
+            crate::operation_deser::parse_associate_multicast_group_with_fuota_task_response(
+                response,
+            )
+        }
+    }
+}
+
+/// Operation shape for `AssociateWirelessDeviceWithFuotaTask`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`associate_wireless_device_with_fuota_task`](crate::client::Client::associate_wireless_device_with_fuota_task).
+///
+/// See [`crate::client::fluent_builders::AssociateWirelessDeviceWithFuotaTask`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct AssociateWirelessDeviceWithFuotaTask {
+    _private: (),
+}
+impl AssociateWirelessDeviceWithFuotaTask {
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithFuotaTaskInput`](crate::input::AssociateWirelessDeviceWithFuotaTaskInput)
+    pub fn builder() -> crate::input::associate_wireless_device_with_fuota_task_input::Builder {
+        crate::input::associate_wireless_device_with_fuota_task_input::Builder::default()
+    }
+    /// Creates a new `AssociateWirelessDeviceWithFuotaTask` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for AssociateWirelessDeviceWithFuotaTask {
+    type Output = std::result::Result<
+        crate::output::AssociateWirelessDeviceWithFuotaTaskOutput,
+        crate::error::AssociateWirelessDeviceWithFuotaTaskError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_associate_wireless_device_with_fuota_task_error(response)
+        } else {
+            crate::operation_deser::parse_associate_wireless_device_with_fuota_task_response(
+                response,
+            )
+        }
+    }
+}
+
+/// Operation shape for `AssociateWirelessDeviceWithMulticastGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`associate_wireless_device_with_multicast_group`](crate::client::Client::associate_wireless_device_with_multicast_group).
+///
+/// See [`crate::client::fluent_builders::AssociateWirelessDeviceWithMulticastGroup`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct AssociateWirelessDeviceWithMulticastGroup {
+    _private: (),
+}
+impl AssociateWirelessDeviceWithMulticastGroup {
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithMulticastGroupInput`](crate::input::AssociateWirelessDeviceWithMulticastGroupInput)
+    pub fn builder() -> crate::input::associate_wireless_device_with_multicast_group_input::Builder
+    {
+        crate::input::associate_wireless_device_with_multicast_group_input::Builder::default()
+    }
+    /// Creates a new `AssociateWirelessDeviceWithMulticastGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for AssociateWirelessDeviceWithMulticastGroup {
+    type Output = std::result::Result<
+        crate::output::AssociateWirelessDeviceWithMulticastGroupOutput,
+        crate::error::AssociateWirelessDeviceWithMulticastGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_associate_wireless_device_with_multicast_group_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_associate_wireless_device_with_multicast_group_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `AssociateWirelessDeviceWithThing`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -141,6 +252,40 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateWirelessGateway
     }
 }
 
+/// Operation shape for `CancelMulticastGroupSession`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`cancel_multicast_group_session`](crate::client::Client::cancel_multicast_group_session).
+///
+/// See [`crate::client::fluent_builders::CancelMulticastGroupSession`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CancelMulticastGroupSession {
+    _private: (),
+}
+impl CancelMulticastGroupSession {
+    /// Creates a new builder-style object to manufacture [`CancelMulticastGroupSessionInput`](crate::input::CancelMulticastGroupSessionInput)
+    pub fn builder() -> crate::input::cancel_multicast_group_session_input::Builder {
+        crate::input::cancel_multicast_group_session_input::Builder::default()
+    }
+    /// Creates a new `CancelMulticastGroupSession` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CancelMulticastGroupSession {
+    type Output = std::result::Result<
+        crate::output::CancelMulticastGroupSessionOutput,
+        crate::error::CancelMulticastGroupSessionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_cancel_multicast_group_session_error(response)
+        } else {
+            crate::operation_deser::parse_cancel_multicast_group_session_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateDestination`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -205,6 +350,74 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDeviceProfile {
             crate::operation_deser::parse_create_device_profile_error(response)
         } else {
             crate::operation_deser::parse_create_device_profile_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateFuotaTask`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_fuota_task`](crate::client::Client::create_fuota_task).
+///
+/// See [`crate::client::fluent_builders::CreateFuotaTask`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateFuotaTask {
+    _private: (),
+}
+impl CreateFuotaTask {
+    /// Creates a new builder-style object to manufacture [`CreateFuotaTaskInput`](crate::input::CreateFuotaTaskInput)
+    pub fn builder() -> crate::input::create_fuota_task_input::Builder {
+        crate::input::create_fuota_task_input::Builder::default()
+    }
+    /// Creates a new `CreateFuotaTask` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateFuotaTask {
+    type Output = std::result::Result<
+        crate::output::CreateFuotaTaskOutput,
+        crate::error::CreateFuotaTaskError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 201 {
+            crate::operation_deser::parse_create_fuota_task_error(response)
+        } else {
+            crate::operation_deser::parse_create_fuota_task_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateMulticastGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_multicast_group`](crate::client::Client::create_multicast_group).
+///
+/// See [`crate::client::fluent_builders::CreateMulticastGroup`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateMulticastGroup {
+    _private: (),
+}
+impl CreateMulticastGroup {
+    /// Creates a new builder-style object to manufacture [`CreateMulticastGroupInput`](crate::input::CreateMulticastGroupInput)
+    pub fn builder() -> crate::input::create_multicast_group_input::Builder {
+        crate::input::create_multicast_group_input::Builder::default()
+    }
+    /// Creates a new `CreateMulticastGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateMulticastGroup {
+    type Output = std::result::Result<
+        crate::output::CreateMulticastGroupOutput,
+        crate::error::CreateMulticastGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 201 {
+            crate::operation_deser::parse_create_multicast_group_error(response)
+        } else {
+            crate::operation_deser::parse_create_multicast_group_response(response)
         }
     }
 }
@@ -447,6 +660,74 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDeviceProfile {
     }
 }
 
+/// Operation shape for `DeleteFuotaTask`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_fuota_task`](crate::client::Client::delete_fuota_task).
+///
+/// See [`crate::client::fluent_builders::DeleteFuotaTask`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteFuotaTask {
+    _private: (),
+}
+impl DeleteFuotaTask {
+    /// Creates a new builder-style object to manufacture [`DeleteFuotaTaskInput`](crate::input::DeleteFuotaTaskInput)
+    pub fn builder() -> crate::input::delete_fuota_task_input::Builder {
+        crate::input::delete_fuota_task_input::Builder::default()
+    }
+    /// Creates a new `DeleteFuotaTask` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteFuotaTask {
+    type Output = std::result::Result<
+        crate::output::DeleteFuotaTaskOutput,
+        crate::error::DeleteFuotaTaskError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_fuota_task_error(response)
+        } else {
+            crate::operation_deser::parse_delete_fuota_task_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteMulticastGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_multicast_group`](crate::client::Client::delete_multicast_group).
+///
+/// See [`crate::client::fluent_builders::DeleteMulticastGroup`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteMulticastGroup {
+    _private: (),
+}
+impl DeleteMulticastGroup {
+    /// Creates a new builder-style object to manufacture [`DeleteMulticastGroupInput`](crate::input::DeleteMulticastGroupInput)
+    pub fn builder() -> crate::input::delete_multicast_group_input::Builder {
+        crate::input::delete_multicast_group_input::Builder::default()
+    }
+    /// Creates a new `DeleteMulticastGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteMulticastGroup {
+    type Output = std::result::Result<
+        crate::output::DeleteMulticastGroupOutput,
+        crate::error::DeleteMulticastGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_multicast_group_error(response)
+        } else {
+            crate::operation_deser::parse_delete_multicast_group_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteServiceProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -655,6 +936,123 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateAwsAccountFr
     }
 }
 
+/// Operation shape for `DisassociateMulticastGroupFromFuotaTask`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`disassociate_multicast_group_from_fuota_task`](crate::client::Client::disassociate_multicast_group_from_fuota_task).
+///
+/// See [`crate::client::fluent_builders::DisassociateMulticastGroupFromFuotaTask`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DisassociateMulticastGroupFromFuotaTask {
+    _private: (),
+}
+impl DisassociateMulticastGroupFromFuotaTask {
+    /// Creates a new builder-style object to manufacture [`DisassociateMulticastGroupFromFuotaTaskInput`](crate::input::DisassociateMulticastGroupFromFuotaTaskInput)
+    pub fn builder() -> crate::input::disassociate_multicast_group_from_fuota_task_input::Builder {
+        crate::input::disassociate_multicast_group_from_fuota_task_input::Builder::default()
+    }
+    /// Creates a new `DisassociateMulticastGroupFromFuotaTask` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DisassociateMulticastGroupFromFuotaTask {
+    type Output = std::result::Result<
+        crate::output::DisassociateMulticastGroupFromFuotaTaskOutput,
+        crate::error::DisassociateMulticastGroupFromFuotaTaskError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_disassociate_multicast_group_from_fuota_task_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_disassociate_multicast_group_from_fuota_task_response(
+                response,
+            )
+        }
+    }
+}
+
+/// Operation shape for `DisassociateWirelessDeviceFromFuotaTask`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`disassociate_wireless_device_from_fuota_task`](crate::client::Client::disassociate_wireless_device_from_fuota_task).
+///
+/// See [`crate::client::fluent_builders::DisassociateWirelessDeviceFromFuotaTask`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DisassociateWirelessDeviceFromFuotaTask {
+    _private: (),
+}
+impl DisassociateWirelessDeviceFromFuotaTask {
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromFuotaTaskInput`](crate::input::DisassociateWirelessDeviceFromFuotaTaskInput)
+    pub fn builder() -> crate::input::disassociate_wireless_device_from_fuota_task_input::Builder {
+        crate::input::disassociate_wireless_device_from_fuota_task_input::Builder::default()
+    }
+    /// Creates a new `DisassociateWirelessDeviceFromFuotaTask` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DisassociateWirelessDeviceFromFuotaTask {
+    type Output = std::result::Result<
+        crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput,
+        crate::error::DisassociateWirelessDeviceFromFuotaTaskError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_disassociate_wireless_device_from_fuota_task_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_disassociate_wireless_device_from_fuota_task_response(
+                response,
+            )
+        }
+    }
+}
+
+/// Operation shape for `DisassociateWirelessDeviceFromMulticastGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`disassociate_wireless_device_from_multicast_group`](crate::client::Client::disassociate_wireless_device_from_multicast_group).
+///
+/// See [`crate::client::fluent_builders::DisassociateWirelessDeviceFromMulticastGroup`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DisassociateWirelessDeviceFromMulticastGroup {
+    _private: (),
+}
+impl DisassociateWirelessDeviceFromMulticastGroup {
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::DisassociateWirelessDeviceFromMulticastGroupInput)
+    pub fn builder(
+    ) -> crate::input::disassociate_wireless_device_from_multicast_group_input::Builder {
+        crate::input::disassociate_wireless_device_from_multicast_group_input::Builder::default()
+    }
+    /// Creates a new `DisassociateWirelessDeviceFromMulticastGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse
+    for DisassociateWirelessDeviceFromMulticastGroup
+{
+    type Output = std::result::Result<
+        crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput,
+        crate::error::DisassociateWirelessDeviceFromMulticastGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_disassociate_wireless_device_from_multicast_group_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_disassociate_wireless_device_from_multicast_group_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `DisassociateWirelessDeviceFromThing`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -830,6 +1228,38 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeviceProfile {
     }
 }
 
+/// Operation shape for `GetFuotaTask`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_fuota_task`](crate::client::Client::get_fuota_task).
+///
+/// See [`crate::client::fluent_builders::GetFuotaTask`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetFuotaTask {
+    _private: (),
+}
+impl GetFuotaTask {
+    /// Creates a new builder-style object to manufacture [`GetFuotaTaskInput`](crate::input::GetFuotaTaskInput)
+    pub fn builder() -> crate::input::get_fuota_task_input::Builder {
+        crate::input::get_fuota_task_input::Builder::default()
+    }
+    /// Creates a new `GetFuotaTask` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetFuotaTask {
+    type Output =
+        std::result::Result<crate::output::GetFuotaTaskOutput, crate::error::GetFuotaTaskError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_fuota_task_error(response)
+        } else {
+            crate::operation_deser::parse_get_fuota_task_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetLogLevelsByResourceTypes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -864,6 +1294,74 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLogLevelsByResourceTy
     }
 }
 
+/// Operation shape for `GetMulticastGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_multicast_group`](crate::client::Client::get_multicast_group).
+///
+/// See [`crate::client::fluent_builders::GetMulticastGroup`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetMulticastGroup {
+    _private: (),
+}
+impl GetMulticastGroup {
+    /// Creates a new builder-style object to manufacture [`GetMulticastGroupInput`](crate::input::GetMulticastGroupInput)
+    pub fn builder() -> crate::input::get_multicast_group_input::Builder {
+        crate::input::get_multicast_group_input::Builder::default()
+    }
+    /// Creates a new `GetMulticastGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetMulticastGroup {
+    type Output = std::result::Result<
+        crate::output::GetMulticastGroupOutput,
+        crate::error::GetMulticastGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_multicast_group_error(response)
+        } else {
+            crate::operation_deser::parse_get_multicast_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetMulticastGroupSession`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_multicast_group_session`](crate::client::Client::get_multicast_group_session).
+///
+/// See [`crate::client::fluent_builders::GetMulticastGroupSession`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetMulticastGroupSession {
+    _private: (),
+}
+impl GetMulticastGroupSession {
+    /// Creates a new builder-style object to manufacture [`GetMulticastGroupSessionInput`](crate::input::GetMulticastGroupSessionInput)
+    pub fn builder() -> crate::input::get_multicast_group_session_input::Builder {
+        crate::input::get_multicast_group_session_input::Builder::default()
+    }
+    /// Creates a new `GetMulticastGroupSession` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetMulticastGroupSession {
+    type Output = std::result::Result<
+        crate::output::GetMulticastGroupSessionOutput,
+        crate::error::GetMulticastGroupSessionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_multicast_group_session_error(response)
+        } else {
+            crate::operation_deser::parse_get_multicast_group_session_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetPartnerAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -894,6 +1392,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPartnerAccount {
             crate::operation_deser::parse_get_partner_account_error(response)
         } else {
             crate::operation_deser::parse_get_partner_account_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetResourceEventConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_resource_event_configuration`](crate::client::Client::get_resource_event_configuration).
+///
+/// See [`crate::client::fluent_builders::GetResourceEventConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetResourceEventConfiguration {
+    _private: (),
+}
+impl GetResourceEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`GetResourceEventConfigurationInput`](crate::input::GetResourceEventConfigurationInput)
+    pub fn builder() -> crate::input::get_resource_event_configuration_input::Builder {
+        crate::input::get_resource_event_configuration_input::Builder::default()
+    }
+    /// Creates a new `GetResourceEventConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetResourceEventConfiguration {
+    type Output = std::result::Result<
+        crate::output::GetResourceEventConfigurationOutput,
+        crate::error::GetResourceEventConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_resource_event_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_get_resource_event_configuration_response(response)
         }
     }
 }
@@ -1342,6 +1874,106 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeviceProfiles {
     }
 }
 
+/// Operation shape for `ListFuotaTasks`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_fuota_tasks`](crate::client::Client::list_fuota_tasks).
+///
+/// See [`crate::client::fluent_builders::ListFuotaTasks`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListFuotaTasks {
+    _private: (),
+}
+impl ListFuotaTasks {
+    /// Creates a new builder-style object to manufacture [`ListFuotaTasksInput`](crate::input::ListFuotaTasksInput)
+    pub fn builder() -> crate::input::list_fuota_tasks_input::Builder {
+        crate::input::list_fuota_tasks_input::Builder::default()
+    }
+    /// Creates a new `ListFuotaTasks` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListFuotaTasks {
+    type Output =
+        std::result::Result<crate::output::ListFuotaTasksOutput, crate::error::ListFuotaTasksError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_fuota_tasks_error(response)
+        } else {
+            crate::operation_deser::parse_list_fuota_tasks_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListMulticastGroups`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_multicast_groups`](crate::client::Client::list_multicast_groups).
+///
+/// See [`crate::client::fluent_builders::ListMulticastGroups`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListMulticastGroups {
+    _private: (),
+}
+impl ListMulticastGroups {
+    /// Creates a new builder-style object to manufacture [`ListMulticastGroupsInput`](crate::input::ListMulticastGroupsInput)
+    pub fn builder() -> crate::input::list_multicast_groups_input::Builder {
+        crate::input::list_multicast_groups_input::Builder::default()
+    }
+    /// Creates a new `ListMulticastGroups` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListMulticastGroups {
+    type Output = std::result::Result<
+        crate::output::ListMulticastGroupsOutput,
+        crate::error::ListMulticastGroupsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_multicast_groups_error(response)
+        } else {
+            crate::operation_deser::parse_list_multicast_groups_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListMulticastGroupsByFuotaTask`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_multicast_groups_by_fuota_task`](crate::client::Client::list_multicast_groups_by_fuota_task).
+///
+/// See [`crate::client::fluent_builders::ListMulticastGroupsByFuotaTask`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListMulticastGroupsByFuotaTask {
+    _private: (),
+}
+impl ListMulticastGroupsByFuotaTask {
+    /// Creates a new builder-style object to manufacture [`ListMulticastGroupsByFuotaTaskInput`](crate::input::ListMulticastGroupsByFuotaTaskInput)
+    pub fn builder() -> crate::input::list_multicast_groups_by_fuota_task_input::Builder {
+        crate::input::list_multicast_groups_by_fuota_task_input::Builder::default()
+    }
+    /// Creates a new `ListMulticastGroupsByFuotaTask` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListMulticastGroupsByFuotaTask {
+    type Output = std::result::Result<
+        crate::output::ListMulticastGroupsByFuotaTaskOutput,
+        crate::error::ListMulticastGroupsByFuotaTaskError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_multicast_groups_by_fuota_task_error(response)
+        } else {
+            crate::operation_deser::parse_list_multicast_groups_by_fuota_task_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListPartnerAccounts`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1648,6 +2280,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetResourceLogLevel {
     }
 }
 
+/// Operation shape for `SendDataToMulticastGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`send_data_to_multicast_group`](crate::client::Client::send_data_to_multicast_group).
+///
+/// See [`crate::client::fluent_builders::SendDataToMulticastGroup`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct SendDataToMulticastGroup {
+    _private: (),
+}
+impl SendDataToMulticastGroup {
+    /// Creates a new builder-style object to manufacture [`SendDataToMulticastGroupInput`](crate::input::SendDataToMulticastGroupInput)
+    pub fn builder() -> crate::input::send_data_to_multicast_group_input::Builder {
+        crate::input::send_data_to_multicast_group_input::Builder::default()
+    }
+    /// Creates a new `SendDataToMulticastGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for SendDataToMulticastGroup {
+    type Output = std::result::Result<
+        crate::output::SendDataToMulticastGroupOutput,
+        crate::error::SendDataToMulticastGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 201 {
+            crate::operation_deser::parse_send_data_to_multicast_group_error(response)
+        } else {
+            crate::operation_deser::parse_send_data_to_multicast_group_response(response)
+        }
+    }
+}
+
 /// Operation shape for `SendDataToWirelessDevice`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1678,6 +2344,148 @@ impl aws_smithy_http::response::ParseStrictResponse for SendDataToWirelessDevice
             crate::operation_deser::parse_send_data_to_wireless_device_error(response)
         } else {
             crate::operation_deser::parse_send_data_to_wireless_device_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StartBulkAssociateWirelessDeviceWithMulticastGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_bulk_associate_wireless_device_with_multicast_group`](crate::client::Client::start_bulk_associate_wireless_device_with_multicast_group).
+///
+/// See [`crate::client::fluent_builders::StartBulkAssociateWirelessDeviceWithMulticastGroup`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartBulkAssociateWirelessDeviceWithMulticastGroup {
+    _private: (),
+}
+impl StartBulkAssociateWirelessDeviceWithMulticastGroup {
+    /// Creates a new builder-style object to manufacture [`StartBulkAssociateWirelessDeviceWithMulticastGroupInput`](crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput)
+    pub fn builder(
+    ) -> crate::input::start_bulk_associate_wireless_device_with_multicast_group_input::Builder
+    {
+        crate::input::start_bulk_associate_wireless_device_with_multicast_group_input::Builder::default()
+    }
+    /// Creates a new `StartBulkAssociateWirelessDeviceWithMulticastGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse
+    for StartBulkAssociateWirelessDeviceWithMulticastGroup
+{
+    type Output = std::result::Result<
+        crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput,
+        crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_start_bulk_associate_wireless_device_with_multicast_group_error(response)
+        } else {
+            crate::operation_deser::parse_start_bulk_associate_wireless_device_with_multicast_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StartBulkDisassociateWirelessDeviceFromMulticastGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_bulk_disassociate_wireless_device_from_multicast_group`](crate::client::Client::start_bulk_disassociate_wireless_device_from_multicast_group).
+///
+/// See [`crate::client::fluent_builders::StartBulkDisassociateWirelessDeviceFromMulticastGroup`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartBulkDisassociateWirelessDeviceFromMulticastGroup {
+    _private: (),
+}
+impl StartBulkDisassociateWirelessDeviceFromMulticastGroup {
+    /// Creates a new builder-style object to manufacture [`StartBulkDisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput)
+    pub fn builder(
+    ) -> crate::input::start_bulk_disassociate_wireless_device_from_multicast_group_input::Builder
+    {
+        crate::input::start_bulk_disassociate_wireless_device_from_multicast_group_input::Builder::default()
+    }
+    /// Creates a new `StartBulkDisassociateWirelessDeviceFromMulticastGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse
+    for StartBulkDisassociateWirelessDeviceFromMulticastGroup
+{
+    type Output = std::result::Result<
+        crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput,
+        crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_start_bulk_disassociate_wireless_device_from_multicast_group_error(response)
+        } else {
+            crate::operation_deser::parse_start_bulk_disassociate_wireless_device_from_multicast_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StartFuotaTask`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_fuota_task`](crate::client::Client::start_fuota_task).
+///
+/// See [`crate::client::fluent_builders::StartFuotaTask`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartFuotaTask {
+    _private: (),
+}
+impl StartFuotaTask {
+    /// Creates a new builder-style object to manufacture [`StartFuotaTaskInput`](crate::input::StartFuotaTaskInput)
+    pub fn builder() -> crate::input::start_fuota_task_input::Builder {
+        crate::input::start_fuota_task_input::Builder::default()
+    }
+    /// Creates a new `StartFuotaTask` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartFuotaTask {
+    type Output =
+        std::result::Result<crate::output::StartFuotaTaskOutput, crate::error::StartFuotaTaskError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_start_fuota_task_error(response)
+        } else {
+            crate::operation_deser::parse_start_fuota_task_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StartMulticastGroupSession`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_multicast_group_session`](crate::client::Client::start_multicast_group_session).
+///
+/// See [`crate::client::fluent_builders::StartMulticastGroupSession`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartMulticastGroupSession {
+    _private: (),
+}
+impl StartMulticastGroupSession {
+    /// Creates a new builder-style object to manufacture [`StartMulticastGroupSessionInput`](crate::input::StartMulticastGroupSessionInput)
+    pub fn builder() -> crate::input::start_multicast_group_session_input::Builder {
+        crate::input::start_multicast_group_session_input::Builder::default()
+    }
+    /// Creates a new `StartMulticastGroupSession` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartMulticastGroupSession {
+    type Output = std::result::Result<
+        crate::output::StartMulticastGroupSessionOutput,
+        crate::error::StartMulticastGroupSessionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_start_multicast_group_session_error(response)
+        } else {
+            crate::operation_deser::parse_start_multicast_group_session_response(response)
         }
     }
 }
@@ -1814,6 +2622,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDestination {
     }
 }
 
+/// Operation shape for `UpdateFuotaTask`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_fuota_task`](crate::client::Client::update_fuota_task).
+///
+/// See [`crate::client::fluent_builders::UpdateFuotaTask`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateFuotaTask {
+    _private: (),
+}
+impl UpdateFuotaTask {
+    /// Creates a new builder-style object to manufacture [`UpdateFuotaTaskInput`](crate::input::UpdateFuotaTaskInput)
+    pub fn builder() -> crate::input::update_fuota_task_input::Builder {
+        crate::input::update_fuota_task_input::Builder::default()
+    }
+    /// Creates a new `UpdateFuotaTask` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateFuotaTask {
+    type Output = std::result::Result<
+        crate::output::UpdateFuotaTaskOutput,
+        crate::error::UpdateFuotaTaskError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_update_fuota_task_error(response)
+        } else {
+            crate::operation_deser::parse_update_fuota_task_response(response)
+        }
+    }
+}
+
 /// Operation shape for `UpdateLogLevelsByResourceTypes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1848,6 +2690,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLogLevelsByResourc
     }
 }
 
+/// Operation shape for `UpdateMulticastGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_multicast_group`](crate::client::Client::update_multicast_group).
+///
+/// See [`crate::client::fluent_builders::UpdateMulticastGroup`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateMulticastGroup {
+    _private: (),
+}
+impl UpdateMulticastGroup {
+    /// Creates a new builder-style object to manufacture [`UpdateMulticastGroupInput`](crate::input::UpdateMulticastGroupInput)
+    pub fn builder() -> crate::input::update_multicast_group_input::Builder {
+        crate::input::update_multicast_group_input::Builder::default()
+    }
+    /// Creates a new `UpdateMulticastGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateMulticastGroup {
+    type Output = std::result::Result<
+        crate::output::UpdateMulticastGroupOutput,
+        crate::error::UpdateMulticastGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_update_multicast_group_error(response)
+        } else {
+            crate::operation_deser::parse_update_multicast_group_response(response)
+        }
+    }
+}
+
 /// Operation shape for `UpdatePartnerAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1878,6 +2754,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePartnerAccount {
             crate::operation_deser::parse_update_partner_account_error(response)
         } else {
             crate::operation_deser::parse_update_partner_account_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateResourceEventConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_resource_event_configuration`](crate::client::Client::update_resource_event_configuration).
+///
+/// See [`crate::client::fluent_builders::UpdateResourceEventConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateResourceEventConfiguration {
+    _private: (),
+}
+impl UpdateResourceEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateResourceEventConfigurationInput`](crate::input::UpdateResourceEventConfigurationInput)
+    pub fn builder() -> crate::input::update_resource_event_configuration_input::Builder {
+        crate::input::update_resource_event_configuration_input::Builder::default()
+    }
+    /// Creates a new `UpdateResourceEventConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateResourceEventConfiguration {
+    type Output = std::result::Result<
+        crate::output::UpdateResourceEventConfigurationOutput,
+        crate::error::UpdateResourceEventConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_update_resource_event_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_update_resource_event_configuration_response(response)
         }
     }
 }

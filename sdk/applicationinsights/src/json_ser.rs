@@ -264,12 +264,12 @@ pub fn serialize_structure_crate_input_list_configuration_history_input(
     if let Some(var_46) = &input.start_time {
         object
             .key("StartTime")
-            .instant(var_46, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_46, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_47) = &input.end_time {
         object
             .key("EndTime")
-            .instant(var_47, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_47, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_48) = &input.event_status {
         object.key("EventStatus").string(var_48.as_str());
@@ -337,12 +337,12 @@ pub fn serialize_structure_crate_input_list_problems_input(
     if let Some(var_59) = &input.start_time {
         object
             .key("StartTime")
-            .instant(var_59, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_59, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_60) = &input.end_time {
         object
             .key("EndTime")
-            .instant(var_60, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_60, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_61) = &input.max_results {
         object.key("MaxResults").number(

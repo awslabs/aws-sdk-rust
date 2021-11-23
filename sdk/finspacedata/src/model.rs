@@ -201,7 +201,7 @@ pub struct ChangesetInfo {
     pub format_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The timestamp at which the changeset was created in FinSpace.</p>
-    pub create_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of changeset creation operation.</p>
     pub status: std::option::Option<crate::model::ChangesetStatus>,
     /// <p>The structure with error messages.</p>
@@ -277,7 +277,7 @@ impl ChangesetInfo {
         self.format_params.as_ref()
     }
     /// <p>The timestamp at which the changeset was created in FinSpace.</p>
-    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_timestamp.as_ref()
     }
     /// <p>The status of changeset creation operation.</p>
@@ -342,7 +342,7 @@ pub mod changeset_info {
         pub(crate) format_params: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) create_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::ChangesetStatus>,
         pub(crate) error_info: std::option::Option<crate::model::ErrorInfo>,
         pub(crate) changeset_labels: std::option::Option<
@@ -521,14 +521,14 @@ pub mod changeset_info {
             self
         }
         /// <p>The timestamp at which the changeset was created in FinSpace.</p>
-        pub fn create_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_timestamp = Some(input);
             self
         }
         /// <p>The timestamp at which the changeset was created in FinSpace.</p>
         pub fn set_create_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_timestamp = input;
             self

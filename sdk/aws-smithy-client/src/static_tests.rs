@@ -56,7 +56,7 @@ fn sanity_retry() {
 // Statically check that a hyper client can actually be used to build a Client.
 #[allow(dead_code)]
 #[cfg(all(test, feature = "hyper"))]
-fn sanity_hyper(hc: crate::hyper_impls::HyperAdapter<hyper::client::HttpConnector>) {
+fn sanity_hyper(hc: crate::hyper_ext::Adapter<hyper::client::HttpConnector>) {
     Builder::new()
         .middleware(tower::layer::util::Identity::new())
         .connector(hc)

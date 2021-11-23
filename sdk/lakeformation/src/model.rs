@@ -2090,7 +2090,7 @@ pub struct ResourceInfo {
     /// <p>The IAM role that registered a resource.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The date and time the resource was last modified.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ResourceInfo {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -2102,7 +2102,7 @@ impl ResourceInfo {
         self.role_arn.as_deref()
     }
     /// <p>The date and time the resource was last modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
 }
@@ -2123,7 +2123,7 @@ pub mod resource_info {
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -2147,14 +2147,14 @@ pub mod resource_info {
             self
         }
         /// <p>The date and time the resource was last modified.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>The date and time the resource was last modified.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self

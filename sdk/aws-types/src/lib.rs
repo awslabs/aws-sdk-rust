@@ -3,8 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+//! Cross-service types for the AWS SDK.
+
+#![warn(
+    missing_docs,
+    missing_crate_level_docs,
+    missing_debug_implementations,
+    rust_2018_idioms,
+    unreachable_pub
+)]
+
+pub mod app_name;
 pub mod build_metadata;
-// internal APIs, may be unstable
 pub mod config;
 pub mod credentials;
 #[doc(hidden)]
@@ -27,6 +37,7 @@ impl AsRef<str> for SigningService {
 }
 
 impl SigningService {
+    /// Creates a `SigningService` from a static str.
     pub fn from_static(service: &'static str) -> Self {
         SigningService(Cow::Borrowed(service))
     }

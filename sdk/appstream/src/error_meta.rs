@@ -792,6 +792,9 @@ where
                 crate::error::DescribeUsersErrorKind::InvalidParameterCombinationException(
                     inner,
                 ) => Error::InvalidParameterCombinationException(inner),
+                crate::error::DescribeUsersErrorKind::OperationNotPermittedException(inner) => {
+                    Error::OperationNotPermittedException(inner)
+                }
                 crate::error::DescribeUsersErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }

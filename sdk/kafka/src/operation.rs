@@ -970,6 +970,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConfiguration {
     }
 }
 
+/// Operation shape for `UpdateConnectivity`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_connectivity`](crate::client::Client::update_connectivity).
+///
+/// See [`crate::client::fluent_builders::UpdateConnectivity`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateConnectivity {
+    _private: (),
+}
+impl UpdateConnectivity {
+    /// Creates a new builder-style object to manufacture [`UpdateConnectivityInput`](crate::input::UpdateConnectivityInput)
+    pub fn builder() -> crate::input::update_connectivity_input::Builder {
+        crate::input::update_connectivity_input::Builder::default()
+    }
+    /// Creates a new `UpdateConnectivity` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateConnectivity {
+    type Output = std::result::Result<
+        crate::output::UpdateConnectivityOutput,
+        crate::error::UpdateConnectivityError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_connectivity_error(response)
+        } else {
+            crate::operation_deser::parse_update_connectivity_response(response)
+        }
+    }
+}
+
 /// Operation shape for `UpdateMonitoring`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

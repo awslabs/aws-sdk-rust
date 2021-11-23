@@ -18,14 +18,14 @@ pub enum DescribeReportCreationErrorKind {
     /// <ul>
     /// <li>
     /// <p>You must meet the prerequisites for using tag policies. For information, see
-    /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites and Permissions for Using Tag Policies</a> in the
-    /// <i>AWS Organizations User Guide.</i>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites and Permissions for Using Tag Policies</a> in the
+    /// <i>Organizations User Guide.</i>
     /// </p>
     /// </li>
     /// <li>
     /// <p>You must enable the tag policies service principal
-    /// (<code>tagpolicies.tag.amazonaws.com</code>) to integrate with AWS Organizations For
-    /// information, see <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.</p>
+    /// (<code>tagpolicies.tag.amazonaws.com</code>) to integrate with Organizations For
+    /// information, see <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.</p>
     /// </li>
     /// <li>
     /// <p>You must have a tag policy attached to the organization root, an OU, or an
@@ -52,8 +52,8 @@ pub enum DescribeReportCreationErrorKind {
     /// </li>
     /// <li>
     /// <p>You can't access the Amazon S3 bucket for report storage. For more information, see
-    /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional Requirements for Organization-wide Tag Compliance
-    /// Reports</a> in the <i>AWS Organizations User Guide.</i>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional Requirements for Organization-wide Tag Compliance
+    /// Reports</a> in the <i>Organizations User Guide.</i>
     /// </p>
     /// </li>
     /// </ul>
@@ -186,14 +186,14 @@ pub enum GetComplianceSummaryErrorKind {
     /// <ul>
     /// <li>
     /// <p>You must meet the prerequisites for using tag policies. For information, see
-    /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites and Permissions for Using Tag Policies</a> in the
-    /// <i>AWS Organizations User Guide.</i>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites and Permissions for Using Tag Policies</a> in the
+    /// <i>Organizations User Guide.</i>
     /// </p>
     /// </li>
     /// <li>
     /// <p>You must enable the tag policies service principal
-    /// (<code>tagpolicies.tag.amazonaws.com</code>) to integrate with AWS Organizations For
-    /// information, see <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.</p>
+    /// (<code>tagpolicies.tag.amazonaws.com</code>) to integrate with Organizations For
+    /// information, see <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.</p>
     /// </li>
     /// <li>
     /// <p>You must have a tag policy attached to the organization root, an OU, or an
@@ -220,8 +220,8 @@ pub enum GetComplianceSummaryErrorKind {
     /// </li>
     /// <li>
     /// <p>You can't access the Amazon S3 bucket for report storage. For more information, see
-    /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional Requirements for Organization-wide Tag Compliance
-    /// Reports</a> in the <i>AWS Organizations User Guide.</i>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional Requirements for Organization-wide Tag Compliance
+    /// Reports</a> in the <i>Organizations User Guide.</i>
     /// </p>
     /// </li>
     /// </ul>
@@ -367,8 +367,8 @@ pub enum GetResourcesErrorKind {
     /// </li>
     /// <li>
     /// <p>You can't access the Amazon S3 bucket for report storage. For more information, see
-    /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional Requirements for Organization-wide Tag Compliance
-    /// Reports</a> in the <i>AWS Organizations User Guide.</i>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional Requirements for Organization-wide Tag Compliance
+    /// Reports</a> in the <i>Organizations User Guide.</i>
     /// </p>
     /// </li>
     /// </ul>
@@ -514,8 +514,8 @@ pub enum GetTagKeysErrorKind {
     /// </li>
     /// <li>
     /// <p>You can't access the Amazon S3 bucket for report storage. For more information, see
-    /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional Requirements for Organization-wide Tag Compliance
-    /// Reports</a> in the <i>AWS Organizations User Guide.</i>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional Requirements for Organization-wide Tag Compliance
+    /// Reports</a> in the <i>Organizations User Guide.</i>
     /// </p>
     /// </li>
     /// </ul>
@@ -658,8 +658,8 @@ pub enum GetTagValuesErrorKind {
     /// </li>
     /// <li>
     /// <p>You can't access the Amazon S3 bucket for report storage. For more information, see
-    /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional Requirements for Organization-wide Tag Compliance
-    /// Reports</a> in the <i>AWS Organizations User Guide.</i>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional Requirements for Organization-wide Tag Compliance
+    /// Reports</a> in the <i>Organizations User Guide.</i>
     /// </p>
     /// </li>
     /// </ul>
@@ -795,14 +795,14 @@ pub enum StartReportCreationErrorKind {
     /// <ul>
     /// <li>
     /// <p>You must meet the prerequisites for using tag policies. For information, see
-    /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites and Permissions for Using Tag Policies</a> in the
-    /// <i>AWS Organizations User Guide.</i>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites and Permissions for Using Tag Policies</a> in the
+    /// <i>Organizations User Guide.</i>
     /// </p>
     /// </li>
     /// <li>
     /// <p>You must enable the tag policies service principal
-    /// (<code>tagpolicies.tag.amazonaws.com</code>) to integrate with AWS Organizations For
-    /// information, see <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.</p>
+    /// (<code>tagpolicies.tag.amazonaws.com</code>) to integrate with Organizations For
+    /// information, see <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.</p>
     /// </li>
     /// <li>
     /// <p>You must have a tag policy attached to the organization root, an OU, or an
@@ -829,8 +829,8 @@ pub enum StartReportCreationErrorKind {
     /// </li>
     /// <li>
     /// <p>You can't access the Amazon S3 bucket for report storage. For more information, see
-    /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional Requirements for Organization-wide Tag Compliance
-    /// Reports</a> in the <i>AWS Organizations User Guide.</i>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional Requirements for Organization-wide Tag Compliance
+    /// Reports</a> in the <i>Organizations User Guide.</i>
     /// </p>
     /// </li>
     /// </ul>
@@ -985,8 +985,8 @@ pub enum TagResourcesErrorKind {
     /// </li>
     /// <li>
     /// <p>You can't access the Amazon S3 bucket for report storage. For more information, see
-    /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional Requirements for Organization-wide Tag Compliance
-    /// Reports</a> in the <i>AWS Organizations User Guide.</i>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional Requirements for Organization-wide Tag Compliance
+    /// Reports</a> in the <i>Organizations User Guide.</i>
     /// </p>
     /// </li>
     /// </ul>
@@ -1120,8 +1120,8 @@ pub enum UntagResourcesErrorKind {
     /// </li>
     /// <li>
     /// <p>You can't access the Amazon S3 bucket for report storage. For more information, see
-    /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional Requirements for Organization-wide Tag Compliance
-    /// Reports</a> in the <i>AWS Organizations User Guide.</i>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional Requirements for Organization-wide Tag Compliance
+    /// Reports</a> in the <i>Organizations User Guide.</i>
     /// </p>
     /// </li>
     /// </ul>
@@ -1303,8 +1303,8 @@ impl ThrottledException {
 /// </li>
 /// <li>
 /// <p>You can't access the Amazon S3 bucket for report storage. For more information, see
-/// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional Requirements for Organization-wide Tag Compliance
-/// Reports</a> in the <i>AWS Organizations User Guide.</i>
+/// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional Requirements for Organization-wide Tag Compliance
+/// Reports</a> in the <i>Organizations User Guide.</i>
 /// </p>
 /// </li>
 /// </ul>
@@ -1442,14 +1442,14 @@ impl InternalServiceException {
 /// <ul>
 /// <li>
 /// <p>You must meet the prerequisites for using tag policies. For information, see
-/// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites and Permissions for Using Tag Policies</a> in the
-/// <i>AWS Organizations User Guide.</i>
+/// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites and Permissions for Using Tag Policies</a> in the
+/// <i>Organizations User Guide.</i>
 /// </p>
 /// </li>
 /// <li>
 /// <p>You must enable the tag policies service principal
-/// (<code>tagpolicies.tag.amazonaws.com</code>) to integrate with AWS Organizations For
-/// information, see <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.</p>
+/// (<code>tagpolicies.tag.amazonaws.com</code>) to integrate with Organizations For
+/// information, see <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.</p>
 /// </li>
 /// <li>
 /// <p>You must have a tag policy attached to the organization root, an OU, or an

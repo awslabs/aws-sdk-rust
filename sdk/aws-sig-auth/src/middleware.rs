@@ -125,7 +125,7 @@ impl MapRequest for SigV4SigningStage {
 
             let signature = self
                 .signer
-                .sign(&operation_config, &request_config, &creds, &mut req)
+                .sign(operation_config, &request_config, &creds, &mut req)
                 .map_err(|err| SigningStageError::SigningFailure(err))?;
             config.insert(signature);
             Ok(req)
@@ -163,7 +163,7 @@ mod test {
                 properties.insert(UNIX_EPOCH + Duration::new(1611160427, 0));
                 properties.insert(SigningService::from_static("kinesis"));
                 properties.insert(OperationSigningConfig::default_config());
-                properties.insert(Credentials::from_keys("AKIAfoo", "bar", None));
+                properties.insert(Credentials::new("AKIAfoo", "bar", None, None, "test"));
                 properties.insert(SigningRegion::from(region));
                 Result::<_, Infallible>::Ok(req)
             })
@@ -213,7 +213,7 @@ mod test {
                 .expect_err("no cred provider"),
         );
         req.properties_mut()
-            .insert(Credentials::from_keys("AKIAfoo", "bar", None));
+            .insert(Credentials::new("AKIAfoo", "bar", None, None, "test"));
         let req = signer.apply(req).expect("signing succeeded");
         // make sure we got the correct error types in any order
         assert!(errs.iter().all(|el| matches!(

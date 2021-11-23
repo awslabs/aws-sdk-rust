@@ -1315,6 +1315,9 @@ pub struct StartTextTranslationJobError {
 pub enum StartTextTranslationJobErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
+    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to
+    /// correct it, and then retry your operation.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p> The request that you made is invalid. Check your request to determine why it's invalid
     /// and then retry the request. </p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -1335,6 +1338,9 @@ impl std::fmt::Display for StartTextTranslationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             StartTextTranslationJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            StartTextTranslationJobErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
             StartTextTranslationJobErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             StartTextTranslationJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             StartTextTranslationJobErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
@@ -1404,6 +1410,13 @@ impl StartTextTranslationJobError {
             StartTextTranslationJobErrorKind::InternalServerException(_)
         )
     }
+    /// Returns `true` if the error kind is `StartTextTranslationJobErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartTextTranslationJobErrorKind::InvalidParameterValueException(_)
+        )
+    }
     /// Returns `true` if the error kind is `StartTextTranslationJobErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
@@ -1437,6 +1450,9 @@ impl std::error::Error for StartTextTranslationJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             StartTextTranslationJobErrorKind::InternalServerException(_inner) => Some(_inner),
+            StartTextTranslationJobErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
             StartTextTranslationJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
             StartTextTranslationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StartTextTranslationJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),

@@ -3391,9 +3391,9 @@ pub fn deser_structure_crate_model_receipt_rule_set_metadata(
             s if s.matches("CreatedTimestamp") /* CreatedTimestamp com.amazonaws.ses#ReceiptRuleSetMetadata$CreatedTimestamp */ =>  {
                 let var_114 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.ses#Timestamp`)"))
                         ?
@@ -3565,9 +3565,9 @@ pub fn deser_structure_crate_model_reputation_options(
             s if s.matches("LastFreshStart") /* LastFreshStart com.amazonaws.ses#ReputationOptions$LastFreshStart */ =>  {
                 let var_120 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.ses#LastFreshStart`)"))
                         ?
@@ -4374,9 +4374,9 @@ pub fn deser_structure_crate_model_send_data_point(
             s if s.matches("Timestamp") /* Timestamp com.amazonaws.ses#SendDataPoint$Timestamp */ =>  {
                 let var_137 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.ses#Timestamp`)"))
                         ?
@@ -4588,9 +4588,9 @@ pub fn deser_structure_crate_model_template_metadata(
             s if s.matches("CreatedTimestamp") /* CreatedTimestamp com.amazonaws.ses#TemplateMetadata$CreatedTimestamp */ =>  {
                 let var_150 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.ses#Timestamp`)"))
                         ?

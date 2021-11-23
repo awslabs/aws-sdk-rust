@@ -36,8 +36,8 @@ pub mod add_permission_input {
         ///
         /// To override the contents of this collection use [`set_aws_account_id`](Self::set_aws_account_id).
         ///
-        /// <p>The account IDs of the users (principals) who will be given access to the
-        /// specified actions. The users must have account, but do not need to be signed up for
+        /// <p>The Amazon Web Services account IDs of the users (principals) who will be given access to the
+        /// specified actions. The users must have Amazon Web Services account, but do not need to be signed up for
         /// this service.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.aws_account_id.unwrap_or_default();
@@ -45,8 +45,8 @@ pub mod add_permission_input {
             self.aws_account_id = Some(v);
             self
         }
-        /// <p>The account IDs of the users (principals) who will be given access to the
-        /// specified actions. The users must have account, but do not need to be signed up for
+        /// <p>The Amazon Web Services account IDs of the users (principals) who will be given access to the
+        /// specified actions. The users must have Amazon Web Services account, but do not need to be signed up for
         /// this service.</p>
         pub fn set_aws_account_id(
             mut self,
@@ -99,6 +99,7 @@ pub type AddPermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl AddPermissionInput {
     /// Consumes the builder and constructs an Operation<[`AddPermission`](crate::operation::AddPermission)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -149,11 +150,14 @@ impl AddPermissionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -244,6 +248,7 @@ pub type CheckIfPhoneNumberIsOptedOutInputOperationRetryAlias = aws_http::AwsErr
 impl CheckIfPhoneNumberIsOptedOutInput {
     /// Consumes the builder and constructs an Operation<[`CheckIfPhoneNumberIsOptedOut`](crate::operation::CheckIfPhoneNumberIsOptedOut)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -296,11 +301,14 @@ impl CheckIfPhoneNumberIsOptedOutInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -426,6 +434,7 @@ pub type ConfirmSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ConfirmSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`ConfirmSubscription`](crate::operation::ConfirmSubscription)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -477,11 +486,14 @@ impl ConfirmSubscriptionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -619,6 +631,7 @@ pub type CreatePlatformApplicationInputOperationRetryAlias = aws_http::AwsErrorR
 impl CreatePlatformApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreatePlatformApplication`](crate::operation::CreatePlatformApplication)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -672,11 +685,14 @@ impl CreatePlatformApplicationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -837,6 +853,7 @@ pub type CreatePlatformEndpointInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl CreatePlatformEndpointInput {
     /// Consumes the builder and constructs an Operation<[`CreatePlatformEndpoint`](crate::operation::CreatePlatformEndpoint)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -890,11 +907,14 @@ impl CreatePlatformEndpointInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1004,6 +1024,7 @@ pub type CreateSmsSandboxPhoneNumberInputOperationRetryAlias = aws_http::AwsErro
 impl CreateSmsSandboxPhoneNumberInput {
     /// Consumes the builder and constructs an Operation<[`CreateSMSSandboxPhoneNumber`](crate::operation::CreateSMSSandboxPhoneNumber)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1056,11 +1077,14 @@ impl CreateSmsSandboxPhoneNumberInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1356,6 +1380,7 @@ pub type CreateTopicInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateTopicInput {
     /// Consumes the builder and constructs an Operation<[`CreateTopic`](crate::operation::CreateTopic)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1406,11 +1431,14 @@ impl CreateTopicInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1500,6 +1528,7 @@ pub type DeleteEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEndpoint`](crate::operation::DeleteEndpoint)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1551,11 +1580,14 @@ impl DeleteEndpointInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1649,6 +1681,7 @@ pub type DeletePlatformApplicationInputOperationRetryAlias = aws_http::AwsErrorR
 impl DeletePlatformApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeletePlatformApplication`](crate::operation::DeletePlatformApplication)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1702,11 +1735,14 @@ impl DeletePlatformApplicationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1797,6 +1833,7 @@ pub type DeleteSmsSandboxPhoneNumberInputOperationRetryAlias = aws_http::AwsErro
 impl DeleteSmsSandboxPhoneNumberInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSMSSandboxPhoneNumber`](crate::operation::DeleteSMSSandboxPhoneNumber)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1849,11 +1886,14 @@ impl DeleteSmsSandboxPhoneNumberInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1943,6 +1983,7 @@ pub type DeleteTopicInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteTopicInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTopic`](crate::operation::DeleteTopic)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1993,11 +2034,14 @@ impl DeleteTopicInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2087,6 +2131,7 @@ pub type GetEndpointAttributesInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl GetEndpointAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetEndpointAttributes`](crate::operation::GetEndpointAttributes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2140,11 +2185,14 @@ impl GetEndpointAttributesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2238,6 +2286,7 @@ pub type GetPlatformApplicationAttributesInputOperationRetryAlias = aws_http::Aw
 impl GetPlatformApplicationAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetPlatformApplicationAttributes`](crate::operation::GetPlatformApplicationAttributes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2290,11 +2339,14 @@ impl GetPlatformApplicationAttributesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2399,6 +2451,7 @@ pub type GetSmsAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl GetSmsAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetSMSAttributes`](crate::operation::GetSMSAttributes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2450,11 +2503,14 @@ impl GetSmsAttributesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2531,6 +2587,7 @@ pub type GetSmsSandboxAccountStatusInputOperationRetryAlias = aws_http::AwsError
 impl GetSmsSandboxAccountStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetSMSSandboxAccountStatus`](crate::operation::GetSMSSandboxAccountStatus)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2583,11 +2640,14 @@ impl GetSmsSandboxAccountStatusInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2673,6 +2733,7 @@ pub type GetSubscriptionAttributesInputOperationRetryAlias = aws_http::AwsErrorR
 impl GetSubscriptionAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetSubscriptionAttributes`](crate::operation::GetSubscriptionAttributes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2726,11 +2787,14 @@ impl GetSubscriptionAttributesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2820,6 +2884,7 @@ pub type GetTopicAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl GetTopicAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetTopicAttributes`](crate::operation::GetTopicAttributes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2871,11 +2936,14 @@ impl GetTopicAttributesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2983,6 +3051,7 @@ pub type ListEndpointsByPlatformApplicationInputOperationRetryAlias = aws_http::
 impl ListEndpointsByPlatformApplicationInput {
     /// Consumes the builder and constructs an Operation<[`ListEndpointsByPlatformApplication`](crate::operation::ListEndpointsByPlatformApplication)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3035,11 +3104,14 @@ impl ListEndpointsByPlatformApplicationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3141,6 +3213,7 @@ pub type ListOriginationNumbersInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl ListOriginationNumbersInput {
     /// Consumes the builder and constructs an Operation<[`ListOriginationNumbers`](crate::operation::ListOriginationNumbers)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3194,11 +3267,14 @@ impl ListOriginationNumbersInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3293,6 +3369,7 @@ pub type ListPhoneNumbersOptedOutInputOperationRetryAlias = aws_http::AwsErrorRe
 impl ListPhoneNumbersOptedOutInput {
     /// Consumes the builder and constructs an Operation<[`ListPhoneNumbersOptedOut`](crate::operation::ListPhoneNumbersOptedOut)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3346,11 +3423,14 @@ impl ListPhoneNumbersOptedOutInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3443,6 +3523,7 @@ pub type ListPlatformApplicationsInputOperationRetryAlias = aws_http::AwsErrorRe
 impl ListPlatformApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`ListPlatformApplications`](crate::operation::ListPlatformApplications)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3496,11 +3577,14 @@ impl ListPlatformApplicationsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3605,6 +3689,7 @@ pub type ListSmsSandboxPhoneNumbersInputOperationRetryAlias = aws_http::AwsError
 impl ListSmsSandboxPhoneNumbersInput {
     /// Consumes the builder and constructs an Operation<[`ListSMSSandboxPhoneNumbers`](crate::operation::ListSMSSandboxPhoneNumbers)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3657,11 +3742,14 @@ impl ListSmsSandboxPhoneNumbersInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3751,6 +3839,7 @@ pub type ListSubscriptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl ListSubscriptionsInput {
     /// Consumes the builder and constructs an Operation<[`ListSubscriptions`](crate::operation::ListSubscriptions)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3802,11 +3891,14 @@ impl ListSubscriptionsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3909,6 +4001,7 @@ pub type ListSubscriptionsByTopicInputOperationRetryAlias = aws_http::AwsErrorRe
 impl ListSubscriptionsByTopicInput {
     /// Consumes the builder and constructs an Operation<[`ListSubscriptionsByTopic`](crate::operation::ListSubscriptionsByTopic)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3962,11 +4055,14 @@ impl ListSubscriptionsByTopicInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4056,6 +4152,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4109,11 +4206,14 @@ impl ListTagsForResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4203,6 +4303,7 @@ pub type ListTopicsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListTopicsInput {
     /// Consumes the builder and constructs an Operation<[`ListTopics`](crate::operation::ListTopics)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4253,11 +4354,14 @@ impl ListTopicsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4347,6 +4451,7 @@ pub type OptInPhoneNumberInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl OptInPhoneNumberInput {
     /// Consumes the builder and constructs an Operation<[`OptInPhoneNumber`](crate::operation::OptInPhoneNumber)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4398,11 +4503,14 @@ impl OptInPhoneNumberInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4740,7 +4848,7 @@ pub mod publish_input {
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
         /// <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric characters
-        /// (a-z, A-Z, 0-9) and punctuation
+        /// <code>(a-z, A-Z, 0-9)</code> and punctuation
         /// <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
         /// <p>Every message must have a unique <code>MessageDeduplicationId</code>, which is a token
         /// used for deduplication of sent messages. If a message with a particular
@@ -4756,7 +4864,7 @@ pub mod publish_input {
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
         /// <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric characters
-        /// (a-z, A-Z, 0-9) and punctuation
+        /// <code>(a-z, A-Z, 0-9)</code> and punctuation
         /// <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
         /// <p>Every message must have a unique <code>MessageDeduplicationId</code>, which is a token
         /// used for deduplication of sent messages. If a message with a particular
@@ -4774,8 +4882,9 @@ pub mod publish_input {
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
-        /// <code>MessageGroupId</code> can contain up to 128 alphanumeric characters (a-z, A-Z,
-        /// 0-9) and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+        /// <code>MessageGroupId</code> can contain up to 128 alphanumeric characters
+        /// <code>(a-z, A-Z, 0-9)</code> and punctuation
+        /// <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>        
         /// <p>The <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
         /// specific message group. Messages that belong to the same message group are processed in
         /// a FIFO manner (however, messages in different message groups might be processed out of
@@ -4785,8 +4894,9 @@ pub mod publish_input {
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
-        /// <code>MessageGroupId</code> can contain up to 128 alphanumeric characters (a-z, A-Z,
-        /// 0-9) and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+        /// <code>MessageGroupId</code> can contain up to 128 alphanumeric characters
+        /// <code>(a-z, A-Z, 0-9)</code> and punctuation
+        /// <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>        
         /// <p>The <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
         /// specific message group. Messages that belong to the same message group are processed in
         /// a FIFO manner (however, messages in different message groups might be processed out of
@@ -4824,6 +4934,7 @@ pub type PublishInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl PublishInput {
     /// Consumes the builder and constructs an Operation<[`Publish`](crate::operation::Publish)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4874,11 +4985,14 @@ impl PublishInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4921,6 +5035,179 @@ impl PublishInput {
     /// Creates a new builder-style object to manufacture [`PublishInput`](crate::input::PublishInput)
     pub fn builder() -> crate::input::publish_input::Builder {
         crate::input::publish_input::Builder::default()
+    }
+}
+
+/// See [`PublishBatchInput`](crate::input::PublishBatchInput)
+pub mod publish_batch_input {
+    /// A builder for [`PublishBatchInput`](crate::input::PublishBatchInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) topic_arn: std::option::Option<std::string::String>,
+        pub(crate) publish_batch_request_entries:
+            std::option::Option<std::vec::Vec<crate::model::PublishBatchRequestEntry>>,
+    }
+    impl Builder {
+        /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_arn = input;
+            self
+        }
+        /// Appends an item to `publish_batch_request_entries`.
+        ///
+        /// To override the contents of this collection use [`set_publish_batch_request_entries`](Self::set_publish_batch_request_entries).
+        ///
+        /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
+        pub fn publish_batch_request_entries(
+            mut self,
+            input: impl Into<crate::model::PublishBatchRequestEntry>,
+        ) -> Self {
+            let mut v = self.publish_batch_request_entries.unwrap_or_default();
+            v.push(input.into());
+            self.publish_batch_request_entries = Some(v);
+            self
+        }
+        /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
+        pub fn set_publish_batch_request_entries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PublishBatchRequestEntry>>,
+        ) -> Self {
+            self.publish_batch_request_entries = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PublishBatchInput`](crate::input::PublishBatchInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::PublishBatchInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::PublishBatchInput {
+                topic_arn: self.topic_arn,
+                publish_batch_request_entries: self.publish_batch_request_entries,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type PublishBatchInputOperationOutputAlias = crate::operation::PublishBatch;
+#[doc(hidden)]
+pub type PublishBatchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl PublishBatchInput {
+    /// Consumes the builder and constructs an Operation<[`PublishBatch`](crate::operation::PublishBatch)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PublishBatch,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::PublishBatchInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::PublishBatchInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::PublishBatchInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-www-form-urlencoded",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_publish_batch(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PublishBatch::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PublishBatch",
+            "sns",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`PublishBatchInput`](crate::input::PublishBatchInput)
+    pub fn builder() -> crate::input::publish_batch_input::Builder {
+        crate::input::publish_batch_input::Builder::default()
     }
 }
 
@@ -4975,6 +5262,7 @@ pub type RemovePermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl RemovePermissionInput {
     /// Consumes the builder and constructs an Operation<[`RemovePermission`](crate::operation::RemovePermission)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5026,11 +5314,14 @@ impl RemovePermissionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5193,6 +5484,7 @@ pub type SetEndpointAttributesInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl SetEndpointAttributesInput {
     /// Consumes the builder and constructs an Operation<[`SetEndpointAttributes`](crate::operation::SetEndpointAttributes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5246,11 +5538,14 @@ impl SetEndpointAttributesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5335,22 +5630,44 @@ pub mod set_platform_application_attributes_input {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>PlatformCredential</code> – The credential received from the
-        /// notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-        /// <code>PlatformCredential</code> is <code>private key</code>. For
-        /// <code>GCM</code> (Firebase Cloud Messaging), <code>PlatformCredential</code>
-        /// is <code>API key</code>. For <code>ADM</code>, <code>PlatformCredential</code>
-        /// is <code>client secret</code>.</p>
+        /// <code>PlatformCredential</code> – The credential received from the notification service.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For ADM, <code>PlatformCredential</code>is client secret.</p>
         /// </li>
         /// <li>
-        /// <p>
-        /// <code>PlatformPrincipal</code> – The principal received from the
-        /// notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-        /// <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
-        /// <code>GCM</code> (Firebase Cloud Messaging), there is no
-        /// <code>PlatformPrincipal</code>. For <code>ADM</code>,
-        /// <code>PlatformPrincipal</code> is <code>client id</code>.</p>
+        /// <p>For Apple Services using certificate credentials, <code>PlatformCredential</code> is private key.</p>
         /// </li>
+        /// <li>
+        /// <p>For Apple Services using token credentials, <code>PlatformCredential</code> is signing key.</p>
+        /// </li>
+        /// <li>
+        /// <p>For GCM (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PlatformPrincipal</code> – The principal received from the notification service.</p>  
+        /// <ul>
+        /// <li>
+        /// <p>For ADM, <code>PlatformPrincipal</code>is client id.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Apple Services using certificate credentials, <code>PlatformPrincipal</code> is SSL certificate.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Apple Services using token credentials, <code>PlatformPrincipal</code> is signing key ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>For GCM (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <ul>
         /// <li>
         /// <p>
         /// <code>EventEndpointCreated</code> – Topic ARN to which
@@ -5389,6 +5706,17 @@ pub mod set_platform_application_attributes_input {
         /// of successfully delivered messages.</p>
         /// </li>
         /// </ul>
+        /// <p>The following attributes only apply to <code>APNs</code> token-based authentication:</p>  
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple developer account team.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ApplePlatformBundleID</code> – The bundle identifier that's assigned to your iOS app.</p>
+        /// </li>
+        /// </ul>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -5404,22 +5732,44 @@ pub mod set_platform_application_attributes_input {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>PlatformCredential</code> – The credential received from the
-        /// notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-        /// <code>PlatformCredential</code> is <code>private key</code>. For
-        /// <code>GCM</code> (Firebase Cloud Messaging), <code>PlatformCredential</code>
-        /// is <code>API key</code>. For <code>ADM</code>, <code>PlatformCredential</code>
-        /// is <code>client secret</code>.</p>
+        /// <code>PlatformCredential</code> – The credential received from the notification service.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For ADM, <code>PlatformCredential</code>is client secret.</p>
         /// </li>
         /// <li>
-        /// <p>
-        /// <code>PlatformPrincipal</code> – The principal received from the
-        /// notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-        /// <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
-        /// <code>GCM</code> (Firebase Cloud Messaging), there is no
-        /// <code>PlatformPrincipal</code>. For <code>ADM</code>,
-        /// <code>PlatformPrincipal</code> is <code>client id</code>.</p>
+        /// <p>For Apple Services using certificate credentials, <code>PlatformCredential</code> is private key.</p>
         /// </li>
+        /// <li>
+        /// <p>For Apple Services using token credentials, <code>PlatformCredential</code> is signing key.</p>
+        /// </li>
+        /// <li>
+        /// <p>For GCM (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PlatformPrincipal</code> – The principal received from the notification service.</p>  
+        /// <ul>
+        /// <li>
+        /// <p>For ADM, <code>PlatformPrincipal</code>is client id.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Apple Services using certificate credentials, <code>PlatformPrincipal</code> is SSL certificate.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Apple Services using token credentials, <code>PlatformPrincipal</code> is signing key ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>For GCM (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <ul>
         /// <li>
         /// <p>
         /// <code>EventEndpointCreated</code> – Topic ARN to which
@@ -5456,6 +5806,17 @@ pub mod set_platform_application_attributes_input {
         /// <p>
         /// <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100)
         /// of successfully delivered messages.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The following attributes only apply to <code>APNs</code> token-based authentication:</p>  
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple developer account team.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ApplePlatformBundleID</code> – The bundle identifier that's assigned to your iOS app.</p>
         /// </li>
         /// </ul>
         pub fn set_attributes(
@@ -5489,6 +5850,7 @@ pub type SetPlatformApplicationAttributesInputOperationRetryAlias = aws_http::Aw
 impl SetPlatformApplicationAttributesInput {
     /// Consumes the builder and constructs an Operation<[`SetPlatformApplicationAttributes`](crate::operation::SetPlatformApplicationAttributes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5541,11 +5903,14 @@ impl SetPlatformApplicationAttributesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5611,7 +5976,7 @@ pub mod set_sms_attributes_input {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The default settings for sending SMS messages from your account. You can set values
+        /// <p>The default settings for sending SMS messages from your Amazon Web Services account. You can set values
         /// for the following attribute names:</p>
         /// <p>
         /// <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend
@@ -5656,15 +6021,14 @@ pub mod set_sms_attributes_input {
         /// <li>
         /// <p>
         /// <code>Transactional</code> – Critical messages that support customer
-        /// transactions, such as one-time passcodes for multi-factor authentication. Amazon
-        /// SNS optimizes the message delivery to achieve the highest reliability.</p>
+        /// transactions, such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the message delivery to achieve the highest reliability.</p>
         /// </li>
         /// </ul>
         /// <p>
         /// <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive daily SMS
         /// usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report as a CSV file to
         /// the bucket. The report includes the following information for each SMS message that was
-        /// successfully delivered by your account:</p>
+        /// successfully delivered by your Amazon Web Services account:</p>
         /// <ul>
         /// <li>
         /// <p>Time that the message was published (in UTC)</p>
@@ -5707,7 +6071,7 @@ pub mod set_sms_attributes_input {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p>The default settings for sending SMS messages from your account. You can set values
+        /// <p>The default settings for sending SMS messages from your Amazon Web Services account. You can set values
         /// for the following attribute names:</p>
         /// <p>
         /// <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend
@@ -5752,15 +6116,14 @@ pub mod set_sms_attributes_input {
         /// <li>
         /// <p>
         /// <code>Transactional</code> – Critical messages that support customer
-        /// transactions, such as one-time passcodes for multi-factor authentication. Amazon
-        /// SNS optimizes the message delivery to achieve the highest reliability.</p>
+        /// transactions, such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the message delivery to achieve the highest reliability.</p>
         /// </li>
         /// </ul>
         /// <p>
         /// <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive daily SMS
         /// usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report as a CSV file to
         /// the bucket. The report includes the following information for each SMS message that was
-        /// successfully delivered by your account:</p>
+        /// successfully delivered by your Amazon Web Services account:</p>
         /// <ul>
         /// <li>
         /// <p>Time that the message was published (in UTC)</p>
@@ -5822,6 +6185,7 @@ pub type SetSmsAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl SetSmsAttributesInput {
     /// Consumes the builder and constructs an Operation<[`SetSMSAttributes`](crate::operation::SetSMSAttributes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5873,11 +6237,14 @@ impl SetSmsAttributesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6099,6 +6466,7 @@ pub type SetSubscriptionAttributesInputOperationRetryAlias = aws_http::AwsErrorR
 impl SetSubscriptionAttributesInput {
     /// Consumes the builder and constructs an Operation<[`SetSubscriptionAttributes`](crate::operation::SetSubscriptionAttributes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6152,11 +6520,14 @@ impl SetSubscriptionAttributesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6392,6 +6763,7 @@ pub type SetTopicAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl SetTopicAttributesInput {
     /// Consumes the builder and constructs an Operation<[`SetTopicAttributes`](crate::operation::SetTopicAttributes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6443,11 +6815,14 @@ impl SetTopicAttributesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6882,6 +7257,7 @@ pub type SubscribeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl SubscribeInput {
     /// Consumes the builder and constructs an Operation<[`Subscribe`](crate::operation::Subscribe)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6932,11 +7308,14 @@ impl SubscribeInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7047,6 +7426,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7097,11 +7477,14 @@ impl TagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7194,6 +7577,7 @@ pub type UnsubscribeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UnsubscribeInput {
     /// Consumes the builder and constructs an Operation<[`Unsubscribe`](crate::operation::Unsubscribe)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7244,11 +7628,14 @@ impl UnsubscribeInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7359,6 +7746,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7409,11 +7797,14 @@ impl UntagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7521,6 +7912,7 @@ pub type VerifySmsSandboxPhoneNumberInputOperationRetryAlias = aws_http::AwsErro
 impl VerifySmsSandboxPhoneNumberInput {
     /// Consumes the builder and constructs an Operation<[`VerifySMSSandboxPhoneNumber`](crate::operation::VerifySMSSandboxPhoneNumber)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7573,11 +7965,14 @@ impl VerifySmsSandboxPhoneNumberInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8360,7 +8755,7 @@ impl std::fmt::Debug for SetSubscriptionAttributesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetSmsAttributesInput {
-    /// <p>The default settings for sending SMS messages from your account. You can set values
+    /// <p>The default settings for sending SMS messages from your Amazon Web Services account. You can set values
     /// for the following attribute names:</p>
     /// <p>
     /// <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend
@@ -8405,15 +8800,14 @@ pub struct SetSmsAttributesInput {
     /// <li>
     /// <p>
     /// <code>Transactional</code> – Critical messages that support customer
-    /// transactions, such as one-time passcodes for multi-factor authentication. Amazon
-    /// SNS optimizes the message delivery to achieve the highest reliability.</p>
+    /// transactions, such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the message delivery to achieve the highest reliability.</p>
     /// </li>
     /// </ul>
     /// <p>
     /// <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive daily SMS
     /// usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report as a CSV file to
     /// the bucket. The report includes the following information for each SMS message that was
-    /// successfully delivered by your account:</p>
+    /// successfully delivered by your Amazon Web Services account:</p>
     /// <ul>
     /// <li>
     /// <p>Time that the message was published (in UTC)</p>
@@ -8450,7 +8844,7 @@ pub struct SetSmsAttributesInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl SetSmsAttributesInput {
-    /// <p>The default settings for sending SMS messages from your account. You can set values
+    /// <p>The default settings for sending SMS messages from your Amazon Web Services account. You can set values
     /// for the following attribute names:</p>
     /// <p>
     /// <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend
@@ -8495,15 +8889,14 @@ impl SetSmsAttributesInput {
     /// <li>
     /// <p>
     /// <code>Transactional</code> – Critical messages that support customer
-    /// transactions, such as one-time passcodes for multi-factor authentication. Amazon
-    /// SNS optimizes the message delivery to achieve the highest reliability.</p>
+    /// transactions, such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the message delivery to achieve the highest reliability.</p>
     /// </li>
     /// </ul>
     /// <p>
     /// <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive daily SMS
     /// usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report as a CSV file to
     /// the bucket. The report includes the following information for each SMS message that was
-    /// successfully delivered by your account:</p>
+    /// successfully delivered by your Amazon Web Services account:</p>
     /// <ul>
     /// <li>
     /// <p>Time that the message was published (in UTC)</p>
@@ -8562,22 +8955,44 @@ pub struct SetPlatformApplicationAttributesInput {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>PlatformCredential</code> – The credential received from the
-    /// notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-    /// <code>PlatformCredential</code> is <code>private key</code>. For
-    /// <code>GCM</code> (Firebase Cloud Messaging), <code>PlatformCredential</code>
-    /// is <code>API key</code>. For <code>ADM</code>, <code>PlatformCredential</code>
-    /// is <code>client secret</code>.</p>
+    /// <code>PlatformCredential</code> – The credential received from the notification service.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For ADM, <code>PlatformCredential</code>is client secret.</p>
     /// </li>
     /// <li>
-    /// <p>
-    /// <code>PlatformPrincipal</code> – The principal received from the
-    /// notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-    /// <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
-    /// <code>GCM</code> (Firebase Cloud Messaging), there is no
-    /// <code>PlatformPrincipal</code>. For <code>ADM</code>,
-    /// <code>PlatformPrincipal</code> is <code>client id</code>.</p>
+    /// <p>For Apple Services using certificate credentials, <code>PlatformCredential</code> is private key.</p>
     /// </li>
+    /// <li>
+    /// <p>For Apple Services using token credentials, <code>PlatformCredential</code> is signing key.</p>
+    /// </li>
+    /// <li>
+    /// <p>For GCM (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PlatformPrincipal</code> – The principal received from the notification service.</p>  
+    /// <ul>
+    /// <li>
+    /// <p>For ADM, <code>PlatformPrincipal</code>is client id.</p>
+    /// </li>
+    /// <li>
+    /// <p>For Apple Services using certificate credentials, <code>PlatformPrincipal</code> is SSL certificate.</p>
+    /// </li>
+    /// <li>
+    /// <p>For Apple Services using token credentials, <code>PlatformPrincipal</code> is signing key ID.</p>
+    /// </li>
+    /// <li>
+    /// <p>For GCM (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    /// <ul>
     /// <li>
     /// <p>
     /// <code>EventEndpointCreated</code> – Topic ARN to which
@@ -8616,6 +9031,17 @@ pub struct SetPlatformApplicationAttributesInput {
     /// of successfully delivered messages.</p>
     /// </li>
     /// </ul>
+    /// <p>The following attributes only apply to <code>APNs</code> token-based authentication:</p>  
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple developer account team.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ApplePlatformBundleID</code> – The bundle identifier that's assigned to your iOS app.</p>
+    /// </li>
+    /// </ul>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8629,22 +9055,44 @@ impl SetPlatformApplicationAttributesInput {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>PlatformCredential</code> – The credential received from the
-    /// notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-    /// <code>PlatformCredential</code> is <code>private key</code>. For
-    /// <code>GCM</code> (Firebase Cloud Messaging), <code>PlatformCredential</code>
-    /// is <code>API key</code>. For <code>ADM</code>, <code>PlatformCredential</code>
-    /// is <code>client secret</code>.</p>
+    /// <code>PlatformCredential</code> – The credential received from the notification service.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For ADM, <code>PlatformCredential</code>is client secret.</p>
     /// </li>
     /// <li>
-    /// <p>
-    /// <code>PlatformPrincipal</code> – The principal received from the
-    /// notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-    /// <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
-    /// <code>GCM</code> (Firebase Cloud Messaging), there is no
-    /// <code>PlatformPrincipal</code>. For <code>ADM</code>,
-    /// <code>PlatformPrincipal</code> is <code>client id</code>.</p>
+    /// <p>For Apple Services using certificate credentials, <code>PlatformCredential</code> is private key.</p>
     /// </li>
+    /// <li>
+    /// <p>For Apple Services using token credentials, <code>PlatformCredential</code> is signing key.</p>
+    /// </li>
+    /// <li>
+    /// <p>For GCM (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PlatformPrincipal</code> – The principal received from the notification service.</p>  
+    /// <ul>
+    /// <li>
+    /// <p>For ADM, <code>PlatformPrincipal</code>is client id.</p>
+    /// </li>
+    /// <li>
+    /// <p>For Apple Services using certificate credentials, <code>PlatformPrincipal</code> is SSL certificate.</p>
+    /// </li>
+    /// <li>
+    /// <p>For Apple Services using token credentials, <code>PlatformPrincipal</code> is signing key ID.</p>
+    /// </li>
+    /// <li>
+    /// <p>For GCM (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    /// <ul>
     /// <li>
     /// <p>
     /// <code>EventEndpointCreated</code> – Topic ARN to which
@@ -8681,6 +9129,17 @@ impl SetPlatformApplicationAttributesInput {
     /// <p>
     /// <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100)
     /// of successfully delivered messages.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The following attributes only apply to <code>APNs</code> token-based authentication:</p>  
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple developer account team.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ApplePlatformBundleID</code> – The bundle identifier that's assigned to your iOS app.</p>
     /// </li>
     /// </ul>
     pub fn attributes(
@@ -8803,6 +9262,40 @@ impl std::fmt::Debug for RemovePermissionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PublishBatchInput {
+    /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
+    pub topic_arn: std::option::Option<std::string::String>,
+    /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
+    pub publish_batch_request_entries:
+        std::option::Option<std::vec::Vec<crate::model::PublishBatchRequestEntry>>,
+}
+impl PublishBatchInput {
+    /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+    /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
+    pub fn publish_batch_request_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::PublishBatchRequestEntry]> {
+        self.publish_batch_request_entries.as_deref()
+    }
+}
+impl std::fmt::Debug for PublishBatchInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PublishBatchInput");
+        formatter.field("topic_arn", &self.topic_arn);
+        formatter.field(
+            "publish_batch_request_entries",
+            &self.publish_batch_request_entries,
+        );
+        formatter.finish()
+    }
+}
+
 /// <p>Input for Publish action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8914,7 +9407,7 @@ pub struct PublishInput {
     >,
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
     /// <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric characters
-    /// (a-z, A-Z, 0-9) and punctuation
+    /// <code>(a-z, A-Z, 0-9)</code> and punctuation
     /// <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
     /// <p>Every message must have a unique <code>MessageDeduplicationId</code>, which is a token
     /// used for deduplication of sent messages. If a message with a particular
@@ -8926,8 +9419,9 @@ pub struct PublishInput {
     /// <code>MessageDeduplicationId</code> overrides the generated one.</p>
     pub message_deduplication_id: std::option::Option<std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
-    /// <code>MessageGroupId</code> can contain up to 128 alphanumeric characters (a-z, A-Z,
-    /// 0-9) and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+    /// <code>MessageGroupId</code> can contain up to 128 alphanumeric characters
+    /// <code>(a-z, A-Z, 0-9)</code> and punctuation
+    /// <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>        
     /// <p>The <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
     /// specific message group. Messages that belong to the same message group are processed in
     /// a FIFO manner (however, messages in different message groups might be processed out of
@@ -9058,7 +9552,7 @@ impl PublishInput {
     }
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
     /// <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric characters
-    /// (a-z, A-Z, 0-9) and punctuation
+    /// <code>(a-z, A-Z, 0-9)</code> and punctuation
     /// <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
     /// <p>Every message must have a unique <code>MessageDeduplicationId</code>, which is a token
     /// used for deduplication of sent messages. If a message with a particular
@@ -9072,8 +9566,9 @@ impl PublishInput {
         self.message_deduplication_id.as_deref()
     }
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
-    /// <code>MessageGroupId</code> can contain up to 128 alphanumeric characters (a-z, A-Z,
-    /// 0-9) and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+    /// <code>MessageGroupId</code> can contain up to 128 alphanumeric characters
+    /// <code>(a-z, A-Z, 0-9)</code> and punctuation
+    /// <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>        
     /// <p>The <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
     /// specific message group. Messages that belong to the same message group are processed in
     /// a FIFO manner (however, messages in different message groups might be processed out of
@@ -9955,8 +10450,8 @@ pub struct AddPermissionInput {
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the new policy statement.</p>
     pub label: std::option::Option<std::string::String>,
-    /// <p>The account IDs of the users (principals) who will be given access to the
-    /// specified actions. The users must have account, but do not need to be signed up for
+    /// <p>The Amazon Web Services account IDs of the users (principals) who will be given access to the
+    /// specified actions. The users must have Amazon Web Services account, but do not need to be signed up for
     /// this service.</p>
     pub aws_account_id: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The action you want to allow for the specified principal(s).</p>
@@ -9972,8 +10467,8 @@ impl AddPermissionInput {
     pub fn label(&self) -> std::option::Option<&str> {
         self.label.as_deref()
     }
-    /// <p>The account IDs of the users (principals) who will be given access to the
-    /// specified actions. The users must have account, but do not need to be signed up for
+    /// <p>The Amazon Web Services account IDs of the users (principals) who will be given access to the
+    /// specified actions. The users must have Amazon Web Services account, but do not need to be signed up for
     /// this service.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&[std::string::String]> {
         self.aws_account_id.as_deref()

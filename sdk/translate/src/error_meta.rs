@@ -357,6 +357,7 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::StartTextTranslationJobErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::StartTextTranslationJobErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::StartTextTranslationJobErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::StartTextTranslationJobErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::StartTextTranslationJobErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),

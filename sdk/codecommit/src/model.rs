@@ -11,9 +11,9 @@ pub struct PullRequest {
     /// <p>The user-defined description of the pull request. This description can be used to clarify what should be reviewed and other details of the request.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The day and time of the last user or system activity on the pull request, in timestamp format.</p>
-    pub last_activity_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_activity_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the pull request was originally created, in timestamp format.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the pull request. Pull request status can only change from <code>OPEN</code> to <code>CLOSED</code>.</p>
     pub pull_request_status: std::option::Option<crate::model::PullRequestStatusEnum>,
     /// <p>The Amazon Resource Name (ARN) of the user who created the pull request.</p>
@@ -45,11 +45,11 @@ impl PullRequest {
         self.description.as_deref()
     }
     /// <p>The day and time of the last user or system activity on the pull request, in timestamp format.</p>
-    pub fn last_activity_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_activity_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_activity_date.as_ref()
     }
     /// <p>The date and time the pull request was originally created, in timestamp format.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The status of the pull request. Pull request status can only change from <code>OPEN</code> to <code>CLOSED</code>.</p>
@@ -106,8 +106,8 @@ pub mod pull_request {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
         pub(crate) title: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) last_activity_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_activity_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) pull_request_status: std::option::Option<crate::model::PullRequestStatusEnum>,
         pub(crate) author_arn: std::option::Option<std::string::String>,
         pub(crate) pull_request_targets:
@@ -153,27 +153,27 @@ pub mod pull_request {
             self
         }
         /// <p>The day and time of the last user or system activity on the pull request, in timestamp format.</p>
-        pub fn last_activity_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_activity_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_activity_date = Some(input);
             self
         }
         /// <p>The day and time of the last user or system activity on the pull request, in timestamp format.</p>
         pub fn set_last_activity_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_activity_date = input;
             self
         }
         /// <p>The date and time the pull request was originally created, in timestamp format.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date and time the pull request was originally created, in timestamp format.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -309,9 +309,9 @@ pub struct ApprovalRule {
     /// <p>The SHA-256 hash signature for the content of the approval rule.</p>
     pub rule_content_sha256: std::option::Option<std::string::String>,
     /// <p>The date the approval rule was most recently changed, in timestamp format.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the approval rule was created, in timestamp format.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule.</p>
     pub last_modified_user: std::option::Option<std::string::String>,
     /// <p>The approval rule template used to create the rule.</p>
@@ -336,11 +336,11 @@ impl ApprovalRule {
         self.rule_content_sha256.as_deref()
     }
     /// <p>The date the approval rule was most recently changed, in timestamp format.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The date the approval rule was created, in timestamp format.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule.</p>
@@ -381,8 +381,8 @@ pub mod approval_rule {
         pub(crate) approval_rule_name: std::option::Option<std::string::String>,
         pub(crate) approval_rule_content: std::option::Option<std::string::String>,
         pub(crate) rule_content_sha256: std::option::Option<std::string::String>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_user: std::option::Option<std::string::String>,
         pub(crate) origin_approval_rule_template:
             std::option::Option<crate::model::OriginApprovalRuleTemplate>,
@@ -441,27 +441,27 @@ pub mod approval_rule {
             self
         }
         /// <p>The date the approval rule was most recently changed, in timestamp format.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The date the approval rule was most recently changed, in timestamp format.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
         }
         /// <p>The date the approval rule was created, in timestamp format.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date the approval rule was created, in timestamp format.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -1097,9 +1097,9 @@ pub struct Comment {
     /// <p>The ID of the comment for which this comment is a reply, if any.</p>
     pub in_reply_to: std::option::Option<std::string::String>,
     /// <p>The date and time the comment was created, in timestamp format.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the comment was most recently modified, in timestamp format.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the person who posted the comment.</p>
     pub author_arn: std::option::Option<std::string::String>,
     /// <p>A Boolean value indicating whether the comment has been deleted.</p>
@@ -1128,11 +1128,11 @@ impl Comment {
         self.in_reply_to.as_deref()
     }
     /// <p>The date and time the comment was created, in timestamp format.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time the comment was most recently modified, in timestamp format.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the person who posted the comment.</p>
@@ -1186,8 +1186,8 @@ pub mod comment {
         pub(crate) comment_id: std::option::Option<std::string::String>,
         pub(crate) content: std::option::Option<std::string::String>,
         pub(crate) in_reply_to: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) author_arn: std::option::Option<std::string::String>,
         pub(crate) deleted: std::option::Option<bool>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -1227,27 +1227,27 @@ pub mod comment {
             self
         }
         /// <p>The date and time the comment was created, in timestamp format.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date and time the comment was created, in timestamp format.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date and time the comment was most recently modified, in timestamp format.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The date and time the comment was most recently modified, in timestamp format.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -1372,9 +1372,9 @@ pub struct ApprovalRuleTemplate {
     /// <p>The SHA-256 hash signature for the content of the approval rule template.</p>
     pub rule_content_sha256: std::option::Option<std::string::String>,
     /// <p>The date the approval rule template was most recently changed, in timestamp format.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the approval rule template was created, in timestamp format.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule template.</p>
     pub last_modified_user: std::option::Option<std::string::String>,
 }
@@ -1400,11 +1400,11 @@ impl ApprovalRuleTemplate {
         self.rule_content_sha256.as_deref()
     }
     /// <p>The date the approval rule template was most recently changed, in timestamp format.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The date the approval rule template was created, in timestamp format.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule template.</p>
@@ -1446,8 +1446,8 @@ pub mod approval_rule_template {
         pub(crate) approval_rule_template_description: std::option::Option<std::string::String>,
         pub(crate) approval_rule_template_content: std::option::Option<std::string::String>,
         pub(crate) rule_content_sha256: std::option::Option<std::string::String>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_user: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1526,27 +1526,27 @@ pub mod approval_rule_template {
             self
         }
         /// <p>The date the approval rule template was most recently changed, in timestamp format.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The date the approval rule template was most recently changed, in timestamp format.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
         }
         /// <p>The date the approval rule template was created, in timestamp format.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date the approval rule template was created, in timestamp format.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -2969,9 +2969,9 @@ pub struct RepositoryMetadata {
     /// <p>The repository's default branch name.</p>
     pub default_branch: std::option::Option<std::string::String>,
     /// <p>The date and time the repository was last modified, in timestamp format.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the repository was created, in timestamp format.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The URL to use for cloning the repository over HTTPS.</p>
     pub clone_url_http: std::option::Option<std::string::String>,
     /// <p>The URL to use for cloning the repository over SSH.</p>
@@ -3001,11 +3001,11 @@ impl RepositoryMetadata {
         self.default_branch.as_deref()
     }
     /// <p>The date and time the repository was last modified, in timestamp format.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The date and time the repository was created, in timestamp format.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The URL to use for cloning the repository over HTTPS.</p>
@@ -3048,8 +3048,8 @@ pub mod repository_metadata {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) repository_description: std::option::Option<std::string::String>,
         pub(crate) default_branch: std::option::Option<std::string::String>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) clone_url_http: std::option::Option<std::string::String>,
         pub(crate) clone_url_ssh: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3118,27 +3118,27 @@ pub mod repository_metadata {
             self
         }
         /// <p>The date and time the repository was last modified, in timestamp format.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The date and time the repository was last modified, in timestamp format.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
         }
         /// <p>The date and time the repository was created, in timestamp format.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date and time the repository was created, in timestamp format.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -5984,7 +5984,7 @@ pub struct PullRequestEvent {
     /// <p>The system-generated ID of the pull request.</p>
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The day and time of the pull request event, in timestamp format.</p>
-    pub event_date: std::option::Option<aws_smithy_types::Instant>,
+    pub event_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of the pull request event (for example, a status change event
     /// (PULL_REQUEST_STATUS_CHANGED) or update event
     /// (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
@@ -6020,7 +6020,7 @@ impl PullRequestEvent {
         self.pull_request_id.as_deref()
     }
     /// <p>The day and time of the pull request event, in timestamp format.</p>
-    pub fn event_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn event_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_date.as_ref()
     }
     /// <p>The type of the pull request event (for example, a status change event
@@ -6127,7 +6127,7 @@ pub mod pull_request_event {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
-        pub(crate) event_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) event_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) pull_request_event_type: std::option::Option<crate::model::PullRequestEventType>,
         pub(crate) actor_arn: std::option::Option<std::string::String>,
         pub(crate) pull_request_created_event_metadata:
@@ -6160,14 +6160,14 @@ pub mod pull_request_event {
             self
         }
         /// <p>The day and time of the pull request event, in timestamp format.</p>
-        pub fn event_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn event_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_date = Some(input);
             self
         }
         /// <p>The day and time of the pull request event, in timestamp format.</p>
         pub fn set_event_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.event_date = input;
             self

@@ -147,12 +147,12 @@ pub fn serialize_structure_crate_input_list_public_keys_input(
     if let Some(var_30) = &input.start_time {
         object
             .key("StartTime")
-            .instant(var_30, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_30, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_31) = &input.end_time {
         object
             .key("EndTime")
-            .instant(var_31, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_31, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_32) = &input.next_token {
         object.key("NextToken").string(var_32);
@@ -210,12 +210,12 @@ pub fn serialize_structure_crate_input_lookup_events_input(
     if let Some(var_42) = &input.start_time {
         object
             .key("StartTime")
-            .instant(var_42, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_42, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_43) = &input.end_time {
         object
             .key("EndTime")
-            .instant(var_43, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_43, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_44) = &input.event_category {
         object.key("EventCategory").string(var_44.as_str());

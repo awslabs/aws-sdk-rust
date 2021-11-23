@@ -1530,17 +1530,17 @@ pub fn serialize_structure_crate_input_submit_task_state_change_input(
     if let Some(var_366) = &input.pull_started_at {
         object
             .key("pullStartedAt")
-            .instant(var_366, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_366, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_367) = &input.pull_stopped_at {
         object
             .key("pullStoppedAt")
-            .instant(var_367, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_367, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_368) = &input.execution_stopped_at {
         object
             .key("executionStoppedAt")
-            .instant(var_368, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_368, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

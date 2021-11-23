@@ -14,11 +14,11 @@ pub struct Service {
     /// <p>A subdomain URL that App Runner generated for this service. You can use this URL to access your service web application.</p>
     pub service_url: std::option::Option<std::string::String>,
     /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the App Runner service was last updated at. It's in the Unix time stamp format.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
-    pub deleted_at: std::option::Option<aws_smithy_types::Instant>,
+    pub deleted_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current state of the App Runner service. These particular values mean the following.</p>
     /// <ul>
     /// <li>
@@ -65,15 +65,15 @@ impl Service {
         self.service_url.as_deref()
     }
     /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the App Runner service was last updated at. It's in the Unix time stamp format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
-    pub fn deleted_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn deleted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deleted_at.as_ref()
     }
     /// <p>The current state of the App Runner service. These particular values mean the following.</p>
@@ -158,9 +158,9 @@ pub mod service {
         pub(crate) service_id: std::option::Option<std::string::String>,
         pub(crate) service_arn: std::option::Option<std::string::String>,
         pub(crate) service_url: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) deleted_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) deleted_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::ServiceStatus>,
         pub(crate) source_configuration: std::option::Option<crate::model::SourceConfiguration>,
         pub(crate) instance_configuration: std::option::Option<crate::model::InstanceConfiguration>,
@@ -213,40 +213,40 @@ pub mod service {
             self
         }
         /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when the App Runner service was last updated at. It's in the Unix time stamp format.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The time when the App Runner service was last updated at. It's in the Unix time stamp format.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
         }
         /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
-        pub fn deleted_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn deleted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deleted_at = Some(input);
             self
         }
         /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
         pub fn set_deleted_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.deleted_at = input;
             self
@@ -2322,9 +2322,9 @@ pub struct ServiceSummary {
     /// <p>A subdomain URL that App Runner generated for this service. You can use this URL to access your service web application.</p>
     pub service_url: std::option::Option<std::string::String>,
     /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the App Runner service was last updated. It's in theUnix time stamp format.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current state of the App Runner service. These particular values mean the following.</p>
     /// <ul>
     /// <li>
@@ -2359,11 +2359,11 @@ impl ServiceSummary {
         self.service_url.as_deref()
     }
     /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the App Runner service was last updated. It's in theUnix time stamp format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The current state of the App Runner service. These particular values mean the following.</p>
@@ -2407,8 +2407,8 @@ pub mod service_summary {
         pub(crate) service_id: std::option::Option<std::string::String>,
         pub(crate) service_arn: std::option::Option<std::string::String>,
         pub(crate) service_url: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::ServiceStatus>,
     }
     impl Builder {
@@ -2453,27 +2453,27 @@ pub mod service_summary {
             self
         }
         /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when the App Runner service was last updated. It's in theUnix time stamp format.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The time when the App Runner service was last updated. It's in theUnix time stamp format.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -2551,11 +2551,11 @@ pub struct OperationSummary {
     /// <p>The Amazon Resource Name (ARN) of the resource that the operation acted on (for example, an App Runner service).</p>
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The time when the operation started. It's in the Unix time stamp format.</p>
-    pub started_at: std::option::Option<aws_smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the operation ended. It's in the Unix time stamp format.</p>
-    pub ended_at: std::option::Option<aws_smithy_types::Instant>,
+    pub ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the operation was last updated. It's in the Unix time stamp format.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl OperationSummary {
     /// <p>A unique ID of this operation. It's unique in the scope of the App Runner service.</p>
@@ -2575,15 +2575,15 @@ impl OperationSummary {
         self.target_arn.as_deref()
     }
     /// <p>The time when the operation started. It's in the Unix time stamp format.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The time when the operation ended. It's in the Unix time stamp format.</p>
-    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
     /// <p>The time when the operation was last updated. It's in the Unix time stamp format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -2610,9 +2610,9 @@ pub mod operation_summary {
         pub(crate) r#type: std::option::Option<crate::model::OperationType>,
         pub(crate) status: std::option::Option<crate::model::OperationStatus>,
         pub(crate) target_arn: std::option::Option<std::string::String>,
-        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) ended_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) ended_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A unique ID of this operation. It's unique in the scope of the App Runner service.</p>
@@ -2659,40 +2659,40 @@ pub mod operation_summary {
             self
         }
         /// <p>The time when the operation started. It's in the Unix time stamp format.</p>
-        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started_at = Some(input);
             self
         }
         /// <p>The time when the operation started. It's in the Unix time stamp format.</p>
         pub fn set_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started_at = input;
             self
         }
         /// <p>The time when the operation ended. It's in the Unix time stamp format.</p>
-        pub fn ended_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.ended_at = Some(input);
             self
         }
         /// <p>The time when the operation ended. It's in the Unix time stamp format.</p>
         pub fn set_ended_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.ended_at = input;
             self
         }
         /// <p>The time when the operation was last updated. It's in the Unix time stamp format.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The time when the operation was last updated. It's in the Unix time stamp format.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -2887,7 +2887,7 @@ pub struct ConnectionSummary {
     /// <p>The current state of the App Runner connection. When the state is <code>AVAILABLE</code>, you can use the connection to create an App Runner service.</p>
     pub status: std::option::Option<crate::model::ConnectionStatus>,
     /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ConnectionSummary {
     /// <p>The customer-provided connection name.</p>
@@ -2907,7 +2907,7 @@ impl ConnectionSummary {
         self.status.as_ref()
     }
     /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -2932,7 +2932,7 @@ pub mod connection_summary {
         pub(crate) connection_arn: std::option::Option<std::string::String>,
         pub(crate) provider_type: std::option::Option<crate::model::ProviderType>,
         pub(crate) status: std::option::Option<crate::model::ConnectionStatus>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The customer-provided connection name.</p>
@@ -2988,14 +2988,14 @@ pub mod connection_summary {
             self
         }
         /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -3574,9 +3574,9 @@ pub struct AutoScalingConfiguration {
     /// <p>The maximum number of instances that a service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
     pub max_size: i32,
     /// <p>The time when the auto scaling configuration was created. It's in Unix time stamp format.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the auto scaling configuration was deleted. It's in Unix time stamp format.</p>
-    pub deleted_at: std::option::Option<aws_smithy_types::Instant>,
+    pub deleted_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AutoScalingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
@@ -3619,11 +3619,11 @@ impl AutoScalingConfiguration {
         self.max_size
     }
     /// <p>The time when the auto scaling configuration was created. It's in Unix time stamp format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the auto scaling configuration was deleted. It's in Unix time stamp format.</p>
-    pub fn deleted_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn deleted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deleted_at.as_ref()
     }
 }
@@ -3666,8 +3666,8 @@ pub mod auto_scaling_configuration {
         pub(crate) max_concurrency: std::option::Option<i32>,
         pub(crate) min_size: std::option::Option<i32>,
         pub(crate) max_size: std::option::Option<i32>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) deleted_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) deleted_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
@@ -3783,27 +3783,27 @@ pub mod auto_scaling_configuration {
             self
         }
         /// <p>The time when the auto scaling configuration was created. It's in Unix time stamp format.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when the auto scaling configuration was created. It's in Unix time stamp format.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when the auto scaling configuration was deleted. It's in Unix time stamp format.</p>
-        pub fn deleted_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn deleted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deleted_at = Some(input);
             self
         }
         /// <p>The time when the auto scaling configuration was deleted. It's in Unix time stamp format.</p>
         pub fn set_deleted_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.deleted_at = input;
             self
@@ -3902,7 +3902,7 @@ pub struct Connection {
     /// <p>The current state of the App Runner connection. When the state is <code>AVAILABLE</code>, you can use the connection to create an App Runner service.</p>
     pub status: std::option::Option<crate::model::ConnectionStatus>,
     /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Connection {
     /// <p>The customer-provided connection name.</p>
@@ -3922,7 +3922,7 @@ impl Connection {
         self.status.as_ref()
     }
     /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -3947,7 +3947,7 @@ pub mod connection {
         pub(crate) connection_arn: std::option::Option<std::string::String>,
         pub(crate) provider_type: std::option::Option<crate::model::ProviderType>,
         pub(crate) status: std::option::Option<crate::model::ConnectionStatus>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The customer-provided connection name.</p>
@@ -4003,14 +4003,14 @@ pub mod connection {
             self
         }
         /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self

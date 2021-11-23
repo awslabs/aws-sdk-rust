@@ -4290,7 +4290,7 @@ pub struct RecipientDsnFields {
     /// formatting of this parameter.</p>
     pub diagnostic_code: std::option::Option<std::string::String>,
     /// <p>The time the final delivery attempt was made, in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
-    pub last_attempt_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_attempt_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Additional X-headers to include in the DSN.</p>
     pub extension_fields: std::option::Option<std::vec::Vec<crate::model::ExtensionField>>,
 }
@@ -4331,7 +4331,7 @@ impl RecipientDsnFields {
         self.diagnostic_code.as_deref()
     }
     /// <p>The time the final delivery attempt was made, in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
-    pub fn last_attempt_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_attempt_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_attempt_date.as_ref()
     }
     /// <p>Additional X-headers to include in the DSN.</p>
@@ -4363,7 +4363,7 @@ pub mod recipient_dsn_fields {
         pub(crate) remote_mta: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) diagnostic_code: std::option::Option<std::string::String>,
-        pub(crate) last_attempt_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_attempt_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) extension_fields:
             std::option::Option<std::vec::Vec<crate::model::ExtensionField>>,
     }
@@ -4455,14 +4455,14 @@ pub mod recipient_dsn_fields {
             self
         }
         /// <p>The time the final delivery attempt was made, in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
-        pub fn last_attempt_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_attempt_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_attempt_date = Some(input);
             self
         }
         /// <p>The time the final delivery attempt was made, in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
         pub fn set_last_attempt_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_attempt_date = input;
             self
@@ -4749,7 +4749,7 @@ pub struct MessageDsn {
     /// inbound-smtp.[region].amazonaws.com</code>.</p>
     pub reporting_mta: std::option::Option<std::string::String>,
     /// <p>When the message was received by the reporting mail transfer agent (MTA), in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
-    pub arrival_date: std::option::Option<aws_smithy_types::Instant>,
+    pub arrival_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Additional X-headers to include in the DSN.</p>
     pub extension_fields: std::option::Option<std::vec::Vec<crate::model::ExtensionField>>,
 }
@@ -4762,7 +4762,7 @@ impl MessageDsn {
         self.reporting_mta.as_deref()
     }
     /// <p>When the message was received by the reporting mail transfer agent (MTA), in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
-    pub fn arrival_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn arrival_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.arrival_date.as_ref()
     }
     /// <p>Additional X-headers to include in the DSN.</p>
@@ -4786,7 +4786,7 @@ pub mod message_dsn {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reporting_mta: std::option::Option<std::string::String>,
-        pub(crate) arrival_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) arrival_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) extension_fields:
             std::option::Option<std::vec::Vec<crate::model::ExtensionField>>,
     }
@@ -4811,14 +4811,14 @@ pub mod message_dsn {
             self
         }
         /// <p>When the message was received by the reporting mail transfer agent (MTA), in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
-        pub fn arrival_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn arrival_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.arrival_date = Some(input);
             self
         }
         /// <p>When the message was received by the reporting mail transfer agent (MTA), in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
         pub fn set_arrival_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.arrival_date = input;
             self
@@ -4936,7 +4936,7 @@ pub struct TemplateMetadata {
     /// <p>The name of the template.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The time and date the template was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TemplateMetadata {
     /// <p>The name of the template.</p>
@@ -4944,7 +4944,7 @@ impl TemplateMetadata {
         self.name.as_deref()
     }
     /// <p>The time and date the template was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
@@ -4963,7 +4963,7 @@ pub mod template_metadata {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the template.</p>
@@ -4977,14 +4977,14 @@ pub mod template_metadata {
             self
         }
         /// <p>The time and date the template was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time and date the template was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
@@ -5028,7 +5028,7 @@ pub struct ReceiptRuleSetMetadata {
     /// </ul>
     pub name: std::option::Option<std::string::String>,
     /// <p>The date and time the receipt rule set was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ReceiptRuleSetMetadata {
     /// <p>The name of the receipt rule set. The name must:</p>
@@ -5048,7 +5048,7 @@ impl ReceiptRuleSetMetadata {
         self.name.as_deref()
     }
     /// <p>The date and time the receipt rule set was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
@@ -5067,7 +5067,7 @@ pub mod receipt_rule_set_metadata {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the receipt rule set. The name must:</p>
@@ -5105,14 +5105,14 @@ pub mod receipt_rule_set_metadata {
             self
         }
         /// <p>The date and time the receipt rule set was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The date and time the receipt rule set was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
@@ -5720,7 +5720,7 @@ impl ConfigurationSet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendDataPoint {
     /// <p>Time of the data point.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Number of emails that have been sent.</p>
     pub delivery_attempts: i64,
     /// <p>Number of emails that have bounced.</p>
@@ -5732,7 +5732,7 @@ pub struct SendDataPoint {
 }
 impl SendDataPoint {
     /// <p>Time of the data point.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>Number of emails that have been sent.</p>
@@ -5769,7 +5769,7 @@ pub mod send_data_point {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) delivery_attempts: std::option::Option<i64>,
         pub(crate) bounces: std::option::Option<i64>,
         pub(crate) complaints: std::option::Option<i64>,
@@ -5777,14 +5777,14 @@ pub mod send_data_point {
     }
     impl Builder {
         /// <p>Time of the data point.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>Time of the data point.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -6658,7 +6658,7 @@ pub struct ReputationOptions {
     /// reset.</p>
     /// <p>If email sending for the configuration set has never been disabled and later
     /// re-enabled, the value of this attribute is <code>null</code>.</p>
-    pub last_fresh_start: std::option::Option<aws_smithy_types::Instant>,
+    pub last_fresh_start: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ReputationOptions {
     /// <p>Describes whether email sending is enabled or disabled for the configuration set. If
@@ -6684,7 +6684,7 @@ impl ReputationOptions {
     /// reset.</p>
     /// <p>If email sending for the configuration set has never been disabled and later
     /// re-enabled, the value of this attribute is <code>null</code>.</p>
-    pub fn last_fresh_start(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_fresh_start(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_fresh_start.as_ref()
     }
 }
@@ -6708,7 +6708,7 @@ pub mod reputation_options {
     pub struct Builder {
         pub(crate) sending_enabled: std::option::Option<bool>,
         pub(crate) reputation_metrics_enabled: std::option::Option<bool>,
-        pub(crate) last_fresh_start: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_fresh_start: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Describes whether email sending is enabled or disabled for the configuration set. If
@@ -6754,7 +6754,7 @@ pub mod reputation_options {
         /// reset.</p>
         /// <p>If email sending for the configuration set has never been disabled and later
         /// re-enabled, the value of this attribute is <code>null</code>.</p>
-        pub fn last_fresh_start(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_fresh_start(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_fresh_start = Some(input);
             self
         }
@@ -6767,7 +6767,7 @@ pub mod reputation_options {
         /// re-enabled, the value of this attribute is <code>null</code>.</p>
         pub fn set_last_fresh_start(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_fresh_start = input;
             self

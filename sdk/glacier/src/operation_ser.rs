@@ -21,7 +21,7 @@ pub fn ser_payload_initiate_job_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_com_amazonaws_glacier_synthetic_initiate_job_input_job_parameters(&payload)?
+        crate::operation_ser::serialize_member_com_amazonaws_glacier_synthetic_initiate_job_input_job_parameters(payload)?
     ))
 }
 
@@ -37,7 +37,7 @@ pub fn ser_payload_initiate_vault_lock_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_com_amazonaws_glacier_synthetic_initiate_vault_lock_input_policy(&payload)?
+        crate::operation_ser::serialize_member_com_amazonaws_glacier_synthetic_initiate_vault_lock_input_policy(payload)?
     ))
 }
 
@@ -79,7 +79,7 @@ pub fn ser_payload_set_vault_access_policy_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_com_amazonaws_glacier_synthetic_set_vault_access_policy_input_policy(&payload)?
+        crate::operation_ser::serialize_member_com_amazonaws_glacier_synthetic_set_vault_access_policy_input_policy(payload)?
     ))
 }
 
@@ -95,7 +95,7 @@ pub fn ser_payload_set_vault_notifications_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_com_amazonaws_glacier_synthetic_set_vault_notifications_input_vault_notification_config(&payload)?
+        crate::operation_ser::serialize_member_com_amazonaws_glacier_synthetic_set_vault_notifications_input_vault_notification_config(payload)?
     ))
 }
 

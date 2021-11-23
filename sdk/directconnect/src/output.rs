@@ -1555,7 +1555,7 @@ pub struct UpdateConnectionOutput {
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+    pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
@@ -1660,7 +1660,7 @@ impl UpdateConnectionOutput {
         self.partner_name.as_deref()
     }
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
@@ -1760,7 +1760,7 @@ pub mod update_connection_output {
         pub(crate) bandwidth: std::option::Option<std::string::String>,
         pub(crate) vlan: std::option::Option<i32>,
         pub(crate) partner_name: std::option::Option<std::string::String>,
-        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) lag_id: std::option::Option<std::string::String>,
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
@@ -1954,14 +1954,14 @@ pub mod update_connection_output {
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-        pub fn loa_issue_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.loa_issue_time = input;
             self
@@ -2588,7 +2588,7 @@ pub struct DisassociateConnectionFromLagOutput {
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+    pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
@@ -2693,7 +2693,7 @@ impl DisassociateConnectionFromLagOutput {
         self.partner_name.as_deref()
     }
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
@@ -2793,7 +2793,7 @@ pub mod disassociate_connection_from_lag_output {
         pub(crate) bandwidth: std::option::Option<std::string::String>,
         pub(crate) vlan: std::option::Option<i32>,
         pub(crate) partner_name: std::option::Option<std::string::String>,
-        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) lag_id: std::option::Option<std::string::String>,
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
@@ -2987,14 +2987,14 @@ pub mod disassociate_connection_from_lag_output {
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-        pub fn loa_issue_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.loa_issue_time = input;
             self
@@ -5849,7 +5849,7 @@ pub struct DeleteConnectionOutput {
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+    pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
@@ -5954,7 +5954,7 @@ impl DeleteConnectionOutput {
         self.partner_name.as_deref()
     }
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
@@ -6054,7 +6054,7 @@ pub mod delete_connection_output {
         pub(crate) bandwidth: std::option::Option<std::string::String>,
         pub(crate) vlan: std::option::Option<i32>,
         pub(crate) partner_name: std::option::Option<std::string::String>,
-        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) lag_id: std::option::Option<std::string::String>,
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
@@ -6248,14 +6248,14 @@ pub mod delete_connection_output {
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-        pub fn loa_issue_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.loa_issue_time = input;
             self
@@ -8738,7 +8738,7 @@ pub struct CreateInterconnectOutput {
     /// <p>The bandwidth of the connection.</p>
     pub bandwidth: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+    pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
@@ -8814,7 +8814,7 @@ impl CreateInterconnectOutput {
         self.bandwidth.as_deref()
     }
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
@@ -8886,7 +8886,7 @@ pub mod create_interconnect_output {
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) location: std::option::Option<std::string::String>,
         pub(crate) bandwidth: std::option::Option<std::string::String>,
-        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) lag_id: std::option::Option<std::string::String>,
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
@@ -9029,14 +9029,14 @@ pub mod create_interconnect_output {
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-        pub fn loa_issue_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.loa_issue_time = input;
             self
@@ -9429,7 +9429,7 @@ pub struct CreateConnectionOutput {
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+    pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
@@ -9534,7 +9534,7 @@ impl CreateConnectionOutput {
         self.partner_name.as_deref()
     }
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
@@ -9634,7 +9634,7 @@ pub mod create_connection_output {
         pub(crate) bandwidth: std::option::Option<std::string::String>,
         pub(crate) vlan: std::option::Option<i32>,
         pub(crate) partner_name: std::option::Option<std::string::String>,
-        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) lag_id: std::option::Option<std::string::String>,
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
@@ -9828,14 +9828,14 @@ pub mod create_connection_output {
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-        pub fn loa_issue_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.loa_issue_time = input;
             self
@@ -11906,7 +11906,7 @@ pub struct AssociateHostedConnectionOutput {
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+    pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
@@ -12011,7 +12011,7 @@ impl AssociateHostedConnectionOutput {
         self.partner_name.as_deref()
     }
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
@@ -12111,7 +12111,7 @@ pub mod associate_hosted_connection_output {
         pub(crate) bandwidth: std::option::Option<std::string::String>,
         pub(crate) vlan: std::option::Option<i32>,
         pub(crate) partner_name: std::option::Option<std::string::String>,
-        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) lag_id: std::option::Option<std::string::String>,
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
@@ -12305,14 +12305,14 @@ pub mod associate_hosted_connection_output {
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-        pub fn loa_issue_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.loa_issue_time = input;
             self
@@ -12576,7 +12576,7 @@ pub struct AssociateConnectionWithLagOutput {
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+    pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
@@ -12681,7 +12681,7 @@ impl AssociateConnectionWithLagOutput {
         self.partner_name.as_deref()
     }
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
@@ -12781,7 +12781,7 @@ pub mod associate_connection_with_lag_output {
         pub(crate) bandwidth: std::option::Option<std::string::String>,
         pub(crate) vlan: std::option::Option<i32>,
         pub(crate) partner_name: std::option::Option<std::string::String>,
-        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) lag_id: std::option::Option<std::string::String>,
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
@@ -12975,14 +12975,14 @@ pub mod associate_connection_with_lag_output {
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-        pub fn loa_issue_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.loa_issue_time = input;
             self
@@ -14801,7 +14801,7 @@ pub struct AllocateHostedConnectionOutput {
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+    pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
@@ -14906,7 +14906,7 @@ impl AllocateHostedConnectionOutput {
         self.partner_name.as_deref()
     }
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
@@ -15006,7 +15006,7 @@ pub mod allocate_hosted_connection_output {
         pub(crate) bandwidth: std::option::Option<std::string::String>,
         pub(crate) vlan: std::option::Option<i32>,
         pub(crate) partner_name: std::option::Option<std::string::String>,
-        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) lag_id: std::option::Option<std::string::String>,
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
@@ -15200,14 +15200,14 @@ pub mod allocate_hosted_connection_output {
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-        pub fn loa_issue_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.loa_issue_time = input;
             self
@@ -15471,7 +15471,7 @@ pub struct AllocateConnectionOnInterconnectOutput {
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+    pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
@@ -15576,7 +15576,7 @@ impl AllocateConnectionOnInterconnectOutput {
         self.partner_name.as_deref()
     }
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
@@ -15676,7 +15676,7 @@ pub mod allocate_connection_on_interconnect_output {
         pub(crate) bandwidth: std::option::Option<std::string::String>,
         pub(crate) vlan: std::option::Option<i32>,
         pub(crate) partner_name: std::option::Option<std::string::String>,
-        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) lag_id: std::option::Option<std::string::String>,
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
@@ -15870,14 +15870,14 @@ pub mod allocate_connection_on_interconnect_output {
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-        pub fn loa_issue_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.loa_issue_time = input;
             self

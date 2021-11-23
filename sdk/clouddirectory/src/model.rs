@@ -542,7 +542,7 @@ pub enum TypedAttributeValue {
     /// <p>A Boolean data value.</p>
     BooleanValue(bool),
     /// <p>A date and time value.</p>
-    DatetimeValue(aws_smithy_types::Instant),
+    DatetimeValue(aws_smithy_types::DateTime),
     /// <p>A number data value.</p>
     NumberValue(std::string::String),
     /// <p>A string data value.</p>
@@ -562,9 +562,9 @@ impl TypedAttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_binary_value(&self) -> std::result::Result<&aws_smithy_types::Blob, &Self> {
         if let TypedAttributeValue::BinaryValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`BinaryValue`](crate::model::TypedAttributeValue::BinaryValue).
@@ -575,22 +575,22 @@ impl TypedAttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
         if let TypedAttributeValue::BooleanValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`BooleanValue`](crate::model::TypedAttributeValue::BooleanValue).
     pub fn is_boolean_value(&self) -> bool {
         self.as_boolean_value().is_ok()
     }
-    /// Tries to convert the enum instance into [`DatetimeValue`](crate::model::TypedAttributeValue::DatetimeValue), extracting the inner [`Instant`](aws_smithy_types::Instant).
+    /// Tries to convert the enum instance into [`DatetimeValue`](crate::model::TypedAttributeValue::DatetimeValue), extracting the inner [`DateTime`](aws_smithy_types::DateTime).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_datetime_value(&self) -> std::result::Result<&aws_smithy_types::Instant, &Self> {
+    pub fn as_datetime_value(&self) -> std::result::Result<&aws_smithy_types::DateTime, &Self> {
         if let TypedAttributeValue::DatetimeValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`DatetimeValue`](crate::model::TypedAttributeValue::DatetimeValue).
@@ -601,9 +601,9 @@ impl TypedAttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_number_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let TypedAttributeValue::NumberValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`NumberValue`](crate::model::TypedAttributeValue::NumberValue).
@@ -614,9 +614,9 @@ impl TypedAttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let TypedAttributeValue::StringValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`StringValue`](crate::model::TypedAttributeValue::StringValue).
@@ -3129,7 +3129,7 @@ pub struct Directory {
     /// <p>The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.</p>
     pub state: std::option::Option<crate::model::DirectoryState>,
     /// <p>The date and time when the directory was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Directory {
     /// <p>The name of the directory.</p>
@@ -3146,7 +3146,7 @@ impl Directory {
         self.state.as_ref()
     }
     /// <p>The date and time when the directory was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
@@ -3169,7 +3169,7 @@ pub mod directory {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) directory_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::DirectoryState>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the directory.</p>
@@ -3211,14 +3211,14 @@ pub mod directory {
             self
         }
         /// <p>The date and time when the directory was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time when the directory was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self

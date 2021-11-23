@@ -1857,9 +1857,9 @@ pub fn deser_operation_crate_operation_get_predictive_scaling_forecast(
             s if s.matches("UpdateTime") /* UpdateTime com.amazonaws.autoscaling.synthetic#GetPredictiveScalingForecastOutput$UpdateTime */ =>  {
                 let var_54 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.autoscaling#TimestampType`)"))
                         ?
@@ -2678,9 +2678,9 @@ pub fn deser_structure_crate_model_activity(
             s if s.matches("StartTime") /* StartTime com.amazonaws.autoscaling#Activity$StartTime */ =>  {
                 let var_70 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.autoscaling#TimestampType`)"))
                         ?
@@ -2692,9 +2692,9 @@ pub fn deser_structure_crate_model_activity(
             s if s.matches("EndTime") /* EndTime com.amazonaws.autoscaling#Activity$EndTime */ =>  {
                 let var_71 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.autoscaling#TimestampType`)"))
                         ?
@@ -3081,9 +3081,9 @@ pub fn deser_structure_crate_model_auto_scaling_group(
             s if s.matches("CreatedTime") /* CreatedTime com.amazonaws.autoscaling#AutoScalingGroup$CreatedTime */ =>  {
                 let var_98 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.autoscaling#TimestampType`)"))
                         ?
@@ -3491,9 +3491,9 @@ pub fn deser_structure_crate_model_instance_refresh(
             s if s.matches("StartTime") /* StartTime com.amazonaws.autoscaling#InstanceRefresh$StartTime */ =>  {
                 let var_128 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.autoscaling#TimestampType`)"))
                         ?
@@ -3505,9 +3505,9 @@ pub fn deser_structure_crate_model_instance_refresh(
             s if s.matches("EndTime") /* EndTime com.amazonaws.autoscaling#InstanceRefresh$EndTime */ =>  {
                 let var_129 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.autoscaling#TimestampType`)"))
                         ?
@@ -3775,9 +3775,9 @@ pub fn deser_structure_crate_model_launch_configuration(
             s if s.matches("CreatedTime") /* CreatedTime com.amazonaws.autoscaling#LaunchConfiguration$CreatedTime */ =>  {
                 let var_150 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.autoscaling#TimestampType`)"))
                         ?
@@ -4457,9 +4457,9 @@ pub fn deser_structure_crate_model_scheduled_update_group_action(
             s if s.matches("Time") /* Time com.amazonaws.autoscaling#ScheduledUpdateGroupAction$Time */ =>  {
                 let var_193 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.autoscaling#TimestampType`)"))
                         ?
@@ -4471,9 +4471,9 @@ pub fn deser_structure_crate_model_scheduled_update_group_action(
             s if s.matches("StartTime") /* StartTime com.amazonaws.autoscaling#ScheduledUpdateGroupAction$StartTime */ =>  {
                 let var_194 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.autoscaling#TimestampType`)"))
                         ?
@@ -4485,9 +4485,9 @@ pub fn deser_structure_crate_model_scheduled_update_group_action(
             s if s.matches("EndTime") /* EndTime com.amazonaws.autoscaling#ScheduledUpdateGroupAction$EndTime */ =>  {
                 let var_195 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.autoscaling#TimestampType`)"))
                         ?
@@ -4828,15 +4828,15 @@ pub fn deser_structure_crate_model_load_forecast(
 
 pub fn deser_list_com_amazonaws_autoscaling_predictive_scaling_forecast_timestamps(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<aws_smithy_types::Instant>, aws_smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<aws_smithy_types::DateTime>, aws_smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#PredictiveScalingForecastTimestamps$member */ =>  {
                 out.push(
-                    aws_smithy_types::Instant::from_str(
+                    aws_smithy_types::DateTime::from_str(
                         aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        , aws_smithy_types::instant::Format::DateTime
+                        , aws_smithy_types::date_time::Format::DateTime
                     )
                     .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.autoscaling#TimestampType`)"))
                     ?

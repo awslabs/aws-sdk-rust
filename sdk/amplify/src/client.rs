@@ -1928,7 +1928,7 @@ pub mod fluent_builders {
         }
         /// <p> The time at which the logs should start. The time range specified is inclusive of the
         /// start time. </p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
@@ -1936,14 +1936,14 @@ pub mod fluent_builders {
         /// start time. </p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
         }
         /// <p> The time at which the logs should end. The time range specified is inclusive of the
         /// end time. </p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
@@ -1951,7 +1951,7 @@ pub mod fluent_builders {
         /// end time. </p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -3527,14 +3527,14 @@ pub mod fluent_builders {
             self
         }
         /// <p> The commit date and time for the job. </p>
-        pub fn commit_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn commit_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.commit_time(inp);
             self
         }
         /// <p> The commit date and time for the job. </p>
         pub fn set_commit_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_commit_time(input);
             self
@@ -4614,7 +4614,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -4637,7 +4643,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

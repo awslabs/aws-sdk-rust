@@ -181,9 +181,9 @@ pub struct ApplicationDetail {
     /// <code>ApplicationVersionId</code> each time you update the application.</p>
     pub application_version_id: std::option::Option<i64>,
     /// <p>The current timestamp when the application was created.</p>
-    pub create_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current timestamp when the application was last updated.</p>
-    pub last_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Describes details about the application code and starting parameters for a Kinesis Data Analytics application.</p>
     pub application_configuration_description:
         std::option::Option<crate::model::ApplicationConfigurationDescription>,
@@ -237,11 +237,11 @@ impl ApplicationDetail {
         self.application_version_id
     }
     /// <p>The current timestamp when the application was created.</p>
-    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_timestamp.as_ref()
     }
     /// <p>The current timestamp when the application was last updated.</p>
-    pub fn last_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_timestamp.as_ref()
     }
     /// <p>Describes details about the application code and starting parameters for a Kinesis Data Analytics application.</p>
@@ -340,8 +340,8 @@ pub mod application_detail {
         pub(crate) service_execution_role: std::option::Option<std::string::String>,
         pub(crate) application_status: std::option::Option<crate::model::ApplicationStatus>,
         pub(crate) application_version_id: std::option::Option<i64>,
-        pub(crate) create_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) application_configuration_description:
             std::option::Option<crate::model::ApplicationConfigurationDescription>,
         pub(crate) cloud_watch_logging_option_descriptions:
@@ -446,27 +446,27 @@ pub mod application_detail {
             self
         }
         /// <p>The current timestamp when the application was created.</p>
-        pub fn create_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_timestamp = Some(input);
             self
         }
         /// <p>The current timestamp when the application was created.</p>
         pub fn set_create_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_timestamp = input;
             self
         }
         /// <p>The current timestamp when the application was last updated.</p>
-        pub fn last_update_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_timestamp = Some(input);
             self
         }
         /// <p>The current timestamp when the application was last updated.</p>
         pub fn set_last_update_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_timestamp = input;
             self
@@ -10714,7 +10714,7 @@ pub struct SnapshotDetails {
     /// <p>The current application version ID when the snapshot was created.</p>
     pub application_version_id: std::option::Option<i64>,
     /// <p>The timestamp of the application snapshot.</p>
-    pub snapshot_creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub snapshot_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SnapshotDetails {
     /// <p>The identifier for the application snapshot.</p>
@@ -10730,7 +10730,7 @@ impl SnapshotDetails {
         self.application_version_id
     }
     /// <p>The timestamp of the application snapshot.</p>
-    pub fn snapshot_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn snapshot_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.snapshot_creation_timestamp.as_ref()
     }
 }
@@ -10756,7 +10756,7 @@ pub mod snapshot_details {
         pub(crate) snapshot_name: std::option::Option<std::string::String>,
         pub(crate) snapshot_status: std::option::Option<crate::model::SnapshotStatus>,
         pub(crate) application_version_id: std::option::Option<i64>,
-        pub(crate) snapshot_creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) snapshot_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier for the application snapshot.</p>
@@ -10796,14 +10796,14 @@ pub mod snapshot_details {
             self
         }
         /// <p>The timestamp of the application snapshot.</p>
-        pub fn snapshot_creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn snapshot_creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.snapshot_creation_timestamp = Some(input);
             self
         }
         /// <p>The timestamp of the application snapshot.</p>
         pub fn set_snapshot_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.snapshot_creation_timestamp = input;
             self

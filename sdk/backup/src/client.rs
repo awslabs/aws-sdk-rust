@@ -3779,27 +3779,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns only backup jobs that were created before the specified date.</p>
-        pub fn by_created_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn by_created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.by_created_before(inp);
             self
         }
         /// <p>Returns only backup jobs that were created before the specified date.</p>
         pub fn set_by_created_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_by_created_before(input);
             self
         }
         /// <p>Returns only backup jobs that were created after the specified date.</p>
-        pub fn by_created_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn by_created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.by_created_after(inp);
             self
         }
         /// <p>Returns only backup jobs that were created after the specified date.</p>
         pub fn set_by_created_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_by_created_after(input);
             self
@@ -4483,27 +4483,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns only copy jobs that were created before the specified date.</p>
-        pub fn by_created_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn by_created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.by_created_before(inp);
             self
         }
         /// <p>Returns only copy jobs that were created before the specified date.</p>
         pub fn set_by_created_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_by_created_before(input);
             self
         }
         /// <p>Returns only copy jobs that were created after the specified date.</p>
-        pub fn by_created_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn by_created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.by_created_after(inp);
             self
         }
         /// <p>Returns only copy jobs that were created after the specified date.</p>
         pub fn set_by_created_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_by_created_after(input);
             self
@@ -4940,27 +4940,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns only recovery points that were created before the specified timestamp.</p>
-        pub fn by_created_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn by_created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.by_created_before(inp);
             self
         }
         /// <p>Returns only recovery points that were created before the specified timestamp.</p>
         pub fn set_by_created_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_by_created_before(input);
             self
         }
         /// <p>Returns only recovery points that were created after the specified timestamp.</p>
-        pub fn by_created_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn by_created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.by_created_after(inp);
             self
         }
         /// <p>Returns only recovery points that were created after the specified timestamp.</p>
         pub fn set_by_created_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_by_created_after(input);
             self
@@ -5150,7 +5150,7 @@ pub mod fluent_builders {
         /// <p>Returns only report jobs that were created before the date and time specified in Unix
         /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
         /// Friday, January 26, 2018 12:11:30 AM.</p>
-        pub fn by_creation_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn by_creation_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.by_creation_before(inp);
             self
         }
@@ -5159,7 +5159,7 @@ pub mod fluent_builders {
         /// Friday, January 26, 2018 12:11:30 AM.</p>
         pub fn set_by_creation_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_by_creation_before(input);
             self
@@ -5167,7 +5167,7 @@ pub mod fluent_builders {
         /// <p>Returns only report jobs that were created after the date and time specified in Unix
         /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
         /// Friday, January 26, 2018 12:11:30 AM.</p>
-        pub fn by_creation_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn by_creation_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.by_creation_after(inp);
             self
         }
@@ -5176,7 +5176,7 @@ pub mod fluent_builders {
         /// Friday, January 26, 2018 12:11:30 AM.</p>
         pub fn set_by_creation_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_by_creation_after(input);
             self
@@ -5409,27 +5409,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns only restore jobs that were created before the specified date.</p>
-        pub fn by_created_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn by_created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.by_created_before(inp);
             self
         }
         /// <p>Returns only restore jobs that were created before the specified date.</p>
         pub fn set_by_created_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_by_created_before(input);
             self
         }
         /// <p>Returns only restore jobs that were created after the specified date.</p>
-        pub fn by_created_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn by_created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.by_created_after(inp);
             self
         }
         /// <p>Returns only restore jobs that were created after the specified date.</p>
         pub fn set_by_created_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_by_created_after(input);
             self
@@ -7694,7 +7694,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -7717,7 +7723,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

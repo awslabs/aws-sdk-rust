@@ -1,6 +1,7 @@
 [workspace]
 members = [
     "examples/apigateway",
+    "examples/apigatewaymanagement",
     "examples/applicationautoscaling",
     "examples/autoscaling",
     "examples/autoscalingplans",
@@ -79,6 +80,7 @@ members = [
     "sdk/aws-smithy-protocol-test",
     "sdk/aws-smithy-query",
     "sdk/aws-smithy-types",
+    "sdk/aws-smithy-types-convert",
     "sdk/aws-smithy-xml",
     "sdk/aws-types",
     "sdk/backup",

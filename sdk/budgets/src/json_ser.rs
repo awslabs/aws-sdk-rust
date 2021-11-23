@@ -599,7 +599,7 @@ pub fn serialize_structure_crate_model_budget(
     if let Some(var_146) = &input.last_updated_time {
         object
             .key("LastUpdatedTime")
-            .instant(var_146, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_146, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -722,12 +722,12 @@ pub fn serialize_structure_crate_model_time_period(
     if let Some(var_166) = &input.start {
         object
             .key("Start")
-            .instant(var_166, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_166, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_167) = &input.end {
         object
             .key("End")
-            .instant(var_167, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_167, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

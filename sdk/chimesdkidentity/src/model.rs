@@ -1215,9 +1215,9 @@ pub struct AppInstanceUserEndpoint {
     /// <p>The attributes of an <code>Endpoint</code>.</p>
     pub endpoint_attributes: std::option::Option<crate::model::EndpointAttributes>,
     /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was last updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
     /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
     pub allow_messages: std::option::Option<crate::model::AllowMessages>,
@@ -1270,11 +1270,11 @@ impl AppInstanceUserEndpoint {
         self.endpoint_attributes.as_ref()
     }
     /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
@@ -1335,8 +1335,8 @@ pub mod app_instance_user_endpoint {
         pub(crate) r#type: std::option::Option<crate::model::AppInstanceUserEndpointType>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_attributes: std::option::Option<crate::model::EndpointAttributes>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) allow_messages: std::option::Option<crate::model::AllowMessages>,
         pub(crate) endpoint_state: std::option::Option<crate::model::EndpointState>,
     }
@@ -1411,27 +1411,27 @@ pub mod app_instance_user_endpoint {
             self
         }
         /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was last updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was last updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self
@@ -1539,9 +1539,9 @@ pub struct AppInstanceUser {
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AppInstanceUser {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -1557,11 +1557,11 @@ impl AppInstanceUser {
         self.metadata.as_deref()
     }
     /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
 }
@@ -1585,8 +1585,8 @@ pub mod app_instance_user {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) metadata: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -1623,27 +1623,27 @@ pub mod app_instance_user {
             self
         }
         /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self
@@ -1676,7 +1676,7 @@ pub struct AppInstanceAdmin {
     /// <p>The ARN of the <code>AppInstance</code> for which the user is an administrator.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The time at which an administrator was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AppInstanceAdmin {
     /// <p>The <code>AppInstanceAdmin</code> data.</p>
@@ -1688,7 +1688,7 @@ impl AppInstanceAdmin {
         self.app_instance_arn.as_deref()
     }
     /// <p>The time at which an administrator was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
@@ -1709,7 +1709,7 @@ pub mod app_instance_admin {
     pub struct Builder {
         pub(crate) admin: std::option::Option<crate::model::Identity>,
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The <code>AppInstanceAdmin</code> data.</p>
@@ -1736,14 +1736,14 @@ pub mod app_instance_admin {
             self
         }
         /// <p>The time at which an administrator was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which an administrator was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
@@ -1775,9 +1775,9 @@ pub struct AppInstance {
     /// <p>The name of an <code>AppInstance</code>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The time at which an <code>AppInstance</code> was created. In epoch milliseconds.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time an <code>AppInstance</code> was last updated. In epoch milliseconds.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The metadata of an <code>AppInstance</code>.</p>
     pub metadata: std::option::Option<std::string::String>,
 }
@@ -1791,11 +1791,11 @@ impl AppInstance {
         self.name.as_deref()
     }
     /// <p>The time at which an <code>AppInstance</code> was created. In epoch milliseconds.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time an <code>AppInstance</code> was last updated. In epoch milliseconds.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The metadata of an <code>AppInstance</code>.</p>
@@ -1822,8 +1822,8 @@ pub mod app_instance {
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) metadata: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1851,27 +1851,27 @@ pub mod app_instance {
             self
         }
         /// <p>The time at which an <code>AppInstance</code> was created. In epoch milliseconds.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which an <code>AppInstance</code> was created. In epoch milliseconds.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time an <code>AppInstance</code> was last updated. In epoch milliseconds.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>The time an <code>AppInstance</code> was last updated. In epoch milliseconds.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self

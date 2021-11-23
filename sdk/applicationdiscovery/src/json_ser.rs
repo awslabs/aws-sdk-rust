@@ -460,12 +460,12 @@ pub fn serialize_structure_crate_input_start_export_task_input(
     if let Some(var_95) = &input.start_time {
         object
             .key("startTime")
-            .instant(var_95, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_95, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_96) = &input.end_time {
         object
             .key("endTime")
-            .instant(var_96, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_96, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

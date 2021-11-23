@@ -89,9 +89,9 @@ pub struct UpdatePatchBaselineOutput {
     /// with packages that include it as a dependency.</p>
     pub rejected_patches_action: std::option::Option<crate::model::PatchAction>,
     /// <p>The date when the patch baseline was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the patch baseline was last modified.</p>
-    pub modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A description of the patch baseline.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the patches to use to update the instances, including target operating
@@ -147,11 +147,11 @@ impl UpdatePatchBaselineOutput {
         self.rejected_patches_action.as_ref()
     }
     /// <p>The date when the patch baseline was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The date when the patch baseline was last modified.</p>
-    pub fn modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_date.as_ref()
     }
     /// <p>A description of the patch baseline.</p>
@@ -207,8 +207,8 @@ pub mod update_patch_baseline_output {
         pub(crate) approved_patches_enable_non_security: std::option::Option<bool>,
         pub(crate) rejected_patches: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) rejected_patches_action: std::option::Option<crate::model::PatchAction>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
     }
@@ -363,27 +363,27 @@ pub mod update_patch_baseline_output {
             self
         }
         /// <p>The date when the patch baseline was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date when the patch baseline was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The date when the patch baseline was last modified.</p>
-        pub fn modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.modified_date = Some(input);
             self
         }
         /// <p>The date when the patch baseline was last modified.</p>
         pub fn set_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.modified_date = input;
             self
@@ -4802,9 +4802,9 @@ pub struct GetPatchBaselineOutput {
     /// <p>Patch groups included in the patch baseline.</p>
     pub patch_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date the patch baseline was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the patch baseline was last modified.</p>
-    pub modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A description of the patch baseline.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the patches to use to update the instances, including target operating
@@ -4864,11 +4864,11 @@ impl GetPatchBaselineOutput {
         self.patch_groups.as_deref()
     }
     /// <p>The date the patch baseline was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The date the patch baseline was last modified.</p>
-    pub fn modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_date.as_ref()
     }
     /// <p>A description of the patch baseline.</p>
@@ -4926,8 +4926,8 @@ pub mod get_patch_baseline_output {
         pub(crate) rejected_patches: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) rejected_patches_action: std::option::Option<crate::model::PatchAction>,
         pub(crate) patch_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
     }
@@ -5101,27 +5101,27 @@ pub mod get_patch_baseline_output {
             self
         }
         /// <p>The date the patch baseline was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date the patch baseline was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The date the patch baseline was last modified.</p>
-        pub fn modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.modified_date = Some(input);
             self
         }
         /// <p>The date the patch baseline was last modified.</p>
         pub fn set_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.modified_date = input;
             self
@@ -6336,9 +6336,9 @@ pub struct GetMaintenanceWindowExecutionTaskInvocationOutput {
     /// values.</p>
     pub status_details: std::option::Option<std::string::String>,
     /// <p>The time that the task started running on the target.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the task finished running on the target.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge
     /// events raised while running tasks for these targets in this maintenance window.</p>
     pub owner_information: std::option::Option<std::string::String>,
@@ -6380,11 +6380,11 @@ impl GetMaintenanceWindowExecutionTaskInvocationOutput {
         self.status_details.as_deref()
     }
     /// <p>The time that the task started running on the target.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time that the task finished running on the target.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge
@@ -6429,8 +6429,8 @@ pub mod get_maintenance_window_execution_task_invocation_output {
         pub(crate) parameters: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
         pub(crate) status_details: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) owner_information: std::option::Option<std::string::String>,
         pub(crate) window_target_id: std::option::Option<std::string::String>,
     }
@@ -6536,27 +6536,27 @@ pub mod get_maintenance_window_execution_task_invocation_output {
             self
         }
         /// <p>The time that the task started running on the target.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The time that the task started running on the target.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time that the task finished running on the target.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time that the task finished running on the target.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -6670,9 +6670,9 @@ pub struct GetMaintenanceWindowExecutionTaskOutput {
     /// <p>The details explaining the status. Not available for all status values.</p>
     pub status_details: std::option::Option<std::string::String>,
     /// <p>The time the task execution started.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the task execution completed.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetMaintenanceWindowExecutionTaskOutput {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
@@ -6747,11 +6747,11 @@ impl GetMaintenanceWindowExecutionTaskOutput {
         self.status_details.as_deref()
     }
     /// <p>The time the task execution started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time the task execution completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -6798,8 +6798,8 @@ pub mod get_maintenance_window_execution_task_output {
         pub(crate) max_errors: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
         pub(crate) status_details: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the maintenance window execution that includes the task.</p>
@@ -6995,27 +6995,27 @@ pub mod get_maintenance_window_execution_task_output {
             self
         }
         /// <p>The time the task execution started.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The time the task execution started.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time the task execution completed.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time the task execution completed.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -7060,9 +7060,9 @@ pub struct GetMaintenanceWindowExecutionOutput {
     /// <p>The details explaining the status. Not available for all status values.</p>
     pub status_details: std::option::Option<std::string::String>,
     /// <p>The time the maintenance window started running.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the maintenance window finished running.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetMaintenanceWindowExecutionOutput {
     /// <p>The ID of the maintenance window execution.</p>
@@ -7082,11 +7082,11 @@ impl GetMaintenanceWindowExecutionOutput {
         self.status_details.as_deref()
     }
     /// <p>The time the maintenance window started running.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time the maintenance window finished running.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -7112,8 +7112,8 @@ pub mod get_maintenance_window_execution_output {
         pub(crate) task_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) status: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
         pub(crate) status_details: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the maintenance window execution.</p>
@@ -7175,27 +7175,27 @@ pub mod get_maintenance_window_execution_output {
             self
         }
         /// <p>The time the maintenance window started running.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The time the maintenance window started running.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time the maintenance window finished running.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time the maintenance window finished running.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -7260,9 +7260,9 @@ pub struct GetMaintenanceWindowOutput {
     /// <p>Indicates whether the maintenance window is enabled.</p>
     pub enabled: bool,
     /// <p>The date the maintenance window was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the maintenance window was last modified.</p>
-    pub modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetMaintenanceWindowOutput {
     /// <p>The ID of the created maintenance window.</p>
@@ -7327,11 +7327,11 @@ impl GetMaintenanceWindowOutput {
         self.enabled
     }
     /// <p>The date the maintenance window was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The date the maintenance window was last modified.</p>
-    pub fn modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_date.as_ref()
     }
 }
@@ -7378,8 +7378,8 @@ pub mod get_maintenance_window_output {
         pub(crate) cutoff: std::option::Option<i32>,
         pub(crate) allow_unassociated_targets: std::option::Option<bool>,
         pub(crate) enabled: std::option::Option<bool>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) modified_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the created maintenance window.</p>
@@ -7537,27 +7537,27 @@ pub mod get_maintenance_window_output {
             self
         }
         /// <p>The date the maintenance window was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date the maintenance window was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The date the maintenance window was last modified.</p>
-        pub fn modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.modified_date = Some(input);
             self
         }
         /// <p>The date the maintenance window was last modified.</p>
         pub fn set_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.modified_date = input;
             self
@@ -7771,7 +7771,7 @@ pub struct GetDocumentOutput {
     /// <p>The name of the SSM document.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The date the SSM document was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The friendly name of the SSM document. This value can differ for each version of the
     /// document. If you want to update this value, see <a>UpdateDocument</a>.</p>
     pub display_name: std::option::Option<std::string::String>,
@@ -7813,7 +7813,7 @@ impl GetDocumentOutput {
         self.name.as_deref()
     }
     /// <p>The date the SSM document was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The friendly name of the SSM document. This value can differ for each version of the
@@ -7899,7 +7899,7 @@ pub mod get_document_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) version_name: std::option::Option<std::string::String>,
         pub(crate) document_version: std::option::Option<std::string::String>,
@@ -7925,14 +7925,14 @@ pub mod get_document_output {
             self
         }
         /// <p>The date the SSM document was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date the SSM document was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self

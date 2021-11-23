@@ -1767,11 +1767,11 @@ pub struct Handshake {
     /// </ul>
     pub state: std::option::Option<crate::model::HandshakeState>,
     /// <p>The date and time that the handshake request was made.</p>
-    pub requested_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub requested_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the handshake expires. If the recipient of the handshake
     /// request fails to respond before the specified date and time, the handshake becomes
     /// inactive and is no longer valid.</p>
-    pub expiration_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub expiration_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of handshake, indicating what action occurs when the recipient accepts the
     /// handshake. The following handshake types are supported:</p>
     /// <ul>
@@ -1864,13 +1864,13 @@ impl Handshake {
         self.state.as_ref()
     }
     /// <p>The date and time that the handshake request was made.</p>
-    pub fn requested_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn requested_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.requested_timestamp.as_ref()
     }
     /// <p>The date and time that the handshake expires. If the recipient of the handshake
     /// request fails to respond before the specified date and time, the handshake becomes
     /// inactive and is no longer valid.</p>
-    pub fn expiration_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiration_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_timestamp.as_ref()
     }
     /// <p>The type of handshake, indicating what action occurs when the recipient accepts the
@@ -1932,8 +1932,8 @@ pub mod handshake {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) parties: std::option::Option<std::vec::Vec<crate::model::HandshakeParty>>,
         pub(crate) state: std::option::Option<crate::model::HandshakeState>,
-        pub(crate) requested_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) expiration_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) requested_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) expiration_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) action: std::option::Option<crate::model::ActionType>,
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::HandshakeResource>>,
     }
@@ -2077,14 +2077,14 @@ pub mod handshake {
             self
         }
         /// <p>The date and time that the handshake request was made.</p>
-        pub fn requested_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn requested_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.requested_timestamp = Some(input);
             self
         }
         /// <p>The date and time that the handshake request was made.</p>
         pub fn set_requested_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.requested_timestamp = input;
             self
@@ -2092,7 +2092,7 @@ pub mod handshake {
         /// <p>The date and time that the handshake expires. If the recipient of the handshake
         /// request fails to respond before the specified date and time, the handshake becomes
         /// inactive and is no longer valid.</p>
-        pub fn expiration_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiration_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_timestamp = Some(input);
             self
         }
@@ -2101,7 +2101,7 @@ pub mod handshake {
         /// inactive and is no longer valid.</p>
         pub fn set_expiration_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiration_timestamp = input;
             self
@@ -2945,7 +2945,7 @@ pub struct DelegatedService {
     /// <i>servicename</i>.amazonaws.com</code>.</p>
     pub service_principal: std::option::Option<std::string::String>,
     /// <p>The date that the account became a delegated administrator for this service. </p>
-    pub delegation_enabled_date: std::option::Option<aws_smithy_types::Instant>,
+    pub delegation_enabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DelegatedService {
     /// <p>The name of an AWS service that can request an operation for the specified service.
@@ -2956,7 +2956,7 @@ impl DelegatedService {
         self.service_principal.as_deref()
     }
     /// <p>The date that the account became a delegated administrator for this service. </p>
-    pub fn delegation_enabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn delegation_enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.delegation_enabled_date.as_ref()
     }
 }
@@ -2975,7 +2975,7 @@ pub mod delegated_service {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_principal: std::option::Option<std::string::String>,
-        pub(crate) delegation_enabled_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) delegation_enabled_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of an AWS service that can request an operation for the specified service.
@@ -2998,14 +2998,14 @@ pub mod delegated_service {
             self
         }
         /// <p>The date that the account became a delegated administrator for this service. </p>
-        pub fn delegation_enabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn delegation_enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.delegation_enabled_date = Some(input);
             self
         }
         /// <p>The date that the account became a delegated administrator for this service. </p>
         pub fn set_delegation_enabled_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.delegation_enabled_date = input;
             self
@@ -3046,9 +3046,9 @@ pub struct DelegatedAdministrator {
     pub joined_method: std::option::Option<crate::model::AccountJoinedMethod>,
     /// <p>The date when the delegated administrator's account became a part of the
     /// organization.</p>
-    pub joined_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub joined_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the account was made a delegated administrator.</p>
-    pub delegation_enabled_date: std::option::Option<aws_smithy_types::Instant>,
+    pub delegation_enabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DelegatedAdministrator {
     /// <p>The unique identifier (ID) of the delegated administrator's account.</p>
@@ -3079,11 +3079,11 @@ impl DelegatedAdministrator {
     }
     /// <p>The date when the delegated administrator's account became a part of the
     /// organization.</p>
-    pub fn joined_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn joined_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.joined_timestamp.as_ref()
     }
     /// <p>The date when the account was made a delegated administrator.</p>
-    pub fn delegation_enabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn delegation_enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.delegation_enabled_date.as_ref()
     }
 }
@@ -3113,8 +3113,8 @@ pub mod delegated_administrator {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::AccountStatus>,
         pub(crate) joined_method: std::option::Option<crate::model::AccountJoinedMethod>,
-        pub(crate) joined_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) delegation_enabled_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) joined_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) delegation_enabled_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The unique identifier (ID) of the delegated administrator's account.</p>
@@ -3189,7 +3189,7 @@ pub mod delegated_administrator {
         }
         /// <p>The date when the delegated administrator's account became a part of the
         /// organization.</p>
-        pub fn joined_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn joined_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.joined_timestamp = Some(input);
             self
         }
@@ -3197,20 +3197,20 @@ pub mod delegated_administrator {
         /// organization.</p>
         pub fn set_joined_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.joined_timestamp = input;
             self
         }
         /// <p>The date when the account was made a delegated administrator.</p>
-        pub fn delegation_enabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn delegation_enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.delegation_enabled_date = Some(input);
             self
         }
         /// <p>The date when the account was made a delegated administrator.</p>
         pub fn set_delegation_enabled_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.delegation_enabled_date = input;
             self
@@ -3363,9 +3363,9 @@ pub struct CreateAccountStatus {
     /// <p>The status of the asynchronous request to create an AWS account.</p>
     pub state: std::option::Option<crate::model::CreateAccountState>,
     /// <p>The date and time that the request was made for the account creation.</p>
-    pub requested_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub requested_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the account was created and the request completed.</p>
-    pub completed_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub completed_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the account was created successfully, the unique identifier (ID) of the new
     /// account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
@@ -3452,11 +3452,11 @@ impl CreateAccountStatus {
         self.state.as_ref()
     }
     /// <p>The date and time that the request was made for the account creation.</p>
-    pub fn requested_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn requested_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.requested_timestamp.as_ref()
     }
     /// <p>The date and time that the account was created and the request completed.</p>
-    pub fn completed_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completed_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed_timestamp.as_ref()
     }
     /// <p>If the account was created successfully, the unique identifier (ID) of the new
@@ -3556,8 +3556,8 @@ pub mod create_account_status {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) account_name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::CreateAccountState>,
-        pub(crate) requested_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completed_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) requested_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completed_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) gov_cloud_account_id: std::option::Option<std::string::String>,
         pub(crate) failure_reason: std::option::Option<crate::model::CreateAccountFailureReason>,
@@ -3605,27 +3605,27 @@ pub mod create_account_status {
             self
         }
         /// <p>The date and time that the request was made for the account creation.</p>
-        pub fn requested_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn requested_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.requested_timestamp = Some(input);
             self
         }
         /// <p>The date and time that the request was made for the account creation.</p>
         pub fn set_requested_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.requested_timestamp = input;
             self
         }
         /// <p>The date and time that the account was created and the request completed.</p>
-        pub fn completed_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completed_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completed_timestamp = Some(input);
             self
         }
         /// <p>The date and time that the account was created and the request completed.</p>
         pub fn set_completed_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completed_timestamp = input;
             self
@@ -4192,7 +4192,7 @@ pub struct EnabledServicePrincipal {
     /// <i>servicename</i>.amazonaws.com</code>.</p>
     pub service_principal: std::option::Option<std::string::String>,
     /// <p>The date that the service principal was enabled for integration with AWS Organizations.</p>
-    pub date_enabled: std::option::Option<aws_smithy_types::Instant>,
+    pub date_enabled: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EnabledServicePrincipal {
     /// <p>The name of the service principal. This is typically in the form of a URL, such as:
@@ -4202,7 +4202,7 @@ impl EnabledServicePrincipal {
         self.service_principal.as_deref()
     }
     /// <p>The date that the service principal was enabled for integration with AWS Organizations.</p>
-    pub fn date_enabled(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_enabled(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_enabled.as_ref()
     }
 }
@@ -4221,7 +4221,7 @@ pub mod enabled_service_principal {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_principal: std::option::Option<std::string::String>,
-        pub(crate) date_enabled: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_enabled: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the service principal. This is typically in the form of a URL, such as:
@@ -4242,14 +4242,14 @@ pub mod enabled_service_principal {
             self
         }
         /// <p>The date that the service principal was enabled for integration with AWS Organizations.</p>
-        pub fn date_enabled(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_enabled(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_enabled = Some(input);
             self
         }
         /// <p>The date that the service principal was enabled for integration with AWS Organizations.</p>
         pub fn set_date_enabled(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_enabled = input;
             self
@@ -4297,7 +4297,7 @@ pub struct Account {
     /// <p>The method by which the account joined the organization.</p>
     pub joined_method: std::option::Option<crate::model::AccountJoinedMethod>,
     /// <p>The date the account became a part of the organization.</p>
-    pub joined_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub joined_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Account {
     /// <p>The unique identifier (ID) of the account.</p>
@@ -4334,7 +4334,7 @@ impl Account {
         self.joined_method.as_ref()
     }
     /// <p>The date the account became a part of the organization.</p>
-    pub fn joined_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn joined_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.joined_timestamp.as_ref()
     }
 }
@@ -4363,7 +4363,7 @@ pub mod account {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::AccountStatus>,
         pub(crate) joined_method: std::option::Option<crate::model::AccountJoinedMethod>,
-        pub(crate) joined_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) joined_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The unique identifier (ID) of the account.</p>
@@ -4451,14 +4451,14 @@ pub mod account {
             self
         }
         /// <p>The date the account became a part of the organization.</p>
-        pub fn joined_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn joined_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.joined_timestamp = Some(input);
             self
         }
         /// <p>The date the account became a part of the organization.</p>
         pub fn set_joined_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.joined_timestamp = input;
             self
@@ -4914,7 +4914,7 @@ pub struct EffectivePolicy {
     /// <p>The text content of the policy.</p>
     pub policy_content: std::option::Option<std::string::String>,
     /// <p>The time of the last update to this policy.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The account ID of the policy target. </p>
     pub target_id: std::option::Option<std::string::String>,
     /// <p>The policy type.</p>
@@ -4926,7 +4926,7 @@ impl EffectivePolicy {
         self.policy_content.as_deref()
     }
     /// <p>The time of the last update to this policy.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The account ID of the policy target. </p>
@@ -4955,7 +4955,7 @@ pub mod effective_policy {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_content: std::option::Option<std::string::String>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) target_id: std::option::Option<std::string::String>,
         pub(crate) policy_type: std::option::Option<crate::model::EffectivePolicyType>,
     }
@@ -4974,14 +4974,14 @@ pub mod effective_policy {
             self
         }
         /// <p>The time of the last update to this policy.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>The time of the last update to this policy.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self

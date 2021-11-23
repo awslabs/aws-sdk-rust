@@ -48,10 +48,12 @@ const NAUGHTY_STRINGS: &str = include_str!("blns/blns.txt");
 
 #[tokio::test]
 async fn test_s3_signer_with_naughty_string_metadata() -> Result<(), aws_sdk_s3::Error> {
-    let creds = Credentials::from_keys(
+    let creds = Credentials::new(
         "ANOTREAL",
         "notrealrnrELgWzOk3IfjzDKtFBhDby",
         Some("notarealsessiontoken".to_string()),
+        None,
+        "test",
     );
     let conf = aws_sdk_s3::Config::builder()
         .credentials_provider(creds)

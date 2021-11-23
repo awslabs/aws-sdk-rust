@@ -1035,7 +1035,7 @@ pub struct GetNetworkRoutesOutput {
     /// <p>The route table type.</p>
     pub route_table_type: std::option::Option<crate::model::RouteTableType>,
     /// <p>The route table creation time.</p>
-    pub route_table_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub route_table_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The network routes.</p>
     pub network_routes: std::option::Option<std::vec::Vec<crate::model::NetworkRoute>>,
 }
@@ -1049,7 +1049,7 @@ impl GetNetworkRoutesOutput {
         self.route_table_type.as_ref()
     }
     /// <p>The route table creation time.</p>
-    pub fn route_table_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn route_table_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.route_table_timestamp.as_ref()
     }
     /// <p>The network routes.</p>
@@ -1075,7 +1075,7 @@ pub mod get_network_routes_output {
     pub struct Builder {
         pub(crate) route_table_arn: std::option::Option<std::string::String>,
         pub(crate) route_table_type: std::option::Option<crate::model::RouteTableType>,
-        pub(crate) route_table_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) route_table_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) network_routes: std::option::Option<std::vec::Vec<crate::model::NetworkRoute>>,
     }
     impl Builder {
@@ -1106,14 +1106,14 @@ pub mod get_network_routes_output {
             self
         }
         /// <p>The route table creation time.</p>
-        pub fn route_table_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn route_table_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.route_table_timestamp = Some(input);
             self
         }
         /// <p>The route table creation time.</p>
         pub fn set_route_table_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.route_table_timestamp = input;
             self

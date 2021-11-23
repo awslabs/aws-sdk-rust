@@ -3240,7 +3240,7 @@ pub struct ListWebhookItem {
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The date and time a webhook was last successfully triggered, in timestamp
     /// format.</p>
-    pub last_triggered: std::option::Option<aws_smithy_types::Instant>,
+    pub last_triggered: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the webhook.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>Specifies the tags applied to the webhook.</p>
@@ -3269,7 +3269,7 @@ impl ListWebhookItem {
     }
     /// <p>The date and time a webhook was last successfully triggered, in timestamp
     /// format.</p>
-    pub fn last_triggered(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_triggered(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_triggered.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the webhook.</p>
@@ -3304,7 +3304,7 @@ pub mod list_webhook_item {
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
-        pub(crate) last_triggered: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_triggered: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -3365,7 +3365,7 @@ pub mod list_webhook_item {
         }
         /// <p>The date and time a webhook was last successfully triggered, in timestamp
         /// format.</p>
-        pub fn last_triggered(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_triggered(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_triggered = Some(input);
             self
         }
@@ -3373,7 +3373,7 @@ pub mod list_webhook_item {
         /// format.</p>
         pub fn set_last_triggered(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_triggered = input;
             self
@@ -4078,7 +4078,7 @@ pub struct CurrentRevision {
     pub change_identifier: std::option::Option<std::string::String>,
     /// <p>The date and time when the most recent revision of the artifact was created, in
     /// timestamp format.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The summary of the most recent revision of the artifact.</p>
     pub revision_summary: std::option::Option<std::string::String>,
 }
@@ -4093,7 +4093,7 @@ impl CurrentRevision {
     }
     /// <p>The date and time when the most recent revision of the artifact was created, in
     /// timestamp format.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The summary of the most recent revision of the artifact.</p>
@@ -4119,7 +4119,7 @@ pub mod current_revision {
     pub struct Builder {
         pub(crate) revision: std::option::Option<std::string::String>,
         pub(crate) change_identifier: std::option::Option<std::string::String>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) revision_summary: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4148,7 +4148,7 @@ pub mod current_revision {
         }
         /// <p>The date and time when the most recent revision of the artifact was created, in
         /// timestamp format.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
@@ -4156,7 +4156,7 @@ pub mod current_revision {
         /// timestamp format.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
@@ -4512,7 +4512,7 @@ pub struct ActionRevision {
     pub revision_change_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the most recent version of the action was created, in
     /// timestamp format.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ActionRevision {
     /// <p>The system-generated unique ID that identifies the revision number of the
@@ -4527,7 +4527,7 @@ impl ActionRevision {
     }
     /// <p>The date and time when the most recent version of the action was created, in
     /// timestamp format.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
 }
@@ -4548,7 +4548,7 @@ pub mod action_revision {
     pub struct Builder {
         pub(crate) revision_id: std::option::Option<std::string::String>,
         pub(crate) revision_change_id: std::option::Option<std::string::String>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The system-generated unique ID that identifies the revision number of the
@@ -4580,7 +4580,7 @@ pub mod action_revision {
         }
         /// <p>The date and time when the most recent version of the action was created, in
         /// timestamp format.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
@@ -4588,7 +4588,7 @@ pub mod action_revision {
         /// timestamp format.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
@@ -5842,10 +5842,10 @@ pub struct PipelineSummary {
     /// <p>The version number of the pipeline.</p>
     pub version: std::option::Option<i32>,
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time of the last update to the pipeline, in timestamp
     /// format.</p>
-    pub updated: std::option::Option<aws_smithy_types::Instant>,
+    pub updated: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PipelineSummary {
     /// <p>The name of the pipeline.</p>
@@ -5857,12 +5857,12 @@ impl PipelineSummary {
         self.version
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date and time of the last update to the pipeline, in timestamp
     /// format.</p>
-    pub fn updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated.as_ref()
     }
 }
@@ -5884,8 +5884,8 @@ pub mod pipeline_summary {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<i32>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the pipeline.</p>
@@ -5909,21 +5909,21 @@ pub mod pipeline_summary {
             self
         }
         /// <p>The date and time the pipeline was created, in timestamp format.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p>The date and time the pipeline was created, in timestamp format.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
         }
         /// <p>The date and time of the last update to the pipeline, in timestamp
         /// format.</p>
-        pub fn updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated = Some(input);
             self
         }
@@ -5931,7 +5931,7 @@ pub mod pipeline_summary {
         /// format.</p>
         pub fn set_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated = input;
             self
@@ -5988,10 +5988,10 @@ pub struct PipelineExecutionSummary {
     /// </ul>
     pub status: std::option::Option<crate::model::PipelineExecutionStatus>,
     /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time of the last change to the pipeline execution, in timestamp
     /// format.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of the source artifact revisions that initiated a pipeline
     /// execution.</p>
     pub source_revisions: std::option::Option<std::vec::Vec<crate::model::SourceRevision>>,
@@ -6036,12 +6036,12 @@ impl PipelineExecutionSummary {
         self.status.as_ref()
     }
     /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time of the last change to the pipeline execution, in timestamp
     /// format.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>A list of the source artifact revisions that initiated a pipeline
@@ -6080,8 +6080,8 @@ pub mod pipeline_execution_summary {
     pub struct Builder {
         pub(crate) pipeline_execution_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::PipelineExecutionStatus>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_revisions:
             std::option::Option<std::vec::Vec<crate::model::SourceRevision>>,
         pub(crate) trigger: std::option::Option<crate::model::ExecutionTrigger>,
@@ -6165,21 +6165,21 @@ pub mod pipeline_execution_summary {
             self
         }
         /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The date and time of the last change to the pipeline execution, in timestamp
         /// format.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
@@ -6187,7 +6187,7 @@ pub mod pipeline_execution_summary {
         /// format.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -7389,9 +7389,9 @@ pub struct ActionExecutionDetail {
     /// <p>The name of the action.</p>
     pub action_name: std::option::Option<std::string::String>,
     /// <p>The start time of the action execution.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last update time of the action execution.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The status of the action execution. Status categories are <code>InProgress</code>,
     /// <code>Succeeded</code>, and <code>Failed</code>.</p>
     pub status: std::option::Option<crate::model::ActionExecutionStatus>,
@@ -7423,11 +7423,11 @@ impl ActionExecutionDetail {
         self.action_name.as_deref()
     }
     /// <p>The start time of the action execution.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The last update time of the action execution.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p> The status of the action execution. Status categories are <code>InProgress</code>,
@@ -7472,8 +7472,8 @@ pub mod action_execution_detail {
         pub(crate) pipeline_version: std::option::Option<i32>,
         pub(crate) stage_name: std::option::Option<std::string::String>,
         pub(crate) action_name: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::ActionExecutionStatus>,
         pub(crate) input: std::option::Option<crate::model::ActionExecutionInput>,
         pub(crate) output: std::option::Option<crate::model::ActionExecutionOutput>,
@@ -7536,27 +7536,27 @@ pub mod action_execution_detail {
             self
         }
         /// <p>The start time of the action execution.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The start time of the action execution.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The last update time of the action execution.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The last update time of the action execution.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -9258,7 +9258,7 @@ pub struct ActionExecution {
     /// <p>A summary of the run of the action.</p>
     pub summary: std::option::Option<std::string::String>,
     /// <p>The last status change of the action.</p>
-    pub last_status_change: std::option::Option<aws_smithy_types::Instant>,
+    pub last_status_change: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The system-generated token used to identify a unique approval request. The token
     /// for each open approval request can be obtained using the <code>GetPipelineState</code>
     /// command. It is used to validate that the approval request corresponding to this token is
@@ -9296,7 +9296,7 @@ impl ActionExecution {
         self.summary.as_deref()
     }
     /// <p>The last status change of the action.</p>
-    pub fn last_status_change(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_status_change(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_status_change.as_ref()
     }
     /// <p>The system-generated token used to identify a unique approval request. The token
@@ -9353,7 +9353,7 @@ pub mod action_execution {
         pub(crate) action_execution_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ActionExecutionStatus>,
         pub(crate) summary: std::option::Option<std::string::String>,
-        pub(crate) last_status_change: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_status_change: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) token: std::option::Option<std::string::String>,
         pub(crate) last_updated_by: std::option::Option<std::string::String>,
         pub(crate) external_execution_id: std::option::Option<std::string::String>,
@@ -9411,14 +9411,14 @@ pub mod action_execution {
             self
         }
         /// <p>The last status change of the action.</p>
-        pub fn last_status_change(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_status_change(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_status_change = Some(input);
             self
         }
         /// <p>The last status change of the action.</p>
         pub fn set_last_status_change(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_status_change = input;
             self
@@ -9611,7 +9611,7 @@ pub struct TransitionState {
     /// <p>The ID of the user who last changed the transition state.</p>
     pub last_changed_by: std::option::Option<std::string::String>,
     /// <p>The timestamp when the transition state was last changed.</p>
-    pub last_changed_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_changed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user-specified reason why the transition between two stages of a pipeline was
     /// disabled.</p>
     pub disabled_reason: std::option::Option<std::string::String>,
@@ -9627,7 +9627,7 @@ impl TransitionState {
         self.last_changed_by.as_deref()
     }
     /// <p>The timestamp when the transition state was last changed.</p>
-    pub fn last_changed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_changed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_changed_at.as_ref()
     }
     /// <p>The user-specified reason why the transition between two stages of a pipeline was
@@ -9654,7 +9654,7 @@ pub mod transition_state {
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) last_changed_by: std::option::Option<std::string::String>,
-        pub(crate) last_changed_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_changed_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) disabled_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -9684,14 +9684,14 @@ pub mod transition_state {
             self
         }
         /// <p>The timestamp when the transition state was last changed.</p>
-        pub fn last_changed_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_changed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_changed_at = Some(input);
             self
         }
         /// <p>The timestamp when the transition state was last changed.</p>
         pub fn set_last_changed_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_changed_at = input;
             self
@@ -10042,7 +10042,7 @@ pub struct ArtifactRevision {
     pub revision_summary: std::option::Option<std::string::String>,
     /// <p>The date and time when the most recent revision of the artifact was created, in
     /// timestamp format.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The commit ID for the artifact revision. For artifacts stored in GitHub or AWS
     /// CodeCommit repositories, the commit ID is linked to a commit details page.</p>
     pub revision_url: std::option::Option<std::string::String>,
@@ -10071,7 +10071,7 @@ impl ArtifactRevision {
     }
     /// <p>The date and time when the most recent revision of the artifact was created, in
     /// timestamp format.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The commit ID for the artifact revision. For artifacts stored in GitHub or AWS
@@ -10105,7 +10105,7 @@ pub mod artifact_revision {
         pub(crate) revision_id: std::option::Option<std::string::String>,
         pub(crate) revision_change_identifier: std::option::Option<std::string::String>,
         pub(crate) revision_summary: std::option::Option<std::string::String>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) revision_url: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -10167,7 +10167,7 @@ pub mod artifact_revision {
         }
         /// <p>The date and time when the most recent revision of the artifact was created, in
         /// timestamp format.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
@@ -10175,7 +10175,7 @@ pub mod artifact_revision {
         /// timestamp format.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
@@ -10219,9 +10219,9 @@ pub struct PipelineMetadata {
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
     pub pipeline_arn: std::option::Option<std::string::String>,
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
-    pub updated: std::option::Option<aws_smithy_types::Instant>,
+    pub updated: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PipelineMetadata {
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
@@ -10229,11 +10229,11 @@ impl PipelineMetadata {
         self.pipeline_arn.as_deref()
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
-    pub fn updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated.as_ref()
     }
 }
@@ -10253,8 +10253,8 @@ pub mod pipeline_metadata {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_arn: std::option::Option<std::string::String>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
@@ -10268,27 +10268,27 @@ pub mod pipeline_metadata {
             self
         }
         /// <p>The date and time the pipeline was created, in timestamp format.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p>The date and time the pipeline was created, in timestamp format.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
         }
         /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
-        pub fn updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated = Some(input);
             self
         }
         /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
         pub fn set_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated = input;
             self

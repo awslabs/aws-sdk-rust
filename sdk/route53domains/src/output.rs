@@ -1027,7 +1027,7 @@ pub struct GetOperationDetailOutput {
     /// <p>The type of operation that was requested.</p>
     pub r#type: std::option::Option<crate::model::OperationType>,
     /// <p>The date when the request was submitted.</p>
-    pub submitted_date: std::option::Option<aws_smithy_types::Instant>,
+    pub submitted_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetOperationDetailOutput {
     /// <p>The identifier for the operation.</p>
@@ -1051,7 +1051,7 @@ impl GetOperationDetailOutput {
         self.r#type.as_ref()
     }
     /// <p>The date when the request was submitted.</p>
-    pub fn submitted_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submitted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_date.as_ref()
     }
 }
@@ -1078,7 +1078,7 @@ pub mod get_operation_detail_output {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::OperationType>,
-        pub(crate) submitted_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submitted_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier for the operation.</p>
@@ -1135,14 +1135,14 @@ pub mod get_operation_detail_output {
             self
         }
         /// <p>The date when the request was submitted.</p>
-        pub fn submitted_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submitted_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submitted_date = Some(input);
             self
         }
         /// <p>The date when the request was submitted.</p>
         pub fn set_submitted_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submitted_date = input;
             self
@@ -1286,13 +1286,13 @@ pub struct GetDomainDetailOutput {
     pub registry_domain_id: std::option::Option<std::string::String>,
     /// <p>The date when the domain was created as found in the response to a WHOIS query. The date and time is in
     /// Unix time format and Coordinated Universal time (UTC).</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
     /// Unix time format and Coordinated Universal time (UTC).</p>
-    pub updated_date: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the registration for the domain is set to expire. The date and time is in
     /// Unix time format and Coordinated Universal time (UTC).</p>
-    pub expiration_date: std::option::Option<aws_smithy_types::Instant>,
+    pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code>
     /// as the reseller. </p>
     pub reseller: std::option::Option<std::string::String>,
@@ -1383,17 +1383,17 @@ impl GetDomainDetailOutput {
     }
     /// <p>The date when the domain was created as found in the response to a WHOIS query. The date and time is in
     /// Unix time format and Coordinated Universal time (UTC).</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
     /// Unix time format and Coordinated Universal time (UTC).</p>
-    pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_date.as_ref()
     }
     /// <p>The date when the registration for the domain is set to expire. The date and time is in
     /// Unix time format and Coordinated Universal time (UTC).</p>
-    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
     /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code>
@@ -1465,9 +1465,9 @@ pub mod get_domain_detail_output {
         pub(crate) abuse_contact_email: std::option::Option<std::string::String>,
         pub(crate) abuse_contact_phone: std::option::Option<std::string::String>,
         pub(crate) registry_domain_id: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) expiration_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) expiration_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) reseller: std::option::Option<std::string::String>,
         pub(crate) dns_sec: std::option::Option<std::string::String>,
         pub(crate) status_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1685,7 +1685,7 @@ pub mod get_domain_detail_output {
         }
         /// <p>The date when the domain was created as found in the response to a WHOIS query. The date and time is in
         /// Unix time format and Coordinated Universal time (UTC).</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -1693,14 +1693,14 @@ pub mod get_domain_detail_output {
         /// Unix time format and Coordinated Universal time (UTC).</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
         /// Unix time format and Coordinated Universal time (UTC).</p>
-        pub fn updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_date = Some(input);
             self
         }
@@ -1708,14 +1708,14 @@ pub mod get_domain_detail_output {
         /// Unix time format and Coordinated Universal time (UTC).</p>
         pub fn set_updated_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_date = input;
             self
         }
         /// <p>The date when the registration for the domain is set to expire. The date and time is in
         /// Unix time format and Coordinated Universal time (UTC).</p>
-        pub fn expiration_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_date = Some(input);
             self
         }
@@ -1723,7 +1723,7 @@ pub mod get_domain_detail_output {
         /// Unix time format and Coordinated Universal time (UTC).</p>
         pub fn set_expiration_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiration_date = input;
             self

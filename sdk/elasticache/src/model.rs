@@ -68,7 +68,7 @@ pub struct ReplicationGroup {
     /// </p>
     pub auth_token_enabled: std::option::Option<bool>,
     /// <p>The date the auth token was last modified</p>
-    pub auth_token_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub auth_token_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>TransitEncryptionEnabled</code>
     /// after the cluster is created. To enable in-transit encryption on a cluster
@@ -103,7 +103,7 @@ pub struct ReplicationGroup {
     pub log_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::LogDeliveryConfiguration>>,
     /// <p>The date and time when the cluster was created.</p>
-    pub replication_group_create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub replication_group_create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ReplicationGroup {
     /// <p>The identifier for the replication group.</p>
@@ -207,7 +207,9 @@ impl ReplicationGroup {
         self.auth_token_enabled
     }
     /// <p>The date the auth token was last modified</p>
-    pub fn auth_token_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn auth_token_last_modified_date(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.auth_token_last_modified_date.as_ref()
     }
     /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
@@ -259,7 +261,9 @@ impl ReplicationGroup {
         self.log_delivery_configurations.as_deref()
     }
     /// <p>The date and time when the cluster was created.</p>
-    pub fn replication_group_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn replication_group_create_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.replication_group_create_time.as_ref()
     }
 }
@@ -339,7 +343,7 @@ pub mod replication_group {
         pub(crate) cluster_enabled: std::option::Option<bool>,
         pub(crate) cache_node_type: std::option::Option<std::string::String>,
         pub(crate) auth_token_enabled: std::option::Option<bool>,
-        pub(crate) auth_token_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) auth_token_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) transit_encryption_enabled: std::option::Option<bool>,
         pub(crate) at_rest_encryption_enabled: std::option::Option<bool>,
         pub(crate) member_clusters_outpost_arns:
@@ -349,7 +353,7 @@ pub mod replication_group {
         pub(crate) user_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) log_delivery_configurations:
             std::option::Option<std::vec::Vec<crate::model::LogDeliveryConfiguration>>,
-        pub(crate) replication_group_create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) replication_group_create_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier for the replication group.</p>
@@ -624,14 +628,14 @@ pub mod replication_group {
             self
         }
         /// <p>The date the auth token was last modified</p>
-        pub fn auth_token_last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn auth_token_last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.auth_token_last_modified_date = Some(input);
             self
         }
         /// <p>The date the auth token was last modified</p>
         pub fn set_auth_token_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.auth_token_last_modified_date = input;
             self
@@ -776,14 +780,14 @@ pub mod replication_group {
             self
         }
         /// <p>The date and time when the cluster was created.</p>
-        pub fn replication_group_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn replication_group_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.replication_group_create_time = Some(input);
             self
         }
         /// <p>The date and time when the cluster was created.</p>
         pub fn set_replication_group_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.replication_group_create_time = input;
             self
@@ -3451,7 +3455,7 @@ pub struct CacheCluster {
     /// <p>The outpost ARN in which the cache cluster is created.</p>
     pub preferred_outpost_arn: std::option::Option<std::string::String>,
     /// <p>The date and time when the cluster was created.</p>
-    pub cache_cluster_create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub cache_cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the weekly time range during which maintenance
     /// on the cluster is performed. It is specified as a range in
     /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
@@ -3538,7 +3542,7 @@ pub struct CacheCluster {
     /// </p>
     pub auth_token_enabled: std::option::Option<bool>,
     /// <p>The date the auth token was last modified</p>
-    pub auth_token_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub auth_token_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>TransitEncryptionEnabled</code>
     /// after the cluster is created. To enable in-transit encryption on a cluster
@@ -3841,7 +3845,7 @@ impl CacheCluster {
         self.preferred_outpost_arn.as_deref()
     }
     /// <p>The date and time when the cluster was created.</p>
-    pub fn cache_cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn cache_cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.cache_cluster_create_time.as_ref()
     }
     /// <p>Specifies the weekly time range during which maintenance
@@ -3963,7 +3967,9 @@ impl CacheCluster {
         self.auth_token_enabled
     }
     /// <p>The date the auth token was last modified</p>
-    pub fn auth_token_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn auth_token_last_modified_date(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.auth_token_last_modified_date.as_ref()
     }
     /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
@@ -4089,7 +4095,7 @@ pub mod cache_cluster {
         pub(crate) num_cache_nodes: std::option::Option<i32>,
         pub(crate) preferred_availability_zone: std::option::Option<std::string::String>,
         pub(crate) preferred_outpost_arn: std::option::Option<std::string::String>,
-        pub(crate) cache_cluster_create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) cache_cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) preferred_maintenance_window: std::option::Option<std::string::String>,
         pub(crate) pending_modified_values:
             std::option::Option<crate::model::PendingModifiedValues>,
@@ -4108,7 +4114,7 @@ pub mod cache_cluster {
         pub(crate) snapshot_retention_limit: std::option::Option<i32>,
         pub(crate) snapshot_window: std::option::Option<std::string::String>,
         pub(crate) auth_token_enabled: std::option::Option<bool>,
-        pub(crate) auth_token_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) auth_token_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) transit_encryption_enabled: std::option::Option<bool>,
         pub(crate) at_rest_encryption_enabled: std::option::Option<bool>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4708,14 +4714,14 @@ pub mod cache_cluster {
             self
         }
         /// <p>The date and time when the cluster was created.</p>
-        pub fn cache_cluster_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn cache_cluster_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.cache_cluster_create_time = Some(input);
             self
         }
         /// <p>The date and time when the cluster was created.</p>
         pub fn set_cache_cluster_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.cache_cluster_create_time = input;
             self
@@ -5033,14 +5039,14 @@ pub mod cache_cluster {
             self
         }
         /// <p>The date the auth token was last modified</p>
-        pub fn auth_token_last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn auth_token_last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.auth_token_last_modified_date = Some(input);
             self
         }
         /// <p>The date the auth token was last modified</p>
         pub fn set_auth_token_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.auth_token_last_modified_date = input;
             self
@@ -5500,7 +5506,7 @@ pub struct CacheNode {
     /// <p>The current state of this cache node, one of the following values: <code>available</code>, <code>creating</code>, <code>rebooting</code>, or <code>deleting</code>.</p>
     pub cache_node_status: std::option::Option<std::string::String>,
     /// <p>The date and time when the cache node was created.</p>
-    pub cache_node_create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub cache_node_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The hostname for connecting to this cache node.</p>
     pub endpoint: std::option::Option<crate::model::Endpoint>,
     /// <p>The status of the parameter group applied to this cache node.</p>
@@ -5523,7 +5529,7 @@ impl CacheNode {
         self.cache_node_status.as_deref()
     }
     /// <p>The date and time when the cache node was created.</p>
-    pub fn cache_node_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn cache_node_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.cache_node_create_time.as_ref()
     }
     /// <p>The hostname for connecting to this cache node.</p>
@@ -5573,7 +5579,7 @@ pub mod cache_node {
     pub struct Builder {
         pub(crate) cache_node_id: std::option::Option<std::string::String>,
         pub(crate) cache_node_status: std::option::Option<std::string::String>,
-        pub(crate) cache_node_create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) cache_node_create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) endpoint: std::option::Option<crate::model::Endpoint>,
         pub(crate) parameter_group_status: std::option::Option<std::string::String>,
         pub(crate) source_cache_node_id: std::option::Option<std::string::String>,
@@ -5608,14 +5614,14 @@ pub mod cache_node {
             self
         }
         /// <p>The date and time when the cache node was created.</p>
-        pub fn cache_node_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn cache_node_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.cache_node_create_time = Some(input);
             self
         }
         /// <p>The date and time when the cache node was created.</p>
         pub fn set_cache_node_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.cache_node_create_time = input;
             self
@@ -7022,7 +7028,7 @@ pub struct ReservedCacheNode {
     /// </ul>
     pub cache_node_type: std::option::Option<std::string::String>,
     /// <p>The time the reservation started.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The duration of the reservation in seconds.</p>
     pub duration: i32,
     /// <p>The fixed price charged for this reserved cache node.</p>
@@ -7271,7 +7277,7 @@ impl ReservedCacheNode {
         self.cache_node_type.as_deref()
     }
     /// <p>The time the reservation started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The duration of the reservation in seconds.</p>
@@ -7344,7 +7350,7 @@ pub mod reserved_cache_node {
         pub(crate) reserved_cache_node_id: std::option::Option<std::string::String>,
         pub(crate) reserved_cache_nodes_offering_id: std::option::Option<std::string::String>,
         pub(crate) cache_node_type: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) duration: std::option::Option<i32>,
         pub(crate) fixed_price: std::option::Option<f64>,
         pub(crate) usage_price: std::option::Option<f64>,
@@ -7826,14 +7832,14 @@ pub mod reserved_cache_node {
             self
         }
         /// <p>The time the reservation started.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The time the reservation started.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -9847,23 +9853,23 @@ pub struct UpdateAction {
     /// <p>The unique ID of the service update</p>
     pub service_update_name: std::option::Option<std::string::String>,
     /// <p>The date the update is first available</p>
-    pub service_update_release_date: std::option::Option<aws_smithy_types::Instant>,
+    pub service_update_release_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The severity of the service update</p>
     pub service_update_severity: std::option::Option<crate::model::ServiceUpdateSeverity>,
     /// <p>The status of the service update</p>
     pub service_update_status: std::option::Option<crate::model::ServiceUpdateStatus>,
     /// <p>The recommended date to apply the service update to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
-    pub service_update_recommended_apply_by_date: std::option::Option<aws_smithy_types::Instant>,
+    pub service_update_recommended_apply_by_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Reflects the nature of the service update  </p>
     pub service_update_type: std::option::Option<crate::model::ServiceUpdateType>,
     /// <p>The date that the service update is available to a replication group</p>
-    pub update_action_available_date: std::option::Option<aws_smithy_types::Instant>,
+    pub update_action_available_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the update action</p>
     pub update_action_status: std::option::Option<crate::model::UpdateActionStatus>,
     /// <p>The progress of the service update on the replication group</p>
     pub nodes_updated: std::option::Option<std::string::String>,
     /// <p>The date when the UpdateActionStatus was last modified</p>
-    pub update_action_status_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub update_action_status_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If yes, all nodes in the replication group have been updated by the recommended apply-by date. If no, at least one node in the replication group have not been updated by the recommended apply-by date. If N/A, the replication group was created after the
     /// recommended apply-by date.</p>
     pub sla_met: std::option::Option<crate::model::SlaMet>,
@@ -9892,7 +9898,7 @@ impl UpdateAction {
         self.service_update_name.as_deref()
     }
     /// <p>The date the update is first available</p>
-    pub fn service_update_release_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn service_update_release_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.service_update_release_date.as_ref()
     }
     /// <p>The severity of the service update</p>
@@ -9908,7 +9914,7 @@ impl UpdateAction {
     /// <p>The recommended date to apply the service update to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
     pub fn service_update_recommended_apply_by_date(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.service_update_recommended_apply_by_date.as_ref()
     }
     /// <p>Reflects the nature of the service update  </p>
@@ -9916,7 +9922,7 @@ impl UpdateAction {
         self.service_update_type.as_ref()
     }
     /// <p>The date that the service update is available to a replication group</p>
-    pub fn update_action_available_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_action_available_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_action_available_date.as_ref()
     }
     /// <p>The status of the update action</p>
@@ -9930,7 +9936,7 @@ impl UpdateAction {
     /// <p>The date when the UpdateActionStatus was last modified</p>
     pub fn update_action_status_modified_date(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_action_status_modified_date.as_ref()
     }
     /// <p>If yes, all nodes in the replication group have been updated by the recommended apply-by date. If no, at least one node in the replication group have not been updated by the recommended apply-by date. If N/A, the replication group was created after the
@@ -10003,18 +10009,18 @@ pub mod update_action {
         pub(crate) replication_group_id: std::option::Option<std::string::String>,
         pub(crate) cache_cluster_id: std::option::Option<std::string::String>,
         pub(crate) service_update_name: std::option::Option<std::string::String>,
-        pub(crate) service_update_release_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) service_update_release_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) service_update_severity:
             std::option::Option<crate::model::ServiceUpdateSeverity>,
         pub(crate) service_update_status: std::option::Option<crate::model::ServiceUpdateStatus>,
         pub(crate) service_update_recommended_apply_by_date:
-            std::option::Option<aws_smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) service_update_type: std::option::Option<crate::model::ServiceUpdateType>,
-        pub(crate) update_action_available_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_action_available_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_action_status: std::option::Option<crate::model::UpdateActionStatus>,
         pub(crate) nodes_updated: std::option::Option<std::string::String>,
         pub(crate) update_action_status_modified_date:
-            std::option::Option<aws_smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) sla_met: std::option::Option<crate::model::SlaMet>,
         pub(crate) node_group_update_status:
             std::option::Option<std::vec::Vec<crate::model::NodeGroupUpdateStatus>>,
@@ -10064,14 +10070,14 @@ pub mod update_action {
             self
         }
         /// <p>The date the update is first available</p>
-        pub fn service_update_release_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn service_update_release_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.service_update_release_date = Some(input);
             self
         }
         /// <p>The date the update is first available</p>
         pub fn set_service_update_release_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.service_update_release_date = input;
             self
@@ -10108,7 +10114,7 @@ pub mod update_action {
         /// <p>The recommended date to apply the service update to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
         pub fn service_update_recommended_apply_by_date(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.service_update_recommended_apply_by_date = Some(input);
             self
@@ -10116,7 +10122,7 @@ pub mod update_action {
         /// <p>The recommended date to apply the service update to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
         pub fn set_service_update_recommended_apply_by_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.service_update_recommended_apply_by_date = input;
             self
@@ -10135,14 +10141,14 @@ pub mod update_action {
             self
         }
         /// <p>The date that the service update is available to a replication group</p>
-        pub fn update_action_available_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_action_available_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_action_available_date = Some(input);
             self
         }
         /// <p>The date that the service update is available to a replication group</p>
         pub fn set_update_action_available_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_action_available_date = input;
             self
@@ -10176,7 +10182,7 @@ pub mod update_action {
         /// <p>The date when the UpdateActionStatus was last modified</p>
         pub fn update_action_status_modified_date(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.update_action_status_modified_date = Some(input);
             self
@@ -10184,7 +10190,7 @@ pub mod update_action {
         /// <p>The date when the UpdateActionStatus was last modified</p>
         pub fn set_update_action_status_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_action_status_modified_date = input;
             self
@@ -10309,17 +10315,17 @@ pub struct CacheNodeUpdateStatus {
     /// <p>The update status of the node</p>
     pub node_update_status: std::option::Option<crate::model::NodeUpdateStatus>,
     /// <p>The deletion date of the node</p>
-    pub node_deletion_date: std::option::Option<aws_smithy_types::Instant>,
+    pub node_deletion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The start date of the update for a node</p>
-    pub node_update_start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub node_update_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end date of the update for a node</p>
-    pub node_update_end_date: std::option::Option<aws_smithy_types::Instant>,
+    pub node_update_end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Reflects whether the update was initiated by the customer or automatically applied</p>
     pub node_update_initiated_by: std::option::Option<crate::model::NodeUpdateInitiatedBy>,
     /// <p>The date when the update is triggered</p>
-    pub node_update_initiated_date: std::option::Option<aws_smithy_types::Instant>,
+    pub node_update_initiated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the NodeUpdateStatus was last modified></p>
-    pub node_update_status_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub node_update_status_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CacheNodeUpdateStatus {
     /// <p>The node ID of the cache cluster</p>
@@ -10331,15 +10337,15 @@ impl CacheNodeUpdateStatus {
         self.node_update_status.as_ref()
     }
     /// <p>The deletion date of the node</p>
-    pub fn node_deletion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn node_deletion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.node_deletion_date.as_ref()
     }
     /// <p>The start date of the update for a node</p>
-    pub fn node_update_start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn node_update_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.node_update_start_date.as_ref()
     }
     /// <p>The end date of the update for a node</p>
-    pub fn node_update_end_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn node_update_end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.node_update_end_date.as_ref()
     }
     /// <p>Reflects whether the update was initiated by the customer or automatically applied</p>
@@ -10349,13 +10355,13 @@ impl CacheNodeUpdateStatus {
         self.node_update_initiated_by.as_ref()
     }
     /// <p>The date when the update is triggered</p>
-    pub fn node_update_initiated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn node_update_initiated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.node_update_initiated_date.as_ref()
     }
     /// <p>The date when the NodeUpdateStatus was last modified></p>
     pub fn node_update_status_modified_date(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.node_update_status_modified_date.as_ref()
     }
 }
@@ -10387,13 +10393,14 @@ pub mod cache_node_update_status {
     pub struct Builder {
         pub(crate) cache_node_id: std::option::Option<std::string::String>,
         pub(crate) node_update_status: std::option::Option<crate::model::NodeUpdateStatus>,
-        pub(crate) node_deletion_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) node_update_start_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) node_update_end_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) node_deletion_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) node_update_start_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) node_update_end_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) node_update_initiated_by:
             std::option::Option<crate::model::NodeUpdateInitiatedBy>,
-        pub(crate) node_update_initiated_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) node_update_status_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) node_update_initiated_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) node_update_status_modified_date:
+            std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The node ID of the cache cluster</p>
@@ -10423,40 +10430,40 @@ pub mod cache_node_update_status {
             self
         }
         /// <p>The deletion date of the node</p>
-        pub fn node_deletion_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn node_deletion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.node_deletion_date = Some(input);
             self
         }
         /// <p>The deletion date of the node</p>
         pub fn set_node_deletion_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.node_deletion_date = input;
             self
         }
         /// <p>The start date of the update for a node</p>
-        pub fn node_update_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn node_update_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.node_update_start_date = Some(input);
             self
         }
         /// <p>The start date of the update for a node</p>
         pub fn set_node_update_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.node_update_start_date = input;
             self
         }
         /// <p>The end date of the update for a node</p>
-        pub fn node_update_end_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn node_update_end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.node_update_end_date = Some(input);
             self
         }
         /// <p>The end date of the update for a node</p>
         pub fn set_node_update_end_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.node_update_end_date = input;
             self
@@ -10478,14 +10485,14 @@ pub mod cache_node_update_status {
             self
         }
         /// <p>The date when the update is triggered</p>
-        pub fn node_update_initiated_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn node_update_initiated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.node_update_initiated_date = Some(input);
             self
         }
         /// <p>The date when the update is triggered</p>
         pub fn set_node_update_initiated_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.node_update_initiated_date = input;
             self
@@ -10493,7 +10500,7 @@ pub mod cache_node_update_status {
         /// <p>The date when the NodeUpdateStatus was last modified></p>
         pub fn node_update_status_modified_date(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.node_update_status_modified_date = Some(input);
             self
@@ -10501,7 +10508,7 @@ pub mod cache_node_update_status {
         /// <p>The date when the NodeUpdateStatus was last modified></p>
         pub fn set_node_update_status_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.node_update_status_modified_date = input;
             self
@@ -10767,17 +10774,17 @@ pub struct NodeGroupMemberUpdateStatus {
     /// <p>The update status of the node</p>
     pub node_update_status: std::option::Option<crate::model::NodeUpdateStatus>,
     /// <p>The deletion date of the node</p>
-    pub node_deletion_date: std::option::Option<aws_smithy_types::Instant>,
+    pub node_deletion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The start date of the update for a node</p>
-    pub node_update_start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub node_update_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end date of the update for a node</p>
-    pub node_update_end_date: std::option::Option<aws_smithy_types::Instant>,
+    pub node_update_end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Reflects whether the update was initiated by the customer or automatically applied</p>
     pub node_update_initiated_by: std::option::Option<crate::model::NodeUpdateInitiatedBy>,
     /// <p>The date when the update is triggered</p>
-    pub node_update_initiated_date: std::option::Option<aws_smithy_types::Instant>,
+    pub node_update_initiated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the NodeUpdateStatus was last modified</p>
-    pub node_update_status_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub node_update_status_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl NodeGroupMemberUpdateStatus {
     /// <p>The cache cluster ID</p>
@@ -10793,15 +10800,15 @@ impl NodeGroupMemberUpdateStatus {
         self.node_update_status.as_ref()
     }
     /// <p>The deletion date of the node</p>
-    pub fn node_deletion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn node_deletion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.node_deletion_date.as_ref()
     }
     /// <p>The start date of the update for a node</p>
-    pub fn node_update_start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn node_update_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.node_update_start_date.as_ref()
     }
     /// <p>The end date of the update for a node</p>
-    pub fn node_update_end_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn node_update_end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.node_update_end_date.as_ref()
     }
     /// <p>Reflects whether the update was initiated by the customer or automatically applied</p>
@@ -10811,13 +10818,13 @@ impl NodeGroupMemberUpdateStatus {
         self.node_update_initiated_by.as_ref()
     }
     /// <p>The date when the update is triggered</p>
-    pub fn node_update_initiated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn node_update_initiated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.node_update_initiated_date.as_ref()
     }
     /// <p>The date when the NodeUpdateStatus was last modified</p>
     pub fn node_update_status_modified_date(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.node_update_status_modified_date.as_ref()
     }
 }
@@ -10851,13 +10858,14 @@ pub mod node_group_member_update_status {
         pub(crate) cache_cluster_id: std::option::Option<std::string::String>,
         pub(crate) cache_node_id: std::option::Option<std::string::String>,
         pub(crate) node_update_status: std::option::Option<crate::model::NodeUpdateStatus>,
-        pub(crate) node_deletion_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) node_update_start_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) node_update_end_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) node_deletion_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) node_update_start_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) node_update_end_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) node_update_initiated_by:
             std::option::Option<crate::model::NodeUpdateInitiatedBy>,
-        pub(crate) node_update_initiated_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) node_update_status_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) node_update_initiated_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) node_update_status_modified_date:
+            std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The cache cluster ID</p>
@@ -10900,40 +10908,40 @@ pub mod node_group_member_update_status {
             self
         }
         /// <p>The deletion date of the node</p>
-        pub fn node_deletion_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn node_deletion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.node_deletion_date = Some(input);
             self
         }
         /// <p>The deletion date of the node</p>
         pub fn set_node_deletion_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.node_deletion_date = input;
             self
         }
         /// <p>The start date of the update for a node</p>
-        pub fn node_update_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn node_update_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.node_update_start_date = Some(input);
             self
         }
         /// <p>The start date of the update for a node</p>
         pub fn set_node_update_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.node_update_start_date = input;
             self
         }
         /// <p>The end date of the update for a node</p>
-        pub fn node_update_end_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn node_update_end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.node_update_end_date = Some(input);
             self
         }
         /// <p>The end date of the update for a node</p>
         pub fn set_node_update_end_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.node_update_end_date = input;
             self
@@ -10955,14 +10963,14 @@ pub mod node_group_member_update_status {
             self
         }
         /// <p>The date when the update is triggered</p>
-        pub fn node_update_initiated_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn node_update_initiated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.node_update_initiated_date = Some(input);
             self
         }
         /// <p>The date when the update is triggered</p>
         pub fn set_node_update_initiated_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.node_update_initiated_date = input;
             self
@@ -10970,7 +10978,7 @@ pub mod node_group_member_update_status {
         /// <p>The date when the NodeUpdateStatus was last modified</p>
         pub fn node_update_status_modified_date(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.node_update_status_modified_date = Some(input);
             self
@@ -10978,7 +10986,7 @@ pub mod node_group_member_update_status {
         /// <p>The date when the NodeUpdateStatus was last modified</p>
         pub fn set_node_update_status_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.node_update_status_modified_date = input;
             self
@@ -11336,17 +11344,17 @@ impl AsRef<str> for ServiceUpdateSeverity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeRangeFilter {
     /// <p>The start time of the time range filter</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time of the time range filter</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimeRangeFilter {
     /// <p>The start time of the time range filter</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the time range filter</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -11364,32 +11372,32 @@ pub mod time_range_filter {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The start time of the time range filter</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The start time of the time range filter</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The end time of the time range filter</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The end time of the time range filter</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -11659,7 +11667,7 @@ pub struct Snapshot {
     /// <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
     pub preferred_outpost_arn: std::option::Option<std::string::String>,
     /// <p>The date and time when the source cluster was created.</p>
-    pub cache_cluster_create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub cache_cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the weekly time range during which maintenance
     /// on the cluster is performed. It is specified as a range in
     /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
@@ -12011,7 +12019,7 @@ impl Snapshot {
         self.preferred_outpost_arn.as_deref()
     }
     /// <p>The date and time when the source cluster was created.</p>
-    pub fn cache_cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn cache_cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.cache_cluster_create_time.as_ref()
     }
     /// <p>Specifies the weekly time range during which maintenance
@@ -12191,7 +12199,7 @@ pub mod snapshot {
         pub(crate) num_cache_nodes: std::option::Option<i32>,
         pub(crate) preferred_availability_zone: std::option::Option<std::string::String>,
         pub(crate) preferred_outpost_arn: std::option::Option<std::string::String>,
-        pub(crate) cache_cluster_create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) cache_cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) preferred_maintenance_window: std::option::Option<std::string::String>,
         pub(crate) topic_arn: std::option::Option<std::string::String>,
         pub(crate) port: std::option::Option<i32>,
@@ -12805,14 +12813,14 @@ pub mod snapshot {
             self
         }
         /// <p>The date and time when the source cluster was created.</p>
-        pub fn cache_cluster_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn cache_cluster_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.cache_cluster_create_time = Some(input);
             self
         }
         /// <p>The date and time when the source cluster was created.</p>
         pub fn set_cache_cluster_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.cache_cluster_create_time = input;
             self
@@ -13144,9 +13152,9 @@ pub struct NodeSnapshot {
     /// <p>The size of the cache on the source cache node.</p>
     pub cache_size: std::option::Option<std::string::String>,
     /// <p>The date and time when the cache node was created in the source cluster.</p>
-    pub cache_node_create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub cache_node_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the source node's metadata and cache data set was obtained for the snapshot.</p>
-    pub snapshot_create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub snapshot_create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl NodeSnapshot {
     /// <p>A unique identifier for the source cluster.</p>
@@ -13172,11 +13180,11 @@ impl NodeSnapshot {
         self.cache_size.as_deref()
     }
     /// <p>The date and time when the cache node was created in the source cluster.</p>
-    pub fn cache_node_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn cache_node_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.cache_node_create_time.as_ref()
     }
     /// <p>The date and time when the source node's metadata and cache data set was obtained for the snapshot.</p>
-    pub fn snapshot_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn snapshot_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.snapshot_create_time.as_ref()
     }
 }
@@ -13205,8 +13213,8 @@ pub mod node_snapshot {
         pub(crate) node_group_configuration:
             std::option::Option<crate::model::NodeGroupConfiguration>,
         pub(crate) cache_size: std::option::Option<std::string::String>,
-        pub(crate) cache_node_create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) snapshot_create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) cache_node_create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) snapshot_create_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A unique identifier for the source cluster.</p>
@@ -13275,27 +13283,27 @@ pub mod node_snapshot {
             self
         }
         /// <p>The date and time when the cache node was created in the source cluster.</p>
-        pub fn cache_node_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn cache_node_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.cache_node_create_time = Some(input);
             self
         }
         /// <p>The date and time when the cache node was created in the source cluster.</p>
         pub fn set_cache_node_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.cache_node_create_time = input;
             self
         }
         /// <p>The date and time when the source node's metadata and cache data set was obtained for the snapshot.</p>
-        pub fn snapshot_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn snapshot_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.snapshot_create_time = Some(input);
             self
         }
         /// <p>The date and time when the source node's metadata and cache data set was obtained for the snapshot.</p>
         pub fn set_snapshot_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.snapshot_create_time = input;
             self
@@ -13556,13 +13564,13 @@ pub struct ServiceUpdate {
     /// <p>The unique ID of the service update</p>
     pub service_update_name: std::option::Option<std::string::String>,
     /// <p>The date when the service update is initially available</p>
-    pub service_update_release_date: std::option::Option<aws_smithy_types::Instant>,
+    pub service_update_release_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date after which the service update is no longer available</p>
-    pub service_update_end_date: std::option::Option<aws_smithy_types::Instant>,
+    pub service_update_end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The severity of the service update</p>
     pub service_update_severity: std::option::Option<crate::model::ServiceUpdateSeverity>,
     /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
-    pub service_update_recommended_apply_by_date: std::option::Option<aws_smithy_types::Instant>,
+    pub service_update_recommended_apply_by_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the service update</p>
     pub service_update_status: std::option::Option<crate::model::ServiceUpdateStatus>,
     /// <p>Provides details of the service update</p>
@@ -13584,11 +13592,11 @@ impl ServiceUpdate {
         self.service_update_name.as_deref()
     }
     /// <p>The date when the service update is initially available</p>
-    pub fn service_update_release_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn service_update_release_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.service_update_release_date.as_ref()
     }
     /// <p>The date after which the service update is no longer available</p>
-    pub fn service_update_end_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn service_update_end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.service_update_end_date.as_ref()
     }
     /// <p>The severity of the service update</p>
@@ -13600,7 +13608,7 @@ impl ServiceUpdate {
     /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
     pub fn service_update_recommended_apply_by_date(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.service_update_recommended_apply_by_date.as_ref()
     }
     /// <p>The status of the service update</p>
@@ -13669,12 +13677,12 @@ pub mod service_update {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_update_name: std::option::Option<std::string::String>,
-        pub(crate) service_update_release_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) service_update_end_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) service_update_release_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) service_update_end_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) service_update_severity:
             std::option::Option<crate::model::ServiceUpdateSeverity>,
         pub(crate) service_update_recommended_apply_by_date:
-            std::option::Option<aws_smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) service_update_status: std::option::Option<crate::model::ServiceUpdateStatus>,
         pub(crate) service_update_description: std::option::Option<std::string::String>,
         pub(crate) service_update_type: std::option::Option<crate::model::ServiceUpdateType>,
@@ -13698,27 +13706,27 @@ pub mod service_update {
             self
         }
         /// <p>The date when the service update is initially available</p>
-        pub fn service_update_release_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn service_update_release_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.service_update_release_date = Some(input);
             self
         }
         /// <p>The date when the service update is initially available</p>
         pub fn set_service_update_release_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.service_update_release_date = input;
             self
         }
         /// <p>The date after which the service update is no longer available</p>
-        pub fn service_update_end_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn service_update_end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.service_update_end_date = Some(input);
             self
         }
         /// <p>The date after which the service update is no longer available</p>
         pub fn set_service_update_end_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.service_update_end_date = input;
             self
@@ -13742,7 +13750,7 @@ pub mod service_update {
         /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
         pub fn service_update_recommended_apply_by_date(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.service_update_recommended_apply_by_date = Some(input);
             self
@@ -13750,7 +13758,7 @@ pub mod service_update {
         /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
         pub fn set_service_update_recommended_apply_by_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.service_update_recommended_apply_by_date = input;
             self
@@ -14951,7 +14959,7 @@ pub struct Event {
     /// <p>The text of the event.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The date and time when the event occurred.</p>
-    pub date: std::option::Option<aws_smithy_types::Instant>,
+    pub date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Event {
     /// <p>The identifier for the source of the event.
@@ -14969,7 +14977,7 @@ impl Event {
         self.message.as_deref()
     }
     /// <p>The date and time when the event occurred.</p>
-    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
 }
@@ -14992,7 +15000,7 @@ pub mod event {
         pub(crate) source_identifier: std::option::Option<std::string::String>,
         pub(crate) source_type: std::option::Option<crate::model::SourceType>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier for the source of the event.
@@ -15036,12 +15044,12 @@ pub mod event {
             self
         }
         /// <p>The date and time when the event occurred.</p>
-        pub fn date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date = Some(input);
             self
         }
         /// <p>The date and time when the event occurred.</p>
-        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
+        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.date = input;
             self
         }

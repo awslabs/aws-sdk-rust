@@ -16,9 +16,9 @@ pub struct MeshRef {
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
     pub version: std::option::Option<i64>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MeshRef {
     /// <p>The name of the service mesh.</p>
@@ -44,11 +44,11 @@ impl MeshRef {
         self.version
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -76,8 +76,8 @@ pub mod mesh_ref {
         pub(crate) resource_owner: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<i64>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the service mesh.</p>
@@ -138,27 +138,27 @@ pub mod mesh_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -425,9 +425,9 @@ pub struct ResourceMetadata {
     /// <p>The unique identifier for the resource.</p>
     pub uid: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
@@ -449,11 +449,11 @@ impl ResourceMetadata {
         self.uid.as_deref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -489,8 +489,8 @@ pub mod resource_metadata {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<i64>,
         pub(crate) uid: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) mesh_owner: std::option::Option<std::string::String>,
         pub(crate) resource_owner: std::option::Option<std::string::String>,
     }
@@ -526,27 +526,27 @@ pub mod resource_metadata {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -887,9 +887,9 @@ pub struct VirtualServiceRef {
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
     pub version: std::option::Option<i64>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl VirtualServiceRef {
     /// <p>The name of the service mesh that the virtual service resides in.</p>
@@ -919,11 +919,11 @@ impl VirtualServiceRef {
         self.version
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -953,8 +953,8 @@ pub mod virtual_service_ref {
         pub(crate) resource_owner: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<i64>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the service mesh that the virtual service resides in.</p>
@@ -1028,27 +1028,27 @@ pub mod virtual_service_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -1419,9 +1419,9 @@ impl VirtualServiceProvider {
         &self,
     ) -> std::result::Result<&crate::model::VirtualNodeServiceProvider, &Self> {
         if let VirtualServiceProvider::VirtualNode(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`VirtualNode`](crate::model::VirtualServiceProvider::VirtualNode).
@@ -1434,9 +1434,9 @@ impl VirtualServiceProvider {
         &self,
     ) -> std::result::Result<&crate::model::VirtualRouterServiceProvider, &Self> {
         if let VirtualServiceProvider::VirtualRouter(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`VirtualRouter`](crate::model::VirtualServiceProvider::VirtualRouter).
@@ -1582,9 +1582,9 @@ pub struct VirtualRouterRef {
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
     pub version: std::option::Option<i64>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl VirtualRouterRef {
     /// <p>The name of the service mesh that the virtual router resides in.</p>
@@ -1614,11 +1614,11 @@ impl VirtualRouterRef {
         self.version
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -1648,8 +1648,8 @@ pub mod virtual_router_ref {
         pub(crate) resource_owner: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<i64>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the service mesh that the virtual router resides in.</p>
@@ -1723,27 +1723,27 @@ pub mod virtual_router_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -2313,9 +2313,9 @@ pub struct RouteRef {
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
     pub version: std::option::Option<i64>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RouteRef {
     /// <p>The name of the service mesh that the route resides in.</p>
@@ -2349,11 +2349,11 @@ impl RouteRef {
         self.version
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -2385,8 +2385,8 @@ pub mod route_ref {
         pub(crate) resource_owner: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<i64>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the service mesh that the route resides in.</p>
@@ -2470,27 +2470,27 @@ pub mod route_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -3874,9 +3874,9 @@ impl GrpcRouteMetadataMatchMethod {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_exact(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcRouteMetadataMatchMethod::Exact(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Exact`](crate::model::GrpcRouteMetadataMatchMethod::Exact).
@@ -3887,9 +3887,9 @@ impl GrpcRouteMetadataMatchMethod {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcRouteMetadataMatchMethod::Prefix(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Prefix`](crate::model::GrpcRouteMetadataMatchMethod::Prefix).
@@ -3900,9 +3900,9 @@ impl GrpcRouteMetadataMatchMethod {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_range(&self) -> std::result::Result<&crate::model::MatchRange, &Self> {
         if let GrpcRouteMetadataMatchMethod::Range(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Range`](crate::model::GrpcRouteMetadataMatchMethod::Range).
@@ -3913,9 +3913,9 @@ impl GrpcRouteMetadataMatchMethod {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_regex(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcRouteMetadataMatchMethod::Regex(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Regex`](crate::model::GrpcRouteMetadataMatchMethod::Regex).
@@ -3926,9 +3926,9 @@ impl GrpcRouteMetadataMatchMethod {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_suffix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcRouteMetadataMatchMethod::Suffix(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Suffix`](crate::model::GrpcRouteMetadataMatchMethod::Suffix).
@@ -4968,9 +4968,9 @@ impl HeaderMatchMethod {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_exact(&self) -> std::result::Result<&std::string::String, &Self> {
         if let HeaderMatchMethod::Exact(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Exact`](crate::model::HeaderMatchMethod::Exact).
@@ -4981,9 +4981,9 @@ impl HeaderMatchMethod {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let HeaderMatchMethod::Prefix(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Prefix`](crate::model::HeaderMatchMethod::Prefix).
@@ -4994,9 +4994,9 @@ impl HeaderMatchMethod {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_range(&self) -> std::result::Result<&crate::model::MatchRange, &Self> {
         if let HeaderMatchMethod::Range(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Range`](crate::model::HeaderMatchMethod::Range).
@@ -5007,9 +5007,9 @@ impl HeaderMatchMethod {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_regex(&self) -> std::result::Result<&std::string::String, &Self> {
         if let HeaderMatchMethod::Regex(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Regex`](crate::model::HeaderMatchMethod::Regex).
@@ -5020,9 +5020,9 @@ impl HeaderMatchMethod {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_suffix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let HeaderMatchMethod::Suffix(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Suffix`](crate::model::HeaderMatchMethod::Suffix).
@@ -5587,9 +5587,9 @@ pub struct VirtualNodeRef {
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
     pub version: std::option::Option<i64>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl VirtualNodeRef {
     /// <p>The name of the service mesh that the virtual node resides in.</p>
@@ -5619,11 +5619,11 @@ impl VirtualNodeRef {
         self.version
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -5653,8 +5653,8 @@ pub mod virtual_node_ref {
         pub(crate) resource_owner: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<i64>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the service mesh that the virtual node resides in.</p>
@@ -5728,27 +5728,27 @@ pub mod virtual_node_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -6278,9 +6278,9 @@ impl AccessLog {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(&self) -> std::result::Result<&crate::model::FileAccessLog, &Self> {
         if let AccessLog::File(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`File`](crate::model::AccessLog::File).
@@ -6851,9 +6851,9 @@ impl TlsValidationContextTrust {
         &self,
     ) -> std::result::Result<&crate::model::TlsValidationContextAcmTrust, &Self> {
         if let TlsValidationContextTrust::Acm(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Acm`](crate::model::TlsValidationContextTrust::Acm).
@@ -6866,9 +6866,9 @@ impl TlsValidationContextTrust {
         &self,
     ) -> std::result::Result<&crate::model::TlsValidationContextFileTrust, &Self> {
         if let TlsValidationContextTrust::File(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`File`](crate::model::TlsValidationContextTrust::File).
@@ -6881,9 +6881,9 @@ impl TlsValidationContextTrust {
         &self,
     ) -> std::result::Result<&crate::model::TlsValidationContextSdsTrust, &Self> {
         if let TlsValidationContextTrust::Sds(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Sds`](crate::model::TlsValidationContextTrust::Sds).
@@ -7112,9 +7112,9 @@ impl ClientTlsCertificate {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(&self) -> std::result::Result<&crate::model::ListenerTlsFileCertificate, &Self> {
         if let ClientTlsCertificate::File(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`File`](crate::model::ClientTlsCertificate::File).
@@ -7125,9 +7125,9 @@ impl ClientTlsCertificate {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sds(&self) -> std::result::Result<&crate::model::ListenerTlsSdsCertificate, &Self> {
         if let ClientTlsCertificate::Sds(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Sds`](crate::model::ClientTlsCertificate::Sds).
@@ -7310,9 +7310,9 @@ impl Backend {
         &self,
     ) -> std::result::Result<&crate::model::VirtualServiceBackend, &Self> {
         if let Backend::VirtualService(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`VirtualService`](crate::model::Backend::VirtualService).
@@ -7602,9 +7602,9 @@ impl VirtualNodeConnectionPool {
         &self,
     ) -> std::result::Result<&crate::model::VirtualNodeGrpcConnectionPool, &Self> {
         if let VirtualNodeConnectionPool::Grpc(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Grpc`](crate::model::VirtualNodeConnectionPool::Grpc).
@@ -7617,9 +7617,9 @@ impl VirtualNodeConnectionPool {
         &self,
     ) -> std::result::Result<&crate::model::VirtualNodeHttpConnectionPool, &Self> {
         if let VirtualNodeConnectionPool::Http(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Http`](crate::model::VirtualNodeConnectionPool::Http).
@@ -7632,9 +7632,9 @@ impl VirtualNodeConnectionPool {
         &self,
     ) -> std::result::Result<&crate::model::VirtualNodeHttp2ConnectionPool, &Self> {
         if let VirtualNodeConnectionPool::Http2(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Http2`](crate::model::VirtualNodeConnectionPool::Http2).
@@ -7647,9 +7647,9 @@ impl VirtualNodeConnectionPool {
         &self,
     ) -> std::result::Result<&crate::model::VirtualNodeTcpConnectionPool, &Self> {
         if let VirtualNodeConnectionPool::Tcp(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Tcp`](crate::model::VirtualNodeConnectionPool::Tcp).
@@ -8062,9 +8062,9 @@ impl ListenerTimeout {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_grpc(&self) -> std::result::Result<&crate::model::GrpcTimeout, &Self> {
         if let ListenerTimeout::Grpc(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Grpc`](crate::model::ListenerTimeout::Grpc).
@@ -8075,9 +8075,9 @@ impl ListenerTimeout {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_http(&self) -> std::result::Result<&crate::model::HttpTimeout, &Self> {
         if let ListenerTimeout::Http(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Http`](crate::model::ListenerTimeout::Http).
@@ -8088,9 +8088,9 @@ impl ListenerTimeout {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_http2(&self) -> std::result::Result<&crate::model::HttpTimeout, &Self> {
         if let ListenerTimeout::Http2(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Http2`](crate::model::ListenerTimeout::Http2).
@@ -8101,9 +8101,9 @@ impl ListenerTimeout {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tcp(&self) -> std::result::Result<&crate::model::TcpTimeout, &Self> {
         if let ListenerTimeout::Tcp(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Tcp`](crate::model::ListenerTimeout::Tcp).
@@ -8603,9 +8603,9 @@ impl ListenerTlsValidationContextTrust {
         &self,
     ) -> std::result::Result<&crate::model::TlsValidationContextFileTrust, &Self> {
         if let ListenerTlsValidationContextTrust::File(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`File`](crate::model::ListenerTlsValidationContextTrust::File).
@@ -8618,9 +8618,9 @@ impl ListenerTlsValidationContextTrust {
         &self,
     ) -> std::result::Result<&crate::model::TlsValidationContextSdsTrust, &Self> {
         if let ListenerTlsValidationContextTrust::Sds(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Sds`](crate::model::ListenerTlsValidationContextTrust::Sds).
@@ -8659,9 +8659,9 @@ impl ListenerTlsCertificate {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_acm(&self) -> std::result::Result<&crate::model::ListenerTlsAcmCertificate, &Self> {
         if let ListenerTlsCertificate::Acm(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Acm`](crate::model::ListenerTlsCertificate::Acm).
@@ -8672,9 +8672,9 @@ impl ListenerTlsCertificate {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(&self) -> std::result::Result<&crate::model::ListenerTlsFileCertificate, &Self> {
         if let ListenerTlsCertificate::File(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`File`](crate::model::ListenerTlsCertificate::File).
@@ -8685,9 +8685,9 @@ impl ListenerTlsCertificate {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sds(&self) -> std::result::Result<&crate::model::ListenerTlsSdsCertificate, &Self> {
         if let ListenerTlsCertificate::Sds(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Sds`](crate::model::ListenerTlsCertificate::Sds).
@@ -8841,9 +8841,9 @@ impl ServiceDiscovery {
         &self,
     ) -> std::result::Result<&crate::model::AwsCloudMapServiceDiscovery, &Self> {
         if let ServiceDiscovery::AwsCloudMap(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`AwsCloudMap`](crate::model::ServiceDiscovery::AwsCloudMap).
@@ -8854,9 +8854,9 @@ impl ServiceDiscovery {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dns(&self) -> std::result::Result<&crate::model::DnsServiceDiscovery, &Self> {
         if let ServiceDiscovery::Dns(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Dns`](crate::model::ServiceDiscovery::Dns).
@@ -9225,9 +9225,9 @@ pub struct VirtualGatewayRef {
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
     pub version: std::option::Option<i64>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl VirtualGatewayRef {
     /// <p>The name of the service mesh that the resource resides in.</p>
@@ -9257,11 +9257,11 @@ impl VirtualGatewayRef {
         self.version
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -9291,8 +9291,8 @@ pub mod virtual_gateway_ref {
         pub(crate) resource_owner: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<i64>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the service mesh that the resource resides in.</p>
@@ -9366,27 +9366,27 @@ pub mod virtual_gateway_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -9870,9 +9870,9 @@ impl VirtualGatewayAccessLog {
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayFileAccessLog, &Self> {
         if let VirtualGatewayAccessLog::File(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`File`](crate::model::VirtualGatewayAccessLog::File).
@@ -10117,9 +10117,9 @@ impl VirtualGatewayConnectionPool {
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayGrpcConnectionPool, &Self> {
         if let VirtualGatewayConnectionPool::Grpc(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Grpc`](crate::model::VirtualGatewayConnectionPool::Grpc).
@@ -10132,9 +10132,9 @@ impl VirtualGatewayConnectionPool {
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayHttpConnectionPool, &Self> {
         if let VirtualGatewayConnectionPool::Http(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Http`](crate::model::VirtualGatewayConnectionPool::Http).
@@ -10147,9 +10147,9 @@ impl VirtualGatewayConnectionPool {
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayHttp2ConnectionPool, &Self> {
         if let VirtualGatewayConnectionPool::Http2(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Http2`](crate::model::VirtualGatewayConnectionPool::Http2).
@@ -10572,9 +10572,9 @@ impl VirtualGatewayListenerTlsCertificate {
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsAcmCertificate, &Self> {
         if let VirtualGatewayListenerTlsCertificate::Acm(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Acm`](crate::model::VirtualGatewayListenerTlsCertificate::Acm).
@@ -10587,9 +10587,9 @@ impl VirtualGatewayListenerTlsCertificate {
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsFileCertificate, &Self> {
         if let VirtualGatewayListenerTlsCertificate::File(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`File`](crate::model::VirtualGatewayListenerTlsCertificate::File).
@@ -10602,9 +10602,9 @@ impl VirtualGatewayListenerTlsCertificate {
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsSdsCertificate, &Self> {
         if let VirtualGatewayListenerTlsCertificate::Sds(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Sds`](crate::model::VirtualGatewayListenerTlsCertificate::Sds).
@@ -10950,9 +10950,9 @@ impl VirtualGatewayListenerTlsValidationContextTrust {
     ) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextFileTrust, &Self>
     {
         if let VirtualGatewayListenerTlsValidationContextTrust::File(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`File`](crate::model::VirtualGatewayListenerTlsValidationContextTrust::File).
@@ -10965,9 +10965,9 @@ impl VirtualGatewayListenerTlsValidationContextTrust {
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextSdsTrust, &Self> {
         if let VirtualGatewayListenerTlsValidationContextTrust::Sds(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Sds`](crate::model::VirtualGatewayListenerTlsValidationContextTrust::Sds).
@@ -11878,9 +11878,9 @@ impl VirtualGatewayTlsValidationContextTrust {
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextAcmTrust, &Self> {
         if let VirtualGatewayTlsValidationContextTrust::Acm(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Acm`](crate::model::VirtualGatewayTlsValidationContextTrust::Acm).
@@ -11894,9 +11894,9 @@ impl VirtualGatewayTlsValidationContextTrust {
     ) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextFileTrust, &Self>
     {
         if let VirtualGatewayTlsValidationContextTrust::File(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`File`](crate::model::VirtualGatewayTlsValidationContextTrust::File).
@@ -11909,9 +11909,9 @@ impl VirtualGatewayTlsValidationContextTrust {
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextSdsTrust, &Self> {
         if let VirtualGatewayTlsValidationContextTrust::Sds(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Sds`](crate::model::VirtualGatewayTlsValidationContextTrust::Sds).
@@ -12021,9 +12021,9 @@ impl VirtualGatewayClientTlsCertificate {
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsFileCertificate, &Self> {
         if let VirtualGatewayClientTlsCertificate::File(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`File`](crate::model::VirtualGatewayClientTlsCertificate::File).
@@ -12036,9 +12036,9 @@ impl VirtualGatewayClientTlsCertificate {
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsSdsCertificate, &Self> {
         if let VirtualGatewayClientTlsCertificate::Sds(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Sds`](crate::model::VirtualGatewayClientTlsCertificate::Sds).
@@ -12072,9 +12072,9 @@ pub struct GatewayRouteRef {
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
     pub version: std::option::Option<i64>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GatewayRouteRef {
     /// <p>The name of the service mesh that the resource resides in. </p>
@@ -12108,11 +12108,11 @@ impl GatewayRouteRef {
         self.version
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -12144,8 +12144,8 @@ pub mod gateway_route_ref {
         pub(crate) resource_owner: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<i64>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the service mesh that the resource resides in. </p>
@@ -12232,27 +12232,27 @@ pub mod gateway_route_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -13362,9 +13362,9 @@ impl GrpcMetadataMatchMethod {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_exact(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcMetadataMatchMethod::Exact(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Exact`](crate::model::GrpcMetadataMatchMethod::Exact).
@@ -13375,9 +13375,9 @@ impl GrpcMetadataMatchMethod {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcMetadataMatchMethod::Prefix(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Prefix`](crate::model::GrpcMetadataMatchMethod::Prefix).
@@ -13388,9 +13388,9 @@ impl GrpcMetadataMatchMethod {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_range(&self) -> std::result::Result<&crate::model::MatchRange, &Self> {
         if let GrpcMetadataMatchMethod::Range(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Range`](crate::model::GrpcMetadataMatchMethod::Range).
@@ -13401,9 +13401,9 @@ impl GrpcMetadataMatchMethod {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_regex(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcMetadataMatchMethod::Regex(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Regex`](crate::model::GrpcMetadataMatchMethod::Regex).
@@ -13414,9 +13414,9 @@ impl GrpcMetadataMatchMethod {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_suffix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcMetadataMatchMethod::Suffix(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Suffix`](crate::model::GrpcMetadataMatchMethod::Suffix).

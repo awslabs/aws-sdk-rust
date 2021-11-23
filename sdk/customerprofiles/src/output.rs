@@ -74,9 +74,9 @@ pub struct UpdateDomainOutput {
     /// API to return and review the results.  </p>
     pub matching: std::option::Option<crate::model::MatchingResponse>,
     /// <p>The timestamp of when the domain was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -109,11 +109,11 @@ impl UpdateDomainOutput {
         self.matching.as_ref()
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -149,8 +149,8 @@ pub mod update_domain_output {
         pub(crate) default_encryption_key: std::option::Option<std::string::String>,
         pub(crate) dead_letter_queue_url: std::option::Option<std::string::String>,
         pub(crate) matching: std::option::Option<crate::model::MatchingResponse>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -228,27 +228,27 @@ pub mod update_domain_output {
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -472,9 +472,9 @@ pub struct PutProfileObjectTypeOutput {
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>,
     >,
     /// <p>The timestamp of when the domain was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -526,11 +526,11 @@ impl PutProfileObjectTypeOutput {
         self.keys.as_ref()
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -579,8 +579,8 @@ pub mod put_profile_object_type_output {
                 std::vec::Vec<crate::model::ObjectTypeKey>,
             >,
         >,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -716,27 +716,27 @@ pub mod put_profile_object_type_output {
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -859,9 +859,9 @@ pub struct PutIntegrationOutput {
     /// <p>The name of the profile object type.</p>
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the domain was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -880,11 +880,11 @@ impl PutIntegrationOutput {
         self.object_type_name.as_deref()
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -916,8 +916,8 @@ pub mod put_integration_output {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) uri: std::option::Option<std::string::String>,
         pub(crate) object_type_name: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -957,27 +957,27 @@ pub mod put_integration_output {
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -1903,9 +1903,9 @@ pub struct GetProfileObjectTypeOutput {
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>,
     >,
     /// <p>The timestamp of when the domain was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1957,11 +1957,11 @@ impl GetProfileObjectTypeOutput {
         self.keys.as_ref()
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -2010,8 +2010,8 @@ pub mod get_profile_object_type_output {
                 std::vec::Vec<crate::model::ObjectTypeKey>,
             >,
         >,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -2147,27 +2147,27 @@ pub mod get_profile_object_type_output {
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -2229,7 +2229,7 @@ pub struct GetMatchesOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The timestamp this version of Match Result generated.</p>
-    pub match_generation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub match_generation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of potential matches found.</p>
     pub potential_matches: std::option::Option<i32>,
     /// <p>The list of matched profiles for this instance.</p>
@@ -2241,7 +2241,7 @@ impl GetMatchesOutput {
         self.next_token.as_deref()
     }
     /// <p>The timestamp this version of Match Result generated.</p>
-    pub fn match_generation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn match_generation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.match_generation_date.as_ref()
     }
     /// <p>The number of potential matches found.</p>
@@ -2270,7 +2270,7 @@ pub mod get_matches_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) match_generation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) match_generation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) potential_matches: std::option::Option<i32>,
         pub(crate) matches: std::option::Option<std::vec::Vec<crate::model::MatchItem>>,
     }
@@ -2286,14 +2286,14 @@ pub mod get_matches_output {
             self
         }
         /// <p>The timestamp this version of Match Result generated.</p>
-        pub fn match_generation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn match_generation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.match_generation_date = Some(input);
             self
         }
         /// <p>The timestamp this version of Match Result generated.</p>
         pub fn set_match_generation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.match_generation_date = input;
             self
@@ -2356,9 +2356,9 @@ pub struct GetIntegrationOutput {
     /// <p>The name of the profile object type.</p>
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the domain was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2377,11 +2377,11 @@ impl GetIntegrationOutput {
         self.object_type_name.as_deref()
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -2413,8 +2413,8 @@ pub mod get_integration_output {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) uri: std::option::Option<std::string::String>,
         pub(crate) object_type_name: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -2454,27 +2454,27 @@ pub mod get_integration_output {
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -2547,9 +2547,9 @@ pub struct GetDomainOutput {
     /// API to return and review the results.  </p>
     pub matching: std::option::Option<crate::model::MatchingResponse>,
     /// <p>The timestamp of when the domain was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2586,11 +2586,11 @@ impl GetDomainOutput {
         self.matching.as_ref()
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -2628,8 +2628,8 @@ pub mod get_domain_output {
         pub(crate) dead_letter_queue_url: std::option::Option<std::string::String>,
         pub(crate) stats: std::option::Option<crate::model::DomainStats>,
         pub(crate) matching: std::option::Option<crate::model::MatchingResponse>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -2717,27 +2717,27 @@ pub mod get_domain_output {
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -3189,9 +3189,9 @@ pub struct CreateDomainOutput {
     /// API to return and review the results.  </p>
     pub matching: std::option::Option<crate::model::MatchingResponse>,
     /// <p>The timestamp of when the domain was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -3224,11 +3224,11 @@ impl CreateDomainOutput {
         self.matching.as_ref()
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -3264,8 +3264,8 @@ pub mod create_domain_output {
         pub(crate) default_encryption_key: std::option::Option<std::string::String>,
         pub(crate) dead_letter_queue_url: std::option::Option<std::string::String>,
         pub(crate) matching: std::option::Option<crate::model::MatchingResponse>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -3343,27 +3343,27 @@ pub mod create_domain_output {
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self

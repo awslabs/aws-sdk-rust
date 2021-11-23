@@ -293,6 +293,82 @@ pub fn parse_create_location_fsx_windows_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_location_hdfs_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateLocationHdfsOutput,
+    crate::error::CreateLocationHdfsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateLocationHdfsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateLocationHdfsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalException" => {
+            crate::error::CreateLocationHdfsError {
+                meta: generic,
+                kind: crate::error::CreateLocationHdfsErrorKind::InternalException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLocationHdfsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InvalidRequestException" => crate::error::CreateLocationHdfsError {
+            meta: generic,
+            kind: crate::error::CreateLocationHdfsErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLocationHdfsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateLocationHdfsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_location_hdfs_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateLocationHdfsOutput,
+    crate::error::CreateLocationHdfsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_location_hdfs_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_location_hdfs(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateLocationHdfsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_location_nfs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateLocationNfsOutput, crate::error::CreateLocationNfsError>
@@ -1075,6 +1151,82 @@ pub fn parse_describe_location_fsx_windows_response(
             output,
         )
         .map_err(crate::error::DescribeLocationFsxWindowsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_location_hdfs_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeLocationHdfsOutput,
+    crate::error::DescribeLocationHdfsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeLocationHdfsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeLocationHdfsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalException" => {
+            crate::error::DescribeLocationHdfsError {
+                meta: generic,
+                kind: crate::error::DescribeLocationHdfsErrorKind::InternalException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLocationHdfsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InvalidRequestException" => crate::error::DescribeLocationHdfsError {
+            meta: generic,
+            kind: crate::error::DescribeLocationHdfsErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLocationHdfsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeLocationHdfsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_location_hdfs_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeLocationHdfsOutput,
+    crate::error::DescribeLocationHdfsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_location_hdfs_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_location_hdfs(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeLocationHdfsError::unhandled)?;
         output.build()
     })
 }
@@ -2162,6 +2314,77 @@ pub fn parse_update_agent_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_agent_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_location_hdfs_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateLocationHdfsOutput,
+    crate::error::UpdateLocationHdfsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateLocationHdfsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateLocationHdfsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalException" => {
+            crate::error::UpdateLocationHdfsError {
+                meta: generic,
+                kind: crate::error::UpdateLocationHdfsErrorKind::InternalException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLocationHdfsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InvalidRequestException" => crate::error::UpdateLocationHdfsError {
+            meta: generic,
+            kind: crate::error::UpdateLocationHdfsErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLocationHdfsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UpdateLocationHdfsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_location_hdfs_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateLocationHdfsOutput,
+    crate::error::UpdateLocationHdfsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_location_hdfs_output::Builder::default();
         let _ = response;
         output.build()
     })

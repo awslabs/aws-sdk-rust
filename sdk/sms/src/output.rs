@@ -620,7 +620,7 @@ impl ImportAppCatalogOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServersOutput {
     /// <p>The time when the server was last modified.</p>
-    pub last_modified_on: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the server catalog.</p>
     pub server_catalog_status: std::option::Option<crate::model::ServerCatalogStatus>,
     /// <p>Information about the servers.</p>
@@ -631,7 +631,7 @@ pub struct GetServersOutput {
 }
 impl GetServersOutput {
     /// <p>The time when the server was last modified.</p>
-    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_on.as_ref()
     }
     /// <p>The status of the server catalog.</p>
@@ -664,21 +664,21 @@ pub mod get_servers_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_modified_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) server_catalog_status: std::option::Option<crate::model::ServerCatalogStatus>,
         pub(crate) server_list: std::option::Option<std::vec::Vec<crate::model::Server>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The time when the server was last modified.</p>
-        pub fn last_modified_on(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_on(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_on = Some(input);
             self
         }
         /// <p>The time when the server was last modified.</p>
         pub fn set_last_modified_on(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_on = input;
             self

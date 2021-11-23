@@ -5211,9 +5211,9 @@ pub fn deser_structure_crate_model_change_info(
             s if s.matches("SubmittedAt") /* SubmittedAt com.amazonaws.route53#ChangeInfo$SubmittedAt */ =>  {
                 let var_193 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.route53#TimeStamp`)"))
                         ?
@@ -5723,9 +5723,9 @@ pub fn deser_structure_crate_model_key_signing_key(
             s if s.matches("CreatedDate") /* CreatedDate com.amazonaws.route53#KeySigningKey$CreatedDate */ =>  {
                 let var_226 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.route53#TimeStamp`)"))
                         ?
@@ -5737,9 +5737,9 @@ pub fn deser_structure_crate_model_key_signing_key(
             s if s.matches("LastModifiedDate") /* LastModifiedDate com.amazonaws.route53#KeySigningKey$LastModifiedDate */ =>  {
                 let var_227 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.route53#TimeStamp`)"))
                         ?
@@ -7641,9 +7641,9 @@ pub fn deser_structure_crate_model_status_report(
             s if s.matches("CheckedTime") /* CheckedTime com.amazonaws.route53#StatusReport$CheckedTime */ =>  {
                 let var_320 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.route53#TimeStamp`)"))
                         ?

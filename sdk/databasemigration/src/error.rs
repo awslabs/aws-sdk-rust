@@ -492,7 +492,7 @@ pub struct CreateEventSubscriptionError {
 pub enum CreateEventSubscriptionErrorKind {
     /// <p>The ciphertext references a key that doesn't exist or that the DMS account doesn't have access to.</p>
     KmsAccessDeniedFault(crate::error::KmsAccessDeniedFault),
-    /// <p>The specified master key (CMK) isn't enabled.</p>
+    /// <p>The specified KMS key isn't enabled.</p>
     KmsDisabledFault(crate::error::KmsDisabledFault),
     /// <p>The state of the specified KMS resource isn't valid for this request.</p>
     KmsInvalidStateFault(crate::error::KmsInvalidStateFault),
@@ -4613,7 +4613,7 @@ pub struct ModifyEventSubscriptionError {
 pub enum ModifyEventSubscriptionErrorKind {
     /// <p>The ciphertext references a key that doesn't exist or that the DMS account doesn't have access to.</p>
     KmsAccessDeniedFault(crate::error::KmsAccessDeniedFault),
-    /// <p>The specified master key (CMK) isn't enabled.</p>
+    /// <p>The specified KMS key isn't enabled.</p>
     KmsDisabledFault(crate::error::KmsDisabledFault),
     /// <p>The state of the specified KMS resource isn't valid for this request.</p>
     KmsInvalidStateFault(crate::error::KmsInvalidStateFault),
@@ -6063,7 +6063,7 @@ pub enum StartReplicationTaskAssessmentRunErrorKind {
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The ciphertext references a key that doesn't exist or that the DMS account doesn't have access to.</p>
     KmsAccessDeniedFault(crate::error::KmsAccessDeniedFault),
-    /// <p>The specified master key (CMK) isn't enabled.</p>
+    /// <p>The specified KMS key isn't enabled.</p>
     KmsDisabledFault(crate::error::KmsDisabledFault),
     /// <p>An Key Management Service (KMS) error is preventing access to KMS.</p>
     KmsFault(crate::error::KmsFault),
@@ -7264,7 +7264,7 @@ impl KmsFault {
     }
 }
 
-/// <p>The specified master key (CMK) isn't enabled.</p>
+/// <p>The specified KMS key isn't enabled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsDisabledFault {

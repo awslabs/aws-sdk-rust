@@ -8,7 +8,7 @@ pub struct UpdateRevisionOutput {
     /// <p>An optional comment about the revision.</p>
     pub comment: std::option::Option<std::string::String>,
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the data set associated with this revision.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
@@ -18,7 +18,7 @@ pub struct UpdateRevisionOutput {
     /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateRevisionOutput {
     /// <p>The ARN for the revision.</p>
@@ -30,7 +30,7 @@ impl UpdateRevisionOutput {
         self.comment.as_deref()
     }
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The unique identifier for the data set associated with this revision.</p>
@@ -50,7 +50,7 @@ impl UpdateRevisionOutput {
         self.source_id.as_deref()
     }
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -76,12 +76,12 @@ pub mod update_revision_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) comment: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_set_id: std::option::Option<std::string::String>,
         pub(crate) finalized: std::option::Option<bool>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) source_id: std::option::Option<std::string::String>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN for the revision.</p>
@@ -105,14 +105,14 @@ pub mod update_revision_output {
             self
         }
         /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -158,14 +158,14 @@ pub mod update_revision_output {
             self
         }
         /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -201,13 +201,13 @@ pub struct UpdateEventActionOutput {
     /// <p>The ARN for the event action.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>What occurs to start an action.</p>
     pub event: std::option::Option<crate::model::Event>,
     /// <p>The unique identifier for the event action.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateEventActionOutput {
     /// <p>What occurs after a certain event.</p>
@@ -219,7 +219,7 @@ impl UpdateEventActionOutput {
         self.arn.as_deref()
     }
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>What occurs to start an action.</p>
@@ -231,7 +231,7 @@ impl UpdateEventActionOutput {
         self.id.as_deref()
     }
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -255,10 +255,10 @@ pub mod update_event_action_output {
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::Action>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event: std::option::Option<crate::model::Event>,
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>What occurs after a certain event.</p>
@@ -282,14 +282,14 @@ pub mod update_event_action_output {
             self
         }
         /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -315,14 +315,14 @@ pub mod update_event_action_output {
             self
         }
         /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -356,7 +356,7 @@ pub struct UpdateDataSetOutput {
     /// <p>The type of asset that is added to a data set.</p>
     pub asset_type: std::option::Option<crate::model::AssetType>,
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description for the data set.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the data set.</p>
@@ -370,7 +370,7 @@ pub struct UpdateDataSetOutput {
     /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateDataSetOutput {
     /// <p>The ARN for the data set.</p>
@@ -382,7 +382,7 @@ impl UpdateDataSetOutput {
         self.asset_type.as_ref()
     }
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The description for the data set.</p>
@@ -410,7 +410,7 @@ impl UpdateDataSetOutput {
         self.source_id.as_deref()
     }
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -438,14 +438,14 @@ pub mod update_data_set_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) asset_type: std::option::Option<crate::model::AssetType>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) origin: std::option::Option<crate::model::Origin>,
         pub(crate) origin_details: std::option::Option<crate::model::OriginDetails>,
         pub(crate) source_id: std::option::Option<std::string::String>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN for the data set.</p>
@@ -472,14 +472,14 @@ pub mod update_data_set_output {
             self
         }
         /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -548,14 +548,14 @@ pub mod update_data_set_output {
             self
         }
         /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -595,7 +595,7 @@ pub struct UpdateAssetOutput {
     /// <p>The type of asset that is added to a data set.</p>
     pub asset_type: std::option::Option<crate::model::AssetType>,
     /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the data set associated with this asset.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the asset.</p>
@@ -607,7 +607,7 @@ pub struct UpdateAssetOutput {
     /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateAssetOutput {
     /// <p>The ARN for the asset.</p>
@@ -623,7 +623,7 @@ impl UpdateAssetOutput {
         self.asset_type.as_ref()
     }
     /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The unique identifier for the data set associated with this asset.</p>
@@ -647,7 +647,7 @@ impl UpdateAssetOutput {
         self.source_id.as_deref()
     }
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -676,13 +676,13 @@ pub mod update_asset_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) asset_details: std::option::Option<crate::model::AssetDetails>,
         pub(crate) asset_type: std::option::Option<crate::model::AssetType>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_set_id: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
         pub(crate) source_id: std::option::Option<std::string::String>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN for the asset.</p>
@@ -722,14 +722,14 @@ pub mod update_asset_output {
             self
         }
         /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -785,14 +785,14 @@ pub mod update_asset_output {
             self
         }
         /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -1404,7 +1404,7 @@ pub struct GetRevisionOutput {
     /// <p>An optional comment about the revision.</p>
     pub comment: std::option::Option<std::string::String>,
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the data set associated with this revision.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
@@ -1417,7 +1417,7 @@ pub struct GetRevisionOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetRevisionOutput {
     /// <p>The ARN for the revision.</p>
@@ -1429,7 +1429,7 @@ impl GetRevisionOutput {
         self.comment.as_deref()
     }
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The unique identifier for the data set associated with this revision.</p>
@@ -1456,7 +1456,7 @@ impl GetRevisionOutput {
         self.tags.as_ref()
     }
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -1483,7 +1483,7 @@ pub mod get_revision_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) comment: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_set_id: std::option::Option<std::string::String>,
         pub(crate) finalized: std::option::Option<bool>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1491,7 +1491,7 @@ pub mod get_revision_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN for the revision.</p>
@@ -1515,14 +1515,14 @@ pub mod get_revision_output {
             self
         }
         /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1593,14 +1593,14 @@ pub mod get_revision_output {
             self
         }
         /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -1635,7 +1635,7 @@ pub struct GetJobOutput {
     /// <p>The ARN for the job.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Details about the job.</p>
     pub details: std::option::Option<crate::model::ResponseDetails>,
     /// <p>The errors associated with jobs.</p>
@@ -1647,7 +1647,7 @@ pub struct GetJobOutput {
     /// <p>The job type.</p>
     pub r#type: std::option::Option<crate::model::Type>,
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetJobOutput {
     /// <p>The ARN for the job.</p>
@@ -1655,7 +1655,7 @@ impl GetJobOutput {
         self.arn.as_deref()
     }
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Details about the job.</p>
@@ -1679,7 +1679,7 @@ impl GetJobOutput {
         self.r#type.as_ref()
     }
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -1704,13 +1704,13 @@ pub mod get_job_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) details: std::option::Option<crate::model::ResponseDetails>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::JobError>>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::State>,
         pub(crate) r#type: std::option::Option<crate::model::Type>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN for the job.</p>
@@ -1724,14 +1724,14 @@ pub mod get_job_output {
             self
         }
         /// <p>The date and time that the job was created, in ISO 8601 format.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the job was created, in ISO 8601 format.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1799,14 +1799,14 @@ pub mod get_job_output {
             self
         }
         /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -1842,13 +1842,13 @@ pub struct GetEventActionOutput {
     /// <p>The ARN for the event action.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>What occurs to start an action.</p>
     pub event: std::option::Option<crate::model::Event>,
     /// <p>The unique identifier for the event action.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetEventActionOutput {
     /// <p>What occurs after a certain event.</p>
@@ -1860,7 +1860,7 @@ impl GetEventActionOutput {
         self.arn.as_deref()
     }
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>What occurs to start an action.</p>
@@ -1872,7 +1872,7 @@ impl GetEventActionOutput {
         self.id.as_deref()
     }
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -1896,10 +1896,10 @@ pub mod get_event_action_output {
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::Action>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event: std::option::Option<crate::model::Event>,
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>What occurs after a certain event.</p>
@@ -1923,14 +1923,14 @@ pub mod get_event_action_output {
             self
         }
         /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1956,14 +1956,14 @@ pub mod get_event_action_output {
             self
         }
         /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -1997,7 +1997,7 @@ pub struct GetDataSetOutput {
     /// <p>The type of asset that is added to a data set.</p>
     pub asset_type: std::option::Option<crate::model::AssetType>,
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description for the data set.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the data set.</p>
@@ -2014,7 +2014,7 @@ pub struct GetDataSetOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetDataSetOutput {
     /// <p>The ARN for the data set.</p>
@@ -2026,7 +2026,7 @@ impl GetDataSetOutput {
         self.asset_type.as_ref()
     }
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The description for the data set.</p>
@@ -2061,7 +2061,7 @@ impl GetDataSetOutput {
         self.tags.as_ref()
     }
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -2090,7 +2090,7 @@ pub mod get_data_set_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) asset_type: std::option::Option<crate::model::AssetType>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2100,7 +2100,7 @@ pub mod get_data_set_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN for the data set.</p>
@@ -2127,14 +2127,14 @@ pub mod get_data_set_output {
             self
         }
         /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -2228,14 +2228,14 @@ pub mod get_data_set_output {
             self
         }
         /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -2276,7 +2276,7 @@ pub struct GetAssetOutput {
     /// <p>The type of asset that is added to a data set.</p>
     pub asset_type: std::option::Option<crate::model::AssetType>,
     /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the data set associated with this asset.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the asset.</p>
@@ -2288,7 +2288,7 @@ pub struct GetAssetOutput {
     /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetAssetOutput {
     /// <p>The ARN for the asset.</p>
@@ -2304,7 +2304,7 @@ impl GetAssetOutput {
         self.asset_type.as_ref()
     }
     /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The unique identifier for the data set associated with this asset.</p>
@@ -2328,7 +2328,7 @@ impl GetAssetOutput {
         self.source_id.as_deref()
     }
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -2357,13 +2357,13 @@ pub mod get_asset_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) asset_details: std::option::Option<crate::model::AssetDetails>,
         pub(crate) asset_type: std::option::Option<crate::model::AssetType>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_set_id: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
         pub(crate) source_id: std::option::Option<std::string::String>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN for the asset.</p>
@@ -2403,14 +2403,14 @@ pub mod get_asset_output {
             self
         }
         /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -2466,14 +2466,14 @@ pub mod get_asset_output {
             self
         }
         /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -2631,7 +2631,7 @@ pub struct CreateRevisionOutput {
     /// <p>An optional comment about the revision.</p>
     pub comment: std::option::Option<std::string::String>,
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the data set associated with this revision.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
@@ -2644,7 +2644,7 @@ pub struct CreateRevisionOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateRevisionOutput {
     /// <p>The ARN for the revision.</p>
@@ -2656,7 +2656,7 @@ impl CreateRevisionOutput {
         self.comment.as_deref()
     }
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The unique identifier for the data set associated with this revision.</p>
@@ -2683,7 +2683,7 @@ impl CreateRevisionOutput {
         self.tags.as_ref()
     }
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -2710,7 +2710,7 @@ pub mod create_revision_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) comment: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_set_id: std::option::Option<std::string::String>,
         pub(crate) finalized: std::option::Option<bool>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2718,7 +2718,7 @@ pub mod create_revision_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN for the revision.</p>
@@ -2742,14 +2742,14 @@ pub mod create_revision_output {
             self
         }
         /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -2820,14 +2820,14 @@ pub mod create_revision_output {
             self
         }
         /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -2862,7 +2862,7 @@ pub struct CreateJobOutput {
     /// <p>The ARN for the job.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Details about the job.</p>
     pub details: std::option::Option<crate::model::ResponseDetails>,
     /// <p>The errors associated with jobs.</p>
@@ -2874,7 +2874,7 @@ pub struct CreateJobOutput {
     /// <p>The job type.</p>
     pub r#type: std::option::Option<crate::model::Type>,
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateJobOutput {
     /// <p>The ARN for the job.</p>
@@ -2882,7 +2882,7 @@ impl CreateJobOutput {
         self.arn.as_deref()
     }
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Details about the job.</p>
@@ -2906,7 +2906,7 @@ impl CreateJobOutput {
         self.r#type.as_ref()
     }
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -2931,13 +2931,13 @@ pub mod create_job_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) details: std::option::Option<crate::model::ResponseDetails>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::JobError>>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::State>,
         pub(crate) r#type: std::option::Option<crate::model::Type>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN for the job.</p>
@@ -2951,14 +2951,14 @@ pub mod create_job_output {
             self
         }
         /// <p>The date and time that the job was created, in ISO 8601 format.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the job was created, in ISO 8601 format.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -3026,14 +3026,14 @@ pub mod create_job_output {
             self
         }
         /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -3069,13 +3069,13 @@ pub struct CreateEventActionOutput {
     /// <p>The ARN for the event action.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>What occurs to start an action.</p>
     pub event: std::option::Option<crate::model::Event>,
     /// <p>The unique identifier for the event action.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateEventActionOutput {
     /// <p>What occurs after a certain event.</p>
@@ -3087,7 +3087,7 @@ impl CreateEventActionOutput {
         self.arn.as_deref()
     }
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>What occurs to start an action.</p>
@@ -3099,7 +3099,7 @@ impl CreateEventActionOutput {
         self.id.as_deref()
     }
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -3123,10 +3123,10 @@ pub mod create_event_action_output {
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::Action>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event: std::option::Option<crate::model::Event>,
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>What occurs after a certain event.</p>
@@ -3150,14 +3150,14 @@ pub mod create_event_action_output {
             self
         }
         /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -3183,14 +3183,14 @@ pub mod create_event_action_output {
             self
         }
         /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -3224,7 +3224,7 @@ pub struct CreateDataSetOutput {
     /// <p>The type of asset that is added to a data set.</p>
     pub asset_type: std::option::Option<crate::model::AssetType>,
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description for the data set.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the data set.</p>
@@ -3241,7 +3241,7 @@ pub struct CreateDataSetOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateDataSetOutput {
     /// <p>The ARN for the data set.</p>
@@ -3253,7 +3253,7 @@ impl CreateDataSetOutput {
         self.asset_type.as_ref()
     }
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The description for the data set.</p>
@@ -3288,7 +3288,7 @@ impl CreateDataSetOutput {
         self.tags.as_ref()
     }
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -3317,7 +3317,7 @@ pub mod create_data_set_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) asset_type: std::option::Option<crate::model::AssetType>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3327,7 +3327,7 @@ pub mod create_data_set_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN for the data set.</p>
@@ -3354,14 +3354,14 @@ pub mod create_data_set_output {
             self
         }
         /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -3455,14 +3455,14 @@ pub mod create_data_set_output {
             self
         }
         /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self

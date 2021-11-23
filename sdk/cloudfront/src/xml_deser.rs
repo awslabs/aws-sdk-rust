@@ -5802,9 +5802,9 @@ pub fn deser_structure_crate_model_cache_policy(
             s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#CachePolicy$LastModifiedTime */ =>  {
                 let var_137 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
                         ?
@@ -5927,9 +5927,9 @@ pub fn deser_structure_crate_model_distribution(
             s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#Distribution$LastModifiedTime */ =>  {
                 let var_145 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
                         ?
@@ -6035,9 +6035,9 @@ pub fn deser_structure_crate_model_field_level_encryption(
             s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#FieldLevelEncryption$LastModifiedTime */ =>  {
                 let var_153 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
                         ?
@@ -6085,9 +6085,9 @@ pub fn deser_structure_crate_model_field_level_encryption_profile(
             s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#FieldLevelEncryptionProfile$LastModifiedTime */ =>  {
                 let var_156 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
                         ?
@@ -6207,9 +6207,9 @@ pub fn deser_structure_crate_model_invalidation(
             s if s.matches("CreateTime") /* CreateTime com.amazonaws.cloudfront#Invalidation$CreateTime */ =>  {
                 let var_164 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
                         ?
@@ -6257,9 +6257,9 @@ pub fn deser_structure_crate_model_key_group(
             s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#KeyGroup$LastModifiedTime */ =>  {
                 let var_167 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
                         ?
@@ -6330,9 +6330,9 @@ pub fn deser_structure_crate_model_origin_request_policy(
             s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#OriginRequestPolicy$LastModifiedTime */ =>  {
                 let var_171 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
                         ?
@@ -6380,9 +6380,9 @@ pub fn deser_structure_crate_model_public_key(
             s if s.matches("CreatedTime") /* CreatedTime com.amazonaws.cloudfront#PublicKey$CreatedTime */ =>  {
                 let var_174 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
                         ?
@@ -6430,9 +6430,9 @@ pub fn deser_structure_crate_model_response_headers_policy(
             s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#ResponseHeadersPolicy$LastModifiedTime */ =>  {
                 let var_177 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
                         ?
@@ -6506,9 +6506,9 @@ pub fn deser_structure_crate_model_streaming_distribution(
             s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#StreamingDistribution$LastModifiedTime */ =>  {
                 let var_182 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
                         ?
@@ -8864,9 +8864,9 @@ pub fn deser_structure_crate_model_function_metadata(
             s if s.matches("CreatedTime") /* CreatedTime com.amazonaws.cloudfront#FunctionMetadata$CreatedTime */ =>  {
                 let var_331 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
                         ?
@@ -8878,9 +8878,9 @@ pub fn deser_structure_crate_model_function_metadata(
             s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#FunctionMetadata$LastModifiedTime */ =>  {
                 let var_332 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
                         ?
@@ -12173,9 +12173,9 @@ pub fn deser_structure_crate_model_distribution_summary(
             s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#DistributionSummary$LastModifiedTime */ =>  {
                 let var_489 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
                         ?
@@ -12400,9 +12400,9 @@ pub fn deser_structure_crate_model_field_level_encryption_summary(
             s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#FieldLevelEncryptionSummary$LastModifiedTime */ =>  {
                 let var_507 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
                         ?
@@ -12473,9 +12473,9 @@ pub fn deser_structure_crate_model_field_level_encryption_profile_summary(
             s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#FieldLevelEncryptionProfileSummary$LastModifiedTime */ =>  {
                 let var_512 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
                         ?
@@ -12549,9 +12549,9 @@ pub fn deser_structure_crate_model_invalidation_summary(
             s if s.matches("CreateTime") /* CreateTime com.amazonaws.cloudfront#InvalidationSummary$CreateTime */ =>  {
                 let var_517 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
                         ?
@@ -12675,9 +12675,9 @@ pub fn deser_structure_crate_model_public_key_summary(
             s if s.matches("CreatedTime") /* CreatedTime com.amazonaws.cloudfront#PublicKeySummary$CreatedTime */ =>  {
                 let var_524 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
                         ?
@@ -12804,9 +12804,9 @@ pub fn deser_structure_crate_model_streaming_distribution_summary(
             s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#StreamingDistributionSummary$LastModifiedTime */ =>  {
                 let var_532 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
                         ?

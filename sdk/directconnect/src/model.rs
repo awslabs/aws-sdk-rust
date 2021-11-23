@@ -1104,7 +1104,7 @@ pub struct Connection {
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+    pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
@@ -1209,7 +1209,7 @@ impl Connection {
         self.partner_name.as_deref()
     }
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
@@ -1309,7 +1309,7 @@ pub mod connection {
         pub(crate) bandwidth: std::option::Option<std::string::String>,
         pub(crate) vlan: std::option::Option<i32>,
         pub(crate) partner_name: std::option::Option<std::string::String>,
-        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) lag_id: std::option::Option<std::string::String>,
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
@@ -1503,14 +1503,14 @@ pub mod connection {
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-        pub fn loa_issue_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.loa_issue_time = input;
             self
@@ -2826,9 +2826,9 @@ pub struct VirtualInterfaceTestHistory {
     /// <p>The time that the virtual interface failover test ran in minutes.</p>
     pub test_duration_in_minutes: std::option::Option<i32>,
     /// <p>The time that the virtual interface moves to the DOWN state.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the virtual interface moves out of the DOWN state.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl VirtualInterfaceTestHistory {
     /// <p>The ID of the virtual interface failover test.</p>
@@ -2856,11 +2856,11 @@ impl VirtualInterfaceTestHistory {
         self.test_duration_in_minutes
     }
     /// <p>The time that the virtual interface moves to the DOWN state.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time that the virtual interface moves out of the DOWN state.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -2890,8 +2890,8 @@ pub mod virtual_interface_test_history {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) test_duration_in_minutes: std::option::Option<i32>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the virtual interface failover test.</p>
@@ -2970,27 +2970,27 @@ pub mod virtual_interface_test_history {
             self
         }
         /// <p>The time that the virtual interface moves to the DOWN state.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The time that the virtual interface moves to the DOWN state.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time that the virtual interface moves out of the DOWN state.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time that the virtual interface moves out of the DOWN state.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -5071,7 +5071,7 @@ pub struct Interconnect {
     /// <p>The bandwidth of the connection.</p>
     pub bandwidth: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+    pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
@@ -5147,7 +5147,7 @@ impl Interconnect {
         self.bandwidth.as_deref()
     }
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
@@ -5219,7 +5219,7 @@ pub mod interconnect {
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) location: std::option::Option<std::string::String>,
         pub(crate) bandwidth: std::option::Option<std::string::String>,
-        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) lag_id: std::option::Option<std::string::String>,
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
@@ -5362,14 +5362,14 @@ pub mod interconnect {
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-        pub fn loa_issue_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.loa_issue_time = input;
             self

@@ -660,3 +660,98 @@ impl AsRef<str> for EnvironmentStatus {
         self.as_str()
     }
 }
+
+/// <p>Configuration information for the superuser.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SuperuserParameters {
+    /// <p>The email address of the superuser.</p>
+    pub email_address: std::option::Option<std::string::String>,
+    /// <p>The first name of the superuser.</p>
+    pub first_name: std::option::Option<std::string::String>,
+    /// <p>The last name of the superuser.</p>
+    pub last_name: std::option::Option<std::string::String>,
+}
+impl SuperuserParameters {
+    /// <p>The email address of the superuser.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>The first name of the superuser.</p>
+    pub fn first_name(&self) -> std::option::Option<&str> {
+        self.first_name.as_deref()
+    }
+    /// <p>The last name of the superuser.</p>
+    pub fn last_name(&self) -> std::option::Option<&str> {
+        self.last_name.as_deref()
+    }
+}
+impl std::fmt::Debug for SuperuserParameters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SuperuserParameters");
+        formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("first_name", &self.first_name);
+        formatter.field("last_name", &self.last_name);
+        formatter.finish()
+    }
+}
+/// See [`SuperuserParameters`](crate::model::SuperuserParameters)
+pub mod superuser_parameters {
+    /// A builder for [`SuperuserParameters`](crate::model::SuperuserParameters)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) email_address: std::option::Option<std::string::String>,
+        pub(crate) first_name: std::option::Option<std::string::String>,
+        pub(crate) last_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The email address of the superuser.</p>
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_address = Some(input.into());
+            self
+        }
+        /// <p>The email address of the superuser.</p>
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_address = input;
+            self
+        }
+        /// <p>The first name of the superuser.</p>
+        pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.first_name = Some(input.into());
+            self
+        }
+        /// <p>The first name of the superuser.</p>
+        pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.first_name = input;
+            self
+        }
+        /// <p>The last name of the superuser.</p>
+        pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_name = Some(input.into());
+            self
+        }
+        /// <p>The last name of the superuser.</p>
+        pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SuperuserParameters`](crate::model::SuperuserParameters)
+        pub fn build(self) -> crate::model::SuperuserParameters {
+            crate::model::SuperuserParameters {
+                email_address: self.email_address,
+                first_name: self.first_name,
+                last_name: self.last_name,
+            }
+        }
+    }
+}
+impl SuperuserParameters {
+    /// Creates a new builder-style object to manufacture [`SuperuserParameters`](crate::model::SuperuserParameters)
+    pub fn builder() -> crate::model::superuser_parameters::Builder {
+        crate::model::superuser_parameters::Builder::default()
+    }
+}

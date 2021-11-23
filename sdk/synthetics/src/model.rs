@@ -1167,17 +1167,17 @@ impl CanaryRun {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CanaryRunTimeline {
     /// <p>The start time of the run.</p>
-    pub started: std::option::Option<aws_smithy_types::Instant>,
+    pub started: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time of the run.</p>
-    pub completed: std::option::Option<aws_smithy_types::Instant>,
+    pub completed: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CanaryRunTimeline {
     /// <p>The start time of the run.</p>
-    pub fn started(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started.as_ref()
     }
     /// <p>The end time of the run.</p>
-    pub fn completed(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completed(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed.as_ref()
     }
 }
@@ -1195,32 +1195,32 @@ pub mod canary_run_timeline {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) started: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completed: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completed: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The start time of the run.</p>
-        pub fn started(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started = Some(input);
             self
         }
         /// <p>The start time of the run.</p>
         pub fn set_started(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started = input;
             self
         }
         /// <p>The end time of the run.</p>
-        pub fn completed(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completed(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completed = Some(input);
             self
         }
         /// <p>The end time of the run.</p>
         pub fn set_completed(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completed = input;
             self
@@ -2203,29 +2203,29 @@ impl VpcConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CanaryTimeline {
     /// <p>The date and time the canary was created.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the canary was most recently modified.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the canary's most recent run started.</p>
-    pub last_started: std::option::Option<aws_smithy_types::Instant>,
+    pub last_started: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the canary's most recent run ended.</p>
-    pub last_stopped: std::option::Option<aws_smithy_types::Instant>,
+    pub last_stopped: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CanaryTimeline {
     /// <p>The date and time the canary was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date and time the canary was most recently modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The date and time that the canary's most recent run started.</p>
-    pub fn last_started(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_started(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_started.as_ref()
     }
     /// <p>The date and time that the canary's most recent run ended.</p>
-    pub fn last_stopped(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_stopped(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_stopped.as_ref()
     }
 }
@@ -2245,60 +2245,60 @@ pub mod canary_timeline {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_started: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_stopped: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_started: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_stopped: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The date and time the canary was created.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p>The date and time the canary was created.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
         }
         /// <p>The date and time the canary was most recently modified.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>The date and time the canary was most recently modified.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
         }
         /// <p>The date and time that the canary's most recent run started.</p>
-        pub fn last_started(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_started(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_started = Some(input);
             self
         }
         /// <p>The date and time that the canary's most recent run started.</p>
         pub fn set_last_started(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_started = input;
             self
         }
         /// <p>The date and time that the canary's most recent run ended.</p>
-        pub fn last_stopped(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_stopped(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_stopped = Some(input);
             self
         }
         /// <p>The date and time that the canary's most recent run ended.</p>
         pub fn set_last_stopped(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_stopped = input;
             self
@@ -2873,9 +2873,9 @@ pub struct RuntimeVersion {
     /// <p>A description of the runtime version, created by Amazon.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date that the runtime version was released.</p>
-    pub release_date: std::option::Option<aws_smithy_types::Instant>,
+    pub release_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If this runtime version is deprecated, this value is the date of deprecation.</p>
-    pub deprecation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub deprecation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RuntimeVersion {
     /// <p>The name of the runtime version. For a list of valid runtime versions,
@@ -2889,11 +2889,11 @@ impl RuntimeVersion {
         self.description.as_deref()
     }
     /// <p>The date that the runtime version was released.</p>
-    pub fn release_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn release_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.release_date.as_ref()
     }
     /// <p>If this runtime version is deprecated, this value is the date of deprecation.</p>
-    pub fn deprecation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn deprecation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deprecation_date.as_ref()
     }
 }
@@ -2915,8 +2915,8 @@ pub mod runtime_version {
     pub struct Builder {
         pub(crate) version_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) release_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) deprecation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) release_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) deprecation_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the runtime version. For a list of valid runtime versions,
@@ -2944,27 +2944,27 @@ pub mod runtime_version {
             self
         }
         /// <p>The date that the runtime version was released.</p>
-        pub fn release_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn release_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.release_date = Some(input);
             self
         }
         /// <p>The date that the runtime version was released.</p>
         pub fn set_release_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.release_date = input;
             self
         }
         /// <p>If this runtime version is deprecated, this value is the date of deprecation.</p>
-        pub fn deprecation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn deprecation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deprecation_date = Some(input);
             self
         }
         /// <p>If this runtime version is deprecated, this value is the date of deprecation.</p>
         pub fn set_deprecation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.deprecation_date = input;
             self

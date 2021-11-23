@@ -1,8 +1,14 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
 use aws_smithy_json::deserialize::token::skip_value;
 use aws_smithy_json::deserialize::{json_token_iter, EscapeError, Token};
-use aws_smithy_types::instant::Format;
-use aws_smithy_types::Instant;
+use aws_smithy_types::date_time::Format;
+use aws_smithy_types::DateTime;
 use std::borrow::Cow;
+use std::convert::TryFrom;
 use std::error::Error;
 use std::fmt::{Display, Formatter};
 use std::time::SystemTime;
@@ -167,14 +173,16 @@ pub(crate) fn parse_json_credentials(
                 session_token.ok_or(InvalidJsonCredentials::MissingField("Token"))?;
             let expiration =
                 expiration.ok_or(InvalidJsonCredentials::MissingField("Expiration"))?;
-            let expiration = Instant::from_str(expiration.as_ref(), Format::DateTime)
-                .map_err(|err| {
+            let expiration = SystemTime::try_from(
+                DateTime::from_str(expiration.as_ref(), Format::DateTime).map_err(|err| {
                     InvalidJsonCredentials::Other(format!("invalid date: {}", err).into())
-                })?
-                .to_system_time()
-                .ok_or_else(|| {
-                    InvalidJsonCredentials::Other("invalid expiration (prior to unix epoch)".into())
-                })?;
+                })?,
+            )
+            .map_err(|_| {
+                InvalidJsonCredentials::Other(
+                    "credential expiration time cannot be represented by a SystemTime".into(),
+                )
+            })?;
             Ok(JsonCredentials::RefreshableCredentials {
                 access_key_id,
                 secret_access_key,

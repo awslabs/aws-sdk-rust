@@ -65,7 +65,7 @@ pub struct StartContentUploadOutput {
     /// <p>The URL of the upload.</p>
     pub url: std::option::Option<std::string::String>,
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
-    pub url_expiry: std::option::Option<aws_smithy_types::Instant>,
+    pub url_expiry: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The headers to include in the upload.</p>
     pub headers_to_include:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -80,7 +80,7 @@ impl StartContentUploadOutput {
         self.url.as_deref()
     }
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
-    pub fn url_expiry(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn url_expiry(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.url_expiry.as_ref()
     }
     /// <p>The headers to include in the upload.</p>
@@ -109,7 +109,7 @@ pub mod start_content_upload_output {
     pub struct Builder {
         pub(crate) upload_id: std::option::Option<std::string::String>,
         pub(crate) url: std::option::Option<std::string::String>,
-        pub(crate) url_expiry: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) url_expiry: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) headers_to_include: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -136,14 +136,14 @@ pub mod start_content_upload_output {
             self
         }
         /// <p>The expiration time of the URL as an epoch timestamp.</p>
-        pub fn url_expiry(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn url_expiry(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.url_expiry = Some(input);
             self
         }
         /// <p>The expiration time of the URL as an epoch timestamp.</p>
         pub fn set_url_expiry(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.url_expiry = input;
             self

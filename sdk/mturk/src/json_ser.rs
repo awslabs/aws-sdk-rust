@@ -755,7 +755,7 @@ pub fn serialize_structure_crate_input_update_expiration_for_hit_input(
     if let Some(var_147) = &input.expire_at {
         object
             .key("ExpireAt")
-            .instant(var_147, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_147, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

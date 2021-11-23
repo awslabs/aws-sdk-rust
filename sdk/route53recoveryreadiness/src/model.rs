@@ -1340,7 +1340,7 @@ pub struct ResourceResult {
     /// The component id of the resource
     pub component_id: std::option::Option<std::string::String>,
     /// The time the resource was last checked for readiness, in ISO-8601 format, UTC.
-    pub last_checked_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_checked_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// The readiness of the resource.
     pub readiness: std::option::Option<crate::model::Readiness>,
     /// The ARN of the resource
@@ -1352,7 +1352,7 @@ impl ResourceResult {
         self.component_id.as_deref()
     }
     /// The time the resource was last checked for readiness, in ISO-8601 format, UTC.
-    pub fn last_checked_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_checked_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_checked_timestamp.as_ref()
     }
     /// The readiness of the resource.
@@ -1381,7 +1381,7 @@ pub mod resource_result {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_id: std::option::Option<std::string::String>,
-        pub(crate) last_checked_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_checked_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) readiness: std::option::Option<crate::model::Readiness>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1397,14 +1397,14 @@ pub mod resource_result {
             self
         }
         /// The time the resource was last checked for readiness, in ISO-8601 format, UTC.
-        pub fn last_checked_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_checked_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_checked_timestamp = Some(input);
             self
         }
         /// The time the resource was last checked for readiness, in ISO-8601 format, UTC.
         pub fn set_last_checked_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_checked_timestamp = input;
             self
@@ -1509,7 +1509,7 @@ impl Message {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleResult {
     /// The time the resource was last checked for readiness, in ISO-8601 format, UTC.
-    pub last_checked_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_checked_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// Details about the resource's readiness
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
     /// The readiness at rule level.
@@ -1519,7 +1519,7 @@ pub struct RuleResult {
 }
 impl RuleResult {
     /// The time the resource was last checked for readiness, in ISO-8601 format, UTC.
-    pub fn last_checked_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_checked_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_checked_timestamp.as_ref()
     }
     /// Details about the resource's readiness
@@ -1551,21 +1551,21 @@ pub mod rule_result {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_checked_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_checked_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
         pub(crate) readiness: std::option::Option<crate::model::Readiness>,
         pub(crate) rule_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// The time the resource was last checked for readiness, in ISO-8601 format, UTC.
-        pub fn last_checked_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_checked_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_checked_timestamp = Some(input);
             self
         }
         /// The time the resource was last checked for readiness, in ISO-8601 format, UTC.
         pub fn set_last_checked_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_checked_timestamp = input;
             self

@@ -1943,7 +1943,7 @@ pub struct TableDataImportJobMetadata {
     /// <p>Details about the submitter of the import request.</p>
     pub submitter: std::option::Option<crate::model::ImportJobSubmitter>,
     /// <p>The timestamp when the job was submitted for import.</p>
-    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The options that was specified at the time of submitting the import request.</p>
     pub import_options: std::option::Option<crate::model::ImportOptions>,
     /// <p>The source of the data that was submitted for import.</p>
@@ -1955,7 +1955,7 @@ impl TableDataImportJobMetadata {
         self.submitter.as_ref()
     }
     /// <p>The timestamp when the job was submitted for import.</p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The options that was specified at the time of submitting the import request.</p>
@@ -1984,7 +1984,7 @@ pub mod table_data_import_job_metadata {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) submitter: std::option::Option<crate::model::ImportJobSubmitter>,
-        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) import_options: std::option::Option<crate::model::ImportOptions>,
         pub(crate) data_source: std::option::Option<crate::model::ImportDataSource>,
     }
@@ -2003,14 +2003,14 @@ pub mod table_data_import_job_metadata {
             self
         }
         /// <p>The timestamp when the job was submitted for import.</p>
-        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time = Some(input);
             self
         }
         /// <p>The timestamp when the job was submitted for import.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time = input;
             self

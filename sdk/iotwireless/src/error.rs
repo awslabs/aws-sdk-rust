@@ -178,6 +178,543 @@ impl std::error::Error for AssociateAwsAccountWithPartnerAccountError {
     }
 }
 
+/// Error type for the `AssociateMulticastGroupWithFuotaTask` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct AssociateMulticastGroupWithFuotaTaskError {
+    /// Kind of error that occurred.
+    pub kind: AssociateMulticastGroupWithFuotaTaskErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `AssociateMulticastGroupWithFuotaTask` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AssociateMulticastGroupWithFuotaTaskErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Adding, updating, or deleting the resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for AssociateMulticastGroupWithFuotaTaskError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AssociateMulticastGroupWithFuotaTaskErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateMulticastGroupWithFuotaTaskErrorKind::ConflictException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateMulticastGroupWithFuotaTaskErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateMulticastGroupWithFuotaTaskErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateMulticastGroupWithFuotaTaskErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateMulticastGroupWithFuotaTaskErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateMulticastGroupWithFuotaTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for AssociateMulticastGroupWithFuotaTaskError {
+    fn code(&self) -> Option<&str> {
+        AssociateMulticastGroupWithFuotaTaskError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AssociateMulticastGroupWithFuotaTaskError {
+    /// Creates a new `AssociateMulticastGroupWithFuotaTaskError`.
+    pub fn new(
+        kind: AssociateMulticastGroupWithFuotaTaskErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `AssociateMulticastGroupWithFuotaTaskError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AssociateMulticastGroupWithFuotaTaskErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `AssociateMulticastGroupWithFuotaTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AssociateMulticastGroupWithFuotaTaskErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `AssociateMulticastGroupWithFuotaTaskErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateMulticastGroupWithFuotaTaskErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateMulticastGroupWithFuotaTaskErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateMulticastGroupWithFuotaTaskErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateMulticastGroupWithFuotaTaskErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateMulticastGroupWithFuotaTaskErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateMulticastGroupWithFuotaTaskErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateMulticastGroupWithFuotaTaskErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateMulticastGroupWithFuotaTaskErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateMulticastGroupWithFuotaTaskErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateMulticastGroupWithFuotaTaskErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateMulticastGroupWithFuotaTaskErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for AssociateMulticastGroupWithFuotaTaskError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AssociateMulticastGroupWithFuotaTaskErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            AssociateMulticastGroupWithFuotaTaskErrorKind::ConflictException(_inner) => {
+                Some(_inner)
+            }
+            AssociateMulticastGroupWithFuotaTaskErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            AssociateMulticastGroupWithFuotaTaskErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            AssociateMulticastGroupWithFuotaTaskErrorKind::ThrottlingException(_inner) => {
+                Some(_inner)
+            }
+            AssociateMulticastGroupWithFuotaTaskErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            AssociateMulticastGroupWithFuotaTaskErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
+/// Error type for the `AssociateWirelessDeviceWithFuotaTask` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct AssociateWirelessDeviceWithFuotaTaskError {
+    /// Kind of error that occurred.
+    pub kind: AssociateWirelessDeviceWithFuotaTaskErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `AssociateWirelessDeviceWithFuotaTask` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AssociateWirelessDeviceWithFuotaTaskErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Adding, updating, or deleting the resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for AssociateWirelessDeviceWithFuotaTaskError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AssociateWirelessDeviceWithFuotaTaskErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateWirelessDeviceWithFuotaTaskErrorKind::ConflictException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateWirelessDeviceWithFuotaTaskErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateWirelessDeviceWithFuotaTaskErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateWirelessDeviceWithFuotaTaskErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateWirelessDeviceWithFuotaTaskErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateWirelessDeviceWithFuotaTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for AssociateWirelessDeviceWithFuotaTaskError {
+    fn code(&self) -> Option<&str> {
+        AssociateWirelessDeviceWithFuotaTaskError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AssociateWirelessDeviceWithFuotaTaskError {
+    /// Creates a new `AssociateWirelessDeviceWithFuotaTaskError`.
+    pub fn new(
+        kind: AssociateWirelessDeviceWithFuotaTaskErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `AssociateWirelessDeviceWithFuotaTaskError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AssociateWirelessDeviceWithFuotaTaskErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `AssociateWirelessDeviceWithFuotaTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AssociateWirelessDeviceWithFuotaTaskErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `AssociateWirelessDeviceWithFuotaTaskErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateWirelessDeviceWithFuotaTaskErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateWirelessDeviceWithFuotaTaskErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateWirelessDeviceWithFuotaTaskErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateWirelessDeviceWithFuotaTaskErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateWirelessDeviceWithFuotaTaskErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateWirelessDeviceWithFuotaTaskErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateWirelessDeviceWithFuotaTaskErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateWirelessDeviceWithFuotaTaskErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateWirelessDeviceWithFuotaTaskErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateWirelessDeviceWithFuotaTaskErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateWirelessDeviceWithFuotaTaskErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for AssociateWirelessDeviceWithFuotaTaskError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AssociateWirelessDeviceWithFuotaTaskErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            AssociateWirelessDeviceWithFuotaTaskErrorKind::ConflictException(_inner) => {
+                Some(_inner)
+            }
+            AssociateWirelessDeviceWithFuotaTaskErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            AssociateWirelessDeviceWithFuotaTaskErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            AssociateWirelessDeviceWithFuotaTaskErrorKind::ThrottlingException(_inner) => {
+                Some(_inner)
+            }
+            AssociateWirelessDeviceWithFuotaTaskErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            AssociateWirelessDeviceWithFuotaTaskErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
+/// Error type for the `AssociateWirelessDeviceWithMulticastGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct AssociateWirelessDeviceWithMulticastGroupError {
+    /// Kind of error that occurred.
+    pub kind: AssociateWirelessDeviceWithMulticastGroupErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `AssociateWirelessDeviceWithMulticastGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AssociateWirelessDeviceWithMulticastGroupErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Adding, updating, or deleting the resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for AssociateWirelessDeviceWithMulticastGroupError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AssociateWirelessDeviceWithMulticastGroupErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateWirelessDeviceWithMulticastGroupErrorKind::ConflictException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateWirelessDeviceWithMulticastGroupErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateWirelessDeviceWithMulticastGroupErrorKind::ResourceNotFoundException(
+                _inner,
+            ) => _inner.fmt(f),
+            AssociateWirelessDeviceWithMulticastGroupErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateWirelessDeviceWithMulticastGroupErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateWirelessDeviceWithMulticastGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for AssociateWirelessDeviceWithMulticastGroupError {
+    fn code(&self) -> Option<&str> {
+        AssociateWirelessDeviceWithMulticastGroupError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AssociateWirelessDeviceWithMulticastGroupError {
+    /// Creates a new `AssociateWirelessDeviceWithMulticastGroupError`.
+    pub fn new(
+        kind: AssociateWirelessDeviceWithMulticastGroupErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `AssociateWirelessDeviceWithMulticastGroupError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AssociateWirelessDeviceWithMulticastGroupErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `AssociateWirelessDeviceWithMulticastGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AssociateWirelessDeviceWithMulticastGroupErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `AssociateWirelessDeviceWithMulticastGroupErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateWirelessDeviceWithMulticastGroupErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateWirelessDeviceWithMulticastGroupErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateWirelessDeviceWithMulticastGroupErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateWirelessDeviceWithMulticastGroupErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateWirelessDeviceWithMulticastGroupErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateWirelessDeviceWithMulticastGroupErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateWirelessDeviceWithMulticastGroupErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateWirelessDeviceWithMulticastGroupErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateWirelessDeviceWithMulticastGroupErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateWirelessDeviceWithMulticastGroupErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateWirelessDeviceWithMulticastGroupErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for AssociateWirelessDeviceWithMulticastGroupError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AssociateWirelessDeviceWithMulticastGroupErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            AssociateWirelessDeviceWithMulticastGroupErrorKind::ConflictException(_inner) => {
+                Some(_inner)
+            }
+            AssociateWirelessDeviceWithMulticastGroupErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            AssociateWirelessDeviceWithMulticastGroupErrorKind::ResourceNotFoundException(
+                _inner,
+            ) => Some(_inner),
+            AssociateWirelessDeviceWithMulticastGroupErrorKind::ThrottlingException(_inner) => {
+                Some(_inner)
+            }
+            AssociateWirelessDeviceWithMulticastGroupErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            AssociateWirelessDeviceWithMulticastGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
 /// Error type for the `AssociateWirelessDeviceWithThing` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -691,6 +1228,158 @@ impl std::error::Error for AssociateWirelessGatewayWithThingError {
     }
 }
 
+/// Error type for the `CancelMulticastGroupSession` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CancelMulticastGroupSessionError {
+    /// Kind of error that occurred.
+    pub kind: CancelMulticastGroupSessionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CancelMulticastGroupSession` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CancelMulticastGroupSessionErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Adding, updating, or deleting the resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CancelMulticastGroupSessionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CancelMulticastGroupSessionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CancelMulticastGroupSessionErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CancelMulticastGroupSessionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CancelMulticastGroupSessionErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            CancelMulticastGroupSessionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CancelMulticastGroupSessionErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CancelMulticastGroupSessionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CancelMulticastGroupSessionError {
+    fn code(&self) -> Option<&str> {
+        CancelMulticastGroupSessionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CancelMulticastGroupSessionError {
+    /// Creates a new `CancelMulticastGroupSessionError`.
+    pub fn new(kind: CancelMulticastGroupSessionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CancelMulticastGroupSessionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CancelMulticastGroupSessionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CancelMulticastGroupSessionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CancelMulticastGroupSessionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CancelMulticastGroupSessionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelMulticastGroupSessionErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelMulticastGroupSessionErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelMulticastGroupSessionErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelMulticastGroupSessionErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelMulticastGroupSessionErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelMulticastGroupSessionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelMulticastGroupSessionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelMulticastGroupSessionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelMulticastGroupSessionErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelMulticastGroupSessionErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelMulticastGroupSessionErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for CancelMulticastGroupSessionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CancelMulticastGroupSessionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CancelMulticastGroupSessionErrorKind::ConflictException(_inner) => Some(_inner),
+            CancelMulticastGroupSessionErrorKind::InternalServerException(_inner) => Some(_inner),
+            CancelMulticastGroupSessionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CancelMulticastGroupSessionErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CancelMulticastGroupSessionErrorKind::ValidationException(_inner) => Some(_inner),
+            CancelMulticastGroupSessionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateDestination` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -973,6 +1662,297 @@ impl std::error::Error for CreateDeviceProfileError {
             CreateDeviceProfileErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateDeviceProfileErrorKind::ValidationException(_inner) => Some(_inner),
             CreateDeviceProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateFuotaTask` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateFuotaTaskError {
+    /// Kind of error that occurred.
+    pub kind: CreateFuotaTaskErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateFuotaTask` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateFuotaTaskErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Adding, updating, or deleting the resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateFuotaTaskError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateFuotaTaskErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateFuotaTaskErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateFuotaTaskErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateFuotaTaskErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateFuotaTaskErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateFuotaTaskErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreateFuotaTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateFuotaTaskError {
+    fn code(&self) -> Option<&str> {
+        CreateFuotaTaskError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateFuotaTaskError {
+    /// Creates a new `CreateFuotaTaskError`.
+    pub fn new(kind: CreateFuotaTaskErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateFuotaTaskError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateFuotaTaskErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateFuotaTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateFuotaTaskErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateFuotaTaskErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFuotaTaskErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateFuotaTaskErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateFuotaTaskErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `CreateFuotaTaskErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFuotaTaskErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateFuotaTaskErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFuotaTaskErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateFuotaTaskErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, CreateFuotaTaskErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `CreateFuotaTaskErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, CreateFuotaTaskErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for CreateFuotaTaskError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateFuotaTaskErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateFuotaTaskErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateFuotaTaskErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateFuotaTaskErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateFuotaTaskErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateFuotaTaskErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateFuotaTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateMulticastGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateMulticastGroupError {
+    /// Kind of error that occurred.
+    pub kind: CreateMulticastGroupErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateMulticastGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateMulticastGroupErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Adding, updating, or deleting the resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateMulticastGroupError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateMulticastGroupErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateMulticastGroupErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateMulticastGroupErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateMulticastGroupErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateMulticastGroupErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateMulticastGroupErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreateMulticastGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateMulticastGroupError {
+    fn code(&self) -> Option<&str> {
+        CreateMulticastGroupError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateMulticastGroupError {
+    /// Creates a new `CreateMulticastGroupError`.
+    pub fn new(kind: CreateMulticastGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateMulticastGroupError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateMulticastGroupErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateMulticastGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateMulticastGroupErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateMulticastGroupErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMulticastGroupErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMulticastGroupErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMulticastGroupErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMulticastGroupErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMulticastGroupErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMulticastGroupErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMulticastGroupErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMulticastGroupErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMulticastGroupErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMulticastGroupErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMulticastGroupErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for CreateMulticastGroupError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateMulticastGroupErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateMulticastGroupErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateMulticastGroupErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateMulticastGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateMulticastGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateMulticastGroupErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateMulticastGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2029,6 +3009,289 @@ impl std::error::Error for DeleteDeviceProfileError {
     }
 }
 
+/// Error type for the `DeleteFuotaTask` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteFuotaTaskError {
+    /// Kind of error that occurred.
+    pub kind: DeleteFuotaTaskErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteFuotaTask` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteFuotaTaskErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteFuotaTaskError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteFuotaTaskErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteFuotaTaskErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteFuotaTaskErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteFuotaTaskErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteFuotaTaskErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteFuotaTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteFuotaTaskError {
+    fn code(&self) -> Option<&str> {
+        DeleteFuotaTaskError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteFuotaTaskError {
+    /// Creates a new `DeleteFuotaTaskError`.
+    pub fn new(kind: DeleteFuotaTaskErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteFuotaTaskError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteFuotaTaskErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteFuotaTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteFuotaTaskErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteFuotaTaskErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFuotaTaskErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteFuotaTaskErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFuotaTaskErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteFuotaTaskErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFuotaTaskErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteFuotaTaskErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DeleteFuotaTaskErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteFuotaTaskErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, DeleteFuotaTaskErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for DeleteFuotaTaskError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteFuotaTaskErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteFuotaTaskErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteFuotaTaskErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteFuotaTaskErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteFuotaTaskErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteFuotaTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteMulticastGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteMulticastGroupError {
+    /// Kind of error that occurred.
+    pub kind: DeleteMulticastGroupErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteMulticastGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteMulticastGroupErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Adding, updating, or deleting the resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteMulticastGroupError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteMulticastGroupErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteMulticastGroupErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteMulticastGroupErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteMulticastGroupErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteMulticastGroupErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteMulticastGroupErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteMulticastGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteMulticastGroupError {
+    fn code(&self) -> Option<&str> {
+        DeleteMulticastGroupError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteMulticastGroupError {
+    /// Creates a new `DeleteMulticastGroupError`.
+    pub fn new(kind: DeleteMulticastGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteMulticastGroupError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteMulticastGroupErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteMulticastGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteMulticastGroupErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteMulticastGroupErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMulticastGroupErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteMulticastGroupErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMulticastGroupErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteMulticastGroupErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMulticastGroupErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteMulticastGroupErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMulticastGroupErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteMulticastGroupErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMulticastGroupErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteMulticastGroupErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMulticastGroupErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteMulticastGroupError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteMulticastGroupErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteMulticastGroupErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteMulticastGroupErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteMulticastGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteMulticastGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteMulticastGroupErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteMulticastGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteServiceProfile` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2909,6 +4172,517 @@ impl std::error::Error for DisassociateAwsAccountFromPartnerAccountError {
     }
 }
 
+/// Error type for the `DisassociateMulticastGroupFromFuotaTask` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DisassociateMulticastGroupFromFuotaTaskError {
+    /// Kind of error that occurred.
+    pub kind: DisassociateMulticastGroupFromFuotaTaskErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DisassociateMulticastGroupFromFuotaTask` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DisassociateMulticastGroupFromFuotaTaskErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Adding, updating, or deleting the resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DisassociateMulticastGroupFromFuotaTaskError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DisassociateMulticastGroupFromFuotaTaskErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateMulticastGroupFromFuotaTaskErrorKind::ConflictException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateMulticastGroupFromFuotaTaskErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateMulticastGroupFromFuotaTaskErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateMulticastGroupFromFuotaTaskErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateMulticastGroupFromFuotaTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DisassociateMulticastGroupFromFuotaTaskError {
+    fn code(&self) -> Option<&str> {
+        DisassociateMulticastGroupFromFuotaTaskError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DisassociateMulticastGroupFromFuotaTaskError {
+    /// Creates a new `DisassociateMulticastGroupFromFuotaTaskError`.
+    pub fn new(
+        kind: DisassociateMulticastGroupFromFuotaTaskErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DisassociateMulticastGroupFromFuotaTaskError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DisassociateMulticastGroupFromFuotaTaskErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DisassociateMulticastGroupFromFuotaTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DisassociateMulticastGroupFromFuotaTaskErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DisassociateMulticastGroupFromFuotaTaskErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateMulticastGroupFromFuotaTaskErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateMulticastGroupFromFuotaTaskErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateMulticastGroupFromFuotaTaskErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateMulticastGroupFromFuotaTaskErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateMulticastGroupFromFuotaTaskErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateMulticastGroupFromFuotaTaskErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateMulticastGroupFromFuotaTaskErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateMulticastGroupFromFuotaTaskErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateMulticastGroupFromFuotaTaskErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DisassociateMulticastGroupFromFuotaTaskError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DisassociateMulticastGroupFromFuotaTaskErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateMulticastGroupFromFuotaTaskErrorKind::ConflictException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateMulticastGroupFromFuotaTaskErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateMulticastGroupFromFuotaTaskErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateMulticastGroupFromFuotaTaskErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateMulticastGroupFromFuotaTaskErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
+/// Error type for the `DisassociateWirelessDeviceFromFuotaTask` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DisassociateWirelessDeviceFromFuotaTaskError {
+    /// Kind of error that occurred.
+    pub kind: DisassociateWirelessDeviceFromFuotaTaskErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DisassociateWirelessDeviceFromFuotaTask` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DisassociateWirelessDeviceFromFuotaTaskErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Adding, updating, or deleting the resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DisassociateWirelessDeviceFromFuotaTaskError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DisassociateWirelessDeviceFromFuotaTaskErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateWirelessDeviceFromFuotaTaskErrorKind::ConflictException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateWirelessDeviceFromFuotaTaskErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateWirelessDeviceFromFuotaTaskErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateWirelessDeviceFromFuotaTaskErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateWirelessDeviceFromFuotaTaskErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateWirelessDeviceFromFuotaTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DisassociateWirelessDeviceFromFuotaTaskError {
+    fn code(&self) -> Option<&str> {
+        DisassociateWirelessDeviceFromFuotaTaskError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DisassociateWirelessDeviceFromFuotaTaskError {
+    /// Creates a new `DisassociateWirelessDeviceFromFuotaTaskError`.
+    pub fn new(
+        kind: DisassociateWirelessDeviceFromFuotaTaskErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DisassociateWirelessDeviceFromFuotaTaskError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DisassociateWirelessDeviceFromFuotaTaskErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DisassociateWirelessDeviceFromFuotaTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DisassociateWirelessDeviceFromFuotaTaskErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DisassociateWirelessDeviceFromFuotaTaskErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateWirelessDeviceFromFuotaTaskErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateWirelessDeviceFromFuotaTaskErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateWirelessDeviceFromFuotaTaskErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateWirelessDeviceFromFuotaTaskErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateWirelessDeviceFromFuotaTaskErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateWirelessDeviceFromFuotaTaskErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateWirelessDeviceFromFuotaTaskErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateWirelessDeviceFromFuotaTaskErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateWirelessDeviceFromFuotaTaskErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateWirelessDeviceFromFuotaTaskErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateWirelessDeviceFromFuotaTaskErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DisassociateWirelessDeviceFromFuotaTaskError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DisassociateWirelessDeviceFromFuotaTaskErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateWirelessDeviceFromFuotaTaskErrorKind::ConflictException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateWirelessDeviceFromFuotaTaskErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateWirelessDeviceFromFuotaTaskErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateWirelessDeviceFromFuotaTaskErrorKind::ThrottlingException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateWirelessDeviceFromFuotaTaskErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateWirelessDeviceFromFuotaTaskErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
+/// Error type for the `DisassociateWirelessDeviceFromMulticastGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DisassociateWirelessDeviceFromMulticastGroupError {
+    /// Kind of error that occurred.
+    pub kind: DisassociateWirelessDeviceFromMulticastGroupErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DisassociateWirelessDeviceFromMulticastGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DisassociateWirelessDeviceFromMulticastGroupErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DisassociateWirelessDeviceFromMulticastGroupError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DisassociateWirelessDeviceFromMulticastGroupErrorKind::AccessDeniedException(
+                _inner,
+            ) => _inner.fmt(f),
+            DisassociateWirelessDeviceFromMulticastGroupErrorKind::InternalServerException(
+                _inner,
+            ) => _inner.fmt(f),
+            DisassociateWirelessDeviceFromMulticastGroupErrorKind::ResourceNotFoundException(
+                _inner,
+            ) => _inner.fmt(f),
+            DisassociateWirelessDeviceFromMulticastGroupErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateWirelessDeviceFromMulticastGroupErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateWirelessDeviceFromMulticastGroupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind
+    for DisassociateWirelessDeviceFromMulticastGroupError
+{
+    fn code(&self) -> Option<&str> {
+        DisassociateWirelessDeviceFromMulticastGroupError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DisassociateWirelessDeviceFromMulticastGroupError {
+    /// Creates a new `DisassociateWirelessDeviceFromMulticastGroupError`.
+    pub fn new(
+        kind: DisassociateWirelessDeviceFromMulticastGroupErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DisassociateWirelessDeviceFromMulticastGroupError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DisassociateWirelessDeviceFromMulticastGroupErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DisassociateWirelessDeviceFromMulticastGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DisassociateWirelessDeviceFromMulticastGroupErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DisassociateWirelessDeviceFromMulticastGroupErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateWirelessDeviceFromMulticastGroupErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateWirelessDeviceFromMulticastGroupErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateWirelessDeviceFromMulticastGroupErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateWirelessDeviceFromMulticastGroupErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateWirelessDeviceFromMulticastGroupErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateWirelessDeviceFromMulticastGroupErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateWirelessDeviceFromMulticastGroupErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateWirelessDeviceFromMulticastGroupErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateWirelessDeviceFromMulticastGroupErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DisassociateWirelessDeviceFromMulticastGroupError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DisassociateWirelessDeviceFromMulticastGroupErrorKind::AccessDeniedException(
+                _inner,
+            ) => Some(_inner),
+            DisassociateWirelessDeviceFromMulticastGroupErrorKind::InternalServerException(
+                _inner,
+            ) => Some(_inner),
+            DisassociateWirelessDeviceFromMulticastGroupErrorKind::ResourceNotFoundException(
+                _inner,
+            ) => Some(_inner),
+            DisassociateWirelessDeviceFromMulticastGroupErrorKind::ThrottlingException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateWirelessDeviceFromMulticastGroupErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateWirelessDeviceFromMulticastGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
 /// Error type for the `DisassociateWirelessDeviceFromThing` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3701,6 +5475,136 @@ impl std::error::Error for GetDeviceProfileError {
     }
 }
 
+/// Error type for the `GetFuotaTask` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetFuotaTaskError {
+    /// Kind of error that occurred.
+    pub kind: GetFuotaTaskErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetFuotaTask` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetFuotaTaskErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetFuotaTaskError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetFuotaTaskErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetFuotaTaskErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetFuotaTaskErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetFuotaTaskErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetFuotaTaskErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetFuotaTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetFuotaTaskError {
+    fn code(&self) -> Option<&str> {
+        GetFuotaTaskError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetFuotaTaskError {
+    /// Creates a new `GetFuotaTaskError`.
+    pub fn new(kind: GetFuotaTaskErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetFuotaTaskError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetFuotaTaskErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetFuotaTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetFuotaTaskErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetFuotaTaskErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, GetFuotaTaskErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetFuotaTaskErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFuotaTaskErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetFuotaTaskErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFuotaTaskErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetFuotaTaskErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetFuotaTaskErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `GetFuotaTaskErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, GetFuotaTaskErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for GetFuotaTaskError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetFuotaTaskErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetFuotaTaskErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetFuotaTaskErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetFuotaTaskErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetFuotaTaskErrorKind::ValidationException(_inner) => Some(_inner),
+            GetFuotaTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetLogLevelsByResourceTypes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3842,6 +5746,284 @@ impl std::error::Error for GetLogLevelsByResourceTypesError {
     }
 }
 
+/// Error type for the `GetMulticastGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetMulticastGroupError {
+    /// Kind of error that occurred.
+    pub kind: GetMulticastGroupErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetMulticastGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetMulticastGroupErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetMulticastGroupError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetMulticastGroupErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetMulticastGroupErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetMulticastGroupErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetMulticastGroupErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetMulticastGroupErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetMulticastGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetMulticastGroupError {
+    fn code(&self) -> Option<&str> {
+        GetMulticastGroupError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetMulticastGroupError {
+    /// Creates a new `GetMulticastGroupError`.
+    pub fn new(kind: GetMulticastGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetMulticastGroupError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetMulticastGroupErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetMulticastGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetMulticastGroupErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetMulticastGroupErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMulticastGroupErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetMulticastGroupErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMulticastGroupErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetMulticastGroupErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMulticastGroupErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetMulticastGroupErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMulticastGroupErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetMulticastGroupErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMulticastGroupErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetMulticastGroupError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetMulticastGroupErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetMulticastGroupErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetMulticastGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetMulticastGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetMulticastGroupErrorKind::ValidationException(_inner) => Some(_inner),
+            GetMulticastGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetMulticastGroupSession` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetMulticastGroupSessionError {
+    /// Kind of error that occurred.
+    pub kind: GetMulticastGroupSessionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetMulticastGroupSession` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetMulticastGroupSessionErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetMulticastGroupSessionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetMulticastGroupSessionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetMulticastGroupSessionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetMulticastGroupSessionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetMulticastGroupSessionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetMulticastGroupSessionErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetMulticastGroupSessionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetMulticastGroupSessionError {
+    fn code(&self) -> Option<&str> {
+        GetMulticastGroupSessionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetMulticastGroupSessionError {
+    /// Creates a new `GetMulticastGroupSessionError`.
+    pub fn new(kind: GetMulticastGroupSessionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetMulticastGroupSessionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetMulticastGroupSessionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetMulticastGroupSessionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetMulticastGroupSessionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetMulticastGroupSessionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMulticastGroupSessionErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetMulticastGroupSessionErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMulticastGroupSessionErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetMulticastGroupSessionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMulticastGroupSessionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetMulticastGroupSessionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMulticastGroupSessionErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetMulticastGroupSessionErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMulticastGroupSessionErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetMulticastGroupSessionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetMulticastGroupSessionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetMulticastGroupSessionErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetMulticastGroupSessionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetMulticastGroupSessionErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetMulticastGroupSessionErrorKind::ValidationException(_inner) => Some(_inner),
+            GetMulticastGroupSessionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetPartnerAccount` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3966,6 +6148,154 @@ impl std::error::Error for GetPartnerAccountError {
             GetPartnerAccountErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetPartnerAccountErrorKind::ValidationException(_inner) => Some(_inner),
             GetPartnerAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetResourceEventConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetResourceEventConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: GetResourceEventConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetResourceEventConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetResourceEventConfigurationErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetResourceEventConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetResourceEventConfigurationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetResourceEventConfigurationErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetResourceEventConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetResourceEventConfigurationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetResourceEventConfigurationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetResourceEventConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetResourceEventConfigurationError {
+    fn code(&self) -> Option<&str> {
+        GetResourceEventConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetResourceEventConfigurationError {
+    /// Creates a new `GetResourceEventConfigurationError`.
+    pub fn new(
+        kind: GetResourceEventConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetResourceEventConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetResourceEventConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetResourceEventConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetResourceEventConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetResourceEventConfigurationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourceEventConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetResourceEventConfigurationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourceEventConfigurationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetResourceEventConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourceEventConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetResourceEventConfigurationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourceEventConfigurationErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetResourceEventConfigurationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourceEventConfigurationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetResourceEventConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetResourceEventConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetResourceEventConfigurationErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetResourceEventConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetResourceEventConfigurationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetResourceEventConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
+            GetResourceEventConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5799,6 +8129,406 @@ impl std::error::Error for ListDeviceProfilesError {
     }
 }
 
+/// Error type for the `ListFuotaTasks` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListFuotaTasksError {
+    /// Kind of error that occurred.
+    pub kind: ListFuotaTasksErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListFuotaTasks` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListFuotaTasksErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListFuotaTasksError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListFuotaTasksErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListFuotaTasksErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListFuotaTasksErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListFuotaTasksErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListFuotaTasksErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListFuotaTasksError {
+    fn code(&self) -> Option<&str> {
+        ListFuotaTasksError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListFuotaTasksError {
+    /// Creates a new `ListFuotaTasksError`.
+    pub fn new(kind: ListFuotaTasksErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListFuotaTasksError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListFuotaTasksErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListFuotaTasksError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListFuotaTasksErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListFuotaTasksErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFuotaTasksErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListFuotaTasksErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFuotaTasksErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListFuotaTasksErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, ListFuotaTasksErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `ListFuotaTasksErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, ListFuotaTasksErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for ListFuotaTasksError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListFuotaTasksErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListFuotaTasksErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListFuotaTasksErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListFuotaTasksErrorKind::ValidationException(_inner) => Some(_inner),
+            ListFuotaTasksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListMulticastGroups` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListMulticastGroupsError {
+    /// Kind of error that occurred.
+    pub kind: ListMulticastGroupsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListMulticastGroups` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListMulticastGroupsErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListMulticastGroupsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListMulticastGroupsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListMulticastGroupsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListMulticastGroupsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListMulticastGroupsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListMulticastGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListMulticastGroupsError {
+    fn code(&self) -> Option<&str> {
+        ListMulticastGroupsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListMulticastGroupsError {
+    /// Creates a new `ListMulticastGroupsError`.
+    pub fn new(kind: ListMulticastGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListMulticastGroupsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListMulticastGroupsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListMulticastGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListMulticastGroupsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListMulticastGroupsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMulticastGroupsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMulticastGroupsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMulticastGroupsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMulticastGroupsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMulticastGroupsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMulticastGroupsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMulticastGroupsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListMulticastGroupsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListMulticastGroupsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListMulticastGroupsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListMulticastGroupsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListMulticastGroupsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListMulticastGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListMulticastGroupsByFuotaTask` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListMulticastGroupsByFuotaTaskError {
+    /// Kind of error that occurred.
+    pub kind: ListMulticastGroupsByFuotaTaskErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListMulticastGroupsByFuotaTask` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListMulticastGroupsByFuotaTaskErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListMulticastGroupsByFuotaTaskError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListMulticastGroupsByFuotaTaskErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListMulticastGroupsByFuotaTaskErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListMulticastGroupsByFuotaTaskErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListMulticastGroupsByFuotaTaskErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListMulticastGroupsByFuotaTaskErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListMulticastGroupsByFuotaTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListMulticastGroupsByFuotaTaskError {
+    fn code(&self) -> Option<&str> {
+        ListMulticastGroupsByFuotaTaskError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListMulticastGroupsByFuotaTaskError {
+    /// Creates a new `ListMulticastGroupsByFuotaTaskError`.
+    pub fn new(
+        kind: ListMulticastGroupsByFuotaTaskErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListMulticastGroupsByFuotaTaskError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListMulticastGroupsByFuotaTaskErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListMulticastGroupsByFuotaTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListMulticastGroupsByFuotaTaskErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListMulticastGroupsByFuotaTaskErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMulticastGroupsByFuotaTaskErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMulticastGroupsByFuotaTaskErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMulticastGroupsByFuotaTaskErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMulticastGroupsByFuotaTaskErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMulticastGroupsByFuotaTaskErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMulticastGroupsByFuotaTaskErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMulticastGroupsByFuotaTaskErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMulticastGroupsByFuotaTaskErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMulticastGroupsByFuotaTaskErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListMulticastGroupsByFuotaTaskError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListMulticastGroupsByFuotaTaskErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListMulticastGroupsByFuotaTaskErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            ListMulticastGroupsByFuotaTaskErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            ListMulticastGroupsByFuotaTaskErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListMulticastGroupsByFuotaTaskErrorKind::ValidationException(_inner) => Some(_inner),
+            ListMulticastGroupsByFuotaTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListPartnerAccounts` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7014,6 +9744,156 @@ impl std::error::Error for ResetResourceLogLevelError {
     }
 }
 
+/// Error type for the `SendDataToMulticastGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SendDataToMulticastGroupError {
+    /// Kind of error that occurred.
+    pub kind: SendDataToMulticastGroupErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `SendDataToMulticastGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SendDataToMulticastGroupErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Adding, updating, or deleting the resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for SendDataToMulticastGroupError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SendDataToMulticastGroupErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            SendDataToMulticastGroupErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            SendDataToMulticastGroupErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            SendDataToMulticastGroupErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            SendDataToMulticastGroupErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            SendDataToMulticastGroupErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            SendDataToMulticastGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for SendDataToMulticastGroupError {
+    fn code(&self) -> Option<&str> {
+        SendDataToMulticastGroupError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SendDataToMulticastGroupError {
+    /// Creates a new `SendDataToMulticastGroupError`.
+    pub fn new(kind: SendDataToMulticastGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `SendDataToMulticastGroupError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SendDataToMulticastGroupErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `SendDataToMulticastGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SendDataToMulticastGroupErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `SendDataToMulticastGroupErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendDataToMulticastGroupErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SendDataToMulticastGroupErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendDataToMulticastGroupErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SendDataToMulticastGroupErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendDataToMulticastGroupErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SendDataToMulticastGroupErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendDataToMulticastGroupErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SendDataToMulticastGroupErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendDataToMulticastGroupErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SendDataToMulticastGroupErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendDataToMulticastGroupErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for SendDataToMulticastGroupError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SendDataToMulticastGroupErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            SendDataToMulticastGroupErrorKind::ConflictException(_inner) => Some(_inner),
+            SendDataToMulticastGroupErrorKind::InternalServerException(_inner) => Some(_inner),
+            SendDataToMulticastGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            SendDataToMulticastGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
+            SendDataToMulticastGroupErrorKind::ValidationException(_inner) => Some(_inner),
+            SendDataToMulticastGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `SendDataToWirelessDevice` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7138,6 +10018,644 @@ impl std::error::Error for SendDataToWirelessDeviceError {
             SendDataToWirelessDeviceErrorKind::ThrottlingException(_inner) => Some(_inner),
             SendDataToWirelessDeviceErrorKind::ValidationException(_inner) => Some(_inner),
             SendDataToWirelessDeviceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `StartBulkAssociateWirelessDeviceWithMulticastGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartBulkAssociateWirelessDeviceWithMulticastGroupError {
+    /// Kind of error that occurred.
+    pub kind: StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StartBulkAssociateWirelessDeviceWithMulticastGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartBulkAssociateWirelessDeviceWithMulticastGroupError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind
+    for StartBulkAssociateWirelessDeviceWithMulticastGroupError
+{
+    fn code(&self) -> Option<&str> {
+        StartBulkAssociateWirelessDeviceWithMulticastGroupError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartBulkAssociateWirelessDeviceWithMulticastGroupError {
+    /// Creates a new `StartBulkAssociateWirelessDeviceWithMulticastGroupError`.
+    pub fn new(
+        kind: StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartBulkAssociateWirelessDeviceWithMulticastGroupError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::Unhandled(
+                err.into(),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartBulkAssociateWirelessDeviceWithMulticastGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::Unhandled(
+                err.into(),
+            ),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::ResourceNotFoundException(
+                _
+            )
+        )
+    }
+    /// Returns `true` if the error kind is `StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for StartBulkAssociateWirelessDeviceWithMulticastGroupError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
+/// Error type for the `StartBulkDisassociateWirelessDeviceFromMulticastGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartBulkDisassociateWirelessDeviceFromMulticastGroupError {
+    /// Kind of error that occurred.
+    pub kind: StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StartBulkDisassociateWirelessDeviceFromMulticastGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartBulkDisassociateWirelessDeviceFromMulticastGroupError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind
+    for StartBulkDisassociateWirelessDeviceFromMulticastGroupError
+{
+    fn code(&self) -> Option<&str> {
+        StartBulkDisassociateWirelessDeviceFromMulticastGroupError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartBulkDisassociateWirelessDeviceFromMulticastGroupError {
+    /// Creates a new `StartBulkDisassociateWirelessDeviceFromMulticastGroupError`.
+    pub fn new(
+        kind: StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartBulkDisassociateWirelessDeviceFromMulticastGroupError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::Unhandled(
+                err.into(),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartBulkDisassociateWirelessDeviceFromMulticastGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::Unhandled(
+                err.into(),
+            ),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::AccessDeniedException(
+                _
+            )
+        )
+    }
+    /// Returns `true` if the error kind is `StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::InternalServerException(
+                _
+            )
+        )
+    }
+    /// Returns `true` if the error kind is `StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(&self.kind, StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::ResourceNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for StartBulkDisassociateWirelessDeviceFromMulticastGroupError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
+/// Error type for the `StartFuotaTask` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartFuotaTaskError {
+    /// Kind of error that occurred.
+    pub kind: StartFuotaTaskErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StartFuotaTask` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartFuotaTaskErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Adding, updating, or deleting the resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartFuotaTaskError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartFuotaTaskErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            StartFuotaTaskErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            StartFuotaTaskErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            StartFuotaTaskErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            StartFuotaTaskErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            StartFuotaTaskErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            StartFuotaTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartFuotaTaskError {
+    fn code(&self) -> Option<&str> {
+        StartFuotaTaskError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartFuotaTaskError {
+    /// Creates a new `StartFuotaTaskError`.
+    pub fn new(kind: StartFuotaTaskErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartFuotaTaskError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartFuotaTaskErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartFuotaTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartFuotaTaskErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartFuotaTaskErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartFuotaTaskErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartFuotaTaskErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, StartFuotaTaskErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `StartFuotaTaskErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartFuotaTaskErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartFuotaTaskErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartFuotaTaskErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartFuotaTaskErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, StartFuotaTaskErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `StartFuotaTaskErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, StartFuotaTaskErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for StartFuotaTaskError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartFuotaTaskErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            StartFuotaTaskErrorKind::ConflictException(_inner) => Some(_inner),
+            StartFuotaTaskErrorKind::InternalServerException(_inner) => Some(_inner),
+            StartFuotaTaskErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            StartFuotaTaskErrorKind::ThrottlingException(_inner) => Some(_inner),
+            StartFuotaTaskErrorKind::ValidationException(_inner) => Some(_inner),
+            StartFuotaTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `StartMulticastGroupSession` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartMulticastGroupSessionError {
+    /// Kind of error that occurred.
+    pub kind: StartMulticastGroupSessionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StartMulticastGroupSession` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartMulticastGroupSessionErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Adding, updating, or deleting the resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartMulticastGroupSessionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartMulticastGroupSessionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            StartMulticastGroupSessionErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            StartMulticastGroupSessionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            StartMulticastGroupSessionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            StartMulticastGroupSessionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            StartMulticastGroupSessionErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            StartMulticastGroupSessionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartMulticastGroupSessionError {
+    fn code(&self) -> Option<&str> {
+        StartMulticastGroupSessionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartMulticastGroupSessionError {
+    /// Creates a new `StartMulticastGroupSessionError`.
+    pub fn new(kind: StartMulticastGroupSessionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartMulticastGroupSessionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartMulticastGroupSessionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartMulticastGroupSessionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartMulticastGroupSessionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartMulticastGroupSessionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMulticastGroupSessionErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartMulticastGroupSessionErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMulticastGroupSessionErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartMulticastGroupSessionErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMulticastGroupSessionErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartMulticastGroupSessionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMulticastGroupSessionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartMulticastGroupSessionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMulticastGroupSessionErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartMulticastGroupSessionErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMulticastGroupSessionErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for StartMulticastGroupSessionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartMulticastGroupSessionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            StartMulticastGroupSessionErrorKind::ConflictException(_inner) => Some(_inner),
+            StartMulticastGroupSessionErrorKind::InternalServerException(_inner) => Some(_inner),
+            StartMulticastGroupSessionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            StartMulticastGroupSessionErrorKind::ThrottlingException(_inner) => Some(_inner),
+            StartMulticastGroupSessionErrorKind::ValidationException(_inner) => Some(_inner),
+            StartMulticastGroupSessionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -7674,6 +11192,147 @@ impl std::error::Error for UpdateDestinationError {
     }
 }
 
+/// Error type for the `UpdateFuotaTask` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateFuotaTaskError {
+    /// Kind of error that occurred.
+    pub kind: UpdateFuotaTaskErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateFuotaTask` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateFuotaTaskErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Adding, updating, or deleting the resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateFuotaTaskError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateFuotaTaskErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateFuotaTaskErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateFuotaTaskErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateFuotaTaskErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateFuotaTaskErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateFuotaTaskErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateFuotaTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateFuotaTaskError {
+    fn code(&self) -> Option<&str> {
+        UpdateFuotaTaskError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateFuotaTaskError {
+    /// Creates a new `UpdateFuotaTaskError`.
+    pub fn new(kind: UpdateFuotaTaskErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateFuotaTaskError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateFuotaTaskErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateFuotaTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateFuotaTaskErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateFuotaTaskErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFuotaTaskErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateFuotaTaskErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateFuotaTaskErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateFuotaTaskErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFuotaTaskErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateFuotaTaskErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFuotaTaskErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateFuotaTaskErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, UpdateFuotaTaskErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateFuotaTaskErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, UpdateFuotaTaskErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for UpdateFuotaTaskError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateFuotaTaskErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateFuotaTaskErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateFuotaTaskErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateFuotaTaskErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateFuotaTaskErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateFuotaTaskErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateFuotaTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `UpdateLogLevelsByResourceTypes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7835,6 +11494,156 @@ impl std::error::Error for UpdateLogLevelsByResourceTypesError {
     }
 }
 
+/// Error type for the `UpdateMulticastGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateMulticastGroupError {
+    /// Kind of error that occurred.
+    pub kind: UpdateMulticastGroupErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateMulticastGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateMulticastGroupErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Adding, updating, or deleting the resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateMulticastGroupError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateMulticastGroupErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateMulticastGroupErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateMulticastGroupErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateMulticastGroupErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateMulticastGroupErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateMulticastGroupErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateMulticastGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateMulticastGroupError {
+    fn code(&self) -> Option<&str> {
+        UpdateMulticastGroupError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateMulticastGroupError {
+    /// Creates a new `UpdateMulticastGroupError`.
+    pub fn new(kind: UpdateMulticastGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateMulticastGroupError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateMulticastGroupErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateMulticastGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateMulticastGroupErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateMulticastGroupErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMulticastGroupErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateMulticastGroupErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMulticastGroupErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateMulticastGroupErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMulticastGroupErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateMulticastGroupErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMulticastGroupErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateMulticastGroupErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMulticastGroupErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateMulticastGroupErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMulticastGroupErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateMulticastGroupError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateMulticastGroupErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateMulticastGroupErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateMulticastGroupErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateMulticastGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateMulticastGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateMulticastGroupErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateMulticastGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `UpdatePartnerAccount` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7959,6 +11768,171 @@ impl std::error::Error for UpdatePartnerAccountError {
             UpdatePartnerAccountErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdatePartnerAccountErrorKind::ValidationException(_inner) => Some(_inner),
             UpdatePartnerAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateResourceEventConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateResourceEventConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: UpdateResourceEventConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateResourceEventConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateResourceEventConfigurationErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Adding, updating, or deleting the resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateResourceEventConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateResourceEventConfigurationErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateResourceEventConfigurationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateResourceEventConfigurationErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateResourceEventConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateResourceEventConfigurationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateResourceEventConfigurationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateResourceEventConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateResourceEventConfigurationError {
+    fn code(&self) -> Option<&str> {
+        UpdateResourceEventConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateResourceEventConfigurationError {
+    /// Creates a new `UpdateResourceEventConfigurationError`.
+    pub fn new(
+        kind: UpdateResourceEventConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateResourceEventConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateResourceEventConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateResourceEventConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateResourceEventConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateResourceEventConfigurationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResourceEventConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResourceEventConfigurationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResourceEventConfigurationErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResourceEventConfigurationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResourceEventConfigurationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResourceEventConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResourceEventConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResourceEventConfigurationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResourceEventConfigurationErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResourceEventConfigurationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResourceEventConfigurationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateResourceEventConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateResourceEventConfigurationErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            UpdateResourceEventConfigurationErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateResourceEventConfigurationErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            UpdateResourceEventConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            UpdateResourceEventConfigurationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateResourceEventConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateResourceEventConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

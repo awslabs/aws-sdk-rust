@@ -236,12 +236,12 @@ pub fn serialize_structure_crate_model_clip_timestamp_range(
     if let Some(var_47) = &input.start_timestamp {
         object
             .key("StartTimestamp")
-            .instant(var_47, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_47, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_48) = &input.end_timestamp {
         object
             .key("EndTimestamp")
-            .instant(var_48, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_48, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -253,12 +253,12 @@ pub fn serialize_structure_crate_model_dash_timestamp_range(
     if let Some(var_49) = &input.start_timestamp {
         object
             .key("StartTimestamp")
-            .instant(var_49, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_49, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_50) = &input.end_timestamp {
         object
             .key("EndTimestamp")
-            .instant(var_50, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_50, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -270,12 +270,12 @@ pub fn serialize_structure_crate_model_hls_timestamp_range(
     if let Some(var_51) = &input.start_timestamp {
         object
             .key("StartTimestamp")
-            .instant(var_51, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_51, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_52) = &input.end_timestamp {
         object
             .key("EndTimestamp")
-            .instant(var_52, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_52, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -287,12 +287,12 @@ pub fn serialize_structure_crate_model_timestamp_range(
     if let Some(var_53) = &input.start_timestamp {
         object
             .key("StartTimestamp")
-            .instant(var_53, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_53, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_54) = &input.end_timestamp {
         object
             .key("EndTimestamp")
-            .instant(var_54, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_54, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

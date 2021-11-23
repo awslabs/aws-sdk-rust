@@ -831,7 +831,7 @@ pub struct SynthesisTask {
     /// <p>Pathway for the output speech file.</p>
     pub output_uri: std::option::Option<std::string::String>,
     /// <p>Timestamp for the time the synthesis task was started.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Number of billable characters synthesized.</p>
     pub request_characters: i32,
     /// <p>ARN for the SNS topic optionally used for providing status
@@ -895,7 +895,7 @@ impl SynthesisTask {
         self.output_uri.as_deref()
     }
     /// <p>Timestamp for the time the synthesis task was started.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Number of billable characters synthesized.</p>
@@ -985,7 +985,7 @@ pub mod synthesis_task {
         pub(crate) task_status: std::option::Option<crate::model::TaskStatus>,
         pub(crate) task_status_reason: std::option::Option<std::string::String>,
         pub(crate) output_uri: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) request_characters: std::option::Option<i32>,
         pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
         pub(crate) lexicon_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1063,14 +1063,14 @@ pub mod synthesis_task {
             self
         }
         /// <p>Timestamp for the time the synthesis task was started.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>Timestamp for the time the synthesis task was started.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -1409,7 +1409,7 @@ pub struct LexiconAttributes {
     /// (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>Date lexicon was last modified (a timestamp value).</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Amazon Resource Name (ARN) of the lexicon.</p>
     pub lexicon_arn: std::option::Option<std::string::String>,
     /// <p>Number of lexemes in the lexicon.</p>
@@ -1430,7 +1430,7 @@ impl LexiconAttributes {
         self.language_code.as_ref()
     }
     /// <p>Date lexicon was last modified (a timestamp value).</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>Amazon Resource Name (ARN) of the lexicon.</p>
@@ -1466,7 +1466,7 @@ pub mod lexicon_attributes {
     pub struct Builder {
         pub(crate) alphabet: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) lexicon_arn: std::option::Option<std::string::String>,
         pub(crate) lexemes_count: std::option::Option<i32>,
         pub(crate) size: std::option::Option<i32>,
@@ -1502,14 +1502,14 @@ pub mod lexicon_attributes {
             self
         }
         /// <p>Date lexicon was last modified (a timestamp value).</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>Date lexicon was last modified (a timestamp value).</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self

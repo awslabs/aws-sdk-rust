@@ -8,7 +8,7 @@ pub struct UpdateVocabularyFilterOutput {
     /// <p>The language code of the words in the vocabulary filter.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The date and time that the vocabulary filter was updated.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateVocabularyFilterOutput {
     /// <p>The name of the updated vocabulary filter.</p>
@@ -20,7 +20,7 @@ impl UpdateVocabularyFilterOutput {
         self.language_code.as_ref()
     }
     /// <p>The date and time that the vocabulary filter was updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -41,7 +41,7 @@ pub mod update_vocabulary_filter_output {
     pub struct Builder {
         pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the updated vocabulary filter.</p>
@@ -71,14 +71,14 @@ pub mod update_vocabulary_filter_output {
             self
         }
         /// <p>The date and time that the vocabulary filter was updated.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time that the vocabulary filter was updated.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -109,7 +109,7 @@ pub struct UpdateVocabularyOutput {
     /// <p>The language code of the vocabulary entries.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The date and time that the vocabulary was updated.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The processing state of the vocabulary. When the <code>VocabularyState</code> field contains
     /// <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code>
     /// request.</p>
@@ -125,7 +125,7 @@ impl UpdateVocabularyOutput {
         self.language_code.as_ref()
     }
     /// <p>The date and time that the vocabulary was updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The processing state of the vocabulary. When the <code>VocabularyState</code> field contains
@@ -153,7 +153,7 @@ pub mod update_vocabulary_output {
     pub struct Builder {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) vocabulary_state: std::option::Option<crate::model::VocabularyState>,
     }
     impl Builder {
@@ -184,14 +184,14 @@ pub mod update_vocabulary_output {
             self
         }
         /// <p>The date and time that the vocabulary was updated.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time that the vocabulary was updated.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -241,7 +241,7 @@ pub struct UpdateMedicalVocabularyOutput {
     /// is the only language supported in Amazon Transcribe Medical.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The date and time that the vocabulary was updated.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The processing state of the update to the vocabulary. When the <code>VocabularyState</code> field is
     /// <code>READY</code>, the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code>
     /// request.</p>
@@ -258,7 +258,7 @@ impl UpdateMedicalVocabularyOutput {
         self.language_code.as_ref()
     }
     /// <p>The date and time that the vocabulary was updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The processing state of the update to the vocabulary. When the <code>VocabularyState</code> field is
@@ -286,7 +286,7 @@ pub mod update_medical_vocabulary_output {
     pub struct Builder {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) vocabulary_state: std::option::Option<crate::model::VocabularyState>,
     }
     impl Builder {
@@ -319,14 +319,14 @@ pub mod update_medical_vocabulary_output {
             self
         }
         /// <p>The date and time that the vocabulary was updated.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time that the vocabulary was updated.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -1671,7 +1671,7 @@ pub struct GetVocabularyFilterOutput {
     /// <p>The language code of the words in the vocabulary filter.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The date and time that the contents of the vocabulary filter were updated.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The URI of the list of words in the vocabulary filter. You can use this URI to get the list of words.</p>
     pub download_uri: std::option::Option<std::string::String>,
 }
@@ -1685,7 +1685,7 @@ impl GetVocabularyFilterOutput {
         self.language_code.as_ref()
     }
     /// <p>The date and time that the contents of the vocabulary filter were updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The URI of the list of words in the vocabulary filter. You can use this URI to get the list of words.</p>
@@ -1711,7 +1711,7 @@ pub mod get_vocabulary_filter_output {
     pub struct Builder {
         pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) download_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1742,14 +1742,14 @@ pub mod get_vocabulary_filter_output {
             self
         }
         /// <p>The date and time that the contents of the vocabulary filter were updated.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time that the contents of the vocabulary filter were updated.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -1793,7 +1793,7 @@ pub struct GetVocabularyOutput {
     /// <p>The processing state of the vocabulary.</p>
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
     /// <p>The date and time that the vocabulary was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains
     /// information about why the job failed.</p>
     pub failure_reason: std::option::Option<std::string::String>,
@@ -1815,7 +1815,7 @@ impl GetVocabularyOutput {
         self.vocabulary_state.as_ref()
     }
     /// <p>The date and time that the vocabulary was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains
@@ -1850,7 +1850,7 @@ pub mod get_vocabulary_output {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
         pub(crate) vocabulary_state: std::option::Option<crate::model::VocabularyState>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) download_uri: std::option::Option<std::string::String>,
     }
@@ -1895,14 +1895,14 @@ pub mod get_vocabulary_output {
             self
         }
         /// <p>The date and time that the vocabulary was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time that the vocabulary was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -2024,7 +2024,7 @@ pub struct GetMedicalVocabularyOutput {
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
     /// <p>The date and time that the vocabulary was last modified with a text file different from the one that was
     /// previously used.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the <code>VocabularyState</code> is <code>FAILED</code>, this field contains information about why
     /// the job failed.</p>
     pub failure_reason: std::option::Option<std::string::String>,
@@ -2048,7 +2048,7 @@ impl GetMedicalVocabularyOutput {
     }
     /// <p>The date and time that the vocabulary was last modified with a text file different from the one that was
     /// previously used.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>If the <code>VocabularyState</code> is <code>FAILED</code>, this field contains information about why
@@ -2083,7 +2083,7 @@ pub mod get_medical_vocabulary_output {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
         pub(crate) vocabulary_state: std::option::Option<crate::model::VocabularyState>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) download_uri: std::option::Option<std::string::String>,
     }
@@ -2131,7 +2131,7 @@ pub mod get_medical_vocabulary_output {
         }
         /// <p>The date and time that the vocabulary was last modified with a text file different from the one that was
         /// previously used.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
@@ -2139,7 +2139,7 @@ pub mod get_medical_vocabulary_output {
         /// previously used.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -2674,7 +2674,7 @@ pub struct CreateVocabularyFilterOutput {
     /// <p>The language code of the words in the collection.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The date and time that the vocabulary filter was modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateVocabularyFilterOutput {
     /// <p>The name of the vocabulary filter.</p>
@@ -2686,7 +2686,7 @@ impl CreateVocabularyFilterOutput {
         self.language_code.as_ref()
     }
     /// <p>The date and time that the vocabulary filter was modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -2707,7 +2707,7 @@ pub mod create_vocabulary_filter_output {
     pub struct Builder {
         pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the vocabulary filter.</p>
@@ -2737,14 +2737,14 @@ pub mod create_vocabulary_filter_output {
             self
         }
         /// <p>The date and time that the vocabulary filter was modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time that the vocabulary filter was modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -2779,7 +2779,7 @@ pub struct CreateVocabularyOutput {
     /// request.</p>
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
     /// <p>The date and time that the vocabulary was created.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about
     /// why the job failed.</p>
     pub failure_reason: std::option::Option<std::string::String>,
@@ -2800,7 +2800,7 @@ impl CreateVocabularyOutput {
         self.vocabulary_state.as_ref()
     }
     /// <p>The date and time that the vocabulary was created.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about
@@ -2829,7 +2829,7 @@ pub mod create_vocabulary_output {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
         pub(crate) vocabulary_state: std::option::Option<crate::model::VocabularyState>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2877,14 +2877,14 @@ pub mod create_vocabulary_output {
             self
         }
         /// <p>The date and time that the vocabulary was created.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time that the vocabulary was created.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -2937,7 +2937,7 @@ pub struct CreateMedicalVocabularyOutput {
     /// use the vocabulary in a <code>StartMedicalTranscriptionJob</code> request.</p>
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
     /// <p>The date and time that you created the vocabulary.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about
     /// why the job failed.</p>
     pub failure_reason: std::option::Option<std::string::String>,
@@ -2959,7 +2959,7 @@ impl CreateMedicalVocabularyOutput {
         self.vocabulary_state.as_ref()
     }
     /// <p>The date and time that you created the vocabulary.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about
@@ -2988,7 +2988,7 @@ pub mod create_medical_vocabulary_output {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
         pub(crate) vocabulary_state: std::option::Option<crate::model::VocabularyState>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3038,14 +3038,14 @@ pub mod create_medical_vocabulary_output {
             self
         }
         /// <p>The date and time that you created the vocabulary.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time that you created the vocabulary.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self

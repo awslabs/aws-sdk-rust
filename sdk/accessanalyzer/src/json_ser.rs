@@ -473,12 +473,12 @@ pub fn serialize_structure_crate_model_cloud_trail_details(
     if let Some(var_106) = &input.start_time {
         object
             .key("startTime")
-            .instant(var_106, aws_smithy_types::instant::Format::DateTime);
+            .date_time(var_106, aws_smithy_types::date_time::Format::DateTime)?;
     }
     if let Some(var_107) = &input.end_time {
         object
             .key("endTime")
-            .instant(var_107, aws_smithy_types::instant::Format::DateTime);
+            .date_time(var_107, aws_smithy_types::date_time::Format::DateTime)?;
     }
     Ok(())
 }

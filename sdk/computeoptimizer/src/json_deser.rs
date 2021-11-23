@@ -892,7 +892,7 @@ pub fn deser_operation_crate_operation_get_enrollment_status(
                         builder = builder.set_last_updated_timestamp(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::instant::Format::EpochSeconds,
+                                aws_smithy_types::date_time::Format::EpochSeconds,
                             )?,
                         );
                     }
@@ -1625,7 +1625,7 @@ where
                                 builder = builder.set_creation_timestamp(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -1633,7 +1633,7 @@ where
                                 builder = builder.set_last_updated_timestamp(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -1749,7 +1749,7 @@ where
                                 builder = builder.set_last_refresh_timestamp(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -1911,7 +1911,7 @@ where
                                 builder = builder.set_last_refresh_timestamp(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -2032,7 +2032,7 @@ where
                                 builder = builder.set_last_refresh_timestamp(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -2169,7 +2169,7 @@ where
                                 builder = builder.set_last_updated_timestamp(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -2270,7 +2270,7 @@ where
                                 builder = builder.set_last_refresh_timestamp(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -3825,7 +3825,7 @@ where
 #[allow(clippy::type_complexity, non_snake_case)]
 pub fn deser_list_com_amazonaws_computeoptimizer_timestamps<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
-) -> Result<Option<std::vec::Vec<aws_smithy_types::Instant>>, aws_smithy_json::deserialize::Error>
+) -> Result<Option<std::vec::Vec<aws_smithy_types::DateTime>>, aws_smithy_json::deserialize::Error>
 where
     I: Iterator<
         Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
@@ -3844,7 +3844,7 @@ where
                     _ => {
                         let value = aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                             tokens.next(),
-                            aws_smithy_types::instant::Format::EpochSeconds,
+                            aws_smithy_types::date_time::Format::EpochSeconds,
                         )?;
                         if let Some(value) = value {
                             items.push(value);

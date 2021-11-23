@@ -205,7 +205,7 @@ pub struct Cluster {
     /// <p>The connection endpoint.</p>
     pub endpoint: std::option::Option<crate::model::Endpoint>,
     /// <p>The date and time that the cluster was created.</p>
-    pub cluster_create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of days that automatic cluster snapshots are retained.</p>
     pub automated_snapshot_retention_period: i32,
     /// <p>The default number of days to retain a manual snapshot. If the value is -1, the
@@ -309,7 +309,7 @@ pub struct Cluster {
     /// <p>The current state of the cluster snapshot schedule.</p>
     pub snapshot_schedule_state: std::option::Option<crate::model::ScheduleState>,
     /// <p>The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and backups enabled. </p>
-    pub expected_next_snapshot_schedule_time: std::option::Option<aws_smithy_types::Instant>,
+    pub expected_next_snapshot_schedule_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled.  Possible values are the following:</p>
     /// <ul>
     /// <li>
@@ -321,7 +321,7 @@ pub struct Cluster {
     /// </ul>
     pub expected_next_snapshot_schedule_time_status: std::option::Option<std::string::String>,
     /// <p>The date and time in UTC when system maintenance can begin.</p>
-    pub next_maintenance_window_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub next_maintenance_window_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Returns the following:</p>
     /// <ul>
     /// <li>
@@ -498,7 +498,7 @@ impl Cluster {
         self.endpoint.as_ref()
     }
     /// <p>The date and time that the cluster was created.</p>
-    pub fn cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.cluster_create_time.as_ref()
     }
     /// <p>The number of days that automatic cluster snapshots are retained.</p>
@@ -682,7 +682,7 @@ impl Cluster {
     /// <p>The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and backups enabled. </p>
     pub fn expected_next_snapshot_schedule_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expected_next_snapshot_schedule_time.as_ref()
     }
     /// <p> The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled.  Possible values are the following:</p>
@@ -700,7 +700,7 @@ impl Cluster {
     /// <p>The date and time in UTC when system maintenance can begin.</p>
     pub fn next_maintenance_window_start_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.next_maintenance_window_start_time.as_ref()
     }
     /// <p>Returns the following:</p>
@@ -842,7 +842,7 @@ pub mod cluster {
         pub(crate) master_username: std::option::Option<std::string::String>,
         pub(crate) db_name: std::option::Option<std::string::String>,
         pub(crate) endpoint: std::option::Option<crate::model::Endpoint>,
-        pub(crate) cluster_create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) automated_snapshot_retention_period: std::option::Option<i32>,
         pub(crate) manual_snapshot_retention_period: std::option::Option<i32>,
         pub(crate) cluster_security_groups:
@@ -883,11 +883,11 @@ pub mod cluster {
         pub(crate) snapshot_schedule_identifier: std::option::Option<std::string::String>,
         pub(crate) snapshot_schedule_state: std::option::Option<crate::model::ScheduleState>,
         pub(crate) expected_next_snapshot_schedule_time:
-            std::option::Option<aws_smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) expected_next_snapshot_schedule_time_status:
             std::option::Option<std::string::String>,
         pub(crate) next_maintenance_window_start_time:
-            std::option::Option<aws_smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) resize_info: std::option::Option<crate::model::ResizeInfo>,
         pub(crate) availability_zone_relocation_status: std::option::Option<std::string::String>,
         pub(crate) cluster_namespace_arn: std::option::Option<std::string::String>,
@@ -1238,14 +1238,14 @@ pub mod cluster {
             self
         }
         /// <p>The date and time that the cluster was created.</p>
-        pub fn cluster_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn cluster_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.cluster_create_time = Some(input);
             self
         }
         /// <p>The date and time that the cluster was created.</p>
         pub fn set_cluster_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.cluster_create_time = input;
             self
@@ -1800,7 +1800,7 @@ pub mod cluster {
         /// <p>The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and backups enabled. </p>
         pub fn expected_next_snapshot_schedule_time(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.expected_next_snapshot_schedule_time = Some(input);
             self
@@ -1808,7 +1808,7 @@ pub mod cluster {
         /// <p>The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and backups enabled. </p>
         pub fn set_expected_next_snapshot_schedule_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expected_next_snapshot_schedule_time = input;
             self
@@ -1848,7 +1848,7 @@ pub mod cluster {
         /// <p>The date and time in UTC when system maintenance can begin.</p>
         pub fn next_maintenance_window_start_time(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.next_maintenance_window_start_time = Some(input);
             self
@@ -1856,7 +1856,7 @@ pub mod cluster {
         /// <p>The date and time in UTC when system maintenance can begin.</p>
         pub fn set_next_maintenance_window_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.next_maintenance_window_start_time = input;
             self
@@ -2446,9 +2446,9 @@ pub struct DeferredMaintenanceWindow {
     /// <p>A unique identifier for the maintenance window.</p>
     pub defer_maintenance_identifier: std::option::Option<std::string::String>,
     /// <p> A timestamp for the beginning of the time period when we defer maintenance.</p>
-    pub defer_maintenance_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub defer_maintenance_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> A timestamp for the end of the time period when we defer maintenance.</p>
-    pub defer_maintenance_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub defer_maintenance_end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeferredMaintenanceWindow {
     /// <p>A unique identifier for the maintenance window.</p>
@@ -2456,11 +2456,11 @@ impl DeferredMaintenanceWindow {
         self.defer_maintenance_identifier.as_deref()
     }
     /// <p> A timestamp for the beginning of the time period when we defer maintenance.</p>
-    pub fn defer_maintenance_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn defer_maintenance_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.defer_maintenance_start_time.as_ref()
     }
     /// <p> A timestamp for the end of the time period when we defer maintenance.</p>
-    pub fn defer_maintenance_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn defer_maintenance_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.defer_maintenance_end_time.as_ref()
     }
 }
@@ -2489,8 +2489,8 @@ pub mod deferred_maintenance_window {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) defer_maintenance_identifier: std::option::Option<std::string::String>,
-        pub(crate) defer_maintenance_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) defer_maintenance_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) defer_maintenance_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) defer_maintenance_end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A unique identifier for the maintenance window.</p>
@@ -2510,27 +2510,27 @@ pub mod deferred_maintenance_window {
             self
         }
         /// <p> A timestamp for the beginning of the time period when we defer maintenance.</p>
-        pub fn defer_maintenance_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn defer_maintenance_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.defer_maintenance_start_time = Some(input);
             self
         }
         /// <p> A timestamp for the beginning of the time period when we defer maintenance.</p>
         pub fn set_defer_maintenance_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.defer_maintenance_start_time = input;
             self
         }
         /// <p> A timestamp for the end of the time period when we defer maintenance.</p>
-        pub fn defer_maintenance_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn defer_maintenance_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.defer_maintenance_end_time = Some(input);
             self
         }
         /// <p> A timestamp for the end of the time period when we defer maintenance.</p>
         pub fn set_defer_maintenance_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.defer_maintenance_end_time = input;
             self
@@ -4801,7 +4801,7 @@ pub struct Snapshot {
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a
     /// copy of the cluster data as of this exact time.</p>
-    pub snapshot_create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub snapshot_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The snapshot status. The value of the status depends on the API operation used: </p>
     /// <ul>
     /// <li>
@@ -4824,7 +4824,7 @@ pub struct Snapshot {
     /// <p>The Availability Zone in which the cluster was created.</p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The time (UTC) when the cluster was originally created.</p>
-    pub cluster_create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The admin user name for the cluster.</p>
     pub master_username: std::option::Option<std::string::String>,
     /// <p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>
@@ -4902,7 +4902,7 @@ pub struct Snapshot {
     /// <p>The number of days until a manual snapshot will pass its retention period.</p>
     pub manual_snapshot_remaining_days: std::option::Option<i32>,
     /// <p>A timestamp representing the start of the retention period for the snapshot.</p>
-    pub snapshot_retention_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub snapshot_retention_start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Snapshot {
     /// <p>The snapshot identifier that is provided in the request.</p>
@@ -4915,7 +4915,7 @@ impl Snapshot {
     }
     /// <p>The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a
     /// copy of the cluster data as of this exact time.</p>
-    pub fn snapshot_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn snapshot_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.snapshot_create_time.as_ref()
     }
     /// <p>The snapshot status. The value of the status depends on the API operation used: </p>
@@ -4946,7 +4946,7 @@ impl Snapshot {
         self.availability_zone.as_deref()
     }
     /// <p>The time (UTC) when the cluster was originally created.</p>
-    pub fn cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.cluster_create_time.as_ref()
     }
     /// <p>The admin user name for the cluster.</p>
@@ -5079,7 +5079,9 @@ impl Snapshot {
         self.manual_snapshot_remaining_days
     }
     /// <p>A timestamp representing the start of the retention period for the snapshot.</p>
-    pub fn snapshot_retention_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn snapshot_retention_start_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.snapshot_retention_start_time.as_ref()
     }
 }
@@ -5158,11 +5160,11 @@ pub mod snapshot {
     pub struct Builder {
         pub(crate) snapshot_identifier: std::option::Option<std::string::String>,
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
-        pub(crate) snapshot_create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) snapshot_create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) port: std::option::Option<i32>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
-        pub(crate) cluster_create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) master_username: std::option::Option<std::string::String>,
         pub(crate) cluster_version: std::option::Option<std::string::String>,
         pub(crate) engine_full_version: std::option::Option<std::string::String>,
@@ -5190,7 +5192,7 @@ pub mod snapshot {
         pub(crate) maintenance_track_name: std::option::Option<std::string::String>,
         pub(crate) manual_snapshot_retention_period: std::option::Option<i32>,
         pub(crate) manual_snapshot_remaining_days: std::option::Option<i32>,
-        pub(crate) snapshot_retention_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) snapshot_retention_start_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The snapshot identifier that is provided in the request.</p>
@@ -5221,7 +5223,7 @@ pub mod snapshot {
         }
         /// <p>The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a
         /// copy of the cluster data as of this exact time.</p>
-        pub fn snapshot_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn snapshot_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.snapshot_create_time = Some(input);
             self
         }
@@ -5229,7 +5231,7 @@ pub mod snapshot {
         /// copy of the cluster data as of this exact time.</p>
         pub fn set_snapshot_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.snapshot_create_time = input;
             self
@@ -5298,14 +5300,14 @@ pub mod snapshot {
             self
         }
         /// <p>The time (UTC) when the cluster was originally created.</p>
-        pub fn cluster_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn cluster_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.cluster_create_time = Some(input);
             self
         }
         /// <p>The time (UTC) when the cluster was originally created.</p>
         pub fn set_cluster_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.cluster_create_time = input;
             self
@@ -5689,14 +5691,14 @@ pub mod snapshot {
             self
         }
         /// <p>A timestamp representing the start of the retention period for the snapshot.</p>
-        pub fn snapshot_retention_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn snapshot_retention_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.snapshot_retention_start_time = Some(input);
             self
         }
         /// <p>A timestamp representing the start of the retention period for the snapshot.</p>
         pub fn set_snapshot_retention_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.snapshot_retention_start_time = input;
             self
@@ -6335,7 +6337,7 @@ pub struct TableRestoreStatus {
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the table restore request was made, in Universal Coordinated Time
     /// (UTC).</p>
-    pub request_time: std::option::Option<aws_smithy_types::Instant>,
+    pub request_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
     pub progress_in_mega_bytes: std::option::Option<i64>,
     /// <p>The total amount of data to restore to the new table, in megabytes (MB).</p>
@@ -6378,7 +6380,7 @@ impl TableRestoreStatus {
     }
     /// <p>The time that the table restore request was made, in Universal Coordinated Time
     /// (UTC).</p>
-    pub fn request_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn request_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.request_time.as_ref()
     }
     /// <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
@@ -6452,7 +6454,7 @@ pub mod table_restore_status {
         pub(crate) table_restore_request_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::TableRestoreStatusType>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) request_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) request_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) progress_in_mega_bytes: std::option::Option<i64>,
         pub(crate) total_data_in_mega_bytes: std::option::Option<i64>,
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
@@ -6513,7 +6515,7 @@ pub mod table_restore_status {
         }
         /// <p>The time that the table restore request was made, in Universal Coordinated Time
         /// (UTC).</p>
-        pub fn request_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn request_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.request_time = Some(input);
             self
         }
@@ -6521,7 +6523,7 @@ pub mod table_restore_status {
         /// (UTC).</p>
         pub fn set_request_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.request_time = input;
             self
@@ -7062,9 +7064,9 @@ pub struct DataShareAssociation {
     /// <p>The status of the datashare that is associated.</p>
     pub status: std::option::Option<crate::model::DataShareStatus>,
     /// <p>The creation date of the datashare that is associated.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status change data of the datashare that is associated.</p>
-    pub status_change_date: std::option::Option<aws_smithy_types::Instant>,
+    pub status_change_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DataShareAssociation {
     /// <p>The name of the consumer accounts that have an association with a producer
@@ -7077,11 +7079,11 @@ impl DataShareAssociation {
         self.status.as_ref()
     }
     /// <p>The creation date of the datashare that is associated.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The status change data of the datashare that is associated.</p>
-    pub fn status_change_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn status_change_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.status_change_date.as_ref()
     }
 }
@@ -7103,8 +7105,8 @@ pub mod data_share_association {
     pub struct Builder {
         pub(crate) consumer_identifier: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DataShareStatus>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) status_change_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) status_change_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the consumer accounts that have an association with a producer
@@ -7136,27 +7138,27 @@ pub mod data_share_association {
             self
         }
         /// <p>The creation date of the datashare that is associated.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The creation date of the datashare that is associated.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The status change data of the datashare that is associated.</p>
-        pub fn status_change_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn status_change_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.status_change_date = Some(input);
             self
         }
         /// <p>The status change data of the datashare that is associated.</p>
         pub fn set_status_change_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.status_change_date = input;
             self
@@ -7270,7 +7272,7 @@ pub struct ReservedNode {
     pub node_type: std::option::Option<std::string::String>,
     /// <p>The time the reservation started. You purchase a reserved node offering for a
     /// duration. This is the start time of that duration.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The duration of the node reservation in seconds.</p>
     pub duration: i32,
     /// <p>The fixed cost Amazon Redshift charges you for this reserved node.</p>
@@ -7327,7 +7329,7 @@ impl ReservedNode {
     }
     /// <p>The time the reservation started. You purchase a reserved node offering for a
     /// duration. This is the start time of that duration.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The duration of the node reservation in seconds.</p>
@@ -7422,7 +7424,7 @@ pub mod reserved_node {
         pub(crate) reserved_node_id: std::option::Option<std::string::String>,
         pub(crate) reserved_node_offering_id: std::option::Option<std::string::String>,
         pub(crate) node_type: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) duration: std::option::Option<i32>,
         pub(crate) fixed_price: std::option::Option<f64>,
         pub(crate) usage_price: std::option::Option<f64>,
@@ -7474,7 +7476,7 @@ pub mod reserved_node {
         }
         /// <p>The time the reservation started. You purchase a reserved node offering for a
         /// duration. This is the start time of that duration.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -7482,7 +7484,7 @@ pub mod reserved_node {
         /// duration. This is the start time of that duration.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -8560,7 +8562,7 @@ pub struct EventSubscription {
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time the Amazon Redshift event notification subscription was
     /// created.</p>
-    pub subscription_creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub subscription_creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The source type of the events returned by the Amazon Redshift event notification, such as
     /// cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action. </p>
     pub source_type: std::option::Option<std::string::String>,
@@ -8615,7 +8617,7 @@ impl EventSubscription {
     }
     /// <p>The date and time the Amazon Redshift event notification subscription was
     /// created.</p>
-    pub fn subscription_creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn subscription_creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.subscription_creation_time.as_ref()
     }
     /// <p>The source type of the events returned by the Amazon Redshift event notification, such as
@@ -8680,7 +8682,7 @@ pub mod event_subscription {
         pub(crate) cust_subscription_id: std::option::Option<std::string::String>,
         pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) subscription_creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) subscription_creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_type: std::option::Option<std::string::String>,
         pub(crate) source_ids_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) event_categories_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8770,7 +8772,7 @@ pub mod event_subscription {
         }
         /// <p>The date and time the Amazon Redshift event notification subscription was
         /// created.</p>
-        pub fn subscription_creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn subscription_creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.subscription_creation_time = Some(input);
             self
         }
@@ -8778,7 +8780,7 @@ pub mod event_subscription {
         /// created.</p>
         pub fn set_subscription_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.subscription_creation_time = input;
             self
@@ -10099,7 +10101,7 @@ pub struct SnapshotSchedule {
     /// <p>An optional set of tags describing the schedule.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p></p>
-    pub next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+    pub next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
     /// <p>The number of clusters associated with the schedule.</p>
     pub associated_cluster_count: std::option::Option<i32>,
     /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
@@ -10124,7 +10126,7 @@ impl SnapshotSchedule {
         self.tags.as_deref()
     }
     /// <p></p>
-    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::Instant]> {
+    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
         self.next_invocations.as_deref()
     }
     /// <p>The number of clusters associated with the schedule.</p>
@@ -10161,7 +10163,7 @@ pub mod snapshot_schedule {
         pub(crate) schedule_identifier: std::option::Option<std::string::String>,
         pub(crate) schedule_description: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        pub(crate) next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+        pub(crate) next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
         pub(crate) associated_cluster_count: std::option::Option<i32>,
         pub(crate) associated_clusters:
             std::option::Option<std::vec::Vec<crate::model::ClusterAssociatedToSchedule>>,
@@ -10236,7 +10238,7 @@ pub mod snapshot_schedule {
         /// To override the contents of this collection use [`set_next_invocations`](Self::set_next_invocations).
         ///
         /// <p></p>
-        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::Instant>) -> Self {
+        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
             let mut v = self.next_invocations.unwrap_or_default();
             v.push(input.into());
             self.next_invocations = Some(v);
@@ -10245,7 +10247,7 @@ pub mod snapshot_schedule {
         /// <p></p>
         pub fn set_next_invocations(
             mut self,
-            input: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+            input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
         ) -> Self {
             self.next_invocations = input;
             self
@@ -10450,11 +10452,11 @@ pub struct ScheduledAction {
     /// <p>The state of the scheduled action. For example, <code>DISABLED</code>. </p>
     pub state: std::option::Option<crate::model::ScheduledActionState>,
     /// <p>List of times when the scheduled action will run. </p>
-    pub next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+    pub next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
     /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ScheduledAction {
     /// <p>The name of the scheduled action. </p>
@@ -10496,15 +10498,15 @@ impl ScheduledAction {
         self.state.as_ref()
     }
     /// <p>List of times when the scheduled action will run. </p>
-    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::Instant]> {
+    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
         self.next_invocations.as_deref()
     }
     /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -10538,9 +10540,9 @@ pub mod scheduled_action {
         pub(crate) iam_role: std::option::Option<std::string::String>,
         pub(crate) scheduled_action_description: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ScheduledActionState>,
-        pub(crate) next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the scheduled action. </p>
@@ -10651,7 +10653,7 @@ pub mod scheduled_action {
         /// To override the contents of this collection use [`set_next_invocations`](Self::set_next_invocations).
         ///
         /// <p>List of times when the scheduled action will run. </p>
-        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::Instant>) -> Self {
+        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
             let mut v = self.next_invocations.unwrap_or_default();
             v.push(input.into());
             self.next_invocations = Some(v);
@@ -10660,33 +10662,33 @@ pub mod scheduled_action {
         /// <p>List of times when the scheduled action will run. </p>
         pub fn set_next_invocations(
             mut self,
-            input: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+            input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
         ) -> Self {
             self.next_invocations = input;
             self
         }
         /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -10926,9 +10928,9 @@ pub struct PartnerIntegrationInfo {
     /// <p>The status message provided by the partner.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The date (UTC) that the partner integration was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date (UTC) that the partner integration status was last updated by the partner.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PartnerIntegrationInfo {
     /// <p>The name of the database that receives data from a partner.</p>
@@ -10948,11 +10950,11 @@ impl PartnerIntegrationInfo {
         self.status_message.as_deref()
     }
     /// <p>The date (UTC) that the partner integration was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date (UTC) that the partner integration status was last updated by the partner.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -10978,8 +10980,8 @@ pub mod partner_integration_info {
         pub(crate) partner_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::PartnerIntegrationStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the database that receives data from a partner.</p>
@@ -11032,27 +11034,27 @@ pub mod partner_integration_info {
             self
         }
         /// <p>The date (UTC) that the partner integration was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date (UTC) that the partner integration was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The date (UTC) that the partner integration status was last updated by the partner.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date (UTC) that the partner integration status was last updated by the partner.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -12019,7 +12021,7 @@ pub struct Event {
     /// <p>Values: ERROR, INFO</p>
     pub severity: std::option::Option<std::string::String>,
     /// <p>The date and time of the event.</p>
-    pub date: std::option::Option<aws_smithy_types::Instant>,
+    pub date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier of the event.</p>
     pub event_id: std::option::Option<std::string::String>,
 }
@@ -12047,7 +12049,7 @@ impl Event {
         self.severity.as_deref()
     }
     /// <p>The date and time of the event.</p>
-    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>The identifier of the event.</p>
@@ -12079,7 +12081,7 @@ pub mod event {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) severity: std::option::Option<std::string::String>,
-        pub(crate) date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -12153,12 +12155,12 @@ pub mod event {
             self
         }
         /// <p>The date and time of the event.</p>
-        pub fn date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date = Some(input);
             self
         }
         /// <p>The date and time of the event.</p>
-        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
+        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.date = input;
             self
         }
@@ -12490,7 +12492,7 @@ pub struct EndpointAuthorization {
     /// <p>The cluster identifier.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The time (UTC) when the authorization was created.</p>
-    pub authorize_time: std::option::Option<aws_smithy_types::Instant>,
+    pub authorize_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the cluster.</p>
     pub cluster_status: std::option::Option<std::string::String>,
     /// <p>The status of the authorization action.</p>
@@ -12516,7 +12518,7 @@ impl EndpointAuthorization {
         self.cluster_identifier.as_deref()
     }
     /// <p>The time (UTC) when the authorization was created.</p>
-    pub fn authorize_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn authorize_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.authorize_time.as_ref()
     }
     /// <p>The status of the cluster.</p>
@@ -12564,7 +12566,7 @@ pub mod endpoint_authorization {
         pub(crate) grantor: std::option::Option<std::string::String>,
         pub(crate) grantee: std::option::Option<std::string::String>,
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
-        pub(crate) authorize_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) authorize_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) cluster_status: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::AuthorizationStatus>,
         pub(crate) allowed_all_vp_cs: std::option::Option<bool>,
@@ -12606,14 +12608,14 @@ pub mod endpoint_authorization {
             self
         }
         /// <p>The time (UTC) when the authorization was created.</p>
-        pub fn authorize_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn authorize_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.authorize_time = Some(input);
             self
         }
         /// <p>The time (UTC) when the authorization was created.</p>
         pub fn set_authorize_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.authorize_time = input;
             self
@@ -12721,7 +12723,7 @@ pub struct EndpointAccess {
     /// <p>The name of the endpoint.</p>
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The time (UTC) that the endpoint was created.</p>
-    pub endpoint_create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub endpoint_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The port number on which the cluster accepts incoming connections.</p>
     pub port: i32,
     /// <p>The DNS address of the endpoint.</p>
@@ -12754,7 +12756,7 @@ impl EndpointAccess {
         self.endpoint_name.as_deref()
     }
     /// <p>The time (UTC) that the endpoint was created.</p>
-    pub fn endpoint_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn endpoint_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.endpoint_create_time.as_ref()
     }
     /// <p>The port number on which the cluster accepts incoming connections.</p>
@@ -12803,7 +12805,7 @@ pub mod endpoint_access {
         pub(crate) subnet_group_name: std::option::Option<std::string::String>,
         pub(crate) endpoint_status: std::option::Option<std::string::String>,
         pub(crate) endpoint_name: std::option::Option<std::string::String>,
-        pub(crate) endpoint_create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) endpoint_create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) port: std::option::Option<i32>,
         pub(crate) address: std::option::Option<std::string::String>,
         pub(crate) vpc_security_groups:
@@ -12877,14 +12879,14 @@ pub mod endpoint_access {
             self
         }
         /// <p>The time (UTC) that the endpoint was created.</p>
-        pub fn endpoint_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn endpoint_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.endpoint_create_time = Some(input);
             self
         }
         /// <p>The time (UTC) that the endpoint was created.</p>
         pub fn set_endpoint_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.endpoint_create_time = input;
             self
@@ -14082,7 +14084,7 @@ pub struct ClusterDbRevision {
     /// <p>A string representing the current cluster version.</p>
     pub current_database_revision: std::option::Option<std::string::String>,
     /// <p>The date on which the database revision was released.</p>
-    pub database_revision_release_date: std::option::Option<aws_smithy_types::Instant>,
+    pub database_revision_release_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of <code>RevisionTarget</code> objects, where each object describes the
     /// database revision that a cluster can be updated to.</p>
     pub revision_targets: std::option::Option<std::vec::Vec<crate::model::RevisionTarget>>,
@@ -14099,7 +14101,7 @@ impl ClusterDbRevision {
     /// <p>The date on which the database revision was released.</p>
     pub fn database_revision_release_date(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.database_revision_release_date.as_ref()
     }
     /// <p>A list of <code>RevisionTarget</code> objects, where each object describes the
@@ -14129,7 +14131,7 @@ pub mod cluster_db_revision {
     pub struct Builder {
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) current_database_revision: std::option::Option<std::string::String>,
-        pub(crate) database_revision_release_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) database_revision_release_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) revision_targets:
             std::option::Option<std::vec::Vec<crate::model::RevisionTarget>>,
     }
@@ -14161,14 +14163,14 @@ pub mod cluster_db_revision {
             self
         }
         /// <p>The date on which the database revision was released.</p>
-        pub fn database_revision_release_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn database_revision_release_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.database_revision_release_date = Some(input);
             self
         }
         /// <p>The date on which the database revision was released.</p>
         pub fn set_database_revision_release_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.database_revision_release_date = input;
             self
@@ -14223,7 +14225,7 @@ pub struct RevisionTarget {
     /// when it is updated to the corresponding <a>ClusterDbRevision</a>.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date on which the database revision was released.</p>
-    pub database_revision_release_date: std::option::Option<aws_smithy_types::Instant>,
+    pub database_revision_release_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RevisionTarget {
     /// <p>A unique string that identifies the version to update the cluster to. You can use this
@@ -14239,7 +14241,7 @@ impl RevisionTarget {
     /// <p>The date on which the database revision was released.</p>
     pub fn database_revision_release_date(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.database_revision_release_date.as_ref()
     }
 }
@@ -14263,7 +14265,7 @@ pub mod revision_target {
     pub struct Builder {
         pub(crate) database_revision: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) database_revision_release_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) database_revision_release_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A unique string that identifies the version to update the cluster to. You can use this
@@ -14294,14 +14296,14 @@ pub mod revision_target {
             self
         }
         /// <p>The date on which the database revision was released.</p>
-        pub fn database_revision_release_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn database_revision_release_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.database_revision_release_date = Some(input);
             self
         }
         /// <p>The date on which the database revision was released.</p>
         pub fn set_database_revision_release_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.database_revision_release_date = input;
             self

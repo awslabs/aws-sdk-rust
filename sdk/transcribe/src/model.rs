@@ -280,9 +280,9 @@ pub struct CategoryProperties {
     /// <p>The rules used to create a call analytics category.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
     /// <p>A timestamp that shows when the call analytics category was created.</p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the call analytics category was most recently updated.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CategoryProperties {
     /// <p>The name of the call analytics category.</p>
@@ -294,11 +294,11 @@ impl CategoryProperties {
         self.rules.as_deref()
     }
     /// <p>A timestamp that shows when the call analytics category was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>A timestamp that shows when the call analytics category was most recently updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -320,8 +320,8 @@ pub mod category_properties {
     pub struct Builder {
         pub(crate) category_name: std::option::Option<std::string::String>,
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the call analytics category.</p>
@@ -357,27 +357,27 @@ pub mod category_properties {
             self
         }
         /// <p>A timestamp that shows when the call analytics category was created.</p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
         /// <p>A timestamp that shows when the call analytics category was created.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p>A timestamp that shows when the call analytics category was most recently updated.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>A timestamp that shows when the call analytics category was most recently updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -431,9 +431,9 @@ impl Rule {
         &self,
     ) -> std::result::Result<&crate::model::InterruptionFilter, &Self> {
         if let Rule::InterruptionFilter(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`InterruptionFilter`](crate::model::Rule::InterruptionFilter).
@@ -446,9 +446,9 @@ impl Rule {
         &self,
     ) -> std::result::Result<&crate::model::NonTalkTimeFilter, &Self> {
         if let Rule::NonTalkTimeFilter(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`NonTalkTimeFilter`](crate::model::Rule::NonTalkTimeFilter).
@@ -461,9 +461,9 @@ impl Rule {
         &self,
     ) -> std::result::Result<&crate::model::SentimentFilter, &Self> {
         if let Rule::SentimentFilter(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`SentimentFilter`](crate::model::Rule::SentimentFilter).
@@ -476,9 +476,9 @@ impl Rule {
         &self,
     ) -> std::result::Result<&crate::model::TranscriptFilter, &Self> {
         if let Rule::TranscriptFilter(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`TranscriptFilter`](crate::model::Rule::TranscriptFilter).
@@ -1828,11 +1828,11 @@ pub struct TranscriptionJob {
     /// <p>An object that describes the output of the transcription job.</p>
     pub transcript: std::option::Option<crate::model::Transcript>,
     /// <p>A timestamp that shows when the job started processing.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the job was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the job completed.</p>
-    pub completion_time: std::option::Option<aws_smithy_types::Instant>,
+    pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains information
     /// about why the job failed.</p>
     /// <p>The <code>FailureReason</code> field can contain one of the following values:</p>
@@ -1935,15 +1935,15 @@ impl TranscriptionJob {
         self.transcript.as_ref()
     }
     /// <p>A timestamp that shows when the job started processing.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>A timestamp that shows when the job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp that shows when the job completed.</p>
-    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains information
@@ -2083,9 +2083,9 @@ pub mod transcription_job {
         pub(crate) media_format: std::option::Option<crate::model::MediaFormat>,
         pub(crate) media: std::option::Option<crate::model::Media>,
         pub(crate) transcript: std::option::Option<crate::model::Transcript>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completion_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completion_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) settings: std::option::Option<crate::model::Settings>,
         pub(crate) model_settings: std::option::Option<crate::model::ModelSettings>,
@@ -2190,40 +2190,40 @@ pub mod transcription_job {
             self
         }
         /// <p>A timestamp that shows when the job started processing.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>A timestamp that shows when the job started processing.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>A timestamp that shows when the job was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A timestamp that shows when the job was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>A timestamp that shows when the job completed.</p>
-        pub fn completion_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completion_time = Some(input);
             self
         }
         /// <p>A timestamp that shows when the job completed.</p>
         pub fn set_completion_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completion_time = input;
             self
@@ -3946,11 +3946,11 @@ pub struct MedicalTranscriptionJob {
     /// <code>TranscriptFileUri</code>.</p>
     pub transcript: std::option::Option<crate::model::MedicalTranscript>,
     /// <p>A timestamp that shows when the job started processing.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the job was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the job was completed.</p>
-    pub completion_time: std::option::Option<aws_smithy_types::Instant>,
+    pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains information
     /// about why the job failed.</p>
     /// <p>The <code>FailureReason</code> field contains one of the following values:</p>
@@ -4050,15 +4050,15 @@ impl MedicalTranscriptionJob {
         self.transcript.as_ref()
     }
     /// <p>A timestamp that shows when the job started processing.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>A timestamp that shows when the job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp that shows when the job was completed.</p>
-    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains information
@@ -4177,9 +4177,9 @@ pub mod medical_transcription_job {
         pub(crate) media_format: std::option::Option<crate::model::MediaFormat>,
         pub(crate) media: std::option::Option<crate::model::Media>,
         pub(crate) transcript: std::option::Option<crate::model::MedicalTranscript>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completion_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completion_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) settings: std::option::Option<crate::model::MedicalTranscriptionSetting>,
         pub(crate) content_identification_type:
@@ -4293,40 +4293,40 @@ pub mod medical_transcription_job {
             self
         }
         /// <p>A timestamp that shows when the job started processing.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>A timestamp that shows when the job started processing.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>A timestamp that shows when the job was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A timestamp that shows when the job was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>A timestamp that shows when the job was completed.</p>
-        pub fn completion_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completion_time = Some(input);
             self
         }
         /// <p>A timestamp that shows when the job was completed.</p>
         pub fn set_completion_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completion_time = input;
             self
@@ -5007,11 +5007,11 @@ pub struct CallAnalyticsJob {
     /// <p>Identifies the location of a transcription.</p>
     pub transcript: std::option::Option<crate::model::Transcript>,
     /// <p>A timestamp that shows when the analytics job started processing.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the analytics job was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the analytics job was completed.</p>
-    pub completion_time: std::option::Option<aws_smithy_types::Instant>,
+    pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the <code>AnalyticsJobStatus</code> is <code>FAILED</code>, this field contains information about why
     /// the job failed.</p>
     /// <p>The <code>FailureReason</code> field can contain one of the following values:</p>
@@ -5105,15 +5105,15 @@ impl CallAnalyticsJob {
         self.transcript.as_ref()
     }
     /// <p>A timestamp that shows when the analytics job started processing.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>A timestamp that shows when the analytics job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp that shows when the analytics job was completed.</p>
-    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>If the <code>AnalyticsJobStatus</code> is <code>FAILED</code>, this field contains information about why
@@ -5217,9 +5217,9 @@ pub mod call_analytics_job {
         pub(crate) media_format: std::option::Option<crate::model::MediaFormat>,
         pub(crate) media: std::option::Option<crate::model::Media>,
         pub(crate) transcript: std::option::Option<crate::model::Transcript>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completion_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completion_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
         pub(crate) identified_language_score: std::option::Option<f32>,
@@ -5327,40 +5327,40 @@ pub mod call_analytics_job {
             self
         }
         /// <p>A timestamp that shows when the analytics job started processing.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>A timestamp that shows when the analytics job started processing.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>A timestamp that shows when the analytics job was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A timestamp that shows when the analytics job was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>A timestamp that shows when the analytics job was completed.</p>
-        pub fn completion_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completion_time = Some(input);
             self
         }
         /// <p>A timestamp that shows when the analytics job was completed.</p>
         pub fn set_completion_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completion_time = input;
             self
@@ -5976,7 +5976,7 @@ pub struct VocabularyFilterInfo {
     /// <p>The language code of the words in the vocabulary filter.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The date and time that the vocabulary was last updated.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl VocabularyFilterInfo {
     /// <p>The name of the vocabulary filter. The name must be unique in the account that holds the filter.</p>
@@ -5988,7 +5988,7 @@ impl VocabularyFilterInfo {
         self.language_code.as_ref()
     }
     /// <p>The date and time that the vocabulary was last updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -6009,7 +6009,7 @@ pub mod vocabulary_filter_info {
     pub struct Builder {
         pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the vocabulary filter. The name must be unique in the account that holds the filter.</p>
@@ -6039,14 +6039,14 @@ pub mod vocabulary_filter_info {
             self
         }
         /// <p>The date and time that the vocabulary was last updated.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time that the vocabulary was last updated.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -6077,7 +6077,7 @@ pub struct VocabularyInfo {
     /// <p>The language code of the vocabulary entries.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The date and time that the vocabulary was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The processing state of the vocabulary. If the state is <code>READY</code> you can use
     /// the vocabulary in a <code>StartTranscriptionJob</code> request.</p>
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
@@ -6092,7 +6092,7 @@ impl VocabularyInfo {
         self.language_code.as_ref()
     }
     /// <p>The date and time that the vocabulary was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The processing state of the vocabulary. If the state is <code>READY</code> you can use
@@ -6119,7 +6119,7 @@ pub mod vocabulary_info {
     pub struct Builder {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) vocabulary_state: std::option::Option<crate::model::VocabularyState>,
     }
     impl Builder {
@@ -6150,14 +6150,14 @@ pub mod vocabulary_info {
             self
         }
         /// <p>The date and time that the vocabulary was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time that the vocabulary was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -6202,11 +6202,11 @@ pub struct TranscriptionJobSummary {
     /// <p>The name of the transcription job.</p>
     pub transcription_job_name: std::option::Option<std::string::String>,
     /// <p>A timestamp that shows when the job was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the job started processing.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the job was completed.</p>
-    pub completion_time: std::option::Option<aws_smithy_types::Instant>,
+    pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The language code for the input speech.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The status of the transcription job. When the status is <code>COMPLETED</code>, use the
@@ -6237,15 +6237,15 @@ impl TranscriptionJobSummary {
         self.transcription_job_name.as_deref()
     }
     /// <p>A timestamp that shows when the job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp that shows when the job started processing.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>A timestamp that shows when the job was completed.</p>
-    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The language code for the input speech.</p>
@@ -6315,9 +6315,9 @@ pub mod transcription_job_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transcription_job_name: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completion_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completion_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
         pub(crate) transcription_job_status:
             std::option::Option<crate::model::TranscriptionJobStatus>,
@@ -6343,40 +6343,40 @@ pub mod transcription_job_summary {
             self
         }
         /// <p>A timestamp that shows when the job was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A timestamp that shows when the job was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>A timestamp that shows when the job started processing.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>A timestamp that shows when the job started processing.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>A timestamp that shows when the job was completed.</p>
-        pub fn completion_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completion_time = Some(input);
             self
         }
         /// <p>A timestamp that shows when the job was completed.</p>
         pub fn set_completion_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completion_time = input;
             self
@@ -6584,11 +6584,11 @@ pub struct MedicalTranscriptionJobSummary {
     /// <p>The name of a medical transcription job.</p>
     pub medical_transcription_job_name: std::option::Option<std::string::String>,
     /// <p>A timestamp that shows when the medical transcription job was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the job began processing.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the job was completed.</p>
-    pub completion_time: std::option::Option<aws_smithy_types::Instant>,
+    pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The language of the transcript in the source audio file.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The status of the medical transcription job.</p>
@@ -6614,15 +6614,15 @@ impl MedicalTranscriptionJobSummary {
         self.medical_transcription_job_name.as_deref()
     }
     /// <p>A timestamp that shows when the medical transcription job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp that shows when the job began processing.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>A timestamp that shows when the job was completed.</p>
-    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The language of the transcript in the source audio file.</p>
@@ -6691,9 +6691,9 @@ pub mod medical_transcription_job_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) medical_transcription_job_name: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completion_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completion_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
         pub(crate) transcription_job_status:
             std::option::Option<crate::model::TranscriptionJobStatus>,
@@ -6722,40 +6722,40 @@ pub mod medical_transcription_job_summary {
             self
         }
         /// <p>A timestamp that shows when the medical transcription job was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A timestamp that shows when the medical transcription job was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>A timestamp that shows when the job began processing.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>A timestamp that shows when the job began processing.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>A timestamp that shows when the job was completed.</p>
-        pub fn completion_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completion_time = Some(input);
             self
         }
         /// <p>A timestamp that shows when the job was completed.</p>
         pub fn set_completion_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completion_time = input;
             self
@@ -6892,9 +6892,9 @@ pub struct LanguageModel {
     /// <p>The name of the custom language model.</p>
     pub model_name: std::option::Option<std::string::String>,
     /// <p>The time the custom language model was created.</p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The most recent time the custom language model was modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The language code you used to create your custom language model.</p>
     pub language_code: std::option::Option<crate::model::ClmLanguageCode>,
     /// <p>The Amazon Transcribe standard language model, or base model used to create the custom language model.</p>
@@ -6916,11 +6916,11 @@ impl LanguageModel {
         self.model_name.as_deref()
     }
     /// <p>The time the custom language model was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The most recent time the custom language model was modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The language code you used to create your custom language model.</p>
@@ -6972,8 +6972,8 @@ pub mod language_model {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_name: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) language_code: std::option::Option<crate::model::ClmLanguageCode>,
         pub(crate) base_model_name: std::option::Option<crate::model::BaseModelName>,
         pub(crate) model_status: std::option::Option<crate::model::ModelStatus>,
@@ -6993,27 +6993,27 @@ pub mod language_model {
             self
         }
         /// <p>The time the custom language model was created.</p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
         /// <p>The time the custom language model was created.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p>The most recent time the custom language model was modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The most recent time the custom language model was modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -7415,11 +7415,11 @@ pub struct CallAnalyticsJobSummary {
     /// <p>The name of the call analytics job.</p>
     pub call_analytics_job_name: std::option::Option<std::string::String>,
     /// <p>A timestamp that shows when the call analytics job was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the job began processing.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the job was completed.</p>
-    pub completion_time: std::option::Option<aws_smithy_types::Instant>,
+    pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The language of the transcript in the source audio file.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The status of the call analytics job.</p>
@@ -7433,15 +7433,15 @@ impl CallAnalyticsJobSummary {
         self.call_analytics_job_name.as_deref()
     }
     /// <p>A timestamp that shows when the call analytics job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp that shows when the job began processing.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>A timestamp that shows when the job was completed.</p>
-    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The language of the transcript in the source audio file.</p>
@@ -7479,9 +7479,9 @@ pub mod call_analytics_job_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) call_analytics_job_name: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completion_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completion_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
         pub(crate) call_analytics_job_status:
             std::option::Option<crate::model::CallAnalyticsJobStatus>,
@@ -7502,40 +7502,40 @@ pub mod call_analytics_job_summary {
             self
         }
         /// <p>A timestamp that shows when the call analytics job was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A timestamp that shows when the call analytics job was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>A timestamp that shows when the job began processing.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>A timestamp that shows when the job began processing.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>A timestamp that shows when the job was completed.</p>
-        pub fn completion_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completion_time = Some(input);
             self
         }
         /// <p>A timestamp that shows when the job was completed.</p>
         pub fn set_completion_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completion_time = input;
             self

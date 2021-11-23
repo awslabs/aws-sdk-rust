@@ -147,6 +147,8 @@ impl InsightSelector {
 pub enum InsightType {
     #[allow(missing_docs)] // documentation missing in model
     ApiCallRateInsight,
+    #[allow(missing_docs)] // documentation missing in model
+    ApiErrorRateInsight,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -154,6 +156,7 @@ impl std::convert::From<&str> for InsightType {
     fn from(s: &str) -> Self {
         match s {
             "ApiCallRateInsight" => InsightType::ApiCallRateInsight,
+            "ApiErrorRateInsight" => InsightType::ApiErrorRateInsight,
             other => InsightType::Unknown(other.to_owned()),
         }
     }
@@ -170,12 +173,13 @@ impl InsightType {
     pub fn as_str(&self) -> &str {
         match self {
             InsightType::ApiCallRateInsight => "ApiCallRateInsight",
+            InsightType::ApiErrorRateInsight => "ApiErrorRateInsight",
             InsightType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["ApiCallRateInsight"]
+        &["ApiCallRateInsight", "ApiErrorRateInsight"]
     }
 }
 impl AsRef<str> for InsightType {
@@ -355,11 +359,55 @@ pub struct AdvancedFieldSelector {
     /// <code>resources.type</code>
     /// </b> - This ﬁeld is required.
     /// <code>resources.type</code> can only use the <code>Equals</code> operator, and the
-    /// value can be one of the following: <code>AWS::S3::Object</code>,
-    /// <code>AWS::S3::AccessPoint</code>,
-    /// <code>AWS::Lambda::Function</code>, <code>AWS::DynamoDB::Table</code>,
-    /// <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-    /// <code>AWS::S3ObjectLambda::AccessPoint</code>, or <code>AWS::EC2::Snapshot</code>.
+    /// value can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AWS::S3::Object</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::Lambda::Function</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::DynamoDB::Table</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::S3Outposts::Object</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::ManagedBlockchain::Node</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::S3ObjectLambda::AccessPoint</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::EC2::Snapshot</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::S3::AccessPoint</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::DynamoDB::Stream</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>
     /// You can have only one <code>resources.type</code> ﬁeld per selector. To log data
     /// events on more than one resource type, add another selector.</p>
     /// </li>
@@ -368,7 +416,7 @@ pub struct AdvancedFieldSelector {
     /// <b>
     /// <code>resources.ARN</code>
     /// </b> - You can use any operator with
-    /// resources.ARN, but if you use <code>Equals</code> or <code>NotEquals</code>, the
+    /// <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the
     /// value must exactly match the ARN of a valid resource of the type you've speciﬁed in
     /// the template as the value of resources.type. For example, if resources.type equals
     /// <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To
@@ -420,7 +468,7 @@ pub struct AdvancedFieldSelector {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table:<table_name></code>
+    /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table/<table_name></code>
     /// </p>
     /// </li>
     /// </ul>
@@ -461,6 +509,15 @@ pub struct AdvancedFieldSelector {
     /// <li>
     /// <p>
     /// <code>arn:<partition>:ec2:<region>::snapshot/<snapshot_ID></code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to
+    /// <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table/<table_name>/stream/<date_time></code>
     /// </p>
     /// </li>
     /// </ul>
@@ -534,11 +591,55 @@ impl AdvancedFieldSelector {
     /// <code>resources.type</code>
     /// </b> - This ﬁeld is required.
     /// <code>resources.type</code> can only use the <code>Equals</code> operator, and the
-    /// value can be one of the following: <code>AWS::S3::Object</code>,
-    /// <code>AWS::S3::AccessPoint</code>,
-    /// <code>AWS::Lambda::Function</code>, <code>AWS::DynamoDB::Table</code>,
-    /// <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-    /// <code>AWS::S3ObjectLambda::AccessPoint</code>, or <code>AWS::EC2::Snapshot</code>.
+    /// value can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AWS::S3::Object</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::Lambda::Function</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::DynamoDB::Table</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::S3Outposts::Object</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::ManagedBlockchain::Node</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::S3ObjectLambda::AccessPoint</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::EC2::Snapshot</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::S3::AccessPoint</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::DynamoDB::Stream</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>
     /// You can have only one <code>resources.type</code> ﬁeld per selector. To log data
     /// events on more than one resource type, add another selector.</p>
     /// </li>
@@ -547,7 +648,7 @@ impl AdvancedFieldSelector {
     /// <b>
     /// <code>resources.ARN</code>
     /// </b> - You can use any operator with
-    /// resources.ARN, but if you use <code>Equals</code> or <code>NotEquals</code>, the
+    /// <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the
     /// value must exactly match the ARN of a valid resource of the type you've speciﬁed in
     /// the template as the value of resources.type. For example, if resources.type equals
     /// <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To
@@ -599,7 +700,7 @@ impl AdvancedFieldSelector {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table:<table_name></code>
+    /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table/<table_name></code>
     /// </p>
     /// </li>
     /// </ul>
@@ -640,6 +741,15 @@ impl AdvancedFieldSelector {
     /// <li>
     /// <p>
     /// <code>arn:<partition>:ec2:<region>::snapshot/<snapshot_ID></code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to
+    /// <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table/<table_name>/stream/<date_time></code>
     /// </p>
     /// </li>
     /// </ul>
@@ -754,11 +864,55 @@ pub mod advanced_field_selector {
         /// <code>resources.type</code>
         /// </b> - This ﬁeld is required.
         /// <code>resources.type</code> can only use the <code>Equals</code> operator, and the
-        /// value can be one of the following: <code>AWS::S3::Object</code>,
-        /// <code>AWS::S3::AccessPoint</code>,
-        /// <code>AWS::Lambda::Function</code>, <code>AWS::DynamoDB::Table</code>,
-        /// <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-        /// <code>AWS::S3ObjectLambda::AccessPoint</code>, or <code>AWS::EC2::Snapshot</code>.
+        /// value can be one of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AWS::S3::Object</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::Lambda::Function</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::DynamoDB::Table</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::S3Outposts::Object</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::ManagedBlockchain::Node</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::S3ObjectLambda::AccessPoint</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::EC2::Snapshot</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::S3::AccessPoint</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::DynamoDB::Stream</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>
         /// You can have only one <code>resources.type</code> ﬁeld per selector. To log data
         /// events on more than one resource type, add another selector.</p>
         /// </li>
@@ -767,7 +921,7 @@ pub mod advanced_field_selector {
         /// <b>
         /// <code>resources.ARN</code>
         /// </b> - You can use any operator with
-        /// resources.ARN, but if you use <code>Equals</code> or <code>NotEquals</code>, the
+        /// <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the
         /// value must exactly match the ARN of a valid resource of the type you've speciﬁed in
         /// the template as the value of resources.type. For example, if resources.type equals
         /// <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To
@@ -819,7 +973,7 @@ pub mod advanced_field_selector {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table:<table_name></code>
+        /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table/<table_name></code>
         /// </p>
         /// </li>
         /// </ul>
@@ -860,6 +1014,15 @@ pub mod advanced_field_selector {
         /// <li>
         /// <p>
         /// <code>arn:<partition>:ec2:<region>::snapshot/<snapshot_ID></code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to
+        /// <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table/<table_name>/stream/<date_time></code>
         /// </p>
         /// </li>
         /// </ul>
@@ -911,11 +1074,55 @@ pub mod advanced_field_selector {
         /// <code>resources.type</code>
         /// </b> - This ﬁeld is required.
         /// <code>resources.type</code> can only use the <code>Equals</code> operator, and the
-        /// value can be one of the following: <code>AWS::S3::Object</code>,
-        /// <code>AWS::S3::AccessPoint</code>,
-        /// <code>AWS::Lambda::Function</code>, <code>AWS::DynamoDB::Table</code>,
-        /// <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-        /// <code>AWS::S3ObjectLambda::AccessPoint</code>, or <code>AWS::EC2::Snapshot</code>.
+        /// value can be one of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AWS::S3::Object</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::Lambda::Function</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::DynamoDB::Table</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::S3Outposts::Object</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::ManagedBlockchain::Node</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::S3ObjectLambda::AccessPoint</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::EC2::Snapshot</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::S3::AccessPoint</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::DynamoDB::Stream</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>
         /// You can have only one <code>resources.type</code> ﬁeld per selector. To log data
         /// events on more than one resource type, add another selector.</p>
         /// </li>
@@ -924,7 +1131,7 @@ pub mod advanced_field_selector {
         /// <b>
         /// <code>resources.ARN</code>
         /// </b> - You can use any operator with
-        /// resources.ARN, but if you use <code>Equals</code> or <code>NotEquals</code>, the
+        /// <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the
         /// value must exactly match the ARN of a valid resource of the type you've speciﬁed in
         /// the template as the value of resources.type. For example, if resources.type equals
         /// <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To
@@ -976,7 +1183,7 @@ pub mod advanced_field_selector {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table:<table_name></code>
+        /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table/<table_name></code>
         /// </p>
         /// </li>
         /// </ul>
@@ -1017,6 +1224,15 @@ pub mod advanced_field_selector {
         /// <li>
         /// <p>
         /// <code>arn:<partition>:ec2:<region>::snapshot/<snapshot_ID></code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to
+        /// <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table/<table_name>/stream/<date_time></code>
         /// </p>
         /// </li>
         /// </ul>
@@ -1465,12 +1681,60 @@ impl EventSelector {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataResource {
     /// <p>The resource type in which you want to log data events. You can specify
-    /// <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
-    /// <code>AWS::DynamoDB::Table</code> resources.</p>
-    /// <p>The <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-    /// <code>AWS::S3ObjectLambda::AccessPoint</code>, and <code>AWS::EC2::Snapshot</code> resource types are not valid in basic
-    /// event selectors. To log data events on these resource types, use advanced event
-    /// selectors.</p>
+    /// the following <i>basic</i> event selector resource types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AWS::S3::Object</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::Lambda::Function</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::DynamoDB::Table</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>The following resource types are also availble through <i>advanced</i> event selectors.
+    /// Basic event selector resource types are valid in advanced event selectors, but
+    /// advanced event selector resource types are not valid in basic event selectors.
+    /// For more information, see <a>AdvancedFieldSelector$Field</a>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AWS::S3Outposts::Object</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::ManagedBlockchain::Node</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::S3ObjectLambda::AccessPoint</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::EC2::Snapshot</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::S3::AccessPoint</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::DynamoDB::Stream</code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
     /// <ul>
@@ -1518,12 +1782,60 @@ pub struct DataResource {
 }
 impl DataResource {
     /// <p>The resource type in which you want to log data events. You can specify
-    /// <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
-    /// <code>AWS::DynamoDB::Table</code> resources.</p>
-    /// <p>The <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-    /// <code>AWS::S3ObjectLambda::AccessPoint</code>, and <code>AWS::EC2::Snapshot</code> resource types are not valid in basic
-    /// event selectors. To log data events on these resource types, use advanced event
-    /// selectors.</p>
+    /// the following <i>basic</i> event selector resource types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AWS::S3::Object</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::Lambda::Function</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::DynamoDB::Table</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>The following resource types are also availble through <i>advanced</i> event selectors.
+    /// Basic event selector resource types are valid in advanced event selectors, but
+    /// advanced event selector resource types are not valid in basic event selectors.
+    /// For more information, see <a>AdvancedFieldSelector$Field</a>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AWS::S3Outposts::Object</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::ManagedBlockchain::Node</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::S3ObjectLambda::AccessPoint</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::EC2::Snapshot</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::S3::AccessPoint</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS::DynamoDB::Stream</code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -1592,23 +1904,119 @@ pub mod data_resource {
     }
     impl Builder {
         /// <p>The resource type in which you want to log data events. You can specify
-        /// <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
-        /// <code>AWS::DynamoDB::Table</code> resources.</p>
-        /// <p>The <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-        /// <code>AWS::S3ObjectLambda::AccessPoint</code>, and <code>AWS::EC2::Snapshot</code> resource types are not valid in basic
-        /// event selectors. To log data events on these resource types, use advanced event
-        /// selectors.</p>
+        /// the following <i>basic</i> event selector resource types:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AWS::S3::Object</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::Lambda::Function</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::DynamoDB::Table</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The following resource types are also availble through <i>advanced</i> event selectors.
+        /// Basic event selector resource types are valid in advanced event selectors, but
+        /// advanced event selector resource types are not valid in basic event selectors.
+        /// For more information, see <a>AdvancedFieldSelector$Field</a>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AWS::S3Outposts::Object</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::ManagedBlockchain::Node</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::S3ObjectLambda::AccessPoint</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::EC2::Snapshot</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::S3::AccessPoint</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::DynamoDB::Stream</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
         /// <p>The resource type in which you want to log data events. You can specify
-        /// <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
-        /// <code>AWS::DynamoDB::Table</code> resources.</p>
-        /// <p>The <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-        /// <code>AWS::S3ObjectLambda::AccessPoint</code>, and <code>AWS::EC2::Snapshot</code> resource types are not valid in basic
-        /// event selectors. To log data events on these resource types, use advanced event
-        /// selectors.</p>
+        /// the following <i>basic</i> event selector resource types:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AWS::S3::Object</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::Lambda::Function</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::DynamoDB::Table</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The following resource types are also availble through <i>advanced</i> event selectors.
+        /// Basic event selector resource types are valid in advanced event selectors, but
+        /// advanced event selector resource types are not valid in basic event selectors.
+        /// For more information, see <a>AdvancedFieldSelector$Field</a>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AWS::S3Outposts::Object</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::ManagedBlockchain::Node</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::S3ObjectLambda::AccessPoint</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::EC2::Snapshot</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::S3::AccessPoint</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS::DynamoDB::Stream</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -1803,7 +2211,7 @@ pub struct Event {
     /// with temporary security credentials, this is the access key ID of the temporary credentials.</p>
     pub access_key_id: std::option::Option<std::string::String>,
     /// <p>The date and time of the event returned.</p>
-    pub event_time: std::option::Option<aws_smithy_types::Instant>,
+    pub event_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services service to which the request was made.</p>
     pub event_source: std::option::Option<std::string::String>,
     /// <p>A user name or role name of the requester that called the API in the event returned.</p>
@@ -1832,7 +2240,7 @@ impl Event {
         self.access_key_id.as_deref()
     }
     /// <p>The date and time of the event returned.</p>
-    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>The Amazon Web Services service to which the request was made.</p>
@@ -1877,7 +2285,7 @@ pub mod event {
         pub(crate) event_name: std::option::Option<std::string::String>,
         pub(crate) read_only: std::option::Option<std::string::String>,
         pub(crate) access_key_id: std::option::Option<std::string::String>,
-        pub(crate) event_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) event_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event_source: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -1930,14 +2338,14 @@ pub mod event {
             self
         }
         /// <p>The date and time of the event returned.</p>
-        pub fn event_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_time = Some(input);
             self
         }
         /// <p>The date and time of the event returned.</p>
         pub fn set_event_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.event_time = input;
             self
@@ -2507,9 +2915,9 @@ pub struct PublicKey {
     /// <p>The DER encoded public key value in PKCS#1 format.</p>
     pub value: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The starting time of validity of the public key.</p>
-    pub validity_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub validity_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ending time of validity of the public key.</p>
-    pub validity_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub validity_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The fingerprint of the public key.</p>
     pub fingerprint: std::option::Option<std::string::String>,
 }
@@ -2519,11 +2927,11 @@ impl PublicKey {
         self.value.as_ref()
     }
     /// <p>The starting time of validity of the public key.</p>
-    pub fn validity_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn validity_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.validity_start_time.as_ref()
     }
     /// <p>The ending time of validity of the public key.</p>
-    pub fn validity_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn validity_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.validity_end_time.as_ref()
     }
     /// <p>The fingerprint of the public key.</p>
@@ -2548,8 +2956,8 @@ pub mod public_key {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<aws_smithy_types::Blob>,
-        pub(crate) validity_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) validity_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) validity_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) validity_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) fingerprint: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2564,27 +2972,27 @@ pub mod public_key {
             self
         }
         /// <p>The starting time of validity of the public key.</p>
-        pub fn validity_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn validity_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.validity_start_time = Some(input);
             self
         }
         /// <p>The starting time of validity of the public key.</p>
         pub fn set_validity_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.validity_start_time = input;
             self
         }
         /// <p>The ending time of validity of the public key.</p>
-        pub fn validity_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn validity_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.validity_end_time = Some(input);
             self
         }
         /// <p>The ending time of validity of the public key.</p>
         pub fn set_validity_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.validity_end_time = input;
             self

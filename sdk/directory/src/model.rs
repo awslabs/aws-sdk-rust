@@ -816,9 +816,9 @@ pub struct SchemaExtensionInfo {
     pub schema_extension_status_reason: std::option::Option<std::string::String>,
     /// <p>The date and time that the schema extension started being applied to the
     /// directory.</p>
-    pub start_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the schema extension was completed.</p>
-    pub end_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SchemaExtensionInfo {
     /// <p>The identifier of the directory to which the schema extension is applied.</p>
@@ -845,11 +845,11 @@ impl SchemaExtensionInfo {
     }
     /// <p>The date and time that the schema extension started being applied to the
     /// directory.</p>
-    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>The date and time that the schema extension was completed.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
 }
@@ -881,8 +881,8 @@ pub mod schema_extension_info {
         pub(crate) schema_extension_status:
             std::option::Option<crate::model::SchemaExtensionStatus>,
         pub(crate) schema_extension_status_reason: std::option::Option<std::string::String>,
-        pub(crate) start_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the directory to which the schema extension is applied.</p>
@@ -952,7 +952,7 @@ pub mod schema_extension_info {
         }
         /// <p>The date and time that the schema extension started being applied to the
         /// directory.</p>
-        pub fn start_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_date_time = Some(input);
             self
         }
@@ -960,20 +960,20 @@ pub mod schema_extension_info {
         /// directory.</p>
         pub fn set_start_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_date_time = input;
             self
         }
         /// <p>The date and time that the schema extension was completed.</p>
-        pub fn end_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_date_time = Some(input);
             self
         }
         /// <p>The date and time that the schema extension was completed.</p>
         pub fn set_end_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_date_time = input;
             self
@@ -1103,7 +1103,7 @@ pub struct LogSubscription {
     /// <p>The name of the log group.</p>
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>The date and time that the log subscription was created.</p>
-    pub subscription_created_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub subscription_created_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LogSubscription {
     /// <p>Identifier (ID) of the directory that you want to associate with the log
@@ -1118,7 +1118,7 @@ impl LogSubscription {
     /// <p>The date and time that the log subscription was created.</p>
     pub fn subscription_created_date_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.subscription_created_date_time.as_ref()
     }
 }
@@ -1142,7 +1142,7 @@ pub mod log_subscription {
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) log_group_name: std::option::Option<std::string::String>,
-        pub(crate) subscription_created_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) subscription_created_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Identifier (ID) of the directory that you want to associate with the log
@@ -1171,14 +1171,14 @@ pub mod log_subscription {
             self
         }
         /// <p>The date and time that the log subscription was created.</p>
-        pub fn subscription_created_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn subscription_created_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.subscription_created_date_time = Some(input);
             self
         }
         /// <p>The date and time that the log subscription was created.</p>
         pub fn set_subscription_created_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.subscription_created_date_time = input;
             self
@@ -1211,7 +1211,7 @@ pub struct IpRouteInfo {
     /// <p>The status of the IP address block.</p>
     pub ip_route_status_msg: std::option::Option<crate::model::IpRouteStatusMsg>,
     /// <p>The date and time the address block was added to the directory.</p>
-    pub added_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub added_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason for the IpRouteStatusMsg.</p>
     pub ip_route_status_reason: std::option::Option<std::string::String>,
     /// <p>Description of the <a>IpRouteInfo</a>.</p>
@@ -1231,7 +1231,7 @@ impl IpRouteInfo {
         self.ip_route_status_msg.as_ref()
     }
     /// <p>The date and time the address block was added to the directory.</p>
-    pub fn added_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn added_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.added_date_time.as_ref()
     }
     /// <p>The reason for the IpRouteStatusMsg.</p>
@@ -1264,7 +1264,7 @@ pub mod ip_route_info {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) cidr_ip: std::option::Option<std::string::String>,
         pub(crate) ip_route_status_msg: std::option::Option<crate::model::IpRouteStatusMsg>,
-        pub(crate) added_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) added_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) ip_route_status_reason: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
     }
@@ -1303,14 +1303,14 @@ pub mod ip_route_info {
             self
         }
         /// <p>The date and time the address block was added to the directory.</p>
-        pub fn added_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn added_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.added_date_time = Some(input);
             self
         }
         /// <p>The date and time the address block was added to the directory.</p>
         pub fn set_added_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.added_date_time = input;
             self
@@ -1447,7 +1447,7 @@ pub struct CertificateInfo {
     /// <p>The state of the certificate.</p>
     pub state: std::option::Option<crate::model::CertificateState>,
     /// <p>The date and time when the certificate will expire.</p>
-    pub expiry_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub expiry_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
     pub r#type: std::option::Option<crate::model::CertificateType>,
 }
@@ -1465,7 +1465,7 @@ impl CertificateInfo {
         self.state.as_ref()
     }
     /// <p>The date and time when the certificate will expire.</p>
-    pub fn expiry_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiry_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiry_date_time.as_ref()
     }
     /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
@@ -1493,7 +1493,7 @@ pub mod certificate_info {
         pub(crate) certificate_id: std::option::Option<std::string::String>,
         pub(crate) common_name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::CertificateState>,
-        pub(crate) expiry_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expiry_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) r#type: std::option::Option<crate::model::CertificateType>,
     }
     impl Builder {
@@ -1534,14 +1534,14 @@ pub mod certificate_info {
             self
         }
         /// <p>The date and time when the certificate will expire.</p>
-        pub fn expiry_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiry_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiry_date_time = Some(input);
             self
         }
         /// <p>The date and time when the certificate will expire.</p>
         pub fn set_expiry_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiry_date_time = input;
             self
@@ -2143,11 +2143,11 @@ pub struct Trust {
     /// <p>The trust relationship state.</p>
     pub trust_state: std::option::Option<crate::model::TrustState>,
     /// <p>The date and time that the trust relationship was created.</p>
-    pub created_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the trust relationship was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the TrustState was last updated.</p>
-    pub state_last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub state_last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason for the TrustState.</p>
     pub trust_state_reason: std::option::Option<std::string::String>,
     /// <p>Current state of selective authentication for the trust.</p>
@@ -2180,15 +2180,15 @@ impl Trust {
         self.trust_state.as_ref()
     }
     /// <p>The date and time that the trust relationship was created.</p>
-    pub fn created_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date_time.as_ref()
     }
     /// <p>The date and time that the trust relationship was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The date and time that the TrustState was last updated.</p>
-    pub fn state_last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn state_last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.state_last_updated_date_time.as_ref()
     }
     /// <p>The reason for the TrustState.</p>
@@ -2232,9 +2232,9 @@ pub mod trust {
         pub(crate) trust_type: std::option::Option<crate::model::TrustType>,
         pub(crate) trust_direction: std::option::Option<crate::model::TrustDirection>,
         pub(crate) trust_state: std::option::Option<crate::model::TrustState>,
-        pub(crate) created_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) state_last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) state_last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) trust_state_reason: std::option::Option<std::string::String>,
         pub(crate) selective_auth: std::option::Option<crate::model::SelectiveAuth>,
     }
@@ -2314,40 +2314,40 @@ pub mod trust {
             self
         }
         /// <p>The date and time that the trust relationship was created.</p>
-        pub fn created_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date_time = Some(input);
             self
         }
         /// <p>The date and time that the trust relationship was created.</p>
         pub fn set_created_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date_time = input;
             self
         }
         /// <p>The date and time that the trust relationship was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time that the trust relationship was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
         }
         /// <p>The date and time that the TrustState was last updated.</p>
-        pub fn state_last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn state_last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.state_last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time that the TrustState was last updated.</p>
         pub fn set_state_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.state_last_updated_date_time = input;
             self
@@ -2635,7 +2635,7 @@ pub struct Snapshot {
     /// <p>The snapshot status.</p>
     pub status: std::option::Option<crate::model::SnapshotStatus>,
     /// <p>The date and time that the snapshot was taken.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Snapshot {
     /// <p>The directory identifier.</p>
@@ -2659,7 +2659,7 @@ impl Snapshot {
         self.status.as_ref()
     }
     /// <p>The date and time that the snapshot was taken.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
@@ -2686,7 +2686,7 @@ pub mod snapshot {
         pub(crate) r#type: std::option::Option<crate::model::SnapshotType>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::SnapshotStatus>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The directory identifier.</p>
@@ -2743,14 +2743,14 @@ pub mod snapshot {
             self
         }
         /// <p>The date and time that the snapshot was taken.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The date and time that the snapshot was taken.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -2916,9 +2916,9 @@ pub struct SharedDirectory {
     /// whether to approve or reject the share invitation.</p>
     pub share_notes: std::option::Option<std::string::String>,
     /// <p>The date and time that the shared directory was created.</p>
-    pub created_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the shared directory was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SharedDirectory {
     /// <p>Identifier of the directory owner account, which contains the directory that has been
@@ -2957,11 +2957,11 @@ impl SharedDirectory {
         self.share_notes.as_deref()
     }
     /// <p>The date and time that the shared directory was created.</p>
-    pub fn created_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date_time.as_ref()
     }
     /// <p>The date and time that the shared directory was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -2993,8 +2993,8 @@ pub mod shared_directory {
         pub(crate) shared_directory_id: std::option::Option<std::string::String>,
         pub(crate) share_status: std::option::Option<crate::model::ShareStatus>,
         pub(crate) share_notes: std::option::Option<std::string::String>,
-        pub(crate) created_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Identifier of the directory owner account, which contains the directory that has been
@@ -3100,27 +3100,27 @@ pub mod shared_directory {
             self
         }
         /// <p>The date and time that the shared directory was created.</p>
-        pub fn created_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date_time = Some(input);
             self
         }
         /// <p>The date and time that the shared directory was created.</p>
         pub fn set_created_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date_time = input;
             self
         }
         /// <p>The date and time that the shared directory was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time that the shared directory was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -3259,11 +3259,11 @@ pub struct RegionDescription {
     /// directory.</p>
     pub desired_number_of_domain_controllers: i32,
     /// <p>Specifies when the Region replication began.</p>
-    pub launch_time: std::option::Option<aws_smithy_types::Instant>,
+    pub launch_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the Region status was last updated.</p>
-    pub status_last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub status_last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the Region description was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RegionDescription {
     /// <p>The identifier of the directory.</p>
@@ -3292,15 +3292,17 @@ impl RegionDescription {
         self.desired_number_of_domain_controllers
     }
     /// <p>Specifies when the Region replication began.</p>
-    pub fn launch_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn launch_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.launch_time.as_ref()
     }
     /// <p>The date and time that the Region status was last updated.</p>
-    pub fn status_last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn status_last_updated_date_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.status_last_updated_date_time.as_ref()
     }
     /// <p>The date and time that the Region description was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -3337,9 +3339,9 @@ pub mod region_description {
         pub(crate) status: std::option::Option<crate::model::DirectoryStage>,
         pub(crate) vpc_settings: std::option::Option<crate::model::DirectoryVpcSettings>,
         pub(crate) desired_number_of_domain_controllers: std::option::Option<i32>,
-        pub(crate) launch_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) status_last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) launch_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) status_last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the directory.</p>
@@ -3417,40 +3419,40 @@ pub mod region_description {
             self
         }
         /// <p>Specifies when the Region replication began.</p>
-        pub fn launch_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn launch_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.launch_time = Some(input);
             self
         }
         /// <p>Specifies when the Region replication began.</p>
         pub fn set_launch_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.launch_time = input;
             self
         }
         /// <p>The date and time that the Region status was last updated.</p>
-        pub fn status_last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn status_last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.status_last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time that the Region status was last updated.</p>
         pub fn set_status_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.status_last_updated_date_time = input;
             self
         }
         /// <p>The date and time that the Region description was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time that the Region description was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -3737,7 +3739,7 @@ pub struct LdapsSettingInfo {
     /// <p>Describes a state change for LDAPS.</p>
     pub ldaps_status_reason: std::option::Option<std::string::String>,
     /// <p>The date and time when the LDAPS settings were last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LdapsSettingInfo {
     /// <p>The state of the LDAPS settings.</p>
@@ -3749,7 +3751,7 @@ impl LdapsSettingInfo {
         self.ldaps_status_reason.as_deref()
     }
     /// <p>The date and time when the LDAPS settings were last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -3770,7 +3772,7 @@ pub mod ldaps_setting_info {
     pub struct Builder {
         pub(crate) ldaps_status: std::option::Option<crate::model::LdapsStatus>,
         pub(crate) ldaps_status_reason: std::option::Option<std::string::String>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The state of the LDAPS settings.</p>
@@ -3800,14 +3802,14 @@ pub mod ldaps_setting_info {
             self
         }
         /// <p>The date and time when the LDAPS settings were last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time when the LDAPS settings were last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -3904,7 +3906,7 @@ pub struct EventTopic {
     /// <p>The Amazon SNS topic ARN (Amazon Resource Name).</p>
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>The date and time of when you associated your directory with the Amazon SNS topic.</p>
-    pub created_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The topic registration status.</p>
     pub status: std::option::Option<crate::model::TopicStatus>,
 }
@@ -3923,7 +3925,7 @@ impl EventTopic {
         self.topic_arn.as_deref()
     }
     /// <p>The date and time of when you associated your directory with the Amazon SNS topic.</p>
-    pub fn created_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date_time.as_ref()
     }
     /// <p>The topic registration status.</p>
@@ -3951,7 +3953,7 @@ pub mod event_topic {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) topic_name: std::option::Option<std::string::String>,
         pub(crate) topic_arn: std::option::Option<std::string::String>,
-        pub(crate) created_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::TopicStatus>,
     }
     impl Builder {
@@ -3988,14 +3990,14 @@ pub mod event_topic {
             self
         }
         /// <p>The date and time of when you associated your directory with the Amazon SNS topic.</p>
-        pub fn created_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date_time = Some(input);
             self
         }
         /// <p>The date and time of when you associated your directory with the Amazon SNS topic.</p>
         pub fn set_created_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date_time = input;
             self
@@ -4113,9 +4115,9 @@ pub struct DomainController {
     /// <p>A description of the domain controller state.</p>
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>Specifies when the domain controller was created.</p>
-    pub launch_time: std::option::Option<aws_smithy_types::Instant>,
+    pub launch_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the status was last updated.</p>
-    pub status_last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub status_last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DomainController {
     /// <p>Identifier of the directory where the domain controller resides.</p>
@@ -4151,11 +4153,13 @@ impl DomainController {
         self.status_reason.as_deref()
     }
     /// <p>Specifies when the domain controller was created.</p>
-    pub fn launch_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn launch_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.launch_time.as_ref()
     }
     /// <p>The date and time that the status was last updated.</p>
-    pub fn status_last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn status_last_updated_date_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.status_last_updated_date_time.as_ref()
     }
 }
@@ -4192,8 +4196,8 @@ pub mod domain_controller {
         pub(crate) availability_zone: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DomainControllerStatus>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
-        pub(crate) launch_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) status_last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) launch_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) status_last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Identifier of the directory where the domain controller resides.</p>
@@ -4289,27 +4293,27 @@ pub mod domain_controller {
             self
         }
         /// <p>Specifies when the domain controller was created.</p>
-        pub fn launch_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn launch_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.launch_time = Some(input);
             self
         }
         /// <p>Specifies when the domain controller was created.</p>
         pub fn set_launch_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.launch_time = input;
             self
         }
         /// <p>The date and time that the status was last updated.</p>
-        pub fn status_last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn status_last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.status_last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time that the status was last updated.</p>
         pub fn set_status_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.status_last_updated_date_time = input;
             self
@@ -4463,9 +4467,9 @@ pub struct DirectoryDescription {
     /// whether to approve or reject the share invitation.</p>
     pub share_notes: std::option::Option<std::string::String>,
     /// <p>Specifies when the directory was created.</p>
-    pub launch_time: std::option::Option<aws_smithy_types::Instant>,
+    pub launch_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the stage was last updated.</p>
-    pub stage_last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub stage_last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The directory size.</p>
     pub r#type: std::option::Option<crate::model::DirectoryType>,
     /// <p>A <a>DirectoryVpcSettingsDescription</a> object that contains additional
@@ -4558,11 +4562,11 @@ impl DirectoryDescription {
         self.share_notes.as_deref()
     }
     /// <p>Specifies when the directory was created.</p>
-    pub fn launch_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn launch_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.launch_time.as_ref()
     }
     /// <p>The date and time that the stage was last updated.</p>
-    pub fn stage_last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn stage_last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stage_last_updated_date_time.as_ref()
     }
     /// <p>The directory size.</p>
@@ -4677,8 +4681,8 @@ pub mod directory_description {
         pub(crate) share_status: std::option::Option<crate::model::ShareStatus>,
         pub(crate) share_method: std::option::Option<crate::model::ShareMethod>,
         pub(crate) share_notes: std::option::Option<std::string::String>,
-        pub(crate) launch_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) stage_last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) launch_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) stage_last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) r#type: std::option::Option<crate::model::DirectoryType>,
         pub(crate) vpc_settings: std::option::Option<crate::model::DirectoryVpcSettingsDescription>,
         pub(crate) connect_settings:
@@ -4867,27 +4871,27 @@ pub mod directory_description {
             self
         }
         /// <p>Specifies when the directory was created.</p>
-        pub fn launch_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn launch_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.launch_time = Some(input);
             self
         }
         /// <p>Specifies when the directory was created.</p>
         pub fn set_launch_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.launch_time = input;
             self
         }
         /// <p>The date and time that the stage was last updated.</p>
-        pub fn stage_last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn stage_last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stage_last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time that the stage was last updated.</p>
         pub fn set_stage_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.stage_last_updated_date_time = input;
             self
@@ -6082,7 +6086,7 @@ pub struct ClientAuthenticationSettingInfo {
     /// <p>Whether the client authentication type is enabled or disabled for the specified directory.</p>
     pub status: std::option::Option<crate::model::ClientAuthenticationStatus>,
     /// <p>The date and time when the status of the client authentication type was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ClientAuthenticationSettingInfo {
     /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved. </p>
@@ -6094,7 +6098,7 @@ impl ClientAuthenticationSettingInfo {
         self.status.as_ref()
     }
     /// <p>The date and time when the status of the client authentication type was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -6115,7 +6119,7 @@ pub mod client_authentication_setting_info {
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ClientAuthenticationType>,
         pub(crate) status: std::option::Option<crate::model::ClientAuthenticationStatus>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved. </p>
@@ -6145,14 +6149,14 @@ pub mod client_authentication_setting_info {
             self
         }
         /// <p>The date and time when the status of the client authentication type was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time when the status of the client authentication type was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -6242,9 +6246,9 @@ pub struct Certificate {
     /// <p>The common name for the certificate.</p>
     pub common_name: std::option::Option<std::string::String>,
     /// <p>The date and time that the certificate was registered.</p>
-    pub registered_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub registered_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the certificate will expire.</p>
-    pub expiry_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub expiry_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
     pub r#type: std::option::Option<crate::model::CertificateType>,
     /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
@@ -6268,11 +6272,11 @@ impl Certificate {
         self.common_name.as_deref()
     }
     /// <p>The date and time that the certificate was registered.</p>
-    pub fn registered_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn registered_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.registered_date_time.as_ref()
     }
     /// <p>The date and time when the certificate will expire.</p>
-    pub fn expiry_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiry_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiry_date_time.as_ref()
     }
     /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
@@ -6310,8 +6314,8 @@ pub mod certificate {
         pub(crate) state: std::option::Option<crate::model::CertificateState>,
         pub(crate) state_reason: std::option::Option<std::string::String>,
         pub(crate) common_name: std::option::Option<std::string::String>,
-        pub(crate) registered_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) expiry_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) registered_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) expiry_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) r#type: std::option::Option<crate::model::CertificateType>,
         pub(crate) client_cert_auth_settings:
             std::option::Option<crate::model::ClientCertAuthSettings>,
@@ -6364,27 +6368,27 @@ pub mod certificate {
             self
         }
         /// <p>The date and time that the certificate was registered.</p>
-        pub fn registered_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn registered_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.registered_date_time = Some(input);
             self
         }
         /// <p>The date and time that the certificate was registered.</p>
         pub fn set_registered_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.registered_date_time = input;
             self
         }
         /// <p>The date and time when the certificate will expire.</p>
-        pub fn expiry_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiry_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiry_date_time = Some(input);
             self
         }
         /// <p>The date and time when the certificate will expire.</p>
         pub fn set_expiry_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiry_date_time = input;
             self

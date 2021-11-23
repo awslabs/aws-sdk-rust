@@ -294,6 +294,56 @@ pub mod fluent_builders {
             self.inner = self.inner.set_federation_parameters(input);
             self
         }
+        /// <p>Configuration information for the superuser.</p>
+        pub fn superuser_parameters(mut self, inp: crate::model::SuperuserParameters) -> Self {
+            self.inner = self.inner.superuser_parameters(inp);
+            self
+        }
+        /// <p>Configuration information for the superuser.</p>
+        pub fn set_superuser_parameters(
+            mut self,
+            input: std::option::Option<crate::model::SuperuserParameters>,
+        ) -> Self {
+            self.inner = self.inner.set_superuser_parameters(input);
+            self
+        }
+        /// Appends an item to `dataBundles`.
+        ///
+        /// To override the contents of this collection use [`set_data_bundles`](Self::set_data_bundles).
+        ///
+        /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p>
+        /// </li>
+        /// </ul>
+        pub fn data_bundles(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_bundles(inp);
+            self
+        }
+        /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_data_bundles(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_data_bundles(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DeleteEnvironment`.
     ///
@@ -921,7 +971,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -944,7 +1000,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

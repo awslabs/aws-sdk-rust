@@ -340,7 +340,7 @@ impl ListConnectorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkerConfigurationOutput {
     /// <p>The time that the worker configuration was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the worker configuration.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The latest revision of the custom configuration.</p>
@@ -352,7 +352,7 @@ pub struct DescribeWorkerConfigurationOutput {
 }
 impl DescribeWorkerConfigurationOutput {
     /// <p>The time that the worker configuration was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description of the worker configuration.</p>
@@ -391,7 +391,7 @@ pub mod describe_worker_configuration_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) latest_revision:
             std::option::Option<crate::model::WorkerConfigurationRevisionDescription>,
@@ -400,14 +400,14 @@ pub mod describe_worker_configuration_output {
     }
     impl Builder {
         /// <p>The time that the worker configuration was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time that the worker configuration was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -485,7 +485,7 @@ impl DescribeWorkerConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomPluginOutput {
     /// <p>The time that the custom plugin was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
     pub custom_plugin_arn: std::option::Option<std::string::String>,
     /// <p>The state of the custom plugin.</p>
@@ -499,7 +499,7 @@ pub struct DescribeCustomPluginOutput {
 }
 impl DescribeCustomPluginOutput {
     /// <p>The time that the custom plugin was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
@@ -543,7 +543,7 @@ pub mod describe_custom_plugin_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) custom_plugin_arn: std::option::Option<std::string::String>,
         pub(crate) custom_plugin_state: std::option::Option<crate::model::CustomPluginState>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -552,14 +552,14 @@ pub mod describe_custom_plugin_output {
     }
     impl Builder {
         /// <p>The time that the custom plugin was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time that the custom plugin was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -661,7 +661,7 @@ pub struct DescribeConnectorOutput {
     /// <p>The state of the connector.</p>
     pub connector_state: std::option::Option<crate::model::ConnectorState>,
     /// <p>The time the connector was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current version of the connector.</p>
     pub current_version: std::option::Option<std::string::String>,
     /// <p>The Apache Kafka cluster that the connector is connected to.</p>
@@ -712,7 +712,7 @@ impl DescribeConnectorOutput {
         self.connector_state.as_ref()
     }
     /// <p>The time the connector was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The current version of the connector.</p>
@@ -803,7 +803,7 @@ pub mod describe_connector_output {
         pub(crate) connector_description: std::option::Option<std::string::String>,
         pub(crate) connector_name: std::option::Option<std::string::String>,
         pub(crate) connector_state: std::option::Option<crate::model::ConnectorState>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) current_version: std::option::Option<std::string::String>,
         pub(crate) kafka_cluster: std::option::Option<crate::model::KafkaClusterDescription>,
         pub(crate) kafka_cluster_client_authentication:
@@ -909,14 +909,14 @@ pub mod describe_connector_output {
             self
         }
         /// <p>The time the connector was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time the connector was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -1167,7 +1167,7 @@ impl DeleteConnectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkerConfigurationOutput {
     /// <p>The time that the worker configuration was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The latest revision of the worker configuration.</p>
     pub latest_revision: std::option::Option<crate::model::WorkerConfigurationRevisionSummary>,
     /// <p>The name of the worker configuration.</p>
@@ -1177,7 +1177,7 @@ pub struct CreateWorkerConfigurationOutput {
 }
 impl CreateWorkerConfigurationOutput {
     /// <p>The time that the worker configuration was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The latest revision of the worker configuration.</p>
@@ -1211,7 +1211,7 @@ pub mod create_worker_configuration_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) latest_revision:
             std::option::Option<crate::model::WorkerConfigurationRevisionSummary>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1219,14 +1219,14 @@ pub mod create_worker_configuration_output {
     }
     impl Builder {
         /// <p>The time that the worker configuration was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time that the worker configuration was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self

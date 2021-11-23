@@ -9,12 +9,14 @@ use std::fmt::{self, Debug, Display, Formatter};
 use std::sync::Arc;
 use std::time::Duration;
 
+/// Error returned when credentials failed to load.
 #[derive(Debug)]
 #[non_exhaustive]
 pub enum CredentialsError {
     /// No credentials were available for this provider
     #[non_exhaustive]
     CredentialsNotLoaded {
+        /// Underlying cause of the error.
         context: Box<dyn Error + Send + Sync + 'static>,
     },
 
@@ -29,6 +31,7 @@ pub enum CredentialsError {
     /// - assume role profile that forms an infinite loop
     #[non_exhaustive]
     InvalidConfiguration {
+        /// Underlying cause of the error.
         cause: Box<dyn Error + Send + Sync + 'static>,
     },
 
@@ -38,6 +41,7 @@ pub enum CredentialsError {
     /// read a configuration file.
     #[non_exhaustive]
     ProviderError {
+        /// Underlying cause of the error.
         cause: Box<dyn Error + Send + Sync + 'static>,
     },
 
@@ -49,6 +53,7 @@ pub enum CredentialsError {
     /// - A provider returns data that is missing required fields
     #[non_exhaustive]
     Unhandled {
+        /// Underlying cause of the error.
         cause: Box<dyn Error + Send + Sync + 'static>,
     },
 }
@@ -138,8 +143,10 @@ impl Error for CredentialsError {
     }
 }
 
+/// Result type for credential providers.
 pub type Result = std::result::Result<Credentials, CredentialsError>;
 
+/// Convenience `ProvideCredentials` struct that implements the `ProvideCredentials` trait.
 pub mod future {
     use aws_smithy_async::future::now_or_later::NowOrLater;
     use std::future::Future;
@@ -147,13 +154,18 @@ pub mod future {
     use std::task::{Context, Poll};
 
     type BoxFuture<'a, T> = Pin<Box<dyn Future<Output = T> + Send + 'a>>;
+
+    /// Future new-type that the `ProvideCredentials` trait must return.
+    #[derive(Debug)]
     pub struct ProvideCredentials<'a>(NowOrLater<super::Result, BoxFuture<'a, super::Result>>);
 
     impl<'a> ProvideCredentials<'a> {
+        /// Creates a `ProvideCredentials` struct from a future.
         pub fn new(future: impl Future<Output = super::Result> + Send + 'a) -> Self {
             ProvideCredentials(NowOrLater::new(Box::pin(future)))
         }
 
+        /// Creates a `ProvideCredentials` struct from a resolved credentials value.
         pub fn ready(credentials: super::Result) -> Self {
             ProvideCredentials(NowOrLater::ready(credentials))
         }
@@ -170,6 +182,7 @@ pub mod future {
 
 /// Asynchronous Credentials Provider
 pub trait ProvideCredentials: Send + Sync + Debug {
+    /// Returns a future that provides credentials.
     fn provide_credentials<'a>(&'a self) -> future::ProvideCredentials<'a>
     where
         Self: 'a;

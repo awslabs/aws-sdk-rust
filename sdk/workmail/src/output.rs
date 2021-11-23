@@ -1657,9 +1657,9 @@ pub struct GetMobileDeviceAccessOverrideOutput {
     /// <p>A description of the override.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date the override was first created.</p>
-    pub date_created: std::option::Option<aws_smithy_types::Instant>,
+    pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the description was last modified.</p>
-    pub date_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub date_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetMobileDeviceAccessOverrideOutput {
     /// <p>The WorkMail user to which the access override applies.</p>
@@ -1679,11 +1679,11 @@ impl GetMobileDeviceAccessOverrideOutput {
         self.description.as_deref()
     }
     /// <p>The date the override was first created.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The date the description was last modified.</p>
-    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_modified.as_ref()
     }
 }
@@ -1709,8 +1709,8 @@ pub mod get_mobile_device_access_override_output {
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) effect: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) date_created: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) date_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) date_modified: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The WorkMail user to which the access override applies.</p>
@@ -1757,27 +1757,27 @@ pub mod get_mobile_device_access_override_output {
             self
         }
         /// <p>The date the override was first created.</p>
-        pub fn date_created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_created = Some(input);
             self
         }
         /// <p>The date the override was first created.</p>
         pub fn set_date_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_created = input;
             self
         }
         /// <p>The date the description was last modified.</p>
-        pub fn date_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_modified = Some(input);
             self
         }
         /// <p>The date the description was last modified.</p>
         pub fn set_date_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_modified = input;
             self
@@ -2431,10 +2431,10 @@ pub struct DescribeUserOutput {
     pub user_role: std::option::Option<crate::model::UserRole>,
     /// <p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch
     /// time format.</p>
-    pub enabled_date: std::option::Option<aws_smithy_types::Instant>,
+    pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch
     /// time format.</p>
-    pub disabled_date: std::option::Option<aws_smithy_types::Instant>,
+    pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeUserOutput {
     /// <p>The identifier for the described user.</p>
@@ -2468,12 +2468,12 @@ impl DescribeUserOutput {
     }
     /// <p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch
     /// time format.</p>
-    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
     /// <p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch
     /// time format.</p>
-    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
 }
@@ -2503,8 +2503,8 @@ pub mod describe_user_output {
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::EntityState>,
         pub(crate) user_role: std::option::Option<crate::model::UserRole>,
-        pub(crate) enabled_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) disabled_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) enabled_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) disabled_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier for the described user.</p>
@@ -2579,7 +2579,7 @@ pub mod describe_user_output {
         }
         /// <p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch
         /// time format.</p>
-        pub fn enabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.enabled_date = Some(input);
             self
         }
@@ -2587,14 +2587,14 @@ pub mod describe_user_output {
         /// time format.</p>
         pub fn set_enabled_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.enabled_date = input;
             self
         }
         /// <p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch
         /// time format.</p>
-        pub fn disabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.disabled_date = Some(input);
             self
         }
@@ -2602,7 +2602,7 @@ pub mod describe_user_output {
         /// time format.</p>
         pub fn set_disabled_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.disabled_date = input;
             self
@@ -2648,10 +2648,10 @@ pub struct DescribeResourceOutput {
     pub state: std::option::Option<crate::model::EntityState>,
     /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time
     /// format.</p>
-    pub enabled_date: std::option::Option<aws_smithy_types::Instant>,
+    pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time
     /// format.</p>
-    pub disabled_date: std::option::Option<aws_smithy_types::Instant>,
+    pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeResourceOutput {
     /// <p>The identifier of the described resource.</p>
@@ -2681,12 +2681,12 @@ impl DescribeResourceOutput {
     }
     /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time
     /// format.</p>
-    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
     /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time
     /// format.</p>
-    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
 }
@@ -2716,8 +2716,8 @@ pub mod describe_resource_output {
         pub(crate) r#type: std::option::Option<crate::model::ResourceType>,
         pub(crate) booking_options: std::option::Option<crate::model::BookingOptions>,
         pub(crate) state: std::option::Option<crate::model::EntityState>,
-        pub(crate) enabled_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) disabled_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) enabled_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) disabled_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the described resource.</p>
@@ -2787,7 +2787,7 @@ pub mod describe_resource_output {
         }
         /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time
         /// format.</p>
-        pub fn enabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.enabled_date = Some(input);
             self
         }
@@ -2795,14 +2795,14 @@ pub mod describe_resource_output {
         /// format.</p>
         pub fn set_enabled_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.enabled_date = input;
             self
         }
         /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time
         /// format.</p>
-        pub fn disabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.disabled_date = Some(input);
             self
         }
@@ -2810,7 +2810,7 @@ pub mod describe_resource_output {
         /// format.</p>
         pub fn set_disabled_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.disabled_date = input;
             self
@@ -2855,7 +2855,7 @@ pub struct DescribeOrganizationOutput {
     pub default_mail_domain: std::option::Option<std::string::String>,
     /// <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch
     /// time format.</p>
-    pub completed_date: std::option::Option<aws_smithy_types::Instant>,
+    pub completed_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>(Optional) The error message indicating if unexpected behavior was encountered with
     /// regards to the organization.</p>
     pub error_message: std::option::Option<std::string::String>,
@@ -2889,7 +2889,7 @@ impl DescribeOrganizationOutput {
     }
     /// <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch
     /// time format.</p>
-    pub fn completed_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed_date.as_ref()
     }
     /// <p>(Optional) The error message indicating if unexpected behavior was encountered with
@@ -2929,7 +2929,7 @@ pub mod describe_organization_output {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) directory_type: std::option::Option<std::string::String>,
         pub(crate) default_mail_domain: std::option::Option<std::string::String>,
-        pub(crate) completed_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) completed_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -3005,7 +3005,7 @@ pub mod describe_organization_output {
         }
         /// <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch
         /// time format.</p>
-        pub fn completed_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completed_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completed_date = Some(input);
             self
         }
@@ -3013,7 +3013,7 @@ pub mod describe_organization_output {
         /// time format.</p>
         pub fn set_completed_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completed_date = input;
             self
@@ -3094,9 +3094,9 @@ pub struct DescribeMailboxExportJobOutput {
     /// <p>Error information for failed mailbox export jobs.</p>
     pub error_info: std::option::Option<std::string::String>,
     /// <p>The mailbox export job start timestamp.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The mailbox export job end timestamp.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeMailboxExportJobOutput {
     /// <p>The identifier of the user or resource associated with the mailbox.</p>
@@ -3143,11 +3143,11 @@ impl DescribeMailboxExportJobOutput {
         self.error_info.as_deref()
     }
     /// <p>The mailbox export job start timestamp.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The mailbox export job end timestamp.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -3185,8 +3185,8 @@ pub mod describe_mailbox_export_job_output {
         pub(crate) estimated_progress: std::option::Option<i32>,
         pub(crate) state: std::option::Option<crate::model::MailboxExportJobState>,
         pub(crate) error_info: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the user or resource associated with the mailbox.</p>
@@ -3302,27 +3302,27 @@ pub mod describe_mailbox_export_job_output {
             self
         }
         /// <p>The mailbox export job start timestamp.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The mailbox export job start timestamp.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The mailbox export job end timestamp.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The mailbox export job end timestamp.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -3422,10 +3422,10 @@ pub struct DescribeGroupOutput {
     pub state: std::option::Option<crate::model::EntityState>,
     /// <p>The date and time when a user was registered to WorkMail, in UNIX epoch time
     /// format.</p>
-    pub enabled_date: std::option::Option<aws_smithy_types::Instant>,
+    pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time
     /// format.</p>
-    pub disabled_date: std::option::Option<aws_smithy_types::Instant>,
+    pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeGroupOutput {
     /// <p>The identifier of the described group.</p>
@@ -3447,12 +3447,12 @@ impl DescribeGroupOutput {
     }
     /// <p>The date and time when a user was registered to WorkMail, in UNIX epoch time
     /// format.</p>
-    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
     /// <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time
     /// format.</p>
-    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
 }
@@ -3478,8 +3478,8 @@ pub mod describe_group_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) email: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::EntityState>,
-        pub(crate) enabled_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) disabled_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) enabled_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) disabled_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the described group.</p>
@@ -3526,7 +3526,7 @@ pub mod describe_group_output {
         }
         /// <p>The date and time when a user was registered to WorkMail, in UNIX epoch time
         /// format.</p>
-        pub fn enabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.enabled_date = Some(input);
             self
         }
@@ -3534,14 +3534,14 @@ pub mod describe_group_output {
         /// format.</p>
         pub fn set_enabled_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.enabled_date = input;
             self
         }
         /// <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time
         /// format.</p>
-        pub fn disabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.disabled_date = Some(input);
             self
         }
@@ -3549,7 +3549,7 @@ pub mod describe_group_output {
         /// format.</p>
         pub fn set_disabled_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.disabled_date = input;
             self

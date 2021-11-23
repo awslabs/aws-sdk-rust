@@ -43,7 +43,7 @@ pub fn unescape(s: &str) -> Result<Cow<str>, XmlError> {
                         // e.g. &#xD;
                         let (entity, radix) = if let Some(entity) = entity.strip_prefix("#x") {
                             (entity, 16)
-                        } else if let Some(entity) = entity.strip_prefix("#") {
+                        } else if let Some(entity) = entity.strip_prefix('#') {
                             // e.g. &#123;
                             (entity, 10)
                         } else {
@@ -51,7 +51,7 @@ pub fn unescape(s: &str) -> Result<Cow<str>, XmlError> {
                                 esc: entity.to_string(),
                             });
                         };
-                        let char_code = u32::from_str_radix(&entity, radix).map_err(|_| {
+                        let char_code = u32::from_str_radix(entity, radix).map_err(|_| {
                             XmlError::InvalidEscape {
                                 esc: format!(
                                     "Expected numeric escape in base {}; got: {}",

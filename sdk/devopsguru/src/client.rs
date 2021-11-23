@@ -113,6 +113,33 @@ where
     pub fn describe_insight(&self) -> fluent_builders::DescribeInsight<C, M, R> {
         fluent_builders::DescribeInsight::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DescribeOrganizationHealth` operation.
+    ///
+    /// See [`DescribeOrganizationHealth`](crate::client::fluent_builders::DescribeOrganizationHealth) for more information about the
+    /// operation and its arguments.
+    pub fn describe_organization_health(
+        &self,
+    ) -> fluent_builders::DescribeOrganizationHealth<C, M, R> {
+        fluent_builders::DescribeOrganizationHealth::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeOrganizationOverview` operation.
+    ///
+    /// See [`DescribeOrganizationOverview`](crate::client::fluent_builders::DescribeOrganizationOverview) for more information about the
+    /// operation and its arguments.
+    pub fn describe_organization_overview(
+        &self,
+    ) -> fluent_builders::DescribeOrganizationOverview<C, M, R> {
+        fluent_builders::DescribeOrganizationOverview::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeOrganizationResourceCollectionHealth` operation.
+    ///
+    /// See [`DescribeOrganizationResourceCollectionHealth`](crate::client::fluent_builders::DescribeOrganizationResourceCollectionHealth) for more information about the
+    /// operation and its arguments.
+    pub fn describe_organization_resource_collection_health(
+        &self,
+    ) -> fluent_builders::DescribeOrganizationResourceCollectionHealth<C, M, R> {
+        fluent_builders::DescribeOrganizationResourceCollectionHealth::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DescribeResourceCollectionHealth` operation.
     ///
     /// See [`DescribeResourceCollectionHealth`](crate::client::fluent_builders::DescribeResourceCollectionHealth) for more information about the
@@ -173,6 +200,13 @@ where
     pub fn list_notification_channels(&self) -> fluent_builders::ListNotificationChannels<C, M, R> {
         fluent_builders::ListNotificationChannels::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `ListOrganizationInsights` operation.
+    ///
+    /// See [`ListOrganizationInsights`](crate::client::fluent_builders::ListOrganizationInsights) for more information about the
+    /// operation and its arguments.
+    pub fn list_organization_insights(&self) -> fluent_builders::ListOrganizationInsights<C, M, R> {
+        fluent_builders::ListOrganizationInsights::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `ListRecommendations` operation.
     ///
     /// See [`ListRecommendations`](crate::client::fluent_builders::ListRecommendations) for more information about the
@@ -202,6 +236,15 @@ where
     /// operation and its arguments.
     pub fn search_insights(&self) -> fluent_builders::SearchInsights<C, M, R> {
         fluent_builders::SearchInsights::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `SearchOrganizationInsights` operation.
+    ///
+    /// See [`SearchOrganizationInsights`](crate::client::fluent_builders::SearchOrganizationInsights) for more information about the
+    /// operation and its arguments.
+    pub fn search_organization_insights(
+        &self,
+    ) -> fluent_builders::SearchOrganizationInsights<C, M, R> {
+        fluent_builders::SearchOrganizationInsights::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `StartCostEstimation` operation.
     ///
@@ -235,17 +278,15 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AddNotificationChannel`.
     ///
-    /// <p>
-    /// Adds a notification channel to DevOps Guru. A notification channel is used to notify you about important DevOps Guru events, such as when an insight is generated.
-    /// </p>
-    ///
+    /// <p> Adds a notification channel to DevOps Guru. A notification channel is used to notify you
+    /// about important DevOps Guru events, such as when an insight is generated. </p>
     /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission
     /// to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account.
     /// For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
     /// for cross account Amazon SNS topics</a>.</p>
-    /// <p>If you use an Amazon SNS topic that is encrypted by an AWS Key Management Service customer-managed key (CMK), then you must add permissions
+    /// <p>If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions
     /// to the CMK. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for
-    /// AWS KMS–encrypted Amazon SNS topics</a>.</p>
+    /// Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
     #[derive(std::fmt::Debug)]
     pub struct AddNotificationChannel<
         C = aws_smithy_client::erase::DynConnector,
@@ -322,10 +363,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAccountHealth`.
     ///
-    /// <p>
-    /// Returns the number of open reactive insights, the number of open proactive insights, and the number of metrics analyzed in your AWS account.
-    /// Use these numbers to gauge the health of operations in your AWS account.
-    /// </p>
+    /// <p> Returns the number of open reactive insights, the number of open proactive insights,
+    /// and the number of metrics analyzed in your Amazon Web Services account. Use these numbers to gauge the
+    /// health of operations in your Amazon Web Services account. </p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeAccountHealth<
         C = aws_smithy_client::erase::DynConnector,
@@ -385,10 +425,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAccountOverview`.
     ///
-    /// <p>
-    /// For the time range passed in, returns the number of open reactive insight that were created, the number of open proactive insights
-    /// that were created, and the Mean Time to Recover (MTTR) for all closed reactive insights.
-    /// </p>
+    /// <p> For the time range passed in, returns the number of open reactive insight that were
+    /// created, the number of open proactive insights that were created, and the Mean Time to Recover (MTTR) for all
+    /// closed reactive insights. </p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeAccountOverview<
         C = aws_smithy_client::erase::DynConnector,
@@ -445,40 +484,36 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The start of the time range passed in. The start time granularity is at the
-        /// day level. The floor of the start time is used. Returned information occurred after this day.
-        /// </p>
-        pub fn from_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        /// <p> The start of the time range passed in. The start time granularity is at the day
+        /// level. The floor of the start time is used. Returned information occurred after this
+        /// day. </p>
+        pub fn from_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.from_time(inp);
             self
         }
-        /// <p>
-        /// The start of the time range passed in. The start time granularity is at the
-        /// day level. The floor of the start time is used. Returned information occurred after this day.
-        /// </p>
+        /// <p> The start of the time range passed in. The start time granularity is at the day
+        /// level. The floor of the start time is used. Returned information occurred after this
+        /// day. </p>
         pub fn set_from_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_from_time(input);
             self
         }
-        /// <p>
-        /// The end of the time range passed in. The start time granularity is at the
-        /// day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.
-        /// </p>
-        pub fn to_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        /// <p> The end of the time range passed in. The start time granularity is at the day level.
+        /// The floor of the start time is used. Returned information occurred before this day. If
+        /// this is not specified, then the current day is used. </p>
+        pub fn to_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.to_time(inp);
             self
         }
-        /// <p>
-        /// The end of the time range passed in. The start time granularity is at the
-        /// day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.
-        /// </p>
+        /// <p> The end of the time range passed in. The start time granularity is at the day level.
+        /// The floor of the start time is used. Returned information occurred before this day. If
+        /// this is not specified, then the current day is used. </p>
         pub fn set_to_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_to_time(input);
             self
@@ -486,9 +521,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAnomaly`.
     ///
-    /// <p>
-    /// Returns details about an anomaly that you specify using its ID.
-    /// </p>
+    /// <p> Returns details about an anomaly that you specify using its ID. </p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeAnomaly<
         C = aws_smithy_client::erase::DynConnector,
@@ -545,25 +578,30 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ID of the anomaly.
-        /// </p>
+        /// <p> The ID of the anomaly. </p>
         pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(inp);
             self
         }
-        /// <p>
-        /// The ID of the anomaly.
-        /// </p>
+        /// <p> The ID of the anomaly. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The ID of the member account.</p>
+        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(inp);
+            self
+        }
+        /// <p>The ID of the member account.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
             self
         }
     }
     /// Fluent builder constructing a request to `DescribeFeedback`.
     ///
-    /// <p>
-    /// Returns the most recent feedback submitted in the current AWS account and Region.
+    /// <p> Returns the most recent feedback submitted in the current Amazon Web Services account and Region.
     /// </p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeFeedback<
@@ -621,16 +659,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ID of the insight for which the feedback was provided.
-        /// </p>
+        /// <p> The ID of the insight for which the feedback was provided. </p>
         pub fn insight_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.insight_id(inp);
             self
         }
-        /// <p>
-        /// The ID of the insight for which the feedback was provided.
-        /// </p>
+        /// <p> The ID of the insight for which the feedback was provided. </p>
         pub fn set_insight_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_insight_id(input);
             self
@@ -638,9 +672,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeInsight`.
     ///
-    /// <p>
-    /// Returns details about an insight that you specify using its ID.
-    /// </p>
+    /// <p> Returns details about an insight that you specify using its ID. </p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeInsight<
         C = aws_smithy_client::erase::DynConnector,
@@ -697,28 +729,399 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ID of the insight.
-        /// </p>
+        /// <p> The ID of the insight. </p>
         pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(inp);
             self
         }
-        /// <p>
-        /// The ID of the insight.
-        /// </p>
+        /// <p> The ID of the insight. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The ID of the member account in the organization.</p>
+        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(inp);
+            self
+        }
+        /// <p>The ID of the member account in the organization.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeOrganizationHealth`.
+    ///
+    /// <p>Returns active insights, predictive insights, and resource hours analyzed in last
+    /// hour.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeOrganizationHealth<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_organization_health_input::Builder,
+    }
+    impl<C, M, R> DescribeOrganizationHealth<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeOrganizationHealth`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeOrganizationHealthOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationHealthError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeOrganizationHealthInputOperationOutputAlias,
+                crate::output::DescribeOrganizationHealthOutput,
+                crate::error::DescribeOrganizationHealthError,
+                crate::input::DescribeOrganizationHealthInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `AccountIds`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The ID of the Amazon Web Services account.</p>
+        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(inp);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account.</p>
+        pub fn set_account_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_account_ids(input);
+            self
+        }
+        /// Appends an item to `OrganizationalUnitIds`.
+        ///
+        /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
+        ///
+        /// <p>The ID of the organizational unit.</p>
+        pub fn organizational_unit_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organizational_unit_ids(inp);
+            self
+        }
+        /// <p>The ID of the organizational unit.</p>
+        pub fn set_organizational_unit_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_organizational_unit_ids(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeOrganizationOverview`.
+    ///
+    /// <p>Returns an overview of your organization's history based on the specified time range.
+    /// The overview includes the total reactive and proactive insights.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeOrganizationOverview<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_organization_overview_input::Builder,
+    }
+    impl<C, M, R> DescribeOrganizationOverview<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeOrganizationOverview`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeOrganizationOverviewOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationOverviewError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeOrganizationOverviewInputOperationOutputAlias,
+                crate::output::DescribeOrganizationOverviewOutput,
+                crate::error::DescribeOrganizationOverviewError,
+                crate::input::DescribeOrganizationOverviewInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> The start of the time range passed in. The start time granularity is at the day
+        /// level. The floor of the start time is used. Returned information occurred after this
+        /// day. </p>
+        pub fn from_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.from_time(inp);
+            self
+        }
+        /// <p> The start of the time range passed in. The start time granularity is at the day
+        /// level. The floor of the start time is used. Returned information occurred after this
+        /// day. </p>
+        pub fn set_from_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_from_time(input);
+            self
+        }
+        /// <p> The end of the time range passed in. The start time granularity is at the day level.
+        /// The floor of the start time is used. Returned information occurred before this day. If
+        /// this is not specified, then the current day is used. </p>
+        pub fn to_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.to_time(inp);
+            self
+        }
+        /// <p> The end of the time range passed in. The start time granularity is at the day level.
+        /// The floor of the start time is used. Returned information occurred before this day. If
+        /// this is not specified, then the current day is used. </p>
+        pub fn set_to_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_to_time(input);
+            self
+        }
+        /// Appends an item to `AccountIds`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The ID of the Amazon Web Services account.</p>
+        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(inp);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account.</p>
+        pub fn set_account_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_account_ids(input);
+            self
+        }
+        /// Appends an item to `OrganizationalUnitIds`.
+        ///
+        /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
+        ///
+        /// <p>The ID of the organizational unit.</p>
+        pub fn organizational_unit_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organizational_unit_ids(inp);
+            self
+        }
+        /// <p>The ID of the organizational unit.</p>
+        pub fn set_organizational_unit_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_organizational_unit_ids(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeOrganizationResourceCollectionHealth`.
+    ///
+    /// <p>Provides an overview of your system's health. If additional member accounts are part
+    /// of your organization, you can filter those accounts using the <code>AccountIds</code>
+    /// field.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeOrganizationResourceCollectionHealth<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_organization_resource_collection_health_input::Builder,
+    }
+    impl<C, M, R> DescribeOrganizationResourceCollectionHealth<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeOrganizationResourceCollectionHealth`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeOrganizationResourceCollectionHealthOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DescribeOrganizationResourceCollectionHealthError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeOrganizationResourceCollectionHealthInputOperationOutputAlias,
+                crate::output::DescribeOrganizationResourceCollectionHealthOutput,
+                crate::error::DescribeOrganizationResourceCollectionHealthError,
+                crate::input::DescribeOrganizationResourceCollectionHealthInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
+        /// are defined. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
+        /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        pub fn organization_resource_collection_type(
+            mut self,
+            inp: crate::model::OrganizationResourceCollectionType,
+        ) -> Self {
+            self.inner = self.inner.organization_resource_collection_type(inp);
+            self
+        }
+        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
+        /// are defined. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
+        /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        pub fn set_organization_resource_collection_type(
+            mut self,
+            input: std::option::Option<crate::model::OrganizationResourceCollectionType>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_resource_collection_type(input);
+            self
+        }
+        /// Appends an item to `AccountIds`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The ID of the Amazon Web Services account.</p>
+        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(inp);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account.</p>
+        pub fn set_account_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_account_ids(input);
+            self
+        }
+        /// Appends an item to `OrganizationalUnitIds`.
+        ///
+        /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
+        ///
+        /// <p>The ID of the organizational unit.</p>
+        pub fn organizational_unit_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organizational_unit_ids(inp);
+            self
+        }
+        /// <p>The ID of the organizational unit.</p>
+        pub fn set_organizational_unit_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_organizational_unit_ids(input);
+            self
+        }
+        /// <p>The pagination token to use to retrieve
+        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The pagination token to use to retrieve
+        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
     /// Fluent builder constructing a request to `DescribeResourceCollectionHealth`.
     ///
-    /// <p>
-    /// Returns the number of open proactive insights, open reactive insights, and the Mean Time to Recover (MTTR) for all closed insights in
-    /// resource collections in your account. You specify the type of AWS resources collection. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
-    /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
-    /// </p>
+    /// <p> Returns the number of open proactive insights, open reactive insights, and the Mean Time to Recover (MTTR)
+    /// for all closed insights in resource collections in your account. You specify the type of
+    /// Amazon Web Services resources collection. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
+    /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeResourceCollectionHealth<
         C = aws_smithy_client::erase::DynConnector,
@@ -775,10 +1178,9 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// An AWS resource collection type. This type specifies how analyzed AWS resources are defined. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
-        /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.       
-        /// </p>
+        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
+        /// are defined. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
+        /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn resource_collection_type(
             mut self,
             inp: crate::model::ResourceCollectionType,
@@ -786,10 +1188,9 @@ pub mod fluent_builders {
             self.inner = self.inner.resource_collection_type(inp);
             self
         }
-        /// <p>
-        /// An AWS resource collection type. This type specifies how analyzed AWS resources are defined. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
-        /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.       
-        /// </p>
+        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
+        /// are defined. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
+        /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn set_resource_collection_type(
             mut self,
             input: std::option::Option<crate::model::ResourceCollectionType>,
@@ -812,11 +1213,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeServiceIntegration`.
     ///
-    /// <p>
-    /// Returns the integration status of services that are integrated with DevOps Guru.
+    /// <p> Returns the integration status of services that are integrated with DevOps Guru.
     /// The one service that can be integrated with DevOps Guru
-    /// is AWS Systems Manager, which can be used to create an OpsItem for each generated insight.
-    /// </p>
+    /// is Amazon Web Services Systems Manager, which can be used to create an OpsItem for each generated insight. </p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeServiceIntegration<
         C = aws_smithy_client::erase::DynConnector,
@@ -876,7 +1275,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCostEstimation`.
     ///
-    /// <p>Returns an estimate of the monthly cost for DevOps Guru to analyze your AWS resources.
+    /// <p>Returns an estimate of the monthly cost for DevOps Guru to analyze your Amazon Web Services resources.
     /// For more information,
     /// see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your
     /// Amazon DevOps Guru costs</a> and
@@ -952,10 +1351,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResourceCollection`.
     ///
-    /// <p>
-    /// Returns lists AWS resources that are of the specified resource collection type. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
-    /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
-    /// </p>
+    /// <p> Returns lists Amazon Web Services resources that are of the specified resource collection type.
+    /// The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
+    /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     #[derive(std::fmt::Debug)]
     pub struct GetResourceCollection<
         C = aws_smithy_client::erase::DynConnector,
@@ -1012,10 +1410,8 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The type of AWS resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for
-        /// AWS CloudFormation stacks.
-        /// </p>
+        /// <p> The type of Amazon Web Services resource collections to return. The one valid value is
+        /// <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
         pub fn resource_collection_type(
             mut self,
             inp: crate::model::ResourceCollectionType,
@@ -1023,10 +1419,8 @@ pub mod fluent_builders {
             self.inner = self.inner.resource_collection_type(inp);
             self
         }
-        /// <p>
-        /// The type of AWS resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for
-        /// AWS CloudFormation stacks.
-        /// </p>
+        /// <p> The type of Amazon Web Services resource collections to return. The one valid value is
+        /// <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
         pub fn set_resource_collection_type(
             mut self,
             input: std::option::Option<crate::model::ResourceCollectionType>,
@@ -1049,9 +1443,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAnomaliesForInsight`.
     ///
-    /// <p>
-    /// Returns a list of the anomalies that belong to an insight that you specify using its ID.
-    /// </p>
+    /// <p> Returns a list of the anomalies that belong to an insight that you specify using its
+    /// ID. </p>
     #[derive(std::fmt::Debug)]
     pub struct ListAnomaliesForInsight<
         C = aws_smithy_client::erase::DynConnector,
@@ -1108,32 +1501,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ID of the insight. The returned anomalies belong to this insight.
-        /// </p>
+        /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
         pub fn insight_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.insight_id(inp);
             self
         }
-        /// <p>
-        /// The ID of the insight. The returned anomalies belong to this insight.
-        /// </p>
+        /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
         pub fn set_insight_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_insight_id(input);
             self
         }
-        /// <p>
-        /// A time range used to specify when the requested anomalies started. All returned anomalies started
-        /// during this time range.
-        /// </p>
+        /// <p> A time range used to specify when the requested anomalies started. All returned
+        /// anomalies started during this time range. </p>
         pub fn start_time_range(mut self, inp: crate::model::StartTimeRange) -> Self {
             self.inner = self.inner.start_time_range(inp);
             self
         }
-        /// <p>
-        /// A time range used to specify when the requested anomalies started. All returned anomalies started
-        /// during this time range.
-        /// </p>
+        /// <p> A time range used to specify when the requested anomalies started. All returned
+        /// anomalies started during this time range. </p>
         pub fn set_start_time_range(
             mut self,
             input: std::option::Option<crate::model::StartTimeRange>,
@@ -1165,12 +1550,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
+        /// <p>The ID of the Amazon Web Services account. </p>
+        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(inp);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account. </p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListEvents`.
     ///
-    /// <p>
-    /// Returns a list of the events emitted by the resources that are evaluated by DevOps Guru. You can use filters to specify which events are returned.
-    /// </p>
+    /// <p> Returns a list of the events emitted by the resources that are evaluated by DevOps Guru.
+    /// You can use filters to specify which events are returned. </p>
     #[derive(std::fmt::Debug)]
     pub struct ListEvents<
         C = aws_smithy_client::erase::DynConnector,
@@ -1227,15 +1621,13 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// A <code>ListEventsFilters</code> object used to specify which events to return.
+        /// <p> A <code>ListEventsFilters</code> object used to specify which events to return.
         /// </p>
         pub fn filters(mut self, inp: crate::model::ListEventsFilters) -> Self {
             self.inner = self.inner.filters(inp);
             self
         }
-        /// <p>
-        /// A <code>ListEventsFilters</code> object used to specify which events to return.
+        /// <p> A <code>ListEventsFilters</code> object used to specify which events to return.
         /// </p>
         pub fn set_filters(
             mut self,
@@ -1268,13 +1660,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
+        /// <p>The ID of the Amazon Web Services account. </p>
+        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(inp);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account. </p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListInsights`.
     ///
-    /// <p>
-    /// Returns a list of insights in your AWS account. You can specify which insights are returned by their start time and
-    /// status (<code>ONGOING</code>, <code>CLOSED</code>, or <code>ANY</code>).
-    /// </p>
+    /// <p> Returns a list of insights in your Amazon Web Services account. You can specify which insights are
+    /// returned by their start time and status (<code>ONGOING</code>, <code>CLOSED</code>, or
+    /// <code>ANY</code>). </p>
     #[derive(std::fmt::Debug)]
     pub struct ListInsights<
         C = aws_smithy_client::erase::DynConnector,
@@ -1331,16 +1732,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// A filter used to filter the returned insights by their status. You can specify one status filter.
-        /// </p>
+        /// <p> A filter used to filter the returned insights by their status. You can specify one
+        /// status filter. </p>
         pub fn status_filter(mut self, inp: crate::model::ListInsightsStatusFilter) -> Self {
             self.inner = self.inner.status_filter(inp);
             self
         }
-        /// <p>
-        /// A filter used to filter the returned insights by their status. You can specify one status filter.
-        /// </p>
+        /// <p> A filter used to filter the returned insights by their status. You can specify one
+        /// status filter. </p>
         pub fn set_status_filter(
             mut self,
             input: std::option::Option<crate::model::ListInsightsStatusFilter>,
@@ -1375,11 +1774,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListNotificationChannels`.
     ///
-    /// <p>
-    /// Returns a list of notification channels configured for DevOps Guru. Each notification channel is used to notify you when
-    /// DevOps Guru generates an insight that contains information about how to improve your operations. The one
-    /// supported notification channel is Amazon Simple Notification Service (Amazon SNS).
-    /// </p>
+    /// <p> Returns a list of notification channels configured for DevOps Guru. Each notification
+    /// channel is used to notify you when DevOps Guru generates an insight that contains information
+    /// about how to improve your operations. The one
+    /// supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
     #[derive(std::fmt::Debug)]
     pub struct ListNotificationChannels<
         C = aws_smithy_client::erase::DynConnector,
@@ -1449,11 +1847,143 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListOrganizationInsights`.
+    ///
+    /// <p>Returns a list of insights associated with the account or OU Id.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListOrganizationInsights<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_organization_insights_input::Builder,
+    }
+    impl<C, M, R> ListOrganizationInsights<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListOrganizationInsights`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListOrganizationInsightsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListOrganizationInsightsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListOrganizationInsightsInputOperationOutputAlias,
+                crate::output::ListOrganizationInsightsOutput,
+                crate::error::ListOrganizationInsightsError,
+                crate::input::ListOrganizationInsightsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> A filter used by <code>ListInsights</code> to specify which insights to return.
+        /// </p>
+        pub fn status_filter(mut self, inp: crate::model::ListInsightsStatusFilter) -> Self {
+            self.inner = self.inner.status_filter(inp);
+            self
+        }
+        /// <p> A filter used by <code>ListInsights</code> to specify which insights to return.
+        /// </p>
+        pub fn set_status_filter(
+            mut self,
+            input: std::option::Option<crate::model::ListInsightsStatusFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_status_filter(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// Appends an item to `AccountIds`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The ID of the Amazon Web Services account. </p>
+        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(inp);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account. </p>
+        pub fn set_account_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_account_ids(input);
+            self
+        }
+        /// Appends an item to `OrganizationalUnitIds`.
+        ///
+        /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
+        ///
+        /// <p>The ID of the organizational unit.</p>
+        pub fn organizational_unit_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organizational_unit_ids(inp);
+            self
+        }
+        /// <p>The ID of the organizational unit.</p>
+        pub fn set_organizational_unit_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_organizational_unit_ids(input);
+            self
+        }
+        /// <p>The pagination token to use to retrieve
+        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The pagination token to use to retrieve
+        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListRecommendations`.
     ///
-    /// <p>
-    /// Returns a list of a specified insight's recommendations. Each recommendation includes a list of related metrics and a list of related events.
-    /// </p>
+    /// <p> Returns a list of a specified insight's recommendations. Each recommendation includes
+    /// a list of related metrics and a list of related events. </p>
     #[derive(std::fmt::Debug)]
     pub struct ListRecommendations<
         C = aws_smithy_client::erase::DynConnector,
@@ -1510,16 +2040,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ID of the requested insight.
-        /// </p>
+        /// <p> The ID of the requested insight. </p>
         pub fn insight_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.insight_id(inp);
             self
         }
-        /// <p>
-        /// The ID of the requested insight.
-        /// </p>
+        /// <p> The ID of the requested insight. </p>
         pub fn set_insight_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_insight_id(input);
             self
@@ -1546,12 +2072,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_locale(input);
             self
         }
+        /// <p>The ID of the Amazon Web Services account. </p>
+        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(inp);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account. </p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `PutFeedback`.
     ///
-    /// <p>
-    /// Collects customer feedback about the specified insight.
-    /// </p>
+    /// <p> Collects customer feedback about the specified insight. </p>
     #[derive(std::fmt::Debug)]
     pub struct PutFeedback<
         C = aws_smithy_client::erase::DynConnector,
@@ -1608,16 +2142,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The feedback from customers is about the recommendations in this insight.
-        /// </p>
+        /// <p> The feedback from customers is about the recommendations in this insight. </p>
         pub fn insight_feedback(mut self, inp: crate::model::InsightFeedback) -> Self {
             self.inner = self.inner.insight_feedback(inp);
             self
         }
-        /// <p>
-        /// The feedback from customers is about the recommendations in this insight.
-        /// </p>
+        /// <p> The feedback from customers is about the recommendations in this insight. </p>
         pub fn set_insight_feedback(
             mut self,
             input: std::option::Option<crate::model::InsightFeedback>,
@@ -1628,10 +2158,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RemoveNotificationChannel`.
     ///
-    /// <p>
-    /// Removes a notification channel from DevOps Guru. A notification channel is used to notify you when DevOps Guru generates an insight
-    /// that contains information about how to improve your operations.
-    /// </p>
+    /// <p> Removes a notification channel from DevOps Guru. A notification channel is used to notify
+    /// you when DevOps Guru generates an insight that contains information about how to improve your
+    /// operations. </p>
     #[derive(std::fmt::Debug)]
     pub struct RemoveNotificationChannel<
         C = aws_smithy_client::erase::DynConnector,
@@ -1688,16 +2217,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ID of the notification channel to be removed.
-        /// </p>
+        /// <p> The ID of the notification channel to be removed. </p>
         pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(inp);
             self
         }
-        /// <p>
-        /// The ID of the notification channel to be removed.
-        /// </p>
+        /// <p> The ID of the notification channel to be removed. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -1705,15 +2230,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchInsights`.
     ///
-    /// <p>
-    /// Returns a list of insights in your AWS account. You can specify which insights are returned by their start time, one or more statuses
-    /// (<code>ONGOING</code>, <code>CLOSED</code>, and <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>,
-    /// and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>).
-    /// </p>
-    /// <p>
-    /// Use the <code>Filters</code> parameter to specify status and severity
-    /// search parameters. Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or <code>PROACTIVE</code> in your search.
-    /// </p>
+    /// <p> Returns a list of insights in your Amazon Web Services account. You can specify which insights are
+    /// returned by their start time, one or more statuses (<code>ONGOING</code>,
+    /// <code>CLOSED</code>, and <code>CLOSED</code>), one or more severities
+    /// (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type
+    /// (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+    /// <p> Use the <code>Filters</code> parameter to specify status and severity search
+    /// parameters. Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or
+    /// <code>PROACTIVE</code> in your search. </p>
     #[derive(std::fmt::Debug)]
     pub struct SearchInsights<
         C = aws_smithy_client::erase::DynConnector,
@@ -1770,15 +2294,13 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The start of the time range passed in. Returned insights occurred after this time.
+        /// <p> The start of the time range passed in. Returned insights occurred after this time.
         /// </p>
         pub fn start_time_range(mut self, inp: crate::model::StartTimeRange) -> Self {
             self.inner = self.inner.start_time_range(inp);
             self
         }
-        /// <p>
-        /// The start of the time range passed in. Returned insights occurred after this time.
+        /// <p> The start of the time range passed in. Returned insights occurred after this time.
         /// </p>
         pub fn set_start_time_range(
             mut self,
@@ -1787,16 +2309,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time_range(input);
             self
         }
-        /// <p>
-        /// A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search.
-        /// </p>
+        /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and
+        /// status filters on your insight search. </p>
         pub fn filters(mut self, inp: crate::model::SearchInsightsFilters) -> Self {
             self.inner = self.inner.filters(inp);
             self
         }
-        /// <p>
-        /// A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search.
-        /// </p>
+        /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and
+        /// status filters on your insight search. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::SearchInsightsFilters>,
@@ -1828,16 +2348,164 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).
-        /// </p>
+        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
+        /// <code>PROACTIVE</code>). </p>
         pub fn r#type(mut self, inp: crate::model::InsightType) -> Self {
             self.inner = self.inner.r#type(inp);
             self
         }
-        /// <p>
-        /// The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).
+        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
+        /// <code>PROACTIVE</code>). </p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::InsightType>) -> Self {
+            self.inner = self.inner.set_type(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `SearchOrganizationInsights`.
+    ///
+    /// <p> Returns a list of insights in your organization. You can specify which insights are
+    /// returned by their start time, one or more statuses (<code>ONGOING</code>,
+    /// <code>CLOSED</code>, and <code>CLOSED</code>), one or more severities
+    /// (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type
+    /// (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+    /// <p> Use the <code>Filters</code> parameter to specify status and severity search
+    /// parameters. Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or
+    /// <code>PROACTIVE</code> in your search. </p>
+    #[derive(std::fmt::Debug)]
+    pub struct SearchOrganizationInsights<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::search_organization_insights_input::Builder,
+    }
+    impl<C, M, R> SearchOrganizationInsights<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `SearchOrganizationInsights`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SearchOrganizationInsightsOutput,
+            aws_smithy_http::result::SdkError<crate::error::SearchOrganizationInsightsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::SearchOrganizationInsightsInputOperationOutputAlias,
+                crate::output::SearchOrganizationInsightsOutput,
+                crate::error::SearchOrganizationInsightsError,
+                crate::input::SearchOrganizationInsightsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `AccountIds`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The ID of the Amazon Web Services account. </p>
+        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(inp);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account. </p>
+        pub fn set_account_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_account_ids(input);
+            self
+        }
+        /// <p> A time range used to specify when the behavior of an insight or anomaly started.
         /// </p>
+        pub fn start_time_range(mut self, inp: crate::model::StartTimeRange) -> Self {
+            self.inner = self.inner.start_time_range(inp);
+            self
+        }
+        /// <p> A time range used to specify when the behavior of an insight or anomaly started.
+        /// </p>
+        pub fn set_start_time_range(
+            mut self,
+            input: std::option::Option<crate::model::StartTimeRange>,
+        ) -> Self {
+            self.inner = self.inner.set_start_time_range(input);
+            self
+        }
+        /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the
+        /// severity and status filters on your insight search. </p>
+        pub fn filters(mut self, inp: crate::model::SearchOrganizationInsightsFilters) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the
+        /// severity and status filters on your insight search. </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<crate::model::SearchOrganizationInsightsFilters>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The pagination token to use to retrieve
+        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The pagination token to use to retrieve
+        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
+        /// <code>PROACTIVE</code>). </p>
+        pub fn r#type(mut self, inp: crate::model::InsightType) -> Self {
+            self.inner = self.inner.r#type(inp);
+            self
+        }
+        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
+        /// <code>PROACTIVE</code>). </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::InsightType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
@@ -1845,7 +2513,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartCostEstimation`.
     ///
-    /// <p>Starts the creation of an estimate of the monthly cost to analyze your AWS resources.</p>
+    /// <p>Starts the creation of an estimate of the monthly cost to analyze your Amazon Web Services
+    /// resources.</p>
     #[derive(std::fmt::Debug)]
     pub struct StartCostEstimation<
         C = aws_smithy_client::erase::DynConnector,
@@ -1902,7 +2571,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The collection of AWS resources used to create a monthly DevOps Guru cost estimate.</p>
+        /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
         pub fn resource_collection(
             mut self,
             inp: crate::model::CostEstimationResourceCollectionFilter,
@@ -1910,7 +2579,7 @@ pub mod fluent_builders {
             self.inner = self.inner.resource_collection(inp);
             self
         }
-        /// <p>The collection of AWS resources used to create a monthly DevOps Guru cost estimate.</p>
+        /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
         pub fn set_resource_collection(
             mut self,
             input: std::option::Option<crate::model::CostEstimationResourceCollectionFilter>,
@@ -1932,9 +2601,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateResourceCollection`.
     ///
     /// <p> Updates the collection of resources that DevOps Guru analyzes.
-    /// The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
-    /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks. This method also creates the IAM role required for you
-    /// to use DevOps Guru. </p>
+    /// The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
+    /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. This method also creates the IAM role required for
+    /// you to use DevOps Guru. </p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateResourceCollection<
         C = aws_smithy_client::erase::DynConnector,
@@ -1991,16 +2660,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// Specifies if the resource collection in the request is added or deleted to the resource collection.
-        /// </p>
+        /// <p> Specifies if the resource collection in the request is added or deleted to the
+        /// resource collection. </p>
         pub fn action(mut self, inp: crate::model::UpdateResourceCollectionAction) -> Self {
             self.inner = self.inner.action(inp);
             self
         }
-        /// <p>
-        /// Specifies if the resource collection in the request is added or deleted to the resource collection.
-        /// </p>
+        /// <p> Specifies if the resource collection in the request is added or deleted to the
+        /// resource collection. </p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::UpdateResourceCollectionAction>,
@@ -2008,9 +2675,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action(input);
             self
         }
-        /// <p>
-        /// Contains information used to update a collection of AWS resources.
-        /// </p>
+        /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
         pub fn resource_collection(
             mut self,
             inp: crate::model::UpdateResourceCollectionFilter,
@@ -2018,9 +2683,7 @@ pub mod fluent_builders {
             self.inner = self.inner.resource_collection(inp);
             self
         }
-        /// <p>
-        /// Contains information used to update a collection of AWS resources.
-        /// </p>
+        /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
         pub fn set_resource_collection(
             mut self,
             input: std::option::Option<crate::model::UpdateResourceCollectionFilter>,
@@ -2031,10 +2694,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateServiceIntegration`.
     ///
-    /// <p>
-    /// Enables or disables integration with a service that can be integrated with DevOps Guru. The one service that can be integrated with
-    /// DevOps Guru is AWS Systems Manager, which can be used to create an OpsItem for each generated insight.
-    /// </p>
+    /// <p> Enables or disables integration with a service that can be integrated with DevOps Guru. The
+    /// one service that can be integrated with DevOps Guru is Amazon Web Services Systems Manager, which can be used to create
+    /// an OpsItem for each generated insight. </p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateServiceIntegration<
         C = aws_smithy_client::erase::DynConnector,
@@ -2091,10 +2753,8 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you
-        /// want to update it to enabled or disabled.
-        /// </p>
+        /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service
+        /// you want to update, and whether you want to update it to enabled or disabled. </p>
         pub fn service_integration(
             mut self,
             inp: crate::model::UpdateServiceIntegrationConfig,
@@ -2102,10 +2762,8 @@ pub mod fluent_builders {
             self.inner = self.inner.service_integration(inp);
             self
         }
-        /// <p>
-        /// An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you
-        /// want to update it to enabled or disabled.
-        /// </p>
+        /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service
+        /// you want to update, and whether you want to update it to enabled or disabled. </p>
         pub fn set_service_integration(
             mut self,
             input: std::option::Option<crate::model::UpdateServiceIntegrationConfig>,
@@ -2119,7 +2777,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -2142,7 +2806,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

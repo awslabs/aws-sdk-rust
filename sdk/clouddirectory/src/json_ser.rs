@@ -1866,7 +1866,7 @@ pub fn serialize_union_crate_model_typed_attribute_value(
         crate::model::TypedAttributeValue::DatetimeValue(inner) => {
             object_249
                 .key("DatetimeValue")
-                .instant(inner, aws_smithy_types::instant::Format::EpochSeconds);
+                .date_time(inner, aws_smithy_types::date_time::Format::EpochSeconds)?;
         }
         crate::model::TypedAttributeValue::Unknown => {
             return Err(

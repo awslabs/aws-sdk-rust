@@ -1334,7 +1334,7 @@ pub struct ResetDistributionCacheOutput {
     pub status: std::option::Option<std::string::String>,
     /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time
     /// format.</p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
@@ -1346,7 +1346,7 @@ impl ResetDistributionCacheOutput {
     }
     /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time
     /// format.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the
@@ -1371,7 +1371,7 @@ pub mod reset_distribution_cache_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
     impl Builder {
@@ -1387,7 +1387,7 @@ pub mod reset_distribution_cache_output {
         }
         /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time
         /// format.</p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -1395,7 +1395,7 @@ pub mod reset_distribution_cache_output {
         /// format.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
@@ -2693,7 +2693,7 @@ pub struct GetRelationalDatabaseMasterUserPasswordOutput {
     /// <p>The master user password for the <code>password version</code> specified.</p>
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>The timestamp when the specified version of the master user password was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetRelationalDatabaseMasterUserPasswordOutput {
     /// <p>The master user password for the <code>password version</code> specified.</p>
@@ -2701,7 +2701,7 @@ impl GetRelationalDatabaseMasterUserPasswordOutput {
         self.master_user_password.as_deref()
     }
     /// <p>The timestamp when the specified version of the master user password was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -2720,7 +2720,7 @@ pub mod get_relational_database_master_user_password_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) master_user_password: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The master user password for the <code>password version</code> specified.</p>
@@ -2737,14 +2737,14 @@ pub mod get_relational_database_master_user_password_output {
             self
         }
         /// <p>The timestamp when the specified version of the master user password was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp when the specified version of the master user password was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -5185,7 +5185,7 @@ pub struct GetDistributionLatestCacheResetOutput {
     pub status: std::option::Option<std::string::String>,
     /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time
     /// format.</p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetDistributionLatestCacheResetOutput {
     /// <p>The status of the last cache reset.</p>
@@ -5194,7 +5194,7 @@ impl GetDistributionLatestCacheResetOutput {
     }
     /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time
     /// format.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
@@ -5213,7 +5213,7 @@ pub mod get_distribution_latest_cache_reset_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The status of the last cache reset.</p>
@@ -5228,7 +5228,7 @@ pub mod get_distribution_latest_cache_reset_output {
         }
         /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time
         /// format.</p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -5236,7 +5236,7 @@ pub mod get_distribution_latest_cache_reset_output {
         /// format.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self

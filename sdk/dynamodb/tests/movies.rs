@@ -192,7 +192,13 @@ async fn movies_it() {
     let client = aws_hyper::Client::new(conn.clone());
     let conf = dynamodb::Config::builder()
         .region(Region::new("us-east-1"))
-        .credentials_provider(Credentials::from_keys("AKNOTREAL", "NOT_A_SECRET", None))
+        .credentials_provider(Credentials::new(
+            "AKNOTREAL",
+            "NOT_A_SECRET",
+            None,
+            None,
+            "test",
+        ))
         .build();
     client
         .call(

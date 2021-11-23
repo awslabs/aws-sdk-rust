@@ -88,9 +88,9 @@ pub struct Backup {
     /// <p>The identifier (ID) of the cluster that was backed up.</p>
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the backup was created.</p>
-    pub create_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the backup was copied from a source backup.</p>
-    pub copy_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub copy_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts
     /// a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
     pub never_expires: std::option::Option<bool>,
@@ -104,7 +104,7 @@ pub struct Backup {
     /// backup was copied.</p>
     pub source_cluster: std::option::Option<std::string::String>,
     /// <p>The date and time when the backup will be permanently deleted.</p>
-    pub delete_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub delete_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of tags for the backup.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -122,11 +122,11 @@ impl Backup {
         self.cluster_id.as_deref()
     }
     /// <p>The date and time when the backup was created.</p>
-    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_timestamp.as_ref()
     }
     /// <p>The date and time when the backup was copied from a source backup.</p>
-    pub fn copy_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn copy_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.copy_timestamp.as_ref()
     }
     /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts
@@ -150,7 +150,7 @@ impl Backup {
         self.source_cluster.as_deref()
     }
     /// <p>The date and time when the backup will be permanently deleted.</p>
-    pub fn delete_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn delete_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.delete_timestamp.as_ref()
     }
     /// <p>The list of tags for the backup.</p>
@@ -184,13 +184,13 @@ pub mod backup {
         pub(crate) backup_id: std::option::Option<std::string::String>,
         pub(crate) backup_state: std::option::Option<crate::model::BackupState>,
         pub(crate) cluster_id: std::option::Option<std::string::String>,
-        pub(crate) create_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) copy_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) copy_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) never_expires: std::option::Option<bool>,
         pub(crate) source_region: std::option::Option<std::string::String>,
         pub(crate) source_backup: std::option::Option<std::string::String>,
         pub(crate) source_cluster: std::option::Option<std::string::String>,
-        pub(crate) delete_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) delete_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -228,27 +228,27 @@ pub mod backup {
             self
         }
         /// <p>The date and time when the backup was created.</p>
-        pub fn create_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_timestamp = Some(input);
             self
         }
         /// <p>The date and time when the backup was created.</p>
         pub fn set_create_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_timestamp = input;
             self
         }
         /// <p>The date and time when the backup was copied from a source backup.</p>
-        pub fn copy_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn copy_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.copy_timestamp = Some(input);
             self
         }
         /// <p>The date and time when the backup was copied from a source backup.</p>
         pub fn set_copy_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.copy_timestamp = input;
             self
@@ -311,14 +311,14 @@ pub mod backup {
             self
         }
         /// <p>The date and time when the backup will be permanently deleted.</p>
-        pub fn delete_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn delete_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.delete_timestamp = Some(input);
             self
         }
         /// <p>The date and time when the backup will be permanently deleted.</p>
         pub fn set_delete_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.delete_timestamp = input;
             self
@@ -441,7 +441,7 @@ pub struct Cluster {
     /// <p>The cluster's identifier (ID).</p>
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the cluster was created.</p>
-    pub create_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains information about the HSMs in the cluster.</p>
     pub hsms: std::option::Option<std::vec::Vec<crate::model::Hsm>>,
     /// <p>The type of HSM that the cluster contains.</p>
@@ -484,7 +484,7 @@ impl Cluster {
         self.cluster_id.as_deref()
     }
     /// <p>The date and time when the cluster was created.</p>
-    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_timestamp.as_ref()
     }
     /// <p>Contains information about the HSMs in the cluster.</p>
@@ -568,7 +568,7 @@ pub mod cluster {
         pub(crate) backup_retention_policy:
             std::option::Option<crate::model::BackupRetentionPolicy>,
         pub(crate) cluster_id: std::option::Option<std::string::String>,
-        pub(crate) create_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) hsms: std::option::Option<std::vec::Vec<crate::model::Hsm>>,
         pub(crate) hsm_type: std::option::Option<std::string::String>,
         pub(crate) pre_co_password: std::option::Option<std::string::String>,
@@ -624,14 +624,14 @@ pub mod cluster {
             self
         }
         /// <p>The date and time when the cluster was created.</p>
-        pub fn create_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_timestamp = Some(input);
             self
         }
         /// <p>The date and time when the cluster was created.</p>
         pub fn set_create_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_timestamp = input;
             self
@@ -1530,7 +1530,7 @@ impl AsRef<str> for BackupPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationBackup {
     /// <p>The date and time when both the source backup was created.</p>
-    pub create_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The AWS region that contains the source backup from which the new backup was copied.</p>
     pub source_region: std::option::Option<std::string::String>,
     /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
@@ -1540,7 +1540,7 @@ pub struct DestinationBackup {
 }
 impl DestinationBackup {
     /// <p>The date and time when both the source backup was created.</p>
-    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_timestamp.as_ref()
     }
     /// <p>The AWS region that contains the source backup from which the new backup was copied.</p>
@@ -1572,21 +1572,21 @@ pub mod destination_backup {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) create_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_region: std::option::Option<std::string::String>,
         pub(crate) source_backup: std::option::Option<std::string::String>,
         pub(crate) source_cluster: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The date and time when both the source backup was created.</p>
-        pub fn create_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_timestamp = Some(input);
             self
         }
         /// <p>The date and time when both the source backup was created.</p>
         pub fn set_create_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_timestamp = input;
             self

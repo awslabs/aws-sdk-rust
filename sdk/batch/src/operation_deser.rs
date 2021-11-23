@@ -221,6 +221,88 @@ pub fn parse_create_job_queue_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_scheduling_policy_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateSchedulingPolicyOutput,
+    crate::error::CreateSchedulingPolicyError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateSchedulingPolicyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateSchedulingPolicyError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ClientException" => {
+            crate::error::CreateSchedulingPolicyError {
+                meta: generic,
+                kind: crate::error::CreateSchedulingPolicyErrorKind::ClientException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSchedulingPolicyError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ServerException" => {
+            crate::error::CreateSchedulingPolicyError {
+                meta: generic,
+                kind: crate::error::CreateSchedulingPolicyErrorKind::ServerException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::server_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSchedulingPolicyError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::CreateSchedulingPolicyError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_scheduling_policy_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateSchedulingPolicyOutput,
+    crate::error::CreateSchedulingPolicyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_scheduling_policy_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_scheduling_policy(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateSchedulingPolicyError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_compute_environment_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -359,6 +441,83 @@ pub fn parse_delete_job_queue_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_job_queue_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_scheduling_policy_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteSchedulingPolicyOutput,
+    crate::error::DeleteSchedulingPolicyError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteSchedulingPolicyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeleteSchedulingPolicyError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ClientException" => {
+            crate::error::DeleteSchedulingPolicyError {
+                meta: generic,
+                kind: crate::error::DeleteSchedulingPolicyErrorKind::ClientException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSchedulingPolicyError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ServerException" => {
+            crate::error::DeleteSchedulingPolicyError {
+                meta: generic,
+                kind: crate::error::DeleteSchedulingPolicyErrorKind::ServerException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::server_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSchedulingPolicyError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DeleteSchedulingPolicyError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_scheduling_policy_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteSchedulingPolicyOutput,
+    crate::error::DeleteSchedulingPolicyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_scheduling_policy_output::Builder::default();
         let _ = response;
         output.build()
     })
@@ -752,6 +911,88 @@ pub fn parse_describe_jobs_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_scheduling_policies_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeSchedulingPoliciesOutput,
+    crate::error::DescribeSchedulingPoliciesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeSchedulingPoliciesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeSchedulingPoliciesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ClientException" => {
+            crate::error::DescribeSchedulingPoliciesError {
+                meta: generic,
+                kind: crate::error::DescribeSchedulingPoliciesErrorKind::ClientException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSchedulingPoliciesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ServerException" => {
+            crate::error::DescribeSchedulingPoliciesError {
+                meta: generic,
+                kind: crate::error::DescribeSchedulingPoliciesErrorKind::ServerException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::server_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSchedulingPoliciesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DescribeSchedulingPoliciesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_scheduling_policies_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeSchedulingPoliciesOutput,
+    crate::error::DescribeSchedulingPoliciesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_scheduling_policies_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_scheduling_policies(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeSchedulingPoliciesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_jobs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListJobsOutput, crate::error::ListJobsError> {
@@ -819,6 +1060,88 @@ pub fn parse_list_jobs_response(
             output,
         )
         .map_err(crate::error::ListJobsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_scheduling_policies_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListSchedulingPoliciesOutput,
+    crate::error::ListSchedulingPoliciesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListSchedulingPoliciesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListSchedulingPoliciesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ClientException" => {
+            crate::error::ListSchedulingPoliciesError {
+                meta: generic,
+                kind: crate::error::ListSchedulingPoliciesErrorKind::ClientException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSchedulingPoliciesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ServerException" => {
+            crate::error::ListSchedulingPoliciesError {
+                meta: generic,
+                kind: crate::error::ListSchedulingPoliciesErrorKind::ServerException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::server_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSchedulingPoliciesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::ListSchedulingPoliciesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_scheduling_policies_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListSchedulingPoliciesOutput,
+    crate::error::ListSchedulingPoliciesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_scheduling_policies_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_scheduling_policies(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListSchedulingPoliciesError::unhandled)?;
         output.build()
     })
 }
@@ -1402,6 +1725,83 @@ pub fn parse_update_job_queue_response(
             output,
         )
         .map_err(crate::error::UpdateJobQueueError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_scheduling_policy_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateSchedulingPolicyOutput,
+    crate::error::UpdateSchedulingPolicyError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateSchedulingPolicyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::UpdateSchedulingPolicyError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ClientException" => {
+            crate::error::UpdateSchedulingPolicyError {
+                meta: generic,
+                kind: crate::error::UpdateSchedulingPolicyErrorKind::ClientException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSchedulingPolicyError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ServerException" => {
+            crate::error::UpdateSchedulingPolicyError {
+                meta: generic,
+                kind: crate::error::UpdateSchedulingPolicyErrorKind::ServerException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::server_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSchedulingPolicyError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::UpdateSchedulingPolicyError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_scheduling_policy_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateSchedulingPolicyOutput,
+    crate::error::UpdateSchedulingPolicyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_scheduling_policy_output::Builder::default();
+        let _ = response;
         output.build()
     })
 }

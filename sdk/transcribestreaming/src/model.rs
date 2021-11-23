@@ -246,9 +246,9 @@ impl TranscriptResultStream {
         &self,
     ) -> std::result::Result<&crate::model::TranscriptEvent, &Self> {
         if let TranscriptResultStream::TranscriptEvent(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`TranscriptEvent`](crate::model::TranscriptResultStream::TranscriptEvent).
@@ -1313,9 +1313,9 @@ impl AudioStream {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_audio_event(&self) -> std::result::Result<&crate::model::AudioEvent, &Self> {
         if let AudioStream::AudioEvent(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`AudioEvent`](crate::model::AudioStream::AudioEvent).
@@ -1471,9 +1471,9 @@ impl MedicalTranscriptResultStream {
         &self,
     ) -> std::result::Result<&crate::model::MedicalTranscriptEvent, &Self> {
         if let MedicalTranscriptResultStream::TranscriptEvent(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`TranscriptEvent`](crate::model::MedicalTranscriptResultStream::TranscriptEvent).

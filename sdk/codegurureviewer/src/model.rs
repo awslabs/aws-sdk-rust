@@ -85,7 +85,7 @@ pub struct RepositoryAssociationSummary {
     /// <p>The time, in milliseconds since the epoch, since the repository association
     /// was last updated.
     /// </p>
-    pub last_updated_time_stamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The repository association ID.
     /// </p>
@@ -183,7 +183,7 @@ impl RepositoryAssociationSummary {
     /// <p>The time, in milliseconds since the epoch, since the repository association
     /// was last updated.
     /// </p>
-    pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time_stamp.as_ref()
     }
     /// <p>
@@ -287,7 +287,7 @@ pub mod repository_association_summary {
     pub struct Builder {
         pub(crate) association_arn: std::option::Option<std::string::String>,
         pub(crate) connection_arn: std::option::Option<std::string::String>,
-        pub(crate) last_updated_time_stamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) association_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) owner: std::option::Option<std::string::String>,
@@ -356,7 +356,7 @@ pub mod repository_association_summary {
         /// <p>The time, in milliseconds since the epoch, since the repository association
         /// was last updated.
         /// </p>
-        pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time_stamp = Some(input);
             self
         }
@@ -365,7 +365,7 @@ pub mod repository_association_summary {
         /// </p>
         pub fn set_last_updated_time_stamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time_stamp = input;
             self
@@ -1481,11 +1481,11 @@ pub struct CodeReviewSummary {
     /// <p>
     /// The time, in milliseconds since the epoch, when the code review was created.
     /// </p>
-    pub created_time_stamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The time, in milliseconds since the epoch, when the code review was last updated.
     /// </p>
-    pub last_updated_time_stamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The type of the code review.
     /// </p>
@@ -1567,13 +1567,13 @@ impl CodeReviewSummary {
     /// <p>
     /// The time, in milliseconds since the epoch, when the code review was created.
     /// </p>
-    pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time_stamp.as_ref()
     }
     /// <p>
     /// The time, in milliseconds since the epoch, when the code review was last updated.
     /// </p>
-    pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time_stamp.as_ref()
     }
     /// <p>
@@ -1631,8 +1631,8 @@ pub mod code_review_summary {
         pub(crate) owner: std::option::Option<std::string::String>,
         pub(crate) provider_type: std::option::Option<crate::model::ProviderType>,
         pub(crate) state: std::option::Option<crate::model::JobState>,
-        pub(crate) created_time_stamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_time_stamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) r#type: std::option::Option<crate::model::Type>,
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
         pub(crate) metrics_summary: std::option::Option<crate::model::MetricsSummary>,
@@ -1783,7 +1783,7 @@ pub mod code_review_summary {
         /// <p>
         /// The time, in milliseconds since the epoch, when the code review was created.
         /// </p>
-        pub fn created_time_stamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time_stamp = Some(input);
             self
         }
@@ -1792,7 +1792,7 @@ pub mod code_review_summary {
         /// </p>
         pub fn set_created_time_stamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time_stamp = input;
             self
@@ -1800,7 +1800,7 @@ pub mod code_review_summary {
         /// <p>
         /// The time, in milliseconds since the epoch, when the code review was last updated.
         /// </p>
-        pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time_stamp = Some(input);
             self
         }
@@ -1809,7 +1809,7 @@ pub mod code_review_summary {
         /// </p>
         pub fn set_last_updated_time_stamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time_stamp = input;
             self
@@ -3340,9 +3340,9 @@ pub struct RepositoryAssociation {
     /// <p>A description of why the repository association is in the current state.</p>
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the repository association was last updated.</p>
-    pub last_updated_time_stamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds since the epoch, when the repository association was created.</p>
-    pub created_time_stamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
     /// <ul>
     /// <li>
@@ -3458,11 +3458,11 @@ impl RepositoryAssociation {
         self.state_reason.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the repository association was last updated.</p>
-    pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time_stamp.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the repository association was created.</p>
-    pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time_stamp.as_ref()
     }
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
@@ -3519,8 +3519,8 @@ pub mod repository_association {
         pub(crate) provider_type: std::option::Option<crate::model::ProviderType>,
         pub(crate) state: std::option::Option<crate::model::RepositoryAssociationState>,
         pub(crate) state_reason: std::option::Option<std::string::String>,
-        pub(crate) last_updated_time_stamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) created_time_stamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) kms_key_details: std::option::Option<crate::model::KmsKeyDetails>,
         pub(crate) s3_repository_details: std::option::Option<crate::model::S3RepositoryDetails>,
     }
@@ -3747,27 +3747,27 @@ pub mod repository_association {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the repository association was last updated.</p>
-        pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time_stamp = Some(input);
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the repository association was last updated.</p>
         pub fn set_last_updated_time_stamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time_stamp = input;
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the repository association was created.</p>
-        pub fn created_time_stamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time_stamp = Some(input);
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the repository association was created.</p>
         pub fn set_created_time_stamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time_stamp = input;
             self
@@ -4026,11 +4026,11 @@ pub struct RecommendationFeedback {
     /// <p>
     /// The time at which the feedback was created.
     /// </p>
-    pub created_time_stamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The time at which the feedback was last updated.
     /// </p>
-    pub last_updated_time_stamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RecommendationFeedback {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
@@ -4066,13 +4066,13 @@ impl RecommendationFeedback {
     /// <p>
     /// The time at which the feedback was created.
     /// </p>
-    pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time_stamp.as_ref()
     }
     /// <p>
     /// The time at which the feedback was last updated.
     /// </p>
-    pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time_stamp.as_ref()
     }
 }
@@ -4098,8 +4098,8 @@ pub mod recommendation_feedback {
         pub(crate) recommendation_id: std::option::Option<std::string::String>,
         pub(crate) reactions: std::option::Option<std::vec::Vec<crate::model::Reaction>>,
         pub(crate) user_id: std::option::Option<std::string::String>,
-        pub(crate) created_time_stamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_time_stamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
@@ -4188,7 +4188,7 @@ pub mod recommendation_feedback {
         /// <p>
         /// The time at which the feedback was created.
         /// </p>
-        pub fn created_time_stamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time_stamp = Some(input);
             self
         }
@@ -4197,7 +4197,7 @@ pub mod recommendation_feedback {
         /// </p>
         pub fn set_created_time_stamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time_stamp = input;
             self
@@ -4205,7 +4205,7 @@ pub mod recommendation_feedback {
         /// <p>
         /// The time at which the feedback was last updated.
         /// </p>
-        pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time_stamp = Some(input);
             self
         }
@@ -4214,7 +4214,7 @@ pub mod recommendation_feedback {
         /// </p>
         pub fn set_last_updated_time_stamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time_stamp = input;
             self
@@ -4297,11 +4297,11 @@ pub struct CodeReview {
     /// <p>
     /// The time, in milliseconds since the epoch, when the code review was created.
     /// </p>
-    pub created_time_stamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The time, in milliseconds since the epoch, when the code review was last updated.
     /// </p>
-    pub last_updated_time_stamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The type of code review.
     /// </p>
@@ -4400,13 +4400,13 @@ impl CodeReview {
     /// <p>
     /// The time, in milliseconds since the epoch, when the code review was created.
     /// </p>
-    pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time_stamp.as_ref()
     }
     /// <p>
     /// The time, in milliseconds since the epoch, when the code review was last updated.
     /// </p>
-    pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time_stamp.as_ref()
     }
     /// <p>
@@ -4486,8 +4486,8 @@ pub mod code_review {
         pub(crate) provider_type: std::option::Option<crate::model::ProviderType>,
         pub(crate) state: std::option::Option<crate::model::JobState>,
         pub(crate) state_reason: std::option::Option<std::string::String>,
-        pub(crate) created_time_stamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_time_stamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) r#type: std::option::Option<crate::model::Type>,
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
         pub(crate) source_code_type: std::option::Option<crate::model::SourceCodeType>,
@@ -4648,7 +4648,7 @@ pub mod code_review {
         /// <p>
         /// The time, in milliseconds since the epoch, when the code review was created.
         /// </p>
-        pub fn created_time_stamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time_stamp = Some(input);
             self
         }
@@ -4657,7 +4657,7 @@ pub mod code_review {
         /// </p>
         pub fn set_created_time_stamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time_stamp = input;
             self
@@ -4665,7 +4665,7 @@ pub mod code_review {
         /// <p>
         /// The time, in milliseconds since the epoch, when the code review was last updated.
         /// </p>
-        pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time_stamp = Some(input);
             self
         }
@@ -4674,7 +4674,7 @@ pub mod code_review {
         /// </p>
         pub fn set_last_updated_time_stamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time_stamp = input;
             self

@@ -5,12 +5,12 @@
 
 //! Functions to create signing keys and calculate signatures.
 
-use crate::date_fmt::format_date;
-use chrono::{Date, Utc};
+use crate::date_time::format_date;
 use ring::{
     digest::{self},
     hmac::{self, Key, Tag},
 };
+use std::time::SystemTime;
 
 /// HashedPayload = Lowercase(HexEncode(Hash(requestPayload)))
 #[allow(dead_code)] // Unused when compiling without certain features
@@ -29,7 +29,7 @@ pub fn calculate_signature(signing_key: Tag, string_to_sign: &[u8]) -> String {
 /// Generates a signing key for Sigv4
 pub fn generate_signing_key(
     secret: &str,
-    date: Date<Utc>,
+    time: SystemTime,
     region: &str,
     service: &str,
 ) -> hmac::Tag {
@@ -40,8 +40,8 @@ pub fn generate_signing_key(
     // kSigning = HMAC(kService, "aws4_request")
 
     let secret = format!("AWS4{}", secret);
-    let secret = hmac::Key::new(hmac::HMAC_SHA256, &secret.as_bytes());
-    let tag = hmac::sign(&secret, format_date(&date).as_bytes());
+    let secret = hmac::Key::new(hmac::HMAC_SHA256, secret.as_bytes());
+    let tag = hmac::sign(&secret, format_date(time).as_bytes());
 
     // sign region
     let key = hmac::Key::new(hmac::HMAC_SHA256, tag.as_ref());
@@ -59,7 +59,7 @@ pub fn generate_signing_key(
 #[cfg(test)]
 mod tests {
     use super::{calculate_signature, generate_signing_key};
-    use crate::date_fmt::parse_date_time;
+    use crate::date_time::test_parsers::parse_date_time;
     use crate::http_request::test::test_canonical_request;
     use crate::sign::sha256_hex_string;
 
@@ -67,9 +67,9 @@ mod tests {
     fn test_signature_calculation() {
         let secret = "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY";
         let creq = test_canonical_request("iam");
-        let date = parse_date_time("20150830T123600Z").unwrap();
+        let time = parse_date_time("20150830T123600Z").unwrap();
 
-        let derived_key = generate_signing_key(secret, date.date(), "us-east-1", "iam");
+        let derived_key = generate_signing_key(secret, time, "us-east-1", "iam");
         let signature = calculate_signature(derived_key, creq.as_bytes());
 
         let expected = "5d672d79c15b13162d9279b0855cfba6789a8edb4c82c400e06b5924a6f2b5d7";

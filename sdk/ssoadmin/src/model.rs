@@ -318,7 +318,7 @@ pub struct PermissionSetProvisioningStatus {
     /// <p>The message that contains an error or exception in case of an operation failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The date that the permission set was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PermissionSetProvisioningStatus {
     /// <p>The status of the permission set provisioning process.</p>
@@ -344,7 +344,7 @@ impl PermissionSetProvisioningStatus {
         self.failure_reason.as_deref()
     }
     /// <p>The date that the permission set was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
 }
@@ -371,7 +371,7 @@ pub mod permission_set_provisioning_status {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) permission_set_arn: std::option::Option<std::string::String>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The status of the permission set provisioning process.</p>
@@ -438,14 +438,14 @@ pub mod permission_set_provisioning_status {
             self
         }
         /// <p>The date that the permission set was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date that the permission set was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -660,7 +660,7 @@ pub struct PermissionSetProvisioningStatusMetadata {
     /// unique identifier (UUID) workflow.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The date that the permission set was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PermissionSetProvisioningStatusMetadata {
     /// <p>The status of the permission set provisioning process.</p>
@@ -673,7 +673,7 @@ impl PermissionSetProvisioningStatusMetadata {
         self.request_id.as_deref()
     }
     /// <p>The date that the permission set was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
 }
@@ -694,7 +694,7 @@ pub mod permission_set_provisioning_status_metadata {
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatusValues>,
         pub(crate) request_id: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The status of the permission set provisioning process.</p>
@@ -723,14 +723,14 @@ pub mod permission_set_provisioning_status_metadata {
             self
         }
         /// <p>The date that the permission set was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date that the permission set was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -1158,7 +1158,7 @@ pub struct AccountAssignmentOperationStatusMetadata {
     /// unique identifier (UUID) workflow.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The date that the permission set was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AccountAssignmentOperationStatusMetadata {
     /// <p>The status of the permission set provisioning process.</p>
@@ -1171,7 +1171,7 @@ impl AccountAssignmentOperationStatusMetadata {
         self.request_id.as_deref()
     }
     /// <p>The date that the permission set was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
 }
@@ -1192,7 +1192,7 @@ pub mod account_assignment_operation_status_metadata {
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatusValues>,
         pub(crate) request_id: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The status of the permission set provisioning process.</p>
@@ -1221,14 +1221,14 @@ pub mod account_assignment_operation_status_metadata {
             self
         }
         /// <p>The date that the permission set was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date that the permission set was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -1262,7 +1262,7 @@ pub struct PermissionSet {
     /// <p>The description of the <a>PermissionSet</a>.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date that the permission set was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The length of time that the application user sessions are valid for in the ISO-8601
     /// standard.</p>
     pub session_duration: std::option::Option<std::string::String>,
@@ -1285,7 +1285,7 @@ impl PermissionSet {
         self.description.as_deref()
     }
     /// <p>The date that the permission set was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The length of time that the application user sessions are valid for in the ISO-8601
@@ -1320,7 +1320,7 @@ pub mod permission_set {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) permission_set_arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) session_duration: std::option::Option<std::string::String>,
         pub(crate) relay_state: std::option::Option<std::string::String>,
     }
@@ -1361,14 +1361,14 @@ pub mod permission_set {
             self
         }
         /// <p>The date that the permission set was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date that the permission set was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -1507,7 +1507,7 @@ pub struct AccountAssignmentOperationStatus {
     /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The date that the permission set was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AccountAssignmentOperationStatus {
     /// <p>The status of the permission set provisioning process.</p>
@@ -1545,7 +1545,7 @@ impl AccountAssignmentOperationStatus {
         self.principal_id.as_deref()
     }
     /// <p>The date that the permission set was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
 }
@@ -1578,7 +1578,7 @@ pub mod account_assignment_operation_status {
         pub(crate) permission_set_arn: std::option::Option<std::string::String>,
         pub(crate) principal_type: std::option::Option<crate::model::PrincipalType>,
         pub(crate) principal_id: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The status of the permission set provisioning process.</p>
@@ -1681,14 +1681,14 @@ pub mod account_assignment_operation_status {
             self
         }
         /// <p>The date that the permission set was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date that the permission set was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self

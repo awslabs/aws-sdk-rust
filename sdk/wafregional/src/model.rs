@@ -9568,26 +9568,26 @@ pub struct TimeWindow {
     /// requests that your AWS resource received. You must specify the date and time in Coordinated Universal Time (UTC) format.
     /// UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>.
     /// You can specify any time range in the previous three hours.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the
     /// requests that your AWS resource received. You must specify the date and time in Coordinated Universal Time (UTC) format.
     /// UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>.
     /// You can specify any time range in the previous three hours.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimeWindow {
     /// <p>The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of the
     /// requests that your AWS resource received. You must specify the date and time in Coordinated Universal Time (UTC) format.
     /// UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>.
     /// You can specify any time range in the previous three hours.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the
     /// requests that your AWS resource received. You must specify the date and time in Coordinated Universal Time (UTC) format.
     /// UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>.
     /// You can specify any time range in the previous three hours.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -9605,15 +9605,15 @@ pub mod time_window {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of the
         /// requests that your AWS resource received. You must specify the date and time in Coordinated Universal Time (UTC) format.
         /// UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>.
         /// You can specify any time range in the previous three hours.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -9623,7 +9623,7 @@ pub mod time_window {
         /// You can specify any time range in the previous three hours.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -9632,7 +9632,7 @@ pub mod time_window {
         /// requests that your AWS resource received. You must specify the date and time in Coordinated Universal Time (UTC) format.
         /// UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>.
         /// You can specify any time range in the previous three hours.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
@@ -9642,7 +9642,7 @@ pub mod time_window {
         /// You can specify any time range in the previous three hours.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -9684,7 +9684,7 @@ pub struct SampledHttpRequest {
     /// that has a weight of <code>1</code>.</p>
     pub weight: i64,
     /// <p>The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
     pub action: std::option::Option<std::string::String>,
     /// <p>This value is returned if the <code>GetSampledRequests</code>  request specifies the ID of a <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code> is the rule within the specified <code>RuleGroup</code> that matched the request listed in the response.</p>
@@ -9702,7 +9702,7 @@ impl SampledHttpRequest {
         self.weight
     }
     /// <p>The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
@@ -9733,7 +9733,7 @@ pub mod sampled_http_request {
     pub struct Builder {
         pub(crate) request: std::option::Option<crate::model::HttpRequest>,
         pub(crate) weight: std::option::Option<i64>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) action: std::option::Option<std::string::String>,
         pub(crate) rule_within_rule_group: std::option::Option<std::string::String>,
     }
@@ -9766,14 +9766,14 @@ pub mod sampled_http_request {
             self
         }
         /// <p>The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self

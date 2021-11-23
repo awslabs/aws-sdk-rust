@@ -16,7 +16,7 @@ pub enum Error {
     InvalidSubnet(crate::error::InvalidSubnet),
     /// <p>The ciphertext references a key that doesn't exist or that the DMS account doesn't have access to.</p>
     KmsAccessDeniedFault(crate::error::KmsAccessDeniedFault),
-    /// <p>The specified master key (CMK) isn't enabled.</p>
+    /// <p>The specified KMS key isn't enabled.</p>
     KmsDisabledFault(crate::error::KmsDisabledFault),
     /// <p>An Key Management Service (KMS) error is preventing access to KMS.</p>
     KmsFault(crate::error::KmsFault),

@@ -1938,7 +1938,7 @@ pub struct DescribeCrossAccountAccessRoleOutput {
     /// attached to enable Amazon Inspector to access your AWS account.</p>
     pub valid: std::option::Option<bool>,
     /// <p>The date when the cross-account access role was registered.</p>
-    pub registered_at: std::option::Option<aws_smithy_types::Instant>,
+    pub registered_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeCrossAccountAccessRoleOutput {
     /// <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS
@@ -1952,7 +1952,7 @@ impl DescribeCrossAccountAccessRoleOutput {
         self.valid
     }
     /// <p>The date when the cross-account access role was registered.</p>
-    pub fn registered_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn registered_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.registered_at.as_ref()
     }
 }
@@ -1973,7 +1973,7 @@ pub mod describe_cross_account_access_role_output {
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) valid: std::option::Option<bool>,
-        pub(crate) registered_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) registered_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS
@@ -2001,14 +2001,14 @@ pub mod describe_cross_account_access_role_output {
             self
         }
         /// <p>The date when the cross-account access role was registered.</p>
-        pub fn registered_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn registered_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.registered_at = Some(input);
             self
         }
         /// <p>The date when the cross-account access role was registered.</p>
         pub fn set_registered_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.registered_at = input;
             self

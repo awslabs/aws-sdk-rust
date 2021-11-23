@@ -222,8 +222,8 @@ pub struct UpdateDeploymentStrategyOutput {
     /// <p>The percentage of targets that received a deployed configuration during each
     /// interval.</p>
     pub growth_factor: f32,
-    /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-    /// complete and no longer eligible for automatic roll back.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+    /// to be complete and no longer eligible for automatic rollback.</p>
     pub final_bake_time_in_minutes: i32,
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     pub replicate_to: std::option::Option<crate::model::ReplicateTo>,
@@ -254,8 +254,8 @@ impl UpdateDeploymentStrategyOutput {
     pub fn growth_factor(&self) -> f32 {
         self.growth_factor
     }
-    /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-    /// complete and no longer eligible for automatic roll back.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+    /// to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(&self) -> i32 {
         self.final_bake_time_in_minutes
     }
@@ -368,14 +368,14 @@ pub mod update_deployment_strategy_output {
             self.growth_factor = input;
             self
         }
-        /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-        /// complete and no longer eligible for automatic roll back.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+        /// to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
             self.final_bake_time_in_minutes = Some(input);
             self
         }
-        /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-        /// complete and no longer eligible for automatic roll back.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+        /// to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.final_bake_time_in_minutes = input;
             self
@@ -432,10 +432,14 @@ pub struct UpdateConfigurationProfileOutput {
     /// <p>The URI location of the configuration.</p>
     pub location_uri: std::option::Option<std::string::String>,
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-    /// LocationUri.</p>
+    /// <code>LocationUri</code>.</p>
     pub retrieval_role_arn: std::option::Option<std::string::String>,
     /// <p>A list of methods for validating the configuration.</p>
     pub validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
+    /// <p>The type of configurations that the configuration profile contains. A configuration can
+    /// be a feature flag used for enabling or disabling new features or a free-form configuration
+    /// used for distributing configurations to your application. </p>
+    pub r#type: std::option::Option<std::string::String>,
 }
 impl UpdateConfigurationProfileOutput {
     /// <p>The application ID.</p>
@@ -459,13 +463,19 @@ impl UpdateConfigurationProfileOutput {
         self.location_uri.as_deref()
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-    /// LocationUri.</p>
+    /// <code>LocationUri</code>.</p>
     pub fn retrieval_role_arn(&self) -> std::option::Option<&str> {
         self.retrieval_role_arn.as_deref()
     }
     /// <p>A list of methods for validating the configuration.</p>
     pub fn validators(&self) -> std::option::Option<&[crate::model::Validator]> {
         self.validators.as_deref()
+    }
+    /// <p>The type of configurations that the configuration profile contains. A configuration can
+    /// be a feature flag used for enabling or disabling new features or a free-form configuration
+    /// used for distributing configurations to your application. </p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
     }
 }
 impl std::fmt::Debug for UpdateConfigurationProfileOutput {
@@ -478,6 +488,7 @@ impl std::fmt::Debug for UpdateConfigurationProfileOutput {
         formatter.field("location_uri", &self.location_uri);
         formatter.field("retrieval_role_arn", &self.retrieval_role_arn);
         formatter.field("validators", &self.validators);
+        formatter.field("r#type", &self.r#type);
         formatter.finish()
     }
 }
@@ -494,6 +505,7 @@ pub mod update_configuration_profile_output {
         pub(crate) location_uri: std::option::Option<std::string::String>,
         pub(crate) retrieval_role_arn: std::option::Option<std::string::String>,
         pub(crate) validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The application ID.</p>
@@ -550,13 +562,13 @@ pub mod update_configuration_profile_output {
             self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// LocationUri.</p>
+        /// <code>LocationUri</code>.</p>
         pub fn retrieval_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.retrieval_role_arn = Some(input.into());
             self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// LocationUri.</p>
+        /// <code>LocationUri</code>.</p>
         pub fn set_retrieval_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -583,6 +595,20 @@ pub mod update_configuration_profile_output {
             self.validators = input;
             self
         }
+        /// <p>The type of configurations that the configuration profile contains. A configuration can
+        /// be a feature flag used for enabling or disabling new features or a free-form configuration
+        /// used for distributing configurations to your application. </p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>The type of configurations that the configuration profile contains. A configuration can
+        /// be a feature flag used for enabling or disabling new features or a free-form configuration
+        /// used for distributing configurations to your application. </p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateConfigurationProfileOutput`](crate::output::UpdateConfigurationProfileOutput)
         pub fn build(self) -> crate::output::UpdateConfigurationProfileOutput {
             crate::output::UpdateConfigurationProfileOutput {
@@ -593,6 +619,7 @@ pub mod update_configuration_profile_output {
                 location_uri: self.location_uri,
                 retrieval_role_arn: self.retrieval_role_arn,
                 validators: self.validators,
+                r#type: self.r#type,
             }
         }
     }
@@ -785,8 +812,8 @@ pub struct StopDeploymentOutput {
     /// <p>The percentage of targets to receive a deployed configuration during each
     /// interval.</p>
     pub growth_factor: f32,
-    /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-    /// complete and no longer eligible for automatic roll back.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+    /// to be complete and no longer eligible for automatic rollback.</p>
     pub final_bake_time_in_minutes: i32,
     /// <p>The state of the deployment.</p>
     pub state: std::option::Option<crate::model::DeploymentState>,
@@ -796,9 +823,9 @@ pub struct StopDeploymentOutput {
     /// <p>The percentage of targets for which the deployment is available.</p>
     pub percentage_complete: f32,
     /// <p>The time the deployment started.</p>
-    pub started_at: std::option::Option<aws_smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the deployment completed. </p>
-    pub completed_at: std::option::Option<aws_smithy_types::Instant>,
+    pub completed_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StopDeploymentOutput {
     /// <p>The ID of the application that was deployed.</p>
@@ -850,8 +877,8 @@ impl StopDeploymentOutput {
     pub fn growth_factor(&self) -> f32 {
         self.growth_factor
     }
-    /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-    /// complete and no longer eligible for automatic roll back.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+    /// to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(&self) -> i32 {
         self.final_bake_time_in_minutes
     }
@@ -869,11 +896,11 @@ impl StopDeploymentOutput {
         self.percentage_complete
     }
     /// <p>The time the deployment started.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The time the deployment completed. </p>
-    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
 }
@@ -932,8 +959,8 @@ pub mod stop_deployment_output {
         pub(crate) state: std::option::Option<crate::model::DeploymentState>,
         pub(crate) event_log: std::option::Option<std::vec::Vec<crate::model::DeploymentEvent>>,
         pub(crate) percentage_complete: std::option::Option<f32>,
-        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completed_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completed_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the application that was deployed.</p>
@@ -1085,14 +1112,14 @@ pub mod stop_deployment_output {
             self.growth_factor = input;
             self
         }
-        /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-        /// complete and no longer eligible for automatic roll back.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+        /// to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
             self.final_bake_time_in_minutes = Some(input);
             self
         }
-        /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-        /// complete and no longer eligible for automatic roll back.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+        /// to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.final_bake_time_in_minutes = input;
             self
@@ -1142,27 +1169,27 @@ pub mod stop_deployment_output {
             self
         }
         /// <p>The time the deployment started.</p>
-        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started_at = Some(input);
             self
         }
         /// <p>The time the deployment started.</p>
         pub fn set_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started_at = input;
             self
         }
         /// <p>The time the deployment completed. </p>
-        pub fn completed_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completed_at = Some(input);
             self
         }
         /// <p>The time the deployment completed. </p>
         pub fn set_completed_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completed_at = input;
             self
@@ -1230,8 +1257,8 @@ pub struct StartDeploymentOutput {
     /// <p>The percentage of targets to receive a deployed configuration during each
     /// interval.</p>
     pub growth_factor: f32,
-    /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-    /// complete and no longer eligible for automatic roll back.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+    /// to be complete and no longer eligible for automatic rollback.</p>
     pub final_bake_time_in_minutes: i32,
     /// <p>The state of the deployment.</p>
     pub state: std::option::Option<crate::model::DeploymentState>,
@@ -1241,9 +1268,9 @@ pub struct StartDeploymentOutput {
     /// <p>The percentage of targets for which the deployment is available.</p>
     pub percentage_complete: f32,
     /// <p>The time the deployment started.</p>
-    pub started_at: std::option::Option<aws_smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the deployment completed. </p>
-    pub completed_at: std::option::Option<aws_smithy_types::Instant>,
+    pub completed_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StartDeploymentOutput {
     /// <p>The ID of the application that was deployed.</p>
@@ -1295,8 +1322,8 @@ impl StartDeploymentOutput {
     pub fn growth_factor(&self) -> f32 {
         self.growth_factor
     }
-    /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-    /// complete and no longer eligible for automatic roll back.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+    /// to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(&self) -> i32 {
         self.final_bake_time_in_minutes
     }
@@ -1314,11 +1341,11 @@ impl StartDeploymentOutput {
         self.percentage_complete
     }
     /// <p>The time the deployment started.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The time the deployment completed. </p>
-    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
 }
@@ -1377,8 +1404,8 @@ pub mod start_deployment_output {
         pub(crate) state: std::option::Option<crate::model::DeploymentState>,
         pub(crate) event_log: std::option::Option<std::vec::Vec<crate::model::DeploymentEvent>>,
         pub(crate) percentage_complete: std::option::Option<f32>,
-        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completed_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completed_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the application that was deployed.</p>
@@ -1530,14 +1557,14 @@ pub mod start_deployment_output {
             self.growth_factor = input;
             self
         }
-        /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-        /// complete and no longer eligible for automatic roll back.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+        /// to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
             self.final_bake_time_in_minutes = Some(input);
             self
         }
-        /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-        /// complete and no longer eligible for automatic roll back.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+        /// to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.final_bake_time_in_minutes = input;
             self
@@ -1587,27 +1614,27 @@ pub mod start_deployment_output {
             self
         }
         /// <p>The time the deployment started.</p>
-        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started_at = Some(input);
             self
         }
         /// <p>The time the deployment started.</p>
         pub fn set_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started_at = input;
             self
         }
         /// <p>The time the deployment completed. </p>
-        pub fn completed_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completed_at = Some(input);
             self
         }
         /// <p>The time the deployment completed. </p>
         pub fn set_completed_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completed_at = input;
             self
@@ -2268,7 +2295,7 @@ pub struct GetHostedConfigurationVersionOutput {
     /// <p>The content of the configuration or the configuration data.</p>
     pub content: std::option::Option<aws_smithy_types::Blob>,
     /// <p>A standard MIME type describing the format of the configuration content. For more
-    /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub content_type: std::option::Option<std::string::String>,
 }
 impl GetHostedConfigurationVersionOutput {
@@ -2293,7 +2320,7 @@ impl GetHostedConfigurationVersionOutput {
         self.content.as_ref()
     }
     /// <p>A standard MIME type describing the format of the configuration content. For more
-    /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -2381,13 +2408,13 @@ pub mod get_hosted_configuration_version_output {
             self
         }
         /// <p>A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+        /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
         /// <p>A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+        /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -2605,8 +2632,8 @@ pub struct GetDeploymentStrategyOutput {
     /// <p>The percentage of targets that received a deployed configuration during each
     /// interval.</p>
     pub growth_factor: f32,
-    /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-    /// complete and no longer eligible for automatic roll back.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+    /// to be complete and no longer eligible for automatic rollback.</p>
     pub final_bake_time_in_minutes: i32,
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     pub replicate_to: std::option::Option<crate::model::ReplicateTo>,
@@ -2637,8 +2664,8 @@ impl GetDeploymentStrategyOutput {
     pub fn growth_factor(&self) -> f32 {
         self.growth_factor
     }
-    /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-    /// complete and no longer eligible for automatic roll back.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+    /// to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(&self) -> i32 {
         self.final_bake_time_in_minutes
     }
@@ -2751,14 +2778,14 @@ pub mod get_deployment_strategy_output {
             self.growth_factor = input;
             self
         }
-        /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-        /// complete and no longer eligible for automatic roll back.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+        /// to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
             self.final_bake_time_in_minutes = Some(input);
             self
         }
-        /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-        /// complete and no longer eligible for automatic roll back.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+        /// to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.final_bake_time_in_minutes = input;
             self
@@ -2829,8 +2856,8 @@ pub struct GetDeploymentOutput {
     /// <p>The percentage of targets to receive a deployed configuration during each
     /// interval.</p>
     pub growth_factor: f32,
-    /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-    /// complete and no longer eligible for automatic roll back.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+    /// to be complete and no longer eligible for automatic rollback.</p>
     pub final_bake_time_in_minutes: i32,
     /// <p>The state of the deployment.</p>
     pub state: std::option::Option<crate::model::DeploymentState>,
@@ -2840,9 +2867,9 @@ pub struct GetDeploymentOutput {
     /// <p>The percentage of targets for which the deployment is available.</p>
     pub percentage_complete: f32,
     /// <p>The time the deployment started.</p>
-    pub started_at: std::option::Option<aws_smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the deployment completed. </p>
-    pub completed_at: std::option::Option<aws_smithy_types::Instant>,
+    pub completed_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetDeploymentOutput {
     /// <p>The ID of the application that was deployed.</p>
@@ -2894,8 +2921,8 @@ impl GetDeploymentOutput {
     pub fn growth_factor(&self) -> f32 {
         self.growth_factor
     }
-    /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-    /// complete and no longer eligible for automatic roll back.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+    /// to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(&self) -> i32 {
         self.final_bake_time_in_minutes
     }
@@ -2913,11 +2940,11 @@ impl GetDeploymentOutput {
         self.percentage_complete
     }
     /// <p>The time the deployment started.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The time the deployment completed. </p>
-    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
 }
@@ -2976,8 +3003,8 @@ pub mod get_deployment_output {
         pub(crate) state: std::option::Option<crate::model::DeploymentState>,
         pub(crate) event_log: std::option::Option<std::vec::Vec<crate::model::DeploymentEvent>>,
         pub(crate) percentage_complete: std::option::Option<f32>,
-        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completed_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completed_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the application that was deployed.</p>
@@ -3129,14 +3156,14 @@ pub mod get_deployment_output {
             self.growth_factor = input;
             self
         }
-        /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-        /// complete and no longer eligible for automatic roll back.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+        /// to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
             self.final_bake_time_in_minutes = Some(input);
             self
         }
-        /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-        /// complete and no longer eligible for automatic roll back.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+        /// to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.final_bake_time_in_minutes = input;
             self
@@ -3186,27 +3213,27 @@ pub mod get_deployment_output {
             self
         }
         /// <p>The time the deployment started.</p>
-        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started_at = Some(input);
             self
         }
         /// <p>The time the deployment started.</p>
         pub fn set_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started_at = input;
             self
         }
         /// <p>The time the deployment completed. </p>
-        pub fn completed_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completed_at = Some(input);
             self
         }
         /// <p>The time the deployment completed. </p>
         pub fn set_completed_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completed_at = input;
             self
@@ -3260,10 +3287,14 @@ pub struct GetConfigurationProfileOutput {
     /// <p>The URI location of the configuration.</p>
     pub location_uri: std::option::Option<std::string::String>,
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-    /// LocationUri.</p>
+    /// <code>LocationUri</code>.</p>
     pub retrieval_role_arn: std::option::Option<std::string::String>,
     /// <p>A list of methods for validating the configuration.</p>
     pub validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
+    /// <p>The type of configurations that the configuration profile contains. A configuration can
+    /// be a feature flag used for enabling or disabling new features or a free-form configuration
+    /// used for distributing configurations to your application. </p>
+    pub r#type: std::option::Option<std::string::String>,
 }
 impl GetConfigurationProfileOutput {
     /// <p>The application ID.</p>
@@ -3287,13 +3318,19 @@ impl GetConfigurationProfileOutput {
         self.location_uri.as_deref()
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-    /// LocationUri.</p>
+    /// <code>LocationUri</code>.</p>
     pub fn retrieval_role_arn(&self) -> std::option::Option<&str> {
         self.retrieval_role_arn.as_deref()
     }
     /// <p>A list of methods for validating the configuration.</p>
     pub fn validators(&self) -> std::option::Option<&[crate::model::Validator]> {
         self.validators.as_deref()
+    }
+    /// <p>The type of configurations that the configuration profile contains. A configuration can
+    /// be a feature flag used for enabling or disabling new features or a free-form configuration
+    /// used for distributing configurations to your application. </p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
     }
 }
 impl std::fmt::Debug for GetConfigurationProfileOutput {
@@ -3306,6 +3343,7 @@ impl std::fmt::Debug for GetConfigurationProfileOutput {
         formatter.field("location_uri", &self.location_uri);
         formatter.field("retrieval_role_arn", &self.retrieval_role_arn);
         formatter.field("validators", &self.validators);
+        formatter.field("r#type", &self.r#type);
         formatter.finish()
     }
 }
@@ -3322,6 +3360,7 @@ pub mod get_configuration_profile_output {
         pub(crate) location_uri: std::option::Option<std::string::String>,
         pub(crate) retrieval_role_arn: std::option::Option<std::string::String>,
         pub(crate) validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The application ID.</p>
@@ -3378,13 +3417,13 @@ pub mod get_configuration_profile_output {
             self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// LocationUri.</p>
+        /// <code>LocationUri</code>.</p>
         pub fn retrieval_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.retrieval_role_arn = Some(input.into());
             self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// LocationUri.</p>
+        /// <code>LocationUri</code>.</p>
         pub fn set_retrieval_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3411,6 +3450,20 @@ pub mod get_configuration_profile_output {
             self.validators = input;
             self
         }
+        /// <p>The type of configurations that the configuration profile contains. A configuration can
+        /// be a feature flag used for enabling or disabling new features or a free-form configuration
+        /// used for distributing configurations to your application. </p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>The type of configurations that the configuration profile contains. A configuration can
+        /// be a feature flag used for enabling or disabling new features or a free-form configuration
+        /// used for distributing configurations to your application. </p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetConfigurationProfileOutput`](crate::output::GetConfigurationProfileOutput)
         pub fn build(self) -> crate::output::GetConfigurationProfileOutput {
             crate::output::GetConfigurationProfileOutput {
@@ -3421,6 +3474,7 @@ pub mod get_configuration_profile_output {
                 location_uri: self.location_uri,
                 retrieval_role_arn: self.retrieval_role_arn,
                 validators: self.validators,
+                r#type: self.r#type,
             }
         }
     }
@@ -3437,6 +3491,14 @@ impl GetConfigurationProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigurationOutput {
     /// <p>The content of the configuration or the configuration data.</p>
+    /// <important>
+    /// <p>Compare the configuration version numbers of the configuration cached locally on your
+    /// machine and the configuration number in the the header. If the configuration numbers are
+    /// the same, the content can be ignored. The <code>Content</code> section only appears if
+    /// the system finds new or updated configuration data. If the system doesn't find new or
+    /// updated configuration data, then the <code>Content</code> section is not
+    /// returned.</p>
+    /// </important>
     pub content: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The configuration version.</p>
     pub configuration_version: std::option::Option<std::string::String>,
@@ -3446,6 +3508,14 @@ pub struct GetConfigurationOutput {
 }
 impl GetConfigurationOutput {
     /// <p>The content of the configuration or the configuration data.</p>
+    /// <important>
+    /// <p>Compare the configuration version numbers of the configuration cached locally on your
+    /// machine and the configuration number in the the header. If the configuration numbers are
+    /// the same, the content can be ignored. The <code>Content</code> section only appears if
+    /// the system finds new or updated configuration data. If the system doesn't find new or
+    /// updated configuration data, then the <code>Content</code> section is not
+    /// returned.</p>
+    /// </important>
     pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.content.as_ref()
     }
@@ -3480,11 +3550,27 @@ pub mod get_configuration_output {
     }
     impl Builder {
         /// <p>The content of the configuration or the configuration data.</p>
+        /// <important>
+        /// <p>Compare the configuration version numbers of the configuration cached locally on your
+        /// machine and the configuration number in the the header. If the configuration numbers are
+        /// the same, the content can be ignored. The <code>Content</code> section only appears if
+        /// the system finds new or updated configuration data. If the system doesn't find new or
+        /// updated configuration data, then the <code>Content</code> section is not
+        /// returned.</p>
+        /// </important>
         pub fn content(mut self, input: aws_smithy_types::Blob) -> Self {
             self.content = Some(input);
             self
         }
         /// <p>The content of the configuration or the configuration data.</p>
+        /// <important>
+        /// <p>Compare the configuration version numbers of the configuration cached locally on your
+        /// machine and the configuration number in the the header. If the configuration numbers are
+        /// the same, the content can be ignored. The <code>Content</code> section only appears if
+        /// the system finds new or updated configuration data. If the system doesn't find new or
+        /// updated configuration data, then the <code>Content</code> section is not
+        /// returned.</p>
+        /// </important>
         pub fn set_content(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.content = input;
             self
@@ -3788,7 +3874,7 @@ pub struct CreateHostedConfigurationVersionOutput {
     /// <p>The content of the configuration or the configuration data.</p>
     pub content: std::option::Option<aws_smithy_types::Blob>,
     /// <p>A standard MIME type describing the format of the configuration content. For more
-    /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub content_type: std::option::Option<std::string::String>,
 }
 impl CreateHostedConfigurationVersionOutput {
@@ -3813,7 +3899,7 @@ impl CreateHostedConfigurationVersionOutput {
         self.content.as_ref()
     }
     /// <p>A standard MIME type describing the format of the configuration content. For more
-    /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -3901,13 +3987,13 @@ pub mod create_hosted_configuration_version_output {
             self
         }
         /// <p>A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+        /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
         /// <p>A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+        /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -4125,8 +4211,8 @@ pub struct CreateDeploymentStrategyOutput {
     /// <p>The percentage of targets that received a deployed configuration during each
     /// interval.</p>
     pub growth_factor: f32,
-    /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-    /// complete and no longer eligible for automatic roll back.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+    /// to be complete and no longer eligible for automatic rollback.</p>
     pub final_bake_time_in_minutes: i32,
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     pub replicate_to: std::option::Option<crate::model::ReplicateTo>,
@@ -4157,8 +4243,8 @@ impl CreateDeploymentStrategyOutput {
     pub fn growth_factor(&self) -> f32 {
         self.growth_factor
     }
-    /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-    /// complete and no longer eligible for automatic roll back.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+    /// to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(&self) -> i32 {
         self.final_bake_time_in_minutes
     }
@@ -4271,14 +4357,14 @@ pub mod create_deployment_strategy_output {
             self.growth_factor = input;
             self
         }
-        /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-        /// complete and no longer eligible for automatic roll back.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+        /// to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
             self.final_bake_time_in_minutes = Some(input);
             self
         }
-        /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
-        /// complete and no longer eligible for automatic roll back.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
+        /// to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.final_bake_time_in_minutes = input;
             self
@@ -4335,10 +4421,14 @@ pub struct CreateConfigurationProfileOutput {
     /// <p>The URI location of the configuration.</p>
     pub location_uri: std::option::Option<std::string::String>,
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-    /// LocationUri.</p>
+    /// <code>LocationUri</code>.</p>
     pub retrieval_role_arn: std::option::Option<std::string::String>,
     /// <p>A list of methods for validating the configuration.</p>
     pub validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
+    /// <p>The type of configurations that the configuration profile contains. A configuration can
+    /// be a feature flag used for enabling or disabling new features or a free-form configuration
+    /// used for distributing configurations to your application. </p>
+    pub r#type: std::option::Option<std::string::String>,
 }
 impl CreateConfigurationProfileOutput {
     /// <p>The application ID.</p>
@@ -4362,13 +4452,19 @@ impl CreateConfigurationProfileOutput {
         self.location_uri.as_deref()
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-    /// LocationUri.</p>
+    /// <code>LocationUri</code>.</p>
     pub fn retrieval_role_arn(&self) -> std::option::Option<&str> {
         self.retrieval_role_arn.as_deref()
     }
     /// <p>A list of methods for validating the configuration.</p>
     pub fn validators(&self) -> std::option::Option<&[crate::model::Validator]> {
         self.validators.as_deref()
+    }
+    /// <p>The type of configurations that the configuration profile contains. A configuration can
+    /// be a feature flag used for enabling or disabling new features or a free-form configuration
+    /// used for distributing configurations to your application. </p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
     }
 }
 impl std::fmt::Debug for CreateConfigurationProfileOutput {
@@ -4381,6 +4477,7 @@ impl std::fmt::Debug for CreateConfigurationProfileOutput {
         formatter.field("location_uri", &self.location_uri);
         formatter.field("retrieval_role_arn", &self.retrieval_role_arn);
         formatter.field("validators", &self.validators);
+        formatter.field("r#type", &self.r#type);
         formatter.finish()
     }
 }
@@ -4397,6 +4494,7 @@ pub mod create_configuration_profile_output {
         pub(crate) location_uri: std::option::Option<std::string::String>,
         pub(crate) retrieval_role_arn: std::option::Option<std::string::String>,
         pub(crate) validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The application ID.</p>
@@ -4453,13 +4551,13 @@ pub mod create_configuration_profile_output {
             self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// LocationUri.</p>
+        /// <code>LocationUri</code>.</p>
         pub fn retrieval_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.retrieval_role_arn = Some(input.into());
             self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// LocationUri.</p>
+        /// <code>LocationUri</code>.</p>
         pub fn set_retrieval_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4486,6 +4584,20 @@ pub mod create_configuration_profile_output {
             self.validators = input;
             self
         }
+        /// <p>The type of configurations that the configuration profile contains. A configuration can
+        /// be a feature flag used for enabling or disabling new features or a free-form configuration
+        /// used for distributing configurations to your application. </p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>The type of configurations that the configuration profile contains. A configuration can
+        /// be a feature flag used for enabling or disabling new features or a free-form configuration
+        /// used for distributing configurations to your application. </p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateConfigurationProfileOutput`](crate::output::CreateConfigurationProfileOutput)
         pub fn build(self) -> crate::output::CreateConfigurationProfileOutput {
             crate::output::CreateConfigurationProfileOutput {
@@ -4496,6 +4608,7 @@ pub mod create_configuration_profile_output {
                 location_uri: self.location_uri,
                 retrieval_role_arn: self.retrieval_role_arn,
                 validators: self.validators,
+                r#type: self.r#type,
             }
         }
     }

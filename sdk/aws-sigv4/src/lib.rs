@@ -8,17 +8,17 @@
 
 #![warn(
     missing_docs,
-    missing_crate_level_docs,
+    rustdoc::missing_crate_level_docs,
     missing_debug_implementations,
     rust_2018_idioms,
     unreachable_pub
 )]
 
-use chrono::{DateTime, Utc};
+use std::time::SystemTime;
 
 pub mod sign;
 
-mod date_fmt;
+mod date_time;
 
 #[cfg(feature = "sign-eventstream")]
 pub mod event_stream;
@@ -41,8 +41,8 @@ pub struct SigningParams<'a, S> {
     pub(crate) region: &'a str,
     /// AWS Service Name to sign for.
     pub(crate) service_name: &'a str,
-    /// Timestamp to use in the signature (should be `Utc::now()` unless testing).
-    pub(crate) date_time: DateTime<Utc>,
+    /// Timestamp to use in the signature (should be `SystemTime::now()` unless testing).
+    pub(crate) time: SystemTime,
 
     /// Additional signing settings. These differ between HTTP and Event Stream.
     pub(crate) settings: S,
@@ -58,9 +58,9 @@ impl<'a, S: Default> SigningParams<'a, S> {
 /// Builder and error for creating [`SigningParams`]
 pub mod signing_params {
     use super::SigningParams;
-    use chrono::{DateTime, Utc};
     use std::error::Error;
     use std::fmt;
+    use std::time::SystemTime;
 
     /// [`SigningParams`] builder error
     #[derive(Debug)]
@@ -89,7 +89,7 @@ pub mod signing_params {
         security_token: Option<&'a str>,
         region: Option<&'a str>,
         service_name: Option<&'a str>,
-        date_time: Option<DateTime<Utc>>,
+        time: Option<SystemTime>,
         settings: Option<S>,
     }
 
@@ -144,14 +144,14 @@ pub mod signing_params {
             self.service_name = service_name;
         }
 
-        /// Sets the date time to be used in the signature (required)
-        pub fn date_time(mut self, date_time: DateTime<Utc>) -> Self {
-            self.date_time = Some(date_time);
+        /// Sets the time to be used in the signature (required)
+        pub fn time(mut self, time: SystemTime) -> Self {
+            self.time = Some(time);
             self
         }
-        /// Sets the date time to be used in the signature (required)
-        pub fn set_date_time(&mut self, date_time: Option<DateTime<Utc>>) {
-            self.date_time = date_time;
+        /// Sets the time to be used in the signature (required)
+        pub fn set_time(&mut self, time: Option<SystemTime>) {
+            self.time = time;
         }
 
         /// Sets additional signing settings (required)
@@ -181,9 +181,9 @@ pub mod signing_params {
                 service_name: self
                     .service_name
                     .ok_or_else(|| BuildError::new("service name is required"))?,
-                date_time: self
-                    .date_time
-                    .ok_or_else(|| BuildError::new("date time is required"))?,
+                time: self
+                    .time
+                    .ok_or_else(|| BuildError::new("time is required"))?,
                 settings: self
                     .settings
                     .ok_or_else(|| BuildError::new("settings are required"))?,

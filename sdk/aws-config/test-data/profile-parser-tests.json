@@ -26,6 +26,17 @@
       }
     },
     {
+      "name": "Profile names support alphanumeric characters and - / . % @ _ : +",
+      "input": {
+        "configFile": "[profile some-thing:long/the_one%only.foo@bar+]\n[profile foo!bar]"
+      },
+      "output": {
+        "profiles": {
+          "some-thing:long/the_one%only.foo@bar+": {}
+        }
+      }
+    },
+    {
       "name": "Profile definitions must end with brackets.",
       "input": {
         "configFile": "[profile foo"

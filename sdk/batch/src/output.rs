@@ -2,6 +2,36 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateSchedulingPolicyOutput {}
+impl std::fmt::Debug for UpdateSchedulingPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateSchedulingPolicyOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateSchedulingPolicyOutput`](crate::output::UpdateSchedulingPolicyOutput)
+pub mod update_scheduling_policy_output {
+    /// A builder for [`UpdateSchedulingPolicyOutput`](crate::output::UpdateSchedulingPolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateSchedulingPolicyOutput`](crate::output::UpdateSchedulingPolicyOutput)
+        pub fn build(self) -> crate::output::UpdateSchedulingPolicyOutput {
+            crate::output::UpdateSchedulingPolicyOutput {}
+        }
+    }
+}
+impl UpdateSchedulingPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSchedulingPolicyOutput`](crate::output::UpdateSchedulingPolicyOutput)
+    pub fn builder() -> crate::output::update_scheduling_policy_output::Builder {
+        crate::output::update_scheduling_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJobQueueOutput {
     /// <p>The name of the job queue.</p>
     pub job_queue_name: std::option::Option<std::string::String>,
@@ -517,6 +547,107 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListSchedulingPoliciesOutput {
+    /// <p>A list of scheduling policies that match
+    /// the request.</p>
+    pub scheduling_policies:
+        std::option::Option<std::vec::Vec<crate::model::SchedulingPolicyListingDetail>>,
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListSchedulingPolicies</code> request. When the
+    /// results of a <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this value can be used to
+    /// retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSchedulingPoliciesOutput {
+    /// <p>A list of scheduling policies that match
+    /// the request.</p>
+    pub fn scheduling_policies(
+        &self,
+    ) -> std::option::Option<&[crate::model::SchedulingPolicyListingDetail]> {
+        self.scheduling_policies.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListSchedulingPolicies</code> request. When the
+    /// results of a <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this value can be used to
+    /// retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListSchedulingPoliciesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListSchedulingPoliciesOutput");
+        formatter.field("scheduling_policies", &self.scheduling_policies);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListSchedulingPoliciesOutput`](crate::output::ListSchedulingPoliciesOutput)
+pub mod list_scheduling_policies_output {
+    /// A builder for [`ListSchedulingPoliciesOutput`](crate::output::ListSchedulingPoliciesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) scheduling_policies:
+            std::option::Option<std::vec::Vec<crate::model::SchedulingPolicyListingDetail>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `scheduling_policies`.
+        ///
+        /// To override the contents of this collection use [`set_scheduling_policies`](Self::set_scheduling_policies).
+        ///
+        /// <p>A list of scheduling policies that match
+        /// the request.</p>
+        pub fn scheduling_policies(
+            mut self,
+            input: impl Into<crate::model::SchedulingPolicyListingDetail>,
+        ) -> Self {
+            let mut v = self.scheduling_policies.unwrap_or_default();
+            v.push(input.into());
+            self.scheduling_policies = Some(v);
+            self
+        }
+        /// <p>A list of scheduling policies that match
+        /// the request.</p>
+        pub fn set_scheduling_policies(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SchedulingPolicyListingDetail>>,
+        ) -> Self {
+            self.scheduling_policies = input;
+            self
+        }
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListSchedulingPolicies</code> request. When the
+        /// results of a <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this value can be used to
+        /// retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListSchedulingPolicies</code> request. When the
+        /// results of a <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this value can be used to
+        /// retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSchedulingPoliciesOutput`](crate::output::ListSchedulingPoliciesOutput)
+        pub fn build(self) -> crate::output::ListSchedulingPoliciesOutput {
+            crate::output::ListSchedulingPoliciesOutput {
+                scheduling_policies: self.scheduling_policies,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListSchedulingPoliciesOutput {
+    /// Creates a new builder-style object to manufacture [`ListSchedulingPoliciesOutput`](crate::output::ListSchedulingPoliciesOutput)
+    pub fn builder() -> crate::output::list_scheduling_policies_output::Builder {
+        crate::output::list_scheduling_policies_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsOutput {
     /// <p>A list of job summaries that match the request.</p>
     pub job_summary_list: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
@@ -601,6 +732,80 @@ impl ListJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListJobsOutput`](crate::output::ListJobsOutput)
     pub fn builder() -> crate::output::list_jobs_output::Builder {
         crate::output::list_jobs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeSchedulingPoliciesOutput {
+    /// <p>The list of scheduling
+    /// policies.</p>
+    pub scheduling_policies:
+        std::option::Option<std::vec::Vec<crate::model::SchedulingPolicyDetail>>,
+}
+impl DescribeSchedulingPoliciesOutput {
+    /// <p>The list of scheduling
+    /// policies.</p>
+    pub fn scheduling_policies(
+        &self,
+    ) -> std::option::Option<&[crate::model::SchedulingPolicyDetail]> {
+        self.scheduling_policies.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeSchedulingPoliciesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeSchedulingPoliciesOutput");
+        formatter.field("scheduling_policies", &self.scheduling_policies);
+        formatter.finish()
+    }
+}
+/// See [`DescribeSchedulingPoliciesOutput`](crate::output::DescribeSchedulingPoliciesOutput)
+pub mod describe_scheduling_policies_output {
+    /// A builder for [`DescribeSchedulingPoliciesOutput`](crate::output::DescribeSchedulingPoliciesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) scheduling_policies:
+            std::option::Option<std::vec::Vec<crate::model::SchedulingPolicyDetail>>,
+    }
+    impl Builder {
+        /// Appends an item to `scheduling_policies`.
+        ///
+        /// To override the contents of this collection use [`set_scheduling_policies`](Self::set_scheduling_policies).
+        ///
+        /// <p>The list of scheduling
+        /// policies.</p>
+        pub fn scheduling_policies(
+            mut self,
+            input: impl Into<crate::model::SchedulingPolicyDetail>,
+        ) -> Self {
+            let mut v = self.scheduling_policies.unwrap_or_default();
+            v.push(input.into());
+            self.scheduling_policies = Some(v);
+            self
+        }
+        /// <p>The list of scheduling
+        /// policies.</p>
+        pub fn set_scheduling_policies(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SchedulingPolicyDetail>>,
+        ) -> Self {
+            self.scheduling_policies = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeSchedulingPoliciesOutput`](crate::output::DescribeSchedulingPoliciesOutput)
+        pub fn build(self) -> crate::output::DescribeSchedulingPoliciesOutput {
+            crate::output::DescribeSchedulingPoliciesOutput {
+                scheduling_policies: self.scheduling_policies,
+            }
+        }
+    }
+}
+impl DescribeSchedulingPoliciesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSchedulingPoliciesOutput`](crate::output::DescribeSchedulingPoliciesOutput)
+    pub fn builder() -> crate::output::describe_scheduling_policies_output::Builder {
+        crate::output::describe_scheduling_policies_output::Builder::default()
     }
 }
 
@@ -853,8 +1058,8 @@ pub struct DescribeComputeEnvironmentsOutput {
     pub compute_environments:
         std::option::Option<std::vec::Vec<crate::model::ComputeEnvironmentDetail>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeComputeEnvironments</code> request. When
-    /// the results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used
-    /// to retrieve the next page of results. This value is <code>null</code> when there are no more results to
+    /// the results of a <code>DescribeComputeEnvironments</code> request exceed <code>maxResults</code>, this value can be
+    /// used to retrieve the next page of results. This value is <code>null</code> when there are no more results to
     /// return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -866,8 +1071,8 @@ impl DescribeComputeEnvironmentsOutput {
         self.compute_environments.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeComputeEnvironments</code> request. When
-    /// the results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used
-    /// to retrieve the next page of results. This value is <code>null</code> when there are no more results to
+    /// the results of a <code>DescribeComputeEnvironments</code> request exceed <code>maxResults</code>, this value can be
+    /// used to retrieve the next page of results. This value is <code>null</code> when there are no more results to
     /// return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -915,16 +1120,16 @@ pub mod describe_compute_environments_output {
             self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>DescribeComputeEnvironments</code> request. When
-        /// the results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used
-        /// to retrieve the next page of results. This value is <code>null</code> when there are no more results to
+        /// the results of a <code>DescribeComputeEnvironments</code> request exceed <code>maxResults</code>, this value can be
+        /// used to retrieve the next page of results. This value is <code>null</code> when there are no more results to
         /// return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>DescribeComputeEnvironments</code> request. When
-        /// the results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used
-        /// to retrieve the next page of results. This value is <code>null</code> when there are no more results to
+        /// the results of a <code>DescribeComputeEnvironments</code> request exceed <code>maxResults</code>, this value can be
+        /// used to retrieve the next page of results. This value is <code>null</code> when there are no more results to
         /// return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -973,6 +1178,36 @@ impl DeregisterJobDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterJobDefinitionOutput`](crate::output::DeregisterJobDefinitionOutput)
     pub fn builder() -> crate::output::deregister_job_definition_output::Builder {
         crate::output::deregister_job_definition_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteSchedulingPolicyOutput {}
+impl std::fmt::Debug for DeleteSchedulingPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteSchedulingPolicyOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteSchedulingPolicyOutput`](crate::output::DeleteSchedulingPolicyOutput)
+pub mod delete_scheduling_policy_output {
+    /// A builder for [`DeleteSchedulingPolicyOutput`](crate::output::DeleteSchedulingPolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteSchedulingPolicyOutput`](crate::output::DeleteSchedulingPolicyOutput)
+        pub fn build(self) -> crate::output::DeleteSchedulingPolicyOutput {
+            crate::output::DeleteSchedulingPolicyOutput {}
+        }
+    }
+}
+impl DeleteSchedulingPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSchedulingPolicyOutput`](crate::output::DeleteSchedulingPolicyOutput)
+    pub fn builder() -> crate::output::delete_scheduling_policy_output::Builder {
+        crate::output::delete_scheduling_policy_output::Builder::default()
     }
 }
 
@@ -1033,6 +1268,103 @@ impl DeleteComputeEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteComputeEnvironmentOutput`](crate::output::DeleteComputeEnvironmentOutput)
     pub fn builder() -> crate::output::delete_compute_environment_output::Builder {
         crate::output::delete_compute_environment_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateSchedulingPolicyOutput {
+    /// <p>The name of the scheduling
+    /// policy.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the scheduling policy.
+    /// The format is
+    /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+    /// </code>.
+    /// For example,
+    /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+    pub arn: std::option::Option<std::string::String>,
+}
+impl CreateSchedulingPolicyOutput {
+    /// <p>The name of the scheduling
+    /// policy.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the scheduling policy.
+    /// The format is
+    /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+    /// </code>.
+    /// For example,
+    /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateSchedulingPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateSchedulingPolicyOutput");
+        formatter.field("name", &self.name);
+        formatter.field("arn", &self.arn);
+        formatter.finish()
+    }
+}
+/// See [`CreateSchedulingPolicyOutput`](crate::output::CreateSchedulingPolicyOutput)
+pub mod create_scheduling_policy_output {
+    /// A builder for [`CreateSchedulingPolicyOutput`](crate::output::CreateSchedulingPolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the scheduling
+        /// policy.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the scheduling
+        /// policy.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the scheduling policy.
+        /// The format is
+        /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+        /// </code>.
+        /// For example,
+        /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the scheduling policy.
+        /// The format is
+        /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+        /// </code>.
+        /// For example,
+        /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateSchedulingPolicyOutput`](crate::output::CreateSchedulingPolicyOutput)
+        pub fn build(self) -> crate::output::CreateSchedulingPolicyOutput {
+            crate::output::CreateSchedulingPolicyOutput {
+                name: self.name,
+                arn: self.arn,
+            }
+        }
+    }
+}
+impl CreateSchedulingPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSchedulingPolicyOutput`](crate::output::CreateSchedulingPolicyOutput)
+    pub fn builder() -> crate::output::create_scheduling_policy_output::Builder {
+        crate::output::create_scheduling_policy_output::Builder::default()
     }
 }
 

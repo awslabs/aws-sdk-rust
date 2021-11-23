@@ -145,8 +145,7 @@ pub enum CheckIfPhoneNumberIsOptedOutErrorKind {
     /// <p>Indicates that a request parameter does not comply with the associated
     /// constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds
-    /// the limit for your account.</p>
+    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -278,8 +277,8 @@ pub struct ConfirmSubscriptionError {
 pub enum ConfirmSubscriptionErrorKind {
     /// <p>Indicates that the user has been denied access to the requested resource.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
-    /// <p>Indicates that the number of filter polices in your account exceeds the limit. To
-    /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services Support
+    /// <p>Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To
+    /// add more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support
     /// Center.</p>
     FilterPolicyLimitExceededException(crate::error::FilterPolicyLimitExceededException),
     /// <p>Indicates an internal service error.</p>
@@ -695,10 +694,9 @@ pub enum CreateSMSSandboxPhoneNumberErrorKind {
     /// constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the specified phone number opted out of receiving SMS messages from
-    /// your account. You can't send SMS messages to phone numbers that opt out.</p>
+    /// your Amazon Web Services account. You can't send SMS messages to phone numbers that opt out.</p>
     OptedOutException(crate::error::OptedOutException),
-    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds
-    /// the limit for your account.</p>
+    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
     /// <p>Indicates that a request parameter does not comply with the associated
     /// constraints.</p>
@@ -1274,8 +1272,7 @@ pub enum DeleteSMSSandboxPhoneNumberErrorKind {
     /// <p>Can’t perform the action on the specified resource. Make sure that the resource
     /// exists.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds
-    /// the limit for your account.</p>
+    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
     /// <p>Indicates that a request parameter does not comply with the associated
     /// constraints.</p>
@@ -1859,8 +1856,7 @@ pub enum GetSMSAttributesErrorKind {
     /// <p>Indicates that a request parameter does not comply with the associated
     /// constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds
-    /// the limit for your account.</p>
+    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1983,8 +1979,7 @@ pub enum GetSMSSandboxAccountStatusErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds
-    /// the limit for your account.</p>
+    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2524,8 +2519,7 @@ pub enum ListOriginationNumbersErrorKind {
     /// <p>Indicates that a request parameter does not comply with the associated
     /// constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds
-    /// the limit for your account.</p>
+    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
     /// <p>Indicates that a parameter in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
@@ -2665,8 +2659,7 @@ pub enum ListPhoneNumbersOptedOutErrorKind {
     /// <p>Indicates that a request parameter does not comply with the associated
     /// constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds
-    /// the limit for your account.</p>
+    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2916,8 +2909,7 @@ pub enum ListSMSSandboxPhoneNumbersErrorKind {
     /// <p>Can’t perform the action on the specified resource. Make sure that the resource
     /// exists.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds
-    /// the limit for your account.</p>
+    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3564,8 +3556,7 @@ pub enum OptInPhoneNumberErrorKind {
     /// <p>Indicates that a request parameter does not comply with the associated
     /// constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds
-    /// the limit for your account.</p>
+    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3693,8 +3684,7 @@ pub enum PublishErrorKind {
     /// <p>Indicates that a request parameter does not comply with the associated
     /// constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your
     /// request using Signature Version 4.</p>
@@ -3881,6 +3871,292 @@ impl std::error::Error for PublishError {
             PublishErrorKind::NotFoundException(_inner) => Some(_inner),
             PublishErrorKind::PlatformApplicationDisabledException(_inner) => Some(_inner),
             PublishErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `PublishBatch` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PublishBatchError {
+    /// Kind of error that occurred.
+    pub kind: PublishBatchErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `PublishBatch` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PublishBatchErrorKind {
+    /// <p>Indicates that the user has been denied access to the requested resource.</p>
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    /// <p>Two or more batch entries in the request have the same <code>Id</code>.</p>
+    BatchEntryIdsNotDistinctException(crate::error::BatchEntryIdsNotDistinctException),
+    /// <p>The length of all the batch messages put together is more than the limit.</p>
+    BatchRequestTooLongException(crate::error::BatchRequestTooLongException),
+    /// <p>The batch request doesn't contain any entries.</p>
+    EmptyBatchRequestException(crate::error::EmptyBatchRequestException),
+    /// <p>Exception error indicating endpoint disabled.</p>
+    EndpointDisabledException(crate::error::EndpointDisabledException),
+    /// <p>Indicates an internal service error.</p>
+    InternalErrorException(crate::error::InternalErrorException),
+    /// <p>The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification. </p>
+    InvalidBatchEntryIdException(crate::error::InvalidBatchEntryIdException),
+    /// <p>Indicates that a request parameter does not comply with the associated
+    /// constraints.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your
+    /// request using Signature Version 4.</p>
+    InvalidSecurityException(crate::error::InvalidSecurityException),
+    /// <p>The ciphertext references a key that doesn't exist or that you don't have access
+    /// to.</p>
+    KmsAccessDeniedException(crate::error::KmsAccessDeniedException),
+    /// <p>The request was rejected because the specified customer master key (CMK) isn't
+    /// enabled.</p>
+    KmsDisabledException(crate::error::KmsDisabledException),
+    /// <p>The request was rejected because the state of the specified resource isn't valid for
+    /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
+    /// Customer Master Key</a> in the <i>Key Management Service Developer
+    /// Guide</i>.</p>
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    /// <p>The request was rejected because the specified entity or resource can't be
+    /// found.</p>
+    KmsNotFoundException(crate::error::KmsNotFoundException),
+    /// <p>The Amazon Web Services access key ID needs a subscription for the service.</p>
+    KmsOptInRequired(crate::error::KmsOptInRequired),
+    /// <p>The request was denied due to request throttling. For more information about
+    /// throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
+    /// the <i>Key Management Service Developer Guide.</i>
+    /// </p>
+    KmsThrottlingException(crate::error::KmsThrottlingException),
+    /// <p>Indicates that the requested resource does not exist.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>Exception error indicating platform application disabled.</p>
+    PlatformApplicationDisabledException(crate::error::PlatformApplicationDisabledException),
+    /// <p>The batch request contains more entries than permissible.</p>
+    TooManyEntriesInBatchRequestException(crate::error::TooManyEntriesInBatchRequestException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for PublishBatchError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PublishBatchErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            PublishBatchErrorKind::BatchEntryIdsNotDistinctException(_inner) => _inner.fmt(f),
+            PublishBatchErrorKind::BatchRequestTooLongException(_inner) => _inner.fmt(f),
+            PublishBatchErrorKind::EmptyBatchRequestException(_inner) => _inner.fmt(f),
+            PublishBatchErrorKind::EndpointDisabledException(_inner) => _inner.fmt(f),
+            PublishBatchErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            PublishBatchErrorKind::InvalidBatchEntryIdException(_inner) => _inner.fmt(f),
+            PublishBatchErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            PublishBatchErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            PublishBatchErrorKind::InvalidSecurityException(_inner) => _inner.fmt(f),
+            PublishBatchErrorKind::KmsAccessDeniedException(_inner) => _inner.fmt(f),
+            PublishBatchErrorKind::KmsDisabledException(_inner) => _inner.fmt(f),
+            PublishBatchErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            PublishBatchErrorKind::KmsNotFoundException(_inner) => _inner.fmt(f),
+            PublishBatchErrorKind::KmsOptInRequired(_inner) => _inner.fmt(f),
+            PublishBatchErrorKind::KmsThrottlingException(_inner) => _inner.fmt(f),
+            PublishBatchErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PublishBatchErrorKind::PlatformApplicationDisabledException(_inner) => _inner.fmt(f),
+            PublishBatchErrorKind::TooManyEntriesInBatchRequestException(_inner) => _inner.fmt(f),
+            PublishBatchErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PublishBatchError {
+    fn code(&self) -> Option<&str> {
+        PublishBatchError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PublishBatchError {
+    /// Creates a new `PublishBatchError`.
+    pub fn new(kind: PublishBatchErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PublishBatchError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PublishBatchErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PublishBatchError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PublishBatchErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PublishBatchErrorKind::AuthorizationErrorException`.
+    pub fn is_authorization_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishBatchErrorKind::AuthorizationErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PublishBatchErrorKind::BatchEntryIdsNotDistinctException`.
+    pub fn is_batch_entry_ids_not_distinct_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishBatchErrorKind::BatchEntryIdsNotDistinctException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PublishBatchErrorKind::BatchRequestTooLongException`.
+    pub fn is_batch_request_too_long_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishBatchErrorKind::BatchRequestTooLongException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PublishBatchErrorKind::EmptyBatchRequestException`.
+    pub fn is_empty_batch_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishBatchErrorKind::EmptyBatchRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PublishBatchErrorKind::EndpointDisabledException`.
+    pub fn is_endpoint_disabled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishBatchErrorKind::EndpointDisabledException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PublishBatchErrorKind::InternalErrorException`.
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(&self.kind, PublishBatchErrorKind::InternalErrorException(_))
+    }
+    /// Returns `true` if the error kind is `PublishBatchErrorKind::InvalidBatchEntryIdException`.
+    pub fn is_invalid_batch_entry_id_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishBatchErrorKind::InvalidBatchEntryIdException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PublishBatchErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishBatchErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PublishBatchErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishBatchErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PublishBatchErrorKind::InvalidSecurityException`.
+    pub fn is_invalid_security_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishBatchErrorKind::InvalidSecurityException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PublishBatchErrorKind::KmsAccessDeniedException`.
+    pub fn is_kms_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishBatchErrorKind::KmsAccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PublishBatchErrorKind::KmsDisabledException`.
+    pub fn is_kms_disabled_exception(&self) -> bool {
+        matches!(&self.kind, PublishBatchErrorKind::KmsDisabledException(_))
+    }
+    /// Returns `true` if the error kind is `PublishBatchErrorKind::KmsInvalidStateException`.
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishBatchErrorKind::KmsInvalidStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PublishBatchErrorKind::KmsNotFoundException`.
+    pub fn is_kms_not_found_exception(&self) -> bool {
+        matches!(&self.kind, PublishBatchErrorKind::KmsNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `PublishBatchErrorKind::KmsOptInRequired`.
+    pub fn is_kms_opt_in_required(&self) -> bool {
+        matches!(&self.kind, PublishBatchErrorKind::KmsOptInRequired(_))
+    }
+    /// Returns `true` if the error kind is `PublishBatchErrorKind::KmsThrottlingException`.
+    pub fn is_kms_throttling_exception(&self) -> bool {
+        matches!(&self.kind, PublishBatchErrorKind::KmsThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `PublishBatchErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, PublishBatchErrorKind::NotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `PublishBatchErrorKind::PlatformApplicationDisabledException`.
+    pub fn is_platform_application_disabled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishBatchErrorKind::PlatformApplicationDisabledException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PublishBatchErrorKind::TooManyEntriesInBatchRequestException`.
+    pub fn is_too_many_entries_in_batch_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishBatchErrorKind::TooManyEntriesInBatchRequestException(_)
+        )
+    }
+}
+impl std::error::Error for PublishBatchError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PublishBatchErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            PublishBatchErrorKind::BatchEntryIdsNotDistinctException(_inner) => Some(_inner),
+            PublishBatchErrorKind::BatchRequestTooLongException(_inner) => Some(_inner),
+            PublishBatchErrorKind::EmptyBatchRequestException(_inner) => Some(_inner),
+            PublishBatchErrorKind::EndpointDisabledException(_inner) => Some(_inner),
+            PublishBatchErrorKind::InternalErrorException(_inner) => Some(_inner),
+            PublishBatchErrorKind::InvalidBatchEntryIdException(_inner) => Some(_inner),
+            PublishBatchErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            PublishBatchErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            PublishBatchErrorKind::InvalidSecurityException(_inner) => Some(_inner),
+            PublishBatchErrorKind::KmsAccessDeniedException(_inner) => Some(_inner),
+            PublishBatchErrorKind::KmsDisabledException(_inner) => Some(_inner),
+            PublishBatchErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            PublishBatchErrorKind::KmsNotFoundException(_inner) => Some(_inner),
+            PublishBatchErrorKind::KmsOptInRequired(_inner) => Some(_inner),
+            PublishBatchErrorKind::KmsThrottlingException(_inner) => Some(_inner),
+            PublishBatchErrorKind::NotFoundException(_inner) => Some(_inner),
+            PublishBatchErrorKind::PlatformApplicationDisabledException(_inner) => Some(_inner),
+            PublishBatchErrorKind::TooManyEntriesInBatchRequestException(_inner) => Some(_inner),
+            PublishBatchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -4304,8 +4580,7 @@ pub enum SetSMSAttributesErrorKind {
     /// <p>Indicates that a request parameter does not comply with the associated
     /// constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds
-    /// the limit for your account.</p>
+    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4426,8 +4701,8 @@ pub struct SetSubscriptionAttributesError {
 pub enum SetSubscriptionAttributesErrorKind {
     /// <p>Indicates that the user has been denied access to the requested resource.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
-    /// <p>Indicates that the number of filter polices in your account exceeds the limit. To
-    /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services Support
+    /// <p>Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To
+    /// add more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support
     /// Center.</p>
     FilterPolicyLimitExceededException(crate::error::FilterPolicyLimitExceededException),
     /// <p>Indicates an internal service error.</p>
@@ -4715,8 +4990,8 @@ pub struct SubscribeError {
 pub enum SubscribeErrorKind {
     /// <p>Indicates that the user has been denied access to the requested resource.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
-    /// <p>Indicates that the number of filter polices in your account exceeds the limit. To
-    /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services Support
+    /// <p>Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To
+    /// add more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support
     /// Center.</p>
     FilterPolicyLimitExceededException(crate::error::FilterPolicyLimitExceededException),
     /// <p>Indicates an internal service error.</p>
@@ -5332,8 +5607,7 @@ pub enum VerifySMSSandboxPhoneNumberErrorKind {
     /// <p>Can’t perform the action on the specified resource. Make sure that the resource
     /// exists.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds
-    /// the limit for your account.</p>
+    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
     /// <p>Indicates that the one-time password (OTP) used for verification is invalid.</p>
     VerificationException(crate::error::VerificationException),
@@ -5555,8 +5829,7 @@ impl VerificationException {
     }
 }
 
-/// <p>Indicates that the rate at which requests have been submitted for this action exceeds
-/// the limit for your account.</p>
+/// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottledException {
@@ -6331,8 +6604,8 @@ impl SubscriptionLimitExceededException {
     }
 }
 
-/// <p>Indicates that the number of filter polices in your account exceeds the limit. To
-/// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services Support
+/// <p>Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To
+/// add more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support
 /// Center.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6397,6 +6670,70 @@ impl FilterPolicyLimitExceededException {
     }
 }
 
+/// <p>The batch request contains more entries than permissible.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TooManyEntriesInBatchRequestException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for TooManyEntriesInBatchRequestException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TooManyEntriesInBatchRequestException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl TooManyEntriesInBatchRequestException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyEntriesInBatchRequestException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyEntriesInBatchRequestException")?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyEntriesInBatchRequestException {}
+/// See [`TooManyEntriesInBatchRequestException`](crate::error::TooManyEntriesInBatchRequestException)
+pub mod too_many_entries_in_batch_request_exception {
+    /// A builder for [`TooManyEntriesInBatchRequestException`](crate::error::TooManyEntriesInBatchRequestException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TooManyEntriesInBatchRequestException`](crate::error::TooManyEntriesInBatchRequestException)
+        pub fn build(self) -> crate::error::TooManyEntriesInBatchRequestException {
+            crate::error::TooManyEntriesInBatchRequestException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl TooManyEntriesInBatchRequestException {
+    /// Creates a new builder-style object to manufacture [`TooManyEntriesInBatchRequestException`](crate::error::TooManyEntriesInBatchRequestException)
+    pub fn builder() -> crate::error::too_many_entries_in_batch_request_exception::Builder {
+        crate::error::too_many_entries_in_batch_request_exception::Builder::default()
+    }
+}
+
 /// <p>Exception error indicating platform application disabled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6420,8 +6757,8 @@ impl PlatformApplicationDisabledException {
 impl std::fmt::Display for PlatformApplicationDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PlatformApplicationDisabledException")?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
@@ -6487,8 +6824,8 @@ impl KmsThrottlingException {
 impl std::fmt::Display for KmsThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsThrottlingException [KMSThrottlingException]")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
@@ -6551,8 +6888,8 @@ impl KmsOptInRequired {
 impl std::fmt::Display for KmsOptInRequired {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsOptInRequired [KMSOptInRequired]")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
@@ -6616,8 +6953,8 @@ impl KmsNotFoundException {
 impl std::fmt::Display for KmsNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsNotFoundException [KMSNotFoundException]")?;
-        if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
@@ -6683,8 +7020,8 @@ impl KmsInvalidStateException {
 impl std::fmt::Display for KmsInvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsInvalidStateException [KMSInvalidStateException]")?;
-        if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+        if let Some(inner_20) = &self.message {
+            write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
@@ -6748,8 +7085,8 @@ impl KmsDisabledException {
 impl std::fmt::Display for KmsDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsDisabledException [KMSDisabledException]")?;
-        if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+        if let Some(inner_21) = &self.message {
+            write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
@@ -6813,8 +7150,8 @@ impl KmsAccessDeniedException {
 impl std::fmt::Display for KmsAccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsAccessDeniedException [KMSAccessDeniedException]")?;
-        if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+        if let Some(inner_22) = &self.message {
+            write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
@@ -6854,12 +7191,11 @@ impl KmsAccessDeniedException {
     }
 }
 
-/// <p>Indicates that a request parameter does not comply with the associated
-/// constraints.</p>
+/// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterValueException {
-    /// <p>The parameter value is invalid.</p>
+    /// <p>The parameter of an entry in a request doesn't abide by the specification. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterValueException {
@@ -6878,8 +7214,8 @@ impl InvalidParameterValueException {
 impl std::fmt::Display for InvalidParameterValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterValueException")?;
-        if let Some(inner_22) = &self.message {
-            write!(f, ": {}", inner_22)?;
+        if let Some(inner_23) = &self.message {
+            write!(f, ": {}", inner_23)?;
         }
         Ok(())
     }
@@ -6894,12 +7230,12 @@ pub mod invalid_parameter_value_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The parameter value is invalid.</p>
+        /// <p>The parameter of an entry in a request doesn't abide by the specification. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The parameter value is invalid.</p>
+        /// <p>The parameter of an entry in a request doesn't abide by the specification. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6916,6 +7252,70 @@ impl InvalidParameterValueException {
     /// Creates a new builder-style object to manufacture [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
     pub fn builder() -> crate::error::invalid_parameter_value_exception::Builder {
         crate::error::invalid_parameter_value_exception::Builder::default()
+    }
+}
+
+/// <p>The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidBatchEntryIdException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidBatchEntryIdException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidBatchEntryIdException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidBatchEntryIdException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidBatchEntryIdException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidBatchEntryIdException")?;
+        if let Some(inner_24) = &self.message {
+            write!(f, ": {}", inner_24)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidBatchEntryIdException {}
+/// See [`InvalidBatchEntryIdException`](crate::error::InvalidBatchEntryIdException)
+pub mod invalid_batch_entry_id_exception {
+    /// A builder for [`InvalidBatchEntryIdException`](crate::error::InvalidBatchEntryIdException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidBatchEntryIdException`](crate::error::InvalidBatchEntryIdException)
+        pub fn build(self) -> crate::error::InvalidBatchEntryIdException {
+            crate::error::InvalidBatchEntryIdException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidBatchEntryIdException {
+    /// Creates a new builder-style object to manufacture [`InvalidBatchEntryIdException`](crate::error::InvalidBatchEntryIdException)
+    pub fn builder() -> crate::error::invalid_batch_entry_id_exception::Builder {
+        crate::error::invalid_batch_entry_id_exception::Builder::default()
     }
 }
 
@@ -6942,8 +7342,8 @@ impl EndpointDisabledException {
 impl std::fmt::Display for EndpointDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointDisabledException")?;
-        if let Some(inner_23) = &self.message {
-            write!(f, ": {}", inner_23)?;
+        if let Some(inner_25) = &self.message {
+            write!(f, ": {}", inner_25)?;
         }
         Ok(())
     }
@@ -6983,6 +7383,198 @@ impl EndpointDisabledException {
     }
 }
 
+/// <p>The batch request doesn't contain any entries.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EmptyBatchRequestException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for EmptyBatchRequestException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EmptyBatchRequestException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl EmptyBatchRequestException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for EmptyBatchRequestException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "EmptyBatchRequestException")?;
+        if let Some(inner_26) = &self.message {
+            write!(f, ": {}", inner_26)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for EmptyBatchRequestException {}
+/// See [`EmptyBatchRequestException`](crate::error::EmptyBatchRequestException)
+pub mod empty_batch_request_exception {
+    /// A builder for [`EmptyBatchRequestException`](crate::error::EmptyBatchRequestException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EmptyBatchRequestException`](crate::error::EmptyBatchRequestException)
+        pub fn build(self) -> crate::error::EmptyBatchRequestException {
+            crate::error::EmptyBatchRequestException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl EmptyBatchRequestException {
+    /// Creates a new builder-style object to manufacture [`EmptyBatchRequestException`](crate::error::EmptyBatchRequestException)
+    pub fn builder() -> crate::error::empty_batch_request_exception::Builder {
+        crate::error::empty_batch_request_exception::Builder::default()
+    }
+}
+
+/// <p>The length of all the batch messages put together is more than the limit.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchRequestTooLongException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for BatchRequestTooLongException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchRequestTooLongException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl BatchRequestTooLongException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for BatchRequestTooLongException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "BatchRequestTooLongException")?;
+        if let Some(inner_27) = &self.message {
+            write!(f, ": {}", inner_27)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for BatchRequestTooLongException {}
+/// See [`BatchRequestTooLongException`](crate::error::BatchRequestTooLongException)
+pub mod batch_request_too_long_exception {
+    /// A builder for [`BatchRequestTooLongException`](crate::error::BatchRequestTooLongException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchRequestTooLongException`](crate::error::BatchRequestTooLongException)
+        pub fn build(self) -> crate::error::BatchRequestTooLongException {
+            crate::error::BatchRequestTooLongException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl BatchRequestTooLongException {
+    /// Creates a new builder-style object to manufacture [`BatchRequestTooLongException`](crate::error::BatchRequestTooLongException)
+    pub fn builder() -> crate::error::batch_request_too_long_exception::Builder {
+        crate::error::batch_request_too_long_exception::Builder::default()
+    }
+}
+
+/// <p>Two or more batch entries in the request have the same <code>Id</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchEntryIdsNotDistinctException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for BatchEntryIdsNotDistinctException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchEntryIdsNotDistinctException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl BatchEntryIdsNotDistinctException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for BatchEntryIdsNotDistinctException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "BatchEntryIdsNotDistinctException")?;
+        if let Some(inner_28) = &self.message {
+            write!(f, ": {}", inner_28)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for BatchEntryIdsNotDistinctException {}
+/// See [`BatchEntryIdsNotDistinctException`](crate::error::BatchEntryIdsNotDistinctException)
+pub mod batch_entry_ids_not_distinct_exception {
+    /// A builder for [`BatchEntryIdsNotDistinctException`](crate::error::BatchEntryIdsNotDistinctException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchEntryIdsNotDistinctException`](crate::error::BatchEntryIdsNotDistinctException)
+        pub fn build(self) -> crate::error::BatchEntryIdsNotDistinctException {
+            crate::error::BatchEntryIdsNotDistinctException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl BatchEntryIdsNotDistinctException {
+    /// Creates a new builder-style object to manufacture [`BatchEntryIdsNotDistinctException`](crate::error::BatchEntryIdsNotDistinctException)
+    pub fn builder() -> crate::error::batch_entry_ids_not_distinct_exception::Builder {
+        crate::error::batch_entry_ids_not_distinct_exception::Builder::default()
+    }
+}
+
 /// <p>Indicates that a parameter in the request is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7006,8 +7598,8 @@ impl ValidationException {
 impl std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ValidationException")?;
-        if let Some(inner_24) = &self.message {
-            write!(f, ": {}", inner_24)?;
+        if let Some(inner_29) = &self.message {
+            write!(f, ": {}", inner_29)?;
         }
         Ok(())
     }
@@ -7071,8 +7663,8 @@ impl UserErrorException {
 impl std::fmt::Display for UserErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserErrorException")?;
-        if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
+        if let Some(inner_30) = &self.message {
+            write!(f, ": {}", inner_30)?;
         }
         Ok(())
     }
@@ -7135,8 +7727,8 @@ impl TopicLimitExceededException {
 impl std::fmt::Display for TopicLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TopicLimitExceededException")?;
-        if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+        if let Some(inner_31) = &self.message {
+            write!(f, ": {}", inner_31)?;
         }
         Ok(())
     }
@@ -7177,7 +7769,7 @@ impl TopicLimitExceededException {
 }
 
 /// <p>Indicates that the specified phone number opted out of receiving SMS messages from
-/// your account. You can't send SMS messages to phone numbers that opt out.</p>
+/// your Amazon Web Services account. You can't send SMS messages to phone numbers that opt out.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OptedOutException {
@@ -7200,8 +7792,8 @@ impl OptedOutException {
 impl std::fmt::Display for OptedOutException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OptedOutException")?;
-        if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+        if let Some(inner_32) = &self.message {
+            write!(f, ": {}", inner_32)?;
         }
         Ok(())
     }

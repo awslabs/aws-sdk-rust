@@ -1,0 +1,12 @@
+{
+  "name": "imds-config-with-no-creds",
+  "docs": "profile provider should hit IMDS if a profile contains config data but no credentials.",
+  "result": {
+    "Ok": {
+      "access_key_id": "ASIARTEST",
+      "secret_access_key": "testsecret",
+      "session_token": "testtoken",
+      "expiry": 1632197813
+    }
+  }
+}

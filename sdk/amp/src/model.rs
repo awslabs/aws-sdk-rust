@@ -153,7 +153,7 @@ pub struct WorkspaceSummary {
     /// The status of this workspace.
     pub status: std::option::Option<crate::model::WorkspaceStatus>,
     /// The time when the workspace was created.
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// The tags of this workspace.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -176,7 +176,7 @@ impl WorkspaceSummary {
         self.status.as_ref()
     }
     /// The time when the workspace was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// The tags of this workspace.
@@ -209,7 +209,7 @@ pub mod workspace_summary {
         pub(crate) alias: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::WorkspaceStatus>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -259,14 +259,14 @@ pub mod workspace_summary {
             self
         }
         /// The time when the workspace was created.
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// The time when the workspace was created.
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -461,7 +461,7 @@ pub struct WorkspaceDescription {
     /// Prometheus endpoint URI.
     pub prometheus_endpoint: std::option::Option<std::string::String>,
     /// The time when the workspace was created.
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// The tags of this workspace.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -488,7 +488,7 @@ impl WorkspaceDescription {
         self.prometheus_endpoint.as_deref()
     }
     /// The time when the workspace was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// The tags of this workspace.
@@ -523,7 +523,7 @@ pub mod workspace_description {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::WorkspaceStatus>,
         pub(crate) prometheus_endpoint: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -586,14 +586,14 @@ pub mod workspace_description {
             self
         }
         /// The time when the workspace was created.
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// The time when the workspace was created.
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -655,9 +655,9 @@ pub struct RuleGroupsNamespaceSummary {
     /// The status of rule groups namespace.
     pub status: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
     /// The time when the rule groups namespace was created.
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// The time when the rule groups namespace was modified.
-    pub modified_at: std::option::Option<aws_smithy_types::Instant>,
+    pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// The tags of this rule groups namespace.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -676,11 +676,11 @@ impl RuleGroupsNamespaceSummary {
         self.status.as_ref()
     }
     /// The time when the rule groups namespace was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// The time when the rule groups namespace was modified.
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
     /// The tags of this rule groups namespace.
@@ -712,8 +712,8 @@ pub mod rule_groups_namespace_summary {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) modified_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) modified_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -753,27 +753,27 @@ pub mod rule_groups_namespace_summary {
             self
         }
         /// The time when the rule groups namespace was created.
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// The time when the rule groups namespace was created.
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// The time when the rule groups namespace was modified.
-        pub fn modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.modified_at = Some(input);
             self
         }
         /// The time when the rule groups namespace was modified.
         pub fn set_modified_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.modified_at = input;
             self
@@ -993,9 +993,9 @@ pub struct RuleGroupsNamespaceDescription {
     /// The rule groups namespace data.
     pub data: std::option::Option<aws_smithy_types::Blob>,
     /// The time when the rule groups namespace was created.
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// The time when the rule groups namespace was modified.
-    pub modified_at: std::option::Option<aws_smithy_types::Instant>,
+    pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// The tags of this rule groups namespace.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1018,11 +1018,11 @@ impl RuleGroupsNamespaceDescription {
         self.data.as_ref()
     }
     /// The time when the rule groups namespace was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// The time when the rule groups namespace was modified.
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
     /// The tags of this rule groups namespace.
@@ -1056,8 +1056,8 @@ pub mod rule_groups_namespace_description {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
         pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) modified_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) modified_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -1107,27 +1107,27 @@ pub mod rule_groups_namespace_description {
             self
         }
         /// The time when the rule groups namespace was created.
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// The time when the rule groups namespace was created.
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// The time when the rule groups namespace was modified.
-        pub fn modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.modified_at = Some(input);
             self
         }
         /// The time when the rule groups namespace was modified.
         pub fn set_modified_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.modified_at = input;
             self
@@ -1349,9 +1349,9 @@ pub struct AlertManagerDefinitionDescription {
     /// The alert manager definition.
     pub data: std::option::Option<aws_smithy_types::Blob>,
     /// The time when the alert manager definition was created.
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// The time when the alert manager definition was modified.
-    pub modified_at: std::option::Option<aws_smithy_types::Instant>,
+    pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AlertManagerDefinitionDescription {
     /// The status of alert manager definition.
@@ -1363,11 +1363,11 @@ impl AlertManagerDefinitionDescription {
         self.data.as_ref()
     }
     /// The time when the alert manager definition was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// The time when the alert manager definition was modified.
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
 }
@@ -1389,8 +1389,8 @@ pub mod alert_manager_definition_description {
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
         pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) modified_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) modified_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// The status of alert manager definition.
@@ -1417,27 +1417,27 @@ pub mod alert_manager_definition_description {
             self
         }
         /// The time when the alert manager definition was created.
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// The time when the alert manager definition was created.
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// The time when the alert manager definition was modified.
-        pub fn modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.modified_at = Some(input);
             self
         }
         /// The time when the alert manager definition was modified.
         pub fn set_modified_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.modified_at = input;
             self

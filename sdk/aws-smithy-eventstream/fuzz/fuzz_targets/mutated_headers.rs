@@ -6,7 +6,7 @@
 #![no_main]
 
 use aws_smithy_eventstream::frame::{Header, HeaderValue, Message};
-use aws_smithy_types::Instant;
+use aws_smithy_types::DateTime;
 use bytes::{Buf, BufMut};
 use crc32fast::Hasher as Crc;
 use libfuzzer_sys::{fuzz_mutator, fuzz_target};
@@ -35,7 +35,7 @@ fn mutate(data: &mut [u8], size: usize, max_size: usize) -> usize {
             .add_header(Header::new("str", HeaderValue::String("some str".into())))
             .add_header(Header::new(
                 "time",
-                HeaderValue::Timestamp(Instant::from_epoch_seconds(5_000_000_000)),
+                HeaderValue::Timestamp(DateTime::from_secs(5_000_000_000)),
             ))
             .add_header(Header::new(
                 "uuid",

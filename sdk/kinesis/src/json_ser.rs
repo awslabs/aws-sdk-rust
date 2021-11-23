@@ -197,7 +197,7 @@ pub fn serialize_structure_crate_input_get_shard_iterator_input(
     if let Some(var_36) = &input.timestamp {
         object
             .key("Timestamp")
-            .instant(var_36, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_36, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -240,7 +240,7 @@ pub fn serialize_structure_crate_input_list_shards_input(
     if let Some(var_43) = &input.stream_creation_timestamp {
         object
             .key("StreamCreationTimestamp")
-            .instant(var_43, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_43, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_44) = &input.shard_filter {
         let mut object_45 = object.key("ShardFilter").start_object();
@@ -269,7 +269,7 @@ pub fn serialize_structure_crate_input_list_stream_consumers_input(
     if let Some(var_49) = &input.stream_creation_timestamp {
         object
             .key("StreamCreationTimestamp")
-            .instant(var_49, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_49, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -485,7 +485,7 @@ pub fn serialize_structure_crate_model_shard_filter(
     if let Some(var_88) = &input.timestamp {
         object
             .key("Timestamp")
-            .instant(var_88, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_88, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

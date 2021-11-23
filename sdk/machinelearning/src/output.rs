@@ -421,9 +421,9 @@ pub struct GetMlModelOutput {
     /// <p>The AWS user account from which the <code>MLModel</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     pub created_by_iam_user: std::option::Option<std::string::String>,
     /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The current status of the <code>MLModel</code>. This element can have one of the following values:</p>
@@ -527,7 +527,7 @@ pub struct GetMlModelOutput {
     /// such as <code>false</code>.</p>
     pub score_threshold: std::option::Option<f32>,
     /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
-    pub score_threshold_last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub score_threshold_last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A link to the file that contains logs of the <code>CreateMLModel</code> operation.</p>
     pub log_uri: std::option::Option<std::string::String>,
     /// <p>A description of the most recent details about accessing the <code>MLModel</code>.</p>
@@ -535,9 +535,9 @@ pub struct GetMlModelOutput {
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>MLModel</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>MLModel</code> is in the <code>COMPLETED</code> state.</p>
     pub compute_time: std::option::Option<i64>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    pub finished_at: std::option::Option<aws_smithy_types::Instant>,
+    pub finished_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>MLModel</code> is in the <code>PENDING</code> state.</p>
-    pub started_at: std::option::Option<aws_smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The recipe to use when training the <code>MLModel</code>. The <code>Recipe</code>
     /// provides detailed information about the observation data to use during training, and
     /// manipulations to perform on the observation data during training.</p>
@@ -564,11 +564,11 @@ impl GetMlModelOutput {
         self.created_by_iam_user.as_deref()
     }
     /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
@@ -694,7 +694,7 @@ impl GetMlModelOutput {
     /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
     pub fn score_threshold_last_updated_at(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.score_threshold_last_updated_at.as_ref()
     }
     /// <p>A link to the file that contains logs of the <code>CreateMLModel</code> operation.</p>
@@ -710,11 +710,11 @@ impl GetMlModelOutput {
         self.compute_time
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.finished_at.as_ref()
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>MLModel</code> is in the <code>PENDING</code> state.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The recipe to use when training the <code>MLModel</code>. The <code>Recipe</code>
@@ -771,8 +771,8 @@ pub mod get_ml_model_output {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
         pub(crate) training_data_source_id: std::option::Option<std::string::String>,
         pub(crate) created_by_iam_user: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::EntityStatus>,
         pub(crate) size_in_bytes: std::option::Option<i64>,
@@ -783,12 +783,12 @@ pub mod get_ml_model_output {
         pub(crate) input_data_location_s3: std::option::Option<std::string::String>,
         pub(crate) ml_model_type: std::option::Option<crate::model::MlModelType>,
         pub(crate) score_threshold: std::option::Option<f32>,
-        pub(crate) score_threshold_last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) score_threshold_last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) log_uri: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) compute_time: std::option::Option<i64>,
-        pub(crate) finished_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) finished_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) recipe: std::option::Option<std::string::String>,
         pub(crate) schema: std::option::Option<std::string::String>,
     }
@@ -832,27 +832,27 @@ pub mod get_ml_model_output {
             self
         }
         /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -1135,14 +1135,17 @@ pub mod get_ml_model_output {
             self
         }
         /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
-        pub fn score_threshold_last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn score_threshold_last_updated_at(
+            mut self,
+            input: aws_smithy_types::DateTime,
+        ) -> Self {
             self.score_threshold_last_updated_at = Some(input);
             self
         }
         /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
         pub fn set_score_threshold_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.score_threshold_last_updated_at = input;
             self
@@ -1178,27 +1181,27 @@ pub mod get_ml_model_output {
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-        pub fn finished_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn finished_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.finished_at = Some(input);
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
         pub fn set_finished_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.finished_at = input;
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>MLModel</code> is in the <code>PENDING</code> state.</p>
-        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started_at = Some(input);
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>MLModel</code> is in the <code>PENDING</code> state.</p>
         pub fn set_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started_at = input;
             self
@@ -1285,9 +1288,9 @@ pub struct GetEvaluationOutput {
     /// <p>The AWS user account that invoked the evaluation. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     pub created_by_iam_user: std::option::Option<std::string::String>,
     /// <p>The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the evaluation. This element can have one of the following values:</p>
@@ -1338,9 +1341,9 @@ pub struct GetEvaluationOutput {
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>Evaluation</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>Evaluation</code> is in the <code>COMPLETED</code> state.</p>
     pub compute_time: std::option::Option<i64>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>Evaluation</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    pub finished_at: std::option::Option<aws_smithy_types::Instant>,
+    pub finished_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>Evaluation</code> is in the <code>PENDING</code> state.</p>
-    pub started_at: std::option::Option<aws_smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetEvaluationOutput {
     /// <p>The evaluation ID which is same as the <code>EvaluationId</code> in the request.</p>
@@ -1364,11 +1367,11 @@ impl GetEvaluationOutput {
         self.created_by_iam_user.as_deref()
     }
     /// <p>The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
@@ -1433,11 +1436,11 @@ impl GetEvaluationOutput {
         self.compute_time
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>Evaluation</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.finished_at.as_ref()
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>Evaluation</code> is in the <code>PENDING</code> state.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
 }
@@ -1473,16 +1476,16 @@ pub mod get_evaluation_output {
         pub(crate) evaluation_data_source_id: std::option::Option<std::string::String>,
         pub(crate) input_data_location_s3: std::option::Option<std::string::String>,
         pub(crate) created_by_iam_user: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::EntityStatus>,
         pub(crate) performance_metrics: std::option::Option<crate::model::PerformanceMetrics>,
         pub(crate) log_uri: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) compute_time: std::option::Option<i64>,
-        pub(crate) finished_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) finished_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The evaluation ID which is same as the <code>EvaluationId</code> in the request.</p>
@@ -1548,27 +1551,27 @@ pub mod get_evaluation_output {
             self
         }
         /// <p>The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -1714,27 +1717,27 @@ pub mod get_evaluation_output {
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>Evaluation</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-        pub fn finished_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn finished_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.finished_at = Some(input);
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>Evaluation</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
         pub fn set_finished_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.finished_at = input;
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>Evaluation</code> is in the <code>PENDING</code> state.</p>
-        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started_at = Some(input);
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>Evaluation</code> is in the <code>PENDING</code> state.</p>
         pub fn set_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started_at = input;
             self
@@ -1782,9 +1785,9 @@ pub struct GetDataSourceOutput {
     /// <p>The AWS user account from which the <code>DataSource</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     pub created_by_iam_user: std::option::Option<std::string::String>,
     /// <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to the <code>DataSource</code>. The time is expressed in epoch time.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total size of observations in the data files.</p>
     pub data_size_in_bytes: std::option::Option<i64>,
     /// <p>The number of data files referenced by the <code>DataSource</code>.</p>
@@ -1832,9 +1835,9 @@ pub struct GetDataSourceOutput {
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>DataSource</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>DataSource</code> is in the <code>COMPLETED</code> state and the <code>ComputeStatistics</code> is set to true.</p>
     pub compute_time: std::option::Option<i64>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>DataSource</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    pub finished_at: std::option::Option<aws_smithy_types::Instant>,
+    pub finished_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>DataSource</code> is in the <code>PENDING</code> state.</p>
-    pub started_at: std::option::Option<aws_smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
     /// <p>
     /// <b>Note:</b> This parameter is provided as part of the verbose format.</p>
@@ -1859,11 +1862,11 @@ impl GetDataSourceOutput {
         self.created_by_iam_user.as_deref()
     }
     /// <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time of the most recent edit to the <code>DataSource</code>. The time is expressed in epoch time.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The total size of observations in the data files.</p>
@@ -1935,11 +1938,11 @@ impl GetDataSourceOutput {
         self.compute_time
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>DataSource</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.finished_at.as_ref()
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>DataSource</code> is in the <code>PENDING</code> state.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
@@ -1985,8 +1988,8 @@ pub mod get_data_source_output {
         pub(crate) data_location_s3: std::option::Option<std::string::String>,
         pub(crate) data_rearrangement: std::option::Option<std::string::String>,
         pub(crate) created_by_iam_user: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_size_in_bytes: std::option::Option<i64>,
         pub(crate) number_of_files: std::option::Option<i64>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1998,8 +2001,8 @@ pub mod get_data_source_output {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) compute_statistics: std::option::Option<bool>,
         pub(crate) compute_time: std::option::Option<i64>,
-        pub(crate) finished_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) finished_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_source_schema: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2058,27 +2061,27 @@ pub mod get_data_source_output {
             self
         }
         /// <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time of the most recent edit to the <code>DataSource</code>. The time is expressed in epoch time.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The time of the most recent edit to the <code>DataSource</code>. The time is expressed in epoch time.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -2251,27 +2254,27 @@ pub mod get_data_source_output {
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>DataSource</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-        pub fn finished_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn finished_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.finished_at = Some(input);
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>DataSource</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
         pub fn set_finished_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.finished_at = input;
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>DataSource</code> is in the <code>PENDING</code> state.</p>
-        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started_at = Some(input);
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>DataSource</code> is in the <code>PENDING</code> state.</p>
         pub fn set_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started_at = input;
             self
@@ -2344,9 +2347,9 @@ pub struct GetBatchPredictionOutput {
     /// <p>The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     pub created_by_iam_user: std::option::Option<std::string::String>,
     /// <p>The time when the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the <code>BatchPrediction</code>, which can be one of the following values:</p>
@@ -2382,9 +2385,9 @@ pub struct GetBatchPredictionOutput {
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>BatchPrediction</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>BatchPrediction</code> is in the <code>COMPLETED</code> state.</p>
     pub compute_time: std::option::Option<i64>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>BatchPrediction</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    pub finished_at: std::option::Option<aws_smithy_types::Instant>,
+    pub finished_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>BatchPrediction</code> is in the <code>PENDING</code> state.</p>
-    pub started_at: std::option::Option<aws_smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of total records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
     pub total_record_count: std::option::Option<i64>,
     /// <p>The number of invalid records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
@@ -2414,11 +2417,11 @@ impl GetBatchPredictionOutput {
         self.created_by_iam_user.as_deref()
     }
     /// <p>The time when the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
@@ -2468,11 +2471,11 @@ impl GetBatchPredictionOutput {
         self.compute_time
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>BatchPrediction</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.finished_at.as_ref()
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>BatchPrediction</code> is in the <code>PENDING</code> state.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The number of total records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
@@ -2521,16 +2524,16 @@ pub mod get_batch_prediction_output {
         pub(crate) batch_prediction_data_source_id: std::option::Option<std::string::String>,
         pub(crate) input_data_location_s3: std::option::Option<std::string::String>,
         pub(crate) created_by_iam_user: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::EntityStatus>,
         pub(crate) output_uri: std::option::Option<std::string::String>,
         pub(crate) log_uri: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) compute_time: std::option::Option<i64>,
-        pub(crate) finished_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) finished_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) total_record_count: std::option::Option<i64>,
         pub(crate) invalid_record_count: std::option::Option<i64>,
     }
@@ -2605,27 +2608,27 @@ pub mod get_batch_prediction_output {
             self
         }
         /// <p>The time when the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -2738,27 +2741,27 @@ pub mod get_batch_prediction_output {
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>BatchPrediction</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-        pub fn finished_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn finished_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.finished_at = Some(input);
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>BatchPrediction</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
         pub fn set_finished_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.finished_at = input;
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>BatchPrediction</code> is in the <code>PENDING</code> state.</p>
-        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started_at = Some(input);
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>BatchPrediction</code> is in the <code>PENDING</code> state.</p>
         pub fn set_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started_at = input;
             self

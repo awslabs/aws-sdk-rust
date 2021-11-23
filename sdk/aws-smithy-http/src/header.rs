@@ -15,9 +15,9 @@ use std::str::FromStr;
 use http::header::{HeaderName, ValueIter};
 use http::HeaderValue;
 
-use aws_smithy_types::instant::Format;
+use aws_smithy_types::date_time::Format;
 use aws_smithy_types::primitive::Parse;
-use aws_smithy_types::Instant;
+use aws_smithy_types::DateTime;
 
 #[derive(Debug, Eq, PartialEq)]
 #[non_exhaustive]
@@ -52,19 +52,19 @@ impl Error for ParseError {}
 
 /// Read all the dates from the header map at `key` according the `format`
 ///
-/// This is separate from `read_many` below because we need to invoke `Instant::read` to take advantage
+/// This is separate from `read_many` below because we need to invoke `DateTime::read` to take advantage
 /// of comma-aware parsing
 pub fn many_dates(
     values: ValueIter<HeaderValue>,
     format: Format,
-) -> Result<Vec<Instant>, ParseError> {
+) -> Result<Vec<DateTime>, ParseError> {
     let mut out = vec![];
     for header in values {
         let mut header = header
             .to_str()
             .map_err(|_| ParseError::new_with_message("header was not valid utf-8 string"))?;
         while !header.is_empty() {
-            let (v, next) = Instant::read(header, format, ',').map_err(|err| {
+            let (v, next) = DateTime::read(header, format, ',').map_err(|err| {
                 ParseError::new_with_message(format!("header could not be parsed as date: {}", err))
             })?;
             out.push(v);
@@ -114,7 +114,7 @@ fn read_many<T>(
     for header in values {
         let mut header = header.as_bytes();
         while !header.is_empty() {
-            let (v, next) = read_one(&header, &f)?;
+            let (v, next) = read_one(header, &f)?;
             out.push(v);
             header = next;
         }
@@ -183,7 +183,7 @@ fn split_at_delim(s: &[u8]) -> (&[u8], &[u8]) {
 
 fn then_delim(s: &[u8]) -> Result<&[u8], ParseError> {
     if s.is_empty() {
-        Ok(&s)
+        Ok(s)
     } else if s.starts_with(b",") {
         Ok(&s[1..])
     } else {

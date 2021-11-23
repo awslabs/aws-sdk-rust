@@ -1208,7 +1208,7 @@ pub struct RemediationException {
     /// <p>An explanation of an remediation exception.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time when the remediation exception will be deleted.</p>
-    pub expiration_time: std::option::Option<aws_smithy_types::Instant>,
+    pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RemediationException {
     /// <p>The name of the Config rule.</p>
@@ -1228,7 +1228,7 @@ impl RemediationException {
         self.message.as_deref()
     }
     /// <p>The time when the remediation exception will be deleted.</p>
-    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
 }
@@ -1253,7 +1253,7 @@ pub mod remediation_exception {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) expiration_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the Config rule.</p>
@@ -1303,14 +1303,14 @@ pub mod remediation_exception {
             self
         }
         /// <p>The time when the remediation exception will be deleted.</p>
-        pub fn expiration_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_time = Some(input);
             self
         }
         /// <p>The time when the remediation exception will be deleted.</p>
         pub fn set_expiration_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiration_time = input;
             self
@@ -3140,7 +3140,7 @@ pub struct ExternalEvaluation {
     /// <p>Supplementary information about the reason of compliance. For example, this task was completed on a specific date.</p>
     pub annotation: std::option::Option<std::string::String>,
     /// <p>The time when the compliance was recorded. </p>
-    pub ordering_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub ordering_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ExternalEvaluation {
     /// <p>The evaluated compliance resource type. Config accepts <code>AWS::::Account</code> resource type.</p>
@@ -3160,7 +3160,7 @@ impl ExternalEvaluation {
         self.annotation.as_deref()
     }
     /// <p>The time when the compliance was recorded. </p>
-    pub fn ordering_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn ordering_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ordering_timestamp.as_ref()
     }
 }
@@ -3185,7 +3185,7 @@ pub mod external_evaluation {
         pub(crate) compliance_resource_id: std::option::Option<std::string::String>,
         pub(crate) compliance_type: std::option::Option<crate::model::ComplianceType>,
         pub(crate) annotation: std::option::Option<std::string::String>,
-        pub(crate) ordering_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) ordering_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The evaluated compliance resource type. Config accepts <code>AWS::::Account</code> resource type.</p>
@@ -3238,14 +3238,14 @@ pub mod external_evaluation {
             self
         }
         /// <p>The time when the compliance was recorded. </p>
-        pub fn ordering_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn ordering_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.ordering_timestamp = Some(input);
             self
         }
         /// <p>The time when the compliance was recorded. </p>
         pub fn set_ordering_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.ordering_timestamp = input;
             self
@@ -3367,7 +3367,7 @@ pub struct Evaluation {
     /// For periodic evaluations, the time indicates when Config
     /// triggered the evaluation at the frequency that you specified (for
     /// example, every 24 hours).</p>
-    pub ordering_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub ordering_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Evaluation {
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
@@ -3403,7 +3403,7 @@ impl Evaluation {
     /// For periodic evaluations, the time indicates when Config
     /// triggered the evaluation at the frequency that you specified (for
     /// example, every 24 hours).</p>
-    pub fn ordering_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn ordering_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ordering_timestamp.as_ref()
     }
 }
@@ -3428,7 +3428,7 @@ pub mod evaluation {
         pub(crate) compliance_resource_id: std::option::Option<std::string::String>,
         pub(crate) compliance_type: std::option::Option<crate::model::ComplianceType>,
         pub(crate) annotation: std::option::Option<std::string::String>,
-        pub(crate) ordering_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) ordering_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The type of Amazon Web Services resource that was evaluated.</p>
@@ -3509,7 +3509,7 @@ pub mod evaluation {
         /// For periodic evaluations, the time indicates when Config
         /// triggered the evaluation at the frequency that you specified (for
         /// example, every 24 hours).</p>
-        pub fn ordering_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn ordering_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.ordering_timestamp = Some(input);
             self
         }
@@ -3520,7 +3520,7 @@ pub mod evaluation {
         /// example, every 24 hours).</p>
         pub fn set_ordering_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.ordering_timestamp = input;
             self
@@ -4308,9 +4308,9 @@ pub struct ConfigurationAggregator {
         std::option::Option<crate::model::OrganizationAggregationSource>,
     /// <p>The time stamp when the configuration aggregator was
     /// created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time of the last update.</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Amazon Web Services service that created the configuration aggregator.</p>
     pub created_by: std::option::Option<std::string::String>,
 }
@@ -4339,11 +4339,11 @@ impl ConfigurationAggregator {
     }
     /// <p>The time stamp when the configuration aggregator was
     /// created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time of the last update.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Amazon Web Services service that created the configuration aggregator.</p>
@@ -4388,8 +4388,8 @@ pub mod configuration_aggregator {
             std::option::Option<std::vec::Vec<crate::model::AccountAggregationSource>>,
         pub(crate) organization_aggregation_source:
             std::option::Option<crate::model::OrganizationAggregationSource>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4469,7 +4469,7 @@ pub mod configuration_aggregator {
         }
         /// <p>The time stamp when the configuration aggregator was
         /// created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
@@ -4477,20 +4477,20 @@ pub mod configuration_aggregator {
         /// created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time of the last update.</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
         /// <p>The time of the last update.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -6171,7 +6171,7 @@ pub struct AggregationAuthorization {
     pub authorized_aws_region: std::option::Option<std::string::String>,
     /// <p>The time stamp when the aggregation authorization was
     /// created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AggregationAuthorization {
     /// <p>The Amazon Resource Name (ARN) of the aggregation
@@ -6190,7 +6190,7 @@ impl AggregationAuthorization {
     }
     /// <p>The time stamp when the aggregation authorization was
     /// created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -6216,7 +6216,7 @@ pub mod aggregation_authorization {
         pub(crate) aggregation_authorization_arn: std::option::Option<std::string::String>,
         pub(crate) authorized_account_id: std::option::Option<std::string::String>,
         pub(crate) authorized_aws_region: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the aggregation
@@ -6267,7 +6267,7 @@ pub mod aggregation_authorization {
         }
         /// <p>The time stamp when the aggregation authorization was
         /// created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
@@ -6275,7 +6275,7 @@ pub mod aggregation_authorization {
         /// created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -6422,7 +6422,7 @@ pub struct ResourceIdentifier {
     /// <p>The custom name of the resource (if available).</p>
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>The time that the resource was deleted.</p>
-    pub resource_deletion_time: std::option::Option<aws_smithy_types::Instant>,
+    pub resource_deletion_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ResourceIdentifier {
     /// <p>The type of resource.</p>
@@ -6439,7 +6439,7 @@ impl ResourceIdentifier {
         self.resource_name.as_deref()
     }
     /// <p>The time that the resource was deleted.</p>
-    pub fn resource_deletion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn resource_deletion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.resource_deletion_time.as_ref()
     }
 }
@@ -6462,7 +6462,7 @@ pub mod resource_identifier {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) resource_name: std::option::Option<std::string::String>,
-        pub(crate) resource_deletion_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) resource_deletion_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The type of resource.</p>
@@ -6504,14 +6504,14 @@ pub mod resource_identifier {
             self
         }
         /// <p>The time that the resource was deleted.</p>
-        pub fn resource_deletion_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn resource_deletion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.resource_deletion_time = Some(input);
             self
         }
         /// <p>The time that the resource was deleted.</p>
         pub fn set_resource_deletion_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.resource_deletion_time = input;
             self
@@ -6802,7 +6802,7 @@ pub struct ConfigurationItem {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The time when the configuration recording was
     /// initiated.</p>
-    pub configuration_item_capture_time: std::option::Option<aws_smithy_types::Instant>,
+    pub configuration_item_capture_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The configuration item status. The valid values are:</p>
     ///
     /// <ul>
@@ -6849,7 +6849,7 @@ pub struct ConfigurationItem {
     /// <p>The Availability Zone associated with the resource.</p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The time stamp when the resource was created.</p>
-    pub resource_creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub resource_creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A mapping of key value tags associated with the
     /// resource.</p>
     pub tags:
@@ -6886,7 +6886,7 @@ impl ConfigurationItem {
     /// initiated.</p>
     pub fn configuration_item_capture_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.configuration_item_capture_time.as_ref()
     }
     /// <p>The configuration item status. The valid values are:</p>
@@ -6955,7 +6955,7 @@ impl ConfigurationItem {
         self.availability_zone.as_deref()
     }
     /// <p>The time stamp when the resource was created.</p>
-    pub fn resource_creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn resource_creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.resource_creation_time.as_ref()
     }
     /// <p>A mapping of key value tags associated with the
@@ -7035,7 +7035,7 @@ pub mod configuration_item {
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
-        pub(crate) configuration_item_capture_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) configuration_item_capture_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) configuration_item_status:
             std::option::Option<crate::model::ConfigurationItemStatus>,
         pub(crate) configuration_state_id: std::option::Option<std::string::String>,
@@ -7046,7 +7046,7 @@ pub mod configuration_item {
         pub(crate) resource_name: std::option::Option<std::string::String>,
         pub(crate) aws_region: std::option::Option<std::string::String>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
-        pub(crate) resource_creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) resource_creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -7082,7 +7082,10 @@ pub mod configuration_item {
         }
         /// <p>The time when the configuration recording was
         /// initiated.</p>
-        pub fn configuration_item_capture_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn configuration_item_capture_time(
+            mut self,
+            input: aws_smithy_types::DateTime,
+        ) -> Self {
             self.configuration_item_capture_time = Some(input);
             self
         }
@@ -7090,7 +7093,7 @@ pub mod configuration_item {
         /// initiated.</p>
         pub fn set_configuration_item_capture_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.configuration_item_capture_time = input;
             self
@@ -7264,14 +7267,14 @@ pub mod configuration_item {
             self
         }
         /// <p>The time stamp when the resource was created.</p>
-        pub fn resource_creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn resource_creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.resource_creation_time = Some(input);
             self
         }
         /// <p>The time stamp when the resource was created.</p>
         pub fn set_resource_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.resource_creation_time = input;
             self
@@ -7746,7 +7749,7 @@ pub struct OrganizationConformancePackDetailedStatus {
     /// has failed due to an error in the member account. </p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The timestamp of the last status update.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl OrganizationConformancePackDetailedStatus {
     /// <p>The 12-digit account ID of a member account.</p>
@@ -7815,7 +7818,7 @@ impl OrganizationConformancePackDetailedStatus {
         self.error_message.as_deref()
     }
     /// <p>The timestamp of the last status update.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -7842,7 +7845,7 @@ pub mod organization_conformance_pack_detailed_status {
         pub(crate) status: std::option::Option<crate::model::OrganizationResourceDetailedStatus>,
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The 12-digit account ID of a member account.</p>
@@ -7995,14 +7998,14 @@ pub mod organization_conformance_pack_detailed_status {
             self
         }
         /// <p>The timestamp of the last status update.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The timestamp of the last status update.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -8426,7 +8429,7 @@ pub struct MemberAccountStatus {
     /// <p>An error message indicating that config rule account creation or deletion has failed due to an error in the member account.</p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The timestamp of the last status update.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MemberAccountStatus {
     /// <p>The 12-digit account ID of a member account.</p>
@@ -8495,7 +8498,7 @@ impl MemberAccountStatus {
         self.error_message.as_deref()
     }
     /// <p>The timestamp of the last status update.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -8526,7 +8529,7 @@ pub mod member_account_status {
             std::option::Option<crate::model::MemberAccountRuleStatus>,
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The 12-digit account ID of a member account.</p>
@@ -8678,14 +8681,14 @@ pub mod member_account_status {
             self
         }
         /// <p>The timestamp of the last status update.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The timestamp of the last status update.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -9298,9 +9301,9 @@ pub struct ConformancePackEvaluationResult {
     /// <p>Uniquely identifies an evaluation result.</p>
     pub evaluation_result_identifier: std::option::Option<crate::model::EvaluationResultIdentifier>,
     /// <p>The time when Config rule evaluated Amazon Web Services resource.</p>
-    pub config_rule_invoked_time: std::option::Option<aws_smithy_types::Instant>,
+    pub config_rule_invoked_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when Config recorded the evaluation result. </p>
-    pub result_recorded_time: std::option::Option<aws_smithy_types::Instant>,
+    pub result_recorded_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Supplementary information about how the evaluation determined the compliance. </p>
     pub annotation: std::option::Option<std::string::String>,
 }
@@ -9318,11 +9321,11 @@ impl ConformancePackEvaluationResult {
         self.evaluation_result_identifier.as_ref()
     }
     /// <p>The time when Config rule evaluated Amazon Web Services resource.</p>
-    pub fn config_rule_invoked_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn config_rule_invoked_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.config_rule_invoked_time.as_ref()
     }
     /// <p>The time when Config recorded the evaluation result. </p>
-    pub fn result_recorded_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn result_recorded_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.result_recorded_time.as_ref()
     }
     /// <p>Supplementary information about how the evaluation determined the compliance. </p>
@@ -9354,8 +9357,8 @@ pub mod conformance_pack_evaluation_result {
             std::option::Option<crate::model::ConformancePackComplianceType>,
         pub(crate) evaluation_result_identifier:
             std::option::Option<crate::model::EvaluationResultIdentifier>,
-        pub(crate) config_rule_invoked_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) result_recorded_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) config_rule_invoked_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) result_recorded_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) annotation: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -9392,27 +9395,27 @@ pub mod conformance_pack_evaluation_result {
             self
         }
         /// <p>The time when Config rule evaluated Amazon Web Services resource.</p>
-        pub fn config_rule_invoked_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn config_rule_invoked_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.config_rule_invoked_time = Some(input);
             self
         }
         /// <p>The time when Config rule evaluated Amazon Web Services resource.</p>
         pub fn set_config_rule_invoked_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.config_rule_invoked_time = input;
             self
         }
         /// <p>The time when Config recorded the evaluation result. </p>
-        pub fn result_recorded_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn result_recorded_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.result_recorded_time = Some(input);
             self
         }
         /// <p>The time when Config recorded the evaluation result. </p>
         pub fn set_result_recorded_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.result_recorded_time = input;
             self
@@ -9457,7 +9460,7 @@ pub struct EvaluationResultIdentifier {
     /// resources. The time can indicate when Config delivered a
     /// configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which
     /// event triggered the evaluation.</p>
-    pub ordering_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub ordering_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EvaluationResultIdentifier {
     /// <p>Identifies an Config rule used to evaluate an Amazon Web Services resource,
@@ -9471,7 +9474,7 @@ impl EvaluationResultIdentifier {
     /// resources. The time can indicate when Config delivered a
     /// configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which
     /// event triggered the evaluation.</p>
-    pub fn ordering_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn ordering_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ordering_timestamp.as_ref()
     }
 }
@@ -9494,7 +9497,7 @@ pub mod evaluation_result_identifier {
     pub struct Builder {
         pub(crate) evaluation_result_qualifier:
             std::option::Option<crate::model::EvaluationResultQualifier>,
-        pub(crate) ordering_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) ordering_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Identifies an Config rule used to evaluate an Amazon Web Services resource,
@@ -9519,7 +9522,7 @@ pub mod evaluation_result_identifier {
         /// resources. The time can indicate when Config delivered a
         /// configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which
         /// event triggered the evaluation.</p>
-        pub fn ordering_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn ordering_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.ordering_timestamp = Some(input);
             self
         }
@@ -9529,7 +9532,7 @@ pub mod evaluation_result_identifier {
         /// event triggered the evaluation.</p>
         pub fn set_ordering_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.ordering_timestamp = input;
             self
@@ -9911,7 +9914,7 @@ pub struct ComplianceSummary {
     pub non_compliant_resource_count: std::option::Option<crate::model::ComplianceContributorCount>,
     /// <p>The time that Config created the compliance
     /// summary.</p>
-    pub compliance_summary_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub compliance_summary_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ComplianceSummary {
     /// <p>The number of Config rules or Amazon Web Services resources that are
@@ -9932,7 +9935,7 @@ impl ComplianceSummary {
     }
     /// <p>The time that Config created the compliance
     /// summary.</p>
-    pub fn compliance_summary_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn compliance_summary_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.compliance_summary_timestamp.as_ref()
     }
 }
@@ -9961,7 +9964,7 @@ pub mod compliance_summary {
             std::option::Option<crate::model::ComplianceContributorCount>,
         pub(crate) non_compliant_resource_count:
             std::option::Option<crate::model::ComplianceContributorCount>,
-        pub(crate) compliance_summary_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) compliance_summary_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The number of Config rules or Amazon Web Services resources that are
@@ -10006,7 +10009,7 @@ pub mod compliance_summary {
         }
         /// <p>The time that Config created the compliance
         /// summary.</p>
-        pub fn compliance_summary_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn compliance_summary_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.compliance_summary_timestamp = Some(input);
             self
         }
@@ -10014,7 +10017,7 @@ pub mod compliance_summary {
         /// summary.</p>
         pub fn set_compliance_summary_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.compliance_summary_timestamp = input;
             self
@@ -10133,10 +10136,10 @@ pub struct EvaluationResult {
     pub compliance_type: std::option::Option<crate::model::ComplianceType>,
     /// <p>The time when Config recorded the evaluation
     /// result.</p>
-    pub result_recorded_time: std::option::Option<aws_smithy_types::Instant>,
+    pub result_recorded_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the Config rule evaluated the Amazon Web Services
     /// resource.</p>
-    pub config_rule_invoked_time: std::option::Option<aws_smithy_types::Instant>,
+    pub config_rule_invoked_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Supplementary information about how the evaluation determined
     /// the compliance.</p>
     pub annotation: std::option::Option<std::string::String>,
@@ -10163,12 +10166,12 @@ impl EvaluationResult {
     }
     /// <p>The time when Config recorded the evaluation
     /// result.</p>
-    pub fn result_recorded_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn result_recorded_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.result_recorded_time.as_ref()
     }
     /// <p>The time when the Config rule evaluated the Amazon Web Services
     /// resource.</p>
-    pub fn config_rule_invoked_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn config_rule_invoked_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.config_rule_invoked_time.as_ref()
     }
     /// <p>Supplementary information about how the evaluation determined
@@ -10206,8 +10209,8 @@ pub mod evaluation_result {
         pub(crate) evaluation_result_identifier:
             std::option::Option<crate::model::EvaluationResultIdentifier>,
         pub(crate) compliance_type: std::option::Option<crate::model::ComplianceType>,
-        pub(crate) result_recorded_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) config_rule_invoked_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) result_recorded_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) config_rule_invoked_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) annotation: std::option::Option<std::string::String>,
         pub(crate) result_token: std::option::Option<std::string::String>,
     }
@@ -10255,7 +10258,7 @@ pub mod evaluation_result {
         }
         /// <p>The time when Config recorded the evaluation
         /// result.</p>
-        pub fn result_recorded_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn result_recorded_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.result_recorded_time = Some(input);
             self
         }
@@ -10263,14 +10266,14 @@ pub mod evaluation_result {
         /// result.</p>
         pub fn set_result_recorded_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.result_recorded_time = input;
             self
         }
         /// <p>The time when the Config rule evaluated the Amazon Web Services
         /// resource.</p>
-        pub fn config_rule_invoked_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn config_rule_invoked_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.config_rule_invoked_time = Some(input);
             self
         }
@@ -10278,7 +10281,7 @@ pub mod evaluation_result {
         /// resource.</p>
         pub fn set_config_rule_invoked_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.config_rule_invoked_time = input;
             self
@@ -11086,10 +11089,10 @@ pub struct AggregateEvaluationResult {
     pub compliance_type: std::option::Option<crate::model::ComplianceType>,
     /// <p>The time when Config recorded the aggregate evaluation
     /// result.</p>
-    pub result_recorded_time: std::option::Option<aws_smithy_types::Instant>,
+    pub result_recorded_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the Config rule evaluated the Amazon Web Services
     /// resource.</p>
-    pub config_rule_invoked_time: std::option::Option<aws_smithy_types::Instant>,
+    pub config_rule_invoked_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Supplementary information about how the agrregate evaluation
     /// determined the compliance.</p>
     pub annotation: std::option::Option<std::string::String>,
@@ -11115,12 +11118,12 @@ impl AggregateEvaluationResult {
     }
     /// <p>The time when Config recorded the aggregate evaluation
     /// result.</p>
-    pub fn result_recorded_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn result_recorded_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.result_recorded_time.as_ref()
     }
     /// <p>The time when the Config rule evaluated the Amazon Web Services
     /// resource.</p>
-    pub fn config_rule_invoked_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn config_rule_invoked_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.config_rule_invoked_time.as_ref()
     }
     /// <p>Supplementary information about how the agrregate evaluation
@@ -11162,8 +11165,8 @@ pub mod aggregate_evaluation_result {
         pub(crate) evaluation_result_identifier:
             std::option::Option<crate::model::EvaluationResultIdentifier>,
         pub(crate) compliance_type: std::option::Option<crate::model::ComplianceType>,
-        pub(crate) result_recorded_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) config_rule_invoked_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) result_recorded_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) config_rule_invoked_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) annotation: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) aws_region: std::option::Option<std::string::String>,
@@ -11208,7 +11211,7 @@ pub mod aggregate_evaluation_result {
         }
         /// <p>The time when Config recorded the aggregate evaluation
         /// result.</p>
-        pub fn result_recorded_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn result_recorded_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.result_recorded_time = Some(input);
             self
         }
@@ -11216,14 +11219,14 @@ pub mod aggregate_evaluation_result {
         /// result.</p>
         pub fn set_result_recorded_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.result_recorded_time = input;
             self
         }
         /// <p>The time when the Config rule evaluated the Amazon Web Services
         /// resource.</p>
-        pub fn config_rule_invoked_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn config_rule_invoked_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.config_rule_invoked_time = Some(input);
             self
         }
@@ -11231,7 +11234,7 @@ pub mod aggregate_evaluation_result {
         /// resource.</p>
         pub fn set_config_rule_invoked_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.config_rule_invoked_time = input;
             self
@@ -11301,9 +11304,9 @@ pub struct RemediationExecutionStatus {
     /// <p>Details of every step.</p>
     pub step_details: std::option::Option<std::vec::Vec<crate::model::RemediationExecutionStep>>,
     /// <p>Start time when the remediation was executed.</p>
-    pub invocation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub invocation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the remediation execution was last updated.</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RemediationExecutionStatus {
     /// <p>The details that identify a resource within Config, including
@@ -11320,11 +11323,11 @@ impl RemediationExecutionStatus {
         self.step_details.as_deref()
     }
     /// <p>Start time when the remediation was executed.</p>
-    pub fn invocation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn invocation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.invocation_time.as_ref()
     }
     /// <p>The time when the remediation execution was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -11349,8 +11352,8 @@ pub mod remediation_execution_status {
         pub(crate) state: std::option::Option<crate::model::RemediationExecutionState>,
         pub(crate) step_details:
             std::option::Option<std::vec::Vec<crate::model::RemediationExecutionStep>>,
-        pub(crate) invocation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) invocation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The details that identify a resource within Config, including
@@ -11404,27 +11407,27 @@ pub mod remediation_execution_status {
             self
         }
         /// <p>Start time when the remediation was executed.</p>
-        pub fn invocation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn invocation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.invocation_time = Some(input);
             self
         }
         /// <p>Start time when the remediation was executed.</p>
         pub fn set_invocation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.invocation_time = input;
             self
         }
         /// <p>The time when the remediation execution was last updated.</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
         /// <p>The time when the remediation execution was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -11459,9 +11462,9 @@ pub struct RemediationExecutionStep {
     /// <p>An error message if the step was interrupted during execution.</p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The time when the step started.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the step stopped.</p>
-    pub stop_time: std::option::Option<aws_smithy_types::Instant>,
+    pub stop_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RemediationExecutionStep {
     /// <p>The details of the step.</p>
@@ -11477,11 +11480,11 @@ impl RemediationExecutionStep {
         self.error_message.as_deref()
     }
     /// <p>The time when the step started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time when the step stopped.</p>
-    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
 }
@@ -11505,8 +11508,8 @@ pub mod remediation_execution_step {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::RemediationExecutionStepState>,
         pub(crate) error_message: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) stop_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) stop_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The details of the step.</p>
@@ -11546,27 +11549,27 @@ pub mod remediation_execution_step {
             self
         }
         /// <p>The time when the step started.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The time when the step started.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time when the step stopped.</p>
-        pub fn stop_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn stop_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stop_time = Some(input);
             self
         }
         /// <p>The time when the step stopped.</p>
         pub fn set_stop_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.stop_time = input;
             self
@@ -11858,7 +11861,7 @@ pub struct OrganizationConformancePackStatus {
     /// <p>An error message indicating that organization conformance pack creation or deletion failed due to an error. </p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The timestamp of the last update.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl OrganizationConformancePackStatus {
     /// <p>The name that you assign to organization conformance pack.</p>
@@ -11926,7 +11929,7 @@ impl OrganizationConformancePackStatus {
         self.error_message.as_deref()
     }
     /// <p>The timestamp of the last update.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -11954,7 +11957,7 @@ pub mod organization_conformance_pack_status {
         pub(crate) status: std::option::Option<crate::model::OrganizationResourceStatus>,
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name that you assign to organization conformance pack.</p>
@@ -12106,14 +12109,14 @@ pub mod organization_conformance_pack_status {
             self
         }
         /// <p>The timestamp of the last update.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The timestamp of the last update.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -12254,7 +12257,7 @@ pub struct OrganizationConformancePack {
     /// <p>A comma-separated list of accounts excluded from organization conformance pack.</p>
     pub excluded_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Last time when organization conformation pack was updated.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl OrganizationConformancePack {
     /// <p>The name you assign to an organization conformance pack.</p>
@@ -12290,7 +12293,7 @@ impl OrganizationConformancePack {
         self.excluded_accounts.as_deref()
     }
     /// <p>Last time when organization conformation pack was updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -12329,7 +12332,7 @@ pub mod organization_conformance_pack {
         pub(crate) conformance_pack_input_parameters:
             std::option::Option<std::vec::Vec<crate::model::ConformancePackInputParameter>>,
         pub(crate) excluded_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name you assign to an organization conformance pack.</p>
@@ -12444,14 +12447,14 @@ pub mod organization_conformance_pack {
             self
         }
         /// <p>Last time when organization conformation pack was updated.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>Last time when organization conformation pack was updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -12532,7 +12535,7 @@ pub struct OrganizationConfigRuleStatus {
     /// <p>An error message indicating that organization config rule creation or deletion failed due to an error.</p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The timestamp of the last update.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl OrganizationConfigRuleStatus {
     /// <p>The name that you assign to organization config rule.</p>
@@ -12596,7 +12599,7 @@ impl OrganizationConfigRuleStatus {
         self.error_message.as_deref()
     }
     /// <p>The timestamp of the last update.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -12625,7 +12628,7 @@ pub mod organization_config_rule_status {
             std::option::Option<crate::model::OrganizationRuleStatus>,
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name that you assign to organization config rule.</p>
@@ -12768,14 +12771,14 @@ pub mod organization_config_rule_status {
             self
         }
         /// <p>The timestamp of the last update.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The timestamp of the last update.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -12909,7 +12912,7 @@ pub struct OrganizationConfigRule {
     /// <p>A comma-separated list of accounts excluded from organization config rule.</p>
     pub excluded_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The timestamp of the last update.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl OrganizationConfigRule {
     /// <p>The name that you assign to organization config rule.</p>
@@ -12937,7 +12940,7 @@ impl OrganizationConfigRule {
         self.excluded_accounts.as_deref()
     }
     /// <p>The timestamp of the last update.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -12978,7 +12981,7 @@ pub mod organization_config_rule {
         pub(crate) organization_custom_rule_metadata:
             std::option::Option<crate::model::OrganizationCustomRuleMetadata>,
         pub(crate) excluded_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name that you assign to organization config rule.</p>
@@ -13065,14 +13068,14 @@ pub mod organization_config_rule {
             self
         }
         /// <p>The timestamp of the last update.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The timestamp of the last update.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -13278,7 +13281,7 @@ pub struct ConfigStreamDeliveryInfo {
     /// <p>The error message from the last attempted delivery.</p>
     pub last_error_message: std::option::Option<std::string::String>,
     /// <p>The time from the last status change.</p>
-    pub last_status_change_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_status_change_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ConfigStreamDeliveryInfo {
     /// <p>Status of the last attempted delivery.</p>
@@ -13298,7 +13301,7 @@ impl ConfigStreamDeliveryInfo {
         self.last_error_message.as_deref()
     }
     /// <p>The time from the last status change.</p>
-    pub fn last_status_change_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_status_change_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_status_change_time.as_ref()
     }
 }
@@ -13321,7 +13324,7 @@ pub mod config_stream_delivery_info {
         pub(crate) last_status: std::option::Option<crate::model::DeliveryStatus>,
         pub(crate) last_error_code: std::option::Option<std::string::String>,
         pub(crate) last_error_message: std::option::Option<std::string::String>,
-        pub(crate) last_status_change_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_status_change_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Status of the last attempted delivery.</p>
@@ -13372,14 +13375,14 @@ pub mod config_stream_delivery_info {
             self
         }
         /// <p>The time from the last status change.</p>
-        pub fn last_status_change_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_status_change_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_status_change_time = Some(input);
             self
         }
         /// <p>The time from the last status change.</p>
         pub fn set_last_status_change_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_status_change_time = input;
             self
@@ -13475,11 +13478,11 @@ pub struct ConfigExportDeliveryInfo {
     /// <p>The error message from the last attempted delivery.</p>
     pub last_error_message: std::option::Option<std::string::String>,
     /// <p>The time of the last attempted delivery.</p>
-    pub last_attempt_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_attempt_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time of the last successful delivery.</p>
-    pub last_successful_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_successful_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the next delivery occurs.</p>
-    pub next_delivery_time: std::option::Option<aws_smithy_types::Instant>,
+    pub next_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ConfigExportDeliveryInfo {
     /// <p>Status of the last attempted delivery.</p>
@@ -13495,15 +13498,15 @@ impl ConfigExportDeliveryInfo {
         self.last_error_message.as_deref()
     }
     /// <p>The time of the last attempted delivery.</p>
-    pub fn last_attempt_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_attempt_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_attempt_time.as_ref()
     }
     /// <p>The time of the last successful delivery.</p>
-    pub fn last_successful_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_successful_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_successful_time.as_ref()
     }
     /// <p>The time that the next delivery occurs.</p>
-    pub fn next_delivery_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn next_delivery_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.next_delivery_time.as_ref()
     }
 }
@@ -13528,9 +13531,9 @@ pub mod config_export_delivery_info {
         pub(crate) last_status: std::option::Option<crate::model::DeliveryStatus>,
         pub(crate) last_error_code: std::option::Option<std::string::String>,
         pub(crate) last_error_message: std::option::Option<std::string::String>,
-        pub(crate) last_attempt_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_successful_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) next_delivery_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_attempt_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_successful_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) next_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Status of the last attempted delivery.</p>
@@ -13573,40 +13576,40 @@ pub mod config_export_delivery_info {
             self
         }
         /// <p>The time of the last attempted delivery.</p>
-        pub fn last_attempt_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_attempt_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_attempt_time = Some(input);
             self
         }
         /// <p>The time of the last attempted delivery.</p>
         pub fn set_last_attempt_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_attempt_time = input;
             self
         }
         /// <p>The time of the last successful delivery.</p>
-        pub fn last_successful_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_successful_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_successful_time = Some(input);
             self
         }
         /// <p>The time of the last successful delivery.</p>
         pub fn set_last_successful_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_successful_time = input;
             self
         }
         /// <p>The time that the next delivery occurs.</p>
-        pub fn next_delivery_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn next_delivery_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.next_delivery_time = Some(input);
             self
         }
         /// <p>The time that the next delivery occurs.</p>
         pub fn set_next_delivery_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.next_delivery_time = input;
             self
@@ -13666,9 +13669,9 @@ pub struct ConformancePackStatusDetail {
     /// <p>The reason of conformance pack creation failure.</p>
     pub conformance_pack_status_reason: std::option::Option<std::string::String>,
     /// <p>Last time when conformation pack creation and update was requested.</p>
-    pub last_update_requested_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_requested_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Last time when conformation pack creation and update was successful.</p>
-    pub last_update_completed_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_completed_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ConformancePackStatusDetail {
     /// <p>Name of the conformance pack.</p>
@@ -13716,11 +13719,11 @@ impl ConformancePackStatusDetail {
         self.conformance_pack_status_reason.as_deref()
     }
     /// <p>Last time when conformation pack creation and update was requested.</p>
-    pub fn last_update_requested_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_requested_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_requested_time.as_ref()
     }
     /// <p>Last time when conformation pack creation and update was successful.</p>
-    pub fn last_update_completed_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_completed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_completed_time.as_ref()
     }
 }
@@ -13759,8 +13762,8 @@ pub mod conformance_pack_status_detail {
         pub(crate) conformance_pack_state: std::option::Option<crate::model::ConformancePackState>,
         pub(crate) stack_arn: std::option::Option<std::string::String>,
         pub(crate) conformance_pack_status_reason: std::option::Option<std::string::String>,
-        pub(crate) last_update_requested_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_completed_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_requested_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_completed_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Name of the conformance pack.</p>
@@ -13878,27 +13881,27 @@ pub mod conformance_pack_status_detail {
             self
         }
         /// <p>Last time when conformation pack creation and update was requested.</p>
-        pub fn last_update_requested_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_requested_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_requested_time = Some(input);
             self
         }
         /// <p>Last time when conformation pack creation and update was requested.</p>
         pub fn set_last_update_requested_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_requested_time = input;
             self
         }
         /// <p>Last time when conformation pack creation and update was successful.</p>
-        pub fn last_update_completed_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_completed_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_completed_time = Some(input);
             self
         }
         /// <p>Last time when conformation pack creation and update was successful.</p>
         pub fn set_last_update_completed_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_completed_time = input;
             self
@@ -14022,7 +14025,7 @@ pub struct ConformancePackDetail {
     pub conformance_pack_input_parameters:
         std::option::Option<std::vec::Vec<crate::model::ConformancePackInputParameter>>,
     /// <p>Last time when conformation pack update was requested. </p>
-    pub last_update_requested_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_requested_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Amazon Web Services service that created the conformance pack.</p>
     pub created_by: std::option::Option<std::string::String>,
 }
@@ -14060,7 +14063,7 @@ impl ConformancePackDetail {
         self.conformance_pack_input_parameters.as_deref()
     }
     /// <p>Last time when conformation pack update was requested. </p>
-    pub fn last_update_requested_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_requested_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_requested_time.as_ref()
     }
     /// <p>Amazon Web Services service that created the conformance pack.</p>
@@ -14101,7 +14104,7 @@ pub mod conformance_pack_detail {
         pub(crate) delivery_s3_key_prefix: std::option::Option<std::string::String>,
         pub(crate) conformance_pack_input_parameters:
             std::option::Option<std::vec::Vec<crate::model::ConformancePackInputParameter>>,
-        pub(crate) last_update_requested_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_requested_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -14205,14 +14208,14 @@ pub mod conformance_pack_detail {
             self
         }
         /// <p>Last time when conformation pack update was requested. </p>
-        pub fn last_update_requested_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_requested_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_requested_time = Some(input);
             self
         }
         /// <p>Last time when conformation pack update was requested. </p>
         pub fn set_last_update_requested_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_requested_time = input;
             self
@@ -14472,9 +14475,9 @@ pub struct ConfigurationRecorderStatus {
     /// <p>The name of the configuration recorder.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The time the recorder was last started.</p>
-    pub last_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the recorder was last stopped.</p>
-    pub last_stop_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_stop_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether or not the recorder is currently
     /// recording.</p>
     pub recording: bool,
@@ -14486,7 +14489,7 @@ pub struct ConfigurationRecorderStatus {
     /// error.</p>
     pub last_error_message: std::option::Option<std::string::String>,
     /// <p>The time when the status was last changed.</p>
-    pub last_status_change_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_status_change_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ConfigurationRecorderStatus {
     /// <p>The name of the configuration recorder.</p>
@@ -14494,11 +14497,11 @@ impl ConfigurationRecorderStatus {
         self.name.as_deref()
     }
     /// <p>The time the recorder was last started.</p>
-    pub fn last_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_start_time.as_ref()
     }
     /// <p>The time the recorder was last stopped.</p>
-    pub fn last_stop_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_stop_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_stop_time.as_ref()
     }
     /// <p>Specifies whether or not the recorder is currently
@@ -14520,7 +14523,7 @@ impl ConfigurationRecorderStatus {
         self.last_error_message.as_deref()
     }
     /// <p>The time when the status was last changed.</p>
-    pub fn last_status_change_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_status_change_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_status_change_time.as_ref()
     }
 }
@@ -14545,13 +14548,13 @@ pub mod configuration_recorder_status {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) last_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_stop_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_stop_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) recording: std::option::Option<bool>,
         pub(crate) last_status: std::option::Option<crate::model::RecorderStatus>,
         pub(crate) last_error_code: std::option::Option<std::string::String>,
         pub(crate) last_error_message: std::option::Option<std::string::String>,
-        pub(crate) last_status_change_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_status_change_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the configuration recorder.</p>
@@ -14565,27 +14568,27 @@ pub mod configuration_recorder_status {
             self
         }
         /// <p>The time the recorder was last started.</p>
-        pub fn last_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_start_time = Some(input);
             self
         }
         /// <p>The time the recorder was last started.</p>
         pub fn set_last_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_start_time = input;
             self
         }
         /// <p>The time the recorder was last stopped.</p>
-        pub fn last_stop_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_stop_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_stop_time = Some(input);
             self
         }
         /// <p>The time the recorder was last stopped.</p>
         pub fn set_last_stop_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_stop_time = input;
             self
@@ -14644,14 +14647,14 @@ pub mod configuration_recorder_status {
             self
         }
         /// <p>The time when the status was last changed.</p>
-        pub fn last_status_change_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_status_change_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_status_change_time = Some(input);
             self
         }
         /// <p>The time when the status was last changed.</p>
         pub fn set_last_status_change_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_status_change_time = input;
             self
@@ -14765,7 +14768,7 @@ pub struct AggregatedSourceStatus {
     /// </ul>
     pub last_update_status: std::option::Option<crate::model::AggregatedSourceStatusType>,
     /// <p>The time of the last update.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The error code that Config returned when the source account
     /// aggregation last failed.</p>
     pub last_error_code: std::option::Option<std::string::String>,
@@ -14807,7 +14810,7 @@ impl AggregatedSourceStatus {
         self.last_update_status.as_ref()
     }
     /// <p>The time of the last update.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>The error code that Config returned when the source account
@@ -14845,7 +14848,7 @@ pub mod aggregated_source_status {
         pub(crate) aws_region: std::option::Option<std::string::String>,
         pub(crate) last_update_status:
             std::option::Option<crate::model::AggregatedSourceStatusType>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_error_code: std::option::Option<std::string::String>,
         pub(crate) last_error_message: std::option::Option<std::string::String>,
     }
@@ -14928,14 +14931,14 @@ pub mod aggregated_source_status {
             self
         }
         /// <p>The time of the last update.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The time of the last update.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -15121,21 +15124,21 @@ pub struct ConfigRuleEvaluationStatus {
     /// <p>The ID of the Config rule.</p>
     pub config_rule_id: std::option::Option<std::string::String>,
     /// <p>The time that Config last successfully invoked the Config rule to evaluate your Amazon Web Services resources.</p>
-    pub last_successful_invocation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_successful_invocation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that Config last failed to invoke the Config
     /// rule to evaluate your Amazon Web Services resources.</p>
-    pub last_failed_invocation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_failed_invocation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that Config last successfully evaluated your Amazon Web Services
     /// resources against the rule.</p>
-    pub last_successful_evaluation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_successful_evaluation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that Config last failed to evaluate your Amazon Web Services
     /// resources against the rule.</p>
-    pub last_failed_evaluation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_failed_evaluation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that you first activated the Config
     /// rule.</p>
-    pub first_activated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub first_activated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that you last turned off the Config rule.</p>
-    pub last_deactivated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_deactivated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The error code that Config returned when the rule last
     /// failed.</p>
     pub last_error_code: std::option::Option<std::string::String>,
@@ -15175,33 +15178,33 @@ impl ConfigRuleEvaluationStatus {
     /// <p>The time that Config last successfully invoked the Config rule to evaluate your Amazon Web Services resources.</p>
     pub fn last_successful_invocation_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_successful_invocation_time.as_ref()
     }
     /// <p>The time that Config last failed to invoke the Config
     /// rule to evaluate your Amazon Web Services resources.</p>
-    pub fn last_failed_invocation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_failed_invocation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_failed_invocation_time.as_ref()
     }
     /// <p>The time that Config last successfully evaluated your Amazon Web Services
     /// resources against the rule.</p>
     pub fn last_successful_evaluation_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_successful_evaluation_time.as_ref()
     }
     /// <p>The time that Config last failed to evaluate your Amazon Web Services
     /// resources against the rule.</p>
-    pub fn last_failed_evaluation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_failed_evaluation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_failed_evaluation_time.as_ref()
     }
     /// <p>The time that you first activated the Config
     /// rule.</p>
-    pub fn first_activated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn first_activated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.first_activated_time.as_ref()
     }
     /// <p>The time that you last turned off the Config rule.</p>
-    pub fn last_deactivated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_deactivated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_deactivated_time.as_ref()
     }
     /// <p>The error code that Config returned when the rule last
@@ -15271,12 +15274,12 @@ pub mod config_rule_evaluation_status {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
         pub(crate) config_rule_arn: std::option::Option<std::string::String>,
         pub(crate) config_rule_id: std::option::Option<std::string::String>,
-        pub(crate) last_successful_invocation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_failed_invocation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_successful_evaluation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_failed_evaluation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) first_activated_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_deactivated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_successful_invocation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_failed_invocation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_successful_evaluation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_failed_evaluation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) first_activated_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_deactivated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_error_code: std::option::Option<std::string::String>,
         pub(crate) last_error_message: std::option::Option<std::string::String>,
         pub(crate) first_evaluation_started: std::option::Option<bool>,
@@ -15324,21 +15327,24 @@ pub mod config_rule_evaluation_status {
             self
         }
         /// <p>The time that Config last successfully invoked the Config rule to evaluate your Amazon Web Services resources.</p>
-        pub fn last_successful_invocation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_successful_invocation_time(
+            mut self,
+            input: aws_smithy_types::DateTime,
+        ) -> Self {
             self.last_successful_invocation_time = Some(input);
             self
         }
         /// <p>The time that Config last successfully invoked the Config rule to evaluate your Amazon Web Services resources.</p>
         pub fn set_last_successful_invocation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_successful_invocation_time = input;
             self
         }
         /// <p>The time that Config last failed to invoke the Config
         /// rule to evaluate your Amazon Web Services resources.</p>
-        pub fn last_failed_invocation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_failed_invocation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_failed_invocation_time = Some(input);
             self
         }
@@ -15346,14 +15352,17 @@ pub mod config_rule_evaluation_status {
         /// rule to evaluate your Amazon Web Services resources.</p>
         pub fn set_last_failed_invocation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_failed_invocation_time = input;
             self
         }
         /// <p>The time that Config last successfully evaluated your Amazon Web Services
         /// resources against the rule.</p>
-        pub fn last_successful_evaluation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_successful_evaluation_time(
+            mut self,
+            input: aws_smithy_types::DateTime,
+        ) -> Self {
             self.last_successful_evaluation_time = Some(input);
             self
         }
@@ -15361,14 +15370,14 @@ pub mod config_rule_evaluation_status {
         /// resources against the rule.</p>
         pub fn set_last_successful_evaluation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_successful_evaluation_time = input;
             self
         }
         /// <p>The time that Config last failed to evaluate your Amazon Web Services
         /// resources against the rule.</p>
-        pub fn last_failed_evaluation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_failed_evaluation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_failed_evaluation_time = Some(input);
             self
         }
@@ -15376,14 +15385,14 @@ pub mod config_rule_evaluation_status {
         /// resources against the rule.</p>
         pub fn set_last_failed_evaluation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_failed_evaluation_time = input;
             self
         }
         /// <p>The time that you first activated the Config
         /// rule.</p>
-        pub fn first_activated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn first_activated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.first_activated_time = Some(input);
             self
         }
@@ -15391,20 +15400,20 @@ pub mod config_rule_evaluation_status {
         /// rule.</p>
         pub fn set_first_activated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.first_activated_time = input;
             self
         }
         /// <p>The time that you last turned off the Config rule.</p>
-        pub fn last_deactivated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_deactivated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_deactivated_time = Some(input);
             self
         }
         /// <p>The time that you last turned off the Config rule.</p>
         pub fn set_last_deactivated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_deactivated_time = input;
             self
@@ -16583,7 +16592,7 @@ pub struct BaseConfigurationItem {
     /// <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The time when the configuration recording was initiated.</p>
-    pub configuration_item_capture_time: std::option::Option<aws_smithy_types::Instant>,
+    pub configuration_item_capture_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The configuration item status. The valid values are:</p>
     ///
     /// <ul>
@@ -16623,7 +16632,7 @@ pub struct BaseConfigurationItem {
     /// <p>The Availability Zone associated with the resource.</p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The time stamp when the resource was created.</p>
-    pub resource_creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub resource_creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the resource configuration.</p>
     pub configuration: std::option::Option<std::string::String>,
     /// <p>Configuration attributes that Config returns for certain
@@ -16644,7 +16653,7 @@ impl BaseConfigurationItem {
     /// <p>The time when the configuration recording was initiated.</p>
     pub fn configuration_item_capture_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.configuration_item_capture_time.as_ref()
     }
     /// <p>The configuration item status. The valid values are:</p>
@@ -16704,7 +16713,7 @@ impl BaseConfigurationItem {
         self.availability_zone.as_deref()
     }
     /// <p>The time stamp when the resource was created.</p>
-    pub fn resource_creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn resource_creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.resource_creation_time.as_ref()
     }
     /// <p>The description of the resource configuration.</p>
@@ -16755,7 +16764,7 @@ pub mod base_configuration_item {
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
-        pub(crate) configuration_item_capture_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) configuration_item_capture_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) configuration_item_status:
             std::option::Option<crate::model::ConfigurationItemStatus>,
         pub(crate) configuration_state_id: std::option::Option<std::string::String>,
@@ -16765,7 +16774,7 @@ pub mod base_configuration_item {
         pub(crate) resource_name: std::option::Option<std::string::String>,
         pub(crate) aws_region: std::option::Option<std::string::String>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
-        pub(crate) resource_creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) resource_creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) configuration: std::option::Option<std::string::String>,
         pub(crate) supplementary_configuration: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -16793,14 +16802,17 @@ pub mod base_configuration_item {
             self
         }
         /// <p>The time when the configuration recording was initiated.</p>
-        pub fn configuration_item_capture_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn configuration_item_capture_time(
+            mut self,
+            input: aws_smithy_types::DateTime,
+        ) -> Self {
             self.configuration_item_capture_time = Some(input);
             self
         }
         /// <p>The time when the configuration recording was initiated.</p>
         pub fn set_configuration_item_capture_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.configuration_item_capture_time = input;
             self
@@ -16948,14 +16960,14 @@ pub mod base_configuration_item {
             self
         }
         /// <p>The time stamp when the resource was created.</p>
-        pub fn resource_creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn resource_creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.resource_creation_time = Some(input);
             self
         }
         /// <p>The time stamp when the resource was created.</p>
         pub fn set_resource_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.resource_creation_time = input;
             self

@@ -169,7 +169,7 @@ impl AsRef<str> for SanitizationWarningReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationRevision {
     /// <p>Required. The date and time of the configuration revision.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the configuration revision.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Required. The revision number of the configuration.</p>
@@ -177,7 +177,7 @@ pub struct ConfigurationRevision {
 }
 impl ConfigurationRevision {
     /// <p>Required. The date and time of the configuration revision.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The description of the configuration revision.</p>
@@ -204,20 +204,20 @@ pub mod configuration_revision {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) revision: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>Required. The date and time of the configuration revision.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p>Required. The date and time of the configuration revision.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
@@ -1332,7 +1332,7 @@ pub struct Configuration {
     /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
     pub authentication_strategy: std::option::Option<crate::model::AuthenticationStrategy>,
     /// <p>Required. The date and time of the configuration revision.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Required. The description of the configuration.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
@@ -1361,7 +1361,7 @@ impl Configuration {
         self.authentication_strategy.as_ref()
     }
     /// <p>Required. The date and time of the configuration revision.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>Required. The description of the configuration.</p>
@@ -1421,7 +1421,7 @@ pub mod configuration {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) authentication_strategy:
             std::option::Option<crate::model::AuthenticationStrategy>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) engine_type: std::option::Option<crate::model::EngineType>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
@@ -1460,14 +1460,14 @@ pub mod configuration {
             self
         }
         /// <p>Required. The date and time of the configuration revision.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p>Required. The date and time of the configuration revision.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
@@ -1658,7 +1658,7 @@ pub struct BrokerSummary {
     /// <p>The broker's status.</p>
     pub broker_state: std::option::Option<crate::model::BrokerState>,
     /// <p>The time when the broker was created.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The broker's deployment mode.</p>
     pub deployment_mode: std::option::Option<crate::model::DeploymentMode>,
     /// <p>The type of broker engine.</p>
@@ -1684,7 +1684,7 @@ impl BrokerSummary {
         self.broker_state.as_ref()
     }
     /// <p>The time when the broker was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The broker's deployment mode.</p>
@@ -1724,7 +1724,7 @@ pub mod broker_summary {
         pub(crate) broker_id: std::option::Option<std::string::String>,
         pub(crate) broker_name: std::option::Option<std::string::String>,
         pub(crate) broker_state: std::option::Option<crate::model::BrokerState>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) deployment_mode: std::option::Option<crate::model::DeploymentMode>,
         pub(crate) engine_type: std::option::Option<crate::model::EngineType>,
         pub(crate) host_instance_type: std::option::Option<std::string::String>,
@@ -1774,14 +1774,14 @@ pub mod broker_summary {
             self
         }
         /// <p>The time when the broker was created.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p>The time when the broker was created.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self

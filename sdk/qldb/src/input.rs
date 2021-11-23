@@ -54,6 +54,7 @@ pub type CancelJournalKinesisStreamInputOperationRetryAlias = aws_http::AwsError
 impl CancelJournalKinesisStreamInput {
     /// Consumes the builder and constructs an Operation<[`CancelJournalKinesisStream`](crate::operation::CancelJournalKinesisStream)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -135,11 +136,14 @@ impl CancelJournalKinesisStreamInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -465,6 +469,7 @@ pub type CreateLedgerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateLedgerInput {
     /// Consumes the builder and constructs an Operation<[`CreateLedger`](crate::operation::CreateLedger)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -515,11 +520,14 @@ impl CreateLedgerInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -607,6 +615,7 @@ pub type DeleteLedgerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteLedgerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLedger`](crate::operation::DeleteLedger)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -667,11 +676,14 @@ impl DeleteLedgerInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -768,6 +780,7 @@ pub type DescribeJournalKinesisStreamInputOperationRetryAlias = aws_http::AwsErr
 impl DescribeJournalKinesisStreamInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJournalKinesisStream`](crate::operation::DescribeJournalKinesisStream)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -849,11 +862,14 @@ impl DescribeJournalKinesisStreamInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -950,6 +966,7 @@ pub type DescribeJournalS3ExportInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DescribeJournalS3ExportInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJournalS3Export`](crate::operation::DescribeJournalS3Export)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1031,11 +1048,14 @@ impl DescribeJournalS3ExportInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1115,6 +1135,7 @@ pub type DescribeLedgerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeLedgerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLedger`](crate::operation::DescribeLedger)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1175,11 +1196,14 @@ impl DescribeLedgerInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1229,8 +1253,8 @@ pub mod export_journal_to_s3_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) inclusive_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) exclusive_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) s3_export_configuration:
             std::option::Option<crate::model::S3ExportConfiguration>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -1254,7 +1278,7 @@ pub mod export_journal_to_s3_input {
         /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
         /// <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's
         /// <code>CreationDateTime</code>.</p>
-        pub fn inclusive_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn inclusive_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inclusive_start_time = Some(input);
             self
         }
@@ -1268,7 +1292,7 @@ pub mod export_journal_to_s3_input {
         /// <code>CreationDateTime</code>.</p>
         pub fn set_inclusive_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inclusive_start_time = input;
             self
@@ -1279,7 +1303,7 @@ pub mod export_journal_to_s3_input {
         /// <code>2019-06-13T21:36:34Z</code>.</p>
         /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and
         /// time.</p>
-        pub fn exclusive_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn exclusive_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.exclusive_end_time = Some(input);
             self
         }
@@ -1291,7 +1315,7 @@ pub mod export_journal_to_s3_input {
         /// time.</p>
         pub fn set_exclusive_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.exclusive_end_time = input;
             self
@@ -1368,6 +1392,7 @@ pub type ExportJournalToS3InputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl ExportJournalToS3Input {
     /// Consumes the builder and constructs an Operation<[`ExportJournalToS3`](crate::operation::ExportJournalToS3)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1435,11 +1460,14 @@ impl ExportJournalToS3Input {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1567,6 +1595,7 @@ pub type GetBlockInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetBlockInput {
     /// Consumes the builder and constructs an Operation<[`GetBlock`](crate::operation::GetBlock)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1633,11 +1662,14 @@ impl GetBlockInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1720,6 +1752,7 @@ pub type GetDigestInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetDigestInput {
     /// Consumes the builder and constructs an Operation<[`GetDigest`](crate::operation::GetDigest)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1781,11 +1814,14 @@ impl GetDigestInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1917,6 +1953,7 @@ pub type GetRevisionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetRevisionInput {
     /// Consumes the builder and constructs an Operation<[`GetRevision`](crate::operation::GetRevision)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1983,11 +2020,14 @@ impl GetRevisionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2112,6 +2152,7 @@ pub type ListJournalKinesisStreamsForLedgerInputOperationRetryAlias = aws_http::
 impl ListJournalKinesisStreamsForLedgerInput {
     /// Consumes the builder and constructs an Operation<[`ListJournalKinesisStreamsForLedger`](crate::operation::ListJournalKinesisStreamsForLedger)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2152,17 +2193,18 @@ impl ListJournalKinesisStreamsForLedgerInput {
         fn uri_query(
             _input: &crate::input::ListJournalKinesisStreamsForLedgerInput,
             mut output: &mut String,
-        ) {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_14) = &_input.max_results {
                 query.push_kv(
                     "max_results",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
                 );
             }
             if let Some(inner_15) = &_input.next_token {
                 query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_15));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -2172,7 +2214,7 @@ impl ListJournalKinesisStreamsForLedgerInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2193,11 +2235,14 @@ impl ListJournalKinesisStreamsForLedgerInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2299,6 +2344,7 @@ pub type ListJournalS3ExportsInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl ListJournalS3ExportsInput {
     /// Consumes the builder and constructs an Operation<[`ListJournalS3Exports`](crate::operation::ListJournalS3Exports)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2316,17 +2362,21 @@ impl ListJournalS3ExportsInput {
             write!(output, "/journal-s3-exports").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListJournalS3ExportsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListJournalS3ExportsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_16) = &_input.max_results {
                 query.push_kv(
                     "max_results",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_16).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_16).encode(),
                 );
             }
             if let Some(inner_17) = &_input.next_token {
                 query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_17));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -2336,7 +2386,7 @@ impl ListJournalS3ExportsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2357,11 +2407,14 @@ impl ListJournalS3ExportsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2478,6 +2531,7 @@ pub type ListJournalS3ExportsForLedgerInputOperationRetryAlias = aws_http::AwsEr
 impl ListJournalS3ExportsForLedgerInput {
     /// Consumes the builder and constructs an Operation<[`ListJournalS3ExportsForLedger`](crate::operation::ListJournalS3ExportsForLedger)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2514,17 +2568,18 @@ impl ListJournalS3ExportsForLedgerInput {
         fn uri_query(
             _input: &crate::input::ListJournalS3ExportsForLedgerInput,
             mut output: &mut String,
-        ) {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_19) = &_input.max_results {
                 query.push_kv(
                     "max_results",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_19).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_19).encode(),
                 );
             }
             if let Some(inner_20) = &_input.next_token {
                 query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_20));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -2534,7 +2589,7 @@ impl ListJournalS3ExportsForLedgerInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2555,11 +2610,14 @@ impl ListJournalS3ExportsForLedgerInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2659,6 +2717,7 @@ pub type ListLedgersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListLedgersInput {
     /// Consumes the builder and constructs an Operation<[`ListLedgers`](crate::operation::ListLedgers)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2676,17 +2735,21 @@ impl ListLedgersInput {
             write!(output, "/ledgers").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListLedgersInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListLedgersInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_21) = &_input.max_results {
                 query.push_kv(
                     "max_results",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_21).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_21).encode(),
                 );
             }
             if let Some(inner_22) = &_input.next_token {
                 query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_22));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -2696,7 +2759,7 @@ impl ListLedgersInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2717,11 +2780,14 @@ impl ListLedgersInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2809,6 +2875,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2870,11 +2937,14 @@ impl ListTagsForResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2931,8 +3001,8 @@ pub mod stream_journal_to_kinesis_input {
                 std::option::Option<std::string::String>,
             >,
         >,
-        pub(crate) inclusive_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) exclusive_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) kinesis_configuration: std::option::Option<crate::model::KinesisConfiguration>,
         pub(crate) stream_name: std::option::Option<std::string::String>,
     }
@@ -2997,7 +3067,7 @@ pub mod stream_journal_to_kinesis_input {
         /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
         /// <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's
         /// <code>CreationDateTime</code>.</p>
-        pub fn inclusive_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn inclusive_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inclusive_start_time = Some(input);
             self
         }
@@ -3011,7 +3081,7 @@ pub mod stream_journal_to_kinesis_input {
         /// <code>CreationDateTime</code>.</p>
         pub fn set_inclusive_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inclusive_start_time = input;
             self
@@ -3021,7 +3091,7 @@ pub mod stream_journal_to_kinesis_input {
         /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
         /// and in Universal Coordinated Time (UTC). For example:
         /// <code>2019-06-13T21:36:34Z</code>.</p>
-        pub fn exclusive_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn exclusive_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.exclusive_end_time = Some(input);
             self
         }
@@ -3032,7 +3102,7 @@ pub mod stream_journal_to_kinesis_input {
         /// <code>2019-06-13T21:36:34Z</code>.</p>
         pub fn set_exclusive_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.exclusive_end_time = input;
             self
@@ -3096,6 +3166,7 @@ pub type StreamJournalToKinesisInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl StreamJournalToKinesisInput {
     /// Consumes the builder and constructs an Operation<[`StreamJournalToKinesis`](crate::operation::StreamJournalToKinesis)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3169,11 +3240,14 @@ impl StreamJournalToKinesisInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3308,6 +3382,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3374,11 +3449,14 @@ impl TagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3495,6 +3573,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3528,13 +3607,17 @@ impl UntagResourceInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::UntagResourceInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_27) = &_input.tag_keys {
                 for inner_28 in inner_27 {
                     query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_28));
                 }
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -3544,7 +3627,7 @@ impl UntagResourceInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3565,11 +3648,14 @@ impl UntagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3779,6 +3865,7 @@ pub type UpdateLedgerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateLedgerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLedger`](crate::operation::UpdateLedger)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3844,11 +3931,14 @@ impl UpdateLedgerInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4012,6 +4102,7 @@ pub type UpdateLedgerPermissionsModeInputOperationRetryAlias = aws_http::AwsErro
 impl UpdateLedgerPermissionsModeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLedgerPermissionsMode`](crate::operation::UpdateLedgerPermissionsMode)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4080,11 +4171,14 @@ impl UpdateLedgerPermissionsModeInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4460,13 +4554,13 @@ pub struct StreamJournalToKinesisInput {
     /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
     /// <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's
     /// <code>CreationDateTime</code>.</p>
-    pub inclusive_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The exclusive date and time that specifies when the stream ends. If you don't define
     /// this parameter, the stream runs indefinitely until you cancel it.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
     /// and in Universal Coordinated Time (UTC). For example:
     /// <code>2019-06-13T21:36:34Z</code>.</p>
-    pub exclusive_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The configuration settings of the Kinesis Data Streams destination for your stream request.</p>
     pub kinesis_configuration: std::option::Option<crate::model::KinesisConfiguration>,
     /// <p>The name that you want to assign to the QLDB journal stream. User-defined names can
@@ -4504,7 +4598,7 @@ impl StreamJournalToKinesisInput {
     /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
     /// <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's
     /// <code>CreationDateTime</code>.</p>
-    pub fn inclusive_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn inclusive_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.inclusive_start_time.as_ref()
     }
     /// <p>The exclusive date and time that specifies when the stream ends. If you don't define
@@ -4512,7 +4606,7 @@ impl StreamJournalToKinesisInput {
     /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
     /// and in Universal Coordinated Time (UTC). For example:
     /// <code>2019-06-13T21:36:34Z</code>.</p>
-    pub fn exclusive_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn exclusive_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.exclusive_end_time.as_ref()
     }
     /// <p>The configuration settings of the Kinesis Data Streams destination for your stream request.</p>
@@ -4864,14 +4958,14 @@ pub struct ExportJournalToS3Input {
     /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
     /// <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's
     /// <code>CreationDateTime</code>.</p>
-    pub inclusive_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The exclusive end date and time for the range of journal contents to export.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
     /// and in Universal Coordinated Time (UTC). For example:
     /// <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and
     /// time.</p>
-    pub exclusive_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The configuration settings of the Amazon S3 bucket destination for your export
     /// request.</p>
     pub s3_export_configuration: std::option::Option<crate::model::S3ExportConfiguration>,
@@ -4901,7 +4995,7 @@ impl ExportJournalToS3Input {
     /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
     /// <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's
     /// <code>CreationDateTime</code>.</p>
-    pub fn inclusive_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn inclusive_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.inclusive_start_time.as_ref()
     }
     /// <p>The exclusive end date and time for the range of journal contents to export.</p>
@@ -4910,7 +5004,7 @@ impl ExportJournalToS3Input {
     /// <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and
     /// time.</p>
-    pub fn exclusive_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn exclusive_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.exclusive_end_time.as_ref()
     }
     /// <p>The configuration settings of the Amazon S3 bucket destination for your export

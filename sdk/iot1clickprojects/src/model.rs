@@ -232,10 +232,10 @@ pub struct ProjectSummary {
     /// <p>The name of the project being summarized.</p>
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
     /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    pub updated_date: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -250,12 +250,12 @@ impl ProjectSummary {
         self.project_name.as_deref()
     }
     /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
     /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_date.as_ref()
     }
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
@@ -285,8 +285,8 @@ pub mod project_summary {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) project_name: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -313,21 +313,21 @@ pub mod project_summary {
             self
         }
         /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
         /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-        pub fn updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_date = Some(input);
             self
         }
@@ -335,7 +335,7 @@ pub mod project_summary {
         /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
         pub fn set_updated_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_date = input;
             self
@@ -393,11 +393,11 @@ pub struct PlacementSummary {
     /// <p>The name of the placement being summarized.</p>
     pub placement_name: std::option::Option<std::string::String>,
     /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
     /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
     /// same.</p>
-    pub updated_date: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PlacementSummary {
     /// <p>The name of the project containing the placement.</p>
@@ -409,13 +409,13 @@ impl PlacementSummary {
         self.placement_name.as_deref()
     }
     /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
     /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
     /// same.</p>
-    pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_date.as_ref()
     }
 }
@@ -437,8 +437,8 @@ pub mod placement_summary {
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
         pub(crate) placement_name: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the project containing the placement.</p>
@@ -465,14 +465,14 @@ pub mod placement_summary {
             self
         }
         /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -480,7 +480,7 @@ pub mod placement_summary {
         /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
         /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
         /// same.</p>
-        pub fn updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_date = Some(input);
             self
         }
@@ -489,7 +489,7 @@ pub mod placement_summary {
         /// same.</p>
         pub fn set_updated_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_date = input;
             self
@@ -524,10 +524,10 @@ pub struct ProjectDescription {
     /// <p>The description of the project.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
     /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    pub updated_date: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object describing the project's placement specifications.</p>
     pub placement_template: std::option::Option<crate::model::PlacementTemplate>,
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
@@ -548,12 +548,12 @@ impl ProjectDescription {
         self.description.as_deref()
     }
     /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
     /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_date.as_ref()
     }
     /// <p>An object describing the project's placement specifications.</p>
@@ -590,8 +590,8 @@ pub mod project_description {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) project_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) placement_template: std::option::Option<crate::model::PlacementTemplate>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -629,21 +629,21 @@ pub mod project_description {
             self
         }
         /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
         /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-        pub fn updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_date = Some(input);
             self
         }
@@ -651,7 +651,7 @@ pub mod project_description {
         /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
         pub fn set_updated_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_date = input;
             self
@@ -727,11 +727,11 @@ pub struct PlacementDescription {
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date when the placement was initially created, in UNIX epoch time format.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
     /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
     /// same.</p>
-    pub updated_date: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PlacementDescription {
     /// <p>The name of the project containing the placement.</p>
@@ -750,13 +750,13 @@ impl PlacementDescription {
         self.attributes.as_ref()
     }
     /// <p>The date when the placement was initially created, in UNIX epoch time format.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
     /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
     /// same.</p>
-    pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_date.as_ref()
     }
 }
@@ -782,8 +782,8 @@ pub mod placement_description {
         pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the project containing the placement.</p>
@@ -835,14 +835,14 @@ pub mod placement_description {
             self
         }
         /// <p>The date when the placement was initially created, in UNIX epoch time format.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date when the placement was initially created, in UNIX epoch time format.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -850,7 +850,7 @@ pub mod placement_description {
         /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
         /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
         /// same.</p>
-        pub fn updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_date = Some(input);
             self
         }
@@ -859,7 +859,7 @@ pub mod placement_description {
         /// same.</p>
         pub fn set_updated_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_date = input;
             self

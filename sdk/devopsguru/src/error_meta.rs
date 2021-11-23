@@ -3,13 +3,12 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An exception that is thrown when a conflict occurs.
-    /// </p>
+    /// <p> An exception that is thrown when a conflict occurs. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -19,9 +18,8 @@ pub enum Error {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -223,6 +221,94 @@ where
                 }
                 crate::error::DescribeInsightErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationHealthError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationHealthError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeOrganizationHealthErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::DescribeOrganizationHealthErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::DescribeOrganizationHealthErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DescribeOrganizationHealthErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::DescribeOrganizationHealthErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationOverviewError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationOverviewError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeOrganizationOverviewErrorKind::AccessDeniedException(
+                    inner,
+                ) => Error::AccessDeniedException(inner),
+                crate::error::DescribeOrganizationOverviewErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::DescribeOrganizationOverviewErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DescribeOrganizationOverviewErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::DescribeOrganizationOverviewErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DescribeOrganizationResourceCollectionHealthError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeOrganizationResourceCollectionHealthError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeOrganizationResourceCollectionHealthErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::DescribeOrganizationResourceCollectionHealthErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::DescribeOrganizationResourceCollectionHealthErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::DescribeOrganizationResourceCollectionHealthErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::DescribeOrganizationResourceCollectionHealthErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -462,6 +548,36 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListOrganizationInsightsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListOrganizationInsightsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListOrganizationInsightsErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::ListOrganizationInsightsErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::ListOrganizationInsightsErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::ListOrganizationInsightsErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::ListOrganizationInsightsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRecommendationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -581,6 +697,36 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::SearchInsightsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchOrganizationInsightsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::SearchOrganizationInsightsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::SearchOrganizationInsightsErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::SearchOrganizationInsightsErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::SearchOrganizationInsightsErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::SearchOrganizationInsightsErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::SearchOrganizationInsightsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }

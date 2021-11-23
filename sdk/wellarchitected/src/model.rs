@@ -461,7 +461,7 @@ pub struct Workload {
     /// <p>The environment for the workload.</p>
     pub environment: std::option::Option<crate::model::WorkloadEnvironment>,
     /// <p>The date and time recorded.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of AWS account IDs associated with the workload.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of AWS Regions associated with the workload, for example,
@@ -475,7 +475,7 @@ pub struct Workload {
     /// primary group or individual that owns the workload review process.</p>
     pub review_owner: std::option::Option<std::string::String>,
     /// <p>The date and time recorded.</p>
-    pub review_restriction_date: std::option::Option<aws_smithy_types::Instant>,
+    pub review_restriction_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review
     /// owner</i> field is required.</p>
     /// <p>If a <b>Review owner</b> is not added to the workload within
@@ -667,7 +667,7 @@ impl Workload {
         self.environment.as_ref()
     }
     /// <p>The date and time recorded.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The list of AWS account IDs associated with the workload.</p>
@@ -693,7 +693,7 @@ impl Workload {
         self.review_owner.as_deref()
     }
     /// <p>The date and time recorded.</p>
-    pub fn review_restriction_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn review_restriction_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.review_restriction_date.as_ref()
     }
     /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review
@@ -934,13 +934,13 @@ pub mod workload {
         pub(crate) workload_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) environment: std::option::Option<crate::model::WorkloadEnvironment>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) non_aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) architectural_design: std::option::Option<std::string::String>,
         pub(crate) review_owner: std::option::Option<std::string::String>,
-        pub(crate) review_restriction_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) review_restriction_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) is_review_owner_update_acknowledged: std::option::Option<bool>,
         pub(crate) industry_type: std::option::Option<std::string::String>,
         pub(crate) industry: std::option::Option<std::string::String>,
@@ -1018,14 +1018,14 @@ pub mod workload {
             self
         }
         /// <p>The date and time recorded.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time recorded.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -1115,14 +1115,14 @@ pub mod workload {
             self
         }
         /// <p>The date and time recorded.</p>
-        pub fn review_restriction_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn review_restriction_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.review_restriction_date = Some(input);
             self
         }
         /// <p>The date and time recorded.</p>
         pub fn set_review_restriction_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.review_restriction_date = input;
             self
@@ -1962,7 +1962,7 @@ pub struct LensReview {
     pub pillar_review_summaries:
         std::option::Option<std::vec::Vec<crate::model::PillarReviewSummary>>,
     /// <p>The date and time recorded.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The notes associated with the workload.</p>
     pub notes: std::option::Option<std::string::String>,
     /// <p>A map from risk names to the count of how questions have that rating.</p>
@@ -1995,7 +1995,7 @@ impl LensReview {
         self.pillar_review_summaries.as_deref()
     }
     /// <p>The date and time recorded.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The notes associated with the workload.</p>
@@ -2040,7 +2040,7 @@ pub mod lens_review {
         pub(crate) lens_status: std::option::Option<crate::model::LensStatus>,
         pub(crate) pillar_review_summaries:
             std::option::Option<std::vec::Vec<crate::model::PillarReviewSummary>>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) notes: std::option::Option<std::string::String>,
         pub(crate) risk_counts:
             std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
@@ -2115,14 +2115,14 @@ pub mod lens_review {
             self
         }
         /// <p>The date and time recorded.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time recorded.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -3352,7 +3352,7 @@ pub struct WorkloadSummary {
     /// <p>An AWS account ID.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>The date and time recorded.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub lenses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A map from risk names to the count of how questions have that rating.</p>
@@ -3380,7 +3380,7 @@ impl WorkloadSummary {
         self.owner.as_deref()
     }
     /// <p>The date and time recorded.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
@@ -3424,7 +3424,7 @@ pub mod workload_summary {
         pub(crate) workload_arn: std::option::Option<std::string::String>,
         pub(crate) workload_name: std::option::Option<std::string::String>,
         pub(crate) owner: std::option::Option<std::string::String>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) lenses: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) risk_counts:
             std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
@@ -3479,14 +3479,14 @@ pub mod workload_summary {
             self
         }
         /// <p>The date and time recorded.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time recorded.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -4029,7 +4029,7 @@ pub struct MilestoneSummary {
     /// <p>Milestone names must be unique within a workload.</p>
     pub milestone_name: std::option::Option<std::string::String>,
     /// <p>The date and time recorded.</p>
-    pub recorded_at: std::option::Option<aws_smithy_types::Instant>,
+    pub recorded_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A workload summary return object.</p>
     pub workload_summary: std::option::Option<crate::model::WorkloadSummary>,
 }
@@ -4045,7 +4045,7 @@ impl MilestoneSummary {
         self.milestone_name.as_deref()
     }
     /// <p>The date and time recorded.</p>
-    pub fn recorded_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn recorded_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.recorded_at.as_ref()
     }
     /// <p>A workload summary return object.</p>
@@ -4071,7 +4071,7 @@ pub mod milestone_summary {
     pub struct Builder {
         pub(crate) milestone_number: std::option::Option<i32>,
         pub(crate) milestone_name: std::option::Option<std::string::String>,
-        pub(crate) recorded_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) recorded_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) workload_summary: std::option::Option<crate::model::WorkloadSummary>,
     }
     impl Builder {
@@ -4103,14 +4103,14 @@ pub mod milestone_summary {
             self
         }
         /// <p>The date and time recorded.</p>
-        pub fn recorded_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn recorded_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.recorded_at = Some(input);
             self
         }
         /// <p>The date and time recorded.</p>
         pub fn set_recorded_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.recorded_at = input;
             self
@@ -4160,7 +4160,7 @@ pub struct LensReviewSummary {
     /// <p>The status of the lens.</p>
     pub lens_status: std::option::Option<crate::model::LensStatus>,
     /// <p>The date and time recorded.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A map from risk names to the count of how questions have that rating.</p>
     pub risk_counts: std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
 }
@@ -4183,7 +4183,7 @@ impl LensReviewSummary {
         self.lens_status.as_ref()
     }
     /// <p>The date and time recorded.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>A map from risk names to the count of how questions have that rating.</p>
@@ -4215,7 +4215,7 @@ pub mod lens_review_summary {
         pub(crate) lens_version: std::option::Option<std::string::String>,
         pub(crate) lens_name: std::option::Option<std::string::String>,
         pub(crate) lens_status: std::option::Option<crate::model::LensStatus>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) risk_counts:
             std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
     }
@@ -4266,14 +4266,14 @@ pub mod lens_review_summary {
             self
         }
         /// <p>The date and time recorded.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time recorded.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -4939,7 +4939,7 @@ pub struct Milestone {
     /// <p>Milestone names must be unique within a workload.</p>
     pub milestone_name: std::option::Option<std::string::String>,
     /// <p>The date and time recorded.</p>
-    pub recorded_at: std::option::Option<aws_smithy_types::Instant>,
+    pub recorded_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A workload return object.</p>
     pub workload: std::option::Option<crate::model::Workload>,
 }
@@ -4955,7 +4955,7 @@ impl Milestone {
         self.milestone_name.as_deref()
     }
     /// <p>The date and time recorded.</p>
-    pub fn recorded_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn recorded_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.recorded_at.as_ref()
     }
     /// <p>A workload return object.</p>
@@ -4981,7 +4981,7 @@ pub mod milestone {
     pub struct Builder {
         pub(crate) milestone_number: std::option::Option<i32>,
         pub(crate) milestone_name: std::option::Option<std::string::String>,
-        pub(crate) recorded_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) recorded_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) workload: std::option::Option<crate::model::Workload>,
     }
     impl Builder {
@@ -5013,14 +5013,14 @@ pub mod milestone {
             self
         }
         /// <p>The date and time recorded.</p>
-        pub fn recorded_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn recorded_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.recorded_at = Some(input);
             self
         }
         /// <p>The date and time recorded.</p>
         pub fn set_recorded_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.recorded_at = input;
             self

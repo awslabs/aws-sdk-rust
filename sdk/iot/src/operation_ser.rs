@@ -359,7 +359,7 @@ pub fn ser_payload_create_topic_rule_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_com_amazonaws_iot_synthetic_create_topic_rule_input_topic_rule_payload(&payload)?
+        crate::operation_ser::serialize_member_com_amazonaws_iot_synthetic_create_topic_rule_input_topic_rule_payload(payload)?
     ))
 }
 
@@ -617,7 +617,7 @@ pub fn ser_payload_replace_topic_rule_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_com_amazonaws_iot_synthetic_replace_topic_rule_input_topic_rule_payload(&payload)?
+        crate::operation_ser::serialize_member_com_amazonaws_iot_synthetic_replace_topic_rule_input_topic_rule_payload(payload)?
     ))
 }
 
@@ -656,7 +656,7 @@ pub fn ser_payload_set_logging_options_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_com_amazonaws_iot_synthetic_set_logging_options_input_logging_options_payload(&payload)?
+        crate::operation_ser::serialize_member_com_amazonaws_iot_synthetic_set_logging_options_input_logging_options_payload(payload)?
     ))
 }
 

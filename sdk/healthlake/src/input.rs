@@ -130,6 +130,7 @@ pub type CreateFhirDatastoreInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl CreateFhirDatastoreInput {
     /// Consumes the builder and constructs an Operation<[`CreateFHIRDatastore`](crate::operation::CreateFHIRDatastore)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -189,11 +190,14 @@ impl CreateFhirDatastoreInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -283,6 +287,7 @@ pub type DeleteFhirDatastoreInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl DeleteFhirDatastoreInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFHIRDatastore`](crate::operation::DeleteFHIRDatastore)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -339,11 +344,14 @@ impl DeleteFhirDatastoreInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -433,6 +441,7 @@ pub type DescribeFhirDatastoreInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl DescribeFhirDatastoreInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFHIRDatastore`](crate::operation::DescribeFHIRDatastore)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -491,11 +500,14 @@ impl DescribeFhirDatastoreInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -597,6 +609,7 @@ pub type DescribeFhirExportJobInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl DescribeFhirExportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFHIRExportJob`](crate::operation::DescribeFHIRExportJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -655,11 +668,14 @@ impl DescribeFhirExportJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -761,6 +777,7 @@ pub type DescribeFhirImportJobInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl DescribeFhirImportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFHIRImportJob`](crate::operation::DescribeFHIRImportJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -819,11 +836,14 @@ impl DescribeFhirImportJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -942,6 +962,7 @@ pub type ListFhirDatastoresInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl ListFhirDatastoresInput {
     /// Consumes the builder and constructs an Operation<[`ListFHIRDatastores`](crate::operation::ListFHIRDatastores)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -998,11 +1019,14 @@ impl ListFhirDatastoresInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1064,8 +1088,8 @@ pub mod list_fhir_export_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submitted_before: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) submitted_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submitted_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) submitted_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>
@@ -1144,7 +1168,7 @@ pub mod list_fhir_export_jobs_input {
         /// <p>
         /// This parameter limits the response to FHIR export jobs submitted before a user specified date.
         /// </p>
-        pub fn submitted_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submitted_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submitted_before = Some(input);
             self
         }
@@ -1153,7 +1177,7 @@ pub mod list_fhir_export_jobs_input {
         /// </p>
         pub fn set_submitted_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submitted_before = input;
             self
@@ -1161,7 +1185,7 @@ pub mod list_fhir_export_jobs_input {
         /// <p>
         /// This parameter limits the response to FHIR export jobs submitted after a user specified date.
         /// </p>
-        pub fn submitted_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submitted_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submitted_after = Some(input);
             self
         }
@@ -1170,7 +1194,7 @@ pub mod list_fhir_export_jobs_input {
         /// </p>
         pub fn set_submitted_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submitted_after = input;
             self
@@ -1201,6 +1225,7 @@ pub type ListFhirExportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl ListFhirExportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListFHIRExportJobs`](crate::operation::ListFHIRExportJobs)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1257,11 +1282,14 @@ impl ListFhirExportJobsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1323,8 +1351,8 @@ pub mod list_fhir_import_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submitted_before: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) submitted_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submitted_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) submitted_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>
@@ -1403,7 +1431,7 @@ pub mod list_fhir_import_jobs_input {
         /// <p>
         /// This parameter limits the response to FHIR import jobs submitted before a user specified date.
         /// </p>
-        pub fn submitted_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submitted_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submitted_before = Some(input);
             self
         }
@@ -1412,7 +1440,7 @@ pub mod list_fhir_import_jobs_input {
         /// </p>
         pub fn set_submitted_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submitted_before = input;
             self
@@ -1420,7 +1448,7 @@ pub mod list_fhir_import_jobs_input {
         /// <p>
         /// This parameter limits the response to FHIR import jobs submitted after a user specified date.
         /// </p>
-        pub fn submitted_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submitted_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submitted_after = Some(input);
             self
         }
@@ -1429,7 +1457,7 @@ pub mod list_fhir_import_jobs_input {
         /// </p>
         pub fn set_submitted_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submitted_after = input;
             self
@@ -1460,6 +1488,7 @@ pub type ListFhirImportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl ListFhirImportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListFHIRImportJobs`](crate::operation::ListFHIRImportJobs)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1516,11 +1545,14 @@ impl ListFhirImportJobsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1614,6 +1646,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1672,11 +1705,14 @@ impl ListTagsForResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1820,6 +1856,7 @@ pub type StartFhirExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl StartFhirExportJobInput {
     /// Consumes the builder and constructs an Operation<[`StartFHIRExportJob`](crate::operation::StartFHIRExportJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -1879,11 +1916,14 @@ impl StartFhirExportJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2042,6 +2082,7 @@ pub type StartFhirImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl StartFhirImportJobInput {
     /// Consumes the builder and constructs an Operation<[`StartFHIRImportJob`](crate::operation::StartFHIRImportJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -2101,11 +2142,14 @@ impl StartFhirImportJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2224,6 +2268,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2279,11 +2324,14 @@ impl TagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2402,6 +2450,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2457,11 +2506,14 @@ impl UntagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2741,11 +2793,11 @@ pub struct ListFhirImportJobsInput {
     /// <p>
     /// This parameter limits the response to FHIR import jobs submitted before a user specified date.
     /// </p>
-    pub submitted_before: std::option::Option<aws_smithy_types::Instant>,
+    pub submitted_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// This parameter limits the response to FHIR import jobs submitted after a user specified date.
     /// </p>
-    pub submitted_after: std::option::Option<aws_smithy_types::Instant>,
+    pub submitted_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListFhirImportJobsInput {
     /// <p>
@@ -2781,13 +2833,13 @@ impl ListFhirImportJobsInput {
     /// <p>
     /// This parameter limits the response to FHIR import jobs submitted before a user specified date.
     /// </p>
-    pub fn submitted_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submitted_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_before.as_ref()
     }
     /// <p>
     /// This parameter limits the response to FHIR import jobs submitted after a user specified date.
     /// </p>
-    pub fn submitted_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submitted_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_after.as_ref()
     }
 }
@@ -2832,11 +2884,11 @@ pub struct ListFhirExportJobsInput {
     /// <p>
     /// This parameter limits the response to FHIR export jobs submitted before a user specified date.
     /// </p>
-    pub submitted_before: std::option::Option<aws_smithy_types::Instant>,
+    pub submitted_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// This parameter limits the response to FHIR export jobs submitted after a user specified date.
     /// </p>
-    pub submitted_after: std::option::Option<aws_smithy_types::Instant>,
+    pub submitted_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListFhirExportJobsInput {
     /// <p>
@@ -2872,13 +2924,13 @@ impl ListFhirExportJobsInput {
     /// <p>
     /// This parameter limits the response to FHIR export jobs submitted before a user specified date.
     /// </p>
-    pub fn submitted_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submitted_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_before.as_ref()
     }
     /// <p>
     /// This parameter limits the response to FHIR export jobs submitted after a user specified date.
     /// </p>
-    pub fn submitted_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submitted_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_after.as_ref()
     }
 }

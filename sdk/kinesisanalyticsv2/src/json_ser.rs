@@ -240,7 +240,7 @@ pub fn serialize_structure_crate_input_delete_application_input(
     if let Some(var_49) = &input.create_timestamp {
         object
             .key("CreateTimestamp")
-            .instant(var_49, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_49, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -337,7 +337,7 @@ pub fn serialize_structure_crate_input_delete_application_snapshot_input(
     if let Some(var_65) = &input.snapshot_creation_timestamp {
         object
             .key("SnapshotCreationTimestamp")
-            .instant(var_65, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_65, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

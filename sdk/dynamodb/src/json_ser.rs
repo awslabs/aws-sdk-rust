@@ -505,7 +505,7 @@ pub fn serialize_structure_crate_input_export_table_to_point_in_time_input(
     if let Some(var_110) = &input.export_time {
         object
             .key("ExportTime")
-            .instant(var_110, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_110, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_111) = &input.client_token {
         object.key("ClientToken").string(var_111);
@@ -600,12 +600,12 @@ pub fn serialize_structure_crate_input_list_backups_input(
     if let Some(var_136) = &input.time_range_lower_bound {
         object
             .key("TimeRangeLowerBound")
-            .instant(var_136, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_136, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_137) = &input.time_range_upper_bound {
         object
             .key("TimeRangeUpperBound")
-            .instant(var_137, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_137, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_138) = &input.exclusive_start_backup_arn {
         object.key("ExclusiveStartBackupArn").string(var_138);
@@ -980,7 +980,7 @@ pub fn serialize_structure_crate_input_restore_table_to_point_in_time_input(
     if let Some(var_234) = &input.restore_date_time {
         object
             .key("RestoreDateTime")
-            .instant(var_234, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_234, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_235) = &input.billing_mode_override {
         object.key("BillingModeOverride").string(var_235.as_str());

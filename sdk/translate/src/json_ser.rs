@@ -319,6 +319,9 @@ pub fn serialize_structure_crate_model_terminology_data(
     if let Some(var_63) = &input.format {
         object.key("Format").string(var_63.as_str());
     }
+    if let Some(var_64) = &input.directionality {
+        object.key("Directionality").string(var_64.as_str());
+    }
     Ok(())
 }
 
@@ -326,21 +329,21 @@ pub fn serialize_structure_crate_model_text_translation_job_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TextTranslationJobFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_64) = &input.job_name {
-        object.key("JobName").string(var_64);
+    if let Some(var_65) = &input.job_name {
+        object.key("JobName").string(var_65);
     }
-    if let Some(var_65) = &input.job_status {
-        object.key("JobStatus").string(var_65.as_str());
+    if let Some(var_66) = &input.job_status {
+        object.key("JobStatus").string(var_66.as_str());
     }
-    if let Some(var_66) = &input.submitted_before_time {
+    if let Some(var_67) = &input.submitted_before_time {
         object
             .key("SubmittedBeforeTime")
-            .instant(var_66, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_67, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_67) = &input.submitted_after_time {
+    if let Some(var_68) = &input.submitted_after_time {
         object
             .key("SubmittedAfterTime")
-            .instant(var_67, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_68, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -349,11 +352,11 @@ pub fn serialize_structure_crate_model_input_data_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::InputDataConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_68) = &input.s3_uri {
-        object.key("S3Uri").string(var_68);
+    if let Some(var_69) = &input.s3_uri {
+        object.key("S3Uri").string(var_69);
     }
-    if let Some(var_69) = &input.content_type {
-        object.key("ContentType").string(var_69);
+    if let Some(var_70) = &input.content_type {
+        object.key("ContentType").string(var_70);
     }
     Ok(())
 }
@@ -362,8 +365,13 @@ pub fn serialize_structure_crate_model_output_data_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::OutputDataConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_70) = &input.s3_uri {
-        object.key("S3Uri").string(var_70);
+    if let Some(var_71) = &input.s3_uri {
+        object.key("S3Uri").string(var_71);
+    }
+    if let Some(var_72) = &input.encryption_key {
+        let mut object_73 = object.key("EncryptionKey").start_object();
+        crate::json_ser::serialize_structure_crate_model_encryption_key(&mut object_73, var_72)?;
+        object_73.finish();
     }
     Ok(())
 }

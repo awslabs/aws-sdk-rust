@@ -884,7 +884,7 @@ pub fn serialize_operation_crate_operation_describe_environments(
     #[allow(unused_mut)]
     let mut scope_237 = writer.prefix("IncludedDeletedBackTo");
     if let Some(var_238) = &input.included_deleted_back_to {
-        scope_237.instant(var_238, aws_smithy_types::instant::Format::DateTime);
+        scope_237.date_time(var_238, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_239 = writer.prefix("MaxRecords");
@@ -952,12 +952,12 @@ pub fn serialize_operation_crate_operation_describe_events(
     #[allow(unused_mut)]
     let mut scope_259 = writer.prefix("StartTime");
     if let Some(var_260) = &input.start_time {
-        scope_259.instant(var_260, aws_smithy_types::instant::Format::DateTime);
+        scope_259.date_time(var_260, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_261 = writer.prefix("EndTime");
     if let Some(var_262) = &input.end_time {
-        scope_261.instant(var_262, aws_smithy_types::instant::Format::DateTime);
+        scope_261.date_time(var_262, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_263 = writer.prefix("MaxRecords");

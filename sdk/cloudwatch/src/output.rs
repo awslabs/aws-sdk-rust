@@ -834,9 +834,9 @@ pub struct GetMetricStreamOutput {
     /// and <code>stopped</code>.</p>
     pub state: std::option::Option<std::string::String>,
     /// <p>The date that the metric stream was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date of the most recent update to the metric stream's configuration.</p>
-    pub last_update_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p></p>
     pub output_format: std::option::Option<crate::model::MetricStreamOutputFormat>,
 }
@@ -876,11 +876,11 @@ impl GetMetricStreamOutput {
         self.state.as_deref()
     }
     /// <p>The date that the metric stream was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date of the most recent update to the metric stream's configuration.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
     /// <p></p>
@@ -919,8 +919,8 @@ pub mod get_metric_stream_output {
         pub(crate) firehose_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) output_format: std::option::Option<crate::model::MetricStreamOutputFormat>,
     }
     impl Builder {
@@ -1031,27 +1031,27 @@ pub mod get_metric_stream_output {
             self
         }
         /// <p>The date that the metric stream was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date that the metric stream was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date of the most recent update to the metric stream's configuration.</p>
-        pub fn last_update_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_date = Some(input);
             self
         }
         /// <p>The date of the most recent update to the metric stream's configuration.</p>
         pub fn set_last_update_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_date = input;
             self

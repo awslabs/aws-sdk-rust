@@ -576,9 +576,9 @@ pub struct Order {
     /// <p>The payment option for the order.</p>
     pub payment_option: std::option::Option<crate::model::PaymentOption>,
     /// <p>The submission date for the order.</p>
-    pub order_submission_date: std::option::Option<aws_smithy_types::Instant>,
+    pub order_submission_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The fulfillment date of the order.</p>
-    pub order_fulfilled_date: std::option::Option<aws_smithy_types::Instant>,
+    pub order_fulfilled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Order {
     /// <p>
@@ -604,11 +604,11 @@ impl Order {
         self.payment_option.as_ref()
     }
     /// <p>The submission date for the order.</p>
-    pub fn order_submission_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn order_submission_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.order_submission_date.as_ref()
     }
     /// <p>The fulfillment date of the order.</p>
-    pub fn order_fulfilled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn order_fulfilled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.order_fulfilled_date.as_ref()
     }
 }
@@ -636,8 +636,8 @@ pub mod order {
         pub(crate) status: std::option::Option<crate::model::OrderStatus>,
         pub(crate) line_items: std::option::Option<std::vec::Vec<crate::model::LineItem>>,
         pub(crate) payment_option: std::option::Option<crate::model::PaymentOption>,
-        pub(crate) order_submission_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) order_fulfilled_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) order_submission_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) order_fulfilled_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>
@@ -707,27 +707,27 @@ pub mod order {
             self
         }
         /// <p>The submission date for the order.</p>
-        pub fn order_submission_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn order_submission_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.order_submission_date = Some(input);
             self
         }
         /// <p>The submission date for the order.</p>
         pub fn set_order_submission_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.order_submission_date = input;
             self
         }
         /// <p>The fulfillment date of the order.</p>
-        pub fn order_fulfilled_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn order_fulfilled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.order_fulfilled_date = Some(input);
             self
         }
         /// <p>The fulfillment date of the order.</p>
         pub fn set_order_fulfilled_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.order_fulfilled_date = input;
             self

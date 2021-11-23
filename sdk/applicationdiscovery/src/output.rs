@@ -116,18 +116,18 @@ impl StopDataCollectionByAgentIdsOutput {
 pub struct StopContinuousExportOutput {
     /// <p>Timestamp that represents when this continuous export started collecting
     /// data.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Timestamp that represents when this continuous export was stopped.</p>
-    pub stop_time: std::option::Option<aws_smithy_types::Instant>,
+    pub stop_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StopContinuousExportOutput {
     /// <p>Timestamp that represents when this continuous export started collecting
     /// data.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Timestamp that represents when this continuous export was stopped.</p>
-    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
 }
@@ -145,13 +145,13 @@ pub mod stop_continuous_export_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) stop_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) stop_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Timestamp that represents when this continuous export started collecting
         /// data.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -159,20 +159,20 @@ pub mod stop_continuous_export_output {
         /// data.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>Timestamp that represents when this continuous export was stopped.</p>
-        pub fn stop_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn stop_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stop_time = Some(input);
             self
         }
         /// <p>Timestamp that represents when this continuous export was stopped.</p>
         pub fn set_stop_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.stop_time = input;
             self
@@ -393,7 +393,7 @@ pub struct StartContinuousExportOutput {
     /// <p>The name of the s3 bucket where the export data parquet files are stored.</p>
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The timestamp representing when the continuous export was started.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of data collector used to gather this data (currently only offered for
     /// AGENT).</p>
     pub data_source: std::option::Option<crate::model::DataSource>,
@@ -418,7 +418,7 @@ impl StartContinuousExportOutput {
         self.s3_bucket.as_deref()
     }
     /// <p>The timestamp representing when the continuous export was started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The type of data collector used to gather this data (currently only offered for
@@ -460,7 +460,7 @@ pub mod start_continuous_export_output {
     pub struct Builder {
         pub(crate) export_id: std::option::Option<std::string::String>,
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_source: std::option::Option<crate::model::DataSource>,
         pub(crate) schema_storage_config: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -488,14 +488,14 @@ pub mod start_continuous_export_output {
             self
         }
         /// <p>The timestamp representing when the continuous export was started.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The timestamp representing when the continuous export was started.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self

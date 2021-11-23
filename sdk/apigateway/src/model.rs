@@ -806,7 +806,7 @@ pub struct MethodSetting {
     pub metrics_enabled: bool,
     /// <p>Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write only error-level entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events as well as extra informational events.</p>
     pub logging_level: std::option::Option<std::string::String>,
-    /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.</p>
+    /// <p>Specifies whether full requests and responses are logged for this method, which affects the log entries pushed to Amazon CloudWatch Logs. This can be useful to troubleshoot APIs, but can result in logging sensitive data. We recommend that you don't enable this option for production APIs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.</p>
     pub data_trace_enabled: bool,
     /// <p>Specifies the throttling burst limit. The PATCH path for this setting is <code>/{method_setting_key}/throttling/burstLimit</code>, and the value is an integer.</p>
     pub throttling_burst_limit: i32,
@@ -833,7 +833,7 @@ impl MethodSetting {
     pub fn logging_level(&self) -> std::option::Option<&str> {
         self.logging_level.as_deref()
     }
-    /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.</p>
+    /// <p>Specifies whether full requests and responses are logged for this method, which affects the log entries pushed to Amazon CloudWatch Logs. This can be useful to troubleshoot APIs, but can result in logging sensitive data. We recommend that you don't enable this option for production APIs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.</p>
     pub fn data_trace_enabled(&self) -> bool {
         self.data_trace_enabled
     }
@@ -932,12 +932,12 @@ pub mod method_setting {
             self.logging_level = input;
             self
         }
-        /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.</p>
+        /// <p>Specifies whether full requests and responses are logged for this method, which affects the log entries pushed to Amazon CloudWatch Logs. This can be useful to troubleshoot APIs, but can result in logging sensitive data. We recommend that you don't enable this option for production APIs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.</p>
         pub fn data_trace_enabled(mut self, input: bool) -> Self {
             self.data_trace_enabled = Some(input);
             self
         }
-        /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.</p>
+        /// <p>Specifies whether full requests and responses are logged for this method, which affects the log entries pushed to Amazon CloudWatch Logs. This can be useful to troubleshoot APIs, but can result in logging sensitive data. We recommend that you don't enable this option for production APIs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.</p>
         pub fn set_data_trace_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.data_trace_enabled = input;
             self
@@ -5406,9 +5406,9 @@ pub struct Stage {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The timestamp when the stage was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the stage last updated.</p>
-    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Stage {
     /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
@@ -5483,11 +5483,11 @@ impl Stage {
         self.tags.as_ref()
     }
     /// <p>The timestamp when the stage was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The timestamp when the stage last updated.</p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
 }
@@ -5541,8 +5541,8 @@ pub mod stage {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
@@ -5764,27 +5764,27 @@ pub mod stage {
             self
         }
         /// <p>The timestamp when the stage was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The timestamp when the stage was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The timestamp when the stage last updated.</p>
-        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date = Some(input);
             self
         }
         /// <p>The timestamp when the stage last updated.</p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date = input;
             self
@@ -6100,7 +6100,7 @@ pub struct RestApi {
     /// <p>The API's description.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp when the API was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A version identifier for the API.</p>
     pub version: std::option::Option<std::string::String>,
     /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
@@ -6135,7 +6135,7 @@ impl RestApi {
         self.description.as_deref()
     }
     /// <p>The timestamp when the API was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>A version identifier for the API.</p>
@@ -6211,7 +6211,7 @@ pub mod rest_api {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6256,14 +6256,14 @@ pub mod rest_api {
             self
         }
         /// <p>The timestamp when the API was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The timestamp when the API was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -7697,7 +7697,7 @@ pub struct DomainName {
     /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
-    pub certificate_upload_date: std::option::Option<aws_smithy_types::Instant>,
+    pub certificate_upload_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
     pub regional_domain_name: std::option::Option<std::string::String>,
     /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
@@ -7740,7 +7740,7 @@ impl DomainName {
         self.certificate_arn.as_deref()
     }
     /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
-    pub fn certificate_upload_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn certificate_upload_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.certificate_upload_date.as_ref()
     }
     /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
@@ -7844,7 +7844,7 @@ pub mod domain_name {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) certificate_name: std::option::Option<std::string::String>,
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
-        pub(crate) certificate_upload_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) certificate_upload_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) regional_domain_name: std::option::Option<std::string::String>,
         pub(crate) regional_hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) regional_certificate_name: std::option::Option<std::string::String>,
@@ -7900,14 +7900,14 @@ pub mod domain_name {
             self
         }
         /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
-        pub fn certificate_upload_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn certificate_upload_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.certificate_upload_date = Some(input);
             self
         }
         /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
         pub fn set_certificate_upload_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.certificate_upload_date = input;
             self
@@ -8147,7 +8147,7 @@ pub struct DocumentationVersion {
     /// <p>The version identifier of the API documentation snapshot.</p>
     pub version: std::option::Option<std::string::String>,
     /// <p>The date when the API documentation snapshot is created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the API documentation snapshot.</p>
     pub description: std::option::Option<std::string::String>,
 }
@@ -8157,7 +8157,7 @@ impl DocumentationVersion {
         self.version.as_deref()
     }
     /// <p>The date when the API documentation snapshot is created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The description of the API documentation snapshot.</p>
@@ -8181,7 +8181,7 @@ pub mod documentation_version {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -8196,14 +8196,14 @@ pub mod documentation_version {
             self
         }
         /// <p>The date when the API documentation snapshot is created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date when the API documentation snapshot is created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -8406,7 +8406,7 @@ pub struct Deployment {
     /// <p>The description for the deployment resource.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that the deployment resource was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.</p>
     pub api_summary: std::option::Option<
         std::collections::HashMap<
@@ -8425,7 +8425,7 @@ impl Deployment {
         self.description.as_deref()
     }
     /// <p>The date and time that the deployment resource was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.</p>
@@ -8458,7 +8458,7 @@ pub mod deployment {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) api_summary: std::option::Option<
             std::collections::HashMap<
                 std::string::String,
@@ -8488,14 +8488,14 @@ pub mod deployment {
             self
         }
         /// <p>The date and time that the deployment resource was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date and time that the deployment resource was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -8561,9 +8561,9 @@ pub struct ClientCertificate {
     /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
     pub pem_encoded_certificate: std::option::Option<std::string::String>,
     /// <p>The timestamp when the client certificate was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the client certificate will expire.</p>
-    pub expiration_date: std::option::Option<aws_smithy_types::Instant>,
+    pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -8582,11 +8582,11 @@ impl ClientCertificate {
         self.pem_encoded_certificate.as_deref()
     }
     /// <p>The timestamp when the client certificate was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The timestamp when the client certificate will expire.</p>
-    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
@@ -8618,8 +8618,8 @@ pub mod client_certificate {
         pub(crate) client_certificate_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) pem_encoded_certificate: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) expiration_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) expiration_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -8662,27 +8662,27 @@ pub mod client_certificate {
             self
         }
         /// <p>The timestamp when the client certificate was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The timestamp when the client certificate was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The timestamp when the client certificate will expire.</p>
-        pub fn expiration_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_date = Some(input);
             self
         }
         /// <p>The timestamp when the client certificate will expire.</p>
         pub fn set_expiration_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiration_date = input;
             self
@@ -9113,9 +9113,9 @@ pub struct ApiKey {
     /// <p>Specifies whether the API Key can be used by callers.</p>
     pub enabled: bool,
     /// <p>The timestamp when the API Key was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the API Key was last updated.</p>
-    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.</p>
     pub stage_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
@@ -9148,11 +9148,11 @@ impl ApiKey {
         self.enabled
     }
     /// <p>The timestamp when the API Key was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The timestamp when the API Key was last updated.</p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.</p>
@@ -9195,8 +9195,8 @@ pub mod api_key {
         pub(crate) customer_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) stage_keys: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -9264,27 +9264,27 @@ pub mod api_key {
             self
         }
         /// <p>The timestamp when the API Key was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The timestamp when the API Key was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The timestamp when the API Key was last updated.</p>
-        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date = Some(input);
             self
         }
         /// <p>The timestamp when the API Key was last updated.</p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date = input;
             self

@@ -2019,9 +2019,9 @@ pub struct DescribeIdentityOutput {
     /// <p>The provider names.</p>
     pub logins: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Date on which the identity was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Date on which the identity was last modified.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeIdentityOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -2033,11 +2033,11 @@ impl DescribeIdentityOutput {
         self.logins.as_deref()
     }
     /// <p>Date on which the identity was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Date on which the identity was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
@@ -2059,8 +2059,8 @@ pub mod describe_identity_output {
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
         pub(crate) logins: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -2093,27 +2093,27 @@ pub mod describe_identity_output {
             self
         }
         /// <p>Date on which the identity was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>Date on which the identity was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>Date on which the identity was last modified.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>Date on which the identity was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self

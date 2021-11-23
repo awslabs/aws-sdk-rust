@@ -1626,7 +1626,7 @@ pub struct GetLifecyclePolicyOutput {
     /// <p>The JSON lifecycle policy text.</p>
     pub lifecycle_policy_text: std::option::Option<std::string::String>,
     /// <p>The time stamp of the last time that the lifecycle policy was run.</p>
-    pub last_evaluated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_evaluated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetLifecyclePolicyOutput {
     /// <p>The registry ID associated with the request.</p>
@@ -1642,7 +1642,7 @@ impl GetLifecyclePolicyOutput {
         self.lifecycle_policy_text.as_deref()
     }
     /// <p>The time stamp of the last time that the lifecycle policy was run.</p>
-    pub fn last_evaluated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_evaluated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_evaluated_at.as_ref()
     }
 }
@@ -1665,7 +1665,7 @@ pub mod get_lifecycle_policy_output {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) lifecycle_policy_text: std::option::Option<std::string::String>,
-        pub(crate) last_evaluated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_evaluated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The registry ID associated with the request.</p>
@@ -1705,14 +1705,14 @@ pub mod get_lifecycle_policy_output {
             self
         }
         /// <p>The time stamp of the last time that the lifecycle policy was run.</p>
-        pub fn last_evaluated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_evaluated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_evaluated_at = Some(input);
             self
         }
         /// <p>The time stamp of the last time that the lifecycle policy was run.</p>
         pub fn set_last_evaluated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_evaluated_at = input;
             self
@@ -2688,7 +2688,7 @@ pub struct DeleteLifecyclePolicyOutput {
     /// <p>The JSON lifecycle policy text.</p>
     pub lifecycle_policy_text: std::option::Option<std::string::String>,
     /// <p>The time stamp of the last time that the lifecycle policy was run.</p>
-    pub last_evaluated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_evaluated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteLifecyclePolicyOutput {
     /// <p>The registry ID associated with the request.</p>
@@ -2704,7 +2704,7 @@ impl DeleteLifecyclePolicyOutput {
         self.lifecycle_policy_text.as_deref()
     }
     /// <p>The time stamp of the last time that the lifecycle policy was run.</p>
-    pub fn last_evaluated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_evaluated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_evaluated_at.as_ref()
     }
 }
@@ -2727,7 +2727,7 @@ pub mod delete_lifecycle_policy_output {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) lifecycle_policy_text: std::option::Option<std::string::String>,
-        pub(crate) last_evaluated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_evaluated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The registry ID associated with the request.</p>
@@ -2767,14 +2767,14 @@ pub mod delete_lifecycle_policy_output {
             self
         }
         /// <p>The time stamp of the last time that the lifecycle policy was run.</p>
-        pub fn last_evaluated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_evaluated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_evaluated_at = Some(input);
             self
         }
         /// <p>The time stamp of the last time that the lifecycle policy was run.</p>
         pub fn set_last_evaluated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_evaluated_at = input;
             self

@@ -202,9 +202,9 @@ pub struct ReportDefinition {
     /// <p>The location in Amazon Simple Storage Service (Amazon S3) the reports should be saved to.</p>
     pub destination_s3_location: std::option::Option<crate::model::S3Location>,
     /// <p>Timestamp (milliseconds) when this report definition was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ReportDefinition {
     /// <p>The ID of the report.</p>
@@ -228,11 +228,11 @@ impl ReportDefinition {
         self.destination_s3_location.as_ref()
     }
     /// <p>Timestamp (milliseconds) when this report definition was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -260,8 +260,8 @@ pub mod report_definition {
         pub(crate) report_frequency: std::option::Option<crate::model::ReportFrequency>,
         pub(crate) format: std::option::Option<crate::model::Format>,
         pub(crate) destination_s3_location: std::option::Option<crate::model::S3Location>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the report.</p>
@@ -324,27 +324,27 @@ pub mod report_definition {
             self
         }
         /// <p>Timestamp (milliseconds) when this report definition was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>Timestamp (milliseconds) when this report definition was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self

@@ -7570,7 +7570,7 @@ pub struct SessionMappingSummary {
     /// group.</p>
     pub session_policy_arn: std::option::Option<std::string::String>,
     /// <p>The time the session mapping was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SessionMappingSummary {
     /// <p>The ID of the Amazon EMR Studio.</p>
@@ -7597,7 +7597,7 @@ impl SessionMappingSummary {
         self.session_policy_arn.as_deref()
     }
     /// <p>The time the session mapping was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -7624,7 +7624,7 @@ pub mod session_mapping_summary {
         pub(crate) identity_name: std::option::Option<std::string::String>,
         pub(crate) identity_type: std::option::Option<crate::model::IdentityType>,
         pub(crate) session_policy_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the Amazon EMR Studio.</p>
@@ -7693,14 +7693,14 @@ pub mod session_mapping_summary {
             self
         }
         /// <p>The time the session mapping was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time the session mapping was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -7745,7 +7745,7 @@ pub struct StudioSummary {
     /// <p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>
     pub auth_mode: std::option::Option<crate::model::AuthMode>,
     /// <p>The time when the Amazon EMR Studio was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StudioSummary {
     /// <p>The ID of the Amazon EMR Studio.</p>
@@ -7774,7 +7774,7 @@ impl StudioSummary {
         self.auth_mode.as_ref()
     }
     /// <p>The time when the Amazon EMR Studio was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -7803,7 +7803,7 @@ pub mod studio_summary {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) auth_mode: std::option::Option<crate::model::AuthMode>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the Amazon EMR Studio.</p>
@@ -7869,14 +7869,14 @@ pub mod studio_summary {
             self
         }
         /// <p>The time when the Amazon EMR Studio was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time when the Amazon EMR Studio was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -8226,23 +8226,23 @@ impl StepStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StepTimeline {
     /// <p>The date and time when the cluster step was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the cluster step execution started.</p>
-    pub start_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the cluster step execution completed or failed.</p>
-    pub end_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StepTimeline {
     /// <p>The date and time when the cluster step was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time when the cluster step execution started.</p>
-    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>The date and time when the cluster step execution completed or failed.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
 }
@@ -8261,46 +8261,46 @@ pub mod step_timeline {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) start_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) start_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The date and time when the cluster step was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time when the cluster step was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time when the cluster step execution started.</p>
-        pub fn start_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_date_time = Some(input);
             self
         }
         /// <p>The date and time when the cluster step execution started.</p>
         pub fn set_start_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_date_time = input;
             self
         }
         /// <p>The date and time when the cluster step execution completed or failed.</p>
-        pub fn end_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_date_time = Some(input);
             self
         }
         /// <p>The date and time when the cluster step execution completed or failed.</p>
         pub fn set_end_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_date_time = input;
             self
@@ -8807,7 +8807,7 @@ pub struct SecurityConfigurationSummary {
     /// <p>The name of the security configuration.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The date and time the security configuration was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SecurityConfigurationSummary {
     /// <p>The name of the security configuration.</p>
@@ -8815,7 +8815,7 @@ impl SecurityConfigurationSummary {
         self.name.as_deref()
     }
     /// <p>The date and time the security configuration was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
@@ -8834,7 +8834,7 @@ pub mod security_configuration_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the security configuration.</p>
@@ -8848,14 +8848,14 @@ pub mod security_configuration_summary {
             self
         }
         /// <p>The date and time the security configuration was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time the security configuration was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
@@ -9013,9 +9013,9 @@ pub struct NotebookExecutionSummary {
     /// </ul>
     pub status: std::option::Option<crate::model::NotebookExecutionStatus>,
     /// <p>The timestamp when notebook execution started.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when notebook execution started.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl NotebookExecutionSummary {
     /// <p>The unique identifier of the notebook execution.</p>
@@ -9086,11 +9086,11 @@ impl NotebookExecutionSummary {
         self.status.as_ref()
     }
     /// <p>The timestamp when notebook execution started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The timestamp when notebook execution started.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -9116,8 +9116,8 @@ pub mod notebook_execution_summary {
         pub(crate) editor_id: std::option::Option<std::string::String>,
         pub(crate) notebook_execution_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::NotebookExecutionStatus>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The unique identifier of the notebook execution.</p>
@@ -9272,27 +9272,27 @@ pub mod notebook_execution_summary {
             self
         }
         /// <p>The timestamp when notebook execution started.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The timestamp when notebook execution started.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The timestamp when notebook execution started.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The timestamp when notebook execution started.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -9903,23 +9903,23 @@ impl InstanceStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceTimeline {
     /// <p>The creation date and time of the instance.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the instance was ready to perform tasks.</p>
-    pub ready_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub ready_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the instance was terminated.</p>
-    pub end_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl InstanceTimeline {
     /// <p>The creation date and time of the instance.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time when the instance was ready to perform tasks.</p>
-    pub fn ready_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn ready_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ready_date_time.as_ref()
     }
     /// <p>The date and time when the instance was terminated.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
 }
@@ -9938,46 +9938,46 @@ pub mod instance_timeline {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) ready_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) ready_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The creation date and time of the instance.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The creation date and time of the instance.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time when the instance was ready to perform tasks.</p>
-        pub fn ready_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn ready_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.ready_date_time = Some(input);
             self
         }
         /// <p>The date and time when the instance was ready to perform tasks.</p>
         pub fn set_ready_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.ready_date_time = input;
             self
         }
         /// <p>The date and time when the instance was terminated.</p>
-        pub fn end_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_date_time = Some(input);
             self
         }
         /// <p>The date and time when the instance was terminated.</p>
         pub fn set_end_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_date_time = input;
             self
@@ -10975,23 +10975,23 @@ impl InstanceGroupStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceGroupTimeline {
     /// <p>The creation date and time of the instance group.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the instance group became ready to perform tasks.</p>
-    pub ready_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub ready_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the instance group terminated.</p>
-    pub end_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl InstanceGroupTimeline {
     /// <p>The creation date and time of the instance group.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time when the instance group became ready to perform tasks.</p>
-    pub fn ready_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn ready_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ready_date_time.as_ref()
     }
     /// <p>The date and time when the instance group terminated.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
 }
@@ -11010,46 +11010,46 @@ pub mod instance_group_timeline {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) ready_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) ready_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The creation date and time of the instance group.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The creation date and time of the instance group.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time when the instance group became ready to perform tasks.</p>
-        pub fn ready_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn ready_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.ready_date_time = Some(input);
             self
         }
         /// <p>The date and time when the instance group became ready to perform tasks.</p>
         pub fn set_ready_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.ready_date_time = input;
             self
         }
         /// <p>The date and time when the instance group terminated.</p>
-        pub fn end_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_date_time = Some(input);
             self
         }
         /// <p>The date and time when the instance group terminated.</p>
         pub fn set_end_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_date_time = input;
             self
@@ -12275,23 +12275,23 @@ impl InstanceFleetStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceFleetTimeline {
     /// <p>The time and date the instance fleet was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time and date the instance fleet was ready to run jobs.</p>
-    pub ready_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub ready_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time and date the instance fleet terminated.</p>
-    pub end_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl InstanceFleetTimeline {
     /// <p>The time and date the instance fleet was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The time and date the instance fleet was ready to run jobs.</p>
-    pub fn ready_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn ready_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ready_date_time.as_ref()
     }
     /// <p>The time and date the instance fleet terminated.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
 }
@@ -12310,46 +12310,46 @@ pub mod instance_fleet_timeline {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) ready_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) ready_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The time and date the instance fleet was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The time and date the instance fleet was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The time and date the instance fleet was ready to run jobs.</p>
-        pub fn ready_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn ready_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.ready_date_time = Some(input);
             self
         }
         /// <p>The time and date the instance fleet was ready to run jobs.</p>
         pub fn set_ready_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.ready_date_time = input;
             self
         }
         /// <p>The time and date the instance fleet terminated.</p>
-        pub fn end_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_date_time = Some(input);
             self
         }
         /// <p>The time and date the instance fleet terminated.</p>
         pub fn set_end_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_date_time = input;
             self
@@ -12882,23 +12882,23 @@ impl ClusterStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterTimeline {
     /// <p>The creation date and time of the cluster.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the cluster was ready to run steps.</p>
-    pub ready_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub ready_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the cluster was terminated.</p>
-    pub end_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ClusterTimeline {
     /// <p>The creation date and time of the cluster.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time when the cluster was ready to run steps.</p>
-    pub fn ready_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn ready_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ready_date_time.as_ref()
     }
     /// <p>The date and time when the cluster was terminated.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
 }
@@ -12917,46 +12917,46 @@ pub mod cluster_timeline {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) ready_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) ready_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The creation date and time of the cluster.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The creation date and time of the cluster.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time when the cluster was ready to run steps.</p>
-        pub fn ready_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn ready_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.ready_date_time = Some(input);
             self
         }
         /// <p>The date and time when the cluster was ready to run steps.</p>
         pub fn set_ready_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.ready_date_time = input;
             self
         }
         /// <p>The date and time when the cluster was terminated.</p>
-        pub fn end_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_date_time = Some(input);
             self
         }
         /// <p>The date and time when the cluster was terminated.</p>
         pub fn set_end_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_date_time = input;
             self
@@ -13344,9 +13344,9 @@ pub struct SessionMappingDetail {
     /// group.</p>
     pub session_policy_arn: std::option::Option<std::string::String>,
     /// <p>The time the session mapping was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the session mapping was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SessionMappingDetail {
     /// <p>The ID of the Amazon EMR Studio.</p>
@@ -13372,11 +13372,11 @@ impl SessionMappingDetail {
         self.session_policy_arn.as_deref()
     }
     /// <p>The time the session mapping was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the session mapping was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -13404,8 +13404,8 @@ pub mod session_mapping_detail {
         pub(crate) identity_name: std::option::Option<std::string::String>,
         pub(crate) identity_type: std::option::Option<crate::model::IdentityType>,
         pub(crate) session_policy_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the Amazon EMR Studio.</p>
@@ -13472,27 +13472,27 @@ pub mod session_mapping_detail {
             self
         }
         /// <p>The time the session mapping was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time the session mapping was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time the session mapping was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The time the session mapping was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -13527,13 +13527,13 @@ impl SessionMappingDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlockPublicAccessConfigurationMetadata {
     /// <p>The date and time that the configuration was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name that created or last modified the configuration.</p>
     pub created_by_arn: std::option::Option<std::string::String>,
 }
 impl BlockPublicAccessConfigurationMetadata {
     /// <p>The date and time that the configuration was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The Amazon Resource Name that created or last modified the configuration.</p>
@@ -13555,19 +13555,19 @@ pub mod block_public_access_configuration_metadata {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The date and time that the configuration was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time that the configuration was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
@@ -13634,7 +13634,7 @@ pub struct Studio {
     /// <p>The unique access URL of the Amazon EMR Studio.</p>
     pub url: std::option::Option<std::string::String>,
     /// <p>The time the Amazon EMR Studio was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
     /// files.</p>
     pub default_s3_location: std::option::Option<std::string::String>,
@@ -13699,7 +13699,7 @@ impl Studio {
         self.url.as_deref()
     }
     /// <p>The time the Amazon EMR Studio was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
@@ -13767,7 +13767,7 @@ pub mod studio {
         pub(crate) workspace_security_group_id: std::option::Option<std::string::String>,
         pub(crate) engine_security_group_id: std::option::Option<std::string::String>,
         pub(crate) url: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) default_s3_location: std::option::Option<std::string::String>,
         pub(crate) idp_auth_url: std::option::Option<std::string::String>,
         pub(crate) idp_relay_state_parameter_name: std::option::Option<std::string::String>,
@@ -13921,14 +13921,14 @@ pub mod studio {
             self
         }
         /// <p>The time the Amazon EMR Studio was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time the Amazon EMR Studio was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -14321,9 +14321,9 @@ pub struct NotebookExecution {
     /// </ul>
     pub status: std::option::Option<crate::model::NotebookExecutionStatus>,
     /// <p>The timestamp when notebook execution started.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when notebook execution ended.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the notebook execution.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The location of the notebook execution's output file in Amazon S3.</p>
@@ -14420,11 +14420,11 @@ impl NotebookExecution {
         self.status.as_ref()
     }
     /// <p>The timestamp when notebook execution started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The timestamp when notebook execution ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the notebook execution.</p>
@@ -14487,8 +14487,8 @@ pub mod notebook_execution {
         pub(crate) notebook_execution_name: std::option::Option<std::string::String>,
         pub(crate) notebook_params: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::NotebookExecutionStatus>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) output_notebook_uri: std::option::Option<std::string::String>,
         pub(crate) last_state_change_reason: std::option::Option<std::string::String>,
@@ -14680,27 +14680,27 @@ pub mod notebook_execution {
             self
         }
         /// <p>The timestamp when notebook execution started.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The timestamp when notebook execution started.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The timestamp when notebook execution ended.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The timestamp when notebook execution ended.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -15439,11 +15439,11 @@ pub struct StepExecutionStatusDetail {
     /// <p>The state of the step.</p>
     pub state: std::option::Option<crate::model::StepExecutionState>,
     /// <p>The creation date and time of the step.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The start date and time of the step.</p>
-    pub start_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The completion date and time of the step.</p>
-    pub end_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A description of the step's current state.</p>
     pub last_state_change_reason: std::option::Option<std::string::String>,
 }
@@ -15453,15 +15453,15 @@ impl StepExecutionStatusDetail {
         self.state.as_ref()
     }
     /// <p>The creation date and time of the step.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The start date and time of the step.</p>
-    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>The completion date and time of the step.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
     /// <p>A description of the step's current state.</p>
@@ -15487,9 +15487,9 @@ pub mod step_execution_status_detail {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::StepExecutionState>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) start_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) start_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_state_change_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -15507,40 +15507,40 @@ pub mod step_execution_status_detail {
             self
         }
         /// <p>The creation date and time of the step.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The creation date and time of the step.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The start date and time of the step.</p>
-        pub fn start_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_date_time = Some(input);
             self
         }
         /// <p>The start date and time of the step.</p>
         pub fn set_start_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_date_time = input;
             self
         }
         /// <p>The completion date and time of the step.</p>
-        pub fn end_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_date_time = Some(input);
             self
         }
         /// <p>The completion date and time of the step.</p>
         pub fn set_end_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_date_time = input;
             self
@@ -16050,13 +16050,13 @@ pub struct InstanceGroupDetail {
     /// <p>Details regarding the state of the instance group.</p>
     pub last_state_change_reason: std::option::Option<std::string::String>,
     /// <p>The date/time the instance group was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date/time the instance group was started.</p>
-    pub start_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date/time the instance group was available to the cluster.</p>
-    pub ready_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub ready_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date/time the instance group was terminated.</p>
-    pub end_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
     pub custom_ami_id: std::option::Option<std::string::String>,
 }
@@ -16103,19 +16103,19 @@ impl InstanceGroupDetail {
         self.last_state_change_reason.as_deref()
     }
     /// <p>The date/time the instance group was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date/time the instance group was started.</p>
-    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>The date/time the instance group was available to the cluster.</p>
-    pub fn ready_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn ready_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ready_date_time.as_ref()
     }
     /// <p>The date/time the instance group was terminated.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
@@ -16160,10 +16160,10 @@ pub mod instance_group_detail {
         pub(crate) instance_running_count: std::option::Option<i32>,
         pub(crate) state: std::option::Option<crate::model::InstanceGroupState>,
         pub(crate) last_state_change_reason: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) start_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) ready_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) start_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) ready_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) custom_ami_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -16285,53 +16285,53 @@ pub mod instance_group_detail {
             self
         }
         /// <p>The date/time the instance group was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date/time the instance group was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date/time the instance group was started.</p>
-        pub fn start_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_date_time = Some(input);
             self
         }
         /// <p>The date/time the instance group was started.</p>
         pub fn set_start_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_date_time = input;
             self
         }
         /// <p>The date/time the instance group was available to the cluster.</p>
-        pub fn ready_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn ready_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.ready_date_time = Some(input);
             self
         }
         /// <p>The date/time the instance group was available to the cluster.</p>
         pub fn set_ready_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.ready_date_time = input;
             self
         }
         /// <p>The date/time the instance group was terminated.</p>
-        pub fn end_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_date_time = Some(input);
             self
         }
         /// <p>The date/time the instance group was terminated.</p>
         pub fn set_end_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_date_time = input;
             self
@@ -16385,13 +16385,13 @@ pub struct JobFlowExecutionStatusDetail {
     /// <p>The state of the job flow.</p>
     pub state: std::option::Option<crate::model::JobFlowExecutionState>,
     /// <p>The creation date and time of the job flow.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The start date and time of the job flow.</p>
-    pub start_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the job flow was ready to start running bootstrap actions.</p>
-    pub ready_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub ready_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The completion date and time of the job flow.</p>
-    pub end_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Description of the job flow last changed state.</p>
     pub last_state_change_reason: std::option::Option<std::string::String>,
 }
@@ -16401,19 +16401,19 @@ impl JobFlowExecutionStatusDetail {
         self.state.as_ref()
     }
     /// <p>The creation date and time of the job flow.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The start date and time of the job flow.</p>
-    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>The date and time when the job flow was ready to start running bootstrap actions.</p>
-    pub fn ready_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn ready_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ready_date_time.as_ref()
     }
     /// <p>The completion date and time of the job flow.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
     /// <p>Description of the job flow last changed state.</p>
@@ -16440,10 +16440,10 @@ pub mod job_flow_execution_status_detail {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::JobFlowExecutionState>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) start_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) ready_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) start_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) ready_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_state_change_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -16461,53 +16461,53 @@ pub mod job_flow_execution_status_detail {
             self
         }
         /// <p>The creation date and time of the job flow.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The creation date and time of the job flow.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The start date and time of the job flow.</p>
-        pub fn start_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_date_time = Some(input);
             self
         }
         /// <p>The start date and time of the job flow.</p>
         pub fn set_start_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_date_time = input;
             self
         }
         /// <p>The date and time when the job flow was ready to start running bootstrap actions.</p>
-        pub fn ready_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn ready_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.ready_date_time = Some(input);
             self
         }
         /// <p>The date and time when the job flow was ready to start running bootstrap actions.</p>
         pub fn set_ready_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.ready_date_time = input;
             self
         }
         /// <p>The completion date and time of the job flow.</p>
-        pub fn end_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_date_time = Some(input);
             self
         }
         /// <p>The completion date and time of the job flow.</p>
         pub fn set_end_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_date_time = input;
             self

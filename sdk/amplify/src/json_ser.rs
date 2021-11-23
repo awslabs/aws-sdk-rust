@@ -261,12 +261,12 @@ pub fn serialize_structure_crate_input_generate_access_logs_input(
     if let Some(var_75) = &input.end_time {
         object
             .key("endTime")
-            .instant(var_75, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_75, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_76) = &input.start_time {
         object
             .key("startTime")
-            .instant(var_76, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_76, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -297,7 +297,7 @@ pub fn serialize_structure_crate_input_start_job_input(
     if let Some(var_81) = &input.commit_time {
         object
             .key("commitTime")
-            .instant(var_81, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_81, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_82) = &input.job_id {
         object.key("jobId").string(var_82);

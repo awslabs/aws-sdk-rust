@@ -6614,12 +6614,12 @@ pub struct GetServiceLastAccessedDetailsWithEntitiesOutput {
     pub job_status: std::option::Option<crate::model::JobStatusType>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the report job was created.</p>
-    pub job_creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub job_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value
     /// of <code>IN_PROGRESS</code>.</p>
-    pub job_completion_date: std::option::Option<aws_smithy_types::Instant>,
+    pub job_completion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An <code>EntityDetailsList</code> object that contains details about when an IAM
     /// entity (user or role) used group or policy permissions in an attempt to access the
     /// specified Amazon Web Services service.</p>
@@ -6645,14 +6645,14 @@ impl GetServiceLastAccessedDetailsWithEntitiesOutput {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the report job was created.</p>
-    pub fn job_creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn job_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.job_creation_date.as_ref()
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value
     /// of <code>IN_PROGRESS</code>.</p>
-    pub fn job_completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn job_completion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.job_completion_date.as_ref()
     }
     /// <p>An <code>EntityDetailsList</code> object that contains details about when an IAM
@@ -6701,8 +6701,8 @@ pub mod get_service_last_accessed_details_with_entities_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_status: std::option::Option<crate::model::JobStatusType>,
-        pub(crate) job_creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) job_completion_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) job_creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) job_completion_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) entity_details_list:
             std::option::Option<std::vec::Vec<crate::model::EntityDetails>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -6725,7 +6725,7 @@ pub mod get_service_last_accessed_details_with_entities_output {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the report job was created.</p>
-        pub fn job_creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn job_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.job_creation_date = Some(input);
             self
         }
@@ -6733,7 +6733,7 @@ pub mod get_service_last_accessed_details_with_entities_output {
         /// format</a>, when the report job was created.</p>
         pub fn set_job_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.job_creation_date = input;
             self
@@ -6742,7 +6742,7 @@ pub mod get_service_last_accessed_details_with_entities_output {
         /// format</a>, when the generated report job was completed or failed.</p>
         /// <p>This field is null if the job is still in progress, as indicated by a job status value
         /// of <code>IN_PROGRESS</code>.</p>
-        pub fn job_completion_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn job_completion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.job_completion_date = Some(input);
             self
         }
@@ -6752,7 +6752,7 @@ pub mod get_service_last_accessed_details_with_entities_output {
         /// of <code>IN_PROGRESS</code>.</p>
         pub fn set_job_completion_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.job_completion_date = input;
             self
@@ -6861,7 +6861,7 @@ pub struct GetServiceLastAccessedDetailsOutput {
     pub job_type: std::option::Option<crate::model::AccessAdvisorUsageGranularityType>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the report job was created.</p>
-    pub job_creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub job_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> A <code>ServiceLastAccessed</code> object that contains details about the most recent
     /// attempt to access the service.</p>
     pub services_last_accessed:
@@ -6870,7 +6870,7 @@ pub struct GetServiceLastAccessedDetailsOutput {
     /// format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value
     /// of <code>IN_PROGRESS</code>.</p>
-    pub job_completion_date: std::option::Option<aws_smithy_types::Instant>,
+    pub job_completion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A flag that indicates whether there are more items to return. If your
     /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
     /// request parameter to retrieve more items. Note that IAM might return fewer than the
@@ -6900,7 +6900,7 @@ impl GetServiceLastAccessedDetailsOutput {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the report job was created.</p>
-    pub fn job_creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn job_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.job_creation_date.as_ref()
     }
     /// <p> A <code>ServiceLastAccessed</code> object that contains details about the most recent
@@ -6914,7 +6914,7 @@ impl GetServiceLastAccessedDetailsOutput {
     /// format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value
     /// of <code>IN_PROGRESS</code>.</p>
-    pub fn job_completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn job_completion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.job_completion_date.as_ref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your
@@ -6959,10 +6959,10 @@ pub mod get_service_last_accessed_details_output {
     pub struct Builder {
         pub(crate) job_status: std::option::Option<crate::model::JobStatusType>,
         pub(crate) job_type: std::option::Option<crate::model::AccessAdvisorUsageGranularityType>,
-        pub(crate) job_creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) job_creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) services_last_accessed:
             std::option::Option<std::vec::Vec<crate::model::ServiceLastAccessed>>,
-        pub(crate) job_completion_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) job_completion_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<crate::model::ErrorDetails>,
@@ -7000,7 +7000,7 @@ pub mod get_service_last_accessed_details_output {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the report job was created.</p>
-        pub fn job_creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn job_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.job_creation_date = Some(input);
             self
         }
@@ -7008,7 +7008,7 @@ pub mod get_service_last_accessed_details_output {
         /// format</a>, when the report job was created.</p>
         pub fn set_job_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.job_creation_date = input;
             self
@@ -7041,7 +7041,7 @@ pub mod get_service_last_accessed_details_output {
         /// format</a>, when the generated report job was completed or failed.</p>
         /// <p>This field is null if the job is still in progress, as indicated by a job status value
         /// of <code>IN_PROGRESS</code>.</p>
-        pub fn job_completion_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn job_completion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.job_completion_date = Some(input);
             self
         }
@@ -7051,7 +7051,7 @@ pub mod get_service_last_accessed_details_output {
         /// of <code>IN_PROGRESS</code>.</p>
         pub fn set_job_completion_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.job_completion_date = input;
             self
@@ -7188,9 +7188,9 @@ pub struct GetSamlProviderOutput {
     /// <p>The XML metadata document that includes information about an identity provider.</p>
     pub saml_metadata_document: std::option::Option<std::string::String>,
     /// <p>The date and time when the SAML provider was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The expiration date and time for the SAML provider.</p>
-    pub valid_until: std::option::Option<aws_smithy_types::Instant>,
+    pub valid_until: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key.
     /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
     /// <i>IAM User Guide</i>.</p>
@@ -7202,11 +7202,11 @@ impl GetSamlProviderOutput {
         self.saml_metadata_document.as_deref()
     }
     /// <p>The date and time when the SAML provider was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The expiration date and time for the SAML provider.</p>
-    pub fn valid_until(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn valid_until(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.valid_until.as_ref()
     }
     /// <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key.
@@ -7233,8 +7233,8 @@ pub mod get_saml_provider_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) saml_metadata_document: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) valid_until: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) valid_until: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -7252,27 +7252,27 @@ pub mod get_saml_provider_output {
             self
         }
         /// <p>The date and time when the SAML provider was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
         /// <p>The date and time when the SAML provider was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
         }
         /// <p>The expiration date and time for the SAML provider.</p>
-        pub fn valid_until(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn valid_until(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.valid_until = Some(input);
             self
         }
         /// <p>The expiration date and time for the SAML provider.</p>
         pub fn set_valid_until(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.valid_until = input;
             self
@@ -7594,12 +7594,12 @@ pub struct GetOrganizationsAccessReportOutput {
     pub job_status: std::option::Option<crate::model::JobStatusType>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the report job was created.</p>
-    pub job_creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub job_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value
     /// of <code>IN_PROGRESS</code>.</p>
-    pub job_completion_date: std::option::Option<aws_smithy_types::Instant>,
+    pub job_completion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of services that the applicable SCPs allow account principals to
     /// access.</p>
     pub number_of_services_accessible: std::option::Option<i32>,
@@ -7631,14 +7631,14 @@ impl GetOrganizationsAccessReportOutput {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the report job was created.</p>
-    pub fn job_creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn job_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.job_creation_date.as_ref()
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value
     /// of <code>IN_PROGRESS</code>.</p>
-    pub fn job_completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn job_completion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.job_completion_date.as_ref()
     }
     /// <p>The number of services that the applicable SCPs allow account principals to
@@ -7705,8 +7705,8 @@ pub mod get_organizations_access_report_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_status: std::option::Option<crate::model::JobStatusType>,
-        pub(crate) job_creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) job_completion_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) job_creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) job_completion_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) number_of_services_accessible: std::option::Option<i32>,
         pub(crate) number_of_services_not_accessed: std::option::Option<i32>,
         pub(crate) access_details: std::option::Option<std::vec::Vec<crate::model::AccessDetail>>,
@@ -7730,7 +7730,7 @@ pub mod get_organizations_access_report_output {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the report job was created.</p>
-        pub fn job_creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn job_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.job_creation_date = Some(input);
             self
         }
@@ -7738,7 +7738,7 @@ pub mod get_organizations_access_report_output {
         /// format</a>, when the report job was created.</p>
         pub fn set_job_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.job_creation_date = input;
             self
@@ -7747,7 +7747,7 @@ pub mod get_organizations_access_report_output {
         /// format</a>, when the generated report job was completed or failed.</p>
         /// <p>This field is null if the job is still in progress, as indicated by a job status value
         /// of <code>IN_PROGRESS</code>.</p>
-        pub fn job_completion_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn job_completion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.job_completion_date = Some(input);
             self
         }
@@ -7757,7 +7757,7 @@ pub mod get_organizations_access_report_output {
         /// of <code>IN_PROGRESS</code>.</p>
         pub fn set_job_completion_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.job_completion_date = input;
             self
@@ -7901,7 +7901,7 @@ pub struct GetOpenIdConnectProviderOutput {
     pub thumbprint_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date and time when the IAM OIDC provider resource object was created in the
     /// Amazon Web Services account.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key.
     /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
     /// <i>IAM User Guide</i>.</p>
@@ -7925,7 +7925,7 @@ impl GetOpenIdConnectProviderOutput {
     }
     /// <p>The date and time when the IAM OIDC provider resource object was created in the
     /// Amazon Web Services account.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key.
@@ -7955,7 +7955,7 @@ pub mod get_open_id_connect_provider_output {
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) client_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) thumbprint_list: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -8015,7 +8015,7 @@ pub mod get_open_id_connect_provider_output {
         }
         /// <p>The date and time when the IAM OIDC provider resource object was created in the
         /// Amazon Web Services account.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
@@ -8023,7 +8023,7 @@ pub mod get_open_id_connect_provider_output {
         /// Amazon Web Services account.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -8456,7 +8456,7 @@ pub struct GetCredentialReportOutput {
     /// <p>The format (MIME type) of the credential report.</p>
     pub report_format: std::option::Option<crate::model::ReportFormatType>,
     /// <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
-    pub generated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub generated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetCredentialReportOutput {
     /// <p>Contains the credential report. The report is Base64-encoded.</p>
@@ -8468,7 +8468,7 @@ impl GetCredentialReportOutput {
         self.report_format.as_ref()
     }
     /// <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
-    pub fn generated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn generated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.generated_time.as_ref()
     }
 }
@@ -8489,7 +8489,7 @@ pub mod get_credential_report_output {
     pub struct Builder {
         pub(crate) content: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) report_format: std::option::Option<crate::model::ReportFormatType>,
-        pub(crate) generated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) generated_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Contains the credential report. The report is Base64-encoded.</p>
@@ -8516,14 +8516,14 @@ pub mod get_credential_report_output {
             self
         }
         /// <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
-        pub fn generated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn generated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.generated_time = Some(input);
             self
         }
         /// <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
         pub fn set_generated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.generated_time = input;
             self

@@ -309,6 +309,20 @@ where
     ) -> fluent_builders::GetEvidenceFoldersByAssessmentControl<C, M, R> {
         fluent_builders::GetEvidenceFoldersByAssessmentControl::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `GetInsights` operation.
+    ///
+    /// See [`GetInsights`](crate::client::fluent_builders::GetInsights) for more information about the
+    /// operation and its arguments.
+    pub fn get_insights(&self) -> fluent_builders::GetInsights<C, M, R> {
+        fluent_builders::GetInsights::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetInsightsByAssessment` operation.
+    ///
+    /// See [`GetInsightsByAssessment`](crate::client::fluent_builders::GetInsightsByAssessment) for more information about the
+    /// operation and its arguments.
+    pub fn get_insights_by_assessment(&self) -> fluent_builders::GetInsightsByAssessment<C, M, R> {
+        fluent_builders::GetInsightsByAssessment::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `GetOrganizationAdminAccount` operation.
     ///
     /// See [`GetOrganizationAdminAccount`](crate::client::fluent_builders::GetOrganizationAdminAccount) for more information about the
@@ -331,6 +345,15 @@ where
     /// operation and its arguments.
     pub fn get_settings(&self) -> fluent_builders::GetSettings<C, M, R> {
         fluent_builders::GetSettings::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListAssessmentControlInsightsByControlDomain` operation.
+    ///
+    /// See [`ListAssessmentControlInsightsByControlDomain`](crate::client::fluent_builders::ListAssessmentControlInsightsByControlDomain) for more information about the
+    /// operation and its arguments.
+    pub fn list_assessment_control_insights_by_control_domain(
+        &self,
+    ) -> fluent_builders::ListAssessmentControlInsightsByControlDomain<C, M, R> {
+        fluent_builders::ListAssessmentControlInsightsByControlDomain::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListAssessmentFrameworks` operation.
     ///
@@ -361,6 +384,33 @@ where
     /// operation and its arguments.
     pub fn list_assessments(&self) -> fluent_builders::ListAssessments<C, M, R> {
         fluent_builders::ListAssessments::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListControlDomainInsights` operation.
+    ///
+    /// See [`ListControlDomainInsights`](crate::client::fluent_builders::ListControlDomainInsights) for more information about the
+    /// operation and its arguments.
+    pub fn list_control_domain_insights(
+        &self,
+    ) -> fluent_builders::ListControlDomainInsights<C, M, R> {
+        fluent_builders::ListControlDomainInsights::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListControlDomainInsightsByAssessment` operation.
+    ///
+    /// See [`ListControlDomainInsightsByAssessment`](crate::client::fluent_builders::ListControlDomainInsightsByAssessment) for more information about the
+    /// operation and its arguments.
+    pub fn list_control_domain_insights_by_assessment(
+        &self,
+    ) -> fluent_builders::ListControlDomainInsightsByAssessment<C, M, R> {
+        fluent_builders::ListControlDomainInsightsByAssessment::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListControlInsightsByControlDomain` operation.
+    ///
+    /// See [`ListControlInsightsByControlDomain`](crate::client::fluent_builders::ListControlInsightsByControlDomain) for more information about the
+    /// operation and its arguments.
+    pub fn list_control_insights_by_control_domain(
+        &self,
+    ) -> fluent_builders::ListControlInsightsByControlDomain<C, M, R> {
+        fluent_builders::ListControlInsightsByControlDomain::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListControls` operation.
     ///
@@ -1796,12 +1846,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The identifier for the framework. </p>
+        /// <p> The identifier for the custom framework. </p>
         pub fn framework_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.framework_id(inp);
             self
         }
-        /// <p> The identifier for the framework. </p>
+        /// <p> The identifier for the custom framework. </p>
         pub fn set_framework_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_framework_id(input);
             self
@@ -1951,12 +2001,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p> The unique identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p> The unique identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2037,12 +2087,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The identifier for the control. </p>
+        /// <p> The unique identifier for the control. </p>
         pub fn control_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_id(inp);
             self
         }
-        /// <p> The identifier for the control. </p>
+        /// <p> The unique identifier for the control. </p>
         pub fn set_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_control_id(input);
             self
@@ -2252,12 +2302,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p> The unique identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p> The unique identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2265,12 +2315,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p> The identifier for the folder in which evidence is stored. </p>
+        /// <p> The unique identifier for the folder that the evidence is stored in. </p>
         pub fn evidence_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.evidence_folder_id(inp);
             self
         }
-        /// <p> The identifier for the folder in which evidence is stored. </p>
+        /// <p> The unique identifier for the folder that the evidence is stored in. </p>
         pub fn set_evidence_folder_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2341,7 +2391,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAssessment`.
     ///
-    /// <p> Returns an assessment from Audit Manager. </p>
+    /// <p>Returns an assessment from Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct GetAssessment<
         C = aws_smithy_client::erase::DynConnector,
@@ -2398,12 +2448,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p>The unique identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p>The unique identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2414,7 +2464,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAssessmentFramework`.
     ///
-    /// <p> Returns a framework from Audit Manager. </p>
+    /// <p>Returns a framework from Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct GetAssessmentFramework<
         C = aws_smithy_client::erase::DynConnector,
@@ -2541,12 +2591,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The identifier for the assessment report. </p>
+        /// <p> The unique identifier for the assessment report. </p>
         pub fn assessment_report_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_report_id(inp);
             self
         }
-        /// <p> The identifier for the assessment report. </p>
+        /// <p> The unique identifier for the assessment report. </p>
         pub fn set_assessment_report_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2554,12 +2604,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_report_id(input);
             self
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p> The unique identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p> The unique identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2627,12 +2677,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p>The unique identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p>The unique identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2640,12 +2690,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p> The identifier for the control set. </p>
+        /// <p> The unique identifier for the control set. </p>
         pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_set_id(inp);
             self
         }
-        /// <p> The identifier for the control set. </p>
+        /// <p> The unique identifier for the control set. </p>
         pub fn set_control_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2653,12 +2703,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_control_set_id(input);
             self
         }
-        /// <p> The identifier for the control. </p>
+        /// <p> The unique identifier for the control. </p>
         pub fn control_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_id(inp);
             self
         }
-        /// <p> The identifier for the control. </p>
+        /// <p> The unique identifier for the control. </p>
         pub fn set_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_control_id(input);
             self
@@ -2673,12 +2723,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+        /// <p>Represents the maximum number of results on a page or for an API request call. </p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
-        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+        /// <p>Represents the maximum number of results on a page or for an API request call. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2893,12 +2943,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p> The unique identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p> The unique identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2906,12 +2956,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p> The identifier for the control set. </p>
+        /// <p> The unique identifier for the control set. </p>
         pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_set_id(inp);
             self
         }
-        /// <p> The identifier for the control set. </p>
+        /// <p> The unique identifier for the control set. </p>
         pub fn set_control_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2919,12 +2969,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_control_set_id(input);
             self
         }
-        /// <p> The identifier for the folder that the evidence is stored in. </p>
+        /// <p> The unique identifier for the folder that the evidence is stored in. </p>
         pub fn evidence_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.evidence_folder_id(inp);
             self
         }
-        /// <p> The identifier for the folder that the evidence is stored in. </p>
+        /// <p> The unique identifier for the folder that the evidence is stored in. </p>
         pub fn set_evidence_folder_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2932,12 +2982,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_evidence_folder_id(input);
             self
         }
-        /// <p> The identifier for the evidence. </p>
+        /// <p> The unique identifier for the evidence. </p>
         pub fn evidence_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.evidence_id(inp);
             self
         }
-        /// <p> The identifier for the evidence. </p>
+        /// <p> The unique identifier for the evidence. </p>
         pub fn set_evidence_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_evidence_id(input);
             self
@@ -3122,12 +3172,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p> The unique identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p> The unique identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3135,12 +3185,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p> The identifier for the control set. </p>
+        /// <p> The unique identifier for the control set. </p>
         pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_set_id(inp);
             self
         }
-        /// <p> The identifier for the control set. </p>
+        /// <p> The unique identifier for the control set. </p>
         pub fn set_control_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3148,12 +3198,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_control_set_id(input);
             self
         }
-        /// <p> The identifier for the folder that the evidence is stored in. </p>
+        /// <p> The unique identifier for the folder that the evidence is stored in. </p>
         pub fn evidence_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.evidence_folder_id(inp);
             self
         }
-        /// <p> The identifier for the folder that the evidence is stored in. </p>
+        /// <p> The unique identifier for the folder that the evidence is stored in. </p>
         pub fn set_evidence_folder_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3222,12 +3272,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p> The unique identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p> The unique identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3372,6 +3422,139 @@ pub mod fluent_builders {
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetInsights`.
+    ///
+    /// <p>Gets the latest analytics data for all your current active assessments. </p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetInsights<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_insights_input::Builder,
+    }
+    impl<C, M, R> GetInsights<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetInsights`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetInsightsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetInsightsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetInsightsInputOperationOutputAlias,
+                crate::output::GetInsightsOutput,
+                crate::error::GetInsightsError,
+                crate::input::GetInsightsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+    }
+    /// Fluent builder constructing a request to `GetInsightsByAssessment`.
+    ///
+    /// <p>Gets the latest analytics data for a specific active assessment. </p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetInsightsByAssessment<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_insights_by_assessment_input::Builder,
+    }
+    impl<C, M, R> GetInsightsByAssessment<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetInsightsByAssessment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetInsightsByAssessmentOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetInsightsByAssessmentError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetInsightsByAssessmentInputOperationOutputAlias,
+                crate::output::GetInsightsByAssessmentOutput,
+                crate::error::GetInsightsByAssessmentError,
+                crate::input::GetInsightsByAssessmentInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the assessment. </p>
+        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(inp);
+            self
+        }
+        /// <p>The unique identifier for the assessment. </p>
+        pub fn set_assessment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_assessment_id(input);
             self
         }
     }
@@ -3567,6 +3750,121 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::SettingAttribute>,
         ) -> Self {
             self.inner = self.inner.set_attribute(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListAssessmentControlInsightsByControlDomain`.
+    ///
+    /// <p>Lists the latest analytics data for controls within a specific control domain and a
+    /// specific active assessment.</p>
+    /// <note>
+    /// <p>Control insights are listed only if the control belongs to the control domain and assessment
+    /// that was specified. Moreover, the control must have collected evidence on the
+    /// <code>lastUpdated</code> date of <code>controlInsightsByAssessment</code>. If neither
+    /// of these conditions are met, no data is listed for that control. </p>
+    /// </note>
+    #[derive(std::fmt::Debug)]
+    pub struct ListAssessmentControlInsightsByControlDomain<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_assessment_control_insights_by_control_domain_input::Builder,
+    }
+    impl<C, M, R> ListAssessmentControlInsightsByControlDomain<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListAssessmentControlInsightsByControlDomain`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListAssessmentControlInsightsByControlDomainOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListAssessmentControlInsightsByControlDomainError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListAssessmentControlInsightsByControlDomainInputOperationOutputAlias,
+                crate::output::ListAssessmentControlInsightsByControlDomainOutput,
+                crate::error::ListAssessmentControlInsightsByControlDomainError,
+                crate::input::ListAssessmentControlInsightsByControlDomainInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the control domain. </p>
+        pub fn control_domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_domain_id(inp);
+            self
+        }
+        /// <p>The unique identifier for the control domain. </p>
+        pub fn set_control_domain_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_control_domain_id(input);
+            self
+        }
+        /// <p>The unique identifier for the active assessment. </p>
+        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(inp);
+            self
+        }
+        /// <p>The unique identifier for the active assessment. </p>
+        pub fn set_assessment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_assessment_id(input);
+            self
+        }
+        /// <p>The pagination token that's used to fetch the next set of results. </p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The pagination token that's used to fetch the next set of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -3898,6 +4196,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// <p> The current status of the assessment.</p>
+        pub fn status(mut self, inp: crate::model::AssessmentStatus) -> Self {
+            self.inner = self.inner.status(inp);
+            self
+        }
+        /// <p> The current status of the assessment.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::AssessmentStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_status(input);
+            self
+        }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
@@ -3914,6 +4225,294 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListControlDomainInsights`.
+    ///
+    /// <p>Lists the latest analytics data for control domains across all of your active
+    /// assessments. </p>
+    /// <note>
+    /// <p>A control domain is listed only if at least one of the controls within that domain collected
+    /// evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If
+    /// this condition isn’t met, no data is listed for that control domain.</p>
+    /// </note>
+    #[derive(std::fmt::Debug)]
+    pub struct ListControlDomainInsights<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_control_domain_insights_input::Builder,
+    }
+    impl<C, M, R> ListControlDomainInsights<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListControlDomainInsights`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListControlDomainInsightsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListControlDomainInsightsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListControlDomainInsightsInputOperationOutputAlias,
+                crate::output::ListControlDomainInsightsOutput,
+                crate::error::ListControlDomainInsightsError,
+                crate::input::ListControlDomainInsightsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The pagination token that's used to fetch the next set of results. </p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The pagination token that's used to fetch the next set of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListControlDomainInsightsByAssessment`.
+    ///
+    /// <p>Lists analytics data for control domains within a specified active assessment.</p>
+    /// <note>
+    /// <p>A control domain is listed only if at least one of the controls within that domain collected
+    /// evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If
+    /// this condition isn’t met, no data is listed for that domain.</p>
+    /// </note>
+    #[derive(std::fmt::Debug)]
+    pub struct ListControlDomainInsightsByAssessment<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_control_domain_insights_by_assessment_input::Builder,
+    }
+    impl<C, M, R> ListControlDomainInsightsByAssessment<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListControlDomainInsightsByAssessment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListControlDomainInsightsByAssessmentOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListControlDomainInsightsByAssessmentError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListControlDomainInsightsByAssessmentInputOperationOutputAlias,
+                crate::output::ListControlDomainInsightsByAssessmentOutput,
+                crate::error::ListControlDomainInsightsByAssessmentError,
+                crate::input::ListControlDomainInsightsByAssessmentInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the active assessment. </p>
+        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(inp);
+            self
+        }
+        /// <p>The unique identifier for the active assessment. </p>
+        pub fn set_assessment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_assessment_id(input);
+            self
+        }
+        /// <p>The pagination token that's used to fetch the next set of results. </p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The pagination token that's used to fetch the next set of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListControlInsightsByControlDomain`.
+    ///
+    /// <p>Lists the latest analytics data for controls within a specific control domain across all
+    /// active assessments.</p>
+    /// <note>
+    /// <p>Control insights are listed only if the control belongs to the control domain that was
+    /// specified and the control collected evidence on the <code>lastUpdated</code> date of
+    /// <code>controlInsightsMetadata</code>. If neither of these conditions are met, no data
+    /// is listed for that control. </p>
+    /// </note>
+    #[derive(std::fmt::Debug)]
+    pub struct ListControlInsightsByControlDomain<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_control_insights_by_control_domain_input::Builder,
+    }
+    impl<C, M, R> ListControlInsightsByControlDomain<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListControlInsightsByControlDomain`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListControlInsightsByControlDomainOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListControlInsightsByControlDomainError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListControlInsightsByControlDomainInputOperationOutputAlias,
+                crate::output::ListControlInsightsByControlDomainOutput,
+                crate::error::ListControlInsightsByControlDomainError,
+                crate::input::ListControlInsightsByControlDomainInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the control domain. </p>
+        pub fn control_domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_domain_id(inp);
+            self
+        }
+        /// <p>The unique identifier for the control domain. </p>
+        pub fn set_control_domain_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_control_domain_id(input);
+            self
+        }
+        /// <p>The pagination token that's used to fetch the next set of results. </p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The pagination token that's used to fetch the next set of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>Represents the maximum number of results on a page or for an API request call. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4764,12 +5363,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p> The unique identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p> The unique identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4908,12 +5507,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p> The unique identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p> The unique identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4921,12 +5520,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p> The identifier for the control set. </p>
+        /// <p> The unique identifier for the control set. </p>
         pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_set_id(inp);
             self
         }
-        /// <p> The identifier for the control set. </p>
+        /// <p> The unique identifier for the control set. </p>
         pub fn set_control_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4934,12 +5533,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_control_set_id(input);
             self
         }
-        /// <p> The identifier for the control. </p>
+        /// <p> The unique identifier for the control. </p>
         pub fn control_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_id(inp);
             self
         }
-        /// <p> The identifier for the control. </p>
+        /// <p> The unique identifier for the control. </p>
         pub fn set_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_control_id(input);
             self
@@ -5027,12 +5626,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p> The unique identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p> The unique identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5040,12 +5639,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p> The identifier for the control set. </p>
+        /// <p> The unique identifier for the control set. </p>
         pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_set_id(inp);
             self
         }
-        /// <p> The identifier for the control set. </p>
+        /// <p> The unique identifier for the control set. </p>
         pub fn set_control_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5136,12 +5735,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The identifier for the framework. </p>
+        /// <p> The unique identifier for the framework. </p>
         pub fn framework_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.framework_id(inp);
             self
         }
-        /// <p> The identifier for the framework. </p>
+        /// <p> The unique identifier for the framework. </p>
         pub fn set_framework_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_framework_id(input);
             self
@@ -5359,12 +5958,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p> The unique identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p> The identifier for the assessment. </p>
+        /// <p> The unique identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5730,7 +6329,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -5753,7 +6358,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

@@ -42,6 +42,7 @@ pub type DeleteHumanLoopInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl DeleteHumanLoopInput {
     /// Consumes the builder and constructs an Operation<[`DeleteHumanLoop`](crate::operation::DeleteHumanLoop)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -107,11 +108,14 @@ impl DeleteHumanLoopInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -196,6 +200,7 @@ pub type DescribeHumanLoopInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl DescribeHumanLoopInput {
     /// Consumes the builder and constructs an Operation<[`DescribeHumanLoop`](crate::operation::DescribeHumanLoop)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -261,11 +266,14 @@ impl DescribeHumanLoopInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -314,8 +322,8 @@ pub mod list_human_loops_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_time_after: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) creation_time_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) flow_definition_arn: std::option::Option<std::string::String>,
         pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -323,27 +331,27 @@ pub mod list_human_loops_input {
     }
     impl Builder {
         /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-        pub fn creation_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time_after = Some(input);
             self
         }
         /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time_after = input;
             self
         }
         /// <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-        pub fn creation_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time_before = Some(input);
             self
         }
         /// <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time_before = input;
             self
@@ -425,6 +433,7 @@ pub type ListHumanLoopsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListHumanLoopsInput {
     /// Consumes the builder and constructs an Operation<[`ListHumanLoops`](crate::operation::ListHumanLoops)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -442,15 +451,18 @@ impl ListHumanLoopsInput {
             write!(output, "/human-loops").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListHumanLoopsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListHumanLoopsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_3) = &_input.creation_time_after {
                 query.push_kv(
                     "CreationTimeAfter",
                     &aws_smithy_http::query::fmt_timestamp(
                         inner_3,
-                        aws_smithy_types::instant::Format::DateTime,
-                    ),
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
                 );
             }
             if let Some(inner_4) = &_input.creation_time_before {
@@ -458,8 +470,8 @@ impl ListHumanLoopsInput {
                     "CreationTimeBefore",
                     &aws_smithy_http::query::fmt_timestamp(
                         inner_4,
-                        aws_smithy_types::instant::Format::DateTime,
-                    ),
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
                 );
             }
             if let Some(inner_5) = &_input.flow_definition_arn {
@@ -477,9 +489,10 @@ impl ListHumanLoopsInput {
             if let Some(inner_8) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -489,7 +502,7 @@ impl ListHumanLoopsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -510,11 +523,14 @@ impl ListHumanLoopsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -648,6 +664,7 @@ pub type StartHumanLoopInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StartHumanLoopInput {
     /// Consumes the builder and constructs an Operation<[`StartHumanLoop`](crate::operation::StartHumanLoop)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -699,11 +716,14 @@ impl StartHumanLoopInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -796,6 +816,7 @@ pub type StopHumanLoopInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StopHumanLoopInput {
     /// Consumes the builder and constructs an Operation<[`StopHumanLoop`](crate::operation::StopHumanLoop)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -847,11 +868,14 @@ impl StopHumanLoopInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -974,9 +998,9 @@ impl std::fmt::Debug for StartHumanLoopInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHumanLoopsInput {
     /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-    pub creation_time_after: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-    pub creation_time_before: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
     pub flow_definition_arn: std::option::Option<std::string::String>,
     /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and
@@ -991,11 +1015,11 @@ pub struct ListHumanLoopsInput {
 }
 impl ListHumanLoopsInput {
     /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>

@@ -72,7 +72,7 @@ pub fn serialize_structure_crate_model_edge_metric(
     if let Some(var_16) = &input.timestamp {
         object
             .key("Timestamp")
-            .instant(var_16, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_16, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -90,12 +90,12 @@ pub fn serialize_structure_crate_model_model(
     if let Some(var_19) = &input.latest_sample_time {
         object
             .key("LatestSampleTime")
-            .instant(var_19, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_19, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_20) = &input.latest_inference {
         object
             .key("LatestInference")
-            .instant(var_20, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_20, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_21) = &input.model_metrics {
         let mut array_22 = object.key("ModelMetrics").start_array();

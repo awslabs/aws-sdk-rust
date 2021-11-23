@@ -2892,6 +2892,24 @@ pub fn parse_describe_users_error(
                 tmp
             }),
         },
+        "OperationNotPermittedException" => crate::error::DescribeUsersError {
+            meta: generic,
+            kind: crate::error::DescribeUsersErrorKind::OperationNotPermittedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeUsersError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => crate::error::DescribeUsersError {
             meta: generic,
             kind: crate::error::DescribeUsersErrorKind::ResourceNotFoundException({

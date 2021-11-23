@@ -127,13 +127,13 @@ impl UpdateDetectorModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAlarmModelOutput {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub alarm_model_arn: std::option::Option<std::string::String>,
     /// <p>The version of the alarm model.</p>
     pub alarm_model_version: std::option::Option<std::string::String>,
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
     /// <li>
@@ -160,7 +160,7 @@ pub struct UpdateAlarmModelOutput {
 }
 impl UpdateAlarmModelOutput {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -172,7 +172,7 @@ impl UpdateAlarmModelOutput {
         self.alarm_model_version.as_deref()
     }
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
@@ -218,22 +218,22 @@ pub mod update_alarm_model_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) alarm_model_arn: std::option::Option<std::string::String>,
         pub(crate) alarm_model_version: std::option::Option<std::string::String>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::AlarmModelVersionStatus>,
     }
     impl Builder {
         /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time the alarm model was created, in the Unix epoch format.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -265,14 +265,14 @@ pub mod update_alarm_model_output {
             self
         }
         /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -1499,13 +1499,13 @@ impl DescribeDetectorModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAlarmModelOutput {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub alarm_model_arn: std::option::Option<std::string::String>,
     /// <p>The version of the alarm model.</p>
     pub alarm_model_version: std::option::Option<std::string::String>,
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
     /// <li>
@@ -1556,7 +1556,7 @@ pub struct DescribeAlarmModelOutput {
 }
 impl DescribeAlarmModelOutput {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -1568,7 +1568,7 @@ impl DescribeAlarmModelOutput {
         self.alarm_model_version.as_deref()
     }
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
@@ -1668,10 +1668,10 @@ pub mod describe_alarm_model_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) alarm_model_arn: std::option::Option<std::string::String>,
         pub(crate) alarm_model_version: std::option::Option<std::string::String>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::AlarmModelVersionStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
@@ -1686,14 +1686,14 @@ pub mod describe_alarm_model_output {
     }
     impl Builder {
         /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time the alarm model was created, in the Unix epoch format.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -1725,14 +1725,14 @@ pub mod describe_alarm_model_output {
             self
         }
         /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -2168,13 +2168,13 @@ impl CreateDetectorModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAlarmModelOutput {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub alarm_model_arn: std::option::Option<std::string::String>,
     /// <p>The version of the alarm model.</p>
     pub alarm_model_version: std::option::Option<std::string::String>,
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
     /// <li>
@@ -2201,7 +2201,7 @@ pub struct CreateAlarmModelOutput {
 }
 impl CreateAlarmModelOutput {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2213,7 +2213,7 @@ impl CreateAlarmModelOutput {
         self.alarm_model_version.as_deref()
     }
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
@@ -2259,22 +2259,22 @@ pub mod create_alarm_model_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) alarm_model_arn: std::option::Option<std::string::String>,
         pub(crate) alarm_model_version: std::option::Option<std::string::String>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::AlarmModelVersionStatus>,
     }
     impl Builder {
         /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time the alarm model was created, in the Unix epoch format.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2306,14 +2306,14 @@ pub mod create_alarm_model_output {
             self
         }
         /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self

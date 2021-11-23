@@ -13,7 +13,7 @@ async fn shared_config_testbed() {
         .region(Region::new("us-east-4"))
         .build();
     let conf = aws_sdk_dynamodb::config::Builder::from(&shared_config)
-        .credentials_provider(Credentials::from_keys("asdf", "asdf", None))
+        .credentials_provider(Credentials::new("asdf", "asdf", None, None, "test"))
         .build();
     let (conn, request) = aws_smithy_client::test_connection::capture_request(None);
     let svc = aws_sdk_dynamodb::Client::from_conf_conn(conf, conn);

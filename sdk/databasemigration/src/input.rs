@@ -62,6 +62,7 @@ pub type AddTagsToResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl AddTagsToResourceInput {
     /// Consumes the builder and constructs an Operation<[`AddTagsToResource`](crate::operation::AddTagsToResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -118,11 +119,14 @@ impl AddTagsToResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -282,6 +286,7 @@ pub type ApplyPendingMaintenanceActionInputOperationRetryAlias = aws_http::AwsEr
 impl ApplyPendingMaintenanceActionInput {
     /// Consumes the builder and constructs an Operation<[`ApplyPendingMaintenanceAction`](crate::operation::ApplyPendingMaintenanceAction)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -339,11 +344,14 @@ impl ApplyPendingMaintenanceActionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -440,6 +448,7 @@ pub type CancelReplicationTaskAssessmentRunInputOperationRetryAlias = aws_http::
 impl CancelReplicationTaskAssessmentRunInput {
     /// Consumes the builder and constructs an Operation<[`CancelReplicationTaskAssessmentRun`](crate::operation::CancelReplicationTaskAssessmentRun)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -497,11 +506,14 @@ impl CancelReplicationTaskAssessmentRunInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -592,6 +604,7 @@ pub mod create_endpoint_input {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) doc_db_settings: std::option::Option<crate::model::DocDbSettings>,
         pub(crate) redis_settings: std::option::Option<crate::model::RedisSettings>,
+        pub(crate) gcp_my_sql_settings: std::option::Option<crate::model::GcpMySqlSettings>,
     }
     impl Builder {
         /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
@@ -627,7 +640,7 @@ pub mod create_endpoint_input {
         /// <p>The type of engine for the endpoint. Valid values, depending on the
         /// <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>,
         /// <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-        /// <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+        /// <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
         /// <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
         /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
         /// <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
@@ -638,7 +651,7 @@ pub mod create_endpoint_input {
         /// <p>The type of engine for the endpoint. Valid values, depending on the
         /// <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>,
         /// <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-        /// <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+        /// <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
         /// <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
         /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
         /// <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
@@ -972,8 +985,8 @@ pub mod create_endpoint_input {
             self.kafka_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the target Elasticsearch endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using Elasticsearch as a Target for DMS</a> in
+        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
+        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
         /// the <i>Database Migration Service User Guide</i>.</p>
         pub fn elasticsearch_settings(
             mut self,
@@ -982,8 +995,8 @@ pub mod create_endpoint_input {
             self.elasticsearch_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the target Elasticsearch endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using Elasticsearch as a Target for DMS</a> in
+        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
+        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
         /// the <i>Database Migration Service User Guide</i>.</p>
         pub fn set_elasticsearch_settings(
             mut self,
@@ -1220,6 +1233,19 @@ pub mod create_endpoint_input {
             self.redis_settings = input;
             self
         }
+        /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+        pub fn gcp_my_sql_settings(mut self, input: crate::model::GcpMySqlSettings) -> Self {
+            self.gcp_my_sql_settings = Some(input);
+            self
+        }
+        /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+        pub fn set_gcp_my_sql_settings(
+            mut self,
+            input: std::option::Option<crate::model::GcpMySqlSettings>,
+        ) -> Self {
+            self.gcp_my_sql_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateEndpointInput`](crate::input::CreateEndpointInput)
         pub fn build(
             self,
@@ -1261,6 +1287,7 @@ pub mod create_endpoint_input {
                 resource_identifier: self.resource_identifier,
                 doc_db_settings: self.doc_db_settings,
                 redis_settings: self.redis_settings,
+                gcp_my_sql_settings: self.gcp_my_sql_settings,
             })
         }
     }
@@ -1272,6 +1299,7 @@ pub type CreateEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateEndpointInput {
     /// Consumes the builder and constructs an Operation<[`CreateEndpoint`](crate::operation::CreateEndpoint)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1328,11 +1356,14 @@ impl CreateEndpointInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1558,6 +1589,7 @@ pub type CreateEventSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRet
 impl CreateEventSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`CreateEventSubscription`](crate::operation::CreateEventSubscription)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1616,11 +1648,14 @@ impl CreateEventSubscriptionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2052,6 +2087,7 @@ pub type CreateReplicationInstanceInputOperationRetryAlias = aws_http::AwsErrorR
 impl CreateReplicationInstanceInput {
     /// Consumes the builder and constructs an Operation<[`CreateReplicationInstance`](crate::operation::CreateReplicationInstance)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2110,11 +2146,14 @@ impl CreateReplicationInstanceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2281,6 +2320,7 @@ pub type CreateReplicationSubnetGroupInputOperationRetryAlias = aws_http::AwsErr
 impl CreateReplicationSubnetGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateReplicationSubnetGroup`](crate::operation::CreateReplicationSubnetGroup)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2338,11 +2378,14 @@ impl CreateReplicationSubnetGroupInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2406,7 +2449,7 @@ pub mod create_replication_task_input {
         pub(crate) migration_type: std::option::Option<crate::model::MigrationTypeValue>,
         pub(crate) table_mappings: std::option::Option<std::string::String>,
         pub(crate) replication_task_settings: std::option::Option<std::string::String>,
-        pub(crate) cdc_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) cdc_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) cdc_start_position: std::option::Option<std::string::String>,
         pub(crate) cdc_stop_position: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2548,7 +2591,7 @@ pub mod create_replication_task_input {
         /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
         /// Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-        pub fn cdc_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn cdc_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.cdc_start_time = Some(input);
             self
         }
@@ -2558,7 +2601,7 @@ pub mod create_replication_task_input {
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
         pub fn set_cdc_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.cdc_start_time = input;
             self
@@ -2719,6 +2762,7 @@ pub type CreateReplicationTaskInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl CreateReplicationTaskInput {
     /// Consumes the builder and constructs an Operation<[`CreateReplicationTask`](crate::operation::CreateReplicationTask)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2777,11 +2821,14 @@ impl CreateReplicationTaskInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2841,12 +2888,12 @@ pub mod delete_certificate_input {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the deleted certificate.</p>
+        /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the deleted certificate.</p>
+        /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2874,6 +2921,7 @@ pub type DeleteCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl DeleteCertificateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCertificate`](crate::operation::DeleteCertificate)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2930,11 +2978,14 @@ impl DeleteCertificateInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3039,6 +3090,7 @@ pub type DeleteConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DeleteConnectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConnection`](crate::operation::DeleteConnection)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3095,11 +3147,14 @@ impl DeleteConnectionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3189,6 +3244,7 @@ pub type DeleteEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEndpoint`](crate::operation::DeleteEndpoint)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3245,11 +3301,14 @@ impl DeleteEndpointInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3343,6 +3402,7 @@ pub type DeleteEventSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DeleteEventSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEventSubscription`](crate::operation::DeleteEventSubscription)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3401,11 +3461,14 @@ impl DeleteEventSubscriptionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3499,6 +3562,7 @@ pub type DeleteReplicationInstanceInputOperationRetryAlias = aws_http::AwsErrorR
 impl DeleteReplicationInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReplicationInstance`](crate::operation::DeleteReplicationInstance)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3557,11 +3621,14 @@ impl DeleteReplicationInstanceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3658,6 +3725,7 @@ pub type DeleteReplicationSubnetGroupInputOperationRetryAlias = aws_http::AwsErr
 impl DeleteReplicationSubnetGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReplicationSubnetGroup`](crate::operation::DeleteReplicationSubnetGroup)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3715,11 +3783,14 @@ impl DeleteReplicationSubnetGroupInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3812,6 +3883,7 @@ pub type DeleteReplicationTaskInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl DeleteReplicationTaskInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReplicationTask`](crate::operation::DeleteReplicationTask)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3870,11 +3942,14 @@ impl DeleteReplicationTaskInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3971,6 +4046,7 @@ pub type DeleteReplicationTaskAssessmentRunInputOperationRetryAlias = aws_http::
 impl DeleteReplicationTaskAssessmentRunInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReplicationTaskAssessmentRun`](crate::operation::DeleteReplicationTaskAssessmentRun)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4028,11 +4104,14 @@ impl DeleteReplicationTaskAssessmentRunInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4109,6 +4188,7 @@ pub type DescribeAccountAttributesInputOperationRetryAlias = aws_http::AwsErrorR
 impl DescribeAccountAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountAttributes`](crate::operation::DescribeAccountAttributes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4167,11 +4247,14 @@ impl DescribeAccountAttributesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4354,6 +4437,7 @@ pub type DescribeApplicableIndividualAssessmentsInputOperationRetryAlias =
 impl DescribeApplicableIndividualAssessmentsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApplicableIndividualAssessments`](crate::operation::DescribeApplicableIndividualAssessments)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4411,11 +4495,14 @@ impl DescribeApplicableIndividualAssessmentsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4481,14 +4568,16 @@ pub mod describe_certificates_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters applied to the certificates described in the form of key-value pairs.</p>
+        /// <p>Filters applied to the certificates described in the form of key-value pairs.
+        /// Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
-        /// <p>Filters applied to the certificates described in the form of key-value pairs.</p>
+        /// <p>Filters applied to the certificates described in the form of key-value pairs.
+        /// Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4548,6 +4637,7 @@ pub type DescribeCertificatesInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl DescribeCertificatesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCertificates`](crate::operation::DescribeCertificates)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4604,11 +4694,14 @@ impl DescribeCertificatesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4745,6 +4838,7 @@ pub type DescribeConnectionsInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl DescribeConnectionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnections`](crate::operation::DescribeConnections)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4801,11 +4895,14 @@ impl DescribeConnectionsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4942,6 +5039,7 @@ pub type DescribeEndpointsInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl DescribeEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEndpoints`](crate::operation::DescribeEndpoints)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4998,11 +5096,14 @@ impl DescribeEndpointsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5123,6 +5224,7 @@ pub type DescribeEndpointSettingsInputOperationRetryAlias = aws_http::AwsErrorRe
 impl DescribeEndpointSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEndpointSettings`](crate::operation::DescribeEndpointSettings)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5181,11 +5283,14 @@ impl DescribeEndpointSettingsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5322,6 +5427,7 @@ pub type DescribeEndpointTypesInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl DescribeEndpointTypesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEndpointTypes`](crate::operation::DescribeEndpointTypes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5380,11 +5486,14 @@ impl DescribeEndpointTypesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5498,6 +5607,7 @@ pub type DescribeEventCategoriesInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DescribeEventCategoriesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEventCategories`](crate::operation::DescribeEventCategories)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5556,11 +5666,14 @@ impl DescribeEventCategoriesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5619,8 +5732,8 @@ pub mod describe_events_input {
     pub struct Builder {
         pub(crate) source_identifier: std::option::Option<std::string::String>,
         pub(crate) source_type: std::option::Option<crate::model::SourceType>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) duration: std::option::Option<i32>,
         pub(crate) event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5657,27 +5770,27 @@ pub mod describe_events_input {
             self
         }
         /// <p>The start time for the events to be listed.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The start time for the events to be listed.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The end time for the events to be listed.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The end time for the events to be listed.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -5715,14 +5828,14 @@ pub mod describe_events_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters applied to events.</p>
+        /// <p>Filters applied to events. The only valid filter is <code>replication-instance-id</code>.</p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
-        /// <p>Filters applied to events.</p>
+        /// <p>Filters applied to events. The only valid filter is <code>replication-instance-id</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5790,6 +5903,7 @@ pub type DescribeEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeEventsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEvents`](crate::operation::DescribeEvents)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5846,11 +5960,14 @@ impl DescribeEventsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5931,6 +6048,7 @@ pub mod describe_event_subscriptions_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to event subscriptions.</p>
+        /// <p>Valid filter names: event-subscription-arn |  event-subscription-id </p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
@@ -5938,6 +6056,7 @@ pub mod describe_event_subscriptions_input {
             self
         }
         /// <p>Filters applied to event subscriptions.</p>
+        /// <p>Valid filter names: event-subscription-arn |  event-subscription-id </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6001,6 +6120,7 @@ pub type DescribeEventSubscriptionsInputOperationRetryAlias = aws_http::AwsError
 impl DescribeEventSubscriptionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEventSubscriptions`](crate::operation::DescribeEventSubscriptions)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6059,11 +6179,14 @@ impl DescribeEventSubscriptionsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6179,6 +6302,7 @@ pub type DescribeOrderableReplicationInstancesInputOperationRetryAlias =
 impl DescribeOrderableReplicationInstancesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrderableReplicationInstances`](crate::operation::DescribeOrderableReplicationInstances)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6236,11 +6360,14 @@ impl DescribeOrderableReplicationInstancesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6391,6 +6518,7 @@ pub type DescribePendingMaintenanceActionsInputOperationRetryAlias = aws_http::A
 impl DescribePendingMaintenanceActionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribePendingMaintenanceActions`](crate::operation::DescribePendingMaintenanceActions)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6448,11 +6576,14 @@ impl DescribePendingMaintenanceActionsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6543,6 +6674,7 @@ pub type DescribeRefreshSchemasStatusInputOperationRetryAlias = aws_http::AwsErr
 impl DescribeRefreshSchemasStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRefreshSchemasStatus`](crate::operation::DescribeRefreshSchemasStatus)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6600,11 +6732,14 @@ impl DescribeRefreshSchemasStatusInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6744,6 +6879,7 @@ pub type DescribeReplicationInstancesInputOperationRetryAlias = aws_http::AwsErr
 impl DescribeReplicationInstancesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReplicationInstances`](crate::operation::DescribeReplicationInstances)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6801,11 +6937,14 @@ impl DescribeReplicationInstancesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6936,6 +7075,7 @@ pub type DescribeReplicationInstanceTaskLogsInputOperationRetryAlias =
 impl DescribeReplicationInstanceTaskLogsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReplicationInstanceTaskLogs`](crate::operation::DescribeReplicationInstanceTaskLogs)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6993,11 +7133,14 @@ impl DescribeReplicationInstanceTaskLogsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7135,6 +7278,7 @@ pub type DescribeReplicationSubnetGroupsInputOperationRetryAlias = aws_http::Aws
 impl DescribeReplicationSubnetGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReplicationSubnetGroups`](crate::operation::DescribeReplicationSubnetGroups)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7192,11 +7336,14 @@ impl DescribeReplicationSubnetGroupsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7333,6 +7480,7 @@ pub type DescribeReplicationTaskAssessmentResultsInputOperationRetryAlias =
 impl DescribeReplicationTaskAssessmentResultsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReplicationTaskAssessmentResults`](crate::operation::DescribeReplicationTaskAssessmentResults)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7390,11 +7538,14 @@ impl DescribeReplicationTaskAssessmentResultsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7533,6 +7684,7 @@ pub type DescribeReplicationTaskAssessmentRunsInputOperationRetryAlias =
 impl DescribeReplicationTaskAssessmentRunsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReplicationTaskAssessmentRuns`](crate::operation::DescribeReplicationTaskAssessmentRuns)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7590,11 +7742,14 @@ impl DescribeReplicationTaskAssessmentRunsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7737,6 +7892,7 @@ pub type DescribeReplicationTaskIndividualAssessmentsInputOperationRetryAlias =
 impl DescribeReplicationTaskIndividualAssessmentsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReplicationTaskIndividualAssessments`](crate::operation::DescribeReplicationTaskIndividualAssessments)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7794,11 +7950,14 @@ impl DescribeReplicationTaskIndividualAssessmentsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7955,6 +8114,7 @@ pub type DescribeReplicationTasksInputOperationRetryAlias = aws_http::AwsErrorRe
 impl DescribeReplicationTasksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReplicationTasks`](crate::operation::DescribeReplicationTasks)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8013,11 +8173,14 @@ impl DescribeReplicationTasksInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8143,6 +8306,7 @@ pub type DescribeSchemasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl DescribeSchemasInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSchemas`](crate::operation::DescribeSchemas)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8199,11 +8363,14 @@ impl DescribeSchemasInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8360,6 +8527,7 @@ pub type DescribeTableStatisticsInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DescribeTableStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTableStatistics`](crate::operation::DescribeTableStatistics)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8418,11 +8586,14 @@ impl DescribeTableStatisticsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8516,14 +8687,16 @@ pub mod import_certificate_input {
             self
         }
         /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file
-        /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.
+        /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
+        /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code>
         /// </p>
         pub fn certificate_wallet(mut self, input: aws_smithy_types::Blob) -> Self {
             self.certificate_wallet = Some(input);
             self
         }
         /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file
-        /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.
+        /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
+        /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code>
         /// </p>
         pub fn set_certificate_wallet(
             mut self,
@@ -8574,6 +8747,7 @@ pub type ImportCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl ImportCertificateInput {
     /// Consumes the builder and constructs an Operation<[`ImportCertificate`](crate::operation::ImportCertificate)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8630,11 +8804,14 @@ impl ImportCertificateInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8755,6 +8932,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8813,11 +8991,14 @@ impl ListTagsForResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8907,6 +9088,7 @@ pub mod modify_endpoint_input {
         pub(crate) doc_db_settings: std::option::Option<crate::model::DocDbSettings>,
         pub(crate) redis_settings: std::option::Option<crate::model::RedisSettings>,
         pub(crate) exact_settings: std::option::Option<bool>,
+        pub(crate) gcp_my_sql_settings: std::option::Option<crate::model::GcpMySqlSettings>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
@@ -8952,7 +9134,7 @@ pub mod modify_endpoint_input {
         /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType,
         /// include
         /// <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
-        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
         /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
         /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
         /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
@@ -8964,7 +9146,7 @@ pub mod modify_endpoint_input {
         /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType,
         /// include
         /// <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
-        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
         /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
         /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
         /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
@@ -9242,8 +9424,8 @@ pub mod modify_endpoint_input {
             self.kafka_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the target Elasticsearch endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using Elasticsearch as a Target for DMS</a> in
+        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
+        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
         /// the <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn elasticsearch_settings(
@@ -9253,8 +9435,8 @@ pub mod modify_endpoint_input {
             self.elasticsearch_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the target Elasticsearch endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using Elasticsearch as a Target for DMS</a> in
+        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
+        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
         /// the <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn set_elasticsearch_settings(
@@ -9519,6 +9701,19 @@ pub mod modify_endpoint_input {
             self.exact_settings = input;
             self
         }
+        /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+        pub fn gcp_my_sql_settings(mut self, input: crate::model::GcpMySqlSettings) -> Self {
+            self.gcp_my_sql_settings = Some(input);
+            self
+        }
+        /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+        pub fn set_gcp_my_sql_settings(
+            mut self,
+            input: std::option::Option<crate::model::GcpMySqlSettings>,
+        ) -> Self {
+            self.gcp_my_sql_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ModifyEndpointInput`](crate::input::ModifyEndpointInput)
         pub fn build(
             self,
@@ -9559,6 +9754,7 @@ pub mod modify_endpoint_input {
                 doc_db_settings: self.doc_db_settings,
                 redis_settings: self.redis_settings,
                 exact_settings: self.exact_settings,
+                gcp_my_sql_settings: self.gcp_my_sql_settings,
             })
         }
     }
@@ -9570,6 +9766,7 @@ pub type ModifyEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ModifyEndpointInput {
     /// Consumes the builder and constructs an Operation<[`ModifyEndpoint`](crate::operation::ModifyEndpoint)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -9626,11 +9823,14 @@ impl ModifyEndpointInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -9792,6 +9992,7 @@ pub type ModifyEventSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRet
 impl ModifyEventSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`ModifyEventSubscription`](crate::operation::ModifyEventSubscription)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -9850,11 +10051,14 @@ impl ModifyEventSubscriptionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -10175,6 +10379,7 @@ pub type ModifyReplicationInstanceInputOperationRetryAlias = aws_http::AwsErrorR
 impl ModifyReplicationInstanceInput {
     /// Consumes the builder and constructs an Operation<[`ModifyReplicationInstance`](crate::operation::ModifyReplicationInstance)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -10233,11 +10438,14 @@ impl ModifyReplicationInstanceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -10373,6 +10581,7 @@ pub type ModifyReplicationSubnetGroupInputOperationRetryAlias = aws_http::AwsErr
 impl ModifyReplicationSubnetGroupInput {
     /// Consumes the builder and constructs an Operation<[`ModifyReplicationSubnetGroup`](crate::operation::ModifyReplicationSubnetGroup)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -10430,11 +10639,14 @@ impl ModifyReplicationSubnetGroupInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -10496,7 +10708,7 @@ pub mod modify_replication_task_input {
         pub(crate) migration_type: std::option::Option<crate::model::MigrationTypeValue>,
         pub(crate) table_mappings: std::option::Option<std::string::String>,
         pub(crate) replication_task_settings: std::option::Option<std::string::String>,
-        pub(crate) cdc_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) cdc_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) cdc_start_position: std::option::Option<std::string::String>,
         pub(crate) cdc_stop_position: std::option::Option<std::string::String>,
         pub(crate) task_data: std::option::Option<std::string::String>,
@@ -10608,7 +10820,7 @@ pub mod modify_replication_task_input {
         /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
         /// Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-        pub fn cdc_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn cdc_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.cdc_start_time = Some(input);
             self
         }
@@ -10618,7 +10830,7 @@ pub mod modify_replication_task_input {
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
         pub fn set_cdc_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.cdc_start_time = input;
             self
@@ -10727,6 +10939,7 @@ pub type ModifyReplicationTaskInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl ModifyReplicationTaskInput {
     /// Consumes the builder and constructs an Operation<[`ModifyReplicationTask`](crate::operation::ModifyReplicationTask)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -10785,11 +10998,14 @@ impl ModifyReplicationTaskInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -10900,6 +11116,7 @@ pub type MoveReplicationTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl MoveReplicationTaskInput {
     /// Consumes the builder and constructs an Operation<[`MoveReplicationTask`](crate::operation::MoveReplicationTask)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -10956,11 +11173,14 @@ impl MoveReplicationTaskInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -11088,6 +11308,7 @@ pub type RebootReplicationInstanceInputOperationRetryAlias = aws_http::AwsErrorR
 impl RebootReplicationInstanceInput {
     /// Consumes the builder and constructs an Operation<[`RebootReplicationInstance`](crate::operation::RebootReplicationInstance)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -11146,11 +11367,14 @@ impl RebootReplicationInstanceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -11255,6 +11479,7 @@ pub type RefreshSchemasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl RefreshSchemasInput {
     /// Consumes the builder and constructs an Operation<[`RefreshSchemas`](crate::operation::RefreshSchemas)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -11311,11 +11536,14 @@ impl RefreshSchemasInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -11453,6 +11681,7 @@ pub type ReloadTablesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ReloadTablesInput {
     /// Consumes the builder and constructs an Operation<[`ReloadTables`](crate::operation::ReloadTables)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -11508,11 +11737,14 @@ impl ReloadTablesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -11623,6 +11855,7 @@ pub type RemoveTagsFromResourceInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl RemoveTagsFromResourceInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTagsFromResource`](crate::operation::RemoveTagsFromResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -11681,11 +11914,14 @@ impl RemoveTagsFromResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -11745,7 +11981,7 @@ pub mod start_replication_task_input {
         pub(crate) replication_task_arn: std::option::Option<std::string::String>,
         pub(crate) start_replication_task_type:
             std::option::Option<crate::model::StartReplicationTaskTypeValue>,
-        pub(crate) cdc_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) cdc_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) cdc_start_position: std::option::Option<std::string::String>,
         pub(crate) cdc_stop_position: std::option::Option<std::string::String>,
     }
@@ -11763,7 +11999,13 @@ pub mod start_replication_task_input {
             self.replication_task_arn = input;
             self
         }
-        /// <p>A type of replication task.</p>
+        /// <p>The type of replication task to start.</p>
+        /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+        /// for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart
+        /// the task and <code>resume-processing</code> to resume the task.</p>
+        /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart
+        /// the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for
+        /// a task with migration type of <code>cdc</code>.</p>
         pub fn start_replication_task_type(
             mut self,
             input: crate::model::StartReplicationTaskTypeValue,
@@ -11771,7 +12013,13 @@ pub mod start_replication_task_input {
             self.start_replication_task_type = Some(input);
             self
         }
-        /// <p>A type of replication task.</p>
+        /// <p>The type of replication task to start.</p>
+        /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+        /// for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart
+        /// the task and <code>resume-processing</code> to resume the task.</p>
+        /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart
+        /// the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for
+        /// a task with migration type of <code>cdc</code>.</p>
         pub fn set_start_replication_task_type(
             mut self,
             input: std::option::Option<crate::model::StartReplicationTaskTypeValue>,
@@ -11783,7 +12031,7 @@ pub mod start_replication_task_input {
         /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
         /// Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-        pub fn cdc_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn cdc_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.cdc_start_time = Some(input);
             self
         }
@@ -11793,7 +12041,7 @@ pub mod start_replication_task_input {
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
         pub fn set_cdc_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.cdc_start_time = input;
             self
@@ -11882,6 +12130,7 @@ pub type StartReplicationTaskInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl StartReplicationTaskInput {
     /// Consumes the builder and constructs an Operation<[`StartReplicationTask`](crate::operation::StartReplicationTask)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -11940,11 +12189,14 @@ impl StartReplicationTaskInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -12038,6 +12290,7 @@ pub type StartReplicationTaskAssessmentInputOperationRetryAlias = aws_http::AwsE
 impl StartReplicationTaskAssessmentInput {
     /// Consumes the builder and constructs an Operation<[`StartReplicationTaskAssessment`](crate::operation::StartReplicationTaskAssessment)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -12095,11 +12348,14 @@ impl StartReplicationTaskAssessmentInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -12407,6 +12663,7 @@ pub type StartReplicationTaskAssessmentRunInputOperationRetryAlias = aws_http::A
 impl StartReplicationTaskAssessmentRunInput {
     /// Consumes the builder and constructs an Operation<[`StartReplicationTaskAssessmentRun`](crate::operation::StartReplicationTaskAssessmentRun)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -12464,11 +12721,14 @@ impl StartReplicationTaskAssessmentRunInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -12561,6 +12821,7 @@ pub type StopReplicationTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl StopReplicationTaskInput {
     /// Consumes the builder and constructs an Operation<[`StopReplicationTask`](crate::operation::StopReplicationTask)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -12617,11 +12878,14 @@ impl StopReplicationTaskInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -12726,6 +12990,7 @@ pub type TestConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TestConnectionInput {
     /// Consumes the builder and constructs an Operation<[`TestConnection`](crate::operation::TestConnection)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -12782,11 +13047,14 @@ impl TestConnectionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -13072,14 +13340,20 @@ impl std::fmt::Debug for StartReplicationTaskAssessmentInput {
 pub struct StartReplicationTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the replication task to be started.</p>
     pub replication_task_arn: std::option::Option<std::string::String>,
-    /// <p>A type of replication task.</p>
+    /// <p>The type of replication task to start.</p>
+    /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+    /// for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart
+    /// the task and <code>resume-processing</code> to resume the task.</p>
+    /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart
+    /// the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for
+    /// a task with migration type of <code>cdc</code>.</p>
     pub start_replication_task_type:
         std::option::Option<crate::model::StartReplicationTaskTypeValue>,
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
     /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
     /// Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-    pub cdc_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub cdc_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
     /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
     /// Specifying both values results in an error.</p>
@@ -13107,7 +13381,13 @@ impl StartReplicationTaskInput {
     pub fn replication_task_arn(&self) -> std::option::Option<&str> {
         self.replication_task_arn.as_deref()
     }
-    /// <p>A type of replication task.</p>
+    /// <p>The type of replication task to start.</p>
+    /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+    /// for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart
+    /// the task and <code>resume-processing</code> to resume the task.</p>
+    /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart
+    /// the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for
+    /// a task with migration type of <code>cdc</code>.</p>
     pub fn start_replication_task_type(
         &self,
     ) -> std::option::Option<&crate::model::StartReplicationTaskTypeValue> {
@@ -13117,7 +13397,7 @@ impl StartReplicationTaskInput {
     /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
     /// Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-    pub fn cdc_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn cdc_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.cdc_start_time.as_ref()
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
@@ -13371,7 +13651,7 @@ pub struct ModifyReplicationTaskInput {
     /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
     /// Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-    pub cdc_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub cdc_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
     /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
     /// Specifying both values results in an error.</p>
@@ -13441,7 +13721,7 @@ impl ModifyReplicationTaskInput {
     /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
     /// Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-    pub fn cdc_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn cdc_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.cdc_start_time.as_ref()
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
@@ -13795,7 +14075,7 @@ pub struct ModifyEndpointInput {
     /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType,
     /// include
     /// <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
-    /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+    /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
     /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
     /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
     /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
@@ -13868,8 +14148,8 @@ pub struct ModifyEndpointInput {
     /// to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i>
     /// </p>
     pub kafka_settings: std::option::Option<crate::model::KafkaSettings>,
-    /// <p>Settings in JSON format for the target Elasticsearch endpoint. For more information
-    /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using Elasticsearch as a Target for DMS</a> in
+    /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
+    /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
     /// the <i>Database Migration Service User Guide.</i>
     /// </p>
     pub elasticsearch_settings: std::option::Option<crate::model::ElasticsearchSettings>,
@@ -13952,6 +14232,8 @@ pub struct ModifyEndpointInput {
     /// Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings
     /// are replaced with the exact settings that you specify. </p>
     pub exact_settings: std::option::Option<bool>,
+    /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+    pub gcp_my_sql_settings: std::option::Option<crate::model::GcpMySqlSettings>,
 }
 impl ModifyEndpointInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
@@ -13973,7 +14255,7 @@ impl ModifyEndpointInput {
     /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType,
     /// include
     /// <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
-    /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+    /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
     /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
     /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
     /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
@@ -14080,8 +14362,8 @@ impl ModifyEndpointInput {
     pub fn kafka_settings(&self) -> std::option::Option<&crate::model::KafkaSettings> {
         self.kafka_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the target Elasticsearch endpoint. For more information
-    /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using Elasticsearch as a Target for DMS</a> in
+    /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
+    /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
     /// the <i>Database Migration Service User Guide.</i>
     /// </p>
     pub fn elasticsearch_settings(
@@ -14191,6 +14473,10 @@ impl ModifyEndpointInput {
     pub fn exact_settings(&self) -> std::option::Option<bool> {
         self.exact_settings
     }
+    /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+    pub fn gcp_my_sql_settings(&self) -> std::option::Option<&crate::model::GcpMySqlSettings> {
+        self.gcp_my_sql_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14233,6 +14519,7 @@ impl std::fmt::Debug for ModifyEndpointInput {
         formatter.field("doc_db_settings", &self.doc_db_settings);
         formatter.field("redis_settings", &self.redis_settings);
         formatter.field("exact_settings", &self.exact_settings);
+        formatter.field("gcp_my_sql_settings", &self.gcp_my_sql_settings);
         formatter.finish()
     }
 }
@@ -14286,7 +14573,8 @@ pub struct ImportCertificateInput {
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
     pub certificate_pem: std::option::Option<std::string::String>,
     /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file
-    /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.
+    /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
+    /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code>
     /// </p>
     pub certificate_wallet: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The tags associated with the certificate.</p>
@@ -14304,7 +14592,8 @@ impl ImportCertificateInput {
         self.certificate_pem.as_deref()
     }
     /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file
-    /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.
+    /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
+    /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code>
     /// </p>
     pub fn certificate_wallet(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.certificate_wallet.as_ref()
@@ -14914,6 +15203,7 @@ pub struct DescribeEventSubscriptionsInput {
     /// <p>The name of the DMS event subscription to be described.</p>
     pub subscription_name: std::option::Option<std::string::String>,
     /// <p>Filters applied to event subscriptions.</p>
+    /// <p>Valid filter names: event-subscription-arn |  event-subscription-id </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than
     /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
@@ -14932,6 +15222,7 @@ impl DescribeEventSubscriptionsInput {
         self.subscription_name.as_deref()
     }
     /// <p>Filters applied to event subscriptions.</p>
+    /// <p>Valid filter names: event-subscription-arn |  event-subscription-id </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -14971,14 +15262,14 @@ pub struct DescribeEventsInput {
     /// <p>Valid values: replication-instance | replication-task</p>
     pub source_type: std::option::Option<crate::model::SourceType>,
     /// <p>The start time for the events to be listed.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time for the events to be listed.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The duration of the events to be listed.</p>
     pub duration: std::option::Option<i32>,
     /// <p>A list of event categories for the source type that you've chosen.</p>
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Filters applied to events.</p>
+    /// <p>Filters applied to events. The only valid filter is <code>replication-instance-id</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than
     /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
@@ -15002,11 +15293,11 @@ impl DescribeEventsInput {
         self.source_type.as_ref()
     }
     /// <p>The start time for the events to be listed.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time for the events to be listed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The duration of the events to be listed.</p>
@@ -15017,7 +15308,7 @@ impl DescribeEventsInput {
     pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
         self.event_categories.as_deref()
     }
-    /// <p>Filters applied to events.</p>
+    /// <p>Filters applied to events. The only valid filter is <code>replication-instance-id</code>.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -15274,7 +15565,8 @@ impl std::fmt::Debug for DescribeConnectionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificatesInput {
-    /// <p>Filters applied to the certificates described in the form of key-value pairs.</p>
+    /// <p>Filters applied to the certificates described in the form of key-value pairs.
+    /// Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than
     /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
@@ -15287,7 +15579,8 @@ pub struct DescribeCertificatesInput {
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeCertificatesInput {
-    /// <p>Filters applied to the certificates described in the form of key-value pairs.</p>
+    /// <p>Filters applied to the certificates described in the form of key-value pairs.
+    /// Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -15565,11 +15858,11 @@ impl std::fmt::Debug for DeleteConnectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCertificateInput {
-    /// <p>The Amazon Resource Name (ARN) of the deleted certificate.</p>
+    /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl DeleteCertificateInput {
-    /// <p>The Amazon Resource Name (ARN) of the deleted certificate.</p>
+    /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
@@ -15622,7 +15915,7 @@ pub struct CreateReplicationTaskInput {
     /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
     /// Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-    pub cdc_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub cdc_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
     /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
     /// Specifying both values results in an error.</p>
@@ -15713,7 +16006,7 @@ impl CreateReplicationTaskInput {
     /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
     /// Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-    pub fn cdc_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn cdc_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.cdc_start_time.as_ref()
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
@@ -16208,7 +16501,7 @@ pub struct CreateEndpointInput {
     /// <p>The type of engine for the endpoint. Valid values, depending on the
     /// <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>,
     /// <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-    /// <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+    /// <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
     /// <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
     /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
     /// <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
@@ -16298,8 +16591,8 @@ pub struct CreateEndpointInput {
     /// Guide.</i>
     /// </p>
     pub kafka_settings: std::option::Option<crate::model::KafkaSettings>,
-    /// <p>Settings in JSON format for the target Elasticsearch endpoint. For more information
-    /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using Elasticsearch as a Target for DMS</a> in
+    /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
+    /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
     /// the <i>Database Migration Service User Guide</i>.</p>
     pub elasticsearch_settings: std::option::Option<crate::model::ElasticsearchSettings>,
     /// <p>Settings in JSON format for the target Amazon Neptune endpoint.
@@ -16366,6 +16659,8 @@ pub struct CreateEndpointInput {
     pub doc_db_settings: std::option::Option<crate::model::DocDbSettings>,
     /// <p>Settings in JSON format for the target Redis endpoint.</p>
     pub redis_settings: std::option::Option<crate::model::RedisSettings>,
+    /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+    pub gcp_my_sql_settings: std::option::Option<crate::model::GcpMySqlSettings>,
 }
 impl CreateEndpointInput {
     /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
@@ -16383,7 +16678,7 @@ impl CreateEndpointInput {
     /// <p>The type of engine for the endpoint. Valid values, depending on the
     /// <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>,
     /// <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-    /// <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+    /// <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
     /// <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
     /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
     /// <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
@@ -16511,8 +16806,8 @@ impl CreateEndpointInput {
     pub fn kafka_settings(&self) -> std::option::Option<&crate::model::KafkaSettings> {
         self.kafka_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the target Elasticsearch endpoint. For more information
-    /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using Elasticsearch as a Target for DMS</a> in
+    /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
+    /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
     /// the <i>Database Migration Service User Guide</i>.</p>
     pub fn elasticsearch_settings(
         &self,
@@ -16606,6 +16901,10 @@ impl CreateEndpointInput {
     pub fn redis_settings(&self) -> std::option::Option<&crate::model::RedisSettings> {
         self.redis_settings.as_ref()
     }
+    /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+    pub fn gcp_my_sql_settings(&self) -> std::option::Option<&crate::model::GcpMySqlSettings> {
+        self.gcp_my_sql_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16649,6 +16948,7 @@ impl std::fmt::Debug for CreateEndpointInput {
         formatter.field("resource_identifier", &self.resource_identifier);
         formatter.field("doc_db_settings", &self.doc_db_settings);
         formatter.field("redis_settings", &self.redis_settings);
+        formatter.field("gcp_my_sql_settings", &self.gcp_my_sql_settings);
         formatter.finish()
     }
 }

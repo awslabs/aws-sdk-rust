@@ -874,7 +874,7 @@ pub struct ModelSummary {
     /// <p>Indicates the status of the ML model. </p>
     pub status: std::option::Option<crate::model::ModelStatus>,
     /// <p>The time at which the specific model was created. </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ModelSummary {
     /// <p>The name of the ML model. </p>
@@ -898,7 +898,7 @@ impl ModelSummary {
         self.status.as_ref()
     }
     /// <p>The time at which the specific model was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -925,7 +925,7 @@ pub mod model_summary {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ModelStatus>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the ML model. </p>
@@ -979,14 +979,14 @@ pub mod model_summary {
             self
         }
         /// <p>The time at which the specific model was created. </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time at which the specific model was created. </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1310,13 +1310,13 @@ pub struct InferenceExecutionSummary {
     pub inference_scheduler_arn: std::option::Option<std::string::String>,
     /// <p>Indicates the start time at which the inference scheduler began the specific inference
     /// execution. </p>
-    pub scheduled_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the time reference in the dataset at which the inference execution began.
     /// </p>
-    pub data_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub data_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the time reference in the dataset at which the inference execution stopped.
     /// </p>
-    pub data_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub data_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies configuration information for the input data for the inference scheduler,
     /// including delimiter, format, and dataset location. </p>
     pub data_input_configuration: std::option::Option<crate::model::InferenceInputConfiguration>,
@@ -1351,17 +1351,17 @@ impl InferenceExecutionSummary {
     }
     /// <p>Indicates the start time at which the inference scheduler began the specific inference
     /// execution. </p>
-    pub fn scheduled_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn scheduled_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.scheduled_start_time.as_ref()
     }
     /// <p>Indicates the time reference in the dataset at which the inference execution began.
     /// </p>
-    pub fn data_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn data_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.data_start_time.as_ref()
     }
     /// <p>Indicates the time reference in the dataset at which the inference execution stopped.
     /// </p>
-    pub fn data_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn data_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.data_end_time.as_ref()
     }
     /// <p> Specifies configuration information for the input data for the inference scheduler,
@@ -1420,9 +1420,9 @@ pub mod inference_execution_summary {
         pub(crate) model_arn: std::option::Option<std::string::String>,
         pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
         pub(crate) inference_scheduler_arn: std::option::Option<std::string::String>,
-        pub(crate) scheduled_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) data_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) data_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) data_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) data_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_input_configuration:
             std::option::Option<crate::model::InferenceInputConfiguration>,
         pub(crate) data_output_configuration:
@@ -1482,7 +1482,7 @@ pub mod inference_execution_summary {
         }
         /// <p>Indicates the start time at which the inference scheduler began the specific inference
         /// execution. </p>
-        pub fn scheduled_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn scheduled_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.scheduled_start_time = Some(input);
             self
         }
@@ -1490,14 +1490,14 @@ pub mod inference_execution_summary {
         /// execution. </p>
         pub fn set_scheduled_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.scheduled_start_time = input;
             self
         }
         /// <p>Indicates the time reference in the dataset at which the inference execution began.
         /// </p>
-        pub fn data_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn data_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.data_start_time = Some(input);
             self
         }
@@ -1505,14 +1505,14 @@ pub mod inference_execution_summary {
         /// </p>
         pub fn set_data_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.data_start_time = input;
             self
         }
         /// <p>Indicates the time reference in the dataset at which the inference execution stopped.
         /// </p>
-        pub fn data_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn data_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.data_end_time = Some(input);
             self
         }
@@ -1520,7 +1520,7 @@ pub mod inference_execution_summary {
         /// </p>
         pub fn set_data_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.data_end_time = input;
             self
@@ -1776,7 +1776,7 @@ pub struct DatasetSummary {
     /// <p>Indicates the status of the dataset. </p>
     pub status: std::option::Option<crate::model::DatasetStatus>,
     /// <p>The time at which the dataset was created in Amazon Lookout for Equipment. </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DatasetSummary {
     /// <p>The name of the dataset. </p>
@@ -1792,7 +1792,7 @@ impl DatasetSummary {
         self.status.as_ref()
     }
     /// <p>The time at which the dataset was created in Amazon Lookout for Equipment. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -1815,7 +1815,7 @@ pub mod dataset_summary {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DatasetStatus>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the dataset. </p>
@@ -1852,14 +1852,14 @@ pub mod dataset_summary {
             self
         }
         /// <p>The time at which the dataset was created in Amazon Lookout for Equipment. </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time at which the dataset was created in Amazon Lookout for Equipment. </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self

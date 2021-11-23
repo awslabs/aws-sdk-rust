@@ -123,7 +123,7 @@ pub struct Consumer {
     /// states.</p>
     pub consumer_status: std::option::Option<crate::model::ConsumerStatus>,
     /// <p></p>
-    pub consumer_creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub consumer_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Consumer {
     /// <p>The name of the consumer is something you choose when you register the
@@ -145,7 +145,7 @@ impl Consumer {
         self.consumer_status.as_ref()
     }
     /// <p></p>
-    pub fn consumer_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn consumer_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.consumer_creation_timestamp.as_ref()
     }
 }
@@ -171,7 +171,7 @@ pub mod consumer {
         pub(crate) consumer_name: std::option::Option<std::string::String>,
         pub(crate) consumer_arn: std::option::Option<std::string::String>,
         pub(crate) consumer_status: std::option::Option<crate::model::ConsumerStatus>,
-        pub(crate) consumer_creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) consumer_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the consumer is something you choose when you register the
@@ -223,14 +223,14 @@ pub mod consumer {
             self
         }
         /// <p></p>
-        pub fn consumer_creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn consumer_creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.consumer_creation_timestamp = Some(input);
             self
         }
         /// <p></p>
         pub fn set_consumer_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.consumer_creation_timestamp = input;
             self
@@ -998,7 +998,7 @@ pub struct ShardFilter {
     #[allow(missing_docs)] // documentation missing in model
     pub shard_id: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ShardFilter {
     #[allow(missing_docs)] // documentation missing in model
@@ -1010,7 +1010,7 @@ impl ShardFilter {
         self.shard_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -1031,7 +1031,7 @@ pub mod shard_filter {
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ShardFilterType>,
         pub(crate) shard_id: std::option::Option<std::string::String>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -1058,14 +1058,14 @@ pub mod shard_filter {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -1353,7 +1353,7 @@ pub struct Record {
     /// <p>The unique identifier of the record within its shard.</p>
     pub sequence_number: std::option::Option<std::string::String>,
     /// <p>The approximate time that the record was inserted into the stream.</p>
-    pub approximate_arrival_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub approximate_arrival_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data
     /// Streams, which does not inspect, interpret, or change the data in the blob in any way.
     /// When the data blob (the payload before base64-encoding) is added to the partition key
@@ -1382,7 +1382,9 @@ impl Record {
         self.sequence_number.as_deref()
     }
     /// <p>The approximate time that the record was inserted into the stream.</p>
-    pub fn approximate_arrival_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn approximate_arrival_timestamp(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.approximate_arrival_timestamp.as_ref()
     }
     /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data
@@ -1434,7 +1436,7 @@ pub mod record {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sequence_number: std::option::Option<std::string::String>,
-        pub(crate) approximate_arrival_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) approximate_arrival_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) partition_key: std::option::Option<std::string::String>,
         pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
@@ -1454,14 +1456,14 @@ pub mod record {
             self
         }
         /// <p>The approximate time that the record was inserted into the stream.</p>
-        pub fn approximate_arrival_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn approximate_arrival_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.approximate_arrival_timestamp = Some(input);
             self
         }
         /// <p>The approximate time that the record was inserted into the stream.</p>
         pub fn set_approximate_arrival_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.approximate_arrival_timestamp = input;
             self
@@ -1680,7 +1682,7 @@ pub struct StreamDescriptionSummary {
     /// <p>The current retention period, in hours.</p>
     pub retention_period_hours: std::option::Option<i32>,
     /// <p>The approximate time that the stream was created.</p>
-    pub stream_creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub stream_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Represents the current enhanced monitoring settings of the stream.</p>
     pub enhanced_monitoring: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
     /// <p>The encryption type used. This value is one of the following:</p>
@@ -1778,7 +1780,7 @@ impl StreamDescriptionSummary {
         self.retention_period_hours
     }
     /// <p>The approximate time that the stream was created.</p>
-    pub fn stream_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn stream_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stream_creation_timestamp.as_ref()
     }
     /// <p>Represents the current enhanced monitoring settings of the stream.</p>
@@ -1869,7 +1871,7 @@ pub mod stream_description_summary {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
         pub(crate) stream_status: std::option::Option<crate::model::StreamStatus>,
         pub(crate) retention_period_hours: std::option::Option<i32>,
-        pub(crate) stream_creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) stream_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) enhanced_monitoring:
             std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
         pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
@@ -1976,14 +1978,14 @@ pub mod stream_description_summary {
             self
         }
         /// <p>The approximate time that the stream was created.</p>
-        pub fn stream_creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn stream_creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stream_creation_timestamp = Some(input);
             self
         }
         /// <p>The approximate time that the stream was created.</p>
         pub fn set_stream_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.stream_creation_timestamp = input;
             self
@@ -2492,7 +2494,7 @@ pub struct ConsumerDescription {
     /// states.</p>
     pub consumer_status: std::option::Option<crate::model::ConsumerStatus>,
     /// <p></p>
-    pub consumer_creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub consumer_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the stream with which you registered the consumer.</p>
     pub stream_arn: std::option::Option<std::string::String>,
 }
@@ -2516,7 +2518,7 @@ impl ConsumerDescription {
         self.consumer_status.as_ref()
     }
     /// <p></p>
-    pub fn consumer_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn consumer_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.consumer_creation_timestamp.as_ref()
     }
     /// <p>The ARN of the stream with which you registered the consumer.</p>
@@ -2547,7 +2549,7 @@ pub mod consumer_description {
         pub(crate) consumer_name: std::option::Option<std::string::String>,
         pub(crate) consumer_arn: std::option::Option<std::string::String>,
         pub(crate) consumer_status: std::option::Option<crate::model::ConsumerStatus>,
-        pub(crate) consumer_creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) consumer_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2600,14 +2602,14 @@ pub mod consumer_description {
             self
         }
         /// <p></p>
-        pub fn consumer_creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn consumer_creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.consumer_creation_timestamp = Some(input);
             self
         }
         /// <p></p>
         pub fn set_consumer_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.consumer_creation_timestamp = input;
             self
@@ -2687,7 +2689,7 @@ pub struct StreamDescription {
     /// 168.</p>
     pub retention_period_hours: std::option::Option<i32>,
     /// <p>The approximate time that the stream was created.</p>
-    pub stream_creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub stream_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Represents the current enhanced monitoring settings of the stream.</p>
     pub enhanced_monitoring: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
     /// <p>The server-side encryption type used on the stream. This parameter can be one of
@@ -2791,7 +2793,7 @@ impl StreamDescription {
         self.retention_period_hours
     }
     /// <p>The approximate time that the stream was created.</p>
-    pub fn stream_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn stream_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stream_creation_timestamp.as_ref()
     }
     /// <p>Represents the current enhanced monitoring settings of the stream.</p>
@@ -2876,7 +2878,7 @@ pub mod stream_description {
         pub(crate) shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
         pub(crate) has_more_shards: std::option::Option<bool>,
         pub(crate) retention_period_hours: std::option::Option<i32>,
-        pub(crate) stream_creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) stream_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) enhanced_monitoring:
             std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
         pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
@@ -3014,14 +3016,14 @@ pub mod stream_description {
             self
         }
         /// <p>The approximate time that the stream was created.</p>
-        pub fn stream_creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn stream_creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stream_creation_timestamp = Some(input);
             self
         }
         /// <p>The approximate time that the stream was created.</p>
         pub fn set_stream_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.stream_creation_timestamp = input;
             self

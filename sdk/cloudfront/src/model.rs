@@ -15,7 +15,7 @@ pub struct StreamingDistribution {
     /// the distribution's information is propagated to all CloudFront edge locations.</p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time that the distribution was last modified. </p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The domain name that corresponds to the streaming distribution, for example, <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A complex type that lists the Amazon Web Services accounts, if any, that you included in the
@@ -51,7 +51,7 @@ impl StreamingDistribution {
         self.status.as_deref()
     }
     /// <p>The date and time that the distribution was last modified. </p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The domain name that corresponds to the streaming distribution, for example, <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
@@ -105,7 +105,7 @@ pub mod streaming_distribution {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) active_trusted_signers: std::option::Option<crate::model::ActiveTrustedSigners>,
         pub(crate) streaming_distribution_config:
@@ -151,14 +151,14 @@ pub mod streaming_distribution {
             self
         }
         /// <p>The date and time that the distribution was last modified. </p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time that the distribution was last modified. </p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -1308,7 +1308,7 @@ pub struct ResponseHeadersPolicy {
     /// <p>The identifier for the response headers policy.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time when the response headers policy was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A response headers policy configuration.</p>
     /// <p>A response headers policy contains information about a set of HTTP response headers and
     /// their values. CloudFront adds the headers in the policy to HTTP responses that it sends for
@@ -1322,7 +1322,7 @@ impl ResponseHeadersPolicy {
         self.id.as_deref()
     }
     /// <p>The date and time when the response headers policy was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>A response headers policy configuration.</p>
@@ -1354,7 +1354,7 @@ pub mod response_headers_policy {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) response_headers_policy_config:
             std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
     }
@@ -1370,14 +1370,14 @@ pub mod response_headers_policy {
             self
         }
         /// <p>The date and time when the response headers policy was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time when the response headers policy was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -4321,7 +4321,7 @@ pub struct PublicKey {
     /// <p>The identifier of the public key.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time when the public key was uploaded.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
     pub public_key_config: std::option::Option<crate::model::PublicKeyConfig>,
 }
@@ -4331,7 +4331,7 @@ impl PublicKey {
         self.id.as_deref()
     }
     /// <p>The date and time when the public key was uploaded.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
@@ -4355,7 +4355,7 @@ pub mod public_key {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) public_key_config: std::option::Option<crate::model::PublicKeyConfig>,
     }
     impl Builder {
@@ -4370,14 +4370,14 @@ pub mod public_key {
             self
         }
         /// <p>The date and time when the public key was uploaded.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The date and time when the public key was uploaded.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -4563,7 +4563,7 @@ pub struct OriginRequestPolicy {
     /// <p>The unique identifier for the origin request policy.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time when the origin request policy was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The origin request policy configuration.</p>
     pub origin_request_policy_config: std::option::Option<crate::model::OriginRequestPolicyConfig>,
 }
@@ -4573,7 +4573,7 @@ impl OriginRequestPolicy {
         self.id.as_deref()
     }
     /// <p>The date and time when the origin request policy was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The origin request policy configuration.</p>
@@ -4602,7 +4602,7 @@ pub mod origin_request_policy {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) origin_request_policy_config:
             std::option::Option<crate::model::OriginRequestPolicyConfig>,
     }
@@ -4618,14 +4618,14 @@ pub mod origin_request_policy {
             self
         }
         /// <p>The date and time when the origin request policy was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time when the origin request policy was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -5838,7 +5838,7 @@ pub struct KeyGroup {
     /// <p>The identifier for the key group.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time when the key group was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The key group configuration.</p>
     pub key_group_config: std::option::Option<crate::model::KeyGroupConfig>,
 }
@@ -5848,7 +5848,7 @@ impl KeyGroup {
         self.id.as_deref()
     }
     /// <p>The date and time when the key group was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The key group configuration.</p>
@@ -5872,7 +5872,7 @@ pub mod key_group {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) key_group_config: std::option::Option<crate::model::KeyGroupConfig>,
     }
     impl Builder {
@@ -5887,14 +5887,14 @@ pub mod key_group {
             self
         }
         /// <p>The date and time when the key group was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time when the key group was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -6167,9 +6167,9 @@ pub struct FunctionMetadata {
     /// distribution’s cache behavior, using the function’s ARN.</p>
     pub stage: std::option::Option<crate::model::FunctionStage>,
     /// <p>The date and time when the function was created.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the function was most recently updated.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl FunctionMetadata {
     /// <p>The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies the
@@ -6187,11 +6187,11 @@ impl FunctionMetadata {
         self.stage.as_ref()
     }
     /// <p>The date and time when the function was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The date and time when the function was most recently updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -6213,8 +6213,8 @@ pub mod function_metadata {
     pub struct Builder {
         pub(crate) function_arn: std::option::Option<std::string::String>,
         pub(crate) stage: std::option::Option<crate::model::FunctionStage>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies the
@@ -6253,27 +6253,27 @@ pub mod function_metadata {
             self
         }
         /// <p>The date and time when the function was created.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The date and time when the function was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
         }
         /// <p>The date and time when the function was most recently updated.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time when the function was most recently updated.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -6490,7 +6490,7 @@ pub struct FieldLevelEncryptionProfile {
     /// selected data fields to be encrypted by specific public keys.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The last time the field-level encryption profile was updated.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A complex data type that includes the profile name and the encryption entities for the field-level encryption profile.</p>
     pub field_level_encryption_profile_config:
         std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
@@ -6502,7 +6502,7 @@ impl FieldLevelEncryptionProfile {
         self.id.as_deref()
     }
     /// <p>The last time the field-level encryption profile was updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>A complex data type that includes the profile name and the encryption entities for the field-level encryption profile.</p>
@@ -6531,7 +6531,7 @@ pub mod field_level_encryption_profile {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) field_level_encryption_profile_config:
             std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
     }
@@ -6549,14 +6549,14 @@ pub mod field_level_encryption_profile {
             self
         }
         /// <p>The last time the field-level encryption profile was updated.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The last time the field-level encryption profile was updated.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -7005,7 +7005,7 @@ pub struct FieldLevelEncryption {
     /// selected data fields to be encrypted by specific public keys.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The last time the field-level encryption configuration was changed. </p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A complex data type that includes the profile configurations specified for field-level encryption. </p>
     pub field_level_encryption_config:
         std::option::Option<crate::model::FieldLevelEncryptionConfig>,
@@ -7017,7 +7017,7 @@ impl FieldLevelEncryption {
         self.id.as_deref()
     }
     /// <p>The last time the field-level encryption configuration was changed. </p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>A complex data type that includes the profile configurations specified for field-level encryption. </p>
@@ -7046,7 +7046,7 @@ pub mod field_level_encryption {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) field_level_encryption_config:
             std::option::Option<crate::model::FieldLevelEncryptionConfig>,
     }
@@ -7064,14 +7064,14 @@ pub mod field_level_encryption {
             self
         }
         /// <p>The last time the field-level encryption configuration was changed. </p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The last time the field-level encryption configuration was changed. </p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -7834,7 +7834,7 @@ pub struct Distribution {
     /// locations. </p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time the distribution was last modified. </p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of invalidation batches currently in progress. </p>
     pub in_progress_invalidation_batches: std::option::Option<i32>,
     /// <p>The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>. </p>
@@ -7883,7 +7883,7 @@ impl Distribution {
         self.status.as_deref()
     }
     /// <p>The date and time the distribution was last modified. </p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The number of invalidation batches currently in progress. </p>
@@ -7959,7 +7959,7 @@ pub mod distribution {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) in_progress_invalidation_batches: std::option::Option<i32>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) active_trusted_signers: std::option::Option<crate::model::ActiveTrustedSigners>,
@@ -8011,14 +8011,14 @@ pub mod distribution {
             self
         }
         /// <p>The date and time the distribution was last modified. </p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time the distribution was last modified. </p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -17200,7 +17200,7 @@ pub struct CachePolicy {
     /// <p>The unique identifier for the cache policy.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time when the cache policy was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The cache policy configuration.</p>
     pub cache_policy_config: std::option::Option<crate::model::CachePolicyConfig>,
 }
@@ -17210,7 +17210,7 @@ impl CachePolicy {
         self.id.as_deref()
     }
     /// <p>The date and time when the cache policy was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The cache policy configuration.</p>
@@ -17234,7 +17234,7 @@ pub mod cache_policy {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) cache_policy_config: std::option::Option<crate::model::CachePolicyConfig>,
     }
     impl Builder {
@@ -17249,14 +17249,14 @@ pub mod cache_policy {
             self
         }
         /// <p>The date and time when the cache policy was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time when the cache policy was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -19382,7 +19382,7 @@ pub struct StreamingDistributionSummary {
     /// Amazon CloudFront system.</p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time the distribution was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about the Amazon S3 bucket from which you want
@@ -19431,7 +19431,7 @@ impl StreamingDistributionSummary {
         self.status.as_deref()
     }
     /// <p>The date and time the distribution was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
@@ -19504,7 +19504,7 @@ pub mod streaming_distribution_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) s3_origin: std::option::Option<crate::model::S3Origin>,
         pub(crate) aliases: std::option::Option<crate::model::Aliases>,
@@ -19553,14 +19553,14 @@ pub mod streaming_distribution_summary {
             self
         }
         /// <p>The date and time the distribution was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time the distribution was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -20264,7 +20264,7 @@ pub struct PublicKeySummary {
     /// <p>A name to help identify the public key.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The date and time when the public key was uploaded.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The public key.</p>
     pub encoded_key: std::option::Option<std::string::String>,
     /// <p>A comment to describe the public key. The comment cannot be longer than 128
@@ -20281,7 +20281,7 @@ impl PublicKeySummary {
         self.name.as_deref()
     }
     /// <p>The date and time when the public key was uploaded.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The public key.</p>
@@ -20313,7 +20313,7 @@ pub mod public_key_summary {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) encoded_key: std::option::Option<std::string::String>,
         pub(crate) comment: std::option::Option<std::string::String>,
     }
@@ -20339,14 +20339,14 @@ pub mod public_key_summary {
             self
         }
         /// <p>The date and time when the public key was uploaded.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The date and time when the public key was uploaded.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -21040,7 +21040,7 @@ pub struct InvalidationSummary {
     /// <p>The unique ID for an invalidation request.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The time that an invalidation request was created.</p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of an invalidation request.</p>
     pub status: std::option::Option<std::string::String>,
 }
@@ -21050,7 +21050,7 @@ impl InvalidationSummary {
         self.id.as_deref()
     }
     /// <p>The time that an invalidation request was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The status of an invalidation request.</p>
@@ -21074,7 +21074,7 @@ pub mod invalidation_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -21089,14 +21089,14 @@ pub mod invalidation_summary {
             self
         }
         /// <p>The time that an invalidation request was created.</p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
         /// <p>The time that an invalidation request was created.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
@@ -21399,7 +21399,7 @@ pub struct FieldLevelEncryptionProfileSummary {
     /// <p>ID for the field-level encryption profile summary.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The time when the the field-level encryption profile summary was last updated.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Name for the field-level encryption profile summary.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and
@@ -21415,7 +21415,7 @@ impl FieldLevelEncryptionProfileSummary {
         self.id.as_deref()
     }
     /// <p>The time when the the field-level encryption profile summary was last updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Name for the field-level encryption profile summary.</p>
@@ -21451,7 +21451,7 @@ pub mod field_level_encryption_profile_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) encryption_entities: std::option::Option<crate::model::EncryptionEntities>,
         pub(crate) comment: std::option::Option<std::string::String>,
@@ -21468,14 +21468,14 @@ pub mod field_level_encryption_profile_summary {
             self
         }
         /// <p>The time when the the field-level encryption profile summary was last updated.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The time when the the field-level encryption profile summary was last updated.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -21675,7 +21675,7 @@ pub struct FieldLevelEncryptionSummary {
     /// <p>The unique ID of a field-level encryption item.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The last time that the summary of field-level encryption items was modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An optional comment about the field-level encryption item. The comment cannot be longer than
     /// 128 characters.</p>
     pub comment: std::option::Option<std::string::String>,
@@ -21694,7 +21694,7 @@ impl FieldLevelEncryptionSummary {
         self.id.as_deref()
     }
     /// <p>The last time that the summary of field-level encryption items was modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>An optional comment about the field-level encryption item. The comment cannot be longer than
@@ -21740,7 +21740,7 @@ pub mod field_level_encryption_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) comment: std::option::Option<std::string::String>,
         pub(crate) query_arg_profile_config:
             std::option::Option<crate::model::QueryArgProfileConfig>,
@@ -21759,14 +21759,14 @@ pub mod field_level_encryption_summary {
             self
         }
         /// <p>The last time that the summary of field-level encryption items was modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The last time that the summary of field-level encryption items was modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -22035,7 +22035,7 @@ pub struct DistributionSummary {
     /// distribution's information is propagated to all CloudFront edge locations.</p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time the distribution was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The domain name that corresponds to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any,
@@ -22104,7 +22104,7 @@ impl DistributionSummary {
         self.status.as_deref()
     }
     /// <p>The date and time the distribution was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The domain name that corresponds to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
@@ -22228,7 +22228,7 @@ pub mod distribution_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) aliases: std::option::Option<crate::model::Aliases>,
         pub(crate) origins: std::option::Option<crate::model::Origins>,
@@ -22287,14 +22287,14 @@ pub mod distribution_summary {
             self
         }
         /// <p>The date and time the distribution was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time the distribution was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -23757,7 +23757,7 @@ pub struct Invalidation {
     /// status is <code>Completed</code>.</p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time the invalidation request was first made. </p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current invalidation information for the batch request. </p>
     pub invalidation_batch: std::option::Option<crate::model::InvalidationBatch>,
 }
@@ -23773,7 +23773,7 @@ impl Invalidation {
         self.status.as_deref()
     }
     /// <p>The date and time the invalidation request was first made. </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The current invalidation information for the batch request. </p>
@@ -23799,7 +23799,7 @@ pub mod invalidation {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) invalidation_batch: std::option::Option<crate::model::InvalidationBatch>,
     }
     impl Builder {
@@ -23828,14 +23828,14 @@ pub mod invalidation {
             self
         }
         /// <p>The date and time the invalidation request was first made. </p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
         /// <p>The date and time the invalidation request was first made. </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self

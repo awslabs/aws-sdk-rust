@@ -916,7 +916,7 @@ pub struct LoadBalancerDescription {
     /// <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date and time the load balancer was created.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p>
     /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer
     /// has a public DNS name that resolves to a public IP address.</p>
@@ -989,7 +989,7 @@ impl LoadBalancerDescription {
         self.security_groups.as_deref()
     }
     /// <p>The date and time the load balancer was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p>
@@ -1054,7 +1054,7 @@ pub mod load_balancer_description {
         pub(crate) health_check: std::option::Option<crate::model::HealthCheck>,
         pub(crate) source_security_group: std::option::Option<crate::model::SourceSecurityGroup>,
         pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) scheme: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1283,14 +1283,14 @@ pub mod load_balancer_description {
             self
         }
         /// <p>The date and time the load balancer was created.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The date and time the load balancer was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self

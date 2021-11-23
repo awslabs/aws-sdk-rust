@@ -3866,7 +3866,7 @@ pub mod fluent_builders {
         }
         /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics
         /// for.</p>
-        pub fn start_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_date(inp);
             self
         }
@@ -3874,7 +3874,7 @@ pub mod fluent_builders {
         /// for.</p>
         pub fn set_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_date(input);
             self
@@ -3882,7 +3882,7 @@ pub mod fluent_builders {
         /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for.
         /// The <code>EndDate</code> that you specify has to be less than or equal to 30 days after
         /// the <code>StartDate</code>.</p>
-        pub fn end_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_date(inp);
             self
         }
@@ -3891,7 +3891,7 @@ pub mod fluent_builders {
         /// the <code>StartDate</code>.</p>
         pub fn set_end_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_date(input);
             self
@@ -4930,7 +4930,7 @@ pub mod fluent_builders {
         }
         /// <p>The first day, in Unix time format, that you want to obtain deliverability data
         /// for.</p>
-        pub fn start_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_date(inp);
             self
         }
@@ -4938,7 +4938,7 @@ pub mod fluent_builders {
         /// for.</p>
         pub fn set_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_date(input);
             self
@@ -4946,7 +4946,7 @@ pub mod fluent_builders {
         /// <p>The last day, in Unix time format, that you want to obtain deliverability data for.
         /// This value has to be less than or equal to 30 days after the value of the
         /// <code>StartDate</code> parameter.</p>
-        pub fn end_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_date(inp);
             self
         }
@@ -4955,7 +4955,7 @@ pub mod fluent_builders {
         /// <code>StartDate</code> parameter.</p>
         pub fn set_end_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_date(input);
             self
@@ -5377,7 +5377,7 @@ pub mod fluent_builders {
         /// <p>Used to filter the list of suppressed email destinations so that it only includes
         /// addresses that were added to the list after a specific date. The date that you specify
         /// should be in Unix time format.</p>
-        pub fn start_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_date(inp);
             self
         }
@@ -5386,7 +5386,7 @@ pub mod fluent_builders {
         /// should be in Unix time format.</p>
         pub fn set_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_date(input);
             self
@@ -5394,7 +5394,7 @@ pub mod fluent_builders {
         /// <p>Used to filter the list of suppressed email destinations so that it only includes
         /// addresses that were added to the list before a specific date. The date that you specify
         /// should be in Unix time format.</p>
-        pub fn end_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_date(inp);
             self
         }
@@ -5403,7 +5403,7 @@ pub mod fluent_builders {
         /// should be in Unix time format.</p>
         pub fn set_end_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_date(input);
             self
@@ -9063,7 +9063,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -9086,7 +9092,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

@@ -1483,12 +1483,12 @@ pub fn serialize_structure_crate_model_time_range(
     if let Some(var_314) = &input.start {
         object
             .key("start")
-            .instant(var_314, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_314, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_315) = &input.end {
         object
             .key("end")
-            .instant(var_315, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_315, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

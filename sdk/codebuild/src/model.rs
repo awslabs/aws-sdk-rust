@@ -33,7 +33,7 @@ pub struct Webhook {
     pub build_type: std::option::Option<crate::model::WebhookBuildType>,
     /// <p>A timestamp that indicates the last time a repository's secret token was modified.
     /// </p>
-    pub last_modified_secret: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_secret: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Webhook {
     /// <p>The URL to the webhook.</p>
@@ -78,7 +78,7 @@ impl Webhook {
     }
     /// <p>A timestamp that indicates the last time a repository's secret token was modified.
     /// </p>
-    pub fn last_modified_secret(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_secret(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_secret.as_ref()
     }
 }
@@ -108,7 +108,7 @@ pub mod webhook {
         pub(crate) filter_groups:
             std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>,
         pub(crate) build_type: std::option::Option<crate::model::WebhookBuildType>,
-        pub(crate) last_modified_secret: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_secret: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The URL to the webhook.</p>
@@ -219,7 +219,7 @@ pub mod webhook {
         }
         /// <p>A timestamp that indicates the last time a repository's secret token was modified.
         /// </p>
-        pub fn last_modified_secret(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_secret(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_secret = Some(input);
             self
         }
@@ -227,7 +227,7 @@ pub mod webhook {
         /// </p>
         pub fn set_last_modified_secret(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_secret = input;
             self
@@ -846,9 +846,9 @@ pub struct ReportGroup {
     /// is exported. </p>
     pub export_config: std::option::Option<crate::model::ReportExportConfig>,
     /// <p>The date and time this <code>ReportGroup</code> was created. </p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time this <code>ReportGroup</code> was last modified. </p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tag key and value pairs associated with this report group. </p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group
     /// tags.</p>
@@ -899,11 +899,11 @@ impl ReportGroup {
         self.export_config.as_ref()
     }
     /// <p>The date and time this <code>ReportGroup</code> was created. </p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date and time this <code>ReportGroup</code> was last modified. </p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>A list of tag key and value pairs associated with this report group. </p>
@@ -952,8 +952,8 @@ pub mod report_group {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ReportType>,
         pub(crate) export_config: std::option::Option<crate::model::ReportExportConfig>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) status: std::option::Option<crate::model::ReportGroupStatusType>,
     }
@@ -1030,27 +1030,27 @@ pub mod report_group {
             self
         }
         /// <p>The date and time this <code>ReportGroup</code> was created. </p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p>The date and time this <code>ReportGroup</code> was created. </p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
         }
         /// <p>The date and time this <code>ReportGroup</code> was last modified. </p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>The date and time this <code>ReportGroup</code> was last modified. </p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -1907,10 +1907,10 @@ pub struct Project {
     /// tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>When the build project was created, expressed in Unix time format.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the build project's settings were last modified, expressed in Unix time
     /// format.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about a webhook that connects repository events to a build project in
     /// CodeBuild.</p>
     pub webhook: std::option::Option<crate::model::Webhook>,
@@ -2067,12 +2067,12 @@ impl Project {
         self.tags.as_deref()
     }
     /// <p>When the build project was created, expressed in Unix time format.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>When the build project's settings were last modified, expressed in Unix time
     /// format.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>Information about a webhook that connects repository events to a build project in
@@ -2201,8 +2201,8 @@ pub mod project {
         pub(crate) queued_timeout_in_minutes: std::option::Option<i32>,
         pub(crate) encryption_key: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) webhook: std::option::Option<crate::model::Webhook>,
         pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
         pub(crate) badge: std::option::Option<crate::model::ProjectBadge>,
@@ -2522,21 +2522,21 @@ pub mod project {
             self
         }
         /// <p>When the build project was created, expressed in Unix time format.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p>When the build project was created, expressed in Unix time format.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
         }
         /// <p>When the build project's settings were last modified, expressed in Unix time
         /// format.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
@@ -2544,7 +2544,7 @@ pub mod project {
         /// format.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -8770,9 +8770,9 @@ pub struct BuildBatch {
     /// <p>The ARN of the batch build.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the batch build started.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the batch build ended.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current phase of the batch build.</p>
     pub current_phase: std::option::Option<std::string::String>,
     /// <p>The status of the batch build.</p>
@@ -8908,11 +8908,11 @@ impl BuildBatch {
         self.arn.as_deref()
     }
     /// <p>The date and time that the batch build started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time that the batch build ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The current phase of the batch build.</p>
@@ -9140,8 +9140,8 @@ pub mod build_batch {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) current_phase: std::option::Option<std::string::String>,
         pub(crate) build_batch_status: std::option::Option<crate::model::StatusType>,
         pub(crate) source_version: std::option::Option<std::string::String>,
@@ -9195,27 +9195,27 @@ pub mod build_batch {
             self
         }
         /// <p>The date and time that the batch build started.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The date and time that the batch build started.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The date and time that the batch build ended.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The date and time that the batch build ended.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -9936,7 +9936,7 @@ pub struct BuildSummary {
     /// <p>The batch build ARN.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>When the build was started, expressed in Unix time format.</p>
-    pub requested_on: std::option::Option<aws_smithy_types::Instant>,
+    pub requested_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the build group.</p>
     /// <dl>
     /// <dt>FAILED</dt>
@@ -9978,7 +9978,7 @@ impl BuildSummary {
         self.arn.as_deref()
     }
     /// <p>When the build was started, expressed in Unix time format.</p>
-    pub fn requested_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn requested_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.requested_on.as_ref()
     }
     /// <p>The status of the build group.</p>
@@ -10040,7 +10040,7 @@ pub mod build_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) requested_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) requested_on: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) build_status: std::option::Option<crate::model::StatusType>,
         pub(crate) primary_artifact: std::option::Option<crate::model::ResolvedArtifact>,
         pub(crate) secondary_artifacts:
@@ -10058,14 +10058,14 @@ pub mod build_summary {
             self
         }
         /// <p>When the build was started, expressed in Unix time format.</p>
-        pub fn requested_on(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn requested_on(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.requested_on = Some(input);
             self
         }
         /// <p>When the build was started, expressed in Unix time format.</p>
         pub fn set_requested_on(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.requested_on = input;
             self
@@ -10828,9 +10828,9 @@ pub struct BuildBatchPhase {
     /// </dl>
     pub phase_status: std::option::Option<crate::model::StatusType>,
     /// <p>When the batch build phase started, expressed in Unix time format.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the batch build phase ended, expressed in Unix time format.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>How long, in seconds, between the starting and ending times of the batch build's
     /// phase.</p>
     pub duration_in_seconds: std::option::Option<i64>,
@@ -10905,11 +10905,11 @@ impl BuildBatchPhase {
         self.phase_status.as_ref()
     }
     /// <p>When the batch build phase started, expressed in Unix time format.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>When the batch build phase ended, expressed in Unix time format.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>How long, in seconds, between the starting and ending times of the batch build's
@@ -10943,8 +10943,8 @@ pub mod build_batch_phase {
     pub struct Builder {
         pub(crate) phase_type: std::option::Option<crate::model::BuildBatchPhaseType>,
         pub(crate) phase_status: std::option::Option<crate::model::StatusType>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) duration_in_seconds: std::option::Option<i64>,
         pub(crate) contexts: std::option::Option<std::vec::Vec<crate::model::PhaseContext>>,
     }
@@ -11090,27 +11090,27 @@ pub mod build_batch_phase {
             self
         }
         /// <p>When the batch build phase started, expressed in Unix time format.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>When the batch build phase started, expressed in Unix time format.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>When the batch build phase ended, expressed in Unix time format.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>When the batch build phase ended, expressed in Unix time format.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -11343,9 +11343,9 @@ pub struct Build {
     /// other builds does not change.</p>
     pub build_number: std::option::Option<i64>,
     /// <p>When the build process started, expressed in Unix time format.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the build process ended, expressed in Unix time format.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current build phase.</p>
     pub current_phase: std::option::Option<std::string::String>,
     /// <p>The current status of the build. Valid values include:</p>
@@ -11519,11 +11519,11 @@ impl Build {
         self.build_number
     }
     /// <p>When the build process started, expressed in Unix time format.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>When the build process ended, expressed in Unix time format.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The current build phase.</p>
@@ -11789,8 +11789,8 @@ pub mod build {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) build_number: std::option::Option<i64>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) current_phase: std::option::Option<std::string::String>,
         pub(crate) build_status: std::option::Option<crate::model::StatusType>,
         pub(crate) source_version: std::option::Option<std::string::String>,
@@ -11862,27 +11862,27 @@ pub mod build {
             self
         }
         /// <p>When the build process started, expressed in Unix time format.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>When the build process started, expressed in Unix time format.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>When the build process ended, expressed in Unix time format.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>When the build process ended, expressed in Unix time format.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -13048,9 +13048,9 @@ pub struct BuildPhase {
     /// </dl>
     pub phase_status: std::option::Option<crate::model::StatusType>,
     /// <p>When the build phase started, expressed in Unix time format.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the build phase ended, expressed in Unix time format.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>How long, in seconds, between the starting and ending times of the build's
     /// phase.</p>
     pub duration_in_seconds: std::option::Option<i64>,
@@ -13141,11 +13141,11 @@ impl BuildPhase {
         self.phase_status.as_ref()
     }
     /// <p>When the build phase started, expressed in Unix time format.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>When the build phase ended, expressed in Unix time format.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>How long, in seconds, between the starting and ending times of the build's
@@ -13179,8 +13179,8 @@ pub mod build_phase {
     pub struct Builder {
         pub(crate) phase_type: std::option::Option<crate::model::BuildPhaseType>,
         pub(crate) phase_status: std::option::Option<crate::model::StatusType>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) duration_in_seconds: std::option::Option<i64>,
         pub(crate) contexts: std::option::Option<std::vec::Vec<crate::model::PhaseContext>>,
     }
@@ -13358,27 +13358,27 @@ pub mod build_phase {
             self
         }
         /// <p>When the build phase started, expressed in Unix time format.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>When the build phase started, expressed in Unix time format.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>When the build phase ended, expressed in Unix time format.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>When the build phase ended, expressed in Unix time format.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -14950,7 +14950,7 @@ pub struct TestCase {
     pub message: std::option::Option<std::string::String>,
     /// <p> The date and time a test case expires. A test case expires 30 days after it is
     /// created. An expired test case is not available to view in CodeBuild. </p>
-    pub expired: std::option::Option<aws_smithy_types::Instant>,
+    pub expired: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TestCase {
     /// <p> The ARN of the report to which the test case belongs. </p>
@@ -14987,7 +14987,7 @@ impl TestCase {
     }
     /// <p> The date and time a test case expires. A test case expires 30 days after it is
     /// created. An expired test case is not available to view in CodeBuild. </p>
-    pub fn expired(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expired(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expired.as_ref()
     }
 }
@@ -15018,7 +15018,7 @@ pub mod test_case {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) duration_in_nano_seconds: std::option::Option<i64>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) expired: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expired: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p> The ARN of the report to which the test case belongs. </p>
@@ -15104,7 +15104,7 @@ pub mod test_case {
         }
         /// <p> The date and time a test case expires. A test case expires 30 days after it is
         /// created. An expired test case is not available to view in CodeBuild. </p>
-        pub fn expired(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expired(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expired = Some(input);
             self
         }
@@ -15112,7 +15112,7 @@ pub mod test_case {
         /// created. An expired test case is not available to view in CodeBuild. </p>
         pub fn set_expired(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expired = input;
             self
@@ -15360,7 +15360,7 @@ pub struct CodeCoverage {
     /// <p>The number of conditional branches that are not covered by your tests.</p>
     pub branches_missed: std::option::Option<i32>,
     /// <p>The date and time that the tests were run.</p>
-    pub expired: std::option::Option<aws_smithy_types::Instant>,
+    pub expired: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CodeCoverage {
     /// <p>The identifier of the code coverage report.</p>
@@ -15400,7 +15400,7 @@ impl CodeCoverage {
         self.branches_missed
     }
     /// <p>The date and time that the tests were run.</p>
-    pub fn expired(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expired(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expired.as_ref()
     }
 }
@@ -15438,7 +15438,7 @@ pub mod code_coverage {
         pub(crate) branch_coverage_percentage: std::option::Option<f64>,
         pub(crate) branches_covered: std::option::Option<i32>,
         pub(crate) branches_missed: std::option::Option<i32>,
-        pub(crate) expired: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expired: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the code coverage report.</p>
@@ -15532,14 +15532,14 @@ pub mod code_coverage {
             self
         }
         /// <p>The date and time that the tests were run.</p>
-        pub fn expired(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expired(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expired = Some(input);
             self
         }
         /// <p>The date and time that the tests were run.</p>
         pub fn set_expired(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expired = input;
             self
@@ -15726,10 +15726,10 @@ pub struct Report {
     /// <p> The status of this report. </p>
     pub status: std::option::Option<crate::model::ReportStatusType>,
     /// <p> The date and time this report run occurred. </p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The date and time a report expires. A report expires 30 days after it is created. An
     /// expired report is not available to view in CodeBuild. </p>
-    pub expired: std::option::Option<aws_smithy_types::Instant>,
+    pub expired: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Information about where the raw data used to generate this report was exported.
     /// </p>
     pub export_config: std::option::Option<crate::model::ReportExportConfig>,
@@ -15779,12 +15779,12 @@ impl Report {
         self.status.as_ref()
     }
     /// <p> The date and time this report run occurred. </p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p> The date and time a report expires. A report expires 30 days after it is created. An
     /// expired report is not available to view in CodeBuild. </p>
-    pub fn expired(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expired(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expired.as_ref()
     }
     /// <p> Information about where the raw data used to generate this report was exported.
@@ -15840,8 +15840,8 @@ pub mod report {
         pub(crate) report_group_arn: std::option::Option<std::string::String>,
         pub(crate) execution_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ReportStatusType>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) expired: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) expired: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) export_config: std::option::Option<crate::model::ReportExportConfig>,
         pub(crate) truncated: std::option::Option<bool>,
         pub(crate) test_summary: std::option::Option<crate::model::TestReportSummary>,
@@ -15936,21 +15936,21 @@ pub mod report {
             self
         }
         /// <p> The date and time this report run occurred. </p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p> The date and time this report run occurred. </p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
         }
         /// <p> The date and time a report expires. A report expires 30 days after it is created. An
         /// expired report is not available to view in CodeBuild. </p>
-        pub fn expired(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expired(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expired = Some(input);
             self
         }
@@ -15958,7 +15958,7 @@ pub mod report {
         /// expired report is not available to view in CodeBuild. </p>
         pub fn set_expired(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expired = input;
             self

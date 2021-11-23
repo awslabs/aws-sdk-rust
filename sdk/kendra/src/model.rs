@@ -11025,7 +11025,7 @@ pub struct ClickFeedback {
     pub result_id: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp of the date and time that the result was
     /// clicked.</p>
-    pub click_time: std::option::Option<aws_smithy_types::Instant>,
+    pub click_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ClickFeedback {
     /// <p>The unique identifier of the search result that was
@@ -11035,7 +11035,7 @@ impl ClickFeedback {
     }
     /// <p>The Unix timestamp of the date and time that the result was
     /// clicked.</p>
-    pub fn click_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn click_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.click_time.as_ref()
     }
 }
@@ -11054,7 +11054,7 @@ pub mod click_feedback {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result_id: std::option::Option<std::string::String>,
-        pub(crate) click_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) click_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The unique identifier of the search result that was
@@ -11071,7 +11071,7 @@ pub mod click_feedback {
         }
         /// <p>The Unix timestamp of the date and time that the result was
         /// clicked.</p>
-        pub fn click_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn click_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.click_time = Some(input);
             self
         }
@@ -11079,7 +11079,7 @@ pub mod click_feedback {
         /// clicked.</p>
         pub fn set_click_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.click_time = input;
             self
@@ -11337,89 +11337,144 @@ impl DocumentAttributeValueCountPair {
 /// <p>The value of a custom document attribute. You can only provide one
 /// value for a custom attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub enum DocumentAttributeValue {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DocumentAttributeValue {
+    /// <p>A string, such as "department".</p>
+    pub string_value: std::option::Option<std::string::String>,
+    /// <p>A list of strings. </p>
+    pub string_list_value: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A long integer value.</p>
+    pub long_value: std::option::Option<i64>,
     /// <p>A date expressed as an ISO 8601 string.</p>
     /// <p>It is important for the time zone to be included
     /// in the ISO 8601 date-time format. For example,
     /// 20120325T123010+01:00 is the ISO 8601 date-time format
     /// for March 25th 2012 at 12:30PM (plus 10 seconds) in
     /// Central European Time.</p>
-    DateValue(aws_smithy_types::Instant),
-    /// <p>A long integer value.</p>
-    LongValue(i64),
-    /// <p>A list of strings. </p>
-    StringListValue(std::vec::Vec<std::string::String>),
-    /// <p>A string, such as "department".</p>
-    StringValue(std::string::String),
-    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
-    /// An unknown enum variant
-    ///
-    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
-    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
-    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
-    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
-    #[non_exhaustive]
-    Unknown,
+    pub date_value: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DocumentAttributeValue {
-    /// Tries to convert the enum instance into [`DateValue`](crate::model::DocumentAttributeValue::DateValue), extracting the inner [`Instant`](aws_smithy_types::Instant).
-    /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_date_value(&self) -> std::result::Result<&aws_smithy_types::Instant, &Self> {
-        if let DocumentAttributeValue::DateValue(val) = &self {
-            Ok(&val)
-        } else {
-            Err(&self)
+    /// <p>A string, such as "department".</p>
+    pub fn string_value(&self) -> std::option::Option<&str> {
+        self.string_value.as_deref()
+    }
+    /// <p>A list of strings. </p>
+    pub fn string_list_value(&self) -> std::option::Option<&[std::string::String]> {
+        self.string_list_value.as_deref()
+    }
+    /// <p>A long integer value.</p>
+    pub fn long_value(&self) -> std::option::Option<i64> {
+        self.long_value
+    }
+    /// <p>A date expressed as an ISO 8601 string.</p>
+    /// <p>It is important for the time zone to be included
+    /// in the ISO 8601 date-time format. For example,
+    /// 20120325T123010+01:00 is the ISO 8601 date-time format
+    /// for March 25th 2012 at 12:30PM (plus 10 seconds) in
+    /// Central European Time.</p>
+    pub fn date_value(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.date_value.as_ref()
+    }
+}
+impl std::fmt::Debug for DocumentAttributeValue {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DocumentAttributeValue");
+        formatter.field("string_value", &self.string_value);
+        formatter.field("string_list_value", &self.string_list_value);
+        formatter.field("long_value", &self.long_value);
+        formatter.field("date_value", &self.date_value);
+        formatter.finish()
+    }
+}
+/// See [`DocumentAttributeValue`](crate::model::DocumentAttributeValue)
+pub mod document_attribute_value {
+    /// A builder for [`DocumentAttributeValue`](crate::model::DocumentAttributeValue)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) string_value: std::option::Option<std::string::String>,
+        pub(crate) string_list_value: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) long_value: std::option::Option<i64>,
+        pub(crate) date_value: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>A string, such as "department".</p>
+        pub fn string_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.string_value = Some(input.into());
+            self
+        }
+        /// <p>A string, such as "department".</p>
+        pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.string_value = input;
+            self
+        }
+        /// Appends an item to `string_list_value`.
+        ///
+        /// To override the contents of this collection use [`set_string_list_value`](Self::set_string_list_value).
+        ///
+        /// <p>A list of strings. </p>
+        pub fn string_list_value(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.string_list_value.unwrap_or_default();
+            v.push(input.into());
+            self.string_list_value = Some(v);
+            self
+        }
+        /// <p>A list of strings. </p>
+        pub fn set_string_list_value(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.string_list_value = input;
+            self
+        }
+        /// <p>A long integer value.</p>
+        pub fn long_value(mut self, input: i64) -> Self {
+            self.long_value = Some(input);
+            self
+        }
+        /// <p>A long integer value.</p>
+        pub fn set_long_value(mut self, input: std::option::Option<i64>) -> Self {
+            self.long_value = input;
+            self
+        }
+        /// <p>A date expressed as an ISO 8601 string.</p>
+        /// <p>It is important for the time zone to be included
+        /// in the ISO 8601 date-time format. For example,
+        /// 20120325T123010+01:00 is the ISO 8601 date-time format
+        /// for March 25th 2012 at 12:30PM (plus 10 seconds) in
+        /// Central European Time.</p>
+        pub fn date_value(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.date_value = Some(input);
+            self
+        }
+        /// <p>A date expressed as an ISO 8601 string.</p>
+        /// <p>It is important for the time zone to be included
+        /// in the ISO 8601 date-time format. For example,
+        /// 20120325T123010+01:00 is the ISO 8601 date-time format
+        /// for March 25th 2012 at 12:30PM (plus 10 seconds) in
+        /// Central European Time.</p>
+        pub fn set_date_value(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.date_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DocumentAttributeValue`](crate::model::DocumentAttributeValue)
+        pub fn build(self) -> crate::model::DocumentAttributeValue {
+            crate::model::DocumentAttributeValue {
+                string_value: self.string_value,
+                string_list_value: self.string_list_value,
+                long_value: self.long_value,
+                date_value: self.date_value,
+            }
         }
     }
-    /// Returns true if this is a [`DateValue`](crate::model::DocumentAttributeValue::DateValue).
-    pub fn is_date_value(&self) -> bool {
-        self.as_date_value().is_ok()
-    }
-    /// Tries to convert the enum instance into [`LongValue`](crate::model::DocumentAttributeValue::LongValue), extracting the inner [`i64`](i64).
-    /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_long_value(&self) -> std::result::Result<&i64, &Self> {
-        if let DocumentAttributeValue::LongValue(val) = &self {
-            Ok(&val)
-        } else {
-            Err(&self)
-        }
-    }
-    /// Returns true if this is a [`LongValue`](crate::model::DocumentAttributeValue::LongValue).
-    pub fn is_long_value(&self) -> bool {
-        self.as_long_value().is_ok()
-    }
-    /// Tries to convert the enum instance into [`StringListValue`](crate::model::DocumentAttributeValue::StringListValue), extracting the inner [`Vec`](std::vec::Vec).
-    /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_string_list_value(
-        &self,
-    ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
-        if let DocumentAttributeValue::StringListValue(val) = &self {
-            Ok(&val)
-        } else {
-            Err(&self)
-        }
-    }
-    /// Returns true if this is a [`StringListValue`](crate::model::DocumentAttributeValue::StringListValue).
-    pub fn is_string_list_value(&self) -> bool {
-        self.as_string_list_value().is_ok()
-    }
-    /// Tries to convert the enum instance into [`StringValue`](crate::model::DocumentAttributeValue::StringValue), extracting the inner [`String`](std::string::String).
-    /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let DocumentAttributeValue::StringValue(val) = &self {
-            Ok(&val)
-        } else {
-            Err(&self)
-        }
-    }
-    /// Returns true if this is a [`StringValue`](crate::model::DocumentAttributeValue::StringValue).
-    pub fn is_string_value(&self) -> bool {
-        self.as_string_value().is_ok()
-    }
-    /// Returns true if the enum instance is the `Unknown` variant.
-    pub fn is_unknown(&self) -> bool {
-        matches!(self, Self::Unknown)
+}
+impl DocumentAttributeValue {
+    /// Creates a new builder-style object to manufacture [`DocumentAttributeValue`](crate::model::DocumentAttributeValue)
+    pub fn builder() -> crate::model::document_attribute_value::Builder {
+        crate::model::document_attribute_value::Builder::default()
     }
 }
 
@@ -13849,9 +13904,9 @@ pub struct ThesaurusSummary {
     /// <p>The status of the thesaurus.</p>
     pub status: std::option::Option<crate::model::ThesaurusStatus>,
     /// <p>The Unix datetime that the thesaurus was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix datetime that the thesaurus was last updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ThesaurusSummary {
     /// <p>The identifier of the thesaurus.</p>
@@ -13867,11 +13922,11 @@ impl ThesaurusSummary {
         self.status.as_ref()
     }
     /// <p>The Unix datetime that the thesaurus was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix datetime that the thesaurus was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -13895,8 +13950,8 @@ pub mod thesaurus_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ThesaurusStatus>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the thesaurus.</p>
@@ -13933,27 +13988,27 @@ pub mod thesaurus_summary {
             self
         }
         /// <p>The Unix datetime that the thesaurus was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix datetime that the thesaurus was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The Unix datetime that the thesaurus was last updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The Unix datetime that the thesaurus was last updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -14073,9 +14128,9 @@ pub struct QuerySuggestionsBlockListSummary {
     pub status: std::option::Option<crate::model::QuerySuggestionsBlockListStatus>,
     /// <p>The date-time summary information for a query suggestions
     /// block list was last created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date-time the block list was last updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of items in the block list file.</p>
     pub item_count: std::option::Option<i32>,
 }
@@ -14094,11 +14149,11 @@ impl QuerySuggestionsBlockListSummary {
     }
     /// <p>The date-time summary information for a query suggestions
     /// block list was last created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date-time the block list was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The number of items in the block list file.</p>
@@ -14127,8 +14182,8 @@ pub mod query_suggestions_block_list_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::QuerySuggestionsBlockListStatus>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) item_count: std::option::Option<i32>,
     }
     impl Builder {
@@ -14167,7 +14222,7 @@ pub mod query_suggestions_block_list_summary {
         }
         /// <p>The date-time summary information for a query suggestions
         /// block list was last created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
@@ -14175,20 +14230,20 @@ pub mod query_suggestions_block_list_summary {
         /// block list was last created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The date-time the block list was last updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date-time the block list was last updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -14316,10 +14371,10 @@ pub struct IndexConfigurationSummary {
     /// developer edition index. </p>
     pub edition: std::option::Option<crate::model::IndexEdition>,
     /// <p>The Unix timestamp when the index was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp when the index was last updated by the
     /// <code>UpdateIndex</code> operation.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the index. When the status is
     /// <code>ACTIVE</code>, the index is ready to search.</p>
     pub status: std::option::Option<crate::model::IndexStatus>,
@@ -14342,12 +14397,12 @@ impl IndexConfigurationSummary {
         self.edition.as_ref()
     }
     /// <p>The Unix timestamp when the index was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp when the index was last updated by the
     /// <code>UpdateIndex</code> operation.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The current status of the index. When the status is
@@ -14377,8 +14432,8 @@ pub mod index_configuration_summary {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) edition: std::option::Option<crate::model::IndexEdition>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::IndexStatus>,
     }
     impl Builder {
@@ -14424,21 +14479,21 @@ pub mod index_configuration_summary {
             self
         }
         /// <p>The Unix timestamp when the index was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix timestamp when the index was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The Unix timestamp when the index was last updated by the
         /// <code>UpdateIndex</code> operation.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
@@ -14446,7 +14501,7 @@ pub mod index_configuration_summary {
         /// <code>UpdateIndex</code> operation.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -14725,9 +14780,9 @@ pub struct FaqSummary {
     /// <code>ACTIVE</code> the FAQ is ready for use.</p>
     pub status: std::option::Option<crate::model::FaqStatus>,
     /// <p>The UNIX datetime that the FAQ was added to the index.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The UNIX datetime that the FAQ was last updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The file type used to create the FAQ. </p>
     pub file_format: std::option::Option<crate::model::FaqFileFormat>,
     /// <p>The code for a language. This shows a supported language for the FAQ document
@@ -14753,11 +14808,11 @@ impl FaqSummary {
         self.status.as_ref()
     }
     /// <p>The UNIX datetime that the FAQ was added to the index.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The UNIX datetime that the FAQ was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The file type used to create the FAQ. </p>
@@ -14795,8 +14850,8 @@ pub mod faq_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::FaqStatus>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) file_format: std::option::Option<crate::model::FaqFileFormat>,
         pub(crate) language_code: std::option::Option<std::string::String>,
     }
@@ -14836,27 +14891,27 @@ pub mod faq_summary {
             self
         }
         /// <p>The UNIX datetime that the FAQ was added to the index.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The UNIX datetime that the FAQ was added to the index.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The UNIX datetime that the FAQ was last updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The UNIX datetime that the FAQ was last updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -15049,10 +15104,10 @@ pub struct DataSourceSyncJob {
     /// <p>A unique identifier for the synchronization job.</p>
     pub execution_id: std::option::Option<std::string::String>,
     /// <p>The UNIX datetime that the synchronization job was started.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The UNIX datetime that the synchronization job was
     /// completed.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The execution status of the synchronization job. When the
     /// <code>Status</code> field is set to <code>SUCCEEDED</code>, the
     /// synchronization job is done. If the status code is set to
@@ -15083,12 +15138,12 @@ impl DataSourceSyncJob {
         self.execution_id.as_deref()
     }
     /// <p>The UNIX datetime that the synchronization job was started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The UNIX datetime that the synchronization job was
     /// completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The execution status of the synchronization job. When the
@@ -15146,8 +15201,8 @@ pub mod data_source_sync_job {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_id: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::DataSourceSyncJobStatus>,
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
@@ -15166,21 +15221,21 @@ pub mod data_source_sync_job {
             self
         }
         /// <p>The UNIX datetime that the synchronization job was started.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The UNIX datetime that the synchronization job was started.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The UNIX datetime that the synchronization job was
         /// completed.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
@@ -15188,7 +15243,7 @@ pub mod data_source_sync_job {
         /// completed.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -15616,17 +15671,17 @@ impl AsRef<str> for DataSourceSyncJobStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeRange {
     /// <p>The UNIX datetime of the beginning of the time range.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The UNIX datetime of the end of the time range.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimeRange {
     /// <p>The UNIX datetime of the beginning of the time range.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The UNIX datetime of the end of the time range.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -15644,32 +15699,32 @@ pub mod time_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The UNIX datetime of the beginning of the time range.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The UNIX datetime of the beginning of the time range.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The UNIX datetime of the end of the time range.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The UNIX datetime of the end of the time range.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -15702,9 +15757,9 @@ pub struct DataSourceSummary {
     /// <p>The type of the data source.</p>
     pub r#type: std::option::Option<crate::model::DataSourceType>,
     /// <p>The UNIX datetime that the data source was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The UNIX datetime that the data source was lasted updated. </p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the data source. When the status is
     /// <code>ACTIVE</code> the data source is ready to use.</p>
     pub status: std::option::Option<crate::model::DataSourceStatus>,
@@ -15729,11 +15784,11 @@ impl DataSourceSummary {
         self.r#type.as_ref()
     }
     /// <p>The UNIX datetime that the data source was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The UNIX datetime that the data source was lasted updated. </p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The status of the data source. When the status is
@@ -15772,8 +15827,8 @@ pub mod data_source_summary {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::DataSourceType>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::DataSourceStatus>,
         pub(crate) language_code: std::option::Option<std::string::String>,
     }
@@ -15812,27 +15867,27 @@ pub mod data_source_summary {
             self
         }
         /// <p>The UNIX datetime that the data source was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The UNIX datetime that the data source was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The UNIX datetime that the data source was lasted updated. </p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The UNIX datetime that the data source was lasted updated. </p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -16434,11 +16489,11 @@ pub struct GroupOrderingIdSummary {
     /// <p>The last date-time an action was updated. An action can be a
     /// <code>PUT</code> or <code>DELETE</code> action for mapping users
     /// to their groups.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date-time an action was received by Amazon Kendra. An action can be a
     /// <code>PUT</code> or <code>DELETE</code> action for mapping users to
     /// their groups.</p>
-    pub received_at: std::option::Option<aws_smithy_types::Instant>,
+    pub received_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The order in which actions should complete processing. An action can
     /// be a <code>PUT</code> or <code>DELETE</code> action for mapping users
     /// to their groups.</p>
@@ -16458,13 +16513,13 @@ impl GroupOrderingIdSummary {
     /// <p>The last date-time an action was updated. An action can be a
     /// <code>PUT</code> or <code>DELETE</code> action for mapping users
     /// to their groups.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The date-time an action was received by Amazon Kendra. An action can be a
     /// <code>PUT</code> or <code>DELETE</code> action for mapping users to
     /// their groups.</p>
-    pub fn received_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn received_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.received_at.as_ref()
     }
     /// <p>The order in which actions should complete processing. An action can
@@ -16498,8 +16553,8 @@ pub mod group_ordering_id_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::PrincipalMappingStatus>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) received_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) received_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) ordering_id: std::option::Option<i64>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
     }
@@ -16524,7 +16579,7 @@ pub mod group_ordering_id_summary {
         /// <p>The last date-time an action was updated. An action can be a
         /// <code>PUT</code> or <code>DELETE</code> action for mapping users
         /// to their groups.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
@@ -16533,7 +16588,7 @@ pub mod group_ordering_id_summary {
         /// to their groups.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -16541,7 +16596,7 @@ pub mod group_ordering_id_summary {
         /// <p>The date-time an action was received by Amazon Kendra. An action can be a
         /// <code>PUT</code> or <code>DELETE</code> action for mapping users to
         /// their groups.</p>
-        pub fn received_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn received_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.received_at = Some(input);
             self
         }
@@ -16550,7 +16605,7 @@ pub mod group_ordering_id_summary {
         /// their groups.</p>
         pub fn set_received_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.received_at = input;
             self

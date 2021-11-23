@@ -1756,7 +1756,7 @@ pub mod fluent_builders {
         /// <p>The date by which this activation request should expire, in timestamp format, such as
         /// "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an
         /// expiration date, the activation code expires in 24 hours.</p>
-        pub fn expiration_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn expiration_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.expiration_date(inp);
             self
         }
@@ -1765,7 +1765,7 @@ pub mod fluent_builders {
         /// expiration date, the activation code expires in 24 hours.</p>
         pub fn set_expiration_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_expiration_date(input);
             self
@@ -2087,9 +2087,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_association_name(input);
             self
         }
-        /// <p>Specify the target for the association. This target is required for associations that use an
-        /// Automation runbook and target resources by using rate controls. Automation is a capability of
-        /// Amazon Web Services Systems Manager.</p>
+        /// <p>Choose the parameter that will define how your automation will branch out. This target is
+        /// required for associations that use an Automation runbook and target resources by using rate
+        /// controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
         pub fn automation_target_parameter_name(
             mut self,
             inp: impl Into<std::string::String>,
@@ -2097,9 +2097,9 @@ pub mod fluent_builders {
             self.inner = self.inner.automation_target_parameter_name(inp);
             self
         }
-        /// <p>Specify the target for the association. This target is required for associations that use an
-        /// Automation runbook and target resources by using rate controls. Automation is a capability of
-        /// Amazon Web Services Systems Manager.</p>
+        /// <p>Choose the parameter that will define how your automation will branch out. This target is
+        /// required for associations that use an Automation runbook and target resources by using rate
+        /// controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
         pub fn set_automation_target_parameter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3271,7 +3271,7 @@ pub mod fluent_builders {
         }
         /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type
         /// <code>/aws/changerequest</code>.</p>
-        pub fn actual_start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn actual_start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.actual_start_time(inp);
             self
         }
@@ -3279,14 +3279,14 @@ pub mod fluent_builders {
         /// <code>/aws/changerequest</code>.</p>
         pub fn set_actual_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_actual_start_time(input);
             self
         }
         /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type
         /// <code>/aws/changerequest</code>.</p>
-        pub fn actual_end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn actual_end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.actual_end_time(inp);
             self
         }
@@ -3294,14 +3294,14 @@ pub mod fluent_builders {
         /// <code>/aws/changerequest</code>.</p>
         pub fn set_actual_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_actual_end_time(input);
             self
         }
         /// <p>The time specified in a change request for a runbook workflow to start. Currently supported
         /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
-        pub fn planned_start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn planned_start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.planned_start_time(inp);
             self
         }
@@ -3309,14 +3309,14 @@ pub mod fluent_builders {
         /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
         pub fn set_planned_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_planned_start_time(input);
             self
         }
         /// <p>The time specified in a change request for a runbook workflow to end. Currently supported
         /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
-        pub fn planned_end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn planned_end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.planned_end_time(inp);
             self
         }
@@ -3324,7 +3324,7 @@ pub mod fluent_builders {
         /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
         pub fn set_planned_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_planned_end_time(input);
             self
@@ -17252,7 +17252,7 @@ pub mod fluent_builders {
         /// <p>The Automation runbooks specified for the runbook workflow can't run until all required
         /// approvals for the change request have been received.</p>
         /// </note>
-        pub fn scheduled_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn scheduled_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.scheduled_time(inp);
             self
         }
@@ -17263,7 +17263,7 @@ pub mod fluent_builders {
         /// </note>
         pub fn set_scheduled_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_scheduled_time(input);
             self
@@ -17450,7 +17450,7 @@ pub mod fluent_builders {
         }
         /// <p>The time that the requester expects the runbook workflow related to the change request to
         /// complete. The time is an estimate only that the requester provides for reviewers.</p>
-        pub fn scheduled_end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn scheduled_end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.scheduled_end_time(inp);
             self
         }
@@ -17458,7 +17458,7 @@ pub mod fluent_builders {
         /// complete. The time is an estimate only that the requester provides for reviewers.</p>
         pub fn set_scheduled_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_scheduled_end_time(input);
             self
@@ -17574,6 +17574,16 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_document_name(input);
+            self
+        }
+        /// <p>The reason for connecting to the instance. This value is included in the details for the Amazon CloudWatch Events event created when you start the session.</p>
+        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(inp);
+            self
+        }
+        /// <p>The reason for connecting to the instance. This value is included in the details for the Amazon CloudWatch Events event created when you start the session.</p>
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_reason(input);
             self
         }
         /// Adds a key-value pair to `Parameters`.
@@ -18097,9 +18107,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_association_version(input);
             self
         }
-        /// <p>Specify the target for the association. This target is required for associations that use an
-        /// Automation runbook and target resources by using rate controls. Automation is a capability of
-        /// Amazon Web Services Systems Manager.</p>
+        /// <p>Choose the parameter that will define how your automation will branch out. This target is
+        /// required for associations that use an Automation runbook and target resources by using rate
+        /// controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
         pub fn automation_target_parameter_name(
             mut self,
             inp: impl Into<std::string::String>,
@@ -18107,9 +18117,9 @@ pub mod fluent_builders {
             self.inner = self.inner.automation_target_parameter_name(inp);
             self
         }
-        /// <p>Specify the target for the association. This target is required for associations that use an
-        /// Automation runbook and target resources by using rate controls. Automation is a capability of
-        /// Amazon Web Services Systems Manager.</p>
+        /// <p>Choose the parameter that will define how your automation will branch out. This target is
+        /// required for associations that use an Automation runbook and target resources by using rate
+        /// controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
         pub fn set_automation_target_parameter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19994,7 +20004,7 @@ pub mod fluent_builders {
         }
         /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type
         /// <code>/aws/changerequest</code>.</p>
-        pub fn actual_start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn actual_start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.actual_start_time(inp);
             self
         }
@@ -20002,14 +20012,14 @@ pub mod fluent_builders {
         /// <code>/aws/changerequest</code>.</p>
         pub fn set_actual_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_actual_start_time(input);
             self
         }
         /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type
         /// <code>/aws/changerequest</code>.</p>
-        pub fn actual_end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn actual_end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.actual_end_time(inp);
             self
         }
@@ -20017,14 +20027,14 @@ pub mod fluent_builders {
         /// <code>/aws/changerequest</code>.</p>
         pub fn set_actual_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_actual_end_time(input);
             self
         }
         /// <p>The time specified in a change request for a runbook workflow to start. Currently supported
         /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
-        pub fn planned_start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn planned_start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.planned_start_time(inp);
             self
         }
@@ -20032,14 +20042,14 @@ pub mod fluent_builders {
         /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
         pub fn set_planned_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_planned_start_time(input);
             self
         }
         /// <p>The time specified in a change request for a runbook workflow to end. Currently supported
         /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
-        pub fn planned_end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn planned_end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.planned_end_time(inp);
             self
         }
@@ -20047,7 +20057,7 @@ pub mod fluent_builders {
         /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
         pub fn set_planned_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_planned_end_time(input);
             self
@@ -20813,7 +20823,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -20836,7 +20852,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

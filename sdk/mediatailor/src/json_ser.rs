@@ -457,12 +457,12 @@ pub fn serialize_structure_crate_model_prefetch_consumption(
     if let Some(var_105) = &input.end_time {
         object
             .key("EndTime")
-            .instant(var_105, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_105, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_106) = &input.start_time {
         object
             .key("StartTime")
-            .instant(var_106, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_106, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -483,12 +483,12 @@ pub fn serialize_structure_crate_model_prefetch_retrieval(
     if let Some(var_111) = &input.end_time {
         object
             .key("EndTime")
-            .instant(var_111, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_111, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_112) = &input.start_time {
         object
             .key("StartTime")
-            .instant(var_112, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_112, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

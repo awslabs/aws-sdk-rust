@@ -11,10 +11,12 @@ use std::time::{Duration, SystemTime};
 
 #[tokio::test]
 async fn test_presigning() -> Result<(), Box<dyn Error>> {
-    let creds = polly::Credentials::from_keys(
+    let creds = polly::Credentials::new(
         "ANOTREAL",
         "notrealrnrELgWzOk3IfjzDKtFBhDby",
         Some("notarealsessiontoken".to_string()),
+        None,
+        "test",
     );
     let config = polly::Config::builder()
         .credentials_provider(creds)

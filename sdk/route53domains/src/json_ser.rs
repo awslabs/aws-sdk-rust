@@ -179,7 +179,7 @@ pub fn serialize_structure_crate_input_list_operations_input(
     if let Some(var_23) = &input.submitted_since {
         object
             .key("SubmittedSince")
-            .instant(var_23, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_23, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_24) = &input.marker {
         object.key("Marker").string(var_24);
@@ -480,12 +480,12 @@ pub fn serialize_structure_crate_input_view_billing_input(
     if let Some(var_87) = &input.start {
         object
             .key("Start")
-            .instant(var_87, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_87, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_88) = &input.end {
         object
             .key("End")
-            .instant(var_88, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_88, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_89) = &input.marker {
         object.key("Marker").string(var_89);

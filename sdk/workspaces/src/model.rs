@@ -2015,11 +2015,11 @@ impl AsRef<str> for WorkspaceImageIngestionProcess {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Snapshot {
     /// <p>The time when the snapshot was created.</p>
-    pub snapshot_time: std::option::Option<aws_smithy_types::Instant>,
+    pub snapshot_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Snapshot {
     /// <p>The time when the snapshot was created.</p>
-    pub fn snapshot_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn snapshot_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.snapshot_time.as_ref()
     }
 }
@@ -2036,18 +2036,18 @@ pub mod snapshot {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) snapshot_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) snapshot_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The time when the snapshot was created.</p>
-        pub fn snapshot_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn snapshot_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.snapshot_time = Some(input);
             self
         }
         /// <p>The time when the snapshot was created.</p>
         pub fn set_snapshot_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.snapshot_time = input;
             self
@@ -2077,9 +2077,9 @@ pub struct WorkspaceConnectionStatus {
     /// is stopped.</p>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The timestamp of the connection status check.</p>
-    pub connection_state_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub connection_state_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of the last known user connection.</p>
-    pub last_known_user_connection_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_known_user_connection_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl WorkspaceConnectionStatus {
     /// <p>The identifier of the WorkSpace.</p>
@@ -2094,13 +2094,13 @@ impl WorkspaceConnectionStatus {
     /// <p>The timestamp of the connection status check.</p>
     pub fn connection_state_check_timestamp(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.connection_state_check_timestamp.as_ref()
     }
     /// <p>The timestamp of the last known user connection.</p>
     pub fn last_known_user_connection_timestamp(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_known_user_connection_timestamp.as_ref()
     }
 }
@@ -2128,9 +2128,10 @@ pub mod workspace_connection_status {
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) connection_state: std::option::Option<crate::model::ConnectionState>,
-        pub(crate) connection_state_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) connection_state_check_timestamp:
+            std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_known_user_connection_timestamp:
-            std::option::Option<aws_smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the WorkSpace.</p>
@@ -2161,7 +2162,7 @@ pub mod workspace_connection_status {
         /// <p>The timestamp of the connection status check.</p>
         pub fn connection_state_check_timestamp(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.connection_state_check_timestamp = Some(input);
             self
@@ -2169,7 +2170,7 @@ pub mod workspace_connection_status {
         /// <p>The timestamp of the connection status check.</p>
         pub fn set_connection_state_check_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.connection_state_check_timestamp = input;
             self
@@ -2177,7 +2178,7 @@ pub mod workspace_connection_status {
         /// <p>The timestamp of the last known user connection.</p>
         pub fn last_known_user_connection_timestamp(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.last_known_user_connection_timestamp = Some(input);
             self
@@ -2185,7 +2186,7 @@ pub mod workspace_connection_status {
         /// <p>The timestamp of the last known user connection.</p>
         pub fn set_last_known_user_connection_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_known_user_connection_timestamp = input;
             self
@@ -3030,7 +3031,7 @@ pub struct WorkspaceImage {
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account
     /// that the image has been shared with sees the original creation date of the image.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The updates (if any) that are available for the specified image.</p>
@@ -3076,7 +3077,7 @@ impl WorkspaceImage {
     }
     /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account
     /// that the image has been shared with sees the original creation date of the image.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
@@ -3120,7 +3121,7 @@ pub mod workspace_image {
             std::option::Option<crate::model::WorkspaceImageRequiredTenancy>,
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) owner_account_id: std::option::Option<std::string::String>,
         pub(crate) updates: std::option::Option<crate::model::UpdateResult>,
     }
@@ -3228,7 +3229,7 @@ pub mod workspace_image {
         }
         /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account
         /// that the image has been shared with sees the original creation date of the image.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
@@ -3236,7 +3237,7 @@ pub mod workspace_image {
         /// that the image has been shared with sees the original creation date of the image.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
@@ -4532,9 +4533,9 @@ pub struct WorkspaceBundle {
     /// <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
     pub compute_type: std::option::Option<crate::model::ComputeType>,
     /// <p>The last time that the bundle was updated.</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the bundle was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl WorkspaceBundle {
     /// <p>The identifier of the bundle.</p>
@@ -4572,11 +4573,11 @@ impl WorkspaceBundle {
         self.compute_type.as_ref()
     }
     /// <p>The last time that the bundle was updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The time when the bundle was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -4610,8 +4611,8 @@ pub mod workspace_bundle {
         pub(crate) root_storage: std::option::Option<crate::model::RootStorage>,
         pub(crate) user_storage: std::option::Option<crate::model::UserStorage>,
         pub(crate) compute_type: std::option::Option<crate::model::ComputeType>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the bundle.</p>
@@ -4708,27 +4709,27 @@ pub mod workspace_bundle {
             self
         }
         /// <p>The last time that the bundle was updated.</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
         /// <p>The last time that the bundle was updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self
         }
         /// <p>The time when the bundle was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time when the bundle was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -5544,7 +5545,7 @@ pub struct AccountModification {
     /// interface used for the account.</p>
     pub dedicated_tenancy_management_cidr_range: std::option::Option<std::string::String>,
     /// <p>The timestamp when the modification of the BYOL configuration was started.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The error code that is returned if the configuration of BYOL cannot be modified.</p>
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The text of the error message that is returned if the configuration of BYOL cannot be
@@ -5570,7 +5571,7 @@ impl AccountModification {
         self.dedicated_tenancy_management_cidr_range.as_deref()
     }
     /// <p>The timestamp when the modification of the BYOL configuration was started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The error code that is returned if the configuration of BYOL cannot be modified.</p>
@@ -5610,7 +5611,7 @@ pub mod account_modification {
             std::option::Option<crate::model::DedicatedTenancySupportResultEnum>,
         pub(crate) dedicated_tenancy_management_cidr_range:
             std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
     }
@@ -5666,14 +5667,14 @@ pub mod account_modification {
             self
         }
         /// <p>The timestamp when the modification of the BYOL configuration was started.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The timestamp when the modification of the BYOL configuration was started.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self

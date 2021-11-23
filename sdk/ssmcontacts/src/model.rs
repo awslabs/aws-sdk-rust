@@ -737,11 +737,11 @@ pub struct Page {
     /// <p>The ARN of the incident that's engaging the contact channel.</p>
     pub incident_id: std::option::Option<std::string::String>,
     /// <p>The time that Incident Manager engaged the contact channel.</p>
-    pub sent_time: std::option::Option<aws_smithy_types::Instant>,
+    pub sent_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the message was delivered to the contact channel.</p>
-    pub delivery_time: std::option::Option<aws_smithy_types::Instant>,
+    pub delivery_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the contact channel acknowledged engagement.</p>
-    pub read_time: std::option::Option<aws_smithy_types::Instant>,
+    pub read_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Page {
     /// <p>The Amazon Resource Name (ARN) of the page to the contact channel.</p>
@@ -765,15 +765,15 @@ impl Page {
         self.incident_id.as_deref()
     }
     /// <p>The time that Incident Manager engaged the contact channel.</p>
-    pub fn sent_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn sent_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.sent_time.as_ref()
     }
     /// <p>The time the message was delivered to the contact channel.</p>
-    pub fn delivery_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn delivery_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.delivery_time.as_ref()
     }
     /// <p>The time that the contact channel acknowledged engagement.</p>
-    pub fn read_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn read_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.read_time.as_ref()
     }
 }
@@ -802,9 +802,9 @@ pub mod page {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
         pub(crate) sender: std::option::Option<std::string::String>,
         pub(crate) incident_id: std::option::Option<std::string::String>,
-        pub(crate) sent_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) delivery_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) read_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) sent_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) delivery_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) read_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the page to the contact channel.</p>
@@ -861,40 +861,40 @@ pub mod page {
             self
         }
         /// <p>The time that Incident Manager engaged the contact channel.</p>
-        pub fn sent_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn sent_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.sent_time = Some(input);
             self
         }
         /// <p>The time that Incident Manager engaged the contact channel.</p>
         pub fn set_sent_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.sent_time = input;
             self
         }
         /// <p>The time the message was delivered to the contact channel.</p>
-        pub fn delivery_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn delivery_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.delivery_time = Some(input);
             self
         }
         /// <p>The time the message was delivered to the contact channel.</p>
         pub fn set_delivery_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.delivery_time = input;
             self
         }
         /// <p>The time that the contact channel acknowledged engagement.</p>
-        pub fn read_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn read_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.read_time = Some(input);
             self
         }
         /// <p>The time that the contact channel acknowledged engagement.</p>
         pub fn set_read_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.read_time = input;
             self
@@ -934,7 +934,7 @@ pub struct Receipt {
     pub receipt_info: std::option::Option<std::string::String>,
     /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or
     /// <code>READ</code>.</p>
-    pub receipt_time: std::option::Option<aws_smithy_types::Instant>,
+    pub receipt_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Receipt {
     /// <p>The Amazon Resource Name (ARN) of the contact channel Incident Manager engaged.</p>
@@ -952,7 +952,7 @@ impl Receipt {
     }
     /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or
     /// <code>READ</code>.</p>
-    pub fn receipt_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn receipt_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.receipt_time.as_ref()
     }
 }
@@ -975,7 +975,7 @@ pub mod receipt {
         pub(crate) contact_channel_arn: std::option::Option<std::string::String>,
         pub(crate) receipt_type: std::option::Option<crate::model::ReceiptType>,
         pub(crate) receipt_info: std::option::Option<std::string::String>,
-        pub(crate) receipt_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) receipt_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the contact channel Incident Manager engaged.</p>
@@ -1018,7 +1018,7 @@ pub mod receipt {
         }
         /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or
         /// <code>READ</code>.</p>
-        pub fn receipt_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn receipt_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.receipt_time = Some(input);
             self
         }
@@ -1026,7 +1026,7 @@ pub mod receipt {
         /// <code>READ</code>.</p>
         pub fn set_receipt_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.receipt_time = input;
             self
@@ -1130,9 +1130,9 @@ pub struct Engagement {
     /// <p>The ARN of the incident that's engaging the contact.</p>
     pub incident_id: std::option::Option<std::string::String>,
     /// <p>The time that the engagement began.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the engagement ended.</p>
-    pub stop_time: std::option::Option<aws_smithy_types::Instant>,
+    pub stop_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Engagement {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
@@ -1152,11 +1152,11 @@ impl Engagement {
         self.incident_id.as_deref()
     }
     /// <p>The time that the engagement began.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time that the engagement ended.</p>
-    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
 }
@@ -1182,8 +1182,8 @@ pub mod engagement {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
         pub(crate) sender: std::option::Option<std::string::String>,
         pub(crate) incident_id: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) stop_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) stop_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
@@ -1230,27 +1230,27 @@ pub mod engagement {
             self
         }
         /// <p>The time that the engagement began.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The time that the engagement began.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time that the engagement ended.</p>
-        pub fn stop_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn stop_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stop_time = Some(input);
             self
         }
         /// <p>The time that the engagement ended.</p>
         pub fn set_stop_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.stop_time = input;
             self
@@ -1280,17 +1280,17 @@ impl Engagement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeRange {
     /// <p>The start of the time range.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the time range.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimeRange {
     /// <p>The start of the time range.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time range.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -1308,32 +1308,32 @@ pub mod time_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The start of the time range.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The start of the time range.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The end of the time range.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The end of the time range.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self

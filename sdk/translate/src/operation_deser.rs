@@ -1084,6 +1084,24 @@ pub fn parse_start_text_translation_job_error(
                 tmp
             }),
         },
+        "InvalidParameterValueException" => crate::error::StartTextTranslationJobError {
+            meta: generic,
+            kind: crate::error::StartTextTranslationJobErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartTextTranslationJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidRequestException" => crate::error::StartTextTranslationJobError {
             meta: generic,
             kind: crate::error::StartTextTranslationJobErrorKind::InvalidRequestException({

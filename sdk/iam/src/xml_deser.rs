@@ -1987,9 +1987,9 @@ pub fn deser_operation_crate_operation_get_credential_report(
             s if s.matches("GeneratedTime") /* GeneratedTime com.amazonaws.iam.synthetic#GetCredentialReportOutput$GeneratedTime */ =>  {
                 let var_54 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -2334,9 +2334,9 @@ pub fn deser_operation_crate_operation_get_open_id_connect_provider(
             s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam.synthetic#GetOpenIDConnectProviderOutput$CreateDate */ =>  {
                 let var_67 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -2413,9 +2413,9 @@ pub fn deser_operation_crate_operation_get_organizations_access_report(
             s if s.matches("JobCreationDate") /* JobCreationDate com.amazonaws.iam.synthetic#GetOrganizationsAccessReportOutput$JobCreationDate */ =>  {
                 let var_70 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -2427,9 +2427,9 @@ pub fn deser_operation_crate_operation_get_organizations_access_report(
             s if s.matches("JobCompletionDate") /* JobCompletionDate com.amazonaws.iam.synthetic#GetOrganizationsAccessReportOutput$JobCompletionDate */ =>  {
                 let var_71 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -2791,9 +2791,9 @@ pub fn deser_operation_crate_operation_get_saml_provider(
             s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam.synthetic#GetSAMLProviderOutput$CreateDate */ =>  {
                 let var_85 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -2805,9 +2805,9 @@ pub fn deser_operation_crate_operation_get_saml_provider(
             s if s.matches("ValidUntil") /* ValidUntil com.amazonaws.iam.synthetic#GetSAMLProviderOutput$ValidUntil */ =>  {
                 let var_86 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -2947,9 +2947,9 @@ pub fn deser_operation_crate_operation_get_service_last_accessed_details(
             s if s.matches("JobCreationDate") /* JobCreationDate com.amazonaws.iam.synthetic#GetServiceLastAccessedDetailsOutput$JobCreationDate */ =>  {
                 let var_91 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -2971,9 +2971,9 @@ pub fn deser_operation_crate_operation_get_service_last_accessed_details(
             s if s.matches("JobCompletionDate") /* JobCompletionDate com.amazonaws.iam.synthetic#GetServiceLastAccessedDetailsOutput$JobCompletionDate */ =>  {
                 let var_93 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -3078,9 +3078,9 @@ pub fn deser_operation_crate_operation_get_service_last_accessed_details_with_en
             s if s.matches("JobCreationDate") /* JobCreationDate com.amazonaws.iam.synthetic#GetServiceLastAccessedDetailsWithEntitiesOutput$JobCreationDate */ =>  {
                 let var_98 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -3092,9 +3092,9 @@ pub fn deser_operation_crate_operation_get_service_last_accessed_details_with_en
             s if s.matches("JobCompletionDate") /* JobCompletionDate com.amazonaws.iam.synthetic#GetServiceLastAccessedDetailsWithEntitiesOutput$JobCompletionDate */ =>  {
                 let var_99 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -6762,9 +6762,9 @@ pub fn deser_structure_crate_model_access_key(
             s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam#AccessKey$CreateDate */ =>  {
                 let var_234 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -6841,9 +6841,9 @@ pub fn deser_structure_crate_model_group(
             s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam#Group$CreateDate */ =>  {
                 let var_239 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -6920,9 +6920,9 @@ pub fn deser_structure_crate_model_instance_profile(
             s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam#InstanceProfile$CreateDate */ =>  {
                 let var_244 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -6980,9 +6980,9 @@ pub fn deser_structure_crate_model_login_profile(
             s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam#LoginProfile$CreateDate */ =>  {
                 let var_248 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -7164,9 +7164,9 @@ pub fn deser_structure_crate_model_policy(
             s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam#Policy$CreateDate */ =>  {
                 let var_259 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -7178,9 +7178,9 @@ pub fn deser_structure_crate_model_policy(
             s if s.matches("UpdateDate") /* UpdateDate com.amazonaws.iam#Policy$UpdateDate */ =>  {
                 let var_260 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -7256,9 +7256,9 @@ pub fn deser_structure_crate_model_policy_version(
             s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam#PolicyVersion$CreateDate */ =>  {
                 let var_265 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -7335,9 +7335,9 @@ pub fn deser_structure_crate_model_role(
             s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam#Role$CreateDate */ =>  {
                 let var_270 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -7433,9 +7433,9 @@ pub fn deser_structure_crate_model_service_specific_credential(
             s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam#ServiceSpecificCredential$CreateDate */ =>  {
                 let var_277 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -7591,9 +7591,9 @@ pub fn deser_structure_crate_model_user(
             s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam#User$CreateDate */ =>  {
                 let var_288 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -7605,9 +7605,9 @@ pub fn deser_structure_crate_model_user(
             s if s.matches("PasswordLastUsed") /* PasswordLastUsed com.amazonaws.iam#User$PasswordLastUsed */ =>  {
                 let var_289 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -7701,9 +7701,9 @@ pub fn deser_structure_crate_model_virtual_mfa_device(
             s if s.matches("EnableDate") /* EnableDate com.amazonaws.iam#VirtualMFADevice$EnableDate */ =>  {
                 let var_296 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -7738,9 +7738,9 @@ pub fn deser_structure_crate_model_access_key_last_used(
             s if s.matches("LastUsedDate") /* LastUsedDate com.amazonaws.iam#AccessKeyLastUsed$LastUsedDate */ =>  {
                 let var_298 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -8392,9 +8392,9 @@ pub fn deser_structure_crate_model_ssh_public_key(
             s if s.matches("UploadDate") /* UploadDate com.amazonaws.iam#SSHPublicKey$UploadDate */ =>  {
                 let var_324 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -8905,9 +8905,9 @@ pub fn deser_structure_crate_model_server_certificate_metadata(
             s if s.matches("UploadDate") /* UploadDate com.amazonaws.iam#ServerCertificateMetadata$UploadDate */ =>  {
                 let var_329 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -8919,9 +8919,9 @@ pub fn deser_structure_crate_model_server_certificate_metadata(
             s if s.matches("Expiration") /* Expiration com.amazonaws.iam#ServerCertificateMetadata$Expiration */ =>  {
                 let var_330 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -8999,9 +8999,9 @@ pub fn deser_structure_crate_model_signing_certificate(
             s if s.matches("UploadDate") /* UploadDate com.amazonaws.iam#SigningCertificate$UploadDate */ =>  {
                 let var_335 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -9105,9 +9105,9 @@ pub fn deser_structure_crate_model_role_last_used(
             s if s.matches("LastUsedDate") /* LastUsedDate com.amazonaws.iam#RoleLastUsed$LastUsedDate */ =>  {
                 let var_340 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -9197,9 +9197,9 @@ pub fn deser_structure_crate_model_user_detail(
             s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam#UserDetail$CreateDate */ =>  {
                 let var_346 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -9326,9 +9326,9 @@ pub fn deser_structure_crate_model_group_detail(
             s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam#GroupDetail$CreateDate */ =>  {
                 let var_356 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -9425,9 +9425,9 @@ pub fn deser_structure_crate_model_role_detail(
             s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam#RoleDetail$CreateDate */ =>  {
                 let var_363 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -9648,9 +9648,9 @@ pub fn deser_structure_crate_model_managed_policy_detail(
             s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam#ManagedPolicyDetail$CreateDate */ =>  {
                 let var_380 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -9662,9 +9662,9 @@ pub fn deser_structure_crate_model_managed_policy_detail(
             s if s.matches("UpdateDate") /* UpdateDate com.amazonaws.iam#ManagedPolicyDetail$UpdateDate */ =>  {
                 let var_381 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -9791,9 +9791,9 @@ pub fn deser_structure_crate_model_access_detail(
             s if s.matches("LastAuthenticatedTime") /* LastAuthenticatedTime com.amazonaws.iam#AccessDetail$LastAuthenticatedTime */ =>  {
                 let var_387 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -9846,9 +9846,9 @@ pub fn deser_structure_crate_model_service_last_accessed(
             s if s.matches("LastAuthenticated") /* LastAuthenticated com.amazonaws.iam#ServiceLastAccessed$LastAuthenticated */ =>  {
                 let var_390 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -9947,9 +9947,9 @@ pub fn deser_structure_crate_model_entity_details(
             s if s.matches("LastAuthenticated") /* LastAuthenticated com.amazonaws.iam#EntityDetails$LastAuthenticated */ =>  {
                 let var_397 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -10033,9 +10033,9 @@ pub fn deser_structure_crate_model_access_key_metadata(
             s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam#AccessKeyMetadata$CreateDate */ =>  {
                 let var_401 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -10242,9 +10242,9 @@ pub fn deser_structure_crate_model_mfa_device(
             s if s.matches("EnableDate") /* EnableDate com.amazonaws.iam#MFADevice$EnableDate */ =>  {
                 let var_412 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -10345,9 +10345,9 @@ pub fn deser_structure_crate_model_saml_provider_list_entry(
             s if s.matches("ValidUntil") /* ValidUntil com.amazonaws.iam#SAMLProviderListEntry$ValidUntil */ =>  {
                 let var_417 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -10359,9 +10359,9 @@ pub fn deser_structure_crate_model_saml_provider_list_entry(
             s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam#SAMLProviderListEntry$CreateDate */ =>  {
                 let var_418 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -10426,9 +10426,9 @@ pub fn deser_structure_crate_model_service_specific_credential_metadata(
             s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam#ServiceSpecificCredentialMetadata$CreateDate */ =>  {
                 let var_422 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -10519,9 +10519,9 @@ pub fn deser_structure_crate_model_ssh_public_key_metadata(
             s if s.matches("UploadDate") /* UploadDate com.amazonaws.iam#SSHPublicKeyMetadata$UploadDate */ =>  {
                 let var_428 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
@@ -11036,9 +11036,9 @@ pub fn deser_structure_crate_model_tracked_action_last_accessed(
             s if s.matches("LastAccessedTime") /* LastAccessedTime com.amazonaws.iam#TrackedActionLastAccessed$LastAccessedTime */ =>  {
                 let var_451 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?

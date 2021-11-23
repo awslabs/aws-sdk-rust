@@ -4,11 +4,11 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStateMachineOutput {
     /// <p>The date and time the state machine was updated.</p>
-    pub update_date: std::option::Option<aws_smithy_types::Instant>,
+    pub update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateStateMachineOutput {
     /// <p>The date and time the state machine was updated.</p>
-    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
 }
@@ -25,18 +25,18 @@ pub mod update_state_machine_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) update_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The date and time the state machine was updated.</p>
-        pub fn update_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_date = Some(input);
             self
         }
         /// <p>The date and time the state machine was updated.</p>
         pub fn set_update_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_date = input;
             self
@@ -121,11 +121,11 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopExecutionOutput {
     /// <p>The date the execution is stopped.</p>
-    pub stop_date: std::option::Option<aws_smithy_types::Instant>,
+    pub stop_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StopExecutionOutput {
     /// <p>The date the execution is stopped.</p>
-    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stop_date.as_ref()
     }
 }
@@ -142,18 +142,18 @@ pub mod stop_execution_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) stop_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) stop_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The date the execution is stopped.</p>
-        pub fn stop_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn stop_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stop_date = Some(input);
             self
         }
         /// <p>The date the execution is stopped.</p>
         pub fn set_stop_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.stop_date = input;
             self
@@ -184,9 +184,9 @@ pub struct StartSyncExecutionOutput {
     /// <p>The name of the execution.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The date the execution is started.</p>
-    pub start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the execution has already ended, the date the execution stopped.</p>
-    pub stop_date: std::option::Option<aws_smithy_types::Instant>,
+    pub stop_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the execution.</p>
     pub status: std::option::Option<crate::model::SyncExecutionStatus>,
     /// <p>The error code of the failure.</p>
@@ -225,11 +225,11 @@ impl StartSyncExecutionOutput {
         self.name.as_deref()
     }
     /// <p>The date the execution is started.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>If the execution has already ended, the date the execution stopped.</p>
-    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stop_date.as_ref()
     }
     /// <p>The current status of the execution.</p>
@@ -307,8 +307,8 @@ pub mod start_sync_execution_output {
         pub(crate) execution_arn: std::option::Option<std::string::String>,
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) start_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) stop_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) stop_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::SyncExecutionStatus>,
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
@@ -359,27 +359,27 @@ pub mod start_sync_execution_output {
             self
         }
         /// <p>The date the execution is started.</p>
-        pub fn start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_date = Some(input);
             self
         }
         /// <p>The date the execution is started.</p>
         pub fn set_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_date = input;
             self
         }
         /// <p>If the execution has already ended, the date the execution stopped.</p>
-        pub fn stop_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn stop_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stop_date = Some(input);
             self
         }
         /// <p>If the execution has already ended, the date the execution stopped.</p>
         pub fn set_stop_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.stop_date = input;
             self
@@ -537,7 +537,7 @@ pub struct StartExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     pub execution_arn: std::option::Option<std::string::String>,
     /// <p>The date the execution is started.</p>
-    pub start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub start_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StartExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
@@ -545,7 +545,7 @@ impl StartExecutionOutput {
         self.execution_arn.as_deref()
     }
     /// <p>The date the execution is started.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
 }
@@ -564,7 +564,7 @@ pub mod start_execution_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_arn: std::option::Option<std::string::String>,
-        pub(crate) start_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
@@ -581,14 +581,14 @@ pub mod start_execution_output {
             self
         }
         /// <p>The date the execution is started.</p>
-        pub fn start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_date = Some(input);
             self
         }
         /// <p>The date the execution is started.</p>
         pub fn set_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_date = input;
             self
@@ -1206,7 +1206,7 @@ pub struct DescribeStateMachineForExecutionOutput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The date and time the state machine associated with an execution was updated. For a newly
     /// created state machine, this is the creation date.</p>
-    pub update_date: std::option::Option<aws_smithy_types::Instant>,
+    pub update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
     /// options.</p>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
@@ -1232,7 +1232,7 @@ impl DescribeStateMachineForExecutionOutput {
     }
     /// <p>The date and time the state machine associated with an execution was updated. For a newly
     /// created state machine, this is the creation date.</p>
-    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
@@ -1272,7 +1272,7 @@ pub mod describe_state_machine_for_execution_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) definition: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) update_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
         pub(crate) tracing_configuration: std::option::Option<crate::model::TracingConfiguration>,
     }
@@ -1322,7 +1322,7 @@ pub mod describe_state_machine_for_execution_output {
         }
         /// <p>The date and time the state machine associated with an execution was updated. For a newly
         /// created state machine, this is the creation date.</p>
-        pub fn update_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_date = Some(input);
             self
         }
@@ -1330,7 +1330,7 @@ pub mod describe_state_machine_for_execution_output {
         /// created state machine, this is the creation date.</p>
         pub fn set_update_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_date = input;
             self
@@ -1425,7 +1425,7 @@ pub struct DescribeStateMachineOutput {
     /// <code>EXPRESS</code>).</p>
     pub r#type: std::option::Option<crate::model::StateMachineType>,
     /// <p>The date the state machine is created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
     /// options.</p>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
@@ -1482,7 +1482,7 @@ impl DescribeStateMachineOutput {
         self.r#type.as_ref()
     }
     /// <p>The date the state machine is created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
@@ -1526,7 +1526,7 @@ pub mod describe_state_machine_output {
         pub(crate) definition: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::StateMachineType>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
         pub(crate) tracing_configuration: std::option::Option<crate::model::TracingConfiguration>,
     }
@@ -1649,14 +1649,14 @@ pub mod describe_state_machine_output {
             self
         }
         /// <p>The date the state machine is created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date the state machine is created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -1747,9 +1747,9 @@ pub struct DescribeExecutionOutput {
     /// <p>The current status of the execution.</p>
     pub status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>The date the execution is started.</p>
-    pub start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the execution has already ended, the date the execution stopped.</p>
-    pub stop_date: std::option::Option<aws_smithy_types::Instant>,
+    pub stop_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub input: std::option::Option<std::string::String>,
     /// <p>Provides details about execution input or output.</p>
@@ -1805,11 +1805,11 @@ impl DescribeExecutionOutput {
         self.status.as_ref()
     }
     /// <p>The date the execution is started.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>If the execution has already ended, the date the execution stopped.</p>
-    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stop_date.as_ref()
     }
     /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
@@ -1868,8 +1868,8 @@ pub mod describe_execution_output {
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ExecutionStatus>,
-        pub(crate) start_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) stop_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) stop_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) input: std::option::Option<std::string::String>,
         pub(crate) input_details:
             std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
@@ -1973,27 +1973,27 @@ pub mod describe_execution_output {
             self
         }
         /// <p>The date the execution is started.</p>
-        pub fn start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_date = Some(input);
             self
         }
         /// <p>The date the execution is started.</p>
         pub fn set_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_date = input;
             self
         }
         /// <p>If the execution has already ended, the date the execution stopped.</p>
-        pub fn stop_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn stop_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stop_date = Some(input);
             self
         }
         /// <p>If the execution has already ended, the date the execution stopped.</p>
         pub fn set_stop_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.stop_date = input;
             self
@@ -2124,7 +2124,7 @@ pub struct DescribeActivityOutput {
     /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The date the activity is created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeActivityOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
@@ -2158,7 +2158,7 @@ impl DescribeActivityOutput {
         self.name.as_deref()
     }
     /// <p>The date the activity is created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -2179,7 +2179,7 @@ pub mod describe_activity_output {
     pub struct Builder {
         pub(crate) activity_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
@@ -2247,14 +2247,14 @@ pub mod describe_activity_output {
             self
         }
         /// <p>The date the activity is created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date the activity is created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -2343,7 +2343,7 @@ pub struct CreateStateMachineOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the created state machine.</p>
     pub state_machine_arn: std::option::Option<std::string::String>,
     /// <p>The date the state machine is created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateStateMachineOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the created state machine.</p>
@@ -2351,7 +2351,7 @@ impl CreateStateMachineOutput {
         self.state_machine_arn.as_deref()
     }
     /// <p>The date the state machine is created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -2370,7 +2370,7 @@ pub mod create_state_machine_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the created state machine.</p>
@@ -2387,14 +2387,14 @@ pub mod create_state_machine_output {
             self
         }
         /// <p>The date the state machine is created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date the state machine is created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -2422,7 +2422,7 @@ pub struct CreateActivityOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
     pub activity_arn: std::option::Option<std::string::String>,
     /// <p>The date the activity is created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateActivityOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
@@ -2430,7 +2430,7 @@ impl CreateActivityOutput {
         self.activity_arn.as_deref()
     }
     /// <p>The date the activity is created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -2449,7 +2449,7 @@ pub mod create_activity_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
@@ -2463,14 +2463,14 @@ pub mod create_activity_output {
             self
         }
         /// <p>The date the activity is created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date the activity is created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self

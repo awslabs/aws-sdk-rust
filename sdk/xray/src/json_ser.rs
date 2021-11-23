@@ -158,7 +158,7 @@ pub fn serialize_structure_crate_input_get_insight_impact_graph_input(
     if let Some(var_30) = &input.end_time {
         object
             .key("EndTime")
-            .instant(var_30, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_30, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_31) = &input.insight_id {
         object.key("InsightId").string(var_31);
@@ -169,7 +169,7 @@ pub fn serialize_structure_crate_input_get_insight_impact_graph_input(
     if let Some(var_33) = &input.start_time {
         object
             .key("StartTime")
-            .instant(var_33, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_33, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -181,7 +181,7 @@ pub fn serialize_structure_crate_input_get_insight_summaries_input(
     if let Some(var_34) = &input.end_time {
         object
             .key("EndTime")
-            .instant(var_34, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_34, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_35) = &input.group_arn {
         object.key("GroupARN").string(var_35);
@@ -201,7 +201,7 @@ pub fn serialize_structure_crate_input_get_insight_summaries_input(
     if let Some(var_39) = &input.start_time {
         object
             .key("StartTime")
-            .instant(var_39, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_39, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_40) = &input.states {
         let mut array_41 = object.key("States").start_array();
@@ -263,7 +263,7 @@ pub fn serialize_structure_crate_input_get_service_graph_input(
     if let Some(var_49) = &input.end_time {
         object
             .key("EndTime")
-            .instant(var_49, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_49, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_50) = &input.group_arn {
         object.key("GroupARN").string(var_50);
@@ -277,7 +277,7 @@ pub fn serialize_structure_crate_input_get_service_graph_input(
     if let Some(var_53) = &input.start_time {
         object
             .key("StartTime")
-            .instant(var_53, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_53, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -289,7 +289,7 @@ pub fn serialize_structure_crate_input_get_time_series_service_statistics_input(
     if let Some(var_54) = &input.end_time {
         object
             .key("EndTime")
-            .instant(var_54, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_54, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_55) = &input.entity_selector_expression {
         object.key("EntitySelectorExpression").string(var_55);
@@ -315,7 +315,7 @@ pub fn serialize_structure_crate_input_get_time_series_service_statistics_input(
     if let Some(var_61) = &input.start_time {
         object
             .key("StartTime")
-            .instant(var_61, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_61, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -346,7 +346,7 @@ pub fn serialize_structure_crate_input_get_trace_summaries_input(
     if let Some(var_66) = &input.end_time {
         object
             .key("EndTime")
-            .instant(var_66, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_66, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_67) = &input.filter_expression {
         object.key("FilterExpression").string(var_67);
@@ -365,7 +365,7 @@ pub fn serialize_structure_crate_input_get_trace_summaries_input(
     if let Some(var_72) = &input.start_time {
         object
             .key("StartTime")
-            .instant(var_72, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_72, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_73) = &input.time_range_type {
         object.key("TimeRangeType").string(var_73.as_str());
@@ -627,7 +627,7 @@ pub fn serialize_structure_crate_model_sampling_statistics_document(
     if let Some(var_122) = &input.timestamp {
         object
             .key("Timestamp")
-            .instant(var_122, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_122, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     {
         object.key("RequestCount").number(
@@ -673,7 +673,7 @@ pub fn serialize_structure_crate_model_telemetry_record(
     if let Some(var_125) = &input.timestamp {
         object
             .key("Timestamp")
-            .instant(var_125, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_125, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_126) = &input.segments_received_count {
         object.key("SegmentsReceivedCount").number(

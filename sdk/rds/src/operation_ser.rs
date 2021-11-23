@@ -182,7 +182,7 @@ pub fn serialize_operation_crate_operation_backtrack_db_cluster(
     #[allow(unused_mut)]
     let mut scope_42 = writer.prefix("BacktrackTo");
     if let Some(var_43) = &input.backtrack_to {
-        scope_42.instant(var_43, aws_smithy_types::instant::Format::DateTime);
+        scope_42.date_time(var_43, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_44 = writer.prefix("Force");
@@ -3362,12 +3362,12 @@ pub fn serialize_operation_crate_operation_describe_events(
     #[allow(unused_mut)]
     let mut scope_976 = writer.prefix("StartTime");
     if let Some(var_977) = &input.start_time {
-        scope_976.instant(var_977, aws_smithy_types::instant::Format::DateTime);
+        scope_976.date_time(var_977, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_978 = writer.prefix("EndTime");
     if let Some(var_979) = &input.end_time {
-        scope_978.instant(var_979, aws_smithy_types::instant::Format::DateTime);
+        scope_978.date_time(var_979, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_980 = writer.prefix("Duration");
@@ -5877,7 +5877,7 @@ pub fn serialize_operation_crate_operation_restore_db_cluster_to_point_in_time(
     #[allow(unused_mut)]
     let mut scope_1725 = writer.prefix("RestoreToTime");
     if let Some(var_1726) = &input.restore_to_time {
-        scope_1725.instant(var_1726, aws_smithy_types::instant::Format::DateTime);
+        scope_1725.date_time(var_1726, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_1727 = writer.prefix("UseLatestRestorableTime");
@@ -6497,7 +6497,7 @@ pub fn serialize_operation_crate_operation_restore_db_instance_to_point_in_time(
     #[allow(unused_mut)]
     let mut scope_1948 = writer.prefix("RestoreTime");
     if let Some(var_1949) = &input.restore_time {
-        scope_1948.instant(var_1949, aws_smithy_types::instant::Format::DateTime);
+        scope_1948.date_time(var_1949, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_1950 = writer.prefix("UseLatestRestorableTime");

@@ -4676,7 +4676,7 @@ pub struct CreateTestGridUrlOutput {
     /// to a <code>RemoteWebDriver</code>. </p>
     pub url: std::option::Option<std::string::String>,
     /// <p>The number of seconds the URL from <a>CreateTestGridUrlResult$url</a> stays active.</p>
-    pub expires: std::option::Option<aws_smithy_types::Instant>,
+    pub expires: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateTestGridUrlOutput {
     /// <p>A signed URL, expiring in <a>CreateTestGridUrlRequest$expiresInSeconds</a> seconds, to be passed
@@ -4685,7 +4685,7 @@ impl CreateTestGridUrlOutput {
         self.url.as_deref()
     }
     /// <p>The number of seconds the URL from <a>CreateTestGridUrlResult$url</a> stays active.</p>
-    pub fn expires(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expires(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires.as_ref()
     }
 }
@@ -4704,7 +4704,7 @@ pub mod create_test_grid_url_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
-        pub(crate) expires: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expires: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A signed URL, expiring in <a>CreateTestGridUrlRequest$expiresInSeconds</a> seconds, to be passed
@@ -4720,14 +4720,14 @@ pub mod create_test_grid_url_output {
             self
         }
         /// <p>The number of seconds the URL from <a>CreateTestGridUrlResult$url</a> stays active.</p>
-        pub fn expires(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expires(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expires = Some(input);
             self
         }
         /// <p>The number of seconds the URL from <a>CreateTestGridUrlResult$url</a> stays active.</p>
         pub fn set_expires(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expires = input;
             self

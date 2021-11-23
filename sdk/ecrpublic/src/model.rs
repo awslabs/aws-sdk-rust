@@ -1002,7 +1002,7 @@ pub struct AuthorizationData {
     pub authorization_token: std::option::Option<std::string::String>,
     /// <p>The Unix time in seconds and milliseconds when the authorization token expires.
     /// Authorization tokens are valid for 12 hours.</p>
-    pub expires_at: std::option::Option<aws_smithy_types::Instant>,
+    pub expires_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AuthorizationData {
     /// <p>A base64-encoded string that contains authorization data for a public Amazon ECR registry.
@@ -1013,7 +1013,7 @@ impl AuthorizationData {
     }
     /// <p>The Unix time in seconds and milliseconds when the authorization token expires.
     /// Authorization tokens are valid for 12 hours.</p>
-    pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires_at.as_ref()
     }
 }
@@ -1032,7 +1032,7 @@ pub mod authorization_data {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization_token: std::option::Option<std::string::String>,
-        pub(crate) expires_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expires_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A base64-encoded string that contains authorization data for a public Amazon ECR registry.
@@ -1054,7 +1054,7 @@ pub mod authorization_data {
         }
         /// <p>The Unix time in seconds and milliseconds when the authorization token expires.
         /// Authorization tokens are valid for 12 hours.</p>
-        pub fn expires_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expires_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expires_at = Some(input);
             self
         }
@@ -1062,7 +1062,7 @@ pub mod authorization_data {
         /// Authorization tokens are valid for 12 hours.</p>
         pub fn set_expires_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expires_at = input;
             self
@@ -1098,7 +1098,7 @@ pub struct Repository {
     /// and <code>pull</code> operations.</p>
     pub repository_uri: std::option::Option<std::string::String>,
     /// <p>The date and time, in JavaScript date format, when the repository was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Repository {
     /// <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code> namespace, followed by the region of the repository, AWS account ID of the repository owner, repository namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
@@ -1120,7 +1120,7 @@ impl Repository {
         self.repository_uri.as_deref()
     }
     /// <p>The date and time, in JavaScript date format, when the repository was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -1145,7 +1145,7 @@ pub mod repository {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) repository_uri: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code> namespace, followed by the region of the repository, AWS account ID of the repository owner, repository namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
@@ -1202,14 +1202,14 @@ pub mod repository {
             self
         }
         /// <p>The date and time, in JavaScript date format, when the repository was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time, in JavaScript date format, when the repository was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1599,7 +1599,7 @@ pub struct ImageTagDetail {
     /// <p>The tag associated with the image.</p>
     pub image_tag: std::option::Option<std::string::String>,
     /// <p>The time stamp indicating when the image tag was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that describes the details of an image.</p>
     pub image_detail: std::option::Option<crate::model::ReferencedImageDetail>,
 }
@@ -1609,7 +1609,7 @@ impl ImageTagDetail {
         self.image_tag.as_deref()
     }
     /// <p>The time stamp indicating when the image tag was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>An object that describes the details of an image.</p>
@@ -1633,7 +1633,7 @@ pub mod image_tag_detail {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_tag: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) image_detail: std::option::Option<crate::model::ReferencedImageDetail>,
     }
     impl Builder {
@@ -1648,14 +1648,14 @@ pub mod image_tag_detail {
             self
         }
         /// <p>The time stamp indicating when the image tag was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time stamp indicating when the image tag was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1708,7 +1708,7 @@ pub struct ReferencedImageDetail {
     pub image_size_in_bytes: std::option::Option<i64>,
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current
     /// image tag was pushed to the repository.</p>
-    pub image_pushed_at: std::option::Option<aws_smithy_types::Instant>,
+    pub image_pushed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The media type of the image manifest.</p>
     pub image_manifest_media_type: std::option::Option<std::string::String>,
     /// <p>The artifact media type of the image.</p>
@@ -1733,7 +1733,7 @@ impl ReferencedImageDetail {
     }
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current
     /// image tag was pushed to the repository.</p>
-    pub fn image_pushed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn image_pushed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.image_pushed_at.as_ref()
     }
     /// <p>The media type of the image manifest.</p>
@@ -1764,7 +1764,7 @@ pub mod referenced_image_detail {
     pub struct Builder {
         pub(crate) image_digest: std::option::Option<std::string::String>,
         pub(crate) image_size_in_bytes: std::option::Option<i64>,
-        pub(crate) image_pushed_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) image_pushed_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) image_manifest_media_type: std::option::Option<std::string::String>,
         pub(crate) artifact_media_type: std::option::Option<std::string::String>,
     }
@@ -1807,7 +1807,7 @@ pub mod referenced_image_detail {
         }
         /// <p>The date and time, expressed in standard JavaScript date format, at which the current
         /// image tag was pushed to the repository.</p>
-        pub fn image_pushed_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn image_pushed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.image_pushed_at = Some(input);
             self
         }
@@ -1815,7 +1815,7 @@ pub mod referenced_image_detail {
         /// image tag was pushed to the repository.</p>
         pub fn set_image_pushed_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.image_pushed_at = input;
             self
@@ -1891,7 +1891,7 @@ pub struct ImageDetail {
     pub image_size_in_bytes: std::option::Option<i64>,
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current
     /// image was pushed to the repository. </p>
-    pub image_pushed_at: std::option::Option<aws_smithy_types::Instant>,
+    pub image_pushed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The media type of the image manifest.</p>
     pub image_manifest_media_type: std::option::Option<std::string::String>,
     /// <p>The artifact media type of the image.</p>
@@ -1929,7 +1929,7 @@ impl ImageDetail {
     }
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current
     /// image was pushed to the repository. </p>
-    pub fn image_pushed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn image_pushed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.image_pushed_at.as_ref()
     }
     /// <p>The media type of the image manifest.</p>
@@ -1966,7 +1966,7 @@ pub mod image_detail {
         pub(crate) image_digest: std::option::Option<std::string::String>,
         pub(crate) image_tags: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) image_size_in_bytes: std::option::Option<i64>,
-        pub(crate) image_pushed_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) image_pushed_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) image_manifest_media_type: std::option::Option<std::string::String>,
         pub(crate) artifact_media_type: std::option::Option<std::string::String>,
     }
@@ -2053,7 +2053,7 @@ pub mod image_detail {
         }
         /// <p>The date and time, expressed in standard JavaScript date format, at which the current
         /// image was pushed to the repository. </p>
-        pub fn image_pushed_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn image_pushed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.image_pushed_at = Some(input);
             self
         }
@@ -2061,7 +2061,7 @@ pub mod image_detail {
         /// image was pushed to the repository. </p>
         pub fn set_image_pushed_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.image_pushed_at = input;
             self

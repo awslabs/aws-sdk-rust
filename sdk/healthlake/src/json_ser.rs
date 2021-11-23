@@ -128,12 +128,12 @@ pub fn serialize_structure_crate_input_list_fhir_export_jobs_input(
     if let Some(var_27) = &input.submitted_before {
         object
             .key("SubmittedBefore")
-            .instant(var_27, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_27, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_28) = &input.submitted_after {
         object
             .key("SubmittedAfter")
-            .instant(var_28, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_28, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -163,12 +163,12 @@ pub fn serialize_structure_crate_input_list_fhir_import_jobs_input(
     if let Some(var_34) = &input.submitted_before {
         object
             .key("SubmittedBefore")
-            .instant(var_34, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_34, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_35) = &input.submitted_after {
         object
             .key("SubmittedAfter")
-            .instant(var_35, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_35, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -327,12 +327,12 @@ pub fn serialize_structure_crate_model_datastore_filter(
     if let Some(var_67) = &input.created_before {
         object
             .key("CreatedBefore")
-            .instant(var_67, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_67, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_68) = &input.created_after {
         object
             .key("CreatedAfter")
-            .instant(var_68, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_68, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

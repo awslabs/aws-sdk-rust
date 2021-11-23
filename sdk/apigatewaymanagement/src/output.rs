@@ -34,15 +34,15 @@ impl PostToConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectionOutput {
     /// <p>The time in ISO 8601 format for when the connection was established.</p>
-    pub connected_at: std::option::Option<aws_smithy_types::Instant>,
+    pub connected_at: std::option::Option<aws_smithy_types::DateTime>,
     #[allow(missing_docs)] // documentation missing in model
     pub identity: std::option::Option<crate::model::Identity>,
     /// <p>The time in ISO 8601 format for when the connection was last active.</p>
-    pub last_active_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_active_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetConnectionOutput {
     /// <p>The time in ISO 8601 format for when the connection was established.</p>
-    pub fn connected_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn connected_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.connected_at.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -50,7 +50,7 @@ impl GetConnectionOutput {
         self.identity.as_ref()
     }
     /// <p>The time in ISO 8601 format for when the connection was last active.</p>
-    pub fn last_active_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_active_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_active_at.as_ref()
     }
 }
@@ -69,20 +69,20 @@ pub mod get_connection_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) connected_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) connected_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) identity: std::option::Option<crate::model::Identity>,
-        pub(crate) last_active_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_active_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The time in ISO 8601 format for when the connection was established.</p>
-        pub fn connected_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn connected_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.connected_at = Some(input);
             self
         }
         /// <p>The time in ISO 8601 format for when the connection was established.</p>
         pub fn set_connected_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.connected_at = input;
             self
@@ -98,14 +98,14 @@ pub mod get_connection_output {
             self
         }
         /// <p>The time in ISO 8601 format for when the connection was last active.</p>
-        pub fn last_active_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_active_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_active_at = Some(input);
             self
         }
         /// <p>The time in ISO 8601 format for when the connection was last active.</p>
         pub fn set_last_active_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_active_at = input;
             self

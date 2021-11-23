@@ -324,7 +324,7 @@ impl<'a> JsonTokenIterator<'a> {
             offset,
             value: if floating {
                 Number::Float(
-                    f64::from_str(&number_str)
+                    f64::from_str(number_str)
                         .map_err(|_| self.error_at(start, InvalidNumber))
                         .and_then(|f| {
                             must_be_finite(f).map_err(|_| self.error_at(start, InvalidNumber))
@@ -342,7 +342,7 @@ impl<'a> JsonTokenIterator<'a> {
                 }
             } else {
                 Number::PosInt(
-                    u64::from_str(&number_str).map_err(|_| self.error_at(start, InvalidNumber))?,
+                    u64::from_str(number_str).map_err(|_| self.error_at(start, InvalidNumber))?,
                 )
             },
         })

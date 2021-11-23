@@ -92,6 +92,13 @@ where
     pub fn create_job_queue(&self) -> fluent_builders::CreateJobQueue<C, M, R> {
         fluent_builders::CreateJobQueue::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `CreateSchedulingPolicy` operation.
+    ///
+    /// See [`CreateSchedulingPolicy`](crate::client::fluent_builders::CreateSchedulingPolicy) for more information about the
+    /// operation and its arguments.
+    pub fn create_scheduling_policy(&self) -> fluent_builders::CreateSchedulingPolicy<C, M, R> {
+        fluent_builders::CreateSchedulingPolicy::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DeleteComputeEnvironment` operation.
     ///
     /// See [`DeleteComputeEnvironment`](crate::client::fluent_builders::DeleteComputeEnvironment) for more information about the
@@ -105,6 +112,13 @@ where
     /// operation and its arguments.
     pub fn delete_job_queue(&self) -> fluent_builders::DeleteJobQueue<C, M, R> {
         fluent_builders::DeleteJobQueue::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteSchedulingPolicy` operation.
+    ///
+    /// See [`DeleteSchedulingPolicy`](crate::client::fluent_builders::DeleteSchedulingPolicy) for more information about the
+    /// operation and its arguments.
+    pub fn delete_scheduling_policy(&self) -> fluent_builders::DeleteSchedulingPolicy<C, M, R> {
+        fluent_builders::DeleteSchedulingPolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DeregisterJobDefinition` operation.
     ///
@@ -143,12 +157,28 @@ where
     pub fn describe_jobs(&self) -> fluent_builders::DescribeJobs<C, M, R> {
         fluent_builders::DescribeJobs::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DescribeSchedulingPolicies` operation.
+    ///
+    /// See [`DescribeSchedulingPolicies`](crate::client::fluent_builders::DescribeSchedulingPolicies) for more information about the
+    /// operation and its arguments.
+    pub fn describe_scheduling_policies(
+        &self,
+    ) -> fluent_builders::DescribeSchedulingPolicies<C, M, R> {
+        fluent_builders::DescribeSchedulingPolicies::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `ListJobs` operation.
     ///
     /// See [`ListJobs`](crate::client::fluent_builders::ListJobs) for more information about the
     /// operation and its arguments.
     pub fn list_jobs(&self) -> fluent_builders::ListJobs<C, M, R> {
         fluent_builders::ListJobs::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListSchedulingPolicies` operation.
+    ///
+    /// See [`ListSchedulingPolicies`](crate::client::fluent_builders::ListSchedulingPolicies) for more information about the
+    /// operation and its arguments.
+    pub fn list_scheduling_policies(&self) -> fluent_builders::ListSchedulingPolicies<C, M, R> {
+        fluent_builders::ListSchedulingPolicies::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListTagsForResource` operation.
     ///
@@ -205,6 +235,13 @@ where
     /// operation and its arguments.
     pub fn update_job_queue(&self) -> fluent_builders::UpdateJobQueue<C, M, R> {
         fluent_builders::UpdateJobQueue::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UpdateSchedulingPolicy` operation.
+    ///
+    /// See [`UpdateSchedulingPolicy`](crate::client::fluent_builders::UpdateSchedulingPolicy) for more information about the
+    /// operation and its arguments.
+    pub fn update_scheduling_policy(&self) -> fluent_builders::UpdateSchedulingPolicy<C, M, R> {
+        fluent_builders::UpdateSchedulingPolicy::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
@@ -311,18 +348,18 @@ pub mod fluent_builders {
     /// within the environment. This is based on the compute resource specification that you define or the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch template</a> that you
     /// specify when you create the compute environment. Either, you can choose to use EC2 On-Demand Instances and EC2 Spot
     /// Instances. Or, you can use Fargate and Fargate Spot capacity in your managed compute environment. You can
-    /// optionally set a maximum price so that Spot Instances only launch when the Spot Instance price is less than a
-    /// specified percentage of the On-Demand price.</p>
+    /// optionally set a maximum price so that Spot Instances only launch
+    /// when
+    /// the Spot Instance price is less than a specified percentage of the On-Demand price.</p>
     /// <note>
     /// <p>Multi-node parallel jobs aren't supported on Spot Instances.</p>
     /// </note>
     /// <p>In an unmanaged compute environment, you can manage your own EC2 compute resources and have a lot of flexibility
     /// with how you configure your compute resources. For example, you can use custom AMIs. However, you must verify that
-    /// each of your AMIs meet the Amazon ECS container instance AMI specification. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">container instance
-    /// AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. After you created your unmanaged compute environment, you
-    /// can use the <a>DescribeComputeEnvironments</a> operation to find the Amazon ECS cluster that's associated with
-    /// it. Then, launch your container instances into that Amazon ECS cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching an Amazon ECS
-    /// container instance</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// each of your AMIs meet the Amazon ECS container instance AMI specification. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">container instance AMIs</a> in the
+    /// <i>Amazon Elastic Container Service Developer Guide</i>. After you created your unmanaged compute environment, you can use the <a>DescribeComputeEnvironments</a> operation to find the Amazon ECS cluster that's associated with it. Then, launch
+    /// your container instances into that Amazon ECS cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching an Amazon ECS container instance</a> in the
+    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <note>
     /// <p>Batch doesn't upgrade the AMIs in a compute environment after the environment is created. For example, it
     /// doesn't update the AMIs when a newer version of the Amazon ECS optimized AMI is available. Therefore, you're responsible
@@ -453,6 +490,30 @@ pub mod fluent_builders {
         /// <code>minvCpus</code> value after instances become idle.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::CeState>) -> Self {
             self.inner = self.inner.set_state(input);
+            self
+        }
+        /// <p>The maximum number of vCPUs for an
+        /// unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new
+        /// share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
+        /// reserved.</p>
+        ///
+        /// <note>
+        /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>/</p>
+        /// </note>
+        pub fn unmanagedv_cpus(mut self, inp: i32) -> Self {
+            self.inner = self.inner.unmanagedv_cpus(inp);
+            self
+        }
+        /// <p>The maximum number of vCPUs for an
+        /// unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new
+        /// share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
+        /// reserved.</p>
+        ///
+        /// <note>
+        /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>/</p>
+        /// </note>
+        pub fn set_unmanagedv_cpus(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_unmanagedv_cpus(input);
             self
         }
         /// <p>Details about the compute resources managed by the compute environment. This parameter is required for managed
@@ -641,6 +702,33 @@ pub mod fluent_builders {
             self.inner = self.inner.set_state(input);
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the fair share scheduling
+        /// policy. If this parameter is specified, the job queue will use a fair share scheduling policy. If this parameter is
+        /// not specified, the job queue will use a first in, first out (FIFO) scheduling policy. Once a job queue is created,
+        /// the fair share scheduling policy can be replaced but not removed. The format is
+        /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+        /// </code>.
+        /// For example,
+        /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+        pub fn scheduling_policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scheduling_policy_arn(inp);
+            self
+        }
+        /// <p>Amazon Resource Name (ARN) of the fair share scheduling
+        /// policy. If this parameter is specified, the job queue will use a fair share scheduling policy. If this parameter is
+        /// not specified, the job queue will use a first in, first out (FIFO) scheduling policy. Once a job queue is created,
+        /// the fair share scheduling policy can be replaced but not removed. The format is
+        /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+        /// </code>.
+        /// For example,
+        /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+        pub fn set_scheduling_policy_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_scheduling_policy_arn(input);
+            self
+        }
         /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
         /// <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is
         /// determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling
@@ -715,6 +803,123 @@ pub mod fluent_builders {
         }
         /// <p>The tags that you apply to the job queue to help you categorize and organize your resources. Each tag consists
         /// of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateSchedulingPolicy`.
+    ///
+    /// <p>Creates an Batch scheduling
+    /// policy.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateSchedulingPolicy<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_scheduling_policy_input::Builder,
+    }
+    impl<C, M, R> CreateSchedulingPolicy<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateSchedulingPolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateSchedulingPolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateSchedulingPolicyError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateSchedulingPolicyInputOperationOutputAlias,
+                crate::output::CreateSchedulingPolicyOutput,
+                crate::error::CreateSchedulingPolicyError,
+                crate::input::CreateSchedulingPolicyInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the scheduling
+        /// policy. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of the scheduling
+        /// policy. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The fair share policy of the scheduling
+        /// policy.</p>
+        pub fn fairshare_policy(mut self, inp: crate::model::FairsharePolicy) -> Self {
+            self.inner = self.inner.fairshare_policy(inp);
+            self
+        }
+        /// <p>The fair share policy of the scheduling
+        /// policy.</p>
+        pub fn set_fairshare_policy(
+            mut self,
+            input: std::option::Option<crate::model::FairsharePolicy>,
+        ) -> Self {
+            self.inner = self.inner.set_fairshare_policy(input);
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag
+        /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
+        /// Reference</i>.</p>
+        /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k, v);
+            self
+        }
+        /// <p>The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag
+        /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
+        /// Reference</i>.</p>
+        /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -871,6 +1076,80 @@ pub mod fluent_builders {
         /// <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.</p>
         pub fn set_job_queue(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_queue(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteSchedulingPolicy`.
+    ///
+    /// <p>Deletes the specified scheduling
+    /// policy.</p>
+    /// <p>You can't delete a scheduling policy that is used in any job queues.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteSchedulingPolicy<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_scheduling_policy_input::Builder,
+    }
+    impl<C, M, R> DeleteSchedulingPolicy<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteSchedulingPolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteSchedulingPolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteSchedulingPolicyError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteSchedulingPolicyInputOperationOutputAlias,
+                crate::output::DeleteSchedulingPolicyOutput,
+                crate::error::DeleteSchedulingPolicyError,
+                crate::input::DeleteSchedulingPolicyInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the scheduling policy to
+        /// delete.</p>
+        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the scheduling policy to
+        /// delete.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_arn(input);
             self
         }
     }
@@ -1424,6 +1703,86 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeSchedulingPolicies`.
+    ///
+    /// <p>Describes one or more of your scheduling
+    /// policies.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeSchedulingPolicies<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_scheduling_policies_input::Builder,
+    }
+    impl<C, M, R> DescribeSchedulingPolicies<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeSchedulingPolicies`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeSchedulingPoliciesOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeSchedulingPoliciesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeSchedulingPoliciesInputOperationOutputAlias,
+                crate::output::DescribeSchedulingPoliciesOutput,
+                crate::error::DescribeSchedulingPoliciesError,
+                crate::input::DescribeSchedulingPoliciesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `arns`.
+        ///
+        /// To override the contents of this collection use [`set_arns`](Self::set_arns).
+        ///
+        /// <p>A list of up to 100 scheduling policy
+        /// Amazon Resource Name (ARN) entries.</p>
+        pub fn arns(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arns(inp);
+            self
+        }
+        /// <p>A list of up to 100 scheduling policy
+        /// Amazon Resource Name (ARN) entries.</p>
+        pub fn set_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_arns(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListJobs`.
     ///
     /// <p>Returns a list of Batch jobs.</p>
@@ -1687,10 +2046,117 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListSchedulingPolicies`.
+    ///
+    /// <p>Returns a list of Batch scheduling
+    /// policies.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListSchedulingPolicies<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_scheduling_policies_input::Builder,
+    }
+    impl<C, M, R> ListSchedulingPolicies<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListSchedulingPolicies`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListSchedulingPoliciesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListSchedulingPoliciesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListSchedulingPoliciesInputOperationOutputAlias,
+                crate::output::ListSchedulingPoliciesOutput,
+                crate::error::ListSchedulingPoliciesError,
+                crate::input::ListSchedulingPoliciesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The maximum number of results returned by <code>ListSchedulingPolicies</code> in paginated output. When this
+        /// parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single page
+        /// and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This value can be
+        /// between 1 and 100. If this parameter isn't used, then
+        /// <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value
+        /// if applicable.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results returned by <code>ListSchedulingPolicies</code> in paginated output. When this
+        /// parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single page
+        /// and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This value can be
+        /// between 1 and 100. If this parameter isn't used, then
+        /// <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value
+        /// if applicable.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListSchedulingPolicies</code> request
+        /// where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
+        /// from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
+        /// when there are no more results to return.</p>
+        /// <note>
+        /// <p>This token should be treated as an opaque identifier that's only used to
+        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// </note>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListSchedulingPolicies</code> request
+        /// where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
+        /// from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
+        /// when there are no more results to return.</p>
+        /// <note>
+        /// <p>This token should be treated as an opaque identifier that's only used to
+        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// </note>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Lists the tags for an Batch resource. Batch resources that support tags are compute environments, jobs, job definitions, and job
-    /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+    /// <p>Lists the tags for an Batch resource. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
+    /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -1747,14 +2213,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, and job
-        /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
+        /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(inp);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, and job
-        /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
+        /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1880,6 +2346,24 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_parameters(input);
+            self
+        }
+        /// <p>The scheduling priority for jobs that are
+        /// submitted with this job definition. This will only affect jobs in job queues with a fair share policy. Jobs with a
+        /// higher scheduling priority will be scheduled before jobs with a lower scheduling priority.</p>
+        ///
+        /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
+        pub fn scheduling_priority(mut self, inp: i32) -> Self {
+            self.inner = self.inner.scheduling_priority(inp);
+            self
+        }
+        /// <p>The scheduling priority for jobs that are
+        /// submitted with this job definition. This will only affect jobs in job queues with a fair share policy. Jobs with a
+        /// higher scheduling priority will be scheduled before jobs with a lower scheduling priority.</p>
+        ///
+        /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
+        pub fn set_scheduling_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_scheduling_priority(input);
             self
         }
         /// <p>An object with various properties specific to single-node container-based jobs. If the job definition's
@@ -2037,10 +2521,15 @@ pub mod fluent_builders {
     ///
     /// <p>Submits an Batch job from a job definition. Parameters that are specified during <a>SubmitJob</a>
     /// override parameters defined in the job definition. vCPU and memory requirements that are specified in the
-    /// <code>ResourceRequirements</code> objects in the job definition are the exception. They can't be overridden this way
+    /// <code>resourceRequirements</code> objects in the job definition are the exception. They can't be overridden this way
     /// using the <code>memory</code> and <code>vcpus</code> parameters. Rather, you must specify updates to job definition
     /// parameters in a <code>ResourceRequirements</code> object that's included in the <code>containerOverrides</code>
     /// parameter.</p>
+    ///
+    /// <note>
+    /// <p>Job queues with a scheduling policy are limited to 500 active fair share identifiers at a time. </p>
+    /// </note>
+    ///
     /// <important>
     /// <p>Jobs that run on Fargate resources can't be guaranteed to run for more than 14 days. This is because, after 14
     /// days, Fargate resources might become unavailable and job might be terminated.</p>
@@ -2121,6 +2610,41 @@ pub mod fluent_builders {
         /// <p>The job queue where the job is submitted. You can specify either the name or the Amazon Resource Name (ARN) of the queue.</p>
         pub fn set_job_queue(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_queue(input);
+            self
+        }
+        /// <p>The share identifier for the
+        /// job.</p>
+        pub fn share_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.share_identifier(inp);
+            self
+        }
+        /// <p>The share identifier for the
+        /// job.</p>
+        pub fn set_share_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_share_identifier(input);
+            self
+        }
+        /// <p>The scheduling priority for the job. This
+        /// will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be
+        /// scheduled before jobs with a lower scheduling priority. This will override any scheduling priority in the job
+        /// definition.</p>
+        ///
+        /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
+        pub fn scheduling_priority_override(mut self, inp: i32) -> Self {
+            self.inner = self.inner.scheduling_priority_override(inp);
+            self
+        }
+        /// <p>The scheduling priority for the job. This
+        /// will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be
+        /// scheduled before jobs with a lower scheduling priority. This will override any scheduling priority in the job
+        /// definition.</p>
+        ///
+        /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
+        pub fn set_scheduling_priority_override(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_scheduling_priority_override(input);
             self
         }
         /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and
@@ -2338,8 +2862,8 @@ pub mod fluent_builders {
     ///
     /// <p>Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
     /// resource aren't specified in the request parameters, they aren't changed. When a resource is deleted, the tags that
-    /// are associated with that resource are deleted as well. Batch resources that support tags are compute environments, jobs, job definitions, and job
-    /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+    /// are associated with that resource are deleted as well. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
+    /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -2396,14 +2920,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, and job
-        /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
+        /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(inp);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, and job
-        /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
+        /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2581,14 +3105,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, and job
-        /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
+        /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(inp);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, and job
-        /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
+        /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2707,6 +3231,24 @@ pub mod fluent_builders {
         /// <code>minvCpus</code> value after instances become idle.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::CeState>) -> Self {
             self.inner = self.inner.set_state(input);
+            self
+        }
+        /// <p>The maximum number of vCPUs expected to
+        /// be used for an unmanaged compute environment. This parameter should not be specified for a managed compute
+        /// environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share
+        /// identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
+        /// reserved.</p>
+        pub fn unmanagedv_cpus(mut self, inp: i32) -> Self {
+            self.inner = self.inner.unmanagedv_cpus(inp);
+            self
+        }
+        /// <p>The maximum number of vCPUs expected to
+        /// be used for an unmanaged compute environment. This parameter should not be specified for a managed compute
+        /// environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share
+        /// identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
+        /// reserved.</p>
+        pub fn set_unmanagedv_cpus(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_unmanagedv_cpus(input);
             self
         }
         /// <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment.
@@ -2850,6 +3392,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_state(input);
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can
+        /// be replaced but not removed. The format is
+        /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+        /// </code>.
+        /// For example,
+        /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+        pub fn scheduling_policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scheduling_policy_arn(inp);
+            self
+        }
+        /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can
+        /// be replaced but not removed. The format is
+        /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+        /// </code>.
+        /// For example,
+        /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+        pub fn set_scheduling_policy_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_scheduling_policy_arn(input);
+            self
+        }
         /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
         /// <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is
         /// determined in descending order, for example, a job queue with a priority value of <code>10</code> is given scheduling
@@ -2907,12 +3472,104 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateSchedulingPolicy`.
+    ///
+    /// <p>Updates a scheduling
+    /// policy.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateSchedulingPolicy<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_scheduling_policy_input::Builder,
+    }
+    impl<C, M, R> UpdateSchedulingPolicy<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateSchedulingPolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateSchedulingPolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateSchedulingPolicyError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateSchedulingPolicyInputOperationOutputAlias,
+                crate::output::UpdateSchedulingPolicyOutput,
+                crate::error::UpdateSchedulingPolicyError,
+                crate::input::UpdateSchedulingPolicyInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
+        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_arn(input);
+            self
+        }
+        /// <p>The fair share
+        /// policy.</p>
+        pub fn fairshare_policy(mut self, inp: crate::model::FairsharePolicy) -> Self {
+            self.inner = self.inner.fairshare_policy(inp);
+            self
+        }
+        /// <p>The fair share
+        /// policy.</p>
+        pub fn set_fairshare_policy(
+            mut self,
+            input: std::option::Option<crate::model::FairsharePolicy>,
+        ) -> Self {
+            self.inner = self.inner.set_fairshare_policy(input);
+            self
+        }
+    }
 }
 impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -2935,7 +3592,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

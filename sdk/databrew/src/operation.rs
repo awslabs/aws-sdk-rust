@@ -197,6 +197,38 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRecipeJob {
     }
 }
 
+/// Operation shape for `CreateRuleset`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_ruleset`](crate::client::Client::create_ruleset).
+///
+/// See [`crate::client::fluent_builders::CreateRuleset`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateRuleset {
+    _private: (),
+}
+impl CreateRuleset {
+    /// Creates a new builder-style object to manufacture [`CreateRulesetInput`](crate::input::CreateRulesetInput)
+    pub fn builder() -> crate::input::create_ruleset_input::Builder {
+        crate::input::create_ruleset_input::Builder::default()
+    }
+    /// Creates a new `CreateRuleset` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateRuleset {
+    type Output =
+        std::result::Result<crate::output::CreateRulesetOutput, crate::error::CreateRulesetError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_ruleset_error(response)
+        } else {
+            crate::operation_deser::parse_create_ruleset_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateSchedule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -354,6 +386,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRecipeVersion {
             crate::operation_deser::parse_delete_recipe_version_error(response)
         } else {
             crate::operation_deser::parse_delete_recipe_version_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteRuleset`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_ruleset`](crate::client::Client::delete_ruleset).
+///
+/// See [`crate::client::fluent_builders::DeleteRuleset`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteRuleset {
+    _private: (),
+}
+impl DeleteRuleset {
+    /// Creates a new builder-style object to manufacture [`DeleteRulesetInput`](crate::input::DeleteRulesetInput)
+    pub fn builder() -> crate::input::delete_ruleset_input::Builder {
+        crate::input::delete_ruleset_input::Builder::default()
+    }
+    /// Creates a new `DeleteRuleset` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteRuleset {
+    type Output =
+        std::result::Result<crate::output::DeleteRulesetOutput, crate::error::DeleteRulesetError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_ruleset_error(response)
+        } else {
+            crate::operation_deser::parse_delete_ruleset_response(response)
         }
     }
 }
@@ -550,6 +614,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRecipe {
             crate::operation_deser::parse_describe_recipe_error(response)
         } else {
             crate::operation_deser::parse_describe_recipe_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeRuleset`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_ruleset`](crate::client::Client::describe_ruleset).
+///
+/// See [`crate::client::fluent_builders::DescribeRuleset`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeRuleset {
+    _private: (),
+}
+impl DescribeRuleset {
+    /// Creates a new builder-style object to manufacture [`DescribeRulesetInput`](crate::input::DescribeRulesetInput)
+    pub fn builder() -> crate::input::describe_ruleset_input::Builder {
+        crate::input::describe_ruleset_input::Builder::default()
+    }
+    /// Creates a new `DescribeRuleset` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeRuleset {
+    type Output = std::result::Result<
+        crate::output::DescribeRulesetOutput,
+        crate::error::DescribeRulesetError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_ruleset_error(response)
+        } else {
+            crate::operation_deser::parse_describe_ruleset_response(response)
         }
     }
 }
@@ -777,6 +875,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecipeVersions {
             crate::operation_deser::parse_list_recipe_versions_error(response)
         } else {
             crate::operation_deser::parse_list_recipe_versions_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListRulesets`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_rulesets`](crate::client::Client::list_rulesets).
+///
+/// See [`crate::client::fluent_builders::ListRulesets`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListRulesets {
+    _private: (),
+}
+impl ListRulesets {
+    /// Creates a new builder-style object to manufacture [`ListRulesetsInput`](crate::input::ListRulesetsInput)
+    pub fn builder() -> crate::input::list_rulesets_input::Builder {
+        crate::input::list_rulesets_input::Builder::default()
+    }
+    /// Creates a new `ListRulesets` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListRulesets {
+    type Output =
+        std::result::Result<crate::output::ListRulesetsOutput, crate::error::ListRulesetsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_rulesets_error(response)
+        } else {
+            crate::operation_deser::parse_list_rulesets_response(response)
         }
     }
 }
@@ -1235,6 +1365,38 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRecipeJob {
             crate::operation_deser::parse_update_recipe_job_error(response)
         } else {
             crate::operation_deser::parse_update_recipe_job_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateRuleset`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_ruleset`](crate::client::Client::update_ruleset).
+///
+/// See [`crate::client::fluent_builders::UpdateRuleset`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateRuleset {
+    _private: (),
+}
+impl UpdateRuleset {
+    /// Creates a new builder-style object to manufacture [`UpdateRulesetInput`](crate::input::UpdateRulesetInput)
+    pub fn builder() -> crate::input::update_ruleset_input::Builder {
+        crate::input::update_ruleset_input::Builder::default()
+    }
+    /// Creates a new `UpdateRuleset` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateRuleset {
+    type Output =
+        std::result::Result<crate::output::UpdateRulesetOutput, crate::error::UpdateRulesetError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_ruleset_error(response)
+        } else {
+            crate::operation_deser::parse_update_ruleset_response(response)
         }
     }
 }

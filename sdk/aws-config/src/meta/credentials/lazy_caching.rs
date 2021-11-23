@@ -136,7 +136,7 @@ mod builder {
     /// let provider = LazyCachingCredentialsProvider::builder()
     ///     .load(provide_credentials_fn(|| async {
     ///         // An async process to retrieve credentials would go here:
-    ///         Ok(Credentials::from_keys("example", "example", None))
+    ///         Ok(Credentials::new("example", "example", None, None, "my_provider_name"))
     ///     }))
     ///     .build();
     /// ```

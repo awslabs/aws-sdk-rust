@@ -1018,16 +1018,16 @@ pub struct DescribeModelOutput {
     pub labels_input_configuration: std::option::Option<crate::model::LabelsInputConfiguration>,
     /// <p> Indicates the time reference in the dataset that was used to begin the subset of
     /// training data for the ML model. </p>
-    pub training_data_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub training_data_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Indicates the time reference in the dataset that was used to end the subset of training
     /// data for the ML model. </p>
-    pub training_data_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub training_data_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Indicates the time reference in the dataset that was used to begin the subset of
     /// evaluation data for the ML model. </p>
-    pub evaluation_data_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub evaluation_data_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Indicates the time reference in the dataset that was used to end the subset of
     /// evaluation data for the ML model. </p>
-    pub evaluation_data_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub evaluation_data_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for
     /// the ML model being described. </p>
     pub role_arn: std::option::Option<std::string::String>,
@@ -1048,9 +1048,9 @@ pub struct DescribeModelOutput {
     /// of the most recent action of the model. </p>
     pub status: std::option::Option<crate::model::ModelStatus>,
     /// <p>Indicates the time at which the training of the ML model began. </p>
-    pub training_execution_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub training_execution_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the time at which the training of the ML model was completed. </p>
-    pub training_execution_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub training_execution_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the training of the ML model failed, this indicates the reason for that failure.
     /// </p>
     pub failed_reason: std::option::Option<std::string::String>,
@@ -1059,9 +1059,9 @@ pub struct DescribeModelOutput {
     pub model_metrics: std::option::Option<std::string::String>,
     /// <p>Indicates the last time the ML model was updated. The type of update is not specified.
     /// </p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the time and date at which the ML model was created. </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
     pub server_side_kms_key_id: std::option::Option<std::string::String>,
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
@@ -1099,22 +1099,22 @@ impl DescribeModelOutput {
     }
     /// <p> Indicates the time reference in the dataset that was used to begin the subset of
     /// training data for the ML model. </p>
-    pub fn training_data_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn training_data_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_data_start_time.as_ref()
     }
     /// <p> Indicates the time reference in the dataset that was used to end the subset of training
     /// data for the ML model. </p>
-    pub fn training_data_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn training_data_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_data_end_time.as_ref()
     }
     /// <p> Indicates the time reference in the dataset that was used to begin the subset of
     /// evaluation data for the ML model. </p>
-    pub fn evaluation_data_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn evaluation_data_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.evaluation_data_start_time.as_ref()
     }
     /// <p> Indicates the time reference in the dataset that was used to end the subset of
     /// evaluation data for the ML model. </p>
-    pub fn evaluation_data_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn evaluation_data_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.evaluation_data_end_time.as_ref()
     }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for
@@ -1144,11 +1144,13 @@ impl DescribeModelOutput {
         self.status.as_ref()
     }
     /// <p>Indicates the time at which the training of the ML model began. </p>
-    pub fn training_execution_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn training_execution_start_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_execution_start_time.as_ref()
     }
     /// <p>Indicates the time at which the training of the ML model was completed. </p>
-    pub fn training_execution_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn training_execution_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_execution_end_time.as_ref()
     }
     /// <p>If the training of the ML model failed, this indicates the reason for that failure.
@@ -1163,11 +1165,11 @@ impl DescribeModelOutput {
     }
     /// <p>Indicates the last time the ML model was updated. The type of update is not specified.
     /// </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Indicates the time and date at which the ML model was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
@@ -1234,20 +1236,20 @@ pub mod describe_model_output {
         pub(crate) schema: std::option::Option<std::string::String>,
         pub(crate) labels_input_configuration:
             std::option::Option<crate::model::LabelsInputConfiguration>,
-        pub(crate) training_data_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) training_data_end_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) evaluation_data_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) evaluation_data_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) training_data_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) training_data_end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) evaluation_data_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) evaluation_data_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) data_pre_processing_configuration:
             std::option::Option<crate::model::DataPreProcessingConfiguration>,
         pub(crate) status: std::option::Option<crate::model::ModelStatus>,
-        pub(crate) training_execution_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) training_execution_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) training_execution_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) training_execution_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failed_reason: std::option::Option<std::string::String>,
         pub(crate) model_metrics: std::option::Option<std::string::String>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) server_side_kms_key_id: std::option::Option<std::string::String>,
         pub(crate) off_condition: std::option::Option<std::string::String>,
     }
@@ -1326,7 +1328,7 @@ pub mod describe_model_output {
         }
         /// <p> Indicates the time reference in the dataset that was used to begin the subset of
         /// training data for the ML model. </p>
-        pub fn training_data_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn training_data_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.training_data_start_time = Some(input);
             self
         }
@@ -1334,14 +1336,14 @@ pub mod describe_model_output {
         /// training data for the ML model. </p>
         pub fn set_training_data_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.training_data_start_time = input;
             self
         }
         /// <p> Indicates the time reference in the dataset that was used to end the subset of training
         /// data for the ML model. </p>
-        pub fn training_data_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn training_data_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.training_data_end_time = Some(input);
             self
         }
@@ -1349,14 +1351,14 @@ pub mod describe_model_output {
         /// data for the ML model. </p>
         pub fn set_training_data_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.training_data_end_time = input;
             self
         }
         /// <p> Indicates the time reference in the dataset that was used to begin the subset of
         /// evaluation data for the ML model. </p>
-        pub fn evaluation_data_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn evaluation_data_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.evaluation_data_start_time = Some(input);
             self
         }
@@ -1364,14 +1366,14 @@ pub mod describe_model_output {
         /// evaluation data for the ML model. </p>
         pub fn set_evaluation_data_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.evaluation_data_start_time = input;
             self
         }
         /// <p> Indicates the time reference in the dataset that was used to end the subset of
         /// evaluation data for the ML model. </p>
-        pub fn evaluation_data_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn evaluation_data_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.evaluation_data_end_time = Some(input);
             self
         }
@@ -1379,7 +1381,7 @@ pub mod describe_model_output {
         /// evaluation data for the ML model. </p>
         pub fn set_evaluation_data_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.evaluation_data_end_time = input;
             self
@@ -1445,27 +1447,27 @@ pub mod describe_model_output {
             self
         }
         /// <p>Indicates the time at which the training of the ML model began. </p>
-        pub fn training_execution_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn training_execution_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.training_execution_start_time = Some(input);
             self
         }
         /// <p>Indicates the time at which the training of the ML model began. </p>
         pub fn set_training_execution_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.training_execution_start_time = input;
             self
         }
         /// <p>Indicates the time at which the training of the ML model was completed. </p>
-        pub fn training_execution_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn training_execution_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.training_execution_end_time = Some(input);
             self
         }
         /// <p>Indicates the time at which the training of the ML model was completed. </p>
         pub fn set_training_execution_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.training_execution_end_time = input;
             self
@@ -1502,7 +1504,7 @@ pub mod describe_model_output {
         }
         /// <p>Indicates the last time the ML model was updated. The type of update is not specified.
         /// </p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
@@ -1510,20 +1512,20 @@ pub mod describe_model_output {
         /// </p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self
         }
         /// <p>Indicates the time and date at which the ML model was created. </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>Indicates the time and date at which the ML model was created. </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1618,9 +1620,9 @@ pub struct DescribeInferenceSchedulerOutput {
     /// In this example, it starts once every 5 minutes. </p>
     pub data_upload_frequency: std::option::Option<crate::model::DataUploadFrequency>,
     /// <p>Specifies the time at which the inference scheduler was created. </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the time at which the inference scheduler was last updated, if it was. </p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies configuration information for the input data for the inference scheduler,
     /// including delimiter, format, and dataset location. </p>
     pub data_input_configuration: std::option::Option<crate::model::InferenceInputConfiguration>,
@@ -1673,11 +1675,11 @@ impl DescribeInferenceSchedulerOutput {
         self.data_upload_frequency.as_ref()
     }
     /// <p>Specifies the time at which the inference scheduler was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Specifies the time at which the inference scheduler was last updated, if it was. </p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p> Specifies configuration information for the input data for the inference scheduler,
@@ -1739,8 +1741,8 @@ pub mod describe_inference_scheduler_output {
         pub(crate) status: std::option::Option<crate::model::InferenceSchedulerStatus>,
         pub(crate) data_delay_offset_in_minutes: std::option::Option<i64>,
         pub(crate) data_upload_frequency: std::option::Option<crate::model::DataUploadFrequency>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_input_configuration:
             std::option::Option<crate::model::InferenceInputConfiguration>,
         pub(crate) data_output_configuration:
@@ -1852,27 +1854,27 @@ pub mod describe_inference_scheduler_output {
             self
         }
         /// <p>Specifies the time at which the inference scheduler was created. </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>Specifies the time at which the inference scheduler was created. </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>Specifies the time at which the inference scheduler was last updated, if it was. </p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>Specifies the time at which the inference scheduler was last updated, if it was. </p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -1974,9 +1976,9 @@ pub struct DescribeDatasetOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset being described. </p>
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the time the dataset was created in Amazon Lookout for Equipment. </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the time the dataset was last updated, if it was. </p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the status of the dataset. </p>
     pub status: std::option::Option<crate::model::DatasetStatus>,
     /// <p>A JSON description of the data that is in each time series dataset, including names,
@@ -1998,11 +2000,11 @@ impl DescribeDatasetOutput {
         self.dataset_arn.as_deref()
     }
     /// <p>Specifies the time the dataset was created in Amazon Lookout for Equipment. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Specifies the time the dataset was last updated, if it was. </p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>Indicates the status of the dataset. </p>
@@ -2050,8 +2052,8 @@ pub mod describe_dataset_output {
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::DatasetStatus>,
         pub(crate) schema: std::option::Option<std::string::String>,
         pub(crate) server_side_kms_key_id: std::option::Option<std::string::String>,
@@ -2080,27 +2082,27 @@ pub mod describe_dataset_output {
             self
         }
         /// <p>Specifies the time the dataset was created in Amazon Lookout for Equipment. </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>Specifies the time the dataset was created in Amazon Lookout for Equipment. </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>Specifies the time the dataset was last updated, if it was. </p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>Specifies the time the dataset was last updated, if it was. </p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -2198,7 +2200,7 @@ pub struct DescribeDataIngestionJobOutput {
     /// being ingested. </p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the data ingestion job was created. </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the status of the <code>DataIngestionJob</code> operation. </p>
     pub status: std::option::Option<crate::model::IngestionJobStatus>,
     /// <p>Specifies the reason for failure when a data ingestion job has failed. </p>
@@ -2227,7 +2229,7 @@ impl DescribeDataIngestionJobOutput {
         self.role_arn.as_deref()
     }
     /// <p>The time at which the data ingestion job was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Indicates the status of the <code>DataIngestionJob</code> operation. </p>
@@ -2266,7 +2268,7 @@ pub mod describe_data_ingestion_job_output {
         pub(crate) ingestion_input_configuration:
             std::option::Option<crate::model::IngestionInputConfiguration>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::IngestionJobStatus>,
         pub(crate) failed_reason: std::option::Option<std::string::String>,
     }
@@ -2324,14 +2326,14 @@ pub mod describe_data_ingestion_job_output {
             self
         }
         /// <p>The time at which the data ingestion job was created. </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time at which the data ingestion job was created. </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self

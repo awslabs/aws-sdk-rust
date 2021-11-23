@@ -1124,9 +1124,9 @@ pub fn deser_operation_crate_operation_authorize_endpoint_access(
             s if s.matches("AuthorizeTime") /* AuthorizeTime com.amazonaws.redshift.synthetic#AuthorizeEndpointAccessOutput$AuthorizeTime */ =>  {
                 let var_36 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -3571,9 +3571,9 @@ pub fn deser_operation_crate_operation_create_endpoint_access(
             s if s.matches("EndpointCreateTime") /* EndpointCreateTime com.amazonaws.redshift.synthetic#CreateEndpointAccessOutput$EndpointCreateTime */ =>  {
                 let var_118 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -4539,9 +4539,9 @@ pub fn deser_operation_crate_operation_create_scheduled_action(
             s if s.matches("StartTime") /* StartTime com.amazonaws.redshift.synthetic#CreateScheduledActionOutput$StartTime */ =>  {
                 let var_151 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -4553,9 +4553,9 @@ pub fn deser_operation_crate_operation_create_scheduled_action(
             s if s.matches("EndTime") /* EndTime com.amazonaws.redshift.synthetic#CreateScheduledActionOutput$EndTime */ =>  {
                 let var_152 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -5682,9 +5682,9 @@ pub fn deser_operation_crate_operation_delete_endpoint_access(
             s if s.matches("EndpointCreateTime") /* EndpointCreateTime com.amazonaws.redshift.synthetic#DeleteEndpointAccessOutput$EndpointCreateTime */ =>  {
                 let var_194 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -7545,9 +7545,9 @@ pub fn deser_operation_crate_operation_describe_logging_status(
             s if s.matches("LastSuccessfulDeliveryTime") /* LastSuccessfulDeliveryTime com.amazonaws.redshift.synthetic#DescribeLoggingStatusOutput$LastSuccessfulDeliveryTime */ =>  {
                 let var_253 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -7559,9 +7559,9 @@ pub fn deser_operation_crate_operation_describe_logging_status(
             s if s.matches("LastFailureTime") /* LastFailureTime com.amazonaws.redshift.synthetic#DescribeLoggingStatusOutput$LastFailureTime */ =>  {
                 let var_254 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -8733,9 +8733,9 @@ pub fn deser_operation_crate_operation_disable_logging(
             s if s.matches("LastSuccessfulDeliveryTime") /* LastSuccessfulDeliveryTime com.amazonaws.redshift.synthetic#DisableLoggingOutput$LastSuccessfulDeliveryTime */ =>  {
                 let var_300 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -8747,9 +8747,9 @@ pub fn deser_operation_crate_operation_disable_logging(
             s if s.matches("LastFailureTime") /* LastFailureTime com.amazonaws.redshift.synthetic#DisableLoggingOutput$LastFailureTime */ =>  {
                 let var_301 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -9165,9 +9165,9 @@ pub fn deser_operation_crate_operation_enable_logging(
             s if s.matches("LastSuccessfulDeliveryTime") /* LastSuccessfulDeliveryTime com.amazonaws.redshift.synthetic#EnableLoggingOutput$LastSuccessfulDeliveryTime */ =>  {
                 let var_316 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -9179,9 +9179,9 @@ pub fn deser_operation_crate_operation_enable_logging(
             s if s.matches("LastFailureTime") /* LastFailureTime com.amazonaws.redshift.synthetic#EnableLoggingOutput$LastFailureTime */ =>  {
                 let var_317 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -9459,9 +9459,9 @@ pub fn deser_operation_crate_operation_get_cluster_credentials(
             s if s.matches("Expiration") /* Expiration com.amazonaws.redshift.synthetic#GetClusterCredentialsOutput$Expiration */ =>  {
                 let var_326 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -10258,9 +10258,9 @@ pub fn deser_operation_crate_operation_modify_endpoint_access(
             s if s.matches("EndpointCreateTime") /* EndpointCreateTime com.amazonaws.redshift.synthetic#ModifyEndpointAccessOutput$EndpointCreateTime */ =>  {
                 let var_349 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -10496,9 +10496,9 @@ pub fn deser_operation_crate_operation_modify_scheduled_action(
             s if s.matches("StartTime") /* StartTime com.amazonaws.redshift.synthetic#ModifyScheduledActionOutput$StartTime */ =>  {
                 let var_362 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -10510,9 +10510,9 @@ pub fn deser_operation_crate_operation_modify_scheduled_action(
             s if s.matches("EndTime") /* EndTime com.amazonaws.redshift.synthetic#ModifyScheduledActionOutput$EndTime */ =>  {
                 let var_363 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -11750,9 +11750,9 @@ pub fn deser_operation_crate_operation_revoke_endpoint_access(
             s if s.matches("AuthorizeTime") /* AuthorizeTime com.amazonaws.redshift.synthetic#RevokeEndpointAccessOutput$AuthorizeTime */ =>  {
                 let var_405 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -12051,9 +12051,9 @@ pub fn deser_structure_crate_model_reserved_node(
             s if s.matches("StartTime") /* StartTime com.amazonaws.redshift#ReservedNode$StartTime */ =>  {
                 let var_418 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -12337,9 +12337,9 @@ pub fn deser_structure_crate_model_snapshot(
             s if s.matches("SnapshotCreateTime") /* SnapshotCreateTime com.amazonaws.redshift#Snapshot$SnapshotCreateTime */ =>  {
                 let var_435 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -12392,9 +12392,9 @@ pub fn deser_structure_crate_model_snapshot(
             s if s.matches("ClusterCreateTime") /* ClusterCreateTime com.amazonaws.redshift#Snapshot$ClusterCreateTime */ =>  {
                 let var_439 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -12759,9 +12759,9 @@ pub fn deser_structure_crate_model_snapshot(
             s if s.matches("SnapshotRetentionStartTime") /* SnapshotRetentionStartTime com.amazonaws.redshift#Snapshot$SnapshotRetentionStartTime */ =>  {
                 let var_466 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -13013,9 +13013,9 @@ pub fn deser_structure_crate_model_cluster(
             s if s.matches("ClusterCreateTime") /* ClusterCreateTime com.amazonaws.redshift#Cluster$ClusterCreateTime */ =>  {
                 let var_475 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -13429,9 +13429,9 @@ pub fn deser_structure_crate_model_cluster(
             s if s.matches("ExpectedNextSnapshotScheduleTime") /* ExpectedNextSnapshotScheduleTime com.amazonaws.redshift#Cluster$ExpectedNextSnapshotScheduleTime */ =>  {
                 let var_509 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -13456,9 +13456,9 @@ pub fn deser_structure_crate_model_cluster(
             s if s.matches("NextMaintenanceWindowStartTime") /* NextMaintenanceWindowStartTime com.amazonaws.redshift#Cluster$NextMaintenanceWindowStartTime */ =>  {
                 let var_511 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -13812,9 +13812,9 @@ pub fn deser_structure_crate_model_event_subscription(
             s if s.matches("SubscriptionCreationTime") /* SubscriptionCreationTime com.amazonaws.redshift#EventSubscription$SubscriptionCreationTime */ =>  {
                 let var_534 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -14069,15 +14069,15 @@ pub fn deser_structure_crate_model_scheduled_action_type(
 
 pub fn deser_list_com_amazonaws_redshift_scheduled_action_time_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<aws_smithy_types::Instant>, aws_smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<aws_smithy_types::DateTime>, aws_smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ScheduledActionTime") /* member com.amazonaws.redshift#ScheduledActionTimeList$member */ =>  {
                 out.push(
-                    aws_smithy_types::Instant::from_str(
+                    aws_smithy_types::DateTime::from_str(
                         aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        , aws_smithy_types::instant::Format::DateTime
+                        , aws_smithy_types::date_time::Format::DateTime
                     )
                     .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                     ?
@@ -14182,15 +14182,15 @@ pub fn deser_list_com_amazonaws_redshift_tag_list(
 
 pub fn deser_list_com_amazonaws_redshift_scheduled_snapshot_time_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<aws_smithy_types::Instant>, aws_smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<aws_smithy_types::DateTime>, aws_smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SnapshotTime") /* member com.amazonaws.redshift#ScheduledSnapshotTimeList$member */ =>  {
                 out.push(
-                    aws_smithy_types::Instant::from_str(
+                    aws_smithy_types::DateTime::from_str(
                         aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        , aws_smithy_types::instant::Format::DateTime
+                        , aws_smithy_types::date_time::Format::DateTime
                     )
                     .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                     ?
@@ -14936,9 +14936,9 @@ pub fn deser_structure_crate_model_table_restore_status(
             s if s.matches("RequestTime") /* RequestTime com.amazonaws.redshift#TableRestoreStatus$RequestTime */ =>  {
                 let var_563 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -15143,9 +15143,9 @@ pub fn deser_structure_crate_model_data_share_association(
             s if s.matches("CreatedDate") /* CreatedDate com.amazonaws.redshift#DataShareAssociation$CreatedDate */ =>  {
                 let var_576 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -15157,9 +15157,9 @@ pub fn deser_structure_crate_model_data_share_association(
             s if s.matches("StatusChangeDate") /* StatusChangeDate com.amazonaws.redshift#DataShareAssociation$StatusChangeDate */ =>  {
                 let var_577 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -16506,9 +16506,9 @@ pub fn deser_structure_crate_model_cluster_db_revision(
             s if s.matches("DatabaseRevisionReleaseDate") /* DatabaseRevisionReleaseDate com.amazonaws.redshift#ClusterDbRevision$DatabaseRevisionReleaseDate */ =>  {
                 let var_638 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -16906,9 +16906,9 @@ pub fn deser_structure_crate_model_endpoint_access(
             s if s.matches("EndpointCreateTime") /* EndpointCreateTime com.amazonaws.redshift#EndpointAccess$EndpointCreateTime */ =>  {
                 let var_664 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -17020,9 +17020,9 @@ pub fn deser_structure_crate_model_endpoint_authorization(
             s if s.matches("AuthorizeTime") /* AuthorizeTime com.amazonaws.redshift#EndpointAuthorization$AuthorizeTime */ =>  {
                 let var_672 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -17213,9 +17213,9 @@ pub fn deser_structure_crate_model_event(
             s if s.matches("Date") /* Date com.amazonaws.redshift#Event$Date */ =>  {
                 let var_685 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -17438,9 +17438,9 @@ pub fn deser_structure_crate_model_partner_integration_info(
             s if s.matches("CreatedAt") /* CreatedAt com.amazonaws.redshift#PartnerIntegrationInfo$CreatedAt */ =>  {
                 let var_699 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -17452,9 +17452,9 @@ pub fn deser_structure_crate_model_partner_integration_info(
             s if s.matches("UpdatedAt") /* UpdatedAt com.amazonaws.redshift#PartnerIntegrationInfo$UpdatedAt */ =>  {
                 let var_700 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -17699,9 +17699,9 @@ pub fn deser_structure_crate_model_scheduled_action(
             s if s.matches("StartTime") /* StartTime com.amazonaws.redshift#ScheduledAction$StartTime */ =>  {
                 let var_717 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -17713,9 +17713,9 @@ pub fn deser_structure_crate_model_scheduled_action(
             s if s.matches("EndTime") /* EndTime com.amazonaws.redshift#ScheduledAction$EndTime */ =>  {
                 let var_718 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -18405,9 +18405,9 @@ pub fn deser_structure_crate_model_deferred_maintenance_window(
             s if s.matches("DeferMaintenanceStartTime") /* DeferMaintenanceStartTime com.amazonaws.redshift#DeferredMaintenanceWindow$DeferMaintenanceStartTime */ =>  {
                 let var_759 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -18419,9 +18419,9 @@ pub fn deser_structure_crate_model_deferred_maintenance_window(
             s if s.matches("DeferMaintenanceEndTime") /* DeferMaintenanceEndTime com.amazonaws.redshift#DeferredMaintenanceWindow$DeferMaintenanceEndTime */ =>  {
                 let var_760 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
@@ -18762,9 +18762,9 @@ pub fn deser_structure_crate_model_revision_target(
             s if s.matches("DatabaseRevisionReleaseDate") /* DatabaseRevisionReleaseDate com.amazonaws.redshift#RevisionTarget$DatabaseRevisionReleaseDate */ =>  {
                 let var_773 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?

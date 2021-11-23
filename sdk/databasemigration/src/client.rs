@@ -922,7 +922,7 @@ pub mod fluent_builders {
         /// <p>The type of engine for the endpoint. Valid values, depending on the
         /// <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>,
         /// <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-        /// <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+        /// <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
         /// <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
         /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
         /// <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
@@ -933,7 +933,7 @@ pub mod fluent_builders {
         /// <p>The type of engine for the endpoint. Valid values, depending on the
         /// <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>,
         /// <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-        /// <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+        /// <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
         /// <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
         /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
         /// <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
@@ -1262,15 +1262,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kafka_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target Elasticsearch endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using Elasticsearch as a Target for DMS</a> in
+        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
+        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
         /// the <i>Database Migration Service User Guide</i>.</p>
         pub fn elasticsearch_settings(mut self, inp: crate::model::ElasticsearchSettings) -> Self {
             self.inner = self.inner.elasticsearch_settings(inp);
             self
         }
-        /// <p>Settings in JSON format for the target Elasticsearch endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using Elasticsearch as a Target for DMS</a> in
+        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
+        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
         /// the <i>Database Migration Service User Guide</i>.</p>
         pub fn set_elasticsearch_settings(
             mut self,
@@ -1505,6 +1505,19 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::RedisSettings>,
         ) -> Self {
             self.inner = self.inner.set_redis_settings(input);
+            self
+        }
+        /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+        pub fn gcp_my_sql_settings(mut self, inp: crate::model::GcpMySqlSettings) -> Self {
+            self.inner = self.inner.gcp_my_sql_settings(inp);
+            self
+        }
+        /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+        pub fn set_gcp_my_sql_settings(
+            mut self,
+            input: std::option::Option<crate::model::GcpMySqlSettings>,
+        ) -> Self {
+            self.inner = self.inner.set_gcp_my_sql_settings(input);
             self
         }
     }
@@ -2419,7 +2432,7 @@ pub mod fluent_builders {
         /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
         /// Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-        pub fn cdc_start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn cdc_start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.cdc_start_time(inp);
             self
         }
@@ -2429,7 +2442,7 @@ pub mod fluent_builders {
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
         pub fn set_cdc_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_cdc_start_time(input);
             self
@@ -2616,12 +2629,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the deleted certificate.</p>
+        /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
         pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_arn(inp);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the deleted certificate.</p>
+        /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3471,12 +3484,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters applied to the certificates described in the form of key-value pairs.</p>
+        /// <p>Filters applied to the certificates described in the form of key-value pairs.
+        /// Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
         pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
             self.inner = self.inner.filters(inp);
             self
         }
-        /// <p>Filters applied to the certificates described in the form of key-value pairs.</p>
+        /// <p>Filters applied to the certificates described in the form of key-value pairs.
+        /// Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4131,27 +4146,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>The start time for the events to be listed.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
         /// <p>The start time for the events to be listed.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
         }
         /// <p>The end time for the events to be listed.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
         /// <p>The end time for the events to be listed.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -4187,12 +4202,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters applied to events.</p>
+        /// <p>Filters applied to events. The only valid filter is <code>replication-instance-id</code>.</p>
         pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
             self.inner = self.inner.filters(inp);
             self
         }
-        /// <p>Filters applied to events.</p>
+        /// <p>Filters applied to events. The only valid filter is <code>replication-instance-id</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4315,11 +4330,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to event subscriptions.</p>
+        /// <p>Valid filter names: event-subscription-arn |  event-subscription-id </p>
         pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
             self.inner = self.inner.filters(inp);
             self
         }
         /// <p>Filters applied to event subscriptions.</p>
+        /// <p>Valid filter names: event-subscription-arn |  event-subscription-id </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4982,12 +4999,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReplicationTaskAssessmentResults`.
     ///
     /// <p>Returns the task assessment results from the Amazon S3 bucket that DMS creates in your
-    /// Amazon Web Services account.  This action always returns the
-    /// latest results.</p>
-    /// <p>For more information about DMS task assessments, see  
-    /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating a task assessment report</a>
-    /// in the <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/Welcome.html">
-    /// Database Migration Service User Guide</a>.</p>
+    /// Amazon Web Services account. This action always returns the latest results.</p>
+    /// <p>For more information about DMS task assessments, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating a task assessment
+    /// report</a> in the <i>Database Migration Service User Guide</i>.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeReplicationTaskAssessmentResults<
         C = aws_smithy_client::erase::DynConnector,
@@ -5788,14 +5802,16 @@ pub mod fluent_builders {
             self
         }
         /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file
-        /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.
+        /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
+        /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code>
         /// </p>
         pub fn certificate_wallet(mut self, inp: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.certificate_wallet(inp);
             self
         }
         /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file
-        /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.
+        /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
+        /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code>
         /// </p>
         pub fn set_certificate_wallet(
             mut self,
@@ -6032,7 +6048,7 @@ pub mod fluent_builders {
         /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType,
         /// include
         /// <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
-        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
         /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
         /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
         /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
@@ -6044,7 +6060,7 @@ pub mod fluent_builders {
         /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType,
         /// include
         /// <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
-        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
         /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
         /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
         /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
@@ -6319,16 +6335,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kafka_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target Elasticsearch endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using Elasticsearch as a Target for DMS</a> in
+        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
+        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
         /// the <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn elasticsearch_settings(mut self, inp: crate::model::ElasticsearchSettings) -> Self {
             self.inner = self.inner.elasticsearch_settings(inp);
             self
         }
-        /// <p>Settings in JSON format for the target Elasticsearch endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using Elasticsearch as a Target for DMS</a> in
+        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
+        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
         /// the <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn set_elasticsearch_settings(
@@ -6591,6 +6607,19 @@ pub mod fluent_builders {
         /// are replaced with the exact settings that you specify. </p>
         pub fn set_exact_settings(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_exact_settings(input);
+            self
+        }
+        /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+        pub fn gcp_my_sql_settings(mut self, inp: crate::model::GcpMySqlSettings) -> Self {
+            self.inner = self.inner.gcp_my_sql_settings(inp);
+            self
+        }
+        /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+        pub fn set_gcp_my_sql_settings(
+            mut self,
+            input: std::option::Option<crate::model::GcpMySqlSettings>,
+        ) -> Self {
+            self.inner = self.inner.set_gcp_my_sql_settings(input);
             self
         }
     }
@@ -7278,7 +7307,7 @@ pub mod fluent_builders {
         /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
         /// Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-        pub fn cdc_start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn cdc_start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.cdc_start_time(inp);
             self
         }
@@ -7288,7 +7317,7 @@ pub mod fluent_builders {
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
         pub fn set_cdc_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_cdc_start_time(input);
             self
@@ -7931,7 +7960,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replication_task_arn(input);
             self
         }
-        /// <p>A type of replication task.</p>
+        /// <p>The type of replication task to start.</p>
+        /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+        /// for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart
+        /// the task and <code>resume-processing</code> to resume the task.</p>
+        /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart
+        /// the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for
+        /// a task with migration type of <code>cdc</code>.</p>
         pub fn start_replication_task_type(
             mut self,
             inp: crate::model::StartReplicationTaskTypeValue,
@@ -7939,7 +7974,13 @@ pub mod fluent_builders {
             self.inner = self.inner.start_replication_task_type(inp);
             self
         }
-        /// <p>A type of replication task.</p>
+        /// <p>The type of replication task to start.</p>
+        /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+        /// for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart
+        /// the task and <code>resume-processing</code> to resume the task.</p>
+        /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart
+        /// the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for
+        /// a task with migration type of <code>cdc</code>.</p>
         pub fn set_start_replication_task_type(
             mut self,
             input: std::option::Option<crate::model::StartReplicationTaskTypeValue>,
@@ -7951,7 +7992,7 @@ pub mod fluent_builders {
         /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
         /// Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-        pub fn cdc_start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn cdc_start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.cdc_start_time(inp);
             self
         }
@@ -7961,7 +8002,7 @@ pub mod fluent_builders {
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
         pub fn set_cdc_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_cdc_start_time(input);
             self
@@ -8535,7 +8576,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -8558,7 +8605,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

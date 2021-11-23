@@ -711,7 +711,7 @@ pub struct VirtualCluster {
     /// <p>The container provider of the virtual cluster.</p>
     pub container_provider: std::option::Option<crate::model::ContainerProvider>,
     /// <p>The date and time when the virtual cluster is created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The assigned tags of the virtual cluster.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -738,7 +738,7 @@ impl VirtualCluster {
         self.container_provider.as_ref()
     }
     /// <p>The date and time when the virtual cluster is created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The assigned tags of the virtual cluster.</p>
@@ -773,7 +773,7 @@ pub mod virtual_cluster {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::VirtualClusterState>,
         pub(crate) container_provider: std::option::Option<crate::model::ContainerProvider>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -836,14 +836,14 @@ pub mod virtual_cluster {
             self
         }
         /// <p>The date and time when the virtual cluster is created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time when the virtual cluster is created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1011,9 +1011,9 @@ impl ContainerInfo {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_eks_info(&self) -> std::result::Result<&crate::model::EksInfo, &Self> {
         if let ContainerInfo::EksInfo(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`EksInfo`](crate::model::ContainerInfo::EksInfo).
@@ -1223,7 +1223,7 @@ pub struct Endpoint {
     /// <p>The server URL of the endpoint.</p>
     pub server_url: std::option::Option<std::string::String>,
     /// <p>The date and time when the endpoint was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The security group configuration of the endpoint.
     /// </p>
     pub security_group: std::option::Option<std::string::String>,
@@ -1295,7 +1295,7 @@ impl Endpoint {
         self.server_url.as_deref()
     }
     /// <p>The date and time when the endpoint was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The security group configuration of the endpoint.
@@ -1372,7 +1372,7 @@ pub mod endpoint {
         pub(crate) configuration_overrides:
             std::option::Option<crate::model::ConfigurationOverrides>,
         pub(crate) server_url: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) security_group: std::option::Option<std::string::String>,
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) state_details: std::option::Option<std::string::String>,
@@ -1527,14 +1527,14 @@ pub mod endpoint {
             self
         }
         /// <p>The date and time when the endpoint was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time when the endpoint was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1913,11 +1913,11 @@ pub struct JobRun {
     /// <p>Parameters of job driver for the job run.</p>
     pub job_driver: std::option::Option<crate::model::JobDriver>,
     /// <p>The date and time when the job run was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user who created the job run.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The date and time when the job run has finished.</p>
-    pub finished_at: std::option::Option<aws_smithy_types::Instant>,
+    pub finished_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Additional details of the job run state.</p>
     pub state_details: std::option::Option<std::string::String>,
     /// <p>The reasons why the job run has failed.</p>
@@ -1970,7 +1970,7 @@ impl JobRun {
         self.job_driver.as_ref()
     }
     /// <p>The date and time when the job run was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The user who created the job run.</p>
@@ -1978,7 +1978,7 @@ impl JobRun {
         self.created_by.as_deref()
     }
     /// <p>The date and time when the job run has finished.</p>
-    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.finished_at.as_ref()
     }
     /// <p>Additional details of the job run state.</p>
@@ -2036,9 +2036,9 @@ pub mod job_run {
         pub(crate) configuration_overrides:
             std::option::Option<crate::model::ConfigurationOverrides>,
         pub(crate) job_driver: std::option::Option<crate::model::JobDriver>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
-        pub(crate) finished_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) finished_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) state_details: std::option::Option<std::string::String>,
         pub(crate) failure_reason: std::option::Option<crate::model::FailureReason>,
         pub(crate) tags: std::option::Option<
@@ -2165,14 +2165,14 @@ pub mod job_run {
             self
         }
         /// <p>The date and time when the job run was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time when the job run was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -2188,14 +2188,14 @@ pub mod job_run {
             self
         }
         /// <p>The date and time when the job run has finished.</p>
-        pub fn finished_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn finished_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.finished_at = Some(input);
             self
         }
         /// <p>The date and time when the job run has finished.</p>
         pub fn set_finished_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.finished_at = input;
             self

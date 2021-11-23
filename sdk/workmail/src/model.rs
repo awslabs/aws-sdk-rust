@@ -603,9 +603,9 @@ pub struct User {
     /// <p>The role of the user.</p>
     pub user_role: std::option::Option<crate::model::UserRole>,
     /// <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
-    pub enabled_date: std::option::Option<aws_smithy_types::Instant>,
+    pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
-    pub disabled_date: std::option::Option<aws_smithy_types::Instant>,
+    pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl User {
     /// <p>The identifier of the user.</p>
@@ -633,11 +633,11 @@ impl User {
         self.user_role.as_ref()
     }
     /// <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
-    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
     /// <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
-    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
 }
@@ -667,8 +667,8 @@ pub mod user {
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::EntityState>,
         pub(crate) user_role: std::option::Option<crate::model::UserRole>,
-        pub(crate) enabled_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) disabled_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) enabled_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) disabled_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the user.</p>
@@ -732,27 +732,27 @@ pub mod user {
             self
         }
         /// <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
-        pub fn enabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.enabled_date = Some(input);
             self
         }
         /// <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
         pub fn set_enabled_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.enabled_date = input;
             self
         }
         /// <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
-        pub fn disabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.disabled_date = Some(input);
             self
         }
         /// <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
         pub fn set_disabled_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.disabled_date = input;
             self
@@ -912,9 +912,9 @@ pub struct Resource {
     /// <p>The state of the resource, which can be ENABLED, DISABLED, or DELETED.</p>
     pub state: std::option::Option<crate::model::EntityState>,
     /// <p>The date indicating when the resource was enabled for Amazon WorkMail use.</p>
-    pub enabled_date: std::option::Option<aws_smithy_types::Instant>,
+    pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date indicating when the resource was disabled from Amazon WorkMail use.</p>
-    pub disabled_date: std::option::Option<aws_smithy_types::Instant>,
+    pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Resource {
     /// <p>The identifier of the resource.</p>
@@ -938,11 +938,11 @@ impl Resource {
         self.state.as_ref()
     }
     /// <p>The date indicating when the resource was enabled for Amazon WorkMail use.</p>
-    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
     /// <p>The date indicating when the resource was disabled from Amazon WorkMail use.</p>
-    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
 }
@@ -970,8 +970,8 @@ pub mod resource {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ResourceType>,
         pub(crate) state: std::option::Option<crate::model::EntityState>,
-        pub(crate) enabled_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) disabled_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) enabled_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) disabled_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the resource.</p>
@@ -1025,27 +1025,27 @@ pub mod resource {
             self
         }
         /// <p>The date indicating when the resource was enabled for Amazon WorkMail use.</p>
-        pub fn enabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.enabled_date = Some(input);
             self
         }
         /// <p>The date indicating when the resource was enabled for Amazon WorkMail use.</p>
         pub fn set_enabled_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.enabled_date = input;
             self
         }
         /// <p>The date indicating when the resource was disabled from Amazon WorkMail use.</p>
-        pub fn disabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.disabled_date = Some(input);
             self
         }
         /// <p>The date indicating when the resource was disabled from Amazon WorkMail use.</p>
         pub fn set_disabled_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.disabled_date = input;
             self
@@ -1431,9 +1431,9 @@ pub struct MobileDeviceAccessRule {
     /// <p>Device user agents that a rule <b>will not</b> match. All other device user agents will match.</p>
     pub not_device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date and time at which an access rule was created.</p>
-    pub date_created: std::option::Option<aws_smithy_types::Instant>,
+    pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time at which an access rule was modified.</p>
-    pub date_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub date_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MobileDeviceAccessRule {
     /// <p>The ID assigned to a mobile access rule. </p>
@@ -1485,11 +1485,11 @@ impl MobileDeviceAccessRule {
         self.not_device_user_agents.as_deref()
     }
     /// <p>The date and time at which an access rule was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The date and time at which an access rule was modified.</p>
-    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_modified.as_ref()
     }
 }
@@ -1539,8 +1539,8 @@ pub mod mobile_device_access_rule {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) not_device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) date_created: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) date_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) date_modified: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID assigned to a mobile access rule. </p>
@@ -1748,27 +1748,27 @@ pub mod mobile_device_access_rule {
             self
         }
         /// <p>The date and time at which an access rule was created.</p>
-        pub fn date_created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_created = Some(input);
             self
         }
         /// <p>The date and time at which an access rule was created.</p>
         pub fn set_date_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_created = input;
             self
         }
         /// <p>The date and time at which an access rule was modified.</p>
-        pub fn date_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_modified = Some(input);
             self
         }
         /// <p>The date and time at which an access rule was modified.</p>
         pub fn set_date_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_modified = input;
             self
@@ -1814,9 +1814,9 @@ pub struct MobileDeviceAccessOverride {
     /// <p>A description of the override.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date the override was first created.</p>
-    pub date_created: std::option::Option<aws_smithy_types::Instant>,
+    pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the override was last modified.</p>
-    pub date_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub date_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MobileDeviceAccessOverride {
     /// <p>The WorkMail user to which the access override applies.</p>
@@ -1836,11 +1836,11 @@ impl MobileDeviceAccessOverride {
         self.description.as_deref()
     }
     /// <p>The date the override was first created.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The date the override was last modified.</p>
-    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_modified.as_ref()
     }
 }
@@ -1866,8 +1866,8 @@ pub mod mobile_device_access_override {
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) effect: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) date_created: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) date_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) date_modified: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The WorkMail user to which the access override applies.</p>
@@ -1914,27 +1914,27 @@ pub mod mobile_device_access_override {
             self
         }
         /// <p>The date the override was first created.</p>
-        pub fn date_created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_created = Some(input);
             self
         }
         /// <p>The date the override was first created.</p>
         pub fn set_date_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_created = input;
             self
         }
         /// <p>The date the override was last modified.</p>
-        pub fn date_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_modified = Some(input);
             self
         }
         /// <p>The date the override was last modified.</p>
         pub fn set_date_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_modified = input;
             self
@@ -2182,9 +2182,9 @@ pub struct MailboxExportJob {
     /// <p>The state of the mailbox export job.</p>
     pub state: std::option::Option<crate::model::MailboxExportJobState>,
     /// <p>The mailbox export job start timestamp.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The mailbox export job end timestamp.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MailboxExportJob {
     /// <p>The identifier of the mailbox export job.</p>
@@ -2216,11 +2216,11 @@ impl MailboxExportJob {
         self.state.as_ref()
     }
     /// <p>The mailbox export job start timestamp.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The mailbox export job end timestamp.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -2252,8 +2252,8 @@ pub mod mailbox_export_job {
         pub(crate) s3_path: std::option::Option<std::string::String>,
         pub(crate) estimated_progress: std::option::Option<i32>,
         pub(crate) state: std::option::Option<crate::model::MailboxExportJobState>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the mailbox export job.</p>
@@ -2333,27 +2333,27 @@ pub mod mailbox_export_job {
             self
         }
         /// <p>The mailbox export job start timestamp.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The mailbox export job start timestamp.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The mailbox export job end timestamp.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The mailbox export job end timestamp.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -2457,9 +2457,9 @@ pub struct Group {
     /// <p>The state of the group, which can be ENABLED, DISABLED, or DELETED.</p>
     pub state: std::option::Option<crate::model::EntityState>,
     /// <p>The date indicating when the group was enabled for Amazon WorkMail use.</p>
-    pub enabled_date: std::option::Option<aws_smithy_types::Instant>,
+    pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date indicating when the group was disabled from Amazon WorkMail use.</p>
-    pub disabled_date: std::option::Option<aws_smithy_types::Instant>,
+    pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Group {
     /// <p>The identifier of the group.</p>
@@ -2479,11 +2479,11 @@ impl Group {
         self.state.as_ref()
     }
     /// <p>The date indicating when the group was enabled for Amazon WorkMail use.</p>
-    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
     /// <p>The date indicating when the group was disabled from Amazon WorkMail use.</p>
-    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
 }
@@ -2509,8 +2509,8 @@ pub mod group {
         pub(crate) email: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::EntityState>,
-        pub(crate) enabled_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) disabled_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) enabled_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) disabled_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the group.</p>
@@ -2554,27 +2554,27 @@ pub mod group {
             self
         }
         /// <p>The date indicating when the group was enabled for Amazon WorkMail use.</p>
-        pub fn enabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.enabled_date = Some(input);
             self
         }
         /// <p>The date indicating when the group was enabled for Amazon WorkMail use.</p>
         pub fn set_enabled_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.enabled_date = input;
             self
         }
         /// <p>The date indicating when the group was disabled from Amazon WorkMail use.</p>
-        pub fn disabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.disabled_date = Some(input);
             self
         }
         /// <p>The date indicating when the group was disabled from Amazon WorkMail use.</p>
         pub fn set_disabled_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.disabled_date = input;
             self
@@ -2612,9 +2612,9 @@ pub struct Member {
     /// <p>The state of the member, which can be ENABLED, DISABLED, or DELETED.</p>
     pub state: std::option::Option<crate::model::EntityState>,
     /// <p>The date indicating when the member was enabled for Amazon WorkMail use.</p>
-    pub enabled_date: std::option::Option<aws_smithy_types::Instant>,
+    pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date indicating when the member was disabled from Amazon WorkMail use.</p>
-    pub disabled_date: std::option::Option<aws_smithy_types::Instant>,
+    pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Member {
     /// <p>The identifier of the member.</p>
@@ -2634,11 +2634,11 @@ impl Member {
         self.state.as_ref()
     }
     /// <p>The date indicating when the member was enabled for Amazon WorkMail use.</p>
-    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
     /// <p>The date indicating when the member was disabled from Amazon WorkMail use.</p>
-    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
 }
@@ -2664,8 +2664,8 @@ pub mod member {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::MemberType>,
         pub(crate) state: std::option::Option<crate::model::EntityState>,
-        pub(crate) enabled_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) disabled_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) enabled_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) disabled_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the member.</p>
@@ -2709,27 +2709,27 @@ pub mod member {
             self
         }
         /// <p>The date indicating when the member was enabled for Amazon WorkMail use.</p>
-        pub fn enabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.enabled_date = Some(input);
             self
         }
         /// <p>The date indicating when the member was enabled for Amazon WorkMail use.</p>
         pub fn set_enabled_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.enabled_date = input;
             self
         }
         /// <p>The date indicating when the member was disabled from Amazon WorkMail use.</p>
-        pub fn disabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.disabled_date = Some(input);
             self
         }
         /// <p>The date indicating when the member was disabled from Amazon WorkMail use.</p>
         pub fn set_disabled_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.disabled_date = input;
             self
@@ -2781,9 +2781,9 @@ pub struct AccessControlRule {
     /// <p>User IDs to exclude from the rule.</p>
     pub not_user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date that the rule was created.</p>
-    pub date_created: std::option::Option<aws_smithy_types::Instant>,
+    pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the rule was modified.</p>
-    pub date_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub date_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AccessControlRule {
     /// <p>The rule name.</p>
@@ -2827,11 +2827,11 @@ impl AccessControlRule {
         self.not_user_ids.as_deref()
     }
     /// <p>The date that the rule was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The date that the rule was modified.</p>
-    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_modified.as_ref()
     }
 }
@@ -2867,8 +2867,8 @@ pub mod access_control_rule {
         pub(crate) not_actions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) not_user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) date_created: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) date_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) date_modified: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The rule name.</p>
@@ -3027,27 +3027,27 @@ pub mod access_control_rule {
             self
         }
         /// <p>The date that the rule was created.</p>
-        pub fn date_created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_created = Some(input);
             self
         }
         /// <p>The date that the rule was created.</p>
         pub fn set_date_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_created = input;
             self
         }
         /// <p>The date that the rule was modified.</p>
-        pub fn date_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_modified = Some(input);
             self
         }
         /// <p>The date that the rule was modified.</p>
         pub fn set_date_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_modified = input;
             self

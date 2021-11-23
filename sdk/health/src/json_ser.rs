@@ -598,12 +598,12 @@ pub fn serialize_structure_crate_model_date_time_range(
     if let Some(var_156) = &input.from {
         object
             .key("from")
-            .instant(var_156, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_156, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_157) = &input.to {
         object
             .key("to")
-            .instant(var_157, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_157, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

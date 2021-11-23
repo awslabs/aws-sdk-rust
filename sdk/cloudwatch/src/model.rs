@@ -255,7 +255,7 @@ pub struct MetricDatum {
     /// <p>The dimensions associated with the metric.</p>
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
     /// <p>The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The value for the metric.</p>
     /// <p>Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or
     /// too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity)
@@ -300,7 +300,7 @@ impl MetricDatum {
         self.dimensions.as_deref()
     }
     /// <p>The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The value for the metric.</p>
@@ -372,7 +372,7 @@ pub mod metric_datum {
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
         pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) value: std::option::Option<f64>,
         pub(crate) statistic_values: std::option::Option<crate::model::StatisticSet>,
         pub(crate) values: std::option::Option<std::vec::Vec<f64>>,
@@ -411,14 +411,14 @@ pub mod metric_datum {
             self
         }
         /// <p>The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -1772,6 +1772,240 @@ impl DashboardValidationMessage {
     }
 }
 
+/// <p>Indicates the CloudWatch math expression that provides the time series the anomaly detector
+/// uses as input.
+/// The designated math expression must return a single time series.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MetricMathAnomalyDetector {
+    /// <p>An array of metric data query structures
+    /// that enables you to create an anomaly detector
+    /// based on the result of a metric math expression.
+    /// Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression.
+    /// One item in <code>MetricDataQueries</code> is the expression
+    /// that provides the time series
+    /// that the anomaly detector uses as input.
+    /// Designate the expression by setting <code>ReturnData</code> to <code>True</code>
+    /// for this object in the array.
+    /// For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>.
+    /// The designated expression must return
+    /// a single time series.</p>
+    pub metric_data_queries: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
+}
+impl MetricMathAnomalyDetector {
+    /// <p>An array of metric data query structures
+    /// that enables you to create an anomaly detector
+    /// based on the result of a metric math expression.
+    /// Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression.
+    /// One item in <code>MetricDataQueries</code> is the expression
+    /// that provides the time series
+    /// that the anomaly detector uses as input.
+    /// Designate the expression by setting <code>ReturnData</code> to <code>True</code>
+    /// for this object in the array.
+    /// For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>.
+    /// The designated expression must return
+    /// a single time series.</p>
+    pub fn metric_data_queries(&self) -> std::option::Option<&[crate::model::MetricDataQuery]> {
+        self.metric_data_queries.as_deref()
+    }
+}
+impl std::fmt::Debug for MetricMathAnomalyDetector {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MetricMathAnomalyDetector");
+        formatter.field("metric_data_queries", &self.metric_data_queries);
+        formatter.finish()
+    }
+}
+/// See [`MetricMathAnomalyDetector`](crate::model::MetricMathAnomalyDetector)
+pub mod metric_math_anomaly_detector {
+    /// A builder for [`MetricMathAnomalyDetector`](crate::model::MetricMathAnomalyDetector)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_data_queries:
+            std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
+    }
+    impl Builder {
+        /// Appends an item to `metric_data_queries`.
+        ///
+        /// To override the contents of this collection use [`set_metric_data_queries`](Self::set_metric_data_queries).
+        ///
+        /// <p>An array of metric data query structures
+        /// that enables you to create an anomaly detector
+        /// based on the result of a metric math expression.
+        /// Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression.
+        /// One item in <code>MetricDataQueries</code> is the expression
+        /// that provides the time series
+        /// that the anomaly detector uses as input.
+        /// Designate the expression by setting <code>ReturnData</code> to <code>True</code>
+        /// for this object in the array.
+        /// For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>.
+        /// The designated expression must return
+        /// a single time series.</p>
+        pub fn metric_data_queries(
+            mut self,
+            input: impl Into<crate::model::MetricDataQuery>,
+        ) -> Self {
+            let mut v = self.metric_data_queries.unwrap_or_default();
+            v.push(input.into());
+            self.metric_data_queries = Some(v);
+            self
+        }
+        /// <p>An array of metric data query structures
+        /// that enables you to create an anomaly detector
+        /// based on the result of a metric math expression.
+        /// Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression.
+        /// One item in <code>MetricDataQueries</code> is the expression
+        /// that provides the time series
+        /// that the anomaly detector uses as input.
+        /// Designate the expression by setting <code>ReturnData</code> to <code>True</code>
+        /// for this object in the array.
+        /// For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>.
+        /// The designated expression must return
+        /// a single time series.</p>
+        pub fn set_metric_data_queries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
+        ) -> Self {
+            self.metric_data_queries = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MetricMathAnomalyDetector`](crate::model::MetricMathAnomalyDetector)
+        pub fn build(self) -> crate::model::MetricMathAnomalyDetector {
+            crate::model::MetricMathAnomalyDetector {
+                metric_data_queries: self.metric_data_queries,
+            }
+        }
+    }
+}
+impl MetricMathAnomalyDetector {
+    /// Creates a new builder-style object to manufacture [`MetricMathAnomalyDetector`](crate::model::MetricMathAnomalyDetector)
+    pub fn builder() -> crate::model::metric_math_anomaly_detector::Builder {
+        crate::model::metric_math_anomaly_detector::Builder::default()
+    }
+}
+
+/// <p>Designates the CloudWatch metric and statistic that provides the time series the anomaly detector
+/// uses as input.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SingleMetricAnomalyDetector {
+    /// <p>The namespace of the metric to create the anomaly detection model for.</p>
+    pub namespace: std::option::Option<std::string::String>,
+    /// <p>The name of the metric to create the anomaly detection model for.</p>
+    pub metric_name: std::option::Option<std::string::String>,
+    /// <p>The metric dimensions to create the anomaly detection model for.</p>
+    pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
+    /// <p>The statistic to use for the metric and anomaly detection model.</p>
+    pub stat: std::option::Option<std::string::String>,
+}
+impl SingleMetricAnomalyDetector {
+    /// <p>The namespace of the metric to create the anomaly detection model for.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The name of the metric to create the anomaly detection model for.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The metric dimensions to create the anomaly detection model for.</p>
+    pub fn dimensions(&self) -> std::option::Option<&[crate::model::Dimension]> {
+        self.dimensions.as_deref()
+    }
+    /// <p>The statistic to use for the metric and anomaly detection model.</p>
+    pub fn stat(&self) -> std::option::Option<&str> {
+        self.stat.as_deref()
+    }
+}
+impl std::fmt::Debug for SingleMetricAnomalyDetector {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SingleMetricAnomalyDetector");
+        formatter.field("namespace", &self.namespace);
+        formatter.field("metric_name", &self.metric_name);
+        formatter.field("dimensions", &self.dimensions);
+        formatter.field("stat", &self.stat);
+        formatter.finish()
+    }
+}
+/// See [`SingleMetricAnomalyDetector`](crate::model::SingleMetricAnomalyDetector)
+pub mod single_metric_anomaly_detector {
+    /// A builder for [`SingleMetricAnomalyDetector`](crate::model::SingleMetricAnomalyDetector)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) namespace: std::option::Option<std::string::String>,
+        pub(crate) metric_name: std::option::Option<std::string::String>,
+        pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
+        pub(crate) stat: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The namespace of the metric to create the anomaly detection model for.</p>
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.namespace = Some(input.into());
+            self
+        }
+        /// <p>The namespace of the metric to create the anomaly detection model for.</p>
+        pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace = input;
+            self
+        }
+        /// <p>The name of the metric to create the anomaly detection model for.</p>
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the metric to create the anomaly detection model for.</p>
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_name = input;
+            self
+        }
+        /// Appends an item to `dimensions`.
+        ///
+        /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
+        ///
+        /// <p>The metric dimensions to create the anomaly detection model for.</p>
+        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+            let mut v = self.dimensions.unwrap_or_default();
+            v.push(input.into());
+            self.dimensions = Some(v);
+            self
+        }
+        /// <p>The metric dimensions to create the anomaly detection model for.</p>
+        pub fn set_dimensions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
+        ) -> Self {
+            self.dimensions = input;
+            self
+        }
+        /// <p>The statistic to use for the metric and anomaly detection model.</p>
+        pub fn stat(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stat = Some(input.into());
+            self
+        }
+        /// <p>The statistic to use for the metric and anomaly detection model.</p>
+        pub fn set_stat(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stat = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SingleMetricAnomalyDetector`](crate::model::SingleMetricAnomalyDetector)
+        pub fn build(self) -> crate::model::SingleMetricAnomalyDetector {
+            crate::model::SingleMetricAnomalyDetector {
+                namespace: self.namespace,
+                metric_name: self.metric_name,
+                dimensions: self.dimensions,
+                stat: self.stat,
+            }
+        }
+    }
+}
+impl SingleMetricAnomalyDetector {
+    /// Creates a new builder-style object to manufacture [`SingleMetricAnomalyDetector`](crate::model::SingleMetricAnomalyDetector)
+    pub fn builder() -> crate::model::single_metric_anomaly_detector::Builder {
+        crate::model::single_metric_anomaly_detector::Builder::default()
+    }
+}
+
 /// <p>The configuration specifies details about how the anomaly detection model is to be trained,
 /// including time ranges to exclude from use for training the model and the time zone to
 /// use for the metric.</p>
@@ -1890,20 +2124,20 @@ impl AnomalyDetectorConfiguration {
 pub struct Range {
     /// <p>The start time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
     /// <code>2019-07-01T23:59:59</code>.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
     /// <code>2019-07-01T23:59:59</code>.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Range {
     /// <p>The start time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
     /// <code>2019-07-01T23:59:59</code>.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
     /// <code>2019-07-01T23:59:59</code>.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -1921,13 +2155,13 @@ pub mod range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The start time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
         /// <code>2019-07-01T23:59:59</code>.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -1935,14 +2169,14 @@ pub mod range {
         /// <code>2019-07-01T23:59:59</code>.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The end time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
         /// <code>2019-07-01T23:59:59</code>.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
@@ -1950,7 +2184,7 @@ pub mod range {
         /// <code>2019-07-01T23:59:59</code>.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -1978,9 +2212,9 @@ pub struct MetricStreamEntry {
     /// <p>The ARN of the metric stream.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date that the metric stream was originally created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the configuration of this metric stream was most recently updated.</p>
-    pub last_update_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the metric stream.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the Kinesis Firehose devlivery stream that is used for this metric stream.</p>
@@ -1998,11 +2232,11 @@ impl MetricStreamEntry {
         self.arn.as_deref()
     }
     /// <p>The date that the metric stream was originally created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date that the configuration of this metric stream was most recently updated.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
     /// <p>The name of the metric stream.</p>
@@ -2044,8 +2278,8 @@ pub mod metric_stream_entry {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) firehose_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<std::string::String>,
@@ -2063,27 +2297,27 @@ pub mod metric_stream_entry {
             self
         }
         /// <p>The date that the metric stream was originally created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date that the metric stream was originally created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date that the configuration of this metric stream was most recently updated.</p>
-        pub fn last_update_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_date = Some(input);
             self
         }
         /// <p>The date that the configuration of this metric stream was most recently updated.</p>
         pub fn set_last_update_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_date = input;
             self
@@ -2290,7 +2524,7 @@ pub struct DashboardEntry {
     pub dashboard_arn: std::option::Option<std::string::String>,
     /// <p>The time stamp of when the dashboard was last modified, either by an API call or
     /// through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The size of the dashboard, in bytes.</p>
     pub size: i64,
 }
@@ -2305,7 +2539,7 @@ impl DashboardEntry {
     }
     /// <p>The time stamp of when the dashboard was last modified, either by an API call or
     /// through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The size of the dashboard, in bytes.</p>
@@ -2331,7 +2565,7 @@ pub mod dashboard_entry {
     pub struct Builder {
         pub(crate) dashboard_name: std::option::Option<std::string::String>,
         pub(crate) dashboard_arn: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) size: std::option::Option<i64>,
     }
     impl Builder {
@@ -2363,7 +2597,7 @@ pub mod dashboard_entry {
         }
         /// <p>The time stamp of when the dashboard was last modified, either by an API call or
         /// through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
@@ -2371,7 +2605,7 @@ pub mod dashboard_entry {
         /// through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -2409,7 +2643,7 @@ impl DashboardEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Datapoint {
     /// <p>The time stamp used for the data point.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of metric values that contributed to the aggregate value of this
     /// data point.</p>
     pub sample_count: std::option::Option<f64>,
@@ -2429,7 +2663,7 @@ pub struct Datapoint {
 }
 impl Datapoint {
     /// <p>The time stamp used for the data point.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The number of metric values that contributed to the aggregate value of this
@@ -2484,7 +2718,7 @@ pub mod datapoint {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) sample_count: std::option::Option<f64>,
         pub(crate) average: std::option::Option<f64>,
         pub(crate) sum: std::option::Option<f64>,
@@ -2496,14 +2730,14 @@ pub mod datapoint {
     }
     impl Builder {
         /// <p>The time stamp used for the data point.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The time stamp used for the data point.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -2705,7 +2939,7 @@ pub struct MetricDataResult {
     /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of
     /// timestamps always matches the number of values and the value for Timestamps[x] is
     /// Values[x].</p>
-    pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+    pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
     /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of
     /// values always matches the number of timestamps and the timestamp for Values[x] is
     /// Timestamps[x].</p>
@@ -2731,7 +2965,7 @@ impl MetricDataResult {
     /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of
     /// timestamps always matches the number of values and the value for Timestamps[x] is
     /// Values[x].</p>
-    pub fn timestamps(&self) -> std::option::Option<&[aws_smithy_types::Instant]> {
+    pub fn timestamps(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
         self.timestamps.as_deref()
     }
     /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of
@@ -2773,7 +3007,7 @@ pub mod metric_data_result {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) label: std::option::Option<std::string::String>,
-        pub(crate) timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+        pub(crate) timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
         pub(crate) values: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) status_code: std::option::Option<crate::model::StatusCode>,
         pub(crate) messages: std::option::Option<std::vec::Vec<crate::model::MessageData>>,
@@ -2806,7 +3040,7 @@ pub mod metric_data_result {
         /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of
         /// timestamps always matches the number of values and the value for Timestamps[x] is
         /// Values[x].</p>
-        pub fn timestamps(mut self, input: impl Into<aws_smithy_types::Instant>) -> Self {
+        pub fn timestamps(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
             let mut v = self.timestamps.unwrap_or_default();
             v.push(input.into());
             self.timestamps = Some(v);
@@ -2817,7 +3051,7 @@ pub mod metric_data_result {
         /// Values[x].</p>
         pub fn set_timestamps(
             mut self,
-            input: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+            input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
         ) -> Self {
             self.timestamps = input;
             self
@@ -3098,7 +3332,7 @@ impl AsRef<str> for ScanBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightRuleMetricDatapoint {
     /// <p>The timestamp of the data point.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of unique contributors who published data during this timestamp.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
     pub unique_contributors: std::option::Option<f64>,
@@ -3125,7 +3359,7 @@ pub struct InsightRuleMetricDatapoint {
 }
 impl InsightRuleMetricDatapoint {
     /// <p>The timestamp of the data point.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The number of unique contributors who published data during this timestamp.</p>
@@ -3186,7 +3420,7 @@ pub mod insight_rule_metric_datapoint {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) unique_contributors: std::option::Option<f64>,
         pub(crate) max_contributor_value: std::option::Option<f64>,
         pub(crate) sample_count: std::option::Option<f64>,
@@ -3197,14 +3431,14 @@ pub mod insight_rule_metric_datapoint {
     }
     impl Builder {
         /// <p>The timestamp of the data point.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The timestamp of the data point.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -3451,13 +3685,13 @@ impl InsightRuleContributor {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightRuleContributorDatapoint {
     /// <p>The timestamp of the data point.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The approximate value that this contributor added during this timestamp.</p>
     pub approximate_value: std::option::Option<f64>,
 }
 impl InsightRuleContributorDatapoint {
     /// <p>The timestamp of the data point.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The approximate value that this contributor added during this timestamp.</p>
@@ -3479,19 +3713,19 @@ pub mod insight_rule_contributor_datapoint {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) approximate_value: std::option::Option<f64>,
     }
     impl Builder {
         /// <p>The timestamp of the data point.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The timestamp of the data point.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -3643,7 +3877,12 @@ impl PartialFailure {
     }
 }
 
-/// <p>This structure contains the definition for a Contributor Insights rule.</p>
+/// <p>This structure contains the definition
+/// for a Contributor Insights rule.
+/// For more information about this rule,
+/// see<a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">
+/// Using Constributor Insights to analyze high-cardinality data</a>
+/// in the <i>Amazon CloudWatch User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightRule {
@@ -3651,7 +3890,7 @@ pub struct InsightRule {
     pub name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the rule is enabled or disabled.</p>
     pub state: std::option::Option<std::string::String>,
-    /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For built-in rules,
+    /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules,
     /// this is <code>{"Name": "ServiceLogRule", "Version": 1}</code>
     /// </p>
     pub schema: std::option::Option<std::string::String>,
@@ -3670,7 +3909,7 @@ impl InsightRule {
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
-    /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For built-in rules,
+    /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules,
     /// this is <code>{"Name": "ServiceLogRule", "Version": 1}</code>
     /// </p>
     pub fn schema(&self) -> std::option::Option<&str> {
@@ -3726,14 +3965,14 @@ pub mod insight_rule {
             self.state = input;
             self
         }
-        /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For built-in rules,
+        /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules,
         /// this is <code>{"Name": "ServiceLogRule", "Version": 1}</code>
         /// </p>
         pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema = Some(input.into());
             self
         }
-        /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For built-in rules,
+        /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules,
         /// this is <code>{"Name": "ServiceLogRule", "Version": 1}</code>
         /// </p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -3774,9 +4013,9 @@ impl InsightRule {
     }
 }
 
-/// <p>An anomaly detection model associated with a particular CloudWatch metric and statistic. You
-/// can use the model to display a band of expected normal values when the metric is
-/// graphed.</p>
+/// <p>An anomaly detection model associated with a particular CloudWatch metric, statistic, or metric math expression.
+/// You can use the model to display a band of expected, normal values
+/// when the metric is graphed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalyDetector {
@@ -3796,6 +4035,11 @@ pub struct AnomalyDetector {
     /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>
     /// </p>
     pub state_value: std::option::Option<crate::model::AnomalyDetectorStateValue>,
+    /// <p>The CloudWatch metric and statistic for this anomaly detector.</p>
+    pub single_metric_anomaly_detector:
+        std::option::Option<crate::model::SingleMetricAnomalyDetector>,
+    /// <p>The CloudWatch metric math expression for this anomaly detector.</p>
+    pub metric_math_anomaly_detector: std::option::Option<crate::model::MetricMathAnomalyDetector>,
 }
 impl AnomalyDetector {
     /// <p>The namespace of the metric associated with the anomaly detection model.</p>
@@ -3828,6 +4072,18 @@ impl AnomalyDetector {
     pub fn state_value(&self) -> std::option::Option<&crate::model::AnomalyDetectorStateValue> {
         self.state_value.as_ref()
     }
+    /// <p>The CloudWatch metric and statistic for this anomaly detector.</p>
+    pub fn single_metric_anomaly_detector(
+        &self,
+    ) -> std::option::Option<&crate::model::SingleMetricAnomalyDetector> {
+        self.single_metric_anomaly_detector.as_ref()
+    }
+    /// <p>The CloudWatch metric math expression for this anomaly detector.</p>
+    pub fn metric_math_anomaly_detector(
+        &self,
+    ) -> std::option::Option<&crate::model::MetricMathAnomalyDetector> {
+        self.metric_math_anomaly_detector.as_ref()
+    }
 }
 impl std::fmt::Debug for AnomalyDetector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3838,6 +4094,14 @@ impl std::fmt::Debug for AnomalyDetector {
         formatter.field("stat", &self.stat);
         formatter.field("configuration", &self.configuration);
         formatter.field("state_value", &self.state_value);
+        formatter.field(
+            "single_metric_anomaly_detector",
+            &self.single_metric_anomaly_detector,
+        );
+        formatter.field(
+            "metric_math_anomaly_detector",
+            &self.metric_math_anomaly_detector,
+        );
         formatter.finish()
     }
 }
@@ -3853,6 +4117,10 @@ pub mod anomaly_detector {
         pub(crate) stat: std::option::Option<std::string::String>,
         pub(crate) configuration: std::option::Option<crate::model::AnomalyDetectorConfiguration>,
         pub(crate) state_value: std::option::Option<crate::model::AnomalyDetectorStateValue>,
+        pub(crate) single_metric_anomaly_detector:
+            std::option::Option<crate::model::SingleMetricAnomalyDetector>,
+        pub(crate) metric_math_anomaly_detector:
+            std::option::Option<crate::model::MetricMathAnomalyDetector>,
     }
     impl Builder {
         /// <p>The namespace of the metric associated with the anomaly detection model.</p>
@@ -3938,6 +4206,38 @@ pub mod anomaly_detector {
             self.state_value = input;
             self
         }
+        /// <p>The CloudWatch metric and statistic for this anomaly detector.</p>
+        pub fn single_metric_anomaly_detector(
+            mut self,
+            input: crate::model::SingleMetricAnomalyDetector,
+        ) -> Self {
+            self.single_metric_anomaly_detector = Some(input);
+            self
+        }
+        /// <p>The CloudWatch metric and statistic for this anomaly detector.</p>
+        pub fn set_single_metric_anomaly_detector(
+            mut self,
+            input: std::option::Option<crate::model::SingleMetricAnomalyDetector>,
+        ) -> Self {
+            self.single_metric_anomaly_detector = input;
+            self
+        }
+        /// <p>The CloudWatch metric math expression for this anomaly detector.</p>
+        pub fn metric_math_anomaly_detector(
+            mut self,
+            input: crate::model::MetricMathAnomalyDetector,
+        ) -> Self {
+            self.metric_math_anomaly_detector = Some(input);
+            self
+        }
+        /// <p>The CloudWatch metric math expression for this anomaly detector.</p>
+        pub fn set_metric_math_anomaly_detector(
+            mut self,
+            input: std::option::Option<crate::model::MetricMathAnomalyDetector>,
+        ) -> Self {
+            self.metric_math_anomaly_detector = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AnomalyDetector`](crate::model::AnomalyDetector)
         pub fn build(self) -> crate::model::AnomalyDetector {
             crate::model::AnomalyDetector {
@@ -3947,6 +4247,8 @@ pub mod anomaly_detector {
                 stat: self.stat,
                 configuration: self.configuration,
                 state_value: self.state_value,
+                single_metric_anomaly_detector: self.single_metric_anomaly_detector,
+                metric_math_anomaly_detector: self.metric_math_anomaly_detector,
             }
         }
     }
@@ -4017,6 +4319,61 @@ impl AsRef<str> for AnomalyDetectorStateValue {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AnomalyDetectorType {
+    #[allow(missing_docs)] // documentation missing in model
+    MetricMath,
+    #[allow(missing_docs)] // documentation missing in model
+    SingleMetric,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AnomalyDetectorType {
+    fn from(s: &str) -> Self {
+        match s {
+            "METRIC_MATH" => AnomalyDetectorType::MetricMath,
+            "SINGLE_METRIC" => AnomalyDetectorType::SingleMetric,
+            other => AnomalyDetectorType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AnomalyDetectorType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AnomalyDetectorType::from(s))
+    }
+}
+impl AnomalyDetectorType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AnomalyDetectorType::MetricMath => "METRIC_MATH",
+            AnomalyDetectorType::SingleMetric => "SINGLE_METRIC",
+            AnomalyDetectorType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["METRIC_MATH", "SINGLE_METRIC"]
+    }
+}
+impl AsRef<str> for AnomalyDetectorType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>The details about a metric alarm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4028,7 +4385,7 @@ pub struct MetricAlarm {
     /// <p>The description of the alarm.</p>
     pub alarm_description: std::option::Option<std::string::String>,
     /// <p>The time stamp of the last update to the alarm configuration.</p>
-    pub alarm_configuration_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub alarm_configuration_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
     pub actions_enabled: std::option::Option<bool>,
     /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state
@@ -4047,7 +4404,7 @@ pub struct MetricAlarm {
     /// <p>An explanation for the alarm state, in JSON format.</p>
     pub state_reason_data: std::option::Option<std::string::String>,
     /// <p>The time stamp of the last update to the alarm state.</p>
-    pub state_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub state_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the metric associated with the alarm, if this is an alarm
     /// based on a single metric.</p>
     pub metric_name: std::option::Option<std::string::String>,
@@ -4110,7 +4467,7 @@ impl MetricAlarm {
     /// <p>The time stamp of the last update to the alarm configuration.</p>
     pub fn alarm_configuration_updated_timestamp(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.alarm_configuration_updated_timestamp.as_ref()
     }
     /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
@@ -4145,7 +4502,7 @@ impl MetricAlarm {
         self.state_reason_data.as_deref()
     }
     /// <p>The time stamp of the last update to the alarm state.</p>
-    pub fn state_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn state_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.state_updated_timestamp.as_ref()
     }
     /// <p>The name of the metric associated with the alarm, if this is an alarm
@@ -4273,7 +4630,7 @@ pub mod metric_alarm {
         pub(crate) alarm_arn: std::option::Option<std::string::String>,
         pub(crate) alarm_description: std::option::Option<std::string::String>,
         pub(crate) alarm_configuration_updated_timestamp:
-            std::option::Option<aws_smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) actions_enabled: std::option::Option<bool>,
         pub(crate) ok_actions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) alarm_actions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4282,7 +4639,7 @@ pub mod metric_alarm {
         pub(crate) state_value: std::option::Option<crate::model::StateValue>,
         pub(crate) state_reason: std::option::Option<std::string::String>,
         pub(crate) state_reason_data: std::option::Option<std::string::String>,
-        pub(crate) state_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) state_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) metric_name: std::option::Option<std::string::String>,
         pub(crate) namespace: std::option::Option<std::string::String>,
         pub(crate) statistic: std::option::Option<crate::model::Statistic>,
@@ -4336,7 +4693,7 @@ pub mod metric_alarm {
         /// <p>The time stamp of the last update to the alarm configuration.</p>
         pub fn alarm_configuration_updated_timestamp(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.alarm_configuration_updated_timestamp = Some(input);
             self
@@ -4344,7 +4701,7 @@ pub mod metric_alarm {
         /// <p>The time stamp of the last update to the alarm configuration.</p>
         pub fn set_alarm_configuration_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.alarm_configuration_updated_timestamp = input;
             self
@@ -4459,14 +4816,14 @@ pub mod metric_alarm {
             self
         }
         /// <p>The time stamp of the last update to the alarm state.</p>
-        pub fn state_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn state_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.state_updated_timestamp = Some(input);
             self
         }
         /// <p>The time stamp of the last update to the alarm state.</p>
         pub fn set_state_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.state_updated_timestamp = input;
             self
@@ -4742,7 +5099,7 @@ pub struct CompositeAlarm {
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
     pub alarm_arn: std::option::Option<std::string::String>,
     /// <p>The time stamp of the last update to the alarm configuration.</p>
-    pub alarm_configuration_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub alarm_configuration_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the alarm.</p>
     pub alarm_description: std::option::Option<std::string::String>,
     /// <p>The name of the alarm.</p>
@@ -4758,7 +5115,7 @@ pub struct CompositeAlarm {
     /// <p>An explanation for the alarm state, in JSON format.</p>
     pub state_reason_data: std::option::Option<std::string::String>,
     /// <p>The time stamp of the last update to the alarm state.</p>
-    pub state_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub state_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The state value for the alarm.</p>
     pub state_value: std::option::Option<crate::model::StateValue>,
 }
@@ -4778,7 +5135,7 @@ impl CompositeAlarm {
     /// <p>The time stamp of the last update to the alarm configuration.</p>
     pub fn alarm_configuration_updated_timestamp(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.alarm_configuration_updated_timestamp.as_ref()
     }
     /// <p>The description of the alarm.</p>
@@ -4810,7 +5167,7 @@ impl CompositeAlarm {
         self.state_reason_data.as_deref()
     }
     /// <p>The time stamp of the last update to the alarm state.</p>
-    pub fn state_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn state_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.state_updated_timestamp.as_ref()
     }
     /// <p>The state value for the alarm.</p>
@@ -4850,7 +5207,7 @@ pub mod composite_alarm {
         pub(crate) alarm_actions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) alarm_arn: std::option::Option<std::string::String>,
         pub(crate) alarm_configuration_updated_timestamp:
-            std::option::Option<aws_smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) alarm_description: std::option::Option<std::string::String>,
         pub(crate) alarm_name: std::option::Option<std::string::String>,
         pub(crate) alarm_rule: std::option::Option<std::string::String>,
@@ -4859,7 +5216,7 @@ pub mod composite_alarm {
         pub(crate) ok_actions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) state_reason: std::option::Option<std::string::String>,
         pub(crate) state_reason_data: std::option::Option<std::string::String>,
-        pub(crate) state_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) state_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) state_value: std::option::Option<crate::model::StateValue>,
     }
     impl Builder {
@@ -4905,7 +5262,7 @@ pub mod composite_alarm {
         /// <p>The time stamp of the last update to the alarm configuration.</p>
         pub fn alarm_configuration_updated_timestamp(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.alarm_configuration_updated_timestamp = Some(input);
             self
@@ -4913,7 +5270,7 @@ pub mod composite_alarm {
         /// <p>The time stamp of the last update to the alarm configuration.</p>
         pub fn set_alarm_configuration_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.alarm_configuration_updated_timestamp = input;
             self
@@ -5013,14 +5370,14 @@ pub mod composite_alarm {
             self
         }
         /// <p>The time stamp of the last update to the alarm state.</p>
-        pub fn state_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn state_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.state_updated_timestamp = Some(input);
             self
         }
         /// <p>The time stamp of the last update to the alarm state.</p>
         pub fn set_state_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.state_updated_timestamp = input;
             self
@@ -5129,7 +5486,7 @@ pub struct AlarmHistoryItem {
     /// <p>The type of alarm, either metric alarm or composite alarm.</p>
     pub alarm_type: std::option::Option<crate::model::AlarmType>,
     /// <p>The time stamp for the alarm history item.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of alarm history item.</p>
     pub history_item_type: std::option::Option<crate::model::HistoryItemType>,
     /// <p>A summary of the alarm history, in text format.</p>
@@ -5147,7 +5504,7 @@ impl AlarmHistoryItem {
         self.alarm_type.as_ref()
     }
     /// <p>The time stamp for the alarm history item.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The type of alarm history item.</p>
@@ -5183,7 +5540,7 @@ pub mod alarm_history_item {
     pub struct Builder {
         pub(crate) alarm_name: std::option::Option<std::string::String>,
         pub(crate) alarm_type: std::option::Option<crate::model::AlarmType>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) history_item_type: std::option::Option<crate::model::HistoryItemType>,
         pub(crate) history_summary: std::option::Option<std::string::String>,
         pub(crate) history_data: std::option::Option<std::string::String>,
@@ -5213,14 +5570,14 @@ pub mod alarm_history_item {
             self
         }
         /// <p>The time stamp for the alarm history item.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The time stamp for the alarm history item.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self

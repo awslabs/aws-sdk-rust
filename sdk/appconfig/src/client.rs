@@ -329,10 +329,11 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateApplication`.
     ///
-    /// <p>An application in AppConfig is a logical unit of code that provides capabilities for your
-    /// customers. For example, an application can be a microservice that runs on Amazon EC2 instances,
-    /// a mobile application installed by your users, a serverless application using Amazon API
-    /// Gateway and AWS Lambda, or any system you run on behalf of others.</p>
+    /// <p>Creates an application. An application in AppConfig is a logical unit of code that
+    /// provides capabilities for your customers. For example, an application can be a microservice
+    /// that runs on Amazon EC2 instances, a mobile application installed by your users, a serverless
+    /// application using Amazon API Gateway and Lambda, or any system you run on behalf of
+    /// others.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
@@ -439,24 +440,28 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateConfigurationProfile`.
     ///
-    /// <p>Information that enables AppConfig to access the configuration source. Valid
-    /// configuration sources include Systems Manager (SSM) documents, SSM Parameter Store parameters, and
-    /// Amazon S3 objects. A configuration profile includes the following information.</p>
+    /// <p>Creates a configuration profile, which is information that enables AppConfig to access
+    /// the configuration source. Valid configuration sources include the AppConfig hosted
+    /// configuration store, Amazon Web Services Systems Manager (SSM) documents, SSM Parameter Store parameters, Amazon S3
+    /// objects, or any <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/integrations-action-type.html#integrations-source">integration source
+    /// action</a> supported by CodePipeline. A configuration profile includes the following
+    /// information:</p>
+    ///
     /// <ul>
     /// <li>
-    /// <p>The Uri location of the configuration data.</p>
+    /// <p>The URI location of the configuration data.</p>
     /// </li>
     /// <li>
-    /// <p>The AWS Identity and Access Management (IAM) role that provides access to the configuration data.</p>
+    /// <p>The Identity and Access Management (IAM) role that provides access to the configuration data.</p>
     /// </li>
     /// <li>
     /// <p>A validator for the configuration data. Available validators include either a JSON
-    /// Schema or an AWS Lambda function.</p>
+    /// Schema or an Lambda function.</p>
     /// </li>
     /// </ul>
-    /// <p>For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-configuration-and-profile.html">Create a
-    /// Configuration and a Configuration Profile</a> in the
-    /// <i>AWS AppConfig User Guide</i>.</p>
+    /// <p>For more information, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile.html">Create a
+    /// Configuration and a Configuration Profile</a> in the <i>AppConfig User
+    /// Guide</i>.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateConfigurationProfile<
         C = aws_smithy_client::erase::DynConnector,
@@ -546,36 +551,54 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A URI to locate the configuration. You can specify a Systems Manager (SSM) document, an SSM
-        /// Parameter Store parameter, or an Amazon S3 object. For an SSM document, specify either the
-        /// document name in the format <code>ssm-document://<Document_name></code> or the Amazon
-        /// Resource Name (ARN). For a parameter, specify either the parameter name in the format
+        /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration
+        /// store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the
+        /// hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM
+        /// document, specify either the document name in the format
+        /// <code>ssm-document://<Document_name></code> or the Amazon Resource Name (ARN). For
+        /// a parameter, specify either the parameter name in the format
         /// <code>ssm-parameter://<Parameter_name></code> or the ARN. For an Amazon S3 object,
         /// specify the URI in the following format: <code>s3://<bucket>/<objectKey>
-        /// </code>. Here is an example: s3://my-bucket/my-app/us-east-1/my-config.json</p>
+        /// </code>. Here is an example:
+        /// <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
+        /// </p>
         pub fn location_uri(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location_uri(inp);
             self
         }
-        /// <p>A URI to locate the configuration. You can specify a Systems Manager (SSM) document, an SSM
-        /// Parameter Store parameter, or an Amazon S3 object. For an SSM document, specify either the
-        /// document name in the format <code>ssm-document://<Document_name></code> or the Amazon
-        /// Resource Name (ARN). For a parameter, specify either the parameter name in the format
+        /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration
+        /// store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the
+        /// hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM
+        /// document, specify either the document name in the format
+        /// <code>ssm-document://<Document_name></code> or the Amazon Resource Name (ARN). For
+        /// a parameter, specify either the parameter name in the format
         /// <code>ssm-parameter://<Parameter_name></code> or the ARN. For an Amazon S3 object,
         /// specify the URI in the following format: <code>s3://<bucket>/<objectKey>
-        /// </code>. Here is an example: s3://my-bucket/my-app/us-east-1/my-config.json</p>
+        /// </code>. Here is an example:
+        /// <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
+        /// </p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location_uri(input);
             self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// LocationUri.</p>
+        /// <code>LocationUri</code>.</p>
+        /// <important>
+        /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig
+        /// hosted configuration store. It is required for all other sources that store your
+        /// configuration. </p>
+        /// </important>
         pub fn retrieval_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.retrieval_role_arn(inp);
             self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// LocationUri.</p>
+        /// <code>LocationUri</code>.</p>
+        /// <important>
+        /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig
+        /// hosted configuration store. It is required for all other sources that store your
+        /// configuration. </p>
+        /// </important>
         pub fn set_retrieval_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -627,13 +650,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>The type of configurations that the configuration profile contains. A configuration can
+        /// be a feature flag used for enabling or disabling new features or a free-form configuration
+        /// used for distributing configurations to your application.</p>
+        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(inp);
+            self
+        }
+        /// <p>The type of configurations that the configuration profile contains. A configuration can
+        /// be a feature flag used for enabling or disabling new features or a free-form configuration
+        /// used for distributing configurations to your application.</p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_type(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateDeploymentStrategy`.
     ///
-    /// <p>A deployment strategy defines important criteria for rolling out your configuration to
-    /// the designated targets. A deployment strategy includes: the overall duration required, a
-    /// percentage of targets to receive the deployment during each interval, an algorithm that
-    /// defines how percentage grows, and bake time.</p>
+    /// <p>Creates a deployment strategy that defines important criteria for rolling out your
+    /// configuration to the designated targets. A deployment strategy includes the overall
+    /// duration required, a percentage of targets to receive the deployment during each interval,
+    /// an algorithm that defines how percentage grows, and bake time.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateDeploymentStrategy<
         C = aws_smithy_client::erase::DynConnector,
@@ -747,7 +784,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_growth_factor(input);
             self
         }
-        /// <p>The algorithm used to define how percentage grows over time. AWS AppConfig supports the
+        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
         /// following growth types:</p>
         /// <p>
         /// <b>Linear</b>: For this type, AppConfig processes the
@@ -781,7 +818,7 @@ pub mod fluent_builders {
             self.inner = self.inner.growth_type(inp);
             self
         }
-        /// <p>The algorithm used to define how percentage grows over time. AWS AppConfig supports the
+        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
         /// following growth types:</p>
         /// <p>
         /// <b>Linear</b>: For this type, AppConfig processes the
@@ -861,13 +898,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEnvironment`.
     ///
-    /// <p>For each application, you define one or more environments. An environment is a logical
-    /// deployment group of AppConfig targets, such as applications in a <code>Beta</code> or
-    /// <code>Production</code> environment. You can also define environments for application
-    /// subcomponents such as the <code>Web</code>, <code>Mobile</code> and <code>Back-end</code>
-    /// components for your application. You can configure Amazon CloudWatch alarms for each environment.
-    /// The system monitors alarms during a configuration deployment. If an alarm is triggered, the
-    /// system rolls back the configuration.</p>
+    /// <p>Creates an environment. For each application, you define one or more environments. An
+    /// environment is a logical deployment group of AppConfig targets, such as applications in a
+    /// <code>Beta</code> or <code>Production</code> environment. You can also define
+    /// environments for application subcomponents such as the <code>Web</code>,
+    /// <code>Mobile</code> and <code>Back-end</code> components for your application. You can
+    /// configure Amazon CloudWatch alarms for each environment. The system monitors alarms during a
+    /// configuration deployment. If an alarm is triggered, the system rolls back the
+    /// configuration.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateEnvironment<
         C = aws_smithy_client::erase::DynConnector,
@@ -1004,7 +1042,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateHostedConfigurationVersion`.
     ///
-    /// <p>Create a new configuration in the AppConfig configuration store.</p>
+    /// <p>Creates a new configuration in the AppConfig hosted configuration store.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateHostedConfigurationVersion<
         C = aws_smithy_client::erase::DynConnector,
@@ -1108,29 +1146,29 @@ pub mod fluent_builders {
             self
         }
         /// <p>A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+        /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.content_type(inp);
             self
         }
         /// <p>A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+        /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content_type(input);
             self
         }
         /// <p>An optional locking token used to prevent race conditions from overwriting configuration
         /// updates when creating a new version. To ensure your data is not overwritten when creating
-        /// multiple hosted configuration versions in rapid succession, specify the version of the
-        /// latest hosted configuration version.</p>
+        /// multiple hosted configuration versions in rapid succession, specify the version number of
+        /// the latest hosted configuration version.</p>
         pub fn latest_version_number(mut self, inp: i32) -> Self {
             self.inner = self.inner.latest_version_number(inp);
             self
         }
         /// <p>An optional locking token used to prevent race conditions from overwriting configuration
         /// updates when creating a new version. To ensure your data is not overwritten when creating
-        /// multiple hosted configuration versions in rapid succession, specify the version of the
-        /// latest hosted configuration version.</p>
+        /// multiple hosted configuration versions in rapid succession, specify the version number of
+        /// the latest hosted configuration version.</p>
         pub fn set_latest_version_number(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_latest_version_number(input);
             self
@@ -1138,7 +1176,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteApplication`.
     ///
-    /// <p>Delete an application. Deleting an application does not delete a configuration from a
+    /// <p>Deletes an application. Deleting an application does not delete a configuration from a
     /// host.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteApplication<
@@ -1212,7 +1250,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteConfigurationProfile`.
     ///
-    /// <p>Delete a configuration profile. Deleting a configuration profile does not delete a
+    /// <p>Deletes a configuration profile. Deleting a configuration profile does not delete a
     /// configuration from a host.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteConfigurationProfile<
@@ -1299,7 +1337,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDeploymentStrategy`.
     ///
-    /// <p>Delete a deployment strategy. Deleting a deployment strategy does not delete a
+    /// <p>Deletes a deployment strategy. Deleting a deployment strategy does not delete a
     /// configuration from a host.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteDeploymentStrategy<
@@ -1373,7 +1411,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEnvironment`.
     ///
-    /// <p>Delete an environment. Deleting an environment does not delete a configuration from a
+    /// <p>Deletes an environment. Deleting an environment does not delete a configuration from a
     /// host.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteEnvironment<
@@ -1431,12 +1469,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The application ID that includes the environment you want to delete.</p>
+        /// <p>The application ID that includes the environment that you want to delete.</p>
         pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.application_id(inp);
             self
         }
-        /// <p>The application ID that includes the environment you want to delete.</p>
+        /// <p>The application ID that includes the environment that you want to delete.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1444,12 +1482,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_id(input);
             self
         }
-        /// <p>The ID of the environment you want to delete.</p>
+        /// <p>The ID of the environment that you want to delete.</p>
         pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.environment_id(inp);
             self
         }
-        /// <p>The ID of the environment you want to delete.</p>
+        /// <p>The ID of the environment that you want to delete.</p>
         pub fn set_environment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1460,7 +1498,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteHostedConfigurationVersion`.
     ///
-    /// <p>Delete a version of a configuration from the AppConfig configuration store.</p>
+    /// <p>Deletes a version of a configuration from the AppConfig hosted configuration
+    /// store.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteHostedConfigurationVersion<
         C = aws_smithy_client::erase::DynConnector,
@@ -1556,7 +1595,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetApplication`.
     ///
-    /// <p>Retrieve information about an application.</p>
+    /// <p>Retrieves information about an application.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetApplication<
         C = aws_smithy_client::erase::DynConnector,
@@ -1629,10 +1668,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetConfiguration`.
     ///
-    /// <p>Receive information about a configuration.</p>
+    /// <p>Retrieves information about a configuration.</p>
     /// <important>
-    /// <p>AWS AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter
-    /// to identify the configuration version on your clients. If you don’t send
+    /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to
+    /// identify the configuration version on your clients. If you don’t send
     /// <code>ClientConfigurationVersion</code> with each call to
     /// <code>GetConfiguration</code>, your clients receive the current configuration. You
     /// are charged each time your clients receive a configuration.</p>
@@ -1737,14 +1776,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration(input);
             self
         }
-        /// <p>A unique ID to identify the client for the configuration. This ID enables AppConfig to
-        /// deploy the configuration in intervals, as defined in the deployment strategy.</p>
+        /// <p>The clientId parameter in the following command is a unique, user-specified ID to
+        /// identify the client for the configuration. This ID enables AppConfig to deploy the
+        /// configuration in intervals, as defined in the deployment strategy. </p>
         pub fn client_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_id(inp);
             self
         }
-        /// <p>A unique ID to identify the client for the configuration. This ID enables AppConfig to
-        /// deploy the configuration in intervals, as defined in the deployment strategy.</p>
+        /// <p>The clientId parameter in the following command is a unique, user-specified ID to
+        /// identify the client for the configuration. This ID enables AppConfig to deploy the
+        /// configuration in intervals, as defined in the deployment strategy. </p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_id(input);
             self
@@ -1752,8 +1793,8 @@ pub mod fluent_builders {
         /// <p>The configuration version returned in the most recent <code>GetConfiguration</code>
         /// response.</p>
         /// <important>
-        /// <p>AWS AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter
-        /// to identify the configuration version on your clients. If you don’t send
+        /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to
+        /// identify the configuration version on your clients. If you don’t send
         /// <code>ClientConfigurationVersion</code> with each call to
         /// <code>GetConfiguration</code>, your clients receive the current configuration. You
         /// are charged each time your clients receive a configuration.</p>
@@ -1763,8 +1804,8 @@ pub mod fluent_builders {
         /// calls to <code>GetConfiguration</code> must pass this value by using the
         /// <code>ClientConfigurationVersion</code> parameter. </p>
         /// </important>
-        /// <p>For more information about working with configurations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the
-        /// <i>AWS AppConfig User Guide</i>.</p>
+        /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the
+        /// Configuration</a> in the <i>AppConfig User Guide</i>.</p>
         pub fn client_configuration_version(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_configuration_version(inp);
             self
@@ -1772,8 +1813,8 @@ pub mod fluent_builders {
         /// <p>The configuration version returned in the most recent <code>GetConfiguration</code>
         /// response.</p>
         /// <important>
-        /// <p>AWS AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter
-        /// to identify the configuration version on your clients. If you don’t send
+        /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to
+        /// identify the configuration version on your clients. If you don’t send
         /// <code>ClientConfigurationVersion</code> with each call to
         /// <code>GetConfiguration</code>, your clients receive the current configuration. You
         /// are charged each time your clients receive a configuration.</p>
@@ -1783,8 +1824,8 @@ pub mod fluent_builders {
         /// calls to <code>GetConfiguration</code> must pass this value by using the
         /// <code>ClientConfigurationVersion</code> parameter. </p>
         /// </important>
-        /// <p>For more information about working with configurations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the
-        /// <i>AWS AppConfig User Guide</i>.</p>
+        /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the
+        /// Configuration</a> in the <i>AppConfig User Guide</i>.</p>
         pub fn set_client_configuration_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1795,7 +1836,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetConfigurationProfile`.
     ///
-    /// <p>Retrieve information about a configuration profile.</p>
+    /// <p>Retrieves information about a configuration profile.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetConfigurationProfile<
         C = aws_smithy_client::erase::DynConnector,
@@ -1867,12 +1908,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_id(input);
             self
         }
-        /// <p>The ID of the configuration profile you want to get.</p>
+        /// <p>The ID of the configuration profile that you want to get.</p>
         pub fn configuration_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_profile_id(inp);
             self
         }
-        /// <p>The ID of the configuration profile you want to get.</p>
+        /// <p>The ID of the configuration profile that you want to get.</p>
         pub fn set_configuration_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1883,7 +1924,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDeployment`.
     ///
-    /// <p>Retrieve information about a configuration deployment.</p>
+    /// <p>Retrieves information about a configuration deployment.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetDeployment<
         C = aws_smithy_client::erase::DynConnector,
@@ -1979,9 +2020,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDeploymentStrategy`.
     ///
-    /// <p>Retrieve information about a deployment strategy. A deployment strategy defines
+    /// <p>Retrieves information about a deployment strategy. A deployment strategy defines
     /// important criteria for rolling out your configuration to the designated targets. A
-    /// deployment strategy includes: the overall duration required, a percentage of targets to
+    /// deployment strategy includes the overall duration required, a percentage of targets to
     /// receive the deployment during each interval, an algorithm that defines how percentage
     /// grows, and bake time.</p>
     #[derive(std::fmt::Debug)]
@@ -2056,7 +2097,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEnvironment`.
     ///
-    /// <p>Retrieve information about an environment. An environment is a logical deployment group
+    /// <p>Retrieves information about an environment. An environment is a logical deployment group
     /// of AppConfig applications, such as applications in a <code>Production</code> environment or
     /// in an <code>EU_Region</code> environment. Each configuration deployment targets an
     /// environment. You can enable one or more Amazon CloudWatch alarms for an environment. If an alarm is
@@ -2130,12 +2171,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_id(input);
             self
         }
-        /// <p>The ID of the environment you wnat to get.</p>
+        /// <p>The ID of the environment that you want to get.</p>
         pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.environment_id(inp);
             self
         }
-        /// <p>The ID of the environment you wnat to get.</p>
+        /// <p>The ID of the environment that you want to get.</p>
         pub fn set_environment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2146,7 +2187,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetHostedConfigurationVersion`.
     ///
-    /// <p>Get information about a specific configuration version.</p>
+    /// <p>Retrieves information about a specific configuration version.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetHostedConfigurationVersion<
         C = aws_smithy_client::erase::DynConnector,
@@ -2242,7 +2283,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListApplications`.
     ///
-    /// <p>List all applications in your AWS account.</p>
+    /// <p>Lists all applications in your Amazon Web Services account.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListApplications<
         C = aws_smithy_client::erase::DynConnector,
@@ -2311,12 +2352,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to start the list. Use this token to get the next set of results.</p>
+        /// <p>A token to start the list. Next token is a pagination token generated by AppConfig to
+        /// describe what page the previous List call ended on. For the first List request, the
+        /// nextToken should not be set. On subsequent calls, the nextToken parameter should be set to
+        /// the previous responses nextToken value. Use this token to get the next set of results.
+        /// </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>A token to start the list. Use this token to get the next set of results.</p>
+        /// <p>A token to start the list. Next token is a pagination token generated by AppConfig to
+        /// describe what page the previous List call ended on. For the first List request, the
+        /// nextToken should not be set. On subsequent calls, the nextToken parameter should be set to
+        /// the previous responses nextToken value. Use this token to get the next set of results.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2414,6 +2463,18 @@ pub mod fluent_builders {
         /// <p>A token to start the list. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>A filter based on the type of configurations that the configuration profile contains. A
+        /// configuration can be a feature flag or a free-form configuration.</p>
+        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(inp);
+            self
+        }
+        /// <p>A filter based on the type of configurations that the configuration profile contains. A
+        /// configuration can be a feature flag or a free-form configuration.</p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_type(input);
             self
         }
     }
@@ -2527,7 +2588,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDeploymentStrategies`.
     ///
-    /// <p>List deployment strategies.</p>
+    /// <p>Lists deployment strategies.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListDeploymentStrategies<
         C = aws_smithy_client::erase::DynConnector,
@@ -2609,7 +2670,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEnvironments`.
     ///
-    /// <p>List the environments for an application.</p>
+    /// <p>Lists the environments for an application.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListEnvironments<
         C = aws_smithy_client::erase::DynConnector,
@@ -2704,7 +2765,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListHostedConfigurationVersions`.
     ///
-    /// <p>View a list of configurations stored in the AppConfig configuration store by
+    /// <p>Lists configurations stored in the AppConfig hosted configuration store by
     /// version.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListHostedConfigurationVersions<
@@ -3143,9 +3204,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Metadata to assign to an AppConfig resource. Tags help organize and categorize your
-    /// AppConfig resources. Each tag consists of a key and an optional value, both of which you
-    /// define. You can specify a maximum of 50 tags for a resource.</p>
+    /// <p>Assigns
+    /// metadata
+    /// to an AppConfig resource. Tags help organize and categorize your AppConfig resources. Each
+    /// tag consists of a key and an optional value, both of which you define. You can specify a
+    /// maximum of 50 tags for a resource.</p>
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -3526,13 +3589,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// LocationUri.</p>
+        /// <code>LocationUri</code>.</p>
         pub fn retrieval_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.retrieval_role_arn(inp);
             self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// LocationUri.</p>
+        /// <code>LocationUri</code>.</p>
         pub fn set_retrieval_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3653,14 +3716,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deployment_duration_in_minutes(input);
             self
         }
-        /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be
-        /// complete and no longer eligible for automatic roll back.</p>
+        /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment
+        /// to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, inp: i32) -> Self {
             self.inner = self.inner.final_bake_time_in_minutes(inp);
             self
         }
-        /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be
-        /// complete and no longer eligible for automatic roll back.</p>
+        /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment
+        /// to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_final_bake_time_in_minutes(input);
             self
@@ -3677,7 +3740,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_growth_factor(input);
             self
         }
-        /// <p>The algorithm used to define how percentage grows over time. AWS AppConfig supports the
+        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
         /// following growth types:</p>
         /// <p>
         /// <b>Linear</b>: For this type, AppConfig processes the
@@ -3710,7 +3773,7 @@ pub mod fluent_builders {
             self.inner = self.inner.growth_type(inp);
             self
         }
-        /// <p>The algorithm used to define how percentage grows over time. AWS AppConfig supports the
+        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
         /// following growth types:</p>
         /// <p>
         /// <b>Linear</b>: For this type, AppConfig processes the
@@ -3974,7 +4037,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -3997,7 +4066,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

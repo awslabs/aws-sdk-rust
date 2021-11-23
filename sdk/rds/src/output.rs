@@ -353,11 +353,11 @@ pub struct StartExportTaskOutput {
     /// </ul>
     pub export_only: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time that the snapshot was created.</p>
-    pub snapshot_time: std::option::Option<aws_smithy_types::Instant>,
+    pub snapshot_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the snapshot export task started.</p>
-    pub task_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub task_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the snapshot export task completed.</p>
-    pub task_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub task_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon S3 bucket that the snapshot is exported to.</p>
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket prefix that is the file name and path of the exported snapshot.</p>
@@ -418,15 +418,15 @@ impl StartExportTaskOutput {
         self.export_only.as_deref()
     }
     /// <p>The time that the snapshot was created.</p>
-    pub fn snapshot_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn snapshot_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.snapshot_time.as_ref()
     }
     /// <p>The time that the snapshot export task started.</p>
-    pub fn task_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn task_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.task_start_time.as_ref()
     }
     /// <p>The time that the snapshot export task completed.</p>
-    pub fn task_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn task_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.task_end_time.as_ref()
     }
     /// <p>The Amazon S3 bucket that the snapshot is exported to.</p>
@@ -501,9 +501,9 @@ pub mod start_export_task_output {
         pub(crate) export_task_identifier: std::option::Option<std::string::String>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
         pub(crate) export_only: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) snapshot_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) task_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) task_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) snapshot_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) task_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) task_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
         pub(crate) s3_prefix: std::option::Option<std::string::String>,
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
@@ -608,40 +608,40 @@ pub mod start_export_task_output {
             self
         }
         /// <p>The time that the snapshot was created.</p>
-        pub fn snapshot_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn snapshot_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.snapshot_time = Some(input);
             self
         }
         /// <p>The time that the snapshot was created.</p>
         pub fn set_snapshot_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.snapshot_time = input;
             self
         }
         /// <p>The time that the snapshot export task started.</p>
-        pub fn task_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn task_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.task_start_time = Some(input);
             self
         }
         /// <p>The time that the snapshot export task started.</p>
         pub fn set_task_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.task_start_time = input;
             self
         }
         /// <p>The time that the snapshot export task completed.</p>
-        pub fn task_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn task_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.task_end_time = Some(input);
             self
         }
         /// <p>The time that the snapshot export task completed.</p>
         pub fn set_task_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.task_end_time = input;
             self
@@ -3764,7 +3764,7 @@ pub struct ModifyCustomDbEngineVersionOutput {
     /// RDS Custom, but optional for Amazon RDS.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The creation time of the DB engine version.</p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
     /// </p>
@@ -3890,7 +3890,7 @@ impl ModifyCustomDbEngineVersionOutput {
         self.kms_key_id.as_deref()
     }
     /// <p>The creation time of the DB engine version.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>A list of tags.
@@ -3979,7 +3979,7 @@ pub mod modify_custom_db_engine_version_output {
         pub(crate) database_installation_files_s3_prefix: std::option::Option<std::string::String>,
         pub(crate) db_engine_version_arn: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -4373,14 +4373,14 @@ pub mod modify_custom_db_engine_version_output {
             self
         }
         /// <p>The creation time of the DB engine version.</p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
         /// <p>The creation time of the DB engine version.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
@@ -10589,7 +10589,7 @@ pub struct DeleteCustomDbEngineVersionOutput {
     /// RDS Custom, but optional for Amazon RDS.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The creation time of the DB engine version.</p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
     /// </p>
@@ -10715,7 +10715,7 @@ impl DeleteCustomDbEngineVersionOutput {
         self.kms_key_id.as_deref()
     }
     /// <p>The creation time of the DB engine version.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>A list of tags.
@@ -10804,7 +10804,7 @@ pub mod delete_custom_db_engine_version_output {
         pub(crate) database_installation_files_s3_prefix: std::option::Option<std::string::String>,
         pub(crate) db_engine_version_arn: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -11198,14 +11198,14 @@ pub mod delete_custom_db_engine_version_output {
             self
         }
         /// <p>The creation time of the DB engine version.</p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
         /// <p>The creation time of the DB engine version.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
@@ -12692,7 +12692,7 @@ pub struct CreateCustomDbEngineVersionOutput {
     /// RDS Custom, but optional for Amazon RDS.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The creation time of the DB engine version.</p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
     /// </p>
@@ -12818,7 +12818,7 @@ impl CreateCustomDbEngineVersionOutput {
         self.kms_key_id.as_deref()
     }
     /// <p>The creation time of the DB engine version.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>A list of tags.
@@ -12907,7 +12907,7 @@ pub mod create_custom_db_engine_version_output {
         pub(crate) database_installation_files_s3_prefix: std::option::Option<std::string::String>,
         pub(crate) db_engine_version_arn: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -13301,14 +13301,14 @@ pub mod create_custom_db_engine_version_output {
             self
         }
         /// <p>The creation time of the DB engine version.</p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
         /// <p>The creation time of the DB engine version.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
@@ -13846,11 +13846,11 @@ pub struct CancelExportTaskOutput {
     /// </ul>
     pub export_only: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time that the snapshot was created.</p>
-    pub snapshot_time: std::option::Option<aws_smithy_types::Instant>,
+    pub snapshot_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the snapshot export task started.</p>
-    pub task_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub task_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the snapshot export task completed.</p>
-    pub task_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub task_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon S3 bucket that the snapshot is exported to.</p>
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket prefix that is the file name and path of the exported snapshot.</p>
@@ -13911,15 +13911,15 @@ impl CancelExportTaskOutput {
         self.export_only.as_deref()
     }
     /// <p>The time that the snapshot was created.</p>
-    pub fn snapshot_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn snapshot_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.snapshot_time.as_ref()
     }
     /// <p>The time that the snapshot export task started.</p>
-    pub fn task_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn task_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.task_start_time.as_ref()
     }
     /// <p>The time that the snapshot export task completed.</p>
-    pub fn task_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn task_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.task_end_time.as_ref()
     }
     /// <p>The Amazon S3 bucket that the snapshot is exported to.</p>
@@ -13994,9 +13994,9 @@ pub mod cancel_export_task_output {
         pub(crate) export_task_identifier: std::option::Option<std::string::String>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
         pub(crate) export_only: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) snapshot_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) task_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) task_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) snapshot_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) task_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) task_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
         pub(crate) s3_prefix: std::option::Option<std::string::String>,
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
@@ -14101,40 +14101,40 @@ pub mod cancel_export_task_output {
             self
         }
         /// <p>The time that the snapshot was created.</p>
-        pub fn snapshot_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn snapshot_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.snapshot_time = Some(input);
             self
         }
         /// <p>The time that the snapshot was created.</p>
         pub fn set_snapshot_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.snapshot_time = input;
             self
         }
         /// <p>The time that the snapshot export task started.</p>
-        pub fn task_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn task_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.task_start_time = Some(input);
             self
         }
         /// <p>The time that the snapshot export task started.</p>
         pub fn set_task_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.task_start_time = input;
             self
         }
         /// <p>The time that the snapshot export task completed.</p>
-        pub fn task_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn task_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.task_end_time = Some(input);
             self
         }
         /// <p>The time that the snapshot export task completed.</p>
         pub fn set_task_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.task_end_time = input;
             self
@@ -14277,11 +14277,11 @@ pub struct BacktrackDbClusterOutput {
     /// <p>Contains the backtrack identifier.</p>
     pub backtrack_identifier: std::option::Option<std::string::String>,
     /// <p>The timestamp of the time to which the DB cluster was backtracked.</p>
-    pub backtrack_to: std::option::Option<aws_smithy_types::Instant>,
+    pub backtrack_to: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of the time from which the DB cluster was backtracked.</p>
-    pub backtracked_from: std::option::Option<aws_smithy_types::Instant>,
+    pub backtracked_from: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of the time at which the backtrack was requested.</p>
-    pub backtrack_request_creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub backtrack_request_creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the backtrack. This property returns one of the following
     /// values:</p>
     /// <ul>
@@ -14314,17 +14314,17 @@ impl BacktrackDbClusterOutput {
         self.backtrack_identifier.as_deref()
     }
     /// <p>The timestamp of the time to which the DB cluster was backtracked.</p>
-    pub fn backtrack_to(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn backtrack_to(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.backtrack_to.as_ref()
     }
     /// <p>The timestamp of the time from which the DB cluster was backtracked.</p>
-    pub fn backtracked_from(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn backtracked_from(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.backtracked_from.as_ref()
     }
     /// <p>The timestamp of the time at which the backtrack was requested.</p>
     pub fn backtrack_request_creation_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.backtrack_request_creation_time.as_ref()
     }
     /// <p>The status of the backtrack. This property returns one of the following
@@ -14374,9 +14374,9 @@ pub mod backtrack_db_cluster_output {
     pub struct Builder {
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) backtrack_identifier: std::option::Option<std::string::String>,
-        pub(crate) backtrack_to: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) backtracked_from: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) backtrack_request_creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) backtrack_to: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) backtracked_from: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) backtrack_request_creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -14407,40 +14407,43 @@ pub mod backtrack_db_cluster_output {
             self
         }
         /// <p>The timestamp of the time to which the DB cluster was backtracked.</p>
-        pub fn backtrack_to(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn backtrack_to(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.backtrack_to = Some(input);
             self
         }
         /// <p>The timestamp of the time to which the DB cluster was backtracked.</p>
         pub fn set_backtrack_to(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.backtrack_to = input;
             self
         }
         /// <p>The timestamp of the time from which the DB cluster was backtracked.</p>
-        pub fn backtracked_from(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn backtracked_from(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.backtracked_from = Some(input);
             self
         }
         /// <p>The timestamp of the time from which the DB cluster was backtracked.</p>
         pub fn set_backtracked_from(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.backtracked_from = input;
             self
         }
         /// <p>The timestamp of the time at which the backtrack was requested.</p>
-        pub fn backtrack_request_creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn backtrack_request_creation_time(
+            mut self,
+            input: aws_smithy_types::DateTime,
+        ) -> Self {
             self.backtrack_request_creation_time = Some(input);
             self
         }
         /// <p>The timestamp of the time at which the backtrack was requested.</p>
         pub fn set_backtrack_request_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.backtrack_request_creation_time = input;
             self

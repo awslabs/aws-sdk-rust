@@ -80,6 +80,25 @@ pub fn parse_delete_anomaly_detector_error(
                 tmp
             }),
         },
+        "InvalidParameterCombination" => crate::error::DeleteAnomalyDetectorError {
+            meta: generic,
+            kind:
+                crate::error::DeleteAnomalyDetectorErrorKind::InvalidParameterCombinationException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
         "InvalidParameterValue" => crate::error::DeleteAnomalyDetectorError {
             meta: generic,
             kind: crate::error::DeleteAnomalyDetectorErrorKind::InvalidParameterValueException({
@@ -565,63 +584,63 @@ pub fn parse_describe_anomaly_detectors_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceError" => crate::error::DescribeAnomalyDetectorsError {
-            meta: generic,
-            kind: crate::error::DescribeAnomalyDetectorsErrorKind::InternalServiceFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_fault::Builder::default();
+        "InternalServiceError" => crate::error::DescribeAnomalyDetectorsError { meta: generic, kind: crate::error::DescribeAnomalyDetectorsErrorKind::InternalServiceFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_service_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnomalyDetectorsError::unhandled)?;
                     output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            }),
-        },
-        "InvalidNextToken" => {
-            crate::error::DescribeAnomalyDetectorsError {
-                meta: generic,
-                kind: crate::error::DescribeAnomalyDetectorsErrorKind::InvalidNextToken({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_next_token::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnomalyDetectorsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "InvalidParameterValue" => crate::error::DescribeAnomalyDetectorsError {
-            meta: generic,
-            kind: crate::error::DescribeAnomalyDetectorsErrorKind::InvalidParameterValueException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_parameter_value_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnomalyDetectorsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        _ => crate::error::DescribeAnomalyDetectorsError::generic(generic),
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidNextToken" => crate::error::DescribeAnomalyDetectorsError { meta: generic, kind: crate::error::DescribeAnomalyDetectorsErrorKind::InvalidNextToken({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_next_token::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnomalyDetectorsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterCombination" => crate::error::DescribeAnomalyDetectorsError { meta: generic, kind: crate::error::DescribeAnomalyDetectorsErrorKind::InvalidParameterCombinationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnomalyDetectorsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterValue" => crate::error::DescribeAnomalyDetectorsError { meta: generic, kind: crate::error::DescribeAnomalyDetectorsErrorKind::InvalidParameterValueException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnomalyDetectorsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DescribeAnomalyDetectorsError::generic(generic)
     })
 }
 
@@ -1798,6 +1817,27 @@ pub fn parse_put_anomaly_detector_error(
                 tmp
             }),
         },
+        "InvalidParameterCombination" => {
+            crate::error::PutAnomalyDetectorError {
+                meta: generic,
+                kind:
+                    crate::error::PutAnomalyDetectorErrorKind::InvalidParameterCombinationException(
+                        {
+                            #[allow(unused_mut)]
+                            let mut tmp = {
+                                #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                                let _ = response;
+                                output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
+                                output.build()
+                            };
+                            if (&tmp.message).is_none() {
+                                tmp.message = _error_message;
+                            }
+                            tmp
+                        },
+                    ),
+            }
+        }
         "InvalidParameterValue" => crate::error::PutAnomalyDetectorError {
             meta: generic,
             kind: crate::error::PutAnomalyDetectorErrorKind::InvalidParameterValueException({

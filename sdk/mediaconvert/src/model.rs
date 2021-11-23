@@ -6,11 +6,11 @@ pub struct Queue {
     /// An identifier for this resource that is unique within all of AWS.
     pub arn: std::option::Option<std::string::String>,
     /// The timestamp in epoch seconds for when you created the queue.
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// An optional description that you create for each queue.
     pub description: std::option::Option<std::string::String>,
     /// The timestamp in epoch seconds for when you most recently updated the queue.
-    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// A name that you create for each queue. Each name must be unique within your account.
     pub name: std::option::Option<std::string::String>,
     /// Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment.
@@ -32,7 +32,7 @@ impl Queue {
         self.arn.as_deref()
     }
     /// The timestamp in epoch seconds for when you created the queue.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// An optional description that you create for each queue.
@@ -40,7 +40,7 @@ impl Queue {
         self.description.as_deref()
     }
     /// The timestamp in epoch seconds for when you most recently updated the queue.
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// A name that you create for each queue. Each name must be unique within your account.
@@ -96,9 +96,9 @@ pub mod queue {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) pricing_plan: std::option::Option<crate::model::PricingPlan>,
         pub(crate) progressing_jobs_count: std::option::Option<i32>,
@@ -119,14 +119,14 @@ pub mod queue {
             self
         }
         /// The timestamp in epoch seconds for when you created the queue.
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// The timestamp in epoch seconds for when you created the queue.
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -142,14 +142,14 @@ pub mod queue {
             self
         }
         /// The timestamp in epoch seconds for when you most recently updated the queue.
-        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated = Some(input);
             self
         }
         /// The timestamp in epoch seconds for when you most recently updated the queue.
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated = input;
             self
@@ -372,9 +372,9 @@ pub struct ReservationPlan {
     /// The length of the term of your reserved queue pricing plan commitment.
     pub commitment: std::option::Option<crate::model::Commitment>,
     /// The timestamp in epoch seconds for when the current pricing plan term for this reserved queue expires.
-    pub expires_at: std::option::Option<aws_smithy_types::Instant>,
+    pub expires_at: std::option::Option<aws_smithy_types::DateTime>,
     /// The timestamp in epoch seconds for when you set up the current pricing plan for this reserved queue.
-    pub purchased_at: std::option::Option<aws_smithy_types::Instant>,
+    pub purchased_at: std::option::Option<aws_smithy_types::DateTime>,
     /// Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term.
     pub renewal_type: std::option::Option<crate::model::RenewalType>,
     /// Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs the queue can process in parallel; each RTS can process one job at a time. When you increase this number, you extend your existing commitment with a new 12-month commitment for a larger number of RTS. The new commitment begins when you purchase the additional capacity. You can't decrease the number of RTS in your reserved queue.
@@ -388,11 +388,11 @@ impl ReservationPlan {
         self.commitment.as_ref()
     }
     /// The timestamp in epoch seconds for when the current pricing plan term for this reserved queue expires.
-    pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires_at.as_ref()
     }
     /// The timestamp in epoch seconds for when you set up the current pricing plan for this reserved queue.
-    pub fn purchased_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn purchased_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.purchased_at.as_ref()
     }
     /// Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term.
@@ -427,8 +427,8 @@ pub mod reservation_plan {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) commitment: std::option::Option<crate::model::Commitment>,
-        pub(crate) expires_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) purchased_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expires_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) purchased_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) renewal_type: std::option::Option<crate::model::RenewalType>,
         pub(crate) reserved_slots: std::option::Option<i32>,
         pub(crate) status: std::option::Option<crate::model::ReservationPlanStatus>,
@@ -448,27 +448,27 @@ pub mod reservation_plan {
             self
         }
         /// The timestamp in epoch seconds for when the current pricing plan term for this reserved queue expires.
-        pub fn expires_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expires_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expires_at = Some(input);
             self
         }
         /// The timestamp in epoch seconds for when the current pricing plan term for this reserved queue expires.
         pub fn set_expires_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expires_at = input;
             self
         }
         /// The timestamp in epoch seconds for when you set up the current pricing plan for this reserved queue.
-        pub fn purchased_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn purchased_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.purchased_at = Some(input);
             self
         }
         /// The timestamp in epoch seconds for when you set up the current pricing plan for this reserved queue.
         pub fn set_purchased_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.purchased_at = input;
             self
@@ -852,11 +852,11 @@ pub struct Preset {
     /// An optional category you create to organize your presets.
     pub category: std::option::Option<std::string::String>,
     /// The timestamp in epoch seconds for preset creation.
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// An optional description you create for each preset.
     pub description: std::option::Option<std::string::String>,
     /// The timestamp in epoch seconds when the preset was last updated.
-    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// A name you create for each preset. Each name must be unique within your account.
     pub name: std::option::Option<std::string::String>,
     /// Settings for preset
@@ -874,7 +874,7 @@ impl Preset {
         self.category.as_deref()
     }
     /// The timestamp in epoch seconds for preset creation.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// An optional description you create for each preset.
@@ -882,7 +882,7 @@ impl Preset {
         self.description.as_deref()
     }
     /// The timestamp in epoch seconds when the preset was last updated.
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// A name you create for each preset. Each name must be unique within your account.
@@ -920,9 +920,9 @@ pub mod preset {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) category: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) settings: std::option::Option<crate::model::PresetSettings>,
         pub(crate) r#type: std::option::Option<crate::model::Type>,
@@ -949,14 +949,14 @@ pub mod preset {
             self
         }
         /// The timestamp in epoch seconds for preset creation.
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// The timestamp in epoch seconds for preset creation.
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -972,14 +972,14 @@ pub mod preset {
             self
         }
         /// The timestamp in epoch seconds when the preset was last updated.
-        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated = Some(input);
             self
         }
         /// The timestamp in epoch seconds when the preset was last updated.
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated = input;
             self
@@ -9926,7 +9926,7 @@ pub struct Mpeg2Settings {
     pub framerate_denominator: i32,
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub framerate_numerator: i32,
-    /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
+    /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. When you create a streaming output, we recommend that you keep the default value, 1, so that players starting mid-stream receive an IDR frame as quickly as possible. Don't set this value to 0; that would break output segmenting.
     pub gop_closed_cadence: i32,
     /// Specify the interval between keyframes, in seconds or frames, for this output. Default: 12 Related settings: When you specify the GOP size in seconds, set GOP mode control (GopSizeUnits) to Specified, seconds (SECONDS). The default value for GOP mode control (GopSizeUnits) is Frames (FRAMES).
     pub gop_size: f64,
@@ -9942,7 +9942,7 @@ pub struct Mpeg2Settings {
     pub intra_dc_precision: std::option::Option<crate::model::Mpeg2IntraDcPrecision>,
     /// Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000.
     pub max_bitrate: i32,
-    /// Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. This setting is only used when Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+    /// Use this setting only when you also enable Scene change detection (SceneChangeDetect). This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. When you specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval (minIInterval) to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
     pub min_i_interval: i32,
     /// Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
     pub number_b_frames_between_reference_frames: i32,
@@ -10016,7 +10016,7 @@ impl Mpeg2Settings {
     pub fn framerate_numerator(&self) -> i32 {
         self.framerate_numerator
     }
-    /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
+    /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. When you create a streaming output, we recommend that you keep the default value, 1, so that players starting mid-stream receive an IDR frame as quickly as possible. Don't set this value to 0; that would break output segmenting.
     pub fn gop_closed_cadence(&self) -> i32 {
         self.gop_closed_cadence
     }
@@ -10048,7 +10048,7 @@ impl Mpeg2Settings {
     pub fn max_bitrate(&self) -> i32 {
         self.max_bitrate
     }
-    /// Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. This setting is only used when Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+    /// Use this setting only when you also enable Scene change detection (SceneChangeDetect). This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. When you specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval (minIInterval) to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
     pub fn min_i_interval(&self) -> i32 {
         self.min_i_interval
     }
@@ -10331,12 +10331,12 @@ pub mod mpeg2_settings {
             self.framerate_numerator = input;
             self
         }
-        /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
+        /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. When you create a streaming output, we recommend that you keep the default value, 1, so that players starting mid-stream receive an IDR frame as quickly as possible. Don't set this value to 0; that would break output segmenting.
         pub fn gop_closed_cadence(mut self, input: i32) -> Self {
             self.gop_closed_cadence = Some(input);
             self
         }
-        /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
+        /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. When you create a streaming output, we recommend that you keep the default value, 1, so that players starting mid-stream receive an IDR frame as quickly as possible. Don't set this value to 0; that would break output segmenting.
         pub fn set_gop_closed_cadence(mut self, input: std::option::Option<i32>) -> Self {
             self.gop_closed_cadence = input;
             self
@@ -10423,12 +10423,12 @@ pub mod mpeg2_settings {
             self.max_bitrate = input;
             self
         }
-        /// Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. This setting is only used when Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+        /// Use this setting only when you also enable Scene change detection (SceneChangeDetect). This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. When you specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval (minIInterval) to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
         pub fn min_i_interval(mut self, input: i32) -> Self {
             self.min_i_interval = Some(input);
             self
         }
-        /// Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. This setting is only used when Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+        /// Use this setting only when you also enable Scene change detection (SceneChangeDetect). This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. When you specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval (minIInterval) to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
         pub fn set_min_i_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.min_i_interval = input;
             self
@@ -11805,11 +11805,11 @@ pub struct H265Settings {
     pub framerate_numerator: i32,
     /// If enable, use reference B frames for GOP structures that have B frames > 1.
     pub gop_b_reference: std::option::Option<crate::model::H265GopBReference>,
-    /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
+    /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. If you do explicitly specify a value, for segmented outputs, don't set this value to 0.
     pub gop_closed_cadence: i32,
-    /// GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+    /// Use this setting only when you set GOP mode control (GopSizeUnits) to Specified, frames (FRAMES) or Specified, seconds (SECONDS). Specify the GOP length using a whole number of frames or a decimal value of seconds. MediaConvert will interpret this value as frames or seconds depending on the value you choose for GOP mode control (GopSizeUnits). If you want to allow MediaConvert to automatically determine GOP size, leave GOP size blank and set GOP mode control to Auto (AUTO). If your output group specifies HLS, DASH, or CMAF, leave GOP size blank and set GOP mode control to Auto in each output in your output group.
     pub gop_size: f64,
-    /// Indicates if the GOP Size in H265 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+    /// Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, choose Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't specify GOP mode control (GopSizeUnits), MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified, frames (FRAMES) or Specified, seconds (SECONDS) and then provide the GOP length in the related setting GOP size (GopSize).
     pub gop_size_units: std::option::Option<crate::model::H265GopSizeUnits>,
     /// Percentage of the buffer that should initially be filled (HRD buffer model).
     pub hrd_buffer_initial_fill_percentage: i32,
@@ -11819,7 +11819,7 @@ pub struct H265Settings {
     pub interlace_mode: std::option::Option<crate::model::H265InterlaceMode>,
     /// Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000. Required when Rate control mode is QVBR.
     pub max_bitrate: i32,
-    /// Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. This setting is only used when Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+    /// Use this setting only when you also enable Scene change detection (SceneChangeDetect). This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. When you explicitly specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval (minIInterval) to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
     pub min_i_interval: i32,
     /// Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
     pub number_b_frames_between_reference_frames: i32,
@@ -11922,15 +11922,15 @@ impl H265Settings {
     pub fn gop_b_reference(&self) -> std::option::Option<&crate::model::H265GopBReference> {
         self.gop_b_reference.as_ref()
     }
-    /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
+    /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. If you do explicitly specify a value, for segmented outputs, don't set this value to 0.
     pub fn gop_closed_cadence(&self) -> i32 {
         self.gop_closed_cadence
     }
-    /// GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+    /// Use this setting only when you set GOP mode control (GopSizeUnits) to Specified, frames (FRAMES) or Specified, seconds (SECONDS). Specify the GOP length using a whole number of frames or a decimal value of seconds. MediaConvert will interpret this value as frames or seconds depending on the value you choose for GOP mode control (GopSizeUnits). If you want to allow MediaConvert to automatically determine GOP size, leave GOP size blank and set GOP mode control to Auto (AUTO). If your output group specifies HLS, DASH, or CMAF, leave GOP size blank and set GOP mode control to Auto in each output in your output group.
     pub fn gop_size(&self) -> f64 {
         self.gop_size
     }
-    /// Indicates if the GOP Size in H265 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+    /// Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, choose Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't specify GOP mode control (GopSizeUnits), MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified, frames (FRAMES) or Specified, seconds (SECONDS) and then provide the GOP length in the related setting GOP size (GopSize).
     pub fn gop_size_units(&self) -> std::option::Option<&crate::model::H265GopSizeUnits> {
         self.gop_size_units.as_ref()
     }
@@ -11950,7 +11950,7 @@ impl H265Settings {
     pub fn max_bitrate(&self) -> i32 {
         self.max_bitrate
     }
-    /// Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. This setting is only used when Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+    /// Use this setting only when you also enable Scene change detection (SceneChangeDetect). This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. When you explicitly specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval (minIInterval) to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
     pub fn min_i_interval(&self) -> i32 {
         self.min_i_interval
     }
@@ -12336,32 +12336,32 @@ pub mod h265_settings {
             self.gop_b_reference = input;
             self
         }
-        /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
+        /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. If you do explicitly specify a value, for segmented outputs, don't set this value to 0.
         pub fn gop_closed_cadence(mut self, input: i32) -> Self {
             self.gop_closed_cadence = Some(input);
             self
         }
-        /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
+        /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. If you do explicitly specify a value, for segmented outputs, don't set this value to 0.
         pub fn set_gop_closed_cadence(mut self, input: std::option::Option<i32>) -> Self {
             self.gop_closed_cadence = input;
             self
         }
-        /// GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+        /// Use this setting only when you set GOP mode control (GopSizeUnits) to Specified, frames (FRAMES) or Specified, seconds (SECONDS). Specify the GOP length using a whole number of frames or a decimal value of seconds. MediaConvert will interpret this value as frames or seconds depending on the value you choose for GOP mode control (GopSizeUnits). If you want to allow MediaConvert to automatically determine GOP size, leave GOP size blank and set GOP mode control to Auto (AUTO). If your output group specifies HLS, DASH, or CMAF, leave GOP size blank and set GOP mode control to Auto in each output in your output group.
         pub fn gop_size(mut self, input: f64) -> Self {
             self.gop_size = Some(input);
             self
         }
-        /// GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+        /// Use this setting only when you set GOP mode control (GopSizeUnits) to Specified, frames (FRAMES) or Specified, seconds (SECONDS). Specify the GOP length using a whole number of frames or a decimal value of seconds. MediaConvert will interpret this value as frames or seconds depending on the value you choose for GOP mode control (GopSizeUnits). If you want to allow MediaConvert to automatically determine GOP size, leave GOP size blank and set GOP mode control to Auto (AUTO). If your output group specifies HLS, DASH, or CMAF, leave GOP size blank and set GOP mode control to Auto in each output in your output group.
         pub fn set_gop_size(mut self, input: std::option::Option<f64>) -> Self {
             self.gop_size = input;
             self
         }
-        /// Indicates if the GOP Size in H265 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+        /// Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, choose Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't specify GOP mode control (GopSizeUnits), MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified, frames (FRAMES) or Specified, seconds (SECONDS) and then provide the GOP length in the related setting GOP size (GopSize).
         pub fn gop_size_units(mut self, input: crate::model::H265GopSizeUnits) -> Self {
             self.gop_size_units = Some(input);
             self
         }
-        /// Indicates if the GOP Size in H265 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+        /// Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, choose Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't specify GOP mode control (GopSizeUnits), MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified, frames (FRAMES) or Specified, seconds (SECONDS) and then provide the GOP length in the related setting GOP size (GopSize).
         pub fn set_gop_size_units(
             mut self,
             input: std::option::Option<crate::model::H265GopSizeUnits>,
@@ -12415,12 +12415,12 @@ pub mod h265_settings {
             self.max_bitrate = input;
             self
         }
-        /// Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. This setting is only used when Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+        /// Use this setting only when you also enable Scene change detection (SceneChangeDetect). This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. When you explicitly specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval (minIInterval) to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
         pub fn min_i_interval(mut self, input: i32) -> Self {
             self.min_i_interval = Some(input);
             self
         }
-        /// Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. This setting is only used when Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+        /// Use this setting only when you also enable Scene change detection (SceneChangeDetect). This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. When you explicitly specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval (minIInterval) to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
         pub fn set_min_i_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.min_i_interval = input;
             self
@@ -13704,7 +13704,7 @@ impl AsRef<str> for H265InterlaceMode {
     }
 }
 
-/// Indicates if the GOP Size in H265 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+/// Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, choose Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't specify GOP mode control (GopSizeUnits), MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified, frames (FRAMES) or Specified, seconds (SECONDS) and then provide the GOP length in the related setting GOP size (GopSize).
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -13717,6 +13717,8 @@ impl AsRef<str> for H265InterlaceMode {
 )]
 pub enum H265GopSizeUnits {
     #[allow(missing_docs)] // documentation missing in model
+    Auto,
+    #[allow(missing_docs)] // documentation missing in model
     Frames,
     #[allow(missing_docs)] // documentation missing in model
     Seconds,
@@ -13726,6 +13728,7 @@ pub enum H265GopSizeUnits {
 impl std::convert::From<&str> for H265GopSizeUnits {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => H265GopSizeUnits::Auto,
             "FRAMES" => H265GopSizeUnits::Frames,
             "SECONDS" => H265GopSizeUnits::Seconds,
             other => H265GopSizeUnits::Unknown(other.to_owned()),
@@ -13743,6 +13746,7 @@ impl H265GopSizeUnits {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            H265GopSizeUnits::Auto => "AUTO",
             H265GopSizeUnits::Frames => "FRAMES",
             H265GopSizeUnits::Seconds => "SECONDS",
             H265GopSizeUnits::Unknown(s) => s.as_ref(),
@@ -13750,7 +13754,7 @@ impl H265GopSizeUnits {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["FRAMES", "SECONDS"]
+        &["AUTO", "FRAMES", "SECONDS"]
     }
 }
 impl AsRef<str> for H265GopSizeUnits {
@@ -14402,11 +14406,11 @@ pub struct H264Settings {
     pub framerate_numerator: i32,
     /// If enable, use reference B frames for GOP structures that have B frames > 1.
     pub gop_b_reference: std::option::Option<crate::model::H264GopBReference>,
-    /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
+    /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. If you do explicitly specify a value, for segmented outputs, don't set this value to 0.
     pub gop_closed_cadence: i32,
-    /// GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+    /// Use this setting only when you set GOP mode control (GopSizeUnits) to Specified, frames (FRAMES) or Specified, seconds (SECONDS). Specify the GOP length using a whole number of frames or a decimal value of seconds. MediaConvert will interpret this value as frames or seconds depending on the value you choose for GOP mode control (GopSizeUnits). If you want to allow MediaConvert to automatically determine GOP size, leave GOP size blank and set GOP mode control to Auto (AUTO). If your output group specifies HLS, DASH, or CMAF, leave GOP size blank and set GOP mode control to Auto in each output in your output group.
     pub gop_size: f64,
-    /// Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+    /// Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, choose Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't specify GOP mode control (GopSizeUnits), MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified, frames (FRAMES) or Specified, seconds (SECONDS) and then provide the GOP length in the related setting GOP size (GopSize).
     pub gop_size_units: std::option::Option<crate::model::H264GopSizeUnits>,
     /// Percentage of the buffer that should initially be filled (HRD buffer model).
     pub hrd_buffer_initial_fill_percentage: i32,
@@ -14416,9 +14420,9 @@ pub struct H264Settings {
     pub interlace_mode: std::option::Option<crate::model::H264InterlaceMode>,
     /// Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000. Required when Rate control mode is QVBR.
     pub max_bitrate: i32,
-    /// Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. This setting is only used when Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+    /// Use this setting only when you also enable Scene change detection (SceneChangeDetect). This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. When you explicitly specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval (minIInterval) to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
     pub min_i_interval: i32,
-    /// Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
+    /// This setting to determines the number of B-frames that MediaConvert puts between reference frames in this output. We recommend that you use automatic behavior to allow the transcoder to choose the best value based on characteristics of your input video. In the console, choose AUTO to select this automatic behavior. When you manually edit your JSON job specification, leave this setting out to choose automatic behavior. When you want to specify this number explicitly, choose a whole number from 0 through 7.
     pub number_b_frames_between_reference_frames: i32,
     /// Number of reference frames to use. The encoder may use more than requested if using B-frames and/or interlaced encoding.
     pub number_reference_frames: i32,
@@ -14518,15 +14522,15 @@ impl H264Settings {
     pub fn gop_b_reference(&self) -> std::option::Option<&crate::model::H264GopBReference> {
         self.gop_b_reference.as_ref()
     }
-    /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
+    /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. If you do explicitly specify a value, for segmented outputs, don't set this value to 0.
     pub fn gop_closed_cadence(&self) -> i32 {
         self.gop_closed_cadence
     }
-    /// GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+    /// Use this setting only when you set GOP mode control (GopSizeUnits) to Specified, frames (FRAMES) or Specified, seconds (SECONDS). Specify the GOP length using a whole number of frames or a decimal value of seconds. MediaConvert will interpret this value as frames or seconds depending on the value you choose for GOP mode control (GopSizeUnits). If you want to allow MediaConvert to automatically determine GOP size, leave GOP size blank and set GOP mode control to Auto (AUTO). If your output group specifies HLS, DASH, or CMAF, leave GOP size blank and set GOP mode control to Auto in each output in your output group.
     pub fn gop_size(&self) -> f64 {
         self.gop_size
     }
-    /// Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+    /// Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, choose Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't specify GOP mode control (GopSizeUnits), MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified, frames (FRAMES) or Specified, seconds (SECONDS) and then provide the GOP length in the related setting GOP size (GopSize).
     pub fn gop_size_units(&self) -> std::option::Option<&crate::model::H264GopSizeUnits> {
         self.gop_size_units.as_ref()
     }
@@ -14546,11 +14550,11 @@ impl H264Settings {
     pub fn max_bitrate(&self) -> i32 {
         self.max_bitrate
     }
-    /// Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. This setting is only used when Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+    /// Use this setting only when you also enable Scene change detection (SceneChangeDetect). This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. When you explicitly specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval (minIInterval) to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
     pub fn min_i_interval(&self) -> i32 {
         self.min_i_interval
     }
-    /// Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
+    /// This setting to determines the number of B-frames that MediaConvert puts between reference frames in this output. We recommend that you use automatic behavior to allow the transcoder to choose the best value based on characteristics of your input video. In the console, choose AUTO to select this automatic behavior. When you manually edit your JSON job specification, leave this setting out to choose automatic behavior. When you want to specify this number explicitly, choose a whole number from 0 through 7.
     pub fn number_b_frames_between_reference_frames(&self) -> i32 {
         self.number_b_frames_between_reference_frames
     }
@@ -14925,32 +14929,32 @@ pub mod h264_settings {
             self.gop_b_reference = input;
             self
         }
-        /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
+        /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. If you do explicitly specify a value, for segmented outputs, don't set this value to 0.
         pub fn gop_closed_cadence(mut self, input: i32) -> Self {
             self.gop_closed_cadence = Some(input);
             self
         }
-        /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
+        /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. If you do explicitly specify a value, for segmented outputs, don't set this value to 0.
         pub fn set_gop_closed_cadence(mut self, input: std::option::Option<i32>) -> Self {
             self.gop_closed_cadence = input;
             self
         }
-        /// GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+        /// Use this setting only when you set GOP mode control (GopSizeUnits) to Specified, frames (FRAMES) or Specified, seconds (SECONDS). Specify the GOP length using a whole number of frames or a decimal value of seconds. MediaConvert will interpret this value as frames or seconds depending on the value you choose for GOP mode control (GopSizeUnits). If you want to allow MediaConvert to automatically determine GOP size, leave GOP size blank and set GOP mode control to Auto (AUTO). If your output group specifies HLS, DASH, or CMAF, leave GOP size blank and set GOP mode control to Auto in each output in your output group.
         pub fn gop_size(mut self, input: f64) -> Self {
             self.gop_size = Some(input);
             self
         }
-        /// GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+        /// Use this setting only when you set GOP mode control (GopSizeUnits) to Specified, frames (FRAMES) or Specified, seconds (SECONDS). Specify the GOP length using a whole number of frames or a decimal value of seconds. MediaConvert will interpret this value as frames or seconds depending on the value you choose for GOP mode control (GopSizeUnits). If you want to allow MediaConvert to automatically determine GOP size, leave GOP size blank and set GOP mode control to Auto (AUTO). If your output group specifies HLS, DASH, or CMAF, leave GOP size blank and set GOP mode control to Auto in each output in your output group.
         pub fn set_gop_size(mut self, input: std::option::Option<f64>) -> Self {
             self.gop_size = input;
             self
         }
-        /// Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+        /// Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, choose Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't specify GOP mode control (GopSizeUnits), MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified, frames (FRAMES) or Specified, seconds (SECONDS) and then provide the GOP length in the related setting GOP size (GopSize).
         pub fn gop_size_units(mut self, input: crate::model::H264GopSizeUnits) -> Self {
             self.gop_size_units = Some(input);
             self
         }
-        /// Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+        /// Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, choose Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't specify GOP mode control (GopSizeUnits), MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified, frames (FRAMES) or Specified, seconds (SECONDS) and then provide the GOP length in the related setting GOP size (GopSize).
         pub fn set_gop_size_units(
             mut self,
             input: std::option::Option<crate::model::H264GopSizeUnits>,
@@ -15004,22 +15008,22 @@ pub mod h264_settings {
             self.max_bitrate = input;
             self
         }
-        /// Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. This setting is only used when Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+        /// Use this setting only when you also enable Scene change detection (SceneChangeDetect). This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. When you explicitly specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval (minIInterval) to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
         pub fn min_i_interval(mut self, input: i32) -> Self {
             self.min_i_interval = Some(input);
             self
         }
-        /// Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. This setting is only used when Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+        /// Use this setting only when you also enable Scene change detection (SceneChangeDetect). This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. When you explicitly specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval (minIInterval) to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
         pub fn set_min_i_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.min_i_interval = input;
             self
         }
-        /// Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
+        /// This setting to determines the number of B-frames that MediaConvert puts between reference frames in this output. We recommend that you use automatic behavior to allow the transcoder to choose the best value based on characteristics of your input video. In the console, choose AUTO to select this automatic behavior. When you manually edit your JSON job specification, leave this setting out to choose automatic behavior. When you want to specify this number explicitly, choose a whole number from 0 through 7.
         pub fn number_b_frames_between_reference_frames(mut self, input: i32) -> Self {
             self.number_b_frames_between_reference_frames = Some(input);
             self
         }
-        /// Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
+        /// This setting to determines the number of B-frames that MediaConvert puts between reference frames in this output. We recommend that you use automatic behavior to allow the transcoder to choose the best value based on characteristics of your input video. In the console, choose AUTO to select this automatic behavior. When you manually edit your JSON job specification, leave this setting out to choose automatic behavior. When you want to specify this number explicitly, choose a whole number from 0 through 7.
         pub fn set_number_b_frames_between_reference_frames(
             mut self,
             input: std::option::Option<i32>,
@@ -16157,7 +16161,7 @@ impl AsRef<str> for H264InterlaceMode {
     }
 }
 
-/// Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+/// Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, choose Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't specify GOP mode control (GopSizeUnits), MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified, frames (FRAMES) or Specified, seconds (SECONDS) and then provide the GOP length in the related setting GOP size (GopSize).
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -16170,6 +16174,8 @@ impl AsRef<str> for H264InterlaceMode {
 )]
 pub enum H264GopSizeUnits {
     #[allow(missing_docs)] // documentation missing in model
+    Auto,
+    #[allow(missing_docs)] // documentation missing in model
     Frames,
     #[allow(missing_docs)] // documentation missing in model
     Seconds,
@@ -16179,6 +16185,7 @@ pub enum H264GopSizeUnits {
 impl std::convert::From<&str> for H264GopSizeUnits {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => H264GopSizeUnits::Auto,
             "FRAMES" => H264GopSizeUnits::Frames,
             "SECONDS" => H264GopSizeUnits::Seconds,
             other => H264GopSizeUnits::Unknown(other.to_owned()),
@@ -16196,6 +16203,7 @@ impl H264GopSizeUnits {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            H264GopSizeUnits::Auto => "AUTO",
             H264GopSizeUnits::Frames => "FRAMES",
             H264GopSizeUnits::Seconds => "SECONDS",
             H264GopSizeUnits::Unknown(s) => s.as_ref(),
@@ -16203,7 +16211,7 @@ impl H264GopSizeUnits {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["FRAMES", "SECONDS"]
+        &["AUTO", "FRAMES", "SECONDS"]
     }
 }
 impl AsRef<str> for H264GopSizeUnits {
@@ -23506,7 +23514,7 @@ pub struct CmfcSettings {
     pub audio_duration: std::option::Option<crate::model::CmfcAudioDuration>,
     /// Specify the audio rendition group for this audio rendition. Specify up to one value for each audio output in your output group. This value appears in your HLS parent manifest in the EXT-X-MEDIA tag of TYPE=AUDIO, as the value for the GROUP-ID attribute. For example, if you specify "audio_aac_1" for Audio group ID, it appears in your manifest like this: #EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="audio_aac_1". Related setting: To associate the rendition group that this audio track belongs to with a video rendition, include the same value that you provide here for that video output's setting Audio rendition sets (audioRenditionSets).
     pub audio_group_id: std::option::Option<std::string::String>,
-    /// List the audio rendition groups that you want included with this video rendition. Use a comma-separated list. For example, say you want to include the audio rendition groups that have the audio group IDs "audio_aac_1" and "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby". Related setting: The rendition groups that you include in your comma-separated list should all match values that you specify in the setting Audio group ID (AudioGroupId) for audio renditions in the same output group as this video rendition. Default behavior: If you don't specify anything here and for Audio group ID, MediaConvert puts each audio variant in its own audio rendition group and associates it with every video variant. Each value in your list appears in your HLS parent manifest in the EXT-X-STREAM-INF tag as the value for the AUDIO attribute. To continue the previous example, say that the file name for the child manifest for your video rendition is "amazing_video_1.m3u8". Then, in your parent manifest, each value will appear on separate lines, like this: #EXT-X-STREAM-INF:AUDIO="audio_aac_1"... amazing_video_1.m3u8 #EXT-X-STREAM-INF:AUDIO="audio_dolby"... amazing_video_1.m3u8
+    /// List the audio rendition groups that you want included with this video rendition. Use a comma-separated list. For example, say you want to include the audio rendition groups that have the audio group IDs "audio_aac_1" and "audio_dolby". Then you would specify this value: "audio_aac_1,audio_dolby". Related setting: The rendition groups that you include in your comma-separated list should all match values that you specify in the setting Audio group ID (AudioGroupId) for audio renditions in the same output group as this video rendition. Default behavior: If you don't specify anything here and for Audio group ID, MediaConvert puts each audio variant in its own audio rendition group and associates it with every video variant. Each value in your list appears in your HLS parent manifest in the EXT-X-STREAM-INF tag as the value for the AUDIO attribute. To continue the previous example, say that the file name for the child manifest for your video rendition is "amazing_video_1.m3u8". Then, in your parent manifest, each value will appear on separate lines, like this: #EXT-X-STREAM-INF:AUDIO="audio_aac_1"... amazing_video_1.m3u8 #EXT-X-STREAM-INF:AUDIO="audio_dolby"... amazing_video_1.m3u8
     pub audio_rendition_sets: std::option::Option<std::string::String>,
     /// Use this setting to control the values that MediaConvert puts in your HLS parent playlist to control how the client player selects which audio track to play. The other options for this setting determine the values that MediaConvert writes for the DEFAULT and AUTOSELECT attributes of the EXT-X-MEDIA entry for the audio variant. For more information about these attributes, see the Apple documentation article https://developer.apple.com/documentation/http_live_streaming/example_playlists_for_http_live_streaming/adding_alternate_media_to_a_playlist. Choose Alternate audio, auto select, default (ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT) to set DEFAULT=YES and AUTOSELECT=YES. Choose this value for only one variant in your output group. Choose Alternate audio, auto select, not default (ALTERNATE_AUDIO_AUTO_SELECT) to set DEFAULT=NO and AUTOSELECT=YES. Choose Alternate Audio, Not Auto Select to set DEFAULT=NO and AUTOSELECT=NO. When you don't specify a value for this setting, MediaConvert defaults to Alternate audio, auto select, default. When there is more than one variant in your output group, you must explicitly choose a value for this setting.
     pub audio_track_type: std::option::Option<crate::model::CmfcAudioTrackType>,
@@ -23529,7 +23537,7 @@ impl CmfcSettings {
     pub fn audio_group_id(&self) -> std::option::Option<&str> {
         self.audio_group_id.as_deref()
     }
-    /// List the audio rendition groups that you want included with this video rendition. Use a comma-separated list. For example, say you want to include the audio rendition groups that have the audio group IDs "audio_aac_1" and "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby". Related setting: The rendition groups that you include in your comma-separated list should all match values that you specify in the setting Audio group ID (AudioGroupId) for audio renditions in the same output group as this video rendition. Default behavior: If you don't specify anything here and for Audio group ID, MediaConvert puts each audio variant in its own audio rendition group and associates it with every video variant. Each value in your list appears in your HLS parent manifest in the EXT-X-STREAM-INF tag as the value for the AUDIO attribute. To continue the previous example, say that the file name for the child manifest for your video rendition is "amazing_video_1.m3u8". Then, in your parent manifest, each value will appear on separate lines, like this: #EXT-X-STREAM-INF:AUDIO="audio_aac_1"... amazing_video_1.m3u8 #EXT-X-STREAM-INF:AUDIO="audio_dolby"... amazing_video_1.m3u8
+    /// List the audio rendition groups that you want included with this video rendition. Use a comma-separated list. For example, say you want to include the audio rendition groups that have the audio group IDs "audio_aac_1" and "audio_dolby". Then you would specify this value: "audio_aac_1,audio_dolby". Related setting: The rendition groups that you include in your comma-separated list should all match values that you specify in the setting Audio group ID (AudioGroupId) for audio renditions in the same output group as this video rendition. Default behavior: If you don't specify anything here and for Audio group ID, MediaConvert puts each audio variant in its own audio rendition group and associates it with every video variant. Each value in your list appears in your HLS parent manifest in the EXT-X-STREAM-INF tag as the value for the AUDIO attribute. To continue the previous example, say that the file name for the child manifest for your video rendition is "amazing_video_1.m3u8". Then, in your parent manifest, each value will appear on separate lines, like this: #EXT-X-STREAM-INF:AUDIO="audio_aac_1"... amazing_video_1.m3u8 #EXT-X-STREAM-INF:AUDIO="audio_dolby"... amazing_video_1.m3u8
     pub fn audio_rendition_sets(&self) -> std::option::Option<&str> {
         self.audio_rendition_sets.as_deref()
     }
@@ -23618,12 +23626,12 @@ pub mod cmfc_settings {
             self.audio_group_id = input;
             self
         }
-        /// List the audio rendition groups that you want included with this video rendition. Use a comma-separated list. For example, say you want to include the audio rendition groups that have the audio group IDs "audio_aac_1" and "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby". Related setting: The rendition groups that you include in your comma-separated list should all match values that you specify in the setting Audio group ID (AudioGroupId) for audio renditions in the same output group as this video rendition. Default behavior: If you don't specify anything here and for Audio group ID, MediaConvert puts each audio variant in its own audio rendition group and associates it with every video variant. Each value in your list appears in your HLS parent manifest in the EXT-X-STREAM-INF tag as the value for the AUDIO attribute. To continue the previous example, say that the file name for the child manifest for your video rendition is "amazing_video_1.m3u8". Then, in your parent manifest, each value will appear on separate lines, like this: #EXT-X-STREAM-INF:AUDIO="audio_aac_1"... amazing_video_1.m3u8 #EXT-X-STREAM-INF:AUDIO="audio_dolby"... amazing_video_1.m3u8
+        /// List the audio rendition groups that you want included with this video rendition. Use a comma-separated list. For example, say you want to include the audio rendition groups that have the audio group IDs "audio_aac_1" and "audio_dolby". Then you would specify this value: "audio_aac_1,audio_dolby". Related setting: The rendition groups that you include in your comma-separated list should all match values that you specify in the setting Audio group ID (AudioGroupId) for audio renditions in the same output group as this video rendition. Default behavior: If you don't specify anything here and for Audio group ID, MediaConvert puts each audio variant in its own audio rendition group and associates it with every video variant. Each value in your list appears in your HLS parent manifest in the EXT-X-STREAM-INF tag as the value for the AUDIO attribute. To continue the previous example, say that the file name for the child manifest for your video rendition is "amazing_video_1.m3u8". Then, in your parent manifest, each value will appear on separate lines, like this: #EXT-X-STREAM-INF:AUDIO="audio_aac_1"... amazing_video_1.m3u8 #EXT-X-STREAM-INF:AUDIO="audio_dolby"... amazing_video_1.m3u8
         pub fn audio_rendition_sets(mut self, input: impl Into<std::string::String>) -> Self {
             self.audio_rendition_sets = Some(input.into());
             self
         }
-        /// List the audio rendition groups that you want included with this video rendition. Use a comma-separated list. For example, say you want to include the audio rendition groups that have the audio group IDs "audio_aac_1" and "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby". Related setting: The rendition groups that you include in your comma-separated list should all match values that you specify in the setting Audio group ID (AudioGroupId) for audio renditions in the same output group as this video rendition. Default behavior: If you don't specify anything here and for Audio group ID, MediaConvert puts each audio variant in its own audio rendition group and associates it with every video variant. Each value in your list appears in your HLS parent manifest in the EXT-X-STREAM-INF tag as the value for the AUDIO attribute. To continue the previous example, say that the file name for the child manifest for your video rendition is "amazing_video_1.m3u8". Then, in your parent manifest, each value will appear on separate lines, like this: #EXT-X-STREAM-INF:AUDIO="audio_aac_1"... amazing_video_1.m3u8 #EXT-X-STREAM-INF:AUDIO="audio_dolby"... amazing_video_1.m3u8
+        /// List the audio rendition groups that you want included with this video rendition. Use a comma-separated list. For example, say you want to include the audio rendition groups that have the audio group IDs "audio_aac_1" and "audio_dolby". Then you would specify this value: "audio_aac_1,audio_dolby". Related setting: The rendition groups that you include in your comma-separated list should all match values that you specify in the setting Audio group ID (AudioGroupId) for audio renditions in the same output group as this video rendition. Default behavior: If you don't specify anything here and for Audio group ID, MediaConvert puts each audio variant in its own audio rendition group and associates it with every video variant. Each value in your list appears in your HLS parent manifest in the EXT-X-STREAM-INF tag as the value for the AUDIO attribute. To continue the previous example, say that the file name for the child manifest for your video rendition is "amazing_video_1.m3u8". Then, in your parent manifest, each value will appear on separate lines, like this: #EXT-X-STREAM-INF:AUDIO="audio_aac_1"... amazing_video_1.m3u8 #EXT-X-STREAM-INF:AUDIO="audio_dolby"... amazing_video_1.m3u8
         pub fn set_audio_rendition_sets(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -26172,7 +26180,7 @@ pub struct DvbSubDestinationSettings {
     pub style_passthrough: std::option::Option<crate::model::DvbSubtitleStylePassthrough>,
     /// Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only dialogue.
     pub subtitling_type: std::option::Option<crate::model::DvbSubtitlingType>,
-    /// Specify whether the Text spacing (TextSpacing) in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions. Within your job settings, all of your DVB-Sub settings must be identical.
+    /// Specify whether the Text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions. Within your job settings, all of your DVB-Sub settings must be identical.
     pub teletext_spacing: std::option::Option<crate::model::DvbSubtitleTeletextSpacing>,
     /// Specify the width, in pixels, of this set of DVB-Sub captions. The default value is 720 pixels. Related setting: When you use this setting, you must set DDS handling (ddsHandling) to a value other than None (NONE). All burn-in and DVB-Sub font settings must match.
     pub width: i32,
@@ -26282,7 +26290,7 @@ impl DvbSubDestinationSettings {
     pub fn subtitling_type(&self) -> std::option::Option<&crate::model::DvbSubtitlingType> {
         self.subtitling_type.as_ref()
     }
-    /// Specify whether the Text spacing (TextSpacing) in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions. Within your job settings, all of your DVB-Sub settings must be identical.
+    /// Specify whether the Text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn teletext_spacing(
         &self,
     ) -> std::option::Option<&crate::model::DvbSubtitleTeletextSpacing> {
@@ -26643,12 +26651,12 @@ pub mod dvb_sub_destination_settings {
             self.subtitling_type = input;
             self
         }
-        /// Specify whether the Text spacing (TextSpacing) in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions. Within your job settings, all of your DVB-Sub settings must be identical.
+        /// Specify whether the Text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions. Within your job settings, all of your DVB-Sub settings must be identical.
         pub fn teletext_spacing(mut self, input: crate::model::DvbSubtitleTeletextSpacing) -> Self {
             self.teletext_spacing = Some(input);
             self
         }
-        /// Specify whether the Text spacing (TextSpacing) in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions. Within your job settings, all of your DVB-Sub settings must be identical.
+        /// Specify whether the Text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions. Within your job settings, all of your DVB-Sub settings must be identical.
         pub fn set_teletext_spacing(
             mut self,
             input: std::option::Option<crate::model::DvbSubtitleTeletextSpacing>,
@@ -26727,7 +26735,7 @@ impl DvbSubDestinationSettings {
     }
 }
 
-/// Specify whether the Text spacing (TextSpacing) in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions. Within your job settings, all of your DVB-Sub settings must be identical.
+/// Specify whether the Text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions. Within your job settings, all of your DVB-Sub settings must be identical.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -27599,7 +27607,7 @@ pub struct BurninDestinationSettings {
     pub alignment: std::option::Option<crate::model::BurninSubtitleAlignment>,
     /// Ignore this setting unless Style passthrough (StylePassthrough) is set to Enabled and Font color (FontColor) set to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color (ApplyFontColor) for additional font color controls. When you choose White text only (WHITE_TEXT_ONLY), or leave blank, your font color setting only applies to white text in your input captions. For example, if your font color setting is Yellow, and your input captions have red and white text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font color setting applies to all of your output captions text.
     pub apply_font_color: std::option::Option<crate::model::BurninSubtitleApplyFontColor>,
-    /// Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
+    /// Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if present.
     pub background_color: std::option::Option<crate::model::BurninSubtitleBackgroundColor>,
     /// Specify the opacity of the background rectangle. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough (StylePassthrough) is set to enabled, leave blank to pass through the background style information in your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value of 0 and remove all backgrounds from your output captions.
     pub background_opacity: i32,
@@ -27649,7 +27657,7 @@ impl BurninDestinationSettings {
     ) -> std::option::Option<&crate::model::BurninSubtitleApplyFontColor> {
         self.apply_font_color.as_ref()
     }
-    /// Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
+    /// Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if present.
     pub fn background_color(
         &self,
     ) -> std::option::Option<&crate::model::BurninSubtitleBackgroundColor> {
@@ -27821,7 +27829,7 @@ pub mod burnin_destination_settings {
             self.apply_font_color = input;
             self
         }
-        /// Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
+        /// Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if present.
         pub fn background_color(
             mut self,
             input: crate::model::BurninSubtitleBackgroundColor,
@@ -27829,7 +27837,7 @@ pub mod burnin_destination_settings {
             self.background_color = Some(input);
             self
         }
-        /// Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
+        /// Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if present.
         pub fn set_background_color(
             mut self,
             input: std::option::Option<crate::model::BurninSubtitleBackgroundColor>,
@@ -28488,7 +28496,7 @@ impl AsRef<str> for BurninSubtitleFallbackFont {
     }
 }
 
-/// Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
+/// Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if present.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -34827,13 +34835,13 @@ pub struct JobTemplate {
     /// An optional category you create to organize your job templates.
     pub category: std::option::Option<std::string::String>,
     /// The timestamp in epoch seconds for Job template creation.
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// An optional description you create for each job template.
     pub description: std::option::Option<std::string::String>,
     /// Optional list of hop destinations.
     pub hop_destinations: std::option::Option<std::vec::Vec<crate::model::HopDestination>>,
     /// The timestamp in epoch seconds when the Job template was last updated.
-    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// A name you create for each job template. Each name must be unique within your account.
     pub name: std::option::Option<std::string::String>,
     /// Relative priority on the job.
@@ -34863,7 +34871,7 @@ impl JobTemplate {
         self.category.as_deref()
     }
     /// The timestamp in epoch seconds for Job template creation.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// An optional description you create for each job template.
@@ -34875,7 +34883,7 @@ impl JobTemplate {
         self.hop_destinations.as_deref()
     }
     /// The timestamp in epoch seconds when the Job template was last updated.
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// A name you create for each job template. Each name must be unique within your account.
@@ -34933,11 +34941,11 @@ pub mod job_template {
         pub(crate) acceleration_settings: std::option::Option<crate::model::AccelerationSettings>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) category: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) hop_destinations:
             std::option::Option<std::vec::Vec<crate::model::HopDestination>>,
-        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) priority: std::option::Option<i32>,
         pub(crate) queue: std::option::Option<std::string::String>,
@@ -34980,14 +34988,14 @@ pub mod job_template {
             self
         }
         /// The timestamp in epoch seconds for Job template creation.
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// The timestamp in epoch seconds for Job template creation.
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -35022,14 +35030,14 @@ pub mod job_template {
             self
         }
         /// The timestamp in epoch seconds when the Job template was last updated.
-        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated = Some(input);
             self
         }
         /// The timestamp in epoch seconds when the Job template was last updated.
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated = input;
             self
@@ -50530,7 +50538,7 @@ pub struct Job {
     /// The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up.
     pub billing_tags_source: std::option::Option<crate::model::BillingTagsSource>,
     /// The time, in Unix epoch format in seconds, when the job got created.
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// A job's phase can be PROBING, TRANSCODING OR UPLOADING
     pub current_phase: std::option::Option<crate::model::JobPhase>,
     /// Error code for the job
@@ -50593,7 +50601,7 @@ impl Job {
         self.billing_tags_source.as_ref()
     }
     /// The time, in Unix epoch format in seconds, when the job got created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// A job's phase can be PROBING, TRANSCODING OR UPLOADING
@@ -50725,7 +50733,7 @@ pub mod job {
         pub(crate) acceleration_status: std::option::Option<crate::model::AccelerationStatus>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) billing_tags_source: std::option::Option<crate::model::BillingTagsSource>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) current_phase: std::option::Option<crate::model::JobPhase>,
         pub(crate) error_code: std::option::Option<i32>,
         pub(crate) error_message: std::option::Option<std::string::String>,
@@ -50804,14 +50812,14 @@ pub mod job {
             self
         }
         /// The time, in Unix epoch format in seconds, when the job got created.
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// The time, in Unix epoch format in seconds, when the job got created.
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -51129,23 +51137,23 @@ impl Job {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Timing {
     /// The time, in Unix epoch format, that the transcoding job finished
-    pub finish_time: std::option::Option<aws_smithy_types::Instant>,
+    pub finish_time: std::option::Option<aws_smithy_types::DateTime>,
     /// The time, in Unix epoch format, that transcoding for the job began.
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// The time, in Unix epoch format, that you submitted the job.
-    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Timing {
     /// The time, in Unix epoch format, that the transcoding job finished
-    pub fn finish_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn finish_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.finish_time.as_ref()
     }
     /// The time, in Unix epoch format, that transcoding for the job began.
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// The time, in Unix epoch format, that you submitted the job.
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
 }
@@ -51164,46 +51172,46 @@ pub mod timing {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) finish_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) finish_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// The time, in Unix epoch format, that the transcoding job finished
-        pub fn finish_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn finish_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.finish_time = Some(input);
             self
         }
         /// The time, in Unix epoch format, that the transcoding job finished
         pub fn set_finish_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.finish_time = input;
             self
         }
         /// The time, in Unix epoch format, that transcoding for the job began.
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// The time, in Unix epoch format, that transcoding for the job began.
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// The time, in Unix epoch format, that you submitted the job.
-        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time = Some(input);
             self
         }
         /// The time, in Unix epoch format, that you submitted the job.
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time = input;
             self
@@ -52397,7 +52405,7 @@ pub struct QueueTransition {
     /// The queue that the job was on before the transition.
     pub source_queue: std::option::Option<std::string::String>,
     /// The time, in Unix epoch format, that the job moved from the source queue to the destination queue.
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl QueueTransition {
     /// The queue that the job was on after the transition.
@@ -52409,7 +52417,7 @@ impl QueueTransition {
         self.source_queue.as_deref()
     }
     /// The time, in Unix epoch format, that the job moved from the source queue to the destination queue.
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -52430,7 +52438,7 @@ pub mod queue_transition {
     pub struct Builder {
         pub(crate) destination_queue: std::option::Option<std::string::String>,
         pub(crate) source_queue: std::option::Option<std::string::String>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// The queue that the job was on after the transition.
@@ -52457,14 +52465,14 @@ pub mod queue_transition {
             self
         }
         /// The time, in Unix epoch format, that the job moved from the source queue to the destination queue.
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// The time, in Unix epoch format, that the job moved from the source queue to the destination queue.
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self

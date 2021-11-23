@@ -5,6 +5,7 @@
 
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_cognitosync::{Client, Error, Region, PKG_VERSION};
+use aws_smithy_types_convert::date_time::DateTimeExt;
 
 use structopt::StructOpt;
 
@@ -56,31 +57,31 @@ async fn main() -> Result<(), Error> {
         .send()
         .await?;
 
-    if let Some(pools) = response.identity_pool_usages {
+    if let Some(pools) = response.identity_pool_usages() {
         println!("Identity pools:");
 
         for pool in pools {
             println!(
                 "  Identity pool ID:    {}",
-                pool.identity_pool_id.unwrap_or_default()
+                pool.identity_pool_id().unwrap_or_default()
             );
             println!(
                 "  Data storage:        {}",
-                pool.data_storage.unwrap_or_default()
+                pool.data_storage().unwrap_or_default()
             );
             println!(
                 "  Sync sessions count: {}",
-                pool.sync_sessions_count.unwrap_or_default()
+                pool.sync_sessions_count().unwrap_or_default()
             );
             println!(
                 "  Last modified:       {}",
-                pool.last_modified_date.unwrap().to_chrono()
+                pool.last_modified_date().unwrap().to_chrono_utc()
             );
             println!();
         }
     }
 
-    println!("Next token: {:?}", response.next_token);
+    println!("Next token: {:?}", response.next_token());
 
     Ok(())
 }

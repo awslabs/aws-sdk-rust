@@ -462,6 +462,8 @@ pub struct IdentityProviderDetails {
     pub invocation_role: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Web ServicesDirectory Service directory that you want to stop sharing.</p>
     pub directory_id: std::option::Option<std::string::String>,
+    /// <p>The ARN for a lambda function to use for the Identity provider.</p>
+    pub function: std::option::Option<std::string::String>,
 }
 impl IdentityProviderDetails {
     /// <p>Provides the location of the service endpoint used to authenticate users.</p>
@@ -477,6 +479,10 @@ impl IdentityProviderDetails {
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
+    /// <p>The ARN for a lambda function to use for the Identity provider.</p>
+    pub fn function(&self) -> std::option::Option<&str> {
+        self.function.as_deref()
+    }
 }
 impl std::fmt::Debug for IdentityProviderDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -484,6 +490,7 @@ impl std::fmt::Debug for IdentityProviderDetails {
         formatter.field("url", &self.url);
         formatter.field("invocation_role", &self.invocation_role);
         formatter.field("directory_id", &self.directory_id);
+        formatter.field("function", &self.function);
         formatter.finish()
     }
 }
@@ -496,6 +503,7 @@ pub mod identity_provider_details {
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) invocation_role: std::option::Option<std::string::String>,
         pub(crate) directory_id: std::option::Option<std::string::String>,
+        pub(crate) function: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Provides the location of the service endpoint used to authenticate users.</p>
@@ -533,12 +541,23 @@ pub mod identity_provider_details {
             self.directory_id = input;
             self
         }
+        /// <p>The ARN for a lambda function to use for the Identity provider.</p>
+        pub fn function(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function = Some(input.into());
+            self
+        }
+        /// <p>The ARN for a lambda function to use for the Identity provider.</p>
+        pub fn set_function(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function = input;
+            self
+        }
         /// Consumes the builder and constructs a [`IdentityProviderDetails`](crate::model::IdentityProviderDetails)
         pub fn build(self) -> crate::model::IdentityProviderDetails {
             crate::model::IdentityProviderDetails {
                 url: self.url,
                 invocation_role: self.invocation_role,
                 directory_id: self.directory_id,
+                function: self.function,
             }
         }
     }
@@ -1522,6 +1541,8 @@ pub struct ListedServer {
     /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
     /// <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call
     /// for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value,
+    /// you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
     /// <p>Specifies the type of VPC endpoint that your server is connected to. If your server is
     /// connected to a VPC endpoint, your server isn't accessible over the public internet.</p>
@@ -1565,6 +1586,8 @@ impl ListedServer {
     /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
     /// <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call
     /// for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value,
+    /// you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
     pub fn identity_provider_type(
         &self,
     ) -> std::option::Option<&crate::model::IdentityProviderType> {
@@ -1663,6 +1686,8 @@ pub mod listed_server {
         /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
         /// <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call
         /// for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value,
+        /// you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
         pub fn identity_provider_type(mut self, input: crate::model::IdentityProviderType) -> Self {
             self.identity_provider_type = Some(input);
             self
@@ -1677,6 +1702,8 @@ pub mod listed_server {
         /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
         /// <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call
         /// for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value,
+        /// you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
         pub fn set_identity_provider_type(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderType>,
@@ -1894,6 +1921,8 @@ pub enum IdentityProviderType {
     #[allow(missing_docs)] // documentation missing in model
     AwsDirectoryService,
     #[allow(missing_docs)] // documentation missing in model
+    AwsLambda,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceManaged,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1903,6 +1932,7 @@ impl std::convert::From<&str> for IdentityProviderType {
         match s {
             "API_GATEWAY" => IdentityProviderType::ApiGateway,
             "AWS_DIRECTORY_SERVICE" => IdentityProviderType::AwsDirectoryService,
+            "AWS_LAMBDA" => IdentityProviderType::AwsLambda,
             "SERVICE_MANAGED" => IdentityProviderType::ServiceManaged,
             other => IdentityProviderType::Unknown(other.to_owned()),
         }
@@ -1921,13 +1951,19 @@ impl IdentityProviderType {
         match self {
             IdentityProviderType::ApiGateway => "API_GATEWAY",
             IdentityProviderType::AwsDirectoryService => "AWS_DIRECTORY_SERVICE",
+            IdentityProviderType::AwsLambda => "AWS_LAMBDA",
             IdentityProviderType::ServiceManaged => "SERVICE_MANAGED",
             IdentityProviderType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["API_GATEWAY", "AWS_DIRECTORY_SERVICE", "SERVICE_MANAGED"]
+        &[
+            "API_GATEWAY",
+            "AWS_DIRECTORY_SERVICE",
+            "AWS_LAMBDA",
+            "SERVICE_MANAGED",
+        ]
     }
 }
 impl AsRef<str> for IdentityProviderType {
@@ -4361,7 +4397,7 @@ impl DescribedUser {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SshPublicKey {
     /// <p>Specifies the date that the public key was added to the user account.</p>
-    pub date_imported: std::option::Option<aws_smithy_types::Instant>,
+    pub date_imported: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the content of the SSH public key as specified by the
     /// <code>PublicKeyId</code>.</p>
     pub ssh_public_key_body: std::option::Option<std::string::String>,
@@ -4371,7 +4407,7 @@ pub struct SshPublicKey {
 }
 impl SshPublicKey {
     /// <p>Specifies the date that the public key was added to the user account.</p>
-    pub fn date_imported(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_imported(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_imported.as_ref()
     }
     /// <p>Specifies the content of the SSH public key as specified by the
@@ -4400,20 +4436,20 @@ pub mod ssh_public_key {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) date_imported: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_imported: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) ssh_public_key_body: std::option::Option<std::string::String>,
         pub(crate) ssh_public_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Specifies the date that the public key was added to the user account.</p>
-        pub fn date_imported(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_imported(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_imported = Some(input);
             self
         }
         /// <p>Specifies the date that the public key was added to the user account.</p>
         pub fn set_date_imported(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_imported = input;
             self
@@ -4512,6 +4548,8 @@ pub struct DescribedServer {
     /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
     /// <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call
     /// for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value,
+    /// you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn
     /// on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in
@@ -4621,6 +4659,8 @@ impl DescribedServer {
     /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
     /// <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call
     /// for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value,
+    /// you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
     pub fn identity_provider_type(
         &self,
     ) -> std::option::Option<&crate::model::IdentityProviderType> {
@@ -4878,6 +4918,8 @@ pub mod described_server {
         /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
         /// <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call
         /// for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value,
+        /// you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
         pub fn identity_provider_type(mut self, input: crate::model::IdentityProviderType) -> Self {
             self.identity_provider_type = Some(input);
             self
@@ -4892,6 +4934,8 @@ pub mod described_server {
         /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
         /// <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call
         /// for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value,
+        /// you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
         pub fn set_identity_provider_type(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderType>,

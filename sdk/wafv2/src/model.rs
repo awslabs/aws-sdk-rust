@@ -68,6 +68,8 @@ pub enum ParameterExceptionField {
     #[allow(missing_docs)] // documentation missing in model
     LoggingFilter,
     #[allow(missing_docs)] // documentation missing in model
+    LogDestination,
+    #[allow(missing_docs)] // documentation missing in model
     ManagedRuleSet,
     #[allow(missing_docs)] // documentation missing in model
     ManagedRuleSetStatement,
@@ -159,6 +161,7 @@ impl std::convert::From<&str> for ParameterExceptionField {
             "JSON_MATCH_SCOPE" => ParameterExceptionField::JsonMatchScope,
             "LABEL_MATCH_STATEMENT" => ParameterExceptionField::LabelMatchStatement,
             "LOGGING_FILTER" => ParameterExceptionField::LoggingFilter,
+            "LOG_DESTINATION" => ParameterExceptionField::LogDestination,
             "MANAGED_RULE_SET" => ParameterExceptionField::ManagedRuleSet,
             "MANAGED_RULE_SET_STATEMENT" => ParameterExceptionField::ManagedRuleSetStatement,
             "METRIC_NAME" => ParameterExceptionField::MetricName,
@@ -236,6 +239,7 @@ impl ParameterExceptionField {
             ParameterExceptionField::JsonMatchScope => "JSON_MATCH_SCOPE",
             ParameterExceptionField::LabelMatchStatement => "LABEL_MATCH_STATEMENT",
             ParameterExceptionField::LoggingFilter => "LOGGING_FILTER",
+            ParameterExceptionField::LogDestination => "LOG_DESTINATION",
             ParameterExceptionField::ManagedRuleSet => "MANAGED_RULE_SET",
             ParameterExceptionField::ManagedRuleSetStatement => "MANAGED_RULE_SET_STATEMENT",
             ParameterExceptionField::MetricName => "METRIC_NAME",
@@ -302,6 +306,7 @@ impl ParameterExceptionField {
             "JSON_MATCH_SCOPE",
             "LABEL_MATCH_STATEMENT",
             "LOGGING_FILTER",
+            "LOG_DESTINATION",
             "MANAGED_RULE_SET",
             "MANAGED_RULE_SET_STATEMENT",
             "METRIC_NAME",
@@ -336,6 +341,119 @@ impl ParameterExceptionField {
 impl AsRef<str> for ParameterExceptionField {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations. This is available at the web ACL level and in each rule.  </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CaptchaConfig {
+    /// <p>Determines how long a <code>CAPTCHA</code> token remains valid after the client successfully solves a <code>CAPTCHA</code> puzzle. </p>
+    pub immunity_time_property: std::option::Option<crate::model::ImmunityTimeProperty>,
+}
+impl CaptchaConfig {
+    /// <p>Determines how long a <code>CAPTCHA</code> token remains valid after the client successfully solves a <code>CAPTCHA</code> puzzle. </p>
+    pub fn immunity_time_property(
+        &self,
+    ) -> std::option::Option<&crate::model::ImmunityTimeProperty> {
+        self.immunity_time_property.as_ref()
+    }
+}
+impl std::fmt::Debug for CaptchaConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CaptchaConfig");
+        formatter.field("immunity_time_property", &self.immunity_time_property);
+        formatter.finish()
+    }
+}
+/// See [`CaptchaConfig`](crate::model::CaptchaConfig)
+pub mod captcha_config {
+    /// A builder for [`CaptchaConfig`](crate::model::CaptchaConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) immunity_time_property: std::option::Option<crate::model::ImmunityTimeProperty>,
+    }
+    impl Builder {
+        /// <p>Determines how long a <code>CAPTCHA</code> token remains valid after the client successfully solves a <code>CAPTCHA</code> puzzle. </p>
+        pub fn immunity_time_property(mut self, input: crate::model::ImmunityTimeProperty) -> Self {
+            self.immunity_time_property = Some(input);
+            self
+        }
+        /// <p>Determines how long a <code>CAPTCHA</code> token remains valid after the client successfully solves a <code>CAPTCHA</code> puzzle. </p>
+        pub fn set_immunity_time_property(
+            mut self,
+            input: std::option::Option<crate::model::ImmunityTimeProperty>,
+        ) -> Self {
+            self.immunity_time_property = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CaptchaConfig`](crate::model::CaptchaConfig)
+        pub fn build(self) -> crate::model::CaptchaConfig {
+            crate::model::CaptchaConfig {
+                immunity_time_property: self.immunity_time_property,
+            }
+        }
+    }
+}
+impl CaptchaConfig {
+    /// Creates a new builder-style object to manufacture [`CaptchaConfig`](crate::model::CaptchaConfig)
+    pub fn builder() -> crate::model::captcha_config::Builder {
+        crate::model::captcha_config::Builder::default()
+    }
+}
+
+/// <p>Determines how long a <code>CAPTCHA</code> token remains valid after the client successfully solves a <code>CAPTCHA</code> puzzle. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImmunityTimeProperty {
+    /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> token is valid. The default setting is 300.</p>
+    pub immunity_time: std::option::Option<i64>,
+}
+impl ImmunityTimeProperty {
+    /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> token is valid. The default setting is 300.</p>
+    pub fn immunity_time(&self) -> std::option::Option<i64> {
+        self.immunity_time
+    }
+}
+impl std::fmt::Debug for ImmunityTimeProperty {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImmunityTimeProperty");
+        formatter.field("immunity_time", &self.immunity_time);
+        formatter.finish()
+    }
+}
+/// See [`ImmunityTimeProperty`](crate::model::ImmunityTimeProperty)
+pub mod immunity_time_property {
+    /// A builder for [`ImmunityTimeProperty`](crate::model::ImmunityTimeProperty)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) immunity_time: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> token is valid. The default setting is 300.</p>
+        pub fn immunity_time(mut self, input: i64) -> Self {
+            self.immunity_time = Some(input);
+            self
+        }
+        /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> token is valid. The default setting is 300.</p>
+        pub fn set_immunity_time(mut self, input: std::option::Option<i64>) -> Self {
+            self.immunity_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImmunityTimeProperty`](crate::model::ImmunityTimeProperty)
+        pub fn build(self) -> crate::model::ImmunityTimeProperty {
+            crate::model::ImmunityTimeProperty {
+                immunity_time: self.immunity_time,
+            }
+        }
+    }
+}
+impl ImmunityTimeProperty {
+    /// Creates a new builder-style object to manufacture [`ImmunityTimeProperty`](crate::model::ImmunityTimeProperty)
+    pub fn builder() -> crate::model::immunity_time_property::Builder {
+        crate::model::immunity_time_property::Builder::default()
     }
 }
 
@@ -643,18 +761,12 @@ pub struct Rule {
     /// </li>
     /// </ul>
     pub action: std::option::Option<crate::model::RuleAction>,
-    /// <p>The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule group,
-    /// like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
-    /// <p>Set the override action to none to leave the rule actions in effect. Set it to count to only count matches, regardless of the rule action settings. </p>
-    /// <p>In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule <code>Action</code> setting, but not both:</p>
-    /// <ul>
-    /// <li>
-    /// <p>If the rule statement references a rule group, use this override action setting and not the action setting.  </p>
-    /// </li>
-    /// <li>
-    /// <p>If the rule statement does not reference a rule group, use the rule action setting and not this rule override action setting. </p>
-    /// </li>
-    /// </ul>
+    /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
+    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
+    /// <note>
+    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
+    /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+    /// </note>
     pub override_action: std::option::Option<crate::model::OverrideAction>,
     /// <p>Labels to apply to web requests that match the rule match statement. WAF applies
     /// fully qualified labels to matching web requests. A fully qualified label is the
@@ -685,6 +797,8 @@ pub struct Rule {
     pub rule_labels: std::option::Option<std::vec::Vec<crate::model::Label>>,
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
     pub visibility_config: std::option::Option<crate::model::VisibilityConfig>,
+    /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations. If you don't specify this, WAF uses the <code>CAPTCHA</code> configuration that's defined for the web ACL. </p>
+    pub captcha_config: std::option::Option<crate::model::CaptchaConfig>,
 }
 impl Rule {
     /// <p>The name of the rule. You can't change the name of a <code>Rule</code> after you create
@@ -717,18 +831,12 @@ impl Rule {
     pub fn action(&self) -> std::option::Option<&crate::model::RuleAction> {
         self.action.as_ref()
     }
-    /// <p>The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule group,
-    /// like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
-    /// <p>Set the override action to none to leave the rule actions in effect. Set it to count to only count matches, regardless of the rule action settings. </p>
-    /// <p>In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule <code>Action</code> setting, but not both:</p>
-    /// <ul>
-    /// <li>
-    /// <p>If the rule statement references a rule group, use this override action setting and not the action setting.  </p>
-    /// </li>
-    /// <li>
-    /// <p>If the rule statement does not reference a rule group, use the rule action setting and not this rule override action setting. </p>
-    /// </li>
-    /// </ul>
+    /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
+    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
+    /// <note>
+    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
+    /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+    /// </note>
     pub fn override_action(&self) -> std::option::Option<&crate::model::OverrideAction> {
         self.override_action.as_ref()
     }
@@ -765,6 +873,10 @@ impl Rule {
     pub fn visibility_config(&self) -> std::option::Option<&crate::model::VisibilityConfig> {
         self.visibility_config.as_ref()
     }
+    /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations. If you don't specify this, WAF uses the <code>CAPTCHA</code> configuration that's defined for the web ACL. </p>
+    pub fn captcha_config(&self) -> std::option::Option<&crate::model::CaptchaConfig> {
+        self.captcha_config.as_ref()
+    }
 }
 impl std::fmt::Debug for Rule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -776,6 +888,7 @@ impl std::fmt::Debug for Rule {
         formatter.field("override_action", &self.override_action);
         formatter.field("rule_labels", &self.rule_labels);
         formatter.field("visibility_config", &self.visibility_config);
+        formatter.field("captcha_config", &self.captcha_config);
         formatter.finish()
     }
 }
@@ -792,6 +905,7 @@ pub mod rule {
         pub(crate) override_action: std::option::Option<crate::model::OverrideAction>,
         pub(crate) rule_labels: std::option::Option<std::vec::Vec<crate::model::Label>>,
         pub(crate) visibility_config: std::option::Option<crate::model::VisibilityConfig>,
+        pub(crate) captcha_config: std::option::Option<crate::model::CaptchaConfig>,
     }
     impl Builder {
         /// <p>The name of the rule. You can't change the name of a <code>Rule</code> after you create
@@ -865,34 +979,22 @@ pub mod rule {
             self.action = input;
             self
         }
-        /// <p>The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule group,
-        /// like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
-        /// <p>Set the override action to none to leave the rule actions in effect. Set it to count to only count matches, regardless of the rule action settings. </p>
-        /// <p>In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule <code>Action</code> setting, but not both:</p>
-        /// <ul>
-        /// <li>
-        /// <p>If the rule statement references a rule group, use this override action setting and not the action setting.  </p>
-        /// </li>
-        /// <li>
-        /// <p>If the rule statement does not reference a rule group, use the rule action setting and not this rule override action setting. </p>
-        /// </li>
-        /// </ul>
+        /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
+        /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
+        /// <note>
+        /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
+        /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+        /// </note>
         pub fn override_action(mut self, input: crate::model::OverrideAction) -> Self {
             self.override_action = Some(input);
             self
         }
-        /// <p>The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule group,
-        /// like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
-        /// <p>Set the override action to none to leave the rule actions in effect. Set it to count to only count matches, regardless of the rule action settings. </p>
-        /// <p>In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule <code>Action</code> setting, but not both:</p>
-        /// <ul>
-        /// <li>
-        /// <p>If the rule statement references a rule group, use this override action setting and not the action setting.  </p>
-        /// </li>
-        /// <li>
-        /// <p>If the rule statement does not reference a rule group, use the rule action setting and not this rule override action setting. </p>
-        /// </li>
-        /// </ul>
+        /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
+        /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
+        /// <note>
+        /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
+        /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+        /// </note>
         pub fn set_override_action(
             mut self,
             input: std::option::Option<crate::model::OverrideAction>,
@@ -982,6 +1084,19 @@ pub mod rule {
             self.visibility_config = input;
             self
         }
+        /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations. If you don't specify this, WAF uses the <code>CAPTCHA</code> configuration that's defined for the web ACL. </p>
+        pub fn captcha_config(mut self, input: crate::model::CaptchaConfig) -> Self {
+            self.captcha_config = Some(input);
+            self
+        }
+        /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations. If you don't specify this, WAF uses the <code>CAPTCHA</code> configuration that's defined for the web ACL. </p>
+        pub fn set_captcha_config(
+            mut self,
+            input: std::option::Option<crate::model::CaptchaConfig>,
+        ) -> Self {
+            self.captcha_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Rule`](crate::model::Rule)
         pub fn build(self) -> crate::model::Rule {
             crate::model::Rule {
@@ -992,6 +1107,7 @@ pub mod rule {
                 override_action: self.override_action,
                 rule_labels: self.rule_labels,
                 visibility_config: self.visibility_config,
+                captcha_config: self.captcha_config,
             }
         }
     }
@@ -1057,32 +1173,34 @@ impl Label {
     }
 }
 
-/// <p>The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule group,
-/// like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
-/// <p>Set the override action to none to leave the rule actions in effect. Set it to count to only count matches, regardless of the rule action settings. </p>
-/// <p>In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule <code>Action</code> setting, but not both:</p>
-/// <ul>
-/// <li>
-/// <p>If the rule statement references a rule group, use this override action setting and not the action setting.  </p>
-/// </li>
-/// <li>
-/// <p>If the rule statement does not reference a rule group, use the rule action setting and not this rule override action setting. </p>
-/// </li>
-/// </ul>
+/// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
+/// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
+/// <note>
+/// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
+/// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OverrideAction {
-    /// <p>Override the rule action setting to count.</p>
+    /// <p>Override the rule group evaluation result to count only. </p>
+    /// <note>
+    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
+    /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+    /// </note>
     pub count: std::option::Option<crate::model::CountAction>,
-    /// <p>Don't override the rule action setting.</p>
+    /// <p>Don't override the rule group evaluation result. This is the most common setting.</p>
     pub none: std::option::Option<crate::model::NoneAction>,
 }
 impl OverrideAction {
-    /// <p>Override the rule action setting to count.</p>
+    /// <p>Override the rule group evaluation result to count only. </p>
+    /// <note>
+    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
+    /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+    /// </note>
     pub fn count(&self) -> std::option::Option<&crate::model::CountAction> {
         self.count.as_ref()
     }
-    /// <p>Don't override the rule action setting.</p>
+    /// <p>Don't override the rule group evaluation result. This is the most common setting.</p>
     pub fn none(&self) -> std::option::Option<&crate::model::NoneAction> {
         self.none.as_ref()
     }
@@ -1105,22 +1223,30 @@ pub mod override_action {
         pub(crate) none: std::option::Option<crate::model::NoneAction>,
     }
     impl Builder {
-        /// <p>Override the rule action setting to count.</p>
+        /// <p>Override the rule group evaluation result to count only. </p>
+        /// <note>
+        /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
+        /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+        /// </note>
         pub fn count(mut self, input: crate::model::CountAction) -> Self {
             self.count = Some(input);
             self
         }
-        /// <p>Override the rule action setting to count.</p>
+        /// <p>Override the rule group evaluation result to count only. </p>
+        /// <note>
+        /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
+        /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+        /// </note>
         pub fn set_count(mut self, input: std::option::Option<crate::model::CountAction>) -> Self {
             self.count = input;
             self
         }
-        /// <p>Don't override the rule action setting.</p>
+        /// <p>Don't override the rule group evaluation result. This is the most common setting.</p>
         pub fn none(mut self, input: crate::model::NoneAction) -> Self {
             self.none = Some(input);
             self
         }
-        /// <p>Don't override the rule action setting.</p>
+        /// <p>Don't override the rule group evaluation result. This is the most common setting.</p>
         pub fn set_none(mut self, input: std::option::Option<crate::model::NoneAction>) -> Self {
             self.none = input;
             self
@@ -1141,8 +1267,8 @@ impl OverrideAction {
     }
 }
 
-/// <p>Specifies that WAF should do nothing. This is generally used to try out a rule
-/// without performing any actions. You set the <code>OverrideAction</code> on the <a>Rule</a>. </p>
+/// <p>Specifies that WAF should do nothing. This is used for the <code>OverrideAction</code> setting
+/// on a <a>Rule</a> when the rule uses a rule group reference statement. </p>
 /// <p>This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>. </p>
 /// <p>JSON specification: <code>"None": {}</code>
 /// </p>
@@ -1423,6 +1549,8 @@ pub struct RuleAction {
     pub allow: std::option::Option<crate::model::AllowAction>,
     /// <p>Instructs WAF to count the web request and allow it.</p>
     pub count: std::option::Option<crate::model::CountAction>,
+    /// <p>Instructs WAF to run a <code>CAPTCHA</code> check against the web request.</p>
+    pub captcha: std::option::Option<crate::model::CaptchaAction>,
 }
 impl RuleAction {
     /// <p>Instructs WAF to block the web request.</p>
@@ -1437,6 +1565,10 @@ impl RuleAction {
     pub fn count(&self) -> std::option::Option<&crate::model::CountAction> {
         self.count.as_ref()
     }
+    /// <p>Instructs WAF to run a <code>CAPTCHA</code> check against the web request.</p>
+    pub fn captcha(&self) -> std::option::Option<&crate::model::CaptchaAction> {
+        self.captcha.as_ref()
+    }
 }
 impl std::fmt::Debug for RuleAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1444,6 +1576,7 @@ impl std::fmt::Debug for RuleAction {
         formatter.field("block", &self.block);
         formatter.field("allow", &self.allow);
         formatter.field("count", &self.count);
+        formatter.field("captcha", &self.captcha);
         formatter.finish()
     }
 }
@@ -1456,6 +1589,7 @@ pub mod rule_action {
         pub(crate) block: std::option::Option<crate::model::BlockAction>,
         pub(crate) allow: std::option::Option<crate::model::AllowAction>,
         pub(crate) count: std::option::Option<crate::model::CountAction>,
+        pub(crate) captcha: std::option::Option<crate::model::CaptchaAction>,
     }
     impl Builder {
         /// <p>Instructs WAF to block the web request.</p>
@@ -1488,12 +1622,26 @@ pub mod rule_action {
             self.count = input;
             self
         }
+        /// <p>Instructs WAF to run a <code>CAPTCHA</code> check against the web request.</p>
+        pub fn captcha(mut self, input: crate::model::CaptchaAction) -> Self {
+            self.captcha = Some(input);
+            self
+        }
+        /// <p>Instructs WAF to run a <code>CAPTCHA</code> check against the web request.</p>
+        pub fn set_captcha(
+            mut self,
+            input: std::option::Option<crate::model::CaptchaAction>,
+        ) -> Self {
+            self.captcha = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RuleAction`](crate::model::RuleAction)
         pub fn build(self) -> crate::model::RuleAction {
             crate::model::RuleAction {
                 block: self.block,
                 allow: self.allow,
                 count: self.count,
+                captcha: self.captcha,
             }
         }
     }
@@ -1502,6 +1650,105 @@ impl RuleAction {
     /// Creates a new builder-style object to manufacture [`RuleAction`](crate::model::RuleAction)
     pub fn builder() -> crate::model::rule_action::Builder {
         crate::model::rule_action::Builder::default()
+    }
+}
+
+/// <p>Specifies that WAF should run a <code>CAPTCHA</code> check against the request: </p>
+/// <ul>
+/// <li>
+/// <p>If the request includes a valid, unexpired <code>CAPTCHA</code> token,
+/// WAF allows the web request inspection to
+/// proceed to the next rule, similar to a <code>CountAction</code>. </p>
+/// </li>
+/// <li>
+/// <p>If the request doesn't include a valid, unexpired <code>CAPTCHA</code> token, WAF
+/// discontinues the web ACL evaluation of the request and blocks it from going to its intended destination.</p>
+/// <p>WAF generates a response that it sends back to the client, which includes the following: </p>
+/// <ul>
+/// <li>
+/// <p>The header <code>x-amzn-waf-action</code> with a value of <code>captcha</code>. </p>
+/// </li>
+/// <li>
+/// <p>The HTTP status code <code>405 Method Not Allowed</code>. </p>
+/// </li>
+/// <li>
+/// <p>If the request contains an <code>Accept</code> header with a value of <code>text/html</code>, the response includes a <code>CAPTCHA</code> challenge. </p>
+/// </li>
+/// </ul>
+/// </li>
+/// </ul>
+/// <p>You can configure the expiration time
+/// in the <code>CaptchaConfig</code>
+/// <code>ImmunityTimeProperty</code> setting at the rule and web ACL level. The rule setting overrides the web ACL setting. </p>
+/// <p>This action option is available for rules. It isn't available for web ACL default actions. </p>
+/// <p>This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CaptchaAction {
+    /// <p>Defines custom handling for the web request.</p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
+    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    pub custom_request_handling: std::option::Option<crate::model::CustomRequestHandling>,
+}
+impl CaptchaAction {
+    /// <p>Defines custom handling for the web request.</p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
+    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    pub fn custom_request_handling(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomRequestHandling> {
+        self.custom_request_handling.as_ref()
+    }
+}
+impl std::fmt::Debug for CaptchaAction {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CaptchaAction");
+        formatter.field("custom_request_handling", &self.custom_request_handling);
+        formatter.finish()
+    }
+}
+/// See [`CaptchaAction`](crate::model::CaptchaAction)
+pub mod captcha_action {
+    /// A builder for [`CaptchaAction`](crate::model::CaptchaAction)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) custom_request_handling:
+            std::option::Option<crate::model::CustomRequestHandling>,
+    }
+    impl Builder {
+        /// <p>Defines custom handling for the web request.</p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        pub fn custom_request_handling(
+            mut self,
+            input: crate::model::CustomRequestHandling,
+        ) -> Self {
+            self.custom_request_handling = Some(input);
+            self
+        }
+        /// <p>Defines custom handling for the web request.</p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        pub fn set_custom_request_handling(
+            mut self,
+            input: std::option::Option<crate::model::CustomRequestHandling>,
+        ) -> Self {
+            self.custom_request_handling = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CaptchaAction`](crate::model::CaptchaAction)
+        pub fn build(self) -> crate::model::CaptchaAction {
+            crate::model::CaptchaAction {
+                custom_request_handling: self.custom_request_handling,
+            }
+        }
+    }
+}
+impl CaptchaAction {
+    /// Creates a new builder-style object to manufacture [`CaptchaAction`](crate::model::CaptchaAction)
+    pub fn builder() -> crate::model::captcha_action::Builder {
+        crate::model::captcha_action::Builder::default()
     }
 }
 
@@ -4652,9 +4899,9 @@ pub struct ManagedRuleGroupStatement {
     /// If you don't specify this, WAF uses the vendor's default version, and then keeps the version
     /// at the vendor's default when the vendor updates the managed rule group settings. </p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>The rules whose actions are set to <code>COUNT</code> by the web ACL, regardless of the
-    /// action that is set on the rule. This effectively excludes the rule from acting on web
-    /// requests. </p>
+    /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>.  
+    /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>.
+    /// This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
     pub excluded_rules: std::option::Option<std::vec::Vec<crate::model::ExcludedRule>>,
     /// <p>An optional nested statement that narrows the scope of the web requests that are
     /// evaluated by the managed rule group. Requests are only evaluated by the rule group if they
@@ -4679,9 +4926,9 @@ impl ManagedRuleGroupStatement {
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The rules whose actions are set to <code>COUNT</code> by the web ACL, regardless of the
-    /// action that is set on the rule. This effectively excludes the rule from acting on web
-    /// requests. </p>
+    /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>.  
+    /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>.
+    /// This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
     pub fn excluded_rules(&self) -> std::option::Option<&[crate::model::ExcludedRule]> {
         self.excluded_rules.as_deref()
     }
@@ -4759,18 +5006,18 @@ pub mod managed_rule_group_statement {
         ///
         /// To override the contents of this collection use [`set_excluded_rules`](Self::set_excluded_rules).
         ///
-        /// <p>The rules whose actions are set to <code>COUNT</code> by the web ACL, regardless of the
-        /// action that is set on the rule. This effectively excludes the rule from acting on web
-        /// requests. </p>
+        /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>.  
+        /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>.
+        /// This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
         pub fn excluded_rules(mut self, input: impl Into<crate::model::ExcludedRule>) -> Self {
             let mut v = self.excluded_rules.unwrap_or_default();
             v.push(input.into());
             self.excluded_rules = Some(v);
             self
         }
-        /// <p>The rules whose actions are set to <code>COUNT</code> by the web ACL, regardless of the
-        /// action that is set on the rule. This effectively excludes the rule from acting on web
-        /// requests. </p>
+        /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>.  
+        /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>.
+        /// This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
         pub fn set_excluded_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExcludedRule>>,
@@ -4821,17 +5068,17 @@ impl ManagedRuleGroupStatement {
     }
 }
 
-/// <p>Specifies a single rule to exclude from the rule group. Excluding a rule overrides its
-/// action setting for the rule group in the web ACL, setting it to <code>COUNT</code>. This
-/// effectively excludes the rule from acting on web requests. </p>
+/// <p>Specifies a single rule in a rule group whose action you want to override to <code>Count</code>. When you exclude a rule,
+/// WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
+/// testing the rules in a rule group without modifying how they handle your web traffic. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExcludedRule {
-    /// <p>The name of the rule to exclude.</p>
+    /// <p>The name of the rule whose action you want to override to <code>Count</code>.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl ExcludedRule {
-    /// <p>The name of the rule to exclude.</p>
+    /// <p>The name of the rule whose action you want to override to <code>Count</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -4852,12 +5099,12 @@ pub mod excluded_rule {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the rule to exclude.</p>
+        /// <p>The name of the rule whose action you want to override to <code>Count</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the rule to exclude.</p>
+        /// <p>The name of the rule whose action you want to override to <code>Count</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6138,8 +6385,9 @@ impl AsRef<str> for ForwardedIpPosition {
 pub struct RuleGroupReferenceStatement {
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The names of rules that are in the referenced rule group, but that you want WAF to
-    /// exclude from processing for this rule statement. </p>
+    /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>.  
+    /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>.
+    /// This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
     pub excluded_rules: std::option::Option<std::vec::Vec<crate::model::ExcludedRule>>,
 }
 impl RuleGroupReferenceStatement {
@@ -6147,8 +6395,9 @@ impl RuleGroupReferenceStatement {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The names of rules that are in the referenced rule group, but that you want WAF to
-    /// exclude from processing for this rule statement. </p>
+    /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>.  
+    /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>.
+    /// This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
     pub fn excluded_rules(&self) -> std::option::Option<&[crate::model::ExcludedRule]> {
         self.excluded_rules.as_deref()
     }
@@ -6185,16 +6434,18 @@ pub mod rule_group_reference_statement {
         ///
         /// To override the contents of this collection use [`set_excluded_rules`](Self::set_excluded_rules).
         ///
-        /// <p>The names of rules that are in the referenced rule group, but that you want WAF to
-        /// exclude from processing for this rule statement. </p>
+        /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>.  
+        /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>.
+        /// This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
         pub fn excluded_rules(mut self, input: impl Into<crate::model::ExcludedRule>) -> Self {
             let mut v = self.excluded_rules.unwrap_or_default();
             v.push(input.into());
             self.excluded_rules = Some(v);
             self
         }
-        /// <p>The names of rules that are in the referenced rule group, but that you want WAF to
-        /// exclude from processing for this rule statement. </p>
+        /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>.  
+        /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>.
+        /// This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
         pub fn set_excluded_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExcludedRule>>,
@@ -8681,21 +8932,24 @@ impl VersionToPublish {
     }
 }
 
-/// <p>Defines an association between Amazon Kinesis Data Firehose destinations and a web ACL
+/// <p>Defines an association between logging destinations and a web ACL
 /// resource, for logging from WAF. As part of the association, you can specify parts of
 /// the standard logging fields to keep out of the logs and you can specify filters so that you
 /// log only a subset of the logging records. </p>
+/// <p>For information about configuring web ACL logging destinations, see
+/// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a>
+/// in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with
     /// <code>LogDestinationConfigs</code>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Kinesis Data Firehose Amazon Resource Name (ARNs) that you want to associate
+    /// <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to associate
     /// with the web ACL.</p>
     pub log_destination_configs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The parts of the request that you want to keep out of the logs. For
-    /// example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the firehose will be <code>xxx</code>. </p>
+    /// example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>xxx</code>. </p>
     /// <note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
     /// </note>
@@ -8715,13 +8969,13 @@ impl LoggingConfiguration {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The Amazon Kinesis Data Firehose Amazon Resource Name (ARNs) that you want to associate
+    /// <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to associate
     /// with the web ACL.</p>
     pub fn log_destination_configs(&self) -> std::option::Option<&[std::string::String]> {
         self.log_destination_configs.as_deref()
     }
     /// <p>The parts of the request that you want to keep out of the logs. For
-    /// example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the firehose will be <code>xxx</code>. </p>
+    /// example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>xxx</code>. </p>
     /// <note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
     /// </note>
@@ -8784,7 +9038,7 @@ pub mod logging_configuration {
         ///
         /// To override the contents of this collection use [`set_log_destination_configs`](Self::set_log_destination_configs).
         ///
-        /// <p>The Amazon Kinesis Data Firehose Amazon Resource Name (ARNs) that you want to associate
+        /// <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to associate
         /// with the web ACL.</p>
         pub fn log_destination_configs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.log_destination_configs.unwrap_or_default();
@@ -8792,7 +9046,7 @@ pub mod logging_configuration {
             self.log_destination_configs = Some(v);
             self
         }
-        /// <p>The Amazon Kinesis Data Firehose Amazon Resource Name (ARNs) that you want to associate
+        /// <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to associate
         /// with the web ACL.</p>
         pub fn set_log_destination_configs(
             mut self,
@@ -8806,7 +9060,7 @@ pub mod logging_configuration {
         /// To override the contents of this collection use [`set_redacted_fields`](Self::set_redacted_fields).
         ///
         /// <p>The parts of the request that you want to keep out of the logs. For
-        /// example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the firehose will be <code>xxx</code>. </p>
+        /// example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>xxx</code>. </p>
         /// <note>
         /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
         /// </note>
@@ -8817,7 +9071,7 @@ pub mod logging_configuration {
             self
         }
         /// <p>The parts of the request that you want to keep out of the logs. For
-        /// example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the firehose will be <code>xxx</code>. </p>
+        /// example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>xxx</code>. </p>
         /// <note>
         /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
         /// </note>
@@ -9349,7 +9603,11 @@ pub enum ActionValue {
     #[allow(missing_docs)] // documentation missing in model
     Block,
     #[allow(missing_docs)] // documentation missing in model
+    Captcha,
+    #[allow(missing_docs)] // documentation missing in model
     Count,
+    #[allow(missing_docs)] // documentation missing in model
+    ExcludedAsCount,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -9358,7 +9616,9 @@ impl std::convert::From<&str> for ActionValue {
         match s {
             "ALLOW" => ActionValue::Allow,
             "BLOCK" => ActionValue::Block,
+            "CAPTCHA" => ActionValue::Captcha,
             "COUNT" => ActionValue::Count,
+            "EXCLUDED_AS_COUNT" => ActionValue::ExcludedAsCount,
             other => ActionValue::Unknown(other.to_owned()),
         }
     }
@@ -9376,13 +9636,15 @@ impl ActionValue {
         match self {
             ActionValue::Allow => "ALLOW",
             ActionValue::Block => "BLOCK",
+            ActionValue::Captcha => "CAPTCHA",
             ActionValue::Count => "COUNT",
+            ActionValue::ExcludedAsCount => "EXCLUDED_AS_COUNT",
             ActionValue::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["ALLOW", "BLOCK", "COUNT"]
+        &["ALLOW", "BLOCK", "CAPTCHA", "COUNT", "EXCLUDED_AS_COUNT"]
     }
 }
 impl AsRef<str> for ActionValue {
@@ -10340,7 +10602,7 @@ pub struct ManagedRuleGroupVersion {
     pub name: std::option::Option<std::string::String>,
     /// <p>The date and time that the managed rule group owner updated the rule group version
     /// information. </p>
-    pub last_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ManagedRuleGroupVersion {
     /// <p>The version name. </p>
@@ -10349,7 +10611,7 @@ impl ManagedRuleGroupVersion {
     }
     /// <p>The date and time that the managed rule group owner updated the rule group version
     /// information. </p>
-    pub fn last_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_timestamp.as_ref()
     }
 }
@@ -10368,7 +10630,7 @@ pub mod managed_rule_group_version {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) last_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The version name. </p>
@@ -10383,7 +10645,7 @@ pub mod managed_rule_group_version {
         }
         /// <p>The date and time that the managed rule group owner updated the rule group version
         /// information. </p>
-        pub fn last_update_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_timestamp = Some(input);
             self
         }
@@ -10391,7 +10653,7 @@ pub mod managed_rule_group_version {
         /// information. </p>
         pub fn set_last_update_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_timestamp = input;
             self
@@ -10584,6 +10846,8 @@ pub struct WebAcl {
     pub custom_response_bodies: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::CustomResponseBody>,
     >,
+    /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
+    pub captcha_config: std::option::Option<crate::model::CaptchaConfig>,
 }
 impl WebAcl {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -10692,6 +10956,10 @@ impl WebAcl {
     > {
         self.custom_response_bodies.as_ref()
     }
+    /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
+    pub fn captcha_config(&self) -> std::option::Option<&crate::model::CaptchaConfig> {
+        self.captcha_config.as_ref()
+    }
 }
 impl std::fmt::Debug for WebAcl {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10718,6 +10986,7 @@ impl std::fmt::Debug for WebAcl {
         );
         formatter.field("label_namespace", &self.label_namespace);
         formatter.field("custom_response_bodies", &self.custom_response_bodies);
+        formatter.field("captcha_config", &self.captcha_config);
         formatter.finish()
     }
 }
@@ -10744,6 +11013,7 @@ pub mod web_acl {
         pub(crate) custom_response_bodies: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::CustomResponseBody>,
         >,
+        pub(crate) captcha_config: std::option::Option<crate::model::CaptchaConfig>,
     }
     impl Builder {
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -11029,6 +11299,19 @@ pub mod web_acl {
             self.custom_response_bodies = input;
             self
         }
+        /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
+        pub fn captcha_config(mut self, input: crate::model::CaptchaConfig) -> Self {
+            self.captcha_config = Some(input);
+            self
+        }
+        /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
+        pub fn set_captcha_config(
+            mut self,
+            input: std::option::Option<crate::model::CaptchaConfig>,
+        ) -> Self {
+            self.captcha_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WebAcl`](crate::model::WebAcl)
         pub fn build(self) -> crate::model::WebAcl {
             crate::model::WebAcl {
@@ -11047,6 +11330,7 @@ pub mod web_acl {
                 managed_by_firewall_manager: self.managed_by_firewall_manager.unwrap_or_default(),
                 label_namespace: self.label_namespace,
                 custom_response_bodies: self.custom_response_bodies,
+                captcha_config: self.captcha_config,
             }
         }
     }
@@ -11071,18 +11355,12 @@ pub struct FirewallManagerRuleGroup {
     pub priority: i32,
     /// <p>The processing guidance for an Firewall Manager rule. This is like a regular rule <a>Statement</a>, but it can only contain a rule group reference.</p>
     pub firewall_manager_statement: std::option::Option<crate::model::FirewallManagerStatement>,
-    /// <p>The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule group,
-    /// like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
-    /// <p>Set the override action to none to leave the rule actions in effect. Set it to count to only count matches, regardless of the rule action settings. </p>
-    /// <p>In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule <code>Action</code> setting, but not both:</p>
-    /// <ul>
-    /// <li>
-    /// <p>If the rule statement references a rule group, use this override action setting and not the action setting.  </p>
-    /// </li>
-    /// <li>
-    /// <p>If the rule statement does not reference a rule group, use the rule action setting and not this rule override action setting. </p>
-    /// </li>
-    /// </ul>
+    /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
+    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
+    /// <note>
+    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
+    /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+    /// </note>
     pub override_action: std::option::Option<crate::model::OverrideAction>,
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
     pub visibility_config: std::option::Option<crate::model::VisibilityConfig>,
@@ -11105,18 +11383,12 @@ impl FirewallManagerRuleGroup {
     ) -> std::option::Option<&crate::model::FirewallManagerStatement> {
         self.firewall_manager_statement.as_ref()
     }
-    /// <p>The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule group,
-    /// like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
-    /// <p>Set the override action to none to leave the rule actions in effect. Set it to count to only count matches, regardless of the rule action settings. </p>
-    /// <p>In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule <code>Action</code> setting, but not both:</p>
-    /// <ul>
-    /// <li>
-    /// <p>If the rule statement references a rule group, use this override action setting and not the action setting.  </p>
-    /// </li>
-    /// <li>
-    /// <p>If the rule statement does not reference a rule group, use the rule action setting and not this rule override action setting. </p>
-    /// </li>
-    /// </ul>
+    /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
+    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
+    /// <note>
+    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
+    /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+    /// </note>
     pub fn override_action(&self) -> std::option::Option<&crate::model::OverrideAction> {
         self.override_action.as_ref()
     }
@@ -11195,34 +11467,22 @@ pub mod firewall_manager_rule_group {
             self.firewall_manager_statement = input;
             self
         }
-        /// <p>The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule group,
-        /// like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
-        /// <p>Set the override action to none to leave the rule actions in effect. Set it to count to only count matches, regardless of the rule action settings. </p>
-        /// <p>In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule <code>Action</code> setting, but not both:</p>
-        /// <ul>
-        /// <li>
-        /// <p>If the rule statement references a rule group, use this override action setting and not the action setting.  </p>
-        /// </li>
-        /// <li>
-        /// <p>If the rule statement does not reference a rule group, use the rule action setting and not this rule override action setting. </p>
-        /// </li>
-        /// </ul>
+        /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
+        /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
+        /// <note>
+        /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
+        /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+        /// </note>
         pub fn override_action(mut self, input: crate::model::OverrideAction) -> Self {
             self.override_action = Some(input);
             self
         }
-        /// <p>The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule group,
-        /// like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
-        /// <p>Set the override action to none to leave the rule actions in effect. Set it to count to only count matches, regardless of the rule action settings. </p>
-        /// <p>In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule <code>Action</code> setting, but not both:</p>
-        /// <ul>
-        /// <li>
-        /// <p>If the rule statement references a rule group, use this override action setting and not the action setting.  </p>
-        /// </li>
-        /// <li>
-        /// <p>If the rule statement does not reference a rule group, use the rule action setting and not this rule override action setting. </p>
-        /// </li>
-        /// </ul>
+        /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
+        /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
+        /// <note>
+        /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
+        /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+        /// </note>
         pub fn set_override_action(
             mut self,
             input: std::option::Option<crate::model::OverrideAction>,
@@ -11394,13 +11654,13 @@ pub struct TimeWindow {
     /// times in Coordinated Universal Time (UTC) format. UTC format includes the special
     /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
     /// any time range in the previous three hours.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the time range from which you want <code>GetSampledRequests</code> to return
     /// a sample of the requests that your Amazon Web Services resource received. You must specify the times in
     /// Coordinated Universal Time (UTC) format. UTC format includes the special designator,
     /// <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time
     /// range in the previous three hours.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimeWindow {
     /// <p>The beginning of the time range from which you want <code>GetSampledRequests</code> to
@@ -11408,7 +11668,7 @@ impl TimeWindow {
     /// times in Coordinated Universal Time (UTC) format. UTC format includes the special
     /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
     /// any time range in the previous three hours.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time range from which you want <code>GetSampledRequests</code> to return
@@ -11416,7 +11676,7 @@ impl TimeWindow {
     /// Coordinated Universal Time (UTC) format. UTC format includes the special designator,
     /// <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time
     /// range in the previous three hours.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -11434,8 +11694,8 @@ pub mod time_window {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The beginning of the time range from which you want <code>GetSampledRequests</code> to
@@ -11443,7 +11703,7 @@ pub mod time_window {
         /// times in Coordinated Universal Time (UTC) format. UTC format includes the special
         /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
         /// any time range in the previous three hours.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -11454,7 +11714,7 @@ pub mod time_window {
         /// any time range in the previous three hours.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -11464,7 +11724,7 @@ pub mod time_window {
         /// Coordinated Universal Time (UTC) format. UTC format includes the special designator,
         /// <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time
         /// range in the previous three hours.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
@@ -11475,7 +11735,7 @@ pub mod time_window {
         /// range in the previous three hours.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -11512,9 +11772,9 @@ pub struct SampledHttpRequest {
     pub weight: i64,
     /// <p>The time at which WAF received the request from your Amazon Web Services resource, in Unix time
     /// format (in seconds).</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
-    /// <p>The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>,
-    /// <code>BLOCK</code>, or <code>COUNT</code>.</p>
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The action for the <code>Rule</code> that the request matched: <code>Allow</code>,
+    /// <code>Block</code>, or <code>Count</code>.</p>
     pub action: std::option::Option<std::string::String>,
     /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the
     /// format for this name is <code><vendor name>#<managed rule group name>#<rule
@@ -11534,6 +11794,8 @@ pub struct SampledHttpRequest {
     /// <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
     /// <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
     pub labels: std::option::Option<std::vec::Vec<crate::model::Label>>,
+    /// <p>The <code>CAPTCHA</code> response for the request.</p>
+    pub captcha_response: std::option::Option<crate::model::CaptchaResponse>,
 }
 impl SampledHttpRequest {
     /// <p>A complex type that contains detailed information about the request.</p>
@@ -11549,11 +11811,11 @@ impl SampledHttpRequest {
     }
     /// <p>The time at which WAF received the request from your Amazon Web Services resource, in Unix time
     /// format (in seconds).</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
-    /// <p>The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>,
-    /// <code>BLOCK</code>, or <code>COUNT</code>.</p>
+    /// <p>The action for the <code>Rule</code> that the request matched: <code>Allow</code>,
+    /// <code>Block</code>, or <code>Count</code>.</p>
     pub fn action(&self) -> std::option::Option<&str> {
         self.action.as_deref()
     }
@@ -11583,6 +11845,10 @@ impl SampledHttpRequest {
     pub fn labels(&self) -> std::option::Option<&[crate::model::Label]> {
         self.labels.as_deref()
     }
+    /// <p>The <code>CAPTCHA</code> response for the request.</p>
+    pub fn captcha_response(&self) -> std::option::Option<&crate::model::CaptchaResponse> {
+        self.captcha_response.as_ref()
+    }
 }
 impl std::fmt::Debug for SampledHttpRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11598,6 +11864,7 @@ impl std::fmt::Debug for SampledHttpRequest {
         formatter.field("request_headers_inserted", &self.request_headers_inserted);
         formatter.field("response_code_sent", &self.response_code_sent);
         formatter.field("labels", &self.labels);
+        formatter.field("captcha_response", &self.captcha_response);
         formatter.finish()
     }
 }
@@ -11609,13 +11876,14 @@ pub mod sampled_http_request {
     pub struct Builder {
         pub(crate) request: std::option::Option<crate::model::HttpRequest>,
         pub(crate) weight: std::option::Option<i64>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) action: std::option::Option<std::string::String>,
         pub(crate) rule_name_within_rule_group: std::option::Option<std::string::String>,
         pub(crate) request_headers_inserted:
             std::option::Option<std::vec::Vec<crate::model::HttpHeader>>,
         pub(crate) response_code_sent: std::option::Option<i32>,
         pub(crate) labels: std::option::Option<std::vec::Vec<crate::model::Label>>,
+        pub(crate) captcha_response: std::option::Option<crate::model::CaptchaResponse>,
     }
     impl Builder {
         /// <p>A complex type that contains detailed information about the request.</p>
@@ -11649,7 +11917,7 @@ pub mod sampled_http_request {
         }
         /// <p>The time at which WAF received the request from your Amazon Web Services resource, in Unix time
         /// format (in seconds).</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
@@ -11657,19 +11925,19 @@ pub mod sampled_http_request {
         /// format (in seconds).</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
         }
-        /// <p>The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>,
-        /// <code>BLOCK</code>, or <code>COUNT</code>.</p>
+        /// <p>The action for the <code>Rule</code> that the request matched: <code>Allow</code>,
+        /// <code>Block</code>, or <code>Count</code>.</p>
         pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
             self.action = Some(input.into());
             self
         }
-        /// <p>The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>,
-        /// <code>BLOCK</code>, or <code>COUNT</code>.</p>
+        /// <p>The action for the <code>Rule</code> that the request matched: <code>Allow</code>,
+        /// <code>Block</code>, or <code>Count</code>.</p>
         pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action = input;
             self
@@ -11761,6 +12029,19 @@ pub mod sampled_http_request {
             self.labels = input;
             self
         }
+        /// <p>The <code>CAPTCHA</code> response for the request.</p>
+        pub fn captcha_response(mut self, input: crate::model::CaptchaResponse) -> Self {
+            self.captcha_response = Some(input);
+            self
+        }
+        /// <p>The <code>CAPTCHA</code> response for the request.</p>
+        pub fn set_captcha_response(
+            mut self,
+            input: std::option::Option<crate::model::CaptchaResponse>,
+        ) -> Self {
+            self.captcha_response = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SampledHttpRequest`](crate::model::SampledHttpRequest)
         pub fn build(self) -> crate::model::SampledHttpRequest {
             crate::model::SampledHttpRequest {
@@ -11772,6 +12053,7 @@ pub mod sampled_http_request {
                 request_headers_inserted: self.request_headers_inserted,
                 response_code_sent: self.response_code_sent,
                 labels: self.labels,
+                captcha_response: self.captcha_response,
             }
         }
     }
@@ -11780,6 +12062,156 @@ impl SampledHttpRequest {
     /// Creates a new builder-style object to manufacture [`SampledHttpRequest`](crate::model::SampledHttpRequest)
     pub fn builder() -> crate::model::sampled_http_request::Builder {
         crate::model::sampled_http_request::Builder::default()
+    }
+}
+
+/// <p>The result from the inspection of the web request for a valid <code>CAPTCHA</code> token. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CaptchaResponse {
+    /// <p>The HTTP response code indicating the status of the <code>CAPTCHA</code> token in the web request. If the token is missing, invalid, or expired, this code is <code>405 Method Not Allowed</code>.</p>
+    pub response_code: std::option::Option<i32>,
+    /// <p>The time that the <code>CAPTCHA</code> puzzle was solved for the supplied token. </p>
+    pub solve_timestamp: std::option::Option<i64>,
+    /// <p>The reason for failure, populated when the evaluation of the token fails.</p>
+    pub failure_reason: std::option::Option<crate::model::FailureReason>,
+}
+impl CaptchaResponse {
+    /// <p>The HTTP response code indicating the status of the <code>CAPTCHA</code> token in the web request. If the token is missing, invalid, or expired, this code is <code>405 Method Not Allowed</code>.</p>
+    pub fn response_code(&self) -> std::option::Option<i32> {
+        self.response_code
+    }
+    /// <p>The time that the <code>CAPTCHA</code> puzzle was solved for the supplied token. </p>
+    pub fn solve_timestamp(&self) -> std::option::Option<i64> {
+        self.solve_timestamp
+    }
+    /// <p>The reason for failure, populated when the evaluation of the token fails.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&crate::model::FailureReason> {
+        self.failure_reason.as_ref()
+    }
+}
+impl std::fmt::Debug for CaptchaResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CaptchaResponse");
+        formatter.field("response_code", &self.response_code);
+        formatter.field("solve_timestamp", &self.solve_timestamp);
+        formatter.field("failure_reason", &self.failure_reason);
+        formatter.finish()
+    }
+}
+/// See [`CaptchaResponse`](crate::model::CaptchaResponse)
+pub mod captcha_response {
+    /// A builder for [`CaptchaResponse`](crate::model::CaptchaResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) response_code: std::option::Option<i32>,
+        pub(crate) solve_timestamp: std::option::Option<i64>,
+        pub(crate) failure_reason: std::option::Option<crate::model::FailureReason>,
+    }
+    impl Builder {
+        /// <p>The HTTP response code indicating the status of the <code>CAPTCHA</code> token in the web request. If the token is missing, invalid, or expired, this code is <code>405 Method Not Allowed</code>.</p>
+        pub fn response_code(mut self, input: i32) -> Self {
+            self.response_code = Some(input);
+            self
+        }
+        /// <p>The HTTP response code indicating the status of the <code>CAPTCHA</code> token in the web request. If the token is missing, invalid, or expired, this code is <code>405 Method Not Allowed</code>.</p>
+        pub fn set_response_code(mut self, input: std::option::Option<i32>) -> Self {
+            self.response_code = input;
+            self
+        }
+        /// <p>The time that the <code>CAPTCHA</code> puzzle was solved for the supplied token. </p>
+        pub fn solve_timestamp(mut self, input: i64) -> Self {
+            self.solve_timestamp = Some(input);
+            self
+        }
+        /// <p>The time that the <code>CAPTCHA</code> puzzle was solved for the supplied token. </p>
+        pub fn set_solve_timestamp(mut self, input: std::option::Option<i64>) -> Self {
+            self.solve_timestamp = input;
+            self
+        }
+        /// <p>The reason for failure, populated when the evaluation of the token fails.</p>
+        pub fn failure_reason(mut self, input: crate::model::FailureReason) -> Self {
+            self.failure_reason = Some(input);
+            self
+        }
+        /// <p>The reason for failure, populated when the evaluation of the token fails.</p>
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<crate::model::FailureReason>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CaptchaResponse`](crate::model::CaptchaResponse)
+        pub fn build(self) -> crate::model::CaptchaResponse {
+            crate::model::CaptchaResponse {
+                response_code: self.response_code,
+                solve_timestamp: self.solve_timestamp,
+                failure_reason: self.failure_reason,
+            }
+        }
+    }
+}
+impl CaptchaResponse {
+    /// Creates a new builder-style object to manufacture [`CaptchaResponse`](crate::model::CaptchaResponse)
+    pub fn builder() -> crate::model::captcha_response::Builder {
+        crate::model::captcha_response::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FailureReason {
+    #[allow(missing_docs)] // documentation missing in model
+    TokenExpired,
+    #[allow(missing_docs)] // documentation missing in model
+    TokenMissing,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FailureReason {
+    fn from(s: &str) -> Self {
+        match s {
+            "TOKEN_EXPIRED" => FailureReason::TokenExpired,
+            "TOKEN_MISSING" => FailureReason::TokenMissing,
+            other => FailureReason::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FailureReason {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FailureReason::from(s))
+    }
+}
+impl FailureReason {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FailureReason::TokenExpired => "TOKEN_EXPIRED",
+            FailureReason::TokenMissing => "TOKEN_MISSING",
+            FailureReason::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["TOKEN_EXPIRED", "TOKEN_MISSING"]
+    }
+}
+impl AsRef<str> for FailureReason {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -13161,13 +13593,13 @@ pub struct ManagedRuleSetVersion {
     pub forecasted_lifetime: std::option::Option<i32>,
     /// <p>The time that you first published this version. </p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-    pub publish_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub publish_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time that you updated this version. </p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-    pub last_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that this version is set to expire.</p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-    pub expiry_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub expiry_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ManagedRuleSetVersion {
     /// <p>The Amazon Resource Name (ARN) of the vendor rule group that's used to define the
@@ -13194,17 +13626,17 @@ impl ManagedRuleSetVersion {
     }
     /// <p>The time that you first published this version. </p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-    pub fn publish_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn publish_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.publish_timestamp.as_ref()
     }
     /// <p>The last time that you updated this version. </p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-    pub fn last_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_timestamp.as_ref()
     }
     /// <p>The time that this version is set to expire.</p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-    pub fn expiry_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiry_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiry_timestamp.as_ref()
     }
 }
@@ -13229,9 +13661,9 @@ pub mod managed_rule_set_version {
         pub(crate) associated_rule_group_arn: std::option::Option<std::string::String>,
         pub(crate) capacity: std::option::Option<i64>,
         pub(crate) forecasted_lifetime: std::option::Option<i32>,
-        pub(crate) publish_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) expiry_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) publish_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) expiry_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the vendor rule group that's used to define the
@@ -13289,7 +13721,7 @@ pub mod managed_rule_set_version {
         }
         /// <p>The time that you first published this version. </p>
         /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-        pub fn publish_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn publish_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.publish_timestamp = Some(input);
             self
         }
@@ -13297,14 +13729,14 @@ pub mod managed_rule_set_version {
         /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
         pub fn set_publish_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.publish_timestamp = input;
             self
         }
         /// <p>The last time that you updated this version. </p>
         /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-        pub fn last_update_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_timestamp = Some(input);
             self
         }
@@ -13312,14 +13744,14 @@ pub mod managed_rule_set_version {
         /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
         pub fn set_last_update_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_timestamp = input;
             self
         }
         /// <p>The time that this version is set to expire.</p>
         /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-        pub fn expiry_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiry_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiry_timestamp = Some(input);
             self
         }
@@ -13327,7 +13759,7 @@ pub mod managed_rule_set_version {
         /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
         pub fn set_expiry_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiry_timestamp = input;
             self

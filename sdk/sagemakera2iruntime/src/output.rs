@@ -177,7 +177,7 @@ impl ListHumanLoopsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHumanLoopOutput {
     /// <p>The creation time when Amazon Augmented AI created the human loop.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason why a human loop failed. The failure reason is returned when the status of the
     /// human loop is <code>Failed</code>.</p>
     pub failure_reason: std::option::Option<std::string::String>,
@@ -200,7 +200,7 @@ pub struct DescribeHumanLoopOutput {
 }
 impl DescribeHumanLoopOutput {
     /// <p>The creation time when Amazon Augmented AI created the human loop.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The reason why a human loop failed. The failure reason is returned when the status of the
@@ -257,7 +257,7 @@ pub mod describe_human_loop_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) failure_code: std::option::Option<std::string::String>,
         pub(crate) human_loop_status: std::option::Option<crate::model::HumanLoopStatus>,
@@ -268,14 +268,14 @@ pub mod describe_human_loop_output {
     }
     impl Builder {
         /// <p>The creation time when Amazon Augmented AI created the human loop.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The creation time when Amazon Augmented AI created the human loop.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self

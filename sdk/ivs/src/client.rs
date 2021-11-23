@@ -175,6 +175,13 @@ where
     pub fn get_stream_key(&self) -> fluent_builders::GetStreamKey<C, M, R> {
         fluent_builders::GetStreamKey::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `GetStreamSession` operation.
+    ///
+    /// See [`GetStreamSession`](crate::client::fluent_builders::GetStreamSession) for more information about the
+    /// operation and its arguments.
+    pub fn get_stream_session(&self) -> fluent_builders::GetStreamSession<C, M, R> {
+        fluent_builders::GetStreamSession::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `ImportPlaybackKeyPair` operation.
     ///
     /// See [`ImportPlaybackKeyPair`](crate::client::fluent_builders::ImportPlaybackKeyPair) for more information about the
@@ -218,6 +225,13 @@ where
     /// operation and its arguments.
     pub fn list_streams(&self) -> fluent_builders::ListStreams<C, M, R> {
         fluent_builders::ListStreams::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListStreamSessions` operation.
+    ///
+    /// See [`ListStreamSessions`](crate::client::fluent_builders::ListStreamSessions) for more information about the
+    /// operation and its arguments.
+    pub fn list_stream_sessions(&self) -> fluent_builders::ListStreamSessions<C, M, R> {
+        fluent_builders::ListStreamSessions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListTagsForResource` operation.
     ///
@@ -495,16 +509,16 @@ pub mod fluent_builders {
         }
         /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
         /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-        /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard,
-        /// respectively.) Default: <code>LOW</code>.</p>
+        /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
+        /// Standard, respectively.) Default: <code>LOW</code>.</p>
         pub fn latency_mode(mut self, inp: crate::model::ChannelLatencyMode) -> Self {
             self.inner = self.inner.latency_mode(inp);
             self
         }
         /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
         /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-        /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard,
-        /// respectively.) Default: <code>LOW</code>.</p>
+        /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
+        /// Standard, respectively.) Default: <code>LOW</code>.</p>
         pub fn set_latency_mode(
             mut self,
             input: std::option::Option<crate::model::ChannelLatencyMode>,
@@ -609,16 +623,16 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new recording configuration, used to enable recording to Amazon S3.</p>
     /// <p>
-    /// <b>Known issue:</b> In the us-east-1 region, if you use the Amazon Web Services
-    /// CLI to create a recording configuration, it returns success even if the S3 bucket is in a
-    /// different region. In this case, the <code>state</code> of the recording configuration is
-    /// <code>CREATE_FAILED</code> (instead of <code>ACTIVE</code>). (In other regions, the CLI
-    /// correctly returns failure if the bucket is in a different region.)</p>
+    /// <b>Known issue:</b> In the us-east-1 region, if you use the
+    /// Amazon Web Services CLI to create a recording configuration, it returns success even if the
+    /// S3 bucket is in a different region. In this case, the <code>state</code> of the recording
+    /// configuration is <code>CREATE_FAILED</code> (instead of <code>ACTIVE</code>). (In other
+    /// regions, the CLI correctly returns failure if the bucket is in a different region.)</p>
     /// <p>
-    /// <b>Workaround:</b> Ensure that your S3 bucket is in the same region as the recording
-    /// configuration. If you create a recording configuration in a different region as your S3
-    /// bucket, delete that recording configuration and create a new one with an S3 bucket from the
-    /// correct region.</p>
+    /// <b>Workaround:</b> Ensure that your S3 bucket is in the same
+    /// region as the recording configuration. If you create a recording configuration in a different
+    /// region as your S3 bucket, delete that recording configuration and create a new one with an S3
+    /// bucket from the correct region.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateRecordingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -829,7 +843,8 @@ pub mod fluent_builders {
     /// <p>If you try to delete a live channel, you will get an error (409 ConflictException). To
     /// delete a channel that is live, call <a>StopStream</a>, wait for the Amazon
     /// EventBridge "Stream End" event (to verify that the stream's state was changed from Live to
-    /// Offline), then call DeleteChannel. (See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html"> Using EventBridge with Amazon IVS</a>.) </p>
+    /// Offline), then call DeleteChannel. (See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html"> Using EventBridge with Amazon IVS</a>.)
+    /// </p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteChannel<
         C = aws_smithy_client::erase::DynConnector,
@@ -1469,6 +1484,90 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetStreamSession`.
+    ///
+    /// <p>Gets metadata on a specified stream.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetStreamSession<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_stream_session_input::Builder,
+    }
+    impl<C, M, R> GetStreamSession<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetStreamSession`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetStreamSessionOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetStreamSessionError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetStreamSessionInputOperationOutputAlias,
+                crate::output::GetStreamSessionOutput,
+                crate::error::GetStreamSessionError,
+                crate::input::GetStreamSessionInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>ARN of the channel resource</p>
+        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(inp);
+            self
+        }
+        /// <p>ARN of the channel resource</p>
+        pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_channel_arn(input);
+            self
+        }
+        /// <p>Unique identifier for a live or previously live stream in the specified channel. If no
+        /// <code>streamId</code> is provided, this returns the most recent stream session for the
+        /// channel, if it exists.</p>
+        pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_id(inp);
+            self
+        }
+        /// <p>Unique identifier for a live or previously live stream in the specified channel. If no
+        /// <code>streamId</code> is provided, this returns the most recent stream session for the
+        /// channel, if it exists.</p>
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ImportPlaybackKeyPair`.
     ///
     /// <p>Imports the public portion of a new key pair and returns its <code>arn</code> and
@@ -1581,9 +1680,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannels`.
     ///
-    /// <p>Gets summary information about all channels in your account, in the Amazon Web Services region where the
-    /// API request is processed. This list can be filtered to match a specified name or
-    /// recording-configuration ARN. Filters are mutually exclusive and cannot be used together. If
+    /// <p>Gets summary information about all channels in your account, in the Amazon Web Services
+    /// region where the API request is processed. This list can be filtered to match a specified name
+    /// or recording-configuration ARN. Filters are mutually exclusive and cannot be used together. If
     /// you try to use both filters, you will get an error (409 ConflictException).</p>
     #[derive(std::fmt::Debug)]
     pub struct ListChannels<
@@ -1778,8 +1877,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRecordingConfigurations`.
     ///
-    /// <p>Gets summary information about all recording configurations in your account, in the Amazon Web Services
-    /// region where the API request is processed.</p>
+    /// <p>Gets summary information about all recording configurations in your account, in the
+    /// Amazon Web Services region where the API request is processed.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListRecordingConfigurations<
         C = aws_smithy_client::erase::DynConnector,
@@ -1953,8 +2052,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListStreams`.
     ///
-    /// <p>Gets summary information about live streams in your account, in the Amazon Web Services region where the
-    /// API request is processed.</p>
+    /// <p>Gets summary information about live streams in your account, in the Amazon Web Services
+    /// region where the API request is processed.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListStreams<
         C = aws_smithy_client::erase::DynConnector,
@@ -2010,6 +2109,112 @@ pub mod fluent_builders {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// <p>Filters the stream list to match the specified criterion.</p>
+        pub fn filter_by(mut self, inp: crate::model::StreamFilters) -> Self {
+            self.inner = self.inner.filter_by(inp);
+            self
+        }
+        /// <p>Filters the stream list to match the specified criterion.</p>
+        pub fn set_filter_by(
+            mut self,
+            input: std::option::Option<crate::model::StreamFilters>,
+        ) -> Self {
+            self.inner = self.inner.set_filter_by(input);
+            self
+        }
+        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
+        /// response field.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
+        /// response field.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Maximum number of streams to return. Default: 50.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>Maximum number of streams to return. Default: 50.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListStreamSessions`.
+    ///
+    /// <p>Gets a summary of current and previous streams for a specified channel in your account, in
+    /// the AWS region where the API request is processed.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListStreamSessions<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_stream_sessions_input::Builder,
+    }
+    impl<C, M, R> ListStreamSessions<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListStreamSessions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListStreamSessionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListStreamSessionsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListStreamSessionsInputOperationOutputAlias,
+                crate::output::ListStreamSessionsOutput,
+                crate::error::ListStreamSessionsError,
+                crate::input::ListStreamSessionsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Channel ARN used to filter the list.</p>
+        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(inp);
+            self
+        }
+        /// <p>Channel ARN used to filter the list.</p>
+        pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_channel_arn(input);
+            self
         }
         /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
         /// response field.</p>
@@ -2106,7 +2311,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutMetadata`.
     ///
-    /// <p>Inserts metadata into the active stream of the specified channel.  At most 5 requests per
+    /// <p>Inserts metadata into the active stream of the specified channel. At most 5 requests per
     /// second per channel are allowed, each with a maximum 1 KB payload. (If 5 TPS is not sufficient
     /// for your needs, we recommend batching your data into a single PutMetadata call.) At most 155
     /// requests per second per account are allowed. Also see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/metadata.html">Embedding Metadata within a Video Stream</a> in
@@ -2527,18 +2732,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-        /// <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console,
-        /// <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard,
-        /// respectively.)</p>
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
+        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
+        /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
+        /// Standard, respectively.)</p>
         pub fn latency_mode(mut self, inp: crate::model::ChannelLatencyMode) -> Self {
             self.inner = self.inner.latency_mode(inp);
             self
         }
-        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-        /// <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console,
-        /// <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard,
-        /// respectively.)</p>
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
+        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
+        /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
+        /// Standard, respectively.)</p>
         pub fn set_latency_mode(
             mut self,
             input: std::option::Option<crate::model::ChannelLatencyMode>,
@@ -2621,7 +2826,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -2644,7 +2855,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

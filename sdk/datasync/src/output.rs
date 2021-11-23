@@ -152,6 +152,36 @@ impl UpdateLocationNfsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateLocationHdfsOutput {}
+impl std::fmt::Debug for UpdateLocationHdfsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateLocationHdfsOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateLocationHdfsOutput`](crate::output::UpdateLocationHdfsOutput)
+pub mod update_location_hdfs_output {
+    /// A builder for [`UpdateLocationHdfsOutput`](crate::output::UpdateLocationHdfsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateLocationHdfsOutput`](crate::output::UpdateLocationHdfsOutput)
+        pub fn build(self) -> crate::output::UpdateLocationHdfsOutput {
+            crate::output::UpdateLocationHdfsOutput {}
+        }
+    }
+}
+impl UpdateLocationHdfsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLocationHdfsOutput`](crate::output::UpdateLocationHdfsOutput)
+    pub fn builder() -> crate::output::update_location_hdfs_output::Builder {
+        crate::output::update_location_hdfs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAgentOutput {}
 impl std::fmt::Debug for UpdateAgentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -779,7 +809,7 @@ pub struct DescribeTaskExecutionOutput {
     /// </p>
     pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
     /// <p>The time that the task execution was started.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The expected number of files that is to be transferred over the network. This value is
     /// calculated during the PREPARING phase, before the TRANSFERRING phase. This value is the
     /// expected number of files to be transferred. It's calculated based on comparing the
@@ -857,7 +887,7 @@ impl DescribeTaskExecutionOutput {
         self.includes.as_deref()
     }
     /// <p>The time that the task execution was started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The expected number of files that is to be transferred over the network. This value is
@@ -932,7 +962,7 @@ pub mod describe_task_execution_output {
         pub(crate) options: std::option::Option<crate::model::Options>,
         pub(crate) excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
         pub(crate) includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) estimated_files_to_transfer: std::option::Option<i64>,
         pub(crate) estimated_bytes_to_transfer: std::option::Option<i64>,
         pub(crate) files_transferred: std::option::Option<i64>,
@@ -1076,14 +1106,14 @@ pub mod describe_task_execution_output {
             self
         }
         /// <p>The time that the task execution was started.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The time that the task execution was started.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -1228,11 +1258,11 @@ pub struct DescribeTaskOutput {
     /// <p>For more information on these groups, see Working with Log Groups and Log
     /// Streams in the <i>Amazon CloudWatch User Guide</i>.</p>
     pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the source ENIs (Elastic Network Interface) that was
+    /// <p>The Amazon Resource Names (ARNs) of the source elastic network interfaces (ENIs) that were
     /// created for your subnet.</p>
     pub source_network_interface_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of the destination ENIs (Elastic Network Interface) that
-    /// was created for your subnet.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the destination elastic network interfaces (ENIs) that
+    /// were created for your subnet.</p>
     pub destination_network_interface_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The set of configuration options that control the behavior of a single execution of the
     /// task that occurs when you call <code>StartTaskExecution</code>. You can configure these
@@ -1243,8 +1273,7 @@ pub struct DescribeTaskOutput {
     pub options: std::option::Option<crate::model::Options>,
     /// <p>A list of filter rules that determines which files to exclude from a task. The list should
     /// contain a single filter string that consists of the patterns to exclude. The patterns are
-    /// delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
-    /// </p>
+    /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     /// <p>
     /// </p>
     pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -1257,11 +1286,10 @@ pub struct DescribeTaskOutput {
     /// can use this information to help troubleshoot issues. </p>
     pub error_detail: std::option::Option<std::string::String>,
     /// <p>The time that the task was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of filter rules that determines which files to include when running a task. The
-    /// pattern should contain a single filter string that consists of the patterns to include. The
-    /// patterns are delimited by "|" (that is, a pipe). For example:
-    /// <code>"/folder1|/folder2</code>"</p>
+    /// pattern contains a single filter string that consists of the patterns to include. The patterns
+    /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2</code>".</p>
     pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
 }
 impl DescribeTaskOutput {
@@ -1302,13 +1330,13 @@ impl DescribeTaskOutput {
     pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<&str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the source ENIs (Elastic Network Interface) that was
+    /// <p>The Amazon Resource Names (ARNs) of the source elastic network interfaces (ENIs) that were
     /// created for your subnet.</p>
     pub fn source_network_interface_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.source_network_interface_arns.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the destination ENIs (Elastic Network Interface) that
-    /// was created for your subnet.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the destination elastic network interfaces (ENIs) that
+    /// were created for your subnet.</p>
     pub fn destination_network_interface_arns(
         &self,
     ) -> std::option::Option<&[std::string::String]> {
@@ -1325,8 +1353,7 @@ impl DescribeTaskOutput {
     }
     /// <p>A list of filter rules that determines which files to exclude from a task. The list should
     /// contain a single filter string that consists of the patterns to exclude. The patterns are
-    /// delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
-    /// </p>
+    /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     /// <p>
     /// </p>
     pub fn excludes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
@@ -1347,13 +1374,12 @@ impl DescribeTaskOutput {
         self.error_detail.as_deref()
     }
     /// <p>The time that the task was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A list of filter rules that determines which files to include when running a task. The
-    /// pattern should contain a single filter string that consists of the patterns to include. The
-    /// patterns are delimited by "|" (that is, a pipe). For example:
-    /// <code>"/folder1|/folder2</code>"</p>
+    /// pattern contains a single filter string that consists of the patterns to include. The patterns
+    /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2</code>".</p>
     pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
         self.includes.as_deref()
     }
@@ -1411,7 +1437,7 @@ pub mod describe_task_output {
         pub(crate) schedule: std::option::Option<crate::model::TaskSchedule>,
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_detail: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
     }
     impl Builder {
@@ -1519,7 +1545,7 @@ pub mod describe_task_output {
         ///
         /// To override the contents of this collection use [`set_source_network_interface_arns`](Self::set_source_network_interface_arns).
         ///
-        /// <p>The Amazon Resource Name (ARN) of the source ENIs (Elastic Network Interface) that was
+        /// <p>The Amazon Resource Names (ARNs) of the source elastic network interfaces (ENIs) that were
         /// created for your subnet.</p>
         pub fn source_network_interface_arns(
             mut self,
@@ -1530,7 +1556,7 @@ pub mod describe_task_output {
             self.source_network_interface_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the source ENIs (Elastic Network Interface) that was
+        /// <p>The Amazon Resource Names (ARNs) of the source elastic network interfaces (ENIs) that were
         /// created for your subnet.</p>
         pub fn set_source_network_interface_arns(
             mut self,
@@ -1543,8 +1569,8 @@ pub mod describe_task_output {
         ///
         /// To override the contents of this collection use [`set_destination_network_interface_arns`](Self::set_destination_network_interface_arns).
         ///
-        /// <p>The Amazon Resource Name (ARN) of the destination ENIs (Elastic Network Interface) that
-        /// was created for your subnet.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the destination elastic network interfaces (ENIs) that
+        /// were created for your subnet.</p>
         pub fn destination_network_interface_arns(
             mut self,
             input: impl Into<std::string::String>,
@@ -1554,8 +1580,8 @@ pub mod describe_task_output {
             self.destination_network_interface_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the destination ENIs (Elastic Network Interface) that
-        /// was created for your subnet.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the destination elastic network interfaces (ENIs) that
+        /// were created for your subnet.</p>
         pub fn set_destination_network_interface_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1589,8 +1615,7 @@ pub mod describe_task_output {
         ///
         /// <p>A list of filter rules that determines which files to exclude from a task. The list should
         /// contain a single filter string that consists of the patterns to exclude. The patterns are
-        /// delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
-        /// </p>
+        /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
         /// <p>
         /// </p>
         pub fn excludes(mut self, input: impl Into<crate::model::FilterRule>) -> Self {
@@ -1601,8 +1626,7 @@ pub mod describe_task_output {
         }
         /// <p>A list of filter rules that determines which files to exclude from a task. The list should
         /// contain a single filter string that consists of the patterns to exclude. The patterns are
-        /// delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
-        /// </p>
+        /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
         /// <p>
         /// </p>
         pub fn set_excludes(
@@ -1650,14 +1674,14 @@ pub mod describe_task_output {
             self
         }
         /// <p>The time that the task was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time that the task was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -1667,9 +1691,8 @@ pub mod describe_task_output {
         /// To override the contents of this collection use [`set_includes`](Self::set_includes).
         ///
         /// <p>A list of filter rules that determines which files to include when running a task. The
-        /// pattern should contain a single filter string that consists of the patterns to include. The
-        /// patterns are delimited by "|" (that is, a pipe). For example:
-        /// <code>"/folder1|/folder2</code>"</p>
+        /// pattern contains a single filter string that consists of the patterns to include. The patterns
+        /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2</code>".</p>
         pub fn includes(mut self, input: impl Into<crate::model::FilterRule>) -> Self {
             let mut v = self.includes.unwrap_or_default();
             v.push(input.into());
@@ -1677,9 +1700,8 @@ pub mod describe_task_output {
             self
         }
         /// <p>A list of filter rules that determines which files to include when running a task. The
-        /// pattern should contain a single filter string that consists of the patterns to include. The
-        /// patterns are delimited by "|" (that is, a pipe). For example:
-        /// <code>"/folder1|/folder2</code>"</p>
+        /// pattern contains a single filter string that consists of the patterns to include. The patterns
+        /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2</code>".</p>
         pub fn set_includes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -1736,7 +1758,7 @@ pub struct DescribeLocationSmbOutput {
     /// <p>The mount options that are available for DataSync to use to access an SMB location.</p>
     pub mount_options: std::option::Option<crate::model::SmbMountOptions>,
     /// <p>The time that the SMB location was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeLocationSmbOutput {
     /// <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
@@ -1766,7 +1788,7 @@ impl DescribeLocationSmbOutput {
         self.mount_options.as_ref()
     }
     /// <p>The time that the SMB location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -1795,7 +1817,7 @@ pub mod describe_location_smb_output {
         pub(crate) user: std::option::Option<std::string::String>,
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) mount_options: std::option::Option<crate::model::SmbMountOptions>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
@@ -1875,14 +1897,14 @@ pub mod describe_location_smb_output {
             self
         }
         /// <p>The time that the SMB location was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time that the SMB location was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -1932,7 +1954,7 @@ pub struct DescribeLocationS3Output {
     /// Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time that the Amazon S3 bucket location was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeLocationS3Output {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.</p>
@@ -1965,7 +1987,7 @@ impl DescribeLocationS3Output {
         self.agent_arns.as_deref()
     }
     /// <p>The time that the Amazon S3 bucket location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -1992,7 +2014,7 @@ pub mod describe_location_s3_output {
         pub(crate) s3_storage_class: std::option::Option<crate::model::S3StorageClass>,
         pub(crate) s3_config: std::option::Option<crate::model::S3Config>,
         pub(crate) agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.</p>
@@ -2076,14 +2098,14 @@ pub mod describe_location_s3_output {
             self
         }
         /// <p>The time that the Amazon S3 bucket location was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time that the Amazon S3 bucket location was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2131,7 +2153,7 @@ pub struct DescribeLocationObjectStorageOutput {
     /// self-managed object storage server location.</p>
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time that the self-managed object storage server agent was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeLocationObjectStorageOutput {
     /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to describe.</p>
@@ -2167,7 +2189,7 @@ impl DescribeLocationObjectStorageOutput {
         self.agent_arns.as_deref()
     }
     /// <p>The time that the self-managed object storage server agent was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -2196,7 +2218,7 @@ pub mod describe_location_object_storage_output {
         pub(crate) server_port: std::option::Option<i32>,
         pub(crate) server_protocol: std::option::Option<crate::model::ObjectStorageServerProtocol>,
         pub(crate) agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to describe.</p>
@@ -2284,14 +2306,14 @@ pub mod describe_location_object_storage_output {
             self
         }
         /// <p>The time that the self-managed object storage server agent was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time that the self-managed object storage server agent was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2331,7 +2353,7 @@ pub struct DescribeLocationNfsOutput {
     /// <p>The NFS mount options that DataSync used to mount your NFS share.</p>
     pub mount_options: std::option::Option<crate::model::NfsMountOptions>,
     /// <p>The time that the NFS location was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeLocationNfsOutput {
     /// <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
@@ -2352,7 +2374,7 @@ impl DescribeLocationNfsOutput {
         self.mount_options.as_ref()
     }
     /// <p>The time that the NFS location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -2377,7 +2399,7 @@ pub mod describe_location_nfs_output {
         pub(crate) location_uri: std::option::Option<std::string::String>,
         pub(crate) on_prem_config: std::option::Option<crate::model::OnPremConfig>,
         pub(crate) mount_options: std::option::Option<crate::model::NfsMountOptions>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
@@ -2429,14 +2451,14 @@ pub mod describe_location_nfs_output {
             self
         }
         /// <p>The time that the NFS location was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time that the NFS location was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2463,6 +2485,324 @@ impl DescribeLocationNfsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLocationHdfsOutput {
+    /// <p>The ARN of the HDFS cluster location.</p>
+    pub location_arn: std::option::Option<std::string::String>,
+    /// <p>The URI of the HDFS cluster location.</p>
+    pub location_uri: std::option::Option<std::string::String>,
+    /// <p>The NameNode that manage the HDFS namespace. </p>
+    pub name_nodes: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
+    /// <p>The size of the data blocks to write into the HDFS cluster. </p>
+    pub block_size: std::option::Option<i32>,
+    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
+    pub replication_factor: std::option::Option<i32>,
+    /// <p> The URI of the HDFS cluster's Key Management Server (KMS). </p>
+    pub kms_key_provider_uri: std::option::Option<std::string::String>,
+    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
+    /// and data transfer protection settings configured on the Hadoop Distributed File System (HDFS)
+    /// cluster. </p>
+    pub qop_configuration: std::option::Option<crate::model::QopConfiguration>,
+    /// <p>The type of authentication used to determine the identity of the user. </p>
+    pub authentication_type: std::option::Option<crate::model::HdfsAuthenticationType>,
+    /// <p>The user name used to identify the client on the host operating system. This parameter is
+    /// used if the <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.</p>
+    pub simple_user: std::option::Option<std::string::String>,
+    /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. This
+    /// parameter is used if the <code>AuthenticationType</code> is defined as
+    /// <code>KERBEROS</code>.</p>
+    pub kerberos_principal: std::option::Option<std::string::String>,
+    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+    pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The time that the HDFS location was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl DescribeLocationHdfsOutput {
+    /// <p>The ARN of the HDFS cluster location.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+    /// <p>The URI of the HDFS cluster location.</p>
+    pub fn location_uri(&self) -> std::option::Option<&str> {
+        self.location_uri.as_deref()
+    }
+    /// <p>The NameNode that manage the HDFS namespace. </p>
+    pub fn name_nodes(&self) -> std::option::Option<&[crate::model::HdfsNameNode]> {
+        self.name_nodes.as_deref()
+    }
+    /// <p>The size of the data blocks to write into the HDFS cluster. </p>
+    pub fn block_size(&self) -> std::option::Option<i32> {
+        self.block_size
+    }
+    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
+    pub fn replication_factor(&self) -> std::option::Option<i32> {
+        self.replication_factor
+    }
+    /// <p> The URI of the HDFS cluster's Key Management Server (KMS). </p>
+    pub fn kms_key_provider_uri(&self) -> std::option::Option<&str> {
+        self.kms_key_provider_uri.as_deref()
+    }
+    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
+    /// and data transfer protection settings configured on the Hadoop Distributed File System (HDFS)
+    /// cluster. </p>
+    pub fn qop_configuration(&self) -> std::option::Option<&crate::model::QopConfiguration> {
+        self.qop_configuration.as_ref()
+    }
+    /// <p>The type of authentication used to determine the identity of the user. </p>
+    pub fn authentication_type(
+        &self,
+    ) -> std::option::Option<&crate::model::HdfsAuthenticationType> {
+        self.authentication_type.as_ref()
+    }
+    /// <p>The user name used to identify the client on the host operating system. This parameter is
+    /// used if the <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.</p>
+    pub fn simple_user(&self) -> std::option::Option<&str> {
+        self.simple_user.as_deref()
+    }
+    /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. This
+    /// parameter is used if the <code>AuthenticationType</code> is defined as
+    /// <code>KERBEROS</code>.</p>
+    pub fn kerberos_principal(&self) -> std::option::Option<&str> {
+        self.kerberos_principal.as_deref()
+    }
+    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.agent_arns.as_deref()
+    }
+    /// <p>The time that the HDFS location was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeLocationHdfsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeLocationHdfsOutput");
+        formatter.field("location_arn", &self.location_arn);
+        formatter.field("location_uri", &self.location_uri);
+        formatter.field("name_nodes", &self.name_nodes);
+        formatter.field("block_size", &self.block_size);
+        formatter.field("replication_factor", &self.replication_factor);
+        formatter.field("kms_key_provider_uri", &self.kms_key_provider_uri);
+        formatter.field("qop_configuration", &self.qop_configuration);
+        formatter.field("authentication_type", &self.authentication_type);
+        formatter.field("simple_user", &self.simple_user);
+        formatter.field("kerberos_principal", &self.kerberos_principal);
+        formatter.field("agent_arns", &self.agent_arns);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.finish()
+    }
+}
+/// See [`DescribeLocationHdfsOutput`](crate::output::DescribeLocationHdfsOutput)
+pub mod describe_location_hdfs_output {
+    /// A builder for [`DescribeLocationHdfsOutput`](crate::output::DescribeLocationHdfsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) location_arn: std::option::Option<std::string::String>,
+        pub(crate) location_uri: std::option::Option<std::string::String>,
+        pub(crate) name_nodes: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
+        pub(crate) block_size: std::option::Option<i32>,
+        pub(crate) replication_factor: std::option::Option<i32>,
+        pub(crate) kms_key_provider_uri: std::option::Option<std::string::String>,
+        pub(crate) qop_configuration: std::option::Option<crate::model::QopConfiguration>,
+        pub(crate) authentication_type: std::option::Option<crate::model::HdfsAuthenticationType>,
+        pub(crate) simple_user: std::option::Option<std::string::String>,
+        pub(crate) kerberos_principal: std::option::Option<std::string::String>,
+        pub(crate) agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The ARN of the HDFS cluster location.</p>
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the HDFS cluster location.</p>
+        pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location_arn = input;
+            self
+        }
+        /// <p>The URI of the HDFS cluster location.</p>
+        pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location_uri = Some(input.into());
+            self
+        }
+        /// <p>The URI of the HDFS cluster location.</p>
+        pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location_uri = input;
+            self
+        }
+        /// Appends an item to `name_nodes`.
+        ///
+        /// To override the contents of this collection use [`set_name_nodes`](Self::set_name_nodes).
+        ///
+        /// <p>The NameNode that manage the HDFS namespace. </p>
+        pub fn name_nodes(mut self, input: impl Into<crate::model::HdfsNameNode>) -> Self {
+            let mut v = self.name_nodes.unwrap_or_default();
+            v.push(input.into());
+            self.name_nodes = Some(v);
+            self
+        }
+        /// <p>The NameNode that manage the HDFS namespace. </p>
+        pub fn set_name_nodes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
+        ) -> Self {
+            self.name_nodes = input;
+            self
+        }
+        /// <p>The size of the data blocks to write into the HDFS cluster. </p>
+        pub fn block_size(mut self, input: i32) -> Self {
+            self.block_size = Some(input);
+            self
+        }
+        /// <p>The size of the data blocks to write into the HDFS cluster. </p>
+        pub fn set_block_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.block_size = input;
+            self
+        }
+        /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
+        pub fn replication_factor(mut self, input: i32) -> Self {
+            self.replication_factor = Some(input);
+            self
+        }
+        /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
+        pub fn set_replication_factor(mut self, input: std::option::Option<i32>) -> Self {
+            self.replication_factor = input;
+            self
+        }
+        /// <p> The URI of the HDFS cluster's Key Management Server (KMS). </p>
+        pub fn kms_key_provider_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_provider_uri = Some(input.into());
+            self
+        }
+        /// <p> The URI of the HDFS cluster's Key Management Server (KMS). </p>
+        pub fn set_kms_key_provider_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.kms_key_provider_uri = input;
+            self
+        }
+        /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
+        /// and data transfer protection settings configured on the Hadoop Distributed File System (HDFS)
+        /// cluster. </p>
+        pub fn qop_configuration(mut self, input: crate::model::QopConfiguration) -> Self {
+            self.qop_configuration = Some(input);
+            self
+        }
+        /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
+        /// and data transfer protection settings configured on the Hadoop Distributed File System (HDFS)
+        /// cluster. </p>
+        pub fn set_qop_configuration(
+            mut self,
+            input: std::option::Option<crate::model::QopConfiguration>,
+        ) -> Self {
+            self.qop_configuration = input;
+            self
+        }
+        /// <p>The type of authentication used to determine the identity of the user. </p>
+        pub fn authentication_type(mut self, input: crate::model::HdfsAuthenticationType) -> Self {
+            self.authentication_type = Some(input);
+            self
+        }
+        /// <p>The type of authentication used to determine the identity of the user. </p>
+        pub fn set_authentication_type(
+            mut self,
+            input: std::option::Option<crate::model::HdfsAuthenticationType>,
+        ) -> Self {
+            self.authentication_type = input;
+            self
+        }
+        /// <p>The user name used to identify the client on the host operating system. This parameter is
+        /// used if the <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.</p>
+        pub fn simple_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.simple_user = Some(input.into());
+            self
+        }
+        /// <p>The user name used to identify the client on the host operating system. This parameter is
+        /// used if the <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.</p>
+        pub fn set_simple_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.simple_user = input;
+            self
+        }
+        /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. This
+        /// parameter is used if the <code>AuthenticationType</code> is defined as
+        /// <code>KERBEROS</code>.</p>
+        pub fn kerberos_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kerberos_principal = Some(input.into());
+            self
+        }
+        /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. This
+        /// parameter is used if the <code>AuthenticationType</code> is defined as
+        /// <code>KERBEROS</code>.</p>
+        pub fn set_kerberos_principal(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.kerberos_principal = input;
+            self
+        }
+        /// Appends an item to `agent_arns`.
+        ///
+        /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
+        ///
+        /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+        pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.agent_arns.unwrap_or_default();
+            v.push(input.into());
+            self.agent_arns = Some(v);
+            self
+        }
+        /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+        pub fn set_agent_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.agent_arns = input;
+            self
+        }
+        /// <p>The time that the HDFS location was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The time that the HDFS location was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeLocationHdfsOutput`](crate::output::DescribeLocationHdfsOutput)
+        pub fn build(self) -> crate::output::DescribeLocationHdfsOutput {
+            crate::output::DescribeLocationHdfsOutput {
+                location_arn: self.location_arn,
+                location_uri: self.location_uri,
+                name_nodes: self.name_nodes,
+                block_size: self.block_size,
+                replication_factor: self.replication_factor,
+                kms_key_provider_uri: self.kms_key_provider_uri,
+                qop_configuration: self.qop_configuration,
+                authentication_type: self.authentication_type,
+                simple_user: self.simple_user,
+                kerberos_principal: self.kerberos_principal,
+                agent_arns: self.agent_arns,
+                creation_time: self.creation_time,
+            }
+        }
+    }
+}
+impl DescribeLocationHdfsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLocationHdfsOutput`](crate::output::DescribeLocationHdfsOutput)
+    pub fn builder() -> crate::output::describe_location_hdfs_output::Builder {
+        crate::output::describe_location_hdfs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationFsxWindowsOutput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was
     /// described.</p>
@@ -2473,7 +2813,7 @@ pub struct DescribeLocationFsxWindowsOutput {
     /// for Windows File Server file system.</p>
     pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time that the FSx for Windows File Server location was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user who has the permissions to access files and folders in the FSx for Windows File
     /// Server file system.</p>
     pub user: std::option::Option<std::string::String>,
@@ -2496,7 +2836,7 @@ impl DescribeLocationFsxWindowsOutput {
         self.security_group_arns.as_deref()
     }
     /// <p>The time that the FSx for Windows File Server location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The user who has the permissions to access files and folders in the FSx for Windows File
@@ -2530,7 +2870,7 @@ pub mod describe_location_fsx_windows_output {
         pub(crate) location_arn: std::option::Option<std::string::String>,
         pub(crate) location_uri: std::option::Option<std::string::String>,
         pub(crate) security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) user: std::option::Option<std::string::String>,
         pub(crate) domain: std::option::Option<std::string::String>,
     }
@@ -2579,14 +2919,14 @@ pub mod describe_location_fsx_windows_output {
             self
         }
         /// <p>The time that the FSx for Windows File Server location was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time that the FSx for Windows File Server location was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2647,7 +2987,7 @@ pub struct DescribeLocationEfsOutput {
     /// subnet specified. </p>
     pub ec2_config: std::option::Option<crate::model::Ec2Config>,
     /// <p>The time that the EFS location was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeLocationEfsOutput {
     /// <p>The Amazon Resource Name (ARN) of the EFS location that was described.</p>
@@ -2666,7 +3006,7 @@ impl DescribeLocationEfsOutput {
         self.ec2_config.as_ref()
     }
     /// <p>The time that the EFS location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -2689,7 +3029,7 @@ pub mod describe_location_efs_output {
         pub(crate) location_arn: std::option::Option<std::string::String>,
         pub(crate) location_uri: std::option::Option<std::string::String>,
         pub(crate) ec2_config: std::option::Option<crate::model::Ec2Config>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the EFS location that was described.</p>
@@ -2732,14 +3072,14 @@ pub mod describe_location_efs_output {
             self
         }
         /// <p>The time that the EFS location was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time that the EFS location was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2777,9 +3117,9 @@ pub struct DescribeAgentOutput {
     /// status.</p>
     pub status: std::option::Option<crate::model::AgentStatus>,
     /// <p>The time that the agent last connected to DataSync.</p>
-    pub last_connection_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_connection_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the agent was activated (that is, created in your account).</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint,
     /// the agent is not accessible over the public internet. </p>
     pub endpoint_type: std::option::Option<crate::model::EndpointType>,
@@ -2804,11 +3144,11 @@ impl DescribeAgentOutput {
         self.status.as_ref()
     }
     /// <p>The time that the agent last connected to DataSync.</p>
-    pub fn last_connection_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_connection_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_connection_time.as_ref()
     }
     /// <p>The time that the agent was activated (that is, created in your account).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint,
@@ -2843,8 +3183,8 @@ pub mod describe_agent_output {
         pub(crate) agent_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::AgentStatus>,
-        pub(crate) last_connection_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_connection_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) endpoint_type: std::option::Option<crate::model::EndpointType>,
         pub(crate) private_link_config: std::option::Option<crate::model::PrivateLinkConfig>,
     }
@@ -2888,27 +3228,27 @@ pub mod describe_agent_output {
             self
         }
         /// <p>The time that the agent last connected to DataSync.</p>
-        pub fn last_connection_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_connection_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_connection_time = Some(input);
             self
         }
         /// <p>The time that the agent last connected to DataSync.</p>
         pub fn set_last_connection_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_connection_time = input;
             self
         }
         /// <p>The time that the agent was activated (that is, created in your account).</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time that the agent was activated (that is, created in your account).</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -3335,6 +3675,60 @@ impl CreateLocationNfsOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationNfsOutput`](crate::output::CreateLocationNfsOutput)
     pub fn builder() -> crate::output::create_location_nfs_output::Builder {
         crate::output::create_location_nfs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLocationHdfsOutput {
+    /// <p>The ARN of the source HDFS cluster location that's created. </p>
+    pub location_arn: std::option::Option<std::string::String>,
+}
+impl CreateLocationHdfsOutput {
+    /// <p>The ARN of the source HDFS cluster location that's created. </p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateLocationHdfsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateLocationHdfsOutput");
+        formatter.field("location_arn", &self.location_arn);
+        formatter.finish()
+    }
+}
+/// See [`CreateLocationHdfsOutput`](crate::output::CreateLocationHdfsOutput)
+pub mod create_location_hdfs_output {
+    /// A builder for [`CreateLocationHdfsOutput`](crate::output::CreateLocationHdfsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) location_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the source HDFS cluster location that's created. </p>
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the source HDFS cluster location that's created. </p>
+        pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateLocationHdfsOutput`](crate::output::CreateLocationHdfsOutput)
+        pub fn build(self) -> crate::output::CreateLocationHdfsOutput {
+            crate::output::CreateLocationHdfsOutput {
+                location_arn: self.location_arn,
+            }
+        }
+    }
+}
+impl CreateLocationHdfsOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLocationHdfsOutput`](crate::output::CreateLocationHdfsOutput)
+    pub fn builder() -> crate::output::create_location_hdfs_output::Builder {
+        crate::output::create_location_hdfs_output::Builder::default()
     }
 }
 

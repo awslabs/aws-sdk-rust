@@ -4126,6 +4126,156 @@ impl std::error::Error for UpdateConfigurationError {
     }
 }
 
+/// Error type for the `UpdateConnectivity` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateConnectivityError {
+    /// Kind of error that occurred.
+    pub kind: UpdateConnectivityErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateConnectivity` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateConnectivityErrorKind {
+    /// <p>Returns information about an error.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>Returns information about an error.</p>
+    ForbiddenException(crate::error::ForbiddenException),
+    /// <p>Returns information about an error.</p>
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    /// <p>Returns information about an error.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>Returns information about an error.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>Returns information about an error.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateConnectivityError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateConnectivityErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateConnectivityErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            UpdateConnectivityErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            UpdateConnectivityErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateConnectivityErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateConnectivityErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            UpdateConnectivityErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateConnectivityError {
+    fn code(&self) -> Option<&str> {
+        UpdateConnectivityError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateConnectivityError {
+    /// Creates a new `UpdateConnectivityError`.
+    pub fn new(kind: UpdateConnectivityErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateConnectivityError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateConnectivityErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateConnectivityError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateConnectivityErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateConnectivityErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectivityErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateConnectivityErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectivityErrorKind::ForbiddenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateConnectivityErrorKind::InternalServerErrorException`.
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectivityErrorKind::InternalServerErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateConnectivityErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectivityErrorKind::NotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateConnectivityErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectivityErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateConnectivityErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectivityErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateConnectivityError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateConnectivityErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateConnectivityErrorKind::ForbiddenException(_inner) => Some(_inner),
+            UpdateConnectivityErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            UpdateConnectivityErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateConnectivityErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UpdateConnectivityErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            UpdateConnectivityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `UpdateMonitoring` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

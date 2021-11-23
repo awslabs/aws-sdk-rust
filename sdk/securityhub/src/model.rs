@@ -4848,9 +4848,9 @@ pub struct Member {
     pub member_status: std::option::Option<std::string::String>,
     /// <p>A timestamp for the date and time when the invitation was sent to the member
     /// account.</p>
-    pub invited_at: std::option::Option<aws_smithy_types::Instant>,
+    pub invited_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for the date and time when the member account was updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Member {
     /// <p>The Amazon Web Services account ID of the member account.</p>
@@ -4915,11 +4915,11 @@ impl Member {
     }
     /// <p>A timestamp for the date and time when the invitation was sent to the member
     /// account.</p>
-    pub fn invited_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn invited_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.invited_at.as_ref()
     }
     /// <p>The timestamp for the date and time when the member account was updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -4947,8 +4947,8 @@ pub mod member {
         pub(crate) master_id: std::option::Option<std::string::String>,
         pub(crate) administrator_id: std::option::Option<std::string::String>,
         pub(crate) member_status: std::option::Option<std::string::String>,
-        pub(crate) invited_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) invited_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Web Services account ID of the member account.</p>
@@ -5089,7 +5089,7 @@ pub mod member {
         }
         /// <p>A timestamp for the date and time when the invitation was sent to the member
         /// account.</p>
-        pub fn invited_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn invited_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.invited_at = Some(input);
             self
         }
@@ -5097,20 +5097,20 @@ pub mod member {
         /// account.</p>
         pub fn set_invited_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.invited_at = input;
             self
         }
         /// <p>The timestamp for the date and time when the member account was updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The timestamp for the date and time when the member account was updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -5145,7 +5145,7 @@ pub struct Invitation {
     /// <p>The ID of the invitation sent to the member account.</p>
     pub invitation_id: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the invitation was sent.</p>
-    pub invited_at: std::option::Option<aws_smithy_types::Instant>,
+    pub invited_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the association between the member and administrator accounts.</p>
     pub member_status: std::option::Option<std::string::String>,
 }
@@ -5159,7 +5159,7 @@ impl Invitation {
         self.invitation_id.as_deref()
     }
     /// <p>The timestamp of when the invitation was sent.</p>
-    pub fn invited_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn invited_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.invited_at.as_ref()
     }
     /// <p>The current status of the association between the member and administrator accounts.</p>
@@ -5185,7 +5185,7 @@ pub mod invitation {
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) invitation_id: std::option::Option<std::string::String>,
-        pub(crate) invited_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) invited_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) member_status: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5213,14 +5213,14 @@ pub mod invitation {
             self
         }
         /// <p>The timestamp of when the invitation was sent.</p>
-        pub fn invited_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn invited_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.invited_at = Some(input);
             self
         }
         /// <p>The timestamp of when the invitation was sent.</p>
         pub fn set_invited_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.invited_at = input;
             self
@@ -65811,7 +65811,7 @@ pub struct StandardsControl {
     pub disabled_reason: std::option::Option<std::string::String>,
     /// <p>The date and time that the status of the security standard control was most recently
     /// updated.</p>
-    pub control_status_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub control_status_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier of the security standard control.</p>
     pub control_id: std::option::Option<std::string::String>,
     /// <p>The title of the security standard control.</p>
@@ -65845,7 +65845,7 @@ impl StandardsControl {
     }
     /// <p>The date and time that the status of the security standard control was most recently
     /// updated.</p>
-    pub fn control_status_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn control_status_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.control_status_updated_at.as_ref()
     }
     /// <p>The identifier of the security standard control.</p>
@@ -65902,7 +65902,7 @@ pub mod standards_control {
         pub(crate) standards_control_arn: std::option::Option<std::string::String>,
         pub(crate) control_status: std::option::Option<crate::model::ControlStatus>,
         pub(crate) disabled_reason: std::option::Option<std::string::String>,
-        pub(crate) control_status_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) control_status_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) control_id: std::option::Option<std::string::String>,
         pub(crate) title: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -65954,7 +65954,7 @@ pub mod standards_control {
         }
         /// <p>The date and time that the status of the security standard control was most recently
         /// updated.</p>
-        pub fn control_status_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn control_status_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.control_status_updated_at = Some(input);
             self
         }
@@ -65962,7 +65962,7 @@ pub mod standards_control {
         /// updated.</p>
         pub fn set_control_status_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.control_status_updated_at = input;
             self

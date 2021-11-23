@@ -5,9 +5,9 @@
 
 //! Abstractions for the Smithy AWS Query protocol
 
-use aws_smithy_types::instant::Format;
+use aws_smithy_types::date_time::{DateTimeFormatError, Format};
 use aws_smithy_types::primitive::Encoder;
-use aws_smithy_types::{Instant, Number};
+use aws_smithy_types::{DateTime, Number};
 use std::borrow::Cow;
 use urlencoding::encode;
 
@@ -178,9 +178,14 @@ impl<'a> QueryValueWriter<'a> {
         }
     }
 
-    /// Writes an Instant `value` with the given `format`.
-    pub fn instant(self, instant: &Instant, format: Format) {
-        self.string(&instant.fmt(format));
+    /// Writes a date-time `value` with the given `format`.
+    pub fn date_time(
+        self,
+        date_time: &DateTime,
+        format: Format,
+    ) -> Result<(), DateTimeFormatError> {
+        self.string(&date_time.fmt(format)?);
+        Ok(())
     }
 
     /// Starts a map.
@@ -208,8 +213,8 @@ impl<'a> QueryValueWriter<'a> {
 #[cfg(test)]
 mod tests {
     use crate::QueryWriter;
-    use aws_smithy_types::instant::Format;
-    use aws_smithy_types::{Instant, Number};
+    use aws_smithy_types::date_time::Format;
+    use aws_smithy_types::{DateTime, Number};
 
     #[test]
     fn no_params() {
@@ -327,15 +332,22 @@ mod tests {
 
         writer
             .prefix("epoch_seconds")
-            .instant(&Instant::from_f64(5.2), Format::EpochSeconds);
-        writer.prefix("date_time").instant(
-            &Instant::from_str("2021-05-24T15:34:50.123Z", Format::DateTime).unwrap(),
-            Format::DateTime,
-        );
-        writer.prefix("http_date").instant(
-            &Instant::from_str("Wed, 21 Oct 2015 07:28:00 GMT", Format::HttpDate).unwrap(),
-            Format::HttpDate,
-        );
+            .date_time(&DateTime::from_secs_f64(5.2), Format::EpochSeconds)
+            .unwrap();
+        writer
+            .prefix("date_time")
+            .date_time(
+                &DateTime::from_str("2021-05-24T15:34:50.123Z", Format::DateTime).unwrap(),
+                Format::DateTime,
+            )
+            .unwrap();
+        writer
+            .prefix("http_date")
+            .date_time(
+                &DateTime::from_str("Wed, 21 Oct 2015 07:28:00 GMT", Format::HttpDate).unwrap(),
+                Format::HttpDate,
+            )
+            .unwrap();
         writer.finish();
 
         assert_eq!(

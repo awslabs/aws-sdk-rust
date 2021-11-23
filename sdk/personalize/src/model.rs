@@ -102,9 +102,9 @@ pub struct SolutionVersionSummary {
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that this version of a solution was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the solution version was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If a solution version fails, the reason behind the failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
 }
@@ -124,11 +124,11 @@ impl SolutionVersionSummary {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that this version of a solution was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the solution version was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If a solution version fails, the reason behind the failure.</p>
@@ -155,8 +155,8 @@ pub mod solution_version_summary {
     pub struct Builder {
         pub(crate) solution_version_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -196,27 +196,27 @@ pub mod solution_version_summary {
             self
         }
         /// <p>The date and time (in Unix time) that this version of a solution was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that this version of a solution was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time (in Unix time) that the solution version was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the solution version was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -274,9 +274,9 @@ pub struct SolutionSummary {
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the solution was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SolutionSummary {
     /// <p>The name of the solution.</p>
@@ -301,11 +301,11 @@ impl SolutionSummary {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that the solution was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -329,8 +329,8 @@ pub mod solution_summary {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) solution_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the solution.</p>
@@ -382,27 +382,27 @@ pub mod solution_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the solution was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the solution was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time (in Unix time) that the solution was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the solution was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -436,9 +436,9 @@ pub struct DatasetSchemaSummary {
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the schema was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the schema was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DatasetSchemaSummary {
     /// <p>The name of the schema.</p>
@@ -450,11 +450,11 @@ impl DatasetSchemaSummary {
         self.schema_arn.as_deref()
     }
     /// <p>The date and time (in Unix time) that the schema was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the schema was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -476,8 +476,8 @@ pub mod dataset_schema_summary {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) schema_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the schema.</p>
@@ -501,27 +501,27 @@ pub mod dataset_schema_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the schema was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the schema was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time (in Unix time) that the schema was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the schema was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -556,9 +556,9 @@ pub struct RecipeSummary {
     /// <p>The status of the recipe.</p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the recipe was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the recipe was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RecipeSummary {
     /// <p>The name of the recipe.</p>
@@ -574,11 +574,11 @@ impl RecipeSummary {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that the recipe was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the recipe was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -602,8 +602,8 @@ pub mod recipe_summary {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) recipe_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the recipe.</p>
@@ -637,27 +637,27 @@ pub mod recipe_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the recipe was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the recipe was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time (in Unix time) that the recipe was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the recipe was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -741,9 +741,9 @@ pub struct FilterSummary {
     /// <p>The ARN of the filter.</p>
     pub filter_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the filter was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the filter was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the dataset group to which the filter belongs.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>If the filter failed, the reason for the failure.</p>
@@ -761,11 +761,11 @@ impl FilterSummary {
         self.filter_arn.as_deref()
     }
     /// <p>The time at which the filter was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The time at which the filter was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The ARN of the dataset group to which the filter belongs.</p>
@@ -802,8 +802,8 @@ pub mod filter_summary {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) filter_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
@@ -830,27 +830,27 @@ pub mod filter_summary {
             self
         }
         /// <p>The time at which the filter was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The time at which the filter was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The time at which the filter was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The time at which the filter was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -933,9 +933,9 @@ pub struct EventTrackerSummary {
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the event tracker was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EventTrackerSummary {
     /// <p>The name of the event tracker.</p>
@@ -960,11 +960,11 @@ impl EventTrackerSummary {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that the event tracker was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -988,8 +988,8 @@ pub mod event_tracker_summary {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) event_tracker_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the event tracker.</p>
@@ -1044,27 +1044,27 @@ pub mod event_tracker_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the event tracker was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the event tracker was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -1125,9 +1125,9 @@ pub struct DatasetSummary {
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the dataset was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the dataset was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DatasetSummary {
     /// <p>The name of the dataset.</p>
@@ -1170,11 +1170,11 @@ impl DatasetSummary {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that the dataset was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the dataset was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -1200,8 +1200,8 @@ pub mod dataset_summary {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
         pub(crate) dataset_type: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the dataset.</p>
@@ -1291,27 +1291,27 @@ pub mod dataset_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the dataset was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the dataset was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time (in Unix time) that the dataset was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the dataset was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -1354,9 +1354,9 @@ pub struct DatasetImportJobSummary {
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the dataset import job was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the dataset import job status was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If a dataset import job fails, the reason behind the failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
 }
@@ -1380,11 +1380,11 @@ impl DatasetImportJobSummary {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that the dataset import job was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the dataset import job status was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If a dataset import job fails, the reason behind the failure.</p>
@@ -1413,8 +1413,8 @@ pub mod dataset_import_job_summary {
         pub(crate) dataset_import_job_arn: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1464,27 +1464,27 @@ pub mod dataset_import_job_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the dataset import job was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the dataset import job was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time (in Unix time) that the dataset import job status was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the dataset import job status was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -1543,9 +1543,9 @@ pub struct DatasetGroupSummary {
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the dataset group was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the dataset group was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If creating a dataset group fails, the reason behind the failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
 }
@@ -1572,11 +1572,11 @@ impl DatasetGroupSummary {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that the dataset group was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the dataset group was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If creating a dataset group fails, the reason behind the failure.</p>
@@ -1605,8 +1605,8 @@ pub mod dataset_group_summary {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1662,27 +1662,27 @@ pub mod dataset_group_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the dataset group was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the dataset group was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time (in Unix time) that the dataset group was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the dataset group was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -1738,9 +1738,9 @@ pub struct DatasetExportJobSummary {
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the dataset export job was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the dataset export job status was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If a dataset export job fails, the reason behind the failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
 }
@@ -1764,11 +1764,11 @@ impl DatasetExportJobSummary {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that the dataset export job was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the dataset export job status was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If a dataset export job fails, the reason behind the failure.</p>
@@ -1797,8 +1797,8 @@ pub mod dataset_export_job_summary {
         pub(crate) dataset_export_job_arn: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1848,27 +1848,27 @@ pub mod dataset_export_job_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the dataset export job was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the dataset export job was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time (in Unix time) that the dataset export job status was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the dataset export job status was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -1927,9 +1927,9 @@ pub struct CampaignSummary {
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the campaign was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the campaign was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If a campaign fails, the reason behind the failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
 }
@@ -1956,11 +1956,11 @@ impl CampaignSummary {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that the campaign was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the campaign was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If a campaign fails, the reason behind the failure.</p>
@@ -1989,8 +1989,8 @@ pub mod campaign_summary {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) campaign_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2043,27 +2043,27 @@ pub mod campaign_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the campaign was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the campaign was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time (in Unix time) that the campaign was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the campaign was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -2127,9 +2127,9 @@ pub struct BatchInferenceJobSummary {
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The time at which the batch inference job was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the batch inference job was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the batch inference job failed, the reason for the failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The ARN of the solution version used by the batch inference job.</p>
@@ -2163,11 +2163,11 @@ impl BatchInferenceJobSummary {
         self.status.as_deref()
     }
     /// <p>The time at which the batch inference job was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The time at which the batch inference job was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If the batch inference job failed, the reason for the failure.</p>
@@ -2201,8 +2201,8 @@ pub mod batch_inference_job_summary {
         pub(crate) batch_inference_job_arn: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) solution_version_arn: std::option::Option<std::string::String>,
     }
@@ -2269,27 +2269,27 @@ pub mod batch_inference_job_summary {
             self
         }
         /// <p>The time at which the batch inference job was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The time at which the batch inference job was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The time at which the batch inference job was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The time at which the batch inference job was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -2412,11 +2412,11 @@ pub struct SolutionVersion {
     /// <p>The date and
     /// time
     /// (in Unix time) that this version of the solution was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in
     /// Unix
     /// time) that the solution was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SolutionVersion {
     /// <p>The ARN of the solution version.</p>
@@ -2512,13 +2512,13 @@ impl SolutionVersion {
     /// <p>The date and
     /// time
     /// (in Unix time) that this version of the solution was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in
     /// Unix
     /// time) that the solution was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -2562,8 +2562,8 @@ pub mod solution_version {
         pub(crate) tuned_hpo_params: std::option::Option<crate::model::TunedHpoParams>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the solution version.</p>
@@ -2793,7 +2793,7 @@ pub mod solution_version {
         /// <p>The date and
         /// time
         /// (in Unix time) that this version of the solution was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
@@ -2802,7 +2802,7 @@ pub mod solution_version {
         /// (in Unix time) that this version of the solution was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
@@ -2810,7 +2810,7 @@ pub mod solution_version {
         /// <p>The date and time (in
         /// Unix
         /// time) that the solution was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
@@ -2819,7 +2819,7 @@ pub mod solution_version {
         /// time) that the solution was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -4249,9 +4249,9 @@ pub struct Solution {
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The creation date and time (in Unix time) of the solution.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Describes the latest version of the solution, including the status and the ARN.</p>
     pub latest_solution_version: std::option::Option<crate::model::SolutionVersionSummary>,
 }
@@ -4311,11 +4311,11 @@ impl Solution {
         self.status.as_deref()
     }
     /// <p>The creation date and time (in Unix time) of the solution.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>Describes the latest version of the solution, including the status and the ARN.</p>
@@ -4360,8 +4360,8 @@ pub mod solution {
         pub(crate) solution_config: std::option::Option<crate::model::SolutionConfig>,
         pub(crate) auto_ml_result: std::option::Option<crate::model::AutoMlResult>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) latest_solution_version:
             std::option::Option<crate::model::SolutionVersionSummary>,
     }
@@ -4504,27 +4504,27 @@ pub mod solution {
             self
         }
         /// <p>The creation date and time (in Unix time) of the solution.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The creation date and time (in Unix time) of the solution.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time (in Unix time) that the solution was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the solution was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -4643,9 +4643,9 @@ pub struct DatasetSchema {
     /// <p>The schema.</p>
     pub schema: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the schema was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the schema was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DatasetSchema {
     /// <p>The name of the schema.</p>
@@ -4661,11 +4661,11 @@ impl DatasetSchema {
         self.schema.as_deref()
     }
     /// <p>The date and time (in Unix time) that the schema was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the schema was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -4689,8 +4689,8 @@ pub mod dataset_schema {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) schema_arn: std::option::Option<std::string::String>,
         pub(crate) schema: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the schema.</p>
@@ -4724,27 +4724,27 @@ pub mod dataset_schema {
             self
         }
         /// <p>The date and time (in Unix time) that the schema was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the schema was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time (in Unix time) that the schema was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the schema was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -4788,7 +4788,7 @@ pub struct Recipe {
     /// <p>The description of the recipe.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix format) that the recipe was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>One of the following values:</p>
     /// <ul>
     /// <li>
@@ -4803,7 +4803,7 @@ pub struct Recipe {
     /// </ul>
     pub recipe_type: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix format) that the recipe was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Recipe {
     /// <p>The name of the recipe.</p>
@@ -4832,7 +4832,7 @@ impl Recipe {
         self.description.as_deref()
     }
     /// <p>The date and time (in Unix format) that the recipe was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>One of the following values:</p>
@@ -4851,7 +4851,7 @@ impl Recipe {
         self.recipe_type.as_deref()
     }
     /// <p>The date and time (in Unix format) that the recipe was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -4885,9 +4885,9 @@ pub mod recipe {
         pub(crate) feature_transformation_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) recipe_type: std::option::Option<std::string::String>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the recipe.</p>
@@ -4959,14 +4959,14 @@ pub mod recipe {
             self
         }
         /// <p>The date and time (in Unix format) that the recipe was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix format) that the recipe was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
@@ -5004,14 +5004,14 @@ pub mod recipe {
             self
         }
         /// <p>The date and time (in Unix format) that the recipe was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix format) that the recipe was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -5049,9 +5049,9 @@ pub struct Filter {
     /// <p>The ARN of the filter.</p>
     pub filter_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the filter was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the filter was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the dataset group to which the filter belongs.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>If the filter failed, the reason for its failure.</p>
@@ -5073,11 +5073,11 @@ impl Filter {
         self.filter_arn.as_deref()
     }
     /// <p>The time at which the filter was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The time at which the filter was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The ARN of the dataset group to which the filter belongs.</p>
@@ -5121,8 +5121,8 @@ pub mod filter {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) filter_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) filter_expression: std::option::Option<std::string::String>,
@@ -5150,27 +5150,27 @@ pub mod filter {
             self
         }
         /// <p>The time at which the filter was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The time at which the filter was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The time at which the filter was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The time at which the filter was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -5263,9 +5263,9 @@ pub struct FeatureTransformation {
     pub default_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The creation date and time (in Unix time) of the feature transformation.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last update date and time (in Unix time) of the feature transformation.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the feature transformation.</p>
     /// <p>A feature transformation can be in one of the following states:</p>
     /// <ul>
@@ -5292,11 +5292,11 @@ impl FeatureTransformation {
         self.default_parameters.as_ref()
     }
     /// <p>The creation date and time (in Unix time) of the feature transformation.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The last update date and time (in Unix time) of the feature transformation.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The status of the feature transformation.</p>
@@ -5336,8 +5336,8 @@ pub mod feature_transformation {
         pub(crate) default_parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5390,27 +5390,27 @@ pub mod feature_transformation {
             self
         }
         /// <p>The creation date and time (in Unix time) of the feature transformation.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The creation date and time (in Unix time) of the feature transformation.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The last update date and time (in Unix time) of the feature transformation.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The last update date and time (in Unix time) of the feature transformation.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -5484,9 +5484,9 @@ pub struct EventTracker {
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix format) that the event tracker was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EventTracker {
     /// <p>The name of the event tracker.</p>
@@ -5524,11 +5524,11 @@ impl EventTracker {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix format) that the event tracker was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -5558,8 +5558,8 @@ pub mod event_tracker {
         pub(crate) tracking_id: std::option::Option<std::string::String>,
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the event tracker.</p>
@@ -5649,27 +5649,27 @@ pub mod event_tracker {
             self
         }
         /// <p>The date and time (in Unix format) that the event tracker was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix format) that the event tracker was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -5727,9 +5727,9 @@ pub struct DatasetImportJob {
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The creation date and time (in Unix time) of the dataset import job.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) the dataset was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If a dataset import job fails, provides the reason why.</p>
     pub failure_reason: std::option::Option<std::string::String>,
 }
@@ -5766,11 +5766,11 @@ impl DatasetImportJob {
         self.status.as_deref()
     }
     /// <p>The creation date and time (in Unix time) of the dataset import job.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) the dataset was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If a dataset import job fails, provides the reason why.</p>
@@ -5805,8 +5805,8 @@ pub mod dataset_import_job {
         pub(crate) data_source: std::option::Option<crate::model::DataSource>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5891,27 +5891,27 @@ pub mod dataset_import_job {
             self
         }
         /// <p>The creation date and time (in Unix time) of the dataset import job.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The creation date and time (in Unix time) of the dataset import job.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time (in Unix time) the dataset was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) the dataset was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -6054,9 +6054,9 @@ pub struct DatasetGroup {
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the datasets.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The creation date and time (in Unix time) of the dataset group.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last update date and time (in Unix time) of the dataset group.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If creating a dataset group fails, provides the reason why.</p>
     pub failure_reason: std::option::Option<std::string::String>,
 }
@@ -6091,11 +6091,11 @@ impl DatasetGroup {
         self.kms_key_arn.as_deref()
     }
     /// <p>The creation date and time (in Unix time) of the dataset group.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The last update date and time (in Unix time) of the dataset group.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If creating a dataset group fails, provides the reason why.</p>
@@ -6128,8 +6128,8 @@ pub mod dataset_group {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6205,27 +6205,27 @@ pub mod dataset_group {
             self
         }
         /// <p>The creation date and time (in Unix time) of the dataset group.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The creation date and time (in Unix time) of the dataset group.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The last update date and time (in Unix time) of the dataset group.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The last update date and time (in Unix time) of the dataset group.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -6303,9 +6303,9 @@ pub struct DatasetExportJob {
     /// </p>
     pub job_output: std::option::Option<crate::model::DatasetExportJobOutput>,
     /// <p>The creation date and time (in Unix time) of the dataset export job.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) the status of the dataset export job was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If a dataset export job fails, provides the reason why.</p>
     pub failure_reason: std::option::Option<std::string::String>,
 }
@@ -6352,11 +6352,11 @@ impl DatasetExportJob {
         self.job_output.as_ref()
     }
     /// <p>The creation date and time (in Unix time) of the dataset export job.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) the status of the dataset export job was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If a dataset export job fails, provides the reason why.</p>
@@ -6393,8 +6393,8 @@ pub mod dataset_export_job {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) job_output: std::option::Option<crate::model::DatasetExportJobOutput>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6504,27 +6504,27 @@ pub mod dataset_export_job {
             self
         }
         /// <p>The creation date and time (in Unix time) of the dataset export job.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The creation date and time (in Unix time) of the dataset export job.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time (in Unix time) the status of the dataset export job was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) the status of the dataset export job was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -6796,9 +6796,9 @@ pub struct Dataset {
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The creation date and time (in Unix time) of the dataset.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp that shows when the dataset was updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Dataset {
     /// <p>The name of the dataset.</p>
@@ -6846,11 +6846,11 @@ impl Dataset {
         self.status.as_deref()
     }
     /// <p>The creation date and time (in Unix time) of the dataset.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A time stamp that shows when the dataset was updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -6880,8 +6880,8 @@ pub mod dataset {
         pub(crate) dataset_type: std::option::Option<std::string::String>,
         pub(crate) schema_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the dataset.</p>
@@ -6988,27 +6988,27 @@ pub mod dataset {
             self
         }
         /// <p>The creation date and time (in Unix time) of the dataset.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The creation date and time (in Unix time) of the dataset.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>A time stamp that shows when the dataset was updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>A time stamp that shows when the dataset was updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -7064,9 +7064,9 @@ pub struct Campaign {
     /// <p>If a campaign fails, the reason behind the failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix format) that the campaign was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix format) that the campaign was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the
     /// <a>DescribeCampaign</a> API.</p>
     pub latest_campaign_update: std::option::Option<crate::model::CampaignUpdateSummary>,
@@ -7110,11 +7110,11 @@ impl Campaign {
         self.failure_reason.as_deref()
     }
     /// <p>The date and time (in Unix format) that the campaign was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix format) that the campaign was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the
@@ -7154,8 +7154,8 @@ pub mod campaign {
         pub(crate) campaign_config: std::option::Option<crate::model::CampaignConfig>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) latest_campaign_update: std::option::Option<crate::model::CampaignUpdateSummary>,
     }
     impl Builder {
@@ -7257,27 +7257,27 @@ pub mod campaign {
             self
         }
         /// <p>The date and time (in Unix format) that the campaign was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix format) that the campaign was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time (in Unix format) that the campaign was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix format) that the campaign was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -7350,9 +7350,9 @@ pub struct CampaignUpdateSummary {
     /// <p>If a campaign update fails, the reason behind the failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the campaign update was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the campaign update was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CampaignUpdateSummary {
     /// <p>The Amazon Resource Name (ARN) of the deployed solution version.</p>
@@ -7386,11 +7386,11 @@ impl CampaignUpdateSummary {
         self.failure_reason.as_deref()
     }
     /// <p>The date and time (in Unix time) that the campaign update was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the campaign update was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -7418,8 +7418,8 @@ pub mod campaign_update_summary {
         pub(crate) campaign_config: std::option::Option<crate::model::CampaignConfig>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the deployed solution version.</p>
@@ -7502,27 +7502,27 @@ pub mod campaign_update_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the campaign update was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the campaign update was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time (in Unix time) that the campaign update was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the campaign update was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -7592,9 +7592,9 @@ pub struct BatchInferenceJob {
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The time at which the batch inference job was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the batch inference job was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BatchInferenceJob {
     /// <p>The name of the batch inference job.</p>
@@ -7661,11 +7661,11 @@ impl BatchInferenceJob {
         self.status.as_deref()
     }
     /// <p>The time at which the batch inference job was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The time at which the batch inference job was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -7709,8 +7709,8 @@ pub mod batch_inference_job {
             std::option::Option<crate::model::BatchInferenceJobConfig>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the batch inference job.</p>
@@ -7879,27 +7879,27 @@ pub mod batch_inference_job {
             self
         }
         /// <p>The time at which the batch inference job was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The time at which the batch inference job was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The time at which the batch inference job was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The time at which the batch inference job was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -8162,9 +8162,9 @@ pub struct Algorithm {
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the algorithm was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the algorithm was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Algorithm {
     /// <p>The name of the algorithm.</p>
@@ -8210,11 +8210,11 @@ impl Algorithm {
         self.role_arn.as_deref()
     }
     /// <p>The date and time (in Unix time) that the algorithm was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the algorithm was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -8256,8 +8256,8 @@ pub mod algorithm {
         >,
         pub(crate) training_input_mode: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the algorithm.</p>
@@ -8390,27 +8390,27 @@ pub mod algorithm {
             self
         }
         /// <p>The date and time (in Unix time) that the algorithm was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the algorithm was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time (in Unix time) that the algorithm was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time (in Unix time) that the algorithm was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self

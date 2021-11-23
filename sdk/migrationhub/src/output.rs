@@ -728,7 +728,7 @@ pub struct DescribeApplicationStateOutput {
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
     pub application_status: std::option::Option<crate::model::ApplicationStatus>,
     /// <p>The timestamp when the application status was last updated.</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeApplicationStateOutput {
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
@@ -736,7 +736,7 @@ impl DescribeApplicationStateOutput {
         self.application_status.as_ref()
     }
     /// <p>The timestamp when the application status was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -755,7 +755,7 @@ pub mod describe_application_state_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_status: std::option::Option<crate::model::ApplicationStatus>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
@@ -772,14 +772,14 @@ pub mod describe_application_state_output {
             self
         }
         /// <p>The timestamp when the application status was last updated.</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
         /// <p>The timestamp when the application status was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self

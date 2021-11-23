@@ -280,12 +280,12 @@ pub fn serialize_structure_crate_input_start_pipeline_reprocessing_input(
     if let Some(var_72) = &input.end_time {
         object
             .key("endTime")
-            .instant(var_72, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_72, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_73) = &input.start_time {
         object
             .key("startTime")
-            .instant(var_73, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_73, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

@@ -616,9 +616,9 @@ pub struct Control {
     pub control_mapping_sources:
         std::option::Option<std::vec::Vec<crate::model::ControlMappingSource>>,
     /// <p> Specifies when the control was created. </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies when the control was most recently updated. </p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The IAM user or role that created the control. </p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p> The IAM user or role that most recently updated the control. </p>
@@ -673,11 +673,11 @@ impl Control {
         self.control_mapping_sources.as_deref()
     }
     /// <p> Specifies when the control was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> Specifies when the control was most recently updated. </p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p> The IAM user or role that created the control. </p>
@@ -734,8 +734,8 @@ pub mod control {
         pub(crate) control_sources: std::option::Option<std::string::String>,
         pub(crate) control_mapping_sources:
             std::option::Option<std::vec::Vec<crate::model::ControlMappingSource>>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
         pub(crate) last_updated_by: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -872,27 +872,27 @@ pub mod control {
             self
         }
         /// <p> Specifies when the control was created. </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p> Specifies when the control was created. </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p> Specifies when the control was most recently updated. </p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p> Specifies when the control was most recently updated. </p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -2109,9 +2109,9 @@ pub struct Delegation {
     /// </note>
     pub role_type: std::option::Option<crate::model::RoleType>,
     /// <p> Specifies when the delegation was created. </p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies when the delegation was last updated. </p>
-    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The identifier for the control set that's associated with the delegation. </p>
     pub control_set_id: std::option::Option<std::string::String>,
     /// <p> The comment that's related to the delegation. </p>
@@ -2153,11 +2153,11 @@ impl Delegation {
         self.role_type.as_ref()
     }
     /// <p> Specifies when the delegation was created. </p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p> Specifies when the delegation was last updated. </p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p> The identifier for the control set that's associated with the delegation. </p>
@@ -2202,8 +2202,8 @@ pub mod delegation {
         pub(crate) status: std::option::Option<crate::model::DelegationStatus>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) role_type: std::option::Option<crate::model::RoleType>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) control_set_id: std::option::Option<std::string::String>,
         pub(crate) comment: std::option::Option<std::string::String>,
         pub(crate) created_by: std::option::Option<std::string::String>,
@@ -2295,27 +2295,27 @@ pub mod delegation {
             self
         }
         /// <p> Specifies when the delegation was created. </p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p> Specifies when the delegation was created. </p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p> Specifies when the delegation was last updated. </p>
-        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated = Some(input);
             self
         }
         /// <p> Specifies when the delegation was last updated. </p>
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated = input;
             self
@@ -2685,7 +2685,7 @@ pub struct ControlComment {
     /// <p> The body text of a control comment. </p>
     pub comment_body: std::option::Option<std::string::String>,
     /// <p> The time when the comment was posted. </p>
-    pub posted_date: std::option::Option<aws_smithy_types::Instant>,
+    pub posted_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ControlComment {
     /// <p> The name of the user who authored the comment. </p>
@@ -2697,7 +2697,7 @@ impl ControlComment {
         self.comment_body.as_deref()
     }
     /// <p> The time when the comment was posted. </p>
-    pub fn posted_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn posted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.posted_date.as_ref()
     }
 }
@@ -2718,7 +2718,7 @@ pub mod control_comment {
     pub struct Builder {
         pub(crate) author_name: std::option::Option<std::string::String>,
         pub(crate) comment_body: std::option::Option<std::string::String>,
-        pub(crate) posted_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) posted_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p> The name of the user who authored the comment. </p>
@@ -2742,14 +2742,14 @@ pub mod control_comment {
             self
         }
         /// <p> The time when the comment was posted. </p>
-        pub fn posted_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn posted_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.posted_date = Some(input);
             self
         }
         /// <p> The time when the comment was posted. </p>
         pub fn set_posted_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.posted_date = input;
             self
@@ -3096,9 +3096,9 @@ pub struct AssessmentMetadata {
     /// <p> The delegations that are associated with the assessment. </p>
     pub delegations: std::option::Option<std::vec::Vec<crate::model::Delegation>>,
     /// <p> Specifies when the assessment was created. </p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The time of the most recent update. </p>
-    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AssessmentMetadata {
     /// <p> The name of the assessment. </p>
@@ -3142,11 +3142,11 @@ impl AssessmentMetadata {
         self.delegations.as_deref()
     }
     /// <p> Specifies when the assessment was created. </p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p> The time of the most recent update. </p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
 }
@@ -3186,8 +3186,8 @@ pub mod assessment_metadata {
         pub(crate) scope: std::option::Option<crate::model::Scope>,
         pub(crate) roles: std::option::Option<std::vec::Vec<crate::model::Role>>,
         pub(crate) delegations: std::option::Option<std::vec::Vec<crate::model::Delegation>>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p> The name of the assessment. </p>
@@ -3315,27 +3315,27 @@ pub mod assessment_metadata {
             self
         }
         /// <p> Specifies when the assessment was created. </p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p> Specifies when the assessment was created. </p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p> The time of the most recent update. </p>
-        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated = Some(input);
             self
         }
         /// <p> The time of the most recent update. </p>
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated = input;
             self
@@ -3692,11 +3692,11 @@ pub struct AssessmentFrameworkShareRequest {
     /// <p> The Amazon Web Services Region of the recipient. </p>
     pub destination_region: std::option::Option<std::string::String>,
     /// <p> The time when the share request expires. </p>
-    pub expiration_time: std::option::Option<aws_smithy_types::Instant>,
+    pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The time when the share request was created. </p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies when the share request was last updated. </p>
-    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> An optional comment from the sender about the share request. </p>
     pub comment: std::option::Option<std::string::String>,
     /// <p>The number of standard controls that are part of the shared custom framework. </p>
@@ -3740,15 +3740,15 @@ impl AssessmentFrameworkShareRequest {
         self.destination_region.as_deref()
     }
     /// <p> The time when the share request expires. </p>
-    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
     /// <p> The time when the share request was created. </p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p> Specifies when the share request was last updated. </p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p> An optional comment from the sender about the share request. </p>
@@ -3803,9 +3803,9 @@ pub mod assessment_framework_share_request {
         pub(crate) source_account: std::option::Option<std::string::String>,
         pub(crate) destination_account: std::option::Option<std::string::String>,
         pub(crate) destination_region: std::option::Option<std::string::String>,
-        pub(crate) expiration_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expiration_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) comment: std::option::Option<std::string::String>,
         pub(crate) standard_controls_count: std::option::Option<i32>,
         pub(crate) custom_controls_count: std::option::Option<i32>,
@@ -3911,40 +3911,40 @@ pub mod assessment_framework_share_request {
             self
         }
         /// <p> The time when the share request expires. </p>
-        pub fn expiration_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_time = Some(input);
             self
         }
         /// <p> The time when the share request expires. </p>
         pub fn set_expiration_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiration_time = input;
             self
         }
         /// <p> The time when the share request was created. </p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p> The time when the share request was created. </p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p> Specifies when the share request was last updated. </p>
-        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated = Some(input);
             self
         }
         /// <p> Specifies when the share request was last updated. </p>
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated = input;
             self
@@ -4248,9 +4248,9 @@ pub struct Framework {
     /// <p> The control sets that are associated with the framework. </p>
     pub control_sets: std::option::Option<std::vec::Vec<crate::model::ControlSet>>,
     /// <p> Specifies when the framework was created. </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies when the framework was most recently updated. </p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The IAM user or role that created the framework. </p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p> The IAM user or role that most recently updated the framework. </p>
@@ -4298,11 +4298,11 @@ impl Framework {
         self.control_sets.as_deref()
     }
     /// <p> Specifies when the framework was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> Specifies when the framework was most recently updated. </p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p> The IAM user or role that created the framework. </p>
@@ -4356,8 +4356,8 @@ pub mod framework {
         pub(crate) logo: std::option::Option<std::string::String>,
         pub(crate) control_sources: std::option::Option<std::string::String>,
         pub(crate) control_sets: std::option::Option<std::vec::Vec<crate::model::ControlSet>>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
         pub(crate) last_updated_by: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -4473,27 +4473,27 @@ pub mod framework {
             self
         }
         /// <p> Specifies when the framework was created. </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p> Specifies when the framework was created. </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p> Specifies when the framework was most recently updated. </p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p> Specifies when the framework was most recently updated. </p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -4975,7 +4975,7 @@ pub struct Notification {
     /// <p> The description of the notification. </p>
     pub description: std::option::Option<std::string::String>,
     /// <p> The time when the notification was sent. </p>
-    pub event_time: std::option::Option<aws_smithy_types::Instant>,
+    pub event_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The sender of the notification. </p>
     pub source: std::option::Option<std::string::String>,
 }
@@ -5005,7 +5005,7 @@ impl Notification {
         self.description.as_deref()
     }
     /// <p> The time when the notification was sent. </p>
-    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p> The sender of the notification. </p>
@@ -5039,7 +5039,7 @@ pub mod notification {
         pub(crate) control_set_id: std::option::Option<std::string::String>,
         pub(crate) control_set_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) event_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) event_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5116,14 +5116,14 @@ pub mod notification {
             self
         }
         /// <p> The time when the notification was sent. </p>
-        pub fn event_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_time = Some(input);
             self
         }
         /// <p> The time when the notification was sent. </p>
         pub fn set_event_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.event_time = input;
             self
@@ -5174,9 +5174,9 @@ pub struct ControlMetadata {
     /// the control. </p>
     pub control_sources: std::option::Option<std::string::String>,
     /// <p> Specifies when the control was created. </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies when the control was most recently updated. </p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ControlMetadata {
     /// <p> The Amazon Resource Name (ARN) of the control. </p>
@@ -5197,11 +5197,11 @@ impl ControlMetadata {
         self.control_sources.as_deref()
     }
     /// <p> Specifies when the control was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> Specifies when the control was most recently updated. </p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -5227,8 +5227,8 @@ pub mod control_metadata {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) control_sources: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) of the control. </p>
@@ -5277,27 +5277,27 @@ pub mod control_metadata {
             self
         }
         /// <p> Specifies when the control was created. </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p> Specifies when the control was created. </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p> Specifies when the control was most recently updated. </p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p> Specifies when the control was most recently updated. </p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -5322,6 +5322,454 @@ impl ControlMetadata {
     }
 }
 
+/// <p>A summary of the latest analytics data for a specific control. </p>
+/// <p>This data reflects the total counts for the specified control across all active assessments. Control insights are grouped by control domain, and ranked by the highest total count of non-compliant evidence.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ControlInsightsMetadataItem {
+    /// <p>The name of the control. </p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for the control. </p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>A breakdown of the compliance check status for the evidence that’s associated with the
+    /// control. </p>
+    pub evidence_insights: std::option::Option<crate::model::EvidenceInsights>,
+    /// <p>The time when the control insights were last updated. </p>
+    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ControlInsightsMetadataItem {
+    /// <p>The name of the control. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The unique identifier for the control. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A breakdown of the compliance check status for the evidence that’s associated with the
+    /// control. </p>
+    pub fn evidence_insights(&self) -> std::option::Option<&crate::model::EvidenceInsights> {
+        self.evidence_insights.as_ref()
+    }
+    /// <p>The time when the control insights were last updated. </p>
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated.as_ref()
+    }
+}
+impl std::fmt::Debug for ControlInsightsMetadataItem {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ControlInsightsMetadataItem");
+        formatter.field("name", &self.name);
+        formatter.field("id", &self.id);
+        formatter.field("evidence_insights", &self.evidence_insights);
+        formatter.field("last_updated", &self.last_updated);
+        formatter.finish()
+    }
+}
+/// See [`ControlInsightsMetadataItem`](crate::model::ControlInsightsMetadataItem)
+pub mod control_insights_metadata_item {
+    /// A builder for [`ControlInsightsMetadataItem`](crate::model::ControlInsightsMetadataItem)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) evidence_insights: std::option::Option<crate::model::EvidenceInsights>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The name of the control. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the control. </p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The unique identifier for the control. </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the control. </p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>A breakdown of the compliance check status for the evidence that’s associated with the
+        /// control. </p>
+        pub fn evidence_insights(mut self, input: crate::model::EvidenceInsights) -> Self {
+            self.evidence_insights = Some(input);
+            self
+        }
+        /// <p>A breakdown of the compliance check status for the evidence that’s associated with the
+        /// control. </p>
+        pub fn set_evidence_insights(
+            mut self,
+            input: std::option::Option<crate::model::EvidenceInsights>,
+        ) -> Self {
+            self.evidence_insights = input;
+            self
+        }
+        /// <p>The time when the control insights were last updated. </p>
+        pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated = Some(input);
+            self
+        }
+        /// <p>The time when the control insights were last updated. </p>
+        pub fn set_last_updated(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ControlInsightsMetadataItem`](crate::model::ControlInsightsMetadataItem)
+        pub fn build(self) -> crate::model::ControlInsightsMetadataItem {
+            crate::model::ControlInsightsMetadataItem {
+                name: self.name,
+                id: self.id,
+                evidence_insights: self.evidence_insights,
+                last_updated: self.last_updated,
+            }
+        }
+    }
+}
+impl ControlInsightsMetadataItem {
+    /// Creates a new builder-style object to manufacture [`ControlInsightsMetadataItem`](crate::model::ControlInsightsMetadataItem)
+    pub fn builder() -> crate::model::control_insights_metadata_item::Builder {
+        crate::model::control_insights_metadata_item::Builder::default()
+    }
+}
+
+/// <p>A breakdown of the latest compliance check status for the evidence in your Audit Manager
+/// assessments. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EvidenceInsights {
+    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant.
+    /// This includes evidence that was collected from Security Hub with a
+    /// <i>Fail</i> ruling, or collected from Config with a
+    /// <i>Non-compliant</i> ruling. </p>
+    pub noncompliant_evidence_count: std::option::Option<i32>,
+    /// <p>The number of compliance check evidence that Audit Manager classified as compliant. This
+    /// includes evidence that was collected from Security Hub with a
+    /// <i>Pass</i> ruling, or collected from Config with a
+    /// <i>Compliant</i> ruling. </p>
+    pub compliant_evidence_count: std::option::Option<i32>,
+    /// <p>The number of evidence that a compliance check ruling isn't available for. Evidence is
+    /// inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a
+    /// control uses a data source that doesn’t support compliance checks (for example, manual
+    /// evidence, API calls, or CloudTrail). </p>
+    /// <note>
+    /// <p>If evidence has a compliance check status of <i>not applicable</i> in the
+    /// console, it's classified as <i>inconclusive</i> in
+    /// <code>EvidenceInsights</code> data.</p>
+    /// </note>
+    pub inconclusive_evidence_count: std::option::Option<i32>,
+}
+impl EvidenceInsights {
+    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant.
+    /// This includes evidence that was collected from Security Hub with a
+    /// <i>Fail</i> ruling, or collected from Config with a
+    /// <i>Non-compliant</i> ruling. </p>
+    pub fn noncompliant_evidence_count(&self) -> std::option::Option<i32> {
+        self.noncompliant_evidence_count
+    }
+    /// <p>The number of compliance check evidence that Audit Manager classified as compliant. This
+    /// includes evidence that was collected from Security Hub with a
+    /// <i>Pass</i> ruling, or collected from Config with a
+    /// <i>Compliant</i> ruling. </p>
+    pub fn compliant_evidence_count(&self) -> std::option::Option<i32> {
+        self.compliant_evidence_count
+    }
+    /// <p>The number of evidence that a compliance check ruling isn't available for. Evidence is
+    /// inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a
+    /// control uses a data source that doesn’t support compliance checks (for example, manual
+    /// evidence, API calls, or CloudTrail). </p>
+    /// <note>
+    /// <p>If evidence has a compliance check status of <i>not applicable</i> in the
+    /// console, it's classified as <i>inconclusive</i> in
+    /// <code>EvidenceInsights</code> data.</p>
+    /// </note>
+    pub fn inconclusive_evidence_count(&self) -> std::option::Option<i32> {
+        self.inconclusive_evidence_count
+    }
+}
+impl std::fmt::Debug for EvidenceInsights {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EvidenceInsights");
+        formatter.field(
+            "noncompliant_evidence_count",
+            &self.noncompliant_evidence_count,
+        );
+        formatter.field("compliant_evidence_count", &self.compliant_evidence_count);
+        formatter.field(
+            "inconclusive_evidence_count",
+            &self.inconclusive_evidence_count,
+        );
+        formatter.finish()
+    }
+}
+/// See [`EvidenceInsights`](crate::model::EvidenceInsights)
+pub mod evidence_insights {
+    /// A builder for [`EvidenceInsights`](crate::model::EvidenceInsights)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) noncompliant_evidence_count: std::option::Option<i32>,
+        pub(crate) compliant_evidence_count: std::option::Option<i32>,
+        pub(crate) inconclusive_evidence_count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant.
+        /// This includes evidence that was collected from Security Hub with a
+        /// <i>Fail</i> ruling, or collected from Config with a
+        /// <i>Non-compliant</i> ruling. </p>
+        pub fn noncompliant_evidence_count(mut self, input: i32) -> Self {
+            self.noncompliant_evidence_count = Some(input);
+            self
+        }
+        /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant.
+        /// This includes evidence that was collected from Security Hub with a
+        /// <i>Fail</i> ruling, or collected from Config with a
+        /// <i>Non-compliant</i> ruling. </p>
+        pub fn set_noncompliant_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.noncompliant_evidence_count = input;
+            self
+        }
+        /// <p>The number of compliance check evidence that Audit Manager classified as compliant. This
+        /// includes evidence that was collected from Security Hub with a
+        /// <i>Pass</i> ruling, or collected from Config with a
+        /// <i>Compliant</i> ruling. </p>
+        pub fn compliant_evidence_count(mut self, input: i32) -> Self {
+            self.compliant_evidence_count = Some(input);
+            self
+        }
+        /// <p>The number of compliance check evidence that Audit Manager classified as compliant. This
+        /// includes evidence that was collected from Security Hub with a
+        /// <i>Pass</i> ruling, or collected from Config with a
+        /// <i>Compliant</i> ruling. </p>
+        pub fn set_compliant_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.compliant_evidence_count = input;
+            self
+        }
+        /// <p>The number of evidence that a compliance check ruling isn't available for. Evidence is
+        /// inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a
+        /// control uses a data source that doesn’t support compliance checks (for example, manual
+        /// evidence, API calls, or CloudTrail). </p>
+        /// <note>
+        /// <p>If evidence has a compliance check status of <i>not applicable</i> in the
+        /// console, it's classified as <i>inconclusive</i> in
+        /// <code>EvidenceInsights</code> data.</p>
+        /// </note>
+        pub fn inconclusive_evidence_count(mut self, input: i32) -> Self {
+            self.inconclusive_evidence_count = Some(input);
+            self
+        }
+        /// <p>The number of evidence that a compliance check ruling isn't available for. Evidence is
+        /// inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a
+        /// control uses a data source that doesn’t support compliance checks (for example, manual
+        /// evidence, API calls, or CloudTrail). </p>
+        /// <note>
+        /// <p>If evidence has a compliance check status of <i>not applicable</i> in the
+        /// console, it's classified as <i>inconclusive</i> in
+        /// <code>EvidenceInsights</code> data.</p>
+        /// </note>
+        pub fn set_inconclusive_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.inconclusive_evidence_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EvidenceInsights`](crate::model::EvidenceInsights)
+        pub fn build(self) -> crate::model::EvidenceInsights {
+            crate::model::EvidenceInsights {
+                noncompliant_evidence_count: self.noncompliant_evidence_count,
+                compliant_evidence_count: self.compliant_evidence_count,
+                inconclusive_evidence_count: self.inconclusive_evidence_count,
+            }
+        }
+    }
+}
+impl EvidenceInsights {
+    /// Creates a new builder-style object to manufacture [`EvidenceInsights`](crate::model::EvidenceInsights)
+    pub fn builder() -> crate::model::evidence_insights::Builder {
+        crate::model::evidence_insights::Builder::default()
+    }
+}
+
+/// <p>A summary of the latest analytics data for a specific control domain.</p>
+/// <p>Control domain insights are grouped by control domain, and ranked by the highest total count of non-compliant evidence.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ControlDomainInsights {
+    /// <p>The name of the control domain. </p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for the control domain. </p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The number of controls in the control domain that collected non-compliant evidence on the
+    /// <code>lastUpdated</code> date. </p>
+    pub controls_count_by_noncompliant_evidence: std::option::Option<i32>,
+    /// <p>The total number of controls in the control domain. </p>
+    pub total_controls_count: std::option::Option<i32>,
+    /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control
+    /// domain. </p>
+    pub evidence_insights: std::option::Option<crate::model::EvidenceInsights>,
+    /// <p>The time when the control domain insights were last updated. </p>
+    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ControlDomainInsights {
+    /// <p>The name of the control domain. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The unique identifier for the control domain. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The number of controls in the control domain that collected non-compliant evidence on the
+    /// <code>lastUpdated</code> date. </p>
+    pub fn controls_count_by_noncompliant_evidence(&self) -> std::option::Option<i32> {
+        self.controls_count_by_noncompliant_evidence
+    }
+    /// <p>The total number of controls in the control domain. </p>
+    pub fn total_controls_count(&self) -> std::option::Option<i32> {
+        self.total_controls_count
+    }
+    /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control
+    /// domain. </p>
+    pub fn evidence_insights(&self) -> std::option::Option<&crate::model::EvidenceInsights> {
+        self.evidence_insights.as_ref()
+    }
+    /// <p>The time when the control domain insights were last updated. </p>
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated.as_ref()
+    }
+}
+impl std::fmt::Debug for ControlDomainInsights {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ControlDomainInsights");
+        formatter.field("name", &self.name);
+        formatter.field("id", &self.id);
+        formatter.field(
+            "controls_count_by_noncompliant_evidence",
+            &self.controls_count_by_noncompliant_evidence,
+        );
+        formatter.field("total_controls_count", &self.total_controls_count);
+        formatter.field("evidence_insights", &self.evidence_insights);
+        formatter.field("last_updated", &self.last_updated);
+        formatter.finish()
+    }
+}
+/// See [`ControlDomainInsights`](crate::model::ControlDomainInsights)
+pub mod control_domain_insights {
+    /// A builder for [`ControlDomainInsights`](crate::model::ControlDomainInsights)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) controls_count_by_noncompliant_evidence: std::option::Option<i32>,
+        pub(crate) total_controls_count: std::option::Option<i32>,
+        pub(crate) evidence_insights: std::option::Option<crate::model::EvidenceInsights>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The name of the control domain. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the control domain. </p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The unique identifier for the control domain. </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the control domain. </p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The number of controls in the control domain that collected non-compliant evidence on the
+        /// <code>lastUpdated</code> date. </p>
+        pub fn controls_count_by_noncompliant_evidence(mut self, input: i32) -> Self {
+            self.controls_count_by_noncompliant_evidence = Some(input);
+            self
+        }
+        /// <p>The number of controls in the control domain that collected non-compliant evidence on the
+        /// <code>lastUpdated</code> date. </p>
+        pub fn set_controls_count_by_noncompliant_evidence(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.controls_count_by_noncompliant_evidence = input;
+            self
+        }
+        /// <p>The total number of controls in the control domain. </p>
+        pub fn total_controls_count(mut self, input: i32) -> Self {
+            self.total_controls_count = Some(input);
+            self
+        }
+        /// <p>The total number of controls in the control domain. </p>
+        pub fn set_total_controls_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_controls_count = input;
+            self
+        }
+        /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control
+        /// domain. </p>
+        pub fn evidence_insights(mut self, input: crate::model::EvidenceInsights) -> Self {
+            self.evidence_insights = Some(input);
+            self
+        }
+        /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control
+        /// domain. </p>
+        pub fn set_evidence_insights(
+            mut self,
+            input: std::option::Option<crate::model::EvidenceInsights>,
+        ) -> Self {
+            self.evidence_insights = input;
+            self
+        }
+        /// <p>The time when the control domain insights were last updated. </p>
+        pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated = Some(input);
+            self
+        }
+        /// <p>The time when the control domain insights were last updated. </p>
+        pub fn set_last_updated(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ControlDomainInsights`](crate::model::ControlDomainInsights)
+        pub fn build(self) -> crate::model::ControlDomainInsights {
+            crate::model::ControlDomainInsights {
+                name: self.name,
+                id: self.id,
+                controls_count_by_noncompliant_evidence: self
+                    .controls_count_by_noncompliant_evidence,
+                total_controls_count: self.total_controls_count,
+                evidence_insights: self.evidence_insights,
+                last_updated: self.last_updated,
+            }
+        }
+    }
+}
+impl ControlDomainInsights {
+    /// Creates a new builder-style object to manufacture [`ControlDomainInsights`](crate::model::ControlDomainInsights)
+    pub fn builder() -> crate::model::control_domain_insights::Builder {
+        crate::model::control_domain_insights::Builder::default()
+    }
+}
+
 /// <p> A metadata object that's associated with an assessment in Audit Manager.
 /// </p>
 #[non_exhaustive]
@@ -5341,9 +5789,9 @@ pub struct AssessmentMetadataItem {
     /// <p> The delegations that are associated with the assessment. </p>
     pub delegations: std::option::Option<std::vec::Vec<crate::model::Delegation>>,
     /// <p> Specifies when the assessment was created. </p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The time of the most recent update. </p>
-    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AssessmentMetadataItem {
     /// <p> The name of the assessment. </p>
@@ -5372,11 +5820,11 @@ impl AssessmentMetadataItem {
         self.delegations.as_deref()
     }
     /// <p> Specifies when the assessment was created. </p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p> The time of the most recent update. </p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
 }
@@ -5406,8 +5854,8 @@ pub mod assessment_metadata_item {
         pub(crate) status: std::option::Option<crate::model::AssessmentStatus>,
         pub(crate) roles: std::option::Option<std::vec::Vec<crate::model::Role>>,
         pub(crate) delegations: std::option::Option<std::vec::Vec<crate::model::Delegation>>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p> The name of the assessment. </p>
@@ -5497,27 +5945,27 @@ pub mod assessment_metadata_item {
             self
         }
         /// <p> Specifies when the assessment was created. </p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p> Specifies when the assessment was created. </p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p> The time of the most recent update. </p>
-        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated = Some(input);
             self
         }
         /// <p> The time of the most recent update. </p>
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated = input;
             self
@@ -5563,7 +6011,7 @@ pub struct AssessmentReportMetadata {
     /// <p> The current status of the assessment report. </p>
     pub status: std::option::Option<crate::model::AssessmentReportStatus>,
     /// <p> Specifies when the assessment report was created. </p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AssessmentReportMetadata {
     /// <p> The unique identifier for the assessment report. </p>
@@ -5595,7 +6043,7 @@ impl AssessmentReportMetadata {
         self.status.as_ref()
     }
     /// <p> Specifies when the assessment report was created. </p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -5626,7 +6074,7 @@ pub mod assessment_report_metadata {
         pub(crate) assessment_name: std::option::Option<std::string::String>,
         pub(crate) author: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::AssessmentReportStatus>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p> The unique identifier for the assessment report. </p>
@@ -5709,14 +6157,14 @@ pub mod assessment_report_metadata {
             self
         }
         /// <p> Specifies when the assessment report was created. </p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p> Specifies when the assessment report was created. </p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -5826,9 +6274,9 @@ pub struct AssessmentFrameworkMetadata {
     /// <p> The number of control sets that are associated with the framework. </p>
     pub control_sets_count: i32,
     /// <p> Specifies when the framework was created. </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies when the framework was most recently updated. </p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AssessmentFrameworkMetadata {
     /// <p> The Amazon Resource Name (ARN) of the framework. </p>
@@ -5869,11 +6317,11 @@ impl AssessmentFrameworkMetadata {
         self.control_sets_count
     }
     /// <p> Specifies when the framework was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> Specifies when the framework was most recently updated. </p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -5909,8 +6357,8 @@ pub mod assessment_framework_metadata {
         pub(crate) compliance_type: std::option::Option<std::string::String>,
         pub(crate) controls_count: std::option::Option<i32>,
         pub(crate) control_sets_count: std::option::Option<i32>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) of the framework. </p>
@@ -6009,27 +6457,27 @@ pub mod assessment_framework_metadata {
             self
         }
         /// <p> Specifies when the framework was created. </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p> Specifies when the framework was created. </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p> Specifies when the framework was most recently updated. </p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p> Specifies when the framework was most recently updated. </p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -6056,6 +6504,152 @@ impl AssessmentFrameworkMetadata {
     /// Creates a new builder-style object to manufacture [`AssessmentFrameworkMetadata`](crate::model::AssessmentFrameworkMetadata)
     pub fn builder() -> crate::model::assessment_framework_metadata::Builder {
         crate::model::assessment_framework_metadata::Builder::default()
+    }
+}
+
+/// <p>A summary of the latest analytics data for a specific control in a specific active
+/// assessment.</p>
+/// <p>Control insights are grouped by control domain, and ranked by the highest total count of non-compliant evidence.
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ControlInsightsMetadataByAssessmentItem {
+    /// <p>The name of the assessment control. </p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for the assessment control. </p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>A breakdown of the compliance check status for the evidence that’s associated with the
+    /// assessment control. </p>
+    pub evidence_insights: std::option::Option<crate::model::EvidenceInsights>,
+    /// <p>The name of the control set that the assessment control belongs to. </p>
+    pub control_set_name: std::option::Option<std::string::String>,
+    /// <p>The time when the assessment control insights were last updated. </p>
+    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ControlInsightsMetadataByAssessmentItem {
+    /// <p>The name of the assessment control. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The unique identifier for the assessment control. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A breakdown of the compliance check status for the evidence that’s associated with the
+    /// assessment control. </p>
+    pub fn evidence_insights(&self) -> std::option::Option<&crate::model::EvidenceInsights> {
+        self.evidence_insights.as_ref()
+    }
+    /// <p>The name of the control set that the assessment control belongs to. </p>
+    pub fn control_set_name(&self) -> std::option::Option<&str> {
+        self.control_set_name.as_deref()
+    }
+    /// <p>The time when the assessment control insights were last updated. </p>
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated.as_ref()
+    }
+}
+impl std::fmt::Debug for ControlInsightsMetadataByAssessmentItem {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ControlInsightsMetadataByAssessmentItem");
+        formatter.field("name", &self.name);
+        formatter.field("id", &self.id);
+        formatter.field("evidence_insights", &self.evidence_insights);
+        formatter.field("control_set_name", &self.control_set_name);
+        formatter.field("last_updated", &self.last_updated);
+        formatter.finish()
+    }
+}
+/// See [`ControlInsightsMetadataByAssessmentItem`](crate::model::ControlInsightsMetadataByAssessmentItem)
+pub mod control_insights_metadata_by_assessment_item {
+    /// A builder for [`ControlInsightsMetadataByAssessmentItem`](crate::model::ControlInsightsMetadataByAssessmentItem)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) evidence_insights: std::option::Option<crate::model::EvidenceInsights>,
+        pub(crate) control_set_name: std::option::Option<std::string::String>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The name of the assessment control. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the assessment control. </p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The unique identifier for the assessment control. </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the assessment control. </p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>A breakdown of the compliance check status for the evidence that’s associated with the
+        /// assessment control. </p>
+        pub fn evidence_insights(mut self, input: crate::model::EvidenceInsights) -> Self {
+            self.evidence_insights = Some(input);
+            self
+        }
+        /// <p>A breakdown of the compliance check status for the evidence that’s associated with the
+        /// assessment control. </p>
+        pub fn set_evidence_insights(
+            mut self,
+            input: std::option::Option<crate::model::EvidenceInsights>,
+        ) -> Self {
+            self.evidence_insights = input;
+            self
+        }
+        /// <p>The name of the control set that the assessment control belongs to. </p>
+        pub fn control_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.control_set_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the control set that the assessment control belongs to. </p>
+        pub fn set_control_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.control_set_name = input;
+            self
+        }
+        /// <p>The time when the assessment control insights were last updated. </p>
+        pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated = Some(input);
+            self
+        }
+        /// <p>The time when the assessment control insights were last updated. </p>
+        pub fn set_last_updated(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ControlInsightsMetadataByAssessmentItem`](crate::model::ControlInsightsMetadataByAssessmentItem)
+        pub fn build(self) -> crate::model::ControlInsightsMetadataByAssessmentItem {
+            crate::model::ControlInsightsMetadataByAssessmentItem {
+                name: self.name,
+                id: self.id,
+                evidence_insights: self.evidence_insights,
+                control_set_name: self.control_set_name,
+                last_updated: self.last_updated,
+            }
+        }
+    }
+}
+impl ControlInsightsMetadataByAssessmentItem {
+    /// Creates a new builder-style object to manufacture [`ControlInsightsMetadataByAssessmentItem`](crate::model::ControlInsightsMetadataByAssessmentItem)
+    pub fn builder() -> crate::model::control_insights_metadata_by_assessment_item::Builder {
+        crate::model::control_insights_metadata_by_assessment_item::Builder::default()
     }
 }
 
@@ -6251,6 +6845,531 @@ impl ServiceMetadata {
     }
 }
 
+/// <p>A summary of the latest analytics data for a specific active assessment.</p>   
+/// <p>This summary is a snapshot of the data that was collected on the <code>lastUpdated</code>
+/// date. It’s important to understand that the totals in <code>InsightsByAssessment</code> are
+/// daily counts based on this date — they aren’t a total sum to date. </p>
+/// <p>The <code>InsightsByAssessment</code> data is eventually consistent. This means that
+/// when you read data from <code>InsightsByAssessment</code>, the response might not instantly
+/// reflect the results of a recently completed write or update operation. If you repeat your
+/// read request after a few hours, the response returns the latest data.</p>
+/// <note>
+/// <p>If you delete an assessment or change its status to inactive,
+/// <code>InsightsByAssessment</code> includes data for that assessment as
+/// follows.</p>
+/// <ul>
+/// <li>   
+/// <p>
+/// <b>Inactive assessments</b> - If Audit Manager collected
+/// evidence for your assessment before you changed it inactive, that evidence is
+/// included in the <code>InsightsByAssessment</code> counts for that day.</p>
+/// </li>
+/// <li>      
+/// <p>
+/// <b>Deleted assessments</b> - If Audit Manager collected
+/// evidence for your assessment before you deleted it, that evidence isn't included
+/// in the <code>InsightsByAssessment</code> counts for that day.</p>
+/// </li>
+/// </ul>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InsightsByAssessment {
+    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant.
+    /// This includes evidence that was collected from Security Hub with a
+    /// <i>Fail</i> ruling, or collected from Config with a
+    /// <i>Non-compliant</i> ruling. </p>
+    pub noncompliant_evidence_count: std::option::Option<i32>,
+    /// <p>The number of compliance check evidence that Audit Manager classified as compliant.
+    /// This includes evidence that was collected from Security Hub with a
+    /// <i>Pass</i> ruling, or collected from Config with a
+    /// <i>Compliant</i> ruling. </p>
+    pub compliant_evidence_count: std::option::Option<i32>,
+    /// <p>The amount of evidence without a compliance check ruling. Evidence is inconclusive if the
+    /// associated control uses Security Hub or Config as a data source
+    /// and you didn't enable those services. This is also the case if a control uses a data source
+    /// that doesn’t support compliance checks (for example, manual evidence, API calls, or CloudTrail). </p>
+    /// <note>
+    /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's
+    /// classified as <i>inconclusive</i> in <code>InsightsByAssessment</code>
+    /// data.</p>
+    /// </note>
+    pub inconclusive_evidence_count: std::option::Option<i32>,
+    /// <p>The number of assessment controls that collected non-compliant evidence on the
+    /// <code>lastUpdated</code> date. </p>
+    pub assessment_controls_count_by_noncompliant_evidence: std::option::Option<i32>,
+    /// <p>The total number of controls in the assessment. </p>
+    pub total_assessment_controls_count: std::option::Option<i32>,
+    /// <p>The time when the assessment insights were last updated.</p>
+    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl InsightsByAssessment {
+    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant.
+    /// This includes evidence that was collected from Security Hub with a
+    /// <i>Fail</i> ruling, or collected from Config with a
+    /// <i>Non-compliant</i> ruling. </p>
+    pub fn noncompliant_evidence_count(&self) -> std::option::Option<i32> {
+        self.noncompliant_evidence_count
+    }
+    /// <p>The number of compliance check evidence that Audit Manager classified as compliant.
+    /// This includes evidence that was collected from Security Hub with a
+    /// <i>Pass</i> ruling, or collected from Config with a
+    /// <i>Compliant</i> ruling. </p>
+    pub fn compliant_evidence_count(&self) -> std::option::Option<i32> {
+        self.compliant_evidence_count
+    }
+    /// <p>The amount of evidence without a compliance check ruling. Evidence is inconclusive if the
+    /// associated control uses Security Hub or Config as a data source
+    /// and you didn't enable those services. This is also the case if a control uses a data source
+    /// that doesn’t support compliance checks (for example, manual evidence, API calls, or CloudTrail). </p>
+    /// <note>
+    /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's
+    /// classified as <i>inconclusive</i> in <code>InsightsByAssessment</code>
+    /// data.</p>
+    /// </note>
+    pub fn inconclusive_evidence_count(&self) -> std::option::Option<i32> {
+        self.inconclusive_evidence_count
+    }
+    /// <p>The number of assessment controls that collected non-compliant evidence on the
+    /// <code>lastUpdated</code> date. </p>
+    pub fn assessment_controls_count_by_noncompliant_evidence(&self) -> std::option::Option<i32> {
+        self.assessment_controls_count_by_noncompliant_evidence
+    }
+    /// <p>The total number of controls in the assessment. </p>
+    pub fn total_assessment_controls_count(&self) -> std::option::Option<i32> {
+        self.total_assessment_controls_count
+    }
+    /// <p>The time when the assessment insights were last updated.</p>
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated.as_ref()
+    }
+}
+impl std::fmt::Debug for InsightsByAssessment {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InsightsByAssessment");
+        formatter.field(
+            "noncompliant_evidence_count",
+            &self.noncompliant_evidence_count,
+        );
+        formatter.field("compliant_evidence_count", &self.compliant_evidence_count);
+        formatter.field(
+            "inconclusive_evidence_count",
+            &self.inconclusive_evidence_count,
+        );
+        formatter.field(
+            "assessment_controls_count_by_noncompliant_evidence",
+            &self.assessment_controls_count_by_noncompliant_evidence,
+        );
+        formatter.field(
+            "total_assessment_controls_count",
+            &self.total_assessment_controls_count,
+        );
+        formatter.field("last_updated", &self.last_updated);
+        formatter.finish()
+    }
+}
+/// See [`InsightsByAssessment`](crate::model::InsightsByAssessment)
+pub mod insights_by_assessment {
+    /// A builder for [`InsightsByAssessment`](crate::model::InsightsByAssessment)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) noncompliant_evidence_count: std::option::Option<i32>,
+        pub(crate) compliant_evidence_count: std::option::Option<i32>,
+        pub(crate) inconclusive_evidence_count: std::option::Option<i32>,
+        pub(crate) assessment_controls_count_by_noncompliant_evidence: std::option::Option<i32>,
+        pub(crate) total_assessment_controls_count: std::option::Option<i32>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant.
+        /// This includes evidence that was collected from Security Hub with a
+        /// <i>Fail</i> ruling, or collected from Config with a
+        /// <i>Non-compliant</i> ruling. </p>
+        pub fn noncompliant_evidence_count(mut self, input: i32) -> Self {
+            self.noncompliant_evidence_count = Some(input);
+            self
+        }
+        /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant.
+        /// This includes evidence that was collected from Security Hub with a
+        /// <i>Fail</i> ruling, or collected from Config with a
+        /// <i>Non-compliant</i> ruling. </p>
+        pub fn set_noncompliant_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.noncompliant_evidence_count = input;
+            self
+        }
+        /// <p>The number of compliance check evidence that Audit Manager classified as compliant.
+        /// This includes evidence that was collected from Security Hub with a
+        /// <i>Pass</i> ruling, or collected from Config with a
+        /// <i>Compliant</i> ruling. </p>
+        pub fn compliant_evidence_count(mut self, input: i32) -> Self {
+            self.compliant_evidence_count = Some(input);
+            self
+        }
+        /// <p>The number of compliance check evidence that Audit Manager classified as compliant.
+        /// This includes evidence that was collected from Security Hub with a
+        /// <i>Pass</i> ruling, or collected from Config with a
+        /// <i>Compliant</i> ruling. </p>
+        pub fn set_compliant_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.compliant_evidence_count = input;
+            self
+        }
+        /// <p>The amount of evidence without a compliance check ruling. Evidence is inconclusive if the
+        /// associated control uses Security Hub or Config as a data source
+        /// and you didn't enable those services. This is also the case if a control uses a data source
+        /// that doesn’t support compliance checks (for example, manual evidence, API calls, or CloudTrail). </p>
+        /// <note>
+        /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's
+        /// classified as <i>inconclusive</i> in <code>InsightsByAssessment</code>
+        /// data.</p>
+        /// </note>
+        pub fn inconclusive_evidence_count(mut self, input: i32) -> Self {
+            self.inconclusive_evidence_count = Some(input);
+            self
+        }
+        /// <p>The amount of evidence without a compliance check ruling. Evidence is inconclusive if the
+        /// associated control uses Security Hub or Config as a data source
+        /// and you didn't enable those services. This is also the case if a control uses a data source
+        /// that doesn’t support compliance checks (for example, manual evidence, API calls, or CloudTrail). </p>
+        /// <note>
+        /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's
+        /// classified as <i>inconclusive</i> in <code>InsightsByAssessment</code>
+        /// data.</p>
+        /// </note>
+        pub fn set_inconclusive_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.inconclusive_evidence_count = input;
+            self
+        }
+        /// <p>The number of assessment controls that collected non-compliant evidence on the
+        /// <code>lastUpdated</code> date. </p>
+        pub fn assessment_controls_count_by_noncompliant_evidence(mut self, input: i32) -> Self {
+            self.assessment_controls_count_by_noncompliant_evidence = Some(input);
+            self
+        }
+        /// <p>The number of assessment controls that collected non-compliant evidence on the
+        /// <code>lastUpdated</code> date. </p>
+        pub fn set_assessment_controls_count_by_noncompliant_evidence(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.assessment_controls_count_by_noncompliant_evidence = input;
+            self
+        }
+        /// <p>The total number of controls in the assessment. </p>
+        pub fn total_assessment_controls_count(mut self, input: i32) -> Self {
+            self.total_assessment_controls_count = Some(input);
+            self
+        }
+        /// <p>The total number of controls in the assessment. </p>
+        pub fn set_total_assessment_controls_count(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.total_assessment_controls_count = input;
+            self
+        }
+        /// <p>The time when the assessment insights were last updated.</p>
+        pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated = Some(input);
+            self
+        }
+        /// <p>The time when the assessment insights were last updated.</p>
+        pub fn set_last_updated(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InsightsByAssessment`](crate::model::InsightsByAssessment)
+        pub fn build(self) -> crate::model::InsightsByAssessment {
+            crate::model::InsightsByAssessment {
+                noncompliant_evidence_count: self.noncompliant_evidence_count,
+                compliant_evidence_count: self.compliant_evidence_count,
+                inconclusive_evidence_count: self.inconclusive_evidence_count,
+                assessment_controls_count_by_noncompliant_evidence: self
+                    .assessment_controls_count_by_noncompliant_evidence,
+                total_assessment_controls_count: self.total_assessment_controls_count,
+                last_updated: self.last_updated,
+            }
+        }
+    }
+}
+impl InsightsByAssessment {
+    /// Creates a new builder-style object to manufacture [`InsightsByAssessment`](crate::model::InsightsByAssessment)
+    pub fn builder() -> crate::model::insights_by_assessment::Builder {
+        crate::model::insights_by_assessment::Builder::default()
+    }
+}
+
+/// <p>A summary of the latest analytics data for all your active assessments. </p>   
+/// <p>This summary is a snapshot of the data that your active assessments collected on the
+/// <code>lastUpdated</code> date. It’s important to understand that the following totals
+/// are daily counts based on this date — they aren’t a total sum to date. </p>
+/// <p>The <code>Insights</code> data is eventually consistent. This means that, when you read
+/// data from <code>Insights</code>, the response might not instantly reflect the results of a
+/// recently completed write or update operation. If you repeat your read request after a few
+/// hours, the response should return the latest data.</p>
+/// <note>
+/// <p>If you delete an assessment or change its status to inactive,
+/// <code>InsightsByAssessment</code> includes data for that assessment as
+/// follows.</p>
+/// <ul>
+/// <li>      
+/// <p>
+/// <b>Inactive assessments</b> - If Audit Manager collected
+/// evidence for your assessment before you changed it inactive, that evidence is
+/// included in the <code>InsightsByAssessment</code> counts for that day.</p>
+/// </li>
+/// <li>      
+/// <p>
+/// <b>Deleted assessments</b> - If Audit Manager collected
+/// evidence for your assessment before you deleted it, that evidence isn't included
+/// in the <code>InsightsByAssessment</code> counts for that day.</p>
+/// </li>
+/// </ul>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Insights {
+    /// <p>The number of active assessments in Audit Manager. </p>
+    pub active_assessments_count: std::option::Option<i32>,
+    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant
+    /// on the <code>lastUpdated</code> date. This includes evidence that was collected from
+    /// Security Hub with a <i>Fail</i> ruling, or collected from
+    /// Config with a <i>Non-compliant</i> ruling. </p>
+    pub noncompliant_evidence_count: std::option::Option<i32>,
+    /// <p>The number of compliance check evidence that Audit Manager classified as compliant on
+    /// the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
+    pub compliant_evidence_count: std::option::Option<i32>,
+    /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the
+    /// associated control uses Security Hub or Config as a data source
+    /// but you didn't enable those services. This is also the case when a control uses a data
+    /// source that doesn’t support compliance checks (for example: manual evidence, API calls, or
+    /// CloudTrail). </p>
+    /// <note>
+    /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classed
+    /// as <i>inconclusive</i> in <code>Insights</code> data.</p>
+    /// </note>
+    pub inconclusive_evidence_count: std::option::Option<i32>,
+    /// <p>The number of assessment controls that collected non-compliant evidence on the
+    /// <code>lastUpdated</code> date. </p>
+    pub assessment_controls_count_by_noncompliant_evidence: std::option::Option<i32>,
+    /// <p>The total number of controls across all active assessments. </p>
+    pub total_assessment_controls_count: std::option::Option<i32>,
+    /// <p>The time when the cross-assessment insights were last updated. </p>
+    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl Insights {
+    /// <p>The number of active assessments in Audit Manager. </p>
+    pub fn active_assessments_count(&self) -> std::option::Option<i32> {
+        self.active_assessments_count
+    }
+    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant
+    /// on the <code>lastUpdated</code> date. This includes evidence that was collected from
+    /// Security Hub with a <i>Fail</i> ruling, or collected from
+    /// Config with a <i>Non-compliant</i> ruling. </p>
+    pub fn noncompliant_evidence_count(&self) -> std::option::Option<i32> {
+        self.noncompliant_evidence_count
+    }
+    /// <p>The number of compliance check evidence that Audit Manager classified as compliant on
+    /// the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
+    pub fn compliant_evidence_count(&self) -> std::option::Option<i32> {
+        self.compliant_evidence_count
+    }
+    /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the
+    /// associated control uses Security Hub or Config as a data source
+    /// but you didn't enable those services. This is also the case when a control uses a data
+    /// source that doesn’t support compliance checks (for example: manual evidence, API calls, or
+    /// CloudTrail). </p>
+    /// <note>
+    /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classed
+    /// as <i>inconclusive</i> in <code>Insights</code> data.</p>
+    /// </note>
+    pub fn inconclusive_evidence_count(&self) -> std::option::Option<i32> {
+        self.inconclusive_evidence_count
+    }
+    /// <p>The number of assessment controls that collected non-compliant evidence on the
+    /// <code>lastUpdated</code> date. </p>
+    pub fn assessment_controls_count_by_noncompliant_evidence(&self) -> std::option::Option<i32> {
+        self.assessment_controls_count_by_noncompliant_evidence
+    }
+    /// <p>The total number of controls across all active assessments. </p>
+    pub fn total_assessment_controls_count(&self) -> std::option::Option<i32> {
+        self.total_assessment_controls_count
+    }
+    /// <p>The time when the cross-assessment insights were last updated. </p>
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated.as_ref()
+    }
+}
+impl std::fmt::Debug for Insights {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Insights");
+        formatter.field("active_assessments_count", &self.active_assessments_count);
+        formatter.field(
+            "noncompliant_evidence_count",
+            &self.noncompliant_evidence_count,
+        );
+        formatter.field("compliant_evidence_count", &self.compliant_evidence_count);
+        formatter.field(
+            "inconclusive_evidence_count",
+            &self.inconclusive_evidence_count,
+        );
+        formatter.field(
+            "assessment_controls_count_by_noncompliant_evidence",
+            &self.assessment_controls_count_by_noncompliant_evidence,
+        );
+        formatter.field(
+            "total_assessment_controls_count",
+            &self.total_assessment_controls_count,
+        );
+        formatter.field("last_updated", &self.last_updated);
+        formatter.finish()
+    }
+}
+/// See [`Insights`](crate::model::Insights)
+pub mod insights {
+    /// A builder for [`Insights`](crate::model::Insights)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) active_assessments_count: std::option::Option<i32>,
+        pub(crate) noncompliant_evidence_count: std::option::Option<i32>,
+        pub(crate) compliant_evidence_count: std::option::Option<i32>,
+        pub(crate) inconclusive_evidence_count: std::option::Option<i32>,
+        pub(crate) assessment_controls_count_by_noncompliant_evidence: std::option::Option<i32>,
+        pub(crate) total_assessment_controls_count: std::option::Option<i32>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The number of active assessments in Audit Manager. </p>
+        pub fn active_assessments_count(mut self, input: i32) -> Self {
+            self.active_assessments_count = Some(input);
+            self
+        }
+        /// <p>The number of active assessments in Audit Manager. </p>
+        pub fn set_active_assessments_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.active_assessments_count = input;
+            self
+        }
+        /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant
+        /// on the <code>lastUpdated</code> date. This includes evidence that was collected from
+        /// Security Hub with a <i>Fail</i> ruling, or collected from
+        /// Config with a <i>Non-compliant</i> ruling. </p>
+        pub fn noncompliant_evidence_count(mut self, input: i32) -> Self {
+            self.noncompliant_evidence_count = Some(input);
+            self
+        }
+        /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant
+        /// on the <code>lastUpdated</code> date. This includes evidence that was collected from
+        /// Security Hub with a <i>Fail</i> ruling, or collected from
+        /// Config with a <i>Non-compliant</i> ruling. </p>
+        pub fn set_noncompliant_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.noncompliant_evidence_count = input;
+            self
+        }
+        /// <p>The number of compliance check evidence that Audit Manager classified as compliant on
+        /// the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
+        pub fn compliant_evidence_count(mut self, input: i32) -> Self {
+            self.compliant_evidence_count = Some(input);
+            self
+        }
+        /// <p>The number of compliance check evidence that Audit Manager classified as compliant on
+        /// the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
+        pub fn set_compliant_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.compliant_evidence_count = input;
+            self
+        }
+        /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the
+        /// associated control uses Security Hub or Config as a data source
+        /// but you didn't enable those services. This is also the case when a control uses a data
+        /// source that doesn’t support compliance checks (for example: manual evidence, API calls, or
+        /// CloudTrail). </p>
+        /// <note>
+        /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classed
+        /// as <i>inconclusive</i> in <code>Insights</code> data.</p>
+        /// </note>
+        pub fn inconclusive_evidence_count(mut self, input: i32) -> Self {
+            self.inconclusive_evidence_count = Some(input);
+            self
+        }
+        /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the
+        /// associated control uses Security Hub or Config as a data source
+        /// but you didn't enable those services. This is also the case when a control uses a data
+        /// source that doesn’t support compliance checks (for example: manual evidence, API calls, or
+        /// CloudTrail). </p>
+        /// <note>
+        /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classed
+        /// as <i>inconclusive</i> in <code>Insights</code> data.</p>
+        /// </note>
+        pub fn set_inconclusive_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.inconclusive_evidence_count = input;
+            self
+        }
+        /// <p>The number of assessment controls that collected non-compliant evidence on the
+        /// <code>lastUpdated</code> date. </p>
+        pub fn assessment_controls_count_by_noncompliant_evidence(mut self, input: i32) -> Self {
+            self.assessment_controls_count_by_noncompliant_evidence = Some(input);
+            self
+        }
+        /// <p>The number of assessment controls that collected non-compliant evidence on the
+        /// <code>lastUpdated</code> date. </p>
+        pub fn set_assessment_controls_count_by_noncompliant_evidence(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.assessment_controls_count_by_noncompliant_evidence = input;
+            self
+        }
+        /// <p>The total number of controls across all active assessments. </p>
+        pub fn total_assessment_controls_count(mut self, input: i32) -> Self {
+            self.total_assessment_controls_count = Some(input);
+            self
+        }
+        /// <p>The total number of controls across all active assessments. </p>
+        pub fn set_total_assessment_controls_count(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.total_assessment_controls_count = input;
+            self
+        }
+        /// <p>The time when the cross-assessment insights were last updated. </p>
+        pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated = Some(input);
+            self
+        }
+        /// <p>The time when the cross-assessment insights were last updated. </p>
+        pub fn set_last_updated(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Insights`](crate::model::Insights)
+        pub fn build(self) -> crate::model::Insights {
+            crate::model::Insights {
+                active_assessments_count: self.active_assessments_count,
+                noncompliant_evidence_count: self.noncompliant_evidence_count,
+                compliant_evidence_count: self.compliant_evidence_count,
+                inconclusive_evidence_count: self.inconclusive_evidence_count,
+                assessment_controls_count_by_noncompliant_evidence: self
+                    .assessment_controls_count_by_noncompliant_evidence,
+                total_assessment_controls_count: self.total_assessment_controls_count,
+                last_updated: self.last_updated,
+            }
+        }
+    }
+}
+impl Insights {
+    /// Creates a new builder-style object to manufacture [`Insights`](crate::model::Insights)
+    pub fn builder() -> crate::model::insights::Builder {
+        crate::model::insights::Builder::default()
+    }
+}
+
 /// <p> The folder where Audit Manager stores evidence for an assessment. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6258,7 +7377,7 @@ pub struct AssessmentEvidenceFolder {
     /// <p> The name of the evidence folder. </p>
     pub name: std::option::Option<std::string::String>,
     /// <p> The date when the first evidence was added to the evidence folder. </p>
-    pub date: std::option::Option<aws_smithy_types::Instant>,
+    pub date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The identifier for the assessment. </p>
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p> The identifier for the control set. </p>
@@ -6304,7 +7423,7 @@ impl AssessmentEvidenceFolder {
         self.name.as_deref()
     }
     /// <p> The date when the first evidence was added to the evidence folder. </p>
-    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p> The identifier for the assessment. </p>
@@ -6433,7 +7552,7 @@ pub mod assessment_evidence_folder {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) assessment_id: std::option::Option<std::string::String>,
         pub(crate) control_set_id: std::option::Option<std::string::String>,
         pub(crate) control_id: std::option::Option<std::string::String>,
@@ -6463,12 +7582,12 @@ pub mod assessment_evidence_folder {
             self
         }
         /// <p> The date when the first evidence was added to the evidence folder. </p>
-        pub fn date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date = Some(input);
             self
         }
         /// <p> The date when the first evidence was added to the evidence folder. </p>
-        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
+        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.date = input;
             self
         }
@@ -6733,7 +7852,7 @@ pub struct Evidence {
     /// <p> The identifier for the Amazon Web Services account. </p>
     pub evidence_aws_account_id: std::option::Option<std::string::String>,
     /// <p> The timestamp that represents when the evidence was collected. </p>
-    pub time: std::option::Option<aws_smithy_types::Instant>,
+    pub time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The Amazon Web Service that the evidence is collected from. </p>
     pub event_source: std::option::Option<std::string::String>,
     /// <p> The name of the evidence event. </p>
@@ -6777,7 +7896,7 @@ impl Evidence {
         self.evidence_aws_account_id.as_deref()
     }
     /// <p> The timestamp that represents when the evidence was collected. </p>
-    pub fn time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.time.as_ref()
     }
     /// <p> The Amazon Web Service that the evidence is collected from. </p>
@@ -6871,7 +7990,7 @@ pub mod evidence {
     pub struct Builder {
         pub(crate) data_source: std::option::Option<std::string::String>,
         pub(crate) evidence_aws_account_id: std::option::Option<std::string::String>,
-        pub(crate) time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event_source: std::option::Option<std::string::String>,
         pub(crate) event_name: std::option::Option<std::string::String>,
         pub(crate) evidence_by_type: std::option::Option<std::string::String>,
@@ -6912,12 +8031,12 @@ pub mod evidence {
             self
         }
         /// <p> The timestamp that represents when the evidence was collected. </p>
-        pub fn time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.time = Some(input);
             self
         }
         /// <p> The timestamp that represents when the evidence was collected. </p>
-        pub fn set_time(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
+        pub fn set_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.time = input;
             self
         }
@@ -7217,7 +8336,7 @@ pub struct DelegationMetadata {
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p> Specifies when the delegation was created. </p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies the name of the control set that was delegated for review. </p>
     pub control_set_name: std::option::Option<std::string::String>,
 }
@@ -7243,7 +8362,7 @@ impl DelegationMetadata {
         self.role_arn.as_deref()
     }
     /// <p> Specifies when the delegation was created. </p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p> Specifies the name of the control set that was delegated for review. </p>
@@ -7275,7 +8394,7 @@ pub mod delegation_metadata {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DelegationStatus>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) control_set_name: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7339,14 +8458,14 @@ pub mod delegation_metadata {
             self
         }
         /// <p> Specifies when the delegation was created. </p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p> Specifies when the delegation was created. </p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -7398,7 +8517,7 @@ pub struct ChangeLog {
     /// <p> The action that was performed. </p>
     pub action: std::option::Option<crate::model::ActionEnum>,
     /// <p> The time when the action was performed and the changelog record was created. </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The IAM user or role that performed the action. </p>
     pub created_by: std::option::Option<std::string::String>,
 }
@@ -7417,7 +8536,7 @@ impl ChangeLog {
         self.action.as_ref()
     }
     /// <p> The time when the action was performed and the changelog record was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> The IAM user or role that performed the action. </p>
@@ -7445,7 +8564,7 @@ pub mod change_log {
         pub(crate) object_type: std::option::Option<crate::model::ObjectTypeEnum>,
         pub(crate) object_name: std::option::Option<std::string::String>,
         pub(crate) action: std::option::Option<crate::model::ActionEnum>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7485,14 +8604,14 @@ pub mod change_log {
             self
         }
         /// <p> The time when the action was performed and the changelog record was created. </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p> The time when the action was performed and the changelog record was created. </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -7987,7 +9106,7 @@ pub struct AssessmentReport {
     /// <p> The current status of the specified assessment report. </p>
     pub status: std::option::Option<crate::model::AssessmentReportStatus>,
     /// <p> Specifies when the assessment report was created. </p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AssessmentReport {
     /// <p> The unique identifier for the assessment report. </p>
@@ -8023,7 +9142,7 @@ impl AssessmentReport {
         self.status.as_ref()
     }
     /// <p> Specifies when the assessment report was created. </p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -8056,7 +9175,7 @@ pub mod assessment_report {
         pub(crate) assessment_name: std::option::Option<std::string::String>,
         pub(crate) author: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::AssessmentReportStatus>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p> The unique identifier for the assessment report. </p>
@@ -8152,14 +9271,14 @@ pub mod assessment_report {
             self
         }
         /// <p> Specifies when the assessment report was created. </p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p> Specifies when the assessment report was created. </p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self

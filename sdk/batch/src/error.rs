@@ -308,6 +308,113 @@ impl std::error::Error for CreateJobQueueError {
     }
 }
 
+/// Error type for the `CreateSchedulingPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateSchedulingPolicyError {
+    /// Kind of error that occurred.
+    pub kind: CreateSchedulingPolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateSchedulingPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateSchedulingPolicyErrorKind {
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
+    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    ClientException(crate::error::ClientException),
+    /// <p>These errors are usually caused by a server issue.</p>
+    ServerException(crate::error::ServerException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateSchedulingPolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateSchedulingPolicyErrorKind::ClientException(_inner) => _inner.fmt(f),
+            CreateSchedulingPolicyErrorKind::ServerException(_inner) => _inner.fmt(f),
+            CreateSchedulingPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateSchedulingPolicyError {
+    fn code(&self) -> Option<&str> {
+        CreateSchedulingPolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateSchedulingPolicyError {
+    /// Creates a new `CreateSchedulingPolicyError`.
+    pub fn new(kind: CreateSchedulingPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateSchedulingPolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateSchedulingPolicyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateSchedulingPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateSchedulingPolicyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateSchedulingPolicyErrorKind::ClientException`.
+    pub fn is_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSchedulingPolicyErrorKind::ClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateSchedulingPolicyErrorKind::ServerException`.
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSchedulingPolicyErrorKind::ServerException(_)
+        )
+    }
+}
+impl std::error::Error for CreateSchedulingPolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateSchedulingPolicyErrorKind::ClientException(_inner) => Some(_inner),
+            CreateSchedulingPolicyErrorKind::ServerException(_inner) => Some(_inner),
+            CreateSchedulingPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteComputeEnvironment` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -512,6 +619,113 @@ impl std::error::Error for DeleteJobQueueError {
             DeleteJobQueueErrorKind::ClientException(_inner) => Some(_inner),
             DeleteJobQueueErrorKind::ServerException(_inner) => Some(_inner),
             DeleteJobQueueErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteSchedulingPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteSchedulingPolicyError {
+    /// Kind of error that occurred.
+    pub kind: DeleteSchedulingPolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteSchedulingPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteSchedulingPolicyErrorKind {
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
+    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    ClientException(crate::error::ClientException),
+    /// <p>These errors are usually caused by a server issue.</p>
+    ServerException(crate::error::ServerException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteSchedulingPolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteSchedulingPolicyErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DeleteSchedulingPolicyErrorKind::ServerException(_inner) => _inner.fmt(f),
+            DeleteSchedulingPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteSchedulingPolicyError {
+    fn code(&self) -> Option<&str> {
+        DeleteSchedulingPolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteSchedulingPolicyError {
+    /// Creates a new `DeleteSchedulingPolicyError`.
+    pub fn new(kind: DeleteSchedulingPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteSchedulingPolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteSchedulingPolicyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteSchedulingPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteSchedulingPolicyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteSchedulingPolicyErrorKind::ClientException`.
+    pub fn is_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSchedulingPolicyErrorKind::ClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteSchedulingPolicyErrorKind::ServerException`.
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSchedulingPolicyErrorKind::ServerException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteSchedulingPolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteSchedulingPolicyErrorKind::ClientException(_inner) => Some(_inner),
+            DeleteSchedulingPolicyErrorKind::ServerException(_inner) => Some(_inner),
+            DeleteSchedulingPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1039,6 +1253,113 @@ impl std::error::Error for DescribeJobsError {
     }
 }
 
+/// Error type for the `DescribeSchedulingPolicies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeSchedulingPoliciesError {
+    /// Kind of error that occurred.
+    pub kind: DescribeSchedulingPoliciesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeSchedulingPolicies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeSchedulingPoliciesErrorKind {
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
+    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    ClientException(crate::error::ClientException),
+    /// <p>These errors are usually caused by a server issue.</p>
+    ServerException(crate::error::ServerException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeSchedulingPoliciesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeSchedulingPoliciesErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DescribeSchedulingPoliciesErrorKind::ServerException(_inner) => _inner.fmt(f),
+            DescribeSchedulingPoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeSchedulingPoliciesError {
+    fn code(&self) -> Option<&str> {
+        DescribeSchedulingPoliciesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeSchedulingPoliciesError {
+    /// Creates a new `DescribeSchedulingPoliciesError`.
+    pub fn new(kind: DescribeSchedulingPoliciesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeSchedulingPoliciesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeSchedulingPoliciesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeSchedulingPoliciesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeSchedulingPoliciesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeSchedulingPoliciesErrorKind::ClientException`.
+    pub fn is_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeSchedulingPoliciesErrorKind::ClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeSchedulingPoliciesErrorKind::ServerException`.
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeSchedulingPoliciesErrorKind::ServerException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeSchedulingPoliciesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeSchedulingPoliciesErrorKind::ClientException(_inner) => Some(_inner),
+            DescribeSchedulingPoliciesErrorKind::ServerException(_inner) => Some(_inner),
+            DescribeSchedulingPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListJobs` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1136,6 +1457,113 @@ impl std::error::Error for ListJobsError {
             ListJobsErrorKind::ClientException(_inner) => Some(_inner),
             ListJobsErrorKind::ServerException(_inner) => Some(_inner),
             ListJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListSchedulingPolicies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListSchedulingPoliciesError {
+    /// Kind of error that occurred.
+    pub kind: ListSchedulingPoliciesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListSchedulingPolicies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListSchedulingPoliciesErrorKind {
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
+    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    ClientException(crate::error::ClientException),
+    /// <p>These errors are usually caused by a server issue.</p>
+    ServerException(crate::error::ServerException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListSchedulingPoliciesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListSchedulingPoliciesErrorKind::ClientException(_inner) => _inner.fmt(f),
+            ListSchedulingPoliciesErrorKind::ServerException(_inner) => _inner.fmt(f),
+            ListSchedulingPoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListSchedulingPoliciesError {
+    fn code(&self) -> Option<&str> {
+        ListSchedulingPoliciesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListSchedulingPoliciesError {
+    /// Creates a new `ListSchedulingPoliciesError`.
+    pub fn new(kind: ListSchedulingPoliciesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListSchedulingPoliciesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListSchedulingPoliciesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListSchedulingPoliciesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListSchedulingPoliciesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListSchedulingPoliciesErrorKind::ClientException`.
+    pub fn is_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSchedulingPoliciesErrorKind::ClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSchedulingPoliciesErrorKind::ServerException`.
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSchedulingPoliciesErrorKind::ServerException(_)
+        )
+    }
+}
+impl std::error::Error for ListSchedulingPoliciesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListSchedulingPoliciesErrorKind::ClientException(_inner) => Some(_inner),
+            ListSchedulingPoliciesErrorKind::ServerException(_inner) => Some(_inner),
+            ListSchedulingPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1956,6 +2384,113 @@ impl std::error::Error for UpdateJobQueueError {
             UpdateJobQueueErrorKind::ClientException(_inner) => Some(_inner),
             UpdateJobQueueErrorKind::ServerException(_inner) => Some(_inner),
             UpdateJobQueueErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateSchedulingPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateSchedulingPolicyError {
+    /// Kind of error that occurred.
+    pub kind: UpdateSchedulingPolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateSchedulingPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateSchedulingPolicyErrorKind {
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
+    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    ClientException(crate::error::ClientException),
+    /// <p>These errors are usually caused by a server issue.</p>
+    ServerException(crate::error::ServerException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateSchedulingPolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateSchedulingPolicyErrorKind::ClientException(_inner) => _inner.fmt(f),
+            UpdateSchedulingPolicyErrorKind::ServerException(_inner) => _inner.fmt(f),
+            UpdateSchedulingPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateSchedulingPolicyError {
+    fn code(&self) -> Option<&str> {
+        UpdateSchedulingPolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateSchedulingPolicyError {
+    /// Creates a new `UpdateSchedulingPolicyError`.
+    pub fn new(kind: UpdateSchedulingPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateSchedulingPolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateSchedulingPolicyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateSchedulingPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateSchedulingPolicyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateSchedulingPolicyErrorKind::ClientException`.
+    pub fn is_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSchedulingPolicyErrorKind::ClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateSchedulingPolicyErrorKind::ServerException`.
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSchedulingPolicyErrorKind::ServerException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateSchedulingPolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateSchedulingPolicyErrorKind::ClientException(_inner) => Some(_inner),
+            UpdateSchedulingPolicyErrorKind::ServerException(_inner) => Some(_inner),
+            UpdateSchedulingPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

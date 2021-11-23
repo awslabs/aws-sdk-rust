@@ -3213,9 +3213,9 @@ pub struct ApplicationDetail {
     /// <p>Status of the application.</p>
     pub application_status: std::option::Option<crate::model::ApplicationStatus>,
     /// <p>Time stamp when the application version was created.</p>
-    pub create_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Time stamp when the application was last updated.</p>
-    pub last_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Describes the application input configuration.
     /// For more information,
     /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.
@@ -3265,11 +3265,11 @@ impl ApplicationDetail {
         self.application_status.as_ref()
     }
     /// <p>Time stamp when the application version was created.</p>
-    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_timestamp.as_ref()
     }
     /// <p>Time stamp when the application was last updated.</p>
-    pub fn last_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_timestamp.as_ref()
     }
     /// <p>Describes the application input configuration.
@@ -3351,8 +3351,8 @@ pub mod application_detail {
         pub(crate) application_description: std::option::Option<std::string::String>,
         pub(crate) application_arn: std::option::Option<std::string::String>,
         pub(crate) application_status: std::option::Option<crate::model::ApplicationStatus>,
-        pub(crate) create_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) input_descriptions:
             std::option::Option<std::vec::Vec<crate::model::InputDescription>>,
         pub(crate) output_descriptions:
@@ -3418,27 +3418,27 @@ pub mod application_detail {
             self
         }
         /// <p>Time stamp when the application version was created.</p>
-        pub fn create_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_timestamp = Some(input);
             self
         }
         /// <p>Time stamp when the application version was created.</p>
         pub fn set_create_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_timestamp = input;
             self
         }
         /// <p>Time stamp when the application was last updated.</p>
-        pub fn last_update_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_timestamp = Some(input);
             self
         }
         /// <p>Time stamp when the application was last updated.</p>
         pub fn set_last_update_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_timestamp = input;
             self

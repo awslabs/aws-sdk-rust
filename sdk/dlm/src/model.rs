@@ -2844,9 +2844,9 @@ pub struct LifecyclePolicy {
     /// the lifecycle policy.</p>
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The local date and time when the lifecycle policy was created.</p>
-    pub date_created: std::option::Option<aws_smithy_types::Instant>,
+    pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The local date and time when the lifecycle policy was last modified.</p>
-    pub date_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub date_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The configuration of the lifecycle policy</p>
     pub policy_details: std::option::Option<crate::model::PolicyDetails>,
     /// <p>The tags.</p>
@@ -2878,11 +2878,11 @@ impl LifecyclePolicy {
         self.execution_role_arn.as_deref()
     }
     /// <p>The local date and time when the lifecycle policy was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The local date and time when the lifecycle policy was last modified.</p>
-    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_modified.as_ref()
     }
     /// <p>The configuration of the lifecycle policy</p>
@@ -2928,8 +2928,8 @@ pub mod lifecycle_policy {
         pub(crate) state: std::option::Option<crate::model::GettablePolicyStateValues>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
-        pub(crate) date_created: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) date_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) date_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) policy_details: std::option::Option<crate::model::PolicyDetails>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -2999,27 +2999,27 @@ pub mod lifecycle_policy {
             self
         }
         /// <p>The local date and time when the lifecycle policy was created.</p>
-        pub fn date_created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_created = Some(input);
             self
         }
         /// <p>The local date and time when the lifecycle policy was created.</p>
         pub fn set_date_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_created = input;
             self
         }
         /// <p>The local date and time when the lifecycle policy was last modified.</p>
-        pub fn date_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_modified = Some(input);
             self
         }
         /// <p>The local date and time when the lifecycle policy was last modified.</p>
         pub fn set_date_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_modified = input;
             self

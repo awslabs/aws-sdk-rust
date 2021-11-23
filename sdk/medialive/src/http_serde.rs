@@ -48,12 +48,14 @@ pub fn deser_header_describe_input_device_thumbnail_describe_input_device_thumbn
 pub fn deser_header_describe_input_device_thumbnail_describe_input_device_thumbnail_output_last_modified(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<aws_smithy_types::Instant>,
+    std::option::Option<aws_smithy_types::DateTime>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("Last-Modified").iter();
-    let var_2: Vec<aws_smithy_types::Instant> =
-        aws_smithy_http::header::many_dates(headers, aws_smithy_types::instant::Format::HttpDate)?;
+    let var_2: Vec<aws_smithy_types::DateTime> = aws_smithy_http::header::many_dates(
+        headers,
+        aws_smithy_types::date_time::Format::HttpDate,
+    )?;
     if var_2.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
             format!("expected one item but found {}", var_2.len()),

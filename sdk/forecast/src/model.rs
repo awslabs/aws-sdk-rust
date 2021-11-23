@@ -108,6 +108,11 @@ pub struct PredictorSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the data used to train
     /// the predictor.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
+    /// <p>Whether AutoPredictor was used to create the predictor.</p>
+    pub is_auto_predictor: std::option::Option<bool>,
+    /// <p>A summary of the reference predictor used if the predictor was retrained or
+    /// upgraded.</p>
+    pub reference_predictor_summary: std::option::Option<crate::model::ReferencePredictorSummary>,
     /// <p>The status of the predictor. States include:</p>
     /// <ul>
     /// <li>
@@ -141,8 +146,9 @@ pub struct PredictorSummary {
     /// <p>If an error occurred, an informational message about the error.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>When the model training task was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the
+    /// job:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -166,7 +172,7 @@ pub struct PredictorSummary {
     /// failed.</p>
     /// </li>
     /// </ul>
-    pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PredictorSummary {
     /// <p>The ARN of the predictor.</p>
@@ -181,6 +187,17 @@ impl PredictorSummary {
     /// the predictor.</p>
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
+    }
+    /// <p>Whether AutoPredictor was used to create the predictor.</p>
+    pub fn is_auto_predictor(&self) -> std::option::Option<bool> {
+        self.is_auto_predictor
+    }
+    /// <p>A summary of the reference predictor used if the predictor was retrained or
+    /// upgraded.</p>
+    pub fn reference_predictor_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::ReferencePredictorSummary> {
+        self.reference_predictor_summary.as_ref()
     }
     /// <p>The status of the predictor. States include:</p>
     /// <ul>
@@ -219,10 +236,11 @@ impl PredictorSummary {
         self.message.as_deref()
     }
     /// <p>When the model training task was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the
+    /// job:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -246,7 +264,7 @@ impl PredictorSummary {
     /// failed.</p>
     /// </li>
     /// </ul>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
@@ -256,6 +274,11 @@ impl std::fmt::Debug for PredictorSummary {
         formatter.field("predictor_arn", &self.predictor_arn);
         formatter.field("predictor_name", &self.predictor_name);
         formatter.field("dataset_group_arn", &self.dataset_group_arn);
+        formatter.field("is_auto_predictor", &self.is_auto_predictor);
+        formatter.field(
+            "reference_predictor_summary",
+            &self.reference_predictor_summary,
+        );
         formatter.field("status", &self.status);
         formatter.field("message", &self.message);
         formatter.field("creation_time", &self.creation_time);
@@ -272,10 +295,13 @@ pub mod predictor_summary {
         pub(crate) predictor_arn: std::option::Option<std::string::String>,
         pub(crate) predictor_name: std::option::Option<std::string::String>,
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
+        pub(crate) is_auto_predictor: std::option::Option<bool>,
+        pub(crate) reference_predictor_summary:
+            std::option::Option<crate::model::ReferencePredictorSummary>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the predictor.</p>
@@ -317,6 +343,34 @@ pub mod predictor_summary {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.dataset_group_arn = input;
+            self
+        }
+        /// <p>Whether AutoPredictor was used to create the predictor.</p>
+        pub fn is_auto_predictor(mut self, input: bool) -> Self {
+            self.is_auto_predictor = Some(input);
+            self
+        }
+        /// <p>Whether AutoPredictor was used to create the predictor.</p>
+        pub fn set_is_auto_predictor(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_auto_predictor = input;
+            self
+        }
+        /// <p>A summary of the reference predictor used if the predictor was retrained or
+        /// upgraded.</p>
+        pub fn reference_predictor_summary(
+            mut self,
+            input: crate::model::ReferencePredictorSummary,
+        ) -> Self {
+            self.reference_predictor_summary = Some(input);
+            self
+        }
+        /// <p>A summary of the reference predictor used if the predictor was retrained or
+        /// upgraded.</p>
+        pub fn set_reference_predictor_summary(
+            mut self,
+            input: std::option::Option<crate::model::ReferencePredictorSummary>,
+        ) -> Self {
+            self.reference_predictor_summary = input;
             self
         }
         /// <p>The status of the predictor. States include:</p>
@@ -396,19 +450,20 @@ pub mod predictor_summary {
             self
         }
         /// <p>When the model training task was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>When the model training task was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
-        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the
+        /// job:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -432,11 +487,12 @@ pub mod predictor_summary {
         /// failed.</p>
         /// </li>
         /// </ul>
-        pub fn last_modification_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
-        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the
+        /// job:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -462,7 +518,7 @@ pub mod predictor_summary {
         /// </ul>
         pub fn set_last_modification_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modification_time = input;
             self
@@ -473,6 +529,8 @@ pub mod predictor_summary {
                 predictor_arn: self.predictor_arn,
                 predictor_name: self.predictor_name,
                 dataset_group_arn: self.dataset_group_arn,
+                is_auto_predictor: self.is_auto_predictor,
+                reference_predictor_summary: self.reference_predictor_summary,
                 status: self.status,
                 message: self.message,
                 creation_time: self.creation_time,
@@ -485,6 +543,135 @@ impl PredictorSummary {
     /// Creates a new builder-style object to manufacture [`PredictorSummary`](crate::model::PredictorSummary)
     pub fn builder() -> crate::model::predictor_summary::Builder {
         crate::model::predictor_summary::Builder::default()
+    }
+}
+
+/// <p>Provides a summary of the reference predictor used when retraining or upgrading a
+/// predictor.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReferencePredictorSummary {
+    /// <p>The ARN of the reference predictor.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>Whether the reference predictor is <code>Active</code> or <code>Deleted</code>.</p>
+    pub state: std::option::Option<crate::model::State>,
+}
+impl ReferencePredictorSummary {
+    /// <p>The ARN of the reference predictor.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Whether the reference predictor is <code>Active</code> or <code>Deleted</code>.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+        self.state.as_ref()
+    }
+}
+impl std::fmt::Debug for ReferencePredictorSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReferencePredictorSummary");
+        formatter.field("arn", &self.arn);
+        formatter.field("state", &self.state);
+        formatter.finish()
+    }
+}
+/// See [`ReferencePredictorSummary`](crate::model::ReferencePredictorSummary)
+pub mod reference_predictor_summary {
+    /// A builder for [`ReferencePredictorSummary`](crate::model::ReferencePredictorSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::State>,
+    }
+    impl Builder {
+        /// <p>The ARN of the reference predictor.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the reference predictor.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>Whether the reference predictor is <code>Active</code> or <code>Deleted</code>.</p>
+        pub fn state(mut self, input: crate::model::State) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>Whether the reference predictor is <code>Active</code> or <code>Deleted</code>.</p>
+        pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
+            self.state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReferencePredictorSummary`](crate::model::ReferencePredictorSummary)
+        pub fn build(self) -> crate::model::ReferencePredictorSummary {
+            crate::model::ReferencePredictorSummary {
+                arn: self.arn,
+                state: self.state,
+            }
+        }
+    }
+}
+impl ReferencePredictorSummary {
+    /// Creates a new builder-style object to manufacture [`ReferencePredictorSummary`](crate::model::ReferencePredictorSummary)
+    pub fn builder() -> crate::model::reference_predictor_summary::Builder {
+        crate::model::reference_predictor_summary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum State {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleted,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for State {
+    fn from(s: &str) -> Self {
+        match s {
+            "Active" => State::Active,
+            "Deleted" => State::Deleted,
+            other => State::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for State {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(State::from(s))
+    }
+}
+impl State {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            State::Active => "Active",
+            State::Deleted => "Deleted",
+            State::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Active", "Deleted"]
+    }
+}
+impl AsRef<str> for State {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -688,7 +875,7 @@ pub struct PredictorBacktestExportJobSummary {
     /// <p>Information about any errors that may have occurred during the backtest export.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>When the predictor backtest export job was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
     /// <li>
@@ -713,7 +900,7 @@ pub struct PredictorBacktestExportJobSummary {
     /// failed.</p>
     /// </li>
     /// </ul>
-    pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PredictorBacktestExportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
@@ -762,7 +949,7 @@ impl PredictorBacktestExportJobSummary {
         self.message.as_deref()
     }
     /// <p>When the predictor backtest export job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
@@ -789,7 +976,7 @@ impl PredictorBacktestExportJobSummary {
     /// failed.</p>
     /// </li>
     /// </ul>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
@@ -823,8 +1010,8 @@ pub mod predictor_backtest_export_job_summary {
         pub(crate) destination: std::option::Option<crate::model::DataDestination>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
@@ -943,14 +1130,14 @@ pub mod predictor_backtest_export_job_summary {
             self
         }
         /// <p>When the predictor backtest export job was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>When the predictor backtest export job was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -979,7 +1166,7 @@ pub mod predictor_backtest_export_job_summary {
         /// failed.</p>
         /// </li>
         /// </ul>
-        pub fn last_modification_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
@@ -1009,7 +1196,7 @@ pub mod predictor_backtest_export_job_summary {
         /// </ul>
         pub fn set_last_modification_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modification_time = input;
             self
@@ -1216,6 +1403,8 @@ pub struct ForecastSummary {
     pub forecast_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the predictor used to generate the forecast.</p>
     pub predictor_arn: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub created_using_auto_predictor: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provided the data used to train
     /// the predictor.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
@@ -1252,7 +1441,7 @@ pub struct ForecastSummary {
     /// <p>If an error occurred, an informational message about the error.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>When the forecast creation task was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
     /// <li>
@@ -1277,7 +1466,7 @@ pub struct ForecastSummary {
     /// failed.</p>
     /// </li>
     /// </ul>
-    pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ForecastSummary {
     /// <p>The ARN of the forecast.</p>
@@ -1291,6 +1480,10 @@ impl ForecastSummary {
     /// <p>The ARN of the predictor used to generate the forecast.</p>
     pub fn predictor_arn(&self) -> std::option::Option<&str> {
         self.predictor_arn.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn created_using_auto_predictor(&self) -> std::option::Option<bool> {
+        self.created_using_auto_predictor
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provided the data used to train
     /// the predictor.</p>
@@ -1334,7 +1527,7 @@ impl ForecastSummary {
         self.message.as_deref()
     }
     /// <p>When the forecast creation task was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
@@ -1361,7 +1554,7 @@ impl ForecastSummary {
     /// failed.</p>
     /// </li>
     /// </ul>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
@@ -1371,6 +1564,10 @@ impl std::fmt::Debug for ForecastSummary {
         formatter.field("forecast_arn", &self.forecast_arn);
         formatter.field("forecast_name", &self.forecast_name);
         formatter.field("predictor_arn", &self.predictor_arn);
+        formatter.field(
+            "created_using_auto_predictor",
+            &self.created_using_auto_predictor,
+        );
         formatter.field("dataset_group_arn", &self.dataset_group_arn);
         formatter.field("status", &self.status);
         formatter.field("message", &self.message);
@@ -1388,11 +1585,12 @@ pub mod forecast_summary {
         pub(crate) forecast_arn: std::option::Option<std::string::String>,
         pub(crate) forecast_name: std::option::Option<std::string::String>,
         pub(crate) predictor_arn: std::option::Option<std::string::String>,
+        pub(crate) created_using_auto_predictor: std::option::Option<bool>,
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the forecast.</p>
@@ -1429,6 +1627,19 @@ pub mod forecast_summary {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.predictor_arn = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn created_using_auto_predictor(mut self, input: bool) -> Self {
+            self.created_using_auto_predictor = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_created_using_auto_predictor(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.created_using_auto_predictor = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group that provided the data used to train
@@ -1523,14 +1734,14 @@ pub mod forecast_summary {
             self
         }
         /// <p>When the forecast creation task was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>When the forecast creation task was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -1559,7 +1770,7 @@ pub mod forecast_summary {
         /// failed.</p>
         /// </li>
         /// </ul>
-        pub fn last_modification_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
@@ -1589,7 +1800,7 @@ pub mod forecast_summary {
         /// </ul>
         pub fn set_last_modification_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modification_time = input;
             self
@@ -1600,6 +1811,7 @@ pub mod forecast_summary {
                 forecast_arn: self.forecast_arn,
                 forecast_name: self.forecast_name,
                 predictor_arn: self.predictor_arn,
+                created_using_auto_predictor: self.created_using_auto_predictor,
                 dataset_group_arn: self.dataset_group_arn,
                 status: self.status,
                 message: self.message,
@@ -1661,7 +1873,7 @@ pub struct ForecastExportJobSummary {
     /// <p>If an error occurred, an informational message about the error.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>When the forecast export job was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
     /// <li>
@@ -1686,7 +1898,7 @@ pub struct ForecastExportJobSummary {
     /// failed.</p>
     /// </li>
     /// </ul>
-    pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ForecastExportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
@@ -1738,7 +1950,7 @@ impl ForecastExportJobSummary {
         self.message.as_deref()
     }
     /// <p>When the forecast export job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
@@ -1765,7 +1977,7 @@ impl ForecastExportJobSummary {
     /// failed.</p>
     /// </li>
     /// </ul>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
@@ -1793,8 +2005,8 @@ pub mod forecast_export_job_summary {
         pub(crate) destination: std::option::Option<crate::model::DataDestination>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
@@ -1913,14 +2125,14 @@ pub mod forecast_export_job_summary {
             self
         }
         /// <p>When the forecast export job was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>When the forecast export job was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -1949,7 +2161,7 @@ pub mod forecast_export_job_summary {
         /// failed.</p>
         /// </li>
         /// </ul>
-        pub fn last_modification_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
@@ -1979,7 +2191,7 @@ pub mod forecast_export_job_summary {
         /// </ul>
         pub fn set_last_modification_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modification_time = input;
             self
@@ -2005,6 +2217,1040 @@ impl ForecastExportJobSummary {
     }
 }
 
+/// <p>Provides a summary of the Explainability export properties used in the <a>ListExplainabilityExports</a> operation. To get a complete set of
+/// properties, call the <a>DescribeExplainabilityExport</a> operation, and
+/// provide the <code>ExplainabilityExportArn</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExplainabilityExportSummary {
+    /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
+    pub explainability_export_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the Explainability export</p>
+    pub explainability_export_name: std::option::Option<std::string::String>,
+    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
+    /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    pub destination: std::option::Option<crate::model::DataDestination>,
+    /// <p>The status of the Explainability export. States include: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
+    /// <code>CREATE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
+    /// <code>DELETE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub status: std::option::Option<std::string::String>,
+    /// <p>Information about any errors that may have occurred during the Explainability
+    /// export.</p>
+    pub message: std::option::Option<std::string::String>,
+    /// <p>When the Explainability was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the
+    /// job:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+    /// failed.</p>
+    /// </li>
+    /// </ul>
+    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ExplainabilityExportSummary {
+    /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
+    pub fn explainability_export_arn(&self) -> std::option::Option<&str> {
+        self.explainability_export_arn.as_deref()
+    }
+    /// <p>The name of the Explainability export</p>
+    pub fn explainability_export_name(&self) -> std::option::Option<&str> {
+        self.explainability_export_name.as_deref()
+    }
+    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
+    /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::DataDestination> {
+        self.destination.as_ref()
+    }
+    /// <p>The status of the Explainability export. States include: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
+    /// <code>CREATE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
+    /// <code>DELETE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>Information about any errors that may have occurred during the Explainability
+    /// export.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>When the Explainability was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the
+    /// job:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+    /// failed.</p>
+    /// </li>
+    /// </ul>
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modification_time.as_ref()
+    }
+}
+impl std::fmt::Debug for ExplainabilityExportSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExplainabilityExportSummary");
+        formatter.field("explainability_export_arn", &self.explainability_export_arn);
+        formatter.field(
+            "explainability_export_name",
+            &self.explainability_export_name,
+        );
+        formatter.field("destination", &self.destination);
+        formatter.field("status", &self.status);
+        formatter.field("message", &self.message);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modification_time", &self.last_modification_time);
+        formatter.finish()
+    }
+}
+/// See [`ExplainabilityExportSummary`](crate::model::ExplainabilityExportSummary)
+pub mod explainability_export_summary {
+    /// A builder for [`ExplainabilityExportSummary`](crate::model::ExplainabilityExportSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) explainability_export_arn: std::option::Option<std::string::String>,
+        pub(crate) explainability_export_name: std::option::Option<std::string::String>,
+        pub(crate) destination: std::option::Option<crate::model::DataDestination>,
+        pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
+        pub fn explainability_export_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.explainability_export_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
+        pub fn set_explainability_export_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.explainability_export_arn = input;
+            self
+        }
+        /// <p>The name of the Explainability export</p>
+        pub fn explainability_export_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.explainability_export_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Explainability export</p>
+        pub fn set_explainability_export_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.explainability_export_name = input;
+            self
+        }
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
+        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+        pub fn destination(mut self, input: crate::model::DataDestination) -> Self {
+            self.destination = Some(input);
+            self
+        }
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
+        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+        pub fn set_destination(
+            mut self,
+            input: std::option::Option<crate::model::DataDestination>,
+        ) -> Self {
+            self.destination = input;
+            self
+        }
+        /// <p>The status of the Explainability export. States include: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ACTIVE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
+        /// <code>CREATE_FAILED</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
+        /// <code>DELETE_FAILED</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The status of the Explainability export. States include: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ACTIVE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
+        /// <code>CREATE_FAILED</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
+        /// <code>DELETE_FAILED</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Information about any errors that may have occurred during the Explainability
+        /// export.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Information about any errors that may have occurred during the Explainability
+        /// export.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>When the Explainability was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>When the Explainability was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the
+        /// job:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+        /// failed.</p>
+        /// </li>
+        /// </ul>
+        pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modification_time = Some(input);
+            self
+        }
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the
+        /// job:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+        /// failed.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_last_modification_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modification_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExplainabilityExportSummary`](crate::model::ExplainabilityExportSummary)
+        pub fn build(self) -> crate::model::ExplainabilityExportSummary {
+            crate::model::ExplainabilityExportSummary {
+                explainability_export_arn: self.explainability_export_arn,
+                explainability_export_name: self.explainability_export_name,
+                destination: self.destination,
+                status: self.status,
+                message: self.message,
+                creation_time: self.creation_time,
+                last_modification_time: self.last_modification_time,
+            }
+        }
+    }
+}
+impl ExplainabilityExportSummary {
+    /// Creates a new builder-style object to manufacture [`ExplainabilityExportSummary`](crate::model::ExplainabilityExportSummary)
+    pub fn builder() -> crate::model::explainability_export_summary::Builder {
+        crate::model::explainability_export_summary::Builder::default()
+    }
+}
+
+/// <p>Provides a summary of the Explainability properties used in the <a>ListExplainabilities</a> operation. To get a complete set of properties,
+/// call the <a>DescribeExplainability</a> operation, and provide the listed
+/// <code>ExplainabilityArn</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExplainabilitySummary {
+    /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+    pub explainability_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the Explainability.</p>
+    pub explainability_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
+    /// Explainability.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The configuration settings that define the granularity of time series and time points
+    /// for the Explainability.</p>
+    pub explainability_config: std::option::Option<crate::model::ExplainabilityConfig>,
+    /// <p>The status of the Explainability. States include: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
+    /// <code>CREATE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
+    /// <code>DELETE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub status: std::option::Option<std::string::String>,
+    /// <p>Information about any errors that may have occurred during the Explainability creation
+    /// process.</p>
+    pub message: std::option::Option<std::string::String>,
+    /// <p>When the Explainability was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the
+    /// job:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+    /// failed.</p>
+    /// </li>
+    /// </ul>
+    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ExplainabilitySummary {
+    /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+    pub fn explainability_arn(&self) -> std::option::Option<&str> {
+        self.explainability_arn.as_deref()
+    }
+    /// <p>The name of the Explainability.</p>
+    pub fn explainability_name(&self) -> std::option::Option<&str> {
+        self.explainability_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
+    /// Explainability.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The configuration settings that define the granularity of time series and time points
+    /// for the Explainability.</p>
+    pub fn explainability_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ExplainabilityConfig> {
+        self.explainability_config.as_ref()
+    }
+    /// <p>The status of the Explainability. States include: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
+    /// <code>CREATE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
+    /// <code>DELETE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>Information about any errors that may have occurred during the Explainability creation
+    /// process.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>When the Explainability was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the
+    /// job:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+    /// failed.</p>
+    /// </li>
+    /// </ul>
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modification_time.as_ref()
+    }
+}
+impl std::fmt::Debug for ExplainabilitySummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExplainabilitySummary");
+        formatter.field("explainability_arn", &self.explainability_arn);
+        formatter.field("explainability_name", &self.explainability_name);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("explainability_config", &self.explainability_config);
+        formatter.field("status", &self.status);
+        formatter.field("message", &self.message);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modification_time", &self.last_modification_time);
+        formatter.finish()
+    }
+}
+/// See [`ExplainabilitySummary`](crate::model::ExplainabilitySummary)
+pub mod explainability_summary {
+    /// A builder for [`ExplainabilitySummary`](crate::model::ExplainabilitySummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) explainability_arn: std::option::Option<std::string::String>,
+        pub(crate) explainability_name: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) explainability_config: std::option::Option<crate::model::ExplainabilityConfig>,
+        pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+        pub fn explainability_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.explainability_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+        pub fn set_explainability_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.explainability_arn = input;
+            self
+        }
+        /// <p>The name of the Explainability.</p>
+        pub fn explainability_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.explainability_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Explainability.</p>
+        pub fn set_explainability_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.explainability_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
+        /// Explainability.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
+        /// Explainability.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The configuration settings that define the granularity of time series and time points
+        /// for the Explainability.</p>
+        pub fn explainability_config(mut self, input: crate::model::ExplainabilityConfig) -> Self {
+            self.explainability_config = Some(input);
+            self
+        }
+        /// <p>The configuration settings that define the granularity of time series and time points
+        /// for the Explainability.</p>
+        pub fn set_explainability_config(
+            mut self,
+            input: std::option::Option<crate::model::ExplainabilityConfig>,
+        ) -> Self {
+            self.explainability_config = input;
+            self
+        }
+        /// <p>The status of the Explainability. States include: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ACTIVE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
+        /// <code>CREATE_FAILED</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
+        /// <code>DELETE_FAILED</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The status of the Explainability. States include: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ACTIVE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
+        /// <code>CREATE_FAILED</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
+        /// <code>DELETE_FAILED</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Information about any errors that may have occurred during the Explainability creation
+        /// process.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Information about any errors that may have occurred during the Explainability creation
+        /// process.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>When the Explainability was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>When the Explainability was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the
+        /// job:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+        /// failed.</p>
+        /// </li>
+        /// </ul>
+        pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modification_time = Some(input);
+            self
+        }
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the
+        /// job:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+        /// failed.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_last_modification_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modification_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExplainabilitySummary`](crate::model::ExplainabilitySummary)
+        pub fn build(self) -> crate::model::ExplainabilitySummary {
+            crate::model::ExplainabilitySummary {
+                explainability_arn: self.explainability_arn,
+                explainability_name: self.explainability_name,
+                resource_arn: self.resource_arn,
+                explainability_config: self.explainability_config,
+                status: self.status,
+                message: self.message,
+                creation_time: self.creation_time,
+                last_modification_time: self.last_modification_time,
+            }
+        }
+    }
+}
+impl ExplainabilitySummary {
+    /// Creates a new builder-style object to manufacture [`ExplainabilitySummary`](crate::model::ExplainabilitySummary)
+    pub fn builder() -> crate::model::explainability_summary::Builder {
+        crate::model::explainability_summary::Builder::default()
+    }
+}
+
+/// <p>The ExplainabilityConfig data type defines the number of time series and time points
+/// included in <a>CreateExplainability</a>.</p>
+/// <p>If you provide a predictor ARN for <code>ResourceArn</code>, you must set both
+/// <code>TimePointGranularity</code> and <code>TimeSeriesGranularity</code> to “ALL”.
+/// When creating Predictor Explainability, Amazon Forecast considers all time series and
+/// time points.</p>
+/// <p>If you provide a forecast ARN for <code>ResourceArn</code>, you can set <code>TimePointGranularity</code> and
+/// <code>TimeSeriesGranularity</code> to either “ALL” or “Specific”.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExplainabilityConfig {
+    /// <p>To create an Explainability for all time series in your datasets, use
+    /// <code>ALL</code>. To create an Explainability for specific time series in your datasets,
+    /// use <code>SPECIFIC</code>.</p>
+    /// <p>Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location
+    /// within the <a>DataDestination</a> data type.</p>
+    pub time_series_granularity: std::option::Option<crate::model::TimeSeriesGranularity>,
+    /// <p>To create an Explainability for all time points in your forecast horizon, use
+    /// <code>ALL</code>. To create an Explainability for specific time points in your
+    /// forecast horizon, use <code>SPECIFIC</code>.</p>
+    /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code>
+    /// parameters within the <a>CreateExplainability</a> operation.</p>
+    pub time_point_granularity: std::option::Option<crate::model::TimePointGranularity>,
+}
+impl ExplainabilityConfig {
+    /// <p>To create an Explainability for all time series in your datasets, use
+    /// <code>ALL</code>. To create an Explainability for specific time series in your datasets,
+    /// use <code>SPECIFIC</code>.</p>
+    /// <p>Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location
+    /// within the <a>DataDestination</a> data type.</p>
+    pub fn time_series_granularity(
+        &self,
+    ) -> std::option::Option<&crate::model::TimeSeriesGranularity> {
+        self.time_series_granularity.as_ref()
+    }
+    /// <p>To create an Explainability for all time points in your forecast horizon, use
+    /// <code>ALL</code>. To create an Explainability for specific time points in your
+    /// forecast horizon, use <code>SPECIFIC</code>.</p>
+    /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code>
+    /// parameters within the <a>CreateExplainability</a> operation.</p>
+    pub fn time_point_granularity(
+        &self,
+    ) -> std::option::Option<&crate::model::TimePointGranularity> {
+        self.time_point_granularity.as_ref()
+    }
+}
+impl std::fmt::Debug for ExplainabilityConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExplainabilityConfig");
+        formatter.field("time_series_granularity", &self.time_series_granularity);
+        formatter.field("time_point_granularity", &self.time_point_granularity);
+        formatter.finish()
+    }
+}
+/// See [`ExplainabilityConfig`](crate::model::ExplainabilityConfig)
+pub mod explainability_config {
+    /// A builder for [`ExplainabilityConfig`](crate::model::ExplainabilityConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) time_series_granularity:
+            std::option::Option<crate::model::TimeSeriesGranularity>,
+        pub(crate) time_point_granularity: std::option::Option<crate::model::TimePointGranularity>,
+    }
+    impl Builder {
+        /// <p>To create an Explainability for all time series in your datasets, use
+        /// <code>ALL</code>. To create an Explainability for specific time series in your datasets,
+        /// use <code>SPECIFIC</code>.</p>
+        /// <p>Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location
+        /// within the <a>DataDestination</a> data type.</p>
+        pub fn time_series_granularity(
+            mut self,
+            input: crate::model::TimeSeriesGranularity,
+        ) -> Self {
+            self.time_series_granularity = Some(input);
+            self
+        }
+        /// <p>To create an Explainability for all time series in your datasets, use
+        /// <code>ALL</code>. To create an Explainability for specific time series in your datasets,
+        /// use <code>SPECIFIC</code>.</p>
+        /// <p>Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location
+        /// within the <a>DataDestination</a> data type.</p>
+        pub fn set_time_series_granularity(
+            mut self,
+            input: std::option::Option<crate::model::TimeSeriesGranularity>,
+        ) -> Self {
+            self.time_series_granularity = input;
+            self
+        }
+        /// <p>To create an Explainability for all time points in your forecast horizon, use
+        /// <code>ALL</code>. To create an Explainability for specific time points in your
+        /// forecast horizon, use <code>SPECIFIC</code>.</p>
+        /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code>
+        /// parameters within the <a>CreateExplainability</a> operation.</p>
+        pub fn time_point_granularity(mut self, input: crate::model::TimePointGranularity) -> Self {
+            self.time_point_granularity = Some(input);
+            self
+        }
+        /// <p>To create an Explainability for all time points in your forecast horizon, use
+        /// <code>ALL</code>. To create an Explainability for specific time points in your
+        /// forecast horizon, use <code>SPECIFIC</code>.</p>
+        /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code>
+        /// parameters within the <a>CreateExplainability</a> operation.</p>
+        pub fn set_time_point_granularity(
+            mut self,
+            input: std::option::Option<crate::model::TimePointGranularity>,
+        ) -> Self {
+            self.time_point_granularity = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExplainabilityConfig`](crate::model::ExplainabilityConfig)
+        pub fn build(self) -> crate::model::ExplainabilityConfig {
+            crate::model::ExplainabilityConfig {
+                time_series_granularity: self.time_series_granularity,
+                time_point_granularity: self.time_point_granularity,
+            }
+        }
+    }
+}
+impl ExplainabilityConfig {
+    /// Creates a new builder-style object to manufacture [`ExplainabilityConfig`](crate::model::ExplainabilityConfig)
+    pub fn builder() -> crate::model::explainability_config::Builder {
+        crate::model::explainability_config::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TimePointGranularity {
+    #[allow(missing_docs)] // documentation missing in model
+    All,
+    #[allow(missing_docs)] // documentation missing in model
+    Specific,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TimePointGranularity {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL" => TimePointGranularity::All,
+            "SPECIFIC" => TimePointGranularity::Specific,
+            other => TimePointGranularity::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TimePointGranularity {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TimePointGranularity::from(s))
+    }
+}
+impl TimePointGranularity {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TimePointGranularity::All => "ALL",
+            TimePointGranularity::Specific => "SPECIFIC",
+            TimePointGranularity::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ALL", "SPECIFIC"]
+    }
+}
+impl AsRef<str> for TimePointGranularity {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TimeSeriesGranularity {
+    #[allow(missing_docs)] // documentation missing in model
+    All,
+    #[allow(missing_docs)] // documentation missing in model
+    Specific,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TimeSeriesGranularity {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL" => TimeSeriesGranularity::All,
+            "SPECIFIC" => TimeSeriesGranularity::Specific,
+            other => TimeSeriesGranularity::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TimeSeriesGranularity {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TimeSeriesGranularity::from(s))
+    }
+}
+impl TimeSeriesGranularity {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TimeSeriesGranularity::All => "ALL",
+            TimeSeriesGranularity::Specific => "SPECIFIC",
+            TimeSeriesGranularity::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ALL", "SPECIFIC"]
+    }
+}
+impl AsRef<str> for TimeSeriesGranularity {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Provides a summary of the dataset properties used in the <a>ListDatasets</a>
 /// operation. To get the complete set of properties, call the <a>DescribeDataset</a>
 /// operation, and provide the <code>DatasetArn</code>.</p>
@@ -2020,13 +3266,13 @@ pub struct DatasetSummary {
     /// <p>The domain associated with the dataset.</p>
     pub domain: std::option::Option<crate::model::Domain>,
     /// <p>When the dataset was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as
     /// <code>CreationTime</code>. While data is being imported to the dataset,
     /// <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call.
     /// After a <a>CreateDatasetImportJob</a> operation has finished,
     /// <code>LastModificationTime</code> is when the import job completed or failed.</p>
-    pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DatasetSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
@@ -2046,7 +3292,7 @@ impl DatasetSummary {
         self.domain.as_ref()
     }
     /// <p>When the dataset was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as
@@ -2054,7 +3300,7 @@ impl DatasetSummary {
     /// <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call.
     /// After a <a>CreateDatasetImportJob</a> operation has finished,
     /// <code>LastModificationTime</code> is when the import job completed or failed.</p>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
@@ -2080,8 +3326,8 @@ pub mod dataset_summary {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) dataset_type: std::option::Option<crate::model::DatasetType>,
         pub(crate) domain: std::option::Option<crate::model::Domain>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
@@ -2128,14 +3374,14 @@ pub mod dataset_summary {
             self
         }
         /// <p>When the dataset was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>When the dataset was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2145,7 +3391,7 @@ pub mod dataset_summary {
         /// <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call.
         /// After a <a>CreateDatasetImportJob</a> operation has finished,
         /// <code>LastModificationTime</code> is when the import job completed or failed.</p>
-        pub fn last_modification_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
@@ -2156,7 +3402,7 @@ pub mod dataset_summary {
         /// <code>LastModificationTime</code> is when the import job completed or failed.</p>
         pub fn set_last_modification_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modification_time = input;
             self
@@ -2366,7 +3612,7 @@ pub struct DatasetImportJobSummary {
     /// <p>If an error occurred, an informational message about the error.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>When the dataset import job was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the
     /// job:</p>
     /// <ul>
@@ -2392,7 +3638,7 @@ pub struct DatasetImportJobSummary {
     /// failed.</p>
     /// </li>
     /// </ul>
-    pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DatasetImportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
@@ -2442,7 +3688,7 @@ impl DatasetImportJobSummary {
         self.message.as_deref()
     }
     /// <p>When the dataset import job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the
@@ -2470,7 +3716,7 @@ impl DatasetImportJobSummary {
     /// failed.</p>
     /// </li>
     /// </ul>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
@@ -2498,8 +3744,8 @@ pub mod dataset_import_job_summary {
         pub(crate) data_source: std::option::Option<crate::model::DataSource>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
@@ -2614,14 +3860,14 @@ pub mod dataset_import_job_summary {
             self
         }
         /// <p>When the dataset import job was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>When the dataset import job was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2651,7 +3897,7 @@ pub mod dataset_import_job_summary {
         /// failed.</p>
         /// </li>
         /// </ul>
-        pub fn last_modification_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
@@ -2682,7 +3928,7 @@ pub mod dataset_import_job_summary {
         /// </ul>
         pub fn set_last_modification_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modification_time = input;
             self
@@ -2779,11 +4025,11 @@ pub struct DatasetGroupSummary {
     /// <p>The name of the dataset group.</p>
     pub dataset_group_name: std::option::Option<std::string::String>,
     /// <p>When the dataset group was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
     /// <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code>
     /// call.</p>
-    pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DatasetGroupSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
@@ -2795,13 +4041,13 @@ impl DatasetGroupSummary {
         self.dataset_group_name.as_deref()
     }
     /// <p>When the dataset group was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
     /// <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code>
     /// call.</p>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
@@ -2823,8 +4069,8 @@ pub mod dataset_group_summary {
     pub struct Builder {
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
         pub(crate) dataset_group_name: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
@@ -2854,14 +4100,14 @@ pub mod dataset_group_summary {
             self
         }
         /// <p>When the dataset group was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>When the dataset group was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2869,7 +4115,7 @@ pub mod dataset_group_summary {
         /// <p>When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
         /// <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code>
         /// call.</p>
-        pub fn last_modification_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
@@ -2878,7 +4124,7 @@ pub mod dataset_group_summary {
         /// call.</p>
         pub fn set_last_modification_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modification_time = input;
             self
@@ -2987,6 +4233,8 @@ impl AsRef<str> for OptimizationMetric {
 )]
 pub enum AutoMlOverrideStrategy {
     #[allow(missing_docs)] // documentation missing in model
+    AccuracyOptimized,
+    #[allow(missing_docs)] // documentation missing in model
     LatencyOptimized,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2994,6 +4242,7 @@ pub enum AutoMlOverrideStrategy {
 impl std::convert::From<&str> for AutoMlOverrideStrategy {
     fn from(s: &str) -> Self {
         match s {
+            "AccuracyOptimized" => AutoMlOverrideStrategy::AccuracyOptimized,
             "LatencyOptimized" => AutoMlOverrideStrategy::LatencyOptimized,
             other => AutoMlOverrideStrategy::Unknown(other.to_owned()),
         }
@@ -3010,13 +4259,14 @@ impl AutoMlOverrideStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AutoMlOverrideStrategy::AccuracyOptimized => "AccuracyOptimized",
             AutoMlOverrideStrategy::LatencyOptimized => "LatencyOptimized",
             AutoMlOverrideStrategy::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["LatencyOptimized"]
+        &["AccuracyOptimized", "LatencyOptimized"]
     }
 }
 impl AsRef<str> for AutoMlOverrideStrategy {
@@ -3126,9 +4376,9 @@ impl EvaluationResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WindowSummary {
     /// <p>The timestamp that defines the start of the window.</p>
-    pub test_window_start: std::option::Option<aws_smithy_types::Instant>,
+    pub test_window_start: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp that defines the end of the window.</p>
-    pub test_window_end: std::option::Option<aws_smithy_types::Instant>,
+    pub test_window_end: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of data points within the window.</p>
     pub item_count: std::option::Option<i32>,
     /// <p>The type of evaluation.</p>
@@ -3148,11 +4398,11 @@ pub struct WindowSummary {
 }
 impl WindowSummary {
     /// <p>The timestamp that defines the start of the window.</p>
-    pub fn test_window_start(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn test_window_start(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.test_window_start.as_ref()
     }
     /// <p>The timestamp that defines the end of the window.</p>
-    pub fn test_window_end(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn test_window_end(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.test_window_end.as_ref()
     }
     /// <p>The number of data points within the window.</p>
@@ -3195,35 +4445,35 @@ pub mod window_summary {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) test_window_start: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) test_window_end: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) test_window_start: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) test_window_end: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) item_count: std::option::Option<i32>,
         pub(crate) evaluation_type: std::option::Option<crate::model::EvaluationType>,
         pub(crate) metrics: std::option::Option<crate::model::Metrics>,
     }
     impl Builder {
         /// <p>The timestamp that defines the start of the window.</p>
-        pub fn test_window_start(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn test_window_start(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.test_window_start = Some(input);
             self
         }
         /// <p>The timestamp that defines the start of the window.</p>
         pub fn set_test_window_start(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.test_window_start = input;
             self
         }
         /// <p>The timestamp that defines the end of the window.</p>
-        pub fn test_window_end(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn test_window_end(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.test_window_end = Some(input);
             self
         }
         /// <p>The timestamp that defines the end of the window.</p>
         pub fn set_test_window_end(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.test_window_end = input;
             self
@@ -3906,9 +5156,9 @@ impl PredictorExecution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestWindowSummary {
     /// <p>The time at which the test began.</p>
-    pub test_window_start: std::option::Option<aws_smithy_types::Instant>,
+    pub test_window_start: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the test ended.</p>
-    pub test_window_end: std::option::Option<aws_smithy_types::Instant>,
+    pub test_window_end: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the test. Possible status values are:</p>
     /// <ul>
     /// <li>
@@ -3933,11 +5183,11 @@ pub struct TestWindowSummary {
 }
 impl TestWindowSummary {
     /// <p>The time at which the test began.</p>
-    pub fn test_window_start(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn test_window_start(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.test_window_start.as_ref()
     }
     /// <p>The time at which the test ended.</p>
-    pub fn test_window_end(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn test_window_end(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.test_window_end.as_ref()
     }
     /// <p>The status of the test. Possible status values are:</p>
@@ -3982,34 +5232,34 @@ pub mod test_window_summary {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) test_window_start: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) test_window_end: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) test_window_start: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) test_window_end: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The time at which the test began.</p>
-        pub fn test_window_start(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn test_window_start(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.test_window_start = Some(input);
             self
         }
         /// <p>The time at which the test began.</p>
         pub fn set_test_window_start(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.test_window_start = input;
             self
         }
         /// <p>The time at which the test ended.</p>
-        pub fn test_window_end(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn test_window_end(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.test_window_end = Some(input);
             self
         }
         /// <p>The time at which the test ended.</p>
         pub fn set_test_window_end(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.test_window_end = input;
             self
@@ -4955,7 +6205,8 @@ impl InputDataConfig {
 /// <p>The Amazon Forecast Weather Index is a built-in featurization that incorporates historical and
 /// projected weather information into your model. The Weather Index supplements your datasets
 /// with over two years of historical weather data and up to 14 days of projected weather data.
-/// For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/weather.html">Amazon Forecast Weather Index</a>.</p>
+/// For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/weather.html">Amazon Forecast Weather
+/// Index</a>.</p>
 /// <p>
 /// <b>Holidays</b>
 /// </p>
@@ -4966,7 +6217,8 @@ impl InputDataConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SupplementaryFeature {
-    /// <p>The name of the feature. Valid values: <code>"holiday"</code> and <code>"weather"</code>.</p>
+    /// <p>The name of the feature. Valid values: <code>"holiday"</code> and
+    /// <code>"weather"</code>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>
     /// <b>Weather Index</b>
@@ -5181,7 +6433,8 @@ pub struct SupplementaryFeature {
     pub value: std::option::Option<std::string::String>,
 }
 impl SupplementaryFeature {
-    /// <p>The name of the feature. Valid values: <code>"holiday"</code> and <code>"weather"</code>.</p>
+    /// <p>The name of the feature. Valid values: <code>"holiday"</code> and
+    /// <code>"weather"</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -5417,12 +6670,14 @@ pub mod supplementary_feature {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the feature. Valid values: <code>"holiday"</code> and <code>"weather"</code>.</p>
+        /// <p>The name of the feature. Valid values: <code>"holiday"</code> and
+        /// <code>"weather"</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the feature. Valid values: <code>"holiday"</code> and <code>"weather"</code>.</p>
+        /// <p>The name of the feature. Valid values: <code>"holiday"</code> and
+        /// <code>"weather"</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6791,6 +8046,217 @@ impl EvaluationParameters {
     }
 }
 
+/// <p>Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Schema {
+    /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
+    pub attributes: std::option::Option<std::vec::Vec<crate::model::SchemaAttribute>>,
+}
+impl Schema {
+    /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::SchemaAttribute]> {
+        self.attributes.as_deref()
+    }
+}
+impl std::fmt::Debug for Schema {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Schema");
+        formatter.field("attributes", &self.attributes);
+        formatter.finish()
+    }
+}
+/// See [`Schema`](crate::model::Schema)
+pub mod schema {
+    /// A builder for [`Schema`](crate::model::Schema)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::SchemaAttribute>>,
+    }
+    impl Builder {
+        /// Appends an item to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
+        pub fn attributes(mut self, input: impl Into<crate::model::SchemaAttribute>) -> Self {
+            let mut v = self.attributes.unwrap_or_default();
+            v.push(input.into());
+            self.attributes = Some(v);
+            self
+        }
+        /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
+        pub fn set_attributes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SchemaAttribute>>,
+        ) -> Self {
+            self.attributes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Schema`](crate::model::Schema)
+        pub fn build(self) -> crate::model::Schema {
+            crate::model::Schema {
+                attributes: self.attributes,
+            }
+        }
+    }
+}
+impl Schema {
+    /// Creates a new builder-style object to manufacture [`Schema`](crate::model::Schema)
+    pub fn builder() -> crate::model::schema::Builder {
+        crate::model::schema::Builder::default()
+    }
+}
+
+/// <p>An attribute of a schema, which defines a dataset field. A schema attribute is required
+/// for every field in a dataset. The <a>Schema</a> object contains an array of
+/// <code>SchemaAttribute</code> objects.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SchemaAttribute {
+    /// <p>The name of the dataset field.</p>
+    pub attribute_name: std::option::Option<std::string::String>,
+    /// <p>The data type of the field.</p>
+    pub attribute_type: std::option::Option<crate::model::AttributeType>,
+}
+impl SchemaAttribute {
+    /// <p>The name of the dataset field.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The data type of the field.</p>
+    pub fn attribute_type(&self) -> std::option::Option<&crate::model::AttributeType> {
+        self.attribute_type.as_ref()
+    }
+}
+impl std::fmt::Debug for SchemaAttribute {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SchemaAttribute");
+        formatter.field("attribute_name", &self.attribute_name);
+        formatter.field("attribute_type", &self.attribute_type);
+        formatter.finish()
+    }
+}
+/// See [`SchemaAttribute`](crate::model::SchemaAttribute)
+pub mod schema_attribute {
+    /// A builder for [`SchemaAttribute`](crate::model::SchemaAttribute)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) attribute_name: std::option::Option<std::string::String>,
+        pub(crate) attribute_type: std::option::Option<crate::model::AttributeType>,
+    }
+    impl Builder {
+        /// <p>The name of the dataset field.</p>
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attribute_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the dataset field.</p>
+        pub fn set_attribute_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.attribute_name = input;
+            self
+        }
+        /// <p>The data type of the field.</p>
+        pub fn attribute_type(mut self, input: crate::model::AttributeType) -> Self {
+            self.attribute_type = Some(input);
+            self
+        }
+        /// <p>The data type of the field.</p>
+        pub fn set_attribute_type(
+            mut self,
+            input: std::option::Option<crate::model::AttributeType>,
+        ) -> Self {
+            self.attribute_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SchemaAttribute`](crate::model::SchemaAttribute)
+        pub fn build(self) -> crate::model::SchemaAttribute {
+            crate::model::SchemaAttribute {
+                attribute_name: self.attribute_name,
+                attribute_type: self.attribute_type,
+            }
+        }
+    }
+}
+impl SchemaAttribute {
+    /// Creates a new builder-style object to manufacture [`SchemaAttribute`](crate::model::SchemaAttribute)
+    pub fn builder() -> crate::model::schema_attribute::Builder {
+        crate::model::schema_attribute::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AttributeType {
+    #[allow(missing_docs)] // documentation missing in model
+    Float,
+    #[allow(missing_docs)] // documentation missing in model
+    Geolocation,
+    #[allow(missing_docs)] // documentation missing in model
+    Integer,
+    #[allow(missing_docs)] // documentation missing in model
+    String,
+    #[allow(missing_docs)] // documentation missing in model
+    Timestamp,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AttributeType {
+    fn from(s: &str) -> Self {
+        match s {
+            "float" => AttributeType::Float,
+            "geolocation" => AttributeType::Geolocation,
+            "integer" => AttributeType::Integer,
+            "string" => AttributeType::String,
+            "timestamp" => AttributeType::Timestamp,
+            other => AttributeType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AttributeType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AttributeType::from(s))
+    }
+}
+impl AttributeType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AttributeType::Float => "float",
+            AttributeType::Geolocation => "geolocation",
+            AttributeType::Integer => "integer",
+            AttributeType::String => "string",
+            AttributeType::Timestamp => "timestamp",
+            AttributeType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["float", "geolocation", "integer", "string", "timestamp"]
+    }
+}
+impl AsRef<str> for AttributeType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Provides statistics for each data field imported into to an Amazon Forecast dataset with
 /// the <a>CreateDatasetImportJob</a> operation.</p>
 #[non_exhaustive]
@@ -7087,114 +8553,1352 @@ impl Statistics {
     }
 }
 
-/// <p>Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Schema {
-    /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
-    pub attributes: std::option::Option<std::vec::Vec<crate::model::SchemaAttribute>>,
+pub struct ExplainabilityInfo {
+    #[allow(missing_docs)] // documentation missing in model
+    pub explainability_arn: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub status: std::option::Option<std::string::String>,
 }
-impl Schema {
-    /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::SchemaAttribute]> {
-        self.attributes.as_deref()
+impl ExplainabilityInfo {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn explainability_arn(&self) -> std::option::Option<&str> {
+        self.explainability_arn.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
     }
 }
-impl std::fmt::Debug for Schema {
+impl std::fmt::Debug for ExplainabilityInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Schema");
-        formatter.field("attributes", &self.attributes);
+        let mut formatter = f.debug_struct("ExplainabilityInfo");
+        formatter.field("explainability_arn", &self.explainability_arn);
+        formatter.field("status", &self.status);
         formatter.finish()
     }
 }
-/// See [`Schema`](crate::model::Schema)
-pub mod schema {
-    /// A builder for [`Schema`](crate::model::Schema)
+/// See [`ExplainabilityInfo`](crate::model::ExplainabilityInfo)
+pub mod explainability_info {
+    /// A builder for [`ExplainabilityInfo`](crate::model::ExplainabilityInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::SchemaAttribute>>,
+        pub(crate) explainability_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Appends an item to `attributes`.
-        ///
-        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
-        ///
-        /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::SchemaAttribute>) -> Self {
-            let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
-            self.attributes = Some(v);
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn explainability_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.explainability_arn = Some(input.into());
             self
         }
-        /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
-        pub fn set_attributes(
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_explainability_arn(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SchemaAttribute>>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.attributes = input;
+            self.explainability_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`Schema`](crate::model::Schema)
-        pub fn build(self) -> crate::model::Schema {
-            crate::model::Schema {
-                attributes: self.attributes,
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExplainabilityInfo`](crate::model::ExplainabilityInfo)
+        pub fn build(self) -> crate::model::ExplainabilityInfo {
+            crate::model::ExplainabilityInfo {
+                explainability_arn: self.explainability_arn,
+                status: self.status,
             }
         }
     }
 }
-impl Schema {
-    /// Creates a new builder-style object to manufacture [`Schema`](crate::model::Schema)
-    pub fn builder() -> crate::model::schema::Builder {
-        crate::model::schema::Builder::default()
+impl ExplainabilityInfo {
+    /// Creates a new builder-style object to manufacture [`ExplainabilityInfo`](crate::model::ExplainabilityInfo)
+    pub fn builder() -> crate::model::explainability_info::Builder {
+        crate::model::explainability_info::Builder::default()
     }
 }
 
-/// <p>An attribute of a schema, which defines a dataset field. A schema attribute is required
-/// for every field in a dataset. The <a>Schema</a> object contains an array of
-/// <code>SchemaAttribute</code> objects.</p>
+/// <p>The data configuration for your dataset group and any additional datasets.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SchemaAttribute {
-    /// <p>The name of the dataset field.</p>
-    pub attribute_name: std::option::Option<std::string::String>,
-    /// <p>The data type of the field.</p>
-    pub attribute_type: std::option::Option<crate::model::AttributeType>,
+pub struct DataConfig {
+    /// <p>The ARN of the dataset group used to train the predictor.</p>
+    pub dataset_group_arn: std::option::Option<std::string::String>,
+    /// <p>Aggregation and filling options for attributes in your dataset group.</p>
+    pub attribute_configs: std::option::Option<std::vec::Vec<crate::model::AttributeConfig>>,
+    /// <p>Additional built-in datasets like Holidays and the Weather Index.</p>
+    pub additional_datasets: std::option::Option<std::vec::Vec<crate::model::AdditionalDataset>>,
 }
-impl SchemaAttribute {
-    /// <p>The name of the dataset field.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
-        self.attribute_name.as_deref()
+impl DataConfig {
+    /// <p>The ARN of the dataset group used to train the predictor.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
     }
-    /// <p>The data type of the field.</p>
-    pub fn attribute_type(&self) -> std::option::Option<&crate::model::AttributeType> {
-        self.attribute_type.as_ref()
+    /// <p>Aggregation and filling options for attributes in your dataset group.</p>
+    pub fn attribute_configs(&self) -> std::option::Option<&[crate::model::AttributeConfig]> {
+        self.attribute_configs.as_deref()
+    }
+    /// <p>Additional built-in datasets like Holidays and the Weather Index.</p>
+    pub fn additional_datasets(&self) -> std::option::Option<&[crate::model::AdditionalDataset]> {
+        self.additional_datasets.as_deref()
     }
 }
-impl std::fmt::Debug for SchemaAttribute {
+impl std::fmt::Debug for DataConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaAttribute");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("attribute_type", &self.attribute_type);
+        let mut formatter = f.debug_struct("DataConfig");
+        formatter.field("dataset_group_arn", &self.dataset_group_arn);
+        formatter.field("attribute_configs", &self.attribute_configs);
+        formatter.field("additional_datasets", &self.additional_datasets);
         formatter.finish()
     }
 }
-/// See [`SchemaAttribute`](crate::model::SchemaAttribute)
-pub mod schema_attribute {
-    /// A builder for [`SchemaAttribute`](crate::model::SchemaAttribute)
+/// See [`DataConfig`](crate::model::DataConfig)
+pub mod data_config {
+    /// A builder for [`DataConfig`](crate::model::DataConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
+        pub(crate) attribute_configs:
+            std::option::Option<std::vec::Vec<crate::model::AttributeConfig>>,
+        pub(crate) additional_datasets:
+            std::option::Option<std::vec::Vec<crate::model::AdditionalDataset>>,
+    }
+    impl Builder {
+        /// <p>The ARN of the dataset group used to train the predictor.</p>
+        pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dataset_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the dataset group used to train the predictor.</p>
+        pub fn set_dataset_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.dataset_group_arn = input;
+            self
+        }
+        /// Appends an item to `attribute_configs`.
+        ///
+        /// To override the contents of this collection use [`set_attribute_configs`](Self::set_attribute_configs).
+        ///
+        /// <p>Aggregation and filling options for attributes in your dataset group.</p>
+        pub fn attribute_configs(
+            mut self,
+            input: impl Into<crate::model::AttributeConfig>,
+        ) -> Self {
+            let mut v = self.attribute_configs.unwrap_or_default();
+            v.push(input.into());
+            self.attribute_configs = Some(v);
+            self
+        }
+        /// <p>Aggregation and filling options for attributes in your dataset group.</p>
+        pub fn set_attribute_configs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AttributeConfig>>,
+        ) -> Self {
+            self.attribute_configs = input;
+            self
+        }
+        /// Appends an item to `additional_datasets`.
+        ///
+        /// To override the contents of this collection use [`set_additional_datasets`](Self::set_additional_datasets).
+        ///
+        /// <p>Additional built-in datasets like Holidays and the Weather Index.</p>
+        pub fn additional_datasets(
+            mut self,
+            input: impl Into<crate::model::AdditionalDataset>,
+        ) -> Self {
+            let mut v = self.additional_datasets.unwrap_or_default();
+            v.push(input.into());
+            self.additional_datasets = Some(v);
+            self
+        }
+        /// <p>Additional built-in datasets like Holidays and the Weather Index.</p>
+        pub fn set_additional_datasets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AdditionalDataset>>,
+        ) -> Self {
+            self.additional_datasets = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataConfig`](crate::model::DataConfig)
+        pub fn build(self) -> crate::model::DataConfig {
+            crate::model::DataConfig {
+                dataset_group_arn: self.dataset_group_arn,
+                attribute_configs: self.attribute_configs,
+                additional_datasets: self.additional_datasets,
+            }
+        }
+    }
+}
+impl DataConfig {
+    /// Creates a new builder-style object to manufacture [`DataConfig`](crate::model::DataConfig)
+    pub fn builder() -> crate::model::data_config::Builder {
+        crate::model::data_config::Builder::default()
+    }
+}
+
+/// <p>Describes an additional dataset. This object is part of the <a>DataConfig</a> object. Forecast supports the Weather Index and Holidays additional datasets.</p>
+/// <p>
+/// <b>Weather Index</b>
+/// </p>
+/// <p>The Amazon Forecast Weather Index is a built-in dataset that incorporates historical and
+/// projected weather information into your model. The Weather Index supplements your
+/// datasets with over two years of historical weather data and up to 14 days of projected
+/// weather data. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/weather.html">Amazon Forecast
+/// Weather Index</a>.</p>
+/// <p>
+/// <b>Holidays</b>
+/// </p>
+/// <p>Holidays is a built-in dataset that incorporates national holiday information into
+/// your model. It provides native support for the holiday calendars of 66 countries. To
+/// view the holiday calendars, refer to the <a href="http://jollyday.sourceforge.net/data.html">Jollyday</a> library. For more
+/// information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html">Holidays
+/// Featurization</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AdditionalDataset {
+    /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and
+    /// <code>"weather"</code>.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>
+    /// <b>Weather Index</b>
+    /// </p>
+    /// <p>To enable the Weather Index, do not specify a value for
+    /// <code>Configuration</code>.</p>
+    /// <p>
+    /// <b>Holidays</b>
+    /// </p>
+    /// <p>To enable Holidays, specify a country with one of the following two-letter country
+    /// codes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>"AL" - ALBANIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"AR" - ARGENTINA</p>
+    /// </li>
+    /// <li>
+    /// <p>"AT" - AUSTRIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"AU" - AUSTRALIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"BA" - BOSNIA HERZEGOVINA</p>
+    /// </li>
+    /// <li>
+    /// <p>"BE" - BELGIUM</p>
+    /// </li>
+    /// <li>
+    /// <p>"BG" - BULGARIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"BO" - BOLIVIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"BR" - BRAZIL</p>
+    /// </li>
+    /// <li>
+    /// <p>"BY" - BELARUS</p>
+    /// </li>
+    /// <li>
+    /// <p>"CA" - CANADA</p>
+    /// </li>
+    /// <li>
+    /// <p>"CL" - CHILE</p>
+    /// </li>
+    /// <li>
+    /// <p>"CO" - COLOMBIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"CR" - COSTA RICA</p>
+    /// </li>
+    /// <li>
+    /// <p>"HR" - CROATIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"CZ" - CZECH REPUBLIC</p>
+    /// </li>
+    /// <li>
+    /// <p>"DK" - DENMARK</p>
+    /// </li>
+    /// <li>
+    /// <p>"EC" - ECUADOR</p>
+    /// </li>
+    /// <li>
+    /// <p>"EE" - ESTONIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"ET" - ETHIOPIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"FI" - FINLAND</p>
+    /// </li>
+    /// <li>
+    /// <p>"FR" - FRANCE</p>
+    /// </li>
+    /// <li>
+    /// <p>"DE" - GERMANY</p>
+    /// </li>
+    /// <li>
+    /// <p>"GR" - GREECE</p>
+    /// </li>
+    /// <li>
+    /// <p>"HU" - HUNGARY</p>
+    /// </li>
+    /// <li>
+    /// <p>"IS" - ICELAND</p>
+    /// </li>
+    /// <li>
+    /// <p>"IN" - INDIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"IE" - IRELAND</p>
+    /// </li>
+    /// <li>
+    /// <p>"IT" - ITALY</p>
+    /// </li>
+    /// <li>
+    /// <p>"JP" - JAPAN</p>
+    /// </li>
+    /// <li>
+    /// <p>"KZ" - KAZAKHSTAN</p>
+    /// </li>
+    /// <li>
+    /// <p>"KR" - KOREA</p>
+    /// </li>
+    /// <li>
+    /// <p>"LV" - LATVIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"LI" - LIECHTENSTEIN</p>
+    /// </li>
+    /// <li>
+    /// <p>"LT" - LITHUANIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"LU" - LUXEMBOURG</p>
+    /// </li>
+    /// <li>
+    /// <p>"MK" - MACEDONIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"MT" - MALTA</p>
+    /// </li>
+    /// <li>
+    /// <p>"MX" - MEXICO</p>
+    /// </li>
+    /// <li>
+    /// <p>"MD" - MOLDOVA</p>
+    /// </li>
+    /// <li>
+    /// <p>"ME" - MONTENEGRO</p>
+    /// </li>
+    /// <li>
+    /// <p>"NL" - NETHERLANDS</p>
+    /// </li>
+    /// <li>
+    /// <p>"NZ" - NEW ZEALAND</p>
+    /// </li>
+    /// <li>
+    /// <p>"NI" - NICARAGUA</p>
+    /// </li>
+    /// <li>
+    /// <p>"NG" - NIGERIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"NO" - NORWAY</p>
+    /// </li>
+    /// <li>
+    /// <p>"PA" - PANAMA</p>
+    /// </li>
+    /// <li>
+    /// <p>"PY" - PARAGUAY</p>
+    /// </li>
+    /// <li>
+    /// <p>"PE" - PERU</p>
+    /// </li>
+    /// <li>
+    /// <p>"PL" - POLAND</p>
+    /// </li>
+    /// <li>
+    /// <p>"PT" - PORTUGAL</p>
+    /// </li>
+    /// <li>
+    /// <p>"RO" - ROMANIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"RU" - RUSSIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"RS" - SERBIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"SK" - SLOVAKIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"SI" - SLOVENIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"ZA" - SOUTH AFRICA</p>
+    /// </li>
+    /// <li>
+    /// <p>"ES" - SPAIN</p>
+    /// </li>
+    /// <li>
+    /// <p>"SE" - SWEDEN</p>
+    /// </li>
+    /// <li>
+    /// <p>"CH" - SWITZERLAND</p>
+    /// </li>
+    /// <li>
+    /// <p>"UA" - UKRAINE</p>
+    /// </li>
+    /// <li>
+    /// <p>"AE" - UNITED ARAB EMIRATES</p>
+    /// </li>
+    /// <li>
+    /// <p>"US" - UNITED STATES</p>
+    /// </li>
+    /// <li>
+    /// <p>"UK" - UNITED KINGDOM</p>
+    /// </li>
+    /// <li>
+    /// <p>"UY" - URUGUAY</p>
+    /// </li>
+    /// <li>
+    /// <p>"VE" - VENEZUELA</p>
+    /// </li>
+    /// </ul>
+    pub configuration: std::option::Option<
+        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    >,
+}
+impl AdditionalDataset {
+    /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and
+    /// <code>"weather"</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// <b>Weather Index</b>
+    /// </p>
+    /// <p>To enable the Weather Index, do not specify a value for
+    /// <code>Configuration</code>.</p>
+    /// <p>
+    /// <b>Holidays</b>
+    /// </p>
+    /// <p>To enable Holidays, specify a country with one of the following two-letter country
+    /// codes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>"AL" - ALBANIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"AR" - ARGENTINA</p>
+    /// </li>
+    /// <li>
+    /// <p>"AT" - AUSTRIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"AU" - AUSTRALIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"BA" - BOSNIA HERZEGOVINA</p>
+    /// </li>
+    /// <li>
+    /// <p>"BE" - BELGIUM</p>
+    /// </li>
+    /// <li>
+    /// <p>"BG" - BULGARIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"BO" - BOLIVIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"BR" - BRAZIL</p>
+    /// </li>
+    /// <li>
+    /// <p>"BY" - BELARUS</p>
+    /// </li>
+    /// <li>
+    /// <p>"CA" - CANADA</p>
+    /// </li>
+    /// <li>
+    /// <p>"CL" - CHILE</p>
+    /// </li>
+    /// <li>
+    /// <p>"CO" - COLOMBIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"CR" - COSTA RICA</p>
+    /// </li>
+    /// <li>
+    /// <p>"HR" - CROATIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"CZ" - CZECH REPUBLIC</p>
+    /// </li>
+    /// <li>
+    /// <p>"DK" - DENMARK</p>
+    /// </li>
+    /// <li>
+    /// <p>"EC" - ECUADOR</p>
+    /// </li>
+    /// <li>
+    /// <p>"EE" - ESTONIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"ET" - ETHIOPIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"FI" - FINLAND</p>
+    /// </li>
+    /// <li>
+    /// <p>"FR" - FRANCE</p>
+    /// </li>
+    /// <li>
+    /// <p>"DE" - GERMANY</p>
+    /// </li>
+    /// <li>
+    /// <p>"GR" - GREECE</p>
+    /// </li>
+    /// <li>
+    /// <p>"HU" - HUNGARY</p>
+    /// </li>
+    /// <li>
+    /// <p>"IS" - ICELAND</p>
+    /// </li>
+    /// <li>
+    /// <p>"IN" - INDIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"IE" - IRELAND</p>
+    /// </li>
+    /// <li>
+    /// <p>"IT" - ITALY</p>
+    /// </li>
+    /// <li>
+    /// <p>"JP" - JAPAN</p>
+    /// </li>
+    /// <li>
+    /// <p>"KZ" - KAZAKHSTAN</p>
+    /// </li>
+    /// <li>
+    /// <p>"KR" - KOREA</p>
+    /// </li>
+    /// <li>
+    /// <p>"LV" - LATVIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"LI" - LIECHTENSTEIN</p>
+    /// </li>
+    /// <li>
+    /// <p>"LT" - LITHUANIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"LU" - LUXEMBOURG</p>
+    /// </li>
+    /// <li>
+    /// <p>"MK" - MACEDONIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"MT" - MALTA</p>
+    /// </li>
+    /// <li>
+    /// <p>"MX" - MEXICO</p>
+    /// </li>
+    /// <li>
+    /// <p>"MD" - MOLDOVA</p>
+    /// </li>
+    /// <li>
+    /// <p>"ME" - MONTENEGRO</p>
+    /// </li>
+    /// <li>
+    /// <p>"NL" - NETHERLANDS</p>
+    /// </li>
+    /// <li>
+    /// <p>"NZ" - NEW ZEALAND</p>
+    /// </li>
+    /// <li>
+    /// <p>"NI" - NICARAGUA</p>
+    /// </li>
+    /// <li>
+    /// <p>"NG" - NIGERIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"NO" - NORWAY</p>
+    /// </li>
+    /// <li>
+    /// <p>"PA" - PANAMA</p>
+    /// </li>
+    /// <li>
+    /// <p>"PY" - PARAGUAY</p>
+    /// </li>
+    /// <li>
+    /// <p>"PE" - PERU</p>
+    /// </li>
+    /// <li>
+    /// <p>"PL" - POLAND</p>
+    /// </li>
+    /// <li>
+    /// <p>"PT" - PORTUGAL</p>
+    /// </li>
+    /// <li>
+    /// <p>"RO" - ROMANIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"RU" - RUSSIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"RS" - SERBIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"SK" - SLOVAKIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"SI" - SLOVENIA</p>
+    /// </li>
+    /// <li>
+    /// <p>"ZA" - SOUTH AFRICA</p>
+    /// </li>
+    /// <li>
+    /// <p>"ES" - SPAIN</p>
+    /// </li>
+    /// <li>
+    /// <p>"SE" - SWEDEN</p>
+    /// </li>
+    /// <li>
+    /// <p>"CH" - SWITZERLAND</p>
+    /// </li>
+    /// <li>
+    /// <p>"UA" - UKRAINE</p>
+    /// </li>
+    /// <li>
+    /// <p>"AE" - UNITED ARAB EMIRATES</p>
+    /// </li>
+    /// <li>
+    /// <p>"US" - UNITED STATES</p>
+    /// </li>
+    /// <li>
+    /// <p>"UK" - UNITED KINGDOM</p>
+    /// </li>
+    /// <li>
+    /// <p>"UY" - URUGUAY</p>
+    /// </li>
+    /// <li>
+    /// <p>"VE" - VENEZUELA</p>
+    /// </li>
+    /// </ul>
+    pub fn configuration(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for AdditionalDataset {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AdditionalDataset");
+        formatter.field("name", &self.name);
+        formatter.field("configuration", &self.configuration);
+        formatter.finish()
+    }
+}
+/// See [`AdditionalDataset`](crate::model::AdditionalDataset)
+pub mod additional_dataset {
+    /// A builder for [`AdditionalDataset`](crate::model::AdditionalDataset)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) configuration: std::option::Option<
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    }
+    impl Builder {
+        /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and
+        /// <code>"weather"</code>.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and
+        /// <code>"weather"</code>.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Adds a key-value pair to `configuration`.
+        ///
+        /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
+        ///
+        /// <p>
+        /// <b>Weather Index</b>
+        /// </p>
+        /// <p>To enable the Weather Index, do not specify a value for
+        /// <code>Configuration</code>.</p>
+        /// <p>
+        /// <b>Holidays</b>
+        /// </p>
+        /// <p>To enable Holidays, specify a country with one of the following two-letter country
+        /// codes:</p>
+        /// <ul>
+        /// <li>
+        /// <p>"AL" - ALBANIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"AR" - ARGENTINA</p>
+        /// </li>
+        /// <li>
+        /// <p>"AT" - AUSTRIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"AU" - AUSTRALIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"BA" - BOSNIA HERZEGOVINA</p>
+        /// </li>
+        /// <li>
+        /// <p>"BE" - BELGIUM</p>
+        /// </li>
+        /// <li>
+        /// <p>"BG" - BULGARIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"BO" - BOLIVIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"BR" - BRAZIL</p>
+        /// </li>
+        /// <li>
+        /// <p>"BY" - BELARUS</p>
+        /// </li>
+        /// <li>
+        /// <p>"CA" - CANADA</p>
+        /// </li>
+        /// <li>
+        /// <p>"CL" - CHILE</p>
+        /// </li>
+        /// <li>
+        /// <p>"CO" - COLOMBIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"CR" - COSTA RICA</p>
+        /// </li>
+        /// <li>
+        /// <p>"HR" - CROATIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"CZ" - CZECH REPUBLIC</p>
+        /// </li>
+        /// <li>
+        /// <p>"DK" - DENMARK</p>
+        /// </li>
+        /// <li>
+        /// <p>"EC" - ECUADOR</p>
+        /// </li>
+        /// <li>
+        /// <p>"EE" - ESTONIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"ET" - ETHIOPIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"FI" - FINLAND</p>
+        /// </li>
+        /// <li>
+        /// <p>"FR" - FRANCE</p>
+        /// </li>
+        /// <li>
+        /// <p>"DE" - GERMANY</p>
+        /// </li>
+        /// <li>
+        /// <p>"GR" - GREECE</p>
+        /// </li>
+        /// <li>
+        /// <p>"HU" - HUNGARY</p>
+        /// </li>
+        /// <li>
+        /// <p>"IS" - ICELAND</p>
+        /// </li>
+        /// <li>
+        /// <p>"IN" - INDIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"IE" - IRELAND</p>
+        /// </li>
+        /// <li>
+        /// <p>"IT" - ITALY</p>
+        /// </li>
+        /// <li>
+        /// <p>"JP" - JAPAN</p>
+        /// </li>
+        /// <li>
+        /// <p>"KZ" - KAZAKHSTAN</p>
+        /// </li>
+        /// <li>
+        /// <p>"KR" - KOREA</p>
+        /// </li>
+        /// <li>
+        /// <p>"LV" - LATVIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"LI" - LIECHTENSTEIN</p>
+        /// </li>
+        /// <li>
+        /// <p>"LT" - LITHUANIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"LU" - LUXEMBOURG</p>
+        /// </li>
+        /// <li>
+        /// <p>"MK" - MACEDONIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"MT" - MALTA</p>
+        /// </li>
+        /// <li>
+        /// <p>"MX" - MEXICO</p>
+        /// </li>
+        /// <li>
+        /// <p>"MD" - MOLDOVA</p>
+        /// </li>
+        /// <li>
+        /// <p>"ME" - MONTENEGRO</p>
+        /// </li>
+        /// <li>
+        /// <p>"NL" - NETHERLANDS</p>
+        /// </li>
+        /// <li>
+        /// <p>"NZ" - NEW ZEALAND</p>
+        /// </li>
+        /// <li>
+        /// <p>"NI" - NICARAGUA</p>
+        /// </li>
+        /// <li>
+        /// <p>"NG" - NIGERIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"NO" - NORWAY</p>
+        /// </li>
+        /// <li>
+        /// <p>"PA" - PANAMA</p>
+        /// </li>
+        /// <li>
+        /// <p>"PY" - PARAGUAY</p>
+        /// </li>
+        /// <li>
+        /// <p>"PE" - PERU</p>
+        /// </li>
+        /// <li>
+        /// <p>"PL" - POLAND</p>
+        /// </li>
+        /// <li>
+        /// <p>"PT" - PORTUGAL</p>
+        /// </li>
+        /// <li>
+        /// <p>"RO" - ROMANIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"RU" - RUSSIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"RS" - SERBIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"SK" - SLOVAKIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"SI" - SLOVENIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"ZA" - SOUTH AFRICA</p>
+        /// </li>
+        /// <li>
+        /// <p>"ES" - SPAIN</p>
+        /// </li>
+        /// <li>
+        /// <p>"SE" - SWEDEN</p>
+        /// </li>
+        /// <li>
+        /// <p>"CH" - SWITZERLAND</p>
+        /// </li>
+        /// <li>
+        /// <p>"UA" - UKRAINE</p>
+        /// </li>
+        /// <li>
+        /// <p>"AE" - UNITED ARAB EMIRATES</p>
+        /// </li>
+        /// <li>
+        /// <p>"US" - UNITED STATES</p>
+        /// </li>
+        /// <li>
+        /// <p>"UK" - UNITED KINGDOM</p>
+        /// </li>
+        /// <li>
+        /// <p>"UY" - URUGUAY</p>
+        /// </li>
+        /// <li>
+        /// <p>"VE" - VENEZUELA</p>
+        /// </li>
+        /// </ul>
+        pub fn configuration(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            let mut hash_map = self.configuration.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.configuration = Some(hash_map);
+            self
+        }
+        /// <p>
+        /// <b>Weather Index</b>
+        /// </p>
+        /// <p>To enable the Weather Index, do not specify a value for
+        /// <code>Configuration</code>.</p>
+        /// <p>
+        /// <b>Holidays</b>
+        /// </p>
+        /// <p>To enable Holidays, specify a country with one of the following two-letter country
+        /// codes:</p>
+        /// <ul>
+        /// <li>
+        /// <p>"AL" - ALBANIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"AR" - ARGENTINA</p>
+        /// </li>
+        /// <li>
+        /// <p>"AT" - AUSTRIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"AU" - AUSTRALIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"BA" - BOSNIA HERZEGOVINA</p>
+        /// </li>
+        /// <li>
+        /// <p>"BE" - BELGIUM</p>
+        /// </li>
+        /// <li>
+        /// <p>"BG" - BULGARIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"BO" - BOLIVIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"BR" - BRAZIL</p>
+        /// </li>
+        /// <li>
+        /// <p>"BY" - BELARUS</p>
+        /// </li>
+        /// <li>
+        /// <p>"CA" - CANADA</p>
+        /// </li>
+        /// <li>
+        /// <p>"CL" - CHILE</p>
+        /// </li>
+        /// <li>
+        /// <p>"CO" - COLOMBIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"CR" - COSTA RICA</p>
+        /// </li>
+        /// <li>
+        /// <p>"HR" - CROATIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"CZ" - CZECH REPUBLIC</p>
+        /// </li>
+        /// <li>
+        /// <p>"DK" - DENMARK</p>
+        /// </li>
+        /// <li>
+        /// <p>"EC" - ECUADOR</p>
+        /// </li>
+        /// <li>
+        /// <p>"EE" - ESTONIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"ET" - ETHIOPIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"FI" - FINLAND</p>
+        /// </li>
+        /// <li>
+        /// <p>"FR" - FRANCE</p>
+        /// </li>
+        /// <li>
+        /// <p>"DE" - GERMANY</p>
+        /// </li>
+        /// <li>
+        /// <p>"GR" - GREECE</p>
+        /// </li>
+        /// <li>
+        /// <p>"HU" - HUNGARY</p>
+        /// </li>
+        /// <li>
+        /// <p>"IS" - ICELAND</p>
+        /// </li>
+        /// <li>
+        /// <p>"IN" - INDIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"IE" - IRELAND</p>
+        /// </li>
+        /// <li>
+        /// <p>"IT" - ITALY</p>
+        /// </li>
+        /// <li>
+        /// <p>"JP" - JAPAN</p>
+        /// </li>
+        /// <li>
+        /// <p>"KZ" - KAZAKHSTAN</p>
+        /// </li>
+        /// <li>
+        /// <p>"KR" - KOREA</p>
+        /// </li>
+        /// <li>
+        /// <p>"LV" - LATVIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"LI" - LIECHTENSTEIN</p>
+        /// </li>
+        /// <li>
+        /// <p>"LT" - LITHUANIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"LU" - LUXEMBOURG</p>
+        /// </li>
+        /// <li>
+        /// <p>"MK" - MACEDONIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"MT" - MALTA</p>
+        /// </li>
+        /// <li>
+        /// <p>"MX" - MEXICO</p>
+        /// </li>
+        /// <li>
+        /// <p>"MD" - MOLDOVA</p>
+        /// </li>
+        /// <li>
+        /// <p>"ME" - MONTENEGRO</p>
+        /// </li>
+        /// <li>
+        /// <p>"NL" - NETHERLANDS</p>
+        /// </li>
+        /// <li>
+        /// <p>"NZ" - NEW ZEALAND</p>
+        /// </li>
+        /// <li>
+        /// <p>"NI" - NICARAGUA</p>
+        /// </li>
+        /// <li>
+        /// <p>"NG" - NIGERIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"NO" - NORWAY</p>
+        /// </li>
+        /// <li>
+        /// <p>"PA" - PANAMA</p>
+        /// </li>
+        /// <li>
+        /// <p>"PY" - PARAGUAY</p>
+        /// </li>
+        /// <li>
+        /// <p>"PE" - PERU</p>
+        /// </li>
+        /// <li>
+        /// <p>"PL" - POLAND</p>
+        /// </li>
+        /// <li>
+        /// <p>"PT" - PORTUGAL</p>
+        /// </li>
+        /// <li>
+        /// <p>"RO" - ROMANIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"RU" - RUSSIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"RS" - SERBIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"SK" - SLOVAKIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"SI" - SLOVENIA</p>
+        /// </li>
+        /// <li>
+        /// <p>"ZA" - SOUTH AFRICA</p>
+        /// </li>
+        /// <li>
+        /// <p>"ES" - SPAIN</p>
+        /// </li>
+        /// <li>
+        /// <p>"SE" - SWEDEN</p>
+        /// </li>
+        /// <li>
+        /// <p>"CH" - SWITZERLAND</p>
+        /// </li>
+        /// <li>
+        /// <p>"UA" - UKRAINE</p>
+        /// </li>
+        /// <li>
+        /// <p>"AE" - UNITED ARAB EMIRATES</p>
+        /// </li>
+        /// <li>
+        /// <p>"US" - UNITED STATES</p>
+        /// </li>
+        /// <li>
+        /// <p>"UK" - UNITED KINGDOM</p>
+        /// </li>
+        /// <li>
+        /// <p>"UY" - URUGUAY</p>
+        /// </li>
+        /// <li>
+        /// <p>"VE" - VENEZUELA</p>
+        /// </li>
+        /// </ul>
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+            >,
+        ) -> Self {
+            self.configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AdditionalDataset`](crate::model::AdditionalDataset)
+        pub fn build(self) -> crate::model::AdditionalDataset {
+            crate::model::AdditionalDataset {
+                name: self.name,
+                configuration: self.configuration,
+            }
+        }
+    }
+}
+impl AdditionalDataset {
+    /// Creates a new builder-style object to manufacture [`AdditionalDataset`](crate::model::AdditionalDataset)
+    pub fn builder() -> crate::model::additional_dataset::Builder {
+        crate::model::additional_dataset::Builder::default()
+    }
+}
+
+/// <p>Provides information about the method used to transform attributes.</p>
+/// <p>The following is an example using the RETAIL domain:</p>
+/// <p>
+/// <code>{</code>
+/// </p>
+/// <p>
+/// <code>"AttributeName": "demand",</code>
+/// </p>
+/// <p>
+/// <code>"Transformations": {"aggregation": "sum", "middlefill": "zero", "backfill":
+/// "zero"}</code>
+/// </p>
+/// <p>
+/// <code>}</code>
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AttributeConfig {
+    /// <p>The name of the attribute as specified in the schema. Amazon Forecast supports the
+    /// target field of the target time series and the related time series datasets. For
+    /// example, for the RETAIL domain, the target is <code>demand</code>.</p>
+    pub attribute_name: std::option::Option<std::string::String>,
+    /// <p>The method parameters (key-value pairs), which are a map of override parameters.
+    /// Specify these parameters to override the default values. Related Time Series attributes
+    /// do not accept aggregation parameters.</p>
+    /// <p>The following list shows the parameters and their valid values for the "filling"
+    /// featurization method for a <b>Target Time Series</b> dataset.
+    /// Default values are bolded.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>aggregation</code>: <b>sum</b>,
+    /// <code>avg</code>, <code>first</code>, <code>min</code>,
+    /// <code>max</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>frontfill</code>: <b>none</b>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>middlefill</code>: <b>zero</b>,
+    /// <code>nan</code> (not a number), <code>value</code>, <code>median</code>,
+    /// <code>mean</code>, <code>min</code>, <code>max</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>backfill</code>: <b>zero</b>,
+    /// <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+    /// <code>min</code>, <code>max</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization method (there are no
+    /// defaults):</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>middlefill</code>: <code>zero</code>, <code>value</code>,
+    /// <code>median</code>, <code>mean</code>, <code>min</code>,
+    /// <code>max</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>backfill</code>: <code>zero</code>, <code>value</code>,
+    /// <code>median</code>, <code>mean</code>, <code>min</code>,
+    /// <code>max</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>futurefill</code>: <code>zero</code>, <code>value</code>,
+    /// <code>median</code>, <code>mean</code>, <code>min</code>,
+    /// <code>max</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>To set a filling method to a specific value, set the fill parameter to
+    /// <code>value</code> and define the value in a corresponding <code>_value</code>
+    /// parameter. For example, to set backfilling to a value of 2, include the following:
+    /// <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
+    pub transformations:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl AttributeConfig {
+    /// <p>The name of the attribute as specified in the schema. Amazon Forecast supports the
+    /// target field of the target time series and the related time series datasets. For
+    /// example, for the RETAIL domain, the target is <code>demand</code>.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The method parameters (key-value pairs), which are a map of override parameters.
+    /// Specify these parameters to override the default values. Related Time Series attributes
+    /// do not accept aggregation parameters.</p>
+    /// <p>The following list shows the parameters and their valid values for the "filling"
+    /// featurization method for a <b>Target Time Series</b> dataset.
+    /// Default values are bolded.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>aggregation</code>: <b>sum</b>,
+    /// <code>avg</code>, <code>first</code>, <code>min</code>,
+    /// <code>max</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>frontfill</code>: <b>none</b>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>middlefill</code>: <b>zero</b>,
+    /// <code>nan</code> (not a number), <code>value</code>, <code>median</code>,
+    /// <code>mean</code>, <code>min</code>, <code>max</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>backfill</code>: <b>zero</b>,
+    /// <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+    /// <code>min</code>, <code>max</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization method (there are no
+    /// defaults):</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>middlefill</code>: <code>zero</code>, <code>value</code>,
+    /// <code>median</code>, <code>mean</code>, <code>min</code>,
+    /// <code>max</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>backfill</code>: <code>zero</code>, <code>value</code>,
+    /// <code>median</code>, <code>mean</code>, <code>min</code>,
+    /// <code>max</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>futurefill</code>: <code>zero</code>, <code>value</code>,
+    /// <code>median</code>, <code>mean</code>, <code>min</code>,
+    /// <code>max</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>To set a filling method to a specific value, set the fill parameter to
+    /// <code>value</code> and define the value in a corresponding <code>_value</code>
+    /// parameter. For example, to set backfilling to a value of 2, include the following:
+    /// <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
+    pub fn transformations(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.transformations.as_ref()
+    }
+}
+impl std::fmt::Debug for AttributeConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AttributeConfig");
+        formatter.field("attribute_name", &self.attribute_name);
+        formatter.field("transformations", &self.transformations);
+        formatter.finish()
+    }
+}
+/// See [`AttributeConfig`](crate::model::AttributeConfig)
+pub mod attribute_config {
+    /// A builder for [`AttributeConfig`](crate::model::AttributeConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
-        pub(crate) attribute_type: std::option::Option<crate::model::AttributeType>,
+        pub(crate) transformations: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
-        /// <p>The name of the dataset field.</p>
+        /// <p>The name of the attribute as specified in the schema. Amazon Forecast supports the
+        /// target field of the target time series and the related time series datasets. For
+        /// example, for the RETAIL domain, the target is <code>demand</code>.</p>
         pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.attribute_name = Some(input.into());
             self
         }
-        /// <p>The name of the dataset field.</p>
+        /// <p>The name of the attribute as specified in the schema. Amazon Forecast supports the
+        /// target field of the target time series and the related time series datasets. For
+        /// example, for the RETAIL domain, the target is <code>demand</code>.</p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7202,98 +9906,169 @@ pub mod schema_attribute {
             self.attribute_name = input;
             self
         }
-        /// <p>The data type of the field.</p>
-        pub fn attribute_type(mut self, input: crate::model::AttributeType) -> Self {
-            self.attribute_type = Some(input);
-            self
-        }
-        /// <p>The data type of the field.</p>
-        pub fn set_attribute_type(
+        /// Adds a key-value pair to `transformations`.
+        ///
+        /// To override the contents of this collection use [`set_transformations`](Self::set_transformations).
+        ///
+        /// <p>The method parameters (key-value pairs), which are a map of override parameters.
+        /// Specify these parameters to override the default values. Related Time Series attributes
+        /// do not accept aggregation parameters.</p>
+        /// <p>The following list shows the parameters and their valid values for the "filling"
+        /// featurization method for a <b>Target Time Series</b> dataset.
+        /// Default values are bolded.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>aggregation</code>: <b>sum</b>,
+        /// <code>avg</code>, <code>first</code>, <code>min</code>,
+        /// <code>max</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>frontfill</code>: <b>none</b>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>middlefill</code>: <b>zero</b>,
+        /// <code>nan</code> (not a number), <code>value</code>, <code>median</code>,
+        /// <code>mean</code>, <code>min</code>, <code>max</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>backfill</code>: <b>zero</b>,
+        /// <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+        /// <code>min</code>, <code>max</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization method (there are no
+        /// defaults):</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>middlefill</code>: <code>zero</code>, <code>value</code>,
+        /// <code>median</code>, <code>mean</code>, <code>min</code>,
+        /// <code>max</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>backfill</code>: <code>zero</code>, <code>value</code>,
+        /// <code>median</code>, <code>mean</code>, <code>min</code>,
+        /// <code>max</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>futurefill</code>: <code>zero</code>, <code>value</code>,
+        /// <code>median</code>, <code>mean</code>, <code>min</code>,
+        /// <code>max</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>To set a filling method to a specific value, set the fill parameter to
+        /// <code>value</code> and define the value in a corresponding <code>_value</code>
+        /// parameter. For example, to set backfilling to a value of 2, include the following:
+        /// <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
+        pub fn transformations(
             mut self,
-            input: std::option::Option<crate::model::AttributeType>,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
         ) -> Self {
-            self.attribute_type = input;
+            let mut hash_map = self.transformations.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.transformations = Some(hash_map);
             self
         }
-        /// Consumes the builder and constructs a [`SchemaAttribute`](crate::model::SchemaAttribute)
-        pub fn build(self) -> crate::model::SchemaAttribute {
-            crate::model::SchemaAttribute {
+        /// <p>The method parameters (key-value pairs), which are a map of override parameters.
+        /// Specify these parameters to override the default values. Related Time Series attributes
+        /// do not accept aggregation parameters.</p>
+        /// <p>The following list shows the parameters and their valid values for the "filling"
+        /// featurization method for a <b>Target Time Series</b> dataset.
+        /// Default values are bolded.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>aggregation</code>: <b>sum</b>,
+        /// <code>avg</code>, <code>first</code>, <code>min</code>,
+        /// <code>max</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>frontfill</code>: <b>none</b>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>middlefill</code>: <b>zero</b>,
+        /// <code>nan</code> (not a number), <code>value</code>, <code>median</code>,
+        /// <code>mean</code>, <code>min</code>, <code>max</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>backfill</code>: <b>zero</b>,
+        /// <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+        /// <code>min</code>, <code>max</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization method (there are no
+        /// defaults):</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>middlefill</code>: <code>zero</code>, <code>value</code>,
+        /// <code>median</code>, <code>mean</code>, <code>min</code>,
+        /// <code>max</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>backfill</code>: <code>zero</code>, <code>value</code>,
+        /// <code>median</code>, <code>mean</code>, <code>min</code>,
+        /// <code>max</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>futurefill</code>: <code>zero</code>, <code>value</code>,
+        /// <code>median</code>, <code>mean</code>, <code>min</code>,
+        /// <code>max</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>To set a filling method to a specific value, set the fill parameter to
+        /// <code>value</code> and define the value in a corresponding <code>_value</code>
+        /// parameter. For example, to set backfilling to a value of 2, include the following:
+        /// <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
+        pub fn set_transformations(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.transformations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AttributeConfig`](crate::model::AttributeConfig)
+        pub fn build(self) -> crate::model::AttributeConfig {
+            crate::model::AttributeConfig {
                 attribute_name: self.attribute_name,
-                attribute_type: self.attribute_type,
+                transformations: self.transformations,
             }
         }
     }
 }
-impl SchemaAttribute {
-    /// Creates a new builder-style object to manufacture [`SchemaAttribute`](crate::model::SchemaAttribute)
-    pub fn builder() -> crate::model::schema_attribute::Builder {
-        crate::model::schema_attribute::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum AttributeType {
-    #[allow(missing_docs)] // documentation missing in model
-    Float,
-    #[allow(missing_docs)] // documentation missing in model
-    Geolocation,
-    #[allow(missing_docs)] // documentation missing in model
-    Integer,
-    #[allow(missing_docs)] // documentation missing in model
-    String,
-    #[allow(missing_docs)] // documentation missing in model
-    Timestamp,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for AttributeType {
-    fn from(s: &str) -> Self {
-        match s {
-            "float" => AttributeType::Float,
-            "geolocation" => AttributeType::Geolocation,
-            "integer" => AttributeType::Integer,
-            "string" => AttributeType::String,
-            "timestamp" => AttributeType::Timestamp,
-            other => AttributeType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for AttributeType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AttributeType::from(s))
-    }
-}
-impl AttributeType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AttributeType::Float => "float",
-            AttributeType::Geolocation => "geolocation",
-            AttributeType::Integer => "integer",
-            AttributeType::String => "string",
-            AttributeType::Timestamp => "timestamp",
-            AttributeType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["float", "geolocation", "integer", "string", "timestamp"]
-    }
-}
-impl AsRef<str> for AttributeType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
+impl AttributeConfig {
+    /// Creates a new builder-style object to manufacture [`AttributeConfig`](crate::model::AttributeConfig)
+    pub fn builder() -> crate::model::attribute_config::Builder {
+        crate::model::attribute_config::Builder::default()
     }
 }

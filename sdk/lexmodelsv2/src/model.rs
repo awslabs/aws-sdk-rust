@@ -4061,17 +4061,28 @@ impl AsRef<str> for BotLocaleStatus {
 pub struct VoiceSettings {
     /// <p>The identifier of the Amazon Polly voice to use.</p>
     pub voice_id: std::option::Option<std::string::String>,
+    /// <p>Indicates the type of Amazon Polly
+    /// voice that Amazon Lex should use for voice interaction with the user.
+    /// For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a>.</p>
+    pub engine: std::option::Option<crate::model::VoiceEngine>,
 }
 impl VoiceSettings {
     /// <p>The identifier of the Amazon Polly voice to use.</p>
     pub fn voice_id(&self) -> std::option::Option<&str> {
         self.voice_id.as_deref()
     }
+    /// <p>Indicates the type of Amazon Polly
+    /// voice that Amazon Lex should use for voice interaction with the user.
+    /// For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a>.</p>
+    pub fn engine(&self) -> std::option::Option<&crate::model::VoiceEngine> {
+        self.engine.as_ref()
+    }
 }
 impl std::fmt::Debug for VoiceSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VoiceSettings");
         formatter.field("voice_id", &self.voice_id);
+        formatter.field("engine", &self.engine);
         formatter.finish()
     }
 }
@@ -4082,6 +4093,7 @@ pub mod voice_settings {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_id: std::option::Option<std::string::String>,
+        pub(crate) engine: std::option::Option<crate::model::VoiceEngine>,
     }
     impl Builder {
         /// <p>The identifier of the Amazon Polly voice to use.</p>
@@ -4094,10 +4106,25 @@ pub mod voice_settings {
             self.voice_id = input;
             self
         }
+        /// <p>Indicates the type of Amazon Polly
+        /// voice that Amazon Lex should use for voice interaction with the user.
+        /// For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a>.</p>
+        pub fn engine(mut self, input: crate::model::VoiceEngine) -> Self {
+            self.engine = Some(input);
+            self
+        }
+        /// <p>Indicates the type of Amazon Polly
+        /// voice that Amazon Lex should use for voice interaction with the user.
+        /// For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a>.</p>
+        pub fn set_engine(mut self, input: std::option::Option<crate::model::VoiceEngine>) -> Self {
+            self.engine = input;
+            self
+        }
         /// Consumes the builder and constructs a [`VoiceSettings`](crate::model::VoiceSettings)
         pub fn build(self) -> crate::model::VoiceSettings {
             crate::model::VoiceSettings {
                 voice_id: self.voice_id,
+                engine: self.engine,
             }
         }
     }
@@ -4106,6 +4133,61 @@ impl VoiceSettings {
     /// Creates a new builder-style object to manufacture [`VoiceSettings`](crate::model::VoiceSettings)
     pub fn builder() -> crate::model::voice_settings::Builder {
         crate::model::voice_settings::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum VoiceEngine {
+    #[allow(missing_docs)] // documentation missing in model
+    Neural,
+    #[allow(missing_docs)] // documentation missing in model
+    Standard,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for VoiceEngine {
+    fn from(s: &str) -> Self {
+        match s {
+            "neural" => VoiceEngine::Neural,
+            "standard" => VoiceEngine::Standard,
+            other => VoiceEngine::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for VoiceEngine {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VoiceEngine::from(s))
+    }
+}
+impl VoiceEngine {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            VoiceEngine::Neural => "neural",
+            VoiceEngine::Standard => "standard",
+            VoiceEngine::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["neural", "standard"]
+    }
+}
+impl AsRef<str> for VoiceEngine {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -4416,14 +4498,14 @@ impl AudioLogSetting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioLogDestination {
     /// <p>The Amazon S3 bucket where the audio log files are stored. The IAM
-    /// role specified in the <code>roleArn</code> parameter of the <a>CreateBot</a> operation must have permission to write to
-    /// this bucket.</p>
+    /// role specified in the <code>roleArn</code> parameter of the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation must have permission to write to this
+    /// bucket.</p>
     pub s3_bucket: std::option::Option<crate::model::S3BucketLogDestination>,
 }
 impl AudioLogDestination {
     /// <p>The Amazon S3 bucket where the audio log files are stored. The IAM
-    /// role specified in the <code>roleArn</code> parameter of the <a>CreateBot</a> operation must have permission to write to
-    /// this bucket.</p>
+    /// role specified in the <code>roleArn</code> parameter of the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation must have permission to write to this
+    /// bucket.</p>
     pub fn s3_bucket(&self) -> std::option::Option<&crate::model::S3BucketLogDestination> {
         self.s3_bucket.as_ref()
     }
@@ -4445,15 +4527,15 @@ pub mod audio_log_destination {
     }
     impl Builder {
         /// <p>The Amazon S3 bucket where the audio log files are stored. The IAM
-        /// role specified in the <code>roleArn</code> parameter of the <a>CreateBot</a> operation must have permission to write to
-        /// this bucket.</p>
+        /// role specified in the <code>roleArn</code> parameter of the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation must have permission to write to this
+        /// bucket.</p>
         pub fn s3_bucket(mut self, input: crate::model::S3BucketLogDestination) -> Self {
             self.s3_bucket = Some(input);
             self
         }
         /// <p>The Amazon S3 bucket where the audio log files are stored. The IAM
-        /// role specified in the <code>roleArn</code> parameter of the <a>CreateBot</a> operation must have permission to write to
-        /// this bucket.</p>
+        /// role specified in the <code>roleArn</code> parameter of the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation must have permission to write to this
+        /// bucket.</p>
         pub fn set_s3_bucket(
             mut self,
             input: std::option::Option<crate::model::S3BucketLogDestination>,
@@ -6078,7 +6160,7 @@ pub struct SlotTypeSummary {
     pub parent_slot_type_signature: std::option::Option<std::string::String>,
     /// <p>A timestamp of the date and time that the slot type was last
     /// updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SlotTypeSummary {
     /// <p>The unique identifier assigned to the slot type.</p>
@@ -6100,7 +6182,7 @@ impl SlotTypeSummary {
     }
     /// <p>A timestamp of the date and time that the slot type was last
     /// updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -6128,7 +6210,7 @@ pub mod slot_type_summary {
         pub(crate) slot_type_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) parent_slot_type_signature: std::option::Option<std::string::String>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The unique identifier assigned to the slot type.</p>
@@ -6181,7 +6263,7 @@ pub mod slot_type_summary {
         }
         /// <p>A timestamp of the date and time that the slot type was last
         /// updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
@@ -6189,7 +6271,7 @@ pub mod slot_type_summary {
         /// updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -6656,7 +6738,7 @@ pub struct SlotSummary {
         std::option::Option<crate::model::PromptSpecification>,
     /// <p>The timestamp of the last date and time that the slot was
     /// updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SlotSummary {
     /// <p>The unique identifier of the slot.</p>
@@ -6690,7 +6772,7 @@ impl SlotSummary {
     }
     /// <p>The timestamp of the last date and time that the slot was
     /// updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -6723,7 +6805,7 @@ pub mod slot_summary {
         pub(crate) slot_type_id: std::option::Option<std::string::String>,
         pub(crate) value_elicitation_prompt_specification:
             std::option::Option<crate::model::PromptSpecification>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The unique identifier of the slot.</p>
@@ -6803,7 +6885,7 @@ pub mod slot_summary {
         }
         /// <p>The timestamp of the last date and time that the slot was
         /// updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
@@ -6811,7 +6893,7 @@ pub mod slot_summary {
         /// updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -7226,7 +7308,7 @@ pub struct IntentSummary {
     pub output_contexts: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
     /// <p>The timestamp of the date and time that the intent was last
     /// updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl IntentSummary {
     /// <p>The unique identifier assigned to the intent. Use this ID to get
@@ -7260,7 +7342,7 @@ impl IntentSummary {
     }
     /// <p>The timestamp of the date and time that the intent was last
     /// updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -7289,7 +7371,7 @@ pub mod intent_summary {
         pub(crate) parent_intent_signature: std::option::Option<std::string::String>,
         pub(crate) input_contexts: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
         pub(crate) output_contexts: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The unique identifier assigned to the intent. Use this ID to get
@@ -7385,7 +7467,7 @@ pub mod intent_summary {
         }
         /// <p>The timestamp of the date and time that the intent was last
         /// updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
@@ -7393,7 +7475,7 @@ pub mod intent_summary {
         /// updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -7803,9 +7885,9 @@ pub struct ImportSummary {
     /// with the imported definition.</p>
     pub merge_strategy: std::option::Option<crate::model::MergeStrategy>,
     /// <p>The date and time that the import was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the import was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ImportSummary {
     /// <p>The unique identifier that Amazon Lex assigned to the import.</p>
@@ -7832,11 +7914,11 @@ impl ImportSummary {
         self.merge_strategy.as_ref()
     }
     /// <p>The date and time that the import was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time that the import was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -7864,8 +7946,8 @@ pub mod import_summary {
         pub(crate) imported_resource_name: std::option::Option<std::string::String>,
         pub(crate) import_status: std::option::Option<crate::model::ImportStatus>,
         pub(crate) merge_strategy: std::option::Option<crate::model::MergeStrategy>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The unique identifier that Amazon Lex assigned to the import.</p>
@@ -7937,27 +8019,27 @@ pub mod import_summary {
             self
         }
         /// <p>The date and time that the import was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time that the import was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time that the import was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time that the import was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -7983,8 +8065,7 @@ impl ImportSummary {
     }
 }
 
-/// <p>Filters the response from the
-/// operation.</p>
+/// <p>Filters the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListImports.html">ListImports</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportFilter {
@@ -8355,9 +8436,9 @@ pub struct ExportSummary {
     /// the export is ready to download.</p>
     pub export_status: std::option::Option<crate::model::ExportStatus>,
     /// <p>The date and time that the export was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the export was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ExportSummary {
     /// <p>The unique identifier that Amazon Lex assigned to the export.</p>
@@ -8380,11 +8461,11 @@ impl ExportSummary {
         self.export_status.as_ref()
     }
     /// <p>The date and time that the export was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time that the export was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -8411,8 +8492,8 @@ pub mod export_summary {
             std::option::Option<crate::model::ExportResourceSpecification>,
         pub(crate) file_format: std::option::Option<crate::model::ImportExportFileFormat>,
         pub(crate) export_status: std::option::Option<crate::model::ExportStatus>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The unique identifier that Amazon Lex assigned to the export.</p>
@@ -8470,27 +8551,27 @@ pub mod export_summary {
             self
         }
         /// <p>The date and time that the export was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time that the export was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>The date and time that the export was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time that the export was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -8515,8 +8596,7 @@ impl ExportSummary {
     }
 }
 
-/// <p>Filters the response form the
-/// operation</p>
+/// <p>Filters the response form the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListExports.html">ListExports</a> operation</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportFilter {
@@ -8873,7 +8953,8 @@ impl AsRef<str> for ExportSortAttribute {
 }
 
 /// <p>Provides summary information about a built-in slot type for the
-/// <a>ListBuiltInSlotTypes</a> operation.</p>
+/// <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBuiltInSlotTypes.html"> ListBuiltInSlotTypes </a>
+/// operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuiltInSlotTypeSummary {
@@ -9085,7 +9166,7 @@ impl AsRef<str> for BuiltInSlotTypeSortAttribute {
     }
 }
 
-/// <p>Provides summary information about a built-in intent for the <a>ListBuiltInIntents</a> operation.</p>
+/// <p>Provides summary information about a built-in intent for the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBuiltInIntents.html"> ListBuiltInIntents </a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuiltInIntentSummary {
@@ -9296,7 +9377,7 @@ impl AsRef<str> for BuiltInIntentSortAttribute {
     }
 }
 
-/// <p>Summary information about a bot version returned by the <a>ListBotVersions</a> operation.</p>
+/// <p>Summary information about a bot version returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBotVersions.html">ListBotVersions</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotVersionSummary {
@@ -9312,7 +9393,7 @@ pub struct BotVersionSummary {
     pub bot_status: std::option::Option<crate::model::BotStatus>,
     /// <p>A timestamp of the date and time that the version was
     /// created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BotVersionSummary {
     /// <p>The name of the bot associated with the version.</p>
@@ -9335,7 +9416,7 @@ impl BotVersionSummary {
     }
     /// <p>A timestamp of the date and time that the version was
     /// created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
@@ -9360,7 +9441,7 @@ pub mod bot_version_summary {
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) bot_status: std::option::Option<crate::model::BotStatus>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the bot associated with the version.</p>
@@ -9412,7 +9493,7 @@ pub mod bot_version_summary {
         }
         /// <p>A timestamp of the date and time that the version was
         /// created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
@@ -9420,7 +9501,7 @@ pub mod bot_version_summary {
         /// created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
@@ -9575,12 +9656,12 @@ impl AsRef<str> for BotVersionSortAttribute {
     }
 }
 
-/// <p>Summary information about a bot returned by the <a>ListBots</a> operation.</p>
+/// <p>Summary information about a bot returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBots.html">ListBots</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotSummary {
     /// <p>The unique identifier assigned to the bot. Use this ID to get
-    /// detailed information about the bot with the <a>DescribeBot</a> operation.</p>
+    /// detailed information about the bot with the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a> operation.</p>
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The name of the bot.</p>
     pub bot_name: std::option::Option<std::string::String>,
@@ -9592,11 +9673,11 @@ pub struct BotSummary {
     /// <p>The latest numerical version in use for the bot.</p>
     pub latest_bot_version: std::option::Option<std::string::String>,
     /// <p>The date and time that the bot was last updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BotSummary {
     /// <p>The unique identifier assigned to the bot. Use this ID to get
-    /// detailed information about the bot with the <a>DescribeBot</a> operation.</p>
+    /// detailed information about the bot with the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a> operation.</p>
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
@@ -9618,7 +9699,7 @@ impl BotSummary {
         self.latest_bot_version.as_deref()
     }
     /// <p>The date and time that the bot was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -9645,17 +9726,17 @@ pub mod bot_summary {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) bot_status: std::option::Option<crate::model::BotStatus>,
         pub(crate) latest_bot_version: std::option::Option<std::string::String>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The unique identifier assigned to the bot. Use this ID to get
-        /// detailed information about the bot with the <a>DescribeBot</a> operation.</p>
+        /// detailed information about the bot with the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a> operation.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_id = Some(input.into());
             self
         }
         /// <p>The unique identifier assigned to the bot. Use this ID to get
-        /// detailed information about the bot with the <a>DescribeBot</a> operation.</p>
+        /// detailed information about the bot with the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a> operation.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -9709,14 +9790,14 @@ pub mod bot_summary {
             self
         }
         /// <p>The date and time that the bot was last updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
         /// <p>The date and time that the bot was last updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -10099,7 +10180,7 @@ impl AsRef<str> for BotSortAttribute {
     }
 }
 
-/// <p>Summary information about bot locales returned by the <a>ListBotLocales</a> operation.</p>
+/// <p>Summary information about bot locales returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBotLocales.html">ListBotLocales</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotLocaleSummary {
@@ -10114,10 +10195,10 @@ pub struct BotLocaleSummary {
     pub bot_locale_status: std::option::Option<crate::model::BotLocaleStatus>,
     /// <p>A timestamp of the date and time that the bot locale was last
     /// updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp of the date and time that the bot locale was last
     /// built.</p>
-    pub last_build_submitted_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_build_submitted_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BotLocaleSummary {
     /// <p>The language and locale of the bot locale.</p>
@@ -10139,14 +10220,14 @@ impl BotLocaleSummary {
     }
     /// <p>A timestamp of the date and time that the bot locale was last
     /// updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the bot locale was last
     /// built.</p>
     pub fn last_build_submitted_date_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_build_submitted_date_time.as_ref()
     }
 }
@@ -10175,8 +10256,8 @@ pub mod bot_locale_summary {
         pub(crate) locale_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) bot_locale_status: std::option::Option<crate::model::BotLocaleStatus>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_build_submitted_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_build_submitted_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The language and locale of the bot locale.</p>
@@ -10226,7 +10307,7 @@ pub mod bot_locale_summary {
         }
         /// <p>A timestamp of the date and time that the bot locale was last
         /// updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
@@ -10234,14 +10315,14 @@ pub mod bot_locale_summary {
         /// updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
         }
         /// <p>A timestamp of the date and time that the bot locale was last
         /// built.</p>
-        pub fn last_build_submitted_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_build_submitted_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_build_submitted_date_time = Some(input);
             self
         }
@@ -10249,7 +10330,7 @@ pub mod bot_locale_summary {
         /// built.</p>
         pub fn set_last_build_submitted_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_build_submitted_date_time = input;
             self
@@ -10635,12 +10716,12 @@ impl AsRef<str> for BotLocaleSortAttribute {
     }
 }
 
-/// <p>Summary information about bot aliases returned from the <a>ListBotAliases</a> operation.</p>
+/// <p>Summary information about bot aliases returned from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBotAliases.html">ListBotAliases</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotAliasSummary {
     /// <p>The unique identifier assigned to the bot alias. You can use this ID
-    /// to get detailed information about the alias using the <a>DescribeBotAlias</a> operation.</p>
+    /// to get detailed information about the alias using the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotAlias.html">DescribeBotAlias</a> operation.</p>
     pub bot_alias_id: std::option::Option<std::string::String>,
     /// <p>The name of the bot alias.</p>
     pub bot_alias_name: std::option::Option<std::string::String>,
@@ -10653,14 +10734,14 @@ pub struct BotAliasSummary {
     pub bot_alias_status: std::option::Option<crate::model::BotAliasStatus>,
     /// <p>A timestamp of the date and time that the bot alias was
     /// created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp of the date and time that the bot alias was last
     /// updated.</p>
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BotAliasSummary {
     /// <p>The unique identifier assigned to the bot alias. You can use this ID
-    /// to get detailed information about the alias using the <a>DescribeBotAlias</a> operation.</p>
+    /// to get detailed information about the alias using the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotAlias.html">DescribeBotAlias</a> operation.</p>
     pub fn bot_alias_id(&self) -> std::option::Option<&str> {
         self.bot_alias_id.as_deref()
     }
@@ -10683,12 +10764,12 @@ impl BotAliasSummary {
     }
     /// <p>A timestamp of the date and time that the bot alias was
     /// created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the bot alias was last
     /// updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -10716,18 +10797,18 @@ pub mod bot_alias_summary {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) bot_alias_status: std::option::Option<crate::model::BotAliasStatus>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The unique identifier assigned to the bot alias. You can use this ID
-        /// to get detailed information about the alias using the <a>DescribeBotAlias</a> operation.</p>
+        /// to get detailed information about the alias using the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotAlias.html">DescribeBotAlias</a> operation.</p>
         pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_alias_id = Some(input.into());
             self
         }
         /// <p>The unique identifier assigned to the bot alias. You can use this ID
-        /// to get detailed information about the alias using the <a>DescribeBotAlias</a> operation.</p>
+        /// to get detailed information about the alias using the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotAlias.html">DescribeBotAlias</a> operation.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_alias_id = input;
             self
@@ -10782,7 +10863,7 @@ pub mod bot_alias_summary {
         }
         /// <p>A timestamp of the date and time that the bot alias was
         /// created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
@@ -10790,14 +10871,14 @@ pub mod bot_alias_summary {
         /// created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
         /// <p>A timestamp of the date and time that the bot alias was last
         /// updated.</p>
-        pub fn last_updated_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date_time = Some(input);
             self
         }
@@ -10805,7 +10886,7 @@ pub mod bot_alias_summary {
         /// updated.</p>
         pub fn set_last_updated_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date_time = input;
             self
@@ -10854,12 +10935,12 @@ pub struct AggregatedUtterancesSummary {
     /// that time, but only utterances within the time window are
     /// counted.</p>
     pub utterance_first_recorded_in_aggregation_duration:
-        std::option::Option<aws_smithy_types::Instant>,
+        std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last date and time that an utterance was recorded in the time
     /// window for aggregation. An utterance may be sent to Amazon Lex after that
     /// time, but only utterances within the time window are counted.</p>
     pub utterance_last_recorded_in_aggregation_duration:
-        std::option::Option<aws_smithy_types::Instant>,
+        std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Aggregated utterance data may contain utterances from versions of
     /// your bot that have since been deleted. When the aggregated contains
     /// this kind of data, this field is set to true.</p>
@@ -10889,7 +10970,7 @@ impl AggregatedUtterancesSummary {
     /// counted.</p>
     pub fn utterance_first_recorded_in_aggregation_duration(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.utterance_first_recorded_in_aggregation_duration
             .as_ref()
     }
@@ -10898,7 +10979,7 @@ impl AggregatedUtterancesSummary {
     /// time, but only utterances within the time window are counted.</p>
     pub fn utterance_last_recorded_in_aggregation_duration(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.utterance_last_recorded_in_aggregation_duration
             .as_ref()
     }
@@ -10940,9 +11021,9 @@ pub mod aggregated_utterances_summary {
         pub(crate) hit_count: std::option::Option<i32>,
         pub(crate) missed_count: std::option::Option<i32>,
         pub(crate) utterance_first_recorded_in_aggregation_duration:
-            std::option::Option<aws_smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) utterance_last_recorded_in_aggregation_duration:
-            std::option::Option<aws_smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) contains_data_from_deleted_resources: std::option::Option<bool>,
     }
     impl Builder {
@@ -10992,7 +11073,7 @@ pub mod aggregated_utterances_summary {
         /// counted.</p>
         pub fn utterance_first_recorded_in_aggregation_duration(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.utterance_first_recorded_in_aggregation_duration = Some(input);
             self
@@ -11003,7 +11084,7 @@ pub mod aggregated_utterances_summary {
         /// counted.</p>
         pub fn set_utterance_first_recorded_in_aggregation_duration(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.utterance_first_recorded_in_aggregation_duration = input;
             self
@@ -11013,7 +11094,7 @@ pub mod aggregated_utterances_summary {
         /// time, but only utterances within the time window are counted.</p>
         pub fn utterance_last_recorded_in_aggregation_duration(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.utterance_last_recorded_in_aggregation_duration = Some(input);
             self
@@ -11023,7 +11104,7 @@ pub mod aggregated_utterances_summary {
         /// time, but only utterances within the time window are counted.</p>
         pub fn set_utterance_last_recorded_in_aggregation_duration(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.utterance_last_recorded_in_aggregation_duration = input;
             self
@@ -11744,7 +11825,7 @@ pub struct BotLocaleHistoryEvent {
     /// <p>A description of the event that occurred.</p>
     pub event: std::option::Option<std::string::String>,
     /// <p>A timestamp of the date and time that the event occurred.</p>
-    pub event_date: std::option::Option<aws_smithy_types::Instant>,
+    pub event_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BotLocaleHistoryEvent {
     /// <p>A description of the event that occurred.</p>
@@ -11752,7 +11833,7 @@ impl BotLocaleHistoryEvent {
         self.event.as_deref()
     }
     /// <p>A timestamp of the date and time that the event occurred.</p>
-    pub fn event_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn event_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_date.as_ref()
     }
 }
@@ -11771,7 +11852,7 @@ pub mod bot_locale_history_event {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event: std::option::Option<std::string::String>,
-        pub(crate) event_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) event_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A description of the event that occurred.</p>
@@ -11785,14 +11866,14 @@ pub mod bot_locale_history_event {
             self
         }
         /// <p>A timestamp of the date and time that the event occurred.</p>
-        pub fn event_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn event_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_date = Some(input);
             self
         }
         /// <p>A timestamp of the date and time that the event occurred.</p>
         pub fn set_event_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.event_date = input;
             self
@@ -11821,9 +11902,9 @@ pub struct BotAliasHistoryEvent {
     /// <p>The version of the bot that was used in the event. </p>
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>The date and time that the event started.</p>
-    pub start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the event ended.</p>
-    pub end_date: std::option::Option<aws_smithy_types::Instant>,
+    pub end_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BotAliasHistoryEvent {
     /// <p>The version of the bot that was used in the event. </p>
@@ -11831,11 +11912,11 @@ impl BotAliasHistoryEvent {
         self.bot_version.as_deref()
     }
     /// <p>The date and time that the event started.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The date and time that the event ended.</p>
-    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
 }
@@ -11855,8 +11936,8 @@ pub mod bot_alias_history_event {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_version: std::option::Option<std::string::String>,
-        pub(crate) start_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The version of the bot that was used in the event. </p>
@@ -11870,27 +11951,27 @@ pub mod bot_alias_history_event {
             self
         }
         /// <p>The date and time that the event started.</p>
-        pub fn start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_date = Some(input);
             self
         }
         /// <p>The date and time that the event started.</p>
         pub fn set_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_date = input;
             self
         }
         /// <p>The date and time that the event ended.</p>
-        pub fn end_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_date = Some(input);
             self
         }
         /// <p>The date and time that the event ended.</p>
         pub fn set_end_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_date = input;
             self

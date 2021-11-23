@@ -2091,7 +2091,7 @@ pub struct NfsMountOptions {
     /// <b>
     /// <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a>
     /// </b> - stateful, firewall-friendly protocol version that supports
-    /// delegations and pseudo filesystems.</p>
+    /// delegations and pseudo file systems.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -2124,7 +2124,7 @@ impl NfsMountOptions {
     /// <b>
     /// <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a>
     /// </b> - stateful, firewall-friendly protocol version that supports
-    /// delegations and pseudo filesystems.</p>
+    /// delegations and pseudo file systems.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -2174,7 +2174,7 @@ pub mod nfs_mount_options {
         /// <b>
         /// <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a>
         /// </b> - stateful, firewall-friendly protocol version that supports
-        /// delegations and pseudo filesystems.</p>
+        /// delegations and pseudo file systems.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2208,7 +2208,7 @@ pub mod nfs_mount_options {
         /// <b>
         /// <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a>
         /// </b> - stateful, firewall-friendly protocol version that supports
-        /// delegations and pseudo filesystems.</p>
+        /// delegations and pseudo file systems.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2365,7 +2365,375 @@ impl OnPremConfig {
     }
 }
 
-/// <p>Represents a single entry in a list of AWS resource tags. <code>TagListEntry</code>
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HdfsAuthenticationType {
+    #[allow(missing_docs)] // documentation missing in model
+    Kerberos,
+    #[allow(missing_docs)] // documentation missing in model
+    Simple,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HdfsAuthenticationType {
+    fn from(s: &str) -> Self {
+        match s {
+            "KERBEROS" => HdfsAuthenticationType::Kerberos,
+            "SIMPLE" => HdfsAuthenticationType::Simple,
+            other => HdfsAuthenticationType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HdfsAuthenticationType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HdfsAuthenticationType::from(s))
+    }
+}
+impl HdfsAuthenticationType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HdfsAuthenticationType::Kerberos => "KERBEROS",
+            HdfsAuthenticationType::Simple => "SIMPLE",
+            HdfsAuthenticationType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["KERBEROS", "SIMPLE"]
+    }
+}
+impl AsRef<str> for HdfsAuthenticationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
+/// and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS)
+/// cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QopConfiguration {
+    /// <p>The RPC protection setting configured on the HDFS cluster. This setting corresponds to
+    /// your <code>hadoop.rpc.protection</code> setting in your <code>core-site.xml</code> file on
+    /// your Hadoop cluster.</p>
+    pub rpc_protection: std::option::Option<crate::model::HdfsRpcProtection>,
+    /// <p>The data transfer protection setting configured on the HDFS cluster. This setting
+    /// corresponds to your <code>dfs.data.transfer.protection</code> setting in the
+    /// <code>hdfs-site.xml</code> file on your Hadoop cluster.</p>
+    pub data_transfer_protection: std::option::Option<crate::model::HdfsDataTransferProtection>,
+}
+impl QopConfiguration {
+    /// <p>The RPC protection setting configured on the HDFS cluster. This setting corresponds to
+    /// your <code>hadoop.rpc.protection</code> setting in your <code>core-site.xml</code> file on
+    /// your Hadoop cluster.</p>
+    pub fn rpc_protection(&self) -> std::option::Option<&crate::model::HdfsRpcProtection> {
+        self.rpc_protection.as_ref()
+    }
+    /// <p>The data transfer protection setting configured on the HDFS cluster. This setting
+    /// corresponds to your <code>dfs.data.transfer.protection</code> setting in the
+    /// <code>hdfs-site.xml</code> file on your Hadoop cluster.</p>
+    pub fn data_transfer_protection(
+        &self,
+    ) -> std::option::Option<&crate::model::HdfsDataTransferProtection> {
+        self.data_transfer_protection.as_ref()
+    }
+}
+impl std::fmt::Debug for QopConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("QopConfiguration");
+        formatter.field("rpc_protection", &self.rpc_protection);
+        formatter.field("data_transfer_protection", &self.data_transfer_protection);
+        formatter.finish()
+    }
+}
+/// See [`QopConfiguration`](crate::model::QopConfiguration)
+pub mod qop_configuration {
+    /// A builder for [`QopConfiguration`](crate::model::QopConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rpc_protection: std::option::Option<crate::model::HdfsRpcProtection>,
+        pub(crate) data_transfer_protection:
+            std::option::Option<crate::model::HdfsDataTransferProtection>,
+    }
+    impl Builder {
+        /// <p>The RPC protection setting configured on the HDFS cluster. This setting corresponds to
+        /// your <code>hadoop.rpc.protection</code> setting in your <code>core-site.xml</code> file on
+        /// your Hadoop cluster.</p>
+        pub fn rpc_protection(mut self, input: crate::model::HdfsRpcProtection) -> Self {
+            self.rpc_protection = Some(input);
+            self
+        }
+        /// <p>The RPC protection setting configured on the HDFS cluster. This setting corresponds to
+        /// your <code>hadoop.rpc.protection</code> setting in your <code>core-site.xml</code> file on
+        /// your Hadoop cluster.</p>
+        pub fn set_rpc_protection(
+            mut self,
+            input: std::option::Option<crate::model::HdfsRpcProtection>,
+        ) -> Self {
+            self.rpc_protection = input;
+            self
+        }
+        /// <p>The data transfer protection setting configured on the HDFS cluster. This setting
+        /// corresponds to your <code>dfs.data.transfer.protection</code> setting in the
+        /// <code>hdfs-site.xml</code> file on your Hadoop cluster.</p>
+        pub fn data_transfer_protection(
+            mut self,
+            input: crate::model::HdfsDataTransferProtection,
+        ) -> Self {
+            self.data_transfer_protection = Some(input);
+            self
+        }
+        /// <p>The data transfer protection setting configured on the HDFS cluster. This setting
+        /// corresponds to your <code>dfs.data.transfer.protection</code> setting in the
+        /// <code>hdfs-site.xml</code> file on your Hadoop cluster.</p>
+        pub fn set_data_transfer_protection(
+            mut self,
+            input: std::option::Option<crate::model::HdfsDataTransferProtection>,
+        ) -> Self {
+            self.data_transfer_protection = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`QopConfiguration`](crate::model::QopConfiguration)
+        pub fn build(self) -> crate::model::QopConfiguration {
+            crate::model::QopConfiguration {
+                rpc_protection: self.rpc_protection,
+                data_transfer_protection: self.data_transfer_protection,
+            }
+        }
+    }
+}
+impl QopConfiguration {
+    /// Creates a new builder-style object to manufacture [`QopConfiguration`](crate::model::QopConfiguration)
+    pub fn builder() -> crate::model::qop_configuration::Builder {
+        crate::model::qop_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HdfsDataTransferProtection {
+    #[allow(missing_docs)] // documentation missing in model
+    Authentication,
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Integrity,
+    #[allow(missing_docs)] // documentation missing in model
+    Privacy,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HdfsDataTransferProtection {
+    fn from(s: &str) -> Self {
+        match s {
+            "AUTHENTICATION" => HdfsDataTransferProtection::Authentication,
+            "DISABLED" => HdfsDataTransferProtection::Disabled,
+            "INTEGRITY" => HdfsDataTransferProtection::Integrity,
+            "PRIVACY" => HdfsDataTransferProtection::Privacy,
+            other => HdfsDataTransferProtection::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HdfsDataTransferProtection {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HdfsDataTransferProtection::from(s))
+    }
+}
+impl HdfsDataTransferProtection {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HdfsDataTransferProtection::Authentication => "AUTHENTICATION",
+            HdfsDataTransferProtection::Disabled => "DISABLED",
+            HdfsDataTransferProtection::Integrity => "INTEGRITY",
+            HdfsDataTransferProtection::Privacy => "PRIVACY",
+            HdfsDataTransferProtection::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AUTHENTICATION", "DISABLED", "INTEGRITY", "PRIVACY"]
+    }
+}
+impl AsRef<str> for HdfsDataTransferProtection {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HdfsRpcProtection {
+    #[allow(missing_docs)] // documentation missing in model
+    Authentication,
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Integrity,
+    #[allow(missing_docs)] // documentation missing in model
+    Privacy,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HdfsRpcProtection {
+    fn from(s: &str) -> Self {
+        match s {
+            "AUTHENTICATION" => HdfsRpcProtection::Authentication,
+            "DISABLED" => HdfsRpcProtection::Disabled,
+            "INTEGRITY" => HdfsRpcProtection::Integrity,
+            "PRIVACY" => HdfsRpcProtection::Privacy,
+            other => HdfsRpcProtection::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HdfsRpcProtection {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HdfsRpcProtection::from(s))
+    }
+}
+impl HdfsRpcProtection {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HdfsRpcProtection::Authentication => "AUTHENTICATION",
+            HdfsRpcProtection::Disabled => "DISABLED",
+            HdfsRpcProtection::Integrity => "INTEGRITY",
+            HdfsRpcProtection::Privacy => "PRIVACY",
+            HdfsRpcProtection::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AUTHENTICATION", "DISABLED", "INTEGRITY", "PRIVACY"]
+    }
+}
+impl AsRef<str> for HdfsRpcProtection {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The NameNode of the Hadoop Distributed File System (HDFS). The NameNode manages the file
+/// system's namespace. The NameNode performs operations such as opening, closing, and renaming
+/// files and directories. The NameNode contains the information to map blocks of data to the
+/// DataNodes.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HdfsNameNode {
+    /// <p>The hostname of the NameNode in the HDFS cluster. This value is the IP address or Domain
+    /// Name Service (DNS) name of the NameNode. An agent that's installed on-premises uses this
+    /// hostname to communicate with the NameNode in the network.</p>
+    pub hostname: std::option::Option<std::string::String>,
+    /// <p>The port that the NameNode uses to listen to client requests.</p>
+    pub port: std::option::Option<i32>,
+}
+impl HdfsNameNode {
+    /// <p>The hostname of the NameNode in the HDFS cluster. This value is the IP address or Domain
+    /// Name Service (DNS) name of the NameNode. An agent that's installed on-premises uses this
+    /// hostname to communicate with the NameNode in the network.</p>
+    pub fn hostname(&self) -> std::option::Option<&str> {
+        self.hostname.as_deref()
+    }
+    /// <p>The port that the NameNode uses to listen to client requests.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+}
+impl std::fmt::Debug for HdfsNameNode {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HdfsNameNode");
+        formatter.field("hostname", &self.hostname);
+        formatter.field("port", &self.port);
+        formatter.finish()
+    }
+}
+/// See [`HdfsNameNode`](crate::model::HdfsNameNode)
+pub mod hdfs_name_node {
+    /// A builder for [`HdfsNameNode`](crate::model::HdfsNameNode)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hostname: std::option::Option<std::string::String>,
+        pub(crate) port: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The hostname of the NameNode in the HDFS cluster. This value is the IP address or Domain
+        /// Name Service (DNS) name of the NameNode. An agent that's installed on-premises uses this
+        /// hostname to communicate with the NameNode in the network.</p>
+        pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hostname = Some(input.into());
+            self
+        }
+        /// <p>The hostname of the NameNode in the HDFS cluster. This value is the IP address or Domain
+        /// Name Service (DNS) name of the NameNode. An agent that's installed on-premises uses this
+        /// hostname to communicate with the NameNode in the network.</p>
+        pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hostname = input;
+            self
+        }
+        /// <p>The port that the NameNode uses to listen to client requests.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
+            self
+        }
+        /// <p>The port that the NameNode uses to listen to client requests.</p>
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HdfsNameNode`](crate::model::HdfsNameNode)
+        pub fn build(self) -> crate::model::HdfsNameNode {
+            crate::model::HdfsNameNode {
+                hostname: self.hostname,
+                port: self.port,
+            }
+        }
+    }
+}
+impl HdfsNameNode {
+    /// Creates a new builder-style object to manufacture [`HdfsNameNode`](crate::model::HdfsNameNode)
+    pub fn builder() -> crate::model::hdfs_name_node::Builder {
+        crate::model::hdfs_name_node::Builder::default()
+    }
+}
+
+/// <p>Represents a single entry in a list of Amazon Web Services resource tags. <code>TagListEntry</code>
 /// returns an array that contains a list of tasks when the
 /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTagsForResource.html">ListTagsForResource</a>
 /// operation is called.</p>

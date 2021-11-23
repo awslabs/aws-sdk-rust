@@ -7121,9 +7121,9 @@ pub struct DeliveryStreamDescription {
     /// stream.</p>
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the delivery stream was created.</p>
-    pub create_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the delivery stream was last updated.</p>
-    pub last_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the <code>DeliveryStreamType</code> parameter is
     /// <code>KinesisStreamAsSource</code>, a <a>SourceDescription</a> object
     /// describing the source Kinesis data stream.</p>
@@ -7188,11 +7188,11 @@ impl DeliveryStreamDescription {
         self.version_id.as_deref()
     }
     /// <p>The date and time that the delivery stream was created.</p>
-    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_timestamp.as_ref()
     }
     /// <p>The date and time that the delivery stream was last updated.</p>
-    pub fn last_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_timestamp.as_ref()
     }
     /// <p>If the <code>DeliveryStreamType</code> parameter is
@@ -7245,8 +7245,8 @@ pub mod delivery_stream_description {
             std::option::Option<crate::model::DeliveryStreamEncryptionConfiguration>,
         pub(crate) delivery_stream_type: std::option::Option<crate::model::DeliveryStreamType>,
         pub(crate) version_id: std::option::Option<std::string::String>,
-        pub(crate) create_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source: std::option::Option<crate::model::SourceDescription>,
         pub(crate) destinations:
             std::option::Option<std::vec::Vec<crate::model::DestinationDescription>>,
@@ -7387,27 +7387,27 @@ pub mod delivery_stream_description {
             self
         }
         /// <p>The date and time that the delivery stream was created.</p>
-        pub fn create_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_timestamp = Some(input);
             self
         }
         /// <p>The date and time that the delivery stream was created.</p>
         pub fn set_create_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_timestamp = input;
             self
         }
         /// <p>The date and time that the delivery stream was last updated.</p>
-        pub fn last_update_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_timestamp = Some(input);
             self
         }
         /// <p>The date and time that the delivery stream was last updated.</p>
         pub fn set_last_update_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_timestamp = input;
             self
@@ -10765,7 +10765,7 @@ pub struct KinesisStreamSourceDescription {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting
     /// with this timestamp.</p>
-    pub delivery_start_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub delivery_start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl KinesisStreamSourceDescription {
     /// <p>The Amazon Resource Name (ARN) of the source Kinesis data stream. For more
@@ -10782,7 +10782,7 @@ impl KinesisStreamSourceDescription {
     }
     /// <p>Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting
     /// with this timestamp.</p>
-    pub fn delivery_start_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn delivery_start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.delivery_start_timestamp.as_ref()
     }
 }
@@ -10803,7 +10803,7 @@ pub mod kinesis_stream_source_description {
     pub struct Builder {
         pub(crate) kinesis_stream_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) delivery_start_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) delivery_start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the source Kinesis data stream. For more
@@ -10839,7 +10839,7 @@ pub mod kinesis_stream_source_description {
         }
         /// <p>Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting
         /// with this timestamp.</p>
-        pub fn delivery_start_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn delivery_start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.delivery_start_timestamp = Some(input);
             self
         }
@@ -10847,7 +10847,7 @@ pub mod kinesis_stream_source_description {
         /// with this timestamp.</p>
         pub fn set_delivery_start_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.delivery_start_timestamp = input;
             self

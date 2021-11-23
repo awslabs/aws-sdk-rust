@@ -62,7 +62,7 @@ mod value {
     use crate::error::Error;
     use crate::frame::checked;
     use crate::str_bytes::StrBytes;
-    use aws_smithy_types::Instant;
+    use aws_smithy_types::DateTime;
     use bytes::{Buf, BufMut, Bytes};
     use std::convert::TryInto;
     use std::mem::size_of;
@@ -89,7 +89,7 @@ mod value {
         Int64(i64),
         ByteArray(Bytes),
         String(StrBytes),
-        Timestamp(Instant),
+        Timestamp(DateTime),
         Uuid(u128),
     }
 
@@ -143,7 +143,7 @@ mod value {
             }
         }
 
-        pub fn as_timestamp(&self) -> Result<Instant, &Self> {
+        pub fn as_timestamp(&self) -> Result<DateTime, &Self> {
             match self {
                 HeaderValue::Timestamp(value) => Ok(*value),
                 _ => Err(self),
@@ -199,9 +199,7 @@ mod value {
                 TYPE_TIMESTAMP => {
                     if buffer.remaining() >= size_of::<i64>() {
                         let epoch_millis = buffer.get_i64();
-                        Ok(HeaderValue::Timestamp(Instant::from_epoch_millis(
-                            epoch_millis,
-                        )))
+                        Ok(HeaderValue::Timestamp(DateTime::from_millis(epoch_millis)))
                     } else {
                         Err(Error::InvalidHeaderValue)
                     }
@@ -244,7 +242,7 @@ mod value {
                 Timestamp(time) => {
                     buffer.put_u8(TYPE_TIMESTAMP);
                     buffer.put_i64(
-                        time.to_epoch_millis()
+                        time.to_millis()
                             .map_err(|_| Error::TimestampValueTooLarge(*time))?,
                     );
                 }
@@ -273,7 +271,7 @@ mod value {
                 }
                 TYPE_STRING => HeaderValue::String(StrBytes::from(String::arbitrary(unstruct)?)),
                 TYPE_TIMESTAMP => {
-                    HeaderValue::Timestamp(Instant::from_epoch_seconds(i64::arbitrary(unstruct)?))
+                    HeaderValue::Timestamp(DateTime::from_secs(i64::arbitrary(unstruct)?))
                 }
                 TYPE_UUID => HeaderValue::Uuid(u128::arbitrary(unstruct)?),
                 _ => unreachable!(),
@@ -526,7 +524,7 @@ fn payload_len(total_len: u32, header_len: u32) -> Result<u32, Error> {
 mod message_tests {
     use crate::error::Error;
     use crate::frame::{Header, HeaderValue, Message};
-    use aws_smithy_types::Instant;
+    use aws_smithy_types::DateTime;
     use bytes::Bytes;
 
     macro_rules! read_message_expect_err {
@@ -639,7 +637,7 @@ mod message_tests {
                 Header::new("str", HeaderValue::String("some str".into())),
                 Header::new(
                     "time",
-                    HeaderValue::Timestamp(Instant::from_epoch_seconds(5_000_000))
+                    HeaderValue::Timestamp(DateTime::from_secs(5_000_000))
                 ),
                 Header::new(
                     "uuid",
@@ -667,7 +665,7 @@ mod message_tests {
             .add_header(Header::new("str", HeaderValue::String("some str".into())))
             .add_header(Header::new(
                 "time",
-                HeaderValue::Timestamp(Instant::from_epoch_seconds(5_000_000)),
+                HeaderValue::Timestamp(DateTime::from_secs(5_000_000)),
             ))
             .add_header(Header::new(
                 "uuid",

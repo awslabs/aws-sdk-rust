@@ -7,7 +7,7 @@ pub mod generate_data_set_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_type: std::option::Option<crate::model::DataSetType>,
-        pub(crate) data_set_publication_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) data_set_publication_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) role_name_arn: std::option::Option<std::string::String>,
         pub(crate) destination_s3_bucket_name: std::option::Option<std::string::String>,
         pub(crate) destination_s3_prefix: std::option::Option<std::string::String>,
@@ -242,7 +242,7 @@ pub mod generate_data_set_input {
         /// For daily data sets, provide a date with day-level granularity for the desired day.
         /// For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored).
         /// For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
-        pub fn data_set_publication_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn data_set_publication_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.data_set_publication_date = Some(input);
             self
         }
@@ -252,7 +252,7 @@ pub mod generate_data_set_input {
         /// For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
         pub fn set_data_set_publication_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.data_set_publication_date = input;
             self
@@ -378,6 +378,7 @@ pub type GenerateDataSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl GenerateDataSetInput {
     /// Consumes the builder and constructs an Operation<[`GenerateDataSet`](crate::operation::GenerateDataSet)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -434,11 +435,14 @@ impl GenerateDataSetInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -496,7 +500,7 @@ pub mod start_support_data_export_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_type: std::option::Option<crate::model::SupportDataSetType>,
-        pub(crate) from_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) from_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) role_name_arn: std::option::Option<std::string::String>,
         pub(crate) destination_s3_bucket_name: std::option::Option<std::string::String>,
         pub(crate) destination_s3_prefix: std::option::Option<std::string::String>,
@@ -542,14 +546,14 @@ pub mod start_support_data_export_input {
             self
         }
         /// The start date from which to retrieve the data set in UTC.  This parameter only affects the customer_support_contacts_data data set type.
-        pub fn from_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn from_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.from_date = Some(input);
             self
         }
         /// The start date from which to retrieve the data set in UTC.  This parameter only affects the customer_support_contacts_data data set type.
         pub fn set_from_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.from_date = input;
             self
@@ -671,6 +675,7 @@ pub type StartSupportDataExportInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl StartSupportDataExportInput {
     /// Consumes the builder and constructs an Operation<[`StartSupportDataExport`](crate::operation::StartSupportDataExport)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -729,11 +734,14 @@ impl StartSupportDataExportInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -802,7 +810,7 @@ pub struct StartSupportDataExportInput {
     /// </p>
     pub data_set_type: std::option::Option<crate::model::SupportDataSetType>,
     /// The start date from which to retrieve the data set in UTC.  This parameter only affects the customer_support_contacts_data data set type.
-    pub from_date: std::option::Option<aws_smithy_types::Instant>,
+    pub from_date: std::option::Option<aws_smithy_types::DateTime>,
     /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided
     /// AWS services.
     pub role_name_arn: std::option::Option<std::string::String>,
@@ -839,7 +847,7 @@ impl StartSupportDataExportInput {
         self.data_set_type.as_ref()
     }
     /// The start date from which to retrieve the data set in UTC.  This parameter only affects the customer_support_contacts_data data set type.
-    pub fn from_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn from_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.from_date.as_ref()
     }
     /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided
@@ -1004,7 +1012,7 @@ pub struct GenerateDataSetInput {
     /// For daily data sets, provide a date with day-level granularity for the desired day.
     /// For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored).
     /// For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
-    pub data_set_publication_date: std::option::Option<aws_smithy_types::Instant>,
+    pub data_set_publication_date: std::option::Option<aws_smithy_types::DateTime>,
     /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided
     /// AWS services.
     pub role_name_arn: std::option::Option<std::string::String>,
@@ -1139,7 +1147,7 @@ impl GenerateDataSetInput {
     /// For daily data sets, provide a date with day-level granularity for the desired day.
     /// For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored).
     /// For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
-    pub fn data_set_publication_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn data_set_publication_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.data_set_publication_date.as_ref()
     }
     /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided

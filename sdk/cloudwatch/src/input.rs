@@ -48,6 +48,7 @@ pub type DeleteAlarmsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteAlarmsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAlarms`](crate::operation::DeleteAlarms)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -98,11 +99,14 @@ impl DeleteAlarmsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -163,6 +167,10 @@ pub mod delete_anomaly_detector_input {
         pub(crate) metric_name: std::option::Option<std::string::String>,
         pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
         pub(crate) stat: std::option::Option<std::string::String>,
+        pub(crate) single_metric_anomaly_detector:
+            std::option::Option<crate::model::SingleMetricAnomalyDetector>,
+        pub(crate) metric_math_anomaly_detector:
+            std::option::Option<crate::model::MetricMathAnomalyDetector>,
     }
     impl Builder {
         /// <p>The namespace associated with the anomaly detection model to delete.</p>
@@ -214,6 +222,160 @@ pub mod delete_anomaly_detector_input {
             self.stat = input;
             self
         }
+        /// <p>A single metric anomaly detector to be deleted.</p>
+        /// <p>When using <code>SingleMetricAnomalyDetector</code>,
+        /// you cannot include the following parameters in the same operation:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Dimensions</code>,</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MetricName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Namespace</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Stat</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Instead, specify the single metric anomaly detector attributes
+        /// as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
+        pub fn single_metric_anomaly_detector(
+            mut self,
+            input: crate::model::SingleMetricAnomalyDetector,
+        ) -> Self {
+            self.single_metric_anomaly_detector = Some(input);
+            self
+        }
+        /// <p>A single metric anomaly detector to be deleted.</p>
+        /// <p>When using <code>SingleMetricAnomalyDetector</code>,
+        /// you cannot include the following parameters in the same operation:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Dimensions</code>,</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MetricName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Namespace</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Stat</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Instead, specify the single metric anomaly detector attributes
+        /// as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
+        pub fn set_single_metric_anomaly_detector(
+            mut self,
+            input: std::option::Option<crate::model::SingleMetricAnomalyDetector>,
+        ) -> Self {
+            self.single_metric_anomaly_detector = input;
+            self
+        }
+        /// <p>The metric math anomaly detector to be deleted.</p>
+        /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Dimensions</code>,</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MetricName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Namespace</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Stat</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Instead, specify the metric math anomaly detector attributes as part of the
+        /// <code>MetricMathAnomalyDetector</code> property.</p>
+        pub fn metric_math_anomaly_detector(
+            mut self,
+            input: crate::model::MetricMathAnomalyDetector,
+        ) -> Self {
+            self.metric_math_anomaly_detector = Some(input);
+            self
+        }
+        /// <p>The metric math anomaly detector to be deleted.</p>
+        /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Dimensions</code>,</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MetricName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Namespace</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Stat</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Instead, specify the metric math anomaly detector attributes as part of the
+        /// <code>MetricMathAnomalyDetector</code> property.</p>
+        pub fn set_metric_math_anomaly_detector(
+            mut self,
+            input: std::option::Option<crate::model::MetricMathAnomalyDetector>,
+        ) -> Self {
+            self.metric_math_anomaly_detector = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteAnomalyDetectorInput`](crate::input::DeleteAnomalyDetectorInput)
         pub fn build(
             self,
@@ -226,6 +388,8 @@ pub mod delete_anomaly_detector_input {
                 metric_name: self.metric_name,
                 dimensions: self.dimensions,
                 stat: self.stat,
+                single_metric_anomaly_detector: self.single_metric_anomaly_detector,
+                metric_math_anomaly_detector: self.metric_math_anomaly_detector,
             })
         }
     }
@@ -237,6 +401,7 @@ pub type DeleteAnomalyDetectorInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl DeleteAnomalyDetectorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAnomalyDetector`](crate::operation::DeleteAnomalyDetector)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -290,11 +455,14 @@ impl DeleteAnomalyDetectorInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -393,6 +561,7 @@ pub type DeleteDashboardsInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DeleteDashboardsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDashboards`](crate::operation::DeleteDashboards)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -444,11 +613,14 @@ impl DeleteDashboardsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -547,6 +719,7 @@ pub type DeleteInsightRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl DeleteInsightRulesInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInsightRules`](crate::operation::DeleteInsightRules)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -598,11 +771,14 @@ impl DeleteInsightRulesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -690,6 +866,7 @@ pub type DeleteMetricStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl DeleteMetricStreamInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMetricStream`](crate::operation::DeleteMetricStream)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -741,11 +918,14 @@ impl DeleteMetricStreamInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -805,8 +985,8 @@ pub mod describe_alarm_history_input {
         pub(crate) alarm_name: std::option::Option<std::string::String>,
         pub(crate) alarm_types: std::option::Option<std::vec::Vec<crate::model::AlarmType>>,
         pub(crate) history_item_type: std::option::Option<crate::model::HistoryItemType>,
-        pub(crate) start_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) max_records: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) scan_by: std::option::Option<crate::model::ScanBy>,
@@ -857,27 +1037,27 @@ pub mod describe_alarm_history_input {
             self
         }
         /// <p>The starting date to retrieve alarm history.</p>
-        pub fn start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_date = Some(input);
             self
         }
         /// <p>The starting date to retrieve alarm history.</p>
         pub fn set_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_date = input;
             self
         }
         /// <p>The ending date to retrieve alarm history.</p>
-        pub fn end_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_date = Some(input);
             self
         }
         /// <p>The ending date to retrieve alarm history.</p>
         pub fn set_end_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_date = input;
             self
@@ -943,6 +1123,7 @@ pub type DescribeAlarmHistoryInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl DescribeAlarmHistoryInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAlarmHistory`](crate::operation::DescribeAlarmHistory)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -996,11 +1177,14 @@ impl DescribeAlarmHistoryInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1291,6 +1475,7 @@ pub type DescribeAlarmsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeAlarmsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAlarms`](crate::operation::DescribeAlarms)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1342,11 +1527,14 @@ impl DescribeAlarmsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1530,6 +1718,7 @@ pub type DescribeAlarmsForMetricInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DescribeAlarmsForMetricInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAlarmsForMetric`](crate::operation::DescribeAlarmsForMetric)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1583,11 +1772,14 @@ impl DescribeAlarmsForMetricInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1649,6 +1841,8 @@ pub mod describe_anomaly_detectors_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
         pub(crate) metric_name: std::option::Option<std::string::String>,
         pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
+        pub(crate) anomaly_detector_types:
+            std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorType>>,
     }
     impl Builder {
         /// <p>Use the token returned by the previous operation to request the next page of results.</p>
@@ -1726,6 +1920,30 @@ pub mod describe_anomaly_detectors_input {
             self.dimensions = input;
             self
         }
+        /// Appends an item to `anomaly_detector_types`.
+        ///
+        /// To override the contents of this collection use [`set_anomaly_detector_types`](Self::set_anomaly_detector_types).
+        ///
+        /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>.
+        /// If empty, defaults to <code>SINGLE_METRIC</code>.</p>
+        pub fn anomaly_detector_types(
+            mut self,
+            input: impl Into<crate::model::AnomalyDetectorType>,
+        ) -> Self {
+            let mut v = self.anomaly_detector_types.unwrap_or_default();
+            v.push(input.into());
+            self.anomaly_detector_types = Some(v);
+            self
+        }
+        /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>.
+        /// If empty, defaults to <code>SINGLE_METRIC</code>.</p>
+        pub fn set_anomaly_detector_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorType>>,
+        ) -> Self {
+            self.anomaly_detector_types = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeAnomalyDetectorsInput`](crate::input::DescribeAnomalyDetectorsInput)
         pub fn build(
             self,
@@ -1739,6 +1957,7 @@ pub mod describe_anomaly_detectors_input {
                 namespace: self.namespace,
                 metric_name: self.metric_name,
                 dimensions: self.dimensions,
+                anomaly_detector_types: self.anomaly_detector_types,
             })
         }
     }
@@ -1751,6 +1970,7 @@ pub type DescribeAnomalyDetectorsInputOperationRetryAlias = aws_http::AwsErrorRe
 impl DescribeAnomalyDetectorsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAnomalyDetectors`](crate::operation::DescribeAnomalyDetectors)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1804,11 +2024,14 @@ impl DescribeAnomalyDetectorsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1912,6 +2135,7 @@ pub type DescribeInsightRulesInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl DescribeInsightRulesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInsightRules`](crate::operation::DescribeInsightRules)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1965,11 +2189,14 @@ impl DescribeInsightRulesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2068,6 +2295,7 @@ pub type DisableAlarmActionsInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl DisableAlarmActionsInput {
     /// Consumes the builder and constructs an Operation<[`DisableAlarmActions`](crate::operation::DisableAlarmActions)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2119,11 +2347,14 @@ impl DisableAlarmActionsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2222,6 +2453,7 @@ pub type DisableInsightRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl DisableInsightRulesInput {
     /// Consumes the builder and constructs an Operation<[`DisableInsightRules`](crate::operation::DisableInsightRules)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2273,11 +2505,14 @@ impl DisableInsightRulesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2376,6 +2611,7 @@ pub type EnableAlarmActionsInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl EnableAlarmActionsInput {
     /// Consumes the builder and constructs an Operation<[`EnableAlarmActions`](crate::operation::EnableAlarmActions)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2427,11 +2663,14 @@ impl EnableAlarmActionsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2530,6 +2769,7 @@ pub type EnableInsightRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl EnableInsightRulesInput {
     /// Consumes the builder and constructs an Operation<[`EnableInsightRules`](crate::operation::EnableInsightRules)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2581,11 +2821,14 @@ impl EnableInsightRulesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2678,6 +2921,7 @@ pub type GetDashboardInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetDashboardInput {
     /// Consumes the builder and constructs an Operation<[`GetDashboard`](crate::operation::GetDashboard)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2728,11 +2972,14 @@ impl GetDashboardInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2790,8 +3037,8 @@ pub mod get_insight_rule_report_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_name: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) period: std::option::Option<i32>,
         pub(crate) max_contributor_count: std::option::Option<i32>,
         pub(crate) metrics: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2811,7 +3058,7 @@ pub mod get_insight_rule_report_input {
         /// <p>The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as
         /// <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
         /// <code>2019-07-01T23:59:59</code>.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -2820,7 +3067,7 @@ pub mod get_insight_rule_report_input {
         /// <code>2019-07-01T23:59:59</code>.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -2828,7 +3075,7 @@ pub mod get_insight_rule_report_input {
         /// <p>The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as
         /// <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
         /// <code>2019-07-01T23:59:59</code>.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
@@ -2837,7 +3084,7 @@ pub mod get_insight_rule_report_input {
         /// <code>2019-07-01T23:59:59</code>.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -2987,6 +3234,7 @@ pub type GetInsightRuleReportInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl GetInsightRuleReportInput {
     /// Consumes the builder and constructs an Operation<[`GetInsightRuleReport`](crate::operation::GetInsightRuleReport)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3040,11 +3288,14 @@ impl GetInsightRuleReportInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3103,8 +3354,8 @@ pub mod get_metric_data_input {
     pub struct Builder {
         pub(crate) metric_data_queries:
             std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) scan_by: std::option::Option<crate::model::ScanBy>,
         pub(crate) max_datapoints: std::option::Option<i32>,
@@ -3165,7 +3416,7 @@ pub mod get_metric_data_input {
         /// the beginning and end of an hour. For example, if the <code>Period</code> of a metric
         /// is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a faster response
         /// from CloudWatch than setting 12:07 or 12:29 as the <code>StartTime</code>.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -3201,7 +3452,7 @@ pub mod get_metric_data_input {
         /// from CloudWatch than setting 12:07 or 12:29 as the <code>StartTime</code>.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -3213,7 +3464,7 @@ pub mod get_metric_data_input {
         /// the beginning and end of an hour. For example, if the <code>Period</code> of a metric
         /// is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster response
         /// from CloudWatch than setting 12:07 or 12:29 as the <code>EndTime</code>.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
@@ -3226,7 +3477,7 @@ pub mod get_metric_data_input {
         /// from CloudWatch than setting 12:07 or 12:29 as the <code>EndTime</code>.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -3314,6 +3565,7 @@ pub type GetMetricDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetMetricDataInput {
     /// Consumes the builder and constructs an Operation<[`GetMetricData`](crate::operation::GetMetricData)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3365,11 +3617,14 @@ impl GetMetricDataInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3429,8 +3684,8 @@ pub mod get_metric_statistics_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
         pub(crate) metric_name: std::option::Option<std::string::String>,
         pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) period: std::option::Option<i32>,
         pub(crate) statistics: std::option::Option<std::vec::Vec<crate::model::Statistic>>,
         pub(crate) extended_statistics: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3513,7 +3768,7 @@ pub mod get_metric_statistics_input {
         /// period of 5 seconds, you receive data
         /// timestamped between 15:02:15 and 15:07:15.
         /// </p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -3546,7 +3801,7 @@ pub mod get_metric_statistics_input {
         /// </p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -3554,7 +3809,7 @@ pub mod get_metric_statistics_input {
         /// <p>The time stamp that determines the last data point to return.</p>
         /// <p>The value specified is exclusive; results include data points up to the specified time stamp.
         /// In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
@@ -3563,7 +3818,7 @@ pub mod get_metric_statistics_input {
         /// In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -3700,6 +3955,7 @@ pub type GetMetricStatisticsInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl GetMetricStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`GetMetricStatistics`](crate::operation::GetMetricStatistics)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3751,11 +4007,14 @@ impl GetMetricStatisticsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3843,6 +4102,7 @@ pub type GetMetricStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl GetMetricStreamInput {
     /// Consumes the builder and constructs an Operation<[`GetMetricStream`](crate::operation::GetMetricStream)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3894,11 +4154,14 @@ impl GetMetricStreamInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4102,6 +4365,7 @@ pub type GetMetricWidgetImageInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl GetMetricWidgetImageInput {
     /// Consumes the builder and constructs an Operation<[`GetMetricWidgetImage`](crate::operation::GetMetricWidgetImage)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4155,11 +4419,14 @@ impl GetMetricWidgetImageInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4272,6 +4539,7 @@ pub type ListDashboardsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListDashboardsInput {
     /// Consumes the builder and constructs an Operation<[`ListDashboards`](crate::operation::ListDashboards)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4323,11 +4591,14 @@ impl ListDashboardsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4497,6 +4768,7 @@ pub type ListMetricsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListMetricsInput {
     /// Consumes the builder and constructs an Operation<[`ListMetrics`](crate::operation::ListMetrics)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4547,11 +4819,14 @@ impl ListMetricsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4653,6 +4928,7 @@ pub type ListMetricStreamsInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl ListMetricStreamsInput {
     /// Consumes the builder and constructs an Operation<[`ListMetricStreams`](crate::operation::ListMetricStreams)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4704,11 +4980,14 @@ impl ListMetricStreamsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4820,6 +5099,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4873,11 +5153,14 @@ impl ListTagsForResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4939,6 +5222,10 @@ pub mod put_anomaly_detector_input {
         pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
         pub(crate) stat: std::option::Option<std::string::String>,
         pub(crate) configuration: std::option::Option<crate::model::AnomalyDetectorConfiguration>,
+        pub(crate) single_metric_anomaly_detector:
+            std::option::Option<crate::model::SingleMetricAnomalyDetector>,
+        pub(crate) metric_math_anomaly_detector:
+            std::option::Option<crate::model::MetricMathAnomalyDetector>,
     }
     impl Builder {
         /// <p>The namespace of the metric to create the anomaly detection model for.</p>
@@ -5013,6 +5300,166 @@ pub mod put_anomaly_detector_input {
             self.configuration = input;
             self
         }
+        /// <p>A single metric anomaly detector to be created.</p>
+        /// <p>When using <code>SingleMetricAnomalyDetector</code>,
+        /// you cannot include the following parameters in the same operation:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Dimensions</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MetricName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Namespace</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Stat</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Instead, specify the single metric anomaly detector attributes
+        /// as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
+        pub fn single_metric_anomaly_detector(
+            mut self,
+            input: crate::model::SingleMetricAnomalyDetector,
+        ) -> Self {
+            self.single_metric_anomaly_detector = Some(input);
+            self
+        }
+        /// <p>A single metric anomaly detector to be created.</p>
+        /// <p>When using <code>SingleMetricAnomalyDetector</code>,
+        /// you cannot include the following parameters in the same operation:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Dimensions</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MetricName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Namespace</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Stat</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Instead, specify the single metric anomaly detector attributes
+        /// as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
+        pub fn set_single_metric_anomaly_detector(
+            mut self,
+            input: std::option::Option<crate::model::SingleMetricAnomalyDetector>,
+        ) -> Self {
+            self.single_metric_anomaly_detector = input;
+            self
+        }
+        /// <p>The metric math anomaly detector to be created.</p>
+        ///
+        /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Dimensions</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MetricName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Namespace</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Stat</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Instead, specify the metric math anomaly detector attributes
+        /// as part of the property <code>MetricMathAnomalyDetector</code>.</p>
+        pub fn metric_math_anomaly_detector(
+            mut self,
+            input: crate::model::MetricMathAnomalyDetector,
+        ) -> Self {
+            self.metric_math_anomaly_detector = Some(input);
+            self
+        }
+        /// <p>The metric math anomaly detector to be created.</p>
+        ///
+        /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Dimensions</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MetricName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Namespace</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Stat</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Instead, specify the metric math anomaly detector attributes
+        /// as part of the property <code>MetricMathAnomalyDetector</code>.</p>
+        pub fn set_metric_math_anomaly_detector(
+            mut self,
+            input: std::option::Option<crate::model::MetricMathAnomalyDetector>,
+        ) -> Self {
+            self.metric_math_anomaly_detector = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PutAnomalyDetectorInput`](crate::input::PutAnomalyDetectorInput)
         pub fn build(
             self,
@@ -5026,6 +5473,8 @@ pub mod put_anomaly_detector_input {
                 dimensions: self.dimensions,
                 stat: self.stat,
                 configuration: self.configuration,
+                single_metric_anomaly_detector: self.single_metric_anomaly_detector,
+                metric_math_anomaly_detector: self.metric_math_anomaly_detector,
             })
         }
     }
@@ -5037,6 +5486,7 @@ pub type PutAnomalyDetectorInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl PutAnomalyDetectorInput {
     /// Consumes the builder and constructs an Operation<[`PutAnomalyDetector`](crate::operation::PutAnomalyDetector)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5088,11 +5538,14 @@ impl PutAnomalyDetectorInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5474,6 +5927,7 @@ pub type PutCompositeAlarmInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl PutCompositeAlarmInput {
     /// Consumes the builder and constructs an Operation<[`PutCompositeAlarm`](crate::operation::PutCompositeAlarm)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5525,11 +5979,14 @@ impl PutCompositeAlarmInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5647,6 +6104,7 @@ pub type PutDashboardInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl PutDashboardInput {
     /// Consumes the builder and constructs an Operation<[`PutDashboard`](crate::operation::PutDashboard)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5697,11 +6155,14 @@ impl PutDashboardInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5863,6 +6324,7 @@ pub type PutInsightRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl PutInsightRuleInput {
     /// Consumes the builder and constructs an Operation<[`PutInsightRule`](crate::operation::PutInsightRule)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5914,11 +6376,14 @@ impl PutInsightRuleInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6621,6 +7086,7 @@ pub type PutMetricAlarmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl PutMetricAlarmInput {
     /// Consumes the builder and constructs an Operation<[`PutMetricAlarm`](crate::operation::PutMetricAlarm)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6672,11 +7138,14 @@ impl PutMetricAlarmInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6793,6 +7262,7 @@ pub type PutMetricDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl PutMetricDataInput {
     /// Consumes the builder and constructs an Operation<[`PutMetricData`](crate::operation::PutMetricData)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6844,11 +7314,14 @@ impl PutMetricDataInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7114,6 +7587,7 @@ pub type PutMetricStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl PutMetricStreamInput {
     /// Consumes the builder and constructs an Operation<[`PutMetricStream`](crate::operation::PutMetricStream)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7165,11 +7639,14 @@ impl PutMetricStreamInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7305,6 +7782,7 @@ pub type SetAlarmStateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl SetAlarmStateInput {
     /// Consumes the builder and constructs an Operation<[`SetAlarmState`](crate::operation::SetAlarmState)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7356,11 +7834,14 @@ impl SetAlarmStateInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7463,6 +7944,7 @@ pub type StartMetricStreamsInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl StartMetricStreamsInput {
     /// Consumes the builder and constructs an Operation<[`StartMetricStreams`](crate::operation::StartMetricStreams)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7514,11 +7996,14 @@ impl StartMetricStreamsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7621,6 +8106,7 @@ pub type StopMetricStreamsInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl StopMetricStreamsInput {
     /// Consumes the builder and constructs an Operation<[`StopMetricStreams`](crate::operation::StopMetricStreams)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7672,11 +8158,14 @@ impl StopMetricStreamsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7809,6 +8298,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7859,11 +8349,14 @@ impl TagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7996,6 +8489,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8046,11 +8540,14 @@ impl UntagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -9278,6 +9775,75 @@ pub struct PutAnomalyDetectorInput {
     /// <p>The configuration can also include the time zone to use for
     /// the metric.</p>
     pub configuration: std::option::Option<crate::model::AnomalyDetectorConfiguration>,
+    /// <p>A single metric anomaly detector to be created.</p>
+    /// <p>When using <code>SingleMetricAnomalyDetector</code>,
+    /// you cannot include the following parameters in the same operation:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Dimensions</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MetricName</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Namespace</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Stat</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>Instead, specify the single metric anomaly detector attributes
+    /// as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
+    pub single_metric_anomaly_detector:
+        std::option::Option<crate::model::SingleMetricAnomalyDetector>,
+    /// <p>The metric math anomaly detector to be created.</p>
+    ///
+    /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Dimensions</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MetricName</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Namespace</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Stat</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>Instead, specify the metric math anomaly detector attributes
+    /// as part of the property <code>MetricMathAnomalyDetector</code>.</p>
+    pub metric_math_anomaly_detector: std::option::Option<crate::model::MetricMathAnomalyDetector>,
 }
 impl PutAnomalyDetectorInput {
     /// <p>The namespace of the metric to create the anomaly detection model for.</p>
@@ -9307,6 +9873,82 @@ impl PutAnomalyDetectorInput {
     ) -> std::option::Option<&crate::model::AnomalyDetectorConfiguration> {
         self.configuration.as_ref()
     }
+    /// <p>A single metric anomaly detector to be created.</p>
+    /// <p>When using <code>SingleMetricAnomalyDetector</code>,
+    /// you cannot include the following parameters in the same operation:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Dimensions</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MetricName</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Namespace</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Stat</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>Instead, specify the single metric anomaly detector attributes
+    /// as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
+    pub fn single_metric_anomaly_detector(
+        &self,
+    ) -> std::option::Option<&crate::model::SingleMetricAnomalyDetector> {
+        self.single_metric_anomaly_detector.as_ref()
+    }
+    /// <p>The metric math anomaly detector to be created.</p>
+    ///
+    /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Dimensions</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MetricName</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Namespace</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Stat</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>Instead, specify the metric math anomaly detector attributes
+    /// as part of the property <code>MetricMathAnomalyDetector</code>.</p>
+    pub fn metric_math_anomaly_detector(
+        &self,
+    ) -> std::option::Option<&crate::model::MetricMathAnomalyDetector> {
+        self.metric_math_anomaly_detector.as_ref()
+    }
 }
 impl std::fmt::Debug for PutAnomalyDetectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9316,6 +9958,14 @@ impl std::fmt::Debug for PutAnomalyDetectorInput {
         formatter.field("dimensions", &self.dimensions);
         formatter.field("stat", &self.stat);
         formatter.field("configuration", &self.configuration);
+        formatter.field(
+            "single_metric_anomaly_detector",
+            &self.single_metric_anomaly_detector,
+        );
+        formatter.field(
+            "metric_math_anomaly_detector",
+            &self.metric_math_anomaly_detector,
+        );
         formatter.finish()
     }
 }
@@ -9683,11 +10333,11 @@ pub struct GetMetricStatisticsInput {
     /// period of 5 seconds, you receive data
     /// timestamped between 15:02:15 and 15:07:15.
     /// </p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time stamp that determines the last data point to return.</p>
     /// <p>The value specified is exclusive; results include data points up to the specified time stamp.
     /// In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can
     /// be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected
     /// at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics
@@ -9765,13 +10415,13 @@ impl GetMetricStatisticsInput {
     /// period of 5 seconds, you receive data
     /// timestamped between 15:02:15 and 15:07:15.
     /// </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time stamp that determines the last data point to return.</p>
     /// <p>The value specified is exclusive; results include data points up to the specified time stamp.
     /// In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can
@@ -9867,7 +10517,7 @@ pub struct GetMetricDataInput {
     /// the beginning and end of an hour. For example, if the <code>Period</code> of a metric
     /// is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a faster response
     /// from CloudWatch than setting 12:07 or 12:29 as the <code>StartTime</code>.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time stamp indicating the latest data to be returned.</p>
     /// <p>The value specified is exclusive; results include data points up to the specified time stamp.</p>
     /// <p>For better performance, specify <code>StartTime</code> and <code>EndTime</code>
@@ -9875,7 +10525,7 @@ pub struct GetMetricDataInput {
     /// the beginning and end of an hour. For example, if the <code>Period</code> of a metric
     /// is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster response
     /// from CloudWatch than setting 12:07 or 12:29 as the <code>EndTime</code>.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Include this value, if it was returned by the previous <code>GetMetricData</code> operation,
     /// to get the next set of data points.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -9928,7 +10578,7 @@ impl GetMetricDataInput {
     /// the beginning and end of an hour. For example, if the <code>Period</code> of a metric
     /// is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a faster response
     /// from CloudWatch than setting 12:07 or 12:29 as the <code>StartTime</code>.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time stamp indicating the latest data to be returned.</p>
@@ -9938,7 +10588,7 @@ impl GetMetricDataInput {
     /// the beginning and end of an hour. For example, if the <code>Period</code> of a metric
     /// is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster response
     /// from CloudWatch than setting 12:07 or 12:29 as the <code>EndTime</code>.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Include this value, if it was returned by the previous <code>GetMetricData</code> operation,
@@ -9988,11 +10638,11 @@ pub struct GetInsightRuleReportInput {
     /// <p>The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as
     /// <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
     /// <code>2019-07-01T23:59:59</code>.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as
     /// <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
     /// <code>2019-07-01T23:59:59</code>.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The period, in seconds, to use for the statistics in the <code>InsightRuleMetricDatapoint</code> results.</p>
     pub period: std::option::Option<i32>,
     /// <p>The maximum number of contributors to include in the report. The range is 1 to 100. If you omit this, the default of 10 is used.</p>
@@ -10045,13 +10695,13 @@ impl GetInsightRuleReportInput {
     /// <p>The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as
     /// <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
     /// <code>2019-07-01T23:59:59</code>.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as
     /// <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
     /// <code>2019-07-01T23:59:59</code>.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The period, in seconds, to use for the statistics in the <code>InsightRuleMetricDatapoint</code> results.</p>
@@ -10277,6 +10927,10 @@ pub struct DescribeAnomalyDetectorsInput {
     /// specified metric dimensions. If there are multiple metrics that have these dimensions
     /// and have anomaly detection models associated, they're all returned.</p>
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
+    /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>.
+    /// If empty, defaults to <code>SINGLE_METRIC</code>.</p>
+    pub anomaly_detector_types:
+        std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorType>>,
 }
 impl DescribeAnomalyDetectorsInput {
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
@@ -10307,6 +10961,13 @@ impl DescribeAnomalyDetectorsInput {
     pub fn dimensions(&self) -> std::option::Option<&[crate::model::Dimension]> {
         self.dimensions.as_deref()
     }
+    /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>.
+    /// If empty, defaults to <code>SINGLE_METRIC</code>.</p>
+    pub fn anomaly_detector_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::AnomalyDetectorType]> {
+        self.anomaly_detector_types.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAnomalyDetectorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10316,6 +10977,7 @@ impl std::fmt::Debug for DescribeAnomalyDetectorsInput {
         formatter.field("namespace", &self.namespace);
         formatter.field("metric_name", &self.metric_name);
         formatter.field("dimensions", &self.dimensions);
+        formatter.field("anomaly_detector_types", &self.anomaly_detector_types);
         formatter.finish()
     }
 }
@@ -10550,9 +11212,9 @@ pub struct DescribeAlarmHistoryInput {
     /// <p>The type of alarm histories to retrieve.</p>
     pub history_item_type: std::option::Option<crate::model::HistoryItemType>,
     /// <p>The starting date to retrieve alarm history.</p>
-    pub start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ending date to retrieve alarm history.</p>
-    pub end_date: std::option::Option<aws_smithy_types::Instant>,
+    pub end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of alarm history records to retrieve.</p>
     pub max_records: std::option::Option<i32>,
     /// <p>The token returned by a previous call to indicate that there is more data
@@ -10577,11 +11239,11 @@ impl DescribeAlarmHistoryInput {
         self.history_item_type.as_ref()
     }
     /// <p>The starting date to retrieve alarm history.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The ending date to retrieve alarm history.</p>
-    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
     /// <p>The maximum number of alarm history records to retrieve.</p>
@@ -10689,6 +11351,72 @@ pub struct DeleteAnomalyDetectorInput {
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
     /// <p>The statistic associated with the anomaly detection model to delete.</p>
     pub stat: std::option::Option<std::string::String>,
+    /// <p>A single metric anomaly detector to be deleted.</p>
+    /// <p>When using <code>SingleMetricAnomalyDetector</code>,
+    /// you cannot include the following parameters in the same operation:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Dimensions</code>,</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MetricName</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Namespace</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Stat</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>Instead, specify the single metric anomaly detector attributes
+    /// as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
+    pub single_metric_anomaly_detector:
+        std::option::Option<crate::model::SingleMetricAnomalyDetector>,
+    /// <p>The metric math anomaly detector to be deleted.</p>
+    /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Dimensions</code>,</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MetricName</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Namespace</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Stat</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>Instead, specify the metric math anomaly detector attributes as part of the
+    /// <code>MetricMathAnomalyDetector</code> property.</p>
+    pub metric_math_anomaly_detector: std::option::Option<crate::model::MetricMathAnomalyDetector>,
 }
 impl DeleteAnomalyDetectorInput {
     /// <p>The namespace associated with the anomaly detection model to delete.</p>
@@ -10707,6 +11435,79 @@ impl DeleteAnomalyDetectorInput {
     pub fn stat(&self) -> std::option::Option<&str> {
         self.stat.as_deref()
     }
+    /// <p>A single metric anomaly detector to be deleted.</p>
+    /// <p>When using <code>SingleMetricAnomalyDetector</code>,
+    /// you cannot include the following parameters in the same operation:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Dimensions</code>,</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MetricName</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Namespace</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Stat</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>Instead, specify the single metric anomaly detector attributes
+    /// as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
+    pub fn single_metric_anomaly_detector(
+        &self,
+    ) -> std::option::Option<&crate::model::SingleMetricAnomalyDetector> {
+        self.single_metric_anomaly_detector.as_ref()
+    }
+    /// <p>The metric math anomaly detector to be deleted.</p>
+    /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Dimensions</code>,</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MetricName</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Namespace</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Stat</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>Instead, specify the metric math anomaly detector attributes as part of the
+    /// <code>MetricMathAnomalyDetector</code> property.</p>
+    pub fn metric_math_anomaly_detector(
+        &self,
+    ) -> std::option::Option<&crate::model::MetricMathAnomalyDetector> {
+        self.metric_math_anomaly_detector.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteAnomalyDetectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10715,6 +11516,14 @@ impl std::fmt::Debug for DeleteAnomalyDetectorInput {
         formatter.field("metric_name", &self.metric_name);
         formatter.field("dimensions", &self.dimensions);
         formatter.field("stat", &self.stat);
+        formatter.field(
+            "single_metric_anomaly_detector",
+            &self.single_metric_anomaly_detector,
+        );
+        formatter.field(
+            "metric_math_anomaly_detector",
+            &self.metric_math_anomaly_detector,
+        );
         formatter.finish()
     }
 }

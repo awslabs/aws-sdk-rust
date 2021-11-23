@@ -142,12 +142,12 @@ pub fn serialize_structure_crate_input_get_scaling_plan_resource_forecast_data_i
     if let Some(var_30) = &input.start_time {
         object
             .key("StartTime")
-            .instant(var_30, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_30, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_31) = &input.end_time {
         object
             .key("EndTime")
-            .instant(var_31, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_31, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

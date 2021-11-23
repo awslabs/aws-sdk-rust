@@ -4434,7 +4434,7 @@ pub struct ConflictException {
     /// The resource type
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// If present in the output, the operation can be retried after this time
-    pub retry_after: std::option::Option<aws_smithy_types::Instant>,
+    pub retry_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ConflictException {
     /// The identifier of the requested resource
@@ -4446,7 +4446,7 @@ impl ConflictException {
         self.resource_type.as_ref()
     }
     /// If present in the output, the operation can be retried after this time
-    pub fn retry_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn retry_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.retry_after.as_ref()
     }
 }
@@ -4485,7 +4485,7 @@ pub mod conflict_exception {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
-        pub(crate) retry_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) retry_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -4525,14 +4525,14 @@ pub mod conflict_exception {
             self
         }
         /// If present in the output, the operation can be retried after this time
-        pub fn retry_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn retry_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.retry_after = Some(input);
             self
         }
         /// If present in the output, the operation can be retried after this time
         pub fn set_retry_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.retry_after = input;
             self

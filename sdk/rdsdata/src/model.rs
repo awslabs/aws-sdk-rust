@@ -32,9 +32,9 @@ impl Field {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_array_value(&self) -> std::result::Result<&crate::model::ArrayValue, &Self> {
         if let Field::ArrayValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`ArrayValue`](crate::model::Field::ArrayValue).
@@ -45,9 +45,9 @@ impl Field {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_blob_value(&self) -> std::result::Result<&aws_smithy_types::Blob, &Self> {
         if let Field::BlobValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`BlobValue`](crate::model::Field::BlobValue).
@@ -58,9 +58,9 @@ impl Field {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
         if let Field::BooleanValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`BooleanValue`](crate::model::Field::BooleanValue).
@@ -71,9 +71,9 @@ impl Field {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_double_value(&self) -> std::result::Result<&f64, &Self> {
         if let Field::DoubleValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`DoubleValue`](crate::model::Field::DoubleValue).
@@ -84,9 +84,9 @@ impl Field {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_is_null(&self) -> std::result::Result<&bool, &Self> {
         if let Field::IsNull(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`IsNull`](crate::model::Field::IsNull).
@@ -97,9 +97,9 @@ impl Field {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_long_value(&self) -> std::result::Result<&i64, &Self> {
         if let Field::LongValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`LongValue`](crate::model::Field::LongValue).
@@ -110,9 +110,9 @@ impl Field {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let Field::StringValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`StringValue`](crate::model::Field::StringValue).
@@ -156,9 +156,9 @@ impl ArrayValue {
         &self,
     ) -> std::result::Result<&std::vec::Vec<crate::model::ArrayValue>, &Self> {
         if let ArrayValue::ArrayValues(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`ArrayValues`](crate::model::ArrayValue::ArrayValues).
@@ -169,9 +169,9 @@ impl ArrayValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_values(&self) -> std::result::Result<&std::vec::Vec<bool>, &Self> {
         if let ArrayValue::BooleanValues(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`BooleanValues`](crate::model::ArrayValue::BooleanValues).
@@ -182,9 +182,9 @@ impl ArrayValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_double_values(&self) -> std::result::Result<&std::vec::Vec<f64>, &Self> {
         if let ArrayValue::DoubleValues(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`DoubleValues`](crate::model::ArrayValue::DoubleValues).
@@ -195,9 +195,9 @@ impl ArrayValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_long_values(&self) -> std::result::Result<&std::vec::Vec<i64>, &Self> {
         if let ArrayValue::LongValues(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`LongValues`](crate::model::ArrayValue::LongValues).
@@ -210,9 +210,9 @@ impl ArrayValue {
         &self,
     ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
         if let ArrayValue::StringValues(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`StringValues`](crate::model::ArrayValue::StringValues).
@@ -1242,9 +1242,9 @@ impl Value {
         &self,
     ) -> std::result::Result<&std::vec::Vec<crate::model::Value>, &Self> {
         if let Value::ArrayValues(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`ArrayValues`](crate::model::Value::ArrayValues).
@@ -1255,9 +1255,9 @@ impl Value {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_big_int_value(&self) -> std::result::Result<&i64, &Self> {
         if let Value::BigIntValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`BigIntValue`](crate::model::Value::BigIntValue).
@@ -1268,9 +1268,9 @@ impl Value {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_bit_value(&self) -> std::result::Result<&bool, &Self> {
         if let Value::BitValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`BitValue`](crate::model::Value::BitValue).
@@ -1281,9 +1281,9 @@ impl Value {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_blob_value(&self) -> std::result::Result<&aws_smithy_types::Blob, &Self> {
         if let Value::BlobValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`BlobValue`](crate::model::Value::BlobValue).
@@ -1294,9 +1294,9 @@ impl Value {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_double_value(&self) -> std::result::Result<&f64, &Self> {
         if let Value::DoubleValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`DoubleValue`](crate::model::Value::DoubleValue).
@@ -1307,9 +1307,9 @@ impl Value {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_int_value(&self) -> std::result::Result<&i32, &Self> {
         if let Value::IntValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`IntValue`](crate::model::Value::IntValue).
@@ -1320,9 +1320,9 @@ impl Value {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_is_null(&self) -> std::result::Result<&bool, &Self> {
         if let Value::IsNull(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`IsNull`](crate::model::Value::IsNull).
@@ -1333,9 +1333,9 @@ impl Value {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_real_value(&self) -> std::result::Result<&f32, &Self> {
         if let Value::RealValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`RealValue`](crate::model::Value::RealValue).
@@ -1346,9 +1346,9 @@ impl Value {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let Value::StringValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`StringValue`](crate::model::Value::StringValue).
@@ -1359,9 +1359,9 @@ impl Value {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_struct_value(&self) -> std::result::Result<&crate::model::StructValue, &Self> {
         if let Value::StructValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`StructValue`](crate::model::Value::StructValue).

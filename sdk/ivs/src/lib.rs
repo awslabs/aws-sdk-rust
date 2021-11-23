@@ -24,7 +24,6 @@
 //! </p>
 //! <p>For a summary of notable documentation changes in each release, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/doc-history.html"> Document
 //! History</a>.</p>
-//!
 //! <p>
 //! <b>Allowed Header Values</b>
 //! </p>
@@ -214,8 +213,18 @@
 //! </li>
 //! <li>
 //! <p>
+//! <a>GetStreamSession</a> — Gets metadata on a specified stream.</p>
+//! </li>
+//! <li>
+//! <p>
 //! <a>ListStreams</a> — Gets summary information about live streams in
 //! your account, in the Amazon Web Services region where the API request is processed.</p>
+//! </li>
+//! <li>
+//! <p>
+//! <a>ListStreamSessions</a> — Gets a summary of current and previous
+//! streams for a specified channel in your account, in the AWS region where the API request
+//! is processed.</p>
 //! </li>
 //! <li>
 //! <p>
@@ -344,10 +353,12 @@ pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 pub use aws_smithy_http::byte_stream::ByteStream;
 pub use aws_smithy_http::result::SdkError;
 pub use aws_smithy_types::Blob;
+pub use aws_smithy_types::DateTime;
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("ivs", PKG_VERSION);
 pub use aws_smithy_http::endpoint::Endpoint;
 pub use aws_smithy_types::retry::RetryConfig;
+pub use aws_types::app_name::AppName;
 pub use aws_types::region::Region;
 pub use aws_types::Credentials;
 #[cfg(feature = "client")]

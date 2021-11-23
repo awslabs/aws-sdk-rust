@@ -197,7 +197,7 @@ pub struct FileSystemSize {
     pub value: i64,
     /// <p>The time at which the size of data, returned in the <code>Value</code> field, was
     /// determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The latest known metered size (in bytes) of data stored in the Infrequent Access
     /// storage class.</p>
     pub value_in_ia: std::option::Option<i64>,
@@ -212,7 +212,7 @@ impl FileSystemSize {
     }
     /// <p>The time at which the size of data, returned in the <code>Value</code> field, was
     /// determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The latest known metered size (in bytes) of data stored in the Infrequent Access
@@ -243,7 +243,7 @@ pub mod file_system_size {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<i64>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) value_in_ia: std::option::Option<i64>,
         pub(crate) value_in_standard: std::option::Option<i64>,
     }
@@ -260,7 +260,7 @@ pub mod file_system_size {
         }
         /// <p>The time at which the size of data, returned in the <code>Value</code> field, was
         /// determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
@@ -268,7 +268,7 @@ pub mod file_system_size {
         /// determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -1330,7 +1330,7 @@ pub struct FileSystemDescription {
     pub file_system_arn: std::option::Option<std::string::String>,
     /// <p>The time that the file system was created, in seconds (since
     /// 1970-01-01T00:00:00Z).</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The lifecycle phase of the file system.</p>
     pub life_cycle_state: std::option::Option<crate::model::LifeCycleState>,
     /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more
@@ -1400,7 +1400,7 @@ impl FileSystemDescription {
     }
     /// <p>The time that the file system was created, in seconds (since
     /// 1970-01-01T00:00:00Z).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The lifecycle phase of the file system.</p>
@@ -1508,7 +1508,7 @@ pub mod file_system_description {
         pub(crate) creation_token: std::option::Option<std::string::String>,
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) file_system_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) life_cycle_state: std::option::Option<crate::model::LifeCycleState>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) number_of_mount_targets: std::option::Option<i32>,
@@ -1584,7 +1584,7 @@ pub mod file_system_description {
         }
         /// <p>The time that the file system was created, in seconds (since
         /// 1970-01-01T00:00:00Z).</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
@@ -1592,7 +1592,7 @@ pub mod file_system_description {
         /// 1970-01-01T00:00:00Z).</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self

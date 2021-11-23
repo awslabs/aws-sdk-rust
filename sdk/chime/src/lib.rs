@@ -10,8 +10,7 @@
 //! <p>The Amazon Chime API (application programming interface) is designed for developers to
 //! perform key tasks, such as creating and managing Amazon Chime accounts, users, and Voice
 //! Connectors. This guide provides detailed information about the Amazon Chime API,
-//! including operations, types, inputs and outputs, and error codes. It also includes some
-//! server-side API actions to use with the Amazon Chime SDK. For more information about the
+//! including operations, types, inputs and outputs, and error codes. It also includes API actions for use with the Amazon Chime SDK, which developers use to build their own communication applications. For more information about the
 //! Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">
 //! Using the Amazon Chime SDK
 //! </a> in the <i>Amazon Chime Developer Guide</i>.</p>
@@ -82,10 +81,12 @@ pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 pub use aws_smithy_http::byte_stream::ByteStream;
 pub use aws_smithy_http::result::SdkError;
 pub use aws_smithy_types::Blob;
+pub use aws_smithy_types::DateTime;
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("chime", PKG_VERSION);
 pub use aws_smithy_http::endpoint::Endpoint;
 pub use aws_smithy_types::retry::RetryConfig;
+pub use aws_types::app_name::AppName;
 pub use aws_types::region::Region;
 pub use aws_types::Credentials;
 #[cfg(feature = "client")]

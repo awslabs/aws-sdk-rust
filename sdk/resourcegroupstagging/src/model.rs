@@ -2,34 +2,33 @@
 /// <p>Information about the errors that are returned for each failed resource. This
 /// information can include <code>InternalServiceException</code> and
 /// <code>InvalidParameterException</code> errors. It can also include any valid error
-/// code returned by the AWS service that hosts the resource that the ARN key
+/// code returned by the Amazon Web Services service that hosts the resource that the ARN key
 /// represents.</p>
-/// <p>The following are common error codes that you might receive from other AWS
+/// <p>The following are common error codes that you might receive from other Amazon Web Services
 /// services:</p>
 /// <ul>
 /// <li>
 /// <p>
 /// <b>InternalServiceException</b> – This can
-/// mean that the Resource Groups Tagging API didn't receive a response from another
-/// AWS service. It can also mean the the resource type in the request is not
-/// supported by the Resource Groups Tagging API. In these cases, it's safe to retry
-/// the request and then call <a href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a> to verify the changes.</p>
+/// mean that the Resource Groups Tagging API didn't receive a response from another Amazon Web Services service. It
+/// can also mean that the resource type in the request is not supported by the
+/// Resource Groups Tagging API. In these cases, it's safe to retry the request and then call <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a> to verify the changes.</p>
 /// </li>
 /// <li>
 /// <p>
 /// <b>AccessDeniedException</b> – This can mean
-/// that you need permission to calling tagging operations in the AWS service that
-/// contains the resource. For example, to use the Resource Groups Tagging API to
-/// tag a CloudWatch alarm resource, you need permission to call <a href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html">
+/// that you need permission to call the tagging operations in the Amazon Web Services service
+/// that contains the resource. For example, to use the Resource Groups Tagging API to tag a Amazon CloudWatch
+/// alarm resource, you need permission to call both <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html">
 /// <code>TagResources</code>
 /// </a>
 /// <i>and</i>
-/// <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">
+/// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">
 /// <code>TagResource</code>
 /// </a> in the CloudWatch API. </p>
 /// </li>
 /// </ul>
-/// <p>For more information on errors that are generated from other AWS services, see the
+/// <p>For more information on errors that are generated from other Amazon Web Services services, see the
 /// documentation for that service. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -38,7 +37,7 @@ pub struct FailureInfo {
     pub status_code: i32,
     /// <p>The code of the common error. Valid values include
     /// <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and
-    /// any valid error code returned by the AWS service that hosts the resource that you want
+    /// any valid error code returned by the Amazon Web Services service that hosts the resource that you want
     /// to tag.</p>
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The message of the common error.</p>
@@ -51,7 +50,7 @@ impl FailureInfo {
     }
     /// <p>The code of the common error. Valid values include
     /// <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and
-    /// any valid error code returned by the AWS service that hosts the resource that you want
+    /// any valid error code returned by the Amazon Web Services service that hosts the resource that you want
     /// to tag.</p>
     pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
         self.error_code.as_ref()
@@ -93,7 +92,7 @@ pub mod failure_info {
         }
         /// <p>The code of the common error. Valid values include
         /// <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and
-        /// any valid error code returned by the AWS service that hosts the resource that you want
+        /// any valid error code returned by the Amazon Web Services service that hosts the resource that you want
         /// to tag.</p>
         pub fn error_code(mut self, input: crate::model::ErrorCode) -> Self {
             self.error_code = Some(input);
@@ -101,7 +100,7 @@ pub mod failure_info {
         }
         /// <p>The code of the common error. Valid values include
         /// <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and
-        /// any valid error code returned by the AWS service that hosts the resource that you want
+        /// any valid error code returned by the Amazon Web Services service that hosts the resource that you want
         /// to tag.</p>
         pub fn set_error_code(
             mut self,
@@ -202,7 +201,7 @@ impl AsRef<str> for ErrorCode {
 pub struct ResourceTagMapping {
     /// <p>The ARN of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The tags that have been applied to one or more AWS resources.</p>
+    /// <p>The tags that have been applied to one or more Amazon Web Services resources.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Information that shows whether a resource is compliant with the effective tag policy,
     /// including details on any noncompliant tag keys.</p>
@@ -213,7 +212,7 @@ impl ResourceTagMapping {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The tags that have been applied to one or more AWS resources.</p>
+    /// <p>The tags that have been applied to one or more Amazon Web Services resources.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -257,14 +256,14 @@ pub mod resource_tag_mapping {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags that have been applied to one or more AWS resources.</p>
+        /// <p>The tags that have been applied to one or more Amazon Web Services resources.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
-        /// <p>The tags that have been applied to one or more AWS resources.</p>
+        /// <p>The tags that have been applied to one or more Amazon Web Services resources.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -426,24 +425,27 @@ impl ComplianceDetails {
     }
 }
 
-/// <p>The metadata that you apply to AWS resources to help you categorize and organize
+/// <p>The metadata that you apply to Amazon Web Services resources to help you categorize and organize
 /// them. Each tag consists of a key and a value, both of which you define. For more
-/// information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-/// Resources</a> in the <i>AWS General Reference</i>.</p>
+/// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    /// <p>One part of a key-value pair that makes up a tag. A key is a general label
+    /// that acts like a category for more specific tag values.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
+    /// <p>One part of a key-value pair that make up a tag. A value acts as a
+    /// descriptor within a tag category (key). The value can be empty or null.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    /// <p>One part of a key-value pair that makes up a tag. A key is a general label
+    /// that acts like a category for more specific tag values.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
+    /// <p>One part of a key-value pair that make up a tag. A value acts as a
+    /// descriptor within a tag category (key). The value can be empty or null.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -466,22 +468,26 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+        /// <p>One part of a key-value pair that makes up a tag. A key is a general label
+        /// that acts like a category for more specific tag values.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+        /// <p>One part of a key-value pair that makes up a tag. A key is a general label
+        /// that acts like a category for more specific tag values.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
+        /// <p>One part of a key-value pair that make up a tag. A value acts as a
+        /// descriptor within a tag category (key). The value can be empty or null.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
+        /// <p>One part of a key-value pair that make up a tag. A value acts as a
+        /// descriptor within a tag category (key). The value can be empty or null.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -507,17 +513,21 @@ impl Tag {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagFilter {
-    /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    /// <p>One part of a key-value pair that makes up a tag. A key is a general label
+    /// that acts like a category for more specific tag values.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
+    /// <p>One part of a key-value pair that make up a tag. A value acts as a
+    /// descriptor within a tag category (key). The value can be empty or null.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TagFilter {
-    /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    /// <p>One part of a key-value pair that makes up a tag. A key is a general label
+    /// that acts like a category for more specific tag values.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
+    /// <p>One part of a key-value pair that make up a tag. A value acts as a
+    /// descriptor within a tag category (key). The value can be empty or null.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
@@ -540,12 +550,14 @@ pub mod tag_filter {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+        /// <p>One part of a key-value pair that makes up a tag. A key is a general label
+        /// that acts like a category for more specific tag values.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+        /// <p>One part of a key-value pair that makes up a tag. A key is a general label
+        /// that acts like a category for more specific tag values.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -554,14 +566,16 @@ pub mod tag_filter {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
+        /// <p>One part of a key-value pair that make up a tag. A value acts as a
+        /// descriptor within a tag category (key). The value can be empty or null.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
-        /// <p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
+        /// <p>One part of a key-value pair that make up a tag. A value acts as a
+        /// descriptor within a tag category (key). The value can be empty or null.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -592,13 +606,13 @@ pub struct Summary {
     /// <p>The timestamp that shows when this summary was generated in this Region. </p>
     pub last_updated: std::option::Option<std::string::String>,
     /// <p>The account identifier or the root identifier of the organization. If you don't know
-    /// the root ID, you can call the AWS Organizations <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
+    /// the root ID, you can call the Organizations <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
     pub target_id: std::option::Option<std::string::String>,
     /// <p>Whether the target is an account, an OU, or the organization root.</p>
     pub target_id_type: std::option::Option<crate::model::TargetIdType>,
-    /// <p>The AWS Region that the summary applies to.</p>
+    /// <p>The Amazon Web Services Region that the summary applies to.</p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>The AWS resource type.</p>
+    /// <p>The Amazon Web Services resource type.</p>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The count of noncompliant resources.</p>
     pub non_compliant_resources: i64,
@@ -609,7 +623,7 @@ impl Summary {
         self.last_updated.as_deref()
     }
     /// <p>The account identifier or the root identifier of the organization. If you don't know
-    /// the root ID, you can call the AWS Organizations <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
+    /// the root ID, you can call the Organizations <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
     pub fn target_id(&self) -> std::option::Option<&str> {
         self.target_id.as_deref()
     }
@@ -617,11 +631,11 @@ impl Summary {
     pub fn target_id_type(&self) -> std::option::Option<&crate::model::TargetIdType> {
         self.target_id_type.as_ref()
     }
-    /// <p>The AWS Region that the summary applies to.</p>
+    /// <p>The Amazon Web Services Region that the summary applies to.</p>
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>The AWS resource type.</p>
+    /// <p>The Amazon Web Services resource type.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -667,13 +681,13 @@ pub mod summary {
             self
         }
         /// <p>The account identifier or the root identifier of the organization. If you don't know
-        /// the root ID, you can call the AWS Organizations <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
+        /// the root ID, you can call the Organizations <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
         pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_id = Some(input.into());
             self
         }
         /// <p>The account identifier or the root identifier of the organization. If you don't know
-        /// the root ID, you can call the AWS Organizations <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
+        /// the root ID, you can call the Organizations <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_id = input;
             self
@@ -691,22 +705,22 @@ pub mod summary {
             self.target_id_type = input;
             self
         }
-        /// <p>The AWS Region that the summary applies to.</p>
+        /// <p>The Amazon Web Services Region that the summary applies to.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The AWS Region that the summary applies to.</p>
+        /// <p>The Amazon Web Services Region that the summary applies to.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
         }
-        /// <p>The AWS resource type.</p>
+        /// <p>The Amazon Web Services resource type.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The AWS resource type.</p>
+        /// <p>The Amazon Web Services resource type.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,

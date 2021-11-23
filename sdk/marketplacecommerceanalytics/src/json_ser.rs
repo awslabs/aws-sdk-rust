@@ -9,7 +9,7 @@ pub fn serialize_structure_crate_input_generate_data_set_input(
     if let Some(var_2) = &input.data_set_publication_date {
         object
             .key("dataSetPublicationDate")
-            .instant(var_2, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_2, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_3) = &input.role_name_arn {
         object.key("roleNameArn").string(var_3);
@@ -45,7 +45,7 @@ pub fn serialize_structure_crate_input_start_support_data_export_input(
     if let Some(var_12) = &input.from_date {
         object
             .key("fromDate")
-            .instant(var_12, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_12, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_13) = &input.role_name_arn {
         object.key("roleNameArn").string(var_13);

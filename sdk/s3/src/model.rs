@@ -374,7 +374,7 @@ pub struct CopyPartResult {
     /// <p>Entity tag of the object.</p>
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>Date and time at which the object was uploaded.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CopyPartResult {
     /// <p>Entity tag of the object.</p>
@@ -382,7 +382,7 @@ impl CopyPartResult {
         self.e_tag.as_deref()
     }
     /// <p>Date and time at which the object was uploaded.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
 }
@@ -401,7 +401,7 @@ pub mod copy_part_result {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) e_tag: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Entity tag of the object.</p>
@@ -415,14 +415,14 @@ pub mod copy_part_result {
             self
         }
         /// <p>Date and time at which the object was uploaded.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>Date and time at which the object was uploaded.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -526,9 +526,9 @@ impl SelectObjectContentEventStream {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_cont(&self) -> std::result::Result<&crate::model::ContinuationEvent, &Self> {
         if let SelectObjectContentEventStream::Cont(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Cont`](crate::model::SelectObjectContentEventStream::Cont).
@@ -539,9 +539,9 @@ impl SelectObjectContentEventStream {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_end(&self) -> std::result::Result<&crate::model::EndEvent, &Self> {
         if let SelectObjectContentEventStream::End(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`End`](crate::model::SelectObjectContentEventStream::End).
@@ -552,9 +552,9 @@ impl SelectObjectContentEventStream {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_progress(&self) -> std::result::Result<&crate::model::ProgressEvent, &Self> {
         if let SelectObjectContentEventStream::Progress(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Progress`](crate::model::SelectObjectContentEventStream::Progress).
@@ -565,9 +565,9 @@ impl SelectObjectContentEventStream {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_records(&self) -> std::result::Result<&crate::model::RecordsEvent, &Self> {
         if let SelectObjectContentEventStream::Records(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Records`](crate::model::SelectObjectContentEventStream::Records).
@@ -578,9 +578,9 @@ impl SelectObjectContentEventStream {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_stats(&self) -> std::result::Result<&crate::model::StatsEvent, &Self> {
         if let SelectObjectContentEventStream::Stats(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Stats`](crate::model::SelectObjectContentEventStream::Stats).
@@ -4152,7 +4152,7 @@ pub struct ObjectLockRetention {
     /// <p>Indicates the Retention mode for the specified object.</p>
     pub mode: std::option::Option<crate::model::ObjectLockRetentionMode>,
     /// <p>The date on which this Object Lock Retention will expire.</p>
-    pub retain_until_date: std::option::Option<aws_smithy_types::Instant>,
+    pub retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ObjectLockRetention {
     /// <p>Indicates the Retention mode for the specified object.</p>
@@ -4160,7 +4160,7 @@ impl ObjectLockRetention {
         self.mode.as_ref()
     }
     /// <p>The date on which this Object Lock Retention will expire.</p>
-    pub fn retain_until_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn retain_until_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.retain_until_date.as_ref()
     }
 }
@@ -4179,7 +4179,7 @@ pub mod object_lock_retention {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mode: std::option::Option<crate::model::ObjectLockRetentionMode>,
-        pub(crate) retain_until_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Indicates the Retention mode for the specified object.</p>
@@ -4196,14 +4196,14 @@ pub mod object_lock_retention {
             self
         }
         /// <p>The date on which this Object Lock Retention will expire.</p>
-        pub fn retain_until_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn retain_until_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.retain_until_date = Some(input);
             self
         }
         /// <p>The date on which this Object Lock Retention will expire.</p>
         pub fn set_retain_until_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.retain_until_date = input;
             self
@@ -8000,9 +8000,9 @@ impl ReplicationRuleFilter {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_and(&self) -> std::result::Result<&crate::model::ReplicationRuleAndOperator, &Self> {
         if let ReplicationRuleFilter::And(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`And`](crate::model::ReplicationRuleFilter::And).
@@ -8013,9 +8013,9 @@ impl ReplicationRuleFilter {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let ReplicationRuleFilter::Prefix(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Prefix`](crate::model::ReplicationRuleFilter::Prefix).
@@ -8026,9 +8026,9 @@ impl ReplicationRuleFilter {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tag(&self) -> std::result::Result<&crate::model::Tag, &Self> {
         if let ReplicationRuleFilter::Tag(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Tag`](crate::model::ReplicationRuleFilter::Tag).
@@ -9358,9 +9358,9 @@ impl MetricsFilter {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_access_point_arn(&self) -> std::result::Result<&std::string::String, &Self> {
         if let MetricsFilter::AccessPointArn(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`AccessPointArn`](crate::model::MetricsFilter::AccessPointArn).
@@ -9371,9 +9371,9 @@ impl MetricsFilter {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_and(&self) -> std::result::Result<&crate::model::MetricsAndOperator, &Self> {
         if let MetricsFilter::And(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`And`](crate::model::MetricsFilter::And).
@@ -9384,9 +9384,9 @@ impl MetricsFilter {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let MetricsFilter::Prefix(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Prefix`](crate::model::MetricsFilter::Prefix).
@@ -9397,9 +9397,9 @@ impl MetricsFilter {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tag(&self) -> std::result::Result<&crate::model::Tag, &Self> {
         if let MetricsFilter::Tag(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Tag`](crate::model::MetricsFilter::Tag).
@@ -10569,7 +10569,7 @@ impl AsRef<str> for TransitionStorageClass {
 pub struct Transition {
     /// <p>Indicates when objects are transitioned to the specified storage class. The date value
     /// must be in ISO 8601 format. The time is always midnight UTC.</p>
-    pub date: std::option::Option<aws_smithy_types::Instant>,
+    pub date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the number of days after creation when objects are transitioned to the
     /// specified storage class. The value must be a positive integer.</p>
     pub days: i32,
@@ -10579,7 +10579,7 @@ pub struct Transition {
 impl Transition {
     /// <p>Indicates when objects are transitioned to the specified storage class. The date value
     /// must be in ISO 8601 format. The time is always midnight UTC.</p>
-    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>Indicates the number of days after creation when objects are transitioned to the
@@ -10607,20 +10607,20 @@ pub mod transition {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) days: std::option::Option<i32>,
         pub(crate) storage_class: std::option::Option<crate::model::TransitionStorageClass>,
     }
     impl Builder {
         /// <p>Indicates when objects are transitioned to the specified storage class. The date value
         /// must be in ISO 8601 format. The time is always midnight UTC.</p>
-        pub fn date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date = Some(input);
             self
         }
         /// <p>Indicates when objects are transitioned to the specified storage class. The date value
         /// must be in ISO 8601 format. The time is always midnight UTC.</p>
-        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
+        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.date = input;
             self
         }
@@ -10755,9 +10755,9 @@ impl LifecycleRuleFilter {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_and(&self) -> std::result::Result<&crate::model::LifecycleRuleAndOperator, &Self> {
         if let LifecycleRuleFilter::And(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`And`](crate::model::LifecycleRuleFilter::And).
@@ -10768,9 +10768,9 @@ impl LifecycleRuleFilter {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let LifecycleRuleFilter::Prefix(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Prefix`](crate::model::LifecycleRuleFilter::Prefix).
@@ -10781,9 +10781,9 @@ impl LifecycleRuleFilter {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tag(&self) -> std::result::Result<&crate::model::Tag, &Self> {
         if let LifecycleRuleFilter::Tag(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Tag`](crate::model::LifecycleRuleFilter::Tag).
@@ -10890,7 +10890,7 @@ impl LifecycleRuleAndOperator {
 pub struct LifecycleExpiration {
     /// <p>Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601
     /// Format.</p>
-    pub date: std::option::Option<aws_smithy_types::Instant>,
+    pub date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value
     /// must be a non-zero positive integer.</p>
     pub days: i32,
@@ -10902,7 +10902,7 @@ pub struct LifecycleExpiration {
 impl LifecycleExpiration {
     /// <p>Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601
     /// Format.</p>
-    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value
@@ -10935,20 +10935,20 @@ pub mod lifecycle_expiration {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) days: std::option::Option<i32>,
         pub(crate) expired_object_delete_marker: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601
         /// Format.</p>
-        pub fn date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date = Some(input);
             self
         }
         /// <p>Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601
         /// Format.</p>
-        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
+        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.date = input;
             self
         }
@@ -13787,9 +13787,9 @@ impl AnalyticsFilter {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_and(&self) -> std::result::Result<&crate::model::AnalyticsAndOperator, &Self> {
         if let AnalyticsFilter::And(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`And`](crate::model::AnalyticsFilter::And).
@@ -13800,9 +13800,9 @@ impl AnalyticsFilter {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AnalyticsFilter::Prefix(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Prefix`](crate::model::AnalyticsFilter::Prefix).
@@ -13813,9 +13813,9 @@ impl AnalyticsFilter {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tag(&self) -> std::result::Result<&crate::model::Tag, &Self> {
         if let AnalyticsFilter::Tag(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Tag`](crate::model::AnalyticsFilter::Tag).
@@ -14183,7 +14183,7 @@ pub struct Part {
     /// 10,000.</p>
     pub part_number: i32,
     /// <p>Date and time at which the part was uploaded.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Entity tag returned when the part was uploaded.</p>
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>Size in bytes of the uploaded part data.</p>
@@ -14196,7 +14196,7 @@ impl Part {
         self.part_number
     }
     /// <p>Date and time at which the part was uploaded.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>Entity tag returned when the part was uploaded.</p>
@@ -14225,7 +14225,7 @@ pub mod part {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) part_number: std::option::Option<i32>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
         pub(crate) size: std::option::Option<i64>,
     }
@@ -14243,14 +14243,14 @@ pub mod part {
             self
         }
         /// <p>Date and time at which the part was uploaded.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>Date and time at which the part was uploaded.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -14419,7 +14419,7 @@ pub struct DeleteMarkerEntry {
     /// object.</p>
     pub is_latest: bool,
     /// <p>Date and time the object was last modified.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteMarkerEntry {
     /// <p>The account that created the delete marker.></p>
@@ -14440,7 +14440,7 @@ impl DeleteMarkerEntry {
         self.is_latest
     }
     /// <p>Date and time the object was last modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
 }
@@ -14465,7 +14465,7 @@ pub mod delete_marker_entry {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) is_latest: std::option::Option<bool>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The account that created the delete marker.></p>
@@ -14511,14 +14511,14 @@ pub mod delete_marker_entry {
             self
         }
         /// <p>Date and time the object was last modified.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>Date and time the object was last modified.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -14560,7 +14560,7 @@ pub struct ObjectVersion {
     /// object.</p>
     pub is_latest: bool,
     /// <p>Date and time the object was last modified.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the owner of the object.</p>
     pub owner: std::option::Option<crate::model::Owner>,
 }
@@ -14591,7 +14591,7 @@ impl ObjectVersion {
         self.is_latest
     }
     /// <p>Date and time the object was last modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>Specifies the owner of the object.</p>
@@ -14625,7 +14625,7 @@ pub mod object_version {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) is_latest: std::option::Option<bool>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) owner: std::option::Option<crate::model::Owner>,
     }
     impl Builder {
@@ -14695,14 +14695,14 @@ pub mod object_version {
             self
         }
         /// <p>Date and time the object was last modified.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>Date and time the object was last modified.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -14798,7 +14798,7 @@ pub struct Object {
     /// object.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>Creation date of the object.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents
     /// of an object, not its metadata. The ETag may or may not be an MD5 digest of the object
     /// data. Whether or not it is depends on how the object was created and how it is encrypted as
@@ -14834,7 +14834,7 @@ impl Object {
         self.key.as_deref()
     }
     /// <p>Creation date of the object.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents
@@ -14892,7 +14892,7 @@ pub mod object {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
         pub(crate) size: std::option::Option<i64>,
         pub(crate) storage_class: std::option::Option<crate::model::ObjectStorageClass>,
@@ -14912,14 +14912,14 @@ pub mod object {
             self
         }
         /// <p>Creation date of the object.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>Creation date of the object.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -15122,7 +15122,7 @@ pub struct MultipartUpload {
     /// <p>Key of the object for which the multipart upload was initiated.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>Date and time at which the multipart upload was initiated.</p>
-    pub initiated: std::option::Option<aws_smithy_types::Instant>,
+    pub initiated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The class of storage used to store the object.</p>
     pub storage_class: std::option::Option<crate::model::StorageClass>,
     /// <p>Specifies the owner of the object that is part of the multipart upload. </p>
@@ -15140,7 +15140,7 @@ impl MultipartUpload {
         self.key.as_deref()
     }
     /// <p>Date and time at which the multipart upload was initiated.</p>
-    pub fn initiated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn initiated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.initiated.as_ref()
     }
     /// <p>The class of storage used to store the object.</p>
@@ -15176,7 +15176,7 @@ pub mod multipart_upload {
     pub struct Builder {
         pub(crate) upload_id: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
-        pub(crate) initiated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) initiated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) storage_class: std::option::Option<crate::model::StorageClass>,
         pub(crate) owner: std::option::Option<crate::model::Owner>,
         pub(crate) initiator: std::option::Option<crate::model::Initiator>,
@@ -15203,14 +15203,14 @@ pub mod multipart_upload {
             self
         }
         /// <p>Date and time at which the multipart upload was initiated.</p>
-        pub fn initiated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn initiated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.initiated = Some(input);
             self
         }
         /// <p>Date and time at which the multipart upload was initiated.</p>
         pub fn set_initiated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.initiated = input;
             self
@@ -15279,7 +15279,7 @@ pub struct Bucket {
     /// <p>The name of the bucket.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>Date the bucket was created. This date can change when making changes to your bucket, such as editing its bucket policy.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Bucket {
     /// <p>The name of the bucket.</p>
@@ -15287,7 +15287,7 @@ impl Bucket {
         self.name.as_deref()
     }
     /// <p>Date the bucket was created. This date can change when making changes to your bucket, such as editing its bucket policy.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -15306,7 +15306,7 @@ pub mod bucket {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the bucket.</p>
@@ -15320,14 +15320,14 @@ pub mod bucket {
             self
         }
         /// <p>Date the bucket was created. This date can change when making changes to your bucket, such as editing its bucket policy.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>Date the bucket was created. This date can change when making changes to your bucket, such as editing its bucket policy.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -23650,7 +23650,7 @@ pub struct CopyObjectResult {
     /// <p>Returns the ETag of the new object. The ETag reflects only changes to the contents of an object, not its metadata.</p>
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>Creation date of the object.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CopyObjectResult {
     /// <p>Returns the ETag of the new object. The ETag reflects only changes to the contents of an object, not its metadata.</p>
@@ -23658,7 +23658,7 @@ impl CopyObjectResult {
         self.e_tag.as_deref()
     }
     /// <p>Creation date of the object.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
 }
@@ -23677,7 +23677,7 @@ pub mod copy_object_result {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) e_tag: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Returns the ETag of the new object. The ETag reflects only changes to the contents of an object, not its metadata.</p>
@@ -23691,14 +23691,14 @@ pub mod copy_object_result {
             self
         }
         /// <p>Creation date of the object.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>Creation date of the object.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self

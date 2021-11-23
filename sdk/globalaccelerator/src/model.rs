@@ -187,7 +187,7 @@ pub struct ByoipCidrEvent {
     pub message: std::option::Option<std::string::String>,
     /// <p>A timestamp when you make a status change for an IP address range that you bring to AWS Global Accelerator through
     /// bring your own IP address (BYOIP).</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ByoipCidrEvent {
     /// <p>A string that contains an <code>Event</code> message describing changes that you make in the status
@@ -197,7 +197,7 @@ impl ByoipCidrEvent {
     }
     /// <p>A timestamp when you make a status change for an IP address range that you bring to AWS Global Accelerator through
     /// bring your own IP address (BYOIP).</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -216,7 +216,7 @@ pub mod byoip_cidr_event {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A string that contains an <code>Event</code> message describing changes that you make in the status
@@ -233,7 +233,7 @@ pub mod byoip_cidr_event {
         }
         /// <p>A timestamp when you make a status change for an IP address range that you bring to AWS Global Accelerator through
         /// bring your own IP address (BYOIP).</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
@@ -241,7 +241,7 @@ pub mod byoip_cidr_event {
         /// bring your own IP address (BYOIP).</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -1831,9 +1831,9 @@ pub struct CustomRoutingAccelerator {
     /// <p>Describes the deployment status of the accelerator.</p>
     pub status: std::option::Option<crate::model::CustomRoutingAcceleratorStatus>,
     /// <p>The date and time that the accelerator was created.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the accelerator was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CustomRoutingAccelerator {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator.</p>
@@ -1872,11 +1872,11 @@ impl CustomRoutingAccelerator {
         self.status.as_ref()
     }
     /// <p>The date and time that the accelerator was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The date and time that the accelerator was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -1908,8 +1908,8 @@ pub mod custom_routing_accelerator {
         pub(crate) ip_sets: std::option::Option<std::vec::Vec<crate::model::IpSet>>,
         pub(crate) dns_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::CustomRoutingAcceleratorStatus>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator.</p>
@@ -2015,27 +2015,27 @@ pub mod custom_routing_accelerator {
             self
         }
         /// <p>The date and time that the accelerator was created.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The date and time that the accelerator was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
         }
         /// <p>The date and time that the accelerator was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time that the accelerator was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -2413,9 +2413,9 @@ pub struct Accelerator {
     /// <p>Describes the deployment status of the accelerator.</p>
     pub status: std::option::Option<crate::model::AcceleratorStatus>,
     /// <p>The date and time that the accelerator was created.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the accelerator was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Accelerator {
     /// <p>The Amazon Resource Name (ARN) of the accelerator.</p>
@@ -2455,11 +2455,11 @@ impl Accelerator {
         self.status.as_ref()
     }
     /// <p>The date and time that the accelerator was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The date and time that the accelerator was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -2491,8 +2491,8 @@ pub mod accelerator {
         pub(crate) ip_sets: std::option::Option<std::vec::Vec<crate::model::IpSet>>,
         pub(crate) dns_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::AcceleratorStatus>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the accelerator.</p>
@@ -2600,27 +2600,27 @@ pub mod accelerator {
             self
         }
         /// <p>The date and time that the accelerator was created.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The date and time that the accelerator was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
         }
         /// <p>The date and time that the accelerator was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The date and time that the accelerator was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self

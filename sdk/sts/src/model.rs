@@ -11,7 +11,7 @@ pub struct Credentials {
     /// credentials.</p>
     pub session_token: std::option::Option<std::string::String>,
     /// <p>The date on which the current credentials expire.</p>
-    pub expiration: std::option::Option<aws_smithy_types::Instant>,
+    pub expiration: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Credentials {
     /// <p>The access key ID that identifies the temporary security credentials.</p>
@@ -28,7 +28,7 @@ impl Credentials {
         self.session_token.as_deref()
     }
     /// <p>The date on which the current credentials expire.</p>
-    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration.as_ref()
     }
 }
@@ -51,7 +51,7 @@ pub mod credentials {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
         pub(crate) secret_access_key: std::option::Option<std::string::String>,
         pub(crate) session_token: std::option::Option<std::string::String>,
-        pub(crate) expiration: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expiration: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The access key ID that identifies the temporary security credentials.</p>
@@ -96,14 +96,14 @@ pub mod credentials {
             self
         }
         /// <p>The date on which the current credentials expire.</p>
-        pub fn expiration(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration = Some(input);
             self
         }
         /// <p>The date on which the current credentials expire.</p>
         pub fn set_expiration(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiration = input;
             self
