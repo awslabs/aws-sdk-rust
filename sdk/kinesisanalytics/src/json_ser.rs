@@ -189,7 +189,7 @@ pub fn serialize_structure_crate_input_delete_application_input(
     if let Some(var_42) = &input.create_timestamp {
         object
             .key("CreateTimestamp")
-            .instant(var_42, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_42, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

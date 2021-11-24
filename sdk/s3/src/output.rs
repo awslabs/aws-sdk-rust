@@ -1835,7 +1835,7 @@ pub struct ListPartsOutput {
     ///
     /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will
     /// provide the ID of the lifecycle configuration rule that defines this action.</p>
-    pub abort_date: std::option::Option<aws_smithy_types::Instant>,
+    pub abort_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It
     /// identifies applicable lifecycle configuration rule that defines the action to abort
     /// incomplete multipart uploads.</p>
@@ -1888,7 +1888,7 @@ impl ListPartsOutput {
     ///
     /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will
     /// provide the ID of the lifecycle configuration rule that defines this action.</p>
-    pub fn abort_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn abort_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.abort_date.as_ref()
     }
     /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It
@@ -1986,7 +1986,7 @@ pub mod list_parts_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) abort_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) abort_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) abort_rule_id: std::option::Option<std::string::String>,
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -2010,7 +2010,7 @@ pub mod list_parts_output {
         ///
         /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will
         /// provide the ID of the lifecycle configuration rule that defines this action.</p>
-        pub fn abort_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn abort_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.abort_date = Some(input);
             self
         }
@@ -2024,7 +2024,7 @@ pub mod list_parts_output {
         /// provide the ID of the lifecycle configuration rule that defines this action.</p>
         pub fn set_abort_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.abort_date = input;
             self
@@ -4552,7 +4552,7 @@ pub struct HeadObjectOutput {
     /// <p>The archive state of the head object.</p>
     pub archive_status: std::option::Option<crate::model::ArchiveStatus>,
     /// <p>Creation date of the object.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Size of the body in bytes.</p>
     pub content_length: i64,
     /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a
@@ -4578,7 +4578,7 @@ pub struct HeadObjectOutput {
     /// <p>A standard MIME type describing the format of the object data.</p>
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The date and time at which the object is no longer cacheable.</p>
-    pub expires: std::option::Option<aws_smithy_types::Instant>,
+    pub expires: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the bucket is configured as a website, redirects requests for this object to another
     /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
     /// the object metadata.</p>
@@ -4660,7 +4660,7 @@ pub struct HeadObjectOutput {
     pub object_lock_mode: std::option::Option<crate::model::ObjectLockMode>,
     /// <p>The date and time when the Object Lock retention period expires. This header is only
     /// returned if the requester has the <code>s3:GetObjectRetention</code> permission.</p>
-    pub object_lock_retain_until_date: std::option::Option<aws_smithy_types::Instant>,
+    pub object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether a legal hold is in effect for this object. This header is only
     /// returned if the requester has the <code>s3:GetObjectLegalHold</code> permission. This
     /// header is not returned if the specified version of this object has never had a legal hold
@@ -4706,7 +4706,7 @@ impl HeadObjectOutput {
         self.archive_status.as_ref()
     }
     /// <p>Creation date of the object.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>Size of the body in bytes.</p>
@@ -4752,7 +4752,7 @@ impl HeadObjectOutput {
         self.content_type.as_deref()
     }
     /// <p>The date and time at which the object is no longer cacheable.</p>
-    pub fn expires(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expires(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires.as_ref()
     }
     /// <p>If the bucket is configured as a website, redirects requests for this object to another
@@ -4864,7 +4864,9 @@ impl HeadObjectOutput {
     }
     /// <p>The date and time when the Object Lock retention period expires. This header is only
     /// returned if the requester has the <code>s3:GetObjectRetention</code> permission.</p>
-    pub fn object_lock_retain_until_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn object_lock_retain_until_date(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.object_lock_retain_until_date.as_ref()
     }
     /// <p>Specifies whether a legal hold is in effect for this object. This header is only
@@ -4930,7 +4932,7 @@ pub mod head_object_output {
         pub(crate) expiration: std::option::Option<std::string::String>,
         pub(crate) restore: std::option::Option<std::string::String>,
         pub(crate) archive_status: std::option::Option<crate::model::ArchiveStatus>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) content_length: std::option::Option<i64>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
         pub(crate) missing_meta: std::option::Option<i32>,
@@ -4940,7 +4942,7 @@ pub mod head_object_output {
         pub(crate) content_encoding: std::option::Option<std::string::String>,
         pub(crate) content_language: std::option::Option<std::string::String>,
         pub(crate) content_type: std::option::Option<std::string::String>,
-        pub(crate) expires: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expires: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) website_redirect_location: std::option::Option<std::string::String>,
         pub(crate) server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
         pub(crate) metadata: std::option::Option<
@@ -4955,7 +4957,7 @@ pub mod head_object_output {
         pub(crate) replication_status: std::option::Option<crate::model::ReplicationStatus>,
         pub(crate) parts_count: std::option::Option<i32>,
         pub(crate) object_lock_mode: std::option::Option<crate::model::ObjectLockMode>,
-        pub(crate) object_lock_retain_until_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) object_lock_legal_hold_status:
             std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
     }
@@ -5051,14 +5053,14 @@ pub mod head_object_output {
             self
         }
         /// <p>Creation date of the object.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>Creation date of the object.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -5178,14 +5180,14 @@ pub mod head_object_output {
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
-        pub fn expires(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expires(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expires = Some(input);
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
         pub fn set_expires(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expires = input;
             self
@@ -5462,7 +5464,7 @@ pub mod head_object_output {
         }
         /// <p>The date and time when the Object Lock retention period expires. This header is only
         /// returned if the requester has the <code>s3:GetObjectRetention</code> permission.</p>
-        pub fn object_lock_retain_until_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn object_lock_retain_until_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.object_lock_retain_until_date = Some(input);
             self
         }
@@ -5470,7 +5472,7 @@ pub mod head_object_output {
         /// returned if the requester has the <code>s3:GetObjectRetention</code> permission.</p>
         pub fn set_object_lock_retain_until_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.object_lock_retain_until_date = input;
             self
@@ -6109,7 +6111,7 @@ pub struct GetObjectOutput {
     /// restored object copy.</p>
     pub restore: std::option::Option<std::string::String>,
     /// <p>Creation date of the object.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Size of the body in bytes.</p>
     pub content_length: i64,
     /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a
@@ -6137,7 +6139,7 @@ pub struct GetObjectOutput {
     /// <p>A standard MIME type describing the format of the object data.</p>
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The date and time at which the object is no longer cacheable.</p>
-    pub expires: std::option::Option<aws_smithy_types::Instant>,
+    pub expires: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the bucket is configured as a website, redirects requests for this object to another
     /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
     /// the object metadata.</p>
@@ -6176,7 +6178,7 @@ pub struct GetObjectOutput {
     /// <p>The Object Lock mode currently in place for this object.</p>
     pub object_lock_mode: std::option::Option<crate::model::ObjectLockMode>,
     /// <p>The date and time when this object's Object Lock will expire.</p>
-    pub object_lock_retain_until_date: std::option::Option<aws_smithy_types::Instant>,
+    pub object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether this object has an active legal hold. This field is only returned if
     /// you have permission to view an object's legal hold status. </p>
     pub object_lock_legal_hold_status: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
@@ -6207,7 +6209,7 @@ impl GetObjectOutput {
         self.restore.as_deref()
     }
     /// <p>Creation date of the object.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>Size of the body in bytes.</p>
@@ -6257,7 +6259,7 @@ impl GetObjectOutput {
         self.content_type.as_deref()
     }
     /// <p>The date and time at which the object is no longer cacheable.</p>
-    pub fn expires(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expires(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires.as_ref()
     }
     /// <p>If the bucket is configured as a website, redirects requests for this object to another
@@ -6328,7 +6330,9 @@ impl GetObjectOutput {
         self.object_lock_mode.as_ref()
     }
     /// <p>The date and time when this object's Object Lock will expire.</p>
-    pub fn object_lock_retain_until_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn object_lock_retain_until_date(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.object_lock_retain_until_date.as_ref()
     }
     /// <p>Indicates whether this object has an active legal hold. This field is only returned if
@@ -6394,7 +6398,7 @@ pub mod get_object_output {
         pub(crate) accept_ranges: std::option::Option<std::string::String>,
         pub(crate) expiration: std::option::Option<std::string::String>,
         pub(crate) restore: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) content_length: std::option::Option<i64>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
         pub(crate) missing_meta: std::option::Option<i32>,
@@ -6405,7 +6409,7 @@ pub mod get_object_output {
         pub(crate) content_language: std::option::Option<std::string::String>,
         pub(crate) content_range: std::option::Option<std::string::String>,
         pub(crate) content_type: std::option::Option<std::string::String>,
-        pub(crate) expires: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expires: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) website_redirect_location: std::option::Option<std::string::String>,
         pub(crate) server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
         pub(crate) metadata: std::option::Option<
@@ -6421,7 +6425,7 @@ pub mod get_object_output {
         pub(crate) parts_count: std::option::Option<i32>,
         pub(crate) tag_count: std::option::Option<i32>,
         pub(crate) object_lock_mode: std::option::Option<crate::model::ObjectLockMode>,
-        pub(crate) object_lock_retain_until_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) object_lock_legal_hold_status:
             std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
     }
@@ -6491,14 +6495,14 @@ pub mod get_object_output {
             self
         }
         /// <p>Creation date of the object.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>Creation date of the object.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -6631,14 +6635,14 @@ pub mod get_object_output {
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
-        pub fn expires(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expires(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expires = Some(input);
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
         pub fn set_expires(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expires = input;
             self
@@ -6836,14 +6840,14 @@ pub mod get_object_output {
             self
         }
         /// <p>The date and time when this object's Object Lock will expire.</p>
-        pub fn object_lock_retain_until_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn object_lock_retain_until_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.object_lock_retain_until_date = Some(input);
             self
         }
         /// <p>The date and time when this object's Object Lock will expire.</p>
         pub fn set_object_lock_retain_until_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.object_lock_retain_until_date = input;
             self
@@ -9091,7 +9095,7 @@ pub struct CreateMultipartUploadOutput {
     ///
     /// <p>The response also includes the <code>x-amz-abort-rule-id</code> header that provides the
     /// ID of the lifecycle configuration rule that defines this action.</p>
-    pub abort_date: std::option::Option<aws_smithy_types::Instant>,
+    pub abort_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It
     /// identifies the applicable lifecycle configuration rule that defines the action to abort
     /// incomplete multipart uploads.</p>
@@ -9136,7 +9140,7 @@ impl CreateMultipartUploadOutput {
     ///
     /// <p>The response also includes the <code>x-amz-abort-rule-id</code> header that provides the
     /// ID of the lifecycle configuration rule that defines this action.</p>
-    pub fn abort_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn abort_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.abort_date.as_ref()
     }
     /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It
@@ -9225,7 +9229,7 @@ pub mod create_multipart_upload_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) abort_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) abort_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) abort_rule_id: std::option::Option<std::string::String>,
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -9247,7 +9251,7 @@ pub mod create_multipart_upload_output {
         ///
         /// <p>The response also includes the <code>x-amz-abort-rule-id</code> header that provides the
         /// ID of the lifecycle configuration rule that defines this action.</p>
-        pub fn abort_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn abort_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.abort_date = Some(input);
             self
         }
@@ -9261,7 +9265,7 @@ pub mod create_multipart_upload_output {
         /// ID of the lifecycle configuration rule that defines this action.</p>
         pub fn set_abort_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.abort_date = input;
             self

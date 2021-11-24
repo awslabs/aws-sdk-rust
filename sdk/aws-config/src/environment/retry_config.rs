@@ -14,15 +14,14 @@ const ENV_VAR_RETRY_MODE: &str = "AWS_RETRY_MODE";
 /// Load a retry_config from environment variables
 ///
 /// This provider will check the values of `AWS_RETRY_MODE` and `AWS_MAX_ATTEMPTS`
-/// in order to build a retry config. If at least one is set to a valid value,
-/// construction will succeed
+/// in order to build a retry config.
 #[derive(Debug, Default)]
 pub struct EnvironmentVariableRetryConfigProvider {
     env: Env,
 }
 
 impl EnvironmentVariableRetryConfigProvider {
-    /// Create a new `EnvironmentVariableRetryConfigProvider`
+    /// Create a new [`EnvironmentVariableRetryConfigProvider`]
     pub fn new() -> Self {
         EnvironmentVariableRetryConfigProvider { env: Env::real() }
     }

@@ -6,7 +6,7 @@ pub struct UpdateSchemaOutput {
     /// <p>The description of the schema.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that schema was modified.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the schema.</p>
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
@@ -19,7 +19,7 @@ pub struct UpdateSchemaOutput {
     /// <p>The type of the schema.</p>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The date the schema version was created.</p>
-    pub version_created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub version_created_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateSchemaOutput {
     /// <p>The description of the schema.</p>
@@ -27,7 +27,7 @@ impl UpdateSchemaOutput {
         self.description.as_deref()
     }
     /// <p>The date and time that schema was modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The ARN of the schema.</p>
@@ -54,7 +54,7 @@ impl UpdateSchemaOutput {
         self.r#type.as_deref()
     }
     /// <p>The date the schema version was created.</p>
-    pub fn version_created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn version_created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.version_created_date.as_ref()
     }
 }
@@ -79,7 +79,7 @@ pub mod update_schema_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) schema_arn: std::option::Option<std::string::String>,
         pub(crate) schema_name: std::option::Option<std::string::String>,
         pub(crate) schema_version: std::option::Option<std::string::String>,
@@ -87,7 +87,7 @@ pub mod update_schema_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) r#type: std::option::Option<std::string::String>,
-        pub(crate) version_created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) version_created_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The description of the schema.</p>
@@ -101,14 +101,14 @@ pub mod update_schema_output {
             self
         }
         /// <p>The date and time that schema was modified.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>The date and time that schema was modified.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -182,14 +182,14 @@ pub mod update_schema_output {
             self
         }
         /// <p>The date the schema version was created.</p>
-        pub fn version_created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn version_created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.version_created_date = Some(input);
             self
         }
         /// <p>The date the schema version was created.</p>
         pub fn set_version_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.version_created_date = input;
             self
@@ -927,9 +927,9 @@ impl PutResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutCodeBindingOutput {
     /// <p>The time and date that the code binding was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that code bindings were modified.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version number of the schema.</p>
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>The current status of code binding generation.</p>
@@ -937,11 +937,11 @@ pub struct PutCodeBindingOutput {
 }
 impl PutCodeBindingOutput {
     /// <p>The time and date that the code binding was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time that code bindings were modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The version number of the schema.</p>
@@ -969,34 +969,34 @@ pub mod put_code_binding_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) schema_version: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::CodeGenerationStatus>,
     }
     impl Builder {
         /// <p>The time and date that the code binding was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The time and date that the code binding was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date and time that code bindings were modified.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>The date and time that code bindings were modified.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -1771,7 +1771,7 @@ pub struct DescribeSchemaOutput {
     /// <p>The description of the schema.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that schema was modified.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the schema.</p>
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
@@ -1784,7 +1784,7 @@ pub struct DescribeSchemaOutput {
     /// <p>The type of the schema.</p>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The date the schema version was created.</p>
-    pub version_created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub version_created_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeSchemaOutput {
     /// <p>The source of the schema definition.</p>
@@ -1796,7 +1796,7 @@ impl DescribeSchemaOutput {
         self.description.as_deref()
     }
     /// <p>The date and time that schema was modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The ARN of the schema.</p>
@@ -1823,7 +1823,7 @@ impl DescribeSchemaOutput {
         self.r#type.as_deref()
     }
     /// <p>The date the schema version was created.</p>
-    pub fn version_created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn version_created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.version_created_date.as_ref()
     }
 }
@@ -1850,7 +1850,7 @@ pub mod describe_schema_output {
     pub struct Builder {
         pub(crate) content: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) schema_arn: std::option::Option<std::string::String>,
         pub(crate) schema_name: std::option::Option<std::string::String>,
         pub(crate) schema_version: std::option::Option<std::string::String>,
@@ -1858,7 +1858,7 @@ pub mod describe_schema_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) r#type: std::option::Option<std::string::String>,
-        pub(crate) version_created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) version_created_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The source of the schema definition.</p>
@@ -1882,14 +1882,14 @@ pub mod describe_schema_output {
             self
         }
         /// <p>The date and time that schema was modified.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>The date and time that schema was modified.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -1963,14 +1963,14 @@ pub mod describe_schema_output {
             self
         }
         /// <p>The date the schema version was created.</p>
-        pub fn version_created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn version_created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.version_created_date = Some(input);
             self
         }
         /// <p>The date the schema version was created.</p>
         pub fn set_version_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.version_created_date = input;
             self
@@ -2336,9 +2336,9 @@ impl DescribeDiscovererOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCodeBindingOutput {
     /// <p>The time and date that the code binding was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that code bindings were modified.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version number of the schema.</p>
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>The current status of code binding generation.</p>
@@ -2346,11 +2346,11 @@ pub struct DescribeCodeBindingOutput {
 }
 impl DescribeCodeBindingOutput {
     /// <p>The time and date that the code binding was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time that code bindings were modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The version number of the schema.</p>
@@ -2378,34 +2378,34 @@ pub mod describe_code_binding_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) schema_version: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::CodeGenerationStatus>,
     }
     impl Builder {
         /// <p>The time and date that the code binding was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The time and date that the code binding was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date and time that code bindings were modified.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>The date and time that code bindings were modified.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -2611,7 +2611,7 @@ pub struct CreateSchemaOutput {
     /// <p>The description of the schema.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that schema was modified.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the schema.</p>
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
@@ -2624,7 +2624,7 @@ pub struct CreateSchemaOutput {
     /// <p>The type of the schema.</p>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The date the schema version was created.</p>
-    pub version_created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub version_created_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateSchemaOutput {
     /// <p>The description of the schema.</p>
@@ -2632,7 +2632,7 @@ impl CreateSchemaOutput {
         self.description.as_deref()
     }
     /// <p>The date and time that schema was modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The ARN of the schema.</p>
@@ -2659,7 +2659,7 @@ impl CreateSchemaOutput {
         self.r#type.as_deref()
     }
     /// <p>The date the schema version was created.</p>
-    pub fn version_created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn version_created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.version_created_date.as_ref()
     }
 }
@@ -2684,7 +2684,7 @@ pub mod create_schema_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) schema_arn: std::option::Option<std::string::String>,
         pub(crate) schema_name: std::option::Option<std::string::String>,
         pub(crate) schema_version: std::option::Option<std::string::String>,
@@ -2692,7 +2692,7 @@ pub mod create_schema_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) r#type: std::option::Option<std::string::String>,
-        pub(crate) version_created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) version_created_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The description of the schema.</p>
@@ -2706,14 +2706,14 @@ pub mod create_schema_output {
             self
         }
         /// <p>The date and time that schema was modified.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>The date and time that schema was modified.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -2787,14 +2787,14 @@ pub mod create_schema_output {
             self
         }
         /// <p>The date the schema version was created.</p>
-        pub fn version_created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn version_created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.version_created_date = Some(input);
             self
         }
         /// <p>The date the schema version was created.</p>
         pub fn set_version_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.version_created_date = input;
             self

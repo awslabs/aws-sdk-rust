@@ -373,9 +373,9 @@ pub struct UpdateSecurityProfileOutput {
     /// <p>The updated version of the security profile.</p>
     pub version: i64,
     /// <p>The time the security profile was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the security profile was last modified.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateSecurityProfileOutput {
     /// <p>The name of the security profile that was updated.</p>
@@ -426,11 +426,11 @@ impl UpdateSecurityProfileOutput {
         self.version
     }
     /// <p>The time the security profile was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The time the security profile was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
@@ -477,8 +477,8 @@ pub mod update_security_profile_output {
         pub(crate) additional_metrics_to_retain_v2:
             std::option::Option<std::vec::Vec<crate::model::MetricToRetain>>,
         pub(crate) version: std::option::Option<i64>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the security profile that was updated.</p>
@@ -640,27 +640,27 @@ pub mod update_security_profile_output {
             self
         }
         /// <p>The time the security profile was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The time the security profile was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The time the security profile was last modified.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The time the security profile was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -1193,9 +1193,9 @@ pub struct UpdateDimensionOutput {
     /// <p>The value or list of values used to scope the dimension. For example, for topic filters, this is the pattern used to match the MQTT topic name.</p>
     pub string_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date and time, in milliseconds since epoch, when the dimension was initially created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time, in milliseconds since epoch, when the dimension was most recently updated.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateDimensionOutput {
     /// <p>A unique identifier for the dimension.</p>
@@ -1217,11 +1217,11 @@ impl UpdateDimensionOutput {
         self.string_values.as_deref()
     }
     /// <p>The date and time, in milliseconds since epoch, when the dimension was initially created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time, in milliseconds since epoch, when the dimension was most recently updated.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
@@ -1247,8 +1247,8 @@ pub mod update_dimension_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::DimensionType>,
         pub(crate) string_values: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A unique identifier for the dimension.</p>
@@ -1305,27 +1305,27 @@ pub mod update_dimension_output {
             self
         }
         /// <p>The date and time, in milliseconds since epoch, when the dimension was initially created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date and time, in milliseconds since epoch, when the dimension was initially created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date and time, in milliseconds since epoch, when the dimension was most recently updated.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The date and time, in milliseconds since epoch, when the dimension was most recently updated.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -1373,11 +1373,11 @@ pub struct UpdateCustomMetricOutput {
     /// <p>
     /// The creation date of the custom metric in milliseconds since epoch.
     /// </p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The time the custom metric was last modified in milliseconds since epoch.
     /// </p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateCustomMetricOutput {
     /// <p>
@@ -1407,13 +1407,13 @@ impl UpdateCustomMetricOutput {
     /// <p>
     /// The creation date of the custom metric in milliseconds since epoch.
     /// </p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>
     /// The time the custom metric was last modified in milliseconds since epoch.
     /// </p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
@@ -1439,8 +1439,8 @@ pub mod update_custom_metric_output {
         pub(crate) metric_arn: std::option::Option<std::string::String>,
         pub(crate) metric_type: std::option::Option<crate::model::CustomMetricType>,
         pub(crate) display_name: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>
@@ -1505,7 +1505,7 @@ pub mod update_custom_metric_output {
         /// <p>
         /// The creation date of the custom metric in milliseconds since epoch.
         /// </p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -1514,7 +1514,7 @@ pub mod update_custom_metric_output {
         /// </p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -1522,7 +1522,7 @@ pub mod update_custom_metric_output {
         /// <p>
         /// The time the custom metric was last modified in milliseconds since epoch.
         /// </p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
@@ -1531,7 +1531,7 @@ pub mod update_custom_metric_output {
         /// </p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -8276,9 +8276,9 @@ pub struct GetPolicyVersionOutput {
     /// <p>Specifies whether the policy version is the default.</p>
     pub is_default_version: bool,
     /// <p>The date the policy was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the policy was last modified.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The generation ID of the policy version.</p>
     pub generation_id: std::option::Option<std::string::String>,
 }
@@ -8304,11 +8304,11 @@ impl GetPolicyVersionOutput {
         self.is_default_version
     }
     /// <p>The date the policy was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the policy was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The generation ID of the policy version.</p>
@@ -8341,8 +8341,8 @@ pub mod get_policy_version_output {
         pub(crate) policy_document: std::option::Option<std::string::String>,
         pub(crate) policy_version_id: std::option::Option<std::string::String>,
         pub(crate) is_default_version: std::option::Option<bool>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) generation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -8403,27 +8403,27 @@ pub mod get_policy_version_output {
             self
         }
         /// <p>The date the policy was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date the policy was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date the policy was last modified.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The date the policy was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -8476,9 +8476,9 @@ pub struct GetPolicyOutput {
     /// <p>The default policy version ID.</p>
     pub default_version_id: std::option::Option<std::string::String>,
     /// <p>The date the policy was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the policy was last modified.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The generation ID of the policy.</p>
     pub generation_id: std::option::Option<std::string::String>,
 }
@@ -8500,11 +8500,11 @@ impl GetPolicyOutput {
         self.default_version_id.as_deref()
     }
     /// <p>The date the policy was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the policy was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The generation ID of the policy.</p>
@@ -8535,8 +8535,8 @@ pub mod get_policy_output {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
         pub(crate) policy_document: std::option::Option<std::string::String>,
         pub(crate) default_version_id: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) generation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -8587,27 +8587,27 @@ pub mod get_policy_output {
             self
         }
         /// <p>The date the policy was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date the policy was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date the policy was last modified.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The date the policy was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -9660,9 +9660,9 @@ pub struct DescribeThingRegistrationTaskOutput {
     /// <p>The task ID.</p>
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The task creation date.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the task was last modified.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The task's template.</p>
     pub template_body: std::option::Option<std::string::String>,
     /// <p>The S3 bucket that contains the input file.</p>
@@ -9688,11 +9688,11 @@ impl DescribeThingRegistrationTaskOutput {
         self.task_id.as_deref()
     }
     /// <p>The task creation date.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date when the task was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The task's template.</p>
@@ -9757,8 +9757,8 @@ pub mod describe_thing_registration_task_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) template_body: std::option::Option<std::string::String>,
         pub(crate) input_file_bucket: std::option::Option<std::string::String>,
         pub(crate) input_file_key: std::option::Option<std::string::String>,
@@ -9781,27 +9781,27 @@ pub mod describe_thing_registration_task_output {
             self
         }
         /// <p>The task creation date.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The task creation date.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date when the task was last modified.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The date when the task was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -10523,9 +10523,9 @@ pub struct DescribeSecurityProfileOutput {
     /// security profile is updated.</p>
     pub version: i64,
     /// <p>The time the security profile was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the security profile was last modified.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeSecurityProfileOutput {
     /// <p>The name of the security profile.</p>
@@ -10581,11 +10581,11 @@ impl DescribeSecurityProfileOutput {
         self.version
     }
     /// <p>The time the security profile was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The time the security profile was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
@@ -10632,8 +10632,8 @@ pub mod describe_security_profile_output {
         pub(crate) additional_metrics_to_retain_v2:
             std::option::Option<std::vec::Vec<crate::model::MetricToRetain>>,
         pub(crate) version: std::option::Option<i64>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the security profile.</p>
@@ -10805,27 +10805,27 @@ pub mod describe_security_profile_output {
             self
         }
         /// <p>The time the security profile was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The time the security profile was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The time the security profile was last modified.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The time the security profile was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -11154,7 +11154,7 @@ pub struct DescribeProvisioningTemplateVersionOutput {
     /// <p>The fleet provisioning template version ID.</p>
     pub version_id: std::option::Option<i32>,
     /// <p>The date when the fleet provisioning template version was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The JSON formatted contents of the fleet provisioning template version.</p>
     pub template_body: std::option::Option<std::string::String>,
     /// <p>True if the fleet provisioning template version is the default version.</p>
@@ -11166,7 +11166,7 @@ impl DescribeProvisioningTemplateVersionOutput {
         self.version_id
     }
     /// <p>The date when the fleet provisioning template version was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The JSON formatted contents of the fleet provisioning template version.</p>
@@ -11195,7 +11195,7 @@ pub mod describe_provisioning_template_version_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_id: std::option::Option<i32>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) template_body: std::option::Option<std::string::String>,
         pub(crate) is_default_version: std::option::Option<bool>,
     }
@@ -11211,14 +11211,14 @@ pub mod describe_provisioning_template_version_output {
             self
         }
         /// <p>The date when the fleet provisioning template version was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date when the fleet provisioning template version was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -11275,9 +11275,9 @@ pub struct DescribeProvisioningTemplateOutput {
     /// <p>The description of the fleet provisioning template.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date when the fleet provisioning template was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the fleet provisioning template was last modified.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The default fleet template version ID.</p>
     pub default_version_id: std::option::Option<i32>,
     /// <p>The JSON formatted contents of the fleet provisioning template.</p>
@@ -11304,11 +11304,11 @@ impl DescribeProvisioningTemplateOutput {
         self.description.as_deref()
     }
     /// <p>The date when the fleet provisioning template was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date when the fleet provisioning template was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The default fleet template version ID.</p>
@@ -11358,8 +11358,8 @@ pub mod describe_provisioning_template_output {
         pub(crate) template_arn: std::option::Option<std::string::String>,
         pub(crate) template_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) default_version_id: std::option::Option<i32>,
         pub(crate) template_body: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
@@ -11401,27 +11401,27 @@ pub mod describe_provisioning_template_output {
             self
         }
         /// <p>The date when the fleet provisioning template was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date when the fleet provisioning template was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date when the fleet provisioning template was last modified.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The date when the fleet provisioning template was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -11528,9 +11528,9 @@ pub struct DescribeMitigationActionOutput {
     /// <p>Parameters that control how the mitigation action is applied, specific to the type of mitigation action.</p>
     pub action_params: std::option::Option<crate::model::MitigationActionParams>,
     /// <p>The date and time when the mitigation action was added to your Amazon Web Services accounts.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the mitigation action was last changed.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeMitigationActionOutput {
     /// <p>The friendly name that uniquely identifies the mitigation action.</p>
@@ -11558,11 +11558,11 @@ impl DescribeMitigationActionOutput {
         self.action_params.as_ref()
     }
     /// <p>The date and time when the mitigation action was added to your Amazon Web Services accounts.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time when the mitigation action was last changed.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
@@ -11592,8 +11592,8 @@ pub mod describe_mitigation_action_output {
         pub(crate) action_id: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) action_params: std::option::Option<crate::model::MitigationActionParams>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The friendly name that uniquely identifies the mitigation action.</p>
@@ -11663,27 +11663,27 @@ pub mod describe_mitigation_action_output {
             self
         }
         /// <p>The date and time when the mitigation action was added to your Amazon Web Services accounts.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date and time when the mitigation action was added to your Amazon Web Services accounts.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date and time when the mitigation action was last changed.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The date and time when the mitigation action was last changed.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -11725,7 +11725,7 @@ pub struct DescribeJobTemplateOutput {
     /// <p>The job document.</p>
     pub document: std::option::Option<std::string::String>,
     /// <p>The time, in seconds since the epoch, when the job template was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Configuration for pre-signed S3 URLs.</p>
     pub presigned_url_config: std::option::Option<crate::model::PresignedUrlConfig>,
     /// <p>Allows you to create a staged rollout of a job.</p>
@@ -11761,7 +11761,7 @@ impl DescribeJobTemplateOutput {
         self.document.as_deref()
     }
     /// <p>The time, in seconds since the epoch, when the job template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Configuration for pre-signed S3 URLs.</p>
@@ -11816,7 +11816,7 @@ pub mod describe_job_template_output {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) document_source: std::option::Option<std::string::String>,
         pub(crate) document: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) presigned_url_config: std::option::Option<crate::model::PresignedUrlConfig>,
         pub(crate) job_executions_rollout_config:
             std::option::Option<crate::model::JobExecutionsRolloutConfig>,
@@ -11884,14 +11884,14 @@ pub mod describe_job_template_output {
             self
         }
         /// <p>The time, in seconds since the epoch, when the job template was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time, in seconds since the epoch, when the job template was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -12298,9 +12298,9 @@ pub struct DescribeFleetMetricOutput {
     /// <p>The name of the index to search.</p>
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The date when the fleet metric is created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the fleet metric is last modified.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
     /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
     pub unit: std::option::Option<crate::model::FleetMetricUnit>,
@@ -12343,11 +12343,11 @@ impl DescribeFleetMetricOutput {
         self.index_name.as_deref()
     }
     /// <p>The date when the fleet metric is created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date when the fleet metric is last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
@@ -12397,8 +12397,8 @@ pub mod describe_fleet_metric_output {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) query_version: std::option::Option<std::string::String>,
         pub(crate) index_name: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) unit: std::option::Option<crate::model::FleetMetricUnit>,
         pub(crate) version: std::option::Option<i64>,
         pub(crate) metric_arn: std::option::Option<std::string::String>,
@@ -12494,27 +12494,27 @@ pub mod describe_fleet_metric_output {
             self
         }
         /// <p>The date when the fleet metric is created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date when the fleet metric is created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date when the fleet metric is last modified.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The date when the fleet metric is last modified.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -12590,9 +12590,9 @@ pub struct DescribeEventConfigurationsOutput {
         std::collections::HashMap<crate::model::EventType, crate::model::Configuration>,
     >,
     /// <p>The creation date of the event configuration.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the event configurations were last modified.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeEventConfigurationsOutput {
     /// <p>The event configurations.</p>
@@ -12604,11 +12604,11 @@ impl DescribeEventConfigurationsOutput {
         self.event_configurations.as_ref()
     }
     /// <p>The creation date of the event configuration.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the event configurations were last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
@@ -12630,8 +12630,8 @@ pub mod describe_event_configurations_output {
         pub(crate) event_configurations: std::option::Option<
             std::collections::HashMap<crate::model::EventType, crate::model::Configuration>,
         >,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// Adds a key-value pair to `event_configurations`.
@@ -12660,27 +12660,27 @@ pub mod describe_event_configurations_output {
             self
         }
         /// <p>The creation date of the event configuration.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The creation date of the event configuration.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date the event configurations were last modified.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The date the event configurations were last modified.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -12785,7 +12785,7 @@ pub struct DescribeDomainConfigurationOutput {
     /// <p>The type of the domain.</p>
     pub domain_type: std::option::Option<crate::model::DomainType>,
     /// <p>The date and time the domain configuration's status was last changed.</p>
-    pub last_status_change_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_status_change_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeDomainConfigurationOutput {
     /// <p>The name of the domain configuration.</p>
@@ -12825,7 +12825,7 @@ impl DescribeDomainConfigurationOutput {
         self.domain_type.as_ref()
     }
     /// <p>The date and time the domain configuration's status was last changed.</p>
-    pub fn last_status_change_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_status_change_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_status_change_date.as_ref()
     }
 }
@@ -12863,7 +12863,7 @@ pub mod describe_domain_configuration_output {
             std::option::Option<crate::model::DomainConfigurationStatus>,
         pub(crate) service_type: std::option::Option<crate::model::ServiceType>,
         pub(crate) domain_type: std::option::Option<crate::model::DomainType>,
-        pub(crate) last_status_change_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_status_change_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the domain configuration.</p>
@@ -12980,14 +12980,14 @@ pub mod describe_domain_configuration_output {
             self
         }
         /// <p>The date and time the domain configuration's status was last changed.</p>
-        pub fn last_status_change_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_status_change_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_status_change_date = Some(input);
             self
         }
         /// <p>The date and time the domain configuration's status was last changed.</p>
         pub fn set_last_status_change_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_status_change_date = input;
             self
@@ -13031,9 +13031,9 @@ pub struct DescribeDimensionOutput {
     /// <p>The value or list of values used to scope the dimension. For example, for topic filters, this is the pattern used to match the MQTT topic name.</p>
     pub string_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date the dimension was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the dimension was last modified.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeDimensionOutput {
     /// <p>The unique identifier for the dimension.</p>
@@ -13056,11 +13056,11 @@ impl DescribeDimensionOutput {
         self.string_values.as_deref()
     }
     /// <p>The date the dimension was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the dimension was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
@@ -13086,8 +13086,8 @@ pub mod describe_dimension_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::DimensionType>,
         pub(crate) string_values: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The unique identifier for the dimension.</p>
@@ -13146,27 +13146,27 @@ pub mod describe_dimension_output {
             self
         }
         /// <p>The date the dimension was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date the dimension was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date the dimension was last modified.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The date the dimension was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -13347,11 +13347,11 @@ pub struct DescribeCustomMetricOutput {
     /// <p>
     /// The creation date of the custom metric in milliseconds since epoch.
     /// </p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The time the custom metric was last modified in milliseconds since epoch.
     /// </p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeCustomMetricOutput {
     /// <p>
@@ -13381,13 +13381,13 @@ impl DescribeCustomMetricOutput {
     /// <p>
     /// The creation date of the custom metric in milliseconds since epoch.
     /// </p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>
     /// The time the custom metric was last modified in milliseconds since epoch.
     /// </p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
@@ -13413,8 +13413,8 @@ pub mod describe_custom_metric_output {
         pub(crate) metric_arn: std::option::Option<std::string::String>,
         pub(crate) metric_type: std::option::Option<crate::model::CustomMetricType>,
         pub(crate) display_name: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>
@@ -13479,7 +13479,7 @@ pub mod describe_custom_metric_output {
         /// <p>
         /// The creation date of the custom metric in milliseconds since epoch.
         /// </p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -13488,7 +13488,7 @@ pub mod describe_custom_metric_output {
         /// </p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -13496,7 +13496,7 @@ pub mod describe_custom_metric_output {
         /// <p>
         /// The time the custom metric was last modified in milliseconds since epoch.
         /// </p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
@@ -13505,7 +13505,7 @@ pub mod describe_custom_metric_output {
         /// </p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -13922,7 +13922,7 @@ pub struct DescribeAuditTaskOutput {
     /// <p>The type of audit: "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".</p>
     pub task_type: std::option::Option<crate::model::AuditTaskType>,
     /// <p>The time the audit started.</p>
-    pub task_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub task_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Statistical information about the audit.</p>
     pub task_statistics: std::option::Option<crate::model::TaskStatistics>,
     /// <p>The name of the scheduled audit (only if the audit was a scheduled audit).</p>
@@ -13943,7 +13943,7 @@ impl DescribeAuditTaskOutput {
         self.task_type.as_ref()
     }
     /// <p>The time the audit started.</p>
-    pub fn task_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn task_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.task_start_time.as_ref()
     }
     /// <p>Statistical information about the audit.</p>
@@ -13983,7 +13983,7 @@ pub mod describe_audit_task_output {
     pub struct Builder {
         pub(crate) task_status: std::option::Option<crate::model::AuditTaskStatus>,
         pub(crate) task_type: std::option::Option<crate::model::AuditTaskType>,
-        pub(crate) task_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) task_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) task_statistics: std::option::Option<crate::model::TaskStatistics>,
         pub(crate) scheduled_audit_name: std::option::Option<std::string::String>,
         pub(crate) audit_details: std::option::Option<
@@ -14020,14 +14020,14 @@ pub mod describe_audit_task_output {
             self
         }
         /// <p>The time the audit started.</p>
-        pub fn task_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn task_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.task_start_time = Some(input);
             self
         }
         /// <p>The time the audit started.</p>
         pub fn set_task_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.task_start_time = input;
             self
@@ -14117,7 +14117,7 @@ pub struct DescribeAuditSuppressionOutput {
     /// <p>
     /// The epoch timestamp in seconds at which this suppression expires.
     /// </p>
-    pub expiration_date: std::option::Option<aws_smithy_types::Instant>,
+    pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// Indicates whether a suppression should exist indefinitely or not.
     /// </p>
@@ -14142,7 +14142,7 @@ impl DescribeAuditSuppressionOutput {
     /// <p>
     /// The epoch timestamp in seconds at which this suppression expires.
     /// </p>
-    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
     /// <p>
@@ -14177,7 +14177,7 @@ pub mod describe_audit_suppression_output {
     pub struct Builder {
         pub(crate) check_name: std::option::Option<std::string::String>,
         pub(crate) resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
-        pub(crate) expiration_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expiration_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) suppress_indefinitely: std::option::Option<bool>,
         pub(crate) description: std::option::Option<std::string::String>,
     }
@@ -14214,7 +14214,7 @@ pub mod describe_audit_suppression_output {
         /// <p>
         /// The epoch timestamp in seconds at which this suppression expires.
         /// </p>
-        pub fn expiration_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_date = Some(input);
             self
         }
@@ -14223,7 +14223,7 @@ pub mod describe_audit_suppression_output {
         /// </p>
         pub fn set_expiration_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiration_date = input;
             self
@@ -14282,9 +14282,9 @@ pub struct DescribeAuditMitigationActionsTaskOutput {
     /// <p>The current status of the task.</p>
     pub task_status: std::option::Option<crate::model::AuditMitigationActionsTaskStatus>,
     /// <p>The date and time when the task was started.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the task was completed or canceled.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Aggregate counts of the results when the mitigation tasks were applied to the findings for this audit mitigation actions task.</p>
     pub task_statistics: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::TaskStatisticsForAuditCheck>,
@@ -14306,11 +14306,11 @@ impl DescribeAuditMitigationActionsTaskOutput {
         self.task_status.as_ref()
     }
     /// <p>The date and time when the task was started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time when the task was completed or canceled.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Aggregate counts of the results when the mitigation tasks were applied to the findings for this audit mitigation actions task.</p>
@@ -14361,8 +14361,8 @@ pub mod describe_audit_mitigation_actions_task_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_status: std::option::Option<crate::model::AuditMitigationActionsTaskStatus>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) task_statistics: std::option::Option<
             std::collections::HashMap<
                 std::string::String,
@@ -14394,27 +14394,27 @@ pub mod describe_audit_mitigation_actions_task_output {
             self
         }
         /// <p>The date and time when the task was started.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The date and time when the task was started.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The date and time when the task was completed or canceled.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The date and time when the task was completed or canceled.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -16657,7 +16657,7 @@ pub struct CreateProvisioningClaimOutput {
     /// <p>The provisioning claim key pair.</p>
     pub key_pair: std::option::Option<crate::model::KeyPair>,
     /// <p>The provisioning claim expiration time.</p>
-    pub expiration: std::option::Option<aws_smithy_types::Instant>,
+    pub expiration: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateProvisioningClaimOutput {
     /// <p>The ID of the certificate.</p>
@@ -16673,7 +16673,7 @@ impl CreateProvisioningClaimOutput {
         self.key_pair.as_ref()
     }
     /// <p>The provisioning claim expiration time.</p>
-    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration.as_ref()
     }
 }
@@ -16696,7 +16696,7 @@ pub mod create_provisioning_claim_output {
         pub(crate) certificate_id: std::option::Option<std::string::String>,
         pub(crate) certificate_pem: std::option::Option<std::string::String>,
         pub(crate) key_pair: std::option::Option<crate::model::KeyPair>,
-        pub(crate) expiration: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expiration: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the certificate.</p>
@@ -16736,14 +16736,14 @@ pub mod create_provisioning_claim_output {
             self
         }
         /// <p>The provisioning claim expiration time.</p>
-        pub fn expiration(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration = Some(input);
             self
         }
         /// <p>The provisioning claim expiration time.</p>
         pub fn set_expiration(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiration = input;
             self

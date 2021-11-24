@@ -3262,9 +3262,9 @@ pub struct Activity {
     /// <p>The reason the activity began.</p>
     pub cause: std::option::Option<std::string::String>,
     /// <p>The start time of the activity.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time of the activity.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the activity.</p>
     pub status_code: std::option::Option<crate::model::ScalingActivityStatusCode>,
     /// <p>A friendly, more verbose description of the activity status.</p>
@@ -3297,11 +3297,11 @@ impl Activity {
         self.cause.as_deref()
     }
     /// <p>The start time of the activity.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the activity.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The current status of the activity.</p>
@@ -3358,8 +3358,8 @@ pub mod activity {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status_code: std::option::Option<crate::model::ScalingActivityStatusCode>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) progress: std::option::Option<i32>,
@@ -3412,27 +3412,27 @@ pub mod activity {
             self
         }
         /// <p>The start time of the activity.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The start time of the activity.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The end time of the activity.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The end time of the activity.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -6472,13 +6472,13 @@ impl StepAdjustment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CapacityForecast {
     /// <p>The time stamps for the data points, in UTC format.</p>
-    pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+    pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
     /// <p>The values of the data points.</p>
     pub values: std::option::Option<std::vec::Vec<f64>>,
 }
 impl CapacityForecast {
     /// <p>The time stamps for the data points, in UTC format.</p>
-    pub fn timestamps(&self) -> std::option::Option<&[aws_smithy_types::Instant]> {
+    pub fn timestamps(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
         self.timestamps.as_deref()
     }
     /// <p>The values of the data points.</p>
@@ -6500,7 +6500,7 @@ pub mod capacity_forecast {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+        pub(crate) timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
         pub(crate) values: std::option::Option<std::vec::Vec<f64>>,
     }
     impl Builder {
@@ -6509,7 +6509,7 @@ pub mod capacity_forecast {
         /// To override the contents of this collection use [`set_timestamps`](Self::set_timestamps).
         ///
         /// <p>The time stamps for the data points, in UTC format.</p>
-        pub fn timestamps(mut self, input: impl Into<aws_smithy_types::Instant>) -> Self {
+        pub fn timestamps(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
             let mut v = self.timestamps.unwrap_or_default();
             v.push(input.into());
             self.timestamps = Some(v);
@@ -6518,7 +6518,7 @@ pub mod capacity_forecast {
         /// <p>The time stamps for the data points, in UTC format.</p>
         pub fn set_timestamps(
             mut self,
-            input: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+            input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
         ) -> Self {
             self.timestamps = input;
             self
@@ -6563,7 +6563,7 @@ impl CapacityForecast {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoadForecast {
     /// <p>The time stamps for the data points, in UTC format.</p>
-    pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+    pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
     /// <p>The values of the data points.</p>
     pub values: std::option::Option<std::vec::Vec<f64>>,
     /// <p>The metric specification for the load forecast.</p>
@@ -6572,7 +6572,7 @@ pub struct LoadForecast {
 }
 impl LoadForecast {
     /// <p>The time stamps for the data points, in UTC format.</p>
-    pub fn timestamps(&self) -> std::option::Option<&[aws_smithy_types::Instant]> {
+    pub fn timestamps(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
         self.timestamps.as_deref()
     }
     /// <p>The values of the data points.</p>
@@ -6601,7 +6601,7 @@ pub mod load_forecast {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+        pub(crate) timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
         pub(crate) values: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) metric_specification:
             std::option::Option<crate::model::PredictiveScalingMetricSpecification>,
@@ -6612,7 +6612,7 @@ pub mod load_forecast {
         /// To override the contents of this collection use [`set_timestamps`](Self::set_timestamps).
         ///
         /// <p>The time stamps for the data points, in UTC format.</p>
-        pub fn timestamps(mut self, input: impl Into<aws_smithy_types::Instant>) -> Self {
+        pub fn timestamps(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
             let mut v = self.timestamps.unwrap_or_default();
             v.push(input.into());
             self.timestamps = Some(v);
@@ -6621,7 +6621,7 @@ pub mod load_forecast {
         /// <p>The time stamps for the data points, in UTC format.</p>
         pub fn set_timestamps(
             mut self,
-            input: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+            input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
         ) -> Self {
             self.timestamps = input;
             self
@@ -7738,15 +7738,15 @@ pub struct ScheduledUpdateGroupAction {
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
     pub scheduled_action_arn: std::option::Option<std::string::String>,
     /// <p>This parameter is no longer used.</p>
-    pub time: std::option::Option<aws_smithy_types::Instant>,
+    pub time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time in UTC for this action to start. For example,
     /// <code>"2019-06-01T00:00:00Z"</code>.
     /// </p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time in UTC for the recurring schedule to end. For example,
     /// <code>"2019-06-01T00:00:00Z"</code>.
     /// </p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The recurring schedule for the action, in Unix cron syntax format.</p>
     /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
     /// <code>Recurrence</code>, they form the boundaries of when the recurring action
@@ -7776,19 +7776,19 @@ impl ScheduledUpdateGroupAction {
         self.scheduled_action_arn.as_deref()
     }
     /// <p>This parameter is no longer used.</p>
-    pub fn time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.time.as_ref()
     }
     /// <p>The date and time in UTC for this action to start. For example,
     /// <code>"2019-06-01T00:00:00Z"</code>.
     /// </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time in UTC for the recurring schedule to end. For example,
     /// <code>"2019-06-01T00:00:00Z"</code>.
     /// </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The recurring schedule for the action, in Unix cron syntax format.</p>
@@ -7842,9 +7842,9 @@ pub mod scheduled_update_group_action {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) scheduled_action_name: std::option::Option<std::string::String>,
         pub(crate) scheduled_action_arn: std::option::Option<std::string::String>,
-        pub(crate) time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) recurrence: std::option::Option<std::string::String>,
         pub(crate) min_size: std::option::Option<i32>,
         pub(crate) max_size: std::option::Option<i32>,
@@ -7892,19 +7892,19 @@ pub mod scheduled_update_group_action {
             self
         }
         /// <p>This parameter is no longer used.</p>
-        pub fn time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.time = Some(input);
             self
         }
         /// <p>This parameter is no longer used.</p>
-        pub fn set_time(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
+        pub fn set_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.time = input;
             self
         }
         /// <p>The date and time in UTC for this action to start. For example,
         /// <code>"2019-06-01T00:00:00Z"</code>.
         /// </p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -7913,7 +7913,7 @@ pub mod scheduled_update_group_action {
         /// </p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -7921,7 +7921,7 @@ pub mod scheduled_update_group_action {
         /// <p>The date and time in UTC for the recurring schedule to end. For example,
         /// <code>"2019-06-01T00:00:00Z"</code>.
         /// </p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
@@ -7930,7 +7930,7 @@ pub mod scheduled_update_group_action {
         /// </p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -10271,7 +10271,7 @@ pub struct LaunchConfiguration {
     /// on Amazon EC2 instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub iam_instance_profile: std::option::Option<std::string::String>,
     /// <p>The creation date and time for the launch configuration.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the launch configuration is optimized for EBS I/O
     /// (<code>true</code>) or not (<code>false</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
     /// EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
@@ -10387,7 +10387,7 @@ impl LaunchConfiguration {
         self.iam_instance_profile.as_deref()
     }
     /// <p>The creation date and time for the launch configuration.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>Specifies whether the launch configuration is optimized for EBS I/O
@@ -10472,7 +10472,7 @@ pub mod launch_configuration {
         pub(crate) instance_monitoring: std::option::Option<crate::model::InstanceMonitoring>,
         pub(crate) spot_price: std::option::Option<std::string::String>,
         pub(crate) iam_instance_profile: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) ebs_optimized: std::option::Option<bool>,
         pub(crate) associate_public_ip_address: std::option::Option<bool>,
         pub(crate) placement_tenancy: std::option::Option<std::string::String>,
@@ -10745,14 +10745,14 @@ pub mod launch_configuration {
             self
         }
         /// <p>The creation date and time for the launch configuration.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The creation date and time for the launch configuration.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -11822,9 +11822,9 @@ pub struct InstanceRefresh {
     /// <p>Provides more details about the current status of the instance refresh. </p>
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The date and time at which the instance refresh began.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time at which the instance refresh ended.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The percentage of the instance refresh that is complete. For each instance
     /// replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the
     /// instance's health status changes to healthy and the specified warm-up time passes, the
@@ -11888,11 +11888,11 @@ impl InstanceRefresh {
         self.status_reason.as_deref()
     }
     /// <p>The date and time at which the instance refresh began.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time at which the instance refresh ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The percentage of the instance refresh that is complete. For each instance
@@ -11951,8 +11951,8 @@ pub mod instance_refresh {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::InstanceRefreshStatus>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) percentage_complete: std::option::Option<i32>,
         pub(crate) instances_to_update: std::option::Option<i32>,
         pub(crate) progress_details:
@@ -12074,27 +12074,27 @@ pub mod instance_refresh {
             self
         }
         /// <p>The date and time at which the instance refresh began.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The date and time at which the instance refresh began.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The date and time at which the instance refresh ended.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The date and time at which the instance refresh ended.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -12921,7 +12921,7 @@ pub struct AutoScalingGroup {
     /// <p>The EC2 instances associated with the group.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     /// <p>The date and time the group was created.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The suspended processes associated with the group.</p>
     pub suspended_processes: std::option::Option<std::vec::Vec<crate::model::SuspendedProcess>>,
     /// <p>The name of the placement group into which to launch your instances, if any.</p>
@@ -13039,7 +13039,7 @@ impl AutoScalingGroup {
         self.instances.as_deref()
     }
     /// <p>The date and time the group was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The suspended processes associated with the group.</p>
@@ -13180,7 +13180,7 @@ pub mod auto_scaling_group {
         pub(crate) health_check_type: std::option::Option<std::string::String>,
         pub(crate) health_check_grace_period: std::option::Option<i32>,
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) suspended_processes:
             std::option::Option<std::vec::Vec<crate::model::SuspendedProcess>>,
         pub(crate) placement_group: std::option::Option<std::string::String>,
@@ -13423,14 +13423,14 @@ pub mod auto_scaling_group {
             self
         }
         /// <p>The date and time the group was created.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The date and time the group was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -14879,9 +14879,9 @@ pub struct ScheduledUpdateGroupActionRequest {
     /// recurrence.</p>
     /// <p>If you try to schedule the action in the past, Amazon EC2 Auto Scaling returns an error
     /// message.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time for the recurring schedule to end, in UTC.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The recurring schedule for the action, in Unix cron syntax format. This format
     /// consists of five fields separated by white spaces: [Minute] [Hour] [Day_of_Month]
     /// [Month_of_Year] [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1
@@ -14917,11 +14917,11 @@ impl ScheduledUpdateGroupActionRequest {
     /// recurrence.</p>
     /// <p>If you try to schedule the action in the past, Amazon EC2 Auto Scaling returns an error
     /// message.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time for the recurring schedule to end, in UTC.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The recurring schedule for the action, in Unix cron syntax format. This format
@@ -14978,8 +14978,8 @@ pub mod scheduled_update_group_action_request {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_action_name: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) recurrence: std::option::Option<std::string::String>,
         pub(crate) min_size: std::option::Option<i32>,
         pub(crate) max_size: std::option::Option<i32>,
@@ -15007,7 +15007,7 @@ pub mod scheduled_update_group_action_request {
         /// recurrence.</p>
         /// <p>If you try to schedule the action in the past, Amazon EC2 Auto Scaling returns an error
         /// message.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -15020,20 +15020,20 @@ pub mod scheduled_update_group_action_request {
         /// message.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The date and time for the recurring schedule to end, in UTC.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The date and time for the recurring schedule to end, in UTC.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self

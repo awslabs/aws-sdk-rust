@@ -1881,12 +1881,12 @@ pub struct VodSource {
     /// <p>The ARN for the VOD source.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the VOD source was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The HTTP package configurations for the VOD source.</p>
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
     /// <p>The timestamp that indicates when the VOD source was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the source location that the VOD source is associated with.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the VOD source.</p>
@@ -1901,7 +1901,7 @@ impl VodSource {
         self.arn.as_deref()
     }
     /// <p>The timestamp that indicates when the VOD source was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The HTTP package configurations for the VOD source.</p>
@@ -1911,7 +1911,7 @@ impl VodSource {
         self.http_package_configurations.as_deref()
     }
     /// <p>The timestamp that indicates when the VOD source was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The name of the source location that the VOD source is associated with.</p>
@@ -1953,10 +1953,10 @@ pub mod vod_source {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) http_package_configurations:
             std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -1975,14 +1975,14 @@ pub mod vod_source {
             self
         }
         /// <p>The timestamp that indicates when the VOD source was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The timestamp that indicates when the VOD source was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2010,14 +2010,14 @@ pub mod vod_source {
             self
         }
         /// <p>The timestamp that indicates when the VOD source was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The timestamp that indicates when the VOD source was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -2103,14 +2103,14 @@ pub struct SourceLocation {
     /// <p>The ARN of the SourceLocation.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the source location was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The default segment delivery configuration.</p>
     pub default_segment_delivery_configuration:
         std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
     /// <p>The HTTP configuration for the source location.</p>
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
     /// <p>The timestamp that indicates when the source location was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the source location.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the source location.</p>
@@ -2127,7 +2127,7 @@ impl SourceLocation {
         self.arn.as_deref()
     }
     /// <p>The timestamp that indicates when the source location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The default segment delivery configuration.</p>
@@ -2141,7 +2141,7 @@ impl SourceLocation {
         self.http_configuration.as_ref()
     }
     /// <p>The timestamp that indicates when the source location was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The name of the source location.</p>
@@ -2181,11 +2181,11 @@ pub mod source_location {
     pub struct Builder {
         pub(crate) access_configuration: std::option::Option<crate::model::AccessConfiguration>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) default_segment_delivery_configuration:
             std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
         pub(crate) http_configuration: std::option::Option<crate::model::HttpConfiguration>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -2216,14 +2216,14 @@ pub mod source_location {
             self
         }
         /// <p>The timestamp that indicates when the source location was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The timestamp that indicates when the source location was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2258,14 +2258,14 @@ pub mod source_location {
             self
         }
         /// <p>The timestamp that indicates when the source location was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The timestamp that indicates when the source location was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -2502,9 +2502,9 @@ pub struct PrefetchRetrieval {
     pub dynamic_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The time when prefetch retrieval ends for the ad break. Prefetching will be attempted for manifest requests that occur at or before this time.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PrefetchRetrieval {
     /// <p>The dynamic variables to use for substitution during prefetch requests to the ad decision server (ADS).</p> <p>You intially configure <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic variables</a> for the ADS URL when you set up your playback configuration. When you specify DynamicVariables for prefetch retrieval, MediaTailor includes the dynamic variables in the request to the ADS.</p>
@@ -2515,11 +2515,11 @@ impl PrefetchRetrieval {
         self.dynamic_variables.as_ref()
     }
     /// <p>The time when prefetch retrieval ends for the ad break. Prefetching will be attempted for manifest requests that occur at or before this time.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
@@ -2541,8 +2541,8 @@ pub mod prefetch_retrieval {
         pub(crate) dynamic_variables: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// Adds a key-value pair to `dynamic_variables`.
@@ -2571,27 +2571,27 @@ pub mod prefetch_retrieval {
             self
         }
         /// <p>The time when prefetch retrieval ends for the ad break. Prefetching will be attempted for manifest requests that occur at or before this time.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time when prefetch retrieval ends for the ad break. Prefetching will be attempted for manifest requests that occur at or before this time.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
         }
         /// <p>The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -2621,9 +2621,9 @@ pub struct PrefetchConsumption {
     pub avail_matching_criteria:
         std::option::Option<std::vec::Vec<crate::model::AvailMatchingCriteria>>,
     /// <p>The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually delete the prefetch schedule, you can call DeletePrefetchSchedule.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when prefetched ads are considered for use in an ad break. If you don't specify StartTime, the prefetched ads are available after MediaTailor retrives them from the ad decision server.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PrefetchConsumption {
     /// <p>If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic variables, such as scte.event_id, set the avail matching criteria.</p>
@@ -2633,11 +2633,11 @@ impl PrefetchConsumption {
         self.avail_matching_criteria.as_deref()
     }
     /// <p>The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually delete the prefetch schedule, you can call DeletePrefetchSchedule.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The time when prefetched ads are considered for use in an ad break. If you don't specify StartTime, the prefetched ads are available after MediaTailor retrives them from the ad decision server.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
@@ -2658,8 +2658,8 @@ pub mod prefetch_consumption {
     pub struct Builder {
         pub(crate) avail_matching_criteria:
             std::option::Option<std::vec::Vec<crate::model::AvailMatchingCriteria>>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// Appends an item to `avail_matching_criteria`.
@@ -2685,27 +2685,27 @@ pub mod prefetch_consumption {
             self
         }
         /// <p>The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually delete the prefetch schedule, you can call DeletePrefetchSchedule.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually delete the prefetch schedule, you can call DeletePrefetchSchedule.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
         }
         /// <p>The time when prefetched ads are considered for use in an ad break. If you don't specify StartTime, the prefetched ads are available after MediaTailor retrives them from the ad decision server.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The time when prefetched ads are considered for use in an ad break. If you don't specify StartTime, the prefetched ads are available after MediaTailor retrives them from the ad decision server.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -3388,11 +3388,11 @@ pub struct Channel {
     /// <p>Returns the state whether the channel is running or not.</p>
     pub channel_state: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the channel was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains information about the slate used to fill gaps between programs in the schedule. You must configure FillerSlate if your channel uses an LINEAR PlaybackMode.</p>
     pub filler_slate: std::option::Option<crate::model::SlateSource>,
     /// <p>The timestamp of when the channel was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The channel's output properties.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
     /// <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
@@ -3415,7 +3415,7 @@ impl Channel {
         self.channel_state.as_deref()
     }
     /// <p>The timestamp of when the channel was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Contains information about the slate used to fill gaps between programs in the schedule. You must configure FillerSlate if your channel uses an LINEAR PlaybackMode.</p>
@@ -3423,7 +3423,7 @@ impl Channel {
         self.filler_slate.as_ref()
     }
     /// <p>The timestamp of when the channel was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The channel's output properties.</p>
@@ -3466,9 +3466,9 @@ pub mod channel {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) channel_state: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) filler_slate: std::option::Option<crate::model::SlateSource>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
         pub(crate) playback_mode: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -3510,14 +3510,14 @@ pub mod channel {
             self
         }
         /// <p>The timestamp of when the channel was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The timestamp of when the channel was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -3536,14 +3536,14 @@ pub mod channel {
             self
         }
         /// <p>The timestamp of when the channel was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The timestamp of when the channel was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -3637,7 +3637,7 @@ pub struct Alert {
     /// <p>If an alert is generated for a resource, an explanation of the reason for the alert.</p>
     pub alert_message: std::option::Option<std::string::String>,
     /// <p>The timestamp when the alert was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Names (ARNs) related to this alert.</p>
     pub related_resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -3653,7 +3653,7 @@ impl Alert {
         self.alert_message.as_deref()
     }
     /// <p>The timestamp when the alert was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The Amazon Resource Names (ARNs) related to this alert.</p>
@@ -3684,7 +3684,7 @@ pub mod alert {
     pub struct Builder {
         pub(crate) alert_code: std::option::Option<std::string::String>,
         pub(crate) alert_message: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) related_resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3713,14 +3713,14 @@ pub mod alert {
             self
         }
         /// <p>The timestamp when the alert was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The timestamp when the alert was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -3780,7 +3780,7 @@ pub struct ScheduleEntry {
     /// <p>The approximate duration of this program, in seconds.</p>
     pub approximate_duration_seconds: i64,
     /// <p>The approximate time that the program will start playing.</p>
-    pub approximate_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub approximate_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the program.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the channel that uses this schedule.</p>
@@ -3802,7 +3802,7 @@ impl ScheduleEntry {
         self.approximate_duration_seconds
     }
     /// <p>The approximate time that the program will start playing.</p>
-    pub fn approximate_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn approximate_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.approximate_start_time.as_ref()
     }
     /// <p>The ARN of the program.</p>
@@ -3859,7 +3859,7 @@ pub mod schedule_entry {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approximate_duration_seconds: std::option::Option<i64>,
-        pub(crate) approximate_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) approximate_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) program_name: std::option::Option<std::string::String>,
@@ -3881,14 +3881,14 @@ pub mod schedule_entry {
             self
         }
         /// <p>The approximate time that the program will start playing.</p>
-        pub fn approximate_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn approximate_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.approximate_start_time = Some(input);
             self
         }
         /// <p>The approximate time that the program will start playing.</p>
         pub fn set_approximate_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.approximate_start_time = input;
             self
@@ -4069,7 +4069,7 @@ pub struct ScheduleAdBreak {
     /// <p>The approximate duration of the ad break, in seconds.</p>
     pub approximate_duration_seconds: i64,
     /// <p>The approximate time that the ad will start playing.</p>
-    pub approximate_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub approximate_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the source location containing the VOD source used for the ad break.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The name of the VOD source used for the ad break.</p>
@@ -4081,7 +4081,7 @@ impl ScheduleAdBreak {
         self.approximate_duration_seconds
     }
     /// <p>The approximate time that the ad will start playing.</p>
-    pub fn approximate_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn approximate_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.approximate_start_time.as_ref()
     }
     /// <p>The name of the source location containing the VOD source used for the ad break.</p>
@@ -4113,7 +4113,7 @@ pub mod schedule_ad_break {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approximate_duration_seconds: std::option::Option<i64>,
-        pub(crate) approximate_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) approximate_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) vod_source_name: std::option::Option<std::string::String>,
     }
@@ -4129,14 +4129,14 @@ pub mod schedule_ad_break {
             self
         }
         /// <p>The approximate time that the ad will start playing.</p>
-        pub fn approximate_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn approximate_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.approximate_start_time = Some(input);
             self
         }
         /// <p>The approximate time that the ad will start playing.</p>
         pub fn set_approximate_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.approximate_start_time = input;
             self

@@ -12,7 +12,7 @@ pub struct StartSnapshotOutput {
     /// <p>The status of the snapshot.</p>
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The timestamp when the snapshot was created.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The size of the volume, in GiB.</p>
     pub volume_size: std::option::Option<i64>,
     /// <p>The size of the blocks in the snapshot, in bytes.</p>
@@ -44,7 +44,7 @@ impl StartSnapshotOutput {
         self.status.as_ref()
     }
     /// <p>The timestamp when the snapshot was created.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The size of the volume, in GiB.</p>
@@ -96,7 +96,7 @@ pub mod start_snapshot_output {
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
         pub(crate) owner_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) volume_size: std::option::Option<i64>,
         pub(crate) block_size: std::option::Option<i32>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -145,14 +145,14 @@ pub mod start_snapshot_output {
             self
         }
         /// <p>The timestamp when the snapshot was created.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The timestamp when the snapshot was created.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -330,7 +330,7 @@ pub struct ListSnapshotBlocksOutput {
     /// <p>An array of objects containing information about the blocks.</p>
     pub blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
     /// <p>The time when the <code>BlockToken</code> expires.</p>
-    pub expiry_time: std::option::Option<aws_smithy_types::Instant>,
+    pub expiry_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The size of the volume in GB.</p>
     pub volume_size: std::option::Option<i64>,
     /// <p>The size of the blocks in the snapshot, in bytes.</p>
@@ -345,7 +345,7 @@ impl ListSnapshotBlocksOutput {
         self.blocks.as_deref()
     }
     /// <p>The time when the <code>BlockToken</code> expires.</p>
-    pub fn expiry_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiry_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiry_time.as_ref()
     }
     /// <p>The size of the volume in GB.</p>
@@ -380,7 +380,7 @@ pub mod list_snapshot_blocks_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
-        pub(crate) expiry_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expiry_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) volume_size: std::option::Option<i64>,
         pub(crate) block_size: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -406,14 +406,14 @@ pub mod list_snapshot_blocks_output {
             self
         }
         /// <p>The time when the <code>BlockToken</code> expires.</p>
-        pub fn expiry_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiry_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiry_time = Some(input);
             self
         }
         /// <p>The time when the <code>BlockToken</code> expires.</p>
         pub fn set_expiry_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiry_time = input;
             self
@@ -476,7 +476,7 @@ pub struct ListChangedBlocksOutput {
     /// <p>An array of objects containing information about the changed blocks.</p>
     pub changed_blocks: std::option::Option<std::vec::Vec<crate::model::ChangedBlock>>,
     /// <p>The time when the <code>BlockToken</code> expires.</p>
-    pub expiry_time: std::option::Option<aws_smithy_types::Instant>,
+    pub expiry_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The size of the volume in GB.</p>
     pub volume_size: std::option::Option<i64>,
     /// <p>The size of the blocks in the snapshot, in bytes.</p>
@@ -491,7 +491,7 @@ impl ListChangedBlocksOutput {
         self.changed_blocks.as_deref()
     }
     /// <p>The time when the <code>BlockToken</code> expires.</p>
-    pub fn expiry_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiry_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiry_time.as_ref()
     }
     /// <p>The size of the volume in GB.</p>
@@ -526,7 +526,7 @@ pub mod list_changed_blocks_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) changed_blocks: std::option::Option<std::vec::Vec<crate::model::ChangedBlock>>,
-        pub(crate) expiry_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expiry_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) volume_size: std::option::Option<i64>,
         pub(crate) block_size: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -552,14 +552,14 @@ pub mod list_changed_blocks_output {
             self
         }
         /// <p>The time when the <code>BlockToken</code> expires.</p>
-        pub fn expiry_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiry_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiry_time = Some(input);
             self
         }
         /// <p>The time when the <code>BlockToken</code> expires.</p>
         pub fn set_expiry_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiry_time = input;
             self

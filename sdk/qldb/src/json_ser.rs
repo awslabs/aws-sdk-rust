@@ -36,12 +36,12 @@ pub fn serialize_structure_crate_input_export_journal_to_s3_input(
     if let Some(var_10) = &input.exclusive_end_time {
         object
             .key("ExclusiveEndTime")
-            .instant(var_10, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_10, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_11) = &input.inclusive_start_time {
         object
             .key("InclusiveStartTime")
-            .instant(var_11, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_11, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_12) = &input.role_arn {
         object.key("RoleArn").string(var_12);
@@ -101,12 +101,12 @@ pub fn serialize_structure_crate_input_stream_journal_to_kinesis_input(
     if let Some(var_24) = &input.exclusive_end_time {
         object
             .key("ExclusiveEndTime")
-            .instant(var_24, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_24, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_25) = &input.inclusive_start_time {
         object
             .key("InclusiveStartTime")
-            .instant(var_25, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_25, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_26) = &input.kinesis_configuration {
         let mut object_27 = object.key("KinesisConfiguration").start_object();

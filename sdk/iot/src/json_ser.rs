@@ -122,7 +122,7 @@ pub fn serialize_structure_crate_input_create_audit_suppression_input(
     if let Some(var_24) = &input.expiration_date {
         object
             .key("expirationDate")
-            .instant(var_24, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_24, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_25) = &input.resource_identifier {
         let mut object_26 = object.key("resourceIdentifier").start_object();
@@ -1173,7 +1173,7 @@ pub fn serialize_structure_crate_input_list_audit_findings_input(
     if let Some(var_284) = &input.end_time {
         object
             .key("endTime")
-            .instant(var_284, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_284, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if input.list_suppressed_findings {
         object
@@ -1200,7 +1200,7 @@ pub fn serialize_structure_crate_input_list_audit_findings_input(
     if let Some(var_289) = &input.start_time {
         object
             .key("startTime")
-            .instant(var_289, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_289, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_290) = &input.task_id {
         object.key("taskId").string(var_290);
@@ -1730,7 +1730,7 @@ pub fn serialize_structure_crate_input_update_audit_suppression_input(
     if let Some(var_405) = &input.expiration_date {
         object
             .key("expirationDate")
-            .instant(var_405, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_405, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_406) = &input.resource_identifier {
         let mut object_407 = object.key("resourceIdentifier").start_object();
@@ -2932,12 +2932,12 @@ pub fn serialize_structure_crate_model_violation_event_occurrence_range(
     if let Some(var_635) = &input.start_time {
         object
             .key("startTime")
-            .instant(var_635, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_635, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_636) = &input.end_time {
         object
             .key("endTime")
-            .instant(var_636, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_636, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

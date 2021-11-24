@@ -77,23 +77,14 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteAnomalyDetectorError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteAnomalyDetectorErrorKind::InternalServiceFault(inner) => {
-                    Error::InternalServiceFault(inner)
-                }
-                crate::error::DeleteAnomalyDetectorErrorKind::InvalidParameterValueException(
-                    inner,
-                ) => Error::InvalidParameterValueException(inner),
-                crate::error::DeleteAnomalyDetectorErrorKind::MissingRequiredParameterException(
-                    inner,
-                ) => Error::MissingRequiredParameterException(inner),
-                crate::error::DeleteAnomalyDetectorErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::DeleteAnomalyDetectorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeleteAnomalyDetectorErrorKind::InternalServiceFault(inner) => Error::InternalServiceFault(inner),
+                crate::error::DeleteAnomalyDetectorErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+                crate::error::DeleteAnomalyDetectorErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::DeleteAnomalyDetectorErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+                crate::error::DeleteAnomalyDetectorErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DeleteAnomalyDetectorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -237,20 +228,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeAnomalyDetectorsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeAnomalyDetectorsErrorKind::InternalServiceFault(inner) => {
-                    Error::InternalServiceFault(inner)
-                }
-                crate::error::DescribeAnomalyDetectorsErrorKind::InvalidNextToken(inner) => {
-                    Error::InvalidNextToken(inner)
-                }
-                crate::error::DescribeAnomalyDetectorsErrorKind::InvalidParameterValueException(
-                    inner,
-                ) => Error::InvalidParameterValueException(inner),
-                crate::error::DescribeAnomalyDetectorsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeAnomalyDetectorsErrorKind::InternalServiceFault(inner) => Error::InternalServiceFault(inner),
+                crate::error::DescribeAnomalyDetectorsErrorKind::InvalidNextToken(inner) => Error::InvalidNextToken(inner),
+                crate::error::DescribeAnomalyDetectorsErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+                crate::error::DescribeAnomalyDetectorsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::DescribeAnomalyDetectorsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -594,6 +578,9 @@ where
                 crate::error::PutAnomalyDetectorErrorKind::InternalServiceFault(inner) => {
                     Error::InternalServiceFault(inner)
                 }
+                crate::error::PutAnomalyDetectorErrorKind::InvalidParameterCombinationException(
+                    inner,
+                ) => Error::InvalidParameterCombinationException(inner),
                 crate::error::PutAnomalyDetectorErrorKind::InvalidParameterValueException(
                     inner,
                 ) => Error::InvalidParameterValueException(inner),

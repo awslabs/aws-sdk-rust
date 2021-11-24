@@ -80,9 +80,9 @@ impl AccessPoliciesStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OptionStatus {
     /// <p>A timestamp for when this option was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp for when this option was last updated.</p>
-    pub update_date: std::option::Option<aws_smithy_types::Instant>,
+    pub update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A unique integer that indicates when this option was last updated.</p>
     pub update_version: i32,
     /// <p>The state of processing a change to an option.  Possible values:</p><ul>
@@ -97,11 +97,11 @@ pub struct OptionStatus {
 }
 impl OptionStatus {
     /// <p>A timestamp for when this option was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>A timestamp for when this option was last updated.</p>
-    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
     /// <p>A unique integer that indicates when this option was last updated.</p>
@@ -139,35 +139,35 @@ pub mod option_status {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) update_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_version: std::option::Option<i32>,
         pub(crate) state: std::option::Option<crate::model::OptionState>,
         pub(crate) pending_deletion: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>A timestamp for when this option was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>A timestamp for when this option was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>A timestamp for when this option was last updated.</p>
-        pub fn update_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_date = Some(input);
             self
         }
         /// <p>A timestamp for when this option was last updated.</p>
         pub fn set_update_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_date = input;
             self

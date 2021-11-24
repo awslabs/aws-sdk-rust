@@ -610,14 +610,6 @@ pub enum ChatItemType {
     #[allow(missing_docs)] // documentation missing in model
     Message,
     #[allow(missing_docs)] // documentation missing in model
-    ParticipantActive,
-    #[allow(missing_docs)] // documentation missing in model
-    ParticipantDisengaged,
-    #[allow(missing_docs)] // documentation missing in model
-    ParticipantEngaged,
-    #[allow(missing_docs)] // documentation missing in model
-    ParticipantInactive,
-    #[allow(missing_docs)] // documentation missing in model
     ParticipantJoined,
     #[allow(missing_docs)] // documentation missing in model
     ParticipantLeft,
@@ -638,10 +630,6 @@ impl std::convert::From<&str> for ChatItemType {
             "CONNECTION_ACK" => ChatItemType::ConnectionAck,
             "EVENT" => ChatItemType::Event,
             "MESSAGE" => ChatItemType::Message,
-            "PARTICIPANT_ACTIVE" => ChatItemType::ParticipantActive,
-            "PARTICIPANT_DISENGAGED" => ChatItemType::ParticipantDisengaged,
-            "PARTICIPANT_ENGAGED" => ChatItemType::ParticipantEngaged,
-            "PARTICIPANT_INACTIVE" => ChatItemType::ParticipantInactive,
             "PARTICIPANT_JOINED" => ChatItemType::ParticipantJoined,
             "PARTICIPANT_LEFT" => ChatItemType::ParticipantLeft,
             "TRANSFER_FAILED" => ChatItemType::TransferFailed,
@@ -667,10 +655,6 @@ impl ChatItemType {
             ChatItemType::ConnectionAck => "CONNECTION_ACK",
             ChatItemType::Event => "EVENT",
             ChatItemType::Message => "MESSAGE",
-            ChatItemType::ParticipantActive => "PARTICIPANT_ACTIVE",
-            ChatItemType::ParticipantDisengaged => "PARTICIPANT_DISENGAGED",
-            ChatItemType::ParticipantEngaged => "PARTICIPANT_ENGAGED",
-            ChatItemType::ParticipantInactive => "PARTICIPANT_INACTIVE",
             ChatItemType::ParticipantJoined => "PARTICIPANT_JOINED",
             ChatItemType::ParticipantLeft => "PARTICIPANT_LEFT",
             ChatItemType::TransferFailed => "TRANSFER_FAILED",
@@ -687,10 +671,6 @@ impl ChatItemType {
             "CONNECTION_ACK",
             "EVENT",
             "MESSAGE",
-            "PARTICIPANT_ACTIVE",
-            "PARTICIPANT_DISENGAGED",
-            "PARTICIPANT_ENGAGED",
-            "PARTICIPANT_INACTIVE",
             "PARTICIPANT_JOINED",
             "PARTICIPANT_LEFT",
             "TRANSFER_FAILED",

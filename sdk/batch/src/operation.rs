@@ -96,6 +96,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateJobQueue {
     }
 }
 
+/// Operation shape for `CreateSchedulingPolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_scheduling_policy`](crate::client::Client::create_scheduling_policy).
+///
+/// See [`crate::client::fluent_builders::CreateSchedulingPolicy`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateSchedulingPolicy {
+    _private: (),
+}
+impl CreateSchedulingPolicy {
+    /// Creates a new builder-style object to manufacture [`CreateSchedulingPolicyInput`](crate::input::CreateSchedulingPolicyInput)
+    pub fn builder() -> crate::input::create_scheduling_policy_input::Builder {
+        crate::input::create_scheduling_policy_input::Builder::default()
+    }
+    /// Creates a new `CreateSchedulingPolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateSchedulingPolicy {
+    type Output = std::result::Result<
+        crate::output::CreateSchedulingPolicyOutput,
+        crate::error::CreateSchedulingPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_scheduling_policy_error(response)
+        } else {
+            crate::operation_deser::parse_create_scheduling_policy_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteComputeEnvironment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -158,6 +192,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteJobQueue {
             crate::operation_deser::parse_delete_job_queue_error(response)
         } else {
             crate::operation_deser::parse_delete_job_queue_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteSchedulingPolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_scheduling_policy`](crate::client::Client::delete_scheduling_policy).
+///
+/// See [`crate::client::fluent_builders::DeleteSchedulingPolicy`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteSchedulingPolicy {
+    _private: (),
+}
+impl DeleteSchedulingPolicy {
+    /// Creates a new builder-style object to manufacture [`DeleteSchedulingPolicyInput`](crate::input::DeleteSchedulingPolicyInput)
+    pub fn builder() -> crate::input::delete_scheduling_policy_input::Builder {
+        crate::input::delete_scheduling_policy_input::Builder::default()
+    }
+    /// Creates a new `DeleteSchedulingPolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteSchedulingPolicy {
+    type Output = std::result::Result<
+        crate::output::DeleteSchedulingPolicyOutput,
+        crate::error::DeleteSchedulingPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_scheduling_policy_error(response)
+        } else {
+            crate::operation_deser::parse_delete_scheduling_policy_response(response)
         }
     }
 }
@@ -404,6 +472,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJobs {
     }
 }
 
+/// Operation shape for `DescribeSchedulingPolicies`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_scheduling_policies`](crate::client::Client::describe_scheduling_policies).
+///
+/// See [`crate::client::fluent_builders::DescribeSchedulingPolicies`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeSchedulingPolicies {
+    _private: (),
+}
+impl DescribeSchedulingPolicies {
+    /// Creates a new builder-style object to manufacture [`DescribeSchedulingPoliciesInput`](crate::input::DescribeSchedulingPoliciesInput)
+    pub fn builder() -> crate::input::describe_scheduling_policies_input::Builder {
+        crate::input::describe_scheduling_policies_input::Builder::default()
+    }
+    /// Creates a new `DescribeSchedulingPolicies` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeSchedulingPolicies {
+    type Output = std::result::Result<
+        crate::output::DescribeSchedulingPoliciesOutput,
+        crate::error::DescribeSchedulingPoliciesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_scheduling_policies_error(response)
+        } else {
+            crate::operation_deser::parse_describe_scheduling_policies_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -431,6 +533,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJobs {
             crate::operation_deser::parse_list_jobs_error(response)
         } else {
             crate::operation_deser::parse_list_jobs_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListSchedulingPolicies`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_scheduling_policies`](crate::client::Client::list_scheduling_policies).
+///
+/// See [`crate::client::fluent_builders::ListSchedulingPolicies`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListSchedulingPolicies {
+    _private: (),
+}
+impl ListSchedulingPolicies {
+    /// Creates a new builder-style object to manufacture [`ListSchedulingPoliciesInput`](crate::input::ListSchedulingPoliciesInput)
+    pub fn builder() -> crate::input::list_scheduling_policies_input::Builder {
+        crate::input::list_scheduling_policies_input::Builder::default()
+    }
+    /// Creates a new `ListSchedulingPolicies` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListSchedulingPolicies {
+    type Output = std::result::Result<
+        crate::output::ListSchedulingPoliciesOutput,
+        crate::error::ListSchedulingPoliciesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_scheduling_policies_error(response)
+        } else {
+            crate::operation_deser::parse_list_scheduling_policies_response(response)
         }
     }
 }
@@ -692,6 +828,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateJobQueue {
             crate::operation_deser::parse_update_job_queue_error(response)
         } else {
             crate::operation_deser::parse_update_job_queue_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateSchedulingPolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_scheduling_policy`](crate::client::Client::update_scheduling_policy).
+///
+/// See [`crate::client::fluent_builders::UpdateSchedulingPolicy`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateSchedulingPolicy {
+    _private: (),
+}
+impl UpdateSchedulingPolicy {
+    /// Creates a new builder-style object to manufacture [`UpdateSchedulingPolicyInput`](crate::input::UpdateSchedulingPolicyInput)
+    pub fn builder() -> crate::input::update_scheduling_policy_input::Builder {
+        crate::input::update_scheduling_policy_input::Builder::default()
+    }
+    /// Creates a new `UpdateSchedulingPolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateSchedulingPolicy {
+    type Output = std::result::Result<
+        crate::output::UpdateSchedulingPolicyOutput,
+        crate::error::UpdateSchedulingPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_scheduling_policy_error(response)
+        } else {
+            crate::operation_deser::parse_update_scheduling_policy_response(response)
         }
     }
 }

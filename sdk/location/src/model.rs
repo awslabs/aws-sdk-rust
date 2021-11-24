@@ -118,7 +118,7 @@ pub struct ListDevicePositionsResponseEntry {
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub sample_time: std::option::Option<aws_smithy_types::Instant>,
+    pub sample_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last known device position. Empty if no positions currently stored.</p>
     pub position: std::option::Option<std::vec::Vec<f64>>,
 }
@@ -129,7 +129,7 @@ impl ListDevicePositionsResponseEntry {
     }
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.sample_time.as_ref()
     }
     /// <p>The last known device position. Empty if no positions currently stored.</p>
@@ -153,7 +153,7 @@ pub mod list_device_positions_response_entry {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
-        pub(crate) sample_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) sample_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) position: std::option::Option<std::vec::Vec<f64>>,
     }
     impl Builder {
@@ -169,7 +169,7 @@ pub mod list_device_positions_response_entry {
         }
         /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-        pub fn sample_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn sample_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.sample_time = Some(input);
             self
         }
@@ -177,7 +177,7 @@ pub mod list_device_positions_response_entry {
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn set_sample_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.sample_time = input;
             self
@@ -223,10 +223,10 @@ pub struct DevicePosition {
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub sample_time: std::option::Option<aws_smithy_types::Instant>,
+    pub sample_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub received_time: std::option::Option<aws_smithy_types::Instant>,
+    pub received_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last known device position.</p>
     pub position: std::option::Option<std::vec::Vec<f64>>,
 }
@@ -237,12 +237,12 @@ impl DevicePosition {
     }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.sample_time.as_ref()
     }
     /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn received_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn received_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.received_time.as_ref()
     }
     /// <p>The last known device position.</p>
@@ -267,8 +267,8 @@ pub mod device_position {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
-        pub(crate) sample_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) received_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) sample_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) received_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) position: std::option::Option<std::vec::Vec<f64>>,
     }
     impl Builder {
@@ -284,7 +284,7 @@ pub mod device_position {
         }
         /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn sample_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn sample_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.sample_time = Some(input);
             self
         }
@@ -292,14 +292,14 @@ pub mod device_position {
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_sample_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.sample_time = input;
             self
         }
         /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn received_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn received_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.received_time = Some(input);
             self
         }
@@ -307,7 +307,7 @@ pub mod device_position {
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_received_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.received_time = input;
             self
@@ -354,7 +354,7 @@ pub struct BatchUpdateDevicePositionError {
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub sample_time: std::option::Option<aws_smithy_types::Instant>,
+    pub sample_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains details related to the error code such as the error code and error
     /// message.</p>
     pub error: std::option::Option<crate::model::BatchItemError>,
@@ -366,7 +366,7 @@ impl BatchUpdateDevicePositionError {
     }
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.sample_time.as_ref()
     }
     /// <p>Contains details related to the error code such as the error code and error
@@ -391,7 +391,7 @@ pub mod batch_update_device_position_error {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
-        pub(crate) sample_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) sample_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) error: std::option::Option<crate::model::BatchItemError>,
     }
     impl Builder {
@@ -407,7 +407,7 @@ pub mod batch_update_device_position_error {
         }
         /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn sample_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn sample_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.sample_time = Some(input);
             self
         }
@@ -415,7 +415,7 @@ pub mod batch_update_device_position_error {
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_sample_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.sample_time = input;
             self
@@ -575,7 +575,7 @@ pub struct DevicePositionUpdate {
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub sample_time: std::option::Option<aws_smithy_types::Instant>,
+    pub sample_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
     /// <code>[X or longitude, Y or latitude]</code>.</p>
     pub position: std::option::Option<std::vec::Vec<f64>>,
@@ -588,7 +588,7 @@ impl DevicePositionUpdate {
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.sample_time.as_ref()
     }
     /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
@@ -613,7 +613,7 @@ pub mod device_position_update {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
-        pub(crate) sample_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) sample_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) position: std::option::Option<std::vec::Vec<f64>>,
     }
     impl Builder {
@@ -630,7 +630,7 @@ pub mod device_position_update {
         /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn sample_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn sample_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.sample_time = Some(input);
             self
         }
@@ -639,7 +639,7 @@ pub mod device_position_update {
         /// </p>
         pub fn set_sample_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.sample_time = input;
             self
@@ -846,10 +846,10 @@ pub struct ListTrackersResponseEntry {
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListTrackersResponseEntry {
     /// <p>The name of the tracker resource.</p>
@@ -871,12 +871,12 @@ impl ListTrackersResponseEntry {
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -902,8 +902,8 @@ pub mod list_trackers_response_entry {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) pricing_plan: std::option::Option<crate::model::PricingPlan>,
         pub(crate) pricing_plan_data_source: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the tracker resource.</p>
@@ -956,7 +956,7 @@ pub mod list_trackers_response_entry {
         }
         /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -964,14 +964,14 @@ pub mod list_trackers_response_entry {
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
@@ -979,7 +979,7 @@ pub mod list_trackers_response_entry {
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self
@@ -1058,7 +1058,7 @@ impl PositionFiltering {
     }
     /// Returns all the `&str` representations of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["DistanceBased", "TimeBased"]
+        &["AccuracyBased", "DistanceBased", "TimeBased"]
     }
 }
 impl<T> std::convert::From<T> for PositionFiltering
@@ -1127,7 +1127,7 @@ pub struct CalculateRouteSummary {
     /// between every stop on the
     /// route.</p>
     pub duration_seconds: std::option::Option<f64>,
-    /// <p>The unit of measurement for the distance.</p>
+    /// <p>The unit of measurement for route distances.</p>
     pub distance_unit: std::option::Option<crate::model::DistanceUnit>,
 }
 impl CalculateRouteSummary {
@@ -1192,7 +1192,7 @@ impl CalculateRouteSummary {
     pub fn duration_seconds(&self) -> std::option::Option<f64> {
         self.duration_seconds
     }
-    /// <p>The unit of measurement for the distance.</p>
+    /// <p>The unit of measurement for route distances.</p>
     pub fn distance_unit(&self) -> std::option::Option<&crate::model::DistanceUnit> {
         self.distance_unit.as_ref()
     }
@@ -1357,12 +1357,12 @@ pub mod calculate_route_summary {
             self.duration_seconds = input;
             self
         }
-        /// <p>The unit of measurement for the distance.</p>
+        /// <p>The unit of measurement for route distances.</p>
         pub fn distance_unit(mut self, input: crate::model::DistanceUnit) -> Self {
             self.distance_unit = Some(input);
             self
         }
-        /// <p>The unit of measurement for the distance.</p>
+        /// <p>The unit of measurement for route distances.</p>
         pub fn set_distance_unit(
             mut self,
             input: std::option::Option<crate::model::DistanceUnit>,
@@ -2658,7 +2658,7 @@ pub struct ListRouteCalculatorsResponseEntry {
     /// </p>
     /// </li>
     /// </ul>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// <ul>
@@ -2667,7 +2667,7 @@ pub struct ListRouteCalculatorsResponseEntry {
     /// </p>
     /// </li>
     /// </ul>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListRouteCalculatorsResponseEntry {
     /// <p>The name of the route calculator resource.</p>
@@ -2709,7 +2709,7 @@ impl ListRouteCalculatorsResponseEntry {
     /// </p>
     /// </li>
     /// </ul>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
@@ -2720,7 +2720,7 @@ impl ListRouteCalculatorsResponseEntry {
     /// </p>
     /// </li>
     /// </ul>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -2746,8 +2746,8 @@ pub mod list_route_calculators_response_entry {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) data_source: std::option::Option<std::string::String>,
         pub(crate) pricing_plan: std::option::Option<crate::model::PricingPlan>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the route calculator resource.</p>
@@ -2834,7 +2834,7 @@ pub mod list_route_calculators_response_entry {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -2848,7 +2848,7 @@ pub mod list_route_calculators_response_entry {
         /// </ul>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
@@ -2861,7 +2861,7 @@ pub mod list_route_calculators_response_entry {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
@@ -2875,7 +2875,7 @@ pub mod list_route_calculators_response_entry {
         /// </ul>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self
@@ -2900,24 +2900,55 @@ impl ListRouteCalculatorsResponseEntry {
     }
 }
 
-/// <p>Contains relevant Places returned by calling
-/// <code>SearchPlaceIndexForText</code>.</p>
+/// <p>Contains a search result from a text search query that is run on a place index resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchForTextResult {
-    /// <p>Contains details about the relevant point of interest.</p>
+    /// <p>Details about the search result, such as its address and position.</p>
     pub place: std::option::Option<crate::model::Place>,
+    /// <p>The distance in meters of a great-circle arc between the bias position specified
+    /// and the result. <code>Distance</code> will be returned only if a bias position was
+    /// specified in the query.</p>
+    /// <note>
+    /// <p>A great-circle arc is the shortest path on a sphere, in this case the
+    /// Earth. This returns the shortest distance between two locations.</p>
+    /// </note>
+    pub distance: std::option::Option<f64>,
+    /// <p>The relative confidence in the match for a result among the results returned. For
+    /// example, if more fields for an address match (including house number, street, city,
+    /// country/region, and postal code), the relevance score is closer to 1.</p>
+    /// <p>Returned only when the partner selected is Esri.</p>
+    pub relevance: std::option::Option<f64>,
 }
 impl SearchForTextResult {
-    /// <p>Contains details about the relevant point of interest.</p>
+    /// <p>Details about the search result, such as its address and position.</p>
     pub fn place(&self) -> std::option::Option<&crate::model::Place> {
         self.place.as_ref()
+    }
+    /// <p>The distance in meters of a great-circle arc between the bias position specified
+    /// and the result. <code>Distance</code> will be returned only if a bias position was
+    /// specified in the query.</p>
+    /// <note>
+    /// <p>A great-circle arc is the shortest path on a sphere, in this case the
+    /// Earth. This returns the shortest distance between two locations.</p>
+    /// </note>
+    pub fn distance(&self) -> std::option::Option<f64> {
+        self.distance
+    }
+    /// <p>The relative confidence in the match for a result among the results returned. For
+    /// example, if more fields for an address match (including house number, street, city,
+    /// country/region, and postal code), the relevance score is closer to 1.</p>
+    /// <p>Returned only when the partner selected is Esri.</p>
+    pub fn relevance(&self) -> std::option::Option<f64> {
+        self.relevance
     }
 }
 impl std::fmt::Debug for SearchForTextResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchForTextResult");
         formatter.field("place", &self.place);
+        formatter.field("distance", &self.distance);
+        formatter.field("relevance", &self.relevance);
         formatter.finish()
     }
 }
@@ -2928,21 +2959,65 @@ pub mod search_for_text_result {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) place: std::option::Option<crate::model::Place>,
+        pub(crate) distance: std::option::Option<f64>,
+        pub(crate) relevance: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>Contains details about the relevant point of interest.</p>
+        /// <p>Details about the search result, such as its address and position.</p>
         pub fn place(mut self, input: crate::model::Place) -> Self {
             self.place = Some(input);
             self
         }
-        /// <p>Contains details about the relevant point of interest.</p>
+        /// <p>Details about the search result, such as its address and position.</p>
         pub fn set_place(mut self, input: std::option::Option<crate::model::Place>) -> Self {
             self.place = input;
             self
         }
+        /// <p>The distance in meters of a great-circle arc between the bias position specified
+        /// and the result. <code>Distance</code> will be returned only if a bias position was
+        /// specified in the query.</p>
+        /// <note>
+        /// <p>A great-circle arc is the shortest path on a sphere, in this case the
+        /// Earth. This returns the shortest distance between two locations.</p>
+        /// </note>
+        pub fn distance(mut self, input: f64) -> Self {
+            self.distance = Some(input);
+            self
+        }
+        /// <p>The distance in meters of a great-circle arc between the bias position specified
+        /// and the result. <code>Distance</code> will be returned only if a bias position was
+        /// specified in the query.</p>
+        /// <note>
+        /// <p>A great-circle arc is the shortest path on a sphere, in this case the
+        /// Earth. This returns the shortest distance between two locations.</p>
+        /// </note>
+        pub fn set_distance(mut self, input: std::option::Option<f64>) -> Self {
+            self.distance = input;
+            self
+        }
+        /// <p>The relative confidence in the match for a result among the results returned. For
+        /// example, if more fields for an address match (including house number, street, city,
+        /// country/region, and postal code), the relevance score is closer to 1.</p>
+        /// <p>Returned only when the partner selected is Esri.</p>
+        pub fn relevance(mut self, input: f64) -> Self {
+            self.relevance = Some(input);
+            self
+        }
+        /// <p>The relative confidence in the match for a result among the results returned. For
+        /// example, if more fields for an address match (including house number, street, city,
+        /// country/region, and postal code), the relevance score is closer to 1.</p>
+        /// <p>Returned only when the partner selected is Esri.</p>
+        pub fn set_relevance(mut self, input: std::option::Option<f64>) -> Self {
+            self.relevance = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SearchForTextResult`](crate::model::SearchForTextResult)
         pub fn build(self) -> crate::model::SearchForTextResult {
-            crate::model::SearchForTextResult { place: self.place }
+            crate::model::SearchForTextResult {
+                place: self.place,
+                distance: self.distance,
+                relevance: self.relevance,
+            }
         }
     }
 }
@@ -2973,7 +3048,7 @@ pub struct Place {
     /// <p>A name for a local area, such as a city or town name. For example,
     /// <code>Toronto</code>.</p>
     pub municipality: std::option::Option<std::string::String>,
-    /// <p>A country, or an area that's part of a larger region .  For example, <code>Metro
+    /// <p>A country, or an area that's part of a larger region.  For example, <code>Metro
     /// Vancouver</code>.</p>
     pub sub_region: std::option::Option<std::string::String>,
     /// <p>A name for an area or geographical division, such as a province or state name. For
@@ -2985,6 +3060,19 @@ pub struct Place {
     /// <p>A group of numbers and letters in a country-specific format, which accompanies the
     /// address for the purpose of identifying a location. </p>
     pub postal_code: std::option::Option<std::string::String>,
+    /// <p>
+    /// <code>True</code> if the result is interpolated from other known places.</p>
+    /// <p>
+    /// <code>False</code> if the Place is a known place.</p>
+    /// <p>Not returned when the partner does not provide the information.</p>
+    /// <p>For example, returns <code>False</code> for an address location that is found in the
+    /// partner data, but returns <code>True</code> if an address does not exist in the partner
+    /// data and its location is calculated by interpolating between other known addresses.
+    /// </p>
+    pub interpolated: std::option::Option<bool>,
+    /// <p>The time zone in which the <code>Place</code> is located. Returned only when using
+    /// Here as the selected partner.</p>
+    pub time_zone: std::option::Option<crate::model::TimeZone>,
 }
 impl Place {
     /// <p>The full name and address of the point of interest such as a city,
@@ -3014,7 +3102,7 @@ impl Place {
     pub fn municipality(&self) -> std::option::Option<&str> {
         self.municipality.as_deref()
     }
-    /// <p>A country, or an area that's part of a larger region .  For example, <code>Metro
+    /// <p>A country, or an area that's part of a larger region.  For example, <code>Metro
     /// Vancouver</code>.</p>
     pub fn sub_region(&self) -> std::option::Option<&str> {
         self.sub_region.as_deref()
@@ -3034,6 +3122,23 @@ impl Place {
     pub fn postal_code(&self) -> std::option::Option<&str> {
         self.postal_code.as_deref()
     }
+    /// <p>
+    /// <code>True</code> if the result is interpolated from other known places.</p>
+    /// <p>
+    /// <code>False</code> if the Place is a known place.</p>
+    /// <p>Not returned when the partner does not provide the information.</p>
+    /// <p>For example, returns <code>False</code> for an address location that is found in the
+    /// partner data, but returns <code>True</code> if an address does not exist in the partner
+    /// data and its location is calculated by interpolating between other known addresses.
+    /// </p>
+    pub fn interpolated(&self) -> std::option::Option<bool> {
+        self.interpolated
+    }
+    /// <p>The time zone in which the <code>Place</code> is located. Returned only when using
+    /// Here as the selected partner.</p>
+    pub fn time_zone(&self) -> std::option::Option<&crate::model::TimeZone> {
+        self.time_zone.as_ref()
+    }
 }
 impl std::fmt::Debug for Place {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3048,6 +3153,8 @@ impl std::fmt::Debug for Place {
         formatter.field("region", &self.region);
         formatter.field("country", &self.country);
         formatter.field("postal_code", &self.postal_code);
+        formatter.field("interpolated", &self.interpolated);
+        formatter.field("time_zone", &self.time_zone);
         formatter.finish()
     }
 }
@@ -3067,6 +3174,8 @@ pub mod place {
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) country: std::option::Option<std::string::String>,
         pub(crate) postal_code: std::option::Option<std::string::String>,
+        pub(crate) interpolated: std::option::Option<bool>,
+        pub(crate) time_zone: std::option::Option<crate::model::TimeZone>,
     }
     impl Builder {
         /// <p>The full name and address of the point of interest such as a city,
@@ -3141,13 +3250,13 @@ pub mod place {
             self.municipality = input;
             self
         }
-        /// <p>A country, or an area that's part of a larger region .  For example, <code>Metro
+        /// <p>A country, or an area that's part of a larger region.  For example, <code>Metro
         /// Vancouver</code>.</p>
         pub fn sub_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.sub_region = Some(input.into());
             self
         }
-        /// <p>A country, or an area that's part of a larger region .  For example, <code>Metro
+        /// <p>A country, or an area that's part of a larger region.  For example, <code>Metro
         /// Vancouver</code>.</p>
         pub fn set_sub_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sub_region = input;
@@ -3189,6 +3298,44 @@ pub mod place {
             self.postal_code = input;
             self
         }
+        /// <p>
+        /// <code>True</code> if the result is interpolated from other known places.</p>
+        /// <p>
+        /// <code>False</code> if the Place is a known place.</p>
+        /// <p>Not returned when the partner does not provide the information.</p>
+        /// <p>For example, returns <code>False</code> for an address location that is found in the
+        /// partner data, but returns <code>True</code> if an address does not exist in the partner
+        /// data and its location is calculated by interpolating between other known addresses.
+        /// </p>
+        pub fn interpolated(mut self, input: bool) -> Self {
+            self.interpolated = Some(input);
+            self
+        }
+        /// <p>
+        /// <code>True</code> if the result is interpolated from other known places.</p>
+        /// <p>
+        /// <code>False</code> if the Place is a known place.</p>
+        /// <p>Not returned when the partner does not provide the information.</p>
+        /// <p>For example, returns <code>False</code> for an address location that is found in the
+        /// partner data, but returns <code>True</code> if an address does not exist in the partner
+        /// data and its location is calculated by interpolating between other known addresses.
+        /// </p>
+        pub fn set_interpolated(mut self, input: std::option::Option<bool>) -> Self {
+            self.interpolated = input;
+            self
+        }
+        /// <p>The time zone in which the <code>Place</code> is located. Returned only when using
+        /// Here as the selected partner.</p>
+        pub fn time_zone(mut self, input: crate::model::TimeZone) -> Self {
+            self.time_zone = Some(input);
+            self
+        }
+        /// <p>The time zone in which the <code>Place</code> is located. Returned only when using
+        /// Here as the selected partner.</p>
+        pub fn set_time_zone(mut self, input: std::option::Option<crate::model::TimeZone>) -> Self {
+            self.time_zone = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Place`](crate::model::Place)
         pub fn build(self) -> crate::model::Place {
             crate::model::Place {
@@ -3202,6 +3349,8 @@ pub mod place {
                 region: self.region,
                 country: self.country,
                 postal_code: self.postal_code,
+                interpolated: self.interpolated,
+                time_zone: self.time_zone,
             }
         }
     }
@@ -3210,6 +3359,84 @@ impl Place {
     /// Creates a new builder-style object to manufacture [`Place`](crate::model::Place)
     pub fn builder() -> crate::model::place::Builder {
         crate::model::place::Builder::default()
+    }
+}
+
+/// <p>Information about a time zone. Includes the name of the time zone and the offset
+/// from UTC in seconds.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TimeZone {
+    /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones">
+    /// IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The time zone's offset, in seconds, from UTC.</p>
+    pub offset: std::option::Option<i32>,
+}
+impl TimeZone {
+    /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones">
+    /// IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The time zone's offset, in seconds, from UTC.</p>
+    pub fn offset(&self) -> std::option::Option<i32> {
+        self.offset
+    }
+}
+impl std::fmt::Debug for TimeZone {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TimeZone");
+        formatter.field("name", &self.name);
+        formatter.field("offset", &self.offset);
+        formatter.finish()
+    }
+}
+/// See [`TimeZone`](crate::model::TimeZone)
+pub mod time_zone {
+    /// A builder for [`TimeZone`](crate::model::TimeZone)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) offset: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones">
+        /// IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones">
+        /// IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The time zone's offset, in seconds, from UTC.</p>
+        pub fn offset(mut self, input: i32) -> Self {
+            self.offset = Some(input);
+            self
+        }
+        /// <p>The time zone's offset, in seconds, from UTC.</p>
+        pub fn set_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.offset = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TimeZone`](crate::model::TimeZone)
+        pub fn build(self) -> crate::model::TimeZone {
+            crate::model::TimeZone {
+                name: self.name,
+                offset: self.offset,
+            }
+        }
+    }
+}
+impl TimeZone {
+    /// Creates a new builder-style object to manufacture [`TimeZone`](crate::model::TimeZone)
+    pub fn builder() -> crate::model::time_zone::Builder {
+        crate::model::time_zone::Builder::default()
     }
 }
 
@@ -3315,79 +3542,91 @@ impl PlaceGeometry {
     }
 }
 
-/// <p>A summary of the geocoding request sent using <code>SearchPlaceIndexForText</code>.</p>
+/// <p>A summary of the request sent by using <code>SearchPlaceIndexForText</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForTextSummary {
-    /// <p>The address, name, city or region to be used in the geocoding request. In free-form text
-    /// format. For example, <code>Vancouver</code>.</p>
+    /// <p>The search text specified in the request.</p>
     pub text: std::option::Option<std::string::String>,
-    /// <p>Contains the coordinates for the bias position entered in the geocoding request.</p>
+    /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
     pub bias_position: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>Contains the coordinates for the optional bounding box coordinated entered in the
-    /// geocoding request.</p>
+    /// <p>Contains the coordinates for the optional bounding box specified in the request.</p>
     pub filter_b_box: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>Contains the country filter entered in the geocoding request.</p>
+    /// <p>Contains the optional country filter specified in the request.</p>
     pub filter_countries: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Contains the maximum number of results indicated for the request.</p>
+    /// <p>Contains the optional result count limit specified in the request.</p>
     pub max_results: i32,
-    /// <p>A bounding box that contains the search results within the specified area indicated by
-    /// <code>FilterBBox</code>. A subset of bounding box specified using
-    /// <code>FilterBBox</code>.</p>
+    /// <p>The bounding box that fully contains all search results.</p>
+    /// <note>
+    /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code>
+    /// is contained within <code>FilterBBox</code>.</p>
+    /// </note>
     pub result_b_box: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+    /// <p>The geospatial data provider attached to the place index resource specified in the request.
+    /// Values can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>Esri</p>
     /// </li>
     /// <li>
-    /// <p>HERE</p>
+    /// <p>Here</p>
     /// </li>
     /// </ul>
-    /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: std::option::Option<std::string::String>,
+    /// <p>The preferred language used to return results. Matches the language in the request.
+    /// The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
+    /// <code>en</code> for English.</p>
+    pub language: std::option::Option<std::string::String>,
 }
 impl SearchPlaceIndexForTextSummary {
-    /// <p>The address, name, city or region to be used in the geocoding request. In free-form text
-    /// format. For example, <code>Vancouver</code>.</p>
+    /// <p>The search text specified in the request.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>Contains the coordinates for the bias position entered in the geocoding request.</p>
+    /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
     pub fn bias_position(&self) -> std::option::Option<&[f64]> {
         self.bias_position.as_deref()
     }
-    /// <p>Contains the coordinates for the optional bounding box coordinated entered in the
-    /// geocoding request.</p>
+    /// <p>Contains the coordinates for the optional bounding box specified in the request.</p>
     pub fn filter_b_box(&self) -> std::option::Option<&[f64]> {
         self.filter_b_box.as_deref()
     }
-    /// <p>Contains the country filter entered in the geocoding request.</p>
+    /// <p>Contains the optional country filter specified in the request.</p>
     pub fn filter_countries(&self) -> std::option::Option<&[std::string::String]> {
         self.filter_countries.as_deref()
     }
-    /// <p>Contains the maximum number of results indicated for the request.</p>
+    /// <p>Contains the optional result count limit specified in the request.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>A bounding box that contains the search results within the specified area indicated by
-    /// <code>FilterBBox</code>. A subset of bounding box specified using
-    /// <code>FilterBBox</code>.</p>
+    /// <p>The bounding box that fully contains all search results.</p>
+    /// <note>
+    /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code>
+    /// is contained within <code>FilterBBox</code>.</p>
+    /// </note>
     pub fn result_b_box(&self) -> std::option::Option<&[f64]> {
         self.result_b_box.as_deref()
     }
-    /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+    /// <p>The geospatial data provider attached to the place index resource specified in the request.
+    /// Values can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>Esri</p>
     /// </li>
     /// <li>
-    /// <p>HERE</p>
+    /// <p>Here</p>
     /// </li>
     /// </ul>
-    /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn data_source(&self) -> std::option::Option<&str> {
         self.data_source.as_deref()
+    }
+    /// <p>The preferred language used to return results. Matches the language in the request.
+    /// The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
+    /// <code>en</code> for English.</p>
+    pub fn language(&self) -> std::option::Option<&str> {
+        self.language.as_deref()
     }
 }
 impl std::fmt::Debug for SearchPlaceIndexForTextSummary {
@@ -3400,6 +3639,7 @@ impl std::fmt::Debug for SearchPlaceIndexForTextSummary {
         formatter.field("max_results", &self.max_results);
         formatter.field("result_b_box", &"*** Sensitive Data Redacted ***");
         formatter.field("data_source", &self.data_source);
+        formatter.field("language", &self.language);
         formatter.finish()
     }
 }
@@ -3416,16 +3656,15 @@ pub mod search_place_index_for_text_summary {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) result_b_box: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) data_source: std::option::Option<std::string::String>,
+        pub(crate) language: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The address, name, city or region to be used in the geocoding request. In free-form text
-        /// format. For example, <code>Vancouver</code>.</p>
+        /// <p>The search text specified in the request.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>The address, name, city or region to be used in the geocoding request. In free-form text
-        /// format. For example, <code>Vancouver</code>.</p>
+        /// <p>The search text specified in the request.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -3434,14 +3673,14 @@ pub mod search_place_index_for_text_summary {
         ///
         /// To override the contents of this collection use [`set_bias_position`](Self::set_bias_position).
         ///
-        /// <p>Contains the coordinates for the bias position entered in the geocoding request.</p>
+        /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
         pub fn bias_position(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.bias_position.unwrap_or_default();
             v.push(input.into());
             self.bias_position = Some(v);
             self
         }
-        /// <p>Contains the coordinates for the bias position entered in the geocoding request.</p>
+        /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
         pub fn set_bias_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.bias_position = input;
             self
@@ -3450,16 +3689,14 @@ pub mod search_place_index_for_text_summary {
         ///
         /// To override the contents of this collection use [`set_filter_b_box`](Self::set_filter_b_box).
         ///
-        /// <p>Contains the coordinates for the optional bounding box coordinated entered in the
-        /// geocoding request.</p>
+        /// <p>Contains the coordinates for the optional bounding box specified in the request.</p>
         pub fn filter_b_box(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.filter_b_box.unwrap_or_default();
             v.push(input.into());
             self.filter_b_box = Some(v);
             self
         }
-        /// <p>Contains the coordinates for the optional bounding box coordinated entered in the
-        /// geocoding request.</p>
+        /// <p>Contains the coordinates for the optional bounding box specified in the request.</p>
         pub fn set_filter_b_box(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.filter_b_box = input;
             self
@@ -3468,14 +3705,14 @@ pub mod search_place_index_for_text_summary {
         ///
         /// To override the contents of this collection use [`set_filter_countries`](Self::set_filter_countries).
         ///
-        /// <p>Contains the country filter entered in the geocoding request.</p>
+        /// <p>Contains the optional country filter specified in the request.</p>
         pub fn filter_countries(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.filter_countries.unwrap_or_default();
             v.push(input.into());
             self.filter_countries = Some(v);
             self
         }
-        /// <p>Contains the country filter entered in the geocoding request.</p>
+        /// <p>Contains the optional country filter specified in the request.</p>
         pub fn set_filter_countries(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3483,12 +3720,12 @@ pub mod search_place_index_for_text_summary {
             self.filter_countries = input;
             self
         }
-        /// <p>Contains the maximum number of results indicated for the request.</p>
+        /// <p>Contains the optional result count limit specified in the request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Contains the maximum number of results indicated for the request.</p>
+        /// <p>Contains the optional result count limit specified in the request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3497,48 +3734,68 @@ pub mod search_place_index_for_text_summary {
         ///
         /// To override the contents of this collection use [`set_result_b_box`](Self::set_result_b_box).
         ///
-        /// <p>A bounding box that contains the search results within the specified area indicated by
-        /// <code>FilterBBox</code>. A subset of bounding box specified using
-        /// <code>FilterBBox</code>.</p>
+        /// <p>The bounding box that fully contains all search results.</p>
+        /// <note>
+        /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code>
+        /// is contained within <code>FilterBBox</code>.</p>
+        /// </note>
         pub fn result_b_box(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.result_b_box.unwrap_or_default();
             v.push(input.into());
             self.result_b_box = Some(v);
             self
         }
-        /// <p>A bounding box that contains the search results within the specified area indicated by
-        /// <code>FilterBBox</code>. A subset of bounding box specified using
-        /// <code>FilterBBox</code>.</p>
+        /// <p>The bounding box that fully contains all search results.</p>
+        /// <note>
+        /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code>
+        /// is contained within <code>FilterBBox</code>.</p>
+        /// </note>
         pub fn set_result_b_box(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.result_b_box = input;
             self
         }
-        /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+        /// <p>The geospatial data provider attached to the place index resource specified in the request.
+        /// Values can be one of the following:</p>
         /// <ul>
         /// <li>
         /// <p>Esri</p>
         /// </li>
         /// <li>
-        /// <p>HERE</p>
+        /// <p>Here</p>
         /// </li>
         /// </ul>
-        /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+        /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
         }
-        /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+        /// <p>The geospatial data provider attached to the place index resource specified in the request.
+        /// Values can be one of the following:</p>
         /// <ul>
         /// <li>
         /// <p>Esri</p>
         /// </li>
         /// <li>
-        /// <p>HERE</p>
+        /// <p>Here</p>
         /// </li>
         /// </ul>
-        /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+        /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_source = input;
+            self
+        }
+        /// <p>The preferred language used to return results. Matches the language in the request.
+        /// The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
+        /// <code>en</code> for English.</p>
+        pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language = Some(input.into());
+            self
+        }
+        /// <p>The preferred language used to return results. Matches the language in the request.
+        /// The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
+        /// <code>en</code> for English.</p>
+        pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.language = input;
             self
         }
         /// Consumes the builder and constructs a [`SearchPlaceIndexForTextSummary`](crate::model::SearchPlaceIndexForTextSummary)
@@ -3551,6 +3808,7 @@ pub mod search_place_index_for_text_summary {
                 max_results: self.max_results.unwrap_or_default(),
                 result_b_box: self.result_b_box,
                 data_source: self.data_source,
+                language: self.language,
             }
         }
     }
@@ -3562,24 +3820,40 @@ impl SearchPlaceIndexForTextSummary {
     }
 }
 
-/// <p>Specifies a single point of interest, or Place as a result of a search query obtained
-/// from a dataset configured in the place index resource.</p>
+/// <p>Contains a search result from a position search query that is run on a place index resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchForPositionResult {
-    /// <p>Contains details about the relevant point of interest.</p>
+    /// <p>Details about the search result, such as its address and position.</p>
     pub place: std::option::Option<crate::model::Place>,
+    /// <p>The distance in meters of a great-circle arc between the query position and the
+    /// result.</p>
+    /// <note>
+    /// <p>A great-circle arc is the shortest path on a sphere, in this case the
+    /// Earth. This returns the shortest distance between two locations.</p>
+    /// </note>
+    pub distance: std::option::Option<f64>,
 }
 impl SearchForPositionResult {
-    /// <p>Contains details about the relevant point of interest.</p>
+    /// <p>Details about the search result, such as its address and position.</p>
     pub fn place(&self) -> std::option::Option<&crate::model::Place> {
         self.place.as_ref()
+    }
+    /// <p>The distance in meters of a great-circle arc between the query position and the
+    /// result.</p>
+    /// <note>
+    /// <p>A great-circle arc is the shortest path on a sphere, in this case the
+    /// Earth. This returns the shortest distance between two locations.</p>
+    /// </note>
+    pub fn distance(&self) -> std::option::Option<f64> {
+        self.distance
     }
 }
 impl std::fmt::Debug for SearchForPositionResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchForPositionResult");
         formatter.field("place", &self.place);
+        formatter.field("distance", &self.distance);
         formatter.finish()
     }
 }
@@ -3590,21 +3864,45 @@ pub mod search_for_position_result {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) place: std::option::Option<crate::model::Place>,
+        pub(crate) distance: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>Contains details about the relevant point of interest.</p>
+        /// <p>Details about the search result, such as its address and position.</p>
         pub fn place(mut self, input: crate::model::Place) -> Self {
             self.place = Some(input);
             self
         }
-        /// <p>Contains details about the relevant point of interest.</p>
+        /// <p>Details about the search result, such as its address and position.</p>
         pub fn set_place(mut self, input: std::option::Option<crate::model::Place>) -> Self {
             self.place = input;
             self
         }
+        /// <p>The distance in meters of a great-circle arc between the query position and the
+        /// result.</p>
+        /// <note>
+        /// <p>A great-circle arc is the shortest path on a sphere, in this case the
+        /// Earth. This returns the shortest distance between two locations.</p>
+        /// </note>
+        pub fn distance(mut self, input: f64) -> Self {
+            self.distance = Some(input);
+            self
+        }
+        /// <p>The distance in meters of a great-circle arc between the query position and the
+        /// result.</p>
+        /// <note>
+        /// <p>A great-circle arc is the shortest path on a sphere, in this case the
+        /// Earth. This returns the shortest distance between two locations.</p>
+        /// </note>
+        pub fn set_distance(mut self, input: std::option::Option<f64>) -> Self {
+            self.distance = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SearchForPositionResult`](crate::model::SearchForPositionResult)
         pub fn build(self) -> crate::model::SearchForPositionResult {
-            crate::model::SearchForPositionResult { place: self.place }
+            crate::model::SearchForPositionResult {
+                place: self.place,
+                distance: self.distance,
+            }
         }
     }
 }
@@ -3615,51 +3913,63 @@ impl SearchForPositionResult {
     }
 }
 
-/// <p>A summary of the reverse geocoding request sent using <code>SearchPlaceIndexForPosition</code>.</p>
+/// <p>A summary of the request sent by using <code>SearchPlaceIndexForPosition</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForPositionSummary {
-    /// <p>The position given in the reverse geocoding request.</p>
+    /// <p>The position specified in the request.</p>
     pub position: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>An optional parameter. The maximum number of results returned per request. </p>
+    /// <p>Contains the optional result count limit that is specified in the request.</p>
     /// <p>Default value: <code>50</code>
     /// </p>
     pub max_results: i32,
-    /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+    /// <p>The geospatial data provider attached to the place index resource specified in the request.
+    /// Values can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>Esri</p>
     /// </li>
     /// <li>
-    /// <p>HERE</p>
+    /// <p>Here</p>
     /// </li>
     /// </ul>
-    /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: std::option::Option<std::string::String>,
+    /// <p>The preferred language used to return results. Matches the language in the request.
+    /// The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
+    /// <code>en</code> for English.</p>
+    pub language: std::option::Option<std::string::String>,
 }
 impl SearchPlaceIndexForPositionSummary {
-    /// <p>The position given in the reverse geocoding request.</p>
+    /// <p>The position specified in the request.</p>
     pub fn position(&self) -> std::option::Option<&[f64]> {
         self.position.as_deref()
     }
-    /// <p>An optional parameter. The maximum number of results returned per request. </p>
+    /// <p>Contains the optional result count limit that is specified in the request.</p>
     /// <p>Default value: <code>50</code>
     /// </p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+    /// <p>The geospatial data provider attached to the place index resource specified in the request.
+    /// Values can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>Esri</p>
     /// </li>
     /// <li>
-    /// <p>HERE</p>
+    /// <p>Here</p>
     /// </li>
     /// </ul>
-    /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn data_source(&self) -> std::option::Option<&str> {
         self.data_source.as_deref()
+    }
+    /// <p>The preferred language used to return results. Matches the language in the request.
+    /// The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
+    /// <code>en</code> for English.</p>
+    pub fn language(&self) -> std::option::Option<&str> {
+        self.language.as_deref()
     }
 }
 impl std::fmt::Debug for SearchPlaceIndexForPositionSummary {
@@ -3668,6 +3978,7 @@ impl std::fmt::Debug for SearchPlaceIndexForPositionSummary {
         formatter.field("position", &"*** Sensitive Data Redacted ***");
         formatter.field("max_results", &self.max_results);
         formatter.field("data_source", &self.data_source);
+        formatter.field("language", &self.language);
         formatter.finish()
     }
 }
@@ -3680,64 +3991,81 @@ pub mod search_place_index_for_position_summary {
         pub(crate) position: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) data_source: std::option::Option<std::string::String>,
+        pub(crate) language: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// Appends an item to `position`.
         ///
         /// To override the contents of this collection use [`set_position`](Self::set_position).
         ///
-        /// <p>The position given in the reverse geocoding request.</p>
+        /// <p>The position specified in the request.</p>
         pub fn position(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.position.unwrap_or_default();
             v.push(input.into());
             self.position = Some(v);
             self
         }
-        /// <p>The position given in the reverse geocoding request.</p>
+        /// <p>The position specified in the request.</p>
         pub fn set_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.position = input;
             self
         }
-        /// <p>An optional parameter. The maximum number of results returned per request. </p>
+        /// <p>Contains the optional result count limit that is specified in the request.</p>
         /// <p>Default value: <code>50</code>
         /// </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>An optional parameter. The maximum number of results returned per request. </p>
+        /// <p>Contains the optional result count limit that is specified in the request.</p>
         /// <p>Default value: <code>50</code>
         /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+        /// <p>The geospatial data provider attached to the place index resource specified in the request.
+        /// Values can be one of the following:</p>
         /// <ul>
         /// <li>
         /// <p>Esri</p>
         /// </li>
         /// <li>
-        /// <p>HERE</p>
+        /// <p>Here</p>
         /// </li>
         /// </ul>
-        /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+        /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
         }
-        /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+        /// <p>The geospatial data provider attached to the place index resource specified in the request.
+        /// Values can be one of the following:</p>
         /// <ul>
         /// <li>
         /// <p>Esri</p>
         /// </li>
         /// <li>
-        /// <p>HERE</p>
+        /// <p>Here</p>
         /// </li>
         /// </ul>
-        /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+        /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_source = input;
+            self
+        }
+        /// <p>The preferred language used to return results. Matches the language in the request.
+        /// The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
+        /// <code>en</code> for English.</p>
+        pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language = Some(input.into());
+            self
+        }
+        /// <p>The preferred language used to return results. Matches the language in the request.
+        /// The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
+        /// <code>en</code> for English.</p>
+        pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.language = input;
             self
         }
         /// Consumes the builder and constructs a [`SearchPlaceIndexForPositionSummary`](crate::model::SearchPlaceIndexForPositionSummary)
@@ -3746,6 +4074,7 @@ pub mod search_place_index_for_position_summary {
                 position: self.position,
                 max_results: self.max_results.unwrap_or_default(),
                 data_source: self.data_source,
+                language: self.language,
             }
         }
     }
@@ -3765,7 +4094,7 @@ pub struct ListPlaceIndexesResponseEntry {
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The optional description for the place index resource.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+    /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -3778,17 +4107,17 @@ pub struct ListPlaceIndexesResponseEntry {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: std::option::Option<std::string::String>,
     /// <p>The pricing plan for the specified place index resource.</p>
     /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
     /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
     /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListPlaceIndexesResponseEntry {
     /// <p>The name of the place index resource.</p>
@@ -3799,7 +4128,7 @@ impl ListPlaceIndexesResponseEntry {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+    /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -3812,7 +4141,7 @@ impl ListPlaceIndexesResponseEntry {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn data_source(&self) -> std::option::Option<&str> {
         self.data_source.as_deref()
     }
@@ -3823,12 +4152,12 @@ impl ListPlaceIndexesResponseEntry {
     }
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
     /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
     /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -3854,8 +4183,8 @@ pub mod list_place_indexes_response_entry {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) data_source: std::option::Option<std::string::String>,
         pub(crate) pricing_plan: std::option::Option<crate::model::PricingPlan>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the place index resource.</p>
@@ -3878,7 +4207,7 @@ pub mod list_place_indexes_response_entry {
             self.description = input;
             self
         }
-        /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+        /// <p>The data provider of geospatial data. Values can be one of the following:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -3891,12 +4220,12 @@ pub mod list_place_indexes_response_entry {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+        /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
         }
-        /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+        /// <p>The data provider of geospatial data. Values can be one of the following:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -3909,7 +4238,7 @@ pub mod list_place_indexes_response_entry {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+        /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_source = input;
             self
@@ -3931,7 +4260,7 @@ pub mod list_place_indexes_response_entry {
         }
         /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
         /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -3939,14 +4268,14 @@ pub mod list_place_indexes_response_entry {
         /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
         /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
@@ -3954,7 +4283,7 @@ pub mod list_place_indexes_response_entry {
         /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self
@@ -4012,7 +4341,7 @@ pub struct DataSourceConfiguration {
     /// <code>Storage</code> specifies that the result can be cached or stored in a database.</p>
     /// </li>
     /// </ul>
-    /// <p>Default value:  <code>SingleUse</code>
+    /// <p>Default value: <code>SingleUse</code>
     /// </p>
     pub intended_use: std::option::Option<crate::model::IntendedUse>,
 }
@@ -4029,7 +4358,7 @@ impl DataSourceConfiguration {
     /// <code>Storage</code> specifies that the result can be cached or stored in a database.</p>
     /// </li>
     /// </ul>
-    /// <p>Default value:  <code>SingleUse</code>
+    /// <p>Default value: <code>SingleUse</code>
     /// </p>
     pub fn intended_use(&self) -> std::option::Option<&crate::model::IntendedUse> {
         self.intended_use.as_ref()
@@ -4063,7 +4392,7 @@ pub mod data_source_configuration {
         /// <code>Storage</code> specifies that the result can be cached or stored in a database.</p>
         /// </li>
         /// </ul>
-        /// <p>Default value:  <code>SingleUse</code>
+        /// <p>Default value: <code>SingleUse</code>
         /// </p>
         pub fn intended_use(mut self, input: crate::model::IntendedUse) -> Self {
             self.intended_use = Some(input);
@@ -4081,7 +4410,7 @@ pub mod data_source_configuration {
         /// <code>Storage</code> specifies that the result can be cached or stored in a database.</p>
         /// </li>
         /// </ul>
-        /// <p>Default value:  <code>SingleUse</code>
+        /// <p>Default value: <code>SingleUse</code>
         /// </p>
         pub fn set_intended_use(
             mut self,
@@ -4151,10 +4480,10 @@ pub struct ListMapsResponseEntry {
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListMapsResponseEntry {
     /// <p>The name of the associated map resource.</p>
@@ -4176,12 +4505,12 @@ impl ListMapsResponseEntry {
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -4207,8 +4536,8 @@ pub mod list_maps_response_entry {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) data_source: std::option::Option<std::string::String>,
         pub(crate) pricing_plan: std::option::Option<crate::model::PricingPlan>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the associated map resource.</p>
@@ -4258,7 +4587,7 @@ pub mod list_maps_response_entry {
         }
         /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -4266,14 +4595,14 @@ pub mod list_maps_response_entry {
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
@@ -4281,7 +4610,7 @@ pub mod list_maps_response_entry {
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self
@@ -4711,11 +5040,11 @@ pub struct ListGeofenceResponseEntry {
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListGeofenceResponseEntry {
     /// <p>The geofence identifier.</p>
@@ -4758,13 +5087,13 @@ impl ListGeofenceResponseEntry {
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -4788,8 +5117,8 @@ pub mod list_geofence_response_entry {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
         pub(crate) geometry: std::option::Option<crate::model::GeofenceGeometry>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The geofence identifier.</p>
@@ -4878,7 +5207,7 @@ pub mod list_geofence_response_entry {
         /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -4887,7 +5216,7 @@ pub mod list_geofence_response_entry {
         /// </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
@@ -4895,7 +5224,7 @@ pub mod list_geofence_response_entry {
         /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
@@ -4904,7 +5233,7 @@ pub mod list_geofence_response_entry {
         /// </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self
@@ -5015,11 +5344,11 @@ pub struct BatchPutGeofenceSuccess {
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BatchPutGeofenceSuccess {
     /// <p>The geofence successfully stored in a geofence collection.</p>
@@ -5029,13 +5358,13 @@ impl BatchPutGeofenceSuccess {
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -5055,8 +5384,8 @@ pub mod batch_put_geofence_success {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The geofence successfully stored in a geofence collection.</p>
@@ -5072,7 +5401,7 @@ pub mod batch_put_geofence_success {
         /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -5081,7 +5410,7 @@ pub mod batch_put_geofence_success {
         /// </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
@@ -5089,7 +5418,7 @@ pub mod batch_put_geofence_success {
         /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
@@ -5098,7 +5427,7 @@ pub mod batch_put_geofence_success {
         /// </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self
@@ -5218,7 +5547,7 @@ pub struct BatchEvaluateGeofencesError {
     /// <p>Specifies a timestamp for when the error occurred in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub sample_time: std::option::Option<aws_smithy_types::Instant>,
+    pub sample_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains details associated to the batch error.</p>
     pub error: std::option::Option<crate::model::BatchItemError>,
 }
@@ -5230,7 +5559,7 @@ impl BatchEvaluateGeofencesError {
     /// <p>Specifies a timestamp for when the error occurred in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.sample_time.as_ref()
     }
     /// <p>Contains details associated to the batch error.</p>
@@ -5254,7 +5583,7 @@ pub mod batch_evaluate_geofences_error {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
-        pub(crate) sample_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) sample_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) error: std::option::Option<crate::model::BatchItemError>,
     }
     impl Builder {
@@ -5271,7 +5600,7 @@ pub mod batch_evaluate_geofences_error {
         /// <p>Specifies a timestamp for when the error occurred in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn sample_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn sample_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.sample_time = Some(input);
             self
         }
@@ -5280,7 +5609,7 @@ pub mod batch_evaluate_geofences_error {
         /// </p>
         pub fn set_sample_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.sample_time = input;
             self
@@ -5409,11 +5738,11 @@ pub struct ListGeofenceCollectionsResponseEntry {
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies a timestamp for when the resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListGeofenceCollectionsResponseEntry {
     /// <p>The name of the geofence collection.</p>
@@ -5437,13 +5766,13 @@ impl ListGeofenceCollectionsResponseEntry {
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>Specifies a timestamp for when the resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -5469,8 +5798,8 @@ pub mod list_geofence_collections_response_entry {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) pricing_plan: std::option::Option<crate::model::PricingPlan>,
         pub(crate) pricing_plan_data_source: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the geofence collection.</p>
@@ -5529,7 +5858,7 @@ pub mod list_geofence_collections_response_entry {
         /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -5538,7 +5867,7 @@ pub mod list_geofence_collections_response_entry {
         /// </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
@@ -5546,7 +5875,7 @@ pub mod list_geofence_collections_response_entry {
         /// <p>Specifies a timestamp for when the resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
@@ -5555,7 +5884,7 @@ pub mod list_geofence_collections_response_entry {
         /// </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self

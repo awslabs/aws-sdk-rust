@@ -12,13 +12,12 @@ pub struct AddNotificationChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddNotificationChannelErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An exception that is thrown when a conflict occurs.
-    /// </p>
+    /// <p> An exception that is thrown when a conflict occurs. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -28,9 +27,8 @@ pub enum AddNotificationChannelErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -179,17 +177,17 @@ pub struct DescribeAccountHealthError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountHealthErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -311,17 +309,17 @@ pub struct DescribeAccountOverviewError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountOverviewErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -443,9 +441,10 @@ pub struct DescribeAnomalyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAnomalyErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -453,9 +452,8 @@ pub enum DescribeAnomalyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -580,9 +578,10 @@ pub struct DescribeFeedbackError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFeedbackErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -590,9 +589,8 @@ pub enum DescribeFeedbackErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -723,9 +721,10 @@ pub struct DescribeInsightError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInsightErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -733,9 +732,8 @@ pub enum DescribeInsightErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -847,6 +845,427 @@ impl std::error::Error for DescribeInsightError {
     }
 }
 
+/// Error type for the `DescribeOrganizationHealth` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeOrganizationHealthError {
+    /// Kind of error that occurred.
+    pub kind: DescribeOrganizationHealthErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeOrganizationHealth` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeOrganizationHealthErrorKind {
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal failure in an Amazon service occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request was denied due to a request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeOrganizationHealthError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeOrganizationHealthErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeOrganizationHealthErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DescribeOrganizationHealthErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeOrganizationHealthErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DescribeOrganizationHealthErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeOrganizationHealthError {
+    fn code(&self) -> Option<&str> {
+        DescribeOrganizationHealthError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeOrganizationHealthError {
+    /// Creates a new `DescribeOrganizationHealthError`.
+    pub fn new(kind: DescribeOrganizationHealthErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeOrganizationHealthError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeOrganizationHealthErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeOrganizationHealthError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeOrganizationHealthErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeOrganizationHealthErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOrganizationHealthErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeOrganizationHealthErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOrganizationHealthErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeOrganizationHealthErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOrganizationHealthErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeOrganizationHealthErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOrganizationHealthErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeOrganizationHealthError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeOrganizationHealthErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeOrganizationHealthErrorKind::InternalServerException(_inner) => Some(_inner),
+            DescribeOrganizationHealthErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeOrganizationHealthErrorKind::ValidationException(_inner) => Some(_inner),
+            DescribeOrganizationHealthErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeOrganizationOverview` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeOrganizationOverviewError {
+    /// Kind of error that occurred.
+    pub kind: DescribeOrganizationOverviewErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeOrganizationOverview` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeOrganizationOverviewErrorKind {
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal failure in an Amazon service occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request was denied due to a request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeOrganizationOverviewError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeOrganizationOverviewErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeOrganizationOverviewErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DescribeOrganizationOverviewErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeOrganizationOverviewErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DescribeOrganizationOverviewErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeOrganizationOverviewError {
+    fn code(&self) -> Option<&str> {
+        DescribeOrganizationOverviewError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeOrganizationOverviewError {
+    /// Creates a new `DescribeOrganizationOverviewError`.
+    pub fn new(kind: DescribeOrganizationOverviewErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeOrganizationOverviewError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeOrganizationOverviewErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeOrganizationOverviewError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeOrganizationOverviewErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeOrganizationOverviewErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOrganizationOverviewErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeOrganizationOverviewErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOrganizationOverviewErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeOrganizationOverviewErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOrganizationOverviewErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeOrganizationOverviewErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOrganizationOverviewErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeOrganizationOverviewError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeOrganizationOverviewErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeOrganizationOverviewErrorKind::InternalServerException(_inner) => Some(_inner),
+            DescribeOrganizationOverviewErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeOrganizationOverviewErrorKind::ValidationException(_inner) => Some(_inner),
+            DescribeOrganizationOverviewErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeOrganizationResourceCollectionHealth` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeOrganizationResourceCollectionHealthError {
+    /// Kind of error that occurred.
+    pub kind: DescribeOrganizationResourceCollectionHealthErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeOrganizationResourceCollectionHealth` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeOrganizationResourceCollectionHealthErrorKind {
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal failure in an Amazon service occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request was denied due to a request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeOrganizationResourceCollectionHealthError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeOrganizationResourceCollectionHealthErrorKind::AccessDeniedException(
+                _inner,
+            ) => _inner.fmt(f),
+            DescribeOrganizationResourceCollectionHealthErrorKind::InternalServerException(
+                _inner,
+            ) => _inner.fmt(f),
+            DescribeOrganizationResourceCollectionHealthErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeOrganizationResourceCollectionHealthErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeOrganizationResourceCollectionHealthErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind
+    for DescribeOrganizationResourceCollectionHealthError
+{
+    fn code(&self) -> Option<&str> {
+        DescribeOrganizationResourceCollectionHealthError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeOrganizationResourceCollectionHealthError {
+    /// Creates a new `DescribeOrganizationResourceCollectionHealthError`.
+    pub fn new(
+        kind: DescribeOrganizationResourceCollectionHealthErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeOrganizationResourceCollectionHealthError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeOrganizationResourceCollectionHealthErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeOrganizationResourceCollectionHealthError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeOrganizationResourceCollectionHealthErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeOrganizationResourceCollectionHealthErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOrganizationResourceCollectionHealthErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeOrganizationResourceCollectionHealthErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOrganizationResourceCollectionHealthErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeOrganizationResourceCollectionHealthErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOrganizationResourceCollectionHealthErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeOrganizationResourceCollectionHealthErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOrganizationResourceCollectionHealthErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeOrganizationResourceCollectionHealthError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeOrganizationResourceCollectionHealthErrorKind::AccessDeniedException(
+                _inner,
+            ) => Some(_inner),
+            DescribeOrganizationResourceCollectionHealthErrorKind::InternalServerException(
+                _inner,
+            ) => Some(_inner),
+            DescribeOrganizationResourceCollectionHealthErrorKind::ThrottlingException(_inner) => {
+                Some(_inner)
+            }
+            DescribeOrganizationResourceCollectionHealthErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            DescribeOrganizationResourceCollectionHealthErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
 /// Error type for the `DescribeResourceCollectionHealth` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -860,17 +1279,17 @@ pub struct DescribeResourceCollectionHealthError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeResourceCollectionHealthErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1003,17 +1422,17 @@ pub struct DescribeServiceIntegrationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeServiceIntegrationErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1135,9 +1554,10 @@ pub struct GetCostEstimationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCostEstimationErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1145,9 +1565,8 @@ pub enum GetCostEstimationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1278,9 +1697,10 @@ pub struct GetResourceCollectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetResourceCollectionErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1288,9 +1708,8 @@ pub enum GetResourceCollectionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1421,9 +1840,10 @@ pub struct ListAnomaliesForInsightError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAnomaliesForInsightErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1431,9 +1851,8 @@ pub enum ListAnomaliesForInsightErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1564,9 +1983,10 @@ pub struct ListEventsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListEventsErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1574,9 +1994,8 @@ pub enum ListEventsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1695,17 +2114,17 @@ pub struct ListInsightsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInsightsErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1818,17 +2237,17 @@ pub struct ListNotificationChannelsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListNotificationChannelsErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1937,6 +2356,138 @@ impl std::error::Error for ListNotificationChannelsError {
     }
 }
 
+/// Error type for the `ListOrganizationInsights` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListOrganizationInsightsError {
+    /// Kind of error that occurred.
+    pub kind: ListOrganizationInsightsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListOrganizationInsights` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListOrganizationInsightsErrorKind {
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal failure in an Amazon service occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request was denied due to a request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListOrganizationInsightsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListOrganizationInsightsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListOrganizationInsightsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListOrganizationInsightsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListOrganizationInsightsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListOrganizationInsightsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListOrganizationInsightsError {
+    fn code(&self) -> Option<&str> {
+        ListOrganizationInsightsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListOrganizationInsightsError {
+    /// Creates a new `ListOrganizationInsightsError`.
+    pub fn new(kind: ListOrganizationInsightsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListOrganizationInsightsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListOrganizationInsightsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListOrganizationInsightsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListOrganizationInsightsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListOrganizationInsightsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOrganizationInsightsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListOrganizationInsightsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOrganizationInsightsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListOrganizationInsightsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOrganizationInsightsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListOrganizationInsightsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOrganizationInsightsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListOrganizationInsightsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListOrganizationInsightsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListOrganizationInsightsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListOrganizationInsightsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListOrganizationInsightsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListOrganizationInsightsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListRecommendations` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1950,9 +2501,10 @@ pub struct ListRecommendationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRecommendationsErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1960,9 +2512,8 @@ pub enum ListRecommendationsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2093,13 +2644,12 @@ pub struct PutFeedbackError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutFeedbackErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An exception that is thrown when a conflict occurs.
-    /// </p>
+    /// <p> An exception that is thrown when a conflict occurs. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2107,9 +2657,8 @@ pub enum PutFeedbackErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2234,13 +2783,12 @@ pub struct RemoveNotificationChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveNotificationChannelErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An exception that is thrown when a conflict occurs.
-    /// </p>
+    /// <p> An exception that is thrown when a conflict occurs. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2248,9 +2796,8 @@ pub enum RemoveNotificationChannelErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2390,17 +2937,17 @@ pub struct SearchInsightsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchInsightsErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2503,6 +3050,138 @@ impl std::error::Error for SearchInsightsError {
     }
 }
 
+/// Error type for the `SearchOrganizationInsights` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SearchOrganizationInsightsError {
+    /// Kind of error that occurred.
+    pub kind: SearchOrganizationInsightsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `SearchOrganizationInsights` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SearchOrganizationInsightsErrorKind {
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal failure in an Amazon service occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request was denied due to a request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for SearchOrganizationInsightsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SearchOrganizationInsightsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            SearchOrganizationInsightsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            SearchOrganizationInsightsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            SearchOrganizationInsightsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            SearchOrganizationInsightsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for SearchOrganizationInsightsError {
+    fn code(&self) -> Option<&str> {
+        SearchOrganizationInsightsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SearchOrganizationInsightsError {
+    /// Creates a new `SearchOrganizationInsightsError`.
+    pub fn new(kind: SearchOrganizationInsightsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `SearchOrganizationInsightsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SearchOrganizationInsightsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `SearchOrganizationInsightsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SearchOrganizationInsightsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `SearchOrganizationInsightsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchOrganizationInsightsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchOrganizationInsightsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchOrganizationInsightsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchOrganizationInsightsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchOrganizationInsightsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchOrganizationInsightsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchOrganizationInsightsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for SearchOrganizationInsightsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SearchOrganizationInsightsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            SearchOrganizationInsightsErrorKind::InternalServerException(_inner) => Some(_inner),
+            SearchOrganizationInsightsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            SearchOrganizationInsightsErrorKind::ValidationException(_inner) => Some(_inner),
+            SearchOrganizationInsightsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `StartCostEstimation` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2516,13 +3195,12 @@ pub struct StartCostEstimationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartCostEstimationErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An exception that is thrown when a conflict occurs.
-    /// </p>
+    /// <p> An exception that is thrown when a conflict occurs. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2530,9 +3208,8 @@ pub enum StartCostEstimationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2672,21 +3349,19 @@ pub struct UpdateResourceCollectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateResourceCollectionErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An exception that is thrown when a conflict occurs.
-    /// </p>
+    /// <p> An exception that is thrown when a conflict occurs. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2817,21 +3492,19 @@ pub struct UpdateServiceIntegrationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateServiceIntegrationErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-    /// least one IAM permissions policy attached that grants the required permissions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that grants
+    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+    /// <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An exception that is thrown when a conflict occurs.
-    /// </p>
+    /// <p> An exception that is thrown when a conflict occurs. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Contains information about data passed in to a field during a request that is not valid.
-    /// </p>
+    /// <p> Contains information about data passed in to a field during a request that is not
+    /// valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2949,35 +3622,24 @@ impl std::error::Error for UpdateServiceIntegrationError {
     }
 }
 
-/// <p>
-/// Contains information about data passed in to a field during a request that is not valid.
-/// </p>
+/// <p> Contains information about data passed in to a field during a request that is not
+/// valid. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
-    /// <p>
-    /// A message that describes the validation exception.
-    /// </p>
+    /// <p> A message that describes the validation exception. </p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>
-    /// The reason the validation exception was thrown.
-    /// </p>
+    /// <p> The reason the validation exception was thrown. </p>
     pub reason: std::option::Option<crate::model::ValidationExceptionReason>,
-    /// <p>
-    /// An array of fields that are associated with the validation exception.
-    /// </p>
+    /// <p> An array of fields that are associated with the validation exception. </p>
     pub fields: std::option::Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
 }
 impl ValidationException {
-    /// <p>
-    /// The reason the validation exception was thrown.
-    /// </p>
+    /// <p> The reason the validation exception was thrown. </p>
     pub fn reason(&self) -> std::option::Option<&crate::model::ValidationExceptionReason> {
         self.reason.as_ref()
     }
-    /// <p>
-    /// An array of fields that are associated with the validation exception.
-    /// </p>
+    /// <p> An array of fields that are associated with the validation exception. </p>
     pub fn fields(&self) -> std::option::Option<&[crate::model::ValidationExceptionField]> {
         self.fields.as_deref()
     }
@@ -3019,30 +3681,22 @@ pub mod validation_exception {
             std::option::Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
     }
     impl Builder {
-        /// <p>
-        /// A message that describes the validation exception.
-        /// </p>
+        /// <p> A message that describes the validation exception. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>
-        /// A message that describes the validation exception.
-        /// </p>
+        /// <p> A message that describes the validation exception. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
-        /// <p>
-        /// The reason the validation exception was thrown.
-        /// </p>
+        /// <p> The reason the validation exception was thrown. </p>
         pub fn reason(mut self, input: crate::model::ValidationExceptionReason) -> Self {
             self.reason = Some(input);
             self
         }
-        /// <p>
-        /// The reason the validation exception was thrown.
-        /// </p>
+        /// <p> The reason the validation exception was thrown. </p>
         pub fn set_reason(
             mut self,
             input: std::option::Option<crate::model::ValidationExceptionReason>,
@@ -3054,18 +3708,14 @@ pub mod validation_exception {
         ///
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
-        /// <p>
-        /// An array of fields that are associated with the validation exception.
-        /// </p>
+        /// <p> An array of fields that are associated with the validation exception. </p>
         pub fn fields(mut self, input: impl Into<crate::model::ValidationExceptionField>) -> Self {
             let mut v = self.fields.unwrap_or_default();
             v.push(input.into());
             self.fields = Some(v);
             self
         }
-        /// <p>
-        /// An array of fields that are associated with the validation exception.
-        /// </p>
+        /// <p> An array of fields that are associated with the validation exception. </p>
         pub fn set_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
@@ -3096,37 +3746,25 @@ impl ValidationException {
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p>
-    /// The code of the quota that was exceeded, causing the throttling exception.
-    /// </p>
+    /// <p> The code of the quota that was exceeded, causing the throttling exception. </p>
     pub quota_code: std::option::Option<std::string::String>,
-    /// <p>
-    /// The code of the service that caused the throttling exception.
-    /// </p>
+    /// <p> The code of the service that caused the throttling exception. </p>
     pub service_code: std::option::Option<std::string::String>,
-    /// <p>
-    /// The number of seconds after which the action that caused the throttling
-    /// exception can be retried.
-    /// </p>
+    /// <p> The number of seconds after which the action that caused the throttling exception can
+    /// be retried. </p>
     pub retry_after_seconds: i32,
 }
 impl ThrottlingException {
-    /// <p>
-    /// The code of the quota that was exceeded, causing the throttling exception.
-    /// </p>
+    /// <p> The code of the quota that was exceeded, causing the throttling exception. </p>
     pub fn quota_code(&self) -> std::option::Option<&str> {
         self.quota_code.as_deref()
     }
-    /// <p>
-    /// The code of the service that caused the throttling exception.
-    /// </p>
+    /// <p> The code of the service that caused the throttling exception. </p>
     pub fn service_code(&self) -> std::option::Option<&str> {
         self.service_code.as_deref()
     }
-    /// <p>
-    /// The number of seconds after which the action that caused the throttling
-    /// exception can be retried.
-    /// </p>
+    /// <p> The number of seconds after which the action that caused the throttling exception can
+    /// be retried. </p>
     pub fn retry_after_seconds(&self) -> i32 {
         self.retry_after_seconds
     }
@@ -3179,46 +3817,34 @@ pub mod throttling_exception {
             self.message = input;
             self
         }
-        /// <p>
-        /// The code of the quota that was exceeded, causing the throttling exception.
-        /// </p>
+        /// <p> The code of the quota that was exceeded, causing the throttling exception. </p>
         pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.quota_code = Some(input.into());
             self
         }
-        /// <p>
-        /// The code of the quota that was exceeded, causing the throttling exception.
-        /// </p>
+        /// <p> The code of the quota that was exceeded, causing the throttling exception. </p>
         pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.quota_code = input;
             self
         }
-        /// <p>
-        /// The code of the service that caused the throttling exception.
-        /// </p>
+        /// <p> The code of the service that caused the throttling exception. </p>
         pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_code = Some(input.into());
             self
         }
-        /// <p>
-        /// The code of the service that caused the throttling exception.
-        /// </p>
+        /// <p> The code of the service that caused the throttling exception. </p>
         pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_code = input;
             self
         }
-        /// <p>
-        /// The number of seconds after which the action that caused the throttling
-        /// exception can be retried.
-        /// </p>
+        /// <p> The number of seconds after which the action that caused the throttling exception can
+        /// be retried. </p>
         pub fn retry_after_seconds(mut self, input: i32) -> Self {
             self.retry_after_seconds = Some(input);
             self
         }
-        /// <p>
-        /// The number of seconds after which the action that caused the throttling
-        /// exception can be retried.
-        /// </p>
+        /// <p> The number of seconds after which the action that caused the throttling exception can
+        /// be retried. </p>
         pub fn set_retry_after_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.retry_after_seconds = input;
             self
@@ -3247,17 +3873,13 @@ impl ThrottlingException {
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p>
-    /// The number of seconds after which the action that caused the internal server
-    /// exception can be retried.
-    /// </p>
+    /// <p> The number of seconds after which the action that caused the internal server
+    /// exception can be retried. </p>
     pub retry_after_seconds: i32,
 }
 impl InternalServerException {
-    /// <p>
-    /// The number of seconds after which the action that caused the internal server
-    /// exception can be retried.
-    /// </p>
+    /// <p> The number of seconds after which the action that caused the internal server
+    /// exception can be retried. </p>
     pub fn retry_after_seconds(&self) -> i32 {
         self.retry_after_seconds
     }
@@ -3306,18 +3928,14 @@ pub mod internal_server_exception {
             self.message = input;
             self
         }
-        /// <p>
-        /// The number of seconds after which the action that caused the internal server
-        /// exception can be retried.
-        /// </p>
+        /// <p> The number of seconds after which the action that caused the internal server
+        /// exception can be retried. </p>
         pub fn retry_after_seconds(mut self, input: i32) -> Self {
             self.retry_after_seconds = Some(input);
             self
         }
-        /// <p>
-        /// The number of seconds after which the action that caused the internal server
-        /// exception can be retried.
-        /// </p>
+        /// <p> The number of seconds after which the action that caused the internal server
+        /// exception can be retried. </p>
         pub fn set_retry_after_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.retry_after_seconds = input;
             self
@@ -3338,33 +3956,23 @@ impl InternalServerException {
     }
 }
 
-/// <p>
-/// An exception that is thrown when a conflict occurs.
-/// </p>
+/// <p> An exception that is thrown when a conflict occurs. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p>
-    /// The ID of the AWS resource in which a conflict occurred.
-    /// </p>
+    /// <p> The ID of the Amazon Web Services resource in which a conflict occurred. </p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of the AWS resource in which a conflict occurred.
-    /// </p>
+    /// <p> The type of the Amazon Web Services resource in which a conflict occurred. </p>
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ConflictException {
-    /// <p>
-    /// The ID of the AWS resource in which a conflict occurred.
-    /// </p>
+    /// <p> The ID of the Amazon Web Services resource in which a conflict occurred. </p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>
-    /// The type of the AWS resource in which a conflict occurred.
-    /// </p>
+    /// <p> The type of the Amazon Web Services resource in which a conflict occurred. </p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -3415,30 +4023,22 @@ pub mod conflict_exception {
             self.message = input;
             self
         }
-        /// <p>
-        /// The ID of the AWS resource in which a conflict occurred.
-        /// </p>
+        /// <p> The ID of the Amazon Web Services resource in which a conflict occurred. </p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the AWS resource in which a conflict occurred.
-        /// </p>
+        /// <p> The ID of the Amazon Web Services resource in which a conflict occurred. </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>
-        /// The type of the AWS resource in which a conflict occurred.
-        /// </p>
+        /// <p> The type of the Amazon Web Services resource in which a conflict occurred. </p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>
-        /// The type of the AWS resource in which a conflict occurred.
-        /// </p>
+        /// <p> The type of the Amazon Web Services resource in which a conflict occurred. </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3463,9 +4063,10 @@ impl ConflictException {
     }
 }
 
-/// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at
-/// least one IAM permissions policy attached that grants the required permissions. For more information, see
-/// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+/// <p> You don't have permissions to perform the requested operation. The user or role that
+/// is making the request must have at least one IAM permissions policy attached that grants
+/// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
+/// <i>IAM User Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
@@ -3535,25 +4136,17 @@ impl AccessDeniedException {
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p>
-    /// The ID of the AWS resource that could not be found.
-    /// </p>
+    /// <p> The ID of the Amazon Web Services resource that could not be found. </p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of the AWS resource that could not be found.
-    /// </p>
+    /// <p> The type of the Amazon Web Services resource that could not be found. </p>
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
-    /// <p>
-    /// The ID of the AWS resource that could not be found.
-    /// </p>
+    /// <p> The ID of the Amazon Web Services resource that could not be found. </p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>
-    /// The type of the AWS resource that could not be found.
-    /// </p>
+    /// <p> The type of the Amazon Web Services resource that could not be found. </p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -3604,30 +4197,22 @@ pub mod resource_not_found_exception {
             self.message = input;
             self
         }
-        /// <p>
-        /// The ID of the AWS resource that could not be found.
-        /// </p>
+        /// <p> The ID of the Amazon Web Services resource that could not be found. </p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the AWS resource that could not be found.
-        /// </p>
+        /// <p> The ID of the Amazon Web Services resource that could not be found. </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>
-        /// The type of the AWS resource that could not be found.
-        /// </p>
+        /// <p> The type of the Amazon Web Services resource that could not be found. </p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>
-        /// The type of the AWS resource that could not be found.
-        /// </p>
+        /// <p> The type of the Amazon Web Services resource that could not be found. </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,

@@ -1056,19 +1056,19 @@ pub struct GetTrailStatusOutput {
     /// </p>
     pub latest_notification_error: std::option::Option<std::string::String>,
     /// <p>Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.</p>
-    pub latest_delivery_time: std::option::Option<aws_smithy_types::Instant>,
+    pub latest_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new log file to an account's Amazon S3 bucket.</p>
-    pub latest_notification_time: std::option::Option<aws_smithy_types::Instant>,
+    pub latest_notification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the most recent date and time when CloudTrail started recording API calls for an Amazon Web Services account.</p>
-    pub start_logging_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_logging_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the most recent date and time when CloudTrail stopped recording API calls for an Amazon Web Services account.</p>
-    pub stop_logging_time: std::option::Option<aws_smithy_types::Instant>,
+    pub stop_logging_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Displays any CloudWatch Logs error that CloudTrail encountered when attempting to deliver logs to CloudWatch Logs.</p>
     pub latest_cloud_watch_logs_delivery_error: std::option::Option<std::string::String>,
     /// <p>Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.</p>
-    pub latest_cloud_watch_logs_delivery_time: std::option::Option<aws_smithy_types::Instant>,
+    pub latest_cloud_watch_logs_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.</p>
-    pub latest_digest_delivery_time: std::option::Option<aws_smithy_types::Instant>,
+    pub latest_digest_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest
     /// file to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
     /// Responses</a> in the Amazon S3 API Reference. </p>
@@ -1116,19 +1116,19 @@ impl GetTrailStatusOutput {
         self.latest_notification_error.as_deref()
     }
     /// <p>Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.</p>
-    pub fn latest_delivery_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn latest_delivery_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_delivery_time.as_ref()
     }
     /// <p>Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new log file to an account's Amazon S3 bucket.</p>
-    pub fn latest_notification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn latest_notification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_notification_time.as_ref()
     }
     /// <p>Specifies the most recent date and time when CloudTrail started recording API calls for an Amazon Web Services account.</p>
-    pub fn start_logging_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_logging_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_logging_time.as_ref()
     }
     /// <p>Specifies the most recent date and time when CloudTrail stopped recording API calls for an Amazon Web Services account.</p>
-    pub fn stop_logging_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn stop_logging_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stop_logging_time.as_ref()
     }
     /// <p>Displays any CloudWatch Logs error that CloudTrail encountered when attempting to deliver logs to CloudWatch Logs.</p>
@@ -1138,11 +1138,11 @@ impl GetTrailStatusOutput {
     /// <p>Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.</p>
     pub fn latest_cloud_watch_logs_delivery_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_cloud_watch_logs_delivery_time.as_ref()
     }
     /// <p>Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.</p>
-    pub fn latest_digest_delivery_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn latest_digest_delivery_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_digest_delivery_time.as_ref()
     }
     /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest
@@ -1238,14 +1238,14 @@ pub mod get_trail_status_output {
         pub(crate) is_logging: std::option::Option<bool>,
         pub(crate) latest_delivery_error: std::option::Option<std::string::String>,
         pub(crate) latest_notification_error: std::option::Option<std::string::String>,
-        pub(crate) latest_delivery_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) latest_notification_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) start_logging_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) stop_logging_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) latest_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) latest_notification_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) start_logging_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) stop_logging_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) latest_cloud_watch_logs_delivery_error: std::option::Option<std::string::String>,
         pub(crate) latest_cloud_watch_logs_delivery_time:
-            std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) latest_digest_delivery_time: std::option::Option<aws_smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) latest_digest_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) latest_digest_delivery_error: std::option::Option<std::string::String>,
         pub(crate) latest_delivery_attempt_time: std::option::Option<std::string::String>,
         pub(crate) latest_notification_attempt_time: std::option::Option<std::string::String>,
@@ -1312,53 +1312,53 @@ pub mod get_trail_status_output {
             self
         }
         /// <p>Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.</p>
-        pub fn latest_delivery_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn latest_delivery_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.latest_delivery_time = Some(input);
             self
         }
         /// <p>Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.</p>
         pub fn set_latest_delivery_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.latest_delivery_time = input;
             self
         }
         /// <p>Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new log file to an account's Amazon S3 bucket.</p>
-        pub fn latest_notification_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn latest_notification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.latest_notification_time = Some(input);
             self
         }
         /// <p>Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new log file to an account's Amazon S3 bucket.</p>
         pub fn set_latest_notification_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.latest_notification_time = input;
             self
         }
         /// <p>Specifies the most recent date and time when CloudTrail started recording API calls for an Amazon Web Services account.</p>
-        pub fn start_logging_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_logging_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_logging_time = Some(input);
             self
         }
         /// <p>Specifies the most recent date and time when CloudTrail started recording API calls for an Amazon Web Services account.</p>
         pub fn set_start_logging_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_logging_time = input;
             self
         }
         /// <p>Specifies the most recent date and time when CloudTrail stopped recording API calls for an Amazon Web Services account.</p>
-        pub fn stop_logging_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn stop_logging_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stop_logging_time = Some(input);
             self
         }
         /// <p>Specifies the most recent date and time when CloudTrail stopped recording API calls for an Amazon Web Services account.</p>
         pub fn set_stop_logging_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.stop_logging_time = input;
             self
@@ -1382,7 +1382,7 @@ pub mod get_trail_status_output {
         /// <p>Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.</p>
         pub fn latest_cloud_watch_logs_delivery_time(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.latest_cloud_watch_logs_delivery_time = Some(input);
             self
@@ -1390,20 +1390,20 @@ pub mod get_trail_status_output {
         /// <p>Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.</p>
         pub fn set_latest_cloud_watch_logs_delivery_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.latest_cloud_watch_logs_delivery_time = input;
             self
         }
         /// <p>Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.</p>
-        pub fn latest_digest_delivery_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn latest_digest_delivery_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.latest_digest_delivery_time = Some(input);
             self
         }
         /// <p>Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.</p>
         pub fn set_latest_digest_delivery_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.latest_digest_delivery_time = input;
             self

@@ -9,8 +9,8 @@
 //!
 //! ```rust
 //! use aws_sigv4::event_stream::{sign_message, SigningParams};
-//! use chrono::Utc;
 //! use aws_smithy_eventstream::frame::{Header, HeaderValue, Message};
+//! use std::time::SystemTime;
 //!
 //! // The `last_signature` argument is the previous message's signature, or
 //! // the signature of the initial HTTP request if a message hasn't been signed yet.
@@ -26,7 +26,7 @@
 //!     .secret_key("example secret key")
 //!     .region("us-east-1")
 //!     .service_name("exampleservice")
-//!     .date_time(Utc::now())
+//!     .time(SystemTime::now())
 //!     .settings(())
 //!     .build()
 //!     .unwrap();
@@ -36,13 +36,13 @@
 //!     sign_message(&message_to_sign, &last_signature, &params).into_parts();
 //! ```
 
-use crate::date_fmt::{format_date, format_date_time};
+use crate::date_time::{format_date, format_date_time, truncate_subsecs};
 use crate::sign::{calculate_signature, generate_signing_key, sha256_hex_string};
 use crate::SigningOutput;
 use aws_smithy_eventstream::frame::{write_headers_to, Header, HeaderValue, Message};
 use bytes::Bytes;
-use chrono::{DateTime, SubsecRound, Utc};
 use std::io::Write;
+use std::time::SystemTime;
 
 /// Event stream signing parameters
 pub type SigningParams<'a> = super::SigningParams<'a, ()>;
@@ -51,13 +51,13 @@ pub type SigningParams<'a> = super::SigningParams<'a, ()>;
 fn calculate_string_to_sign(
     message_payload: &[u8],
     last_signature: &str,
-    date_time: &DateTime<Utc>,
+    time: SystemTime,
     params: &SigningParams<'_>,
 ) -> Vec<u8> {
     // Event Stream string to sign format is documented here:
     // https://docs.aws.amazon.com/transcribe/latest/dg/how-streaming.html
-    let date_time_str = format_date_time(&date_time);
-    let date_str = format_date(&date_time.date());
+    let date_time_str = format_date_time(time);
+    let date_str = format_date(time);
 
     let mut sts: Vec<u8> = Vec::new();
     writeln!(sts, "AWS4-HMAC-SHA256-PAYLOAD").unwrap();
@@ -70,7 +70,7 @@ fn calculate_string_to_sign(
     .unwrap();
     writeln!(sts, "{}", last_signature).unwrap();
 
-    let date_header = Header::new(":date", HeaderValue::Timestamp((*date_time).into()));
+    let date_header = Header::new(":date", HeaderValue::Timestamp(time.into()));
     let mut date_buffer = Vec::new();
     write_headers_to(&[date_header], &mut date_buffer).unwrap();
     writeln!(sts, "{}", sha256_hex_string(&date_buffer)).unwrap();
@@ -115,18 +115,14 @@ fn sign_payload<'a>(
 ) -> SigningOutput<Message> {
     // Truncate the sub-seconds up front since the timestamp written to the signed message header
     // needs to exactly match the string formatted timestamp, which doesn't include sub-seconds.
-    let date_time = params.date_time.trunc_subsecs(0);
+    let time = truncate_subsecs(params.time);
 
-    let signing_key = generate_signing_key(
-        params.secret_key,
-        date_time.date(),
-        params.region,
-        params.service_name,
-    );
+    let signing_key =
+        generate_signing_key(params.secret_key, time, params.region, params.service_name);
     let string_to_sign = calculate_string_to_sign(
         message_payload.as_ref().map(|v| &v[..]).unwrap_or(&[]),
         last_signature,
-        &date_time,
+        time,
         params,
     );
     let signature = calculate_signature(signing_key, &string_to_sign);
@@ -138,10 +134,7 @@ fn sign_payload<'a>(
                 ":chunk-signature",
                 HeaderValue::ByteArray(hex::decode(&signature).unwrap().into()),
             ))
-            .add_header(Header::new(
-                ":date",
-                HeaderValue::Timestamp(date_time.into()),
-            )),
+            .add_header(Header::new(":date", HeaderValue::Timestamp(time.into()))),
         signature,
     )
 }
@@ -166,7 +159,7 @@ mod tests {
             security_token: None,
             region: "us-east-1",
             service_name: "testservice",
-            date_time: (UNIX_EPOCH + Duration::new(123_456_789_u64, 1234u32)).into(),
+            time: (UNIX_EPOCH + Duration::new(123_456_789_u64, 1234u32)).into(),
             settings: (),
         };
 
@@ -185,7 +178,7 @@ mod tests {
             std::str::from_utf8(&calculate_string_to_sign(
                 &message_payload,
                 &last_signature,
-                &params.date_time,
+                params.time,
                 &params
             ))
             .unwrap()
@@ -204,7 +197,7 @@ mod tests {
             security_token: None,
             region: "us-east-1",
             service_name: "testservice",
-            date_time: (UNIX_EPOCH + Duration::new(123_456_789_u64, 1234u32)).into(),
+            time: (UNIX_EPOCH + Duration::new(123_456_789_u64, 1234u32)).into(),
             settings: (),
         };
 
@@ -219,9 +212,9 @@ mod tests {
         }
         assert_eq!(":date", signed.headers()[1].name().as_str());
         if let HeaderValue::Timestamp(value) = signed.headers()[1].value() {
-            assert_eq!(123_456_789_i64, value.epoch_seconds());
+            assert_eq!(123_456_789_i64, value.secs());
             // The subseconds should have been truncated off
-            assert_eq!(0, value.epoch_subsecond_nanos());
+            assert_eq!(0, value.subsec_nanos());
         } else {
             panic!("expected timestamp for :date header");
         }

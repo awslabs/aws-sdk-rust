@@ -804,9 +804,9 @@ pub fn deser_operation_crate_operation_create_configuration_template(
             s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk.synthetic#CreateConfigurationTemplateOutput$DateCreated */ =>  {
                 let var_28 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#CreationDate`)"))
                         ?
@@ -818,9 +818,9 @@ pub fn deser_operation_crate_operation_create_configuration_template(
             s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk.synthetic#CreateConfigurationTemplateOutput$DateUpdated */ =>  {
                 let var_29 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#UpdateDate`)"))
                         ?
@@ -1010,9 +1010,9 @@ pub fn deser_operation_crate_operation_create_environment(
             s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$DateCreated */ =>  {
                 let var_41 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#CreationDate`)"))
                         ?
@@ -1024,9 +1024,9 @@ pub fn deser_operation_crate_operation_create_environment(
             s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$DateUpdated */ =>  {
                 let var_42 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#UpdateDate`)"))
                         ?
@@ -1933,9 +1933,9 @@ pub fn deser_operation_crate_operation_describe_environment_health(
             s if s.matches("RefreshedAt") /* RefreshedAt com.amazonaws.elasticbeanstalk.synthetic#DescribeEnvironmentHealthOutput$RefreshedAt */ =>  {
                 let var_77 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#RefreshedAt`)"))
                         ?
@@ -2287,9 +2287,9 @@ pub fn deser_operation_crate_operation_describe_instances_health(
             s if s.matches("RefreshedAt") /* RefreshedAt com.amazonaws.elasticbeanstalk.synthetic#DescribeInstancesHealthOutput$RefreshedAt */ =>  {
                 let var_87 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#RefreshedAt`)"))
                         ?
@@ -2901,9 +2901,9 @@ pub fn deser_operation_crate_operation_terminate_environment(
             s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$DateCreated */ =>  {
                 let var_111 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#CreationDate`)"))
                         ?
@@ -2915,9 +2915,9 @@ pub fn deser_operation_crate_operation_terminate_environment(
             s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$DateUpdated */ =>  {
                 let var_112 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#UpdateDate`)"))
                         ?
@@ -3338,9 +3338,9 @@ pub fn deser_operation_crate_operation_update_configuration_template(
             s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk.synthetic#UpdateConfigurationTemplateOutput$DateCreated */ =>  {
                 let var_133 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#CreationDate`)"))
                         ?
@@ -3352,9 +3352,9 @@ pub fn deser_operation_crate_operation_update_configuration_template(
             s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk.synthetic#UpdateConfigurationTemplateOutput$DateUpdated */ =>  {
                 let var_134 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#UpdateDate`)"))
                         ?
@@ -3544,9 +3544,9 @@ pub fn deser_operation_crate_operation_update_environment(
             s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$DateCreated */ =>  {
                 let var_146 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#CreationDate`)"))
                         ?
@@ -3558,9 +3558,9 @@ pub fn deser_operation_crate_operation_update_environment(
             s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$DateUpdated */ =>  {
                 let var_147 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#UpdateDate`)"))
                         ?
@@ -3845,9 +3845,9 @@ pub fn deser_structure_crate_model_application_description(
             s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk#ApplicationDescription$DateCreated */ =>  {
                 let var_162 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#CreationDate`)"))
                         ?
@@ -3859,9 +3859,9 @@ pub fn deser_structure_crate_model_application_description(
             s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk#ApplicationDescription$DateUpdated */ =>  {
                 let var_163 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#UpdateDate`)"))
                         ?
@@ -4001,9 +4001,9 @@ pub fn deser_structure_crate_model_application_version_description(
             s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk#ApplicationVersionDescription$DateCreated */ =>  {
                 let var_174 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#CreationDate`)"))
                         ?
@@ -4015,9 +4015,9 @@ pub fn deser_structure_crate_model_application_version_description(
             s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk#ApplicationVersionDescription$DateUpdated */ =>  {
                 let var_175 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#UpdateDate`)"))
                         ?
@@ -4978,9 +4978,9 @@ pub fn deser_structure_crate_model_platform_description(
             s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk#PlatformDescription$DateCreated */ =>  {
                 let var_225 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#CreationDate`)"))
                         ?
@@ -4992,9 +4992,9 @@ pub fn deser_structure_crate_model_platform_description(
             s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk#PlatformDescription$DateUpdated */ =>  {
                 let var_226 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#UpdateDate`)"))
                         ?
@@ -5477,9 +5477,9 @@ pub fn deser_structure_crate_model_environment_description(
             s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk#EnvironmentDescription$DateCreated */ =>  {
                 let var_252 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#CreationDate`)"))
                         ?
@@ -5491,9 +5491,9 @@ pub fn deser_structure_crate_model_environment_description(
             s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk#EnvironmentDescription$DateUpdated */ =>  {
                 let var_253 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#UpdateDate`)"))
                         ?
@@ -6244,9 +6244,9 @@ pub fn deser_structure_crate_model_configuration_settings_description(
             s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk#ConfigurationSettingsDescription$DateCreated */ =>  {
                 let var_296 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#CreationDate`)"))
                         ?
@@ -6258,9 +6258,9 @@ pub fn deser_structure_crate_model_configuration_settings_description(
             s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk#ConfigurationSettingsDescription$DateUpdated */ =>  {
                 let var_297 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#UpdateDate`)"))
                         ?
@@ -6582,9 +6582,9 @@ pub fn deser_structure_crate_model_managed_action_history_item(
             s if s.matches("ExecutedTime") /* ExecutedTime com.amazonaws.elasticbeanstalk#ManagedActionHistoryItem$ExecutedTime */ =>  {
                 let var_317 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#Timestamp`)"))
                         ?
@@ -6596,9 +6596,9 @@ pub fn deser_structure_crate_model_managed_action_history_item(
             s if s.matches("FinishedTime") /* FinishedTime com.amazonaws.elasticbeanstalk#ManagedActionHistoryItem$FinishedTime */ =>  {
                 let var_318 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#Timestamp`)"))
                         ?
@@ -6677,9 +6677,9 @@ pub fn deser_structure_crate_model_managed_action(
             s if s.matches("WindowStartTime") /* WindowStartTime com.amazonaws.elasticbeanstalk#ManagedAction$WindowStartTime */ =>  {
                 let var_323 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#Timestamp`)"))
                         ?
@@ -6837,9 +6837,9 @@ pub fn deser_structure_crate_model_event_description(
             s if s.matches("EventDate") /* EventDate com.amazonaws.elasticbeanstalk#EventDescription$EventDate */ =>  {
                 let var_324 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#EventDate`)"))
                         ?
@@ -7018,9 +7018,9 @@ pub fn deser_structure_crate_model_single_instance_health(
             s if s.matches("LaunchedAt") /* LaunchedAt com.amazonaws.elasticbeanstalk#SingleInstanceHealth$LaunchedAt */ =>  {
                 let var_337 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#LaunchedAt`)"))
                         ?
@@ -7340,9 +7340,9 @@ pub fn deser_structure_crate_model_environment_info_description(
             s if s.matches("SampleTimestamp") /* SampleTimestamp com.amazonaws.elasticbeanstalk#EnvironmentInfoDescription$SampleTimestamp */ =>  {
                 let var_354 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#SampleTimestamp`)"))
                         ?
@@ -7828,9 +7828,9 @@ pub fn deser_structure_crate_model_deployment(
             s if s.matches("DeploymentTime") /* DeploymentTime com.amazonaws.elasticbeanstalk#Deployment$DeploymentTime */ =>  {
                 let var_377 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#DeploymentTimestamp`)"))
                         ?

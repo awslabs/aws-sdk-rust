@@ -621,6 +621,134 @@ impl std::error::Error for CreateBackendConfigError {
     }
 }
 
+/// Error type for the `CreateBackendStorage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateBackendStorageError {
+    /// Kind of error that occurred.
+    pub kind: CreateBackendStorageErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateBackendStorage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateBackendStorageErrorKind {
+    /// <p>An error returned if a request is not formed properly.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>An error returned if there's a temporary issue with the service.</p>
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    /// <p>An error returned when a specific resource type is not found.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateBackendStorageError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateBackendStorageErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateBackendStorageErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            CreateBackendStorageErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateBackendStorageErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateBackendStorageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateBackendStorageError {
+    fn code(&self) -> Option<&str> {
+        CreateBackendStorageError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateBackendStorageError {
+    /// Creates a new `CreateBackendStorageError`.
+    pub fn new(kind: CreateBackendStorageErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateBackendStorageError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateBackendStorageErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateBackendStorageError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateBackendStorageErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateBackendStorageErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBackendStorageErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBackendStorageErrorKind::GatewayTimeoutException`.
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBackendStorageErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBackendStorageErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBackendStorageErrorKind::NotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBackendStorageErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBackendStorageErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for CreateBackendStorageError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateBackendStorageErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateBackendStorageErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            CreateBackendStorageErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateBackendStorageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateBackendStorageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateToken` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1108,6 +1236,134 @@ impl std::error::Error for DeleteBackendAuthError {
             DeleteBackendAuthErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteBackendAuthErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteBackendAuthErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteBackendStorage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteBackendStorageError {
+    /// Kind of error that occurred.
+    pub kind: DeleteBackendStorageErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteBackendStorage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteBackendStorageErrorKind {
+    /// <p>An error returned if a request is not formed properly.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>An error returned if there's a temporary issue with the service.</p>
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    /// <p>An error returned when a specific resource type is not found.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteBackendStorageError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteBackendStorageErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteBackendStorageErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            DeleteBackendStorageErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteBackendStorageErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteBackendStorageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteBackendStorageError {
+    fn code(&self) -> Option<&str> {
+        DeleteBackendStorageError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteBackendStorageError {
+    /// Creates a new `DeleteBackendStorageError`.
+    pub fn new(kind: DeleteBackendStorageErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteBackendStorageError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteBackendStorageErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteBackendStorageError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteBackendStorageErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteBackendStorageErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBackendStorageErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteBackendStorageErrorKind::GatewayTimeoutException`.
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBackendStorageErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteBackendStorageErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBackendStorageErrorKind::NotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteBackendStorageErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBackendStorageErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteBackendStorageError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteBackendStorageErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteBackendStorageErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            DeleteBackendStorageErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteBackendStorageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteBackendStorageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1969,6 +2225,131 @@ impl std::error::Error for GetBackendJobError {
     }
 }
 
+/// Error type for the `GetBackendStorage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetBackendStorageError {
+    /// Kind of error that occurred.
+    pub kind: GetBackendStorageErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetBackendStorage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetBackendStorageErrorKind {
+    /// <p>An error returned if a request is not formed properly.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>An error returned if there's a temporary issue with the service.</p>
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    /// <p>An error returned when a specific resource type is not found.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetBackendStorageError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetBackendStorageErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetBackendStorageErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            GetBackendStorageErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetBackendStorageErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetBackendStorageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetBackendStorageError {
+    fn code(&self) -> Option<&str> {
+        GetBackendStorageError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetBackendStorageError {
+    /// Creates a new `GetBackendStorageError`.
+    pub fn new(kind: GetBackendStorageErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetBackendStorageError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetBackendStorageErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetBackendStorageError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetBackendStorageErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetBackendStorageErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBackendStorageErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetBackendStorageErrorKind::GatewayTimeoutException`.
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBackendStorageErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetBackendStorageErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetBackendStorageErrorKind::NotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `GetBackendStorageErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBackendStorageErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for GetBackendStorageError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetBackendStorageErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetBackendStorageErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            GetBackendStorageErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetBackendStorageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetBackendStorageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetToken` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2210,6 +2591,134 @@ impl std::error::Error for ImportBackendAuthError {
     }
 }
 
+/// Error type for the `ImportBackendStorage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ImportBackendStorageError {
+    /// Kind of error that occurred.
+    pub kind: ImportBackendStorageErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ImportBackendStorage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ImportBackendStorageErrorKind {
+    /// <p>An error returned if a request is not formed properly.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>An error returned if there's a temporary issue with the service.</p>
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    /// <p>An error returned when a specific resource type is not found.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ImportBackendStorageError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ImportBackendStorageErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ImportBackendStorageErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            ImportBackendStorageErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            ImportBackendStorageErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            ImportBackendStorageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ImportBackendStorageError {
+    fn code(&self) -> Option<&str> {
+        ImportBackendStorageError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ImportBackendStorageError {
+    /// Creates a new `ImportBackendStorageError`.
+    pub fn new(kind: ImportBackendStorageErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ImportBackendStorageError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ImportBackendStorageErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ImportBackendStorageError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ImportBackendStorageErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ImportBackendStorageErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportBackendStorageErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ImportBackendStorageErrorKind::GatewayTimeoutException`.
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportBackendStorageErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ImportBackendStorageErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportBackendStorageErrorKind::NotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ImportBackendStorageErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportBackendStorageErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for ImportBackendStorageError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ImportBackendStorageErrorKind::BadRequestException(_inner) => Some(_inner),
+            ImportBackendStorageErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            ImportBackendStorageErrorKind::NotFoundException(_inner) => Some(_inner),
+            ImportBackendStorageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            ImportBackendStorageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListBackendJobs` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2328,6 +2837,128 @@ impl std::error::Error for ListBackendJobsError {
             ListBackendJobsErrorKind::NotFoundException(_inner) => Some(_inner),
             ListBackendJobsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListBackendJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListS3Buckets` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListS3BucketsError {
+    /// Kind of error that occurred.
+    pub kind: ListS3BucketsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListS3Buckets` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListS3BucketsErrorKind {
+    /// <p>An error returned if a request is not formed properly.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>An error returned if there's a temporary issue with the service.</p>
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    /// <p>An error returned when a specific resource type is not found.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListS3BucketsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListS3BucketsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListS3BucketsErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            ListS3BucketsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            ListS3BucketsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            ListS3BucketsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListS3BucketsError {
+    fn code(&self) -> Option<&str> {
+        ListS3BucketsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListS3BucketsError {
+    /// Creates a new `ListS3BucketsError`.
+    pub fn new(kind: ListS3BucketsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListS3BucketsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListS3BucketsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListS3BucketsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListS3BucketsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListS3BucketsErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, ListS3BucketsErrorKind::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `ListS3BucketsErrorKind::GatewayTimeoutException`.
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListS3BucketsErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListS3BucketsErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, ListS3BucketsErrorKind::NotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `ListS3BucketsErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListS3BucketsErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for ListS3BucketsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListS3BucketsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListS3BucketsErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            ListS3BucketsErrorKind::NotFoundException(_inner) => Some(_inner),
+            ListS3BucketsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            ListS3BucketsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3084,6 +3715,134 @@ impl std::error::Error for UpdateBackendJobError {
             UpdateBackendJobErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateBackendJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateBackendJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateBackendStorage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateBackendStorageError {
+    /// Kind of error that occurred.
+    pub kind: UpdateBackendStorageErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateBackendStorage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateBackendStorageErrorKind {
+    /// <p>An error returned if a request is not formed properly.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>An error returned if there's a temporary issue with the service.</p>
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    /// <p>An error returned when a specific resource type is not found.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateBackendStorageError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateBackendStorageErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateBackendStorageErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            UpdateBackendStorageErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateBackendStorageErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateBackendStorageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateBackendStorageError {
+    fn code(&self) -> Option<&str> {
+        UpdateBackendStorageError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateBackendStorageError {
+    /// Creates a new `UpdateBackendStorageError`.
+    pub fn new(kind: UpdateBackendStorageErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateBackendStorageError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateBackendStorageErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateBackendStorageError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateBackendStorageErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateBackendStorageErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBackendStorageErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateBackendStorageErrorKind::GatewayTimeoutException`.
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBackendStorageErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateBackendStorageErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBackendStorageErrorKind::NotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateBackendStorageErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBackendStorageErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateBackendStorageError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateBackendStorageErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateBackendStorageErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            UpdateBackendStorageErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateBackendStorageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateBackendStorageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

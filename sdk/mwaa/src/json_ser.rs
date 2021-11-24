@@ -296,7 +296,7 @@ pub fn serialize_structure_crate_model_metric_datum(
     if let Some(var_75) = &input.timestamp {
         object
             .key("Timestamp")
-            .instant(var_75, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_75, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_76) = &input.dimensions {
         let mut array_77 = object.key("Dimensions").start_array();

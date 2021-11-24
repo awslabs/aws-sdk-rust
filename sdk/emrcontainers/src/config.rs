@@ -17,6 +17,9 @@
 ///
 pub struct Config {
     pub(crate) make_token: crate::idempotency_token::IdempotencyTokenProvider,
+    app_name: Option<aws_types::app_name::AppName>,
+    pub(crate) timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
+    pub(crate) sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
     pub(crate) retry_config: Option<aws_smithy_types::retry::RetryConfig>,
     pub(crate) endpoint_resolver: ::std::sync::Arc<dyn aws_endpoint::ResolveAwsEndpoint>,
     pub(crate) region: Option<aws_types::region::Region>,
@@ -32,6 +35,13 @@ impl Config {
     /// Constructs a config builder.
     pub fn builder() -> Builder {
         Builder::default()
+    }
+    /// Returns the name of the app that is using the client, if it was provided.
+    ///
+    /// This _optional_ name is used to identify the application in the user agent that
+    /// gets sent along with requests.
+    pub fn app_name(&self) -> Option<&aws_types::app_name::AppName> {
+        self.app_name.as_ref()
     }
     /// Creates a new [service config](crate::Config) from a [shared `config`](aws_types::config::Config).
     pub fn new(config: &aws_types::config::Config) -> Self {
@@ -49,6 +59,9 @@ impl Config {
 #[derive(Default)]
 pub struct Builder {
     make_token: Option<crate::idempotency_token::IdempotencyTokenProvider>,
+    app_name: Option<aws_types::app_name::AppName>,
+    timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
+    sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
     retry_config: Option<aws_smithy_types::retry::RetryConfig>,
     endpoint_resolver: Option<::std::sync::Arc<dyn aws_endpoint::ResolveAwsEndpoint>>,
     region: Option<aws_types::region::Region>,
@@ -65,6 +78,129 @@ impl Builder {
         make_token: impl Into<crate::idempotency_token::IdempotencyTokenProvider>,
     ) -> Self {
         self.make_token = Some(make_token.into());
+        self
+    }
+    /// Sets the name of the app that is using the client.
+    ///
+    /// This _optional_ name is used to identify the application in the user agent that
+    /// gets sent along with requests.
+    pub fn app_name(mut self, app_name: aws_types::app_name::AppName) -> Self {
+        self.set_app_name(Some(app_name));
+        self
+    }
+
+    /// Sets the name of the app that is using the client.
+    ///
+    /// This _optional_ name is used to identify the application in the user agent that
+    /// gets sent along with requests.
+    pub fn set_app_name(&mut self, app_name: Option<aws_types::app_name::AppName>) -> &mut Self {
+        self.app_name = app_name;
+        self
+    }
+    /// Set the timeout_config for the builder
+    ///
+    /// # Examples
+    /// ```rust
+    /// # use std::time::Duration;
+    /// use aws_sdk_emrcontainers::config::Config;
+    /// use aws_smithy_types::timeout::TimeoutConfig;
+    ///
+    /// let timeout_config = TimeoutConfig::new()
+    ///     .with_api_call_attempt_timeout(Some(Duration::from_secs(1)));
+    /// let config = Config::builder().timeout_config(timeout_config).build();
+    /// ```
+    pub fn timeout_config(
+        mut self,
+        timeout_config: aws_smithy_types::timeout::TimeoutConfig,
+    ) -> Self {
+        self.set_timeout_config(Some(timeout_config));
+        self
+    }
+
+    /// Set the timeout_config for the builder
+    ///
+    /// # Examples
+    /// ```rust
+    /// # use std::time::Duration;
+    /// use aws_sdk_emrcontainers::config::{Builder, Config};
+    /// use aws_smithy_types::timeout::TimeoutConfig;
+    ///
+    /// fn set_request_timeout(builder: &mut Builder) {
+    ///     let timeout_config = TimeoutConfig::new()
+    ///         .with_api_call_timeout(Some(Duration::from_secs(3)));
+    ///     builder.set_timeout_config(Some(timeout_config));
+    /// }
+    ///
+    /// let mut builder = Config::builder();
+    /// set_request_timeout(&mut builder);
+    /// let config = builder.build();
+    /// ```
+    pub fn set_timeout_config(
+        &mut self,
+        timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
+    ) -> &mut Self {
+        self.timeout_config = timeout_config;
+        self
+    }
+    /// Set the sleep_impl for the builder
+    ///
+    /// # Examples
+    /// ```rust
+    /// use aws_sdk_emrcontainers::config::Config;
+    /// use aws_smithy_async::rt::sleep::AsyncSleep;
+    /// use aws_smithy_async::rt::sleep::Sleep;
+    ///
+    /// #[derive(Debug)]
+    /// pub struct ForeverSleep;
+    ///
+    /// impl AsyncSleep for ForeverSleep {
+    ///     fn sleep(&self, duration: std::time::Duration) -> Sleep {
+    ///         Sleep::new(std::future::pending())
+    ///     }
+    /// }
+    ///
+    /// let sleep_impl = std::sync::Arc::new(ForeverSleep);
+    /// let config = Config::builder().sleep_impl(sleep_impl).build();
+    /// ```
+    pub fn sleep_impl(
+        mut self,
+        sleep_impl: std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>,
+    ) -> Self {
+        self.set_sleep_impl(Some(sleep_impl));
+        self
+    }
+
+    /// Set the sleep_impl for the builder
+    ///
+    /// # Examples
+    /// ```rust
+    /// use aws_sdk_emrcontainers::config::{Builder, Config};
+    /// use aws_smithy_async::rt::sleep::AsyncSleep;
+    /// use aws_smithy_async::rt::sleep::Sleep;
+    ///
+    /// #[derive(Debug)]
+    /// pub struct ForeverSleep;
+    ///
+    /// impl AsyncSleep for ForeverSleep {
+    ///     fn sleep(&self, duration: std::time::Duration) -> Sleep {
+    ///         Sleep::new(std::future::pending())
+    ///     }
+    /// }
+    ///
+    /// fn set_never_ending_sleep_impl(builder: &mut Builder) {
+    ///     let sleep_impl = std::sync::Arc::new(ForeverSleep);
+    ///     builder.set_sleep_impl(Some(sleep_impl));
+    /// }
+    ///
+    /// let mut builder = Config::builder();
+    /// set_never_ending_sleep_impl(&mut builder);
+    /// let config = builder.build();
+    /// ```
+    pub fn set_sleep_impl(
+        &mut self,
+        sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
+    ) -> &mut Self {
+        self.sleep_impl = sleep_impl;
         self
     }
     /// Set the retry_config for the builder
@@ -144,6 +280,9 @@ impl Builder {
             make_token: self
                 .make_token
                 .unwrap_or_else(crate::idempotency_token::default_provider),
+            app_name: self.app_name,
+            timeout_config: self.timeout_config,
+            sleep_impl: self.sleep_impl,
             retry_config: self.retry_config,
             endpoint_resolver: self
                 .endpoint_resolver
@@ -163,7 +302,10 @@ impl From<&aws_types::config::Config> for Builder {
         let mut builder = Builder::default();
         builder = builder.region(input.region().cloned());
         builder.set_retry_config(input.retry_config().cloned());
+        builder.set_timeout_config(input.timeout_config().cloned());
+        builder.set_sleep_impl(input.sleep_impl().clone());
         builder.set_credentials_provider(input.credentials_provider().cloned());
+        builder.set_app_name(input.app_name().cloned());
         builder
     }
 }

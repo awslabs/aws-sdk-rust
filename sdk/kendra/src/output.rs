@@ -1367,9 +1367,9 @@ pub struct DescribeThesaurusOutput {
     /// </p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The Unix datetime that the thesaurus was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix datetime that the thesaurus was last updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions
     /// to access thesaurus file specified in <code>SourceS3Path</code>.
     /// </p>
@@ -1423,11 +1423,11 @@ impl DescribeThesaurusOutput {
         self.error_message.as_deref()
     }
     /// <p>The Unix datetime that the thesaurus was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix datetime that the thesaurus was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions
@@ -1488,8 +1488,8 @@ pub mod describe_thesaurus_output {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ThesaurusStatus>,
         pub(crate) error_message: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) source_s3_path: std::option::Option<crate::model::S3Path>,
         pub(crate) file_size_bytes: std::option::Option<i64>,
@@ -1584,27 +1584,27 @@ pub mod describe_thesaurus_output {
             self
         }
         /// <p>The Unix datetime that the thesaurus was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix datetime that the thesaurus was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The Unix datetime that the thesaurus was last updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The Unix datetime that the thesaurus was last updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -1730,13 +1730,13 @@ pub struct DescribeQuerySuggestionsConfigOutput {
     /// the query to be eligible to suggest to your users.</p>
     pub minimum_query_count: std::option::Option<i32>,
     /// <p>Shows the date-time query suggestions for an index was last updated.</p>
-    pub last_suggestions_build_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_suggestions_build_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Shows the date-time query suggestions for an index was last cleared.</p>
     /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based
     /// on new queries added to the query log from the time you cleared suggestions.
     /// Amazon Kendra only considers re-occurences of a query from the time you cleared
     /// suggestions. </p>
-    pub last_clear_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_clear_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Shows the current total count of query suggestions for an index.</p>
     /// <p>This count can change when you update your query suggestions settings,
     /// if you filter out certain queries from suggestions using a block list,
@@ -1781,7 +1781,7 @@ impl DescribeQuerySuggestionsConfigOutput {
         self.minimum_query_count
     }
     /// <p>Shows the date-time query suggestions for an index was last updated.</p>
-    pub fn last_suggestions_build_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_suggestions_build_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_suggestions_build_time.as_ref()
     }
     /// <p>Shows the date-time query suggestions for an index was last cleared.</p>
@@ -1789,7 +1789,7 @@ impl DescribeQuerySuggestionsConfigOutput {
     /// on new queries added to the query log from the time you cleared suggestions.
     /// Amazon Kendra only considers re-occurences of a query from the time you cleared
     /// suggestions. </p>
-    pub fn last_clear_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_clear_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_clear_time.as_ref()
     }
     /// <p>Shows the current total count of query suggestions for an index.</p>
@@ -1839,8 +1839,8 @@ pub mod describe_query_suggestions_config_output {
         pub(crate) include_queries_without_user_information: std::option::Option<bool>,
         pub(crate) minimum_number_of_querying_users: std::option::Option<i32>,
         pub(crate) minimum_query_count: std::option::Option<i32>,
-        pub(crate) last_suggestions_build_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_clear_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_suggestions_build_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_clear_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) total_suggestions_count: std::option::Option<i32>,
     }
     impl Builder {
@@ -1941,14 +1941,14 @@ pub mod describe_query_suggestions_config_output {
             self
         }
         /// <p>Shows the date-time query suggestions for an index was last updated.</p>
-        pub fn last_suggestions_build_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_suggestions_build_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_suggestions_build_time = Some(input);
             self
         }
         /// <p>Shows the date-time query suggestions for an index was last updated.</p>
         pub fn set_last_suggestions_build_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_suggestions_build_time = input;
             self
@@ -1958,7 +1958,7 @@ pub mod describe_query_suggestions_config_output {
         /// on new queries added to the query log from the time you cleared suggestions.
         /// Amazon Kendra only considers re-occurences of a query from the time you cleared
         /// suggestions. </p>
-        pub fn last_clear_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_clear_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_clear_time = Some(input);
             self
         }
@@ -1969,7 +1969,7 @@ pub mod describe_query_suggestions_config_output {
         /// suggestions. </p>
         pub fn set_last_clear_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_clear_time = input;
             self
@@ -2033,9 +2033,9 @@ pub struct DescribeQuerySuggestionsBlockListOutput {
     /// processing the block list.</p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>Shows the date-time a block list for query suggestions was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Shows the date-time a block list for query suggestions was last updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Shows the current S3 path to your block list text file in your S3 bucket.</p>
     /// <p>Each block word or phrase should be on a separate line in a text file.</p>
     /// <p>For information on the current quota limits for block lists, see
@@ -2082,11 +2082,11 @@ impl DescribeQuerySuggestionsBlockListOutput {
         self.error_message.as_deref()
     }
     /// <p>Shows the date-time a block list for query suggestions was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Shows the date-time a block list for query suggestions was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>Shows the current S3 path to your block list text file in your S3 bucket.</p>
@@ -2145,8 +2145,8 @@ pub mod describe_query_suggestions_block_list_output {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::QuerySuggestionsBlockListStatus>,
         pub(crate) error_message: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_s3_path: std::option::Option<crate::model::S3Path>,
         pub(crate) item_count: std::option::Option<i32>,
         pub(crate) file_size_bytes: std::option::Option<i64>,
@@ -2224,27 +2224,27 @@ pub mod describe_query_suggestions_block_list_output {
             self
         }
         /// <p>Shows the date-time a block list for query suggestions was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>Shows the date-time a block list for query suggestions was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>Shows the date-time a block list for query suggestions was last updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>Shows the date-time a block list for query suggestions was last updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -2604,9 +2604,9 @@ pub struct DescribeIndexOutput {
     /// <p>The description of the index.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The Unix datetime that the index was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix datetime that the index was last updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Configuration settings for any metadata applied to the documents in
     /// the index.</p>
     pub document_metadata_configurations:
@@ -2673,11 +2673,11 @@ impl DescribeIndexOutput {
         self.description.as_deref()
     }
     /// <p>The Unix datetime that the index was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix datetime that the index was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>Configuration settings for any metadata applied to the documents in
@@ -2769,8 +2769,8 @@ pub mod describe_index_output {
             std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
         pub(crate) status: std::option::Option<crate::model::IndexStatus>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) document_metadata_configurations:
             std::option::Option<std::vec::Vec<crate::model::DocumentMetadataConfiguration>>,
         pub(crate) index_statistics: std::option::Option<crate::model::IndexStatistics>,
@@ -2877,27 +2877,27 @@ pub mod describe_index_output {
             self
         }
         /// <p>The Unix datetime that the index was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix datetime that the index was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The Unix datetime that the index was last updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The Unix datetime that the index was last updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -3075,9 +3075,9 @@ pub struct DescribeFaqOutput {
     /// <p>The description of the FAQ that you provided when it was created.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that the FAQ was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the FAQ was last updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information required to find a specific file in an Amazon S3
     /// bucket.</p>
     pub s3_path: std::option::Option<crate::model::S3Path>,
@@ -3117,11 +3117,11 @@ impl DescribeFaqOutput {
         self.description.as_deref()
     }
     /// <p>The date and time that the FAQ was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time that the FAQ was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>Information required to find a specific file in an Amazon S3
@@ -3185,8 +3185,8 @@ pub mod describe_faq_output {
         pub(crate) index_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) s3_path: std::option::Option<crate::model::S3Path>,
         pub(crate) status: std::option::Option<crate::model::FaqStatus>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -3236,27 +3236,27 @@ pub mod describe_faq_output {
             self
         }
         /// <p>The date and time that the FAQ was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the FAQ was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The date and time that the FAQ was last updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time that the FAQ was last updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -3389,9 +3389,9 @@ pub struct DescribeDataSourceOutput {
     /// depends on the data source provider.</p>
     pub configuration: std::option::Option<crate::model::DataSourceConfiguration>,
     /// <p>The Unix timestamp of when the data source was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp of when the data source was last updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the data source.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The current status of the data source. When the status is
@@ -3439,11 +3439,11 @@ impl DescribeDataSourceOutput {
         self.configuration.as_ref()
     }
     /// <p>The Unix timestamp of when the data source was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp of when the data source was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The description of the data source.</p>
@@ -3511,8 +3511,8 @@ pub mod describe_data_source_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::DataSourceType>,
         pub(crate) configuration: std::option::Option<crate::model::DataSourceConfiguration>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DataSourceStatus>,
         pub(crate) schedule: std::option::Option<std::string::String>,
@@ -3582,27 +3582,27 @@ pub mod describe_data_source_output {
             self
         }
         /// <p>The Unix timestamp of when the data source was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix timestamp of when the data source was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The Unix timestamp of when the data source was last updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The Unix timestamp of when the data source was last updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self

@@ -90,6 +90,7 @@ pub type CreateScalingPlanInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl CreateScalingPlanInput {
     /// Consumes the builder and constructs an Operation<[`CreateScalingPlan`](crate::operation::CreateScalingPlan)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -146,11 +147,14 @@ impl CreateScalingPlanInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -257,6 +261,7 @@ pub type DeleteScalingPlanInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl DeleteScalingPlanInput {
     /// Consumes the builder and constructs an Operation<[`DeleteScalingPlan`](crate::operation::DeleteScalingPlan)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -313,11 +318,14 @@ impl DeleteScalingPlanInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -451,6 +459,7 @@ pub type DescribeScalingPlanResourcesInputOperationRetryAlias = aws_http::AwsErr
 impl DescribeScalingPlanResourcesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScalingPlanResources`](crate::operation::DescribeScalingPlanResources)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -508,11 +517,14 @@ impl DescribeScalingPlanResourcesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -688,6 +700,7 @@ pub type DescribeScalingPlansInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl DescribeScalingPlansInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScalingPlans`](crate::operation::DescribeScalingPlans)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -746,11 +759,14 @@ impl DescribeScalingPlansInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -813,8 +829,8 @@ pub mod get_scaling_plan_resource_forecast_data_input {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
         pub(crate) forecast_data_type: std::option::Option<crate::model::ForecastDataType>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the scaling plan.</p>
@@ -945,7 +961,7 @@ pub mod get_scaling_plan_resource_forecast_data_input {
         }
         /// <p>The inclusive start time of the time range for the forecast data to get. The date and
         /// time can be at most 56 days before the current date and time. </p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -953,7 +969,7 @@ pub mod get_scaling_plan_resource_forecast_data_input {
         /// time can be at most 56 days before the current date and time. </p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -963,7 +979,7 @@ pub mod get_scaling_plan_resource_forecast_data_input {
         /// <p>Although this parameter can accept a date and time that is more than two days in the
         /// future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for
         /// periods of two days in advance.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
@@ -974,7 +990,7 @@ pub mod get_scaling_plan_resource_forecast_data_input {
         /// periods of two days in advance.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -1007,6 +1023,7 @@ pub type GetScalingPlanResourceForecastDataInputOperationRetryAlias = aws_http::
 impl GetScalingPlanResourceForecastDataInput {
     /// Consumes the builder and constructs an Operation<[`GetScalingPlanResourceForecastData`](crate::operation::GetScalingPlanResourceForecastData)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1064,11 +1081,14 @@ impl GetScalingPlanResourceForecastDataInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1219,6 +1239,7 @@ pub type UpdateScalingPlanInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl UpdateScalingPlanInput {
     /// Consumes the builder and constructs an Operation<[`UpdateScalingPlan`](crate::operation::UpdateScalingPlan)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1275,11 +1296,14 @@ impl UpdateScalingPlanInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1423,13 +1447,13 @@ pub struct GetScalingPlanResourceForecastDataInput {
     pub forecast_data_type: std::option::Option<crate::model::ForecastDataType>,
     /// <p>The inclusive start time of the time range for the forecast data to get. The date and
     /// time can be at most 56 days before the current date and time. </p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time
     /// duration between the start and end time is seven days. </p>
     /// <p>Although this parameter can accept a date and time that is more than two days in the
     /// future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for
     /// periods of two days in advance.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetScalingPlanResourceForecastDataInput {
     /// <p>The name of the scaling plan.</p>
@@ -1485,7 +1509,7 @@ impl GetScalingPlanResourceForecastDataInput {
     }
     /// <p>The inclusive start time of the time range for the forecast data to get. The date and
     /// time can be at most 56 days before the current date and time. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time
@@ -1493,7 +1517,7 @@ impl GetScalingPlanResourceForecastDataInput {
     /// <p>Although this parameter can accept a date and time that is more than two days in the
     /// future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for
     /// periods of two days in advance.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }

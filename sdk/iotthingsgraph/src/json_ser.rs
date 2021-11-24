@@ -394,12 +394,12 @@ pub fn serialize_structure_crate_input_search_flow_executions_input(
     if let Some(var_65) = &input.start_time {
         object
             .key("startTime")
-            .instant(var_65, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_65, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_66) = &input.end_time {
         object
             .key("endTime")
-            .instant(var_66, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_66, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_67) = &input.next_token {
         object.key("nextToken").string(var_67);

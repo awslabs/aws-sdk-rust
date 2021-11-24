@@ -8,9 +8,9 @@ pub struct Model {
     /// <p>The version of the model.</p>
     pub model_version: std::option::Option<std::string::String>,
     /// <p>The timestamp of the last data sample taken.</p>
-    pub latest_sample_time: std::option::Option<aws_smithy_types::Instant>,
+    pub latest_sample_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of the last inference that was made.</p>
-    pub latest_inference: std::option::Option<aws_smithy_types::Instant>,
+    pub latest_inference: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information required for model metrics.</p>
     pub model_metrics: std::option::Option<std::vec::Vec<crate::model::EdgeMetric>>,
 }
@@ -24,11 +24,11 @@ impl Model {
         self.model_version.as_deref()
     }
     /// <p>The timestamp of the last data sample taken.</p>
-    pub fn latest_sample_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn latest_sample_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_sample_time.as_ref()
     }
     /// <p>The timestamp of the last inference that was made.</p>
-    pub fn latest_inference(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn latest_inference(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_inference.as_ref()
     }
     /// <p>Information required for model metrics.</p>
@@ -55,8 +55,8 @@ pub mod model {
     pub struct Builder {
         pub(crate) model_name: std::option::Option<std::string::String>,
         pub(crate) model_version: std::option::Option<std::string::String>,
-        pub(crate) latest_sample_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) latest_inference: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) latest_sample_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) latest_inference: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) model_metrics: std::option::Option<std::vec::Vec<crate::model::EdgeMetric>>,
     }
     impl Builder {
@@ -84,27 +84,27 @@ pub mod model {
             self
         }
         /// <p>The timestamp of the last data sample taken.</p>
-        pub fn latest_sample_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn latest_sample_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.latest_sample_time = Some(input);
             self
         }
         /// <p>The timestamp of the last data sample taken.</p>
         pub fn set_latest_sample_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.latest_sample_time = input;
             self
         }
         /// <p>The timestamp of the last inference that was made.</p>
-        pub fn latest_inference(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn latest_inference(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.latest_inference = Some(input);
             self
         }
         /// <p>The timestamp of the last inference that was made.</p>
         pub fn set_latest_inference(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.latest_inference = input;
             self
@@ -158,7 +158,7 @@ pub struct EdgeMetric {
     /// <p>Returns the value of the metric.</p>
     pub value: f64,
     /// <p>Timestamp of when the metric was requested.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EdgeMetric {
     /// <p>The dimension of metrics published.</p>
@@ -174,7 +174,7 @@ impl EdgeMetric {
         self.value
     }
     /// <p>Timestamp of when the metric was requested.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -197,7 +197,7 @@ pub mod edge_metric {
         pub(crate) dimension: std::option::Option<std::string::String>,
         pub(crate) metric_name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<f64>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The dimension of metrics published.</p>
@@ -231,14 +231,14 @@ pub mod edge_metric {
             self
         }
         /// <p>Timestamp of when the metric was requested.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>Timestamp of when the metric was requested.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self

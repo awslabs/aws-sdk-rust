@@ -1933,10 +1933,10 @@ pub struct TapeInfo {
     /// </p>
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>The date that the tape became subject to tape retention lock.</p>
-    pub retention_start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub retention_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the tape entered the custom tape pool with tape retention lock
     /// enabled.</p>
-    pub pool_entry_date: std::option::Option<aws_smithy_types::Instant>,
+    pub pool_entry_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TapeInfo {
     /// <p>The Amazon Resource Name (ARN) of a virtual tape.</p>
@@ -1971,12 +1971,12 @@ impl TapeInfo {
         self.pool_id.as_deref()
     }
     /// <p>The date that the tape became subject to tape retention lock.</p>
-    pub fn retention_start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn retention_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.retention_start_date.as_ref()
     }
     /// <p>The date that the tape entered the custom tape pool with tape retention lock
     /// enabled.</p>
-    pub fn pool_entry_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn pool_entry_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.pool_entry_date.as_ref()
     }
 }
@@ -2006,8 +2006,8 @@ pub mod tape_info {
         pub(crate) tape_status: std::option::Option<std::string::String>,
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) pool_id: std::option::Option<std::string::String>,
-        pub(crate) retention_start_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) pool_entry_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) retention_start_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) pool_entry_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of a virtual tape.</p>
@@ -2085,21 +2085,21 @@ pub mod tape_info {
             self
         }
         /// <p>The date that the tape became subject to tape retention lock.</p>
-        pub fn retention_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn retention_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.retention_start_date = Some(input);
             self
         }
         /// <p>The date that the tape became subject to tape retention lock.</p>
         pub fn set_retention_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.retention_start_date = input;
             self
         }
         /// <p>The date that the tape entered the custom tape pool with tape retention lock
         /// enabled.</p>
-        pub fn pool_entry_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn pool_entry_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.pool_entry_date = Some(input);
             self
         }
@@ -2107,7 +2107,7 @@ pub mod tape_info {
         /// enabled.</p>
         pub fn set_pool_entry_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.pool_entry_date = input;
             self
@@ -3776,7 +3776,7 @@ pub struct Tape {
     /// <p>The barcode that identifies a specific virtual tape.</p>
     pub tape_barcode: std::option::Option<std::string::String>,
     /// <p>The date the virtual tape was created.</p>
-    pub tape_created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub tape_created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The size, in bytes, of the virtual tape capacity.</p>
     pub tape_size_in_bytes: std::option::Option<i64>,
     /// <p>The current state of the virtual tape.</p>
@@ -3809,9 +3809,9 @@ pub struct Tape {
     /// <code>true</code>.</p>
     pub worm: bool,
     /// <p>The date that the tape is first archived with tape retention lock enabled.</p>
-    pub retention_start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub retention_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the tape enters a custom tape pool.</p>
-    pub pool_entry_date: std::option::Option<aws_smithy_types::Instant>,
+    pub pool_entry_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Tape {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
@@ -3823,7 +3823,7 @@ impl Tape {
         self.tape_barcode.as_deref()
     }
     /// <p>The date the virtual tape was created.</p>
-    pub fn tape_created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn tape_created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.tape_created_date.as_ref()
     }
     /// <p>The size, in bytes, of the virtual tape capacity.</p>
@@ -3874,11 +3874,11 @@ impl Tape {
         self.worm
     }
     /// <p>The date that the tape is first archived with tape retention lock enabled.</p>
-    pub fn retention_start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn retention_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.retention_start_date.as_ref()
     }
     /// <p>The date that the tape enters a custom tape pool.</p>
-    pub fn pool_entry_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn pool_entry_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.pool_entry_date.as_ref()
     }
 }
@@ -3909,7 +3909,7 @@ pub mod tape {
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
         pub(crate) tape_barcode: std::option::Option<std::string::String>,
-        pub(crate) tape_created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) tape_created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tape_size_in_bytes: std::option::Option<i64>,
         pub(crate) tape_status: std::option::Option<std::string::String>,
         pub(crate) vtl_device: std::option::Option<std::string::String>,
@@ -3918,8 +3918,8 @@ pub mod tape {
         pub(crate) kms_key: std::option::Option<std::string::String>,
         pub(crate) pool_id: std::option::Option<std::string::String>,
         pub(crate) worm: std::option::Option<bool>,
-        pub(crate) retention_start_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) pool_entry_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) retention_start_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) pool_entry_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
@@ -3943,14 +3943,14 @@ pub mod tape {
             self
         }
         /// <p>The date the virtual tape was created.</p>
-        pub fn tape_created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn tape_created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.tape_created_date = Some(input);
             self
         }
         /// <p>The date the virtual tape was created.</p>
         pub fn set_tape_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.tape_created_date = input;
             self
@@ -4066,27 +4066,27 @@ pub mod tape {
             self
         }
         /// <p>The date that the tape is first archived with tape retention lock enabled.</p>
-        pub fn retention_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn retention_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.retention_start_date = Some(input);
             self
         }
         /// <p>The date that the tape is first archived with tape retention lock enabled.</p>
         pub fn set_retention_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.retention_start_date = input;
             self
         }
         /// <p>The date that the tape enters a custom tape pool.</p>
-        pub fn pool_entry_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn pool_entry_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.pool_entry_date = Some(input);
             self
         }
         /// <p>The date that the tape enters a custom tape pool.</p>
         pub fn set_pool_entry_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.pool_entry_date = input;
             self
@@ -4129,7 +4129,7 @@ pub struct TapeRecoveryPointInfo {
     ///
     /// <p>The default timestamp format of the tape recovery point time is in the ISO8601 extended
     /// YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
-    pub tape_recovery_point_time: std::option::Option<aws_smithy_types::Instant>,
+    pub tape_recovery_point_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The size, in bytes, of the virtual tapes to recover.</p>
     pub tape_size_in_bytes: std::option::Option<i64>,
     /// <p>The status of the virtual tapes.</p>
@@ -4145,7 +4145,7 @@ impl TapeRecoveryPointInfo {
     ///
     /// <p>The default timestamp format of the tape recovery point time is in the ISO8601 extended
     /// YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
-    pub fn tape_recovery_point_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn tape_recovery_point_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.tape_recovery_point_time.as_ref()
     }
     /// <p>The size, in bytes, of the virtual tapes to recover.</p>
@@ -4174,7 +4174,7 @@ pub mod tape_recovery_point_info {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
-        pub(crate) tape_recovery_point_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) tape_recovery_point_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tape_size_in_bytes: std::option::Option<i64>,
         pub(crate) tape_status: std::option::Option<std::string::String>,
     }
@@ -4194,7 +4194,7 @@ pub mod tape_recovery_point_info {
         ///
         /// <p>The default timestamp format of the tape recovery point time is in the ISO8601 extended
         /// YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
-        pub fn tape_recovery_point_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn tape_recovery_point_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.tape_recovery_point_time = Some(input);
             self
         }
@@ -4205,7 +4205,7 @@ pub mod tape_recovery_point_info {
         /// YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
         pub fn set_tape_recovery_point_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.tape_recovery_point_time = input;
             self
@@ -4257,14 +4257,14 @@ pub struct TapeArchive {
     /// <p>The barcode that identifies the archived virtual tape.</p>
     pub tape_barcode: std::option::Option<std::string::String>,
     /// <p>The date the virtual tape was created.</p>
-    pub tape_created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub tape_created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The size, in bytes, of the archived virtual tape.</p>
     pub tape_size_in_bytes: std::option::Option<i64>,
     /// <p>The time that the archiving of the virtual tape was completed.</p>
     ///
     /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
     /// format.</p>
-    pub completion_time: std::option::Option<aws_smithy_types::Instant>,
+    pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being
     /// retrieved to.</p>
     ///
@@ -4292,12 +4292,12 @@ pub struct TapeArchive {
     pub worm: bool,
     /// <p>If the archived tape is subject to tape retention lock, the date that the archived tape
     /// started being retained.</p>
-    pub retention_start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub retention_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the tape entered the custom tape pool.</p>
     ///
     /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
     /// format.</p>
-    pub pool_entry_date: std::option::Option<aws_smithy_types::Instant>,
+    pub pool_entry_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TapeArchive {
     /// <p>The Amazon Resource Name (ARN) of an archived virtual tape.</p>
@@ -4309,7 +4309,7 @@ impl TapeArchive {
         self.tape_barcode.as_deref()
     }
     /// <p>The date the virtual tape was created.</p>
-    pub fn tape_created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn tape_created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.tape_created_date.as_ref()
     }
     /// <p>The size, in bytes, of the archived virtual tape.</p>
@@ -4320,7 +4320,7 @@ impl TapeArchive {
     ///
     /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
     /// format.</p>
-    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being
@@ -4362,14 +4362,14 @@ impl TapeArchive {
     }
     /// <p>If the archived tape is subject to tape retention lock, the date that the archived tape
     /// started being retained.</p>
-    pub fn retention_start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn retention_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.retention_start_date.as_ref()
     }
     /// <p>The time that the tape entered the custom tape pool.</p>
     ///
     /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
     /// format.</p>
-    pub fn pool_entry_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn pool_entry_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.pool_entry_date.as_ref()
     }
 }
@@ -4400,17 +4400,17 @@ pub mod tape_archive {
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
         pub(crate) tape_barcode: std::option::Option<std::string::String>,
-        pub(crate) tape_created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) tape_created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tape_size_in_bytes: std::option::Option<i64>,
-        pub(crate) completion_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) completion_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) retrieved_to: std::option::Option<std::string::String>,
         pub(crate) tape_status: std::option::Option<std::string::String>,
         pub(crate) tape_used_in_bytes: std::option::Option<i64>,
         pub(crate) kms_key: std::option::Option<std::string::String>,
         pub(crate) pool_id: std::option::Option<std::string::String>,
         pub(crate) worm: std::option::Option<bool>,
-        pub(crate) retention_start_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) pool_entry_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) retention_start_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) pool_entry_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of an archived virtual tape.</p>
@@ -4434,14 +4434,14 @@ pub mod tape_archive {
             self
         }
         /// <p>The date the virtual tape was created.</p>
-        pub fn tape_created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn tape_created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.tape_created_date = Some(input);
             self
         }
         /// <p>The date the virtual tape was created.</p>
         pub fn set_tape_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.tape_created_date = input;
             self
@@ -4460,7 +4460,7 @@ pub mod tape_archive {
         ///
         /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
         /// format.</p>
-        pub fn completion_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completion_time = Some(input);
             self
         }
@@ -4470,7 +4470,7 @@ pub mod tape_archive {
         /// format.</p>
         pub fn set_completion_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completion_time = input;
             self
@@ -4563,7 +4563,7 @@ pub mod tape_archive {
         }
         /// <p>If the archived tape is subject to tape retention lock, the date that the archived tape
         /// started being retained.</p>
-        pub fn retention_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn retention_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.retention_start_date = Some(input);
             self
         }
@@ -4571,7 +4571,7 @@ pub mod tape_archive {
         /// started being retained.</p>
         pub fn set_retention_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.retention_start_date = input;
             self
@@ -4580,7 +4580,7 @@ pub mod tape_archive {
         ///
         /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
         /// format.</p>
-        pub fn pool_entry_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn pool_entry_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.pool_entry_date = Some(input);
             self
         }
@@ -4590,7 +4590,7 @@ pub mod tape_archive {
         /// format.</p>
         pub fn set_pool_entry_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.pool_entry_date = input;
             self
@@ -4660,7 +4660,7 @@ pub struct StorediScsiVolume {
     pub volumei_scsi_attributes: std::option::Option<crate::model::VolumeiScsiAttributes>,
     /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this
     /// timestamp.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The size of the data stored on the volume in bytes. This value is calculated based on
     /// the number of blocks that are touched, instead of the actual amount of data written. This
     /// value can be useful for sequential write patterns but less accurate for random write
@@ -4744,7 +4744,7 @@ impl StorediScsiVolume {
     }
     /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this
     /// timestamp.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The size of the data stored on the volume in bytes. This value is calculated based on
@@ -4816,7 +4816,7 @@ pub mod storedi_scsi_volume {
         pub(crate) preserved_existing_data: std::option::Option<bool>,
         pub(crate) volumei_scsi_attributes:
             std::option::Option<crate::model::VolumeiScsiAttributes>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) volume_used_in_bytes: std::option::Option<i64>,
         pub(crate) kms_key: std::option::Option<std::string::String>,
         pub(crate) target_name: std::option::Option<std::string::String>,
@@ -4972,7 +4972,7 @@ pub mod storedi_scsi_volume {
         }
         /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this
         /// timestamp.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
@@ -4980,7 +4980,7 @@ pub mod storedi_scsi_volume {
         /// timestamp.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -8313,7 +8313,7 @@ pub struct CachediScsiVolume {
     pub volumei_scsi_attributes: std::option::Option<crate::model::VolumeiScsiAttributes>,
     /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this
     /// timestamp.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The size of the data stored on the volume in bytes. This value is calculated based on
     /// the number of blocks that are touched, instead of the actual amount of data written. This
     /// value can be useful for sequential write patterns but less accurate for random write
@@ -8385,7 +8385,7 @@ impl CachediScsiVolume {
     }
     /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this
     /// timestamp.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The size of the data stored on the volume in bytes. This value is calculated based on
@@ -8453,7 +8453,7 @@ pub mod cachedi_scsi_volume {
         pub(crate) source_snapshot_id: std::option::Option<std::string::String>,
         pub(crate) volumei_scsi_attributes:
             std::option::Option<crate::model::VolumeiScsiAttributes>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) volume_used_in_bytes: std::option::Option<i64>,
         pub(crate) kms_key: std::option::Option<std::string::String>,
         pub(crate) target_name: std::option::Option<std::string::String>,
@@ -8578,7 +8578,7 @@ pub mod cachedi_scsi_volume {
         }
         /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this
         /// timestamp.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
@@ -8586,7 +8586,7 @@ pub mod cachedi_scsi_volume {
         /// timestamp.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self

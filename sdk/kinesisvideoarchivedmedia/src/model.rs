@@ -10,9 +10,9 @@ pub struct Fragment {
     /// data.</p>
     pub fragment_size_in_bytes: i64,
     /// <p>The timestamp from the producer corresponding to the fragment.</p>
-    pub producer_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub producer_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp from the AWS server corresponding to the fragment.</p>
-    pub server_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub server_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The playback duration or other time value associated with the fragment.</p>
     pub fragment_length_in_milliseconds: i64,
 }
@@ -28,11 +28,11 @@ impl Fragment {
         self.fragment_size_in_bytes
     }
     /// <p>The timestamp from the producer corresponding to the fragment.</p>
-    pub fn producer_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn producer_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.producer_timestamp.as_ref()
     }
     /// <p>The timestamp from the AWS server corresponding to the fragment.</p>
-    pub fn server_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn server_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.server_timestamp.as_ref()
     }
     /// <p>The playback duration or other time value associated with the fragment.</p>
@@ -62,8 +62,8 @@ pub mod fragment {
     pub struct Builder {
         pub(crate) fragment_number: std::option::Option<std::string::String>,
         pub(crate) fragment_size_in_bytes: std::option::Option<i64>,
-        pub(crate) producer_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) server_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) producer_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) server_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) fragment_length_in_milliseconds: std::option::Option<i64>,
     }
     impl Builder {
@@ -95,27 +95,27 @@ pub mod fragment {
             self
         }
         /// <p>The timestamp from the producer corresponding to the fragment.</p>
-        pub fn producer_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn producer_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.producer_timestamp = Some(input);
             self
         }
         /// <p>The timestamp from the producer corresponding to the fragment.</p>
         pub fn set_producer_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.producer_timestamp = input;
             self
         }
         /// <p>The timestamp from the AWS server corresponding to the fragment.</p>
-        pub fn server_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn server_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.server_timestamp = Some(input);
             self
         }
         /// <p>The timestamp from the AWS server corresponding to the fragment.</p>
         pub fn set_server_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.server_timestamp = input;
             self
@@ -260,18 +260,18 @@ impl FragmentSelector {
 pub struct TimestampRange {
     /// <p>The starting timestamp in the range of timestamps for which to return
     /// fragments.</p>
-    pub start_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ending timestamp in the range of timestamps for which to return fragments.</p>
-    pub end_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimestampRange {
     /// <p>The starting timestamp in the range of timestamps for which to return
     /// fragments.</p>
-    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
     /// <p>The ending timestamp in the range of timestamps for which to return fragments.</p>
-    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
 }
@@ -289,13 +289,13 @@ pub mod timestamp_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The starting timestamp in the range of timestamps for which to return
         /// fragments.</p>
-        pub fn start_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_timestamp = Some(input);
             self
         }
@@ -303,20 +303,20 @@ pub mod timestamp_range {
         /// fragments.</p>
         pub fn set_start_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_timestamp = input;
             self
         }
         /// <p>The ending timestamp in the range of timestamps for which to return fragments.</p>
-        pub fn end_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_timestamp = Some(input);
             self
         }
         /// <p>The ending timestamp in the range of timestamps for which to return fragments.</p>
         pub fn set_end_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_timestamp = input;
             self
@@ -749,7 +749,7 @@ pub struct HlsTimestampRange {
     /// past it aren't included in the session. If <code>FragmentSelectorType</code> is
     /// <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than
     /// the stream head. </p>
-    pub start_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the timestamp range for the requested media. This value must be within 24
     /// hours of the specified <code>StartTimestamp</code>, and it must be later than the
     /// <code>StartTimestamp</code> value.</p>
@@ -765,7 +765,7 @@ pub struct HlsTimestampRange {
     /// <code>EndTimestamp</code> value and continue past it are included in the
     /// session.</p>
     /// </note>
-    pub end_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl HlsTimestampRange {
     /// <p>The start of the timestamp range for the requested media.</p>
@@ -776,7 +776,7 @@ impl HlsTimestampRange {
     /// past it aren't included in the session. If <code>FragmentSelectorType</code> is
     /// <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than
     /// the stream head. </p>
-    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
     /// <p>The end of the timestamp range for the requested media. This value must be within 24
@@ -794,7 +794,7 @@ impl HlsTimestampRange {
     /// <code>EndTimestamp</code> value and continue past it are included in the
     /// session.</p>
     /// </note>
-    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
 }
@@ -812,8 +812,8 @@ pub mod hls_timestamp_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The start of the timestamp range for the requested media.</p>
@@ -824,7 +824,7 @@ pub mod hls_timestamp_range {
         /// past it aren't included in the session. If <code>FragmentSelectorType</code> is
         /// <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than
         /// the stream head. </p>
-        pub fn start_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_timestamp = Some(input);
             self
         }
@@ -838,7 +838,7 @@ pub mod hls_timestamp_range {
         /// the stream head. </p>
         pub fn set_start_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_timestamp = input;
             self
@@ -858,7 +858,7 @@ pub mod hls_timestamp_range {
         /// <code>EndTimestamp</code> value and continue past it are included in the
         /// session.</p>
         /// </note>
-        pub fn end_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_timestamp = Some(input);
             self
         }
@@ -879,7 +879,7 @@ pub mod hls_timestamp_range {
         /// </note>
         pub fn set_end_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_timestamp = input;
             self
@@ -1205,7 +1205,7 @@ pub struct DashTimestampRange {
     /// past it aren't included in the session. If <code>FragmentSelectorType</code> is
     /// <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than
     /// the stream head. </p>
-    pub start_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the timestamp range for the requested media. This value must be within 24
     /// hours of the specified <code>StartTimestamp</code>, and it must be later than the
     /// <code>StartTimestamp</code> value.</p>
@@ -1222,7 +1222,7 @@ pub struct DashTimestampRange {
     /// <code>EndTimestamp</code> value and continue past it are included in the
     /// session.</p>
     /// </note>
-    pub end_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DashTimestampRange {
     /// <p>The start of the timestamp range for the requested media.</p>
@@ -1233,7 +1233,7 @@ impl DashTimestampRange {
     /// past it aren't included in the session. If <code>FragmentSelectorType</code> is
     /// <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than
     /// the stream head. </p>
-    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
     /// <p>The end of the timestamp range for the requested media. This value must be within 24
@@ -1252,7 +1252,7 @@ impl DashTimestampRange {
     /// <code>EndTimestamp</code> value and continue past it are included in the
     /// session.</p>
     /// </note>
-    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
 }
@@ -1270,8 +1270,8 @@ pub mod dash_timestamp_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The start of the timestamp range for the requested media.</p>
@@ -1282,7 +1282,7 @@ pub mod dash_timestamp_range {
         /// past it aren't included in the session. If <code>FragmentSelectorType</code> is
         /// <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than
         /// the stream head. </p>
-        pub fn start_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_timestamp = Some(input);
             self
         }
@@ -1296,7 +1296,7 @@ pub mod dash_timestamp_range {
         /// the stream head. </p>
         pub fn set_start_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_timestamp = input;
             self
@@ -1317,7 +1317,7 @@ pub mod dash_timestamp_range {
         /// <code>EndTimestamp</code> value and continue past it are included in the
         /// session.</p>
         /// </note>
-        pub fn end_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_timestamp = Some(input);
             self
         }
@@ -1339,7 +1339,7 @@ pub mod dash_timestamp_range {
         /// </note>
         pub fn set_end_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_timestamp = input;
             self
@@ -1685,7 +1685,7 @@ pub struct ClipTimestampRange {
     /// past it aren't included in the session. If <code>FragmentSelectorType</code> is
     /// <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than
     /// the stream head. </p>
-    pub start_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the timestamp range for the requested media.</p>
     /// <p>This value must be within 24 hours of the specified <code>StartTimestamp</code>, and
     /// it must be later than the <code>StartTimestamp</code> value. If
@@ -1694,7 +1694,7 @@ pub struct ClipTimestampRange {
     /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting)
     /// timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code>
     /// value and continue past it are included in the session. </p>
-    pub end_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ClipTimestampRange {
     /// <p>The starting timestamp in the range of timestamps for which to return fragments. </p>
@@ -1703,7 +1703,7 @@ impl ClipTimestampRange {
     /// past it aren't included in the session. If <code>FragmentSelectorType</code> is
     /// <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than
     /// the stream head. </p>
-    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
     /// <p>The end of the timestamp range for the requested media.</p>
@@ -1714,7 +1714,7 @@ impl ClipTimestampRange {
     /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting)
     /// timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code>
     /// value and continue past it are included in the session. </p>
-    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
 }
@@ -1732,8 +1732,8 @@ pub mod clip_timestamp_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The starting timestamp in the range of timestamps for which to return fragments. </p>
@@ -1742,7 +1742,7 @@ pub mod clip_timestamp_range {
         /// past it aren't included in the session. If <code>FragmentSelectorType</code> is
         /// <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than
         /// the stream head. </p>
-        pub fn start_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_timestamp = Some(input);
             self
         }
@@ -1754,7 +1754,7 @@ pub mod clip_timestamp_range {
         /// the stream head. </p>
         pub fn set_start_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_timestamp = input;
             self
@@ -1767,7 +1767,7 @@ pub mod clip_timestamp_range {
         /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting)
         /// timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code>
         /// value and continue past it are included in the session. </p>
-        pub fn end_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_timestamp = Some(input);
             self
         }
@@ -1781,7 +1781,7 @@ pub mod clip_timestamp_range {
         /// value and continue past it are included in the session. </p>
         pub fn set_end_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_timestamp = input;
             self

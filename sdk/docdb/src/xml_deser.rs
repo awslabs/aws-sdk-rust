@@ -4883,9 +4883,9 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
             s if s.matches("SnapshotCreateTime") /* SnapshotCreateTime com.amazonaws.docdb#DBClusterSnapshot$SnapshotCreateTime */ =>  {
                 let var_139 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.docdb#TStamp`)"))
                         ?
@@ -4951,9 +4951,9 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
             s if s.matches("ClusterCreateTime") /* ClusterCreateTime com.amazonaws.docdb#DBClusterSnapshot$ClusterCreateTime */ =>  {
                 let var_144 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.docdb#TStamp`)"))
                         ?
@@ -5176,9 +5176,9 @@ pub fn deser_structure_crate_model_db_cluster(
             s if s.matches("EarliestRestorableTime") /* EarliestRestorableTime com.amazonaws.docdb#DBCluster$EarliestRestorableTime */ =>  {
                 let var_160 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.docdb#TStamp`)"))
                         ?
@@ -5257,9 +5257,9 @@ pub fn deser_structure_crate_model_db_cluster(
             s if s.matches("LatestRestorableTime") /* LatestRestorableTime com.amazonaws.docdb#DBCluster$LatestRestorableTime */ =>  {
                 let var_166 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.docdb#TStamp`)"))
                         ?
@@ -5445,9 +5445,9 @@ pub fn deser_structure_crate_model_db_cluster(
             s if s.matches("ClusterCreateTime") /* ClusterCreateTime com.amazonaws.docdb#DBCluster$ClusterCreateTime */ =>  {
                 let var_181 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.docdb#TStamp`)"))
                         ?
@@ -5559,9 +5559,9 @@ pub fn deser_structure_crate_model_db_instance(
             s if s.matches("InstanceCreateTime") /* InstanceCreateTime com.amazonaws.docdb#DBInstance$InstanceCreateTime */ =>  {
                 let var_189 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.docdb#TStamp`)"))
                         ?
@@ -5657,9 +5657,9 @@ pub fn deser_structure_crate_model_db_instance(
             s if s.matches("LatestRestorableTime") /* LatestRestorableTime com.amazonaws.docdb#DBInstance$LatestRestorableTime */ =>  {
                 let var_197 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.docdb#TStamp`)"))
                         ?
@@ -6989,9 +6989,9 @@ pub fn deser_structure_crate_model_certificate(
             s if s.matches("ValidFrom") /* ValidFrom com.amazonaws.docdb#Certificate$ValidFrom */ =>  {
                 let var_251 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.docdb#TStamp`)"))
                         ?
@@ -7003,9 +7003,9 @@ pub fn deser_structure_crate_model_certificate(
             s if s.matches("ValidTill") /* ValidTill com.amazonaws.docdb#Certificate$ValidTill */ =>  {
                 let var_252 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.docdb#TStamp`)"))
                         ?
@@ -7408,9 +7408,9 @@ pub fn deser_structure_crate_model_event(
             s if s.matches("Date") /* Date com.amazonaws.docdb#Event$Date */ =>  {
                 let var_278 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.docdb#TStamp`)"))
                         ?
@@ -7590,9 +7590,9 @@ pub fn deser_structure_crate_model_pending_maintenance_action(
             s if s.matches("AutoAppliedAfterDate") /* AutoAppliedAfterDate com.amazonaws.docdb#PendingMaintenanceAction$AutoAppliedAfterDate */ =>  {
                 let var_289 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.docdb#TStamp`)"))
                         ?
@@ -7604,9 +7604,9 @@ pub fn deser_structure_crate_model_pending_maintenance_action(
             s if s.matches("ForcedApplyDate") /* ForcedApplyDate com.amazonaws.docdb#PendingMaintenanceAction$ForcedApplyDate */ =>  {
                 let var_290 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.docdb#TStamp`)"))
                         ?
@@ -7631,9 +7631,9 @@ pub fn deser_structure_crate_model_pending_maintenance_action(
             s if s.matches("CurrentApplyDate") /* CurrentApplyDate com.amazonaws.docdb#PendingMaintenanceAction$CurrentApplyDate */ =>  {
                 let var_292 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.docdb#TStamp`)"))
                         ?

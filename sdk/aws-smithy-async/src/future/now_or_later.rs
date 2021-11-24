@@ -48,6 +48,7 @@
 //! }
 //! ```
 
+use std::fmt;
 use std::future::Future;
 use std::pin::Pin;
 use std::task::{Context, Poll};
@@ -69,6 +70,17 @@ pin_project! {
     }
 }
 
+impl<T, F> fmt::Debug for NowOrLater<T, F>
+where
+    T: fmt::Debug,
+{
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.debug_struct("NowOrLater")
+            .field("inner", &self.inner)
+            .finish()
+    }
+}
+
 pin_project! {
     #[project = NowOrLaterProj]
     enum Inner<T, F> {
@@ -76,6 +88,21 @@ pin_project! {
         Now { value: Option<T> },
         #[non_exhaustive]
         Later { #[pin] future: F },
+    }
+}
+
+impl<T, F> fmt::Debug for Inner<T, F>
+where
+    T: fmt::Debug,
+{
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            Self::Now { value } => f.debug_struct("Now").field("value", value).finish(),
+            Self::Later { .. } => f
+                .debug_struct("Later")
+                .field("future", &"<future>")
+                .finish(),
+        }
     }
 }
 

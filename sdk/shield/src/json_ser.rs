@@ -423,12 +423,12 @@ pub fn serialize_structure_crate_model_time_range(
     if let Some(var_78) = &input.from_inclusive {
         object
             .key("FromInclusive")
-            .instant(var_78, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_78, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_79) = &input.to_exclusive {
         object
             .key("ToExclusive")
-            .instant(var_79, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_79, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

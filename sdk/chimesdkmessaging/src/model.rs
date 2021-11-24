@@ -1443,7 +1443,7 @@ pub struct ChannelSummary {
     /// <p>The metadata of the channel.</p>
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The time at which the last message in a channel was sent.</p>
-    pub last_message_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_message_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ChannelSummary {
     /// <p>The name of the channel.</p>
@@ -1467,7 +1467,7 @@ impl ChannelSummary {
         self.metadata.as_deref()
     }
     /// <p>The time at which the last message in a channel was sent.</p>
-    pub fn last_message_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_message_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_message_timestamp.as_ref()
     }
 }
@@ -1494,7 +1494,7 @@ pub mod channel_summary {
         pub(crate) mode: std::option::Option<crate::model::ChannelMode>,
         pub(crate) privacy: std::option::Option<crate::model::ChannelPrivacy>,
         pub(crate) metadata: std::option::Option<std::string::String>,
-        pub(crate) last_message_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_message_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the channel.</p>
@@ -1551,14 +1551,14 @@ pub mod channel_summary {
             self
         }
         /// <p>The time at which the last message in a channel was sent.</p>
-        pub fn last_message_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_message_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_message_timestamp = Some(input);
             self
         }
         /// <p>The time at which the last message in a channel was sent.</p>
         pub fn set_last_message_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_message_timestamp = input;
             self
@@ -1838,11 +1838,11 @@ pub struct ChannelMessageSummary {
     /// <p>The type of message.</p>
     pub r#type: std::option::Option<crate::model::ChannelMessageType>,
     /// <p>The time at which the message summary was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a message was last updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a message was last edited.</p>
-    pub last_edited_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_edited_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message sender.</p>
     pub sender: std::option::Option<crate::model::Identity>,
     /// <p>Indicates whether a message was redacted.</p>
@@ -1873,15 +1873,15 @@ impl ChannelMessageSummary {
         self.r#type.as_ref()
     }
     /// <p>The time at which the message summary was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which a message was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The time at which a message was last edited.</p>
-    pub fn last_edited_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_edited_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_edited_timestamp.as_ref()
     }
     /// <p>The message sender.</p>
@@ -1933,9 +1933,9 @@ pub mod channel_message_summary {
         pub(crate) content: std::option::Option<std::string::String>,
         pub(crate) metadata: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ChannelMessageType>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_edited_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_edited_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) sender: std::option::Option<crate::model::Identity>,
         pub(crate) redacted: std::option::Option<bool>,
         pub(crate) status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
@@ -1988,40 +1988,40 @@ pub mod channel_message_summary {
             self
         }
         /// <p>The time at which the message summary was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which the message summary was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time at which a message was last updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>The time at which a message was last updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self
         }
         /// <p>The time at which a message was last edited.</p>
-        pub fn last_edited_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_edited_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_edited_timestamp = Some(input);
             self
         }
         /// <p>The time at which a message was last edited.</p>
         pub fn set_last_edited_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_edited_timestamp = input;
             self
@@ -2262,7 +2262,7 @@ pub struct AppInstanceUserMembershipSummary {
     /// <p>The type of <code>ChannelMembership</code>.</p>
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The time at which a message was last read.</p>
-    pub read_marker_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub read_marker_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AppInstanceUserMembershipSummary {
     /// <p>The type of <code>ChannelMembership</code>.</p>
@@ -2270,7 +2270,7 @@ impl AppInstanceUserMembershipSummary {
         self.r#type.as_ref()
     }
     /// <p>The time at which a message was last read.</p>
-    pub fn read_marker_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn read_marker_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.read_marker_timestamp.as_ref()
     }
 }
@@ -2289,7 +2289,7 @@ pub mod app_instance_user_membership_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ChannelMembershipType>,
-        pub(crate) read_marker_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) read_marker_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The type of <code>ChannelMembership</code>.</p>
@@ -2306,14 +2306,14 @@ pub mod app_instance_user_membership_summary {
             self
         }
         /// <p>The time at which a message was last read.</p>
-        pub fn read_marker_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn read_marker_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.read_marker_timestamp = Some(input);
             self
         }
         /// <p>The time at which a message was last read.</p>
         pub fn set_read_marker_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.read_marker_timestamp = input;
             self
@@ -2668,11 +2668,11 @@ pub struct ChannelMessage {
     /// <p>The message type.</p>
     pub r#type: std::option::Option<crate::model::ChannelMessageType>,
     /// <p>The time at which the message was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a message was edited.</p>
-    pub last_edited_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_edited_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a message was updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message sender.</p>
     pub sender: std::option::Option<crate::model::Identity>,
     /// <p>Hides the content of a message.</p>
@@ -2708,15 +2708,15 @@ impl ChannelMessage {
         self.r#type.as_ref()
     }
     /// <p>The time at which the message was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which a message was edited.</p>
-    pub fn last_edited_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_edited_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_edited_timestamp.as_ref()
     }
     /// <p>The time at which a message was updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The message sender.</p>
@@ -2774,9 +2774,9 @@ pub mod channel_message {
         pub(crate) content: std::option::Option<std::string::String>,
         pub(crate) metadata: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ChannelMessageType>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_edited_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_edited_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) sender: std::option::Option<crate::model::Identity>,
         pub(crate) redacted: std::option::Option<bool>,
         pub(crate) persistence: std::option::Option<crate::model::ChannelMessagePersistenceType>,
@@ -2840,40 +2840,40 @@ pub mod channel_message {
             self
         }
         /// <p>The time at which the message was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which the message was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time at which a message was edited.</p>
-        pub fn last_edited_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_edited_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_edited_timestamp = Some(input);
             self
         }
         /// <p>The time at which a message was edited.</p>
         pub fn set_last_edited_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_edited_timestamp = input;
             self
         }
         /// <p>The time at which a message was updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>The time at which a message was updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self
@@ -2985,7 +2985,7 @@ pub struct ChannelModerator {
     /// <p>The ARN of the moderator's channel.</p>
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the moderator was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>AppInstanceUser</code> who created the moderator.</p>
     pub created_by: std::option::Option<crate::model::Identity>,
 }
@@ -2999,7 +2999,7 @@ impl ChannelModerator {
         self.channel_arn.as_deref()
     }
     /// <p>The time at which the moderator was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The <code>AppInstanceUser</code> who created the moderator.</p>
@@ -3025,7 +3025,7 @@ pub mod channel_moderator {
     pub struct Builder {
         pub(crate) moderator: std::option::Option<crate::model::Identity>,
         pub(crate) channel_arn: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<crate::model::Identity>,
     }
     impl Builder {
@@ -3050,14 +3050,14 @@ pub mod channel_moderator {
             self
         }
         /// <p>The time at which the moderator was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which the moderator was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
@@ -3106,9 +3106,9 @@ pub struct ChannelMembership {
     /// <p>The ARN of the member's channel.</p>
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the channel membership was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a channel membership was last updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ChannelMembership {
     /// <p>The identifier of the member who invited another member.</p>
@@ -3128,11 +3128,11 @@ impl ChannelMembership {
         self.channel_arn.as_deref()
     }
     /// <p>The time at which the channel membership was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which a channel membership was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
 }
@@ -3158,8 +3158,8 @@ pub mod channel_membership {
         pub(crate) r#type: std::option::Option<crate::model::ChannelMembershipType>,
         pub(crate) member: std::option::Option<crate::model::Identity>,
         pub(crate) channel_arn: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the member who invited another member.</p>
@@ -3209,27 +3209,27 @@ pub mod channel_membership {
             self
         }
         /// <p>The time at which the channel membership was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which the channel membership was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time at which a channel membership was last updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>The time at which a channel membership was last updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self
@@ -3265,9 +3265,9 @@ pub struct ChannelFlow {
     /// <p>The name of the channel flow.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The time at which the channel flow was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a channel flow was updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ChannelFlow {
     /// <p>The ARN of the channel flow.</p>
@@ -3283,11 +3283,11 @@ impl ChannelFlow {
         self.name.as_deref()
     }
     /// <p>The time at which the channel flow was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which a channel flow was updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
 }
@@ -3311,8 +3311,8 @@ pub mod channel_flow {
         pub(crate) channel_flow_arn: std::option::Option<std::string::String>,
         pub(crate) processors: std::option::Option<std::vec::Vec<crate::model::Processor>>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the channel flow.</p>
@@ -3358,27 +3358,27 @@ pub mod channel_flow {
             self
         }
         /// <p>The time at which the channel flow was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which the channel flow was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time at which a channel flow was updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>The time at which a channel flow was updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self
@@ -3411,7 +3411,7 @@ pub struct ChannelBan {
     /// <p>The ARN of the channel from which a member is being banned.</p>
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the ban was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>AppInstanceUser</code> who created the ban.</p>
     pub created_by: std::option::Option<crate::model::Identity>,
 }
@@ -3425,7 +3425,7 @@ impl ChannelBan {
         self.channel_arn.as_deref()
     }
     /// <p>The time at which the ban was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The <code>AppInstanceUser</code> who created the ban.</p>
@@ -3451,7 +3451,7 @@ pub mod channel_ban {
     pub struct Builder {
         pub(crate) member: std::option::Option<crate::model::Identity>,
         pub(crate) channel_arn: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<crate::model::Identity>,
     }
     impl Builder {
@@ -3476,14 +3476,14 @@ pub mod channel_ban {
             self
         }
         /// <p>The time at which the ban was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which the ban was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
@@ -3536,11 +3536,11 @@ pub struct Channel {
     /// <p>The <code>AppInstanceUser</code> who created the channel.</p>
     pub created_by: std::option::Option<crate::model::Identity>,
     /// <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a member sent the last message in the channel.</p>
-    pub last_message_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_message_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a channel was last updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the channel flow.</p>
     pub channel_flow_arn: std::option::Option<std::string::String>,
 }
@@ -3570,15 +3570,15 @@ impl Channel {
         self.created_by.as_ref()
     }
     /// <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which a member sent the last message in the channel.</p>
-    pub fn last_message_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_message_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_message_timestamp.as_ref()
     }
     /// <p>The time at which a channel was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The ARN of the channel flow.</p>
@@ -3614,9 +3614,9 @@ pub mod channel {
         pub(crate) privacy: std::option::Option<crate::model::ChannelPrivacy>,
         pub(crate) metadata: std::option::Option<std::string::String>,
         pub(crate) created_by: std::option::Option<crate::model::Identity>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_message_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_message_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) channel_flow_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3687,40 +3687,40 @@ pub mod channel {
             self
         }
         /// <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time at which a member sent the last message in the channel.</p>
-        pub fn last_message_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_message_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_message_timestamp = Some(input);
             self
         }
         /// <p>The time at which a member sent the last message in the channel.</p>
         pub fn set_last_message_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_message_timestamp = input;
             self
         }
         /// <p>The time at which a channel was last updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>The time at which a channel was last updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self

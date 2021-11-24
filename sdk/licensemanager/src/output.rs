@@ -1851,11 +1851,11 @@ pub struct GetLicenseConversionTaskOutput {
     /// <p>Status of the license type conversion task.</p>
     pub status: std::option::Option<crate::model::LicenseConversionTaskStatus>,
     /// <p>Time at which the license type conversion task was started .</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Amount of time to complete the license type conversion.</p>
-    pub license_conversion_time: std::option::Option<aws_smithy_types::Instant>,
+    pub license_conversion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Time at which the license type conversion task was completed.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetLicenseConversionTaskOutput {
     /// <p>ID of the license type conversion task.</p>
@@ -1887,15 +1887,15 @@ impl GetLicenseConversionTaskOutput {
         self.status.as_ref()
     }
     /// <p>Time at which the license type conversion task was started .</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Amount of time to complete the license type conversion.</p>
-    pub fn license_conversion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn license_conversion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.license_conversion_time.as_ref()
     }
     /// <p>Time at which the license type conversion task was completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -1934,9 +1934,9 @@ pub mod get_license_conversion_task_output {
             std::option::Option<crate::model::LicenseConversionContext>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::LicenseConversionTaskStatus>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) license_conversion_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) license_conversion_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>ID of the license type conversion task.</p>
@@ -2021,40 +2021,40 @@ pub mod get_license_conversion_task_output {
             self
         }
         /// <p>Time at which the license type conversion task was started .</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>Time at which the license type conversion task was started .</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>Amount of time to complete the license type conversion.</p>
-        pub fn license_conversion_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn license_conversion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.license_conversion_time = Some(input);
             self
         }
         /// <p>Amount of time to complete the license type conversion.</p>
         pub fn set_license_conversion_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.license_conversion_time = input;
             self
         }
         /// <p>Time at which the license type conversion task was completed.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>Time at which the license type conversion task was completed.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self

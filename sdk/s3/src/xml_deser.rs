@@ -3866,9 +3866,9 @@ pub fn deser_structure_crate_model_multipart_upload(
             s if s.matches("Initiated") /* Initiated com.amazonaws.s3#MultipartUpload$Initiated */ =>  {
                 let var_212 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.s3#Initiated`)"))
                         ?
@@ -3940,9 +3940,9 @@ pub fn deser_structure_crate_model_object(
             s if s.matches("LastModified") /* LastModified com.amazonaws.s3#Object$LastModified */ =>  {
                 let var_217 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.s3#LastModified`)"))
                         ?
@@ -4102,9 +4102,9 @@ pub fn deser_structure_crate_model_object_version(
             s if s.matches("LastModified") /* LastModified com.amazonaws.s3#ObjectVersion$LastModified */ =>  {
                 let var_228 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.s3#LastModified`)"))
                         ?
@@ -4190,9 +4190,9 @@ pub fn deser_structure_crate_model_delete_marker_entry(
             s if s.matches("LastModified") /* LastModified com.amazonaws.s3#DeleteMarkerEntry$LastModified */ =>  {
                 let var_234 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.s3#LastModified`)"))
                         ?
@@ -4232,9 +4232,9 @@ pub fn deser_structure_crate_model_part(
             s if s.matches("LastModified") /* LastModified com.amazonaws.s3#Part$LastModified */ =>  {
                 let var_236 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.s3#LastModified`)"))
                         ?
@@ -4379,9 +4379,9 @@ pub fn deser_structure_crate_model_copy_object_result(
             s if s.matches("LastModified") /* LastModified com.amazonaws.s3#CopyObjectResult$LastModified */ =>  {
                 let var_242 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.s3#LastModified`)"))
                         ?
@@ -4615,9 +4615,9 @@ pub fn deser_structure_crate_model_object_lock_retention(
             s if s.matches("RetainUntilDate") /* RetainUntilDate com.amazonaws.s3#ObjectLockRetention$RetainUntilDate */ =>  {
                 let var_255 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.s3#Date`)"))
                         ?
@@ -4728,9 +4728,9 @@ pub fn deser_structure_crate_model_copy_part_result(
             s if s.matches("LastModified") /* LastModified com.amazonaws.s3#CopyPartResult$LastModified */ =>  {
                 let var_261 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.s3#LastModified`)"))
                         ?
@@ -4792,9 +4792,9 @@ pub fn deser_structure_crate_model_lifecycle_expiration(
             s if s.matches("Date") /* Date com.amazonaws.s3#LifecycleExpiration$Date */ =>  {
                 let var_264 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.s3#Date`)"))
                         ?
@@ -4888,9 +4888,9 @@ pub fn deser_structure_crate_model_transition(
             s if s.matches("Date") /* Date com.amazonaws.s3#Transition$Date */ =>  {
                 let var_267 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.s3#Date`)"))
                         ?
@@ -5468,9 +5468,9 @@ pub fn deser_structure_crate_model_bucket(
             s if s.matches("CreationDate") /* CreationDate com.amazonaws.s3#Bucket$CreationDate */ =>  {
                 let var_289 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.s3#CreationDate`)"))
                         ?

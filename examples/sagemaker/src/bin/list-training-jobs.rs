@@ -4,9 +4,9 @@
  */
 
 use aws_config::meta::region::RegionProviderChain;
-
+use aws_sdk_sagemaker as sagemaker;
+use aws_smithy_types_convert::date_time::DateTimeExt;
 use sagemaker::{Client, Region};
-
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -54,12 +54,12 @@ async fn main() -> Result<(), sagemaker::Error> {
     let job_details = client.list_training_jobs().send().await?;
 
     println!("Job Name\tCreation DateTime\tDuration\tStatus");
-    for j in job_details.training_job_summaries.unwrap_or_default() {
-        let name = j.training_job_name.as_deref().unwrap_or_default();
-        let creation_time = j.creation_time.unwrap().to_chrono();
-        let training_end_time = j.training_end_time.unwrap().to_chrono();
+    for j in job_details.training_job_summaries().unwrap_or_default() {
+        let name = j.training_job_name().unwrap_or_default();
+        let creation_time = j.creation_time().unwrap().to_chrono_utc();
+        let training_end_time = j.training_end_time().unwrap().to_chrono_utc();
 
-        let status = j.training_job_status.unwrap();
+        let status = j.training_job_status().unwrap();
         let duration = training_end_time - creation_time;
 
         println!(

@@ -401,11 +401,11 @@ impl ClientAuthentication {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Unauthenticated {
-    /// <p>Specifies whether you want to enable or disable unauthenticated traffic to your cluster.</p>
+    /// <p>Specifies whether you want to turn on or turn off unauthenticated traffic to your cluster.</p>
     pub enabled: bool,
 }
 impl Unauthenticated {
-    /// <p>Specifies whether you want to enable or disable unauthenticated traffic to your cluster.</p>
+    /// <p>Specifies whether you want to turn on or turn off unauthenticated traffic to your cluster.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
@@ -426,12 +426,12 @@ pub mod unauthenticated {
         pub(crate) enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Specifies whether you want to enable or disable unauthenticated traffic to your cluster.</p>
+        /// <p>Specifies whether you want to turn on or turn off unauthenticated traffic to your cluster.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>Specifies whether you want to enable or disable unauthenticated traffic to your cluster.</p>
+        /// <p>Specifies whether you want to turn on or turn off unauthenticated traffic to your cluster.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -457,7 +457,7 @@ impl Unauthenticated {
 pub struct Tls {
     /// <p>List of ACM Certificate Authority ARNs.</p>
     pub certificate_authority_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies whether you want to enable or disable TLS authentication.</p>
+    /// <p>Specifies whether you want to turn on or turn off TLS authentication.</p>
     pub enabled: bool,
 }
 impl Tls {
@@ -465,7 +465,7 @@ impl Tls {
     pub fn certificate_authority_arn_list(&self) -> std::option::Option<&[std::string::String]> {
         self.certificate_authority_arn_list.as_deref()
     }
-    /// <p>Specifies whether you want to enable or disable TLS authentication.</p>
+    /// <p>Specifies whether you want to turn on or turn off TLS authentication.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
@@ -514,12 +514,12 @@ pub mod tls {
             self.certificate_authority_arn_list = input;
             self
         }
-        /// <p>Specifies whether you want to enable or disable TLS authentication.</p>
+        /// <p>Specifies whether you want to turn on or turn off TLS authentication.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>Specifies whether you want to enable or disable TLS authentication.</p>
+        /// <p>Specifies whether you want to turn on or turn off TLS authentication.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -1175,17 +1175,17 @@ impl OpenMonitoringInfo {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrometheusInfo {
-    /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+    /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     pub jmx_exporter: std::option::Option<crate::model::JmxExporterInfo>,
-    /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+    /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
     pub node_exporter: std::option::Option<crate::model::NodeExporterInfo>,
 }
 impl PrometheusInfo {
-    /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+    /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     pub fn jmx_exporter(&self) -> std::option::Option<&crate::model::JmxExporterInfo> {
         self.jmx_exporter.as_ref()
     }
-    /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+    /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
     pub fn node_exporter(&self) -> std::option::Option<&crate::model::NodeExporterInfo> {
         self.node_exporter.as_ref()
     }
@@ -1208,12 +1208,12 @@ pub mod prometheus_info {
         pub(crate) node_exporter: std::option::Option<crate::model::NodeExporterInfo>,
     }
     impl Builder {
-        /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+        /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
         pub fn jmx_exporter(mut self, input: crate::model::JmxExporterInfo) -> Self {
             self.jmx_exporter = Some(input);
             self
         }
-        /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+        /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
         pub fn set_jmx_exporter(
             mut self,
             input: std::option::Option<crate::model::JmxExporterInfo>,
@@ -1221,12 +1221,12 @@ pub mod prometheus_info {
             self.jmx_exporter = input;
             self
         }
-        /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+        /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
         pub fn node_exporter(mut self, input: crate::model::NodeExporterInfo) -> Self {
             self.node_exporter = Some(input);
             self
         }
-        /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+        /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
         pub fn set_node_exporter(
             mut self,
             input: std::option::Option<crate::model::NodeExporterInfo>,
@@ -1250,15 +1250,15 @@ impl PrometheusInfo {
     }
 }
 
-/// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+/// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeExporterInfo {
-    /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+    /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
     pub enabled_in_broker: bool,
 }
 impl NodeExporterInfo {
-    /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+    /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
     pub fn enabled_in_broker(&self) -> bool {
         self.enabled_in_broker
     }
@@ -1279,12 +1279,12 @@ pub mod node_exporter_info {
         pub(crate) enabled_in_broker: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+        /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
         pub fn enabled_in_broker(mut self, input: bool) -> Self {
             self.enabled_in_broker = Some(input);
             self
         }
-        /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+        /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
         pub fn set_enabled_in_broker(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled_in_broker = input;
             self
@@ -1304,15 +1304,15 @@ impl NodeExporterInfo {
     }
 }
 
-/// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+/// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JmxExporterInfo {
-    /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+    /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     pub enabled_in_broker: bool,
 }
 impl JmxExporterInfo {
-    /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+    /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     pub fn enabled_in_broker(&self) -> bool {
         self.enabled_in_broker
     }
@@ -1333,12 +1333,12 @@ pub mod jmx_exporter_info {
         pub(crate) enabled_in_broker: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+        /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
         pub fn enabled_in_broker(mut self, input: bool) -> Self {
             self.enabled_in_broker = Some(input);
             self
         }
-        /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+        /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
         pub fn set_enabled_in_broker(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled_in_broker = input;
             self
@@ -1426,12 +1426,123 @@ impl AsRef<str> for EnhancedMonitoring {
     }
 }
 
+/// <p>Information about the broker access configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConnectivityInfo {
+    /// <p>Public access control for brokers.</p>
+    pub public_access: std::option::Option<crate::model::PublicAccess>,
+}
+impl ConnectivityInfo {
+    /// <p>Public access control for brokers.</p>
+    pub fn public_access(&self) -> std::option::Option<&crate::model::PublicAccess> {
+        self.public_access.as_ref()
+    }
+}
+impl std::fmt::Debug for ConnectivityInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConnectivityInfo");
+        formatter.field("public_access", &self.public_access);
+        formatter.finish()
+    }
+}
+/// See [`ConnectivityInfo`](crate::model::ConnectivityInfo)
+pub mod connectivity_info {
+    /// A builder for [`ConnectivityInfo`](crate::model::ConnectivityInfo)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) public_access: std::option::Option<crate::model::PublicAccess>,
+    }
+    impl Builder {
+        /// <p>Public access control for brokers.</p>
+        pub fn public_access(mut self, input: crate::model::PublicAccess) -> Self {
+            self.public_access = Some(input);
+            self
+        }
+        /// <p>Public access control for brokers.</p>
+        pub fn set_public_access(
+            mut self,
+            input: std::option::Option<crate::model::PublicAccess>,
+        ) -> Self {
+            self.public_access = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConnectivityInfo`](crate::model::ConnectivityInfo)
+        pub fn build(self) -> crate::model::ConnectivityInfo {
+            crate::model::ConnectivityInfo {
+                public_access: self.public_access,
+            }
+        }
+    }
+}
+impl ConnectivityInfo {
+    /// Creates a new builder-style object to manufacture [`ConnectivityInfo`](crate::model::ConnectivityInfo)
+    pub fn builder() -> crate::model::connectivity_info::Builder {
+        crate::model::connectivity_info::Builder::default()
+    }
+}
+
+/// Public access control for brokers.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PublicAccess {
+    /// <p>The value DISABLED indicates that public access is turned off. SERVICE_PROVIDED_EIPS indicates that public access is turned on.</p>
+    pub r#type: std::option::Option<std::string::String>,
+}
+impl PublicAccess {
+    /// <p>The value DISABLED indicates that public access is turned off. SERVICE_PROVIDED_EIPS indicates that public access is turned on.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
+impl std::fmt::Debug for PublicAccess {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PublicAccess");
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+/// See [`PublicAccess`](crate::model::PublicAccess)
+pub mod public_access {
+    /// A builder for [`PublicAccess`](crate::model::PublicAccess)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The value DISABLED indicates that public access is turned off. SERVICE_PROVIDED_EIPS indicates that public access is turned on.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>The value DISABLED indicates that public access is turned off. SERVICE_PROVIDED_EIPS indicates that public access is turned on.</p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PublicAccess`](crate::model::PublicAccess)
+        pub fn build(self) -> crate::model::PublicAccess {
+            crate::model::PublicAccess {
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl PublicAccess {
+    /// Creates a new builder-style object to manufacture [`PublicAccess`](crate::model::PublicAccess)
+    pub fn builder() -> crate::model::public_access::Builder {
+        crate::model::public_access::Builder::default()
+    }
+}
+
 /// <p>Describes a configuration revision.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationRevision {
     /// <p>The time when the configuration revision was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the configuration revision.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The revision number.</p>
@@ -1439,7 +1550,7 @@ pub struct ConfigurationRevision {
 }
 impl ConfigurationRevision {
     /// <p>The time when the configuration revision was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description of the configuration revision.</p>
@@ -1466,20 +1577,20 @@ pub mod configuration_revision {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) revision: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>The time when the configuration revision was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time when the configuration revision was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2042,7 +2153,7 @@ pub struct BrokerNodeInfo {
     pub client_subnet: std::option::Option<std::string::String>,
     /// <p>The virtual private cloud (VPC) of the client.</p>
     pub client_vpc_ip_address: std::option::Option<std::string::String>,
-    /// <p>Information about the version of software currently deployed on the Kafka brokers in the cluster.</p>
+    /// <p>Information about the version of software currently deployed on the Apache Kafka brokers in the cluster.</p>
     pub current_broker_software_info: std::option::Option<crate::model::BrokerSoftwareInfo>,
     /// <p>Endpoints for accessing the broker.</p>
     pub endpoints: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2064,7 +2175,7 @@ impl BrokerNodeInfo {
     pub fn client_vpc_ip_address(&self) -> std::option::Option<&str> {
         self.client_vpc_ip_address.as_deref()
     }
-    /// <p>Information about the version of software currently deployed on the Kafka brokers in the cluster.</p>
+    /// <p>Information about the version of software currently deployed on the Apache Kafka brokers in the cluster.</p>
     pub fn current_broker_software_info(
         &self,
     ) -> std::option::Option<&crate::model::BrokerSoftwareInfo> {
@@ -2154,7 +2265,7 @@ pub mod broker_node_info {
             self.client_vpc_ip_address = input;
             self
         }
-        /// <p>Information about the version of software currently deployed on the Kafka brokers in the cluster.</p>
+        /// <p>Information about the version of software currently deployed on the Apache Kafka brokers in the cluster.</p>
         pub fn current_broker_software_info(
             mut self,
             input: crate::model::BrokerSoftwareInfo,
@@ -2162,7 +2273,7 @@ pub mod broker_node_info {
             self.current_broker_software_info = Some(input);
             self
         }
-        /// <p>Information about the version of software currently deployed on the Kafka brokers in the cluster.</p>
+        /// <p>Information about the version of software currently deployed on the Apache Kafka brokers in the cluster.</p>
         pub fn set_current_broker_software_info(
             mut self,
             input: std::option::Option<crate::model::BrokerSoftwareInfo>,
@@ -2445,7 +2556,7 @@ pub struct Configuration {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the configuration was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the configuration.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of the versions of Apache Kafka with which you can use this MSK configuration. You can use this configuration for an MSK cluster only if the Apache Kafka version specified for the cluster appears in this array.</p>
@@ -2463,7 +2574,7 @@ impl Configuration {
         self.arn.as_deref()
     }
     /// <p>The time when the configuration was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description of the configuration.</p>
@@ -2507,7 +2618,7 @@ pub mod configuration {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) kafka_versions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) latest_revision: std::option::Option<crate::model::ConfigurationRevision>,
@@ -2526,14 +2637,14 @@ pub mod configuration {
             self
         }
         /// <p>The time when the configuration was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time when the configuration was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2698,8 +2809,8 @@ pub struct ClusterInfo {
     /// <p>The name of the cluster.</p>
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The time when the cluster was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
-    /// <p>Information about the version of software currently deployed on the Kafka brokers in the cluster.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Information about the version of software currently deployed on the Apache Kafka brokers in the cluster.</p>
     pub current_broker_software_info: std::option::Option<crate::model::BrokerSoftwareInfo>,
     /// <p>The current version of the MSK cluster.</p>
     pub current_version: std::option::Option<std::string::String>,
@@ -2751,10 +2862,10 @@ impl ClusterInfo {
         self.cluster_name.as_deref()
     }
     /// <p>The time when the cluster was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>Information about the version of software currently deployed on the Kafka brokers in the cluster.</p>
+    /// <p>Information about the version of software currently deployed on the Apache Kafka brokers in the cluster.</p>
     pub fn current_broker_software_info(
         &self,
     ) -> std::option::Option<&crate::model::BrokerSoftwareInfo> {
@@ -2849,7 +2960,7 @@ pub mod cluster_info {
         pub(crate) client_authentication: std::option::Option<crate::model::ClientAuthentication>,
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_name: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) current_broker_software_info:
             std::option::Option<crate::model::BrokerSoftwareInfo>,
         pub(crate) current_version: std::option::Option<std::string::String>,
@@ -2927,19 +3038,19 @@ pub mod cluster_info {
             self
         }
         /// <p>The time when the cluster was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time when the cluster was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
-        /// <p>Information about the version of software currently deployed on the Kafka brokers in the cluster.</p>
+        /// <p>Information about the version of software currently deployed on the Apache Kafka brokers in the cluster.</p>
         pub fn current_broker_software_info(
             mut self,
             input: crate::model::BrokerSoftwareInfo,
@@ -2947,7 +3058,7 @@ pub mod cluster_info {
             self.current_broker_software_info = Some(input);
             self
         }
-        /// <p>Information about the version of software currently deployed on the Kafka brokers in the cluster.</p>
+        /// <p>Information about the version of software currently deployed on the Apache Kafka brokers in the cluster.</p>
         pub fn set_current_broker_software_info(
             mut self,
             input: std::option::Option<crate::model::BrokerSoftwareInfo>,
@@ -3212,7 +3323,7 @@ impl StateInfo {
     }
 }
 
-/// <p>The state of a Kafka cluster.</p>
+/// <p>The state of the Apache Kafka cluster.</p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3361,17 +3472,17 @@ impl OpenMonitoring {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Prometheus {
-    /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+    /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     pub jmx_exporter: std::option::Option<crate::model::JmxExporter>,
-    /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+    /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
     pub node_exporter: std::option::Option<crate::model::NodeExporter>,
 }
 impl Prometheus {
-    /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+    /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     pub fn jmx_exporter(&self) -> std::option::Option<&crate::model::JmxExporter> {
         self.jmx_exporter.as_ref()
     }
-    /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+    /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
     pub fn node_exporter(&self) -> std::option::Option<&crate::model::NodeExporter> {
         self.node_exporter.as_ref()
     }
@@ -3394,12 +3505,12 @@ pub mod prometheus {
         pub(crate) node_exporter: std::option::Option<crate::model::NodeExporter>,
     }
     impl Builder {
-        /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+        /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
         pub fn jmx_exporter(mut self, input: crate::model::JmxExporter) -> Self {
             self.jmx_exporter = Some(input);
             self
         }
-        /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+        /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
         pub fn set_jmx_exporter(
             mut self,
             input: std::option::Option<crate::model::JmxExporter>,
@@ -3407,12 +3518,12 @@ pub mod prometheus {
             self.jmx_exporter = input;
             self
         }
-        /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+        /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
         pub fn node_exporter(mut self, input: crate::model::NodeExporter) -> Self {
             self.node_exporter = Some(input);
             self
         }
-        /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+        /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
         pub fn set_node_exporter(
             mut self,
             input: std::option::Option<crate::model::NodeExporter>,
@@ -3436,15 +3547,15 @@ impl Prometheus {
     }
 }
 
-/// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+/// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeExporter {
-    /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+    /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
     pub enabled_in_broker: bool,
 }
 impl NodeExporter {
-    /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+    /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
     pub fn enabled_in_broker(&self) -> bool {
         self.enabled_in_broker
     }
@@ -3465,12 +3576,12 @@ pub mod node_exporter {
         pub(crate) enabled_in_broker: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+        /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
         pub fn enabled_in_broker(mut self, input: bool) -> Self {
             self.enabled_in_broker = Some(input);
             self
         }
-        /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+        /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
         pub fn set_enabled_in_broker(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled_in_broker = input;
             self
@@ -3490,15 +3601,15 @@ impl NodeExporter {
     }
 }
 
-/// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+/// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JmxExporter {
-    /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+    /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     pub enabled_in_broker: bool,
 }
 impl JmxExporter {
-    /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+    /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     pub fn enabled_in_broker(&self) -> bool {
         self.enabled_in_broker
     }
@@ -3519,12 +3630,12 @@ pub mod jmx_exporter {
         pub(crate) enabled_in_broker: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+        /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
         pub fn enabled_in_broker(mut self, input: bool) -> Self {
             self.enabled_in_broker = Some(input);
             self
         }
-        /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+        /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
         pub fn set_enabled_in_broker(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled_in_broker = input;
             self
@@ -3544,7 +3655,7 @@ impl JmxExporter {
     }
 }
 
-/// <p>Describes the setup to be used for Kafka broker nodes in the cluster.</p>
+/// <p>Describes the setup to be used for Apache Kafka broker nodes in the cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BrokerNodeGroupInfo {
@@ -3553,13 +3664,15 @@ pub struct BrokerNodeGroupInfo {
     pub broker_az_distribution: std::option::Option<crate::model::BrokerAzDistribution>,
     /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.</p>
     pub client_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The type of Amazon EC2 instances to use for Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
+    /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
     /// kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
     pub storage_info: std::option::Option<crate::model::StorageInfo>,
+    /// <p>Information about the broker access configuration.</p>
+    pub connectivity_info: std::option::Option<crate::model::ConnectivityInfo>,
 }
 impl BrokerNodeGroupInfo {
     /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
@@ -3573,7 +3686,7 @@ impl BrokerNodeGroupInfo {
     pub fn client_subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.client_subnets.as_deref()
     }
-    /// <p>The type of Amazon EC2 instances to use for Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
+    /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
     /// kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
@@ -3586,6 +3699,10 @@ impl BrokerNodeGroupInfo {
     pub fn storage_info(&self) -> std::option::Option<&crate::model::StorageInfo> {
         self.storage_info.as_ref()
     }
+    /// <p>Information about the broker access configuration.</p>
+    pub fn connectivity_info(&self) -> std::option::Option<&crate::model::ConnectivityInfo> {
+        self.connectivity_info.as_ref()
+    }
 }
 impl std::fmt::Debug for BrokerNodeGroupInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3595,6 +3712,7 @@ impl std::fmt::Debug for BrokerNodeGroupInfo {
         formatter.field("instance_type", &self.instance_type);
         formatter.field("security_groups", &self.security_groups);
         formatter.field("storage_info", &self.storage_info);
+        formatter.field("connectivity_info", &self.connectivity_info);
         formatter.finish()
     }
 }
@@ -3609,6 +3727,7 @@ pub mod broker_node_group_info {
         pub(crate) instance_type: std::option::Option<std::string::String>,
         pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) storage_info: std::option::Option<crate::model::StorageInfo>,
+        pub(crate) connectivity_info: std::option::Option<crate::model::ConnectivityInfo>,
     }
     impl Builder {
         /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
@@ -3645,13 +3764,13 @@ pub mod broker_node_group_info {
             self.client_subnets = input;
             self
         }
-        /// <p>The type of Amazon EC2 instances to use for Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
+        /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
         /// kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
             self
         }
-        /// <p>The type of Amazon EC2 instances to use for Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
+        /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
         /// kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
         pub fn set_instance_type(
             mut self,
@@ -3692,6 +3811,19 @@ pub mod broker_node_group_info {
             self.storage_info = input;
             self
         }
+        /// <p>Information about the broker access configuration.</p>
+        pub fn connectivity_info(mut self, input: crate::model::ConnectivityInfo) -> Self {
+            self.connectivity_info = Some(input);
+            self
+        }
+        /// <p>Information about the broker access configuration.</p>
+        pub fn set_connectivity_info(
+            mut self,
+            input: std::option::Option<crate::model::ConnectivityInfo>,
+        ) -> Self {
+            self.connectivity_info = input;
+            self
+        }
         /// Consumes the builder and constructs a [`BrokerNodeGroupInfo`](crate::model::BrokerNodeGroupInfo)
         pub fn build(self) -> crate::model::BrokerNodeGroupInfo {
             crate::model::BrokerNodeGroupInfo {
@@ -3700,6 +3832,7 @@ pub mod broker_node_group_info {
                 instance_type: self.instance_type,
                 security_groups: self.security_groups,
                 storage_info: self.storage_info,
+                connectivity_info: self.connectivity_info,
             }
         }
     }
@@ -3768,7 +3901,7 @@ impl StorageInfo {
     }
 }
 
-/// <p>Contains information about the EBS storage volumes attached to Kafka broker nodes.</p>
+/// <p>Contains information about the EBS storage volumes attached to Apache Kafka broker nodes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsStorageInfo {
@@ -3883,9 +4016,9 @@ pub struct ClusterOperationInfo {
     /// <p>ARN of the cluster.</p>
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The time that the operation was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the operation finished.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Describes the error if the operation fails.</p>
     pub error_info: std::option::Option<crate::model::ErrorInfo>,
     /// <p>ARN of the cluster operation.</p>
@@ -3911,11 +4044,11 @@ impl ClusterOperationInfo {
         self.cluster_arn.as_deref()
     }
     /// <p>The time that the operation was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time at which the operation finished.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Describes the error if the operation fails.</p>
@@ -3972,8 +4105,8 @@ pub mod cluster_operation_info {
     pub struct Builder {
         pub(crate) client_request_id: std::option::Option<std::string::String>,
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) error_info: std::option::Option<crate::model::ErrorInfo>,
         pub(crate) operation_arn: std::option::Option<std::string::String>,
         pub(crate) operation_state: std::option::Option<std::string::String>,
@@ -4008,27 +4141,27 @@ pub mod cluster_operation_info {
             self
         }
         /// <p>The time that the operation was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time that the operation was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time at which the operation finished.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time at which the operation finished.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -4173,7 +4306,7 @@ pub struct MutableClusterInfo {
     pub enhanced_monitoring: std::option::Option<crate::model::EnhancedMonitoring>,
     /// <p>The settings for open monitoring.</p>
     pub open_monitoring: std::option::Option<crate::model::OpenMonitoring>,
-    /// <p>The Kafka version.</p>
+    /// <p>The Apache Kafka version.</p>
     pub kafka_version: std::option::Option<std::string::String>,
     /// <p>You can configure your MSK cluster to send broker logs to different destination types. This is a container for the configuration details related to broker logs.</p>
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
@@ -4183,6 +4316,8 @@ pub struct MutableClusterInfo {
     pub client_authentication: std::option::Option<crate::model::ClientAuthentication>,
     /// <p>Includes all encryption-related information.</p>
     pub encryption_info: std::option::Option<crate::model::EncryptionInfo>,
+    /// <p>Information about the broker access configuration.</p>
+    pub connectivity_info: std::option::Option<crate::model::ConnectivityInfo>,
 }
 impl MutableClusterInfo {
     /// <p>Specifies the size of the EBS volume and the ID of the associated broker.</p>
@@ -4207,7 +4342,7 @@ impl MutableClusterInfo {
     pub fn open_monitoring(&self) -> std::option::Option<&crate::model::OpenMonitoring> {
         self.open_monitoring.as_ref()
     }
-    /// <p>The Kafka version.</p>
+    /// <p>The Apache Kafka version.</p>
     pub fn kafka_version(&self) -> std::option::Option<&str> {
         self.kafka_version.as_deref()
     }
@@ -4229,6 +4364,10 @@ impl MutableClusterInfo {
     pub fn encryption_info(&self) -> std::option::Option<&crate::model::EncryptionInfo> {
         self.encryption_info.as_ref()
     }
+    /// <p>Information about the broker access configuration.</p>
+    pub fn connectivity_info(&self) -> std::option::Option<&crate::model::ConnectivityInfo> {
+        self.connectivity_info.as_ref()
+    }
 }
 impl std::fmt::Debug for MutableClusterInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4243,6 +4382,7 @@ impl std::fmt::Debug for MutableClusterInfo {
         formatter.field("instance_type", &self.instance_type);
         formatter.field("client_authentication", &self.client_authentication);
         formatter.field("encryption_info", &self.encryption_info);
+        formatter.field("connectivity_info", &self.connectivity_info);
         formatter.finish()
     }
 }
@@ -4263,6 +4403,7 @@ pub mod mutable_cluster_info {
         pub(crate) instance_type: std::option::Option<std::string::String>,
         pub(crate) client_authentication: std::option::Option<crate::model::ClientAuthentication>,
         pub(crate) encryption_info: std::option::Option<crate::model::EncryptionInfo>,
+        pub(crate) connectivity_info: std::option::Option<crate::model::ConnectivityInfo>,
     }
     impl Builder {
         /// Appends an item to `broker_ebs_volume_info`.
@@ -4336,12 +4477,12 @@ pub mod mutable_cluster_info {
             self.open_monitoring = input;
             self
         }
-        /// <p>The Kafka version.</p>
+        /// <p>The Apache Kafka version.</p>
         pub fn kafka_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.kafka_version = Some(input.into());
             self
         }
-        /// <p>The Kafka version.</p>
+        /// <p>The Apache Kafka version.</p>
         pub fn set_kafka_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4401,6 +4542,19 @@ pub mod mutable_cluster_info {
             self.encryption_info = input;
             self
         }
+        /// <p>Information about the broker access configuration.</p>
+        pub fn connectivity_info(mut self, input: crate::model::ConnectivityInfo) -> Self {
+            self.connectivity_info = Some(input);
+            self
+        }
+        /// <p>Information about the broker access configuration.</p>
+        pub fn set_connectivity_info(
+            mut self,
+            input: std::option::Option<crate::model::ConnectivityInfo>,
+        ) -> Self {
+            self.connectivity_info = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MutableClusterInfo`](crate::model::MutableClusterInfo)
         pub fn build(self) -> crate::model::MutableClusterInfo {
             crate::model::MutableClusterInfo {
@@ -4414,6 +4568,7 @@ pub mod mutable_cluster_info {
                 instance_type: self.instance_type,
                 client_authentication: self.client_authentication,
                 encryption_info: self.encryption_info,
+                connectivity_info: self.connectivity_info,
             }
         }
     }
@@ -4628,21 +4783,21 @@ impl ErrorInfo {
     }
 }
 
-/// <p>Contains source Kafka versions and compatible target Kafka versions.</p>
+/// <p>Contains source Apache Kafka versions and compatible target Apache Kafka versions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompatibleKafkaVersion {
-    /// <p>A Kafka version.</p>
+    /// <p>An Apache Kafka version.</p>
     pub source_version: std::option::Option<std::string::String>,
-    /// <p>A list of Kafka versions.</p>
+    /// <p>A list of Apache Kafka versions.</p>
     pub target_versions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CompatibleKafkaVersion {
-    /// <p>A Kafka version.</p>
+    /// <p>An Apache Kafka version.</p>
     pub fn source_version(&self) -> std::option::Option<&str> {
         self.source_version.as_deref()
     }
-    /// <p>A list of Kafka versions.</p>
+    /// <p>A list of Apache Kafka versions.</p>
     pub fn target_versions(&self) -> std::option::Option<&[std::string::String]> {
         self.target_versions.as_deref()
     }
@@ -4665,12 +4820,12 @@ pub mod compatible_kafka_version {
         pub(crate) target_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>A Kafka version.</p>
+        /// <p>An Apache Kafka version.</p>
         pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_version = Some(input.into());
             self
         }
-        /// <p>A Kafka version.</p>
+        /// <p>An Apache Kafka version.</p>
         pub fn set_source_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4682,14 +4837,14 @@ pub mod compatible_kafka_version {
         ///
         /// To override the contents of this collection use [`set_target_versions`](Self::set_target_versions).
         ///
-        /// <p>A list of Kafka versions.</p>
+        /// <p>A list of Apache Kafka versions.</p>
         pub fn target_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_versions.unwrap_or_default();
             v.push(input.into());
             self.target_versions = Some(v);
             self
         }
-        /// <p>A list of Kafka versions.</p>
+        /// <p>A list of Apache Kafka versions.</p>
         pub fn set_target_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

@@ -2161,9 +2161,7 @@ mod list_objects_request_test {
             .set_contents(Some(vec![
                 crate::model::Object::builder()
                     .set_key(Some("    ".to_string()))
-                    .set_last_modified(Some(aws_smithy_types::Instant::from_epoch_seconds(
-                        1626452453,
-                    )))
+                    .set_last_modified(Some(aws_smithy_types::DateTime::from_secs(1626452453)))
                     .set_e_tag(Some("\"etag123\"".to_string()))
                     .set_size(Some(0))
                     .set_owner(Some(
@@ -2175,9 +2173,7 @@ mod list_objects_request_test {
                     .build(),
                 crate::model::Object::builder()
                     .set_key(Some(" a ".to_string()))
-                    .set_last_modified(Some(aws_smithy_types::Instant::from_epoch_seconds(
-                        1626451330,
-                    )))
+                    .set_last_modified(Some(aws_smithy_types::DateTime::from_secs(1626451330)))
                     .set_e_tag(Some("\"etag123\"".to_string()))
                     .set_size(Some(0))
                     .set_owner(Some(

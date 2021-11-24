@@ -167,7 +167,7 @@ impl SigV4Signer {
             .secret_key(credentials.secret_access_key())
             .region(request_config.region.as_ref())
             .service_name(request_config.service.as_ref())
-            .date_time(request_config.request_ts.into())
+            .time(request_config.request_ts)
             .settings(settings);
         builder.set_security_token(credentials.session_token());
         builder.build().expect("all required fields set")

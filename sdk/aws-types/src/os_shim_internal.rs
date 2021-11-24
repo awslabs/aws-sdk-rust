@@ -155,13 +155,13 @@ mod fs {
     use std::sync::Arc;
 
     #[derive(Clone, Debug)]
-    pub enum Inner {
+    pub(super) enum Inner {
         Real,
         Fake(Arc<Fake>),
     }
 
     #[derive(Debug)]
-    pub enum Fake {
+    pub(super) enum Fake {
         MapFs(HashMap<OsString, Vec<u8>>),
         NamespacedFs {
             real_path: PathBuf,
@@ -235,7 +235,7 @@ mod env {
     use std::sync::Arc;
 
     #[derive(Clone, Debug)]
-    pub enum Inner {
+    pub(super) enum Inner {
         Real,
         Fake(Arc<HashMap<String, String>>),
     }
@@ -328,7 +328,7 @@ mod time_source {
     // in the future, if needed we can add a time source trait, however, the manual time source
     // should cover most test use cases.
     #[derive(Debug, Clone)]
-    pub enum Inner {
+    pub(super) enum Inner {
         Real,
         Manual(ManualTimeSource),
     }

@@ -4012,6 +4012,238 @@ impl std::error::Error for GetEvidenceFoldersByAssessmentControlError {
     }
 }
 
+/// Error type for the `GetInsights` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetInsightsError {
+    /// Kind of error that occurred.
+    pub kind: GetInsightsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetInsights` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetInsightsErrorKind {
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetInsightsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetInsightsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetInsightsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetInsightsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetInsightsError {
+    fn code(&self) -> Option<&str> {
+        GetInsightsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetInsightsError {
+    /// Creates a new `GetInsightsError`.
+    pub fn new(kind: GetInsightsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetInsightsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetInsightsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetInsightsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetInsightsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetInsightsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, GetInsightsErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetInsightsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, GetInsightsErrorKind::InternalServerException(_))
+    }
+}
+impl std::error::Error for GetInsightsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetInsightsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetInsightsErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetInsightsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetInsightsByAssessment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetInsightsByAssessmentError {
+    /// Kind of error that occurred.
+    pub kind: GetInsightsByAssessmentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetInsightsByAssessment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetInsightsByAssessmentErrorKind {
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The resource that's specified in the request can't be found. </p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p> The request has invalid or missing parameters. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetInsightsByAssessmentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetInsightsByAssessmentErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetInsightsByAssessmentErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetInsightsByAssessmentErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetInsightsByAssessmentErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetInsightsByAssessmentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetInsightsByAssessmentError {
+    fn code(&self) -> Option<&str> {
+        GetInsightsByAssessmentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetInsightsByAssessmentError {
+    /// Creates a new `GetInsightsByAssessmentError`.
+    pub fn new(kind: GetInsightsByAssessmentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetInsightsByAssessmentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetInsightsByAssessmentErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetInsightsByAssessmentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetInsightsByAssessmentErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetInsightsByAssessmentErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInsightsByAssessmentErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetInsightsByAssessmentErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInsightsByAssessmentErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetInsightsByAssessmentErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInsightsByAssessmentErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetInsightsByAssessmentErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInsightsByAssessmentErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetInsightsByAssessmentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetInsightsByAssessmentErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetInsightsByAssessmentErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetInsightsByAssessmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetInsightsByAssessmentErrorKind::ValidationException(_inner) => Some(_inner),
+            GetInsightsByAssessmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetOrganizationAdminAccount` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4361,6 +4593,161 @@ impl std::error::Error for GetSettingsError {
             GetSettingsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetSettingsErrorKind::InternalServerException(_inner) => Some(_inner),
             GetSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListAssessmentControlInsightsByControlDomain` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListAssessmentControlInsightsByControlDomainError {
+    /// Kind of error that occurred.
+    pub kind: ListAssessmentControlInsightsByControlDomainErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListAssessmentControlInsightsByControlDomain` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListAssessmentControlInsightsByControlDomainErrorKind {
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The resource that's specified in the request can't be found. </p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p> The request has invalid or missing parameters. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListAssessmentControlInsightsByControlDomainError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListAssessmentControlInsightsByControlDomainErrorKind::AccessDeniedException(
+                _inner,
+            ) => _inner.fmt(f),
+            ListAssessmentControlInsightsByControlDomainErrorKind::InternalServerException(
+                _inner,
+            ) => _inner.fmt(f),
+            ListAssessmentControlInsightsByControlDomainErrorKind::ResourceNotFoundException(
+                _inner,
+            ) => _inner.fmt(f),
+            ListAssessmentControlInsightsByControlDomainErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListAssessmentControlInsightsByControlDomainErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind
+    for ListAssessmentControlInsightsByControlDomainError
+{
+    fn code(&self) -> Option<&str> {
+        ListAssessmentControlInsightsByControlDomainError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListAssessmentControlInsightsByControlDomainError {
+    /// Creates a new `ListAssessmentControlInsightsByControlDomainError`.
+    pub fn new(
+        kind: ListAssessmentControlInsightsByControlDomainErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListAssessmentControlInsightsByControlDomainError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListAssessmentControlInsightsByControlDomainErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListAssessmentControlInsightsByControlDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListAssessmentControlInsightsByControlDomainErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListAssessmentControlInsightsByControlDomainErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAssessmentControlInsightsByControlDomainErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAssessmentControlInsightsByControlDomainErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAssessmentControlInsightsByControlDomainErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAssessmentControlInsightsByControlDomainErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAssessmentControlInsightsByControlDomainErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAssessmentControlInsightsByControlDomainErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAssessmentControlInsightsByControlDomainErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListAssessmentControlInsightsByControlDomainError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListAssessmentControlInsightsByControlDomainErrorKind::AccessDeniedException(
+                _inner,
+            ) => Some(_inner),
+            ListAssessmentControlInsightsByControlDomainErrorKind::InternalServerException(
+                _inner,
+            ) => Some(_inner),
+            ListAssessmentControlInsightsByControlDomainErrorKind::ResourceNotFoundException(
+                _inner,
+            ) => Some(_inner),
+            ListAssessmentControlInsightsByControlDomainErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            ListAssessmentControlInsightsByControlDomainErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
         }
     }
 }
@@ -4851,6 +5238,436 @@ impl std::error::Error for ListAssessmentsError {
             ListAssessmentsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListAssessmentsErrorKind::ValidationException(_inner) => Some(_inner),
             ListAssessmentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListControlDomainInsights` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListControlDomainInsightsError {
+    /// Kind of error that occurred.
+    pub kind: ListControlDomainInsightsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListControlDomainInsights` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListControlDomainInsightsErrorKind {
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The resource that's specified in the request can't be found. </p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p> The request has invalid or missing parameters. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListControlDomainInsightsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListControlDomainInsightsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListControlDomainInsightsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListControlDomainInsightsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListControlDomainInsightsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListControlDomainInsightsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListControlDomainInsightsError {
+    fn code(&self) -> Option<&str> {
+        ListControlDomainInsightsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListControlDomainInsightsError {
+    /// Creates a new `ListControlDomainInsightsError`.
+    pub fn new(kind: ListControlDomainInsightsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListControlDomainInsightsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListControlDomainInsightsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListControlDomainInsightsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListControlDomainInsightsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListControlDomainInsightsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListControlDomainInsightsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListControlDomainInsightsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListControlDomainInsightsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListControlDomainInsightsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListControlDomainInsightsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListControlDomainInsightsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListControlDomainInsightsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListControlDomainInsightsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListControlDomainInsightsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListControlDomainInsightsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListControlDomainInsightsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListControlDomainInsightsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListControlDomainInsightsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListControlDomainInsightsByAssessment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListControlDomainInsightsByAssessmentError {
+    /// Kind of error that occurred.
+    pub kind: ListControlDomainInsightsByAssessmentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListControlDomainInsightsByAssessment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListControlDomainInsightsByAssessmentErrorKind {
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The resource that's specified in the request can't be found. </p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p> The request has invalid or missing parameters. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListControlDomainInsightsByAssessmentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListControlDomainInsightsByAssessmentErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListControlDomainInsightsByAssessmentErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListControlDomainInsightsByAssessmentErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListControlDomainInsightsByAssessmentErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListControlDomainInsightsByAssessmentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListControlDomainInsightsByAssessmentError {
+    fn code(&self) -> Option<&str> {
+        ListControlDomainInsightsByAssessmentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListControlDomainInsightsByAssessmentError {
+    /// Creates a new `ListControlDomainInsightsByAssessmentError`.
+    pub fn new(
+        kind: ListControlDomainInsightsByAssessmentErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListControlDomainInsightsByAssessmentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListControlDomainInsightsByAssessmentErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListControlDomainInsightsByAssessmentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListControlDomainInsightsByAssessmentErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListControlDomainInsightsByAssessmentErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListControlDomainInsightsByAssessmentErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListControlDomainInsightsByAssessmentErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListControlDomainInsightsByAssessmentErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListControlDomainInsightsByAssessmentErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListControlDomainInsightsByAssessmentErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListControlDomainInsightsByAssessmentErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListControlDomainInsightsByAssessmentErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListControlDomainInsightsByAssessmentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListControlDomainInsightsByAssessmentErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            ListControlDomainInsightsByAssessmentErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            ListControlDomainInsightsByAssessmentErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            ListControlDomainInsightsByAssessmentErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            ListControlDomainInsightsByAssessmentErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
+/// Error type for the `ListControlInsightsByControlDomain` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListControlInsightsByControlDomainError {
+    /// Kind of error that occurred.
+    pub kind: ListControlInsightsByControlDomainErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListControlInsightsByControlDomain` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListControlInsightsByControlDomainErrorKind {
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The resource that's specified in the request can't be found. </p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p> The request has invalid or missing parameters. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListControlInsightsByControlDomainError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListControlInsightsByControlDomainErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListControlInsightsByControlDomainErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListControlInsightsByControlDomainErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListControlInsightsByControlDomainErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListControlInsightsByControlDomainErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListControlInsightsByControlDomainError {
+    fn code(&self) -> Option<&str> {
+        ListControlInsightsByControlDomainError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListControlInsightsByControlDomainError {
+    /// Creates a new `ListControlInsightsByControlDomainError`.
+    pub fn new(
+        kind: ListControlInsightsByControlDomainErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListControlInsightsByControlDomainError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListControlInsightsByControlDomainErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListControlInsightsByControlDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListControlInsightsByControlDomainErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListControlInsightsByControlDomainErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListControlInsightsByControlDomainErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListControlInsightsByControlDomainErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListControlInsightsByControlDomainErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListControlInsightsByControlDomainErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListControlInsightsByControlDomainErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListControlInsightsByControlDomainErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListControlInsightsByControlDomainErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListControlInsightsByControlDomainError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListControlInsightsByControlDomainErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            ListControlInsightsByControlDomainErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            ListControlInsightsByControlDomainErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            ListControlInsightsByControlDomainErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            ListControlInsightsByControlDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

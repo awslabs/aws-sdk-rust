@@ -946,6 +946,41 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateConnectivityError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateConnectivityError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateConnectivityErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::UpdateConnectivityErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::UpdateConnectivityErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
+                }
+                crate::error::UpdateConnectivityErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::UpdateConnectivityErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::UpdateConnectivityErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
+                }
+                crate::error::UpdateConnectivityErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateMonitoringError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

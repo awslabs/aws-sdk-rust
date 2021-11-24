@@ -5093,9 +5093,9 @@ pub struct GetResourcePolicyOutput {
     /// <p>Contains the hash value associated with this policy.</p>
     pub policy_hash: std::option::Option<std::string::String>,
     /// <p>The date and time at which the policy was created.</p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time at which the policy was last updated.</p>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetResourcePolicyOutput {
     /// <p>Contains the requested policy document, in JSON format.</p>
@@ -5107,11 +5107,11 @@ impl GetResourcePolicyOutput {
         self.policy_hash.as_deref()
     }
     /// <p>The date and time at which the policy was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The date and time at which the policy was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -5133,8 +5133,8 @@ pub mod get_resource_policy_output {
     pub struct Builder {
         pub(crate) policy_in_json: std::option::Option<std::string::String>,
         pub(crate) policy_hash: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Contains the requested policy document, in JSON format.</p>
@@ -5161,27 +5161,27 @@ pub mod get_resource_policy_output {
             self
         }
         /// <p>The date and time at which the policy was created.</p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
         /// <p>The date and time at which the policy was created.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p>The date and time at which the policy was last updated.</p>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
         /// <p>The date and time at which the policy was last updated.</p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self
@@ -5862,9 +5862,9 @@ pub struct GetMlTransformOutput {
     /// <p>The last known status of the transform (to indicate whether it can be used or not). One of "NOT_READY", "READY", or "DELETING".</p>
     pub status: std::option::Option<crate::model::TransformStatusType>,
     /// <p>The date and time when the transform was created.</p>
-    pub created_on: std::option::Option<aws_smithy_types::Instant>,
+    pub created_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the transform was last modified.</p>
-    pub last_modified_on: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of Glue table definitions used by the transform.</p>
     pub input_record_tables: std::option::Option<std::vec::Vec<crate::model::GlueTable>>,
     /// <p>The configuration parameters that are specific to the algorithm used.</p>
@@ -5929,11 +5929,11 @@ impl GetMlTransformOutput {
         self.status.as_ref()
     }
     /// <p>The date and time when the transform was created.</p>
-    pub fn created_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_on.as_ref()
     }
     /// <p>The date and time when the transform was last modified.</p>
-    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_on.as_ref()
     }
     /// <p>A list of Glue table definitions used by the transform.</p>
@@ -6042,8 +6042,8 @@ pub mod get_ml_transform_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::TransformStatusType>,
-        pub(crate) created_on: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) input_record_tables: std::option::Option<std::vec::Vec<crate::model::GlueTable>>,
         pub(crate) parameters: std::option::Option<crate::model::TransformParameters>,
         pub(crate) evaluation_metrics: std::option::Option<crate::model::EvaluationMetrics>,
@@ -6105,27 +6105,27 @@ pub mod get_ml_transform_output {
             self
         }
         /// <p>The date and time when the transform was created.</p>
-        pub fn created_on(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_on(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_on = Some(input);
             self
         }
         /// <p>The date and time when the transform was created.</p>
         pub fn set_created_on(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_on = input;
             self
         }
         /// <p>The date and time when the transform was last modified.</p>
-        pub fn last_modified_on(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_on(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_on = Some(input);
             self
         }
         /// <p>The date and time when the transform was last modified.</p>
         pub fn set_last_modified_on(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_on = input;
             self
@@ -6458,11 +6458,11 @@ pub struct GetMlTaskRunOutput {
     /// <p>The error strings that are associated with the task run.</p>
     pub error_string: std::option::Option<std::string::String>,
     /// <p>The date and time when this task run started.</p>
-    pub started_on: std::option::Option<aws_smithy_types::Instant>,
+    pub started_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when this task run was last modified.</p>
-    pub last_modified_on: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when this task run was completed.</p>
-    pub completed_on: std::option::Option<aws_smithy_types::Instant>,
+    pub completed_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The amount of time (in seconds) that the task run consumed resources.</p>
     pub execution_time: i32,
 }
@@ -6492,15 +6492,15 @@ impl GetMlTaskRunOutput {
         self.error_string.as_deref()
     }
     /// <p>The date and time when this task run started.</p>
-    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_on.as_ref()
     }
     /// <p>The date and time when this task run was last modified.</p>
-    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_on.as_ref()
     }
     /// <p>The date and time when this task run was completed.</p>
-    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed_on.as_ref()
     }
     /// <p>The amount of time (in seconds) that the task run consumed resources.</p>
@@ -6536,9 +6536,9 @@ pub mod get_ml_task_run_output {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) properties: std::option::Option<crate::model::TaskRunProperties>,
         pub(crate) error_string: std::option::Option<std::string::String>,
-        pub(crate) started_on: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_on: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completed_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completed_on: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) execution_time: std::option::Option<i32>,
     }
     impl Builder {
@@ -6612,40 +6612,40 @@ pub mod get_ml_task_run_output {
             self
         }
         /// <p>The date and time when this task run started.</p>
-        pub fn started_on(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started_on(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started_on = Some(input);
             self
         }
         /// <p>The date and time when this task run started.</p>
         pub fn set_started_on(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started_on = input;
             self
         }
         /// <p>The date and time when this task run was last modified.</p>
-        pub fn last_modified_on(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_on(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_on = Some(input);
             self
         }
         /// <p>The date and time when this task run was last modified.</p>
         pub fn set_last_modified_on(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_on = input;
             self
         }
         /// <p>The date and time when this task run was completed.</p>
-        pub fn completed_on(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completed_on(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completed_on = Some(input);
             self
         }
         /// <p>The date and time when this task run was completed.</p>
         pub fn set_completed_on(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completed_on = input;
             self
@@ -9592,7 +9592,7 @@ pub struct CreateSecurityConfigurationOutput {
     /// <p>The name assigned to the new security configuration.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The time at which the new security configuration was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateSecurityConfigurationOutput {
     /// <p>The name assigned to the new security configuration.</p>
@@ -9600,7 +9600,7 @@ impl CreateSecurityConfigurationOutput {
         self.name.as_deref()
     }
     /// <p>The time at which the new security configuration was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
@@ -9619,7 +9619,7 @@ pub mod create_security_configuration_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name assigned to the new security configuration.</p>
@@ -9633,14 +9633,14 @@ pub mod create_security_configuration_output {
             self
         }
         /// <p>The time at which the new security configuration was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which the new security configuration was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
@@ -10423,7 +10423,7 @@ pub struct CreateDevEndpointOutput {
     /// <code>DevEndpoint</code>.</p>
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>The point in time at which this <code>DevEndpoint</code> was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
     ///
     /// <p>Valid arguments are:</p>
@@ -10515,7 +10515,7 @@ impl CreateDevEndpointOutput {
         self.security_configuration.as_deref()
     }
     /// <p>The point in time at which this <code>DevEndpoint</code> was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
@@ -10588,7 +10588,7 @@ pub mod create_dev_endpoint_output {
         pub(crate) extra_jars_s3_path: std::option::Option<std::string::String>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) security_configuration: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) arguments: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -10813,14 +10813,14 @@ pub mod create_dev_endpoint_output {
             self
         }
         /// <p>The point in time at which this <code>DevEndpoint</code> was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The point in time at which this <code>DevEndpoint</code> was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self

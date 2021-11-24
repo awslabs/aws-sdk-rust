@@ -3,9 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+use std::sync::Arc;
+
 use crate::{bounds, erase, retry, Client};
+use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::result::ConnectorError;
+use aws_smithy_types::timeout::TimeoutConfig;
 
 /// A builder that provides more customization options when constructing a [`Client`].
 ///
@@ -17,6 +21,8 @@ pub struct Builder<C = (), M = (), R = retry::Standard> {
     connector: C,
     middleware: M,
     retry_policy: R,
+    timeout_config: TimeoutConfig,
+    sleep_impl: Option<Arc<dyn AsyncSleep>>,
 }
 
 // It'd be nice to include R where R: Default here, but then the caller ends up always having to
@@ -32,13 +38,9 @@ where
     C: Default,
     M: Default,
 {
-    /// Construct a new builder.
-    ///
-    /// This will
-    ///
-    /// You will likely want to , as it does not specify a [connector](Builder::connector)
-    /// or [middleware](Builder::middleware). It uses the [standard retry
-    /// mechanism](retry::Standard).
+    /// Construct a new builder. This does not specify a [connector](Builder::connector)
+    /// or [middleware](Builder::middleware).
+    /// It uses the [standard retry mechanism](retry::Standard).
     pub fn new() -> Self {
         Self::default()
     }
@@ -52,12 +54,14 @@ impl<M, R> Builder<(), M, R> {
     /// be able to use a custom connector instead, such as to mock the network for tests.
     ///
     /// If you just want to specify a function from request to response instead, use
-    /// [`Builder::map_connector`].
+    /// [`Builder::connector_fn`].
     pub fn connector<C>(self, connector: C) -> Builder<C, M, R> {
         Builder {
             connector,
             retry_policy: self.retry_policy,
             middleware: self.middleware,
+            timeout_config: self.timeout_config,
+            sleep_impl: self.sleep_impl,
         }
     }
 
@@ -111,7 +115,9 @@ impl<C, R> Builder<C, (), R> {
         Builder {
             connector: self.connector,
             retry_policy: self.retry_policy,
+            timeout_config: self.timeout_config,
             middleware,
+            sleep_impl: self.sleep_impl,
         }
     }
 
@@ -154,7 +160,9 @@ impl<C, M> Builder<C, M, retry::Standard> {
         Builder {
             connector: self.connector,
             retry_policy,
+            timeout_config: self.timeout_config,
             middleware: self.middleware,
+            sleep_impl: self.sleep_impl,
         }
     }
 }
@@ -163,6 +171,16 @@ impl<C, M> Builder<C, M> {
     /// Set the standard retry policy's configuration.
     pub fn set_retry_config(&mut self, config: retry::Config) {
         self.retry_policy.with_config(config);
+    }
+
+    /// Set a timeout config for the builder
+    pub fn set_timeout_config(&mut self, timeout_config: TimeoutConfig) {
+        self.timeout_config = timeout_config;
+    }
+
+    /// Set the [`AsyncSleep`] function that the [`Client`] will use to create things like timeout futures.
+    pub fn set_sleep_impl(&mut self, async_sleep: Option<Arc<dyn AsyncSleep>>) {
+        self.sleep_impl = async_sleep;
     }
 }
 
@@ -176,6 +194,8 @@ impl<C, M, R> Builder<C, M, R> {
             connector: map(self.connector),
             middleware: self.middleware,
             retry_policy: self.retry_policy,
+            timeout_config: self.timeout_config,
+            sleep_impl: self.sleep_impl,
         }
     }
 
@@ -188,6 +208,8 @@ impl<C, M, R> Builder<C, M, R> {
             connector: self.connector,
             middleware: map(self.middleware),
             retry_policy: self.retry_policy,
+            timeout_config: self.timeout_config,
+            sleep_impl: self.sleep_impl,
         }
     }
 
@@ -197,6 +219,8 @@ impl<C, M, R> Builder<C, M, R> {
             connector: self.connector,
             retry_policy: self.retry_policy,
             middleware: self.middleware,
+            timeout_config: self.timeout_config,
+            sleep_impl: self.sleep_impl,
         }
     }
 }

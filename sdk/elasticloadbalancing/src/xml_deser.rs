@@ -2575,9 +2575,9 @@ pub fn deser_structure_crate_model_load_balancer_description(
             s if s.matches("CreatedTime") /* CreatedTime com.amazonaws.elasticloadbalancing#LoadBalancerDescription$CreatedTime */ =>  {
                 let var_88 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticloadbalancing#CreatedTime`)"))
                         ?

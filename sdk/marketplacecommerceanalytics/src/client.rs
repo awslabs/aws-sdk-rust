@@ -385,7 +385,7 @@ pub mod fluent_builders {
         /// For daily data sets, provide a date with day-level granularity for the desired day.
         /// For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored).
         /// For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
-        pub fn data_set_publication_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn data_set_publication_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.data_set_publication_date(inp);
             self
         }
@@ -395,7 +395,7 @@ pub mod fluent_builders {
         /// For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
         pub fn set_data_set_publication_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_data_set_publication_date(input);
             self
@@ -596,14 +596,14 @@ pub mod fluent_builders {
             self
         }
         /// The start date from which to retrieve the data set in UTC.  This parameter only affects the customer_support_contacts_data data set type.
-        pub fn from_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn from_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.from_date(inp);
             self
         }
         /// The start date from which to retrieve the data set in UTC.  This parameter only affects the customer_support_contacts_data data set type.
         pub fn set_from_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_from_date(input);
             self
@@ -703,7 +703,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -726,7 +732,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

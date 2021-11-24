@@ -9,7 +9,7 @@ pub fn serialize_operation_crate_operation_create_access_point(
         let mut root = writer
             .start_el("CreateAccessPointRequest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_input_create_access_point_input(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_input_create_access_point_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -25,7 +25,7 @@ pub fn serialize_operation_crate_operation_create_access_point_for_object_lambda
             .start_el("CreateAccessPointForObjectLambdaRequest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
         crate::xml_ser::serialize_structure_crate_input_create_access_point_for_object_lambda_input(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -43,7 +43,7 @@ pub fn ser_payload_create_bucket_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_s3control_synthetic_create_bucket_input_create_bucket_configuration(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_s3control_synthetic_create_bucket_input_create_bucket_configuration(payload)?
     ))
 }
 
@@ -57,7 +57,7 @@ pub fn serialize_operation_crate_operation_create_job(
         let mut root = writer
             .start_el("CreateJobRequest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_input_create_job_input(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_input_create_job_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -73,7 +73,7 @@ pub fn serialize_operation_crate_operation_create_multi_region_access_point(
             .start_el("CreateMultiRegionAccessPointRequest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
         crate::xml_ser::serialize_structure_crate_input_create_multi_region_access_point_input(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -90,7 +90,7 @@ pub fn serialize_operation_crate_operation_delete_multi_region_access_point(
             .start_el("DeleteMultiRegionAccessPointRequest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
         crate::xml_ser::serialize_structure_crate_input_delete_multi_region_access_point_input(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -106,7 +106,7 @@ pub fn serialize_operation_crate_operation_put_access_point_configuration_for_ob
         let mut root = writer
             .start_el("PutAccessPointConfigurationForObjectLambdaRequest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_input_put_access_point_configuration_for_object_lambda_input(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_input_put_access_point_configuration_for_object_lambda_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -121,9 +121,7 @@ pub fn serialize_operation_crate_operation_put_access_point_policy(
         let mut root = writer
             .start_el("PutAccessPointPolicyRequest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_input_put_access_point_policy_input(
-            &&input, root,
-        )?
+        crate::xml_ser::serialize_structure_crate_input_put_access_point_policy_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -138,7 +136,7 @@ pub fn serialize_operation_crate_operation_put_access_point_policy_for_object_la
         let mut root = writer
             .start_el("PutAccessPointPolicyForObjectLambdaRequest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_input_put_access_point_policy_for_object_lambda_input(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_input_put_access_point_policy_for_object_lambda_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -155,7 +153,7 @@ pub fn ser_payload_put_bucket_lifecycle_configuration_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_s3control_synthetic_put_bucket_lifecycle_configuration_input_lifecycle_configuration(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_s3control_synthetic_put_bucket_lifecycle_configuration_input_lifecycle_configuration(payload)?
     ))
 }
 
@@ -169,7 +167,7 @@ pub fn serialize_operation_crate_operation_put_bucket_policy(
         let mut root = writer
             .start_el("PutBucketPolicyRequest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_input_put_bucket_policy_input(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_input_put_bucket_policy_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -186,7 +184,7 @@ pub fn ser_payload_put_bucket_tagging_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_s3control_synthetic_put_bucket_tagging_input_tagging(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_s3control_synthetic_put_bucket_tagging_input_tagging(payload)?
     ))
 }
 
@@ -200,7 +198,7 @@ pub fn serialize_operation_crate_operation_put_job_tagging(
         let mut root = writer
             .start_el("PutJobTaggingRequest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_input_put_job_tagging_input(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_input_put_job_tagging_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -216,7 +214,7 @@ pub fn serialize_operation_crate_operation_put_multi_region_access_point_policy(
             .start_el("PutMultiRegionAccessPointPolicyRequest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
         crate::xml_ser::serialize_structure_crate_input_put_multi_region_access_point_policy_input(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -234,7 +232,7 @@ pub fn ser_payload_put_public_access_block_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_s3control_synthetic_put_public_access_block_input_public_access_block_configuration(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_s3control_synthetic_put_public_access_block_input_public_access_block_configuration(payload)?
     ))
 }
 
@@ -249,7 +247,7 @@ pub fn serialize_operation_crate_operation_put_storage_lens_configuration(
             .start_el("PutStorageLensConfigurationRequest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
         crate::xml_ser::serialize_structure_crate_input_put_storage_lens_configuration_input(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -265,7 +263,7 @@ pub fn serialize_operation_crate_operation_put_storage_lens_configuration_taggin
         let mut root = writer
             .start_el("PutStorageLensConfigurationTaggingRequest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_input_put_storage_lens_configuration_tagging_input(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_input_put_storage_lens_configuration_tagging_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

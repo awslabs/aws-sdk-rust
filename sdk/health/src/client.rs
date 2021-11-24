@@ -187,11 +187,11 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `DescribeAffectedAccountsForOrganization`.
     ///
-    /// <p>Returns a list of accounts in the organization from AWS Organizations that are affected by the
-    /// provided event. For more information about the different types of AWS Health events, see
+    /// <p>Returns a list of accounts in the organization from Organizations that are affected by the
+    /// provided event. For more information about the different types of Health events, see
     /// <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>. </p>
-    /// <p>Before you can call this operation, you must first enable AWS Health to work with
-    /// AWS Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> operation from your organization's
+    /// <p>Before you can call this operation, you must first enable Health to work with
+    /// Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> operation from your organization's
     /// management account.</p>
     /// <note>
     /// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p>
@@ -309,11 +309,10 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of entities that have been affected by the specified events, based on the
     /// specified filter criteria. Entities can refer to individual customer resources, groups of
-    /// customer resources, or any other construct, depending on the AWS service. Events that
+    /// customer resources, or any other construct, depending on the Amazon Web Services service. Events that
     /// have impact beyond that of the affected entities, or where the extent of impact is unknown,
     /// include at least one entity indicating this.</p>
-    /// <p>At least one event ARN is required. Results are sorted by the
-    /// <code>lastUpdatedTime</code> of the entity, starting with the most recent.</p>
+    /// <p>At least one event ARN is required.</p>
     ///
     /// <note>
     /// <ul>
@@ -321,8 +320,8 @@ pub mod fluent_builders {
     /// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p>
     /// </li>
     /// <li>
-    /// <p>This operation supports resource-level permissions. You can use this operation to allow or deny access to specific AWS Health events. For more
-    /// information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource- and action-based conditions</a> in the <i>AWS Health User Guide</i>.</p>
+    /// <p>This operation supports resource-level permissions. You can use this operation to allow or deny access to specific Health events. For more
+    /// information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource- and action-based conditions</a> in the <i>Health User Guide</i>.</p>
     /// </li>
     /// </ul>
     /// </note>
@@ -435,14 +434,12 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAffectedEntitiesForOrganization`.
     ///
     /// <p>Returns a list of entities that have been affected by one or more events for one or more
-    /// accounts in your organization in AWS Organizations, based on the filter criteria. Entities can refer
+    /// accounts in your organization in Organizations, based on the filter criteria. Entities can refer
     /// to individual customer resources, groups of customer resources, or any other construct,
-    /// depending on the AWS service.</p>
-    /// <p>At least one event Amazon Resource Name (ARN) and account ID are required. Results are
-    /// sorted by the <code>lastUpdatedTime</code> of the entity, starting with the most
-    /// recent.</p>
-    /// <p>Before you can call this operation, you must first enable AWS Health to work with
-    /// AWS Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a>
+    /// depending on the Amazon Web Services service.</p>
+    /// <p>At least one event Amazon Resource Name (ARN) and account ID are required.</p>
+    /// <p>Before you can call this operation, you must first enable Health to work with
+    /// Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a>
     /// operation from your organization's management account.</p>
     /// <note>
     /// <ul>
@@ -450,8 +447,8 @@ pub mod fluent_builders {
     /// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p>
     /// </li>
     /// <li>
-    /// <p>This operation doesn't support resource-level permissions. You can't use this operation to allow or deny access to specific AWS Health events. For more
-    /// information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource- and action-based conditions</a> in the <i>AWS Health User Guide</i>.</p>
+    /// <p>This operation doesn't support resource-level permissions. You can't use this operation to allow or deny access to specific Health events. For more
+    /// information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource- and action-based conditions</a> in the <i>Health User Guide</i>.</p>
     /// </li>
     /// </ul>
     ///
@@ -575,8 +572,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEntityAggregates`.
     ///
-    /// <p>Returns the number of entities that are affected by each of the specified events. If no
-    /// events are specified, the counts of all affected entities are returned.</p>
+    /// <p>Returns the number of entities that are affected by each of the specified events.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeEntityAggregates<
         C = aws_smithy_client::erase::DynConnector,
@@ -770,14 +766,14 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEventDetails`.
     ///
     /// <p>Returns detailed information about one or more specified events. Information includes
-    /// standard event data (AWS Region, service, and so on, as returned by <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>), a detailed event description, and possible additional metadata
+    /// standard event data (Amazon Web Services Region, service, and so on, as returned by <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>), a detailed event description, and possible additional metadata
     /// that depends upon the nature of the event. Affected entities are not included. To retrieve
     /// the entities, use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html">DescribeAffectedEntities</a> operation.</p>
     /// <p>If a specified event can't be retrieved, an error message is returned for that
     /// event.</p>
     /// <note>
-    /// <p>This operation supports resource-level permissions. You can use this operation to allow or deny access to specific AWS Health events. For more
-    /// information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource- and action-based conditions</a> in the <i>AWS Health User Guide</i>.</p>
+    /// <p>This operation supports resource-level permissions. You can use this operation to allow or deny access to specific Health events. For more
+    /// information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource- and action-based conditions</a> in the <i>Health User Guide</i>.</p>
     /// </note>
     #[derive(std::fmt::Debug)]
     pub struct DescribeEventDetails<
@@ -867,38 +863,38 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEventDetailsForOrganization`.
     ///
-    /// <p>Returns detailed information about one or more specified events for one or more AWS
-    /// accounts in your organization. This information includes standard event data (such as the
-    /// AWS Region and service), an event description, and (depending on the event) possible
+    /// <p>Returns detailed information about one or more specified events for one or more
+    /// Amazon Web Services accounts in your organization. This information includes standard event data (such as the
+    /// Amazon Web Services Region and service), an event description, and (depending on the event) possible
     /// metadata. This operation doesn't return affected entities, such as the resources related to
     /// the event. To return affected entities, use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a> operation.</p>
     /// <note>
-    /// <p>Before you can call this operation, you must first enable AWS Health to work with
-    /// AWS Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> operation from your organization's
+    /// <p>Before you can call this operation, you must first enable Health to work with
+    /// Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> operation from your organization's
     /// management account.</p>
     /// </note>
     /// <p>When you call the <code>DescribeEventDetailsForOrganization</code> operation, specify
     /// the <code>organizationEventDetailFilters</code> object in the request. Depending on the
-    /// AWS Health event type, note the following differences:</p>
+    /// Health event type, note the following differences:</p>
     /// <ul>
     /// <li>
     /// <p>To return event details for a public event, you must specify a null value for the
     /// <code>awsAccountId</code> parameter. If you specify an account ID for a public
-    /// event, AWS Health returns an error message because public events aren't specific to
+    /// event, Health returns an error message because public events aren't specific to
     /// an account.</p>
     /// </li>
     /// <li>
     /// <p>To return event details for an event that is specific to an account in your
     /// organization,  you must specify the <code>awsAccountId</code> parameter in the
-    /// request. If you don't specify an account ID, AWS Health returns an error message
+    /// request. If you don't specify an account ID, Health returns an error message
     /// because the event is specific to an account in your organization. </p>
     /// </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.</p>
     ///
     /// <note>
-    /// <p>This operation doesn't support resource-level permissions. You can't use this operation to allow or deny access to specific AWS Health events. For more
-    /// information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource- and action-based conditions</a> in the <i>AWS Health User Guide</i>.</p>
+    /// <p>This operation doesn't support resource-level permissions. You can't use this operation to allow or deny access to specific Health events. For more
+    /// information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource- and action-based conditions</a> in the <i>Health User Guide</i>.</p>
     /// </note>
     #[derive(std::fmt::Debug)]
     pub struct DescribeEventDetailsForOrganization<
@@ -1003,10 +999,10 @@ pub mod fluent_builders {
     /// <ul>
     /// <li>
     /// <p>When you call the <code>DescribeEvents</code> operation and specify an entity
-    /// for the <code>entityValues</code> parameter, AWS Health might return public
+    /// for the <code>entityValues</code> parameter, Health might return public
     /// events that aren't specific to that resource. For example, if you call
     /// <code>DescribeEvents</code> and specify an ID for an Amazon Elastic Compute Cloud (Amazon EC2)
-    /// instance, AWS Health might return events that aren't specific to that resource or
+    /// instance, Health might return events that aren't specific to that resource or
     /// service. To get events that are specific to a service, use the
     /// <code>services</code> parameter in the <code>filter</code> object. For more
     /// information, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.</p>
@@ -1121,7 +1117,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEventsForOrganization`.
     ///
-    /// <p>Returns information about events across your organization in AWS Organizations. You can use
+    /// <p>Returns information about events across your organization in Organizations. You can use
     /// the<code>filters</code> parameter to specify the events that you want to return. Events
     /// are returned in a summary form and don't include the affected accounts, detailed
     /// description, any additional metadata that depends on the event type, or any affected
@@ -1146,9 +1142,9 @@ pub mod fluent_builders {
     /// <p>If you don't specify a <code>filter</code>, the
     /// <code>DescribeEventsForOrganizations</code> returns all events across your organization.
     /// Results are sorted by <code>lastModifiedTime</code>, starting with the most recent event. </p>
-    /// <p>For more information about the different types of AWS Health events, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.</p>
-    /// <p>Before you can call this operation, you must first enable AWS Health to work with
-    /// AWS Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> operation from your organization's
+    /// <p>For more information about the different types of Health events, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.</p>
+    /// <p>Before you can call this operation, you must first enable Health to work with
+    /// Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> operation from your organization's
     /// management account.</p>
     /// <note>
     /// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p>
@@ -1262,7 +1258,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEventTypes`.
     ///
     /// <p>Returns the event types that meet the specified filter criteria. You can use this API
-    /// operation to find information about the AWS Health event, such as the category, AWS
+    /// operation to find information about the Health event, such as the category, Amazon Web Services
     /// service, and event code. The metadata for each event appears in the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventType.html">EventType</a> object. </p>
     /// <p>If you don't specify a filter criteria, the API operation returns all event types, in no
     /// particular order.  </p>
@@ -1377,7 +1373,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeHealthServiceStatusForOrganization`.
     ///
-    /// <p>This operation provides status information on enabling or disabling AWS Health to work
+    /// <p>This operation provides status information on enabling or disabling Health to work
     /// with your organization. To call this operation, you must sign in as an IAM user, assume
     /// an IAM role, or sign in as the root user (not recommended) in the organization's
     /// management account.</p>
@@ -1442,20 +1438,19 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableHealthServiceAccessForOrganization`.
     ///
-    /// <p>Disables AWS Health from working with AWS Organizations. To call this operation, you must sign
-    /// in as an AWS Identity and Access Management (IAM) user, assume an IAM role, or sign in as the root user (not
+    /// <p>Disables Health from working with Organizations. To call this operation, you must sign
+    /// in as an Identity and Access Management (IAM) user, assume an IAM role, or sign in as the root user (not
     /// recommended) in the organization's management account. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating
-    /// AWS Health events</a> in the
-    /// <i>AWS Health User Guide</i>.</p>
-    /// <p>This operation doesn't remove the service-linked role from the management account in your organization. You must use the IAM console, API, or AWS Command Line Interface (AWS CLI) to
+    /// Health events</a> in the
+    /// <i>Health User Guide</i>.</p>
+    /// <p>This operation doesn't remove the service-linked role from the management account in your organization. You must use the IAM console, API, or Command Line Interface (CLI) to
     /// remove the service-linked role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role">Deleting a Service-Linked Role</a> in the
     /// <i>IAM User Guide</i>.</p>
     /// <note>
     /// <p>You can also disable the organizational feature by using the Organizations <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_DisableAWSServiceAccess.html">DisableAWSServiceAccess</a> API operation. After you call this operation,
-    /// AWS Health stops aggregating events for all other AWS accounts in your organization.
-    /// If you call the AWS Health API operations for organizational view, AWS Health returns
-    /// an error. AWS Health continues to aggregate health events for your AWS
-    /// account.</p>
+    /// Health stops aggregating events for all other Amazon Web Services accounts in your organization.
+    /// If you call the Health API operations for organizational view, Health returns
+    /// an error. Health continues to aggregate health events for your Amazon Web Services account.</p>
     /// </note>
     #[derive(std::fmt::Debug)]
     pub struct DisableHealthServiceAccessForOrganization<
@@ -1518,29 +1513,29 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableHealthServiceAccessForOrganization`.
     ///
-    /// <p>Enables AWS Health to work with AWS Organizations. You can use the organizational view feature
-    /// to aggregate events from all AWS accounts in your organization in a centralized location. </p>
+    /// <p>Enables Health to work with Organizations. You can use the organizational view feature
+    /// to aggregate events from all Amazon Web Services accounts in your organization in a centralized location. </p>
     /// <p>This operation also creates a service-linked role for the management account in the
     /// organization. </p>
     /// <note>
     /// <p>To call this operation, you must meet the following requirements:</p>
     /// <ul>
     /// <li>
-    /// <p>You must have a Business or Enterprise Support plan from <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a> to use the AWS Health
-    /// API. If you call the AWS Health API from an AWS account that doesn't have a
+    /// <p>You must have a Business or Enterprise Support plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a> to use the Health
+    /// API. If you call the Health API from an Amazon Web Services account that doesn't have a
     /// Business or Enterprise Support plan, you receive a
     /// <code>SubscriptionRequiredException</code> error.</p>
     /// </li>
     /// <li>
     /// <p>You must have permission to call this operation from the organization's
-    /// management account. For example IAM policies, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html">AWS Health
+    /// management account. For example IAM policies, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html">Health
     /// identity-based policy examples</a>.</p>
     /// </li>
     /// </ul>
     /// </note>
-    /// <p>If you don't have the required support plan, you can instead use the AWS Health console
+    /// <p>If you don't have the required support plan, you can instead use the Health console
     /// to enable the organizational view feature. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating
-    /// AWS Health events</a> in the <i>AWS Health User Guide</i>.</p>
+    /// Health events</a> in the <i>Health User Guide</i>.</p>
     #[derive(std::fmt::Debug)]
     pub struct EnableHealthServiceAccessForOrganization<
         C = aws_smithy_client::erase::DynConnector,
@@ -1605,7 +1600,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -1628,7 +1629,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

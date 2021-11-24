@@ -15,7 +15,7 @@ pub struct QualificationType {
     pub qualification_type_id: std::option::Option<std::string::String>,
     /// <p> The date and time the Qualification type was created.
     /// </p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The name of the Qualification type. The type name is used to
     /// identify the type, and to find the type using a Qualification type
     /// search.
@@ -84,7 +84,7 @@ impl QualificationType {
     }
     /// <p> The date and time the Qualification type was created.
     /// </p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p> The name of the Qualification type. The type name is used to
@@ -195,7 +195,7 @@ pub mod qualification_type {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_type_id: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) keywords: std::option::Option<std::string::String>,
@@ -231,7 +231,7 @@ pub mod qualification_type {
         }
         /// <p> The date and time the Qualification type was created.
         /// </p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
@@ -239,7 +239,7 @@ pub mod qualification_type {
         /// </p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -1089,7 +1089,7 @@ pub struct Qualification {
     /// re-granted based on a new Qualification request, GrantTime is the
     /// date and time of the last call to the AcceptQualificationRequest
     /// operation.</p>
-    pub grant_time: std::option::Option<aws_smithy_types::Instant>,
+    pub grant_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The value (score) of the Qualification, if the Qualification
     /// has an integer value.</p>
     pub integer_value: std::option::Option<i32>,
@@ -1114,7 +1114,7 @@ impl Qualification {
     /// re-granted based on a new Qualification request, GrantTime is the
     /// date and time of the last call to the AcceptQualificationRequest
     /// operation.</p>
-    pub fn grant_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn grant_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.grant_time.as_ref()
     }
     /// <p> The value (score) of the Qualification, if the Qualification
@@ -1152,7 +1152,7 @@ pub mod qualification {
     pub struct Builder {
         pub(crate) qualification_type_id: std::option::Option<std::string::String>,
         pub(crate) worker_id: std::option::Option<std::string::String>,
-        pub(crate) grant_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) grant_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) integer_value: std::option::Option<i32>,
         pub(crate) locale_value: std::option::Option<crate::model::Locale>,
         pub(crate) status: std::option::Option<crate::model::QualificationStatus>,
@@ -1188,7 +1188,7 @@ pub mod qualification {
         /// re-granted based on a new Qualification request, GrantTime is the
         /// date and time of the last call to the AcceptQualificationRequest
         /// operation.</p>
-        pub fn grant_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn grant_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.grant_time = Some(input);
             self
         }
@@ -1199,7 +1199,7 @@ pub mod qualification {
         /// operation.</p>
         pub fn set_grant_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.grant_time = input;
             self
@@ -1632,7 +1632,7 @@ pub struct ReviewActionDetail {
     /// </p>
     pub status: std::option::Option<crate::model::ReviewActionStatus>,
     /// <p> The date when the action was completed.</p>
-    pub complete_time: std::option::Option<aws_smithy_types::Instant>,
+    pub complete_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> A description of the outcome of the review.</p>
     pub result: std::option::Option<std::string::String>,
     /// <p> Present only when the Results have a FAILED Status.</p>
@@ -1664,7 +1664,7 @@ impl ReviewActionDetail {
         self.status.as_ref()
     }
     /// <p> The date when the action was completed.</p>
-    pub fn complete_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn complete_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.complete_time.as_ref()
     }
     /// <p> A description of the outcome of the review.</p>
@@ -1701,7 +1701,7 @@ pub mod review_action_detail {
         pub(crate) target_id: std::option::Option<std::string::String>,
         pub(crate) target_type: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ReviewActionStatus>,
-        pub(crate) complete_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) complete_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) result: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
     }
@@ -1768,14 +1768,14 @@ pub mod review_action_detail {
             self
         }
         /// <p> The date when the action was completed.</p>
-        pub fn complete_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn complete_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.complete_time = Some(input);
             self
         }
         /// <p> The date when the action was completed.</p>
         pub fn set_complete_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.complete_time = input;
             self
@@ -2489,7 +2489,7 @@ pub struct Hit {
     /// <p> The ID of the HIT Layout of this HIT.</p>
     pub hit_layout_id: std::option::Option<std::string::String>,
     /// <p> The date and time the HIT was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The title of the HIT.</p>
     pub title: std::option::Option<std::string::String>,
     /// <p> A general description of the HIT.</p>
@@ -2520,7 +2520,7 @@ pub struct Hit {
     /// </p>
     pub auto_approval_delay_in_seconds: std::option::Option<i64>,
     /// <p>The date and time the HIT expires.</p>
-    pub expiration: std::option::Option<aws_smithy_types::Instant>,
+    pub expiration: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The length of time, in seconds, that a Worker has to
     /// complete the HIT after accepting it.</p>
     pub assignment_duration_in_seconds: std::option::Option<i64>,
@@ -2570,7 +2570,7 @@ impl Hit {
         self.hit_layout_id.as_deref()
     }
     /// <p> The date and time the HIT was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p> The title of the HIT.</p>
@@ -2619,7 +2619,7 @@ impl Hit {
         self.auto_approval_delay_in_seconds
     }
     /// <p>The date and time the HIT expires.</p>
-    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration.as_ref()
     }
     /// <p> The length of time, in seconds, that a Worker has to
@@ -2723,7 +2723,7 @@ pub mod hit {
         pub(crate) hit_type_id: std::option::Option<std::string::String>,
         pub(crate) hit_group_id: std::option::Option<std::string::String>,
         pub(crate) hit_layout_id: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) title: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) question: std::option::Option<std::string::String>,
@@ -2732,7 +2732,7 @@ pub mod hit {
         pub(crate) max_assignments: std::option::Option<i32>,
         pub(crate) reward: std::option::Option<std::string::String>,
         pub(crate) auto_approval_delay_in_seconds: std::option::Option<i64>,
-        pub(crate) expiration: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expiration: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) assignment_duration_in_seconds: std::option::Option<i64>,
         pub(crate) requester_annotation: std::option::Option<std::string::String>,
         pub(crate) qualification_requirements:
@@ -2787,14 +2787,14 @@ pub mod hit {
             self
         }
         /// <p> The date and time the HIT was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p> The date and time the HIT was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2912,14 +2912,14 @@ pub mod hit {
             self
         }
         /// <p>The date and time the HIT expires.</p>
-        pub fn expiration(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration = Some(input);
             self
         }
         /// <p>The date and time the HIT expires.</p>
         pub fn set_expiration(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiration = input;
             self
@@ -3861,7 +3861,7 @@ pub struct QualificationRequest {
     /// Qualification test, or the time the Worker requested the
     /// Qualification if the Qualification type does not have a test.
     /// </p>
-    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl QualificationRequest {
     /// <p>The ID of the Qualification request, a unique identifier
@@ -3902,7 +3902,7 @@ impl QualificationRequest {
     /// Qualification test, or the time the Worker requested the
     /// Qualification if the Qualification type does not have a test.
     /// </p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
 }
@@ -3929,7 +3929,7 @@ pub mod qualification_request {
         pub(crate) worker_id: std::option::Option<std::string::String>,
         pub(crate) test: std::option::Option<std::string::String>,
         pub(crate) answer: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the Qualification request, a unique identifier
@@ -4019,7 +4019,7 @@ pub mod qualification_request {
         /// Qualification test, or the time the Worker requested the
         /// Qualification if the Qualification type does not have a test.
         /// </p>
-        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time = Some(input);
             self
         }
@@ -4030,7 +4030,7 @@ pub mod qualification_request {
         /// </p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time = input;
             self
@@ -4068,7 +4068,7 @@ pub struct BonusPayment {
     /// <p>The Reason text given when the bonus was granted, if any.</p>
     pub reason: std::option::Option<std::string::String>,
     /// <p>The date and time of when the bonus was granted.</p>
-    pub grant_time: std::option::Option<aws_smithy_types::Instant>,
+    pub grant_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BonusPayment {
     /// <p>The ID of the Worker to whom the bonus was paid.</p>
@@ -4088,7 +4088,7 @@ impl BonusPayment {
         self.reason.as_deref()
     }
     /// <p>The date and time of when the bonus was granted.</p>
-    pub fn grant_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn grant_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.grant_time.as_ref()
     }
 }
@@ -4113,7 +4113,7 @@ pub mod bonus_payment {
         pub(crate) bonus_amount: std::option::Option<std::string::String>,
         pub(crate) assignment_id: std::option::Option<std::string::String>,
         pub(crate) reason: std::option::Option<std::string::String>,
-        pub(crate) grant_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) grant_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the Worker to whom the bonus was paid.</p>
@@ -4160,14 +4160,14 @@ pub mod bonus_payment {
             self
         }
         /// <p>The date and time of when the bonus was granted.</p>
-        pub fn grant_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn grant_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.grant_time = Some(input);
             self
         }
         /// <p>The date and time of when the bonus was granted.</p>
         pub fn set_grant_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.grant_time = input;
             self
@@ -4213,26 +4213,26 @@ pub struct Assignment {
     /// auto-approval delay specified by the Requester in the HIT. This value
     /// is omitted from the assignment if the Worker has not yet submitted
     /// results.</p>
-    pub auto_approval_time: std::option::Option<aws_smithy_types::Instant>,
+    pub auto_approval_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The date and time the Worker accepted the assignment.</p>
-    pub accept_time: std::option::Option<aws_smithy_types::Instant>,
+    pub accept_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> If the Worker has submitted results, SubmitTime is the date
     /// and time the assignment was submitted. This value is omitted from the
     /// assignment if the Worker has not yet submitted results.</p>
-    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> If the Worker has submitted results and the Requester has
     /// approved the results, ApprovalTime is the date and time the Requester
     /// approved the results. This value is omitted from the assignment if
     /// the Requester has not yet approved the results.</p>
-    pub approval_time: std::option::Option<aws_smithy_types::Instant>,
+    pub approval_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> If the Worker has submitted results and the Requester has
     /// rejected the results, RejectionTime is the date and time the
     /// Requester rejected the results.</p>
-    pub rejection_time: std::option::Option<aws_smithy_types::Instant>,
+    pub rejection_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The date and time of the deadline for the assignment. This
     /// value is derived from the deadline specification for the HIT and the
     /// date and time the Worker accepted the HIT.</p>
-    pub deadline: std::option::Option<aws_smithy_types::Instant>,
+    pub deadline: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The Worker's answers submitted for the HIT contained in a
     /// QuestionFormAnswers document, if the Worker provides an answer. If
     /// the Worker does not provide any answers, Answer may contain a
@@ -4267,36 +4267,36 @@ impl Assignment {
     /// auto-approval delay specified by the Requester in the HIT. This value
     /// is omitted from the assignment if the Worker has not yet submitted
     /// results.</p>
-    pub fn auto_approval_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn auto_approval_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.auto_approval_time.as_ref()
     }
     /// <p> The date and time the Worker accepted the assignment.</p>
-    pub fn accept_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn accept_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.accept_time.as_ref()
     }
     /// <p> If the Worker has submitted results, SubmitTime is the date
     /// and time the assignment was submitted. This value is omitted from the
     /// assignment if the Worker has not yet submitted results.</p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p> If the Worker has submitted results and the Requester has
     /// approved the results, ApprovalTime is the date and time the Requester
     /// approved the results. This value is omitted from the assignment if
     /// the Requester has not yet approved the results.</p>
-    pub fn approval_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn approval_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.approval_time.as_ref()
     }
     /// <p> If the Worker has submitted results and the Requester has
     /// rejected the results, RejectionTime is the date and time the
     /// Requester rejected the results.</p>
-    pub fn rejection_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn rejection_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.rejection_time.as_ref()
     }
     /// <p> The date and time of the deadline for the assignment. This
     /// value is derived from the deadline specification for the HIT and the
     /// date and time the Worker accepted the HIT.</p>
-    pub fn deadline(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn deadline(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deadline.as_ref()
     }
     /// <p> The Worker's answers submitted for the HIT contained in a
@@ -4341,12 +4341,12 @@ pub mod assignment {
         pub(crate) worker_id: std::option::Option<std::string::String>,
         pub(crate) hit_id: std::option::Option<std::string::String>,
         pub(crate) assignment_status: std::option::Option<crate::model::AssignmentStatus>,
-        pub(crate) auto_approval_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) accept_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) approval_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) rejection_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) deadline: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) auto_approval_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) accept_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) approval_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) rejection_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) deadline: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) answer: std::option::Option<std::string::String>,
         pub(crate) requester_feedback: std::option::Option<std::string::String>,
     }
@@ -4404,7 +4404,7 @@ pub mod assignment {
         /// auto-approval delay specified by the Requester in the HIT. This value
         /// is omitted from the assignment if the Worker has not yet submitted
         /// results.</p>
-        pub fn auto_approval_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn auto_approval_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.auto_approval_time = Some(input);
             self
         }
@@ -4417,20 +4417,20 @@ pub mod assignment {
         /// results.</p>
         pub fn set_auto_approval_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.auto_approval_time = input;
             self
         }
         /// <p> The date and time the Worker accepted the assignment.</p>
-        pub fn accept_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn accept_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.accept_time = Some(input);
             self
         }
         /// <p> The date and time the Worker accepted the assignment.</p>
         pub fn set_accept_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.accept_time = input;
             self
@@ -4438,7 +4438,7 @@ pub mod assignment {
         /// <p> If the Worker has submitted results, SubmitTime is the date
         /// and time the assignment was submitted. This value is omitted from the
         /// assignment if the Worker has not yet submitted results.</p>
-        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time = Some(input);
             self
         }
@@ -4447,7 +4447,7 @@ pub mod assignment {
         /// assignment if the Worker has not yet submitted results.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time = input;
             self
@@ -4456,7 +4456,7 @@ pub mod assignment {
         /// approved the results, ApprovalTime is the date and time the Requester
         /// approved the results. This value is omitted from the assignment if
         /// the Requester has not yet approved the results.</p>
-        pub fn approval_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn approval_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.approval_time = Some(input);
             self
         }
@@ -4466,7 +4466,7 @@ pub mod assignment {
         /// the Requester has not yet approved the results.</p>
         pub fn set_approval_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.approval_time = input;
             self
@@ -4474,7 +4474,7 @@ pub mod assignment {
         /// <p> If the Worker has submitted results and the Requester has
         /// rejected the results, RejectionTime is the date and time the
         /// Requester rejected the results.</p>
-        pub fn rejection_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn rejection_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.rejection_time = Some(input);
             self
         }
@@ -4483,7 +4483,7 @@ pub mod assignment {
         /// Requester rejected the results.</p>
         pub fn set_rejection_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.rejection_time = input;
             self
@@ -4491,7 +4491,7 @@ pub mod assignment {
         /// <p> The date and time of the deadline for the assignment. This
         /// value is derived from the deadline specification for the HIT and the
         /// date and time the Worker accepted the HIT.</p>
-        pub fn deadline(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn deadline(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deadline = Some(input);
             self
         }
@@ -4500,7 +4500,7 @@ pub mod assignment {
         /// date and time the Worker accepted the HIT.</p>
         pub fn set_deadline(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.deadline = input;
             self

@@ -93,12 +93,12 @@ pub fn serialize_structure_crate_input_get_protection_status_input(
     if let Some(var_11) = &input.start_time {
         object
             .key("StartTime")
-            .instant(var_11, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_11, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_12) = &input.end_time {
         object
             .key("EndTime")
-            .instant(var_12, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_12, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_13) = &input.next_token {
         object.key("NextToken").string(var_13);
@@ -384,12 +384,12 @@ pub fn serialize_structure_crate_model_apps_list_data(
     if let Some(var_64) = &input.create_time {
         object
             .key("CreateTime")
-            .instant(var_64, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_64, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_65) = &input.last_update_time {
         object
             .key("LastUpdateTime")
-            .instant(var_65, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_65, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_66) = &input.apps_list {
         let mut array_67 = object.key("AppsList").start_array();
@@ -549,12 +549,12 @@ pub fn serialize_structure_crate_model_protocols_list_data(
     if let Some(var_107) = &input.create_time {
         object
             .key("CreateTime")
-            .instant(var_107, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_107, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_108) = &input.last_update_time {
         object
             .key("LastUpdateTime")
-            .instant(var_108, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_108, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_109) = &input.protocols_list {
         let mut array_110 = object.key("ProtocolsList").start_array();

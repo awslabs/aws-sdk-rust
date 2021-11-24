@@ -183,9 +183,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateParallelData`.
     ///
     /// <p>Creates a parallel data resource in Amazon Translate by importing an input file from
-    /// Amazon S3. Parallel data files contain examples of source phrases and their translations from
-    /// your translation memory. By adding parallel data, you can influence the style, tone, and word
-    /// choice in your translation output.</p>
+    /// Amazon S3. Parallel data files contain examples that show how you want segments of text to be
+    /// translated. By adding parallel data, you can influence the style, tone, and word choice in
+    /// your translation output.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateParallelData<
         C = aws_smithy_client::erase::DynConnector,
@@ -445,7 +445,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeTextTranslationJob`.
     ///
-    /// <p>Gets the properties associated with an asycnhronous batch translation job including name,
+    /// <p>Gets the properties associated with an asynchronous batch translation job including name,
     /// ID, status, source and target languages, input/output S3 buckets, and so on.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeTextTranslationJob<
@@ -655,12 +655,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The data format of the custom terminology being retrieved, either CSV or TMX.</p>
+        /// <p>The data format of the custom terminology being retrieved.</p>
+        /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same
+        /// format as the file that was imported to create the terminology. </p>
+        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource,
+        /// you must specify the same format as that of the input file that was imported to create it.
+        /// Otherwise, Amazon Translate throws an error.</p>
         pub fn terminology_data_format(mut self, inp: crate::model::TerminologyDataFormat) -> Self {
             self.inner = self.inner.terminology_data_format(inp);
             self
         }
-        /// <p>The data format of the custom terminology being retrieved, either CSV or TMX.</p>
+        /// <p>The data format of the custom terminology being retrieved.</p>
+        /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same
+        /// format as the file that was imported to create the terminology. </p>
+        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource,
+        /// you must specify the same format as that of the input file that was imported to create it.
+        /// Otherwise, Amazon Translate throws an error.</p>
         pub fn set_terminology_data_format(
             mut self,
             input: std::option::Option<crate::model::TerminologyDataFormat>,
@@ -1163,13 +1173,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
-        /// that grants Amazon Translate read access to your input data. For more nformation, see <a>identity-and-access-management</a>.</p>
+        /// that grants Amazon Translate read access to your input data. For more information, see <a>identity-and-access-management</a>.</p>
         pub fn data_access_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_access_role_arn(inp);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
-        /// that grants Amazon Translate read access to your input data. For more nformation, see <a>identity-and-access-management</a>.</p>
+        /// that grants Amazon Translate read access to your input data. For more information, see <a>identity-and-access-management</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1215,14 +1225,20 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_terminology_names`](Self::set_terminology_names).
         ///
-        /// <p>The name of the terminology to use in the batch translation job. For a list of available
-        /// terminologies, use the <a>ListTerminologies</a> operation.</p>
+        /// <p>The name of a custom terminology resource to add to the translation job. This resource
+        /// lists examples source terms and the desired translation for each term.</p>
+        /// <p>This parameter accepts only one custom terminology resource.</p>
+        /// <p>For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.</p>
+        /// <p>For more information, see <a>how-custom-terminology</a>.</p>
         pub fn terminology_names(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.terminology_names(inp);
             self
         }
-        /// <p>The name of the terminology to use in the batch translation job. For a list of available
-        /// terminologies, use the <a>ListTerminologies</a> operation.</p>
+        /// <p>The name of a custom terminology resource to add to the translation job. This resource
+        /// lists examples source terms and the desired translation for each term.</p>
+        /// <p>This parameter accepts only one custom terminology resource.</p>
+        /// <p>For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.</p>
+        /// <p>For more information, see <a>how-custom-terminology</a>.</p>
         pub fn set_terminology_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1234,16 +1250,30 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_parallel_data_names`](Self::set_parallel_data_names).
         ///
-        /// <p>The names of the parallel data resources to use in the batch translation job. For a list
-        /// of available parallel data resources, use the <a>ListParallelData</a>
-        /// operation.</p>
+        /// <p>The name of a parallel data resource to add to the translation job. This resource consists
+        /// of examples that show how you want segments of text to be translated. When you add parallel
+        /// data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
+        /// <p>This parameter accepts only one parallel data resource.</p>
+        /// <note>
+        /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't
+        /// use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
+        /// </note>
+        /// <p>For a list of available parallel data resources, use the <a>ListParallelData</a> operation.</p>
+        /// <p>For more information, see <a>customizing-translations-parallel-data</a>.</p>
         pub fn parallel_data_names(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.parallel_data_names(inp);
             self
         }
-        /// <p>The names of the parallel data resources to use in the batch translation job. For a list
-        /// of available parallel data resources, use the <a>ListParallelData</a>
-        /// operation.</p>
+        /// <p>The name of a parallel data resource to add to the translation job. This resource consists
+        /// of examples that show how you want segments of text to be translated. When you add parallel
+        /// data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
+        /// <p>This parameter accepts only one parallel data resource.</p>
+        /// <note>
+        /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't
+        /// use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
+        /// </note>
+        /// <p>For a list of available parallel data resources, use the <a>ListParallelData</a> operation.</p>
+        /// <p>For more information, see <a>customizing-translations-parallel-data</a>.</p>
         pub fn set_parallel_data_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1583,7 +1613,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -1606,7 +1642,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

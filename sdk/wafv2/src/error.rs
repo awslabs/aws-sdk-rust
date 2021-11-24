@@ -5775,6 +5775,12 @@ pub enum PutLoggingConfigurationErrorKind {
     /// account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
     /// <i>WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
+    /// <p>The operation failed because you don't have the permissions that your logging configuration requires. For information, see
+    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a>
+    /// in the <i>WAF Developer Guide</i>.</p>
+    WafLogDestinationPermissionIssueException(
+        crate::error::WafLogDestinationPermissionIssueException,
+    ),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>WAF couldn’t save your changes because you tried to update or delete a resource
@@ -5800,6 +5806,9 @@ impl std::fmt::Display for PutLoggingConfigurationError {
             PutLoggingConfigurationErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
             PutLoggingConfigurationErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
             PutLoggingConfigurationErrorKind::WafLimitsExceededException(_inner) => _inner.fmt(f),
+            PutLoggingConfigurationErrorKind::WafLogDestinationPermissionIssueException(_inner) => {
+                _inner.fmt(f)
+            }
             PutLoggingConfigurationErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
             PutLoggingConfigurationErrorKind::WafOptimisticLockException(_inner) => _inner.fmt(f),
             PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException(_inner) => {
@@ -5889,6 +5898,13 @@ impl PutLoggingConfigurationError {
             PutLoggingConfigurationErrorKind::WafLimitsExceededException(_)
         )
     }
+    /// Returns `true` if the error kind is `PutLoggingConfigurationErrorKind::WafLogDestinationPermissionIssueException`.
+    pub fn is_waf_log_destination_permission_issue_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutLoggingConfigurationErrorKind::WafLogDestinationPermissionIssueException(_)
+        )
+    }
     /// Returns `true` if the error kind is `PutLoggingConfigurationErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
@@ -5918,6 +5934,9 @@ impl std::error::Error for PutLoggingConfigurationError {
             PutLoggingConfigurationErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             PutLoggingConfigurationErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             PutLoggingConfigurationErrorKind::WafLimitsExceededException(_inner) => Some(_inner),
+            PutLoggingConfigurationErrorKind::WafLogDestinationPermissionIssueException(_inner) => {
+                Some(_inner)
+            }
             PutLoggingConfigurationErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
             PutLoggingConfigurationErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
             PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException(_inner) => {
@@ -8729,6 +8748,75 @@ impl WafServiceLinkedRoleErrorException {
     }
 }
 
+/// <p>The operation failed because you don't have the permissions that your logging configuration requires. For information, see
+/// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a>
+/// in the <i>WAF Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct WafLogDestinationPermissionIssueException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for WafLogDestinationPermissionIssueException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("WafLogDestinationPermissionIssueException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl WafLogDestinationPermissionIssueException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for WafLogDestinationPermissionIssueException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "WafLogDestinationPermissionIssueException [WAFLogDestinationPermissionIssueException]"
+        )?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for WafLogDestinationPermissionIssueException {}
+/// See [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException)
+pub mod waf_log_destination_permission_issue_exception {
+    /// A builder for [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException)
+        pub fn build(self) -> crate::error::WafLogDestinationPermissionIssueException {
+            crate::error::WafLogDestinationPermissionIssueException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl WafLogDestinationPermissionIssueException {
+    /// Creates a new builder-style object to manufacture [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException)
+    pub fn builder() -> crate::error::waf_log_destination_permission_issue_exception::Builder {
+        crate::error::waf_log_destination_permission_issue_exception::Builder::default()
+    }
+}
+
 /// <p>WAF couldn’t perform the operation because your resource is being used by another
 /// resource or it’s associated with another resource. </p>
 #[non_exhaustive]
@@ -8753,8 +8841,8 @@ impl WafAssociatedItemException {
 impl std::fmt::Display for WafAssociatedItemException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafAssociatedItemException [WAFAssociatedItemException]")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }

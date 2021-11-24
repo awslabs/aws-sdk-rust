@@ -20,9 +20,9 @@ pub struct ServiceTemplateVersionSummary {
     /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the version of a service template was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the version of a service template was last modified.</p>
-    pub last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ServiceTemplateVersionSummary {
     /// <p>The name of the service template.</p>
@@ -58,11 +58,11 @@ impl ServiceTemplateVersionSummary {
         self.arn.as_deref()
     }
     /// <p>The time when the version of a service template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the version of a service template was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
 }
@@ -96,8 +96,8 @@ pub mod service_template_version_summary {
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the service template.</p>
@@ -199,27 +199,27 @@ pub mod service_template_version_summary {
             self
         }
         /// <p>The time when the version of a service template was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when the version of a service template was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when the version of a service template was last modified.</p>
-        pub fn last_modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_at = Some(input);
             self
         }
         /// <p>The time when the version of a service template was last modified.</p>
         pub fn set_last_modified_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_at = input;
             self
@@ -337,9 +337,9 @@ pub struct ServiceTemplateVersion {
     /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the version of a service template was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the version of a service template was last modified.</p>
-    pub last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of compatible environment template names for the major version of a service template.</p>
     pub compatible_environment_templates:
         std::option::Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplate>>,
@@ -380,11 +380,11 @@ impl ServiceTemplateVersion {
         self.arn.as_deref()
     }
     /// <p>The time when the version of a service template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the version of a service template was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>An array of compatible environment template names for the major version of a service template.</p>
@@ -433,8 +433,8 @@ pub mod service_template_version {
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) compatible_environment_templates:
             std::option::Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplate>>,
         pub(crate) schema: std::option::Option<std::string::String>,
@@ -539,27 +539,27 @@ pub mod service_template_version {
             self
         }
         /// <p>The time when the version of a service template was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when the version of a service template was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when the version of a service template was last modified.</p>
-        pub fn last_modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_at = Some(input);
             self
         }
         /// <p>The time when the version of a service template was last modified.</p>
         pub fn set_last_modified_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_at = input;
             self
@@ -875,9 +875,9 @@ impl TemplateVersionSourceInput {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3(&self) -> std::result::Result<&crate::model::S3ObjectSource, &Self> {
         if let TemplateVersionSourceInput::S3(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`S3`](crate::model::TemplateVersionSourceInput::S3).
@@ -972,9 +972,9 @@ pub struct ServiceTemplateSummary {
     /// <p>The Amazon Resource Name (ARN) of the service template.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the service template was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the service template was last modified.</p>
-    pub last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The service template name as displayed in the developer interface.</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>A description of the service template.</p>
@@ -995,11 +995,11 @@ impl ServiceTemplateSummary {
         self.arn.as_deref()
     }
     /// <p>The time when the service template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the service template was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The service template name as displayed in the developer interface.</p>
@@ -1042,8 +1042,8 @@ pub mod service_template_summary {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) recommended_version: std::option::Option<std::string::String>,
@@ -1071,27 +1071,27 @@ pub mod service_template_summary {
             self
         }
         /// <p>The time when the service template was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when the service template was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when the service template was last modified.</p>
-        pub fn last_modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_at = Some(input);
             self
         }
         /// <p>The time when the service template was last modified.</p>
         pub fn set_last_modified_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_at = input;
             self
@@ -1226,9 +1226,9 @@ pub struct ServiceTemplate {
     /// <p>The Amazon Resource Name (ARN) of the service template.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the service template was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the service template was last modified.</p>
-    pub last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The service template name as displayed in the developer interface.</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>A description of the service template.</p>
@@ -1251,11 +1251,11 @@ impl ServiceTemplate {
         self.arn.as_deref()
     }
     /// <p>The time when the service template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the service template was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The service template name as displayed in the developer interface.</p>
@@ -1303,8 +1303,8 @@ pub mod service_template {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) recommended_version: std::option::Option<std::string::String>,
@@ -1333,27 +1333,27 @@ pub mod service_template {
             self
         }
         /// <p>The time when the service template was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when the service template was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when the service template was last modified.</p>
-        pub fn last_modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_at = Some(input);
             self
         }
         /// <p>The time when the service template was last modified.</p>
         pub fn set_last_modified_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_at = input;
             self
@@ -1455,9 +1455,9 @@ pub struct ServiceSummary {
     /// <p>The name of the service template.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The time when the service was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the service was last modified.</p>
-    pub last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the service.</p>
     pub status: std::option::Option<crate::model::ServiceStatus>,
     /// <p>A service status message.</p>
@@ -1481,11 +1481,11 @@ impl ServiceSummary {
         self.template_name.as_deref()
     }
     /// <p>The time when the service was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the service was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The status of the service.</p>
@@ -1521,8 +1521,8 @@ pub mod service_summary {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) template_name: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::ServiceStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
     }
@@ -1571,27 +1571,27 @@ pub mod service_summary {
             self
         }
         /// <p>The time when the service was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when the service was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when the service was last modified.</p>
-        pub fn last_modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_at = Some(input);
             self
         }
         /// <p>The time when the service was last modified.</p>
         pub fn set_last_modified_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_at = input;
             self
@@ -1775,9 +1775,9 @@ pub struct Service {
     /// <p>The name of the service template.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The time when the service was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the service was last modified.</p>
-    pub last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the service.</p>
     pub status: std::option::Option<crate::model::ServiceStatus>,
     /// <p>A service status message.</p>
@@ -1813,11 +1813,11 @@ impl Service {
         self.template_name.as_deref()
     }
     /// <p>The time when the service was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the service was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The status of the service.</p>
@@ -1880,8 +1880,8 @@ pub mod service {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) template_name: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::ServiceStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) spec: std::option::Option<std::string::String>,
@@ -1935,27 +1935,27 @@ pub mod service {
             self
         }
         /// <p>The time when the service was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when the service was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when the service was last modified.</p>
-        pub fn last_modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_at = Some(input);
             self
         }
         /// <p>The time when the service was last modified.</p>
         pub fn set_last_modified_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_at = input;
             self
@@ -2083,11 +2083,11 @@ pub struct ServicePipeline {
     /// <p>The Amazon Resource Name (ARN) of the service pipeline.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the service pipeline was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when a deployment of the service pipeline was last attempted.</p>
-    pub last_deployment_attempted_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the service pipeline was last deployed successfully.</p>
-    pub last_deployment_succeeded_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the service template that was used to create the service pipeline.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The ID of the major version of the service template that was used to create the service pipeline.</p>
@@ -2107,15 +2107,15 @@ impl ServicePipeline {
         self.arn.as_deref()
     }
     /// <p>The time when the service pipeline was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when a deployment of the service pipeline was last attempted.</p>
-    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_deployment_attempted_at.as_ref()
     }
     /// <p>The time when the service pipeline was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_deployment_succeeded_at.as_ref()
     }
     /// <p>The name of the service template that was used to create the service pipeline.</p>
@@ -2175,9 +2175,9 @@ pub mod service_pipeline {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_deployment_attempted_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_deployment_succeeded_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) template_name: std::option::Option<std::string::String>,
         pub(crate) template_major_version: std::option::Option<std::string::String>,
         pub(crate) template_minor_version: std::option::Option<std::string::String>,
@@ -2197,40 +2197,40 @@ pub mod service_pipeline {
             self
         }
         /// <p>The time when the service pipeline was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when the service pipeline was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when a deployment of the service pipeline was last attempted.</p>
-        pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_deployment_attempted_at = Some(input);
             self
         }
         /// <p>The time when a deployment of the service pipeline was last attempted.</p>
         pub fn set_last_deployment_attempted_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_deployment_attempted_at = input;
             self
         }
         /// <p>The time when the service pipeline was last deployed successfully.</p>
-        pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_deployment_succeeded_at = Some(input);
             self
         }
         /// <p>The time when the service pipeline was last deployed successfully.</p>
         pub fn set_last_deployment_succeeded_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_deployment_succeeded_at = input;
             self
@@ -2494,11 +2494,11 @@ pub struct ServiceInstanceSummary {
     /// <p>The Amazon Resource Name (ARN) of the service instance.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the service instance was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when a deployment of the service was last attempted.</p>
-    pub last_deployment_attempted_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the service was last deployed successfully.</p>
-    pub last_deployment_succeeded_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the service that the service instance belongs to.</p>
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The name of the environment that the service instance was deployed into.</p>
@@ -2524,15 +2524,15 @@ impl ServiceInstanceSummary {
         self.arn.as_deref()
     }
     /// <p>The time when the service instance was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when a deployment of the service was last attempted.</p>
-    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_deployment_attempted_at.as_ref()
     }
     /// <p>The time when the service was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_deployment_succeeded_at.as_ref()
     }
     /// <p>The name of the service that the service instance belongs to.</p>
@@ -2599,9 +2599,9 @@ pub mod service_instance_summary {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_deployment_attempted_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_deployment_succeeded_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) service_name: std::option::Option<std::string::String>,
         pub(crate) environment_name: std::option::Option<std::string::String>,
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -2632,40 +2632,40 @@ pub mod service_instance_summary {
             self
         }
         /// <p>The time when the service instance was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when the service instance was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when a deployment of the service was last attempted.</p>
-        pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_deployment_attempted_at = Some(input);
             self
         }
         /// <p>The time when a deployment of the service was last attempted.</p>
         pub fn set_last_deployment_attempted_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_deployment_attempted_at = input;
             self
         }
         /// <p>The time when the service was last deployed successfully.</p>
-        pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_deployment_succeeded_at = Some(input);
             self
         }
         /// <p>The time when the service was last deployed successfully.</p>
         pub fn set_last_deployment_succeeded_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_deployment_succeeded_at = input;
             self
@@ -2793,11 +2793,11 @@ pub struct ServiceInstance {
     /// <p>The Amazon Resource Name (ARN) of the service instance.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the service instance was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when a deployment of the service instance was last attempted.</p>
-    pub last_deployment_attempted_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the service instance was last deployed successfully.</p>
-    pub last_deployment_succeeded_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the service that the service instance belongs to.</p>
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The name of the environment that the service instance was deployed into.</p>
@@ -2825,15 +2825,15 @@ impl ServiceInstance {
         self.arn.as_deref()
     }
     /// <p>The time when the service instance was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when a deployment of the service instance was last attempted.</p>
-    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_deployment_attempted_at.as_ref()
     }
     /// <p>The time when the service instance was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_deployment_succeeded_at.as_ref()
     }
     /// <p>The name of the service that the service instance belongs to.</p>
@@ -2905,9 +2905,9 @@ pub mod service_instance {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_deployment_attempted_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_deployment_succeeded_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) service_name: std::option::Option<std::string::String>,
         pub(crate) environment_name: std::option::Option<std::string::String>,
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -2939,40 +2939,40 @@ pub mod service_instance {
             self
         }
         /// <p>The time when the service instance was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when the service instance was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when a deployment of the service instance was last attempted.</p>
-        pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_deployment_attempted_at = Some(input);
             self
         }
         /// <p>The time when a deployment of the service instance was last attempted.</p>
         pub fn set_last_deployment_attempted_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_deployment_attempted_at = input;
             self
         }
         /// <p>The time when the service instance was last deployed successfully.</p>
-        pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_deployment_succeeded_at = Some(input);
             self
         }
         /// <p>The time when the service instance was last deployed successfully.</p>
         pub fn set_last_deployment_succeeded_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_deployment_succeeded_at = input;
             self
@@ -3123,9 +3123,9 @@ pub struct EnvironmentTemplateVersionSummary {
     /// <p>The Amazon Resource Name (ARN) of the version of an environment template.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the version of an environment template was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the version of an environment template was last modified.</p>
-    pub last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EnvironmentTemplateVersionSummary {
     /// <p>The name of the version of an environment template.</p>
@@ -3161,11 +3161,11 @@ impl EnvironmentTemplateVersionSummary {
         self.arn.as_deref()
     }
     /// <p>The time when the version of an environment template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the version of an environment template was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
 }
@@ -3199,8 +3199,8 @@ pub mod environment_template_version_summary {
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the version of an environment template.</p>
@@ -3302,27 +3302,27 @@ pub mod environment_template_version_summary {
             self
         }
         /// <p>The time when the version of an environment template was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when the version of an environment template was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when the version of an environment template was last modified.</p>
-        pub fn last_modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_at = Some(input);
             self
         }
         /// <p>The time when the version of an environment template was last modified.</p>
         pub fn set_last_modified_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_at = input;
             self
@@ -3372,9 +3372,9 @@ pub struct EnvironmentTemplateVersion {
     /// <p>The Amazon Resource Name (ARN) of the version of an environment template.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the version of an environment template was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the version of an environment template was last modified.</p>
-    pub last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The schema of the version of an environment template.</p>
     pub schema: std::option::Option<std::string::String>,
 }
@@ -3412,11 +3412,11 @@ impl EnvironmentTemplateVersion {
         self.arn.as_deref()
     }
     /// <p>The time when the version of an environment template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the version of an environment template was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The schema of the version of an environment template.</p>
@@ -3455,8 +3455,8 @@ pub mod environment_template_version {
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) schema: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3559,27 +3559,27 @@ pub mod environment_template_version {
             self
         }
         /// <p>The time when the version of an environment template was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when the version of an environment template was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when the version of an environment template was last modified.</p>
-        pub fn last_modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_at = Some(input);
             self
         }
         /// <p>The time when the version of an environment template was last modified.</p>
         pub fn set_last_modified_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_at = input;
             self
@@ -3628,9 +3628,9 @@ pub struct EnvironmentTemplateSummary {
     /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the environment template was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the environment template was last modified.</p>
-    pub last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the environment template as displayed in the developer interface.</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>A description of the environment template.</p>
@@ -3650,11 +3650,11 @@ impl EnvironmentTemplateSummary {
         self.arn.as_deref()
     }
     /// <p>The time when the environment template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the environment template was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The name of the environment template as displayed in the developer interface.</p>
@@ -3696,8 +3696,8 @@ pub mod environment_template_summary {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) recommended_version: std::option::Option<std::string::String>,
@@ -3725,27 +3725,27 @@ pub mod environment_template_summary {
             self
         }
         /// <p>The time when the environment template was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when the environment template was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when the environment template was last modified.</p>
-        pub fn last_modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_at = Some(input);
             self
         }
         /// <p>The time when the environment template was last modified.</p>
         pub fn set_last_modified_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_at = input;
             self
@@ -3827,9 +3827,9 @@ pub struct EnvironmentTemplate {
     /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the environment template was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the environment template was last modified.</p>
-    pub last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the environment template as displayed in the developer interface.</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>A description of the environment template.</p>
@@ -3851,11 +3851,11 @@ impl EnvironmentTemplate {
         self.arn.as_deref()
     }
     /// <p>The time when the environment template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the environment template was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The name of the environment template as displayed in the developer interface.</p>
@@ -3902,8 +3902,8 @@ pub mod environment_template {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) recommended_version: std::option::Option<std::string::String>,
@@ -3932,27 +3932,27 @@ pub mod environment_template {
             self
         }
         /// <p>The time when the environment template was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when the environment template was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when the environment template was last modified.</p>
-        pub fn last_modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_at = Some(input);
             self
         }
         /// <p>The time when the environment template was last modified.</p>
         pub fn set_last_modified_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_at = input;
             self
@@ -4048,11 +4048,11 @@ pub struct EnvironmentSummary {
     /// <p>The description of the environment.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The time when the environment was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when a deployment of the environment was last attempted.</p>
-    pub last_deployment_attempted_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the environment was last deployed successfully.</p>
-    pub last_deployment_succeeded_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the environment template.</p>
@@ -4085,15 +4085,15 @@ impl EnvironmentSummary {
         self.description.as_deref()
     }
     /// <p>The time when the environment was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when a deployment of the environment was last attempted.</p>
-    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_deployment_attempted_at.as_ref()
     }
     /// <p>The time when the environment was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_deployment_succeeded_at.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
@@ -4179,9 +4179,9 @@ pub mod environment_summary {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_deployment_attempted_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_deployment_succeeded_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) template_name: std::option::Option<std::string::String>,
         pub(crate) template_major_version: std::option::Option<std::string::String>,
@@ -4215,40 +4215,40 @@ pub mod environment_summary {
             self
         }
         /// <p>The time when the environment was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when the environment was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when a deployment of the environment was last attempted.</p>
-        pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_deployment_attempted_at = Some(input);
             self
         }
         /// <p>The time when a deployment of the environment was last attempted.</p>
         pub fn set_last_deployment_attempted_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_deployment_attempted_at = input;
             self
         }
         /// <p>The time when the environment was last deployed successfully.</p>
-        pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_deployment_succeeded_at = Some(input);
             self
         }
         /// <p>The time when the environment was last deployed successfully.</p>
         pub fn set_last_deployment_succeeded_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_deployment_succeeded_at = input;
             self
@@ -4502,11 +4502,11 @@ pub struct Environment {
     /// <p>The description of the environment.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The time when the environment was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when a deployment of the environment was last attempted.</p>
-    pub last_deployment_attempted_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the environment was last deployed successfully.</p>
-    pub last_deployment_succeeded_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
@@ -4541,15 +4541,15 @@ impl Environment {
         self.description.as_deref()
     }
     /// <p>The time when the environment was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when a deployment of the environment was last attempted.</p>
-    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_deployment_attempted_at.as_ref()
     }
     /// <p>The time when the environment was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_deployment_succeeded_at.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
@@ -4640,9 +4640,9 @@ pub mod environment {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_deployment_attempted_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_deployment_succeeded_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) template_name: std::option::Option<std::string::String>,
         pub(crate) template_major_version: std::option::Option<std::string::String>,
@@ -4677,40 +4677,40 @@ pub mod environment {
             self
         }
         /// <p>The time when the environment was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when the environment was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when a deployment of the environment was last attempted.</p>
-        pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_deployment_attempted_at = Some(input);
             self
         }
         /// <p>The time when a deployment of the environment was last attempted.</p>
         pub fn set_last_deployment_attempted_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_deployment_attempted_at = input;
             self
         }
         /// <p>The time when the environment was last deployed successfully.</p>
-        pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_deployment_succeeded_at = Some(input);
             self
         }
         /// <p>The time when the environment was last deployed successfully.</p>
         pub fn set_last_deployment_succeeded_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_deployment_succeeded_at = input;
             self
@@ -4904,9 +4904,9 @@ pub struct EnvironmentAccountConnection {
     /// <p>The name of the environment that's associated with the environment account connection.</p>
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The time when the environment account connection request was made.</p>
-    pub requested_at: std::option::Option<aws_smithy_types::Instant>,
+    pub requested_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the environment account connection was last modified.</p>
-    pub last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the environment account connection.</p>
     pub status: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>,
 }
@@ -4936,11 +4936,11 @@ impl EnvironmentAccountConnection {
         self.environment_name.as_deref()
     }
     /// <p>The time when the environment account connection request was made.</p>
-    pub fn requested_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn requested_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.requested_at.as_ref()
     }
     /// <p>The time when the environment account connection was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The status of the environment account connection.</p>
@@ -4975,8 +4975,8 @@ pub mod environment_account_connection {
         pub(crate) environment_account_id: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) environment_name: std::option::Option<std::string::String>,
-        pub(crate) requested_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) requested_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>,
     }
     impl Builder {
@@ -5050,27 +5050,27 @@ pub mod environment_account_connection {
             self
         }
         /// <p>The time when the environment account connection request was made.</p>
-        pub fn requested_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn requested_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.requested_at = Some(input);
             self
         }
         /// <p>The time when the environment account connection request was made.</p>
         pub fn set_requested_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.requested_at = input;
             self
         }
         /// <p>The time when the environment account connection was last modified.</p>
-        pub fn last_modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_at = Some(input);
             self
         }
         /// <p>The time when the environment account connection was last modified.</p>
         pub fn set_last_modified_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_at = input;
             self
@@ -5187,9 +5187,9 @@ pub struct EnvironmentAccountConnectionSummary {
     /// <p>The name of the environment that's associated with the environment account connection.</p>
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The time when the environment account connection request was made.</p>
-    pub requested_at: std::option::Option<aws_smithy_types::Instant>,
+    pub requested_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the environment account connection was last modified.</p>
-    pub last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the environment account connection.</p>
     pub status: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>,
 }
@@ -5219,11 +5219,11 @@ impl EnvironmentAccountConnectionSummary {
         self.environment_name.as_deref()
     }
     /// <p>The time when the environment account connection request was made.</p>
-    pub fn requested_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn requested_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.requested_at.as_ref()
     }
     /// <p>The time when the environment account connection was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The status of the environment account connection.</p>
@@ -5258,8 +5258,8 @@ pub mod environment_account_connection_summary {
         pub(crate) environment_account_id: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) environment_name: std::option::Option<std::string::String>,
-        pub(crate) requested_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) requested_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>,
     }
     impl Builder {
@@ -5333,27 +5333,27 @@ pub mod environment_account_connection_summary {
             self
         }
         /// <p>The time when the environment account connection request was made.</p>
-        pub fn requested_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn requested_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.requested_at = Some(input);
             self
         }
         /// <p>The time when the environment account connection request was made.</p>
         pub fn set_requested_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.requested_at = input;
             self
         }
         /// <p>The time when the environment account connection was last modified.</p>
-        pub fn last_modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_at = Some(input);
             self
         }
         /// <p>The time when the environment account connection was last modified.</p>
         pub fn set_last_modified_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_at = input;
             self

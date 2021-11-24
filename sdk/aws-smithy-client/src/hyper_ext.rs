@@ -2,34 +2,70 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
+//! Implementation of [`SmithyConnector`](crate::bounds::SmithyConnector) for Hyper
+//!
+//! The module provides [`Adapter`] which enables using a [`hyper::Client`] as the connector for a Smithy
+//! [`Client`](crate::Client).
+//!
+//! # Examples
+//! ### Construct a Smithy Client with Hyper and Rustls
+//! In the basic case, customers should not need to use this module. A default implementation of Hyper
+//! with `rustls` will be constructed during client creation. However, if you are creating a Smithy
+//! [`Client`](crate::Client), directly, use the `https()` method to match the default behavior:
+//! ```rust
+//! use aws_smithy_client::Client;
+//! use aws_smithy_client::erase::DynConnector;
+//!
+//! // TODO: replace this with your middleware
+//! type MyMiddleware = tower::layer::util::Identity;
+//! let client = Client::<DynConnector, MyMiddleware>::https();
+//! ```
+//!
+//! ### Create a Hyper client with a custom timeout
+//! One common use case for constructing a connector directly is setting `CONNECT` timeouts. Since the
+//! internal connector is cheap to clone, you can also use this to share a connector between multiple services.
+//! ```rust
+//! use std::time::Duration;
+//! use aws_smithy_client::{Client, conns, hyper_ext};
+//! use aws_smithy_client::erase::DynConnector;
+//! use aws_smithy_client::timeout::Settings;
+//!
+//! let timeout = Settings::new().with_connect_timeout(Duration::from_secs(1));
+//! let connector = hyper_ext::Adapter::builder().timeout(&timeout).build(conns::https());
+//! // TODO: replace this with your middleware
+//! type MyMiddleware = tower::layer::util::Identity;
+//! // once you have a connector, use it to construct a Smithy client:
+//! let client = Client::<DynConnector, MyMiddleware>::new(DynConnector::new(connector));
+//! ```
 
+use std::error::Error;
 use std::sync::Arc;
 
 use http::Uri;
 use hyper::client::connect::Connection;
-
 use tokio::io::{AsyncRead, AsyncWrite};
 use tower::{BoxError, Service};
 
+use aws_smithy_async::future::timeout::TimedOutError;
 use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::result::ConnectorError;
 pub use aws_smithy_http::result::{SdkError, SdkSuccess};
-use std::error::Error;
-
-use crate::hyper_impls::timeout_middleware::{ConnectTimeout, HttpReadTimeout, TimeoutError};
-use crate::{timeout, Builder as ClientBuilder};
-use aws_smithy_async::future::timeout::TimedOutError;
 use aws_smithy_types::retry::ErrorKind;
 
-/// Adapter from a [`hyper::Client`] to a connector usable by a [`Client`](crate::Client).
+use crate::{timeout, Builder as ClientBuilder};
+
+use self::timeout_middleware::{ConnectTimeout, HttpReadTimeout, HttpTimeoutError};
+
+/// Adapter from a [`hyper::Client`](hyper::Client) to a connector usable by a Smithy [`Client`](crate::Client).
 ///
-/// This adapter also enables TCP connect and HTTP read timeouts via [`HyperAdapter::builder`]
+/// This adapter also enables TCP `CONNECT` and HTTP `READ` timeouts via [`Adapter::builder`]. For examples
+/// see [the module documentation](crate::hyper_ext).
 #[derive(Clone, Debug)]
 #[non_exhaustive]
-pub struct HyperAdapter<C>(HttpReadTimeout<hyper::Client<ConnectTimeout<C>, SdkBody>>);
+pub struct Adapter<C>(HttpReadTimeout<hyper::Client<ConnectTimeout<C>, SdkBody>>);
 
-impl<C> Service<http::Request<SdkBody>> for HyperAdapter<C>
+impl<C> Service<http::Request<SdkBody>> for Adapter<C>
 where
     C: Clone + Send + Sync + 'static,
     C: tower::Service<Uri>,
@@ -58,10 +94,10 @@ where
     }
 }
 
-impl HyperAdapter<()> {
+impl Adapter<()> {
     /// Builder for a Hyper Adapter
     ///
-    /// Generally, end users should not need to construct a HyperAdapter manually: a hyper adapter
+    /// Generally, end users should not need to construct an [`Adapter`] manually: a hyper adapter
     /// will be constructed automatically during client creation.
     pub fn builder() -> Builder {
         Builder::default()
@@ -92,7 +128,7 @@ fn downcast_error(err: BoxError) -> ConnectorError {
 
 /// Convert a [`hyper::Error`] into a [`ConnectorError`]
 fn to_connector_error(err: hyper::Error) -> ConnectorError {
-    if err.is_timeout() || find_source::<TimeoutError>(&err).is_some() {
+    if err.is_timeout() || find_source::<HttpTimeoutError>(&err).is_some() {
         ConnectorError::timeout(err.into())
     } else if err.is_user() {
         ConnectorError::user(err.into())
@@ -121,7 +157,26 @@ fn find_source<'a, E: Error + 'static>(err: &'a (dyn Error + 'static)) -> Option
 }
 
 #[derive(Default, Debug)]
-/// Builder for [`HyperAdapter`]
+/// Builder for [`hyper_ext::Adapter`](Adapter)
+///
+/// Unlike a Smithy client, the [`tower::Service`] inside a [`hyper_ext::Adapter`](Adapter) is actually a service that
+/// accepts a `Uri` and returns a TCP stream. Two default implementations of this are provided, one
+/// that encrypts the stream with `rustls`, the other that encrypts the stream with `native-tls`.
+///
+/// # Examples
+/// Construct a HyperAdapter with the default HTTP implementation (rustls). This can be useful when you want to share a Hyper connector
+/// between multiple Smithy clients.
+///
+/// ```rust
+/// use tower::layer::util::Identity;
+/// use aws_smithy_client::{conns, hyper_ext};
+/// use aws_smithy_client::erase::DynConnector;
+///
+/// let hyper_connector = hyper_ext::Adapter::builder().build(conns::https());
+/// // this client can then be used when constructing a Smithy Client
+/// // TODO: replace `Identity` with your middleware implementation
+/// let client = aws_smithy_client::Client::<DynConnector, Identity>::new(DynConnector::new(hyper_connector));
+/// ```
 pub struct Builder {
     timeout: timeout::Settings,
     sleep: Option<Arc<dyn AsyncSleep>>,
@@ -130,7 +185,7 @@ pub struct Builder {
 
 impl Builder {
     /// Create a HyperAdapter from this builder and a given connector
-    pub fn build<C>(self, connector: C) -> HyperAdapter<C>
+    pub fn build<C>(self, connector: C) -> Adapter<C>
     where
         C: Clone + Send + Sync + 'static,
         C: tower::Service<Uri>,
@@ -161,7 +216,7 @@ impl Builder {
             ),
             None => HttpReadTimeout::no_timeout(base),
         };
-        HyperAdapter(http_timeout)
+        Adapter(http_timeout)
     }
 
     /// Set the async sleep implementation used for timeouts
@@ -226,15 +281,15 @@ where
 #[cfg(feature = "rustls")]
 impl<M, R> ClientBuilder<(), M, R> {
     /// Connect to the service over HTTPS using Rustls.
-    pub fn rustls(self) -> ClientBuilder<HyperAdapter<crate::conns::Https>, M, R> {
-        self.connector(HyperAdapter::builder().build(crate::conns::https()))
+    pub fn rustls(self) -> ClientBuilder<Adapter<crate::conns::Https>, M, R> {
+        self.connector(Adapter::builder().build(crate::conns::https()))
     }
 
     /// Connect to the service over HTTPS using Rustls.
     ///
     /// This is exactly equivalent to [`Builder::rustls`](ClientBuilder::rustls). If you instead wish to use `native_tls`,
     /// use `Builder::native_tls`.
-    pub fn https(self) -> ClientBuilder<HyperAdapter<crate::conns::Https>, M, R> {
+    pub fn https(self) -> ClientBuilder<Adapter<crate::conns::Https>, M, R> {
         self.rustls()
     }
 }
@@ -243,13 +298,14 @@ impl<M, R> ClientBuilder<(), M, R> {
     /// Connect to the service over HTTPS using the native TLS library on your platform.
     pub fn native_tls(
         self,
-    ) -> ClientBuilder<HyperAdapter<hyper_tls::HttpsConnector<hyper::client::HttpConnector>>, M, R>
-    {
-        self.connector(HyperAdapter::builder().build(crate::conns::native_tls()))
+    ) -> ClientBuilder<Adapter<hyper_tls::HttpsConnector<hyper::client::HttpConnector>>, M, R> {
+        self.connector(Adapter::builder().build(crate::conns::native_tls()))
     }
 }
 
 mod timeout_middleware {
+    use std::error::Error;
+    use std::fmt::Formatter;
     use std::future::Future;
     use std::pin::Pin;
     use std::sync::Arc;
@@ -257,33 +313,36 @@ mod timeout_middleware {
     use std::time::Duration;
 
     use http::Uri;
-
     use pin_project_lite::pin_project;
+    use tower::BoxError;
 
     use aws_smithy_async::future;
     use aws_smithy_async::future::timeout::{TimedOutError, Timeout};
     use aws_smithy_async::rt::sleep::AsyncSleep;
     use aws_smithy_async::rt::sleep::Sleep;
-    use std::error::Error;
-    use std::fmt::Formatter;
-    use tower::BoxError;
 
     #[derive(Debug)]
-    pub(crate) struct TimeoutError {
-        operation: &'static str,
+    pub(crate) struct HttpTimeoutError {
+        kind: &'static str,
         duration: Duration,
-        cause: TimedOutError,
     }
 
-    impl std::fmt::Display for TimeoutError {
+    impl std::fmt::Display for HttpTimeoutError {
         fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-            write!(f, "timed out after {:?}", self.duration)
+            write!(
+                f,
+                "{} timeout occurred after {:?}",
+                self.kind, self.duration
+            )
         }
     }
 
-    impl Error for TimeoutError {
+    impl Error for HttpTimeoutError {
+        // We implement the `source` function as returning a `TimedOutError` because when `downcast_error`
+        // or `find_source` is called with an `HttpTimeoutError` (or another error wrapping an `HttpTimeoutError`)
+        // this method will be checked to determine if it's a timeout-related error.
         fn source(&self) -> Option<&(dyn Error + 'static)> {
-            Some(&self.cause)
+            Some(&TimedOutError)
         }
     }
 
@@ -369,7 +428,7 @@ mod timeout_middleware {
         type Output = Result<T, BoxError>;
 
         fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output> {
-            let (timeout_future, timeout_type, dur) = match self.project() {
+            let (timeout_future, kind, &mut duration) = match self.project() {
                 MaybeTimeoutFutureProj::NoTimeout { future } => {
                     return future.poll(cx).map_err(|err| err.into())
                 }
@@ -381,12 +440,9 @@ mod timeout_middleware {
             };
             match timeout_future.poll(cx) {
                 Poll::Ready(Ok(response)) => Poll::Ready(response.map_err(|err| err.into())),
-                Poll::Ready(Err(_timeout)) => Poll::Ready(Err(TimeoutError {
-                    operation: timeout_type,
-                    duration: *dur,
-                    cause: TimedOutError,
+                Poll::Ready(Err(_timeout)) => {
+                    Poll::Ready(Err(HttpTimeoutError { kind, duration }.into()))
                 }
-                .into())),
                 Poll::Pending => Poll::Pending,
             }
         }
@@ -411,7 +467,7 @@ mod timeout_middleware {
                     let sleep = sleep.sleep(*duration);
                     MaybeTimeoutFuture::Timeout {
                         timeout: future::timeout::Timeout::new(self.inner.call(req), sleep),
-                        error_type: "connect",
+                        error_type: "HTTP connect",
                         duration: *duration,
                     }
                 }
@@ -440,7 +496,6 @@ mod timeout_middleware {
                     let sleep = sleep.sleep(*duration);
                     MaybeTimeoutFuture::Timeout {
                         timeout: future::timeout::Timeout::new(self.inner.call(req), sleep),
-
                         error_type: "HTTP read",
                         duration: *duration,
                     }
@@ -454,29 +509,17 @@ mod timeout_middleware {
 
     #[cfg(test)]
     mod test {
-        use crate::hyper_impls::HyperAdapter;
-        use crate::never::{NeverConnected, NeverReplies};
-        use crate::timeout;
-        use aws_smithy_async::rt::sleep::TokioSleep;
-        use aws_smithy_http::body::SdkBody;
         use std::time::Duration;
+
         use tower::Service;
 
-        macro_rules! assert_elapsed {
-            ($start:expr, $dur:expr) => {{
-                let elapsed = $start.elapsed();
-                // type ascription improves compiler error when wrong type is passed
-                let lower: std::time::Duration = $dur;
+        use aws_smithy_async::assert_elapsed;
+        use aws_smithy_async::rt::sleep::TokioSleep;
+        use aws_smithy_http::body::SdkBody;
 
-                // Handles ms rounding
-                assert!(
-                    elapsed >= lower && elapsed <= lower + std::time::Duration::from_millis(5),
-                    "actual = {:?}, expected = {:?}",
-                    elapsed,
-                    lower
-                );
-            }};
-        }
+        use crate::hyper_ext::Adapter;
+        use crate::never::{NeverConnected, NeverReplies};
+        use crate::timeout;
 
         #[allow(unused)]
         fn connect_timeout_is_correct<T: Send + Sync + Clone + 'static>() {
@@ -487,10 +530,10 @@ mod timeout_middleware {
         fn is_send_sync<T: Send + Sync>() {}
 
         #[tokio::test]
-        async fn connect_timeout_works() {
+        async fn http_connect_timeout_works() {
             let inner = NeverConnected::new();
             let timeout = timeout::Settings::new().with_connect_timeout(Duration::from_secs(1));
-            let mut hyper = HyperAdapter::builder()
+            let mut hyper = Adapter::builder()
                 .timeout(&timeout)
                 .sleep_impl(TokioSleep::new())
                 .build(inner);
@@ -504,22 +547,26 @@ mod timeout_middleware {
                         .unwrap(),
                 )
                 .await
-                .expect_err("timeout");
-            assert!(resp.is_timeout(), "{:?}", resp);
+                .unwrap_err();
+            assert!(
+                resp.is_timeout(),
+                "expected resp.is_timeout() to be true but it was false, resp == {:?}",
+                resp
+            );
             assert_eq!(
                 format!("{}", resp),
-                "timeout: error trying to connect: timed out after 1s"
+                "timeout: error trying to connect: HTTP connect timeout occurred after 1s"
             );
             assert_elapsed!(now, Duration::from_secs(1));
         }
 
         #[tokio::test]
-        async fn http_timeout_works() {
+        async fn http_read_timeout_works() {
             let inner = NeverReplies::new();
             let timeout = timeout::Settings::new()
                 .with_connect_timeout(Duration::from_secs(1))
                 .with_read_timeout(Duration::from_secs(2));
-            let mut hyper = HyperAdapter::builder()
+            let mut hyper = Adapter::builder()
                 .timeout(&timeout)
                 .sleep_impl(TokioSleep::new())
                 .build(inner);
@@ -533,8 +580,16 @@ mod timeout_middleware {
                         .unwrap(),
                 )
                 .await
-                .expect_err("timeout");
-            assert!(resp.is_timeout(), "{:?}", resp);
+                .unwrap_err();
+            assert!(
+                resp.is_timeout(),
+                "expected resp.is_timeout() to be true but it was false, resp == {:?}",
+                resp
+            );
+            assert_eq!(
+                format!("{}", resp),
+                "timeout: HTTP read timeout occurred after 2s"
+            );
             assert_elapsed!(now, Duration::from_secs(2));
         }
     }
@@ -542,24 +597,25 @@ mod timeout_middleware {
 
 #[cfg(test)]
 mod test {
-    use crate::hyper_impls::HyperAdapter;
-    use http::Uri;
-    use hyper::client::connect::{Connected, Connection};
-
-    use aws_smithy_http::body::SdkBody;
     use std::io::{Error, ErrorKind};
     use std::pin::Pin;
     use std::task::{Context, Poll};
-    use tokio::io::{AsyncRead, AsyncWrite, ReadBuf};
 
+    use http::Uri;
+    use hyper::client::connect::{Connected, Connection};
+    use tokio::io::{AsyncRead, AsyncWrite, ReadBuf};
     use tower::BoxError;
+
+    use aws_smithy_http::body::SdkBody;
+
+    use crate::hyper_ext::Adapter;
 
     #[tokio::test]
     async fn hyper_io_error() {
         let connector = TestConnection {
             inner: HangupStream,
         };
-        let mut adapter = HyperAdapter::builder().build(connector);
+        let mut adapter = Adapter::builder().build(connector);
         use tower::Service;
         let err = adapter
             .call(

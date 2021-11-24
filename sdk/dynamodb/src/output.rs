@@ -201,35 +201,35 @@ pub struct UpdateItemOutput {
     pub attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
-    /// <p>The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the total
-    /// provisioned throughput consumed, along with statistics for the table and any indexes involved
-    /// in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified.
-    /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-    /// Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>The capacity units consumed by the <code>UpdateItem</code> operation. The data
+    /// returned includes the total provisioned throughput consumed, along with statistics for
+    /// the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is
+    /// only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For
+    /// more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
     /// <p>Information about item collections, if any, that were affected by the
-    /// <code>UpdateItem</code> operation.
-    /// <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table
-    /// does not have any local secondary indexes, this information is not
-    /// returned in the response.</p>
-    /// <p>Each <code>ItemCollectionMetrics</code>
-    /// element consists of:</p>
+    /// <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only
+    /// returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the
+    /// table does not have any local secondary indexes, this information is not returned in the
+    /// response.</p>
+    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>ItemCollectionKey</code> - The partition key value of the item
-    /// collection. This is the same as the partition key value of the item itself.</p>
+    /// <code>ItemCollectionKey</code> - The partition key value of the item collection.
+    /// This is the same as the partition key value of the item itself.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
-    /// in gigabytes. This value is a two-element array
-    /// containing a lower bound and an upper bound for the
-    /// estimate. The estimate includes the size of all the
-    /// items in the table, plus the size of all attributes
-    /// projected into all of the local secondary indexes on that
-    /// table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+    /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in
+    /// gigabytes. This value is a two-element array containing a lower bound and an
+    /// upper bound for the estimate. The estimate includes the size of all the items in
+    /// the table, plus the size of all attributes projected into all of the local
+    /// secondary indexes on that table. Use this estimate to measure whether a local
+    /// secondary index is approaching its size limit.</p>
+    /// <p>The estimate is subject to change over time; therefore, do not rely on the
+    /// precision or accuracy of the estimate.</p>
     /// </li>
     /// </ul>
     pub item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
@@ -247,37 +247,37 @@ impl UpdateItemOutput {
     > {
         self.attributes.as_ref()
     }
-    /// <p>The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the total
-    /// provisioned throughput consumed, along with statistics for the table and any indexes involved
-    /// in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified.
-    /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-    /// Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>The capacity units consumed by the <code>UpdateItem</code> operation. The data
+    /// returned includes the total provisioned throughput consumed, along with statistics for
+    /// the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is
+    /// only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For
+    /// more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub fn consumed_capacity(&self) -> std::option::Option<&crate::model::ConsumedCapacity> {
         self.consumed_capacity.as_ref()
     }
     /// <p>Information about item collections, if any, that were affected by the
-    /// <code>UpdateItem</code> operation.
-    /// <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table
-    /// does not have any local secondary indexes, this information is not
-    /// returned in the response.</p>
-    /// <p>Each <code>ItemCollectionMetrics</code>
-    /// element consists of:</p>
+    /// <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only
+    /// returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the
+    /// table does not have any local secondary indexes, this information is not returned in the
+    /// response.</p>
+    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>ItemCollectionKey</code> - The partition key value of the item
-    /// collection. This is the same as the partition key value of the item itself.</p>
+    /// <code>ItemCollectionKey</code> - The partition key value of the item collection.
+    /// This is the same as the partition key value of the item itself.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
-    /// in gigabytes. This value is a two-element array
-    /// containing a lower bound and an upper bound for the
-    /// estimate. The estimate includes the size of all the
-    /// items in the table, plus the size of all attributes
-    /// projected into all of the local secondary indexes on that
-    /// table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+    /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in
+    /// gigabytes. This value is a two-element array containing a lower bound and an
+    /// upper bound for the estimate. The estimate includes the size of all the items in
+    /// the table, plus the size of all attributes projected into all of the local
+    /// secondary indexes on that table. Use this estimate to measure whether a local
+    /// secondary index is approaching its size limit.</p>
+    /// <p>The estimate is subject to change over time; therefore, do not rely on the
+    /// precision or accuracy of the estimate.</p>
     /// </li>
     /// </ul>
     pub fn item_collection_metrics(
@@ -342,20 +342,22 @@ pub mod update_item_output {
             self.attributes = input;
             self
         }
-        /// <p>The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the total
-        /// provisioned throughput consumed, along with statistics for the table and any indexes involved
-        /// in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified.
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-        /// Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>The capacity units consumed by the <code>UpdateItem</code> operation. The data
+        /// returned includes the total provisioned throughput consumed, along with statistics for
+        /// the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is
+        /// only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For
+        /// more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
             self.consumed_capacity = Some(input);
             self
         }
-        /// <p>The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the total
-        /// provisioned throughput consumed, along with statistics for the table and any indexes involved
-        /// in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified.
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-        /// Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>The capacity units consumed by the <code>UpdateItem</code> operation. The data
+        /// returned includes the total provisioned throughput consumed, along with statistics for
+        /// the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is
+        /// only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For
+        /// more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_consumed_capacity(
             mut self,
             input: std::option::Option<crate::model::ConsumedCapacity>,
@@ -364,28 +366,27 @@ pub mod update_item_output {
             self
         }
         /// <p>Information about item collections, if any, that were affected by the
-        /// <code>UpdateItem</code> operation.
-        /// <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table
-        /// does not have any local secondary indexes, this information is not
-        /// returned in the response.</p>
-        /// <p>Each <code>ItemCollectionMetrics</code>
-        /// element consists of:</p>
+        /// <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only
+        /// returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the
+        /// table does not have any local secondary indexes, this information is not returned in the
+        /// response.</p>
+        /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>ItemCollectionKey</code> - The partition key value of the item
-        /// collection. This is the same as the partition key value of the item itself.</p>
+        /// <code>ItemCollectionKey</code> - The partition key value of the item collection.
+        /// This is the same as the partition key value of the item itself.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
-        /// in gigabytes. This value is a two-element array
-        /// containing a lower bound and an upper bound for the
-        /// estimate. The estimate includes the size of all the
-        /// items in the table, plus the size of all attributes
-        /// projected into all of the local secondary indexes on that
-        /// table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-        /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+        /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in
+        /// gigabytes. This value is a two-element array containing a lower bound and an
+        /// upper bound for the estimate. The estimate includes the size of all the items in
+        /// the table, plus the size of all attributes projected into all of the local
+        /// secondary indexes on that table. Use this estimate to measure whether a local
+        /// secondary index is approaching its size limit.</p>
+        /// <p>The estimate is subject to change over time; therefore, do not rely on the
+        /// precision or accuracy of the estimate.</p>
         /// </li>
         /// </ul>
         pub fn item_collection_metrics(
@@ -396,28 +397,27 @@ pub mod update_item_output {
             self
         }
         /// <p>Information about item collections, if any, that were affected by the
-        /// <code>UpdateItem</code> operation.
-        /// <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table
-        /// does not have any local secondary indexes, this information is not
-        /// returned in the response.</p>
-        /// <p>Each <code>ItemCollectionMetrics</code>
-        /// element consists of:</p>
+        /// <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only
+        /// returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the
+        /// table does not have any local secondary indexes, this information is not returned in the
+        /// response.</p>
+        /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>ItemCollectionKey</code> - The partition key value of the item
-        /// collection. This is the same as the partition key value of the item itself.</p>
+        /// <code>ItemCollectionKey</code> - The partition key value of the item collection.
+        /// This is the same as the partition key value of the item itself.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
-        /// in gigabytes. This value is a two-element array
-        /// containing a lower bound and an upper bound for the
-        /// estimate. The estimate includes the size of all the
-        /// items in the table, plus the size of all attributes
-        /// projected into all of the local secondary indexes on that
-        /// table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-        /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+        /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in
+        /// gigabytes. This value is a two-element array containing a lower bound and an
+        /// upper bound for the estimate. The estimate includes the size of all the items in
+        /// the table, plus the size of all attributes projected into all of the local
+        /// secondary indexes on that table. Use this estimate to measure whether a local
+        /// secondary index is approaching its size limit.</p>
+        /// <p>The estimate is subject to change over time; therefore, do not rely on the
+        /// precision or accuracy of the estimate.</p>
         /// </li>
         /// </ul>
         pub fn set_item_collection_metrics(
@@ -707,12 +707,14 @@ impl UpdateContributorInsightsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContinuousBackupsOutput {
-    /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
+    /// <p>Represents the continuous backups and point in time recovery settings on the
+    /// table.</p>
     pub continuous_backups_description:
         std::option::Option<crate::model::ContinuousBackupsDescription>,
 }
 impl UpdateContinuousBackupsOutput {
-    /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
+    /// <p>Represents the continuous backups and point in time recovery settings on the
+    /// table.</p>
     pub fn continuous_backups_description(
         &self,
     ) -> std::option::Option<&crate::model::ContinuousBackupsDescription> {
@@ -739,7 +741,8 @@ pub mod update_continuous_backups_output {
             std::option::Option<crate::model::ContinuousBackupsDescription>,
     }
     impl Builder {
-        /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
+        /// <p>Represents the continuous backups and point in time recovery settings on the
+        /// table.</p>
         pub fn continuous_backups_description(
             mut self,
             input: crate::model::ContinuousBackupsDescription,
@@ -747,7 +750,8 @@ pub mod update_continuous_backups_output {
             self.continuous_backups_description = Some(input);
             self
         }
-        /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
+        /// <p>Represents the continuous backups and point in time recovery settings on the
+        /// table.</p>
         pub fn set_continuous_backups_description(
             mut self,
             input: std::option::Option<crate::model::ContinuousBackupsDescription>,
@@ -804,10 +808,9 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactWriteItemsOutput {
-    /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code>
-    /// operation. The values of the list are ordered according to
-    /// the ordering of the <code>TransactItems</code> request parameter.
-    /// </p>
+    /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code> operation.
+    /// The values of the list are ordered according to the ordering of the
+    /// <code>TransactItems</code> request parameter. </p>
     pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
     /// <p>A list of tables that were processed by <code>TransactWriteItems</code> and, for each
     /// table, information about any item collections that were affected by individual
@@ -821,10 +824,9 @@ pub struct TransactWriteItemsOutput {
     >,
 }
 impl TransactWriteItemsOutput {
-    /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code>
-    /// operation. The values of the list are ordered according to
-    /// the ordering of the <code>TransactItems</code> request parameter.
-    /// </p>
+    /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code> operation.
+    /// The values of the list are ordered according to the ordering of the
+    /// <code>TransactItems</code> request parameter. </p>
     pub fn consumed_capacity(&self) -> std::option::Option<&[crate::model::ConsumedCapacity]> {
         self.consumed_capacity.as_deref()
     }
@@ -871,10 +873,9 @@ pub mod transact_write_items_output {
         ///
         /// To override the contents of this collection use [`set_consumed_capacity`](Self::set_consumed_capacity).
         ///
-        /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code>
-        /// operation. The values of the list are ordered according to
-        /// the ordering of the <code>TransactItems</code> request parameter.
-        /// </p>
+        /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code> operation.
+        /// The values of the list are ordered according to the ordering of the
+        /// <code>TransactItems</code> request parameter. </p>
         pub fn consumed_capacity(
             mut self,
             input: impl Into<crate::model::ConsumedCapacity>,
@@ -884,10 +885,9 @@ pub mod transact_write_items_output {
             self.consumed_capacity = Some(v);
             self
         }
-        /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code>
-        /// operation. The values of the list are ordered according to
-        /// the ordering of the <code>TransactItems</code> request parameter.
-        /// </p>
+        /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code> operation.
+        /// The values of the list are ordered according to the ordering of the
+        /// <code>TransactItems</code> request parameter. </p>
         pub fn set_consumed_capacity(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
@@ -949,39 +949,39 @@ impl TransactWriteItemsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactGetItemsOutput {
-    /// <p>If the <i>ReturnConsumedCapacity</i> value was <code>TOTAL</code>,
-    /// this is an array of <code>ConsumedCapacity</code> objects, one for each table
-    /// addressed by <code>TransactGetItem</code> objects in the <i>TransactItems</i>
-    /// parameter. These <code>ConsumedCapacity</code> objects report the read-capacity
-    /// units consumed by the <code>TransactGetItems</code> call in that table.</p>
+    /// <p>If the <i>ReturnConsumedCapacity</i> value was <code>TOTAL</code>, this
+    /// is an array of <code>ConsumedCapacity</code> objects, one for each table addressed by
+    /// <code>TransactGetItem</code> objects in the <i>TransactItems</i>
+    /// parameter. These <code>ConsumedCapacity</code> objects report the read-capacity units
+    /// consumed by the <code>TransactGetItems</code> call in that table.</p>
     pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
-    /// <p>An ordered array of up to 25 <code>ItemResponse</code> objects, each of which corresponds
-    /// to the <code>TransactGetItem</code> object in the same position in the
+    /// <p>An ordered array of up to 25 <code>ItemResponse</code> objects, each of which
+    /// corresponds to the <code>TransactGetItem</code> object in the same position in the
     /// <i>TransactItems</i> array. Each <code>ItemResponse</code> object
-    /// contains a Map of the name-value pairs that are the projected attributes of
-    /// the requested item.</p>
-    /// <p>If a requested item could not be retrieved, the corresponding <code>ItemResponse</code>
-    /// object is Null, or if the requested item has no projected attributes, the corresponding
-    /// <code>ItemResponse</code> object is an empty Map. </p>
+    /// contains a Map of the name-value pairs that are the projected attributes of the
+    /// requested item.</p>
+    /// <p>If a requested item could not be retrieved, the corresponding
+    /// <code>ItemResponse</code> object is Null, or if the requested item has no projected
+    /// attributes, the corresponding <code>ItemResponse</code> object is an empty Map. </p>
     pub responses: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
 }
 impl TransactGetItemsOutput {
-    /// <p>If the <i>ReturnConsumedCapacity</i> value was <code>TOTAL</code>,
-    /// this is an array of <code>ConsumedCapacity</code> objects, one for each table
-    /// addressed by <code>TransactGetItem</code> objects in the <i>TransactItems</i>
-    /// parameter. These <code>ConsumedCapacity</code> objects report the read-capacity
-    /// units consumed by the <code>TransactGetItems</code> call in that table.</p>
+    /// <p>If the <i>ReturnConsumedCapacity</i> value was <code>TOTAL</code>, this
+    /// is an array of <code>ConsumedCapacity</code> objects, one for each table addressed by
+    /// <code>TransactGetItem</code> objects in the <i>TransactItems</i>
+    /// parameter. These <code>ConsumedCapacity</code> objects report the read-capacity units
+    /// consumed by the <code>TransactGetItems</code> call in that table.</p>
     pub fn consumed_capacity(&self) -> std::option::Option<&[crate::model::ConsumedCapacity]> {
         self.consumed_capacity.as_deref()
     }
-    /// <p>An ordered array of up to 25 <code>ItemResponse</code> objects, each of which corresponds
-    /// to the <code>TransactGetItem</code> object in the same position in the
+    /// <p>An ordered array of up to 25 <code>ItemResponse</code> objects, each of which
+    /// corresponds to the <code>TransactGetItem</code> object in the same position in the
     /// <i>TransactItems</i> array. Each <code>ItemResponse</code> object
-    /// contains a Map of the name-value pairs that are the projected attributes of
-    /// the requested item.</p>
-    /// <p>If a requested item could not be retrieved, the corresponding <code>ItemResponse</code>
-    /// object is Null, or if the requested item has no projected attributes, the corresponding
-    /// <code>ItemResponse</code> object is an empty Map. </p>
+    /// contains a Map of the name-value pairs that are the projected attributes of the
+    /// requested item.</p>
+    /// <p>If a requested item could not be retrieved, the corresponding
+    /// <code>ItemResponse</code> object is Null, or if the requested item has no projected
+    /// attributes, the corresponding <code>ItemResponse</code> object is an empty Map. </p>
     pub fn responses(&self) -> std::option::Option<&[crate::model::ItemResponse]> {
         self.responses.as_deref()
     }
@@ -1009,11 +1009,11 @@ pub mod transact_get_items_output {
         ///
         /// To override the contents of this collection use [`set_consumed_capacity`](Self::set_consumed_capacity).
         ///
-        /// <p>If the <i>ReturnConsumedCapacity</i> value was <code>TOTAL</code>,
-        /// this is an array of <code>ConsumedCapacity</code> objects, one for each table
-        /// addressed by <code>TransactGetItem</code> objects in the <i>TransactItems</i>
-        /// parameter. These <code>ConsumedCapacity</code> objects report the read-capacity
-        /// units consumed by the <code>TransactGetItems</code> call in that table.</p>
+        /// <p>If the <i>ReturnConsumedCapacity</i> value was <code>TOTAL</code>, this
+        /// is an array of <code>ConsumedCapacity</code> objects, one for each table addressed by
+        /// <code>TransactGetItem</code> objects in the <i>TransactItems</i>
+        /// parameter. These <code>ConsumedCapacity</code> objects report the read-capacity units
+        /// consumed by the <code>TransactGetItems</code> call in that table.</p>
         pub fn consumed_capacity(
             mut self,
             input: impl Into<crate::model::ConsumedCapacity>,
@@ -1023,11 +1023,11 @@ pub mod transact_get_items_output {
             self.consumed_capacity = Some(v);
             self
         }
-        /// <p>If the <i>ReturnConsumedCapacity</i> value was <code>TOTAL</code>,
-        /// this is an array of <code>ConsumedCapacity</code> objects, one for each table
-        /// addressed by <code>TransactGetItem</code> objects in the <i>TransactItems</i>
-        /// parameter. These <code>ConsumedCapacity</code> objects report the read-capacity
-        /// units consumed by the <code>TransactGetItems</code> call in that table.</p>
+        /// <p>If the <i>ReturnConsumedCapacity</i> value was <code>TOTAL</code>, this
+        /// is an array of <code>ConsumedCapacity</code> objects, one for each table addressed by
+        /// <code>TransactGetItem</code> objects in the <i>TransactItems</i>
+        /// parameter. These <code>ConsumedCapacity</code> objects report the read-capacity units
+        /// consumed by the <code>TransactGetItems</code> call in that table.</p>
         pub fn set_consumed_capacity(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
@@ -1039,28 +1039,28 @@ pub mod transact_get_items_output {
         ///
         /// To override the contents of this collection use [`set_responses`](Self::set_responses).
         ///
-        /// <p>An ordered array of up to 25 <code>ItemResponse</code> objects, each of which corresponds
-        /// to the <code>TransactGetItem</code> object in the same position in the
+        /// <p>An ordered array of up to 25 <code>ItemResponse</code> objects, each of which
+        /// corresponds to the <code>TransactGetItem</code> object in the same position in the
         /// <i>TransactItems</i> array. Each <code>ItemResponse</code> object
-        /// contains a Map of the name-value pairs that are the projected attributes of
-        /// the requested item.</p>
-        /// <p>If a requested item could not be retrieved, the corresponding <code>ItemResponse</code>
-        /// object is Null, or if the requested item has no projected attributes, the corresponding
-        /// <code>ItemResponse</code> object is an empty Map. </p>
+        /// contains a Map of the name-value pairs that are the projected attributes of the
+        /// requested item.</p>
+        /// <p>If a requested item could not be retrieved, the corresponding
+        /// <code>ItemResponse</code> object is Null, or if the requested item has no projected
+        /// attributes, the corresponding <code>ItemResponse</code> object is an empty Map. </p>
         pub fn responses(mut self, input: impl Into<crate::model::ItemResponse>) -> Self {
             let mut v = self.responses.unwrap_or_default();
             v.push(input.into());
             self.responses = Some(v);
             self
         }
-        /// <p>An ordered array of up to 25 <code>ItemResponse</code> objects, each of which corresponds
-        /// to the <code>TransactGetItem</code> object in the same position in the
+        /// <p>An ordered array of up to 25 <code>ItemResponse</code> objects, each of which
+        /// corresponds to the <code>TransactGetItem</code> object in the same position in the
         /// <i>TransactItems</i> array. Each <code>ItemResponse</code> object
-        /// contains a Map of the name-value pairs that are the projected attributes of
-        /// the requested item.</p>
-        /// <p>If a requested item could not be retrieved, the corresponding <code>ItemResponse</code>
-        /// object is Null, or if the requested item has no projected attributes, the corresponding
-        /// <code>ItemResponse</code> object is an empty Map. </p>
+        /// contains a Map of the name-value pairs that are the projected attributes of the
+        /// requested item.</p>
+        /// <p>If a requested item could not be retrieved, the corresponding
+        /// <code>ItemResponse</code> object is Null, or if the requested item has no projected
+        /// attributes, the corresponding <code>ItemResponse</code> object is an empty Map. </p>
         pub fn set_responses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
@@ -1118,45 +1118,48 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanOutput {
-    /// <p>An array of item attributes that match the scan criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
+    /// <p>An array of item attributes that match the scan criteria. Each element in this array
+    /// consists of an attribute name and the value for that attribute.</p>
     pub items: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
     >,
     /// <p>The number of items in the response.</p>
-    /// <p>If you set <code>ScanFilter</code> in the request, then <code>Count</code> is the number of items
-    /// returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items
-    /// before the filter was applied.</p>
+    /// <p>If you set <code>ScanFilter</code> in the request, then <code>Count</code> is the
+    /// number of items returned after the filter was applied, and <code>ScannedCount</code> is
+    /// the number of matching items before the filter was applied.</p>
     /// <p>If you did not use a filter in the request, then <code>Count</code> is the same as
     /// <code>ScannedCount</code>.</p>
     pub count: i32,
     /// <p>The number of items evaluated, before any <code>ScanFilter</code> is applied. A high
-    /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient
-    /// <code>Scan</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the
-    /// <i>Amazon DynamoDB Developer Guide</i>.</p>
-    /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as
-    /// <code>Count</code>.</p>
+    /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results
+    /// indicates an inefficient <code>Scan</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+    /// ScannedCount</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
+    /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same
+    /// as <code>Count</code>.</p>
     pub scanned_count: i32,
     /// <p>The primary key of the item where the operation stopped, inclusive of the previous
     /// result set. Use this value to start a new operation, excluding this value in the new
     /// request.</p>
-    /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results
-    /// has been processed and there is no more data to be retrieved.</p>
-    /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean
-    /// that there is more data in the result set. The only way to know when you have reached
-    /// the end of the result set is when <code>LastEvaluatedKey</code> is
-    /// empty.</p>
+    /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been
+    /// processed and there is no more data to be retrieved.</p>
+    /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there
+    /// is more data in the result set. The only way to know when you have reached the end of
+    /// the result set is when <code>LastEvaluatedKey</code> is empty.</p>
     pub last_evaluated_key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
-    /// <p>The capacity units consumed by the <code>Scan</code> operation. The data returned includes the total
-    /// provisioned throughput consumed, along with statistics for the table and any indexes involved
-    /// in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified.
-    /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-    /// Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>The capacity units consumed by the <code>Scan</code> operation. The data returned
+    /// includes the total provisioned throughput consumed, along with statistics for the table
+    /// and any indexes involved in the operation. <code>ConsumedCapacity</code> is only
+    /// returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more
+    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
 }
 impl ScanOutput {
-    /// <p>An array of item attributes that match the scan criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
+    /// <p>An array of item attributes that match the scan criteria. Each element in this array
+    /// consists of an attribute name and the value for that attribute.</p>
     pub fn items(
         &self,
     ) -> std::option::Option<
@@ -1165,32 +1168,32 @@ impl ScanOutput {
         self.items.as_deref()
     }
     /// <p>The number of items in the response.</p>
-    /// <p>If you set <code>ScanFilter</code> in the request, then <code>Count</code> is the number of items
-    /// returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items
-    /// before the filter was applied.</p>
+    /// <p>If you set <code>ScanFilter</code> in the request, then <code>Count</code> is the
+    /// number of items returned after the filter was applied, and <code>ScannedCount</code> is
+    /// the number of matching items before the filter was applied.</p>
     /// <p>If you did not use a filter in the request, then <code>Count</code> is the same as
     /// <code>ScannedCount</code>.</p>
     pub fn count(&self) -> i32 {
         self.count
     }
     /// <p>The number of items evaluated, before any <code>ScanFilter</code> is applied. A high
-    /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient
-    /// <code>Scan</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the
-    /// <i>Amazon DynamoDB Developer Guide</i>.</p>
-    /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as
-    /// <code>Count</code>.</p>
+    /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results
+    /// indicates an inefficient <code>Scan</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+    /// ScannedCount</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
+    /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same
+    /// as <code>Count</code>.</p>
     pub fn scanned_count(&self) -> i32 {
         self.scanned_count
     }
     /// <p>The primary key of the item where the operation stopped, inclusive of the previous
     /// result set. Use this value to start a new operation, excluding this value in the new
     /// request.</p>
-    /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results
-    /// has been processed and there is no more data to be retrieved.</p>
-    /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean
-    /// that there is more data in the result set. The only way to know when you have reached
-    /// the end of the result set is when <code>LastEvaluatedKey</code> is
-    /// empty.</p>
+    /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been
+    /// processed and there is no more data to be retrieved.</p>
+    /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there
+    /// is more data in the result set. The only way to know when you have reached the end of
+    /// the result set is when <code>LastEvaluatedKey</code> is empty.</p>
     pub fn last_evaluated_key(
         &self,
     ) -> std::option::Option<
@@ -1198,11 +1201,12 @@ impl ScanOutput {
     > {
         self.last_evaluated_key.as_ref()
     }
-    /// <p>The capacity units consumed by the <code>Scan</code> operation. The data returned includes the total
-    /// provisioned throughput consumed, along with statistics for the table and any indexes involved
-    /// in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified.
-    /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-    /// Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>The capacity units consumed by the <code>Scan</code> operation. The data returned
+    /// includes the total provisioned throughput consumed, along with statistics for the table
+    /// and any indexes involved in the operation. <code>ConsumedCapacity</code> is only
+    /// returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more
+    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub fn consumed_capacity(&self) -> std::option::Option<&crate::model::ConsumedCapacity> {
         self.consumed_capacity.as_ref()
     }
@@ -1241,7 +1245,8 @@ pub mod scan_output {
         ///
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
-        /// <p>An array of item attributes that match the scan criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
+        /// <p>An array of item attributes that match the scan criteria. Each element in this array
+        /// consists of an attribute name and the value for that attribute.</p>
         pub fn items(
             mut self,
             input: impl Into<
@@ -1253,7 +1258,8 @@ pub mod scan_output {
             self.items = Some(v);
             self
         }
-        /// <p>An array of item attributes that match the scan criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
+        /// <p>An array of item attributes that match the scan criteria. Each element in this array
+        /// consists of an attribute name and the value for that attribute.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<
@@ -1266,9 +1272,9 @@ pub mod scan_output {
             self
         }
         /// <p>The number of items in the response.</p>
-        /// <p>If you set <code>ScanFilter</code> in the request, then <code>Count</code> is the number of items
-        /// returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items
-        /// before the filter was applied.</p>
+        /// <p>If you set <code>ScanFilter</code> in the request, then <code>Count</code> is the
+        /// number of items returned after the filter was applied, and <code>ScannedCount</code> is
+        /// the number of matching items before the filter was applied.</p>
         /// <p>If you did not use a filter in the request, then <code>Count</code> is the same as
         /// <code>ScannedCount</code>.</p>
         pub fn count(mut self, input: i32) -> Self {
@@ -1276,9 +1282,9 @@ pub mod scan_output {
             self
         }
         /// <p>The number of items in the response.</p>
-        /// <p>If you set <code>ScanFilter</code> in the request, then <code>Count</code> is the number of items
-        /// returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items
-        /// before the filter was applied.</p>
+        /// <p>If you set <code>ScanFilter</code> in the request, then <code>Count</code> is the
+        /// number of items returned after the filter was applied, and <code>ScannedCount</code> is
+        /// the number of matching items before the filter was applied.</p>
         /// <p>If you did not use a filter in the request, then <code>Count</code> is the same as
         /// <code>ScannedCount</code>.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
@@ -1286,21 +1292,23 @@ pub mod scan_output {
             self
         }
         /// <p>The number of items evaluated, before any <code>ScanFilter</code> is applied. A high
-        /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient
-        /// <code>Scan</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the
-        /// <i>Amazon DynamoDB Developer Guide</i>.</p>
-        /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as
-        /// <code>Count</code>.</p>
+        /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results
+        /// indicates an inefficient <code>Scan</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+        /// ScannedCount</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
+        /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same
+        /// as <code>Count</code>.</p>
         pub fn scanned_count(mut self, input: i32) -> Self {
             self.scanned_count = Some(input);
             self
         }
         /// <p>The number of items evaluated, before any <code>ScanFilter</code> is applied. A high
-        /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient
-        /// <code>Scan</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the
-        /// <i>Amazon DynamoDB Developer Guide</i>.</p>
-        /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as
-        /// <code>Count</code>.</p>
+        /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results
+        /// indicates an inefficient <code>Scan</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+        /// ScannedCount</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
+        /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same
+        /// as <code>Count</code>.</p>
         pub fn set_scanned_count(mut self, input: std::option::Option<i32>) -> Self {
             self.scanned_count = input;
             self
@@ -1312,12 +1320,11 @@ pub mod scan_output {
         /// <p>The primary key of the item where the operation stopped, inclusive of the previous
         /// result set. Use this value to start a new operation, excluding this value in the new
         /// request.</p>
-        /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results
-        /// has been processed and there is no more data to be retrieved.</p>
-        /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean
-        /// that there is more data in the result set. The only way to know when you have reached
-        /// the end of the result set is when <code>LastEvaluatedKey</code> is
-        /// empty.</p>
+        /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been
+        /// processed and there is no more data to be retrieved.</p>
+        /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there
+        /// is more data in the result set. The only way to know when you have reached the end of
+        /// the result set is when <code>LastEvaluatedKey</code> is empty.</p>
         pub fn last_evaluated_key(
             mut self,
             k: impl Into<std::string::String>,
@@ -1331,12 +1338,11 @@ pub mod scan_output {
         /// <p>The primary key of the item where the operation stopped, inclusive of the previous
         /// result set. Use this value to start a new operation, excluding this value in the new
         /// request.</p>
-        /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results
-        /// has been processed and there is no more data to be retrieved.</p>
-        /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean
-        /// that there is more data in the result set. The only way to know when you have reached
-        /// the end of the result set is when <code>LastEvaluatedKey</code> is
-        /// empty.</p>
+        /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been
+        /// processed and there is no more data to be retrieved.</p>
+        /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there
+        /// is more data in the result set. The only way to know when you have reached the end of
+        /// the result set is when <code>LastEvaluatedKey</code> is empty.</p>
         pub fn set_last_evaluated_key(
             mut self,
             input: std::option::Option<
@@ -1346,20 +1352,22 @@ pub mod scan_output {
             self.last_evaluated_key = input;
             self
         }
-        /// <p>The capacity units consumed by the <code>Scan</code> operation. The data returned includes the total
-        /// provisioned throughput consumed, along with statistics for the table and any indexes involved
-        /// in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified.
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-        /// Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>The capacity units consumed by the <code>Scan</code> operation. The data returned
+        /// includes the total provisioned throughput consumed, along with statistics for the table
+        /// and any indexes involved in the operation. <code>ConsumedCapacity</code> is only
+        /// returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more
+        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
             self.consumed_capacity = Some(input);
             self
         }
-        /// <p>The capacity units consumed by the <code>Scan</code> operation. The data returned includes the total
-        /// provisioned throughput consumed, along with statistics for the table and any indexes involved
-        /// in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified.
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-        /// Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>The capacity units consumed by the <code>Scan</code> operation. The data returned
+        /// includes the total provisioned throughput consumed, along with statistics for the table
+        /// and any indexes involved in the operation. <code>ConsumedCapacity</code> is only
+        /// returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more
+        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_consumed_capacity(
             mut self,
             input: std::option::Option<crate::model::ConsumedCapacity>,
@@ -1504,27 +1512,34 @@ impl RestoreTableFromBackupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryOutput {
-    /// <p>An array of item attributes that match the query criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
+    /// <p>An array of item attributes that match the query criteria. Each element in this array
+    /// consists of an attribute name and the value for that attribute.</p>
     pub items: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
     >,
     /// <p>The number of items in the response.</p>
-    /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items
-    /// returned after the filter was applied, and <code>ScannedCount</code> is the number of
-    /// matching items before the filter was applied.</p>
-    /// <p>If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the
-    /// same.</p>
+    /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the
+    /// number of items returned after the filter was applied, and <code>ScannedCount</code> is
+    /// the number of matching items before the filter was applied.</p>
+    /// <p>If you did not use a filter in the request, then <code>Count</code> and
+    /// <code>ScannedCount</code> are the same.</p>
     pub count: i32,
     /// <p>The number of items evaluated, before any <code>QueryFilter</code> is applied. A high
-    /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient
-    /// <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the
-    /// <i>Amazon DynamoDB Developer Guide</i>.</p>
-    /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as
-    /// <code>Count</code>.</p>
+    /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results
+    /// indicates an inefficient <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+    /// ScannedCount</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
+    /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same
+    /// as <code>Count</code>.</p>
     pub scanned_count: i32,
-    /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
-    /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
-    /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty.</p>
+    /// <p>The primary key of the item where the operation stopped, inclusive of the previous
+    /// result set. Use this value to start a new operation, excluding this value in the new
+    /// request.</p>
+    /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been
+    /// processed and there is no more data to be retrieved.</p>
+    /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there
+    /// is more data in the result set. The only way to know when you have reached the end of
+    /// the result set is when <code>LastEvaluatedKey</code> is empty.</p>
     pub last_evaluated_key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -1537,7 +1552,8 @@ pub struct QueryOutput {
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
 }
 impl QueryOutput {
-    /// <p>An array of item attributes that match the query criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
+    /// <p>An array of item attributes that match the query criteria. Each element in this array
+    /// consists of an attribute name and the value for that attribute.</p>
     pub fn items(
         &self,
     ) -> std::option::Option<
@@ -1546,26 +1562,32 @@ impl QueryOutput {
         self.items.as_deref()
     }
     /// <p>The number of items in the response.</p>
-    /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items
-    /// returned after the filter was applied, and <code>ScannedCount</code> is the number of
-    /// matching items before the filter was applied.</p>
-    /// <p>If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the
-    /// same.</p>
+    /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the
+    /// number of items returned after the filter was applied, and <code>ScannedCount</code> is
+    /// the number of matching items before the filter was applied.</p>
+    /// <p>If you did not use a filter in the request, then <code>Count</code> and
+    /// <code>ScannedCount</code> are the same.</p>
     pub fn count(&self) -> i32 {
         self.count
     }
     /// <p>The number of items evaluated, before any <code>QueryFilter</code> is applied. A high
-    /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient
-    /// <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the
-    /// <i>Amazon DynamoDB Developer Guide</i>.</p>
-    /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as
-    /// <code>Count</code>.</p>
+    /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results
+    /// indicates an inefficient <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+    /// ScannedCount</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
+    /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same
+    /// as <code>Count</code>.</p>
     pub fn scanned_count(&self) -> i32 {
         self.scanned_count
     }
-    /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
-    /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
-    /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty.</p>
+    /// <p>The primary key of the item where the operation stopped, inclusive of the previous
+    /// result set. Use this value to start a new operation, excluding this value in the new
+    /// request.</p>
+    /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been
+    /// processed and there is no more data to be retrieved.</p>
+    /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there
+    /// is more data in the result set. The only way to know when you have reached the end of
+    /// the result set is when <code>LastEvaluatedKey</code> is empty.</p>
     pub fn last_evaluated_key(
         &self,
     ) -> std::option::Option<
@@ -1617,7 +1639,8 @@ pub mod query_output {
         ///
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
-        /// <p>An array of item attributes that match the query criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
+        /// <p>An array of item attributes that match the query criteria. Each element in this array
+        /// consists of an attribute name and the value for that attribute.</p>
         pub fn items(
             mut self,
             input: impl Into<
@@ -1629,7 +1652,8 @@ pub mod query_output {
             self.items = Some(v);
             self
         }
-        /// <p>An array of item attributes that match the query criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
+        /// <p>An array of item attributes that match the query criteria. Each element in this array
+        /// consists of an attribute name and the value for that attribute.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<
@@ -1642,41 +1666,43 @@ pub mod query_output {
             self
         }
         /// <p>The number of items in the response.</p>
-        /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items
-        /// returned after the filter was applied, and <code>ScannedCount</code> is the number of
-        /// matching items before the filter was applied.</p>
-        /// <p>If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the
-        /// same.</p>
+        /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the
+        /// number of items returned after the filter was applied, and <code>ScannedCount</code> is
+        /// the number of matching items before the filter was applied.</p>
+        /// <p>If you did not use a filter in the request, then <code>Count</code> and
+        /// <code>ScannedCount</code> are the same.</p>
         pub fn count(mut self, input: i32) -> Self {
             self.count = Some(input);
             self
         }
         /// <p>The number of items in the response.</p>
-        /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items
-        /// returned after the filter was applied, and <code>ScannedCount</code> is the number of
-        /// matching items before the filter was applied.</p>
-        /// <p>If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the
-        /// same.</p>
+        /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the
+        /// number of items returned after the filter was applied, and <code>ScannedCount</code> is
+        /// the number of matching items before the filter was applied.</p>
+        /// <p>If you did not use a filter in the request, then <code>Count</code> and
+        /// <code>ScannedCount</code> are the same.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
         }
         /// <p>The number of items evaluated, before any <code>QueryFilter</code> is applied. A high
-        /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient
-        /// <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the
-        /// <i>Amazon DynamoDB Developer Guide</i>.</p>
-        /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as
-        /// <code>Count</code>.</p>
+        /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results
+        /// indicates an inefficient <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+        /// ScannedCount</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
+        /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same
+        /// as <code>Count</code>.</p>
         pub fn scanned_count(mut self, input: i32) -> Self {
             self.scanned_count = Some(input);
             self
         }
         /// <p>The number of items evaluated, before any <code>QueryFilter</code> is applied. A high
-        /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient
-        /// <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the
-        /// <i>Amazon DynamoDB Developer Guide</i>.</p>
-        /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as
-        /// <code>Count</code>.</p>
+        /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results
+        /// indicates an inefficient <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+        /// ScannedCount</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
+        /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same
+        /// as <code>Count</code>.</p>
         pub fn set_scanned_count(mut self, input: std::option::Option<i32>) -> Self {
             self.scanned_count = input;
             self
@@ -1685,9 +1711,14 @@ pub mod query_output {
         ///
         /// To override the contents of this collection use [`set_last_evaluated_key`](Self::set_last_evaluated_key).
         ///
-        /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
-        /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
-        /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty.</p>
+        /// <p>The primary key of the item where the operation stopped, inclusive of the previous
+        /// result set. Use this value to start a new operation, excluding this value in the new
+        /// request.</p>
+        /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been
+        /// processed and there is no more data to be retrieved.</p>
+        /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there
+        /// is more data in the result set. The only way to know when you have reached the end of
+        /// the result set is when <code>LastEvaluatedKey</code> is empty.</p>
         pub fn last_evaluated_key(
             mut self,
             k: impl Into<std::string::String>,
@@ -1698,9 +1729,14 @@ pub mod query_output {
             self.last_evaluated_key = Some(hash_map);
             self
         }
-        /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
-        /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
-        /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty.</p>
+        /// <p>The primary key of the item where the operation stopped, inclusive of the previous
+        /// result set. Use this value to start a new operation, excluding this value in the new
+        /// request.</p>
+        /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been
+        /// processed and there is no more data to be retrieved.</p>
+        /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there
+        /// is more data in the result set. The only way to know when you have reached the end of
+        /// the result set is when <code>LastEvaluatedKey</code> is empty.</p>
         pub fn set_last_evaluated_key(
             mut self,
             input: std::option::Option<
@@ -1756,9 +1792,9 @@ impl QueryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutItemOutput {
-    /// <p>The attribute values as they appeared before the <code>PutItem</code> operation, but only if
-    /// <code>ReturnValues</code> is specified as <code>ALL_OLD</code> in the request. Each element
-    /// consists of an attribute name and an attribute value.</p>
+    /// <p>The attribute values as they appeared before the <code>PutItem</code> operation, but
+    /// only if <code>ReturnValues</code> is specified as <code>ALL_OLD</code> in the request.
+    /// Each element consists of an attribute name and an attribute value.</p>
     pub attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -1770,35 +1806,35 @@ pub struct PutItemOutput {
     /// Guide</i>.</p>
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
     /// <p>Information about item collections, if any, that were affected by the
-    /// <code>PutItem</code> operation. <code>ItemCollectionMetrics</code>
-    /// is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local
-    /// secondary indexes, this information is not returned in the response.</p>
-    /// <p>Each <code>ItemCollectionMetrics</code>
-    /// element consists of:</p>
+    /// <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned
+    /// if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table
+    /// does not have any local secondary indexes, this information is not returned in the
+    /// response.</p>
+    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>ItemCollectionKey</code> - The partition key value of the item
-    /// collection. This is the same as the partition key value of the item itself.</p>
+    /// <code>ItemCollectionKey</code> - The partition key value of the item collection.
+    /// This is the same as the partition key value of the item itself.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
-    /// in gigabytes. This value is a two-element array
-    /// containing a lower bound and an upper bound for the
-    /// estimate. The estimate includes the size of all the
-    /// items in the table, plus the size of all attributes
-    /// projected into all of the local secondary indexes on that
-    /// table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+    /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in
+    /// gigabytes. This value is a two-element array containing a lower bound and an
+    /// upper bound for the estimate. The estimate includes the size of all the items in
+    /// the table, plus the size of all attributes projected into all of the local
+    /// secondary indexes on that table. Use this estimate to measure whether a local
+    /// secondary index is approaching its size limit.</p>
+    /// <p>The estimate is subject to change over time; therefore, do not rely on the
+    /// precision or accuracy of the estimate.</p>
     /// </li>
     /// </ul>
     pub item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
 }
 impl PutItemOutput {
-    /// <p>The attribute values as they appeared before the <code>PutItem</code> operation, but only if
-    /// <code>ReturnValues</code> is specified as <code>ALL_OLD</code> in the request. Each element
-    /// consists of an attribute name and an attribute value.</p>
+    /// <p>The attribute values as they appeared before the <code>PutItem</code> operation, but
+    /// only if <code>ReturnValues</code> is specified as <code>ALL_OLD</code> in the request.
+    /// Each element consists of an attribute name and an attribute value.</p>
     pub fn attributes(
         &self,
     ) -> std::option::Option<
@@ -1816,27 +1852,27 @@ impl PutItemOutput {
         self.consumed_capacity.as_ref()
     }
     /// <p>Information about item collections, if any, that were affected by the
-    /// <code>PutItem</code> operation. <code>ItemCollectionMetrics</code>
-    /// is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local
-    /// secondary indexes, this information is not returned in the response.</p>
-    /// <p>Each <code>ItemCollectionMetrics</code>
-    /// element consists of:</p>
+    /// <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned
+    /// if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table
+    /// does not have any local secondary indexes, this information is not returned in the
+    /// response.</p>
+    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>ItemCollectionKey</code> - The partition key value of the item
-    /// collection. This is the same as the partition key value of the item itself.</p>
+    /// <code>ItemCollectionKey</code> - The partition key value of the item collection.
+    /// This is the same as the partition key value of the item itself.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
-    /// in gigabytes. This value is a two-element array
-    /// containing a lower bound and an upper bound for the
-    /// estimate. The estimate includes the size of all the
-    /// items in the table, plus the size of all attributes
-    /// projected into all of the local secondary indexes on that
-    /// table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+    /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in
+    /// gigabytes. This value is a two-element array containing a lower bound and an
+    /// upper bound for the estimate. The estimate includes the size of all the items in
+    /// the table, plus the size of all attributes projected into all of the local
+    /// secondary indexes on that table. Use this estimate to measure whether a local
+    /// secondary index is approaching its size limit.</p>
+    /// <p>The estimate is subject to change over time; therefore, do not rely on the
+    /// precision or accuracy of the estimate.</p>
     /// </li>
     /// </ul>
     pub fn item_collection_metrics(
@@ -1872,9 +1908,9 @@ pub mod put_item_output {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The attribute values as they appeared before the <code>PutItem</code> operation, but only if
-        /// <code>ReturnValues</code> is specified as <code>ALL_OLD</code> in the request. Each element
-        /// consists of an attribute name and an attribute value.</p>
+        /// <p>The attribute values as they appeared before the <code>PutItem</code> operation, but
+        /// only if <code>ReturnValues</code> is specified as <code>ALL_OLD</code> in the request.
+        /// Each element consists of an attribute name and an attribute value.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -1885,9 +1921,9 @@ pub mod put_item_output {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p>The attribute values as they appeared before the <code>PutItem</code> operation, but only if
-        /// <code>ReturnValues</code> is specified as <code>ALL_OLD</code> in the request. Each element
-        /// consists of an attribute name and an attribute value.</p>
+        /// <p>The attribute values as they appeared before the <code>PutItem</code> operation, but
+        /// only if <code>ReturnValues</code> is specified as <code>ALL_OLD</code> in the request.
+        /// Each element consists of an attribute name and an attribute value.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -1921,27 +1957,27 @@ pub mod put_item_output {
             self
         }
         /// <p>Information about item collections, if any, that were affected by the
-        /// <code>PutItem</code> operation. <code>ItemCollectionMetrics</code>
-        /// is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local
-        /// secondary indexes, this information is not returned in the response.</p>
-        /// <p>Each <code>ItemCollectionMetrics</code>
-        /// element consists of:</p>
+        /// <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned
+        /// if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table
+        /// does not have any local secondary indexes, this information is not returned in the
+        /// response.</p>
+        /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>ItemCollectionKey</code> - The partition key value of the item
-        /// collection. This is the same as the partition key value of the item itself.</p>
+        /// <code>ItemCollectionKey</code> - The partition key value of the item collection.
+        /// This is the same as the partition key value of the item itself.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
-        /// in gigabytes. This value is a two-element array
-        /// containing a lower bound and an upper bound for the
-        /// estimate. The estimate includes the size of all the
-        /// items in the table, plus the size of all attributes
-        /// projected into all of the local secondary indexes on that
-        /// table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-        /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+        /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in
+        /// gigabytes. This value is a two-element array containing a lower bound and an
+        /// upper bound for the estimate. The estimate includes the size of all the items in
+        /// the table, plus the size of all attributes projected into all of the local
+        /// secondary indexes on that table. Use this estimate to measure whether a local
+        /// secondary index is approaching its size limit.</p>
+        /// <p>The estimate is subject to change over time; therefore, do not rely on the
+        /// precision or accuracy of the estimate.</p>
         /// </li>
         /// </ul>
         pub fn item_collection_metrics(
@@ -1952,27 +1988,27 @@ pub mod put_item_output {
             self
         }
         /// <p>Information about item collections, if any, that were affected by the
-        /// <code>PutItem</code> operation. <code>ItemCollectionMetrics</code>
-        /// is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local
-        /// secondary indexes, this information is not returned in the response.</p>
-        /// <p>Each <code>ItemCollectionMetrics</code>
-        /// element consists of:</p>
+        /// <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned
+        /// if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table
+        /// does not have any local secondary indexes, this information is not returned in the
+        /// response.</p>
+        /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>ItemCollectionKey</code> - The partition key value of the item
-        /// collection. This is the same as the partition key value of the item itself.</p>
+        /// <code>ItemCollectionKey</code> - The partition key value of the item collection.
+        /// This is the same as the partition key value of the item itself.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
-        /// in gigabytes. This value is a two-element array
-        /// containing a lower bound and an upper bound for the
-        /// estimate. The estimate includes the size of all the
-        /// items in the table, plus the size of all attributes
-        /// projected into all of the local secondary indexes on that
-        /// table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-        /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+        /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in
+        /// gigabytes. This value is a two-element array containing a lower bound and an
+        /// upper bound for the estimate. The estimate includes the size of all the items in
+        /// the table, plus the size of all attributes projected into all of the local
+        /// secondary indexes on that table. Use this estimate to measure whether a local
+        /// secondary index is approaching its size limit.</p>
+        /// <p>The estimate is subject to change over time; therefore, do not rely on the
+        /// precision or accuracy of the estimate.</p>
         /// </li>
         /// </ul>
         pub fn set_item_collection_metrics(
@@ -2005,8 +2041,8 @@ impl PutItemOutput {
 pub struct ListTagsOfResourceOutput {
     /// <p>The tags currently associated with the Amazon DynamoDB resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>If this value is returned, there are additional results to be displayed. To retrieve them,
-    /// call ListTagsOfResource again, with NextToken set to this value.</p>
+    /// <p>If this value is returned, there are additional results to be displayed. To retrieve
+    /// them, call ListTagsOfResource again, with NextToken set to this value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsOfResourceOutput {
@@ -2014,8 +2050,8 @@ impl ListTagsOfResourceOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>If this value is returned, there are additional results to be displayed. To retrieve them,
-    /// call ListTagsOfResource again, with NextToken set to this value.</p>
+    /// <p>If this value is returned, there are additional results to be displayed. To retrieve
+    /// them, call ListTagsOfResource again, with NextToken set to this value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2057,14 +2093,14 @@ pub mod list_tags_of_resource_output {
             self.tags = input;
             self
         }
-        /// <p>If this value is returned, there are additional results to be displayed. To retrieve them,
-        /// call ListTagsOfResource again, with NextToken set to this value.</p>
+        /// <p>If this value is returned, there are additional results to be displayed. To retrieve
+        /// them, call ListTagsOfResource again, with NextToken set to this value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If this value is returned, there are additional results to be displayed. To retrieve them,
-        /// call ListTagsOfResource again, with NextToken set to this value.</p>
+        /// <p>If this value is returned, there are additional results to be displayed. To retrieve
+        /// them, call ListTagsOfResource again, with NextToken set to this value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2089,31 +2125,33 @@ impl ListTagsOfResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTablesOutput {
-    /// <p>The names of the tables associated with the current account at the current endpoint. The maximum size of this array is 100.</p>
-    /// <p>If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the
-    /// <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and
-    /// obtain the next page of results.</p>
+    /// <p>The names of the tables associated with the current account at the current endpoint.
+    /// The maximum size of this array is 100.</p>
+    /// <p>If <code>LastEvaluatedTableName</code> also appears in the output, you can use this
+    /// value as the <code>ExclusiveStartTableName</code> parameter in a subsequent
+    /// <code>ListTables</code> request and obtain the next page of results.</p>
     pub table_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the last table in the current page of results. Use this value as the
-    /// <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until
-    /// all the table names are returned.</p>
-    /// <p>If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that
-    /// there are no more table names to be retrieved.</p>
+    /// <code>ExclusiveStartTableName</code> in a new request to obtain the next page of
+    /// results, until all the table names are returned.</p>
+    /// <p>If you do not receive a <code>LastEvaluatedTableName</code> value in the response,
+    /// this means that there are no more table names to be retrieved.</p>
     pub last_evaluated_table_name: std::option::Option<std::string::String>,
 }
 impl ListTablesOutput {
-    /// <p>The names of the tables associated with the current account at the current endpoint. The maximum size of this array is 100.</p>
-    /// <p>If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the
-    /// <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and
-    /// obtain the next page of results.</p>
+    /// <p>The names of the tables associated with the current account at the current endpoint.
+    /// The maximum size of this array is 100.</p>
+    /// <p>If <code>LastEvaluatedTableName</code> also appears in the output, you can use this
+    /// value as the <code>ExclusiveStartTableName</code> parameter in a subsequent
+    /// <code>ListTables</code> request and obtain the next page of results.</p>
     pub fn table_names(&self) -> std::option::Option<&[std::string::String]> {
         self.table_names.as_deref()
     }
     /// <p>The name of the last table in the current page of results. Use this value as the
-    /// <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until
-    /// all the table names are returned.</p>
-    /// <p>If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that
-    /// there are no more table names to be retrieved.</p>
+    /// <code>ExclusiveStartTableName</code> in a new request to obtain the next page of
+    /// results, until all the table names are returned.</p>
+    /// <p>If you do not receive a <code>LastEvaluatedTableName</code> value in the response,
+    /// this means that there are no more table names to be retrieved.</p>
     pub fn last_evaluated_table_name(&self) -> std::option::Option<&str> {
         self.last_evaluated_table_name.as_deref()
     }
@@ -2140,20 +2178,22 @@ pub mod list_tables_output {
         ///
         /// To override the contents of this collection use [`set_table_names`](Self::set_table_names).
         ///
-        /// <p>The names of the tables associated with the current account at the current endpoint. The maximum size of this array is 100.</p>
-        /// <p>If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the
-        /// <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and
-        /// obtain the next page of results.</p>
+        /// <p>The names of the tables associated with the current account at the current endpoint.
+        /// The maximum size of this array is 100.</p>
+        /// <p>If <code>LastEvaluatedTableName</code> also appears in the output, you can use this
+        /// value as the <code>ExclusiveStartTableName</code> parameter in a subsequent
+        /// <code>ListTables</code> request and obtain the next page of results.</p>
         pub fn table_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.table_names.unwrap_or_default();
             v.push(input.into());
             self.table_names = Some(v);
             self
         }
-        /// <p>The names of the tables associated with the current account at the current endpoint. The maximum size of this array is 100.</p>
-        /// <p>If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the
-        /// <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and
-        /// obtain the next page of results.</p>
+        /// <p>The names of the tables associated with the current account at the current endpoint.
+        /// The maximum size of this array is 100.</p>
+        /// <p>If <code>LastEvaluatedTableName</code> also appears in the output, you can use this
+        /// value as the <code>ExclusiveStartTableName</code> parameter in a subsequent
+        /// <code>ListTables</code> request and obtain the next page of results.</p>
         pub fn set_table_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2162,19 +2202,19 @@ pub mod list_tables_output {
             self
         }
         /// <p>The name of the last table in the current page of results. Use this value as the
-        /// <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until
-        /// all the table names are returned.</p>
-        /// <p>If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that
-        /// there are no more table names to be retrieved.</p>
+        /// <code>ExclusiveStartTableName</code> in a new request to obtain the next page of
+        /// results, until all the table names are returned.</p>
+        /// <p>If you do not receive a <code>LastEvaluatedTableName</code> value in the response,
+        /// this means that there are no more table names to be retrieved.</p>
         pub fn last_evaluated_table_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_evaluated_table_name = Some(input.into());
             self
         }
         /// <p>The name of the last table in the current page of results. Use this value as the
-        /// <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until
-        /// all the table names are returned.</p>
-        /// <p>If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that
-        /// there are no more table names to be retrieved.</p>
+        /// <code>ExclusiveStartTableName</code> in a new request to obtain the next page of
+        /// results, until all the table names are returned.</p>
+        /// <p>If you do not receive a <code>LastEvaluatedTableName</code> value in the response,
+        /// this means that there are no more table names to be retrieved.</p>
         pub fn set_last_evaluated_table_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2478,18 +2518,15 @@ impl ListContributorInsightsOutput {
 pub struct ListBackupsOutput {
     /// <p>List of <code>BackupSummary</code> objects.</p>
     pub backup_summaries: std::option::Option<std::vec::Vec<crate::model::BackupSummary>>,
-    /// <p>
-    /// The ARN of the backup last evaluated when the current page of results was returned,
+    /// <p> The ARN of the backup last evaluated when the current page of results was returned,
     /// inclusive of the current page of results. This value may be specified as the
-    /// <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results.
-    /// </p>
-    /// <p>
-    /// If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and there are no
-    /// more results to be retrieved.
-    /// </p>
-    /// <p> If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate that
-    /// there is more data to be returned. All results are guaranteed to have been returned if
-    /// and only if no value for <code>LastEvaluatedBackupArn</code> is returned. </p>
+    /// <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in
+    /// order to fetch the next page of results. </p>
+    /// <p> If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has
+    /// been processed and there are no more results to be retrieved. </p>
+    /// <p> If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate
+    /// that there is more data to be returned. All results are guaranteed to have been returned
+    /// if and only if no value for <code>LastEvaluatedBackupArn</code> is returned. </p>
     pub last_evaluated_backup_arn: std::option::Option<std::string::String>,
 }
 impl ListBackupsOutput {
@@ -2497,18 +2534,15 @@ impl ListBackupsOutput {
     pub fn backup_summaries(&self) -> std::option::Option<&[crate::model::BackupSummary]> {
         self.backup_summaries.as_deref()
     }
-    /// <p>
-    /// The ARN of the backup last evaluated when the current page of results was returned,
+    /// <p> The ARN of the backup last evaluated when the current page of results was returned,
     /// inclusive of the current page of results. This value may be specified as the
-    /// <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results.
-    /// </p>
-    /// <p>
-    /// If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and there are no
-    /// more results to be retrieved.
-    /// </p>
-    /// <p> If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate that
-    /// there is more data to be returned. All results are guaranteed to have been returned if
-    /// and only if no value for <code>LastEvaluatedBackupArn</code> is returned. </p>
+    /// <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in
+    /// order to fetch the next page of results. </p>
+    /// <p> If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has
+    /// been processed and there are no more results to be retrieved. </p>
+    /// <p> If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate
+    /// that there is more data to be returned. All results are guaranteed to have been returned
+    /// if and only if no value for <code>LastEvaluatedBackupArn</code> is returned. </p>
     pub fn last_evaluated_backup_arn(&self) -> std::option::Option<&str> {
         self.last_evaluated_backup_arn.as_deref()
     }
@@ -2551,34 +2585,28 @@ pub mod list_backups_output {
             self.backup_summaries = input;
             self
         }
-        /// <p>
-        /// The ARN of the backup last evaluated when the current page of results was returned,
+        /// <p> The ARN of the backup last evaluated when the current page of results was returned,
         /// inclusive of the current page of results. This value may be specified as the
-        /// <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results.
-        /// </p>
-        /// <p>
-        /// If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and there are no
-        /// more results to be retrieved.
-        /// </p>
-        /// <p> If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate that
-        /// there is more data to be returned. All results are guaranteed to have been returned if
-        /// and only if no value for <code>LastEvaluatedBackupArn</code> is returned. </p>
+        /// <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in
+        /// order to fetch the next page of results. </p>
+        /// <p> If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has
+        /// been processed and there are no more results to be retrieved. </p>
+        /// <p> If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate
+        /// that there is more data to be returned. All results are guaranteed to have been returned
+        /// if and only if no value for <code>LastEvaluatedBackupArn</code> is returned. </p>
         pub fn last_evaluated_backup_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_evaluated_backup_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The ARN of the backup last evaluated when the current page of results was returned,
+        /// <p> The ARN of the backup last evaluated when the current page of results was returned,
         /// inclusive of the current page of results. This value may be specified as the
-        /// <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results.
-        /// </p>
-        /// <p>
-        /// If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and there are no
-        /// more results to be retrieved.
-        /// </p>
-        /// <p> If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate that
-        /// there is more data to be returned. All results are guaranteed to have been returned if
-        /// and only if no value for <code>LastEvaluatedBackupArn</code> is returned. </p>
+        /// <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in
+        /// order to fetch the next page of results. </p>
+        /// <p> If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has
+        /// been processed and there are no more results to be retrieved. </p>
+        /// <p> If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate
+        /// that there is more data to be returned. All results are guaranteed to have been returned
+        /// if and only if no value for <code>LastEvaluatedBackupArn</code> is returned. </p>
         pub fn set_last_evaluated_backup_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2606,8 +2634,8 @@ impl ListBackupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetItemOutput {
-    /// <p>A map of attribute names to <code>AttributeValue</code> objects, as specified
-    /// by <code>ProjectionExpression</code>.</p>
+    /// <p>A map of attribute names to <code>AttributeValue</code> objects, as specified by
+    /// <code>ProjectionExpression</code>.</p>
     pub item: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -2620,8 +2648,8 @@ pub struct GetItemOutput {
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
 }
 impl GetItemOutput {
-    /// <p>A map of attribute names to <code>AttributeValue</code> objects, as specified
-    /// by <code>ProjectionExpression</code>.</p>
+    /// <p>A map of attribute names to <code>AttributeValue</code> objects, as specified by
+    /// <code>ProjectionExpression</code>.</p>
     pub fn item(
         &self,
     ) -> std::option::Option<
@@ -2663,8 +2691,8 @@ pub mod get_item_output {
         ///
         /// To override the contents of this collection use [`set_item`](Self::set_item).
         ///
-        /// <p>A map of attribute names to <code>AttributeValue</code> objects, as specified
-        /// by <code>ProjectionExpression</code>.</p>
+        /// <p>A map of attribute names to <code>AttributeValue</code> objects, as specified by
+        /// <code>ProjectionExpression</code>.</p>
         pub fn item(
             mut self,
             k: impl Into<std::string::String>,
@@ -2675,8 +2703,8 @@ pub mod get_item_output {
             self.item = Some(hash_map);
             self
         }
-        /// <p>A map of attribute names to <code>AttributeValue</code> objects, as specified
-        /// by <code>ProjectionExpression</code>.</p>
+        /// <p>A map of attribute names to <code>AttributeValue</code> objects, as specified by
+        /// <code>ProjectionExpression</code>.</p>
         pub fn set_item(
             mut self,
             input: std::option::Option<
@@ -2786,15 +2814,11 @@ impl ExportTableToPointInTimeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteTransactionOutput {
-    /// <p>
-    /// The response to a PartiQL transaction.
-    /// </p>
+    /// <p>The response to a PartiQL transaction.</p>
     pub responses: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
 }
 impl ExecuteTransactionOutput {
-    /// <p>
-    /// The response to a PartiQL transaction.
-    /// </p>
+    /// <p>The response to a PartiQL transaction.</p>
     pub fn responses(&self) -> std::option::Option<&[crate::model::ItemResponse]> {
         self.responses.as_deref()
     }
@@ -2819,18 +2843,14 @@ pub mod execute_transaction_output {
         ///
         /// To override the contents of this collection use [`set_responses`](Self::set_responses).
         ///
-        /// <p>
-        /// The response to a PartiQL transaction.
-        /// </p>
+        /// <p>The response to a PartiQL transaction.</p>
         pub fn responses(mut self, input: impl Into<crate::model::ItemResponse>) -> Self {
             let mut v = self.responses.unwrap_or_default();
             v.push(input.into());
             self.responses = Some(v);
             self
         }
-        /// <p>
-        /// The response to a PartiQL transaction.
-        /// </p>
+        /// <p>The response to a PartiQL transaction.</p>
         pub fn set_responses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
@@ -2857,21 +2877,21 @@ impl ExecuteTransactionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteStatementOutput {
-    /// <p>
-    /// If a read operation was used, this property will contain the result of the reade operation; a map of attribute names and their values. For the write operations this value will be empty.
-    /// </p>
+    /// <p>If a read operation was used, this property will contain the result of the read
+    /// operation; a map of attribute names and their values. For the write operations this
+    /// value will be empty.</p>
     pub items: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
     >,
-    /// <p>
-    /// If the response of a read request exceeds the response payload limit DynamoDB will set this value in the response. If set, you can use that this value in the subsequent request to get the remaining results.
-    /// </p>
+    /// <p>If the response of a read request exceeds the response payload limit DynamoDB will set
+    /// this value in the response. If set, you can use that this value in the subsequent
+    /// request to get the remaining results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ExecuteStatementOutput {
-    /// <p>
-    /// If a read operation was used, this property will contain the result of the reade operation; a map of attribute names and their values. For the write operations this value will be empty.
-    /// </p>
+    /// <p>If a read operation was used, this property will contain the result of the read
+    /// operation; a map of attribute names and their values. For the write operations this
+    /// value will be empty.</p>
     pub fn items(
         &self,
     ) -> std::option::Option<
@@ -2879,9 +2899,9 @@ impl ExecuteStatementOutput {
     > {
         self.items.as_deref()
     }
-    /// <p>
-    /// If the response of a read request exceeds the response payload limit DynamoDB will set this value in the response. If set, you can use that this value in the subsequent request to get the remaining results.
-    /// </p>
+    /// <p>If the response of a read request exceeds the response payload limit DynamoDB will set
+    /// this value in the response. If set, you can use that this value in the subsequent
+    /// request to get the remaining results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2912,9 +2932,9 @@ pub mod execute_statement_output {
         ///
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
-        /// <p>
-        /// If a read operation was used, this property will contain the result of the reade operation; a map of attribute names and their values. For the write operations this value will be empty.
-        /// </p>
+        /// <p>If a read operation was used, this property will contain the result of the read
+        /// operation; a map of attribute names and their values. For the write operations this
+        /// value will be empty.</p>
         pub fn items(
             mut self,
             input: impl Into<
@@ -2926,9 +2946,9 @@ pub mod execute_statement_output {
             self.items = Some(v);
             self
         }
-        /// <p>
-        /// If a read operation was used, this property will contain the result of the reade operation; a map of attribute names and their values. For the write operations this value will be empty.
-        /// </p>
+        /// <p>If a read operation was used, this property will contain the result of the read
+        /// operation; a map of attribute names and their values. For the write operations this
+        /// value will be empty.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<
@@ -2940,16 +2960,16 @@ pub mod execute_statement_output {
             self.items = input;
             self
         }
-        /// <p>
-        /// If the response of a read request exceeds the response payload limit DynamoDB will set this value in the response. If set, you can use that this value in the subsequent request to get the remaining results.
-        /// </p>
+        /// <p>If the response of a read request exceeds the response payload limit DynamoDB will set
+        /// this value in the response. If set, you can use that this value in the subsequent
+        /// request to get the remaining results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// If the response of a read request exceeds the response payload limit DynamoDB will set this value in the response. If set, you can use that this value in the subsequent request to get the remaining results.
-        /// </p>
+        /// <p>If the response of a read request exceeds the response payload limit DynamoDB will set
+        /// this value in the response. If set, you can use that this value in the subsequent
+        /// request to get the remaining results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3352,8 +3372,8 @@ pub struct DescribeLimitsOutput {
     /// <p>The maximum total read capacity units that your account allows you to provision across
     /// all of your tables in this Region.</p>
     pub account_max_read_capacity_units: std::option::Option<i64>,
-    /// <p>The maximum total write capacity units that your account allows you to provision across
-    /// all of your tables in this Region.</p>
+    /// <p>The maximum total write capacity units that your account allows you to provision
+    /// across all of your tables in this Region.</p>
     pub account_max_write_capacity_units: std::option::Option<i64>,
     /// <p>The maximum read capacity units that your account allows you to provision for a new
     /// table that you are creating in this Region, including the read capacity units
@@ -3370,8 +3390,8 @@ impl DescribeLimitsOutput {
     pub fn account_max_read_capacity_units(&self) -> std::option::Option<i64> {
         self.account_max_read_capacity_units
     }
-    /// <p>The maximum total write capacity units that your account allows you to provision across
-    /// all of your tables in this Region.</p>
+    /// <p>The maximum total write capacity units that your account allows you to provision
+    /// across all of your tables in this Region.</p>
     pub fn account_max_write_capacity_units(&self) -> std::option::Option<i64> {
         self.account_max_write_capacity_units
     }
@@ -3437,14 +3457,14 @@ pub mod describe_limits_output {
             self.account_max_read_capacity_units = input;
             self
         }
-        /// <p>The maximum total write capacity units that your account allows you to provision across
-        /// all of your tables in this Region.</p>
+        /// <p>The maximum total write capacity units that your account allows you to provision
+        /// across all of your tables in this Region.</p>
         pub fn account_max_write_capacity_units(mut self, input: i64) -> Self {
             self.account_max_write_capacity_units = Some(input);
             self
         }
-        /// <p>The maximum total write capacity units that your account allows you to provision across
-        /// all of your tables in this Region.</p>
+        /// <p>The maximum total write capacity units that your account allows you to provision
+        /// across all of your tables in this Region.</p>
         pub fn set_account_max_write_capacity_units(
             mut self,
             input: std::option::Option<i64>,
@@ -3879,27 +3899,31 @@ pub struct DescribeContributorInsightsOutput {
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The name of the global secondary index being described.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>List of names of the associated Alpine rules.</p>
+    /// <p>List of names of the associated contributor insights rules.</p>
     pub contributor_insights_rule_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Current Status contributor insights.</p>
+    /// <p>Current status of contributor insights.</p>
     pub contributor_insights_status: std::option::Option<crate::model::ContributorInsightsStatus>,
     /// <p>Timestamp of the last time the status was changed.</p>
-    pub last_update_date_time: std::option::Option<aws_smithy_types::Instant>,
-    /// <p>Returns information about the last failure that encountered.</p>
+    pub last_update_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Returns information about the last failure that was encountered.</p>
     /// <p>The most common exceptions for a FAILED status are:</p>
     /// <ul>
     /// <li>
-    /// <p>LimitExceededException -   Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for
-    /// other tables/indexes OR disable Contributor Insights rules before retrying.</p>
+    /// <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights
+    /// rule limit reached. Please disable Contributor Insights for other tables/indexes
+    /// OR disable Contributor Insights rules before retrying.</p>
     /// </li>
     /// <li>
-    /// <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p>
+    /// <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be
+    /// modified due to insufficient permissions.</p>
     /// </li>
     /// <li>
-    /// <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p>
+    /// <p>AccessDeniedException - Failed to create service-linked role for Contributor
+    /// Insights due to insufficient permissions.</p>
     /// </li>
     /// <li>
-    /// <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p>
+    /// <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights
+    /// rules. Please retry request.</p>
     /// </li>
     /// </ul>
     pub failure_exception: std::option::Option<crate::model::FailureException>,
@@ -3913,35 +3937,39 @@ impl DescribeContributorInsightsOutput {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>List of names of the associated Alpine rules.</p>
+    /// <p>List of names of the associated contributor insights rules.</p>
     pub fn contributor_insights_rule_list(&self) -> std::option::Option<&[std::string::String]> {
         self.contributor_insights_rule_list.as_deref()
     }
-    /// <p>Current Status contributor insights.</p>
+    /// <p>Current status of contributor insights.</p>
     pub fn contributor_insights_status(
         &self,
     ) -> std::option::Option<&crate::model::ContributorInsightsStatus> {
         self.contributor_insights_status.as_ref()
     }
     /// <p>Timestamp of the last time the status was changed.</p>
-    pub fn last_update_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date_time.as_ref()
     }
-    /// <p>Returns information about the last failure that encountered.</p>
+    /// <p>Returns information about the last failure that was encountered.</p>
     /// <p>The most common exceptions for a FAILED status are:</p>
     /// <ul>
     /// <li>
-    /// <p>LimitExceededException -   Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for
-    /// other tables/indexes OR disable Contributor Insights rules before retrying.</p>
+    /// <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights
+    /// rule limit reached. Please disable Contributor Insights for other tables/indexes
+    /// OR disable Contributor Insights rules before retrying.</p>
     /// </li>
     /// <li>
-    /// <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p>
+    /// <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be
+    /// modified due to insufficient permissions.</p>
     /// </li>
     /// <li>
-    /// <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p>
+    /// <p>AccessDeniedException - Failed to create service-linked role for Contributor
+    /// Insights due to insufficient permissions.</p>
     /// </li>
     /// <li>
-    /// <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p>
+    /// <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights
+    /// rules. Please retry request.</p>
     /// </li>
     /// </ul>
     pub fn failure_exception(&self) -> std::option::Option<&crate::model::FailureException> {
@@ -3978,7 +4006,7 @@ pub mod describe_contributor_insights_output {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) contributor_insights_status:
             std::option::Option<crate::model::ContributorInsightsStatus>,
-        pub(crate) last_update_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_exception: std::option::Option<crate::model::FailureException>,
     }
     impl Builder {
@@ -4006,7 +4034,7 @@ pub mod describe_contributor_insights_output {
         ///
         /// To override the contents of this collection use [`set_contributor_insights_rule_list`](Self::set_contributor_insights_rule_list).
         ///
-        /// <p>List of names of the associated Alpine rules.</p>
+        /// <p>List of names of the associated contributor insights rules.</p>
         pub fn contributor_insights_rule_list(
             mut self,
             input: impl Into<std::string::String>,
@@ -4016,7 +4044,7 @@ pub mod describe_contributor_insights_output {
             self.contributor_insights_rule_list = Some(v);
             self
         }
-        /// <p>List of names of the associated Alpine rules.</p>
+        /// <p>List of names of the associated contributor insights rules.</p>
         pub fn set_contributor_insights_rule_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4024,7 +4052,7 @@ pub mod describe_contributor_insights_output {
             self.contributor_insights_rule_list = input;
             self
         }
-        /// <p>Current Status contributor insights.</p>
+        /// <p>Current status of contributor insights.</p>
         pub fn contributor_insights_status(
             mut self,
             input: crate::model::ContributorInsightsStatus,
@@ -4032,7 +4060,7 @@ pub mod describe_contributor_insights_output {
             self.contributor_insights_status = Some(input);
             self
         }
-        /// <p>Current Status contributor insights.</p>
+        /// <p>Current status of contributor insights.</p>
         pub fn set_contributor_insights_status(
             mut self,
             input: std::option::Option<crate::model::ContributorInsightsStatus>,
@@ -4041,54 +4069,62 @@ pub mod describe_contributor_insights_output {
             self
         }
         /// <p>Timestamp of the last time the status was changed.</p>
-        pub fn last_update_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_date_time = Some(input);
             self
         }
         /// <p>Timestamp of the last time the status was changed.</p>
         pub fn set_last_update_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_date_time = input;
             self
         }
-        /// <p>Returns information about the last failure that encountered.</p>
+        /// <p>Returns information about the last failure that was encountered.</p>
         /// <p>The most common exceptions for a FAILED status are:</p>
         /// <ul>
         /// <li>
-        /// <p>LimitExceededException -   Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for
-        /// other tables/indexes OR disable Contributor Insights rules before retrying.</p>
+        /// <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights
+        /// rule limit reached. Please disable Contributor Insights for other tables/indexes
+        /// OR disable Contributor Insights rules before retrying.</p>
         /// </li>
         /// <li>
-        /// <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p>
+        /// <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be
+        /// modified due to insufficient permissions.</p>
         /// </li>
         /// <li>
-        /// <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p>
+        /// <p>AccessDeniedException - Failed to create service-linked role for Contributor
+        /// Insights due to insufficient permissions.</p>
         /// </li>
         /// <li>
-        /// <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p>
+        /// <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights
+        /// rules. Please retry request.</p>
         /// </li>
         /// </ul>
         pub fn failure_exception(mut self, input: crate::model::FailureException) -> Self {
             self.failure_exception = Some(input);
             self
         }
-        /// <p>Returns information about the last failure that encountered.</p>
+        /// <p>Returns information about the last failure that was encountered.</p>
         /// <p>The most common exceptions for a FAILED status are:</p>
         /// <ul>
         /// <li>
-        /// <p>LimitExceededException -   Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for
-        /// other tables/indexes OR disable Contributor Insights rules before retrying.</p>
+        /// <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights
+        /// rule limit reached. Please disable Contributor Insights for other tables/indexes
+        /// OR disable Contributor Insights rules before retrying.</p>
         /// </li>
         /// <li>
-        /// <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p>
+        /// <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be
+        /// modified due to insufficient permissions.</p>
         /// </li>
         /// <li>
-        /// <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p>
+        /// <p>AccessDeniedException - Failed to create service-linked role for Contributor
+        /// Insights due to insufficient permissions.</p>
         /// </li>
         /// <li>
-        /// <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p>
+        /// <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights
+        /// rules. Please retry request.</p>
         /// </li>
         /// </ul>
         pub fn set_failure_exception(
@@ -4122,12 +4158,14 @@ impl DescribeContributorInsightsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContinuousBackupsOutput {
-    /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
+    /// <p>Represents the continuous backups and point in time recovery settings on the
+    /// table.</p>
     pub continuous_backups_description:
         std::option::Option<crate::model::ContinuousBackupsDescription>,
 }
 impl DescribeContinuousBackupsOutput {
-    /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
+    /// <p>Represents the continuous backups and point in time recovery settings on the
+    /// table.</p>
     pub fn continuous_backups_description(
         &self,
     ) -> std::option::Option<&crate::model::ContinuousBackupsDescription> {
@@ -4154,7 +4192,8 @@ pub mod describe_continuous_backups_output {
             std::option::Option<crate::model::ContinuousBackupsDescription>,
     }
     impl Builder {
-        /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
+        /// <p>Represents the continuous backups and point in time recovery settings on the
+        /// table.</p>
         pub fn continuous_backups_description(
             mut self,
             input: crate::model::ContinuousBackupsDescription,
@@ -4162,7 +4201,8 @@ pub mod describe_continuous_backups_output {
             self.continuous_backups_description = Some(input);
             self
         }
-        /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
+        /// <p>Represents the continuous backups and point in time recovery settings on the
+        /// table.</p>
         pub fn set_continuous_backups_description(
             mut self,
             input: std::option::Option<crate::model::ContinuousBackupsDescription>,
@@ -4303,9 +4343,10 @@ impl DeleteTableOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteItemOutput {
-    /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the item as it
-    /// appeared before the <code>DeleteItem</code> operation. This map appears in the response only if
-    /// <code>ReturnValues</code> was specified as <code>ALL_OLD</code> in the request.</p>
+    /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the item
+    /// as it appeared before the <code>DeleteItem</code> operation. This map appears in the
+    /// response only if <code>ReturnValues</code> was specified as <code>ALL_OLD</code> in the
+    /// request.</p>
     pub attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -4317,37 +4358,36 @@ pub struct DeleteItemOutput {
     /// Guide</i>.</p>
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
     /// <p>Information about item collections, if any, that were affected by the
-    /// <code>DeleteItem</code> operation.
-    /// <code>ItemCollectionMetrics</code> is only returned if the
-    /// <code>ReturnItemCollectionMetrics</code> parameter was specified. If the
+    /// <code>DeleteItem</code> operation. <code>ItemCollectionMetrics</code> is only
+    /// returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the
     /// table does not have any local secondary indexes, this information is not returned in the
     /// response.</p>
-    /// <p>Each <code>ItemCollectionMetrics</code>
-    /// element consists of:</p>
+    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>ItemCollectionKey</code> - The partition key value of the item
-    /// collection. This is the same as the partition key value of the item itself.</p>
+    /// <code>ItemCollectionKey</code> - The partition key value of the item collection.
+    /// This is the same as the partition key value of the item itself.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
-    /// in gigabytes. This value is a two-element array
-    /// containing a lower bound and an upper bound for the
-    /// estimate. The estimate includes the size of all the
-    /// items in the table, plus the size of all attributes
-    /// projected into all of the local secondary indexes on that
-    /// table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+    /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in
+    /// gigabytes. This value is a two-element array containing a lower bound and an
+    /// upper bound for the estimate. The estimate includes the size of all the items in
+    /// the table, plus the size of all attributes projected into all of the local
+    /// secondary indexes on that table. Use this estimate to measure whether a local
+    /// secondary index is approaching its size limit.</p>
+    /// <p>The estimate is subject to change over time; therefore, do not rely on the
+    /// precision or accuracy of the estimate.</p>
     /// </li>
     /// </ul>
     pub item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
 }
 impl DeleteItemOutput {
-    /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the item as it
-    /// appeared before the <code>DeleteItem</code> operation. This map appears in the response only if
-    /// <code>ReturnValues</code> was specified as <code>ALL_OLD</code> in the request.</p>
+    /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the item
+    /// as it appeared before the <code>DeleteItem</code> operation. This map appears in the
+    /// response only if <code>ReturnValues</code> was specified as <code>ALL_OLD</code> in the
+    /// request.</p>
     pub fn attributes(
         &self,
     ) -> std::option::Option<
@@ -4365,29 +4405,27 @@ impl DeleteItemOutput {
         self.consumed_capacity.as_ref()
     }
     /// <p>Information about item collections, if any, that were affected by the
-    /// <code>DeleteItem</code> operation.
-    /// <code>ItemCollectionMetrics</code> is only returned if the
-    /// <code>ReturnItemCollectionMetrics</code> parameter was specified. If the
+    /// <code>DeleteItem</code> operation. <code>ItemCollectionMetrics</code> is only
+    /// returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the
     /// table does not have any local secondary indexes, this information is not returned in the
     /// response.</p>
-    /// <p>Each <code>ItemCollectionMetrics</code>
-    /// element consists of:</p>
+    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>ItemCollectionKey</code> - The partition key value of the item
-    /// collection. This is the same as the partition key value of the item itself.</p>
+    /// <code>ItemCollectionKey</code> - The partition key value of the item collection.
+    /// This is the same as the partition key value of the item itself.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
-    /// in gigabytes. This value is a two-element array
-    /// containing a lower bound and an upper bound for the
-    /// estimate. The estimate includes the size of all the
-    /// items in the table, plus the size of all attributes
-    /// projected into all of the local secondary indexes on that
-    /// table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+    /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in
+    /// gigabytes. This value is a two-element array containing a lower bound and an
+    /// upper bound for the estimate. The estimate includes the size of all the items in
+    /// the table, plus the size of all attributes projected into all of the local
+    /// secondary indexes on that table. Use this estimate to measure whether a local
+    /// secondary index is approaching its size limit.</p>
+    /// <p>The estimate is subject to change over time; therefore, do not rely on the
+    /// precision or accuracy of the estimate.</p>
     /// </li>
     /// </ul>
     pub fn item_collection_metrics(
@@ -4423,9 +4461,10 @@ pub mod delete_item_output {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the item as it
-        /// appeared before the <code>DeleteItem</code> operation. This map appears in the response only if
-        /// <code>ReturnValues</code> was specified as <code>ALL_OLD</code> in the request.</p>
+        /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the item
+        /// as it appeared before the <code>DeleteItem</code> operation. This map appears in the
+        /// response only if <code>ReturnValues</code> was specified as <code>ALL_OLD</code> in the
+        /// request.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -4436,9 +4475,10 @@ pub mod delete_item_output {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the item as it
-        /// appeared before the <code>DeleteItem</code> operation. This map appears in the response only if
-        /// <code>ReturnValues</code> was specified as <code>ALL_OLD</code> in the request.</p>
+        /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the item
+        /// as it appeared before the <code>DeleteItem</code> operation. This map appears in the
+        /// response only if <code>ReturnValues</code> was specified as <code>ALL_OLD</code> in the
+        /// request.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -4472,29 +4512,27 @@ pub mod delete_item_output {
             self
         }
         /// <p>Information about item collections, if any, that were affected by the
-        /// <code>DeleteItem</code> operation.
-        /// <code>ItemCollectionMetrics</code> is only returned if the
-        /// <code>ReturnItemCollectionMetrics</code> parameter was specified. If the
+        /// <code>DeleteItem</code> operation. <code>ItemCollectionMetrics</code> is only
+        /// returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the
         /// table does not have any local secondary indexes, this information is not returned in the
         /// response.</p>
-        /// <p>Each <code>ItemCollectionMetrics</code>
-        /// element consists of:</p>
+        /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>ItemCollectionKey</code> - The partition key value of the item
-        /// collection. This is the same as the partition key value of the item itself.</p>
+        /// <code>ItemCollectionKey</code> - The partition key value of the item collection.
+        /// This is the same as the partition key value of the item itself.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
-        /// in gigabytes. This value is a two-element array
-        /// containing a lower bound and an upper bound for the
-        /// estimate. The estimate includes the size of all the
-        /// items in the table, plus the size of all attributes
-        /// projected into all of the local secondary indexes on that
-        /// table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-        /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+        /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in
+        /// gigabytes. This value is a two-element array containing a lower bound and an
+        /// upper bound for the estimate. The estimate includes the size of all the items in
+        /// the table, plus the size of all attributes projected into all of the local
+        /// secondary indexes on that table. Use this estimate to measure whether a local
+        /// secondary index is approaching its size limit.</p>
+        /// <p>The estimate is subject to change over time; therefore, do not rely on the
+        /// precision or accuracy of the estimate.</p>
         /// </li>
         /// </ul>
         pub fn item_collection_metrics(
@@ -4505,29 +4543,27 @@ pub mod delete_item_output {
             self
         }
         /// <p>Information about item collections, if any, that were affected by the
-        /// <code>DeleteItem</code> operation.
-        /// <code>ItemCollectionMetrics</code> is only returned if the
-        /// <code>ReturnItemCollectionMetrics</code> parameter was specified. If the
+        /// <code>DeleteItem</code> operation. <code>ItemCollectionMetrics</code> is only
+        /// returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the
         /// table does not have any local secondary indexes, this information is not returned in the
         /// response.</p>
-        /// <p>Each <code>ItemCollectionMetrics</code>
-        /// element consists of:</p>
+        /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>ItemCollectionKey</code> - The partition key value of the item
-        /// collection. This is the same as the partition key value of the item itself.</p>
+        /// <code>ItemCollectionKey</code> - The partition key value of the item collection.
+        /// This is the same as the partition key value of the item itself.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
-        /// in gigabytes. This value is a two-element array
-        /// containing a lower bound and an upper bound for the
-        /// estimate. The estimate includes the size of all the
-        /// items in the table, plus the size of all attributes
-        /// projected into all of the local secondary indexes on that
-        /// table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-        /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+        /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in
+        /// gigabytes. This value is a two-element array containing a lower bound and an
+        /// upper bound for the estimate. The estimate includes the size of all the items in
+        /// the table, plus the size of all attributes projected into all of the local
+        /// secondary indexes on that table. Use this estimate to measure whether a local
+        /// secondary index is approaching its size limit.</p>
+        /// <p>The estimate is subject to change over time; therefore, do not rely on the
+        /// precision or accuracy of the estimate.</p>
         /// </li>
         /// </ul>
         pub fn set_item_collection_metrics(
@@ -4793,37 +4829,45 @@ impl CreateBackupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchWriteItemOutput {
     /// <p>A map of tables and requests against those tables that were not processed. The
-    /// <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide
-    /// this value directly to a subsequent <code>BatchGetItem</code> operation. For more information, see
+    /// <code>UnprocessedItems</code> value is in the same form as
+    /// <code>RequestItems</code>, so you can provide this value directly to a subsequent
+    /// <code>BatchGetItem</code> operation. For more information, see
     /// <code>RequestItems</code> in the Request Parameters section.</p>
-    /// <p>Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of
-    /// operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).</p>
+    /// <p>Each <code>UnprocessedItems</code> entry consists of a table name and, for that table,
+    /// a list of operations to perform (<code>DeleteRequest</code> or
+    /// <code>PutRequest</code>).</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The
-    /// item to be deleted is identified by a <code>Key</code> subelement:</p>
+    /// <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
+    /// specified item. The item to be deleted is identified by a <code>Key</code>
+    /// subelement:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>Key</code> - A map of primary key attribute values that uniquely identify the item.
-    /// Each entry in this map consists of an attribute name and an attribute value.</p>
+    /// <code>Key</code> - A map of primary key attribute values that uniquely
+    /// identify the item. Each entry in this map consists of an attribute name
+    /// and an attribute value.</p>
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to
-    /// be put is identified by an <code>Item</code> subelement:</p>
+    /// <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the
+    /// specified item. The item to be put is identified by an <code>Item</code>
+    /// subelement:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>Item</code> - A map of attributes and their values. Each entry in this map consists
-    /// of an attribute name and an attribute value. Attribute values must not be null; string
-    /// and binary type attributes must have lengths greater than zero; and set type
-    /// attributes must not be empty. Requests that contain empty values will be rejected with
-    /// a <code>ValidationException</code> exception.</p>
-    /// <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p>
+    /// <code>Item</code> - A map of attributes and their values. Each entry in
+    /// this map consists of an attribute name and an attribute value. Attribute
+    /// values must not be null; string and binary type attributes must have
+    /// lengths greater than zero; and set type attributes must not be empty.
+    /// Requests that contain empty values will be rejected with a
+    /// <code>ValidationException</code> exception.</p>
+    /// <p>If you specify any attributes that are part of an index key, then the
+    /// data types for those attributes must match those of the schema in the
+    /// table's attribute definition.</p>
     /// </li>
     /// </ul>
     /// </li>
@@ -4833,24 +4877,26 @@ pub struct BatchWriteItemOutput {
     pub unprocessed_items: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::WriteRequest>>,
     >,
-    /// <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for each table,
-    /// information about any item collections that were affected by individual <code>DeleteItem</code> or
-    /// <code>PutItem</code> operations.</p>
+    /// <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for each
+    /// table, information about any item collections that were affected by individual
+    /// <code>DeleteItem</code> or <code>PutItem</code> operations.</p>
     /// <p>Each entry consists of the following subelements:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as
-    /// the partition key value of the item.</p>
+    /// <code>ItemCollectionKey</code> - The partition key value of the item collection.
+    /// This is the same as the partition key value of the item.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is
-    /// a two-element array containing a lower bound and an upper bound for the estimate. The
-    /// estimate includes the size of all the items in the table, plus the size of all attributes
-    /// projected into all of the local secondary indexes on the table. Use this estimate to measure whether a
-    /// local secondary index is approaching its size limit.</p>
-    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+    /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
+    /// expressed in GB. This is a two-element array containing a lower bound and an
+    /// upper bound for the estimate. The estimate includes the size of all the items in
+    /// the table, plus the size of all attributes projected into all of the local
+    /// secondary indexes on the table. Use this estimate to measure whether a local
+    /// secondary index is approaching its size limit.</p>
+    /// <p>The estimate is subject to change over time; therefore, do not rely on the
+    /// precision or accuracy of the estimate.</p>
     /// </li>
     /// </ul>
     pub item_collection_metrics: std::option::Option<
@@ -4859,12 +4905,14 @@ pub struct BatchWriteItemOutput {
             std::vec::Vec<crate::model::ItemCollectionMetrics>,
         >,
     >,
-    /// <p>The capacity units consumed by the entire <code>BatchWriteItem</code> operation.</p>
+    /// <p>The capacity units consumed by the entire <code>BatchWriteItem</code>
+    /// operation.</p>
     /// <p>Each element consists of:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>TableName</code> - The table that consumed the provisioned throughput.</p>
+    /// <code>TableName</code> - The table that consumed the provisioned
+    /// throughput.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -4875,37 +4923,45 @@ pub struct BatchWriteItemOutput {
 }
 impl BatchWriteItemOutput {
     /// <p>A map of tables and requests against those tables that were not processed. The
-    /// <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide
-    /// this value directly to a subsequent <code>BatchGetItem</code> operation. For more information, see
+    /// <code>UnprocessedItems</code> value is in the same form as
+    /// <code>RequestItems</code>, so you can provide this value directly to a subsequent
+    /// <code>BatchGetItem</code> operation. For more information, see
     /// <code>RequestItems</code> in the Request Parameters section.</p>
-    /// <p>Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of
-    /// operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).</p>
+    /// <p>Each <code>UnprocessedItems</code> entry consists of a table name and, for that table,
+    /// a list of operations to perform (<code>DeleteRequest</code> or
+    /// <code>PutRequest</code>).</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The
-    /// item to be deleted is identified by a <code>Key</code> subelement:</p>
+    /// <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
+    /// specified item. The item to be deleted is identified by a <code>Key</code>
+    /// subelement:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>Key</code> - A map of primary key attribute values that uniquely identify the item.
-    /// Each entry in this map consists of an attribute name and an attribute value.</p>
+    /// <code>Key</code> - A map of primary key attribute values that uniquely
+    /// identify the item. Each entry in this map consists of an attribute name
+    /// and an attribute value.</p>
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to
-    /// be put is identified by an <code>Item</code> subelement:</p>
+    /// <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the
+    /// specified item. The item to be put is identified by an <code>Item</code>
+    /// subelement:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>Item</code> - A map of attributes and their values. Each entry in this map consists
-    /// of an attribute name and an attribute value. Attribute values must not be null; string
-    /// and binary type attributes must have lengths greater than zero; and set type
-    /// attributes must not be empty. Requests that contain empty values will be rejected with
-    /// a <code>ValidationException</code> exception.</p>
-    /// <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p>
+    /// <code>Item</code> - A map of attributes and their values. Each entry in
+    /// this map consists of an attribute name and an attribute value. Attribute
+    /// values must not be null; string and binary type attributes must have
+    /// lengths greater than zero; and set type attributes must not be empty.
+    /// Requests that contain empty values will be rejected with a
+    /// <code>ValidationException</code> exception.</p>
+    /// <p>If you specify any attributes that are part of an index key, then the
+    /// data types for those attributes must match those of the schema in the
+    /// table's attribute definition.</p>
     /// </li>
     /// </ul>
     /// </li>
@@ -4919,24 +4975,26 @@ impl BatchWriteItemOutput {
     > {
         self.unprocessed_items.as_ref()
     }
-    /// <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for each table,
-    /// information about any item collections that were affected by individual <code>DeleteItem</code> or
-    /// <code>PutItem</code> operations.</p>
+    /// <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for each
+    /// table, information about any item collections that were affected by individual
+    /// <code>DeleteItem</code> or <code>PutItem</code> operations.</p>
     /// <p>Each entry consists of the following subelements:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as
-    /// the partition key value of the item.</p>
+    /// <code>ItemCollectionKey</code> - The partition key value of the item collection.
+    /// This is the same as the partition key value of the item.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is
-    /// a two-element array containing a lower bound and an upper bound for the estimate. The
-    /// estimate includes the size of all the items in the table, plus the size of all attributes
-    /// projected into all of the local secondary indexes on the table. Use this estimate to measure whether a
-    /// local secondary index is approaching its size limit.</p>
-    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+    /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
+    /// expressed in GB. This is a two-element array containing a lower bound and an
+    /// upper bound for the estimate. The estimate includes the size of all the items in
+    /// the table, plus the size of all attributes projected into all of the local
+    /// secondary indexes on the table. Use this estimate to measure whether a local
+    /// secondary index is approaching its size limit.</p>
+    /// <p>The estimate is subject to change over time; therefore, do not rely on the
+    /// precision or accuracy of the estimate.</p>
     /// </li>
     /// </ul>
     pub fn item_collection_metrics(
@@ -4949,12 +5007,14 @@ impl BatchWriteItemOutput {
     > {
         self.item_collection_metrics.as_ref()
     }
-    /// <p>The capacity units consumed by the entire <code>BatchWriteItem</code> operation.</p>
+    /// <p>The capacity units consumed by the entire <code>BatchWriteItem</code>
+    /// operation.</p>
     /// <p>Each element consists of:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>TableName</code> - The table that consumed the provisioned throughput.</p>
+    /// <code>TableName</code> - The table that consumed the provisioned
+    /// throughput.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -5001,37 +5061,45 @@ pub mod batch_write_item_output {
         /// To override the contents of this collection use [`set_unprocessed_items`](Self::set_unprocessed_items).
         ///
         /// <p>A map of tables and requests against those tables that were not processed. The
-        /// <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide
-        /// this value directly to a subsequent <code>BatchGetItem</code> operation. For more information, see
+        /// <code>UnprocessedItems</code> value is in the same form as
+        /// <code>RequestItems</code>, so you can provide this value directly to a subsequent
+        /// <code>BatchGetItem</code> operation. For more information, see
         /// <code>RequestItems</code> in the Request Parameters section.</p>
-        /// <p>Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of
-        /// operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).</p>
+        /// <p>Each <code>UnprocessedItems</code> entry consists of a table name and, for that table,
+        /// a list of operations to perform (<code>DeleteRequest</code> or
+        /// <code>PutRequest</code>).</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The
-        /// item to be deleted is identified by a <code>Key</code> subelement:</p>
+        /// <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
+        /// specified item. The item to be deleted is identified by a <code>Key</code>
+        /// subelement:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>Key</code> - A map of primary key attribute values that uniquely identify the item.
-        /// Each entry in this map consists of an attribute name and an attribute value.</p>
+        /// <code>Key</code> - A map of primary key attribute values that uniquely
+        /// identify the item. Each entry in this map consists of an attribute name
+        /// and an attribute value.</p>
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to
-        /// be put is identified by an <code>Item</code> subelement:</p>
+        /// <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the
+        /// specified item. The item to be put is identified by an <code>Item</code>
+        /// subelement:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>Item</code> - A map of attributes and their values. Each entry in this map consists
-        /// of an attribute name and an attribute value. Attribute values must not be null; string
-        /// and binary type attributes must have lengths greater than zero; and set type
-        /// attributes must not be empty. Requests that contain empty values will be rejected with
-        /// a <code>ValidationException</code> exception.</p>
-        /// <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p>
+        /// <code>Item</code> - A map of attributes and their values. Each entry in
+        /// this map consists of an attribute name and an attribute value. Attribute
+        /// values must not be null; string and binary type attributes must have
+        /// lengths greater than zero; and set type attributes must not be empty.
+        /// Requests that contain empty values will be rejected with a
+        /// <code>ValidationException</code> exception.</p>
+        /// <p>If you specify any attributes that are part of an index key, then the
+        /// data types for those attributes must match those of the schema in the
+        /// table's attribute definition.</p>
         /// </li>
         /// </ul>
         /// </li>
@@ -5049,37 +5117,45 @@ pub mod batch_write_item_output {
             self
         }
         /// <p>A map of tables and requests against those tables that were not processed. The
-        /// <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide
-        /// this value directly to a subsequent <code>BatchGetItem</code> operation. For more information, see
+        /// <code>UnprocessedItems</code> value is in the same form as
+        /// <code>RequestItems</code>, so you can provide this value directly to a subsequent
+        /// <code>BatchGetItem</code> operation. For more information, see
         /// <code>RequestItems</code> in the Request Parameters section.</p>
-        /// <p>Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of
-        /// operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).</p>
+        /// <p>Each <code>UnprocessedItems</code> entry consists of a table name and, for that table,
+        /// a list of operations to perform (<code>DeleteRequest</code> or
+        /// <code>PutRequest</code>).</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The
-        /// item to be deleted is identified by a <code>Key</code> subelement:</p>
+        /// <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
+        /// specified item. The item to be deleted is identified by a <code>Key</code>
+        /// subelement:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>Key</code> - A map of primary key attribute values that uniquely identify the item.
-        /// Each entry in this map consists of an attribute name and an attribute value.</p>
+        /// <code>Key</code> - A map of primary key attribute values that uniquely
+        /// identify the item. Each entry in this map consists of an attribute name
+        /// and an attribute value.</p>
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to
-        /// be put is identified by an <code>Item</code> subelement:</p>
+        /// <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the
+        /// specified item. The item to be put is identified by an <code>Item</code>
+        /// subelement:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>Item</code> - A map of attributes and their values. Each entry in this map consists
-        /// of an attribute name and an attribute value. Attribute values must not be null; string
-        /// and binary type attributes must have lengths greater than zero; and set type
-        /// attributes must not be empty. Requests that contain empty values will be rejected with
-        /// a <code>ValidationException</code> exception.</p>
-        /// <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p>
+        /// <code>Item</code> - A map of attributes and their values. Each entry in
+        /// this map consists of an attribute name and an attribute value. Attribute
+        /// values must not be null; string and binary type attributes must have
+        /// lengths greater than zero; and set type attributes must not be empty.
+        /// Requests that contain empty values will be rejected with a
+        /// <code>ValidationException</code> exception.</p>
+        /// <p>If you specify any attributes that are part of an index key, then the
+        /// data types for those attributes must match those of the schema in the
+        /// table's attribute definition.</p>
         /// </li>
         /// </ul>
         /// </li>
@@ -5102,24 +5178,26 @@ pub mod batch_write_item_output {
         ///
         /// To override the contents of this collection use [`set_item_collection_metrics`](Self::set_item_collection_metrics).
         ///
-        /// <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for each table,
-        /// information about any item collections that were affected by individual <code>DeleteItem</code> or
-        /// <code>PutItem</code> operations.</p>
+        /// <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for each
+        /// table, information about any item collections that were affected by individual
+        /// <code>DeleteItem</code> or <code>PutItem</code> operations.</p>
         /// <p>Each entry consists of the following subelements:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as
-        /// the partition key value of the item.</p>
+        /// <code>ItemCollectionKey</code> - The partition key value of the item collection.
+        /// This is the same as the partition key value of the item.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is
-        /// a two-element array containing a lower bound and an upper bound for the estimate. The
-        /// estimate includes the size of all the items in the table, plus the size of all attributes
-        /// projected into all of the local secondary indexes on the table. Use this estimate to measure whether a
-        /// local secondary index is approaching its size limit.</p>
-        /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+        /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
+        /// expressed in GB. This is a two-element array containing a lower bound and an
+        /// upper bound for the estimate. The estimate includes the size of all the items in
+        /// the table, plus the size of all attributes projected into all of the local
+        /// secondary indexes on the table. Use this estimate to measure whether a local
+        /// secondary index is approaching its size limit.</p>
+        /// <p>The estimate is subject to change over time; therefore, do not rely on the
+        /// precision or accuracy of the estimate.</p>
         /// </li>
         /// </ul>
         pub fn item_collection_metrics(
@@ -5132,24 +5210,26 @@ pub mod batch_write_item_output {
             self.item_collection_metrics = Some(hash_map);
             self
         }
-        /// <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for each table,
-        /// information about any item collections that were affected by individual <code>DeleteItem</code> or
-        /// <code>PutItem</code> operations.</p>
+        /// <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for each
+        /// table, information about any item collections that were affected by individual
+        /// <code>DeleteItem</code> or <code>PutItem</code> operations.</p>
         /// <p>Each entry consists of the following subelements:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as
-        /// the partition key value of the item.</p>
+        /// <code>ItemCollectionKey</code> - The partition key value of the item collection.
+        /// This is the same as the partition key value of the item.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is
-        /// a two-element array containing a lower bound and an upper bound for the estimate. The
-        /// estimate includes the size of all the items in the table, plus the size of all attributes
-        /// projected into all of the local secondary indexes on the table. Use this estimate to measure whether a
-        /// local secondary index is approaching its size limit.</p>
-        /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+        /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
+        /// expressed in GB. This is a two-element array containing a lower bound and an
+        /// upper bound for the estimate. The estimate includes the size of all the items in
+        /// the table, plus the size of all attributes projected into all of the local
+        /// secondary indexes on the table. Use this estimate to measure whether a local
+        /// secondary index is approaching its size limit.</p>
+        /// <p>The estimate is subject to change over time; therefore, do not rely on the
+        /// precision or accuracy of the estimate.</p>
         /// </li>
         /// </ul>
         pub fn set_item_collection_metrics(
@@ -5168,12 +5248,14 @@ pub mod batch_write_item_output {
         ///
         /// To override the contents of this collection use [`set_consumed_capacity`](Self::set_consumed_capacity).
         ///
-        /// <p>The capacity units consumed by the entire <code>BatchWriteItem</code> operation.</p>
+        /// <p>The capacity units consumed by the entire <code>BatchWriteItem</code>
+        /// operation.</p>
         /// <p>Each element consists of:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>TableName</code> - The table that consumed the provisioned throughput.</p>
+        /// <code>TableName</code> - The table that consumed the provisioned
+        /// throughput.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -5189,12 +5271,14 @@ pub mod batch_write_item_output {
             self.consumed_capacity = Some(v);
             self
         }
-        /// <p>The capacity units consumed by the entire <code>BatchWriteItem</code> operation.</p>
+        /// <p>The capacity units consumed by the entire <code>BatchWriteItem</code>
+        /// operation.</p>
         /// <p>Each element consists of:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>TableName</code> - The table that consumed the provisioned throughput.</p>
+        /// <code>TableName</code> - The table that consumed the provisioned
+        /// throughput.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -5229,8 +5313,9 @@ impl BatchWriteItemOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetItemOutput {
-    /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table
-    /// name, along with a map of attribute data consisting of the data type and attribute value.</p>
+    /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists
+    /// of a table name, along with a map of attribute data consisting of the data type and
+    /// attribute value.</p>
     pub responses: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -5239,28 +5324,29 @@ pub struct BatchGetItemOutput {
             >,
         >,
     >,
-    /// <p>A map of tables and their respective keys that were not processed with the current response.
-    /// The <code>UnprocessedKeys</code> value is in the same form as <code>RequestItems</code>, so the value can
-    /// be provided directly to a subsequent <code>BatchGetItem</code> operation. For more information, see
+    /// <p>A map of tables and their respective keys that were not processed with the current
+    /// response. The <code>UnprocessedKeys</code> value is in the same form as
+    /// <code>RequestItems</code>, so the value can be provided directly to a subsequent
+    /// <code>BatchGetItem</code> operation. For more information, see
     /// <code>RequestItems</code> in the Request Parameters section.</p>
     /// <p>Each element consists of:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>Keys</code> - An array of primary key attribute values that define specific items in the
-    /// table.</p>
+    /// <code>Keys</code> - An array of primary key attribute values that define
+    /// specific items in the table.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ProjectionExpression</code> - One or more attributes to be
-    /// retrieved from the table or index. By default, all attributes are returned. If a
-    /// requested attribute is not found, it does not appear in the result.</p>
+    /// <code>ProjectionExpression</code> - One or more attributes to be retrieved from
+    /// the table or index. By default, all attributes are returned. If a requested
+    /// attribute is not found, it does not appear in the result.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ConsistentRead</code> - The consistency of a read operation. If set to <code>true</code>,
-    /// then a strongly consistent read is used; otherwise, an eventually consistent read is
-    /// used.</p>
+    /// <code>ConsistentRead</code> - The consistency of a read operation. If set to
+    /// <code>true</code>, then a strongly consistent read is used; otherwise, an
+    /// eventually consistent read is used.</p>
     /// </li>
     /// </ul>
     /// <p>If there are no unprocessed keys remaining, the response contains an empty
@@ -5268,12 +5354,14 @@ pub struct BatchGetItemOutput {
     pub unprocessed_keys: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>,
     >,
-    /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code> operation.</p>
+    /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code>
+    /// operation.</p>
     /// <p>Each element consists of:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>TableName</code> - The table that consumed the provisioned throughput.</p>
+    /// <code>TableName</code> - The table that consumed the provisioned
+    /// throughput.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -5283,8 +5371,9 @@ pub struct BatchGetItemOutput {
     pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
 }
 impl BatchGetItemOutput {
-    /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table
-    /// name, along with a map of attribute data consisting of the data type and attribute value.</p>
+    /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists
+    /// of a table name, along with a map of attribute data consisting of the data type and
+    /// attribute value.</p>
     pub fn responses(
         &self,
     ) -> std::option::Option<
@@ -5297,28 +5386,29 @@ impl BatchGetItemOutput {
     > {
         self.responses.as_ref()
     }
-    /// <p>A map of tables and their respective keys that were not processed with the current response.
-    /// The <code>UnprocessedKeys</code> value is in the same form as <code>RequestItems</code>, so the value can
-    /// be provided directly to a subsequent <code>BatchGetItem</code> operation. For more information, see
+    /// <p>A map of tables and their respective keys that were not processed with the current
+    /// response. The <code>UnprocessedKeys</code> value is in the same form as
+    /// <code>RequestItems</code>, so the value can be provided directly to a subsequent
+    /// <code>BatchGetItem</code> operation. For more information, see
     /// <code>RequestItems</code> in the Request Parameters section.</p>
     /// <p>Each element consists of:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>Keys</code> - An array of primary key attribute values that define specific items in the
-    /// table.</p>
+    /// <code>Keys</code> - An array of primary key attribute values that define
+    /// specific items in the table.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ProjectionExpression</code> - One or more attributes to be
-    /// retrieved from the table or index. By default, all attributes are returned. If a
-    /// requested attribute is not found, it does not appear in the result.</p>
+    /// <code>ProjectionExpression</code> - One or more attributes to be retrieved from
+    /// the table or index. By default, all attributes are returned. If a requested
+    /// attribute is not found, it does not appear in the result.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ConsistentRead</code> - The consistency of a read operation. If set to <code>true</code>,
-    /// then a strongly consistent read is used; otherwise, an eventually consistent read is
-    /// used.</p>
+    /// <code>ConsistentRead</code> - The consistency of a read operation. If set to
+    /// <code>true</code>, then a strongly consistent read is used; otherwise, an
+    /// eventually consistent read is used.</p>
     /// </li>
     /// </ul>
     /// <p>If there are no unprocessed keys remaining, the response contains an empty
@@ -5330,12 +5420,14 @@ impl BatchGetItemOutput {
     > {
         self.unprocessed_keys.as_ref()
     }
-    /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code> operation.</p>
+    /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code>
+    /// operation.</p>
     /// <p>Each element consists of:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>TableName</code> - The table that consumed the provisioned throughput.</p>
+    /// <code>TableName</code> - The table that consumed the provisioned
+    /// throughput.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -5380,8 +5472,9 @@ pub mod batch_get_item_output {
         ///
         /// To override the contents of this collection use [`set_responses`](Self::set_responses).
         ///
-        /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table
-        /// name, along with a map of attribute data consisting of the data type and attribute value.</p>
+        /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists
+        /// of a table name, along with a map of attribute data consisting of the data type and
+        /// attribute value.</p>
         pub fn responses(
             mut self,
             k: impl Into<std::string::String>,
@@ -5396,8 +5489,9 @@ pub mod batch_get_item_output {
             self.responses = Some(hash_map);
             self
         }
-        /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table
-        /// name, along with a map of attribute data consisting of the data type and attribute value.</p>
+        /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists
+        /// of a table name, along with a map of attribute data consisting of the data type and
+        /// attribute value.</p>
         pub fn set_responses(
             mut self,
             input: std::option::Option<
@@ -5419,28 +5513,29 @@ pub mod batch_get_item_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_keys`](Self::set_unprocessed_keys).
         ///
-        /// <p>A map of tables and their respective keys that were not processed with the current response.
-        /// The <code>UnprocessedKeys</code> value is in the same form as <code>RequestItems</code>, so the value can
-        /// be provided directly to a subsequent <code>BatchGetItem</code> operation. For more information, see
+        /// <p>A map of tables and their respective keys that were not processed with the current
+        /// response. The <code>UnprocessedKeys</code> value is in the same form as
+        /// <code>RequestItems</code>, so the value can be provided directly to a subsequent
+        /// <code>BatchGetItem</code> operation. For more information, see
         /// <code>RequestItems</code> in the Request Parameters section.</p>
         /// <p>Each element consists of:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>Keys</code> - An array of primary key attribute values that define specific items in the
-        /// table.</p>
+        /// <code>Keys</code> - An array of primary key attribute values that define
+        /// specific items in the table.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ProjectionExpression</code> - One or more attributes to be
-        /// retrieved from the table or index. By default, all attributes are returned. If a
-        /// requested attribute is not found, it does not appear in the result.</p>
+        /// <code>ProjectionExpression</code> - One or more attributes to be retrieved from
+        /// the table or index. By default, all attributes are returned. If a requested
+        /// attribute is not found, it does not appear in the result.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ConsistentRead</code> - The consistency of a read operation. If set to <code>true</code>,
-        /// then a strongly consistent read is used; otherwise, an eventually consistent read is
-        /// used.</p>
+        /// <code>ConsistentRead</code> - The consistency of a read operation. If set to
+        /// <code>true</code>, then a strongly consistent read is used; otherwise, an
+        /// eventually consistent read is used.</p>
         /// </li>
         /// </ul>
         /// <p>If there are no unprocessed keys remaining, the response contains an empty
@@ -5455,28 +5550,29 @@ pub mod batch_get_item_output {
             self.unprocessed_keys = Some(hash_map);
             self
         }
-        /// <p>A map of tables and their respective keys that were not processed with the current response.
-        /// The <code>UnprocessedKeys</code> value is in the same form as <code>RequestItems</code>, so the value can
-        /// be provided directly to a subsequent <code>BatchGetItem</code> operation. For more information, see
+        /// <p>A map of tables and their respective keys that were not processed with the current
+        /// response. The <code>UnprocessedKeys</code> value is in the same form as
+        /// <code>RequestItems</code>, so the value can be provided directly to a subsequent
+        /// <code>BatchGetItem</code> operation. For more information, see
         /// <code>RequestItems</code> in the Request Parameters section.</p>
         /// <p>Each element consists of:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>Keys</code> - An array of primary key attribute values that define specific items in the
-        /// table.</p>
+        /// <code>Keys</code> - An array of primary key attribute values that define
+        /// specific items in the table.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ProjectionExpression</code> - One or more attributes to be
-        /// retrieved from the table or index. By default, all attributes are returned. If a
-        /// requested attribute is not found, it does not appear in the result.</p>
+        /// <code>ProjectionExpression</code> - One or more attributes to be retrieved from
+        /// the table or index. By default, all attributes are returned. If a requested
+        /// attribute is not found, it does not appear in the result.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ConsistentRead</code> - The consistency of a read operation. If set to <code>true</code>,
-        /// then a strongly consistent read is used; otherwise, an eventually consistent read is
-        /// used.</p>
+        /// <code>ConsistentRead</code> - The consistency of a read operation. If set to
+        /// <code>true</code>, then a strongly consistent read is used; otherwise, an
+        /// eventually consistent read is used.</p>
         /// </li>
         /// </ul>
         /// <p>If there are no unprocessed keys remaining, the response contains an empty
@@ -5494,12 +5590,14 @@ pub mod batch_get_item_output {
         ///
         /// To override the contents of this collection use [`set_consumed_capacity`](Self::set_consumed_capacity).
         ///
-        /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code> operation.</p>
+        /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code>
+        /// operation.</p>
         /// <p>Each element consists of:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>TableName</code> - The table that consumed the provisioned throughput.</p>
+        /// <code>TableName</code> - The table that consumed the provisioned
+        /// throughput.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -5515,12 +5613,14 @@ pub mod batch_get_item_output {
             self.consumed_capacity = Some(v);
             self
         }
-        /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code> operation.</p>
+        /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code>
+        /// operation.</p>
         /// <p>Each element consists of:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>TableName</code> - The table that consumed the provisioned throughput.</p>
+        /// <code>TableName</code> - The table that consumed the provisioned
+        /// throughput.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -5555,15 +5655,11 @@ impl BatchGetItemOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchExecuteStatementOutput {
-    /// <p>
-    /// The response to each PartiQL statement in the batch.
-    /// </p>
+    /// <p>The response to each PartiQL statement in the batch.</p>
     pub responses: std::option::Option<std::vec::Vec<crate::model::BatchStatementResponse>>,
 }
 impl BatchExecuteStatementOutput {
-    /// <p>
-    /// The response to each PartiQL statement in the batch.
-    /// </p>
+    /// <p>The response to each PartiQL statement in the batch.</p>
     pub fn responses(&self) -> std::option::Option<&[crate::model::BatchStatementResponse]> {
         self.responses.as_deref()
     }
@@ -5589,18 +5685,14 @@ pub mod batch_execute_statement_output {
         ///
         /// To override the contents of this collection use [`set_responses`](Self::set_responses).
         ///
-        /// <p>
-        /// The response to each PartiQL statement in the batch.
-        /// </p>
+        /// <p>The response to each PartiQL statement in the batch.</p>
         pub fn responses(mut self, input: impl Into<crate::model::BatchStatementResponse>) -> Self {
             let mut v = self.responses.unwrap_or_default();
             v.push(input.into());
             self.responses = Some(v);
             self
         }
-        /// <p>
-        /// The response to each PartiQL statement in the batch.
-        /// </p>
+        /// <p>The response to each PartiQL statement in the batch.</p>
         pub fn set_responses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchStatementResponse>>,

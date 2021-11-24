@@ -552,7 +552,7 @@ pub struct ProvisioningArtifactDetail {
     /// </ul>
     pub r#type: std::option::Option<crate::model::ProvisioningArtifactType>,
     /// <p>The UTC time stamp of the creation time.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether the product version is active.</p>
     pub active: std::option::Option<bool>,
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
@@ -590,7 +590,7 @@ impl ProvisioningArtifactDetail {
         self.r#type.as_ref()
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>Indicates whether the product version is active.</p>
@@ -625,7 +625,7 @@ pub mod provisioning_artifact_detail {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ProvisioningArtifactType>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) active: std::option::Option<bool>,
         pub(crate) guidance: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
     }
@@ -702,14 +702,14 @@ pub mod provisioning_artifact_detail {
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -1039,9 +1039,9 @@ pub struct RecordDetail {
     /// </ul>
     pub status: std::option::Option<crate::model::RecordStatus>,
     /// <p>The UTC time stamp of the creation time.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the record was last updated.</p>
-    pub updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
     pub provisioned_product_type: std::option::Option<std::string::String>,
     /// <p>The record type.</p>
@@ -1116,11 +1116,11 @@ impl RecordDetail {
         self.status.as_ref()
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The time when the record was last updated.</p>
-    pub fn updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_time.as_ref()
     }
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
@@ -1206,8 +1206,8 @@ pub mod record_detail {
         pub(crate) record_id: std::option::Option<std::string::String>,
         pub(crate) provisioned_product_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RecordStatus>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) provisioned_product_type: std::option::Option<std::string::String>,
         pub(crate) record_type: std::option::Option<std::string::String>,
         pub(crate) provisioned_product_id: std::option::Option<std::string::String>,
@@ -1304,27 +1304,27 @@ pub mod record_detail {
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
         }
         /// <p>The time when the record was last updated.</p>
-        pub fn updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_time = Some(input);
             self
         }
         /// <p>The time when the record was last updated.</p>
         pub fn set_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_time = input;
             self
@@ -2262,7 +2262,7 @@ pub struct ProductViewDetail {
     /// <p>The ARN of the product.</p>
     pub product_arn: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ProductViewDetail {
     /// <p>Summary information about the product view.</p>
@@ -2292,7 +2292,7 @@ impl ProductViewDetail {
         self.product_arn.as_deref()
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
@@ -2315,7 +2315,7 @@ pub mod product_view_detail {
         pub(crate) product_view_summary: std::option::Option<crate::model::ProductViewSummary>,
         pub(crate) status: std::option::Option<crate::model::Status>,
         pub(crate) product_arn: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Summary information about the product view.</p>
@@ -2380,14 +2380,14 @@ pub mod product_view_detail {
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -2971,7 +2971,7 @@ pub struct PortfolioDetail {
     /// <p>The description of the portfolio.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the portfolio provider.</p>
     pub provider_name: std::option::Option<std::string::String>,
 }
@@ -2993,7 +2993,7 @@ impl PortfolioDetail {
         self.description.as_deref()
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The name of the portfolio provider.</p>
@@ -3023,7 +3023,7 @@ pub mod portfolio_detail {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) provider_name: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3068,14 +3068,14 @@ pub mod portfolio_detail {
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -3390,7 +3390,7 @@ pub struct ProvisionedProductAttribute {
     /// <p>The current status message of the provisioned product.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
     /// the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
@@ -3515,7 +3515,7 @@ impl ProvisionedProductAttribute {
         self.status_message.as_deref()
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
@@ -3658,7 +3658,7 @@ pub mod provisioned_product_attribute {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ProvisionedProductStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) idempotency_token: std::option::Option<std::string::String>,
         pub(crate) last_record_id: std::option::Option<std::string::String>,
         pub(crate) last_provisioning_record_id: std::option::Option<std::string::String>,
@@ -3796,14 +3796,14 @@ pub mod provisioned_product_attribute {
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -4749,7 +4749,7 @@ pub struct ProvisionedProductDetail {
     /// <p>The current status message of the provisioned product.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
     /// the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
@@ -4864,7 +4864,7 @@ impl ProvisionedProductDetail {
         self.status_message.as_deref()
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
@@ -4979,7 +4979,7 @@ pub mod provisioned_product_detail {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ProvisionedProductStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) idempotency_token: std::option::Option<std::string::String>,
         pub(crate) last_record_id: std::option::Option<std::string::String>,
         pub(crate) last_provisioning_record_id: std::option::Option<std::string::String>,
@@ -5112,14 +5112,14 @@ pub mod provisioned_product_detail {
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -6067,7 +6067,7 @@ pub struct ResourceDetail {
     /// <p>The description of the resource.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The creation time of the resource.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ResourceDetail {
     /// <p>The identifier of the resource.</p>
@@ -6087,7 +6087,7 @@ impl ResourceDetail {
         self.description.as_deref()
     }
     /// <p>The creation time of the resource.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
@@ -6112,7 +6112,7 @@ pub mod resource_detail {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the resource.</p>
@@ -6156,14 +6156,14 @@ pub mod resource_detail {
             self
         }
         /// <p>The creation time of the resource.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The creation time of the resource.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -6392,7 +6392,7 @@ pub struct ProvisioningArtifact {
     /// <p>The description of the provisioning artifact.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     pub guidance: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
 }
@@ -6410,7 +6410,7 @@ impl ProvisioningArtifact {
         self.description.as_deref()
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
@@ -6438,7 +6438,7 @@ pub mod provisioning_artifact {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) guidance: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
     }
     impl Builder {
@@ -6473,14 +6473,14 @@ pub mod provisioning_artifact {
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -8901,7 +8901,7 @@ impl AsRef<str> for ChangeAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedProductPlanDetails {
     /// <p>The UTC time stamp of the creation time.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The path identifier of the product. This value is optional if the product
     /// has a default path, and required if the product has more than one path.
     /// To list the paths for a product, use <a>ListLaunchPaths</a>.</p>
@@ -8923,7 +8923,7 @@ pub struct ProvisionedProductPlanDetails {
     /// <p>The status.</p>
     pub status: std::option::Option<crate::model::ProvisionedProductPlanStatus>,
     /// <p>The time when the plan was last updated.</p>
-    pub updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
     /// events.</p>
     pub notification_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8938,7 +8938,7 @@ pub struct ProvisionedProductPlanDetails {
 }
 impl ProvisionedProductPlanDetails {
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The path identifier of the product. This value is optional if the product
@@ -8980,7 +8980,7 @@ impl ProvisionedProductPlanDetails {
         self.status.as_ref()
     }
     /// <p>The time when the plan was last updated.</p>
-    pub fn updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_time.as_ref()
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
@@ -9031,7 +9031,7 @@ pub mod provisioned_product_plan_details {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) path_id: std::option::Option<std::string::String>,
         pub(crate) product_id: std::option::Option<std::string::String>,
         pub(crate) plan_name: std::option::Option<std::string::String>,
@@ -9041,7 +9041,7 @@ pub mod provisioned_product_plan_details {
         pub(crate) plan_type: std::option::Option<crate::model::ProvisionedProductPlanType>,
         pub(crate) provisioning_artifact_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ProvisionedProductPlanStatus>,
-        pub(crate) updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) notification_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) provisioning_parameters:
             std::option::Option<std::vec::Vec<crate::model::UpdateProvisioningParameter>>,
@@ -9050,14 +9050,14 @@ pub mod provisioned_product_plan_details {
     }
     impl Builder {
         /// <p>The UTC time stamp of the creation time.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -9172,14 +9172,14 @@ pub mod provisioned_product_plan_details {
             self
         }
         /// <p>The time when the plan was last updated.</p>
-        pub fn updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_time = Some(input);
             self
         }
         /// <p>The time when the plan was last updated.</p>
         pub fn set_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_time = input;
             self
@@ -9431,7 +9431,7 @@ pub struct ProvisioningArtifactSummary {
     /// <p>The description of the provisioning artifact.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The metadata for the provisioning artifact. This is used with AWS Marketplace products.</p>
     pub provisioning_artifact_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -9450,7 +9450,7 @@ impl ProvisioningArtifactSummary {
         self.description.as_deref()
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The metadata for the provisioning artifact. This is used with AWS Marketplace products.</p>
@@ -9484,7 +9484,7 @@ pub mod provisioning_artifact_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) provisioning_artifact_metadata: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -9521,14 +9521,14 @@ pub mod provisioning_artifact_summary {
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self

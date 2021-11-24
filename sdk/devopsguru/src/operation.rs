@@ -203,6 +203,115 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInsight {
     }
 }
 
+/// Operation shape for `DescribeOrganizationHealth`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_organization_health`](crate::client::Client::describe_organization_health).
+///
+/// See [`crate::client::fluent_builders::DescribeOrganizationHealth`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeOrganizationHealth {
+    _private: (),
+}
+impl DescribeOrganizationHealth {
+    /// Creates a new builder-style object to manufacture [`DescribeOrganizationHealthInput`](crate::input::DescribeOrganizationHealthInput)
+    pub fn builder() -> crate::input::describe_organization_health_input::Builder {
+        crate::input::describe_organization_health_input::Builder::default()
+    }
+    /// Creates a new `DescribeOrganizationHealth` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeOrganizationHealth {
+    type Output = std::result::Result<
+        crate::output::DescribeOrganizationHealthOutput,
+        crate::error::DescribeOrganizationHealthError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_organization_health_error(response)
+        } else {
+            crate::operation_deser::parse_describe_organization_health_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeOrganizationOverview`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_organization_overview`](crate::client::Client::describe_organization_overview).
+///
+/// See [`crate::client::fluent_builders::DescribeOrganizationOverview`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeOrganizationOverview {
+    _private: (),
+}
+impl DescribeOrganizationOverview {
+    /// Creates a new builder-style object to manufacture [`DescribeOrganizationOverviewInput`](crate::input::DescribeOrganizationOverviewInput)
+    pub fn builder() -> crate::input::describe_organization_overview_input::Builder {
+        crate::input::describe_organization_overview_input::Builder::default()
+    }
+    /// Creates a new `DescribeOrganizationOverview` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeOrganizationOverview {
+    type Output = std::result::Result<
+        crate::output::DescribeOrganizationOverviewOutput,
+        crate::error::DescribeOrganizationOverviewError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_organization_overview_error(response)
+        } else {
+            crate::operation_deser::parse_describe_organization_overview_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeOrganizationResourceCollectionHealth`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_organization_resource_collection_health`](crate::client::Client::describe_organization_resource_collection_health).
+///
+/// See [`crate::client::fluent_builders::DescribeOrganizationResourceCollectionHealth`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeOrganizationResourceCollectionHealth {
+    _private: (),
+}
+impl DescribeOrganizationResourceCollectionHealth {
+    /// Creates a new builder-style object to manufacture [`DescribeOrganizationResourceCollectionHealthInput`](crate::input::DescribeOrganizationResourceCollectionHealthInput)
+    pub fn builder() -> crate::input::describe_organization_resource_collection_health_input::Builder
+    {
+        crate::input::describe_organization_resource_collection_health_input::Builder::default()
+    }
+    /// Creates a new `DescribeOrganizationResourceCollectionHealth` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse
+    for DescribeOrganizationResourceCollectionHealth
+{
+    type Output = std::result::Result<
+        crate::output::DescribeOrganizationResourceCollectionHealthOutput,
+        crate::error::DescribeOrganizationResourceCollectionHealthError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_organization_resource_collection_health_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_describe_organization_resource_collection_health_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `DescribeResourceCollectionHealth`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -471,6 +580,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNotificationChannels
     }
 }
 
+/// Operation shape for `ListOrganizationInsights`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_organization_insights`](crate::client::Client::list_organization_insights).
+///
+/// See [`crate::client::fluent_builders::ListOrganizationInsights`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListOrganizationInsights {
+    _private: (),
+}
+impl ListOrganizationInsights {
+    /// Creates a new builder-style object to manufacture [`ListOrganizationInsightsInput`](crate::input::ListOrganizationInsightsInput)
+    pub fn builder() -> crate::input::list_organization_insights_input::Builder {
+        crate::input::list_organization_insights_input::Builder::default()
+    }
+    /// Creates a new `ListOrganizationInsights` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListOrganizationInsights {
+    type Output = std::result::Result<
+        crate::output::ListOrganizationInsightsOutput,
+        crate::error::ListOrganizationInsightsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_organization_insights_error(response)
+        } else {
+            crate::operation_deser::parse_list_organization_insights_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListRecommendations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -599,6 +742,40 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchInsights {
             crate::operation_deser::parse_search_insights_error(response)
         } else {
             crate::operation_deser::parse_search_insights_response(response)
+        }
+    }
+}
+
+/// Operation shape for `SearchOrganizationInsights`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`search_organization_insights`](crate::client::Client::search_organization_insights).
+///
+/// See [`crate::client::fluent_builders::SearchOrganizationInsights`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct SearchOrganizationInsights {
+    _private: (),
+}
+impl SearchOrganizationInsights {
+    /// Creates a new builder-style object to manufacture [`SearchOrganizationInsightsInput`](crate::input::SearchOrganizationInsightsInput)
+    pub fn builder() -> crate::input::search_organization_insights_input::Builder {
+        crate::input::search_organization_insights_input::Builder::default()
+    }
+    /// Creates a new `SearchOrganizationInsights` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for SearchOrganizationInsights {
+    type Output = std::result::Result<
+        crate::output::SearchOrganizationInsightsOutput,
+        crate::error::SearchOrganizationInsightsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_search_organization_insights_error(response)
+        } else {
+            crate::operation_deser::parse_search_organization_insights_response(response)
         }
     }
 }

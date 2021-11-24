@@ -846,7 +846,7 @@ pub mod fluent_builders {
         }
         /// <p>Filters results to return only signing jobs with signatures expiring before a
         /// specified timestamp.</p>
-        pub fn signature_expires_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn signature_expires_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.signature_expires_before(inp);
             self
         }
@@ -854,14 +854,14 @@ pub mod fluent_builders {
         /// specified timestamp.</p>
         pub fn set_signature_expires_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_signature_expires_before(input);
             self
         }
         /// <p>Filters results to return only signing jobs with signatures expiring after a specified
         /// timestamp.</p>
-        pub fn signature_expires_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn signature_expires_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.signature_expires_after(inp);
             self
         }
@@ -869,7 +869,7 @@ pub mod fluent_builders {
         /// timestamp.</p>
         pub fn set_signature_expires_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_signature_expires_after(input);
             self
@@ -1669,7 +1669,7 @@ pub mod fluent_builders {
         /// <p>A timestamp for when revocation of a Signing Profile should become effective.
         /// Signatures generated using the signing profile after this timestamp are not
         /// trusted.</p>
-        pub fn effective_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn effective_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.effective_time(inp);
             self
         }
@@ -1678,7 +1678,7 @@ pub mod fluent_builders {
         /// trusted.</p>
         pub fn set_effective_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_effective_time(input);
             self
@@ -2025,7 +2025,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -2048,7 +2054,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

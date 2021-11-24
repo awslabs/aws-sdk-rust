@@ -709,9 +709,9 @@ pub struct Problem {
     /// <p>The resource affected by the problem.</p>
     pub affected_resource: std::option::Option<std::string::String>,
     /// <p>The time when the problem started, in epoch seconds.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the problem ended, in epoch seconds.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A measure of the level of impact of the problem.</p>
     pub severity_level: std::option::Option<crate::model::SeverityLevel>,
     /// <p>The name of the resource group affected by the problem.</p>
@@ -723,7 +723,7 @@ pub struct Problem {
     #[allow(missing_docs)] // documentation missing in model
     pub recurring_count: std::option::Option<i64>,
     #[allow(missing_docs)] // documentation missing in model
-    pub last_recurrence_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_recurrence_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Problem {
     /// <p>The ID of the problem.</p>
@@ -747,11 +747,11 @@ impl Problem {
         self.affected_resource.as_deref()
     }
     /// <p>The time when the problem started, in epoch seconds.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time when the problem ended, in epoch seconds.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>A measure of the level of impact of the problem.</p>
@@ -775,7 +775,7 @@ impl Problem {
         self.recurring_count
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn last_recurrence_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_recurrence_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_recurrence_time.as_ref()
     }
 }
@@ -808,15 +808,15 @@ pub mod problem {
         pub(crate) insights: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
         pub(crate) affected_resource: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) severity_level: std::option::Option<crate::model::SeverityLevel>,
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
         pub(crate) feedback: std::option::Option<
             std::collections::HashMap<crate::model::FeedbackKey, crate::model::FeedbackValue>,
         >,
         pub(crate) recurring_count: std::option::Option<i64>,
-        pub(crate) last_recurrence_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_recurrence_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the problem.</p>
@@ -873,27 +873,27 @@ pub mod problem {
             self
         }
         /// <p>The time when the problem started, in epoch seconds.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The time when the problem started, in epoch seconds.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time when the problem ended, in epoch seconds.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time when the problem ended, in epoch seconds.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -960,14 +960,14 @@ pub mod problem {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn last_recurrence_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_recurrence_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_recurrence_time = Some(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_last_recurrence_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_recurrence_time = input;
             self
@@ -1251,7 +1251,7 @@ pub struct ConfigurationEvent {
     /// <p>
     /// The timestamp of the event.
     /// </p>
-    pub event_time: std::option::Option<aws_smithy_types::Instant>,
+    pub event_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The details of the event in plain text.
     /// </p>
@@ -1285,7 +1285,7 @@ impl ConfigurationEvent {
     /// <p>
     /// The timestamp of the event.
     /// </p>
-    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>
@@ -1323,7 +1323,7 @@ pub mod configuration_event {
         pub(crate) event_status: std::option::Option<crate::model::ConfigurationEventStatus>,
         pub(crate) event_resource_type:
             std::option::Option<crate::model::ConfigurationEventResourceType>,
-        pub(crate) event_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) event_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event_detail: std::option::Option<std::string::String>,
         pub(crate) event_resource_name: std::option::Option<std::string::String>,
     }
@@ -1385,7 +1385,7 @@ pub mod configuration_event {
         /// <p>
         /// The timestamp of the event.
         /// </p>
-        pub fn event_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_time = Some(input);
             self
         }
@@ -1394,7 +1394,7 @@ pub mod configuration_event {
         /// </p>
         pub fn set_event_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.event_time = input;
             self
@@ -1939,9 +1939,9 @@ pub struct Observation {
     /// <p>The ID of the observation type.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The time when the observation was  first detected, in epoch seconds.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the observation ended, in epoch seconds.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The source type of the observation.</p>
     pub source_type: std::option::Option<std::string::String>,
     /// <p>The source resource ARN of the observation.</p>
@@ -1949,7 +1949,7 @@ pub struct Observation {
     /// <p>The log group name.</p>
     pub log_group: std::option::Option<std::string::String>,
     /// <p>The timestamp in the CloudWatch Logs that specifies when the matched line occurred.</p>
-    pub line_time: std::option::Option<aws_smithy_types::Instant>,
+    pub line_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The log text of the observation.</p>
     pub log_text: std::option::Option<std::string::String>,
     /// <p>The log filter of the observation.</p>
@@ -2080,11 +2080,11 @@ impl Observation {
         self.id.as_deref()
     }
     /// <p>The time when the observation was  first detected, in epoch seconds.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time when the observation ended, in epoch seconds.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The source type of the observation.</p>
@@ -2100,7 +2100,7 @@ impl Observation {
         self.log_group.as_deref()
     }
     /// <p>The timestamp in the CloudWatch Logs that specifies when the matched line occurred.</p>
-    pub fn line_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn line_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.line_time.as_ref()
     }
     /// <p>The log text of the observation.</p>
@@ -2378,12 +2378,12 @@ pub mod observation {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_type: std::option::Option<std::string::String>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
         pub(crate) log_group: std::option::Option<std::string::String>,
-        pub(crate) line_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) line_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) log_text: std::option::Option<std::string::String>,
         pub(crate) log_filter: std::option::Option<crate::model::LogFilter>,
         pub(crate) metric_namespace: std::option::Option<std::string::String>,
@@ -2436,27 +2436,27 @@ pub mod observation {
             self
         }
         /// <p>The time when the observation was  first detected, in epoch seconds.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The time when the observation was  first detected, in epoch seconds.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time when the observation ended, in epoch seconds.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time when the observation ended, in epoch seconds.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -2492,14 +2492,14 @@ pub mod observation {
             self
         }
         /// <p>The timestamp in the CloudWatch Logs that specifies when the matched line occurred.</p>
-        pub fn line_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn line_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.line_time = Some(input);
             self
         }
         /// <p>The timestamp in the CloudWatch Logs that specifies when the matched line occurred.</p>
         pub fn set_line_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.line_time = input;
             self

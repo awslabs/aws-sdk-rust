@@ -39,6 +39,7 @@ pub type DeleteLexiconInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteLexiconInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLexicon`](crate::operation::DeleteLexicon)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -99,11 +100,14 @@ impl DeleteLexiconInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -251,6 +255,7 @@ pub type DescribeVoicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeVoicesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVoices`](crate::operation::DescribeVoices)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -268,7 +273,10 @@ impl DescribeVoicesInput {
             write!(output, "/v1/voices").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::DescribeVoicesInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::DescribeVoicesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_2) = &_input.engine {
                 query.push_kv("Engine", &aws_smithy_http::query::fmt_string(&inner_2));
@@ -282,7 +290,7 @@ impl DescribeVoicesInput {
             if _input.include_additional_language_codes {
                 query.push_kv(
                     "IncludeAdditionalLanguageCodes",
-                    &aws_smithy_types::primitive::Encoder::from(
+                    aws_smithy_types::primitive::Encoder::from(
                         _input.include_additional_language_codes,
                     )
                     .encode(),
@@ -291,6 +299,7 @@ impl DescribeVoicesInput {
             if let Some(inner_4) = &_input.next_token {
                 query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_4));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -300,7 +309,7 @@ impl DescribeVoicesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -321,11 +330,14 @@ impl DescribeVoicesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -405,6 +417,7 @@ pub type GetLexiconInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetLexiconInput {
     /// Consumes the builder and constructs an Operation<[`GetLexicon`](crate::operation::GetLexicon)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -465,11 +478,14 @@ impl GetLexiconInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -551,6 +567,7 @@ pub type GetSpeechSynthesisTaskInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl GetSpeechSynthesisTaskInput {
     /// Consumes the builder and constructs an Operation<[`GetSpeechSynthesisTask`](crate::operation::GetSpeechSynthesisTask)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -612,11 +629,14 @@ impl GetSpeechSynthesisTaskInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -702,6 +722,7 @@ pub type ListLexiconsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListLexiconsInput {
     /// Consumes the builder and constructs an Operation<[`ListLexicons`](crate::operation::ListLexicons)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -719,11 +740,15 @@ impl ListLexiconsInput {
             write!(output, "/v1/lexicons").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListLexiconsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListLexiconsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_7) = &_input.next_token {
                 query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_7));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -733,7 +758,7 @@ impl ListLexiconsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -754,11 +779,14 @@ impl ListLexiconsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -871,6 +899,7 @@ pub type ListSpeechSynthesisTasksInputOperationRetryAlias = aws_http::AwsErrorRe
 impl ListSpeechSynthesisTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListSpeechSynthesisTasks`](crate::operation::ListSpeechSynthesisTasks)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -891,12 +920,12 @@ impl ListSpeechSynthesisTasksInput {
         fn uri_query(
             _input: &crate::input::ListSpeechSynthesisTasksInput,
             mut output: &mut String,
-        ) {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_8) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
                 );
             }
             if let Some(inner_9) = &_input.next_token {
@@ -905,6 +934,7 @@ impl ListSpeechSynthesisTasksInput {
             if let Some(inner_10) = &_input.status {
                 query.push_kv("Status", &aws_smithy_http::query::fmt_string(&inner_10));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -914,7 +944,7 @@ impl ListSpeechSynthesisTasksInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -935,11 +965,14 @@ impl ListSpeechSynthesisTasksInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1037,6 +1070,7 @@ pub type PutLexiconInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl PutLexiconInput {
     /// Consumes the builder and constructs an Operation<[`PutLexicon`](crate::operation::PutLexicon)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1102,11 +1136,14 @@ impl PutLexiconInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1407,6 +1444,7 @@ pub type StartSpeechSynthesisTaskInputOperationRetryAlias = aws_http::AwsErrorRe
 impl StartSpeechSynthesisTaskInput {
     /// Consumes the builder and constructs an Operation<[`StartSpeechSynthesisTask`](crate::operation::StartSpeechSynthesisTask)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1460,11 +1498,14 @@ impl StartSpeechSynthesisTaskInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1767,6 +1808,7 @@ pub type SynthesizeSpeechInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl SynthesizeSpeechInput {
     /// Consumes the builder and constructs an Operation<[`SynthesizeSpeech`](crate::operation::SynthesizeSpeech)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     async fn _make_presigned_operation(
         &self,
         _config: &crate::config::Config,
@@ -1784,7 +1826,10 @@ impl SynthesizeSpeechInput {
             write!(output, "/v1/speech").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::SynthesizeSpeechInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::SynthesizeSpeechInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_12) = &_input.engine {
                 query.push_kv("Engine", &aws_smithy_http::query::fmt_string(&inner_12));
@@ -1829,6 +1874,7 @@ impl SynthesizeSpeechInput {
             if let Some(inner_22) = &_input.voice_id {
                 query.push_kv("VoiceId", &aws_smithy_http::query::fmt_string(&inner_22));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -1838,7 +1884,7 @@ impl SynthesizeSpeechInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1859,11 +1905,14 @@ impl SynthesizeSpeechInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1939,6 +1988,7 @@ impl SynthesizeSpeechInput {
     }
     /// Consumes the builder and constructs an Operation<[`SynthesizeSpeech`](crate::operation::SynthesizeSpeech)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1990,11 +2040,14 @@ impl SynthesizeSpeechInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);

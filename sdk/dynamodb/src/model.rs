@@ -616,9 +616,11 @@ impl AsRef<str> for ReplicaStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingSettingsDescription {
-    /// <p>The minimum capacity units that a global table or global secondary index should be scaled down to.</p>
+    /// <p>The minimum capacity units that a global table or global secondary index should be
+    /// scaled down to.</p>
     pub minimum_units: std::option::Option<i64>,
-    /// <p>The maximum capacity units that a global table or global secondary index should be scaled up to.</p>
+    /// <p>The maximum capacity units that a global table or global secondary index should be
+    /// scaled up to.</p>
     pub maximum_units: std::option::Option<i64>,
     /// <p>Disabled auto scaling for this global table or global secondary index.</p>
     pub auto_scaling_disabled: std::option::Option<bool>,
@@ -629,11 +631,13 @@ pub struct AutoScalingSettingsDescription {
         std::option::Option<std::vec::Vec<crate::model::AutoScalingPolicyDescription>>,
 }
 impl AutoScalingSettingsDescription {
-    /// <p>The minimum capacity units that a global table or global secondary index should be scaled down to.</p>
+    /// <p>The minimum capacity units that a global table or global secondary index should be
+    /// scaled down to.</p>
     pub fn minimum_units(&self) -> std::option::Option<i64> {
         self.minimum_units
     }
-    /// <p>The maximum capacity units that a global table or global secondary index should be scaled up to.</p>
+    /// <p>The maximum capacity units that a global table or global secondary index should be
+    /// scaled up to.</p>
     pub fn maximum_units(&self) -> std::option::Option<i64> {
         self.maximum_units
     }
@@ -677,22 +681,26 @@ pub mod auto_scaling_settings_description {
             std::option::Option<std::vec::Vec<crate::model::AutoScalingPolicyDescription>>,
     }
     impl Builder {
-        /// <p>The minimum capacity units that a global table or global secondary index should be scaled down to.</p>
+        /// <p>The minimum capacity units that a global table or global secondary index should be
+        /// scaled down to.</p>
         pub fn minimum_units(mut self, input: i64) -> Self {
             self.minimum_units = Some(input);
             self
         }
-        /// <p>The minimum capacity units that a global table or global secondary index should be scaled down to.</p>
+        /// <p>The minimum capacity units that a global table or global secondary index should be
+        /// scaled down to.</p>
         pub fn set_minimum_units(mut self, input: std::option::Option<i64>) -> Self {
             self.minimum_units = input;
             self
         }
-        /// <p>The maximum capacity units that a global table or global secondary index should be scaled up to.</p>
+        /// <p>The maximum capacity units that a global table or global secondary index should be
+        /// scaled up to.</p>
         pub fn maximum_units(mut self, input: i64) -> Self {
             self.maximum_units = Some(input);
             self
         }
-        /// <p>The maximum capacity units that a global table or global secondary index should be scaled up to.</p>
+        /// <p>The maximum capacity units that a global table or global secondary index should be
+        /// scaled up to.</p>
         pub fn set_maximum_units(mut self, input: std::option::Option<i64>) -> Self {
             self.maximum_units = input;
             self
@@ -858,53 +866,55 @@ impl AutoScalingPolicyDescription {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingTargetTrackingScalingPolicyConfigurationDescription {
-    /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is true,
-    /// scale in is disabled and the target tracking policy won't remove capacity from the scalable resource.
-    /// Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource.
-    /// The default value is false.</p>
+    /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is
+    /// true, scale in is disabled and the target tracking policy won't remove capacity from the
+    /// scalable resource. Otherwise, scale in is enabled and the target tracking policy can
+    /// remove capacity from the scalable resource. The default value is false.</p>
     pub disable_scale_in: std::option::Option<bool>,
-    /// <p>The amount of time, in seconds, after a scale in activity completes before another scale
-    /// in activity can start. The cooldown period is used to block subsequent scale in requests
-    /// until it has expired. You should scale in conservatively to protect your application's
-    /// availability. However, if another alarm triggers a scale out policy during the cooldown
-    /// period after a scale-in, application auto scaling scales out your scalable target
-    /// immediately. </p>
+    /// <p>The amount of time, in seconds, after a scale in activity completes before another
+    /// scale in activity can start. The cooldown period is used to block subsequent scale in
+    /// requests until it has expired. You should scale in conservatively to protect your
+    /// application's availability. However, if another alarm triggers a scale out policy during
+    /// the cooldown period after a scale-in, application auto scaling scales out your scalable
+    /// target immediately. </p>
     pub scale_in_cooldown: std::option::Option<i32>,
-    /// <p>The amount of time, in seconds, after a scale out activity completes before another scale out
-    /// activity can start. While the cooldown period is in effect, the capacity that has been added
-    /// by the previous scale out event that initiated the cooldown is calculated as part of the
-    /// desired capacity for the next scale out. You should continuously (but not excessively)
-    /// scale out.</p>
+    /// <p>The amount of time, in seconds, after a scale out activity completes before another
+    /// scale out activity can start. While the cooldown period is in effect, the capacity that
+    /// has been added by the previous scale out event that initiated the cooldown is calculated
+    /// as part of the desired capacity for the next scale out. You should continuously (but not
+    /// excessively) scale out.</p>
     pub scale_out_cooldown: std::option::Option<i32>,
-    /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
+    /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10)
+    /// or 2e-360 to 2e360 (Base 2).</p>
     pub target_value: std::option::Option<f64>,
 }
 impl AutoScalingTargetTrackingScalingPolicyConfigurationDescription {
-    /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is true,
-    /// scale in is disabled and the target tracking policy won't remove capacity from the scalable resource.
-    /// Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource.
-    /// The default value is false.</p>
+    /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is
+    /// true, scale in is disabled and the target tracking policy won't remove capacity from the
+    /// scalable resource. Otherwise, scale in is enabled and the target tracking policy can
+    /// remove capacity from the scalable resource. The default value is false.</p>
     pub fn disable_scale_in(&self) -> std::option::Option<bool> {
         self.disable_scale_in
     }
-    /// <p>The amount of time, in seconds, after a scale in activity completes before another scale
-    /// in activity can start. The cooldown period is used to block subsequent scale in requests
-    /// until it has expired. You should scale in conservatively to protect your application's
-    /// availability. However, if another alarm triggers a scale out policy during the cooldown
-    /// period after a scale-in, application auto scaling scales out your scalable target
-    /// immediately. </p>
+    /// <p>The amount of time, in seconds, after a scale in activity completes before another
+    /// scale in activity can start. The cooldown period is used to block subsequent scale in
+    /// requests until it has expired. You should scale in conservatively to protect your
+    /// application's availability. However, if another alarm triggers a scale out policy during
+    /// the cooldown period after a scale-in, application auto scaling scales out your scalable
+    /// target immediately. </p>
     pub fn scale_in_cooldown(&self) -> std::option::Option<i32> {
         self.scale_in_cooldown
     }
-    /// <p>The amount of time, in seconds, after a scale out activity completes before another scale out
-    /// activity can start. While the cooldown period is in effect, the capacity that has been added
-    /// by the previous scale out event that initiated the cooldown is calculated as part of the
-    /// desired capacity for the next scale out. You should continuously (but not excessively)
-    /// scale out.</p>
+    /// <p>The amount of time, in seconds, after a scale out activity completes before another
+    /// scale out activity can start. While the cooldown period is in effect, the capacity that
+    /// has been added by the previous scale out event that initiated the cooldown is calculated
+    /// as part of the desired capacity for the next scale out. You should continuously (but not
+    /// excessively) scale out.</p>
     pub fn scale_out_cooldown(&self) -> std::option::Option<i32> {
         self.scale_out_cooldown
     }
-    /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
+    /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10)
+    /// or 2e-360 to 2e360 (Base 2).</p>
     pub fn target_value(&self) -> std::option::Option<f64> {
         self.target_value
     }
@@ -932,66 +942,68 @@ pub mod auto_scaling_target_tracking_scaling_policy_configuration_description {
         pub(crate) target_value: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is true,
-        /// scale in is disabled and the target tracking policy won't remove capacity from the scalable resource.
-        /// Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource.
-        /// The default value is false.</p>
+        /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is
+        /// true, scale in is disabled and the target tracking policy won't remove capacity from the
+        /// scalable resource. Otherwise, scale in is enabled and the target tracking policy can
+        /// remove capacity from the scalable resource. The default value is false.</p>
         pub fn disable_scale_in(mut self, input: bool) -> Self {
             self.disable_scale_in = Some(input);
             self
         }
-        /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is true,
-        /// scale in is disabled and the target tracking policy won't remove capacity from the scalable resource.
-        /// Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource.
-        /// The default value is false.</p>
+        /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is
+        /// true, scale in is disabled and the target tracking policy won't remove capacity from the
+        /// scalable resource. Otherwise, scale in is enabled and the target tracking policy can
+        /// remove capacity from the scalable resource. The default value is false.</p>
         pub fn set_disable_scale_in(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_scale_in = input;
             self
         }
-        /// <p>The amount of time, in seconds, after a scale in activity completes before another scale
-        /// in activity can start. The cooldown period is used to block subsequent scale in requests
-        /// until it has expired. You should scale in conservatively to protect your application's
-        /// availability. However, if another alarm triggers a scale out policy during the cooldown
-        /// period after a scale-in, application auto scaling scales out your scalable target
-        /// immediately. </p>
+        /// <p>The amount of time, in seconds, after a scale in activity completes before another
+        /// scale in activity can start. The cooldown period is used to block subsequent scale in
+        /// requests until it has expired. You should scale in conservatively to protect your
+        /// application's availability. However, if another alarm triggers a scale out policy during
+        /// the cooldown period after a scale-in, application auto scaling scales out your scalable
+        /// target immediately. </p>
         pub fn scale_in_cooldown(mut self, input: i32) -> Self {
             self.scale_in_cooldown = Some(input);
             self
         }
-        /// <p>The amount of time, in seconds, after a scale in activity completes before another scale
-        /// in activity can start. The cooldown period is used to block subsequent scale in requests
-        /// until it has expired. You should scale in conservatively to protect your application's
-        /// availability. However, if another alarm triggers a scale out policy during the cooldown
-        /// period after a scale-in, application auto scaling scales out your scalable target
-        /// immediately. </p>
+        /// <p>The amount of time, in seconds, after a scale in activity completes before another
+        /// scale in activity can start. The cooldown period is used to block subsequent scale in
+        /// requests until it has expired. You should scale in conservatively to protect your
+        /// application's availability. However, if another alarm triggers a scale out policy during
+        /// the cooldown period after a scale-in, application auto scaling scales out your scalable
+        /// target immediately. </p>
         pub fn set_scale_in_cooldown(mut self, input: std::option::Option<i32>) -> Self {
             self.scale_in_cooldown = input;
             self
         }
-        /// <p>The amount of time, in seconds, after a scale out activity completes before another scale out
-        /// activity can start. While the cooldown period is in effect, the capacity that has been added
-        /// by the previous scale out event that initiated the cooldown is calculated as part of the
-        /// desired capacity for the next scale out. You should continuously (but not excessively)
-        /// scale out.</p>
+        /// <p>The amount of time, in seconds, after a scale out activity completes before another
+        /// scale out activity can start. While the cooldown period is in effect, the capacity that
+        /// has been added by the previous scale out event that initiated the cooldown is calculated
+        /// as part of the desired capacity for the next scale out. You should continuously (but not
+        /// excessively) scale out.</p>
         pub fn scale_out_cooldown(mut self, input: i32) -> Self {
             self.scale_out_cooldown = Some(input);
             self
         }
-        /// <p>The amount of time, in seconds, after a scale out activity completes before another scale out
-        /// activity can start. While the cooldown period is in effect, the capacity that has been added
-        /// by the previous scale out event that initiated the cooldown is calculated as part of the
-        /// desired capacity for the next scale out. You should continuously (but not excessively)
-        /// scale out.</p>
+        /// <p>The amount of time, in seconds, after a scale out activity completes before another
+        /// scale out activity can start. While the cooldown period is in effect, the capacity that
+        /// has been added by the previous scale out event that initiated the cooldown is calculated
+        /// as part of the desired capacity for the next scale out. You should continuously (but not
+        /// excessively) scale out.</p>
         pub fn set_scale_out_cooldown(mut self, input: std::option::Option<i32>) -> Self {
             self.scale_out_cooldown = input;
             self
         }
-        /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
+        /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10)
+        /// or 2e-360 to 2e360 (Base 2).</p>
         pub fn target_value(mut self, input: f64) -> Self {
             self.target_value = Some(input);
             self
         }
-        /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
+        /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10)
+        /// or 2e-360 to 2e360 (Base 2).</p>
         pub fn set_target_value(mut self, input: std::option::Option<f64>) -> Self {
             self.target_value = input;
             self
@@ -1395,8 +1407,8 @@ impl AsRef<str> for TableStatus {
 pub struct ReplicaAutoScalingUpdate {
     /// <p>The Region where the replica exists.</p>
     pub region_name: std::option::Option<std::string::String>,
-    /// <p>Represents the auto scaling settings of global secondary indexes that will
-    /// be modified.</p>
+    /// <p>Represents the auto scaling settings of global secondary indexes that will be
+    /// modified.</p>
     pub replica_global_secondary_index_updates: std::option::Option<
         std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndexAutoScalingUpdate>,
     >,
@@ -1410,8 +1422,8 @@ impl ReplicaAutoScalingUpdate {
     pub fn region_name(&self) -> std::option::Option<&str> {
         self.region_name.as_deref()
     }
-    /// <p>Represents the auto scaling settings of global secondary indexes that will
-    /// be modified.</p>
+    /// <p>Represents the auto scaling settings of global secondary indexes that will be
+    /// modified.</p>
     pub fn replica_global_secondary_index_updates(
         &self,
     ) -> std::option::Option<&[crate::model::ReplicaGlobalSecondaryIndexAutoScalingUpdate]> {
@@ -1469,8 +1481,8 @@ pub mod replica_auto_scaling_update {
         ///
         /// To override the contents of this collection use [`set_replica_global_secondary_index_updates`](Self::set_replica_global_secondary_index_updates).
         ///
-        /// <p>Represents the auto scaling settings of global secondary indexes that will
-        /// be modified.</p>
+        /// <p>Represents the auto scaling settings of global secondary indexes that will be
+        /// modified.</p>
         pub fn replica_global_secondary_index_updates(
             mut self,
             input: impl Into<crate::model::ReplicaGlobalSecondaryIndexAutoScalingUpdate>,
@@ -1482,8 +1494,8 @@ pub mod replica_auto_scaling_update {
             self.replica_global_secondary_index_updates = Some(v);
             self
         }
-        /// <p>Represents the auto scaling settings of global secondary indexes that will
-        /// be modified.</p>
+        /// <p>Represents the auto scaling settings of global secondary indexes that will be
+        /// modified.</p>
         pub fn set_replica_global_secondary_index_updates(
             mut self,
             input: std::option::Option<
@@ -1534,23 +1546,28 @@ impl ReplicaAutoScalingUpdate {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingSettingsUpdate {
-    /// <p>The minimum capacity units that a global table or global secondary index should be scaled down to.</p>
+    /// <p>The minimum capacity units that a global table or global secondary index should be
+    /// scaled down to.</p>
     pub minimum_units: std::option::Option<i64>,
-    /// <p>The maximum capacity units that a global table or global secondary index should be scaled up to.</p>
+    /// <p>The maximum capacity units that a global table or global secondary index should be
+    /// scaled up to.</p>
     pub maximum_units: std::option::Option<i64>,
     /// <p>Disabled auto scaling for this global table or global secondary index.</p>
     pub auto_scaling_disabled: std::option::Option<bool>,
     /// <p>Role ARN used for configuring auto scaling policy.</p>
     pub auto_scaling_role_arn: std::option::Option<std::string::String>,
-    /// <p>The scaling policy to apply for scaling target global table or global secondary index capacity units.</p>
+    /// <p>The scaling policy to apply for scaling target global table or global secondary index
+    /// capacity units.</p>
     pub scaling_policy_update: std::option::Option<crate::model::AutoScalingPolicyUpdate>,
 }
 impl AutoScalingSettingsUpdate {
-    /// <p>The minimum capacity units that a global table or global secondary index should be scaled down to.</p>
+    /// <p>The minimum capacity units that a global table or global secondary index should be
+    /// scaled down to.</p>
     pub fn minimum_units(&self) -> std::option::Option<i64> {
         self.minimum_units
     }
-    /// <p>The maximum capacity units that a global table or global secondary index should be scaled up to.</p>
+    /// <p>The maximum capacity units that a global table or global secondary index should be
+    /// scaled up to.</p>
     pub fn maximum_units(&self) -> std::option::Option<i64> {
         self.maximum_units
     }
@@ -1562,7 +1579,8 @@ impl AutoScalingSettingsUpdate {
     pub fn auto_scaling_role_arn(&self) -> std::option::Option<&str> {
         self.auto_scaling_role_arn.as_deref()
     }
-    /// <p>The scaling policy to apply for scaling target global table or global secondary index capacity units.</p>
+    /// <p>The scaling policy to apply for scaling target global table or global secondary index
+    /// capacity units.</p>
     pub fn scaling_policy_update(
         &self,
     ) -> std::option::Option<&crate::model::AutoScalingPolicyUpdate> {
@@ -1594,22 +1612,26 @@ pub mod auto_scaling_settings_update {
             std::option::Option<crate::model::AutoScalingPolicyUpdate>,
     }
     impl Builder {
-        /// <p>The minimum capacity units that a global table or global secondary index should be scaled down to.</p>
+        /// <p>The minimum capacity units that a global table or global secondary index should be
+        /// scaled down to.</p>
         pub fn minimum_units(mut self, input: i64) -> Self {
             self.minimum_units = Some(input);
             self
         }
-        /// <p>The minimum capacity units that a global table or global secondary index should be scaled down to.</p>
+        /// <p>The minimum capacity units that a global table or global secondary index should be
+        /// scaled down to.</p>
         pub fn set_minimum_units(mut self, input: std::option::Option<i64>) -> Self {
             self.minimum_units = input;
             self
         }
-        /// <p>The maximum capacity units that a global table or global secondary index should be scaled up to.</p>
+        /// <p>The maximum capacity units that a global table or global secondary index should be
+        /// scaled up to.</p>
         pub fn maximum_units(mut self, input: i64) -> Self {
             self.maximum_units = Some(input);
             self
         }
-        /// <p>The maximum capacity units that a global table or global secondary index should be scaled up to.</p>
+        /// <p>The maximum capacity units that a global table or global secondary index should be
+        /// scaled up to.</p>
         pub fn set_maximum_units(mut self, input: std::option::Option<i64>) -> Self {
             self.maximum_units = input;
             self
@@ -1637,7 +1659,8 @@ pub mod auto_scaling_settings_update {
             self.auto_scaling_role_arn = input;
             self
         }
-        /// <p>The scaling policy to apply for scaling target global table or global secondary index capacity units.</p>
+        /// <p>The scaling policy to apply for scaling target global table or global secondary index
+        /// capacity units.</p>
         pub fn scaling_policy_update(
             mut self,
             input: crate::model::AutoScalingPolicyUpdate,
@@ -1645,7 +1668,8 @@ pub mod auto_scaling_settings_update {
             self.scaling_policy_update = Some(input);
             self
         }
-        /// <p>The scaling policy to apply for scaling target global table or global secondary index capacity units.</p>
+        /// <p>The scaling policy to apply for scaling target global table or global secondary index
+        /// capacity units.</p>
         pub fn set_scaling_policy_update(
             mut self,
             input: std::option::Option<crate::model::AutoScalingPolicyUpdate>,
@@ -1764,57 +1788,60 @@ impl AutoScalingPolicyUpdate {
     }
 }
 
-/// <p>Represents the settings of a target tracking scaling policy that will be modified.</p>
+/// <p>Represents the settings of a target tracking scaling policy that will be
+/// modified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
-    /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is true,
-    /// scale in is disabled and the target tracking policy won't remove capacity from the scalable resource.
-    /// Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource.
-    /// The default value is false.</p>
+    /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is
+    /// true, scale in is disabled and the target tracking policy won't remove capacity from the
+    /// scalable resource. Otherwise, scale in is enabled and the target tracking policy can
+    /// remove capacity from the scalable resource. The default value is false.</p>
     pub disable_scale_in: std::option::Option<bool>,
-    /// <p>The amount of time, in seconds, after a scale in activity completes before another scale
-    /// in activity can start. The cooldown period is used to block subsequent scale in requests
-    /// until it has expired. You should scale in conservatively to protect your application's
-    /// availability. However, if another alarm triggers a scale out policy during the cooldown
-    /// period after a scale-in, application auto scaling scales out your scalable target
-    /// immediately. </p>
+    /// <p>The amount of time, in seconds, after a scale in activity completes before another
+    /// scale in activity can start. The cooldown period is used to block subsequent scale in
+    /// requests until it has expired. You should scale in conservatively to protect your
+    /// application's availability. However, if another alarm triggers a scale out policy during
+    /// the cooldown period after a scale-in, application auto scaling scales out your scalable
+    /// target immediately. </p>
     pub scale_in_cooldown: std::option::Option<i32>,
-    /// <p>The amount of time, in seconds, after a scale out activity completes before another scale out
-    /// activity can start. While the cooldown period is in effect, the capacity that has been added
-    /// by the previous scale out event that initiated the cooldown is calculated as part of the
-    /// desired capacity for the next scale out. You should continuously (but not excessively)
-    /// scale out.</p>
+    /// <p>The amount of time, in seconds, after a scale out activity completes before another
+    /// scale out activity can start. While the cooldown period is in effect, the capacity that
+    /// has been added by the previous scale out event that initiated the cooldown is calculated
+    /// as part of the desired capacity for the next scale out. You should continuously (but not
+    /// excessively) scale out.</p>
     pub scale_out_cooldown: std::option::Option<i32>,
-    /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
+    /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10)
+    /// or 2e-360 to 2e360 (Base 2).</p>
     pub target_value: std::option::Option<f64>,
 }
 impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
-    /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is true,
-    /// scale in is disabled and the target tracking policy won't remove capacity from the scalable resource.
-    /// Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource.
-    /// The default value is false.</p>
+    /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is
+    /// true, scale in is disabled and the target tracking policy won't remove capacity from the
+    /// scalable resource. Otherwise, scale in is enabled and the target tracking policy can
+    /// remove capacity from the scalable resource. The default value is false.</p>
     pub fn disable_scale_in(&self) -> std::option::Option<bool> {
         self.disable_scale_in
     }
-    /// <p>The amount of time, in seconds, after a scale in activity completes before another scale
-    /// in activity can start. The cooldown period is used to block subsequent scale in requests
-    /// until it has expired. You should scale in conservatively to protect your application's
-    /// availability. However, if another alarm triggers a scale out policy during the cooldown
-    /// period after a scale-in, application auto scaling scales out your scalable target
-    /// immediately. </p>
+    /// <p>The amount of time, in seconds, after a scale in activity completes before another
+    /// scale in activity can start. The cooldown period is used to block subsequent scale in
+    /// requests until it has expired. You should scale in conservatively to protect your
+    /// application's availability. However, if another alarm triggers a scale out policy during
+    /// the cooldown period after a scale-in, application auto scaling scales out your scalable
+    /// target immediately. </p>
     pub fn scale_in_cooldown(&self) -> std::option::Option<i32> {
         self.scale_in_cooldown
     }
-    /// <p>The amount of time, in seconds, after a scale out activity completes before another scale out
-    /// activity can start. While the cooldown period is in effect, the capacity that has been added
-    /// by the previous scale out event that initiated the cooldown is calculated as part of the
-    /// desired capacity for the next scale out. You should continuously (but not excessively)
-    /// scale out.</p>
+    /// <p>The amount of time, in seconds, after a scale out activity completes before another
+    /// scale out activity can start. While the cooldown period is in effect, the capacity that
+    /// has been added by the previous scale out event that initiated the cooldown is calculated
+    /// as part of the desired capacity for the next scale out. You should continuously (but not
+    /// excessively) scale out.</p>
     pub fn scale_out_cooldown(&self) -> std::option::Option<i32> {
         self.scale_out_cooldown
     }
-    /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
+    /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10)
+    /// or 2e-360 to 2e360 (Base 2).</p>
     pub fn target_value(&self) -> std::option::Option<f64> {
         self.target_value
     }
@@ -1842,66 +1869,68 @@ pub mod auto_scaling_target_tracking_scaling_policy_configuration_update {
         pub(crate) target_value: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is true,
-        /// scale in is disabled and the target tracking policy won't remove capacity from the scalable resource.
-        /// Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource.
-        /// The default value is false.</p>
+        /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is
+        /// true, scale in is disabled and the target tracking policy won't remove capacity from the
+        /// scalable resource. Otherwise, scale in is enabled and the target tracking policy can
+        /// remove capacity from the scalable resource. The default value is false.</p>
         pub fn disable_scale_in(mut self, input: bool) -> Self {
             self.disable_scale_in = Some(input);
             self
         }
-        /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is true,
-        /// scale in is disabled and the target tracking policy won't remove capacity from the scalable resource.
-        /// Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource.
-        /// The default value is false.</p>
+        /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is
+        /// true, scale in is disabled and the target tracking policy won't remove capacity from the
+        /// scalable resource. Otherwise, scale in is enabled and the target tracking policy can
+        /// remove capacity from the scalable resource. The default value is false.</p>
         pub fn set_disable_scale_in(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_scale_in = input;
             self
         }
-        /// <p>The amount of time, in seconds, after a scale in activity completes before another scale
-        /// in activity can start. The cooldown period is used to block subsequent scale in requests
-        /// until it has expired. You should scale in conservatively to protect your application's
-        /// availability. However, if another alarm triggers a scale out policy during the cooldown
-        /// period after a scale-in, application auto scaling scales out your scalable target
-        /// immediately. </p>
+        /// <p>The amount of time, in seconds, after a scale in activity completes before another
+        /// scale in activity can start. The cooldown period is used to block subsequent scale in
+        /// requests until it has expired. You should scale in conservatively to protect your
+        /// application's availability. However, if another alarm triggers a scale out policy during
+        /// the cooldown period after a scale-in, application auto scaling scales out your scalable
+        /// target immediately. </p>
         pub fn scale_in_cooldown(mut self, input: i32) -> Self {
             self.scale_in_cooldown = Some(input);
             self
         }
-        /// <p>The amount of time, in seconds, after a scale in activity completes before another scale
-        /// in activity can start. The cooldown period is used to block subsequent scale in requests
-        /// until it has expired. You should scale in conservatively to protect your application's
-        /// availability. However, if another alarm triggers a scale out policy during the cooldown
-        /// period after a scale-in, application auto scaling scales out your scalable target
-        /// immediately. </p>
+        /// <p>The amount of time, in seconds, after a scale in activity completes before another
+        /// scale in activity can start. The cooldown period is used to block subsequent scale in
+        /// requests until it has expired. You should scale in conservatively to protect your
+        /// application's availability. However, if another alarm triggers a scale out policy during
+        /// the cooldown period after a scale-in, application auto scaling scales out your scalable
+        /// target immediately. </p>
         pub fn set_scale_in_cooldown(mut self, input: std::option::Option<i32>) -> Self {
             self.scale_in_cooldown = input;
             self
         }
-        /// <p>The amount of time, in seconds, after a scale out activity completes before another scale out
-        /// activity can start. While the cooldown period is in effect, the capacity that has been added
-        /// by the previous scale out event that initiated the cooldown is calculated as part of the
-        /// desired capacity for the next scale out. You should continuously (but not excessively)
-        /// scale out.</p>
+        /// <p>The amount of time, in seconds, after a scale out activity completes before another
+        /// scale out activity can start. While the cooldown period is in effect, the capacity that
+        /// has been added by the previous scale out event that initiated the cooldown is calculated
+        /// as part of the desired capacity for the next scale out. You should continuously (but not
+        /// excessively) scale out.</p>
         pub fn scale_out_cooldown(mut self, input: i32) -> Self {
             self.scale_out_cooldown = Some(input);
             self
         }
-        /// <p>The amount of time, in seconds, after a scale out activity completes before another scale out
-        /// activity can start. While the cooldown period is in effect, the capacity that has been added
-        /// by the previous scale out event that initiated the cooldown is calculated as part of the
-        /// desired capacity for the next scale out. You should continuously (but not excessively)
-        /// scale out.</p>
+        /// <p>The amount of time, in seconds, after a scale out activity completes before another
+        /// scale out activity can start. While the cooldown period is in effect, the capacity that
+        /// has been added by the previous scale out event that initiated the cooldown is calculated
+        /// as part of the desired capacity for the next scale out. You should continuously (but not
+        /// excessively) scale out.</p>
         pub fn set_scale_out_cooldown(mut self, input: std::option::Option<i32>) -> Self {
             self.scale_out_cooldown = input;
             self
         }
-        /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
+        /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10)
+        /// or 2e-360 to 2e360 (Base 2).</p>
         pub fn target_value(mut self, input: f64) -> Self {
             self.target_value = Some(input);
             self
         }
-        /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
+        /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10)
+        /// or 2e-360 to 2e360 (Base 2).</p>
         pub fn set_target_value(mut self, input: std::option::Option<f64>) -> Self {
             self.target_value = input;
             self
@@ -1928,8 +1957,8 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
     }
 }
 
-/// <p>Represents the auto scaling settings of a global secondary index for a replica
-/// that will be modified.</p>
+/// <p>Represents the auto scaling settings of a global secondary index for a replica that
+/// will be modified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicaGlobalSecondaryIndexAutoScalingUpdate {
@@ -2116,8 +2145,8 @@ impl GlobalSecondaryIndexAutoScalingUpdate {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableDescription {
-    /// <p>An array of <code>AttributeDefinition</code> objects. Each of these objects describes one attribute
-    /// in the table and index key schema.</p>
+    /// <p>An array of <code>AttributeDefinition</code> objects. Each of these objects describes
+    /// one attribute in the table and index key schema.</p>
     /// <p>Each <code>AttributeDefinition</code> object in this array is composed of:</p>
     /// <ul>
     /// <li>
@@ -2133,7 +2162,8 @@ pub struct TableDescription {
         std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
     /// <p>The name of the table.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>The primary key structure for the table. Each <code>KeySchemaElement</code> consists of:</p>
+    /// <p>The primary key structure for the table. Each <code>KeySchemaElement</code> consists
+    /// of:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -2145,7 +2175,7 @@ pub struct TableDescription {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>HASH</code> -  partition key</p>
+    /// <code>HASH</code> - partition key</p>
     /// </li>
     /// <li>
     /// <p>
@@ -2153,18 +2183,20 @@ pub struct TableDescription {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-    /// evenly distribute data items across partitions, based on their partition key values.</p>
-    /// <p>The sort key of an item is also known as its <i>range attribute</i>.
-    /// The term "range attribute" derives from the way DynamoDB stores items with the same
-    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// <p>The partition key of an item is also known as its <i>hash
+    /// attribute</i>. The term "hash attribute" derives from DynamoDB's
+    /// usage of an internal hash function to evenly distribute data items across
+    /// partitions, based on their partition key values.</p>
+    /// <p>The sort key of an item is also known as its <i>range
+    /// attribute</i>. The term "range attribute" derives from the way
+    /// DynamoDB stores items with the same partition key physically close together,
+    /// in sorted order by the sort key value.</p>
     /// </note>
     ///
     /// </li>
     /// </ul>
-    /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the
-    /// <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
     /// <p>The current state of the table:</p>
     /// <ul>
@@ -2186,34 +2218,35 @@ pub struct TableDescription {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The AWS KMS
-    /// key used to encrypt the table in inaccessible. Table operations
-    /// may fail due to failure to use the AWS KMS key. DynamoDB will
-    /// initiate the table archival process when a table's AWS KMS key
-    /// remains inaccessible for more than seven days.
-    /// </p>
+    /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The KMS key
+    /// used to encrypt the table in inaccessible. Table operations may fail due to
+    /// failure to use the KMS key. DynamoDB will initiate the
+    /// table archival process when a table's KMS key remains
+    /// inaccessible for more than seven days. </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ARCHIVING</code> - The table is being archived. Operations
-    /// are not allowed until archival is complete.
-    /// </p>
+    /// <code>ARCHIVING</code> - The table is being archived. Operations are not allowed
+    /// until archival is complete. </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ARCHIVED</code> - The table has been archived. See the
-    /// ArchivalReason for more information.
-    /// </p>
+    /// <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
+    /// more information. </p>
     /// </li>
     /// </ul>
     pub table_status: std::option::Option<crate::model::TableStatus>,
     /// <p>The date and time when the table was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-    /// <p>The provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.</p>
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The provisioned throughput settings for the table, consisting of read and write
+    /// capacity units, along with data about increases and decreases.</p>
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughputDescription>,
-    /// <p>The total size of the specified table, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+    /// <p>The total size of the specified table, in bytes. DynamoDB updates this value
+    /// approximately every six hours. Recent changes might not be reflected in this
+    /// value.</p>
     pub table_size_bytes: i64,
-    /// <p>The number of items in the specified table. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+    /// <p>The number of items in the specified table. DynamoDB updates this value approximately
+    /// every six hours. Recent changes might not be reflected in this value.</p>
     pub item_count: i64,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the table.</p>
     pub table_arn: std::option::Option<std::string::String>,
@@ -2221,7 +2254,10 @@ pub struct TableDescription {
     pub table_id: std::option::Option<std::string::String>,
     /// <p>Contains the details for the read/write capacity mode.</p>
     pub billing_mode_summary: std::option::Option<crate::model::BillingModeSummary>,
-    /// <p>Represents one or more local secondary indexes on the table. Each index is scoped to a given partition key value. Tables with one or more local secondary indexes are subject to an item collection size limit, where the amount of data within a given item collection cannot exceed 10 GB. Each element is composed of:</p>
+    /// <p>Represents one or more local secondary indexes on the table. Each index is scoped to a
+    /// given partition key value. Tables with one or more local secondary indexes are subject
+    /// to an item collection size limit, where the amount of data within a given item
+    /// collection cannot exceed 10 GB. Each element is composed of:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -2229,79 +2265,83 @@ pub struct TableDescription {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>KeySchema</code> - Specifies the complete index key schema. The attribute names in the
-    /// key schema must be between 1 and 255 characters (inclusive). The key schema must begin
-    /// with the same partition key as the table.</p>
+    /// <code>KeySchema</code> - Specifies the complete index key schema. The attribute
+    /// names in the key schema must be between 1 and 255 characters (inclusive). The
+    /// key schema must begin with the same partition key as the table.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>Projection</code> - Specifies
-    /// attributes that are copied (projected) from the table into the index. These are in
-    /// addition to the primary key attributes and index key
-    /// attributes, which are automatically projected. Each
-    /// attribute specification is composed of:</p>
+    /// <code>Projection</code> - Specifies attributes that are copied (projected) from
+    /// the table into the index. These are in addition to the primary key attributes
+    /// and index key attributes, which are automatically projected. Each attribute
+    /// specification is composed of:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>ProjectionType</code> - One
-    /// of the following:</p>
+    /// <code>ProjectionType</code> - One of the following:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-    /// index.</p>
+    /// <code>KEYS_ONLY</code> - Only the index and primary keys are
+    /// projected into the index.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>INCLUDE</code> - Only the specified table attributes are projected
-    /// into the index. The list of projected attributes is in
+    /// <code>INCLUDE</code> - Only the specified table attributes are
+    /// projected into the index. The list of projected attributes is in
     /// <code>NonKeyAttributes</code>.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ALL</code> - All of the table attributes are projected into the
-    /// index.</p>
+    /// <code>ALL</code> - All of the table attributes are projected
+    /// into the index.</p>
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are
-    /// projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+    /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute
+    /// names that are projected into the secondary index. The total count of
+    /// attributes provided in <code>NonKeyAttributes</code>, summed across all
+    /// of the secondary indexes, must not exceed 20. If you project the same
+    /// attribute into two different indexes, this counts as two distinct
+    /// attributes when determining the total.</p>
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>IndexSizeBytes</code> - Represents the total size of the index, in bytes. DynamoDB updates
-    /// this value approximately every six hours. Recent changes might not be reflected in this
-    /// value.</p>
+    /// <code>IndexSizeBytes</code> - Represents the total size of the index, in bytes.
+    /// DynamoDB updates this value approximately every six hours. Recent changes might
+    /// not be reflected in this value.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ItemCount</code> - Represents the number of items in the index. DynamoDB updates this value
-    /// approximately every six hours. Recent changes might not be reflected in this value.</p>
+    /// <code>ItemCount</code> - Represents the number of items in the index. DynamoDB
+    /// updates this value approximately every six hours. Recent changes might not be
+    /// reflected in this value.</p>
     /// </li>
     /// </ul>
-    /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be
-    /// returned.</p>
+    /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will
+    /// be returned.</p>
     pub local_secondary_indexes:
         std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndexDescription>>,
-    /// <p>The global secondary indexes, if any, on the table. Each index is scoped to a given partition key value. Each element is composed of:</p>
+    /// <p>The global secondary indexes, if any, on the table. Each index is scoped to a given
+    /// partition key value. Each element is composed of:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>Backfilling</code> - If true, then the index is currently in the backfilling
-    /// phase. Backfilling occurs only when a new global secondary index is added to the
-    /// table. It is the process by which DynamoDB populates the new index with data from the
-    /// table. (This attribute does not appear for indexes that were created during a
-    /// <code>CreateTable</code> operation.) </p>
-    /// <p> You can delete an index that is being created during the <code>Backfilling</code>
-    /// phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code>
-    /// is true. You can't delete the index that is being created when
-    /// <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false.
-    /// (This attribute does not appear for indexes that were created during a
-    /// <code>CreateTable</code> operation.)</p>
+    /// <code>Backfilling</code> - If true, then the index is currently in the
+    /// backfilling phase. Backfilling occurs only when a new global secondary index is
+    /// added to the table. It is the process by which DynamoDB populates the new index
+    /// with data from the table. (This attribute does not appear for indexes that were
+    /// created during a <code>CreateTable</code> operation.) </p>
+    /// <p> You can delete an index that is being created during the
+    /// <code>Backfilling</code> phase when <code>IndexStatus</code> is set to
+    /// CREATING and <code>Backfilling</code> is true. You can't delete the index that
+    /// is being created when <code>IndexStatus</code> is set to CREATING and
+    /// <code>Backfilling</code> is false. (This attribute does not appear for
+    /// indexes that were created during a <code>CreateTable</code> operation.)</p>
     /// </li>
     /// <li>
     /// <p>
@@ -2309,13 +2349,14 @@ pub struct TableDescription {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>IndexSizeBytes</code> - The total size of the global secondary index, in bytes. DynamoDB updates this value approximately every six
-    /// hours. Recent changes might not be reflected in this value.
-    /// </p>
+    /// <code>IndexSizeBytes</code> - The total size of the global secondary index, in
+    /// bytes. DynamoDB updates this value approximately every six hours. Recent changes
+    /// might not be reflected in this value. </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>IndexStatus</code> - The current status of the global secondary index:</p>
+    /// <code>IndexStatus</code> - The current status of the global secondary
+    /// index:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -2337,71 +2378,78 @@ pub struct TableDescription {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ItemCount</code> - The number of items in the global secondary index. DynamoDB updates this value approximately every six
-    /// hours. Recent changes might not be reflected in this value.
-    /// </p>
+    /// <code>ItemCount</code> - The number of items in the global secondary index.
+    /// DynamoDB updates this value approximately every six hours. Recent changes might
+    /// not be reflected in this value. </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>KeySchema</code> - Specifies the complete index key schema. The attribute names in the
-    /// key schema must be between 1 and 255 characters (inclusive). The key schema must begin
-    /// with the same partition key as the table.</p>
+    /// <code>KeySchema</code> - Specifies the complete index key schema. The attribute
+    /// names in the key schema must be between 1 and 255 characters (inclusive). The
+    /// key schema must begin with the same partition key as the table.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>Projection</code> - Specifies
-    /// attributes that are copied (projected) from the table into the index. These are in
-    /// addition to the primary key attributes and index key
-    /// attributes, which are automatically projected. Each
-    /// attribute specification is composed of:</p>
+    /// <code>Projection</code> - Specifies attributes that are copied (projected) from
+    /// the table into the index. These are in addition to the primary key attributes
+    /// and index key attributes, which are automatically projected. Each attribute
+    /// specification is composed of:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>ProjectionType</code> - One
-    /// of the following:</p>
+    /// <code>ProjectionType</code> - One of the following:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-    /// index.</p>
+    /// <code>KEYS_ONLY</code> - Only the index and primary keys are
+    /// projected into the index.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p>
+    /// <code>INCLUDE</code> - In addition to the attributes described
+    /// in <code>KEYS_ONLY</code>, the secondary index will include
+    /// other non-key attributes that you specify.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ALL</code> - All of the table attributes are projected into the
-    /// index.</p>
+    /// <code>ALL</code> - All of the table attributes are projected
+    /// into the index.</p>
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are
-    /// projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+    /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute
+    /// names that are projected into the secondary index. The total count of
+    /// attributes provided in <code>NonKeyAttributes</code>, summed across all
+    /// of the secondary indexes, must not exceed 20. If you project the same
+    /// attribute into two different indexes, this counts as two distinct
+    /// attributes when determining the total.</p>
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index,
-    /// consisting of read and write capacity units, along with data about increases and
-    /// decreases. </p>
+    /// <code>ProvisionedThroughput</code> - The provisioned throughput settings for the
+    /// global secondary index, consisting of read and write capacity units, along with
+    /// data about increases and decreases. </p>
     /// </li>
     /// </ul>
-    /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be
-    /// returned.</p>
+    /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will
+    /// be returned.</p>
     pub global_secondary_indexes:
         std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndexDescription>>,
     /// <p>The current DynamoDB Streams configuration for the table.</p>
     pub stream_specification: std::option::Option<crate::model::StreamSpecification>,
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     ///
-    /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
+    /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream,
+    /// because it is possible that a stream from another table might have the same timestamp.
+    /// However, the combination of the following three elements is guaranteed to be
+    /// unique:</p>
     /// <ul>
     /// <li>
-    /// <p>AWS customer ID</p>
+    /// <p>Amazon Web Services customer ID</p>
     /// </li>
     /// <li>
     /// <p>Table name</p>
@@ -2413,9 +2461,11 @@ pub struct TableDescription {
     /// </li>
     /// </ul>
     pub latest_stream_label: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the latest stream for this table.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the latest stream for this
+    /// table.</p>
     pub latest_stream_arn: std::option::Option<std::string::String>,
-    /// <p>Represents the version of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global tables</a> in use, if the table is replicated across AWS Regions.</p>
+    /// <p>Represents the version of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global tables</a>
+    /// in use, if the table is replicated across Amazon Web Services Regions.</p>
     pub global_table_version: std::option::Option<std::string::String>,
     /// <p>Represents replicas of the table.</p>
     pub replicas: std::option::Option<std::vec::Vec<crate::model::ReplicaDescription>>,
@@ -2427,8 +2477,8 @@ pub struct TableDescription {
     pub archival_summary: std::option::Option<crate::model::ArchivalSummary>,
 }
 impl TableDescription {
-    /// <p>An array of <code>AttributeDefinition</code> objects. Each of these objects describes one attribute
-    /// in the table and index key schema.</p>
+    /// <p>An array of <code>AttributeDefinition</code> objects. Each of these objects describes
+    /// one attribute in the table and index key schema.</p>
     /// <p>Each <code>AttributeDefinition</code> object in this array is composed of:</p>
     /// <ul>
     /// <li>
@@ -2449,7 +2499,8 @@ impl TableDescription {
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>The primary key structure for the table. Each <code>KeySchemaElement</code> consists of:</p>
+    /// <p>The primary key structure for the table. Each <code>KeySchemaElement</code> consists
+    /// of:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -2461,7 +2512,7 @@ impl TableDescription {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>HASH</code> -  partition key</p>
+    /// <code>HASH</code> - partition key</p>
     /// </li>
     /// <li>
     /// <p>
@@ -2469,18 +2520,20 @@ impl TableDescription {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-    /// evenly distribute data items across partitions, based on their partition key values.</p>
-    /// <p>The sort key of an item is also known as its <i>range attribute</i>.
-    /// The term "range attribute" derives from the way DynamoDB stores items with the same
-    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// <p>The partition key of an item is also known as its <i>hash
+    /// attribute</i>. The term "hash attribute" derives from DynamoDB's
+    /// usage of an internal hash function to evenly distribute data items across
+    /// partitions, based on their partition key values.</p>
+    /// <p>The sort key of an item is also known as its <i>range
+    /// attribute</i>. The term "range attribute" derives from the way
+    /// DynamoDB stores items with the same partition key physically close together,
+    /// in sorted order by the sort key value.</p>
     /// </note>
     ///
     /// </li>
     /// </ul>
-    /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the
-    /// <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub fn key_schema(&self) -> std::option::Option<&[crate::model::KeySchemaElement]> {
         self.key_schema.as_deref()
     }
@@ -2504,44 +2557,45 @@ impl TableDescription {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The AWS KMS
-    /// key used to encrypt the table in inaccessible. Table operations
-    /// may fail due to failure to use the AWS KMS key. DynamoDB will
-    /// initiate the table archival process when a table's AWS KMS key
-    /// remains inaccessible for more than seven days.
-    /// </p>
+    /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The KMS key
+    /// used to encrypt the table in inaccessible. Table operations may fail due to
+    /// failure to use the KMS key. DynamoDB will initiate the
+    /// table archival process when a table's KMS key remains
+    /// inaccessible for more than seven days. </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ARCHIVING</code> - The table is being archived. Operations
-    /// are not allowed until archival is complete.
-    /// </p>
+    /// <code>ARCHIVING</code> - The table is being archived. Operations are not allowed
+    /// until archival is complete. </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ARCHIVED</code> - The table has been archived. See the
-    /// ArchivalReason for more information.
-    /// </p>
+    /// <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
+    /// more information. </p>
     /// </li>
     /// </ul>
     pub fn table_status(&self) -> std::option::Option<&crate::model::TableStatus> {
         self.table_status.as_ref()
     }
     /// <p>The date and time when the table was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
-    /// <p>The provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.</p>
+    /// <p>The provisioned throughput settings for the table, consisting of read and write
+    /// capacity units, along with data about increases and decreases.</p>
     pub fn provisioned_throughput(
         &self,
     ) -> std::option::Option<&crate::model::ProvisionedThroughputDescription> {
         self.provisioned_throughput.as_ref()
     }
-    /// <p>The total size of the specified table, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+    /// <p>The total size of the specified table, in bytes. DynamoDB updates this value
+    /// approximately every six hours. Recent changes might not be reflected in this
+    /// value.</p>
     pub fn table_size_bytes(&self) -> i64 {
         self.table_size_bytes
     }
-    /// <p>The number of items in the specified table. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+    /// <p>The number of items in the specified table. DynamoDB updates this value approximately
+    /// every six hours. Recent changes might not be reflected in this value.</p>
     pub fn item_count(&self) -> i64 {
         self.item_count
     }
@@ -2557,7 +2611,10 @@ impl TableDescription {
     pub fn billing_mode_summary(&self) -> std::option::Option<&crate::model::BillingModeSummary> {
         self.billing_mode_summary.as_ref()
     }
-    /// <p>Represents one or more local secondary indexes on the table. Each index is scoped to a given partition key value. Tables with one or more local secondary indexes are subject to an item collection size limit, where the amount of data within a given item collection cannot exceed 10 GB. Each element is composed of:</p>
+    /// <p>Represents one or more local secondary indexes on the table. Each index is scoped to a
+    /// given partition key value. Tables with one or more local secondary indexes are subject
+    /// to an item collection size limit, where the amount of data within a given item
+    /// collection cannot exceed 10 GB. Each element is composed of:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -2565,82 +2622,86 @@ impl TableDescription {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>KeySchema</code> - Specifies the complete index key schema. The attribute names in the
-    /// key schema must be between 1 and 255 characters (inclusive). The key schema must begin
-    /// with the same partition key as the table.</p>
+    /// <code>KeySchema</code> - Specifies the complete index key schema. The attribute
+    /// names in the key schema must be between 1 and 255 characters (inclusive). The
+    /// key schema must begin with the same partition key as the table.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>Projection</code> - Specifies
-    /// attributes that are copied (projected) from the table into the index. These are in
-    /// addition to the primary key attributes and index key
-    /// attributes, which are automatically projected. Each
-    /// attribute specification is composed of:</p>
+    /// <code>Projection</code> - Specifies attributes that are copied (projected) from
+    /// the table into the index. These are in addition to the primary key attributes
+    /// and index key attributes, which are automatically projected. Each attribute
+    /// specification is composed of:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>ProjectionType</code> - One
-    /// of the following:</p>
+    /// <code>ProjectionType</code> - One of the following:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-    /// index.</p>
+    /// <code>KEYS_ONLY</code> - Only the index and primary keys are
+    /// projected into the index.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>INCLUDE</code> - Only the specified table attributes are projected
-    /// into the index. The list of projected attributes is in
+    /// <code>INCLUDE</code> - Only the specified table attributes are
+    /// projected into the index. The list of projected attributes is in
     /// <code>NonKeyAttributes</code>.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ALL</code> - All of the table attributes are projected into the
-    /// index.</p>
+    /// <code>ALL</code> - All of the table attributes are projected
+    /// into the index.</p>
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are
-    /// projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+    /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute
+    /// names that are projected into the secondary index. The total count of
+    /// attributes provided in <code>NonKeyAttributes</code>, summed across all
+    /// of the secondary indexes, must not exceed 20. If you project the same
+    /// attribute into two different indexes, this counts as two distinct
+    /// attributes when determining the total.</p>
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>IndexSizeBytes</code> - Represents the total size of the index, in bytes. DynamoDB updates
-    /// this value approximately every six hours. Recent changes might not be reflected in this
-    /// value.</p>
+    /// <code>IndexSizeBytes</code> - Represents the total size of the index, in bytes.
+    /// DynamoDB updates this value approximately every six hours. Recent changes might
+    /// not be reflected in this value.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ItemCount</code> - Represents the number of items in the index. DynamoDB updates this value
-    /// approximately every six hours. Recent changes might not be reflected in this value.</p>
+    /// <code>ItemCount</code> - Represents the number of items in the index. DynamoDB
+    /// updates this value approximately every six hours. Recent changes might not be
+    /// reflected in this value.</p>
     /// </li>
     /// </ul>
-    /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be
-    /// returned.</p>
+    /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will
+    /// be returned.</p>
     pub fn local_secondary_indexes(
         &self,
     ) -> std::option::Option<&[crate::model::LocalSecondaryIndexDescription]> {
         self.local_secondary_indexes.as_deref()
     }
-    /// <p>The global secondary indexes, if any, on the table. Each index is scoped to a given partition key value. Each element is composed of:</p>
+    /// <p>The global secondary indexes, if any, on the table. Each index is scoped to a given
+    /// partition key value. Each element is composed of:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>Backfilling</code> - If true, then the index is currently in the backfilling
-    /// phase. Backfilling occurs only when a new global secondary index is added to the
-    /// table. It is the process by which DynamoDB populates the new index with data from the
-    /// table. (This attribute does not appear for indexes that were created during a
-    /// <code>CreateTable</code> operation.) </p>
-    /// <p> You can delete an index that is being created during the <code>Backfilling</code>
-    /// phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code>
-    /// is true. You can't delete the index that is being created when
-    /// <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false.
-    /// (This attribute does not appear for indexes that were created during a
-    /// <code>CreateTable</code> operation.)</p>
+    /// <code>Backfilling</code> - If true, then the index is currently in the
+    /// backfilling phase. Backfilling occurs only when a new global secondary index is
+    /// added to the table. It is the process by which DynamoDB populates the new index
+    /// with data from the table. (This attribute does not appear for indexes that were
+    /// created during a <code>CreateTable</code> operation.) </p>
+    /// <p> You can delete an index that is being created during the
+    /// <code>Backfilling</code> phase when <code>IndexStatus</code> is set to
+    /// CREATING and <code>Backfilling</code> is true. You can't delete the index that
+    /// is being created when <code>IndexStatus</code> is set to CREATING and
+    /// <code>Backfilling</code> is false. (This attribute does not appear for
+    /// indexes that were created during a <code>CreateTable</code> operation.)</p>
     /// </li>
     /// <li>
     /// <p>
@@ -2648,13 +2709,14 @@ impl TableDescription {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>IndexSizeBytes</code> - The total size of the global secondary index, in bytes. DynamoDB updates this value approximately every six
-    /// hours. Recent changes might not be reflected in this value.
-    /// </p>
+    /// <code>IndexSizeBytes</code> - The total size of the global secondary index, in
+    /// bytes. DynamoDB updates this value approximately every six hours. Recent changes
+    /// might not be reflected in this value. </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>IndexStatus</code> - The current status of the global secondary index:</p>
+    /// <code>IndexStatus</code> - The current status of the global secondary
+    /// index:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -2676,61 +2738,65 @@ impl TableDescription {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ItemCount</code> - The number of items in the global secondary index. DynamoDB updates this value approximately every six
-    /// hours. Recent changes might not be reflected in this value.
-    /// </p>
+    /// <code>ItemCount</code> - The number of items in the global secondary index.
+    /// DynamoDB updates this value approximately every six hours. Recent changes might
+    /// not be reflected in this value. </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>KeySchema</code> - Specifies the complete index key schema. The attribute names in the
-    /// key schema must be between 1 and 255 characters (inclusive). The key schema must begin
-    /// with the same partition key as the table.</p>
+    /// <code>KeySchema</code> - Specifies the complete index key schema. The attribute
+    /// names in the key schema must be between 1 and 255 characters (inclusive). The
+    /// key schema must begin with the same partition key as the table.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>Projection</code> - Specifies
-    /// attributes that are copied (projected) from the table into the index. These are in
-    /// addition to the primary key attributes and index key
-    /// attributes, which are automatically projected. Each
-    /// attribute specification is composed of:</p>
+    /// <code>Projection</code> - Specifies attributes that are copied (projected) from
+    /// the table into the index. These are in addition to the primary key attributes
+    /// and index key attributes, which are automatically projected. Each attribute
+    /// specification is composed of:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>ProjectionType</code> - One
-    /// of the following:</p>
+    /// <code>ProjectionType</code> - One of the following:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-    /// index.</p>
+    /// <code>KEYS_ONLY</code> - Only the index and primary keys are
+    /// projected into the index.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p>
+    /// <code>INCLUDE</code> - In addition to the attributes described
+    /// in <code>KEYS_ONLY</code>, the secondary index will include
+    /// other non-key attributes that you specify.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ALL</code> - All of the table attributes are projected into the
-    /// index.</p>
+    /// <code>ALL</code> - All of the table attributes are projected
+    /// into the index.</p>
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are
-    /// projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+    /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute
+    /// names that are projected into the secondary index. The total count of
+    /// attributes provided in <code>NonKeyAttributes</code>, summed across all
+    /// of the secondary indexes, must not exceed 20. If you project the same
+    /// attribute into two different indexes, this counts as two distinct
+    /// attributes when determining the total.</p>
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index,
-    /// consisting of read and write capacity units, along with data about increases and
-    /// decreases. </p>
+    /// <code>ProvisionedThroughput</code> - The provisioned throughput settings for the
+    /// global secondary index, consisting of read and write capacity units, along with
+    /// data about increases and decreases. </p>
     /// </li>
     /// </ul>
-    /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be
-    /// returned.</p>
+    /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will
+    /// be returned.</p>
     pub fn global_secondary_indexes(
         &self,
     ) -> std::option::Option<&[crate::model::GlobalSecondaryIndexDescription]> {
@@ -2742,10 +2808,13 @@ impl TableDescription {
     }
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     ///
-    /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
+    /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream,
+    /// because it is possible that a stream from another table might have the same timestamp.
+    /// However, the combination of the following three elements is guaranteed to be
+    /// unique:</p>
     /// <ul>
     /// <li>
-    /// <p>AWS customer ID</p>
+    /// <p>Amazon Web Services customer ID</p>
     /// </li>
     /// <li>
     /// <p>Table name</p>
@@ -2759,11 +2828,13 @@ impl TableDescription {
     pub fn latest_stream_label(&self) -> std::option::Option<&str> {
         self.latest_stream_label.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the latest stream for this table.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the latest stream for this
+    /// table.</p>
     pub fn latest_stream_arn(&self) -> std::option::Option<&str> {
         self.latest_stream_arn.as_deref()
     }
-    /// <p>Represents the version of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global tables</a> in use, if the table is replicated across AWS Regions.</p>
+    /// <p>Represents the version of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global tables</a>
+    /// in use, if the table is replicated across Amazon Web Services Regions.</p>
     pub fn global_table_version(&self) -> std::option::Option<&str> {
         self.global_table_version.as_deref()
     }
@@ -2822,7 +2893,7 @@ pub mod table_description {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
         pub(crate) table_status: std::option::Option<crate::model::TableStatus>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) provisioned_throughput:
             std::option::Option<crate::model::ProvisionedThroughputDescription>,
         pub(crate) table_size_bytes: std::option::Option<i64>,
@@ -2848,8 +2919,8 @@ pub mod table_description {
         ///
         /// To override the contents of this collection use [`set_attribute_definitions`](Self::set_attribute_definitions).
         ///
-        /// <p>An array of <code>AttributeDefinition</code> objects. Each of these objects describes one attribute
-        /// in the table and index key schema.</p>
+        /// <p>An array of <code>AttributeDefinition</code> objects. Each of these objects describes
+        /// one attribute in the table and index key schema.</p>
         /// <p>Each <code>AttributeDefinition</code> object in this array is composed of:</p>
         /// <ul>
         /// <li>
@@ -2870,8 +2941,8 @@ pub mod table_description {
             self.attribute_definitions = Some(v);
             self
         }
-        /// <p>An array of <code>AttributeDefinition</code> objects. Each of these objects describes one attribute
-        /// in the table and index key schema.</p>
+        /// <p>An array of <code>AttributeDefinition</code> objects. Each of these objects describes
+        /// one attribute in the table and index key schema.</p>
         /// <p>Each <code>AttributeDefinition</code> object in this array is composed of:</p>
         /// <ul>
         /// <li>
@@ -2904,7 +2975,8 @@ pub mod table_description {
         ///
         /// To override the contents of this collection use [`set_key_schema`](Self::set_key_schema).
         ///
-        /// <p>The primary key structure for the table. Each <code>KeySchemaElement</code> consists of:</p>
+        /// <p>The primary key structure for the table. Each <code>KeySchemaElement</code> consists
+        /// of:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -2916,7 +2988,7 @@ pub mod table_description {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>HASH</code> -  partition key</p>
+        /// <code>HASH</code> - partition key</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2924,25 +2996,28 @@ pub mod table_description {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-        /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-        /// evenly distribute data items across partitions, based on their partition key values.</p>
-        /// <p>The sort key of an item is also known as its <i>range attribute</i>.
-        /// The term "range attribute" derives from the way DynamoDB stores items with the same
-        /// partition key physically close together, in sorted order by the sort key value.</p>
+        /// <p>The partition key of an item is also known as its <i>hash
+        /// attribute</i>. The term "hash attribute" derives from DynamoDB's
+        /// usage of an internal hash function to evenly distribute data items across
+        /// partitions, based on their partition key values.</p>
+        /// <p>The sort key of an item is also known as its <i>range
+        /// attribute</i>. The term "range attribute" derives from the way
+        /// DynamoDB stores items with the same partition key physically close together,
+        /// in sorted order by the sort key value.</p>
         /// </note>
         ///
         /// </li>
         /// </ul>
-        /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the
-        /// <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
             v.push(input.into());
             self.key_schema = Some(v);
             self
         }
-        /// <p>The primary key structure for the table. Each <code>KeySchemaElement</code> consists of:</p>
+        /// <p>The primary key structure for the table. Each <code>KeySchemaElement</code> consists
+        /// of:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -2954,7 +3029,7 @@ pub mod table_description {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>HASH</code> -  partition key</p>
+        /// <code>HASH</code> - partition key</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2962,18 +3037,20 @@ pub mod table_description {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-        /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-        /// evenly distribute data items across partitions, based on their partition key values.</p>
-        /// <p>The sort key of an item is also known as its <i>range attribute</i>.
-        /// The term "range attribute" derives from the way DynamoDB stores items with the same
-        /// partition key physically close together, in sorted order by the sort key value.</p>
+        /// <p>The partition key of an item is also known as its <i>hash
+        /// attribute</i>. The term "hash attribute" derives from DynamoDB's
+        /// usage of an internal hash function to evenly distribute data items across
+        /// partitions, based on their partition key values.</p>
+        /// <p>The sort key of an item is also known as its <i>range
+        /// attribute</i>. The term "range attribute" derives from the way
+        /// DynamoDB stores items with the same partition key physically close together,
+        /// in sorted order by the sort key value.</p>
         /// </note>
         ///
         /// </li>
         /// </ul>
-        /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the
-        /// <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_key_schema(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
@@ -3001,24 +3078,21 @@ pub mod table_description {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The AWS KMS
-        /// key used to encrypt the table in inaccessible. Table operations
-        /// may fail due to failure to use the AWS KMS key. DynamoDB will
-        /// initiate the table archival process when a table's AWS KMS key
-        /// remains inaccessible for more than seven days.
-        /// </p>
+        /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The KMS key
+        /// used to encrypt the table in inaccessible. Table operations may fail due to
+        /// failure to use the KMS key. DynamoDB will initiate the
+        /// table archival process when a table's KMS key remains
+        /// inaccessible for more than seven days. </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ARCHIVING</code> - The table is being archived. Operations
-        /// are not allowed until archival is complete.
-        /// </p>
+        /// <code>ARCHIVING</code> - The table is being archived. Operations are not allowed
+        /// until archival is complete. </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ARCHIVED</code> - The table has been archived. See the
-        /// ArchivalReason for more information.
-        /// </p>
+        /// <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
+        /// more information. </p>
         /// </li>
         /// </ul>
         pub fn table_status(mut self, input: crate::model::TableStatus) -> Self {
@@ -3045,24 +3119,21 @@ pub mod table_description {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The AWS KMS
-        /// key used to encrypt the table in inaccessible. Table operations
-        /// may fail due to failure to use the AWS KMS key. DynamoDB will
-        /// initiate the table archival process when a table's AWS KMS key
-        /// remains inaccessible for more than seven days.
-        /// </p>
+        /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The KMS key
+        /// used to encrypt the table in inaccessible. Table operations may fail due to
+        /// failure to use the KMS key. DynamoDB will initiate the
+        /// table archival process when a table's KMS key remains
+        /// inaccessible for more than seven days. </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ARCHIVING</code> - The table is being archived. Operations
-        /// are not allowed until archival is complete.
-        /// </p>
+        /// <code>ARCHIVING</code> - The table is being archived. Operations are not allowed
+        /// until archival is complete. </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ARCHIVED</code> - The table has been archived. See the
-        /// ArchivalReason for more information.
-        /// </p>
+        /// <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
+        /// more information. </p>
         /// </li>
         /// </ul>
         pub fn set_table_status(
@@ -3073,19 +3144,20 @@ pub mod table_description {
             self
         }
         /// <p>The date and time when the table was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time when the table was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
         }
-        /// <p>The provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.</p>
+        /// <p>The provisioned throughput settings for the table, consisting of read and write
+        /// capacity units, along with data about increases and decreases.</p>
         pub fn provisioned_throughput(
             mut self,
             input: crate::model::ProvisionedThroughputDescription,
@@ -3093,7 +3165,8 @@ pub mod table_description {
             self.provisioned_throughput = Some(input);
             self
         }
-        /// <p>The provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.</p>
+        /// <p>The provisioned throughput settings for the table, consisting of read and write
+        /// capacity units, along with data about increases and decreases.</p>
         pub fn set_provisioned_throughput(
             mut self,
             input: std::option::Option<crate::model::ProvisionedThroughputDescription>,
@@ -3101,22 +3174,28 @@ pub mod table_description {
             self.provisioned_throughput = input;
             self
         }
-        /// <p>The total size of the specified table, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+        /// <p>The total size of the specified table, in bytes. DynamoDB updates this value
+        /// approximately every six hours. Recent changes might not be reflected in this
+        /// value.</p>
         pub fn table_size_bytes(mut self, input: i64) -> Self {
             self.table_size_bytes = Some(input);
             self
         }
-        /// <p>The total size of the specified table, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+        /// <p>The total size of the specified table, in bytes. DynamoDB updates this value
+        /// approximately every six hours. Recent changes might not be reflected in this
+        /// value.</p>
         pub fn set_table_size_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.table_size_bytes = input;
             self
         }
-        /// <p>The number of items in the specified table. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+        /// <p>The number of items in the specified table. DynamoDB updates this value approximately
+        /// every six hours. Recent changes might not be reflected in this value.</p>
         pub fn item_count(mut self, input: i64) -> Self {
             self.item_count = Some(input);
             self
         }
-        /// <p>The number of items in the specified table. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+        /// <p>The number of items in the specified table. DynamoDB updates this value approximately
+        /// every six hours. Recent changes might not be reflected in this value.</p>
         pub fn set_item_count(mut self, input: std::option::Option<i64>) -> Self {
             self.item_count = input;
             self
@@ -3158,7 +3237,10 @@ pub mod table_description {
         ///
         /// To override the contents of this collection use [`set_local_secondary_indexes`](Self::set_local_secondary_indexes).
         ///
-        /// <p>Represents one or more local secondary indexes on the table. Each index is scoped to a given partition key value. Tables with one or more local secondary indexes are subject to an item collection size limit, where the amount of data within a given item collection cannot exceed 10 GB. Each element is composed of:</p>
+        /// <p>Represents one or more local secondary indexes on the table. Each index is scoped to a
+        /// given partition key value. Tables with one or more local secondary indexes are subject
+        /// to an item collection size limit, where the amount of data within a given item
+        /// collection cannot exceed 10 GB. Each element is composed of:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -3166,62 +3248,65 @@ pub mod table_description {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>KeySchema</code> - Specifies the complete index key schema. The attribute names in the
-        /// key schema must be between 1 and 255 characters (inclusive). The key schema must begin
-        /// with the same partition key as the table.</p>
+        /// <code>KeySchema</code> - Specifies the complete index key schema. The attribute
+        /// names in the key schema must be between 1 and 255 characters (inclusive). The
+        /// key schema must begin with the same partition key as the table.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>Projection</code> - Specifies
-        /// attributes that are copied (projected) from the table into the index. These are in
-        /// addition to the primary key attributes and index key
-        /// attributes, which are automatically projected. Each
-        /// attribute specification is composed of:</p>
+        /// <code>Projection</code> - Specifies attributes that are copied (projected) from
+        /// the table into the index. These are in addition to the primary key attributes
+        /// and index key attributes, which are automatically projected. Each attribute
+        /// specification is composed of:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>ProjectionType</code> - One
-        /// of the following:</p>
+        /// <code>ProjectionType</code> - One of the following:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-        /// index.</p>
+        /// <code>KEYS_ONLY</code> - Only the index and primary keys are
+        /// projected into the index.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>INCLUDE</code> - Only the specified table attributes are projected
-        /// into the index. The list of projected attributes is in
+        /// <code>INCLUDE</code> - Only the specified table attributes are
+        /// projected into the index. The list of projected attributes is in
         /// <code>NonKeyAttributes</code>.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ALL</code> - All of the table attributes are projected into the
-        /// index.</p>
+        /// <code>ALL</code> - All of the table attributes are projected
+        /// into the index.</p>
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are
-        /// projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+        /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute
+        /// names that are projected into the secondary index. The total count of
+        /// attributes provided in <code>NonKeyAttributes</code>, summed across all
+        /// of the secondary indexes, must not exceed 20. If you project the same
+        /// attribute into two different indexes, this counts as two distinct
+        /// attributes when determining the total.</p>
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>IndexSizeBytes</code> - Represents the total size of the index, in bytes. DynamoDB updates
-        /// this value approximately every six hours. Recent changes might not be reflected in this
-        /// value.</p>
+        /// <code>IndexSizeBytes</code> - Represents the total size of the index, in bytes.
+        /// DynamoDB updates this value approximately every six hours. Recent changes might
+        /// not be reflected in this value.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ItemCount</code> - Represents the number of items in the index. DynamoDB updates this value
-        /// approximately every six hours. Recent changes might not be reflected in this value.</p>
+        /// <code>ItemCount</code> - Represents the number of items in the index. DynamoDB
+        /// updates this value approximately every six hours. Recent changes might not be
+        /// reflected in this value.</p>
         /// </li>
         /// </ul>
-        /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be
-        /// returned.</p>
+        /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will
+        /// be returned.</p>
         pub fn local_secondary_indexes(
             mut self,
             input: impl Into<crate::model::LocalSecondaryIndexDescription>,
@@ -3231,7 +3316,10 @@ pub mod table_description {
             self.local_secondary_indexes = Some(v);
             self
         }
-        /// <p>Represents one or more local secondary indexes on the table. Each index is scoped to a given partition key value. Tables with one or more local secondary indexes are subject to an item collection size limit, where the amount of data within a given item collection cannot exceed 10 GB. Each element is composed of:</p>
+        /// <p>Represents one or more local secondary indexes on the table. Each index is scoped to a
+        /// given partition key value. Tables with one or more local secondary indexes are subject
+        /// to an item collection size limit, where the amount of data within a given item
+        /// collection cannot exceed 10 GB. Each element is composed of:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -3239,62 +3327,65 @@ pub mod table_description {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>KeySchema</code> - Specifies the complete index key schema. The attribute names in the
-        /// key schema must be between 1 and 255 characters (inclusive). The key schema must begin
-        /// with the same partition key as the table.</p>
+        /// <code>KeySchema</code> - Specifies the complete index key schema. The attribute
+        /// names in the key schema must be between 1 and 255 characters (inclusive). The
+        /// key schema must begin with the same partition key as the table.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>Projection</code> - Specifies
-        /// attributes that are copied (projected) from the table into the index. These are in
-        /// addition to the primary key attributes and index key
-        /// attributes, which are automatically projected. Each
-        /// attribute specification is composed of:</p>
+        /// <code>Projection</code> - Specifies attributes that are copied (projected) from
+        /// the table into the index. These are in addition to the primary key attributes
+        /// and index key attributes, which are automatically projected. Each attribute
+        /// specification is composed of:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>ProjectionType</code> - One
-        /// of the following:</p>
+        /// <code>ProjectionType</code> - One of the following:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-        /// index.</p>
+        /// <code>KEYS_ONLY</code> - Only the index and primary keys are
+        /// projected into the index.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>INCLUDE</code> - Only the specified table attributes are projected
-        /// into the index. The list of projected attributes is in
+        /// <code>INCLUDE</code> - Only the specified table attributes are
+        /// projected into the index. The list of projected attributes is in
         /// <code>NonKeyAttributes</code>.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ALL</code> - All of the table attributes are projected into the
-        /// index.</p>
+        /// <code>ALL</code> - All of the table attributes are projected
+        /// into the index.</p>
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are
-        /// projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+        /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute
+        /// names that are projected into the secondary index. The total count of
+        /// attributes provided in <code>NonKeyAttributes</code>, summed across all
+        /// of the secondary indexes, must not exceed 20. If you project the same
+        /// attribute into two different indexes, this counts as two distinct
+        /// attributes when determining the total.</p>
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>IndexSizeBytes</code> - Represents the total size of the index, in bytes. DynamoDB updates
-        /// this value approximately every six hours. Recent changes might not be reflected in this
-        /// value.</p>
+        /// <code>IndexSizeBytes</code> - Represents the total size of the index, in bytes.
+        /// DynamoDB updates this value approximately every six hours. Recent changes might
+        /// not be reflected in this value.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ItemCount</code> - Represents the number of items in the index. DynamoDB updates this value
-        /// approximately every six hours. Recent changes might not be reflected in this value.</p>
+        /// <code>ItemCount</code> - Represents the number of items in the index. DynamoDB
+        /// updates this value approximately every six hours. Recent changes might not be
+        /// reflected in this value.</p>
         /// </li>
         /// </ul>
-        /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be
-        /// returned.</p>
+        /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will
+        /// be returned.</p>
         pub fn set_local_secondary_indexes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndexDescription>>,
@@ -3306,21 +3397,22 @@ pub mod table_description {
         ///
         /// To override the contents of this collection use [`set_global_secondary_indexes`](Self::set_global_secondary_indexes).
         ///
-        /// <p>The global secondary indexes, if any, on the table. Each index is scoped to a given partition key value. Each element is composed of:</p>
+        /// <p>The global secondary indexes, if any, on the table. Each index is scoped to a given
+        /// partition key value. Each element is composed of:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>Backfilling</code> - If true, then the index is currently in the backfilling
-        /// phase. Backfilling occurs only when a new global secondary index is added to the
-        /// table. It is the process by which DynamoDB populates the new index with data from the
-        /// table. (This attribute does not appear for indexes that were created during a
-        /// <code>CreateTable</code> operation.) </p>
-        /// <p> You can delete an index that is being created during the <code>Backfilling</code>
-        /// phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code>
-        /// is true. You can't delete the index that is being created when
-        /// <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false.
-        /// (This attribute does not appear for indexes that were created during a
-        /// <code>CreateTable</code> operation.)</p>
+        /// <code>Backfilling</code> - If true, then the index is currently in the
+        /// backfilling phase. Backfilling occurs only when a new global secondary index is
+        /// added to the table. It is the process by which DynamoDB populates the new index
+        /// with data from the table. (This attribute does not appear for indexes that were
+        /// created during a <code>CreateTable</code> operation.) </p>
+        /// <p> You can delete an index that is being created during the
+        /// <code>Backfilling</code> phase when <code>IndexStatus</code> is set to
+        /// CREATING and <code>Backfilling</code> is true. You can't delete the index that
+        /// is being created when <code>IndexStatus</code> is set to CREATING and
+        /// <code>Backfilling</code> is false. (This attribute does not appear for
+        /// indexes that were created during a <code>CreateTable</code> operation.)</p>
         /// </li>
         /// <li>
         /// <p>
@@ -3328,13 +3420,14 @@ pub mod table_description {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>IndexSizeBytes</code> - The total size of the global secondary index, in bytes. DynamoDB updates this value approximately every six
-        /// hours. Recent changes might not be reflected in this value.
-        /// </p>
+        /// <code>IndexSizeBytes</code> - The total size of the global secondary index, in
+        /// bytes. DynamoDB updates this value approximately every six hours. Recent changes
+        /// might not be reflected in this value. </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>IndexStatus</code> - The current status of the global secondary index:</p>
+        /// <code>IndexStatus</code> - The current status of the global secondary
+        /// index:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -3356,61 +3449,65 @@ pub mod table_description {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ItemCount</code> - The number of items in the global secondary index. DynamoDB updates this value approximately every six
-        /// hours. Recent changes might not be reflected in this value.
-        /// </p>
+        /// <code>ItemCount</code> - The number of items in the global secondary index.
+        /// DynamoDB updates this value approximately every six hours. Recent changes might
+        /// not be reflected in this value. </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>KeySchema</code> - Specifies the complete index key schema. The attribute names in the
-        /// key schema must be between 1 and 255 characters (inclusive). The key schema must begin
-        /// with the same partition key as the table.</p>
+        /// <code>KeySchema</code> - Specifies the complete index key schema. The attribute
+        /// names in the key schema must be between 1 and 255 characters (inclusive). The
+        /// key schema must begin with the same partition key as the table.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>Projection</code> - Specifies
-        /// attributes that are copied (projected) from the table into the index. These are in
-        /// addition to the primary key attributes and index key
-        /// attributes, which are automatically projected. Each
-        /// attribute specification is composed of:</p>
+        /// <code>Projection</code> - Specifies attributes that are copied (projected) from
+        /// the table into the index. These are in addition to the primary key attributes
+        /// and index key attributes, which are automatically projected. Each attribute
+        /// specification is composed of:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>ProjectionType</code> - One
-        /// of the following:</p>
+        /// <code>ProjectionType</code> - One of the following:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-        /// index.</p>
+        /// <code>KEYS_ONLY</code> - Only the index and primary keys are
+        /// projected into the index.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p>
+        /// <code>INCLUDE</code> - In addition to the attributes described
+        /// in <code>KEYS_ONLY</code>, the secondary index will include
+        /// other non-key attributes that you specify.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ALL</code> - All of the table attributes are projected into the
-        /// index.</p>
+        /// <code>ALL</code> - All of the table attributes are projected
+        /// into the index.</p>
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are
-        /// projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+        /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute
+        /// names that are projected into the secondary index. The total count of
+        /// attributes provided in <code>NonKeyAttributes</code>, summed across all
+        /// of the secondary indexes, must not exceed 20. If you project the same
+        /// attribute into two different indexes, this counts as two distinct
+        /// attributes when determining the total.</p>
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index,
-        /// consisting of read and write capacity units, along with data about increases and
-        /// decreases. </p>
+        /// <code>ProvisionedThroughput</code> - The provisioned throughput settings for the
+        /// global secondary index, consisting of read and write capacity units, along with
+        /// data about increases and decreases. </p>
         /// </li>
         /// </ul>
-        /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be
-        /// returned.</p>
+        /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will
+        /// be returned.</p>
         pub fn global_secondary_indexes(
             mut self,
             input: impl Into<crate::model::GlobalSecondaryIndexDescription>,
@@ -3420,21 +3517,22 @@ pub mod table_description {
             self.global_secondary_indexes = Some(v);
             self
         }
-        /// <p>The global secondary indexes, if any, on the table. Each index is scoped to a given partition key value. Each element is composed of:</p>
+        /// <p>The global secondary indexes, if any, on the table. Each index is scoped to a given
+        /// partition key value. Each element is composed of:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>Backfilling</code> - If true, then the index is currently in the backfilling
-        /// phase. Backfilling occurs only when a new global secondary index is added to the
-        /// table. It is the process by which DynamoDB populates the new index with data from the
-        /// table. (This attribute does not appear for indexes that were created during a
-        /// <code>CreateTable</code> operation.) </p>
-        /// <p> You can delete an index that is being created during the <code>Backfilling</code>
-        /// phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code>
-        /// is true. You can't delete the index that is being created when
-        /// <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false.
-        /// (This attribute does not appear for indexes that were created during a
-        /// <code>CreateTable</code> operation.)</p>
+        /// <code>Backfilling</code> - If true, then the index is currently in the
+        /// backfilling phase. Backfilling occurs only when a new global secondary index is
+        /// added to the table. It is the process by which DynamoDB populates the new index
+        /// with data from the table. (This attribute does not appear for indexes that were
+        /// created during a <code>CreateTable</code> operation.) </p>
+        /// <p> You can delete an index that is being created during the
+        /// <code>Backfilling</code> phase when <code>IndexStatus</code> is set to
+        /// CREATING and <code>Backfilling</code> is true. You can't delete the index that
+        /// is being created when <code>IndexStatus</code> is set to CREATING and
+        /// <code>Backfilling</code> is false. (This attribute does not appear for
+        /// indexes that were created during a <code>CreateTable</code> operation.)</p>
         /// </li>
         /// <li>
         /// <p>
@@ -3442,13 +3540,14 @@ pub mod table_description {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>IndexSizeBytes</code> - The total size of the global secondary index, in bytes. DynamoDB updates this value approximately every six
-        /// hours. Recent changes might not be reflected in this value.
-        /// </p>
+        /// <code>IndexSizeBytes</code> - The total size of the global secondary index, in
+        /// bytes. DynamoDB updates this value approximately every six hours. Recent changes
+        /// might not be reflected in this value. </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>IndexStatus</code> - The current status of the global secondary index:</p>
+        /// <code>IndexStatus</code> - The current status of the global secondary
+        /// index:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -3470,61 +3569,65 @@ pub mod table_description {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ItemCount</code> - The number of items in the global secondary index. DynamoDB updates this value approximately every six
-        /// hours. Recent changes might not be reflected in this value.
-        /// </p>
+        /// <code>ItemCount</code> - The number of items in the global secondary index.
+        /// DynamoDB updates this value approximately every six hours. Recent changes might
+        /// not be reflected in this value. </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>KeySchema</code> - Specifies the complete index key schema. The attribute names in the
-        /// key schema must be between 1 and 255 characters (inclusive). The key schema must begin
-        /// with the same partition key as the table.</p>
+        /// <code>KeySchema</code> - Specifies the complete index key schema. The attribute
+        /// names in the key schema must be between 1 and 255 characters (inclusive). The
+        /// key schema must begin with the same partition key as the table.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>Projection</code> - Specifies
-        /// attributes that are copied (projected) from the table into the index. These are in
-        /// addition to the primary key attributes and index key
-        /// attributes, which are automatically projected. Each
-        /// attribute specification is composed of:</p>
+        /// <code>Projection</code> - Specifies attributes that are copied (projected) from
+        /// the table into the index. These are in addition to the primary key attributes
+        /// and index key attributes, which are automatically projected. Each attribute
+        /// specification is composed of:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>ProjectionType</code> - One
-        /// of the following:</p>
+        /// <code>ProjectionType</code> - One of the following:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-        /// index.</p>
+        /// <code>KEYS_ONLY</code> - Only the index and primary keys are
+        /// projected into the index.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p>
+        /// <code>INCLUDE</code> - In addition to the attributes described
+        /// in <code>KEYS_ONLY</code>, the secondary index will include
+        /// other non-key attributes that you specify.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ALL</code> - All of the table attributes are projected into the
-        /// index.</p>
+        /// <code>ALL</code> - All of the table attributes are projected
+        /// into the index.</p>
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are
-        /// projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+        /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute
+        /// names that are projected into the secondary index. The total count of
+        /// attributes provided in <code>NonKeyAttributes</code>, summed across all
+        /// of the secondary indexes, must not exceed 20. If you project the same
+        /// attribute into two different indexes, this counts as two distinct
+        /// attributes when determining the total.</p>
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index,
-        /// consisting of read and write capacity units, along with data about increases and
-        /// decreases. </p>
+        /// <code>ProvisionedThroughput</code> - The provisioned throughput settings for the
+        /// global secondary index, consisting of read and write capacity units, along with
+        /// data about increases and decreases. </p>
         /// </li>
         /// </ul>
-        /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be
-        /// returned.</p>
+        /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will
+        /// be returned.</p>
         pub fn set_global_secondary_indexes(
             mut self,
             input: std::option::Option<
@@ -3549,10 +3652,13 @@ pub mod table_description {
         }
         /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
         ///
-        /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
+        /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream,
+        /// because it is possible that a stream from another table might have the same timestamp.
+        /// However, the combination of the following three elements is guaranteed to be
+        /// unique:</p>
         /// <ul>
         /// <li>
-        /// <p>AWS customer ID</p>
+        /// <p>Amazon Web Services customer ID</p>
         /// </li>
         /// <li>
         /// <p>Table name</p>
@@ -3569,10 +3675,13 @@ pub mod table_description {
         }
         /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
         ///
-        /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
+        /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream,
+        /// because it is possible that a stream from another table might have the same timestamp.
+        /// However, the combination of the following three elements is guaranteed to be
+        /// unique:</p>
         /// <ul>
         /// <li>
-        /// <p>AWS customer ID</p>
+        /// <p>Amazon Web Services customer ID</p>
         /// </li>
         /// <li>
         /// <p>Table name</p>
@@ -3590,12 +3699,14 @@ pub mod table_description {
             self.latest_stream_label = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that uniquely identifies the latest stream for this table.</p>
+        /// <p>The Amazon Resource Name (ARN) that uniquely identifies the latest stream for this
+        /// table.</p>
         pub fn latest_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.latest_stream_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that uniquely identifies the latest stream for this table.</p>
+        /// <p>The Amazon Resource Name (ARN) that uniquely identifies the latest stream for this
+        /// table.</p>
         pub fn set_latest_stream_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3603,12 +3714,14 @@ pub mod table_description {
             self.latest_stream_arn = input;
             self
         }
-        /// <p>Represents the version of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global tables</a> in use, if the table is replicated across AWS Regions.</p>
+        /// <p>Represents the version of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global tables</a>
+        /// in use, if the table is replicated across Amazon Web Services Regions.</p>
         pub fn global_table_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.global_table_version = Some(input.into());
             self
         }
-        /// <p>Represents the version of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global tables</a> in use, if the table is replicated across AWS Regions.</p>
+        /// <p>Represents the version of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global tables</a>
+        /// in use, if the table is replicated across Amazon Web Services Regions.</p>
         pub fn set_global_table_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3713,53 +3826,47 @@ impl TableDescription {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArchivalSummary {
-    /// <p>The date and time when table archival was initiated by DynamoDB,
-    /// in UNIX epoch time format.</p>
-    pub archival_date_time: std::option::Option<aws_smithy_types::Instant>,
-    /// <p>The reason DynamoDB archived the table. Currently, the only
-    /// possible value is:</p>
+    /// <p>The date and time when table archival was initiated by DynamoDB, in UNIX epoch time
+    /// format.</p>
+    pub archival_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The reason DynamoDB archived the table. Currently, the only possible value is:</p>
     ///
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-    /// table was archived due to the table's AWS KMS key being inaccessible
-    /// for more than seven days. An On-Demand backup was created at the archival
-    /// time.</p>
+    /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The table was archived due
+    /// to the table's KMS key being inaccessible for more than seven
+    /// days. An On-Demand backup was created at the archival time.</p>
     /// </li>
     /// </ul>
     pub archival_reason: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the backup the table was archived
-    /// to, when applicable in the archival reason. If you wish to restore this
-    /// backup to the same table name, you will need to delete the original
-    /// table.</p>
+    /// <p>The Amazon Resource Name (ARN) of the backup the table was archived to, when
+    /// applicable in the archival reason. If you wish to restore this backup to the same table
+    /// name, you will need to delete the original table.</p>
     pub archival_backup_arn: std::option::Option<std::string::String>,
 }
 impl ArchivalSummary {
-    /// <p>The date and time when table archival was initiated by DynamoDB,
-    /// in UNIX epoch time format.</p>
-    pub fn archival_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    /// <p>The date and time when table archival was initiated by DynamoDB, in UNIX epoch time
+    /// format.</p>
+    pub fn archival_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.archival_date_time.as_ref()
     }
-    /// <p>The reason DynamoDB archived the table. Currently, the only
-    /// possible value is:</p>
+    /// <p>The reason DynamoDB archived the table. Currently, the only possible value is:</p>
     ///
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-    /// table was archived due to the table's AWS KMS key being inaccessible
-    /// for more than seven days. An On-Demand backup was created at the archival
-    /// time.</p>
+    /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The table was archived due
+    /// to the table's KMS key being inaccessible for more than seven
+    /// days. An On-Demand backup was created at the archival time.</p>
     /// </li>
     /// </ul>
     pub fn archival_reason(&self) -> std::option::Option<&str> {
         self.archival_reason.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the backup the table was archived
-    /// to, when applicable in the archival reason. If you wish to restore this
-    /// backup to the same table name, you will need to delete the original
-    /// table.</p>
+    /// <p>The Amazon Resource Name (ARN) of the backup the table was archived to, when
+    /// applicable in the archival reason. If you wish to restore this backup to the same table
+    /// name, you will need to delete the original table.</p>
     pub fn archival_backup_arn(&self) -> std::option::Option<&str> {
         self.archival_backup_arn.as_deref()
     }
@@ -3779,52 +3886,48 @@ pub mod archival_summary {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) archival_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) archival_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) archival_reason: std::option::Option<std::string::String>,
         pub(crate) archival_backup_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The date and time when table archival was initiated by DynamoDB,
-        /// in UNIX epoch time format.</p>
-        pub fn archival_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        /// <p>The date and time when table archival was initiated by DynamoDB, in UNIX epoch time
+        /// format.</p>
+        pub fn archival_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.archival_date_time = Some(input);
             self
         }
-        /// <p>The date and time when table archival was initiated by DynamoDB,
-        /// in UNIX epoch time format.</p>
+        /// <p>The date and time when table archival was initiated by DynamoDB, in UNIX epoch time
+        /// format.</p>
         pub fn set_archival_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.archival_date_time = input;
             self
         }
-        /// <p>The reason DynamoDB archived the table. Currently, the only
-        /// possible value is:</p>
+        /// <p>The reason DynamoDB archived the table. Currently, the only possible value is:</p>
         ///
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-        /// table was archived due to the table's AWS KMS key being inaccessible
-        /// for more than seven days. An On-Demand backup was created at the archival
-        /// time.</p>
+        /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The table was archived due
+        /// to the table's KMS key being inaccessible for more than seven
+        /// days. An On-Demand backup was created at the archival time.</p>
         /// </li>
         /// </ul>
         pub fn archival_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.archival_reason = Some(input.into());
             self
         }
-        /// <p>The reason DynamoDB archived the table. Currently, the only
-        /// possible value is:</p>
+        /// <p>The reason DynamoDB archived the table. Currently, the only possible value is:</p>
         ///
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-        /// table was archived due to the table's AWS KMS key being inaccessible
-        /// for more than seven days. An On-Demand backup was created at the archival
-        /// time.</p>
+        /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The table was archived due
+        /// to the table's KMS key being inaccessible for more than seven
+        /// days. An On-Demand backup was created at the archival time.</p>
         /// </li>
         /// </ul>
         pub fn set_archival_reason(
@@ -3834,18 +3937,16 @@ pub mod archival_summary {
             self.archival_reason = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the backup the table was archived
-        /// to, when applicable in the archival reason. If you wish to restore this
-        /// backup to the same table name, you will need to delete the original
-        /// table.</p>
+        /// <p>The Amazon Resource Name (ARN) of the backup the table was archived to, when
+        /// applicable in the archival reason. If you wish to restore this backup to the same table
+        /// name, you will need to delete the original table.</p>
         pub fn archival_backup_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.archival_backup_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the backup the table was archived
-        /// to, when applicable in the archival reason. If you wish to restore this
-        /// backup to the same table name, you will need to delete the original
-        /// table.</p>
+        /// <p>The Amazon Resource Name (ARN) of the backup the table was archived to, when
+        /// applicable in the archival reason. If you wish to restore this backup to the same table
+        /// name, you will need to delete the original table.</p>
         pub fn set_archival_backup_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3874,7 +3975,8 @@ impl ArchivalSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SseDescription {
-    /// <p>Represents the current state of server-side encryption. The only supported values are:</p>
+    /// <p>Represents the current state of server-side encryption. The only supported values
+    /// are:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -3890,23 +3992,23 @@ pub struct SseDescription {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>KMS</code> - Server-side encryption that uses AWS Key Management Service. The
-    /// key is stored in your account and is managed by AWS KMS (AWS KMS charges
-    /// apply).</p>
+    /// <code>KMS</code> - Server-side encryption that uses Key Management Service. The
+    /// key is stored in your account and is managed by KMS (KMS charges apply).</p>
     /// </li>
     /// </ul>
     pub sse_type: std::option::Option<crate::model::SseType>,
-    /// <p>The AWS KMS customer master key (CMK) ARN used for the AWS KMS encryption.</p>
+    /// <p>The KMS key ARN used for the KMS
+    /// encryption.</p>
     pub kms_master_key_arn: std::option::Option<std::string::String>,
-    /// <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that the table's
-    /// AWS KMS key was inaccessible. This attribute will automatically be cleared when DynamoDB
-    /// detects that the table's AWS KMS key is accessible again. DynamoDB will initiate the table
-    /// archival process when table's AWS KMS key remains inaccessible for more than seven days
-    /// from this date.</p>
-    pub inaccessible_encryption_date_time: std::option::Option<aws_smithy_types::Instant>,
+    /// <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that
+    /// the table's KMS key was inaccessible. This attribute will automatically
+    /// be cleared when DynamoDB detects that the table's KMS key is accessible
+    /// again. DynamoDB will initiate the table archival process when table's KMS key remains inaccessible for more than seven days from this date.</p>
+    pub inaccessible_encryption_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SseDescription {
-    /// <p>Represents the current state of server-side encryption. The only supported values are:</p>
+    /// <p>Represents the current state of server-side encryption. The only supported values
+    /// are:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -3924,26 +4026,25 @@ impl SseDescription {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>KMS</code> - Server-side encryption that uses AWS Key Management Service. The
-    /// key is stored in your account and is managed by AWS KMS (AWS KMS charges
-    /// apply).</p>
+    /// <code>KMS</code> - Server-side encryption that uses Key Management Service. The
+    /// key is stored in your account and is managed by KMS (KMS charges apply).</p>
     /// </li>
     /// </ul>
     pub fn sse_type(&self) -> std::option::Option<&crate::model::SseType> {
         self.sse_type.as_ref()
     }
-    /// <p>The AWS KMS customer master key (CMK) ARN used for the AWS KMS encryption.</p>
+    /// <p>The KMS key ARN used for the KMS
+    /// encryption.</p>
     pub fn kms_master_key_arn(&self) -> std::option::Option<&str> {
         self.kms_master_key_arn.as_deref()
     }
-    /// <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that the table's
-    /// AWS KMS key was inaccessible. This attribute will automatically be cleared when DynamoDB
-    /// detects that the table's AWS KMS key is accessible again. DynamoDB will initiate the table
-    /// archival process when table's AWS KMS key remains inaccessible for more than seven days
-    /// from this date.</p>
+    /// <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that
+    /// the table's KMS key was inaccessible. This attribute will automatically
+    /// be cleared when DynamoDB detects that the table's KMS key is accessible
+    /// again. DynamoDB will initiate the table archival process when table's KMS key remains inaccessible for more than seven days from this date.</p>
     pub fn inaccessible_encryption_date_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.inaccessible_encryption_date_time.as_ref()
     }
 }
@@ -3970,10 +4071,11 @@ pub mod sse_description {
         pub(crate) sse_type: std::option::Option<crate::model::SseType>,
         pub(crate) kms_master_key_arn: std::option::Option<std::string::String>,
         pub(crate) inaccessible_encryption_date_time:
-            std::option::Option<aws_smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>Represents the current state of server-side encryption. The only supported values are:</p>
+        /// <p>Represents the current state of server-side encryption. The only supported values
+        /// are:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -3988,7 +4090,8 @@ pub mod sse_description {
             self.status = Some(input);
             self
         }
-        /// <p>Represents the current state of server-side encryption. The only supported values are:</p>
+        /// <p>Represents the current state of server-side encryption. The only supported values
+        /// are:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -4007,9 +4110,8 @@ pub mod sse_description {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>KMS</code> - Server-side encryption that uses AWS Key Management Service. The
-        /// key is stored in your account and is managed by AWS KMS (AWS KMS charges
-        /// apply).</p>
+        /// <code>KMS</code> - Server-side encryption that uses Key Management Service. The
+        /// key is stored in your account and is managed by KMS (KMS charges apply).</p>
         /// </li>
         /// </ul>
         pub fn sse_type(mut self, input: crate::model::SseType) -> Self {
@@ -4020,21 +4122,22 @@ pub mod sse_description {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>KMS</code> - Server-side encryption that uses AWS Key Management Service. The
-        /// key is stored in your account and is managed by AWS KMS (AWS KMS charges
-        /// apply).</p>
+        /// <code>KMS</code> - Server-side encryption that uses Key Management Service. The
+        /// key is stored in your account and is managed by KMS (KMS charges apply).</p>
         /// </li>
         /// </ul>
         pub fn set_sse_type(mut self, input: std::option::Option<crate::model::SseType>) -> Self {
             self.sse_type = input;
             self
         }
-        /// <p>The AWS KMS customer master key (CMK) ARN used for the AWS KMS encryption.</p>
+        /// <p>The KMS key ARN used for the KMS
+        /// encryption.</p>
         pub fn kms_master_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_arn = Some(input.into());
             self
         }
-        /// <p>The AWS KMS customer master key (CMK) ARN used for the AWS KMS encryption.</p>
+        /// <p>The KMS key ARN used for the KMS
+        /// encryption.</p>
         pub fn set_kms_master_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4042,26 +4145,24 @@ pub mod sse_description {
             self.kms_master_key_arn = input;
             self
         }
-        /// <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that the table's
-        /// AWS KMS key was inaccessible. This attribute will automatically be cleared when DynamoDB
-        /// detects that the table's AWS KMS key is accessible again. DynamoDB will initiate the table
-        /// archival process when table's AWS KMS key remains inaccessible for more than seven days
-        /// from this date.</p>
+        /// <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that
+        /// the table's KMS key was inaccessible. This attribute will automatically
+        /// be cleared when DynamoDB detects that the table's KMS key is accessible
+        /// again. DynamoDB will initiate the table archival process when table's KMS key remains inaccessible for more than seven days from this date.</p>
         pub fn inaccessible_encryption_date_time(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.inaccessible_encryption_date_time = Some(input);
             self
         }
-        /// <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that the table's
-        /// AWS KMS key was inaccessible. This attribute will automatically be cleared when DynamoDB
-        /// detects that the table's AWS KMS key is accessible again. DynamoDB will initiate the table
-        /// archival process when table's AWS KMS key remains inaccessible for more than seven days
-        /// from this date.</p>
+        /// <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that
+        /// the table's KMS key was inaccessible. This attribute will automatically
+        /// be cleared when DynamoDB detects that the table's KMS key is accessible
+        /// again. DynamoDB will initiate the table archival process when table's KMS key remains inaccessible for more than seven days from this date.</p>
         pub fn set_inaccessible_encryption_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inaccessible_encryption_date_time = input;
             self
@@ -4215,7 +4316,7 @@ pub struct RestoreSummary {
     /// <p>The ARN of the source table of the backup that is being restored.</p>
     pub source_table_arn: std::option::Option<std::string::String>,
     /// <p>Point in time or source backup time.</p>
-    pub restore_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub restore_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates if a restore is in progress or not.</p>
     pub restore_in_progress: std::option::Option<bool>,
 }
@@ -4229,7 +4330,7 @@ impl RestoreSummary {
         self.source_table_arn.as_deref()
     }
     /// <p>Point in time or source backup time.</p>
-    pub fn restore_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn restore_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.restore_date_time.as_ref()
     }
     /// <p>Indicates if a restore is in progress or not.</p>
@@ -4255,7 +4356,7 @@ pub mod restore_summary {
     pub struct Builder {
         pub(crate) source_backup_arn: std::option::Option<std::string::String>,
         pub(crate) source_table_arn: std::option::Option<std::string::String>,
-        pub(crate) restore_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) restore_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) restore_in_progress: std::option::Option<bool>,
     }
     impl Builder {
@@ -4286,14 +4387,14 @@ pub mod restore_summary {
             self
         }
         /// <p>Point in time or source backup time.</p>
-        pub fn restore_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn restore_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.restore_date_time = Some(input);
             self
         }
         /// <p>Point in time or source backup time.</p>
         pub fn set_restore_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.restore_date_time = input;
             self
@@ -4352,27 +4453,34 @@ pub struct ReplicaDescription {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>REGION_DISABLED</code> - The replica is inaccessible because the AWS Region has been disabled.</p>
+    /// <code>REGION_DISABLED</code> - The replica is inaccessible because the Amazon Web Services Region has been disabled.</p>
     /// <note>
-    /// <p>If the AWS Region remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
+    /// <p>If the Amazon Web Services Region remains inaccessible for more than 20
+    /// hours, DynamoDB will remove this replica from the replication
+    /// group. The replica will not be deleted and replication will stop from and to
+    /// this region.</p>
     /// </note>
     /// </li>
-    /// <li>      
+    /// <li>
     /// <p>
-    /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The AWS KMS key used to encrypt the table is inaccessible.</p>
+    /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The KMS key
+    /// used to encrypt the table is inaccessible.</p>
     /// <note>
-    /// <p>If the AWS KMS key remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
+    /// <p>If the KMS key remains inaccessible for more than 20 hours,
+    /// DynamoDB will remove this replica from the replication group.
+    /// The replica will not be deleted and replication will stop from and to this
+    /// region.</p>
     /// </note>
     /// </li>
     /// </ul>
     pub replica_status: std::option::Option<crate::model::ReplicaStatus>,
     /// <p>Detailed information about the replica status.</p>
     pub replica_status_description: std::option::Option<std::string::String>,
-    /// <p>Specifies the progress of a Create, Update, or Delete action on the replica
-    /// as a percentage.</p>
+    /// <p>Specifies the progress of a Create, Update, or Delete action on the replica as a
+    /// percentage.</p>
     pub replica_status_percent_progress: std::option::Option<std::string::String>,
-    /// <p>The AWS KMS customer master key (CMK) of the replica that will be used for AWS KMS
-    /// encryption.</p>
+    /// <p>The KMS key of the replica that will be used for
+    /// KMS encryption.</p>
     pub kms_master_key_id: std::option::Option<std::string::String>,
     /// <p>Replica-specific provisioned throughput. If not described, uses the source table's
     /// provisioned throughput settings.</p>
@@ -4381,8 +4489,9 @@ pub struct ReplicaDescription {
     /// <p>Replica-specific global secondary index settings.</p>
     pub global_secondary_indexes:
         std::option::Option<std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndexDescription>>,
-    /// <p>The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility check the <code>ReplicaStatus</code> property.</p>
-    pub replica_inaccessible_date_time: std::option::Option<aws_smithy_types::Instant>,
+    /// <p>The time at which the replica was first detected as inaccessible. To determine cause
+    /// of inaccessibility check the <code>ReplicaStatus</code> property.</p>
+    pub replica_inaccessible_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ReplicaDescription {
     /// <p>The name of the Region.</p>
@@ -4409,16 +4518,23 @@ impl ReplicaDescription {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>REGION_DISABLED</code> - The replica is inaccessible because the AWS Region has been disabled.</p>
+    /// <code>REGION_DISABLED</code> - The replica is inaccessible because the Amazon Web Services Region has been disabled.</p>
     /// <note>
-    /// <p>If the AWS Region remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
+    /// <p>If the Amazon Web Services Region remains inaccessible for more than 20
+    /// hours, DynamoDB will remove this replica from the replication
+    /// group. The replica will not be deleted and replication will stop from and to
+    /// this region.</p>
     /// </note>
     /// </li>
-    /// <li>      
+    /// <li>
     /// <p>
-    /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The AWS KMS key used to encrypt the table is inaccessible.</p>
+    /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The KMS key
+    /// used to encrypt the table is inaccessible.</p>
     /// <note>
-    /// <p>If the AWS KMS key remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
+    /// <p>If the KMS key remains inaccessible for more than 20 hours,
+    /// DynamoDB will remove this replica from the replication group.
+    /// The replica will not be deleted and replication will stop from and to this
+    /// region.</p>
     /// </note>
     /// </li>
     /// </ul>
@@ -4429,13 +4545,13 @@ impl ReplicaDescription {
     pub fn replica_status_description(&self) -> std::option::Option<&str> {
         self.replica_status_description.as_deref()
     }
-    /// <p>Specifies the progress of a Create, Update, or Delete action on the replica
-    /// as a percentage.</p>
+    /// <p>Specifies the progress of a Create, Update, or Delete action on the replica as a
+    /// percentage.</p>
     pub fn replica_status_percent_progress(&self) -> std::option::Option<&str> {
         self.replica_status_percent_progress.as_deref()
     }
-    /// <p>The AWS KMS customer master key (CMK) of the replica that will be used for AWS KMS
-    /// encryption.</p>
+    /// <p>The KMS key of the replica that will be used for
+    /// KMS encryption.</p>
     pub fn kms_master_key_id(&self) -> std::option::Option<&str> {
         self.kms_master_key_id.as_deref()
     }
@@ -4452,10 +4568,11 @@ impl ReplicaDescription {
     ) -> std::option::Option<&[crate::model::ReplicaGlobalSecondaryIndexDescription]> {
         self.global_secondary_indexes.as_deref()
     }
-    /// <p>The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility check the <code>ReplicaStatus</code> property.</p>
+    /// <p>The time at which the replica was first detected as inaccessible. To determine cause
+    /// of inaccessibility check the <code>ReplicaStatus</code> property.</p>
     pub fn replica_inaccessible_date_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.replica_inaccessible_date_time.as_ref()
     }
 }
@@ -4501,7 +4618,7 @@ pub mod replica_description {
         pub(crate) global_secondary_indexes: std::option::Option<
             std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndexDescription>,
         >,
-        pub(crate) replica_inaccessible_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) replica_inaccessible_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the Region.</p>
@@ -4534,16 +4651,23 @@ pub mod replica_description {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>REGION_DISABLED</code> - The replica is inaccessible because the AWS Region has been disabled.</p>
+        /// <code>REGION_DISABLED</code> - The replica is inaccessible because the Amazon Web Services Region has been disabled.</p>
         /// <note>
-        /// <p>If the AWS Region remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
+        /// <p>If the Amazon Web Services Region remains inaccessible for more than 20
+        /// hours, DynamoDB will remove this replica from the replication
+        /// group. The replica will not be deleted and replication will stop from and to
+        /// this region.</p>
         /// </note>
         /// </li>
-        /// <li>      
+        /// <li>
         /// <p>
-        /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The AWS KMS key used to encrypt the table is inaccessible.</p>
+        /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The KMS key
+        /// used to encrypt the table is inaccessible.</p>
         /// <note>
-        /// <p>If the AWS KMS key remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
+        /// <p>If the KMS key remains inaccessible for more than 20 hours,
+        /// DynamoDB will remove this replica from the replication group.
+        /// The replica will not be deleted and replication will stop from and to this
+        /// region.</p>
         /// </note>
         /// </li>
         /// </ul>
@@ -4571,16 +4695,23 @@ pub mod replica_description {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>REGION_DISABLED</code> - The replica is inaccessible because the AWS Region has been disabled.</p>
+        /// <code>REGION_DISABLED</code> - The replica is inaccessible because the Amazon Web Services Region has been disabled.</p>
         /// <note>
-        /// <p>If the AWS Region remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
+        /// <p>If the Amazon Web Services Region remains inaccessible for more than 20
+        /// hours, DynamoDB will remove this replica from the replication
+        /// group. The replica will not be deleted and replication will stop from and to
+        /// this region.</p>
         /// </note>
         /// </li>
-        /// <li>      
+        /// <li>
         /// <p>
-        /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The AWS KMS key used to encrypt the table is inaccessible.</p>
+        /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The KMS key
+        /// used to encrypt the table is inaccessible.</p>
         /// <note>
-        /// <p>If the AWS KMS key remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
+        /// <p>If the KMS key remains inaccessible for more than 20 hours,
+        /// DynamoDB will remove this replica from the replication group.
+        /// The replica will not be deleted and replication will stop from and to this
+        /// region.</p>
         /// </note>
         /// </li>
         /// </ul>
@@ -4604,8 +4735,8 @@ pub mod replica_description {
             self.replica_status_description = input;
             self
         }
-        /// <p>Specifies the progress of a Create, Update, or Delete action on the replica
-        /// as a percentage.</p>
+        /// <p>Specifies the progress of a Create, Update, or Delete action on the replica as a
+        /// percentage.</p>
         pub fn replica_status_percent_progress(
             mut self,
             input: impl Into<std::string::String>,
@@ -4613,8 +4744,8 @@ pub mod replica_description {
             self.replica_status_percent_progress = Some(input.into());
             self
         }
-        /// <p>Specifies the progress of a Create, Update, or Delete action on the replica
-        /// as a percentage.</p>
+        /// <p>Specifies the progress of a Create, Update, or Delete action on the replica as a
+        /// percentage.</p>
         pub fn set_replica_status_percent_progress(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4622,14 +4753,14 @@ pub mod replica_description {
             self.replica_status_percent_progress = input;
             self
         }
-        /// <p>The AWS KMS customer master key (CMK) of the replica that will be used for AWS KMS
-        /// encryption.</p>
+        /// <p>The KMS key of the replica that will be used for
+        /// KMS encryption.</p>
         pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_id = Some(input.into());
             self
         }
-        /// <p>The AWS KMS customer master key (CMK) of the replica that will be used for AWS KMS
-        /// encryption.</p>
+        /// <p>The KMS key of the replica that will be used for
+        /// KMS encryption.</p>
         pub fn set_kms_master_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4679,15 +4810,17 @@ pub mod replica_description {
             self.global_secondary_indexes = input;
             self
         }
-        /// <p>The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility check the <code>ReplicaStatus</code> property.</p>
-        pub fn replica_inaccessible_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        /// <p>The time at which the replica was first detected as inaccessible. To determine cause
+        /// of inaccessibility check the <code>ReplicaStatus</code> property.</p>
+        pub fn replica_inaccessible_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.replica_inaccessible_date_time = Some(input);
             self
         }
-        /// <p>The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility check the <code>ReplicaStatus</code> property.</p>
+        /// <p>The time at which the replica was first detected as inaccessible. To determine cause
+        /// of inaccessibility check the <code>ReplicaStatus</code> property.</p>
         pub fn set_replica_inaccessible_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.replica_inaccessible_date_time = input;
             self
@@ -4800,18 +4933,18 @@ impl ReplicaGlobalSecondaryIndexDescription {
     }
 }
 
-/// <p>Replica-specific provisioned throughput settings. If not specified, uses the
-/// source table's provisioned throughput settings.</p>
+/// <p>Replica-specific provisioned throughput settings. If not specified, uses the source
+/// table's provisioned throughput settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedThroughputOverride {
-    /// <p>Replica-specific read capacity units. If not specified, uses the source table's
-    /// read capacity settings.</p>
+    /// <p>Replica-specific read capacity units. If not specified, uses the source table's read
+    /// capacity settings.</p>
     pub read_capacity_units: std::option::Option<i64>,
 }
 impl ProvisionedThroughputOverride {
-    /// <p>Replica-specific read capacity units. If not specified, uses the source table's
-    /// read capacity settings.</p>
+    /// <p>Replica-specific read capacity units. If not specified, uses the source table's read
+    /// capacity settings.</p>
     pub fn read_capacity_units(&self) -> std::option::Option<i64> {
         self.read_capacity_units
     }
@@ -4832,14 +4965,14 @@ pub mod provisioned_throughput_override {
         pub(crate) read_capacity_units: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>Replica-specific read capacity units. If not specified, uses the source table's
-        /// read capacity settings.</p>
+        /// <p>Replica-specific read capacity units. If not specified, uses the source table's read
+        /// capacity settings.</p>
         pub fn read_capacity_units(mut self, input: i64) -> Self {
             self.read_capacity_units = Some(input);
             self
         }
-        /// <p>Replica-specific read capacity units. If not specified, uses the source table's
-        /// read capacity settings.</p>
+        /// <p>Replica-specific read capacity units. If not specified, uses the source table's read
+        /// capacity settings.</p>
         pub fn set_read_capacity_units(mut self, input: std::option::Option<i64>) -> Self {
             self.read_capacity_units = input;
             self
@@ -4863,63 +4996,65 @@ impl ProvisionedThroughputOverride {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamSpecification {
-    /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.</p>
+    /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the
+    /// table.</p>
     pub stream_enabled: std::option::Option<bool>,
-    /// <p>
-    /// When an item in the table is modified, <code>StreamViewType</code>
-    /// determines what information is written to the stream for this table. Valid values for
+    /// <p> When an item in the table is modified, <code>StreamViewType</code> determines what
+    /// information is written to the stream for this table. Valid values for
     /// <code>StreamViewType</code> are:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written
-    /// to the stream.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is
+    /// <code>KEYS_ONLY</code> - Only the key attributes of the modified item are
     /// written to the stream.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are
-    /// written to the stream.</p>
+    /// <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified,
+    /// is written to the stream.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified,
+    /// is written to the stream.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the
+    /// item are written to the stream.</p>
     /// </li>
     /// </ul>
     pub stream_view_type: std::option::Option<crate::model::StreamViewType>,
 }
 impl StreamSpecification {
-    /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.</p>
+    /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the
+    /// table.</p>
     pub fn stream_enabled(&self) -> std::option::Option<bool> {
         self.stream_enabled
     }
-    /// <p>
-    /// When an item in the table is modified, <code>StreamViewType</code>
-    /// determines what information is written to the stream for this table. Valid values for
+    /// <p> When an item in the table is modified, <code>StreamViewType</code> determines what
+    /// information is written to the stream for this table. Valid values for
     /// <code>StreamViewType</code> are:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written
-    /// to the stream.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is
+    /// <code>KEYS_ONLY</code> - Only the key attributes of the modified item are
     /// written to the stream.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are
-    /// written to the stream.</p>
+    /// <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified,
+    /// is written to the stream.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified,
+    /// is written to the stream.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the
+    /// item are written to the stream.</p>
     /// </li>
     /// </ul>
     pub fn stream_view_type(&self) -> std::option::Option<&crate::model::StreamViewType> {
@@ -4944,68 +5079,70 @@ pub mod stream_specification {
         pub(crate) stream_view_type: std::option::Option<crate::model::StreamViewType>,
     }
     impl Builder {
-        /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.</p>
+        /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the
+        /// table.</p>
         pub fn stream_enabled(mut self, input: bool) -> Self {
             self.stream_enabled = Some(input);
             self
         }
-        /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.</p>
+        /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the
+        /// table.</p>
         pub fn set_stream_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.stream_enabled = input;
             self
         }
-        /// <p>
-        /// When an item in the table is modified, <code>StreamViewType</code>
-        /// determines what information is written to the stream for this table. Valid values for
+        /// <p> When an item in the table is modified, <code>StreamViewType</code> determines what
+        /// information is written to the stream for this table. Valid values for
         /// <code>StreamViewType</code> are:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written
-        /// to the stream.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is
+        /// <code>KEYS_ONLY</code> - Only the key attributes of the modified item are
         /// written to the stream.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are
-        /// written to the stream.</p>
+        /// <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified,
+        /// is written to the stream.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified,
+        /// is written to the stream.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the
+        /// item are written to the stream.</p>
         /// </li>
         /// </ul>
         pub fn stream_view_type(mut self, input: crate::model::StreamViewType) -> Self {
             self.stream_view_type = Some(input);
             self
         }
-        /// <p>
-        /// When an item in the table is modified, <code>StreamViewType</code>
-        /// determines what information is written to the stream for this table. Valid values for
+        /// <p> When an item in the table is modified, <code>StreamViewType</code> determines what
+        /// information is written to the stream for this table. Valid values for
         /// <code>StreamViewType</code> are:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written
-        /// to the stream.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is
+        /// <code>KEYS_ONLY</code> - Only the key attributes of the modified item are
         /// written to the stream.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are
-        /// written to the stream.</p>
+        /// <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified,
+        /// is written to the stream.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified,
+        /// is written to the stream.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the
+        /// item are written to the stream.</p>
         /// </li>
         /// </ul>
         pub fn set_stream_view_type(
@@ -5100,7 +5237,8 @@ impl AsRef<str> for StreamViewType {
 pub struct GlobalSecondaryIndexDescription {
     /// <p>The name of the global secondary index.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
+    /// <p>The complete key schema for a global secondary index, which consists of one or more
+    /// pairs of attribute names and key types:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -5112,12 +5250,13 @@ pub struct GlobalSecondaryIndexDescription {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The partition key of an item is also known as its <i>hash
+    /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across
+    /// partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>.
-    /// The term "range attribute" derives from the way DynamoDB stores items with the same
-    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// The term "range attribute" derives from the way DynamoDB stores items with
+    /// the same partition key physically close together, in sorted order by the sort key
+    /// value.</p>
     /// </note>
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
     /// <p>Represents attributes that are copied (projected) from the table into the global
@@ -5144,24 +5283,34 @@ pub struct GlobalSecondaryIndexDescription {
     /// </li>
     /// </ul>
     pub index_status: std::option::Option<crate::model::IndexStatus>,
-    /// <p>Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items from
-    /// the table and determining whether they can be added to the index. (Not all items will qualify:  For example, a partition key
-    /// cannot have any duplicate values.) If an item can be added to the index, DynamoDB will do so. After all items have been processed,
-    /// the backfilling operation is complete and <code>Backfilling</code> is false.</p>
-    /// <p>You can delete an index that is being created during the <code>Backfilling</code> phase
-    /// when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You
-    /// can't delete the index that is being created when <code>IndexStatus</code> is set to
-    /// CREATING and <code>Backfilling</code> is false. </p>
+    /// <p>Indicates whether the index is currently backfilling. <i>Backfilling</i>
+    /// is the process of reading items from the table and determining whether they can be added
+    /// to the index. (Not all items will qualify: For example, a partition key cannot have any
+    /// duplicate values.) If an item can be added to the index, DynamoDB will do so. After all
+    /// items have been processed, the backfilling operation is complete and
+    /// <code>Backfilling</code> is false.</p>
+    /// <p>You can delete an index that is being created during the <code>Backfilling</code>
+    /// phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+    /// true. You can't delete the index that is being created when <code>IndexStatus</code> is
+    /// set to CREATING and <code>Backfilling</code> is false. </p>
     /// <note>
-    /// <p>For indexes that were created during a <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does not appear in the <code>DescribeTable</code> output.</p>
+    /// <p>For indexes that were created during a <code>CreateTable</code> operation, the
+    /// <code>Backfilling</code> attribute does not appear in the
+    /// <code>DescribeTable</code> output.</p>
     /// </note>
     pub backfilling: std::option::Option<bool>,
-    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
-    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Represents the provisioned throughput settings for the specified global secondary
+    /// index.</p>
+    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+    /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughputDescription>,
-    /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+    /// <p>The total size of the specified index, in bytes. DynamoDB updates this value
+    /// approximately every six hours. Recent changes might not be reflected in this
+    /// value.</p>
     pub index_size_bytes: i64,
-    /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+    /// <p>The number of items in the specified index. DynamoDB updates this value approximately
+    /// every six hours. Recent changes might not be reflected in this value.</p>
     pub item_count: i64,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
     pub index_arn: std::option::Option<std::string::String>,
@@ -5171,7 +5320,8 @@ impl GlobalSecondaryIndexDescription {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
+    /// <p>The complete key schema for a global secondary index, which consists of one or more
+    /// pairs of attribute names and key types:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -5183,12 +5333,13 @@ impl GlobalSecondaryIndexDescription {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The partition key of an item is also known as its <i>hash
+    /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across
+    /// partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>.
-    /// The term "range attribute" derives from the way DynamoDB stores items with the same
-    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// The term "range attribute" derives from the way DynamoDB stores items with
+    /// the same partition key physically close together, in sorted order by the sort key
+    /// value.</p>
     /// </note>
     pub fn key_schema(&self) -> std::option::Option<&[crate::model::KeySchemaElement]> {
         self.key_schema.as_deref()
@@ -5221,32 +5372,42 @@ impl GlobalSecondaryIndexDescription {
     pub fn index_status(&self) -> std::option::Option<&crate::model::IndexStatus> {
         self.index_status.as_ref()
     }
-    /// <p>Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items from
-    /// the table and determining whether they can be added to the index. (Not all items will qualify:  For example, a partition key
-    /// cannot have any duplicate values.) If an item can be added to the index, DynamoDB will do so. After all items have been processed,
-    /// the backfilling operation is complete and <code>Backfilling</code> is false.</p>
-    /// <p>You can delete an index that is being created during the <code>Backfilling</code> phase
-    /// when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You
-    /// can't delete the index that is being created when <code>IndexStatus</code> is set to
-    /// CREATING and <code>Backfilling</code> is false. </p>
+    /// <p>Indicates whether the index is currently backfilling. <i>Backfilling</i>
+    /// is the process of reading items from the table and determining whether they can be added
+    /// to the index. (Not all items will qualify: For example, a partition key cannot have any
+    /// duplicate values.) If an item can be added to the index, DynamoDB will do so. After all
+    /// items have been processed, the backfilling operation is complete and
+    /// <code>Backfilling</code> is false.</p>
+    /// <p>You can delete an index that is being created during the <code>Backfilling</code>
+    /// phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+    /// true. You can't delete the index that is being created when <code>IndexStatus</code> is
+    /// set to CREATING and <code>Backfilling</code> is false. </p>
     /// <note>
-    /// <p>For indexes that were created during a <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does not appear in the <code>DescribeTable</code> output.</p>
+    /// <p>For indexes that were created during a <code>CreateTable</code> operation, the
+    /// <code>Backfilling</code> attribute does not appear in the
+    /// <code>DescribeTable</code> output.</p>
     /// </note>
     pub fn backfilling(&self) -> std::option::Option<bool> {
         self.backfilling
     }
-    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
-    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Represents the provisioned throughput settings for the specified global secondary
+    /// index.</p>
+    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+    /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub fn provisioned_throughput(
         &self,
     ) -> std::option::Option<&crate::model::ProvisionedThroughputDescription> {
         self.provisioned_throughput.as_ref()
     }
-    /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+    /// <p>The total size of the specified index, in bytes. DynamoDB updates this value
+    /// approximately every six hours. Recent changes might not be reflected in this
+    /// value.</p>
     pub fn index_size_bytes(&self) -> i64 {
         self.index_size_bytes
     }
-    /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+    /// <p>The number of items in the specified index. DynamoDB updates this value approximately
+    /// every six hours. Recent changes might not be reflected in this value.</p>
     pub fn item_count(&self) -> i64 {
         self.item_count
     }
@@ -5302,7 +5463,8 @@ pub mod global_secondary_index_description {
         ///
         /// To override the contents of this collection use [`set_key_schema`](Self::set_key_schema).
         ///
-        /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
+        /// <p>The complete key schema for a global secondary index, which consists of one or more
+        /// pairs of attribute names and key types:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -5314,12 +5476,13 @@ pub mod global_secondary_index_description {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-        /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-        /// evenly distribute data items across partitions, based on their partition key values.</p>
+        /// <p>The partition key of an item is also known as its <i>hash
+        /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across
+        /// partitions, based on their partition key values.</p>
         /// <p>The sort key of an item is also known as its <i>range attribute</i>.
-        /// The term "range attribute" derives from the way DynamoDB stores items with the same
-        /// partition key physically close together, in sorted order by the sort key value.</p>
+        /// The term "range attribute" derives from the way DynamoDB stores items with
+        /// the same partition key physically close together, in sorted order by the sort key
+        /// value.</p>
         /// </note>
         pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
@@ -5327,7 +5490,8 @@ pub mod global_secondary_index_description {
             self.key_schema = Some(v);
             self
         }
-        /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
+        /// <p>The complete key schema for a global secondary index, which consists of one or more
+        /// pairs of attribute names and key types:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -5339,12 +5503,13 @@ pub mod global_secondary_index_description {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-        /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-        /// evenly distribute data items across partitions, based on their partition key values.</p>
+        /// <p>The partition key of an item is also known as its <i>hash
+        /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across
+        /// partitions, based on their partition key values.</p>
         /// <p>The sort key of an item is also known as its <i>range attribute</i>.
-        /// The term "range attribute" derives from the way DynamoDB stores items with the same
-        /// partition key physically close together, in sorted order by the sort key value.</p>
+        /// The term "range attribute" derives from the way DynamoDB stores items with
+        /// the same partition key physically close together, in sorted order by the sort key
+        /// value.</p>
         /// </note>
         pub fn set_key_schema(
             mut self,
@@ -5419,38 +5584,49 @@ pub mod global_secondary_index_description {
             self.index_status = input;
             self
         }
-        /// <p>Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items from
-        /// the table and determining whether they can be added to the index. (Not all items will qualify:  For example, a partition key
-        /// cannot have any duplicate values.) If an item can be added to the index, DynamoDB will do so. After all items have been processed,
-        /// the backfilling operation is complete and <code>Backfilling</code> is false.</p>
-        /// <p>You can delete an index that is being created during the <code>Backfilling</code> phase
-        /// when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You
-        /// can't delete the index that is being created when <code>IndexStatus</code> is set to
-        /// CREATING and <code>Backfilling</code> is false. </p>
+        /// <p>Indicates whether the index is currently backfilling. <i>Backfilling</i>
+        /// is the process of reading items from the table and determining whether they can be added
+        /// to the index. (Not all items will qualify: For example, a partition key cannot have any
+        /// duplicate values.) If an item can be added to the index, DynamoDB will do so. After all
+        /// items have been processed, the backfilling operation is complete and
+        /// <code>Backfilling</code> is false.</p>
+        /// <p>You can delete an index that is being created during the <code>Backfilling</code>
+        /// phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+        /// true. You can't delete the index that is being created when <code>IndexStatus</code> is
+        /// set to CREATING and <code>Backfilling</code> is false. </p>
         /// <note>
-        /// <p>For indexes that were created during a <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does not appear in the <code>DescribeTable</code> output.</p>
+        /// <p>For indexes that were created during a <code>CreateTable</code> operation, the
+        /// <code>Backfilling</code> attribute does not appear in the
+        /// <code>DescribeTable</code> output.</p>
         /// </note>
         pub fn backfilling(mut self, input: bool) -> Self {
             self.backfilling = Some(input);
             self
         }
-        /// <p>Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items from
-        /// the table and determining whether they can be added to the index. (Not all items will qualify:  For example, a partition key
-        /// cannot have any duplicate values.) If an item can be added to the index, DynamoDB will do so. After all items have been processed,
-        /// the backfilling operation is complete and <code>Backfilling</code> is false.</p>
-        /// <p>You can delete an index that is being created during the <code>Backfilling</code> phase
-        /// when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You
-        /// can't delete the index that is being created when <code>IndexStatus</code> is set to
-        /// CREATING and <code>Backfilling</code> is false. </p>
+        /// <p>Indicates whether the index is currently backfilling. <i>Backfilling</i>
+        /// is the process of reading items from the table and determining whether they can be added
+        /// to the index. (Not all items will qualify: For example, a partition key cannot have any
+        /// duplicate values.) If an item can be added to the index, DynamoDB will do so. After all
+        /// items have been processed, the backfilling operation is complete and
+        /// <code>Backfilling</code> is false.</p>
+        /// <p>You can delete an index that is being created during the <code>Backfilling</code>
+        /// phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+        /// true. You can't delete the index that is being created when <code>IndexStatus</code> is
+        /// set to CREATING and <code>Backfilling</code> is false. </p>
         /// <note>
-        /// <p>For indexes that were created during a <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does not appear in the <code>DescribeTable</code> output.</p>
+        /// <p>For indexes that were created during a <code>CreateTable</code> operation, the
+        /// <code>Backfilling</code> attribute does not appear in the
+        /// <code>DescribeTable</code> output.</p>
         /// </note>
         pub fn set_backfilling(mut self, input: std::option::Option<bool>) -> Self {
             self.backfilling = input;
             self
         }
-        /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
-        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>Represents the provisioned throughput settings for the specified global secondary
+        /// index.</p>
+        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+        /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn provisioned_throughput(
             mut self,
             input: crate::model::ProvisionedThroughputDescription,
@@ -5458,8 +5634,11 @@ pub mod global_secondary_index_description {
             self.provisioned_throughput = Some(input);
             self
         }
-        /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
-        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>Represents the provisioned throughput settings for the specified global secondary
+        /// index.</p>
+        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+        /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_provisioned_throughput(
             mut self,
             input: std::option::Option<crate::model::ProvisionedThroughputDescription>,
@@ -5467,22 +5646,28 @@ pub mod global_secondary_index_description {
             self.provisioned_throughput = input;
             self
         }
-        /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+        /// <p>The total size of the specified index, in bytes. DynamoDB updates this value
+        /// approximately every six hours. Recent changes might not be reflected in this
+        /// value.</p>
         pub fn index_size_bytes(mut self, input: i64) -> Self {
             self.index_size_bytes = Some(input);
             self
         }
-        /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+        /// <p>The total size of the specified index, in bytes. DynamoDB updates this value
+        /// approximately every six hours. Recent changes might not be reflected in this
+        /// value.</p>
         pub fn set_index_size_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.index_size_bytes = input;
             self
         }
-        /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+        /// <p>The number of items in the specified index. DynamoDB updates this value approximately
+        /// every six hours. Recent changes might not be reflected in this value.</p>
         pub fn item_count(mut self, input: i64) -> Self {
             self.item_count = Some(input);
             self
         }
-        /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+        /// <p>The number of items in the specified index. DynamoDB updates this value approximately
+        /// every six hours. Recent changes might not be reflected in this value.</p>
         pub fn set_item_count(mut self, input: std::option::Option<i64>) -> Self {
             self.item_count = input;
             self
@@ -5520,21 +5705,25 @@ impl GlobalSecondaryIndexDescription {
     }
 }
 
-/// <p>Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.</p>
+/// <p>Represents the provisioned throughput settings for the table, consisting of read and
+/// write capacity units, along with data about increases and decreases.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedThroughputDescription {
     /// <p>The date and time of the last provisioned throughput increase for this table.</p>
-    pub last_increase_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_increase_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time of the last provisioned throughput decrease for this table.</p>
-    pub last_decrease_date_time: std::option::Option<aws_smithy_types::Instant>,
-    /// <p>The number of provisioned throughput decreases for this table during this UTC calendar day.
-    /// For current maximums on provisioned throughput decreases, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub last_decrease_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The number of provisioned throughput decreases for this table during this UTC calendar
+    /// day. For current maximums on provisioned throughput decreases, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+    /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub number_of_decreases_today: std::option::Option<i64>,
-    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-    /// <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly
-    /// consistent reads, so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100
-    /// eventually consistent <code>ReadCapacityUnits</code> per second.</p>
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+    /// returns a <code>ThrottlingException</code>. Eventually consistent reads require less
+    /// effort than strongly consistent reads, so a setting of 50 <code>ReadCapacityUnits</code>
+    /// per second provides 100 eventually consistent <code>ReadCapacityUnits</code> per
+    /// second.</p>
     pub read_capacity_units: std::option::Option<i64>,
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a
     /// <code>ThrottlingException</code>.</p>
@@ -5542,22 +5731,25 @@ pub struct ProvisionedThroughputDescription {
 }
 impl ProvisionedThroughputDescription {
     /// <p>The date and time of the last provisioned throughput increase for this table.</p>
-    pub fn last_increase_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_increase_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_increase_date_time.as_ref()
     }
     /// <p>The date and time of the last provisioned throughput decrease for this table.</p>
-    pub fn last_decrease_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_decrease_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_decrease_date_time.as_ref()
     }
-    /// <p>The number of provisioned throughput decreases for this table during this UTC calendar day.
-    /// For current maximums on provisioned throughput decreases, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>The number of provisioned throughput decreases for this table during this UTC calendar
+    /// day. For current maximums on provisioned throughput decreases, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+    /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub fn number_of_decreases_today(&self) -> std::option::Option<i64> {
         self.number_of_decreases_today
     }
-    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-    /// <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly
-    /// consistent reads, so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100
-    /// eventually consistent <code>ReadCapacityUnits</code> per second.</p>
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+    /// returns a <code>ThrottlingException</code>. Eventually consistent reads require less
+    /// effort than strongly consistent reads, so a setting of 50 <code>ReadCapacityUnits</code>
+    /// per second provides 100 eventually consistent <code>ReadCapacityUnits</code> per
+    /// second.</p>
     pub fn read_capacity_units(&self) -> std::option::Option<i64> {
         self.read_capacity_units
     }
@@ -5584,63 +5776,69 @@ pub mod provisioned_throughput_description {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_increase_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_decrease_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_increase_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_decrease_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) number_of_decreases_today: std::option::Option<i64>,
         pub(crate) read_capacity_units: std::option::Option<i64>,
         pub(crate) write_capacity_units: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>The date and time of the last provisioned throughput increase for this table.</p>
-        pub fn last_increase_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_increase_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_increase_date_time = Some(input);
             self
         }
         /// <p>The date and time of the last provisioned throughput increase for this table.</p>
         pub fn set_last_increase_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_increase_date_time = input;
             self
         }
         /// <p>The date and time of the last provisioned throughput decrease for this table.</p>
-        pub fn last_decrease_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_decrease_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_decrease_date_time = Some(input);
             self
         }
         /// <p>The date and time of the last provisioned throughput decrease for this table.</p>
         pub fn set_last_decrease_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_decrease_date_time = input;
             self
         }
-        /// <p>The number of provisioned throughput decreases for this table during this UTC calendar day.
-        /// For current maximums on provisioned throughput decreases, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>The number of provisioned throughput decreases for this table during this UTC calendar
+        /// day. For current maximums on provisioned throughput decreases, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+        /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn number_of_decreases_today(mut self, input: i64) -> Self {
             self.number_of_decreases_today = Some(input);
             self
         }
-        /// <p>The number of provisioned throughput decreases for this table during this UTC calendar day.
-        /// For current maximums on provisioned throughput decreases, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>The number of provisioned throughput decreases for this table during this UTC calendar
+        /// day. For current maximums on provisioned throughput decreases, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+        /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_number_of_decreases_today(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_decreases_today = input;
             self
         }
-        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-        /// <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly
-        /// consistent reads, so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100
-        /// eventually consistent <code>ReadCapacityUnits</code> per second.</p>
+        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+        /// returns a <code>ThrottlingException</code>. Eventually consistent reads require less
+        /// effort than strongly consistent reads, so a setting of 50 <code>ReadCapacityUnits</code>
+        /// per second provides 100 eventually consistent <code>ReadCapacityUnits</code> per
+        /// second.</p>
         pub fn read_capacity_units(mut self, input: i64) -> Self {
             self.read_capacity_units = Some(input);
             self
         }
-        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-        /// <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly
-        /// consistent reads, so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100
-        /// eventually consistent <code>ReadCapacityUnits</code> per second.</p>
+        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+        /// returns a <code>ThrottlingException</code>. Eventually consistent reads require less
+        /// effort than strongly consistent reads, so a setting of 50 <code>ReadCapacityUnits</code>
+        /// per second provides 100 eventually consistent <code>ReadCapacityUnits</code> per
+        /// second.</p>
         pub fn set_read_capacity_units(mut self, input: std::option::Option<i64>) -> Self {
             self.read_capacity_units = input;
             self
@@ -5676,7 +5874,9 @@ impl ProvisionedThroughputDescription {
     }
 }
 
-/// <p>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
+/// <p>Represents attributes that are copied (projected) from the table into an index. These
+/// are in addition to the primary key attributes and index key attributes, which are
+/// automatically projected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Projection {
@@ -5689,18 +5889,22 @@ pub struct Projection {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p>
+    /// <code>INCLUDE</code> - In addition to the attributes described in
+    /// <code>KEYS_ONLY</code>, the secondary index will include other non-key
+    /// attributes that you specify.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ALL</code> - All of the table attributes are projected into the index.</p>
+    /// <code>ALL</code> - All of the table attributes are projected into the
+    /// index.</p>
     /// </li>
     /// </ul>
     pub projection_type: std::option::Option<crate::model::ProjectionType>,
     /// <p>Represents the non-key attribute names which will be projected into the index.</p>
-    /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes,
-    /// must not exceed 20. If you project the same attribute into two
-    /// different indexes, this counts as two distinct attributes when determining the total.</p>
+    /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed
+    /// across all of the local secondary indexes, must not exceed 20. If you project the same
+    /// attribute into two different indexes, this counts as two distinct attributes when
+    /// determining the total.</p>
     pub non_key_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Projection {
@@ -5713,20 +5917,24 @@ impl Projection {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p>
+    /// <code>INCLUDE</code> - In addition to the attributes described in
+    /// <code>KEYS_ONLY</code>, the secondary index will include other non-key
+    /// attributes that you specify.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ALL</code> - All of the table attributes are projected into the index.</p>
+    /// <code>ALL</code> - All of the table attributes are projected into the
+    /// index.</p>
     /// </li>
     /// </ul>
     pub fn projection_type(&self) -> std::option::Option<&crate::model::ProjectionType> {
         self.projection_type.as_ref()
     }
     /// <p>Represents the non-key attribute names which will be projected into the index.</p>
-    /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes,
-    /// must not exceed 20. If you project the same attribute into two
-    /// different indexes, this counts as two distinct attributes when determining the total.</p>
+    /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed
+    /// across all of the local secondary indexes, must not exceed 20. If you project the same
+    /// attribute into two different indexes, this counts as two distinct attributes when
+    /// determining the total.</p>
     pub fn non_key_attributes(&self) -> std::option::Option<&[std::string::String]> {
         self.non_key_attributes.as_deref()
     }
@@ -5758,11 +5966,14 @@ pub mod projection {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p>
+        /// <code>INCLUDE</code> - In addition to the attributes described in
+        /// <code>KEYS_ONLY</code>, the secondary index will include other non-key
+        /// attributes that you specify.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ALL</code> - All of the table attributes are projected into the index.</p>
+        /// <code>ALL</code> - All of the table attributes are projected into the
+        /// index.</p>
         /// </li>
         /// </ul>
         pub fn projection_type(mut self, input: crate::model::ProjectionType) -> Self {
@@ -5778,11 +5989,14 @@ pub mod projection {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p>
+        /// <code>INCLUDE</code> - In addition to the attributes described in
+        /// <code>KEYS_ONLY</code>, the secondary index will include other non-key
+        /// attributes that you specify.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ALL</code> - All of the table attributes are projected into the index.</p>
+        /// <code>ALL</code> - All of the table attributes are projected into the
+        /// index.</p>
         /// </li>
         /// </ul>
         pub fn set_projection_type(
@@ -5797,9 +6011,10 @@ pub mod projection {
         /// To override the contents of this collection use [`set_non_key_attributes`](Self::set_non_key_attributes).
         ///
         /// <p>Represents the non-key attribute names which will be projected into the index.</p>
-        /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes,
-        /// must not exceed 20. If you project the same attribute into two
-        /// different indexes, this counts as two distinct attributes when determining the total.</p>
+        /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed
+        /// across all of the local secondary indexes, must not exceed 20. If you project the same
+        /// attribute into two different indexes, this counts as two distinct attributes when
+        /// determining the total.</p>
         pub fn non_key_attributes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.non_key_attributes.unwrap_or_default();
             v.push(input.into());
@@ -5807,9 +6022,10 @@ pub mod projection {
             self
         }
         /// <p>Represents the non-key attribute names which will be projected into the index.</p>
-        /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes,
-        /// must not exceed 20. If you project the same attribute into two
-        /// different indexes, this counts as two distinct attributes when determining the total.</p>
+        /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed
+        /// across all of the local secondary indexes, must not exceed 20. If you project the same
+        /// attribute into two different indexes, this counts as two distinct attributes when
+        /// determining the total.</p>
         pub fn set_non_key_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5892,13 +6108,17 @@ impl AsRef<str> for ProjectionType {
     }
 }
 
-/// <p>Represents <i>a single element</i> of a key schema. A key schema specifies the attributes
-/// that make up the primary key of a table, or the key attributes of an index.</p>
-/// <p>A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a
-/// simple primary key would be represented by one <code>KeySchemaElement</code> (for the partition key). A composite
-/// primary key would require one <code>KeySchemaElement</code> for the partition key, and another
+/// <p>Represents <i>a single element</i> of a key schema. A key schema
+/// specifies the attributes that make up the primary key of a table, or the key attributes
+/// of an index.</p>
+/// <p>A <code>KeySchemaElement</code> represents exactly one attribute of the primary key.
+/// For example, a simple primary key would be represented by one
+/// <code>KeySchemaElement</code> (for the partition key). A composite primary key would
+/// require one <code>KeySchemaElement</code> for the partition key, and another
 /// <code>KeySchemaElement</code> for the sort key.</p>
-/// <p>A <code>KeySchemaElement</code> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary.  The attribute cannot be nested within a List or a Map.</p>
+/// <p>A <code>KeySchemaElement</code> must be a scalar, top-level attribute (not a nested
+/// attribute). The data type must be one of String, Number, or Binary. The attribute cannot
+/// be nested within a List or a Map.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeySchemaElement {
@@ -5916,12 +6136,13 @@ pub struct KeySchemaElement {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The partition key of an item is also known as its <i>hash
+    /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across
+    /// partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>.
-    /// The term "range attribute" derives from the way DynamoDB stores items with the same
-    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// The term "range attribute" derives from the way DynamoDB stores items with
+    /// the same partition key physically close together, in sorted order by the sort key
+    /// value.</p>
     /// </note>
     pub key_type: std::option::Option<crate::model::KeyType>,
 }
@@ -5942,12 +6163,13 @@ impl KeySchemaElement {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The partition key of an item is also known as its <i>hash
+    /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across
+    /// partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>.
-    /// The term "range attribute" derives from the way DynamoDB stores items with the same
-    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// The term "range attribute" derives from the way DynamoDB stores items with
+    /// the same partition key physically close together, in sorted order by the sort key
+    /// value.</p>
     /// </note>
     pub fn key_type(&self) -> std::option::Option<&crate::model::KeyType> {
         self.key_type.as_ref()
@@ -5996,12 +6218,13 @@ pub mod key_schema_element {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-        /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-        /// evenly distribute data items across partitions, based on their partition key values.</p>
+        /// <p>The partition key of an item is also known as its <i>hash
+        /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across
+        /// partitions, based on their partition key values.</p>
         /// <p>The sort key of an item is also known as its <i>range attribute</i>.
-        /// The term "range attribute" derives from the way DynamoDB stores items with the same
-        /// partition key physically close together, in sorted order by the sort key value.</p>
+        /// The term "range attribute" derives from the way DynamoDB stores items with
+        /// the same partition key physically close together, in sorted order by the sort key
+        /// value.</p>
         /// </note>
         pub fn key_type(mut self, input: crate::model::KeyType) -> Self {
             self.key_type = Some(input);
@@ -6019,12 +6242,13 @@ pub mod key_schema_element {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-        /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-        /// evenly distribute data items across partitions, based on their partition key values.</p>
+        /// <p>The partition key of an item is also known as its <i>hash
+        /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across
+        /// partitions, based on their partition key values.</p>
         /// <p>The sort key of an item is also known as its <i>range attribute</i>.
-        /// The term "range attribute" derives from the way DynamoDB stores items with the same
-        /// partition key physically close together, in sorted order by the sort key value.</p>
+        /// The term "range attribute" derives from the way DynamoDB stores items with
+        /// the same partition key physically close together, in sorted order by the sort key
+        /// value.</p>
         /// </note>
         pub fn set_key_type(mut self, input: std::option::Option<crate::model::KeyType>) -> Self {
             self.key_type = input;
@@ -6107,7 +6331,8 @@ impl AsRef<str> for KeyType {
 pub struct LocalSecondaryIndexDescription {
     /// <p>Represents the name of the local secondary index.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
+    /// <p>The complete key schema for the local secondary index, consisting of one or more pairs
+    /// of attribute names and key types:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -6119,21 +6344,27 @@ pub struct LocalSecondaryIndexDescription {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The partition key of an item is also known as its <i>hash
+    /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
+    /// an internal hash function to evenly distribute data items across partitions, based
+    /// on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>.
     /// The term "range attribute" derives from the way DynamoDB stores items with the same
-    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// partition key physically close together, in sorted order by the sort key
+    /// value.</p>
     /// </note>
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
     /// <p>Represents attributes that are copied (projected) from the table into the global
     /// secondary index. These are in addition to the primary key attributes and index key
     /// attributes, which are automatically projected. </p>
     pub projection: std::option::Option<crate::model::Projection>,
-    /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+    /// <p>The total size of the specified index, in bytes. DynamoDB updates this value
+    /// approximately every six hours. Recent changes might not be reflected in this
+    /// value.</p>
     pub index_size_bytes: i64,
-    /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+    /// <p>The number of items in the specified index. DynamoDB updates this value
+    /// approximately every six hours. Recent changes might not be reflected in this
+    /// value.</p>
     pub item_count: i64,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
     pub index_arn: std::option::Option<std::string::String>,
@@ -6143,7 +6374,8 @@ impl LocalSecondaryIndexDescription {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
+    /// <p>The complete key schema for the local secondary index, consisting of one or more pairs
+    /// of attribute names and key types:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -6155,12 +6387,14 @@ impl LocalSecondaryIndexDescription {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The partition key of an item is also known as its <i>hash
+    /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
+    /// an internal hash function to evenly distribute data items across partitions, based
+    /// on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>.
     /// The term "range attribute" derives from the way DynamoDB stores items with the same
-    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// partition key physically close together, in sorted order by the sort key
+    /// value.</p>
     /// </note>
     pub fn key_schema(&self) -> std::option::Option<&[crate::model::KeySchemaElement]> {
         self.key_schema.as_deref()
@@ -6171,11 +6405,15 @@ impl LocalSecondaryIndexDescription {
     pub fn projection(&self) -> std::option::Option<&crate::model::Projection> {
         self.projection.as_ref()
     }
-    /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+    /// <p>The total size of the specified index, in bytes. DynamoDB updates this value
+    /// approximately every six hours. Recent changes might not be reflected in this
+    /// value.</p>
     pub fn index_size_bytes(&self) -> i64 {
         self.index_size_bytes
     }
-    /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+    /// <p>The number of items in the specified index. DynamoDB updates this value
+    /// approximately every six hours. Recent changes might not be reflected in this
+    /// value.</p>
     pub fn item_count(&self) -> i64 {
         self.item_count
     }
@@ -6224,7 +6462,8 @@ pub mod local_secondary_index_description {
         ///
         /// To override the contents of this collection use [`set_key_schema`](Self::set_key_schema).
         ///
-        /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
+        /// <p>The complete key schema for the local secondary index, consisting of one or more pairs
+        /// of attribute names and key types:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -6236,12 +6475,14 @@ pub mod local_secondary_index_description {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-        /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-        /// evenly distribute data items across partitions, based on their partition key values.</p>
+        /// <p>The partition key of an item is also known as its <i>hash
+        /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
+        /// an internal hash function to evenly distribute data items across partitions, based
+        /// on their partition key values.</p>
         /// <p>The sort key of an item is also known as its <i>range attribute</i>.
         /// The term "range attribute" derives from the way DynamoDB stores items with the same
-        /// partition key physically close together, in sorted order by the sort key value.</p>
+        /// partition key physically close together, in sorted order by the sort key
+        /// value.</p>
         /// </note>
         pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
@@ -6249,7 +6490,8 @@ pub mod local_secondary_index_description {
             self.key_schema = Some(v);
             self
         }
-        /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
+        /// <p>The complete key schema for the local secondary index, consisting of one or more pairs
+        /// of attribute names and key types:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -6261,12 +6503,14 @@ pub mod local_secondary_index_description {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-        /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-        /// evenly distribute data items across partitions, based on their partition key values.</p>
+        /// <p>The partition key of an item is also known as its <i>hash
+        /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
+        /// an internal hash function to evenly distribute data items across partitions, based
+        /// on their partition key values.</p>
         /// <p>The sort key of an item is also known as its <i>range attribute</i>.
         /// The term "range attribute" derives from the way DynamoDB stores items with the same
-        /// partition key physically close together, in sorted order by the sort key value.</p>
+        /// partition key physically close together, in sorted order by the sort key
+        /// value.</p>
         /// </note>
         pub fn set_key_schema(
             mut self,
@@ -6292,22 +6536,30 @@ pub mod local_secondary_index_description {
             self.projection = input;
             self
         }
-        /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+        /// <p>The total size of the specified index, in bytes. DynamoDB updates this value
+        /// approximately every six hours. Recent changes might not be reflected in this
+        /// value.</p>
         pub fn index_size_bytes(mut self, input: i64) -> Self {
             self.index_size_bytes = Some(input);
             self
         }
-        /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+        /// <p>The total size of the specified index, in bytes. DynamoDB updates this value
+        /// approximately every six hours. Recent changes might not be reflected in this
+        /// value.</p>
         pub fn set_index_size_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.index_size_bytes = input;
             self
         }
-        /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+        /// <p>The number of items in the specified index. DynamoDB updates this value
+        /// approximately every six hours. Recent changes might not be reflected in this
+        /// value.</p>
         pub fn item_count(mut self, input: i64) -> Self {
             self.item_count = Some(input);
             self
         }
-        /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+        /// <p>The number of items in the specified index. DynamoDB updates this value
+        /// approximately every six hours. Recent changes might not be reflected in this
+        /// value.</p>
         pub fn set_item_count(mut self, input: std::option::Option<i64>) -> Self {
             self.item_count = input;
             self
@@ -6346,42 +6598,52 @@ impl LocalSecondaryIndexDescription {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BillingModeSummary {
-    /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
+    /// <p>Controls how you are charged for read and write throughput and how you manage
+    /// capacity. This setting can be changed later.</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for predictable workloads.</p>
+    /// <code>PROVISIONED</code> - Sets the read/write capacity mode to
+    /// <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for
+    /// predictable workloads.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
-    /// </p>
+    /// <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to
+    /// <code>PAY_PER_REQUEST</code>. We recommend using
+    /// <code>PAY_PER_REQUEST</code> for unpredictable workloads. </p>
     /// </li>
     /// </ul>
     pub billing_mode: std::option::Option<crate::model::BillingMode>,
-    /// <p>Represents the time when <code>PAY_PER_REQUEST</code> was last set as the read/write capacity mode.</p>
-    pub last_update_to_pay_per_request_date_time: std::option::Option<aws_smithy_types::Instant>,
+    /// <p>Represents the time when <code>PAY_PER_REQUEST</code> was last set as the read/write
+    /// capacity mode.</p>
+    pub last_update_to_pay_per_request_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BillingModeSummary {
-    /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
+    /// <p>Controls how you are charged for read and write throughput and how you manage
+    /// capacity. This setting can be changed later.</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for predictable workloads.</p>
+    /// <code>PROVISIONED</code> - Sets the read/write capacity mode to
+    /// <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for
+    /// predictable workloads.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
-    /// </p>
+    /// <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to
+    /// <code>PAY_PER_REQUEST</code>. We recommend using
+    /// <code>PAY_PER_REQUEST</code> for unpredictable workloads. </p>
     /// </li>
     /// </ul>
     pub fn billing_mode(&self) -> std::option::Option<&crate::model::BillingMode> {
         self.billing_mode.as_ref()
     }
-    /// <p>Represents the time when <code>PAY_PER_REQUEST</code> was last set as the read/write capacity mode.</p>
+    /// <p>Represents the time when <code>PAY_PER_REQUEST</code> was last set as the read/write
+    /// capacity mode.</p>
     pub fn last_update_to_pay_per_request_date_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_to_pay_per_request_date_time.as_ref()
     }
 }
@@ -6404,35 +6666,43 @@ pub mod billing_mode_summary {
     pub struct Builder {
         pub(crate) billing_mode: std::option::Option<crate::model::BillingMode>,
         pub(crate) last_update_to_pay_per_request_date_time:
-            std::option::Option<aws_smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
+        /// <p>Controls how you are charged for read and write throughput and how you manage
+        /// capacity. This setting can be changed later.</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for predictable workloads.</p>
+        /// <code>PROVISIONED</code> - Sets the read/write capacity mode to
+        /// <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for
+        /// predictable workloads.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
-        /// </p>
+        /// <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to
+        /// <code>PAY_PER_REQUEST</code>. We recommend using
+        /// <code>PAY_PER_REQUEST</code> for unpredictable workloads. </p>
         /// </li>
         /// </ul>
         pub fn billing_mode(mut self, input: crate::model::BillingMode) -> Self {
             self.billing_mode = Some(input);
             self
         }
-        /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
+        /// <p>Controls how you are charged for read and write throughput and how you manage
+        /// capacity. This setting can be changed later.</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for predictable workloads.</p>
+        /// <code>PROVISIONED</code> - Sets the read/write capacity mode to
+        /// <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for
+        /// predictable workloads.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
-        /// </p>
+        /// <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to
+        /// <code>PAY_PER_REQUEST</code>. We recommend using
+        /// <code>PAY_PER_REQUEST</code> for unpredictable workloads. </p>
         /// </li>
         /// </ul>
         pub fn set_billing_mode(
@@ -6442,18 +6712,20 @@ pub mod billing_mode_summary {
             self.billing_mode = input;
             self
         }
-        /// <p>Represents the time when <code>PAY_PER_REQUEST</code> was last set as the read/write capacity mode.</p>
+        /// <p>Represents the time when <code>PAY_PER_REQUEST</code> was last set as the read/write
+        /// capacity mode.</p>
         pub fn last_update_to_pay_per_request_date_time(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.last_update_to_pay_per_request_date_time = Some(input);
             self
         }
-        /// <p>Represents the time when <code>PAY_PER_REQUEST</code> was last set as the read/write capacity mode.</p>
+        /// <p>Represents the time when <code>PAY_PER_REQUEST</code> was last set as the read/write
+        /// capacity mode.</p>
         pub fn set_last_update_to_pay_per_request_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_to_pay_per_request_date_time = input;
             self
@@ -6530,7 +6802,8 @@ impl AsRef<str> for BillingMode {
     }
 }
 
-/// <p>Represents an attribute for describing the key schema for the table and indexes.</p>
+/// <p>Represents an attribute for describing the key schema for the table and
+/// indexes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttributeDefinition {
@@ -6737,8 +7010,8 @@ impl AsRef<str> for ScalarAttributeType {
 /// </li>
 /// <li>
 /// <p>An existing replica to be deleted. The request invokes the
-/// <code>DeleteTableReplica</code> action in the destination Region, deleting the
-/// replica and all if its items in the destination Region.</p>
+/// <code>DeleteTableReplica</code> action in the destination Region, deleting
+/// the replica and all if its items in the destination Region.</p>
 /// </li>
 /// </ul>
 #[non_exhaustive]
@@ -6901,10 +7174,11 @@ impl DeleteReplicationGroupMemberAction {
 pub struct UpdateReplicationGroupMemberAction {
     /// <p>The Region where the replica exists.</p>
     pub region_name: std::option::Option<std::string::String>,
-    /// <p>The AWS KMS customer master key (CMK) of the replica that should be used for AWS KMS encryption.
-    /// To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-    /// ARN. Note that you should only provide this parameter if the key is different from
-    /// the default DynamoDB KMS master key alias/aws/dynamodb.</p>
+    /// <p>The KMS key of the replica that should be used
+    /// for KMS encryption. To specify a key, use its key ID, Amazon Resource
+    /// Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter
+    /// if the key is different from the default DynamoDB KMS key
+    /// <code>alias/aws/dynamodb</code>.</p>
     pub kms_master_key_id: std::option::Option<std::string::String>,
     /// <p>Replica-specific provisioned throughput. If not specified, uses the source table's
     /// provisioned throughput settings.</p>
@@ -6919,10 +7193,11 @@ impl UpdateReplicationGroupMemberAction {
     pub fn region_name(&self) -> std::option::Option<&str> {
         self.region_name.as_deref()
     }
-    /// <p>The AWS KMS customer master key (CMK) of the replica that should be used for AWS KMS encryption.
-    /// To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-    /// ARN. Note that you should only provide this parameter if the key is different from
-    /// the default DynamoDB KMS master key alias/aws/dynamodb.</p>
+    /// <p>The KMS key of the replica that should be used
+    /// for KMS encryption. To specify a key, use its key ID, Amazon Resource
+    /// Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter
+    /// if the key is different from the default DynamoDB KMS key
+    /// <code>alias/aws/dynamodb</code>.</p>
     pub fn kms_master_key_id(&self) -> std::option::Option<&str> {
         self.kms_master_key_id.as_deref()
     }
@@ -6977,18 +7252,20 @@ pub mod update_replication_group_member_action {
             self.region_name = input;
             self
         }
-        /// <p>The AWS KMS customer master key (CMK) of the replica that should be used for AWS KMS encryption.
-        /// To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-        /// ARN. Note that you should only provide this parameter if the key is different from
-        /// the default DynamoDB KMS master key alias/aws/dynamodb.</p>
+        /// <p>The KMS key of the replica that should be used
+        /// for KMS encryption. To specify a key, use its key ID, Amazon Resource
+        /// Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter
+        /// if the key is different from the default DynamoDB KMS key
+        /// <code>alias/aws/dynamodb</code>.</p>
         pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_id = Some(input.into());
             self
         }
-        /// <p>The AWS KMS customer master key (CMK) of the replica that should be used for AWS KMS encryption.
-        /// To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-        /// ARN. Note that you should only provide this parameter if the key is different from
-        /// the default DynamoDB KMS master key alias/aws/dynamodb.</p>
+        /// <p>The KMS key of the replica that should be used
+        /// for KMS encryption. To specify a key, use its key ID, Amazon Resource
+        /// Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter
+        /// if the key is different from the default DynamoDB KMS key
+        /// <code>alias/aws/dynamodb</code>.</p>
         pub fn set_kms_master_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7060,8 +7337,8 @@ impl UpdateReplicationGroupMemberAction {
 pub struct ReplicaGlobalSecondaryIndex {
     /// <p>The name of the global secondary index.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>Replica table GSI-specific provisioned throughput. If not specified, uses the
-    /// source table GSI's read capacity settings.</p>
+    /// <p>Replica table GSI-specific provisioned throughput. If not specified, uses the source
+    /// table GSI's read capacity settings.</p>
     pub provisioned_throughput_override:
         std::option::Option<crate::model::ProvisionedThroughputOverride>,
 }
@@ -7070,8 +7347,8 @@ impl ReplicaGlobalSecondaryIndex {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>Replica table GSI-specific provisioned throughput. If not specified, uses the
-    /// source table GSI's read capacity settings.</p>
+    /// <p>Replica table GSI-specific provisioned throughput. If not specified, uses the source
+    /// table GSI's read capacity settings.</p>
     pub fn provisioned_throughput_override(
         &self,
     ) -> std::option::Option<&crate::model::ProvisionedThroughputOverride> {
@@ -7110,8 +7387,8 @@ pub mod replica_global_secondary_index {
             self.index_name = input;
             self
         }
-        /// <p>Replica table GSI-specific provisioned throughput. If not specified, uses the
-        /// source table GSI's read capacity settings.</p>
+        /// <p>Replica table GSI-specific provisioned throughput. If not specified, uses the source
+        /// table GSI's read capacity settings.</p>
         pub fn provisioned_throughput_override(
             mut self,
             input: crate::model::ProvisionedThroughputOverride,
@@ -7119,8 +7396,8 @@ pub mod replica_global_secondary_index {
             self.provisioned_throughput_override = Some(input);
             self
         }
-        /// <p>Replica table GSI-specific provisioned throughput. If not specified, uses the
-        /// source table GSI's read capacity settings.</p>
+        /// <p>Replica table GSI-specific provisioned throughput. If not specified, uses the source
+        /// table GSI's read capacity settings.</p>
         pub fn set_provisioned_throughput_override(
             mut self,
             input: std::option::Option<crate::model::ProvisionedThroughputOverride>,
@@ -7150,10 +7427,11 @@ impl ReplicaGlobalSecondaryIndex {
 pub struct CreateReplicationGroupMemberAction {
     /// <p>The Region where the new replica will be created.</p>
     pub region_name: std::option::Option<std::string::String>,
-    /// <p>The AWS KMS customer master key (CMK) that should be used for AWS KMS encryption
-    /// in the new replica. To specify a CMK, use its key ID, Amazon Resource Name (ARN),
-    /// alias name, or alias ARN. Note that you should only provide this parameter if the
-    /// key is different from the default DynamoDB KMS master key alias/aws/dynamodb.</p>
+    /// <p>The KMS key that should be used for KMS encryption in
+    /// the new replica. To specify a key, use its key ID, Amazon Resource Name (ARN), alias
+    /// name, or alias ARN. Note that you should only provide this parameter if the key is
+    /// different from the default DynamoDB KMS key
+    /// <code>alias/aws/dynamodb</code>.</p>
     pub kms_master_key_id: std::option::Option<std::string::String>,
     /// <p>Replica-specific provisioned throughput. If not specified, uses the source table's
     /// provisioned throughput settings.</p>
@@ -7168,10 +7446,11 @@ impl CreateReplicationGroupMemberAction {
     pub fn region_name(&self) -> std::option::Option<&str> {
         self.region_name.as_deref()
     }
-    /// <p>The AWS KMS customer master key (CMK) that should be used for AWS KMS encryption
-    /// in the new replica. To specify a CMK, use its key ID, Amazon Resource Name (ARN),
-    /// alias name, or alias ARN. Note that you should only provide this parameter if the
-    /// key is different from the default DynamoDB KMS master key alias/aws/dynamodb.</p>
+    /// <p>The KMS key that should be used for KMS encryption in
+    /// the new replica. To specify a key, use its key ID, Amazon Resource Name (ARN), alias
+    /// name, or alias ARN. Note that you should only provide this parameter if the key is
+    /// different from the default DynamoDB KMS key
+    /// <code>alias/aws/dynamodb</code>.</p>
     pub fn kms_master_key_id(&self) -> std::option::Option<&str> {
         self.kms_master_key_id.as_deref()
     }
@@ -7226,18 +7505,20 @@ pub mod create_replication_group_member_action {
             self.region_name = input;
             self
         }
-        /// <p>The AWS KMS customer master key (CMK) that should be used for AWS KMS encryption
-        /// in the new replica. To specify a CMK, use its key ID, Amazon Resource Name (ARN),
-        /// alias name, or alias ARN. Note that you should only provide this parameter if the
-        /// key is different from the default DynamoDB KMS master key alias/aws/dynamodb.</p>
+        /// <p>The KMS key that should be used for KMS encryption in
+        /// the new replica. To specify a key, use its key ID, Amazon Resource Name (ARN), alias
+        /// name, or alias ARN. Note that you should only provide this parameter if the key is
+        /// different from the default DynamoDB KMS key
+        /// <code>alias/aws/dynamodb</code>.</p>
         pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_id = Some(input.into());
             self
         }
-        /// <p>The AWS KMS customer master key (CMK) that should be used for AWS KMS encryption
-        /// in the new replica. To specify a CMK, use its key ID, Amazon Resource Name (ARN),
-        /// alias name, or alias ARN. Note that you should only provide this parameter if the
-        /// key is different from the default DynamoDB KMS master key alias/aws/dynamodb.</p>
+        /// <p>The KMS key that should be used for KMS encryption in
+        /// the new replica. To specify a key, use its key ID, Amazon Resource Name (ARN), alias
+        /// name, or alias ARN. Note that you should only provide this parameter if the key is
+        /// different from the default DynamoDB KMS key
+        /// <code>alias/aws/dynamodb</code>.</p>
         pub fn set_kms_master_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7307,30 +7588,31 @@ impl CreateReplicationGroupMemberAction {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SseSpecification {
-    /// <p>Indicates whether server-side encryption is done using an AWS managed CMK or an AWS owned CMK. If enabled (true),
-    /// server-side encryption type is set to <code>KMS</code> and an AWS managed CMK is used (AWS KMS charges apply). If disabled (false) or not specified, server-side
-    /// encryption is set to AWS owned CMK.</p>
+    /// <p>Indicates whether server-side encryption is done using an Amazon Web Services managed
+    /// key or an Amazon Web Services owned key. If enabled (true), server-side encryption type
+    /// is set to <code>KMS</code> and an Amazon Web Services managed key is used (KMS charges apply). If disabled (false) or not specified, server-side
+    /// encryption is set to Amazon Web Services owned key.</p>
     pub enabled: std::option::Option<bool>,
     /// <p>Server-side encryption type. The only supported value is:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>KMS</code> - Server-side encryption that uses AWS Key Management Service. The
-    /// key is stored in your account and is managed by AWS KMS (AWS KMS charges
-    /// apply).</p>
+    /// <code>KMS</code> - Server-side encryption that uses Key Management Service. The
+    /// key is stored in your account and is managed by KMS (KMS charges apply).</p>
     /// </li>
     /// </ul>
     pub sse_type: std::option::Option<crate::model::SseType>,
-    /// <p>The AWS KMS customer master key (CMK) that should be used for the AWS KMS encryption. To
-    /// specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note
-    /// that you should only provide this parameter if the key is different from the default
-    /// DynamoDB customer master key alias/aws/dynamodb.</p>
+    /// <p>The KMS key that should be used for the KMS encryption.
+    /// To specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN.
+    /// Note that you should only provide this parameter if the key is different from the
+    /// default DynamoDB key <code>alias/aws/dynamodb</code>.</p>
     pub kms_master_key_id: std::option::Option<std::string::String>,
 }
 impl SseSpecification {
-    /// <p>Indicates whether server-side encryption is done using an AWS managed CMK or an AWS owned CMK. If enabled (true),
-    /// server-side encryption type is set to <code>KMS</code> and an AWS managed CMK is used (AWS KMS charges apply). If disabled (false) or not specified, server-side
-    /// encryption is set to AWS owned CMK.</p>
+    /// <p>Indicates whether server-side encryption is done using an Amazon Web Services managed
+    /// key or an Amazon Web Services owned key. If enabled (true), server-side encryption type
+    /// is set to <code>KMS</code> and an Amazon Web Services managed key is used (KMS charges apply). If disabled (false) or not specified, server-side
+    /// encryption is set to Amazon Web Services owned key.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
@@ -7338,18 +7620,17 @@ impl SseSpecification {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>KMS</code> - Server-side encryption that uses AWS Key Management Service. The
-    /// key is stored in your account and is managed by AWS KMS (AWS KMS charges
-    /// apply).</p>
+    /// <code>KMS</code> - Server-side encryption that uses Key Management Service. The
+    /// key is stored in your account and is managed by KMS (KMS charges apply).</p>
     /// </li>
     /// </ul>
     pub fn sse_type(&self) -> std::option::Option<&crate::model::SseType> {
         self.sse_type.as_ref()
     }
-    /// <p>The AWS KMS customer master key (CMK) that should be used for the AWS KMS encryption. To
-    /// specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note
-    /// that you should only provide this parameter if the key is different from the default
-    /// DynamoDB customer master key alias/aws/dynamodb.</p>
+    /// <p>The KMS key that should be used for the KMS encryption.
+    /// To specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN.
+    /// Note that you should only provide this parameter if the key is different from the
+    /// default DynamoDB key <code>alias/aws/dynamodb</code>.</p>
     pub fn kms_master_key_id(&self) -> std::option::Option<&str> {
         self.kms_master_key_id.as_deref()
     }
@@ -7374,16 +7655,18 @@ pub mod sse_specification {
         pub(crate) kms_master_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Indicates whether server-side encryption is done using an AWS managed CMK or an AWS owned CMK. If enabled (true),
-        /// server-side encryption type is set to <code>KMS</code> and an AWS managed CMK is used (AWS KMS charges apply). If disabled (false) or not specified, server-side
-        /// encryption is set to AWS owned CMK.</p>
+        /// <p>Indicates whether server-side encryption is done using an Amazon Web Services managed
+        /// key or an Amazon Web Services owned key. If enabled (true), server-side encryption type
+        /// is set to <code>KMS</code> and an Amazon Web Services managed key is used (KMS charges apply). If disabled (false) or not specified, server-side
+        /// encryption is set to Amazon Web Services owned key.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>Indicates whether server-side encryption is done using an AWS managed CMK or an AWS owned CMK. If enabled (true),
-        /// server-side encryption type is set to <code>KMS</code> and an AWS managed CMK is used (AWS KMS charges apply). If disabled (false) or not specified, server-side
-        /// encryption is set to AWS owned CMK.</p>
+        /// <p>Indicates whether server-side encryption is done using an Amazon Web Services managed
+        /// key or an Amazon Web Services owned key. If enabled (true), server-side encryption type
+        /// is set to <code>KMS</code> and an Amazon Web Services managed key is used (KMS charges apply). If disabled (false) or not specified, server-side
+        /// encryption is set to Amazon Web Services owned key.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -7392,9 +7675,8 @@ pub mod sse_specification {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>KMS</code> - Server-side encryption that uses AWS Key Management Service. The
-        /// key is stored in your account and is managed by AWS KMS (AWS KMS charges
-        /// apply).</p>
+        /// <code>KMS</code> - Server-side encryption that uses Key Management Service. The
+        /// key is stored in your account and is managed by KMS (KMS charges apply).</p>
         /// </li>
         /// </ul>
         pub fn sse_type(mut self, input: crate::model::SseType) -> Self {
@@ -7405,27 +7687,26 @@ pub mod sse_specification {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>KMS</code> - Server-side encryption that uses AWS Key Management Service. The
-        /// key is stored in your account and is managed by AWS KMS (AWS KMS charges
-        /// apply).</p>
+        /// <code>KMS</code> - Server-side encryption that uses Key Management Service. The
+        /// key is stored in your account and is managed by KMS (KMS charges apply).</p>
         /// </li>
         /// </ul>
         pub fn set_sse_type(mut self, input: std::option::Option<crate::model::SseType>) -> Self {
             self.sse_type = input;
             self
         }
-        /// <p>The AWS KMS customer master key (CMK) that should be used for the AWS KMS encryption. To
-        /// specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note
-        /// that you should only provide this parameter if the key is different from the default
-        /// DynamoDB customer master key alias/aws/dynamodb.</p>
+        /// <p>The KMS key that should be used for the KMS encryption.
+        /// To specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN.
+        /// Note that you should only provide this parameter if the key is different from the
+        /// default DynamoDB key <code>alias/aws/dynamodb</code>.</p>
         pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_id = Some(input.into());
             self
         }
-        /// <p>The AWS KMS customer master key (CMK) that should be used for the AWS KMS encryption. To
-        /// specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note
-        /// that you should only provide this parameter if the key is different from the default
-        /// DynamoDB customer master key alias/aws/dynamodb.</p>
+        /// <p>The KMS key that should be used for the KMS encryption.
+        /// To specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN.
+        /// Note that you should only provide this parameter if the key is different from the
+        /// default DynamoDB key <code>alias/aws/dynamodb</code>.</p>
         pub fn set_kms_master_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7456,18 +7737,22 @@ impl SseSpecification {
 /// <p>A new global secondary index to be added to an existing table.</p>
 /// </li>
 /// <li>
-/// <p>New provisioned throughput parameters for an existing global secondary index.</p>
+/// <p>New provisioned throughput parameters for an existing global secondary
+/// index.</p>
 /// </li>
 /// <li>
-/// <p>An existing global secondary index to be removed from an existing table.</p>
+/// <p>An existing global secondary index to be removed from an existing
+/// table.</p>
 /// </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalSecondaryIndexUpdate {
-    /// <p>The name of an existing global secondary index, along with new provisioned throughput settings to be applied to that index.</p>
+    /// <p>The name of an existing global secondary index, along with new provisioned throughput
+    /// settings to be applied to that index.</p>
     pub update: std::option::Option<crate::model::UpdateGlobalSecondaryIndexAction>,
-    /// <p>The parameters required for creating a global secondary index on an existing table:</p>
+    /// <p>The parameters required for creating a global secondary index on an existing
+    /// table:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -7500,11 +7785,13 @@ pub struct GlobalSecondaryIndexUpdate {
     pub delete: std::option::Option<crate::model::DeleteGlobalSecondaryIndexAction>,
 }
 impl GlobalSecondaryIndexUpdate {
-    /// <p>The name of an existing global secondary index, along with new provisioned throughput settings to be applied to that index.</p>
+    /// <p>The name of an existing global secondary index, along with new provisioned throughput
+    /// settings to be applied to that index.</p>
     pub fn update(&self) -> std::option::Option<&crate::model::UpdateGlobalSecondaryIndexAction> {
         self.update.as_ref()
     }
-    /// <p>The parameters required for creating a global secondary index on an existing table:</p>
+    /// <p>The parameters required for creating a global secondary index on an existing
+    /// table:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -7560,12 +7847,14 @@ pub mod global_secondary_index_update {
         pub(crate) delete: std::option::Option<crate::model::DeleteGlobalSecondaryIndexAction>,
     }
     impl Builder {
-        /// <p>The name of an existing global secondary index, along with new provisioned throughput settings to be applied to that index.</p>
+        /// <p>The name of an existing global secondary index, along with new provisioned throughput
+        /// settings to be applied to that index.</p>
         pub fn update(mut self, input: crate::model::UpdateGlobalSecondaryIndexAction) -> Self {
             self.update = Some(input);
             self
         }
-        /// <p>The name of an existing global secondary index, along with new provisioned throughput settings to be applied to that index.</p>
+        /// <p>The name of an existing global secondary index, along with new provisioned throughput
+        /// settings to be applied to that index.</p>
         pub fn set_update(
             mut self,
             input: std::option::Option<crate::model::UpdateGlobalSecondaryIndexAction>,
@@ -7573,7 +7862,8 @@ pub mod global_secondary_index_update {
             self.update = input;
             self
         }
-        /// <p>The parameters required for creating a global secondary index on an existing table:</p>
+        /// <p>The parameters required for creating a global secondary index on an existing
+        /// table:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -7605,7 +7895,8 @@ pub mod global_secondary_index_update {
             self.create = Some(input);
             self
         }
-        /// <p>The parameters required for creating a global secondary index on an existing table:</p>
+        /// <p>The parameters required for creating a global secondary index on an existing
+        /// table:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -7736,8 +8027,11 @@ pub struct CreateGlobalSecondaryIndexAction {
     /// are in addition to the primary key attributes and index key attributes, which are
     /// automatically projected.</p>
     pub projection: std::option::Option<crate::model::Projection>,
-    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
-    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Represents the provisioned throughput settings for the specified global secondary
+    /// index.</p>
+    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+    /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
 }
 impl CreateGlobalSecondaryIndexAction {
@@ -7755,8 +8049,11 @@ impl CreateGlobalSecondaryIndexAction {
     pub fn projection(&self) -> std::option::Option<&crate::model::Projection> {
         self.projection.as_ref()
     }
-    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
-    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Represents the provisioned throughput settings for the specified global secondary
+    /// index.</p>
+    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+    /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub fn provisioned_throughput(
         &self,
     ) -> std::option::Option<&crate::model::ProvisionedThroughput> {
@@ -7831,8 +8128,11 @@ pub mod create_global_secondary_index_action {
             self.projection = input;
             self
         }
-        /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
-        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>Represents the provisioned throughput settings for the specified global secondary
+        /// index.</p>
+        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+        /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn provisioned_throughput(
             mut self,
             input: crate::model::ProvisionedThroughput,
@@ -7840,8 +8140,11 @@ pub mod create_global_secondary_index_action {
             self.provisioned_throughput = Some(input);
             self
         }
-        /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
-        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>Represents the provisioned throughput settings for the specified global secondary
+        /// index.</p>
+        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+        /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_provisioned_throughput(
             mut self,
             input: std::option::Option<crate::model::ProvisionedThroughput>,
@@ -7867,35 +8170,41 @@ impl CreateGlobalSecondaryIndexAction {
     }
 }
 
-/// <p>Represents the provisioned throughput settings for a specified table or index. The settings
-/// can be modified using the <code>UpdateTable</code> operation.</p>
-/// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+/// <p>Represents the provisioned throughput settings for a specified table or index. The
+/// settings can be modified using the <code>UpdateTable</code> operation.</p>
+/// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+/// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+/// Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedThroughput {
-    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-    /// <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
-    /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</p>
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+    /// returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB
+    /// Developer Guide</i>.</p>
+    /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to
+    /// 0.</p>
     pub read_capacity_units: std::option::Option<i64>,
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a
-    /// <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
-    /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</p>
+    /// <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB
+    /// Developer Guide</i>.</p>
+    /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to
+    /// 0.</p>
     pub write_capacity_units: std::option::Option<i64>,
 }
 impl ProvisionedThroughput {
-    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-    /// <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
-    /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</p>
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+    /// returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB
+    /// Developer Guide</i>.</p>
+    /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to
+    /// 0.</p>
     pub fn read_capacity_units(&self) -> std::option::Option<i64> {
         self.read_capacity_units
     }
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a
-    /// <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
-    /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</p>
+    /// <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB
+    /// Developer Guide</i>.</p>
+    /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to
+    /// 0.</p>
     pub fn write_capacity_units(&self) -> std::option::Option<i64> {
         self.write_capacity_units
     }
@@ -7918,34 +8227,38 @@ pub mod provisioned_throughput {
         pub(crate) write_capacity_units: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-        /// <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
-        /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</p>
+        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+        /// returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB
+        /// Developer Guide</i>.</p>
+        /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to
+        /// 0.</p>
         pub fn read_capacity_units(mut self, input: i64) -> Self {
             self.read_capacity_units = Some(input);
             self
         }
-        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-        /// <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
-        /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</p>
+        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+        /// returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB
+        /// Developer Guide</i>.</p>
+        /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to
+        /// 0.</p>
         pub fn set_read_capacity_units(mut self, input: std::option::Option<i64>) -> Self {
             self.read_capacity_units = input;
             self
         }
         /// <p>The maximum number of writes consumed per second before DynamoDB returns a
-        /// <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
-        /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</p>
+        /// <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB
+        /// Developer Guide</i>.</p>
+        /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to
+        /// 0.</p>
         pub fn write_capacity_units(mut self, input: i64) -> Self {
             self.write_capacity_units = Some(input);
             self
         }
         /// <p>The maximum number of writes consumed per second before DynamoDB returns a
-        /// <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
-        /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</p>
+        /// <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB
+        /// Developer Guide</i>.</p>
+        /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to
+        /// 0.</p>
         pub fn set_write_capacity_units(mut self, input: std::option::Option<i64>) -> Self {
             self.write_capacity_units = input;
             self
@@ -7966,14 +8279,18 @@ impl ProvisionedThroughput {
     }
 }
 
-/// <p>Represents the new provisioned throughput settings to be applied to a global secondary index.</p>
+/// <p>Represents the new provisioned throughput settings to be applied to a global secondary
+/// index.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGlobalSecondaryIndexAction {
     /// <p>The name of the global secondary index to be updated.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
-    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Represents the provisioned throughput settings for the specified global secondary
+    /// index.</p>
+    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+    /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
 }
 impl UpdateGlobalSecondaryIndexAction {
@@ -7981,8 +8298,11 @@ impl UpdateGlobalSecondaryIndexAction {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
-    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Represents the provisioned throughput settings for the specified global secondary
+    /// index.</p>
+    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+    /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub fn provisioned_throughput(
         &self,
     ) -> std::option::Option<&crate::model::ProvisionedThroughput> {
@@ -8017,8 +8337,11 @@ pub mod update_global_secondary_index_action {
             self.index_name = input;
             self
         }
-        /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
-        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>Represents the provisioned throughput settings for the specified global secondary
+        /// index.</p>
+        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+        /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn provisioned_throughput(
             mut self,
             input: crate::model::ProvisionedThroughput,
@@ -8026,8 +8349,11 @@ pub mod update_global_secondary_index_action {
             self.provisioned_throughput = Some(input);
             self
         }
-        /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
-        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>Represents the provisioned throughput settings for the specified global secondary
+        /// index.</p>
+        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+        /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_provisioned_throughput(
             mut self,
             input: std::option::Option<crate::model::ProvisionedThroughput>,
@@ -8052,21 +8378,29 @@ impl UpdateGlobalSecondaryIndexAction {
 }
 
 /// <p>Information about item collections, if any, that were affected by the operation.
-/// <code>ItemCollectionMetrics</code> is only returned if the request asked for it. If the
-/// table does not have any local secondary indexes, this information is not returned in the response.</p>
+/// <code>ItemCollectionMetrics</code> is only returned if the request asked for it. If
+/// the table does not have any local secondary indexes, this information is not returned in
+/// the response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ItemCollectionMetrics {
-    /// <p>The partition key value of the item collection. This value is the same as the partition key value of the item.</p>
+    /// <p>The partition key value of the item collection. This value is the same as the
+    /// partition key value of the item.</p>
     pub item_collection_key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
-    /// <p>An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+    /// <p>An estimate of item collection size, in gigabytes. This value is a two-element array
+    /// containing a lower bound and an upper bound for the estimate. The estimate includes the
+    /// size of all the items in the table, plus the size of all attributes projected into all
+    /// of the local secondary indexes on that table. Use this estimate to measure whether a
+    /// local secondary index is approaching its size limit.</p>
+    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision
+    /// or accuracy of the estimate.</p>
     pub size_estimate_range_gb: std::option::Option<std::vec::Vec<f64>>,
 }
 impl ItemCollectionMetrics {
-    /// <p>The partition key value of the item collection. This value is the same as the partition key value of the item.</p>
+    /// <p>The partition key value of the item collection. This value is the same as the
+    /// partition key value of the item.</p>
     pub fn item_collection_key(
         &self,
     ) -> std::option::Option<
@@ -8074,8 +8408,13 @@ impl ItemCollectionMetrics {
     > {
         self.item_collection_key.as_ref()
     }
-    /// <p>An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+    /// <p>An estimate of item collection size, in gigabytes. This value is a two-element array
+    /// containing a lower bound and an upper bound for the estimate. The estimate includes the
+    /// size of all the items in the table, plus the size of all attributes projected into all
+    /// of the local secondary indexes on that table. Use this estimate to measure whether a
+    /// local secondary index is approaching its size limit.</p>
+    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision
+    /// or accuracy of the estimate.</p>
     pub fn size_estimate_range_gb(&self) -> std::option::Option<&[f64]> {
         self.size_estimate_range_gb.as_deref()
     }
@@ -8104,7 +8443,8 @@ pub mod item_collection_metrics {
         ///
         /// To override the contents of this collection use [`set_item_collection_key`](Self::set_item_collection_key).
         ///
-        /// <p>The partition key value of the item collection. This value is the same as the partition key value of the item.</p>
+        /// <p>The partition key value of the item collection. This value is the same as the
+        /// partition key value of the item.</p>
         pub fn item_collection_key(
             mut self,
             k: impl Into<std::string::String>,
@@ -8115,7 +8455,8 @@ pub mod item_collection_metrics {
             self.item_collection_key = Some(hash_map);
             self
         }
-        /// <p>The partition key value of the item collection. This value is the same as the partition key value of the item.</p>
+        /// <p>The partition key value of the item collection. This value is the same as the
+        /// partition key value of the item.</p>
         pub fn set_item_collection_key(
             mut self,
             input: std::option::Option<
@@ -8129,16 +8470,26 @@ pub mod item_collection_metrics {
         ///
         /// To override the contents of this collection use [`set_size_estimate_range_gb`](Self::set_size_estimate_range_gb).
         ///
-        /// <p>An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-        /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+        /// <p>An estimate of item collection size, in gigabytes. This value is a two-element array
+        /// containing a lower bound and an upper bound for the estimate. The estimate includes the
+        /// size of all the items in the table, plus the size of all attributes projected into all
+        /// of the local secondary indexes on that table. Use this estimate to measure whether a
+        /// local secondary index is approaching its size limit.</p>
+        /// <p>The estimate is subject to change over time; therefore, do not rely on the precision
+        /// or accuracy of the estimate.</p>
         pub fn size_estimate_range_gb(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.size_estimate_range_gb.unwrap_or_default();
             v.push(input.into());
             self.size_estimate_range_gb = Some(v);
             self
         }
-        /// <p>An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-        /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+        /// <p>An estimate of item collection size, in gigabytes. This value is a two-element array
+        /// containing a lower bound and an upper bound for the estimate. The estimate includes the
+        /// size of all the items in the table, plus the size of all attributes projected into all
+        /// of the local secondary indexes on that table. Use this estimate to measure whether a
+        /// local secondary index is approaching its size limit.</p>
+        /// <p>The estimate is subject to change over time; therefore, do not rely on the precision
+        /// or accuracy of the estimate.</p>
         pub fn set_size_estimate_range_gb(
             mut self,
             input: std::option::Option<std::vec::Vec<f64>>,
@@ -8163,60 +8514,65 @@ impl ItemCollectionMetrics {
 }
 
 /// <p>Represents the data for an attribute.</p>
-/// <p>Each attribute value is described as a name-value pair.  The name is the data type, and the value is the data itself.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the
-/// <i>Amazon DynamoDB Developer Guide</i>.</p>
+/// <p>Each attribute value is described as a name-value pair. The name is the data type, and
+/// the value is the data itself.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer
+/// Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum AttributeValue {
-    /// <p>An attribute of type Binary.  For example:</p>
+    /// <p>An attribute of type Binary. For example:</p>
     /// <p>
     /// <code>"B": "dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"</code>
     /// </p>
     B(aws_smithy_types::Blob),
-    /// <p>An attribute of type Boolean.  For example:</p>
+    /// <p>An attribute of type Boolean. For example:</p>
     /// <p>
     /// <code>"BOOL": true</code>
     /// </p>
     Bool(bool),
-    /// <p>An attribute of type Binary Set.  For example:</p>
+    /// <p>An attribute of type Binary Set. For example:</p>
     /// <p>
     /// <code>"BS": ["U3Vubnk=", "UmFpbnk=", "U25vd3k="]</code>
     /// </p>
     Bs(std::vec::Vec<aws_smithy_types::Blob>),
-    /// <p>An attribute of type List.  For example:</p>
+    /// <p>An attribute of type List. For example:</p>
     /// <p>
     /// <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N", "3.14159"}]</code>
     /// </p>
     L(std::vec::Vec<crate::model::AttributeValue>),
-    /// <p>An attribute of type Map.  For example:</p>
+    /// <p>An attribute of type Map. For example:</p>
     /// <p>
     /// <code>"M": {"Name": {"S": "Joe"}, "Age": {"N": "35"}}</code>
     /// </p>
     M(std::collections::HashMap<std::string::String, crate::model::AttributeValue>),
-    /// <p>An attribute of type Number.  For example:</p>
+    /// <p>An attribute of type Number. For example:</p>
     /// <p>
     /// <code>"N": "123.45"</code>
     /// </p>
-    /// <p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
+    /// <p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility
+    /// across languages and libraries. However, DynamoDB treats them as number type attributes
+    /// for mathematical operations.</p>
     N(std::string::String),
-    /// <p>An attribute of type Number Set.  For example:</p>
+    /// <p>An attribute of type Number Set. For example:</p>
     /// <p>
     /// <code>"NS": ["42.2", "-19", "7.5", "3.14"]</code>
     /// </p>
-    /// <p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
+    /// <p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility
+    /// across languages and libraries. However, DynamoDB treats them as number type attributes
+    /// for mathematical operations.</p>
     Ns(std::vec::Vec<std::string::String>),
-    /// <p>An attribute of type Null.  For example:</p>
+    /// <p>An attribute of type Null. For example:</p>
     /// <p>
     /// <code>"NULL": true</code>
     /// </p>
     Null(bool),
-    /// <p>An attribute of type  String. For example:</p>
+    /// <p>An attribute of type String. For example:</p>
     /// <p>
     /// <code>"S": "Hello"</code>
     /// </p>
     S(std::string::String),
-    /// <p>An attribute of type String Set.  For example:</p>
+    /// <p>An attribute of type String Set. For example:</p>
     /// <p>
     /// <code>"SS": ["Giraffe", "Hippo" ,"Zebra"]</code>
     /// </p>
@@ -8236,9 +8592,9 @@ impl AttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_b(&self) -> std::result::Result<&aws_smithy_types::Blob, &Self> {
         if let AttributeValue::B(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`B`](crate::model::AttributeValue::B).
@@ -8249,9 +8605,9 @@ impl AttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_bool(&self) -> std::result::Result<&bool, &Self> {
         if let AttributeValue::Bool(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Bool`](crate::model::AttributeValue::Bool).
@@ -8262,9 +8618,9 @@ impl AttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_bs(&self) -> std::result::Result<&std::vec::Vec<aws_smithy_types::Blob>, &Self> {
         if let AttributeValue::Bs(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Bs`](crate::model::AttributeValue::Bs).
@@ -8275,9 +8631,9 @@ impl AttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_l(&self) -> std::result::Result<&std::vec::Vec<crate::model::AttributeValue>, &Self> {
         if let AttributeValue::L(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`L`](crate::model::AttributeValue::L).
@@ -8293,9 +8649,9 @@ impl AttributeValue {
         &Self,
     > {
         if let AttributeValue::M(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`M`](crate::model::AttributeValue::M).
@@ -8306,9 +8662,9 @@ impl AttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_n(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AttributeValue::N(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`N`](crate::model::AttributeValue::N).
@@ -8319,9 +8675,9 @@ impl AttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ns(&self) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
         if let AttributeValue::Ns(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Ns`](crate::model::AttributeValue::Ns).
@@ -8332,9 +8688,9 @@ impl AttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_null(&self) -> std::result::Result<&bool, &Self> {
         if let AttributeValue::Null(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Null`](crate::model::AttributeValue::Null).
@@ -8345,9 +8701,9 @@ impl AttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AttributeValue::S(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`S`](crate::model::AttributeValue::S).
@@ -8358,9 +8714,9 @@ impl AttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ss(&self) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
         if let AttributeValue::Ss(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Ss`](crate::model::AttributeValue::Ss).
@@ -8374,10 +8730,10 @@ impl AttributeValue {
 }
 
 /// <p>The capacity units consumed by an operation. The data returned includes the total
-/// provisioned throughput consumed, along with statistics for the table and any indexes involved
-/// in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it.
-/// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-/// Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+/// provisioned throughput consumed, along with statistics for the table and any indexes
+/// involved in the operation. <code>ConsumedCapacity</code> is only returned if the request
+/// asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer
+/// Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConsumedCapacity {
@@ -8391,10 +8747,12 @@ pub struct ConsumedCapacity {
     pub write_capacity_units: std::option::Option<f64>,
     /// <p>The amount of throughput consumed on the table affected by the operation.</p>
     pub table: std::option::Option<crate::model::Capacity>,
-    /// <p>The amount of throughput consumed on each local index affected by the operation.</p>
+    /// <p>The amount of throughput consumed on each local index affected by the
+    /// operation.</p>
     pub local_secondary_indexes:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Capacity>>,
-    /// <p>The amount of throughput consumed on each global index affected by the operation.</p>
+    /// <p>The amount of throughput consumed on each global index affected by the
+    /// operation.</p>
     pub global_secondary_indexes:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Capacity>>,
 }
@@ -8419,14 +8777,16 @@ impl ConsumedCapacity {
     pub fn table(&self) -> std::option::Option<&crate::model::Capacity> {
         self.table.as_ref()
     }
-    /// <p>The amount of throughput consumed on each local index affected by the operation.</p>
+    /// <p>The amount of throughput consumed on each local index affected by the
+    /// operation.</p>
     pub fn local_secondary_indexes(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Capacity>>
     {
         self.local_secondary_indexes.as_ref()
     }
-    /// <p>The amount of throughput consumed on each global index affected by the operation.</p>
+    /// <p>The amount of throughput consumed on each global index affected by the
+    /// operation.</p>
     pub fn global_secondary_indexes(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Capacity>>
@@ -8520,7 +8880,8 @@ pub mod consumed_capacity {
         ///
         /// To override the contents of this collection use [`set_local_secondary_indexes`](Self::set_local_secondary_indexes).
         ///
-        /// <p>The amount of throughput consumed on each local index affected by the operation.</p>
+        /// <p>The amount of throughput consumed on each local index affected by the
+        /// operation.</p>
         pub fn local_secondary_indexes(
             mut self,
             k: impl Into<std::string::String>,
@@ -8531,7 +8892,8 @@ pub mod consumed_capacity {
             self.local_secondary_indexes = Some(hash_map);
             self
         }
-        /// <p>The amount of throughput consumed on each local index affected by the operation.</p>
+        /// <p>The amount of throughput consumed on each local index affected by the
+        /// operation.</p>
         pub fn set_local_secondary_indexes(
             mut self,
             input: std::option::Option<
@@ -8545,7 +8907,8 @@ pub mod consumed_capacity {
         ///
         /// To override the contents of this collection use [`set_global_secondary_indexes`](Self::set_global_secondary_indexes).
         ///
-        /// <p>The amount of throughput consumed on each global index affected by the operation.</p>
+        /// <p>The amount of throughput consumed on each global index affected by the
+        /// operation.</p>
         pub fn global_secondary_indexes(
             mut self,
             k: impl Into<std::string::String>,
@@ -8556,7 +8919,8 @@ pub mod consumed_capacity {
             self.global_secondary_indexes = Some(hash_map);
             self
         }
-        /// <p>The amount of throughput consumed on each global index affected by the operation.</p>
+        /// <p>The amount of throughput consumed on each global index affected by the
+        /// operation.</p>
         pub fn set_global_secondary_indexes(
             mut self,
             input: std::option::Option<
@@ -8587,7 +8951,8 @@ impl ConsumedCapacity {
     }
 }
 
-/// <p>Represents the amount of provisioned throughput capacity consumed on a table or an index.</p>
+/// <p>Represents the amount of provisioned throughput capacity consumed on a table or an
+/// index.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Capacity {
@@ -8734,20 +9099,29 @@ impl AsRef<str> for ReturnItemCollectionMetrics {
     }
 }
 
-/// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
+/// <p>Determines the level of detail about provisioned throughput consumption that is
+/// returned in the response:</p>
 /// <ul>
 /// <li>
 /// <p>
-/// <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p>
-/// <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all.  In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p>
+/// <code>INDEXES</code> - The response includes the aggregate
+/// <code>ConsumedCapacity</code> for the operation, together with
+/// <code>ConsumedCapacity</code> for each table and secondary index that was
+/// accessed.</p>
+/// <p>Note that some operations, such as <code>GetItem</code> and
+/// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
+/// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
+/// information for table(s).</p>
 /// </li>
 /// <li>
 /// <p>
-/// <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p>
+/// <code>TOTAL</code> - The response includes only the aggregate
+/// <code>ConsumedCapacity</code> for the operation.</p>
 /// </li>
 /// <li>
 /// <p>
-/// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p>
+/// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
+/// response.</p>
 /// </li>
 /// </ul>
 #[non_exhaustive]
@@ -8937,417 +9311,510 @@ impl AsRef<str> for ConditionalOperator {
 /// ways:</p>
 /// <ul>
 /// <li>
-/// <p>Use <code>AttributeValueList</code> to specify one or more values to compare against an
-/// attribute. Use <code>ComparisonOperator</code> to specify how you want to perform the
-/// comparison. If the comparison evaluates to true, then the conditional operation
-/// succeeds.</p>
+/// <p>Use <code>AttributeValueList</code> to specify one or more values to compare
+/// against an attribute. Use <code>ComparisonOperator</code> to specify how you
+/// want to perform the comparison. If the comparison evaluates to true, then the
+/// conditional operation succeeds.</p>
 /// </li>
 /// <li>
-/// <p>Use <code>Value</code> to specify a value that DynamoDB will compare against an attribute. If the
-/// values match, then <code>ExpectedAttributeValue</code> evaluates to true and the conditional
-/// operation succeeds. Optionally, you can also set <code>Exists</code> to false, indicating that
-/// you <i>do not</i> expect to find the attribute value in the table. In this case, the
-/// conditional operation succeeds only if the comparison evaluates to false.</p>
+/// <p>Use <code>Value</code> to specify a value that DynamoDB will compare against
+/// an attribute. If the values match, then <code>ExpectedAttributeValue</code>
+/// evaluates to true and the conditional operation succeeds. Optionally, you can
+/// also set <code>Exists</code> to false, indicating that you <i>do
+/// not</i> expect to find the attribute value in the table. In this
+/// case, the conditional operation succeeds only if the comparison evaluates to
+/// false.</p>
 /// </li>
 /// </ul>
 /// <p>
-/// <code>Value</code> and <code>Exists</code> are incompatible with <code>AttributeValueList</code> and
-/// <code>ComparisonOperator</code>. Note that if you use both sets of parameters at once, DynamoDB will
-/// return a <code>ValidationException</code> exception.</p>
+/// <code>Value</code> and <code>Exists</code> are incompatible with
+/// <code>AttributeValueList</code> and <code>ComparisonOperator</code>. Note that if
+/// you use both sets of parameters at once, DynamoDB will return a
+/// <code>ValidationException</code> exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpectedAttributeValue {
     /// <p>Represents the data for the expected attribute.</p>
-    /// <p>Each attribute value is described as a name-value pair.  The name is the data type, and the value is the data itself.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the
-    /// <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Each attribute value is described as a name-value pair. The name is the data type, and
+    /// the value is the data itself.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub value: std::option::Option<crate::model::AttributeValue>,
-    /// <p>Causes DynamoDB to evaluate the value before attempting a conditional operation:</p>
+    /// <p>Causes DynamoDB to evaluate the value before attempting a conditional
+    /// operation:</p>
     /// <ul>
     /// <li>
-    /// <p>If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value
-    /// already exists in the table. If it is found, then the operation succeeds. If it is not
-    /// found, the operation fails with a <code>ConditionCheckFailedException</code>.</p>
+    /// <p>If <code>Exists</code> is <code>true</code>, DynamoDB will check to
+    /// see if that attribute value already exists in the table. If it is found, then
+    /// the operation succeeds. If it is not found, the operation fails with a
+    /// <code>ConditionCheckFailedException</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does
-    /// not exist in the table. If in fact the value does not exist, then the assumption
-    /// is valid and the operation succeeds. If the value is found, despite the assumption that it
-    /// does not exist, the operation fails with a <code>ConditionCheckFailedException</code>.</p>
+    /// <p>If <code>Exists</code> is <code>false</code>, DynamoDB assumes that
+    /// the attribute value does not exist in the table. If in fact the value does not
+    /// exist, then the assumption is valid and the operation succeeds. If the value is
+    /// found, despite the assumption that it does not exist, the operation fails with a
+    /// <code>ConditionCheckFailedException</code>.</p>
     /// </li>
     /// </ul>
-    /// <p>The default setting for <code>Exists</code> is <code>true</code>. If you supply a <code>Value</code> all
-    /// by itself, DynamoDB assumes the attribute exists: You don't have to set <code>Exists</code> to
-    /// <code>true</code>, because it is implied.</p>
+    /// <p>The default setting for <code>Exists</code> is <code>true</code>. If you supply a
+    /// <code>Value</code> all by itself, DynamoDB assumes the attribute exists:
+    /// You don't have to set <code>Exists</code> to <code>true</code>, because it is
+    /// implied.</p>
     /// <p>DynamoDB returns a <code>ValidationException</code> if:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>Exists</code> is <code>true</code> but there is no <code>Value</code> to check. (You expect a
-    /// value to exist, but don't specify what that value is.)</p>
+    /// <code>Exists</code> is <code>true</code> but there is no <code>Value</code> to
+    /// check. (You expect a value to exist, but don't specify what that value
+    /// is.)</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>Exists</code> is <code>false</code> but you also provide a <code>Value</code>. (You cannot
-    /// expect an attribute to have a value, while also expecting it not to exist.)</p>
+    /// <code>Exists</code> is <code>false</code> but you also provide a
+    /// <code>Value</code>. (You cannot expect an attribute to have a value, while
+    /// also expecting it not to exist.)</p>
     /// </li>
     /// </ul>
     pub exists: std::option::Option<bool>,
-    /// <p>A comparator for evaluating attributes in the <code>AttributeValueList</code>. For example, equals,
-    /// greater than, less than, etc.</p>
+    /// <p>A comparator for evaluating attributes in the <code>AttributeValueList</code>. For
+    /// example, equals, greater than, less than, etc.</p>
     /// <p>The following comparison operators are available:</p>
     /// <p>
-    /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code>
+    /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS |
+    /// BEGINS_WITH | IN | BETWEEN</code>
     /// </p>
     /// <p>The following are descriptions of each comparison operator.</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.</p>
+    /// <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types,
+    /// including lists and maps.</p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> element of a different
-    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, Binary, String Set, Number Set, or Binary Set.
+    /// If an item contains an <code>AttributeValue</code> element of a different type
+    /// than the one provided in the request, the value does not match. For example,
     /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+    /// "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.</p>
+    /// <code>NE</code> : Not equal. <code>NE</code> is supported for all data types,
+    /// including lists and maps.</p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String,
-    /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a different
-    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// of type String, Number, Binary, String Set, Number Set, or Binary Set. If an
+    /// item contains an <code>AttributeValue</code> of a different type than the one
+    /// provided in the request, the value does not match. For example,
     /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+    /// "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>LE</code> : Less than or equal. </p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-    /// type than the one provided in the request, the value does not match. For example,
-    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, or Binary (not a set type). If an item contains
+    /// an <code>AttributeValue</code> element of a different type than the one provided
+    /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+    /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+    /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>LT</code> : Less than. </p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String,
-    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// of type String, Number, or Binary (not a set type). If an item contains an
+    /// <code>AttributeValue</code> element of a different type than the one
+    /// provided in the request, the value does not match. For example,
     /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+    /// "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>GE</code> : Greater than or equal. </p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-    /// type than the one provided in the request, the value does not match. For example,
-    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, or Binary (not a set type). If an item contains
+    /// an <code>AttributeValue</code> element of a different type than the one provided
+    /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+    /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+    /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>GT</code> : Greater than. </p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-    /// type than the one provided in the request, the value does not match. For example,
-    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, or Binary (not a set type). If an item contains
+    /// an <code>AttributeValue</code> element of a different type than the one provided
+    /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+    /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+    /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types, including lists and maps.</p>
+    /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported
+    /// for all data types, including lists and maps.</p>
     /// <note>
-    /// <p>This operator tests for the existence of an attribute, not its data type.  If the data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NOT_NULL</code> comparison operator.</p>
+    /// <p>This operator tests for the existence of an attribute, not its data type.
+    /// If the data type of attribute "<code>a</code>" is null, and you evaluate it
+    /// using <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This
+    /// result is because the attribute "<code>a</code>" exists; its data type is
+    /// not relevant to the <code>NOT_NULL</code> comparison operator.</p>
     /// </note>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types, including lists and maps.</p>
+    /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported
+    /// for all data types, including lists and maps.</p>
     /// <note>
-    /// <p>This operator tests for the nonexistence of an attribute, not its data type.  If the data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <code>false</code>. This is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code> comparison operator.</p>
+    /// <p>This operator tests for the nonexistence of an attribute, not its data
+    /// type. If the data type of attribute "<code>a</code>" is null, and you
+    /// evaluate it using <code>NULL</code>, the result is a Boolean
+    /// <code>false</code>. This is because the attribute "<code>a</code>"
+    /// exists; its data type is not relevant to the <code>NULL</code> comparison
+    /// operator.</p>
     /// </note>
     /// </li>
     /// <li>
     /// <p>
     /// <code>CONTAINS</code> : Checks for a subsequence, or value in a set.</p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, or Binary (not a set type). If the target attribute of the comparison is of type String, then
-    /// the operator checks for a substring match. If the target attribute of the comparison is
-    /// of type Binary, then the operator looks for a subsequence of the target that matches the input.
-    /// If the target attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the
-    /// operator evaluates to true if it finds an exact match with any member of the set.</p>
-    /// <p>CONTAINS is supported for lists: When evaluating "<code>a CONTAINS b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, or Binary (not a set type). If the target
+    /// attribute of the comparison is of type String, then the operator checks for a
+    /// substring match. If the target attribute of the comparison is of type Binary,
+    /// then the operator looks for a subsequence of the target that matches the input.
+    /// If the target attribute of the comparison is a set ("<code>SS</code>",
+    /// "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to
+    /// true if it finds an exact match with any member of the set.</p>
+    /// <p>CONTAINS is supported for lists: When evaluating "<code>a CONTAINS b</code>",
+    /// "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a
+    /// map, or a list.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in
-    /// a set.</p>
+    /// <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a
+    /// value in a set.</p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, or Binary (not a set type). If the target attribute of the comparison is a String, then
-    /// the operator checks for the absence of a substring match. If the target attribute of the
-    /// comparison is Binary, then the operator checks for the absence of a subsequence of the
-    /// target that matches the input. If the target attribute of the comparison is a set ("<code>SS</code>",
-    /// "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it <i>does not</i> find an exact match with any member of the set.</p>
-    /// <p>NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, or Binary (not a set type). If the target
+    /// attribute of the comparison is a String, then the operator checks for the
+    /// absence of a substring match. If the target attribute of the comparison is
+    /// Binary, then the operator checks for the absence of a subsequence of the target
+    /// that matches the input. If the target attribute of the comparison is a set
+    /// ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the
+    /// operator evaluates to true if it <i>does not</i> find an exact
+    /// match with any member of the set.</p>
+    /// <p>NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS
+    /// b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot
+    /// be a set, a map, or a list.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>BEGINS_WITH</code> : Checks for a prefix. </p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or
-    /// Binary (not a Number or a set type). The target attribute of the comparison must be of type String or
-    /// Binary (not a Number or a set type).</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// of type String or Binary (not a Number or a set type). The target attribute of
+    /// the comparison must be of type String or Binary (not a Number or a set
+    /// type).</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>IN</code> : Checks for matching elements in a list.</p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code>
-    /// elements of type String, Number, or Binary. These attributes are compared against an
-    /// existing attribute of an item. If any elements of the input are equal to the item
-    /// attribute, the expression evaluates to true.</p>
+    /// <code>AttributeValueList</code> can contain one or more
+    /// <code>AttributeValue</code> elements of type String, Number, or Binary.
+    /// These attributes are compared against an existing attribute of an item. If any
+    /// elements of the input are equal to the item attribute, the expression evaluates
+    /// to true.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than or equal
-    /// to the second value. </p>
+    /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than
+    /// or equal to the second value. </p>
     /// <p>
-    /// <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same
-    /// type, either String, Number, or Binary (not a set type). A target attribute matches if the
-    /// target value is greater than, or equal to, the first element and less than, or equal to,
-    /// the second element. If an item contains an <code>AttributeValue</code> element of a different type than
-    /// the one provided in the request, the value does not match. For example,
+    /// <code>AttributeValueList</code> must contain two <code>AttributeValue</code>
+    /// elements of the same type, either String, Number, or Binary (not a set type). A
+    /// target attribute matches if the target value is greater than, or equal to, the
+    /// first element and less than, or equal to, the second element. If an item
+    /// contains an <code>AttributeValue</code> element of a different type than the one
+    /// provided in the request, the value does not match. For example,
     /// <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
+    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+    /// "1"]}</code>
     /// </p>
     /// </li>
     /// </ul>
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
-    /// <p>One or more values to evaluate against the supplied attribute. The number of values in the
-    /// list depends on the <code>ComparisonOperator</code> being used.</p>
+    /// <p>One or more values to evaluate against the supplied attribute. The number of values in
+    /// the list depends on the <code>ComparisonOperator</code> being used.</p>
     /// <p>For type Number, value comparisons are numeric.</p>
-    /// <p>String value comparisons for greater than, equals, or less than are based on ASCII character
-    /// code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code>
-    /// is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
-    /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
-    /// <p>For information on specifying data types in JSON, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>String value comparisons for greater than, equals, or less than are based on ASCII
+    /// character code values. For example, <code>a</code> is greater than <code>A</code>, and
+    /// <code>a</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
+    /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
+    /// compares binary values.</p>
+    /// <p>For information on specifying data types in JSON, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a>
+    /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub attribute_value_list: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
 }
 impl ExpectedAttributeValue {
     /// <p>Represents the data for the expected attribute.</p>
-    /// <p>Each attribute value is described as a name-value pair.  The name is the data type, and the value is the data itself.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the
-    /// <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Each attribute value is described as a name-value pair. The name is the data type, and
+    /// the value is the data itself.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::AttributeValue> {
         self.value.as_ref()
     }
-    /// <p>Causes DynamoDB to evaluate the value before attempting a conditional operation:</p>
+    /// <p>Causes DynamoDB to evaluate the value before attempting a conditional
+    /// operation:</p>
     /// <ul>
     /// <li>
-    /// <p>If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value
-    /// already exists in the table. If it is found, then the operation succeeds. If it is not
-    /// found, the operation fails with a <code>ConditionCheckFailedException</code>.</p>
+    /// <p>If <code>Exists</code> is <code>true</code>, DynamoDB will check to
+    /// see if that attribute value already exists in the table. If it is found, then
+    /// the operation succeeds. If it is not found, the operation fails with a
+    /// <code>ConditionCheckFailedException</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does
-    /// not exist in the table. If in fact the value does not exist, then the assumption
-    /// is valid and the operation succeeds. If the value is found, despite the assumption that it
-    /// does not exist, the operation fails with a <code>ConditionCheckFailedException</code>.</p>
+    /// <p>If <code>Exists</code> is <code>false</code>, DynamoDB assumes that
+    /// the attribute value does not exist in the table. If in fact the value does not
+    /// exist, then the assumption is valid and the operation succeeds. If the value is
+    /// found, despite the assumption that it does not exist, the operation fails with a
+    /// <code>ConditionCheckFailedException</code>.</p>
     /// </li>
     /// </ul>
-    /// <p>The default setting for <code>Exists</code> is <code>true</code>. If you supply a <code>Value</code> all
-    /// by itself, DynamoDB assumes the attribute exists: You don't have to set <code>Exists</code> to
-    /// <code>true</code>, because it is implied.</p>
+    /// <p>The default setting for <code>Exists</code> is <code>true</code>. If you supply a
+    /// <code>Value</code> all by itself, DynamoDB assumes the attribute exists:
+    /// You don't have to set <code>Exists</code> to <code>true</code>, because it is
+    /// implied.</p>
     /// <p>DynamoDB returns a <code>ValidationException</code> if:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>Exists</code> is <code>true</code> but there is no <code>Value</code> to check. (You expect a
-    /// value to exist, but don't specify what that value is.)</p>
+    /// <code>Exists</code> is <code>true</code> but there is no <code>Value</code> to
+    /// check. (You expect a value to exist, but don't specify what that value
+    /// is.)</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>Exists</code> is <code>false</code> but you also provide a <code>Value</code>. (You cannot
-    /// expect an attribute to have a value, while also expecting it not to exist.)</p>
+    /// <code>Exists</code> is <code>false</code> but you also provide a
+    /// <code>Value</code>. (You cannot expect an attribute to have a value, while
+    /// also expecting it not to exist.)</p>
     /// </li>
     /// </ul>
     pub fn exists(&self) -> std::option::Option<bool> {
         self.exists
     }
-    /// <p>A comparator for evaluating attributes in the <code>AttributeValueList</code>. For example, equals,
-    /// greater than, less than, etc.</p>
+    /// <p>A comparator for evaluating attributes in the <code>AttributeValueList</code>. For
+    /// example, equals, greater than, less than, etc.</p>
     /// <p>The following comparison operators are available:</p>
     /// <p>
-    /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code>
+    /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS |
+    /// BEGINS_WITH | IN | BETWEEN</code>
     /// </p>
     /// <p>The following are descriptions of each comparison operator.</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.</p>
+    /// <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types,
+    /// including lists and maps.</p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> element of a different
-    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, Binary, String Set, Number Set, or Binary Set.
+    /// If an item contains an <code>AttributeValue</code> element of a different type
+    /// than the one provided in the request, the value does not match. For example,
     /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+    /// "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.</p>
+    /// <code>NE</code> : Not equal. <code>NE</code> is supported for all data types,
+    /// including lists and maps.</p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String,
-    /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a different
-    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// of type String, Number, Binary, String Set, Number Set, or Binary Set. If an
+    /// item contains an <code>AttributeValue</code> of a different type than the one
+    /// provided in the request, the value does not match. For example,
     /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+    /// "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>LE</code> : Less than or equal. </p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-    /// type than the one provided in the request, the value does not match. For example,
-    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, or Binary (not a set type). If an item contains
+    /// an <code>AttributeValue</code> element of a different type than the one provided
+    /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+    /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+    /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>LT</code> : Less than. </p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String,
-    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// of type String, Number, or Binary (not a set type). If an item contains an
+    /// <code>AttributeValue</code> element of a different type than the one
+    /// provided in the request, the value does not match. For example,
     /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+    /// "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>GE</code> : Greater than or equal. </p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-    /// type than the one provided in the request, the value does not match. For example,
-    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, or Binary (not a set type). If an item contains
+    /// an <code>AttributeValue</code> element of a different type than the one provided
+    /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+    /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+    /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>GT</code> : Greater than. </p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-    /// type than the one provided in the request, the value does not match. For example,
-    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, or Binary (not a set type). If an item contains
+    /// an <code>AttributeValue</code> element of a different type than the one provided
+    /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+    /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+    /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types, including lists and maps.</p>
+    /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported
+    /// for all data types, including lists and maps.</p>
     /// <note>
-    /// <p>This operator tests for the existence of an attribute, not its data type.  If the data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NOT_NULL</code> comparison operator.</p>
+    /// <p>This operator tests for the existence of an attribute, not its data type.
+    /// If the data type of attribute "<code>a</code>" is null, and you evaluate it
+    /// using <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This
+    /// result is because the attribute "<code>a</code>" exists; its data type is
+    /// not relevant to the <code>NOT_NULL</code> comparison operator.</p>
     /// </note>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types, including lists and maps.</p>
+    /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported
+    /// for all data types, including lists and maps.</p>
     /// <note>
-    /// <p>This operator tests for the nonexistence of an attribute, not its data type.  If the data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <code>false</code>. This is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code> comparison operator.</p>
+    /// <p>This operator tests for the nonexistence of an attribute, not its data
+    /// type. If the data type of attribute "<code>a</code>" is null, and you
+    /// evaluate it using <code>NULL</code>, the result is a Boolean
+    /// <code>false</code>. This is because the attribute "<code>a</code>"
+    /// exists; its data type is not relevant to the <code>NULL</code> comparison
+    /// operator.</p>
     /// </note>
     /// </li>
     /// <li>
     /// <p>
     /// <code>CONTAINS</code> : Checks for a subsequence, or value in a set.</p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, or Binary (not a set type). If the target attribute of the comparison is of type String, then
-    /// the operator checks for a substring match. If the target attribute of the comparison is
-    /// of type Binary, then the operator looks for a subsequence of the target that matches the input.
-    /// If the target attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the
-    /// operator evaluates to true if it finds an exact match with any member of the set.</p>
-    /// <p>CONTAINS is supported for lists: When evaluating "<code>a CONTAINS b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, or Binary (not a set type). If the target
+    /// attribute of the comparison is of type String, then the operator checks for a
+    /// substring match. If the target attribute of the comparison is of type Binary,
+    /// then the operator looks for a subsequence of the target that matches the input.
+    /// If the target attribute of the comparison is a set ("<code>SS</code>",
+    /// "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to
+    /// true if it finds an exact match with any member of the set.</p>
+    /// <p>CONTAINS is supported for lists: When evaluating "<code>a CONTAINS b</code>",
+    /// "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a
+    /// map, or a list.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in
-    /// a set.</p>
+    /// <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a
+    /// value in a set.</p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, or Binary (not a set type). If the target attribute of the comparison is a String, then
-    /// the operator checks for the absence of a substring match. If the target attribute of the
-    /// comparison is Binary, then the operator checks for the absence of a subsequence of the
-    /// target that matches the input. If the target attribute of the comparison is a set ("<code>SS</code>",
-    /// "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it <i>does not</i> find an exact match with any member of the set.</p>
-    /// <p>NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, or Binary (not a set type). If the target
+    /// attribute of the comparison is a String, then the operator checks for the
+    /// absence of a substring match. If the target attribute of the comparison is
+    /// Binary, then the operator checks for the absence of a subsequence of the target
+    /// that matches the input. If the target attribute of the comparison is a set
+    /// ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the
+    /// operator evaluates to true if it <i>does not</i> find an exact
+    /// match with any member of the set.</p>
+    /// <p>NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS
+    /// b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot
+    /// be a set, a map, or a list.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>BEGINS_WITH</code> : Checks for a prefix. </p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or
-    /// Binary (not a Number or a set type). The target attribute of the comparison must be of type String or
-    /// Binary (not a Number or a set type).</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// of type String or Binary (not a Number or a set type). The target attribute of
+    /// the comparison must be of type String or Binary (not a Number or a set
+    /// type).</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>IN</code> : Checks for matching elements in a list.</p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code>
-    /// elements of type String, Number, or Binary. These attributes are compared against an
-    /// existing attribute of an item. If any elements of the input are equal to the item
-    /// attribute, the expression evaluates to true.</p>
+    /// <code>AttributeValueList</code> can contain one or more
+    /// <code>AttributeValue</code> elements of type String, Number, or Binary.
+    /// These attributes are compared against an existing attribute of an item. If any
+    /// elements of the input are equal to the item attribute, the expression evaluates
+    /// to true.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than or equal
-    /// to the second value. </p>
+    /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than
+    /// or equal to the second value. </p>
     /// <p>
-    /// <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same
-    /// type, either String, Number, or Binary (not a set type). A target attribute matches if the
-    /// target value is greater than, or equal to, the first element and less than, or equal to,
-    /// the second element. If an item contains an <code>AttributeValue</code> element of a different type than
-    /// the one provided in the request, the value does not match. For example,
+    /// <code>AttributeValueList</code> must contain two <code>AttributeValue</code>
+    /// elements of the same type, either String, Number, or Binary (not a set type). A
+    /// target attribute matches if the target value is greater than, or equal to, the
+    /// first element and less than, or equal to, the second element. If an item
+    /// contains an <code>AttributeValue</code> element of a different type than the one
+    /// provided in the request, the value does not match. For example,
     /// <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
+    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+    /// "1"]}</code>
     /// </p>
     /// </li>
     /// </ul>
     pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
-    /// <p>One or more values to evaluate against the supplied attribute. The number of values in the
-    /// list depends on the <code>ComparisonOperator</code> being used.</p>
+    /// <p>One or more values to evaluate against the supplied attribute. The number of values in
+    /// the list depends on the <code>ComparisonOperator</code> being used.</p>
     /// <p>For type Number, value comparisons are numeric.</p>
-    /// <p>String value comparisons for greater than, equals, or less than are based on ASCII character
-    /// code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code>
-    /// is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
-    /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
-    /// <p>For information on specifying data types in JSON, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>String value comparisons for greater than, equals, or less than are based on ASCII
+    /// character code values. For example, <code>a</code> is greater than <code>A</code>, and
+    /// <code>a</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
+    /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
+    /// compares binary values.</p>
+    /// <p>For information on specifying data types in JSON, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a>
+    /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn attribute_value_list(&self) -> std::option::Option<&[crate::model::AttributeValue]> {
         self.attribute_value_list.as_deref()
     }
@@ -9376,17 +9843,19 @@ pub mod expected_attribute_value {
     }
     impl Builder {
         /// <p>Represents the data for the expected attribute.</p>
-        /// <p>Each attribute value is described as a name-value pair.  The name is the data type, and the value is the data itself.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the
-        /// <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>Each attribute value is described as a name-value pair. The name is the data type, and
+        /// the value is the data itself.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn value(mut self, input: crate::model::AttributeValue) -> Self {
             self.value = Some(input);
             self
         }
         /// <p>Represents the data for the expected attribute.</p>
-        /// <p>Each attribute value is described as a name-value pair.  The name is the data type, and the value is the data itself.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the
-        /// <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>Each attribute value is described as a name-value pair. The name is the data type, and
+        /// the value is the data itself.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_value(
             mut self,
             input: std::option::Option<crate::model::AttributeValue>,
@@ -9394,217 +9863,265 @@ pub mod expected_attribute_value {
             self.value = input;
             self
         }
-        /// <p>Causes DynamoDB to evaluate the value before attempting a conditional operation:</p>
+        /// <p>Causes DynamoDB to evaluate the value before attempting a conditional
+        /// operation:</p>
         /// <ul>
         /// <li>
-        /// <p>If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value
-        /// already exists in the table. If it is found, then the operation succeeds. If it is not
-        /// found, the operation fails with a <code>ConditionCheckFailedException</code>.</p>
+        /// <p>If <code>Exists</code> is <code>true</code>, DynamoDB will check to
+        /// see if that attribute value already exists in the table. If it is found, then
+        /// the operation succeeds. If it is not found, the operation fails with a
+        /// <code>ConditionCheckFailedException</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does
-        /// not exist in the table. If in fact the value does not exist, then the assumption
-        /// is valid and the operation succeeds. If the value is found, despite the assumption that it
-        /// does not exist, the operation fails with a <code>ConditionCheckFailedException</code>.</p>
+        /// <p>If <code>Exists</code> is <code>false</code>, DynamoDB assumes that
+        /// the attribute value does not exist in the table. If in fact the value does not
+        /// exist, then the assumption is valid and the operation succeeds. If the value is
+        /// found, despite the assumption that it does not exist, the operation fails with a
+        /// <code>ConditionCheckFailedException</code>.</p>
         /// </li>
         /// </ul>
-        /// <p>The default setting for <code>Exists</code> is <code>true</code>. If you supply a <code>Value</code> all
-        /// by itself, DynamoDB assumes the attribute exists: You don't have to set <code>Exists</code> to
-        /// <code>true</code>, because it is implied.</p>
+        /// <p>The default setting for <code>Exists</code> is <code>true</code>. If you supply a
+        /// <code>Value</code> all by itself, DynamoDB assumes the attribute exists:
+        /// You don't have to set <code>Exists</code> to <code>true</code>, because it is
+        /// implied.</p>
         /// <p>DynamoDB returns a <code>ValidationException</code> if:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>Exists</code> is <code>true</code> but there is no <code>Value</code> to check. (You expect a
-        /// value to exist, but don't specify what that value is.)</p>
+        /// <code>Exists</code> is <code>true</code> but there is no <code>Value</code> to
+        /// check. (You expect a value to exist, but don't specify what that value
+        /// is.)</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>Exists</code> is <code>false</code> but you also provide a <code>Value</code>. (You cannot
-        /// expect an attribute to have a value, while also expecting it not to exist.)</p>
+        /// <code>Exists</code> is <code>false</code> but you also provide a
+        /// <code>Value</code>. (You cannot expect an attribute to have a value, while
+        /// also expecting it not to exist.)</p>
         /// </li>
         /// </ul>
         pub fn exists(mut self, input: bool) -> Self {
             self.exists = Some(input);
             self
         }
-        /// <p>Causes DynamoDB to evaluate the value before attempting a conditional operation:</p>
+        /// <p>Causes DynamoDB to evaluate the value before attempting a conditional
+        /// operation:</p>
         /// <ul>
         /// <li>
-        /// <p>If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value
-        /// already exists in the table. If it is found, then the operation succeeds. If it is not
-        /// found, the operation fails with a <code>ConditionCheckFailedException</code>.</p>
+        /// <p>If <code>Exists</code> is <code>true</code>, DynamoDB will check to
+        /// see if that attribute value already exists in the table. If it is found, then
+        /// the operation succeeds. If it is not found, the operation fails with a
+        /// <code>ConditionCheckFailedException</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does
-        /// not exist in the table. If in fact the value does not exist, then the assumption
-        /// is valid and the operation succeeds. If the value is found, despite the assumption that it
-        /// does not exist, the operation fails with a <code>ConditionCheckFailedException</code>.</p>
+        /// <p>If <code>Exists</code> is <code>false</code>, DynamoDB assumes that
+        /// the attribute value does not exist in the table. If in fact the value does not
+        /// exist, then the assumption is valid and the operation succeeds. If the value is
+        /// found, despite the assumption that it does not exist, the operation fails with a
+        /// <code>ConditionCheckFailedException</code>.</p>
         /// </li>
         /// </ul>
-        /// <p>The default setting for <code>Exists</code> is <code>true</code>. If you supply a <code>Value</code> all
-        /// by itself, DynamoDB assumes the attribute exists: You don't have to set <code>Exists</code> to
-        /// <code>true</code>, because it is implied.</p>
+        /// <p>The default setting for <code>Exists</code> is <code>true</code>. If you supply a
+        /// <code>Value</code> all by itself, DynamoDB assumes the attribute exists:
+        /// You don't have to set <code>Exists</code> to <code>true</code>, because it is
+        /// implied.</p>
         /// <p>DynamoDB returns a <code>ValidationException</code> if:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>Exists</code> is <code>true</code> but there is no <code>Value</code> to check. (You expect a
-        /// value to exist, but don't specify what that value is.)</p>
+        /// <code>Exists</code> is <code>true</code> but there is no <code>Value</code> to
+        /// check. (You expect a value to exist, but don't specify what that value
+        /// is.)</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>Exists</code> is <code>false</code> but you also provide a <code>Value</code>. (You cannot
-        /// expect an attribute to have a value, while also expecting it not to exist.)</p>
+        /// <code>Exists</code> is <code>false</code> but you also provide a
+        /// <code>Value</code>. (You cannot expect an attribute to have a value, while
+        /// also expecting it not to exist.)</p>
         /// </li>
         /// </ul>
         pub fn set_exists(mut self, input: std::option::Option<bool>) -> Self {
             self.exists = input;
             self
         }
-        /// <p>A comparator for evaluating attributes in the <code>AttributeValueList</code>. For example, equals,
-        /// greater than, less than, etc.</p>
+        /// <p>A comparator for evaluating attributes in the <code>AttributeValueList</code>. For
+        /// example, equals, greater than, less than, etc.</p>
         /// <p>The following comparison operators are available:</p>
         /// <p>
-        /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code>
+        /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS |
+        /// BEGINS_WITH | IN | BETWEEN</code>
         /// </p>
         /// <p>The following are descriptions of each comparison operator.</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.</p>
+        /// <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types,
+        /// including lists and maps.</p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> element of a different
-        /// type than the one provided in the request, the value does not match. For example,
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, Binary, String Set, Number Set, or Binary Set.
+        /// If an item contains an <code>AttributeValue</code> element of a different type
+        /// than the one provided in the request, the value does not match. For example,
         /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+        /// "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.</p>
+        /// <code>NE</code> : Not equal. <code>NE</code> is supported for all data types,
+        /// including lists and maps.</p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String,
-        /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a different
-        /// type than the one provided in the request, the value does not match. For example,
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// of type String, Number, Binary, String Set, Number Set, or Binary Set. If an
+        /// item contains an <code>AttributeValue</code> of a different type than the one
+        /// provided in the request, the value does not match. For example,
         /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+        /// "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>LE</code> : Less than or equal. </p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-        /// type than the one provided in the request, the value does not match. For example,
-        /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, or Binary (not a set type). If an item contains
+        /// an <code>AttributeValue</code> element of a different type than the one provided
+        /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+        /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+        /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>LT</code> : Less than. </p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String,
-        /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-        /// type than the one provided in the request, the value does not match. For example,
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// of type String, Number, or Binary (not a set type). If an item contains an
+        /// <code>AttributeValue</code> element of a different type than the one
+        /// provided in the request, the value does not match. For example,
         /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+        /// "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>GE</code> : Greater than or equal. </p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-        /// type than the one provided in the request, the value does not match. For example,
-        /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, or Binary (not a set type). If an item contains
+        /// an <code>AttributeValue</code> element of a different type than the one provided
+        /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+        /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+        /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>GT</code> : Greater than. </p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-        /// type than the one provided in the request, the value does not match. For example,
-        /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, or Binary (not a set type). If an item contains
+        /// an <code>AttributeValue</code> element of a different type than the one provided
+        /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+        /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+        /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types, including lists and maps.</p>
+        /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported
+        /// for all data types, including lists and maps.</p>
         /// <note>
-        /// <p>This operator tests for the existence of an attribute, not its data type.  If the data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NOT_NULL</code> comparison operator.</p>
+        /// <p>This operator tests for the existence of an attribute, not its data type.
+        /// If the data type of attribute "<code>a</code>" is null, and you evaluate it
+        /// using <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This
+        /// result is because the attribute "<code>a</code>" exists; its data type is
+        /// not relevant to the <code>NOT_NULL</code> comparison operator.</p>
         /// </note>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types, including lists and maps.</p>
+        /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported
+        /// for all data types, including lists and maps.</p>
         /// <note>
-        /// <p>This operator tests for the nonexistence of an attribute, not its data type.  If the data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <code>false</code>. This is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code> comparison operator.</p>
+        /// <p>This operator tests for the nonexistence of an attribute, not its data
+        /// type. If the data type of attribute "<code>a</code>" is null, and you
+        /// evaluate it using <code>NULL</code>, the result is a Boolean
+        /// <code>false</code>. This is because the attribute "<code>a</code>"
+        /// exists; its data type is not relevant to the <code>NULL</code> comparison
+        /// operator.</p>
         /// </note>
         /// </li>
         /// <li>
         /// <p>
         /// <code>CONTAINS</code> : Checks for a subsequence, or value in a set.</p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, or Binary (not a set type). If the target attribute of the comparison is of type String, then
-        /// the operator checks for a substring match. If the target attribute of the comparison is
-        /// of type Binary, then the operator looks for a subsequence of the target that matches the input.
-        /// If the target attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the
-        /// operator evaluates to true if it finds an exact match with any member of the set.</p>
-        /// <p>CONTAINS is supported for lists: When evaluating "<code>a CONTAINS b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, or Binary (not a set type). If the target
+        /// attribute of the comparison is of type String, then the operator checks for a
+        /// substring match. If the target attribute of the comparison is of type Binary,
+        /// then the operator looks for a subsequence of the target that matches the input.
+        /// If the target attribute of the comparison is a set ("<code>SS</code>",
+        /// "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to
+        /// true if it finds an exact match with any member of the set.</p>
+        /// <p>CONTAINS is supported for lists: When evaluating "<code>a CONTAINS b</code>",
+        /// "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a
+        /// map, or a list.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in
-        /// a set.</p>
+        /// <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a
+        /// value in a set.</p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, or Binary (not a set type). If the target attribute of the comparison is a String, then
-        /// the operator checks for the absence of a substring match. If the target attribute of the
-        /// comparison is Binary, then the operator checks for the absence of a subsequence of the
-        /// target that matches the input. If the target attribute of the comparison is a set ("<code>SS</code>",
-        /// "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it <i>does not</i> find an exact match with any member of the set.</p>
-        /// <p>NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, or Binary (not a set type). If the target
+        /// attribute of the comparison is a String, then the operator checks for the
+        /// absence of a substring match. If the target attribute of the comparison is
+        /// Binary, then the operator checks for the absence of a subsequence of the target
+        /// that matches the input. If the target attribute of the comparison is a set
+        /// ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the
+        /// operator evaluates to true if it <i>does not</i> find an exact
+        /// match with any member of the set.</p>
+        /// <p>NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS
+        /// b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot
+        /// be a set, a map, or a list.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>BEGINS_WITH</code> : Checks for a prefix. </p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or
-        /// Binary (not a Number or a set type). The target attribute of the comparison must be of type String or
-        /// Binary (not a Number or a set type).</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// of type String or Binary (not a Number or a set type). The target attribute of
+        /// the comparison must be of type String or Binary (not a Number or a set
+        /// type).</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>IN</code> : Checks for matching elements in a list.</p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code>
-        /// elements of type String, Number, or Binary. These attributes are compared against an
-        /// existing attribute of an item. If any elements of the input are equal to the item
-        /// attribute, the expression evaluates to true.</p>
+        /// <code>AttributeValueList</code> can contain one or more
+        /// <code>AttributeValue</code> elements of type String, Number, or Binary.
+        /// These attributes are compared against an existing attribute of an item. If any
+        /// elements of the input are equal to the item attribute, the expression evaluates
+        /// to true.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than or equal
-        /// to the second value. </p>
+        /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than
+        /// or equal to the second value. </p>
         /// <p>
-        /// <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same
-        /// type, either String, Number, or Binary (not a set type). A target attribute matches if the
-        /// target value is greater than, or equal to, the first element and less than, or equal to,
-        /// the second element. If an item contains an <code>AttributeValue</code> element of a different type than
-        /// the one provided in the request, the value does not match. For example,
+        /// <code>AttributeValueList</code> must contain two <code>AttributeValue</code>
+        /// elements of the same type, either String, Number, or Binary (not a set type). A
+        /// target attribute matches if the target value is greater than, or equal to, the
+        /// first element and less than, or equal to, the second element. If an item
+        /// contains an <code>AttributeValue</code> element of a different type than the one
+        /// provided in the request, the value does not match. For example,
         /// <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
+        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+        /// "1"]}</code>
         /// </p>
         /// </li>
         /// </ul>
@@ -9612,149 +10129,185 @@ pub mod expected_attribute_value {
             self.comparison_operator = Some(input);
             self
         }
-        /// <p>A comparator for evaluating attributes in the <code>AttributeValueList</code>. For example, equals,
-        /// greater than, less than, etc.</p>
+        /// <p>A comparator for evaluating attributes in the <code>AttributeValueList</code>. For
+        /// example, equals, greater than, less than, etc.</p>
         /// <p>The following comparison operators are available:</p>
         /// <p>
-        /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code>
+        /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS |
+        /// BEGINS_WITH | IN | BETWEEN</code>
         /// </p>
         /// <p>The following are descriptions of each comparison operator.</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.</p>
+        /// <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types,
+        /// including lists and maps.</p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> element of a different
-        /// type than the one provided in the request, the value does not match. For example,
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, Binary, String Set, Number Set, or Binary Set.
+        /// If an item contains an <code>AttributeValue</code> element of a different type
+        /// than the one provided in the request, the value does not match. For example,
         /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+        /// "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.</p>
+        /// <code>NE</code> : Not equal. <code>NE</code> is supported for all data types,
+        /// including lists and maps.</p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String,
-        /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a different
-        /// type than the one provided in the request, the value does not match. For example,
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// of type String, Number, Binary, String Set, Number Set, or Binary Set. If an
+        /// item contains an <code>AttributeValue</code> of a different type than the one
+        /// provided in the request, the value does not match. For example,
         /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+        /// "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>LE</code> : Less than or equal. </p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-        /// type than the one provided in the request, the value does not match. For example,
-        /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, or Binary (not a set type). If an item contains
+        /// an <code>AttributeValue</code> element of a different type than the one provided
+        /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+        /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+        /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>LT</code> : Less than. </p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String,
-        /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-        /// type than the one provided in the request, the value does not match. For example,
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// of type String, Number, or Binary (not a set type). If an item contains an
+        /// <code>AttributeValue</code> element of a different type than the one
+        /// provided in the request, the value does not match. For example,
         /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+        /// "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>GE</code> : Greater than or equal. </p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-        /// type than the one provided in the request, the value does not match. For example,
-        /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, or Binary (not a set type). If an item contains
+        /// an <code>AttributeValue</code> element of a different type than the one provided
+        /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+        /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+        /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>GT</code> : Greater than. </p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-        /// type than the one provided in the request, the value does not match. For example,
-        /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, or Binary (not a set type). If an item contains
+        /// an <code>AttributeValue</code> element of a different type than the one provided
+        /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+        /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+        /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types, including lists and maps.</p>
+        /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported
+        /// for all data types, including lists and maps.</p>
         /// <note>
-        /// <p>This operator tests for the existence of an attribute, not its data type.  If the data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NOT_NULL</code> comparison operator.</p>
+        /// <p>This operator tests for the existence of an attribute, not its data type.
+        /// If the data type of attribute "<code>a</code>" is null, and you evaluate it
+        /// using <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This
+        /// result is because the attribute "<code>a</code>" exists; its data type is
+        /// not relevant to the <code>NOT_NULL</code> comparison operator.</p>
         /// </note>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types, including lists and maps.</p>
+        /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported
+        /// for all data types, including lists and maps.</p>
         /// <note>
-        /// <p>This operator tests for the nonexistence of an attribute, not its data type.  If the data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <code>false</code>. This is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code> comparison operator.</p>
+        /// <p>This operator tests for the nonexistence of an attribute, not its data
+        /// type. If the data type of attribute "<code>a</code>" is null, and you
+        /// evaluate it using <code>NULL</code>, the result is a Boolean
+        /// <code>false</code>. This is because the attribute "<code>a</code>"
+        /// exists; its data type is not relevant to the <code>NULL</code> comparison
+        /// operator.</p>
         /// </note>
         /// </li>
         /// <li>
         /// <p>
         /// <code>CONTAINS</code> : Checks for a subsequence, or value in a set.</p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, or Binary (not a set type). If the target attribute of the comparison is of type String, then
-        /// the operator checks for a substring match. If the target attribute of the comparison is
-        /// of type Binary, then the operator looks for a subsequence of the target that matches the input.
-        /// If the target attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the
-        /// operator evaluates to true if it finds an exact match with any member of the set.</p>
-        /// <p>CONTAINS is supported for lists: When evaluating "<code>a CONTAINS b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, or Binary (not a set type). If the target
+        /// attribute of the comparison is of type String, then the operator checks for a
+        /// substring match. If the target attribute of the comparison is of type Binary,
+        /// then the operator looks for a subsequence of the target that matches the input.
+        /// If the target attribute of the comparison is a set ("<code>SS</code>",
+        /// "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to
+        /// true if it finds an exact match with any member of the set.</p>
+        /// <p>CONTAINS is supported for lists: When evaluating "<code>a CONTAINS b</code>",
+        /// "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a
+        /// map, or a list.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in
-        /// a set.</p>
+        /// <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a
+        /// value in a set.</p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, or Binary (not a set type). If the target attribute of the comparison is a String, then
-        /// the operator checks for the absence of a substring match. If the target attribute of the
-        /// comparison is Binary, then the operator checks for the absence of a subsequence of the
-        /// target that matches the input. If the target attribute of the comparison is a set ("<code>SS</code>",
-        /// "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it <i>does not</i> find an exact match with any member of the set.</p>
-        /// <p>NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, or Binary (not a set type). If the target
+        /// attribute of the comparison is a String, then the operator checks for the
+        /// absence of a substring match. If the target attribute of the comparison is
+        /// Binary, then the operator checks for the absence of a subsequence of the target
+        /// that matches the input. If the target attribute of the comparison is a set
+        /// ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the
+        /// operator evaluates to true if it <i>does not</i> find an exact
+        /// match with any member of the set.</p>
+        /// <p>NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS
+        /// b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot
+        /// be a set, a map, or a list.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>BEGINS_WITH</code> : Checks for a prefix. </p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or
-        /// Binary (not a Number or a set type). The target attribute of the comparison must be of type String or
-        /// Binary (not a Number or a set type).</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// of type String or Binary (not a Number or a set type). The target attribute of
+        /// the comparison must be of type String or Binary (not a Number or a set
+        /// type).</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>IN</code> : Checks for matching elements in a list.</p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code>
-        /// elements of type String, Number, or Binary. These attributes are compared against an
-        /// existing attribute of an item. If any elements of the input are equal to the item
-        /// attribute, the expression evaluates to true.</p>
+        /// <code>AttributeValueList</code> can contain one or more
+        /// <code>AttributeValue</code> elements of type String, Number, or Binary.
+        /// These attributes are compared against an existing attribute of an item. If any
+        /// elements of the input are equal to the item attribute, the expression evaluates
+        /// to true.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than or equal
-        /// to the second value. </p>
+        /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than
+        /// or equal to the second value. </p>
         /// <p>
-        /// <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same
-        /// type, either String, Number, or Binary (not a set type). A target attribute matches if the
-        /// target value is greater than, or equal to, the first element and less than, or equal to,
-        /// the second element. If an item contains an <code>AttributeValue</code> element of a different type than
-        /// the one provided in the request, the value does not match. For example,
+        /// <code>AttributeValueList</code> must contain two <code>AttributeValue</code>
+        /// elements of the same type, either String, Number, or Binary (not a set type). A
+        /// target attribute matches if the target value is greater than, or equal to, the
+        /// first element and less than, or equal to, the second element. If an item
+        /// contains an <code>AttributeValue</code> element of a different type than the one
+        /// provided in the request, the value does not match. For example,
         /// <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
+        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+        /// "1"]}</code>
         /// </p>
         /// </li>
         /// </ul>
@@ -9769,14 +10322,16 @@ pub mod expected_attribute_value {
         ///
         /// To override the contents of this collection use [`set_attribute_value_list`](Self::set_attribute_value_list).
         ///
-        /// <p>One or more values to evaluate against the supplied attribute. The number of values in the
-        /// list depends on the <code>ComparisonOperator</code> being used.</p>
+        /// <p>One or more values to evaluate against the supplied attribute. The number of values in
+        /// the list depends on the <code>ComparisonOperator</code> being used.</p>
         /// <p>For type Number, value comparisons are numeric.</p>
-        /// <p>String value comparisons for greater than, equals, or less than are based on ASCII character
-        /// code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code>
-        /// is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
-        /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
-        /// <p>For information on specifying data types in JSON, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>String value comparisons for greater than, equals, or less than are based on ASCII
+        /// character code values. For example, <code>a</code> is greater than <code>A</code>, and
+        /// <code>a</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
+        /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
+        /// compares binary values.</p>
+        /// <p>For information on specifying data types in JSON, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a>
+        /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn attribute_value_list(
             mut self,
             input: impl Into<crate::model::AttributeValue>,
@@ -9786,14 +10341,16 @@ pub mod expected_attribute_value {
             self.attribute_value_list = Some(v);
             self
         }
-        /// <p>One or more values to evaluate against the supplied attribute. The number of values in the
-        /// list depends on the <code>ComparisonOperator</code> being used.</p>
+        /// <p>One or more values to evaluate against the supplied attribute. The number of values in
+        /// the list depends on the <code>ComparisonOperator</code> being used.</p>
         /// <p>For type Number, value comparisons are numeric.</p>
-        /// <p>String value comparisons for greater than, equals, or less than are based on ASCII character
-        /// code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code>
-        /// is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
-        /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
-        /// <p>For information on specifying data types in JSON, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>String value comparisons for greater than, equals, or less than are based on ASCII
+        /// character code values. For example, <code>a</code> is greater than <code>A</code>, and
+        /// <code>a</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
+        /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
+        /// compares binary values.</p>
+        /// <p>For information on specifying data types in JSON, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a>
+        /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_attribute_value_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
@@ -9932,99 +10489,110 @@ impl AsRef<str> for ComparisonOperator {
     }
 }
 
-/// <p>For the <code>UpdateItem</code> operation, represents the attributes to be modified, the action to
-/// perform on each, and the new value for each.</p>
+/// <p>For the <code>UpdateItem</code> operation, represents the attributes to be modified,
+/// the action to perform on each, and the new value for each.</p>
 /// <note>
-/// <p>You cannot use <code>UpdateItem</code> to update any primary key attributes. Instead, you will
-/// need to delete the item, and then use <code>PutItem</code> to create a new item with new
-/// attributes.</p>
+/// <p>You cannot use <code>UpdateItem</code> to update any primary key attributes.
+/// Instead, you will need to delete the item, and then use <code>PutItem</code> to
+/// create a new item with new attributes.</p>
 /// </note>
-/// <p>Attribute values cannot be null; string and binary type attributes must have lengths greater
-/// than zero; and set type attributes must not be empty. Requests with empty values will be
-/// rejected with a <code>ValidationException</code> exception.</p>
+/// <p>Attribute values cannot be null; string and binary type attributes must have lengths
+/// greater than zero; and set type attributes must not be empty. Requests with empty values
+/// will be rejected with a <code>ValidationException</code> exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttributeValueUpdate {
     /// <p>Represents the data for an attribute.</p>
-    /// <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+    /// <p>Each attribute value is described as a name-value pair. The name is the data type, and
+    /// the value is the data itself.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </p>
     pub value: std::option::Option<crate::model::AttributeValue>,
-    /// <p>Specifies how to perform the update. Valid values are <code>PUT</code> (default), <code>DELETE</code>,
-    /// and <code>ADD</code>. The behavior depends on whether the specified primary key already exists
-    /// in the table.</p>
+    /// <p>Specifies how to perform the update. Valid values are <code>PUT</code> (default),
+    /// <code>DELETE</code>, and <code>ADD</code>. The behavior depends on whether the
+    /// specified primary key already exists in the table.</p>
     ///
     /// <p>
-    /// <b>If an item with the specified <i>Key</i> is found in the table:</b>
+    /// <b>If an item with the specified <i>Key</i> is found in
+    /// the table:</b>
     /// </p>
     ///
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>PUT</code> - Adds the specified attribute to the item. If the attribute already
-    /// exists, it is replaced by the new value. </p>
+    /// <code>PUT</code> - Adds the specified attribute to the item. If the attribute
+    /// already exists, it is replaced by the new value. </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>DELETE</code> - If no value is specified, the attribute and its value are removed
-    /// from the item. The data type of the specified value must match the existing value's data
-    /// type.</p>
-    /// <p>If a <i>set</i> of values is specified, then those values are subtracted from the old
-    /// set. For example, if the attribute value was the set <code>[a,b,c]</code> and the
-    /// <code>DELETE</code> action specified <code>[a,c]</code>, then the final attribute value would
-    /// be <code>[b]</code>. Specifying an empty set is an error.</p>
+    /// <code>DELETE</code> - If no value is specified, the attribute and its value are
+    /// removed from the item. The data type of the specified value must match the
+    /// existing value's data type.</p>
+    /// <p>If a <i>set</i> of values is specified, then those values are
+    /// subtracted from the old set. For example, if the attribute value was the set
+    /// <code>[a,b,c]</code> and the <code>DELETE</code> action specified
+    /// <code>[a,c]</code>, then the final attribute value would be
+    /// <code>[b]</code>. Specifying an empty set is an error.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ADD</code> - If the attribute does not already exist, then the attribute and its
-    /// values are added to the item. If the attribute does exist, then the behavior of
-    /// <code>ADD</code> depends on the data type of the attribute:</p>
+    /// <code>ADD</code> - If the attribute does not already exist, then the attribute
+    /// and its values are added to the item. If the attribute does exist, then the
+    /// behavior of <code>ADD</code> depends on the data type of the attribute:</p>
     /// <ul>
     /// <li>
-    /// <p>If the existing attribute is a number, and if <code>Value</code> is also a number, then the
-    /// <code>Value</code> is mathematically added to the existing attribute. If <code>Value</code> is a
-    /// negative number, then it is subtracted from the existing attribute.</p>
+    /// <p>If the existing attribute is a number, and if <code>Value</code> is
+    /// also a number, then the <code>Value</code> is mathematically added to
+    /// the existing attribute. If <code>Value</code> is a negative number, then
+    /// it is subtracted from the existing attribute.</p>
     /// <note>
-    /// <p> If you use <code>ADD</code> to increment or decrement a number value for an item
-    /// that doesn't exist before the update, DynamoDB uses 0 as the initial value.</p>
-    /// <p>In addition, if you use <code>ADD</code> to update an existing item, and intend to
-    /// increment or decrement an attribute value which does not yet exist, DynamoDB uses
-    /// <code>0</code> as the initial value. For example, suppose that the item you want
-    /// to update does not yet have an attribute named <i>itemcount</i>, but you decide to
-    /// <code>ADD</code> the number <code>3</code> to this attribute anyway, even though
-    /// it currently does not exist. DynamoDB will create the <i>itemcount</i> attribute, set
-    /// its initial value to <code>0</code>, and finally add <code>3</code> to it. The
-    /// result will be a new <i>itemcount</i> attribute in the item, with a value of
-    /// <code>3</code>.</p>
+    /// <p> If you use <code>ADD</code> to increment or decrement a number
+    /// value for an item that doesn't exist before the update, DynamoDB
+    /// uses 0 as the initial value.</p>
+    /// <p>In addition, if you use <code>ADD</code> to update an existing
+    /// item, and intend to increment or decrement an attribute value which
+    /// does not yet exist, DynamoDB uses <code>0</code> as the initial
+    /// value. For example, suppose that the item you want to update does
+    /// not yet have an attribute named <i>itemcount</i>, but
+    /// you decide to <code>ADD</code> the number <code>3</code> to this
+    /// attribute anyway, even though it currently does not exist. DynamoDB
+    /// will create the <i>itemcount</i> attribute, set its
+    /// initial value to <code>0</code>, and finally add <code>3</code> to
+    /// it. The result will be a new <i>itemcount</i>
+    /// attribute in the item, with a value of <code>3</code>.</p>
     /// </note>
     /// </li>
     /// <li>
-    /// <p>If the existing data type is a set, and if the <code>Value</code> is also a set, then the
-    /// <code>Value</code> is added to the existing set. (This is a <i>set</i> operation, not
-    /// mathematical addition.) For example, if the attribute value was the set
-    /// <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then
-    /// the final attribute value would be <code>[1,2,3]</code>. An error occurs if an Add
-    /// action is specified for a set attribute and the attribute type specified does not
-    /// match the existing set type. </p>
-    /// <p>Both sets must have the same primitive data type. For example, if the existing data
-    /// type is a set of strings, the <code>Value</code> must also be a set of strings. The same
-    /// holds true for number sets and binary sets.</p>
+    /// <p>If the existing data type is a set, and if the <code>Value</code> is
+    /// also a set, then the <code>Value</code> is added to the existing set.
+    /// (This is a <i>set</i> operation, not mathematical
+    /// addition.) For example, if the attribute value was the set
+    /// <code>[1,2]</code>, and the <code>ADD</code> action specified
+    /// <code>[3]</code>, then the final attribute value would be
+    /// <code>[1,2,3]</code>. An error occurs if an Add action is specified
+    /// for a set attribute and the attribute type specified does not match the
+    /// existing set type. </p>
+    /// <p>Both sets must have the same primitive data type. For example, if the
+    /// existing data type is a set of strings, the <code>Value</code> must also
+    /// be a set of strings. The same holds true for number sets and binary
+    /// sets.</p>
     /// </li>
     /// </ul>
-    /// <p>This action is only valid for an existing attribute whose data type is number or is a
-    /// set. Do not use <code>ADD</code> for any other data types.</p>
+    /// <p>This action is only valid for an existing attribute whose data type is number
+    /// or is a set. Do not use <code>ADD</code> for any other data types.</p>
     /// </li>
     /// </ul>
     ///
     /// <p>
-    /// <b>If no item with the specified <i>Key</i> is found:</b>
+    /// <b>If no item with the specified <i>Key</i> is
+    /// found:</b>
     /// </p>
     ///
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>PUT</code> - DynamoDB creates a new item with the specified primary key, and then adds
-    /// the attribute. </p>
+    /// <code>PUT</code> - DynamoDB creates a new item with the specified primary key,
+    /// and then adds the attribute. </p>
     /// </li>
     /// <li>
     /// <p>
@@ -10032,96 +10600,107 @@ pub struct AttributeValueUpdate {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set
-    /// of numbers) for the attribute value. The only data types allowed are number and number
-    /// set; no other data types can be specified.</p>
+    /// <code>ADD</code> - DynamoDB creates an item with the supplied primary key and
+    /// number (or set of numbers) for the attribute value. The only data types allowed
+    /// are number and number set; no other data types can be specified.</p>
     /// </li>
     /// </ul>
     pub action: std::option::Option<crate::model::AttributeAction>,
 }
 impl AttributeValueUpdate {
     /// <p>Represents the data for an attribute.</p>
-    /// <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+    /// <p>Each attribute value is described as a name-value pair. The name is the data type, and
+    /// the value is the data itself.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </p>
     pub fn value(&self) -> std::option::Option<&crate::model::AttributeValue> {
         self.value.as_ref()
     }
-    /// <p>Specifies how to perform the update. Valid values are <code>PUT</code> (default), <code>DELETE</code>,
-    /// and <code>ADD</code>. The behavior depends on whether the specified primary key already exists
-    /// in the table.</p>
+    /// <p>Specifies how to perform the update. Valid values are <code>PUT</code> (default),
+    /// <code>DELETE</code>, and <code>ADD</code>. The behavior depends on whether the
+    /// specified primary key already exists in the table.</p>
     ///
     /// <p>
-    /// <b>If an item with the specified <i>Key</i> is found in the table:</b>
+    /// <b>If an item with the specified <i>Key</i> is found in
+    /// the table:</b>
     /// </p>
     ///
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>PUT</code> - Adds the specified attribute to the item. If the attribute already
-    /// exists, it is replaced by the new value. </p>
+    /// <code>PUT</code> - Adds the specified attribute to the item. If the attribute
+    /// already exists, it is replaced by the new value. </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>DELETE</code> - If no value is specified, the attribute and its value are removed
-    /// from the item. The data type of the specified value must match the existing value's data
-    /// type.</p>
-    /// <p>If a <i>set</i> of values is specified, then those values are subtracted from the old
-    /// set. For example, if the attribute value was the set <code>[a,b,c]</code> and the
-    /// <code>DELETE</code> action specified <code>[a,c]</code>, then the final attribute value would
-    /// be <code>[b]</code>. Specifying an empty set is an error.</p>
+    /// <code>DELETE</code> - If no value is specified, the attribute and its value are
+    /// removed from the item. The data type of the specified value must match the
+    /// existing value's data type.</p>
+    /// <p>If a <i>set</i> of values is specified, then those values are
+    /// subtracted from the old set. For example, if the attribute value was the set
+    /// <code>[a,b,c]</code> and the <code>DELETE</code> action specified
+    /// <code>[a,c]</code>, then the final attribute value would be
+    /// <code>[b]</code>. Specifying an empty set is an error.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ADD</code> - If the attribute does not already exist, then the attribute and its
-    /// values are added to the item. If the attribute does exist, then the behavior of
-    /// <code>ADD</code> depends on the data type of the attribute:</p>
+    /// <code>ADD</code> - If the attribute does not already exist, then the attribute
+    /// and its values are added to the item. If the attribute does exist, then the
+    /// behavior of <code>ADD</code> depends on the data type of the attribute:</p>
     /// <ul>
     /// <li>
-    /// <p>If the existing attribute is a number, and if <code>Value</code> is also a number, then the
-    /// <code>Value</code> is mathematically added to the existing attribute. If <code>Value</code> is a
-    /// negative number, then it is subtracted from the existing attribute.</p>
+    /// <p>If the existing attribute is a number, and if <code>Value</code> is
+    /// also a number, then the <code>Value</code> is mathematically added to
+    /// the existing attribute. If <code>Value</code> is a negative number, then
+    /// it is subtracted from the existing attribute.</p>
     /// <note>
-    /// <p> If you use <code>ADD</code> to increment or decrement a number value for an item
-    /// that doesn't exist before the update, DynamoDB uses 0 as the initial value.</p>
-    /// <p>In addition, if you use <code>ADD</code> to update an existing item, and intend to
-    /// increment or decrement an attribute value which does not yet exist, DynamoDB uses
-    /// <code>0</code> as the initial value. For example, suppose that the item you want
-    /// to update does not yet have an attribute named <i>itemcount</i>, but you decide to
-    /// <code>ADD</code> the number <code>3</code> to this attribute anyway, even though
-    /// it currently does not exist. DynamoDB will create the <i>itemcount</i> attribute, set
-    /// its initial value to <code>0</code>, and finally add <code>3</code> to it. The
-    /// result will be a new <i>itemcount</i> attribute in the item, with a value of
-    /// <code>3</code>.</p>
+    /// <p> If you use <code>ADD</code> to increment or decrement a number
+    /// value for an item that doesn't exist before the update, DynamoDB
+    /// uses 0 as the initial value.</p>
+    /// <p>In addition, if you use <code>ADD</code> to update an existing
+    /// item, and intend to increment or decrement an attribute value which
+    /// does not yet exist, DynamoDB uses <code>0</code> as the initial
+    /// value. For example, suppose that the item you want to update does
+    /// not yet have an attribute named <i>itemcount</i>, but
+    /// you decide to <code>ADD</code> the number <code>3</code> to this
+    /// attribute anyway, even though it currently does not exist. DynamoDB
+    /// will create the <i>itemcount</i> attribute, set its
+    /// initial value to <code>0</code>, and finally add <code>3</code> to
+    /// it. The result will be a new <i>itemcount</i>
+    /// attribute in the item, with a value of <code>3</code>.</p>
     /// </note>
     /// </li>
     /// <li>
-    /// <p>If the existing data type is a set, and if the <code>Value</code> is also a set, then the
-    /// <code>Value</code> is added to the existing set. (This is a <i>set</i> operation, not
-    /// mathematical addition.) For example, if the attribute value was the set
-    /// <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then
-    /// the final attribute value would be <code>[1,2,3]</code>. An error occurs if an Add
-    /// action is specified for a set attribute and the attribute type specified does not
-    /// match the existing set type. </p>
-    /// <p>Both sets must have the same primitive data type. For example, if the existing data
-    /// type is a set of strings, the <code>Value</code> must also be a set of strings. The same
-    /// holds true for number sets and binary sets.</p>
+    /// <p>If the existing data type is a set, and if the <code>Value</code> is
+    /// also a set, then the <code>Value</code> is added to the existing set.
+    /// (This is a <i>set</i> operation, not mathematical
+    /// addition.) For example, if the attribute value was the set
+    /// <code>[1,2]</code>, and the <code>ADD</code> action specified
+    /// <code>[3]</code>, then the final attribute value would be
+    /// <code>[1,2,3]</code>. An error occurs if an Add action is specified
+    /// for a set attribute and the attribute type specified does not match the
+    /// existing set type. </p>
+    /// <p>Both sets must have the same primitive data type. For example, if the
+    /// existing data type is a set of strings, the <code>Value</code> must also
+    /// be a set of strings. The same holds true for number sets and binary
+    /// sets.</p>
     /// </li>
     /// </ul>
-    /// <p>This action is only valid for an existing attribute whose data type is number or is a
-    /// set. Do not use <code>ADD</code> for any other data types.</p>
+    /// <p>This action is only valid for an existing attribute whose data type is number
+    /// or is a set. Do not use <code>ADD</code> for any other data types.</p>
     /// </li>
     /// </ul>
     ///
     /// <p>
-    /// <b>If no item with the specified <i>Key</i> is found:</b>
+    /// <b>If no item with the specified <i>Key</i> is
+    /// found:</b>
     /// </p>
     ///
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>PUT</code> - DynamoDB creates a new item with the specified primary key, and then adds
-    /// the attribute. </p>
+    /// <code>PUT</code> - DynamoDB creates a new item with the specified primary key,
+    /// and then adds the attribute. </p>
     /// </li>
     /// <li>
     /// <p>
@@ -10129,9 +10708,9 @@ impl AttributeValueUpdate {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set
-    /// of numbers) for the attribute value. The only data types allowed are number and number
-    /// set; no other data types can be specified.</p>
+    /// <code>ADD</code> - DynamoDB creates an item with the supplied primary key and
+    /// number (or set of numbers) for the attribute value. The only data types allowed
+    /// are number and number set; no other data types can be specified.</p>
     /// </li>
     /// </ul>
     pub fn action(&self) -> std::option::Option<&crate::model::AttributeAction> {
@@ -10157,7 +10736,8 @@ pub mod attribute_value_update {
     }
     impl Builder {
         /// <p>Represents the data for an attribute.</p>
-        /// <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+        /// <p>Each attribute value is described as a name-value pair. The name is the data type, and
+        /// the value is the data itself.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </p>
         pub fn value(mut self, input: crate::model::AttributeValue) -> Self {
@@ -10165,7 +10745,8 @@ pub mod attribute_value_update {
             self
         }
         /// <p>Represents the data for an attribute.</p>
-        /// <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+        /// <p>Each attribute value is described as a name-value pair. The name is the data type, and
+        /// the value is the data itself.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </p>
         pub fn set_value(
@@ -10175,81 +10756,91 @@ pub mod attribute_value_update {
             self.value = input;
             self
         }
-        /// <p>Specifies how to perform the update. Valid values are <code>PUT</code> (default), <code>DELETE</code>,
-        /// and <code>ADD</code>. The behavior depends on whether the specified primary key already exists
-        /// in the table.</p>
+        /// <p>Specifies how to perform the update. Valid values are <code>PUT</code> (default),
+        /// <code>DELETE</code>, and <code>ADD</code>. The behavior depends on whether the
+        /// specified primary key already exists in the table.</p>
         ///
         /// <p>
-        /// <b>If an item with the specified <i>Key</i> is found in the table:</b>
+        /// <b>If an item with the specified <i>Key</i> is found in
+        /// the table:</b>
         /// </p>
         ///
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>PUT</code> - Adds the specified attribute to the item. If the attribute already
-        /// exists, it is replaced by the new value. </p>
+        /// <code>PUT</code> - Adds the specified attribute to the item. If the attribute
+        /// already exists, it is replaced by the new value. </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>DELETE</code> - If no value is specified, the attribute and its value are removed
-        /// from the item. The data type of the specified value must match the existing value's data
-        /// type.</p>
-        /// <p>If a <i>set</i> of values is specified, then those values are subtracted from the old
-        /// set. For example, if the attribute value was the set <code>[a,b,c]</code> and the
-        /// <code>DELETE</code> action specified <code>[a,c]</code>, then the final attribute value would
-        /// be <code>[b]</code>. Specifying an empty set is an error.</p>
+        /// <code>DELETE</code> - If no value is specified, the attribute and its value are
+        /// removed from the item. The data type of the specified value must match the
+        /// existing value's data type.</p>
+        /// <p>If a <i>set</i> of values is specified, then those values are
+        /// subtracted from the old set. For example, if the attribute value was the set
+        /// <code>[a,b,c]</code> and the <code>DELETE</code> action specified
+        /// <code>[a,c]</code>, then the final attribute value would be
+        /// <code>[b]</code>. Specifying an empty set is an error.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ADD</code> - If the attribute does not already exist, then the attribute and its
-        /// values are added to the item. If the attribute does exist, then the behavior of
-        /// <code>ADD</code> depends on the data type of the attribute:</p>
+        /// <code>ADD</code> - If the attribute does not already exist, then the attribute
+        /// and its values are added to the item. If the attribute does exist, then the
+        /// behavior of <code>ADD</code> depends on the data type of the attribute:</p>
         /// <ul>
         /// <li>
-        /// <p>If the existing attribute is a number, and if <code>Value</code> is also a number, then the
-        /// <code>Value</code> is mathematically added to the existing attribute. If <code>Value</code> is a
-        /// negative number, then it is subtracted from the existing attribute.</p>
+        /// <p>If the existing attribute is a number, and if <code>Value</code> is
+        /// also a number, then the <code>Value</code> is mathematically added to
+        /// the existing attribute. If <code>Value</code> is a negative number, then
+        /// it is subtracted from the existing attribute.</p>
         /// <note>
-        /// <p> If you use <code>ADD</code> to increment or decrement a number value for an item
-        /// that doesn't exist before the update, DynamoDB uses 0 as the initial value.</p>
-        /// <p>In addition, if you use <code>ADD</code> to update an existing item, and intend to
-        /// increment or decrement an attribute value which does not yet exist, DynamoDB uses
-        /// <code>0</code> as the initial value. For example, suppose that the item you want
-        /// to update does not yet have an attribute named <i>itemcount</i>, but you decide to
-        /// <code>ADD</code> the number <code>3</code> to this attribute anyway, even though
-        /// it currently does not exist. DynamoDB will create the <i>itemcount</i> attribute, set
-        /// its initial value to <code>0</code>, and finally add <code>3</code> to it. The
-        /// result will be a new <i>itemcount</i> attribute in the item, with a value of
-        /// <code>3</code>.</p>
+        /// <p> If you use <code>ADD</code> to increment or decrement a number
+        /// value for an item that doesn't exist before the update, DynamoDB
+        /// uses 0 as the initial value.</p>
+        /// <p>In addition, if you use <code>ADD</code> to update an existing
+        /// item, and intend to increment or decrement an attribute value which
+        /// does not yet exist, DynamoDB uses <code>0</code> as the initial
+        /// value. For example, suppose that the item you want to update does
+        /// not yet have an attribute named <i>itemcount</i>, but
+        /// you decide to <code>ADD</code> the number <code>3</code> to this
+        /// attribute anyway, even though it currently does not exist. DynamoDB
+        /// will create the <i>itemcount</i> attribute, set its
+        /// initial value to <code>0</code>, and finally add <code>3</code> to
+        /// it. The result will be a new <i>itemcount</i>
+        /// attribute in the item, with a value of <code>3</code>.</p>
         /// </note>
         /// </li>
         /// <li>
-        /// <p>If the existing data type is a set, and if the <code>Value</code> is also a set, then the
-        /// <code>Value</code> is added to the existing set. (This is a <i>set</i> operation, not
-        /// mathematical addition.) For example, if the attribute value was the set
-        /// <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then
-        /// the final attribute value would be <code>[1,2,3]</code>. An error occurs if an Add
-        /// action is specified for a set attribute and the attribute type specified does not
-        /// match the existing set type. </p>
-        /// <p>Both sets must have the same primitive data type. For example, if the existing data
-        /// type is a set of strings, the <code>Value</code> must also be a set of strings. The same
-        /// holds true for number sets and binary sets.</p>
+        /// <p>If the existing data type is a set, and if the <code>Value</code> is
+        /// also a set, then the <code>Value</code> is added to the existing set.
+        /// (This is a <i>set</i> operation, not mathematical
+        /// addition.) For example, if the attribute value was the set
+        /// <code>[1,2]</code>, and the <code>ADD</code> action specified
+        /// <code>[3]</code>, then the final attribute value would be
+        /// <code>[1,2,3]</code>. An error occurs if an Add action is specified
+        /// for a set attribute and the attribute type specified does not match the
+        /// existing set type. </p>
+        /// <p>Both sets must have the same primitive data type. For example, if the
+        /// existing data type is a set of strings, the <code>Value</code> must also
+        /// be a set of strings. The same holds true for number sets and binary
+        /// sets.</p>
         /// </li>
         /// </ul>
-        /// <p>This action is only valid for an existing attribute whose data type is number or is a
-        /// set. Do not use <code>ADD</code> for any other data types.</p>
+        /// <p>This action is only valid for an existing attribute whose data type is number
+        /// or is a set. Do not use <code>ADD</code> for any other data types.</p>
         /// </li>
         /// </ul>
         ///
         /// <p>
-        /// <b>If no item with the specified <i>Key</i> is found:</b>
+        /// <b>If no item with the specified <i>Key</i> is
+        /// found:</b>
         /// </p>
         ///
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>PUT</code> - DynamoDB creates a new item with the specified primary key, and then adds
-        /// the attribute. </p>
+        /// <code>PUT</code> - DynamoDB creates a new item with the specified primary key,
+        /// and then adds the attribute. </p>
         /// </li>
         /// <li>
         /// <p>
@@ -10257,90 +10848,100 @@ pub mod attribute_value_update {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set
-        /// of numbers) for the attribute value. The only data types allowed are number and number
-        /// set; no other data types can be specified.</p>
+        /// <code>ADD</code> - DynamoDB creates an item with the supplied primary key and
+        /// number (or set of numbers) for the attribute value. The only data types allowed
+        /// are number and number set; no other data types can be specified.</p>
         /// </li>
         /// </ul>
         pub fn action(mut self, input: crate::model::AttributeAction) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p>Specifies how to perform the update. Valid values are <code>PUT</code> (default), <code>DELETE</code>,
-        /// and <code>ADD</code>. The behavior depends on whether the specified primary key already exists
-        /// in the table.</p>
+        /// <p>Specifies how to perform the update. Valid values are <code>PUT</code> (default),
+        /// <code>DELETE</code>, and <code>ADD</code>. The behavior depends on whether the
+        /// specified primary key already exists in the table.</p>
         ///
         /// <p>
-        /// <b>If an item with the specified <i>Key</i> is found in the table:</b>
+        /// <b>If an item with the specified <i>Key</i> is found in
+        /// the table:</b>
         /// </p>
         ///
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>PUT</code> - Adds the specified attribute to the item. If the attribute already
-        /// exists, it is replaced by the new value. </p>
+        /// <code>PUT</code> - Adds the specified attribute to the item. If the attribute
+        /// already exists, it is replaced by the new value. </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>DELETE</code> - If no value is specified, the attribute and its value are removed
-        /// from the item. The data type of the specified value must match the existing value's data
-        /// type.</p>
-        /// <p>If a <i>set</i> of values is specified, then those values are subtracted from the old
-        /// set. For example, if the attribute value was the set <code>[a,b,c]</code> and the
-        /// <code>DELETE</code> action specified <code>[a,c]</code>, then the final attribute value would
-        /// be <code>[b]</code>. Specifying an empty set is an error.</p>
+        /// <code>DELETE</code> - If no value is specified, the attribute and its value are
+        /// removed from the item. The data type of the specified value must match the
+        /// existing value's data type.</p>
+        /// <p>If a <i>set</i> of values is specified, then those values are
+        /// subtracted from the old set. For example, if the attribute value was the set
+        /// <code>[a,b,c]</code> and the <code>DELETE</code> action specified
+        /// <code>[a,c]</code>, then the final attribute value would be
+        /// <code>[b]</code>. Specifying an empty set is an error.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ADD</code> - If the attribute does not already exist, then the attribute and its
-        /// values are added to the item. If the attribute does exist, then the behavior of
-        /// <code>ADD</code> depends on the data type of the attribute:</p>
+        /// <code>ADD</code> - If the attribute does not already exist, then the attribute
+        /// and its values are added to the item. If the attribute does exist, then the
+        /// behavior of <code>ADD</code> depends on the data type of the attribute:</p>
         /// <ul>
         /// <li>
-        /// <p>If the existing attribute is a number, and if <code>Value</code> is also a number, then the
-        /// <code>Value</code> is mathematically added to the existing attribute. If <code>Value</code> is a
-        /// negative number, then it is subtracted from the existing attribute.</p>
+        /// <p>If the existing attribute is a number, and if <code>Value</code> is
+        /// also a number, then the <code>Value</code> is mathematically added to
+        /// the existing attribute. If <code>Value</code> is a negative number, then
+        /// it is subtracted from the existing attribute.</p>
         /// <note>
-        /// <p> If you use <code>ADD</code> to increment or decrement a number value for an item
-        /// that doesn't exist before the update, DynamoDB uses 0 as the initial value.</p>
-        /// <p>In addition, if you use <code>ADD</code> to update an existing item, and intend to
-        /// increment or decrement an attribute value which does not yet exist, DynamoDB uses
-        /// <code>0</code> as the initial value. For example, suppose that the item you want
-        /// to update does not yet have an attribute named <i>itemcount</i>, but you decide to
-        /// <code>ADD</code> the number <code>3</code> to this attribute anyway, even though
-        /// it currently does not exist. DynamoDB will create the <i>itemcount</i> attribute, set
-        /// its initial value to <code>0</code>, and finally add <code>3</code> to it. The
-        /// result will be a new <i>itemcount</i> attribute in the item, with a value of
-        /// <code>3</code>.</p>
+        /// <p> If you use <code>ADD</code> to increment or decrement a number
+        /// value for an item that doesn't exist before the update, DynamoDB
+        /// uses 0 as the initial value.</p>
+        /// <p>In addition, if you use <code>ADD</code> to update an existing
+        /// item, and intend to increment or decrement an attribute value which
+        /// does not yet exist, DynamoDB uses <code>0</code> as the initial
+        /// value. For example, suppose that the item you want to update does
+        /// not yet have an attribute named <i>itemcount</i>, but
+        /// you decide to <code>ADD</code> the number <code>3</code> to this
+        /// attribute anyway, even though it currently does not exist. DynamoDB
+        /// will create the <i>itemcount</i> attribute, set its
+        /// initial value to <code>0</code>, and finally add <code>3</code> to
+        /// it. The result will be a new <i>itemcount</i>
+        /// attribute in the item, with a value of <code>3</code>.</p>
         /// </note>
         /// </li>
         /// <li>
-        /// <p>If the existing data type is a set, and if the <code>Value</code> is also a set, then the
-        /// <code>Value</code> is added to the existing set. (This is a <i>set</i> operation, not
-        /// mathematical addition.) For example, if the attribute value was the set
-        /// <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then
-        /// the final attribute value would be <code>[1,2,3]</code>. An error occurs if an Add
-        /// action is specified for a set attribute and the attribute type specified does not
-        /// match the existing set type. </p>
-        /// <p>Both sets must have the same primitive data type. For example, if the existing data
-        /// type is a set of strings, the <code>Value</code> must also be a set of strings. The same
-        /// holds true for number sets and binary sets.</p>
+        /// <p>If the existing data type is a set, and if the <code>Value</code> is
+        /// also a set, then the <code>Value</code> is added to the existing set.
+        /// (This is a <i>set</i> operation, not mathematical
+        /// addition.) For example, if the attribute value was the set
+        /// <code>[1,2]</code>, and the <code>ADD</code> action specified
+        /// <code>[3]</code>, then the final attribute value would be
+        /// <code>[1,2,3]</code>. An error occurs if an Add action is specified
+        /// for a set attribute and the attribute type specified does not match the
+        /// existing set type. </p>
+        /// <p>Both sets must have the same primitive data type. For example, if the
+        /// existing data type is a set of strings, the <code>Value</code> must also
+        /// be a set of strings. The same holds true for number sets and binary
+        /// sets.</p>
         /// </li>
         /// </ul>
-        /// <p>This action is only valid for an existing attribute whose data type is number or is a
-        /// set. Do not use <code>ADD</code> for any other data types.</p>
+        /// <p>This action is only valid for an existing attribute whose data type is number
+        /// or is a set. Do not use <code>ADD</code> for any other data types.</p>
         /// </li>
         /// </ul>
         ///
         /// <p>
-        /// <b>If no item with the specified <i>Key</i> is found:</b>
+        /// <b>If no item with the specified <i>Key</i> is
+        /// found:</b>
         /// </p>
         ///
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>PUT</code> - DynamoDB creates a new item with the specified primary key, and then adds
-        /// the attribute. </p>
+        /// <code>PUT</code> - DynamoDB creates a new item with the specified primary key,
+        /// and then adds the attribute. </p>
         /// </li>
         /// <li>
         /// <p>
@@ -10348,9 +10949,9 @@ pub mod attribute_value_update {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set
-        /// of numbers) for the attribute value. The only data types allowed are number and number
-        /// set; no other data types can be specified.</p>
+        /// <code>ADD</code> - DynamoDB creates an item with the supplied primary key and
+        /// number (or set of numbers) for the attribute value. The only data types allowed
+        /// are number and number set; no other data types can be specified.</p>
         /// </li>
         /// </ul>
         pub fn set_action(
@@ -10463,17 +11064,16 @@ pub struct ReplicaSettingsDescription {
     pub replica_status: std::option::Option<crate::model::ReplicaStatus>,
     /// <p>The read/write capacity mode of the replica.</p>
     pub replica_billing_mode_summary: std::option::Option<crate::model::BillingModeSummary>,
-    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
-    /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
-    /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-    /// </p>
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+    /// returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB
+    /// Developer Guide</i>. </p>
     pub replica_provisioned_read_capacity_units: std::option::Option<i64>,
     /// <p>Auto scaling settings for a global table replica's read capacity units.</p>
     pub replica_provisioned_read_capacity_auto_scaling_settings:
         std::option::Option<crate::model::AutoScalingSettingsDescription>,
-    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
-    /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
-    /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a
+    /// <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB
+    /// Developer Guide</i>.</p>
     pub replica_provisioned_write_capacity_units: std::option::Option<i64>,
     /// <p>Auto scaling settings for a global table replica's write capacity units.</p>
     pub replica_provisioned_write_capacity_auto_scaling_settings:
@@ -10516,10 +11116,9 @@ impl ReplicaSettingsDescription {
     ) -> std::option::Option<&crate::model::BillingModeSummary> {
         self.replica_billing_mode_summary.as_ref()
     }
-    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
-    /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
-    /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-    /// </p>
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+    /// returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB
+    /// Developer Guide</i>. </p>
     pub fn replica_provisioned_read_capacity_units(&self) -> std::option::Option<i64> {
         self.replica_provisioned_read_capacity_units
     }
@@ -10530,9 +11129,9 @@ impl ReplicaSettingsDescription {
         self.replica_provisioned_read_capacity_auto_scaling_settings
             .as_ref()
     }
-    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
-    /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
-    /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a
+    /// <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB
+    /// Developer Guide</i>.</p>
     pub fn replica_provisioned_write_capacity_units(&self) -> std::option::Option<i64> {
         self.replica_provisioned_write_capacity_units
     }
@@ -10678,18 +11277,16 @@ pub mod replica_settings_description {
             self.replica_billing_mode_summary = input;
             self
         }
-        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
-        /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-        /// </p>
+        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+        /// returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB
+        /// Developer Guide</i>. </p>
         pub fn replica_provisioned_read_capacity_units(mut self, input: i64) -> Self {
             self.replica_provisioned_read_capacity_units = Some(input);
             self
         }
-        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
-        /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-        /// </p>
+        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+        /// returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB
+        /// Developer Guide</i>. </p>
         pub fn set_replica_provisioned_read_capacity_units(
             mut self,
             input: std::option::Option<i64>,
@@ -10713,16 +11310,16 @@ pub mod replica_settings_description {
             self.replica_provisioned_read_capacity_auto_scaling_settings = input;
             self
         }
-        /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
-        /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>The maximum number of writes consumed per second before DynamoDB returns a
+        /// <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB
+        /// Developer Guide</i>.</p>
         pub fn replica_provisioned_write_capacity_units(mut self, input: i64) -> Self {
             self.replica_provisioned_write_capacity_units = Some(input);
             self
         }
-        /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
-        /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>The maximum number of writes consumed per second before DynamoDB returns a
+        /// <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB
+        /// Developer Guide</i>.</p>
         pub fn set_replica_provisioned_write_capacity_units(
             mut self,
             input: std::option::Option<i64>,
@@ -10803,10 +11400,10 @@ impl ReplicaSettingsDescription {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicaGlobalSecondaryIndexSettingsDescription {
-    /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+    /// <p>The name of the global secondary index. The name must be unique among all other
+    /// indexes on this table.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The current status of the global secondary index:</p>
+    /// <p> The current status of the global secondary index:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -10826,12 +11423,15 @@ pub struct ReplicaGlobalSecondaryIndexSettingsDescription {
     /// </li>
     /// </ul>
     pub index_status: std::option::Option<crate::model::IndexStatus>,
-    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+    /// returns a <code>ThrottlingException</code>.</p>
     pub provisioned_read_capacity_units: std::option::Option<i64>,
-    /// <p>Auto scaling settings for a global secondary index replica's read capacity units.</p>
+    /// <p>Auto scaling settings for a global secondary index replica's read capacity
+    /// units.</p>
     pub provisioned_read_capacity_auto_scaling_settings:
         std::option::Option<crate::model::AutoScalingSettingsDescription>,
-    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a
+    /// <code>ThrottlingException</code>.</p>
     pub provisioned_write_capacity_units: std::option::Option<i64>,
     /// <p>Auto scaling settings for a global secondary index replica's write capacity
     /// units.</p>
@@ -10839,12 +11439,12 @@ pub struct ReplicaGlobalSecondaryIndexSettingsDescription {
         std::option::Option<crate::model::AutoScalingSettingsDescription>,
 }
 impl ReplicaGlobalSecondaryIndexSettingsDescription {
-    /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+    /// <p>The name of the global secondary index. The name must be unique among all other
+    /// indexes on this table.</p>
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>
-    /// The current status of the global secondary index:</p>
+    /// <p> The current status of the global secondary index:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -10866,18 +11466,21 @@ impl ReplicaGlobalSecondaryIndexSettingsDescription {
     pub fn index_status(&self) -> std::option::Option<&crate::model::IndexStatus> {
         self.index_status.as_ref()
     }
-    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+    /// returns a <code>ThrottlingException</code>.</p>
     pub fn provisioned_read_capacity_units(&self) -> std::option::Option<i64> {
         self.provisioned_read_capacity_units
     }
-    /// <p>Auto scaling settings for a global secondary index replica's read capacity units.</p>
+    /// <p>Auto scaling settings for a global secondary index replica's read capacity
+    /// units.</p>
     pub fn provisioned_read_capacity_auto_scaling_settings(
         &self,
     ) -> std::option::Option<&crate::model::AutoScalingSettingsDescription> {
         self.provisioned_read_capacity_auto_scaling_settings
             .as_ref()
     }
-    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a
+    /// <code>ThrottlingException</code>.</p>
     pub fn provisioned_write_capacity_units(&self) -> std::option::Option<i64> {
         self.provisioned_write_capacity_units
     }
@@ -10930,18 +11533,19 @@ pub mod replica_global_secondary_index_settings_description {
             std::option::Option<crate::model::AutoScalingSettingsDescription>,
     }
     impl Builder {
-        /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+        /// <p>The name of the global secondary index. The name must be unique among all other
+        /// indexes on this table.</p>
         pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_name = Some(input.into());
             self
         }
-        /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+        /// <p>The name of the global secondary index. The name must be unique among all other
+        /// indexes on this table.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
         }
-        /// <p>
-        /// The current status of the global secondary index:</p>
+        /// <p> The current status of the global secondary index:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -10964,8 +11568,7 @@ pub mod replica_global_secondary_index_settings_description {
             self.index_status = Some(input);
             self
         }
-        /// <p>
-        /// The current status of the global secondary index:</p>
+        /// <p> The current status of the global secondary index:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -10991,12 +11594,14 @@ pub mod replica_global_secondary_index_settings_description {
             self.index_status = input;
             self
         }
-        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
+        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+        /// returns a <code>ThrottlingException</code>.</p>
         pub fn provisioned_read_capacity_units(mut self, input: i64) -> Self {
             self.provisioned_read_capacity_units = Some(input);
             self
         }
-        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
+        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+        /// returns a <code>ThrottlingException</code>.</p>
         pub fn set_provisioned_read_capacity_units(
             mut self,
             input: std::option::Option<i64>,
@@ -11004,7 +11609,8 @@ pub mod replica_global_secondary_index_settings_description {
             self.provisioned_read_capacity_units = input;
             self
         }
-        /// <p>Auto scaling settings for a global secondary index replica's read capacity units.</p>
+        /// <p>Auto scaling settings for a global secondary index replica's read capacity
+        /// units.</p>
         pub fn provisioned_read_capacity_auto_scaling_settings(
             mut self,
             input: crate::model::AutoScalingSettingsDescription,
@@ -11012,7 +11618,8 @@ pub mod replica_global_secondary_index_settings_description {
             self.provisioned_read_capacity_auto_scaling_settings = Some(input);
             self
         }
-        /// <p>Auto scaling settings for a global secondary index replica's read capacity units.</p>
+        /// <p>Auto scaling settings for a global secondary index replica's read capacity
+        /// units.</p>
         pub fn set_provisioned_read_capacity_auto_scaling_settings(
             mut self,
             input: std::option::Option<crate::model::AutoScalingSettingsDescription>,
@@ -11020,12 +11627,14 @@ pub mod replica_global_secondary_index_settings_description {
             self.provisioned_read_capacity_auto_scaling_settings = input;
             self
         }
-        /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
+        /// <p>The maximum number of writes consumed per second before DynamoDB returns a
+        /// <code>ThrottlingException</code>.</p>
         pub fn provisioned_write_capacity_units(mut self, input: i64) -> Self {
             self.provisioned_write_capacity_units = Some(input);
             self
         }
-        /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
+        /// <p>The maximum number of writes consumed per second before DynamoDB returns a
+        /// <code>ThrottlingException</code>.</p>
         pub fn set_provisioned_write_capacity_units(
             mut self,
             input: std::option::Option<i64>,
@@ -11079,15 +11688,16 @@ impl ReplicaGlobalSecondaryIndexSettingsDescription {
 pub struct ReplicaSettingsUpdate {
     /// <p>The Region of the replica to be added.</p>
     pub region_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
-    /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
-    /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-    /// </p>
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+    /// returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB
+    /// Developer Guide</i>. </p>
     pub replica_provisioned_read_capacity_units: std::option::Option<i64>,
-    /// <p>Auto scaling settings for managing a global table replica's read capacity units.</p>
+    /// <p>Auto scaling settings for managing a global table replica's read capacity
+    /// units.</p>
     pub replica_provisioned_read_capacity_auto_scaling_settings_update:
         std::option::Option<crate::model::AutoScalingSettingsUpdate>,
-    /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
+    /// <p>Represents the settings of a global secondary index for a global table that will be
+    /// modified.</p>
     pub replica_global_secondary_index_settings_update:
         std::option::Option<std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndexSettingsUpdate>>,
 }
@@ -11096,21 +11706,22 @@ impl ReplicaSettingsUpdate {
     pub fn region_name(&self) -> std::option::Option<&str> {
         self.region_name.as_deref()
     }
-    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
-    /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
-    /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-    /// </p>
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+    /// returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB
+    /// Developer Guide</i>. </p>
     pub fn replica_provisioned_read_capacity_units(&self) -> std::option::Option<i64> {
         self.replica_provisioned_read_capacity_units
     }
-    /// <p>Auto scaling settings for managing a global table replica's read capacity units.</p>
+    /// <p>Auto scaling settings for managing a global table replica's read capacity
+    /// units.</p>
     pub fn replica_provisioned_read_capacity_auto_scaling_settings_update(
         &self,
     ) -> std::option::Option<&crate::model::AutoScalingSettingsUpdate> {
         self.replica_provisioned_read_capacity_auto_scaling_settings_update
             .as_ref()
     }
-    /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
+    /// <p>Represents the settings of a global secondary index for a global table that will be
+    /// modified.</p>
     pub fn replica_global_secondary_index_settings_update(
         &self,
     ) -> std::option::Option<&[crate::model::ReplicaGlobalSecondaryIndexSettingsUpdate]> {
@@ -11162,18 +11773,16 @@ pub mod replica_settings_update {
             self.region_name = input;
             self
         }
-        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
-        /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-        /// </p>
+        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+        /// returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB
+        /// Developer Guide</i>. </p>
         pub fn replica_provisioned_read_capacity_units(mut self, input: i64) -> Self {
             self.replica_provisioned_read_capacity_units = Some(input);
             self
         }
-        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
-        /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-        /// </p>
+        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+        /// returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB
+        /// Developer Guide</i>. </p>
         pub fn set_replica_provisioned_read_capacity_units(
             mut self,
             input: std::option::Option<i64>,
@@ -11181,7 +11790,8 @@ pub mod replica_settings_update {
             self.replica_provisioned_read_capacity_units = input;
             self
         }
-        /// <p>Auto scaling settings for managing a global table replica's read capacity units.</p>
+        /// <p>Auto scaling settings for managing a global table replica's read capacity
+        /// units.</p>
         pub fn replica_provisioned_read_capacity_auto_scaling_settings_update(
             mut self,
             input: crate::model::AutoScalingSettingsUpdate,
@@ -11189,7 +11799,8 @@ pub mod replica_settings_update {
             self.replica_provisioned_read_capacity_auto_scaling_settings_update = Some(input);
             self
         }
-        /// <p>Auto scaling settings for managing a global table replica's read capacity units.</p>
+        /// <p>Auto scaling settings for managing a global table replica's read capacity
+        /// units.</p>
         pub fn set_replica_provisioned_read_capacity_auto_scaling_settings_update(
             mut self,
             input: std::option::Option<crate::model::AutoScalingSettingsUpdate>,
@@ -11201,7 +11812,8 @@ pub mod replica_settings_update {
         ///
         /// To override the contents of this collection use [`set_replica_global_secondary_index_settings_update`](Self::set_replica_global_secondary_index_settings_update).
         ///
-        /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
+        /// <p>Represents the settings of a global secondary index for a global table that will be
+        /// modified.</p>
         pub fn replica_global_secondary_index_settings_update(
             mut self,
             input: impl Into<crate::model::ReplicaGlobalSecondaryIndexSettingsUpdate>,
@@ -11213,7 +11825,8 @@ pub mod replica_settings_update {
             self.replica_global_secondary_index_settings_update = Some(v);
             self
         }
-        /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
+        /// <p>Represents the settings of a global secondary index for a global table that will be
+        /// modified.</p>
         pub fn set_replica_global_secondary_index_settings_update(
             mut self,
             input: std::option::Option<
@@ -11244,13 +11857,16 @@ impl ReplicaSettingsUpdate {
     }
 }
 
-/// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
+/// <p>Represents the settings of a global secondary index for a global table that will be
+/// modified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicaGlobalSecondaryIndexSettingsUpdate {
-    /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+    /// <p>The name of the global secondary index. The name must be unique among all other
+    /// indexes on this table.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+    /// returns a <code>ThrottlingException</code>.</p>
     pub provisioned_read_capacity_units: std::option::Option<i64>,
     /// <p>Auto scaling settings for managing a global secondary index replica's read capacity
     /// units.</p>
@@ -11258,11 +11874,13 @@ pub struct ReplicaGlobalSecondaryIndexSettingsUpdate {
         std::option::Option<crate::model::AutoScalingSettingsUpdate>,
 }
 impl ReplicaGlobalSecondaryIndexSettingsUpdate {
-    /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+    /// <p>The name of the global secondary index. The name must be unique among all other
+    /// indexes on this table.</p>
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+    /// returns a <code>ThrottlingException</code>.</p>
     pub fn provisioned_read_capacity_units(&self) -> std::option::Option<i64> {
         self.provisioned_read_capacity_units
     }
@@ -11302,22 +11920,26 @@ pub mod replica_global_secondary_index_settings_update {
             std::option::Option<crate::model::AutoScalingSettingsUpdate>,
     }
     impl Builder {
-        /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+        /// <p>The name of the global secondary index. The name must be unique among all other
+        /// indexes on this table.</p>
         pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_name = Some(input.into());
             self
         }
-        /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+        /// <p>The name of the global secondary index. The name must be unique among all other
+        /// indexes on this table.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
         }
-        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
+        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+        /// returns a <code>ThrottlingException</code>.</p>
         pub fn provisioned_read_capacity_units(mut self, input: i64) -> Self {
             self.provisioned_read_capacity_units = Some(input);
             self
         }
-        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
+        /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB
+        /// returns a <code>ThrottlingException</code>.</p>
         pub fn set_provisioned_read_capacity_units(
             mut self,
             input: std::option::Option<i64>,
@@ -11361,13 +11983,16 @@ impl ReplicaGlobalSecondaryIndexSettingsUpdate {
     }
 }
 
-/// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
+/// <p>Represents the settings of a global secondary index for a global table that will be
+/// modified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalTableGlobalSecondaryIndexSettingsUpdate {
-    /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+    /// <p>The name of the global secondary index. The name must be unique among all other
+    /// indexes on this table.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code>
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a
+    /// <code>ThrottlingException.</code>
     /// </p>
     pub provisioned_write_capacity_units: std::option::Option<i64>,
     /// <p>Auto scaling settings for managing a global secondary index's write capacity
@@ -11376,11 +12001,13 @@ pub struct GlobalTableGlobalSecondaryIndexSettingsUpdate {
         std::option::Option<crate::model::AutoScalingSettingsUpdate>,
 }
 impl GlobalTableGlobalSecondaryIndexSettingsUpdate {
-    /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+    /// <p>The name of the global secondary index. The name must be unique among all other
+    /// indexes on this table.</p>
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code>
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a
+    /// <code>ThrottlingException.</code>
     /// </p>
     pub fn provisioned_write_capacity_units(&self) -> std::option::Option<i64> {
         self.provisioned_write_capacity_units
@@ -11421,23 +12048,27 @@ pub mod global_table_global_secondary_index_settings_update {
             std::option::Option<crate::model::AutoScalingSettingsUpdate>,
     }
     impl Builder {
-        /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+        /// <p>The name of the global secondary index. The name must be unique among all other
+        /// indexes on this table.</p>
         pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_name = Some(input.into());
             self
         }
-        /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+        /// <p>The name of the global secondary index. The name must be unique among all other
+        /// indexes on this table.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
         }
-        /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code>
+        /// <p>The maximum number of writes consumed per second before DynamoDB returns a
+        /// <code>ThrottlingException.</code>
         /// </p>
         pub fn provisioned_write_capacity_units(mut self, input: i64) -> Self {
             self.provisioned_write_capacity_units = Some(input);
             self
         }
-        /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code>
+        /// <p>The maximum number of writes consumed per second before DynamoDB returns a
+        /// <code>ThrottlingException.</code>
         /// </p>
         pub fn set_provisioned_write_capacity_units(
             mut self,
@@ -11491,7 +12122,7 @@ pub struct GlobalTableDescription {
     /// <p>The unique identifier of the global table.</p>
     pub global_table_arn: std::option::Option<std::string::String>,
     /// <p>The creation time of the global table.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current state of the global table:</p>
     /// <ul>
     /// <li>
@@ -11525,7 +12156,7 @@ impl GlobalTableDescription {
         self.global_table_arn.as_deref()
     }
     /// <p>The creation time of the global table.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The current state of the global table:</p>
@@ -11575,7 +12206,7 @@ pub mod global_table_description {
         pub(crate) replication_group:
             std::option::Option<std::vec::Vec<crate::model::ReplicaDescription>>,
         pub(crate) global_table_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) global_table_status: std::option::Option<crate::model::GlobalTableStatus>,
         pub(crate) global_table_name: std::option::Option<std::string::String>,
     }
@@ -11616,14 +12247,14 @@ pub mod global_table_description {
             self
         }
         /// <p>The creation time of the global table.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The creation time of the global table.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
@@ -12092,7 +12723,8 @@ impl AsRef<str> for ContributorInsightsAction {
     }
 }
 
-/// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
+/// <p>Represents the continuous backups and point in time recovery settings on the
+/// table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContinuousBackupsDescription {
@@ -12215,13 +12847,13 @@ pub struct PointInTimeRecoveryDescription {
     /// </li>
     /// </ul>
     pub point_in_time_recovery_status: std::option::Option<crate::model::PointInTimeRecoveryStatus>,
-    /// <p>Specifies the earliest point in time you can restore your table to. You can restore your
-    /// table to any point in time during the last 35 days. </p>
-    pub earliest_restorable_date_time: std::option::Option<aws_smithy_types::Instant>,
+    /// <p>Specifies the earliest point in time you can restore your table to. You can restore
+    /// your table to any point in time during the last 35 days. </p>
+    pub earliest_restorable_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
     /// </p>
-    pub latest_restorable_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub latest_restorable_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PointInTimeRecoveryDescription {
     /// <p>The current state of point in time recovery:</p>
@@ -12244,15 +12876,17 @@ impl PointInTimeRecoveryDescription {
     ) -> std::option::Option<&crate::model::PointInTimeRecoveryStatus> {
         self.point_in_time_recovery_status.as_ref()
     }
-    /// <p>Specifies the earliest point in time you can restore your table to. You can restore your
-    /// table to any point in time during the last 35 days. </p>
-    pub fn earliest_restorable_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    /// <p>Specifies the earliest point in time you can restore your table to. You can restore
+    /// your table to any point in time during the last 35 days. </p>
+    pub fn earliest_restorable_date_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.earliest_restorable_date_time.as_ref()
     }
     /// <p>
     /// <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
     /// </p>
-    pub fn latest_restorable_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn latest_restorable_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_restorable_date_time.as_ref()
     }
 }
@@ -12282,8 +12916,8 @@ pub mod point_in_time_recovery_description {
     pub struct Builder {
         pub(crate) point_in_time_recovery_status:
             std::option::Option<crate::model::PointInTimeRecoveryStatus>,
-        pub(crate) earliest_restorable_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) latest_restorable_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) earliest_restorable_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) latest_restorable_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The current state of point in time recovery:</p>
@@ -12330,17 +12964,17 @@ pub mod point_in_time_recovery_description {
             self.point_in_time_recovery_status = input;
             self
         }
-        /// <p>Specifies the earliest point in time you can restore your table to. You can restore your
-        /// table to any point in time during the last 35 days. </p>
-        pub fn earliest_restorable_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        /// <p>Specifies the earliest point in time you can restore your table to. You can restore
+        /// your table to any point in time during the last 35 days. </p>
+        pub fn earliest_restorable_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.earliest_restorable_date_time = Some(input);
             self
         }
-        /// <p>Specifies the earliest point in time you can restore your table to. You can restore your
-        /// table to any point in time during the last 35 days. </p>
+        /// <p>Specifies the earliest point in time you can restore your table to. You can restore
+        /// your table to any point in time during the last 35 days. </p>
         pub fn set_earliest_restorable_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.earliest_restorable_date_time = input;
             self
@@ -12348,7 +12982,7 @@ pub mod point_in_time_recovery_description {
         /// <p>
         /// <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
         /// </p>
-        pub fn latest_restorable_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn latest_restorable_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.latest_restorable_date_time = Some(input);
             self
         }
@@ -12357,7 +12991,7 @@ pub mod point_in_time_recovery_description {
         /// </p>
         pub fn set_latest_restorable_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.latest_restorable_date_time = input;
             self
@@ -12493,11 +13127,13 @@ impl AsRef<str> for ContinuousBackupsStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PointInTimeRecoverySpecification {
-    /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
+    /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the
+    /// table.</p>
     pub point_in_time_recovery_enabled: std::option::Option<bool>,
 }
 impl PointInTimeRecoverySpecification {
-    /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
+    /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the
+    /// table.</p>
     pub fn point_in_time_recovery_enabled(&self) -> std::option::Option<bool> {
         self.point_in_time_recovery_enabled
     }
@@ -12521,12 +13157,14 @@ pub mod point_in_time_recovery_specification {
         pub(crate) point_in_time_recovery_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
+        /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the
+        /// table.</p>
         pub fn point_in_time_recovery_enabled(mut self, input: bool) -> Self {
             self.point_in_time_recovery_enabled = Some(input);
             self
         }
-        /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
+        /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the
+        /// table.</p>
         pub fn set_point_in_time_recovery_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -12549,11 +13187,10 @@ impl PointInTimeRecoverySpecification {
     }
 }
 
-/// <p>An ordered list of errors for each item in the request which caused the transaction
-/// to get cancelled. The values of the list are ordered according to the ordering of the
-/// <code>TransactWriteItems</code> request parameter. If no error
-/// occurred for the associated item an error with a Null code and Null message will be present.
-/// </p>
+/// <p>An ordered list of errors for each item in the request which caused the transaction to
+/// get cancelled. The values of the list are ordered according to the ordering of the
+/// <code>TransactWriteItems</code> request parameter. If no error occurred for the
+/// associated item an error with a Null code and Null message will be present. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancellationReason {
@@ -12668,7 +13305,8 @@ impl CancellationReason {
     }
 }
 
-/// <p>A list of requests that can perform update, put, delete, or check operations on multiple items in one or more tables atomically.</p>
+/// <p>A list of requests that can perform update, put, delete, or check operations on
+/// multiple items in one or more tables atomically.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactWriteItem {
@@ -12786,13 +13424,13 @@ impl TransactWriteItem {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Update {
-    /// <p>The primary key of the item to be updated. Each element consists of
-    /// an attribute name and a value for that attribute.</p>
+    /// <p>The primary key of the item to be updated. Each element consists of an attribute name
+    /// and a value for that attribute.</p>
     pub key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
-    /// <p>An expression that defines one or more attributes to be updated,
-    /// the action to be performed on them, and new value(s) for them.</p>
+    /// <p>An expression that defines one or more attributes to be updated, the action to be
+    /// performed on them, and new value(s) for them.</p>
     pub update_expression: std::option::Option<std::string::String>,
     /// <p>Name of the table for the <code>UpdateItem</code> request.</p>
     pub table_name: std::option::Option<std::string::String>,
@@ -12806,16 +13444,16 @@ pub struct Update {
     pub expression_attribute_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
-    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to
-    /// get the item attributes if the <code>Update</code> condition fails.
-    /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
-    /// values are: NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.</p>
+    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the
+    /// <code>Update</code> condition fails. For
+    /// <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE,
+    /// ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.</p>
     pub return_values_on_condition_check_failure:
         std::option::Option<crate::model::ReturnValuesOnConditionCheckFailure>,
 }
 impl Update {
-    /// <p>The primary key of the item to be updated. Each element consists of
-    /// an attribute name and a value for that attribute.</p>
+    /// <p>The primary key of the item to be updated. Each element consists of an attribute name
+    /// and a value for that attribute.</p>
     pub fn key(
         &self,
     ) -> std::option::Option<
@@ -12823,8 +13461,8 @@ impl Update {
     > {
         self.key.as_ref()
     }
-    /// <p>An expression that defines one or more attributes to be updated,
-    /// the action to be performed on them, and new value(s) for them.</p>
+    /// <p>An expression that defines one or more attributes to be updated, the action to be
+    /// performed on them, and new value(s) for them.</p>
     pub fn update_expression(&self) -> std::option::Option<&str> {
         self.update_expression.as_deref()
     }
@@ -12852,10 +13490,10 @@ impl Update {
     > {
         self.expression_attribute_values.as_ref()
     }
-    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to
-    /// get the item attributes if the <code>Update</code> condition fails.
-    /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
-    /// values are: NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.</p>
+    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the
+    /// <code>Update</code> condition fails. For
+    /// <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE,
+    /// ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.</p>
     pub fn return_values_on_condition_check_failure(
         &self,
     ) -> std::option::Option<&crate::model::ReturnValuesOnConditionCheckFailure> {
@@ -12910,8 +13548,8 @@ pub mod update {
         ///
         /// To override the contents of this collection use [`set_key`](Self::set_key).
         ///
-        /// <p>The primary key of the item to be updated. Each element consists of
-        /// an attribute name and a value for that attribute.</p>
+        /// <p>The primary key of the item to be updated. Each element consists of an attribute name
+        /// and a value for that attribute.</p>
         pub fn key(
             mut self,
             k: impl Into<std::string::String>,
@@ -12922,8 +13560,8 @@ pub mod update {
             self.key = Some(hash_map);
             self
         }
-        /// <p>The primary key of the item to be updated. Each element consists of
-        /// an attribute name and a value for that attribute.</p>
+        /// <p>The primary key of the item to be updated. Each element consists of an attribute name
+        /// and a value for that attribute.</p>
         pub fn set_key(
             mut self,
             input: std::option::Option<
@@ -12933,14 +13571,14 @@ pub mod update {
             self.key = input;
             self
         }
-        /// <p>An expression that defines one or more attributes to be updated,
-        /// the action to be performed on them, and new value(s) for them.</p>
+        /// <p>An expression that defines one or more attributes to be updated, the action to be
+        /// performed on them, and new value(s) for them.</p>
         pub fn update_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.update_expression = Some(input.into());
             self
         }
-        /// <p>An expression that defines one or more attributes to be updated,
-        /// the action to be performed on them, and new value(s) for them.</p>
+        /// <p>An expression that defines one or more attributes to be updated, the action to be
+        /// performed on them, and new value(s) for them.</p>
         pub fn set_update_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13023,10 +13661,10 @@ pub mod update {
             self.expression_attribute_values = input;
             self
         }
-        /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to
-        /// get the item attributes if the <code>Update</code> condition fails.
-        /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
-        /// values are: NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.</p>
+        /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the
+        /// <code>Update</code> condition fails. For
+        /// <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE,
+        /// ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.</p>
         pub fn return_values_on_condition_check_failure(
             mut self,
             input: crate::model::ReturnValuesOnConditionCheckFailure,
@@ -13034,10 +13672,10 @@ pub mod update {
             self.return_values_on_condition_check_failure = Some(input);
             self
         }
-        /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to
-        /// get the item attributes if the <code>Update</code> condition fails.
-        /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
-        /// values are: NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.</p>
+        /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the
+        /// <code>Update</code> condition fails. For
+        /// <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE,
+        /// ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.</p>
         pub fn set_return_values_on_condition_check_failure(
             mut self,
             input: std::option::Option<crate::model::ReturnValuesOnConditionCheckFailure>,
@@ -13126,14 +13764,15 @@ impl AsRef<str> for ReturnValuesOnConditionCheckFailure {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Delete {
-    /// <p>The primary key of the item to be deleted. Each element consists of an
-    /// attribute name and a value for that attribute.</p>
+    /// <p>The primary key of the item to be deleted. Each element consists of an attribute name
+    /// and a value for that attribute.</p>
     pub key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>Name of the table in which the item to be deleted resides.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>A condition that must be satisfied in order for a conditional delete to succeed.</p>
+    /// <p>A condition that must be satisfied in order for a conditional delete to
+    /// succeed.</p>
     pub condition_expression: std::option::Option<std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression.</p>
     pub expression_attribute_names:
@@ -13142,16 +13781,16 @@ pub struct Delete {
     pub expression_attribute_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
-    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to
-    /// get the item attributes if the <code>Delete</code> condition fails.
-    /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
-    /// values are: NONE and ALL_OLD.</p>
+    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the
+    /// <code>Delete</code> condition fails. For
+    /// <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+    /// ALL_OLD.</p>
     pub return_values_on_condition_check_failure:
         std::option::Option<crate::model::ReturnValuesOnConditionCheckFailure>,
 }
 impl Delete {
-    /// <p>The primary key of the item to be deleted. Each element consists of an
-    /// attribute name and a value for that attribute.</p>
+    /// <p>The primary key of the item to be deleted. Each element consists of an attribute name
+    /// and a value for that attribute.</p>
     pub fn key(
         &self,
     ) -> std::option::Option<
@@ -13163,7 +13802,8 @@ impl Delete {
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>A condition that must be satisfied in order for a conditional delete to succeed.</p>
+    /// <p>A condition that must be satisfied in order for a conditional delete to
+    /// succeed.</p>
     pub fn condition_expression(&self) -> std::option::Option<&str> {
         self.condition_expression.as_deref()
     }
@@ -13182,10 +13822,10 @@ impl Delete {
     > {
         self.expression_attribute_values.as_ref()
     }
-    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to
-    /// get the item attributes if the <code>Delete</code> condition fails.
-    /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
-    /// values are: NONE and ALL_OLD.</p>
+    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the
+    /// <code>Delete</code> condition fails. For
+    /// <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+    /// ALL_OLD.</p>
     pub fn return_values_on_condition_check_failure(
         &self,
     ) -> std::option::Option<&crate::model::ReturnValuesOnConditionCheckFailure> {
@@ -13238,8 +13878,8 @@ pub mod delete {
         ///
         /// To override the contents of this collection use [`set_key`](Self::set_key).
         ///
-        /// <p>The primary key of the item to be deleted. Each element consists of an
-        /// attribute name and a value for that attribute.</p>
+        /// <p>The primary key of the item to be deleted. Each element consists of an attribute name
+        /// and a value for that attribute.</p>
         pub fn key(
             mut self,
             k: impl Into<std::string::String>,
@@ -13250,8 +13890,8 @@ pub mod delete {
             self.key = Some(hash_map);
             self
         }
-        /// <p>The primary key of the item to be deleted. Each element consists of an
-        /// attribute name and a value for that attribute.</p>
+        /// <p>The primary key of the item to be deleted. Each element consists of an attribute name
+        /// and a value for that attribute.</p>
         pub fn set_key(
             mut self,
             input: std::option::Option<
@@ -13271,12 +13911,14 @@ pub mod delete {
             self.table_name = input;
             self
         }
-        /// <p>A condition that must be satisfied in order for a conditional delete to succeed.</p>
+        /// <p>A condition that must be satisfied in order for a conditional delete to
+        /// succeed.</p>
         pub fn condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.condition_expression = Some(input.into());
             self
         }
-        /// <p>A condition that must be satisfied in order for a conditional delete to succeed.</p>
+        /// <p>A condition that must be satisfied in order for a conditional delete to
+        /// succeed.</p>
         pub fn set_condition_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13334,10 +13976,10 @@ pub mod delete {
             self.expression_attribute_values = input;
             self
         }
-        /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to
-        /// get the item attributes if the <code>Delete</code> condition fails.
-        /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
-        /// values are: NONE and ALL_OLD.</p>
+        /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the
+        /// <code>Delete</code> condition fails. For
+        /// <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+        /// ALL_OLD.</p>
         pub fn return_values_on_condition_check_failure(
             mut self,
             input: crate::model::ReturnValuesOnConditionCheckFailure,
@@ -13345,10 +13987,10 @@ pub mod delete {
             self.return_values_on_condition_check_failure = Some(input);
             self
         }
-        /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to
-        /// get the item attributes if the <code>Delete</code> condition fails.
-        /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
-        /// values are: NONE and ALL_OLD.</p>
+        /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the
+        /// <code>Delete</code> condition fails. For
+        /// <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+        /// ALL_OLD.</p>
         pub fn set_return_values_on_condition_check_failure(
             mut self,
             input: std::option::Option<crate::model::ReturnValuesOnConditionCheckFailure>,
@@ -13381,17 +14023,18 @@ impl Delete {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Put {
-    /// <p>A map of attribute name to attribute values, representing the primary key
-    /// of the item to be written by <code>PutItem</code>. All of the table's primary key
-    /// attributes must be specified, and their data types must match those of the table's
-    /// key schema. If any attributes are present in the item that are part of an index
-    /// key schema for the table, their types must match the index key schema. </p>
+    /// <p>A map of attribute name to attribute values, representing the primary key of the item
+    /// to be written by <code>PutItem</code>. All of the table's primary key attributes must be
+    /// specified, and their data types must match those of the table's key schema. If any
+    /// attributes are present in the item that are part of an index key schema for the table,
+    /// their types must match the index key schema. </p>
     pub item: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>Name of the table in which to write the item.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
+    /// <p>A condition that must be satisfied in order for a conditional update to
+    /// succeed.</p>
     pub condition_expression: std::option::Option<std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression.</p>
     pub expression_attribute_names:
@@ -13400,19 +14043,19 @@ pub struct Put {
     pub expression_attribute_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
-    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to
-    /// get the item attributes if the <code>Put</code> condition fails.
-    /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
-    /// values are: NONE and ALL_OLD.</p>
+    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the
+    /// <code>Put</code> condition fails. For
+    /// <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+    /// ALL_OLD.</p>
     pub return_values_on_condition_check_failure:
         std::option::Option<crate::model::ReturnValuesOnConditionCheckFailure>,
 }
 impl Put {
-    /// <p>A map of attribute name to attribute values, representing the primary key
-    /// of the item to be written by <code>PutItem</code>. All of the table's primary key
-    /// attributes must be specified, and their data types must match those of the table's
-    /// key schema. If any attributes are present in the item that are part of an index
-    /// key schema for the table, their types must match the index key schema. </p>
+    /// <p>A map of attribute name to attribute values, representing the primary key of the item
+    /// to be written by <code>PutItem</code>. All of the table's primary key attributes must be
+    /// specified, and their data types must match those of the table's key schema. If any
+    /// attributes are present in the item that are part of an index key schema for the table,
+    /// their types must match the index key schema. </p>
     pub fn item(
         &self,
     ) -> std::option::Option<
@@ -13424,7 +14067,8 @@ impl Put {
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
+    /// <p>A condition that must be satisfied in order for a conditional update to
+    /// succeed.</p>
     pub fn condition_expression(&self) -> std::option::Option<&str> {
         self.condition_expression.as_deref()
     }
@@ -13443,10 +14087,10 @@ impl Put {
     > {
         self.expression_attribute_values.as_ref()
     }
-    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to
-    /// get the item attributes if the <code>Put</code> condition fails.
-    /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
-    /// values are: NONE and ALL_OLD.</p>
+    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the
+    /// <code>Put</code> condition fails. For
+    /// <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+    /// ALL_OLD.</p>
     pub fn return_values_on_condition_check_failure(
         &self,
     ) -> std::option::Option<&crate::model::ReturnValuesOnConditionCheckFailure> {
@@ -13499,11 +14143,11 @@ pub mod put {
         ///
         /// To override the contents of this collection use [`set_item`](Self::set_item).
         ///
-        /// <p>A map of attribute name to attribute values, representing the primary key
-        /// of the item to be written by <code>PutItem</code>. All of the table's primary key
-        /// attributes must be specified, and their data types must match those of the table's
-        /// key schema. If any attributes are present in the item that are part of an index
-        /// key schema for the table, their types must match the index key schema. </p>
+        /// <p>A map of attribute name to attribute values, representing the primary key of the item
+        /// to be written by <code>PutItem</code>. All of the table's primary key attributes must be
+        /// specified, and their data types must match those of the table's key schema. If any
+        /// attributes are present in the item that are part of an index key schema for the table,
+        /// their types must match the index key schema. </p>
         pub fn item(
             mut self,
             k: impl Into<std::string::String>,
@@ -13514,11 +14158,11 @@ pub mod put {
             self.item = Some(hash_map);
             self
         }
-        /// <p>A map of attribute name to attribute values, representing the primary key
-        /// of the item to be written by <code>PutItem</code>. All of the table's primary key
-        /// attributes must be specified, and their data types must match those of the table's
-        /// key schema. If any attributes are present in the item that are part of an index
-        /// key schema for the table, their types must match the index key schema. </p>
+        /// <p>A map of attribute name to attribute values, representing the primary key of the item
+        /// to be written by <code>PutItem</code>. All of the table's primary key attributes must be
+        /// specified, and their data types must match those of the table's key schema. If any
+        /// attributes are present in the item that are part of an index key schema for the table,
+        /// their types must match the index key schema. </p>
         pub fn set_item(
             mut self,
             input: std::option::Option<
@@ -13538,12 +14182,14 @@ pub mod put {
             self.table_name = input;
             self
         }
-        /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
+        /// <p>A condition that must be satisfied in order for a conditional update to
+        /// succeed.</p>
         pub fn condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.condition_expression = Some(input.into());
             self
         }
-        /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
+        /// <p>A condition that must be satisfied in order for a conditional update to
+        /// succeed.</p>
         pub fn set_condition_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13601,10 +14247,10 @@ pub mod put {
             self.expression_attribute_values = input;
             self
         }
-        /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to
-        /// get the item attributes if the <code>Put</code> condition fails.
-        /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
-        /// values are: NONE and ALL_OLD.</p>
+        /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the
+        /// <code>Put</code> condition fails. For
+        /// <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+        /// ALL_OLD.</p>
         pub fn return_values_on_condition_check_failure(
             mut self,
             input: crate::model::ReturnValuesOnConditionCheckFailure,
@@ -13612,10 +14258,10 @@ pub mod put {
             self.return_values_on_condition_check_failure = Some(input);
             self
         }
-        /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to
-        /// get the item attributes if the <code>Put</code> condition fails.
-        /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
-        /// values are: NONE and ALL_OLD.</p>
+        /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the
+        /// <code>Put</code> condition fails. For
+        /// <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+        /// ALL_OLD.</p>
         pub fn set_return_values_on_condition_check_failure(
             mut self,
             input: std::option::Option<crate::model::ReturnValuesOnConditionCheckFailure>,
@@ -13644,19 +14290,20 @@ impl Put {
     }
 }
 
-/// <p>Represents a request to perform a check that an item exists or to check the condition of
-/// specific attributes of the item.</p>
+/// <p>Represents a request to perform a check that an item exists or to check the condition
+/// of specific attributes of the item.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConditionCheck {
-    /// <p>The primary key of the item to be checked. Each element consists of an
-    /// attribute name and a value for that attribute.</p>
+    /// <p>The primary key of the item to be checked. Each element consists of an attribute name
+    /// and a value for that attribute.</p>
     pub key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>Name of the table for the check item request.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
+    /// <p>A condition that must be satisfied in order for a conditional update to
+    /// succeed.</p>
     pub condition_expression: std::option::Option<std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression.</p>
     pub expression_attribute_names:
@@ -13665,16 +14312,16 @@ pub struct ConditionCheck {
     pub expression_attribute_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
-    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to
-    /// get the item attributes if the <code>ConditionCheck</code> condition fails.
-    /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
-    /// values are: NONE and ALL_OLD.</p>
+    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the
+    /// <code>ConditionCheck</code> condition fails. For
+    /// <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+    /// ALL_OLD.</p>
     pub return_values_on_condition_check_failure:
         std::option::Option<crate::model::ReturnValuesOnConditionCheckFailure>,
 }
 impl ConditionCheck {
-    /// <p>The primary key of the item to be checked. Each element consists of an
-    /// attribute name and a value for that attribute.</p>
+    /// <p>The primary key of the item to be checked. Each element consists of an attribute name
+    /// and a value for that attribute.</p>
     pub fn key(
         &self,
     ) -> std::option::Option<
@@ -13686,7 +14333,8 @@ impl ConditionCheck {
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
+    /// <p>A condition that must be satisfied in order for a conditional update to
+    /// succeed.</p>
     pub fn condition_expression(&self) -> std::option::Option<&str> {
         self.condition_expression.as_deref()
     }
@@ -13705,10 +14353,10 @@ impl ConditionCheck {
     > {
         self.expression_attribute_values.as_ref()
     }
-    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to
-    /// get the item attributes if the <code>ConditionCheck</code> condition fails.
-    /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
-    /// values are: NONE and ALL_OLD.</p>
+    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the
+    /// <code>ConditionCheck</code> condition fails. For
+    /// <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+    /// ALL_OLD.</p>
     pub fn return_values_on_condition_check_failure(
         &self,
     ) -> std::option::Option<&crate::model::ReturnValuesOnConditionCheckFailure> {
@@ -13761,8 +14409,8 @@ pub mod condition_check {
         ///
         /// To override the contents of this collection use [`set_key`](Self::set_key).
         ///
-        /// <p>The primary key of the item to be checked. Each element consists of an
-        /// attribute name and a value for that attribute.</p>
+        /// <p>The primary key of the item to be checked. Each element consists of an attribute name
+        /// and a value for that attribute.</p>
         pub fn key(
             mut self,
             k: impl Into<std::string::String>,
@@ -13773,8 +14421,8 @@ pub mod condition_check {
             self.key = Some(hash_map);
             self
         }
-        /// <p>The primary key of the item to be checked. Each element consists of an
-        /// attribute name and a value for that attribute.</p>
+        /// <p>The primary key of the item to be checked. Each element consists of an attribute name
+        /// and a value for that attribute.</p>
         pub fn set_key(
             mut self,
             input: std::option::Option<
@@ -13794,12 +14442,14 @@ pub mod condition_check {
             self.table_name = input;
             self
         }
-        /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
+        /// <p>A condition that must be satisfied in order for a conditional update to
+        /// succeed.</p>
         pub fn condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.condition_expression = Some(input.into());
             self
         }
-        /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
+        /// <p>A condition that must be satisfied in order for a conditional update to
+        /// succeed.</p>
         pub fn set_condition_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13857,10 +14507,10 @@ pub mod condition_check {
             self.expression_attribute_values = input;
             self
         }
-        /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to
-        /// get the item attributes if the <code>ConditionCheck</code> condition fails.
-        /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
-        /// values are: NONE and ALL_OLD.</p>
+        /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the
+        /// <code>ConditionCheck</code> condition fails. For
+        /// <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+        /// ALL_OLD.</p>
         pub fn return_values_on_condition_check_failure(
             mut self,
             input: crate::model::ReturnValuesOnConditionCheckFailure,
@@ -13868,10 +14518,10 @@ pub mod condition_check {
             self.return_values_on_condition_check_failure = Some(input);
             self
         }
-        /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to
-        /// get the item attributes if the <code>ConditionCheck</code> condition fails.
-        /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
-        /// values are: NONE and ALL_OLD.</p>
+        /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the
+        /// <code>ConditionCheck</code> condition fails. For
+        /// <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+        /// ALL_OLD.</p>
         pub fn set_return_values_on_condition_check_failure(
             mut self,
             input: std::option::Option<crate::model::ReturnValuesOnConditionCheckFailure>,
@@ -13979,15 +14629,15 @@ impl ItemResponse {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactGetItem {
-    /// <p>Contains the primary key that identifies the item to get, together
-    /// with the name of the table that contains the item, and optionally
-    /// the specific attributes of the item to retrieve.</p>
+    /// <p>Contains the primary key that identifies the item to get, together with the name of
+    /// the table that contains the item, and optionally the specific attributes of the item to
+    /// retrieve.</p>
     pub get: std::option::Option<crate::model::Get>,
 }
 impl TransactGetItem {
-    /// <p>Contains the primary key that identifies the item to get, together
-    /// with the name of the table that contains the item, and optionally
-    /// the specific attributes of the item to retrieve.</p>
+    /// <p>Contains the primary key that identifies the item to get, together with the name of
+    /// the table that contains the item, and optionally the specific attributes of the item to
+    /// retrieve.</p>
     pub fn get(&self) -> std::option::Option<&crate::model::Get> {
         self.get.as_ref()
     }
@@ -14008,16 +14658,16 @@ pub mod transact_get_item {
         pub(crate) get: std::option::Option<crate::model::Get>,
     }
     impl Builder {
-        /// <p>Contains the primary key that identifies the item to get, together
-        /// with the name of the table that contains the item, and optionally
-        /// the specific attributes of the item to retrieve.</p>
+        /// <p>Contains the primary key that identifies the item to get, together with the name of
+        /// the table that contains the item, and optionally the specific attributes of the item to
+        /// retrieve.</p>
         pub fn get(mut self, input: crate::model::Get) -> Self {
             self.get = Some(input);
             self
         }
-        /// <p>Contains the primary key that identifies the item to get, together
-        /// with the name of the table that contains the item, and optionally
-        /// the specific attributes of the item to retrieve.</p>
+        /// <p>Contains the primary key that identifies the item to get, together with the name of
+        /// the table that contains the item, and optionally the specific attributes of the item to
+        /// retrieve.</p>
         pub fn set_get(mut self, input: std::option::Option<crate::model::Get>) -> Self {
             self.get = input;
             self
@@ -14040,27 +14690,26 @@ impl TransactGetItem {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Get {
-    /// <p>A map of attribute names to <code>AttributeValue</code> objects that
-    /// specifies the primary key of the item to retrieve.</p>
+    /// <p>A map of attribute names to <code>AttributeValue</code> objects that specifies the
+    /// primary key of the item to retrieve.</p>
     pub key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>The name of the table from which to retrieve the specified item.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>A string that identifies one or more attributes of the specified item
-    /// to retrieve from the table.  The attributes in the expression must be
-    /// separated by commas. If no attribute names are specified, then all
-    /// attributes of the specified item are returned. If any of the requested
-    /// attributes are not found, they do not appear in the result.</p>
+    /// <p>A string that identifies one or more attributes of the specified item to retrieve from
+    /// the table. The attributes in the expression must be separated by commas. If no attribute
+    /// names are specified, then all attributes of the specified item are returned. If any of
+    /// the requested attributes are not found, they do not appear in the result.</p>
     pub projection_expression: std::option::Option<std::string::String>,
-    /// <p>One or more substitution tokens for attribute names in the
-    /// ProjectionExpression parameter.</p>
+    /// <p>One or more substitution tokens for attribute names in the ProjectionExpression
+    /// parameter.</p>
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Get {
-    /// <p>A map of attribute names to <code>AttributeValue</code> objects that
-    /// specifies the primary key of the item to retrieve.</p>
+    /// <p>A map of attribute names to <code>AttributeValue</code> objects that specifies the
+    /// primary key of the item to retrieve.</p>
     pub fn key(
         &self,
     ) -> std::option::Option<
@@ -14072,16 +14721,15 @@ impl Get {
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>A string that identifies one or more attributes of the specified item
-    /// to retrieve from the table.  The attributes in the expression must be
-    /// separated by commas. If no attribute names are specified, then all
-    /// attributes of the specified item are returned. If any of the requested
-    /// attributes are not found, they do not appear in the result.</p>
+    /// <p>A string that identifies one or more attributes of the specified item to retrieve from
+    /// the table. The attributes in the expression must be separated by commas. If no attribute
+    /// names are specified, then all attributes of the specified item are returned. If any of
+    /// the requested attributes are not found, they do not appear in the result.</p>
     pub fn projection_expression(&self) -> std::option::Option<&str> {
         self.projection_expression.as_deref()
     }
-    /// <p>One or more substitution tokens for attribute names in the
-    /// ProjectionExpression parameter.</p>
+    /// <p>One or more substitution tokens for attribute names in the ProjectionExpression
+    /// parameter.</p>
     pub fn expression_attribute_names(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -14122,8 +14770,8 @@ pub mod get {
         ///
         /// To override the contents of this collection use [`set_key`](Self::set_key).
         ///
-        /// <p>A map of attribute names to <code>AttributeValue</code> objects that
-        /// specifies the primary key of the item to retrieve.</p>
+        /// <p>A map of attribute names to <code>AttributeValue</code> objects that specifies the
+        /// primary key of the item to retrieve.</p>
         pub fn key(
             mut self,
             k: impl Into<std::string::String>,
@@ -14134,8 +14782,8 @@ pub mod get {
             self.key = Some(hash_map);
             self
         }
-        /// <p>A map of attribute names to <code>AttributeValue</code> objects that
-        /// specifies the primary key of the item to retrieve.</p>
+        /// <p>A map of attribute names to <code>AttributeValue</code> objects that specifies the
+        /// primary key of the item to retrieve.</p>
         pub fn set_key(
             mut self,
             input: std::option::Option<
@@ -14155,20 +14803,18 @@ pub mod get {
             self.table_name = input;
             self
         }
-        /// <p>A string that identifies one or more attributes of the specified item
-        /// to retrieve from the table.  The attributes in the expression must be
-        /// separated by commas. If no attribute names are specified, then all
-        /// attributes of the specified item are returned. If any of the requested
-        /// attributes are not found, they do not appear in the result.</p>
+        /// <p>A string that identifies one or more attributes of the specified item to retrieve from
+        /// the table. The attributes in the expression must be separated by commas. If no attribute
+        /// names are specified, then all attributes of the specified item are returned. If any of
+        /// the requested attributes are not found, they do not appear in the result.</p>
         pub fn projection_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.projection_expression = Some(input.into());
             self
         }
-        /// <p>A string that identifies one or more attributes of the specified item
-        /// to retrieve from the table.  The attributes in the expression must be
-        /// separated by commas. If no attribute names are specified, then all
-        /// attributes of the specified item are returned. If any of the requested
-        /// attributes are not found, they do not appear in the result.</p>
+        /// <p>A string that identifies one or more attributes of the specified item to retrieve from
+        /// the table. The attributes in the expression must be separated by commas. If no attribute
+        /// names are specified, then all attributes of the specified item are returned. If any of
+        /// the requested attributes are not found, they do not appear in the result.</p>
         pub fn set_projection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14180,8 +14826,8 @@ pub mod get {
         ///
         /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
         ///
-        /// <p>One or more substitution tokens for attribute names in the
-        /// ProjectionExpression parameter.</p>
+        /// <p>One or more substitution tokens for attribute names in the ProjectionExpression
+        /// parameter.</p>
         pub fn expression_attribute_names(
             mut self,
             k: impl Into<std::string::String>,
@@ -14192,8 +14838,8 @@ pub mod get {
             self.expression_attribute_names = Some(hash_map);
             self
         }
-        /// <p>One or more substitution tokens for attribute names in the
-        /// ProjectionExpression parameter.</p>
+        /// <p>One or more substitution tokens for attribute names in the ProjectionExpression
+        /// parameter.</p>
         pub fn set_expression_attribute_names(
             mut self,
             input: std::option::Option<
@@ -14221,29 +14867,30 @@ impl Get {
     }
 }
 
-/// <p>Describes a tag. A tag is a key-value pair. You can add up to 50 tags to a single DynamoDB table.
-/// </p>
-/// <p> AWS-assigned tag names and values are automatically assigned the <code>aws:</code>
-/// prefix, which the user cannot assign. AWS-assigned tag names do not count towards the
-/// tag limit of 50. User-assigned tag names have the prefix <code>user:</code> in the Cost
-/// Allocation Report. You cannot backdate the application of a tag. </p>
-/// <p>For an overview on tagging DynamoDB resources, see
-/// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>
-/// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+/// <p>Describes a tag. A tag is a key-value pair. You can add up to 50 tags to a single
+/// DynamoDB table. </p>
+/// <p>Amazon Web Services-assigned tag names and values are automatically assigned the
+/// <code>aws:</code> prefix, which the user cannot assign. Amazon Web Services-assigned
+/// tag names do not count towards the tag limit of 50. User-assigned tag names have the
+/// prefix <code>user:</code> in the Cost Allocation Report. You cannot backdate the
+/// application of a tag.</p>
+/// <p>For an overview on tagging DynamoDB resources, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
+/// for DynamoDB</a> in the <i>Amazon DynamoDB Developer
+/// Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to
-    /// one tag with the same key. If you try to add an existing tag (same key), the existing
-    /// tag value will be updated to the new value. </p>
+    /// <p>The key of the tag. Tag keys are case sensitive. Each DynamoDB table can
+    /// only have up to one tag with the same key. If you try to add an existing tag (same key),
+    /// the existing tag value will be updated to the new value.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag. Tag values are case-sensitive and can be null.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to
-    /// one tag with the same key. If you try to add an existing tag (same key), the existing
-    /// tag value will be updated to the new value. </p>
+    /// <p>The key of the tag. Tag keys are case sensitive. Each DynamoDB table can
+    /// only have up to one tag with the same key. If you try to add an existing tag (same key),
+    /// the existing tag value will be updated to the new value.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -14270,16 +14917,16 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to
-        /// one tag with the same key. If you try to add an existing tag (same key), the existing
-        /// tag value will be updated to the new value. </p>
+        /// <p>The key of the tag. Tag keys are case sensitive. Each DynamoDB table can
+        /// only have up to one tag with the same key. If you try to add an existing tag (same key),
+        /// the existing tag value will be updated to the new value.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to
-        /// one tag with the same key. If you try to add an existing tag (same key), the existing
-        /// tag value will be updated to the new value. </p>
+        /// <p>The key of the tag. Tag keys are case sensitive. Each DynamoDB table can
+        /// only have up to one tag with the same key. If you try to add an existing tag (same key),
+        /// the existing tag value will be updated to the new value.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -14310,344 +14957,425 @@ impl Tag {
     }
 }
 
-/// <p>Represents the selection criteria for a <code>Query</code> or <code>Scan</code> operation:</p>
+/// <p>Represents the selection criteria for a <code>Query</code> or <code>Scan</code>
+/// operation:</p>
 /// <ul>
 /// <li>
-/// <p>For a <code>Query</code> operation, <code>Condition</code> is used for specifying the
-/// <code>KeyConditions</code> to use when querying a table or an index. For <code>KeyConditions</code>,
-/// only the following comparison operators are supported:</p>
+/// <p>For a <code>Query</code> operation, <code>Condition</code> is used for
+/// specifying the <code>KeyConditions</code> to use when querying a table or an
+/// index. For <code>KeyConditions</code>, only the following comparison operators
+/// are supported:</p>
 /// <p>
 /// <code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code>
 /// </p>
 /// <p>
-/// <code>Condition</code> is also used in a <code>QueryFilter</code>, which evaluates the query results
-/// and returns only the desired values.</p>
+/// <code>Condition</code> is also used in a <code>QueryFilter</code>, which
+/// evaluates the query results and returns only the desired values.</p>
 /// </li>
 /// <li>
-/// <p>For a <code>Scan</code> operation, <code>Condition</code> is used in a <code>ScanFilter</code>, which
-/// evaluates the scan results and returns only the desired values.</p>
+/// <p>For a <code>Scan</code> operation, <code>Condition</code> is used in a
+/// <code>ScanFilter</code>, which evaluates the scan results and returns only
+/// the desired values.</p>
 /// </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Condition {
-    /// <p>One or more values to evaluate against the supplied attribute. The number of values in the
-    /// list depends on the <code>ComparisonOperator</code> being used.</p>
+    /// <p>One or more values to evaluate against the supplied attribute. The number of values in
+    /// the list depends on the <code>ComparisonOperator</code> being used.</p>
     /// <p>For type Number, value comparisons are numeric.</p>
-    /// <p>String value comparisons for greater than, equals, or less than are based on ASCII character
-    /// code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code>
-    /// is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
-    /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
+    /// <p>String value comparisons for greater than, equals, or less than are based on ASCII
+    /// character code values. For example, <code>a</code> is greater than <code>A</code>, and
+    /// <code>a</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
+    /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
+    /// compares binary values.</p>
     pub attribute_value_list: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
-    /// <p>A comparator for evaluating attributes. For example, equals, greater than, less than, etc.</p>
+    /// <p>A comparator for evaluating attributes. For example, equals, greater than, less than,
+    /// etc.</p>
     /// <p>The following comparison operators are available:</p>
     /// <p>
-    /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code>
+    /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS |
+    /// BEGINS_WITH | IN | BETWEEN</code>
     /// </p>
     /// <p>The following are descriptions of each comparison operator.</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.</p>
+    /// <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types,
+    /// including lists and maps.</p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> element of a different
-    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, Binary, String Set, Number Set, or Binary Set.
+    /// If an item contains an <code>AttributeValue</code> element of a different type
+    /// than the one provided in the request, the value does not match. For example,
     /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+    /// "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.</p>
+    /// <code>NE</code> : Not equal. <code>NE</code> is supported for all data types,
+    /// including lists and maps.</p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String,
-    /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a different
-    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// of type String, Number, Binary, String Set, Number Set, or Binary Set. If an
+    /// item contains an <code>AttributeValue</code> of a different type than the one
+    /// provided in the request, the value does not match. For example,
     /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+    /// "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>LE</code> : Less than or equal. </p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-    /// type than the one provided in the request, the value does not match. For example,
-    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, or Binary (not a set type). If an item contains
+    /// an <code>AttributeValue</code> element of a different type than the one provided
+    /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+    /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+    /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>LT</code> : Less than. </p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String,
-    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// of type String, Number, or Binary (not a set type). If an item contains an
+    /// <code>AttributeValue</code> element of a different type than the one
+    /// provided in the request, the value does not match. For example,
     /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+    /// "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>GE</code> : Greater than or equal. </p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-    /// type than the one provided in the request, the value does not match. For example,
-    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, or Binary (not a set type). If an item contains
+    /// an <code>AttributeValue</code> element of a different type than the one provided
+    /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+    /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+    /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>GT</code> : Greater than. </p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-    /// type than the one provided in the request, the value does not match. For example,
-    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, or Binary (not a set type). If an item contains
+    /// an <code>AttributeValue</code> element of a different type than the one provided
+    /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+    /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+    /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types, including lists and maps.</p>
+    /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported
+    /// for all data types, including lists and maps.</p>
     /// <note>
-    /// <p>This operator tests for the existence of an attribute, not its data type.  If the data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NOT_NULL</code> comparison operator.</p>
+    /// <p>This operator tests for the existence of an attribute, not its data type.
+    /// If the data type of attribute "<code>a</code>" is null, and you evaluate it
+    /// using <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This
+    /// result is because the attribute "<code>a</code>" exists; its data type is
+    /// not relevant to the <code>NOT_NULL</code> comparison operator.</p>
     /// </note>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types, including lists and maps.</p>
+    /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported
+    /// for all data types, including lists and maps.</p>
     /// <note>
-    /// <p>This operator tests for the nonexistence of an attribute, not its data type.  If the data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <code>false</code>. This is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code> comparison operator.</p>
+    /// <p>This operator tests for the nonexistence of an attribute, not its data
+    /// type. If the data type of attribute "<code>a</code>" is null, and you
+    /// evaluate it using <code>NULL</code>, the result is a Boolean
+    /// <code>false</code>. This is because the attribute "<code>a</code>"
+    /// exists; its data type is not relevant to the <code>NULL</code> comparison
+    /// operator.</p>
     /// </note>
     /// </li>
     /// <li>
     /// <p>
     /// <code>CONTAINS</code> : Checks for a subsequence, or value in a set.</p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, or Binary (not a set type). If the target attribute of the comparison is of type String, then
-    /// the operator checks for a substring match. If the target attribute of the comparison is
-    /// of type Binary, then the operator looks for a subsequence of the target that matches the input.
-    /// If the target attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the
-    /// operator evaluates to true if it finds an exact match with any member of the set.</p>
-    /// <p>CONTAINS is supported for lists: When evaluating "<code>a CONTAINS b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, or Binary (not a set type). If the target
+    /// attribute of the comparison is of type String, then the operator checks for a
+    /// substring match. If the target attribute of the comparison is of type Binary,
+    /// then the operator looks for a subsequence of the target that matches the input.
+    /// If the target attribute of the comparison is a set ("<code>SS</code>",
+    /// "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to
+    /// true if it finds an exact match with any member of the set.</p>
+    /// <p>CONTAINS is supported for lists: When evaluating "<code>a CONTAINS b</code>",
+    /// "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a
+    /// map, or a list.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in
-    /// a set.</p>
+    /// <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a
+    /// value in a set.</p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, or Binary (not a set type). If the target attribute of the comparison is a String, then
-    /// the operator checks for the absence of a substring match. If the target attribute of the
-    /// comparison is Binary, then the operator checks for the absence of a subsequence of the
-    /// target that matches the input. If the target attribute of the comparison is a set ("<code>SS</code>",
-    /// "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it <i>does not</i> find an exact match with any member of the set.</p>
-    /// <p>NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, or Binary (not a set type). If the target
+    /// attribute of the comparison is a String, then the operator checks for the
+    /// absence of a substring match. If the target attribute of the comparison is
+    /// Binary, then the operator checks for the absence of a subsequence of the target
+    /// that matches the input. If the target attribute of the comparison is a set
+    /// ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the
+    /// operator evaluates to true if it <i>does not</i> find an exact
+    /// match with any member of the set.</p>
+    /// <p>NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS
+    /// b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot
+    /// be a set, a map, or a list.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>BEGINS_WITH</code> : Checks for a prefix. </p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or
-    /// Binary (not a Number or a set type). The target attribute of the comparison must be of type String or
-    /// Binary (not a Number or a set type).</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// of type String or Binary (not a Number or a set type). The target attribute of
+    /// the comparison must be of type String or Binary (not a Number or a set
+    /// type).</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>IN</code> : Checks for matching elements in a list.</p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code>
-    /// elements of type String, Number, or Binary. These attributes are compared against an
-    /// existing attribute of an item. If any elements of the input are equal to the item
-    /// attribute, the expression evaluates to true.</p>
+    /// <code>AttributeValueList</code> can contain one or more
+    /// <code>AttributeValue</code> elements of type String, Number, or Binary.
+    /// These attributes are compared against an existing attribute of an item. If any
+    /// elements of the input are equal to the item attribute, the expression evaluates
+    /// to true.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than or equal
-    /// to the second value. </p>
+    /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than
+    /// or equal to the second value. </p>
     /// <p>
-    /// <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same
-    /// type, either String, Number, or Binary (not a set type). A target attribute matches if the
-    /// target value is greater than, or equal to, the first element and less than, or equal to,
-    /// the second element. If an item contains an <code>AttributeValue</code> element of a different type than
-    /// the one provided in the request, the value does not match. For example,
+    /// <code>AttributeValueList</code> must contain two <code>AttributeValue</code>
+    /// elements of the same type, either String, Number, or Binary (not a set type). A
+    /// target attribute matches if the target value is greater than, or equal to, the
+    /// first element and less than, or equal to, the second element. If an item
+    /// contains an <code>AttributeValue</code> element of a different type than the one
+    /// provided in the request, the value does not match. For example,
     /// <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
+    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+    /// "1"]}</code>
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see
-    /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a>
-    /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>For usage examples of <code>AttributeValueList</code> and
+    /// <code>ComparisonOperator</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+    /// Conditional Parameters</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
 }
 impl Condition {
-    /// <p>One or more values to evaluate against the supplied attribute. The number of values in the
-    /// list depends on the <code>ComparisonOperator</code> being used.</p>
+    /// <p>One or more values to evaluate against the supplied attribute. The number of values in
+    /// the list depends on the <code>ComparisonOperator</code> being used.</p>
     /// <p>For type Number, value comparisons are numeric.</p>
-    /// <p>String value comparisons for greater than, equals, or less than are based on ASCII character
-    /// code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code>
-    /// is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
-    /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
+    /// <p>String value comparisons for greater than, equals, or less than are based on ASCII
+    /// character code values. For example, <code>a</code> is greater than <code>A</code>, and
+    /// <code>a</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
+    /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
+    /// compares binary values.</p>
     pub fn attribute_value_list(&self) -> std::option::Option<&[crate::model::AttributeValue]> {
         self.attribute_value_list.as_deref()
     }
-    /// <p>A comparator for evaluating attributes. For example, equals, greater than, less than, etc.</p>
+    /// <p>A comparator for evaluating attributes. For example, equals, greater than, less than,
+    /// etc.</p>
     /// <p>The following comparison operators are available:</p>
     /// <p>
-    /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code>
+    /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS |
+    /// BEGINS_WITH | IN | BETWEEN</code>
     /// </p>
     /// <p>The following are descriptions of each comparison operator.</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.</p>
+    /// <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types,
+    /// including lists and maps.</p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> element of a different
-    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, Binary, String Set, Number Set, or Binary Set.
+    /// If an item contains an <code>AttributeValue</code> element of a different type
+    /// than the one provided in the request, the value does not match. For example,
     /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+    /// "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.</p>
+    /// <code>NE</code> : Not equal. <code>NE</code> is supported for all data types,
+    /// including lists and maps.</p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String,
-    /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a different
-    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// of type String, Number, Binary, String Set, Number Set, or Binary Set. If an
+    /// item contains an <code>AttributeValue</code> of a different type than the one
+    /// provided in the request, the value does not match. For example,
     /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+    /// "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>LE</code> : Less than or equal. </p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-    /// type than the one provided in the request, the value does not match. For example,
-    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, or Binary (not a set type). If an item contains
+    /// an <code>AttributeValue</code> element of a different type than the one provided
+    /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+    /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+    /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>LT</code> : Less than. </p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String,
-    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// of type String, Number, or Binary (not a set type). If an item contains an
+    /// <code>AttributeValue</code> element of a different type than the one
+    /// provided in the request, the value does not match. For example,
     /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+    /// "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>GE</code> : Greater than or equal. </p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-    /// type than the one provided in the request, the value does not match. For example,
-    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, or Binary (not a set type). If an item contains
+    /// an <code>AttributeValue</code> element of a different type than the one provided
+    /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+    /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+    /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>GT</code> : Greater than. </p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-    /// type than the one provided in the request, the value does not match. For example,
-    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, or Binary (not a set type). If an item contains
+    /// an <code>AttributeValue</code> element of a different type than the one provided
+    /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+    /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+    /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types, including lists and maps.</p>
+    /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported
+    /// for all data types, including lists and maps.</p>
     /// <note>
-    /// <p>This operator tests for the existence of an attribute, not its data type.  If the data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NOT_NULL</code> comparison operator.</p>
+    /// <p>This operator tests for the existence of an attribute, not its data type.
+    /// If the data type of attribute "<code>a</code>" is null, and you evaluate it
+    /// using <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This
+    /// result is because the attribute "<code>a</code>" exists; its data type is
+    /// not relevant to the <code>NOT_NULL</code> comparison operator.</p>
     /// </note>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types, including lists and maps.</p>
+    /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported
+    /// for all data types, including lists and maps.</p>
     /// <note>
-    /// <p>This operator tests for the nonexistence of an attribute, not its data type.  If the data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <code>false</code>. This is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code> comparison operator.</p>
+    /// <p>This operator tests for the nonexistence of an attribute, not its data
+    /// type. If the data type of attribute "<code>a</code>" is null, and you
+    /// evaluate it using <code>NULL</code>, the result is a Boolean
+    /// <code>false</code>. This is because the attribute "<code>a</code>"
+    /// exists; its data type is not relevant to the <code>NULL</code> comparison
+    /// operator.</p>
     /// </note>
     /// </li>
     /// <li>
     /// <p>
     /// <code>CONTAINS</code> : Checks for a subsequence, or value in a set.</p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, or Binary (not a set type). If the target attribute of the comparison is of type String, then
-    /// the operator checks for a substring match. If the target attribute of the comparison is
-    /// of type Binary, then the operator looks for a subsequence of the target that matches the input.
-    /// If the target attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the
-    /// operator evaluates to true if it finds an exact match with any member of the set.</p>
-    /// <p>CONTAINS is supported for lists: When evaluating "<code>a CONTAINS b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, or Binary (not a set type). If the target
+    /// attribute of the comparison is of type String, then the operator checks for a
+    /// substring match. If the target attribute of the comparison is of type Binary,
+    /// then the operator looks for a subsequence of the target that matches the input.
+    /// If the target attribute of the comparison is a set ("<code>SS</code>",
+    /// "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to
+    /// true if it finds an exact match with any member of the set.</p>
+    /// <p>CONTAINS is supported for lists: When evaluating "<code>a CONTAINS b</code>",
+    /// "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a
+    /// map, or a list.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in
-    /// a set.</p>
+    /// <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a
+    /// value in a set.</p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-    /// Number, or Binary (not a set type). If the target attribute of the comparison is a String, then
-    /// the operator checks for the absence of a substring match. If the target attribute of the
-    /// comparison is Binary, then the operator checks for the absence of a subsequence of the
-    /// target that matches the input. If the target attribute of the comparison is a set ("<code>SS</code>",
-    /// "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it <i>does not</i> find an exact match with any member of the set.</p>
-    /// <p>NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// element of type String, Number, or Binary (not a set type). If the target
+    /// attribute of the comparison is a String, then the operator checks for the
+    /// absence of a substring match. If the target attribute of the comparison is
+    /// Binary, then the operator checks for the absence of a subsequence of the target
+    /// that matches the input. If the target attribute of the comparison is a set
+    /// ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the
+    /// operator evaluates to true if it <i>does not</i> find an exact
+    /// match with any member of the set.</p>
+    /// <p>NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS
+    /// b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot
+    /// be a set, a map, or a list.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>BEGINS_WITH</code> : Checks for a prefix. </p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or
-    /// Binary (not a Number or a set type). The target attribute of the comparison must be of type String or
-    /// Binary (not a Number or a set type).</p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+    /// of type String or Binary (not a Number or a set type). The target attribute of
+    /// the comparison must be of type String or Binary (not a Number or a set
+    /// type).</p>
     /// <p></p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>IN</code> : Checks for matching elements in a list.</p>
     /// <p>
-    /// <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code>
-    /// elements of type String, Number, or Binary. These attributes are compared against an
-    /// existing attribute of an item. If any elements of the input are equal to the item
-    /// attribute, the expression evaluates to true.</p>
+    /// <code>AttributeValueList</code> can contain one or more
+    /// <code>AttributeValue</code> elements of type String, Number, or Binary.
+    /// These attributes are compared against an existing attribute of an item. If any
+    /// elements of the input are equal to the item attribute, the expression evaluates
+    /// to true.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than or equal
-    /// to the second value. </p>
+    /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than
+    /// or equal to the second value. </p>
     /// <p>
-    /// <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same
-    /// type, either String, Number, or Binary (not a set type). A target attribute matches if the
-    /// target value is greater than, or equal to, the first element and less than, or equal to,
-    /// the second element. If an item contains an <code>AttributeValue</code> element of a different type than
-    /// the one provided in the request, the value does not match. For example,
+    /// <code>AttributeValueList</code> must contain two <code>AttributeValue</code>
+    /// elements of the same type, either String, Number, or Binary (not a set type). A
+    /// target attribute matches if the target value is greater than, or equal to, the
+    /// first element and less than, or equal to, the second element. If an item
+    /// contains an <code>AttributeValue</code> element of a different type than the one
+    /// provided in the request, the value does not match. For example,
     /// <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
-    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
+    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+    /// "1"]}</code>
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see
-    /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a>
-    /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>For usage examples of <code>AttributeValueList</code> and
+    /// <code>ComparisonOperator</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+    /// Conditional Parameters</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
@@ -14675,13 +15403,14 @@ pub mod condition {
         ///
         /// To override the contents of this collection use [`set_attribute_value_list`](Self::set_attribute_value_list).
         ///
-        /// <p>One or more values to evaluate against the supplied attribute. The number of values in the
-        /// list depends on the <code>ComparisonOperator</code> being used.</p>
+        /// <p>One or more values to evaluate against the supplied attribute. The number of values in
+        /// the list depends on the <code>ComparisonOperator</code> being used.</p>
         /// <p>For type Number, value comparisons are numeric.</p>
-        /// <p>String value comparisons for greater than, equals, or less than are based on ASCII character
-        /// code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code>
-        /// is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
-        /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
+        /// <p>String value comparisons for greater than, equals, or less than are based on ASCII
+        /// character code values. For example, <code>a</code> is greater than <code>A</code>, and
+        /// <code>a</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
+        /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
+        /// compares binary values.</p>
         pub fn attribute_value_list(
             mut self,
             input: impl Into<crate::model::AttributeValue>,
@@ -14691,13 +15420,14 @@ pub mod condition {
             self.attribute_value_list = Some(v);
             self
         }
-        /// <p>One or more values to evaluate against the supplied attribute. The number of values in the
-        /// list depends on the <code>ComparisonOperator</code> being used.</p>
+        /// <p>One or more values to evaluate against the supplied attribute. The number of values in
+        /// the list depends on the <code>ComparisonOperator</code> being used.</p>
         /// <p>For type Number, value comparisons are numeric.</p>
-        /// <p>String value comparisons for greater than, equals, or less than are based on ASCII character
-        /// code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code>
-        /// is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
-        /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
+        /// <p>String value comparisons for greater than, equals, or less than are based on ASCII
+        /// character code values. For example, <code>a</code> is greater than <code>A</code>, and
+        /// <code>a</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
+        /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
+        /// compares binary values.</p>
         pub fn set_attribute_value_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
@@ -14705,306 +15435,382 @@ pub mod condition {
             self.attribute_value_list = input;
             self
         }
-        /// <p>A comparator for evaluating attributes. For example, equals, greater than, less than, etc.</p>
+        /// <p>A comparator for evaluating attributes. For example, equals, greater than, less than,
+        /// etc.</p>
         /// <p>The following comparison operators are available:</p>
         /// <p>
-        /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code>
+        /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS |
+        /// BEGINS_WITH | IN | BETWEEN</code>
         /// </p>
         /// <p>The following are descriptions of each comparison operator.</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.</p>
+        /// <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types,
+        /// including lists and maps.</p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> element of a different
-        /// type than the one provided in the request, the value does not match. For example,
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, Binary, String Set, Number Set, or Binary Set.
+        /// If an item contains an <code>AttributeValue</code> element of a different type
+        /// than the one provided in the request, the value does not match. For example,
         /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+        /// "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.</p>
+        /// <code>NE</code> : Not equal. <code>NE</code> is supported for all data types,
+        /// including lists and maps.</p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String,
-        /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a different
-        /// type than the one provided in the request, the value does not match. For example,
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// of type String, Number, Binary, String Set, Number Set, or Binary Set. If an
+        /// item contains an <code>AttributeValue</code> of a different type than the one
+        /// provided in the request, the value does not match. For example,
         /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+        /// "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>LE</code> : Less than or equal. </p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-        /// type than the one provided in the request, the value does not match. For example,
-        /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, or Binary (not a set type). If an item contains
+        /// an <code>AttributeValue</code> element of a different type than the one provided
+        /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+        /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+        /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>LT</code> : Less than. </p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String,
-        /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-        /// type than the one provided in the request, the value does not match. For example,
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// of type String, Number, or Binary (not a set type). If an item contains an
+        /// <code>AttributeValue</code> element of a different type than the one
+        /// provided in the request, the value does not match. For example,
         /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+        /// "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>GE</code> : Greater than or equal. </p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-        /// type than the one provided in the request, the value does not match. For example,
-        /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, or Binary (not a set type). If an item contains
+        /// an <code>AttributeValue</code> element of a different type than the one provided
+        /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+        /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+        /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>GT</code> : Greater than. </p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-        /// type than the one provided in the request, the value does not match. For example,
-        /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, or Binary (not a set type). If an item contains
+        /// an <code>AttributeValue</code> element of a different type than the one provided
+        /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+        /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+        /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types, including lists and maps.</p>
+        /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported
+        /// for all data types, including lists and maps.</p>
         /// <note>
-        /// <p>This operator tests for the existence of an attribute, not its data type.  If the data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NOT_NULL</code> comparison operator.</p>
+        /// <p>This operator tests for the existence of an attribute, not its data type.
+        /// If the data type of attribute "<code>a</code>" is null, and you evaluate it
+        /// using <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This
+        /// result is because the attribute "<code>a</code>" exists; its data type is
+        /// not relevant to the <code>NOT_NULL</code> comparison operator.</p>
         /// </note>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types, including lists and maps.</p>
+        /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported
+        /// for all data types, including lists and maps.</p>
         /// <note>
-        /// <p>This operator tests for the nonexistence of an attribute, not its data type.  If the data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <code>false</code>. This is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code> comparison operator.</p>
+        /// <p>This operator tests for the nonexistence of an attribute, not its data
+        /// type. If the data type of attribute "<code>a</code>" is null, and you
+        /// evaluate it using <code>NULL</code>, the result is a Boolean
+        /// <code>false</code>. This is because the attribute "<code>a</code>"
+        /// exists; its data type is not relevant to the <code>NULL</code> comparison
+        /// operator.</p>
         /// </note>
         /// </li>
         /// <li>
         /// <p>
         /// <code>CONTAINS</code> : Checks for a subsequence, or value in a set.</p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, or Binary (not a set type). If the target attribute of the comparison is of type String, then
-        /// the operator checks for a substring match. If the target attribute of the comparison is
-        /// of type Binary, then the operator looks for a subsequence of the target that matches the input.
-        /// If the target attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the
-        /// operator evaluates to true if it finds an exact match with any member of the set.</p>
-        /// <p>CONTAINS is supported for lists: When evaluating "<code>a CONTAINS b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, or Binary (not a set type). If the target
+        /// attribute of the comparison is of type String, then the operator checks for a
+        /// substring match. If the target attribute of the comparison is of type Binary,
+        /// then the operator looks for a subsequence of the target that matches the input.
+        /// If the target attribute of the comparison is a set ("<code>SS</code>",
+        /// "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to
+        /// true if it finds an exact match with any member of the set.</p>
+        /// <p>CONTAINS is supported for lists: When evaluating "<code>a CONTAINS b</code>",
+        /// "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a
+        /// map, or a list.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in
-        /// a set.</p>
+        /// <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a
+        /// value in a set.</p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, or Binary (not a set type). If the target attribute of the comparison is a String, then
-        /// the operator checks for the absence of a substring match. If the target attribute of the
-        /// comparison is Binary, then the operator checks for the absence of a subsequence of the
-        /// target that matches the input. If the target attribute of the comparison is a set ("<code>SS</code>",
-        /// "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it <i>does not</i> find an exact match with any member of the set.</p>
-        /// <p>NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, or Binary (not a set type). If the target
+        /// attribute of the comparison is a String, then the operator checks for the
+        /// absence of a substring match. If the target attribute of the comparison is
+        /// Binary, then the operator checks for the absence of a subsequence of the target
+        /// that matches the input. If the target attribute of the comparison is a set
+        /// ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the
+        /// operator evaluates to true if it <i>does not</i> find an exact
+        /// match with any member of the set.</p>
+        /// <p>NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS
+        /// b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot
+        /// be a set, a map, or a list.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>BEGINS_WITH</code> : Checks for a prefix. </p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or
-        /// Binary (not a Number or a set type). The target attribute of the comparison must be of type String or
-        /// Binary (not a Number or a set type).</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// of type String or Binary (not a Number or a set type). The target attribute of
+        /// the comparison must be of type String or Binary (not a Number or a set
+        /// type).</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>IN</code> : Checks for matching elements in a list.</p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code>
-        /// elements of type String, Number, or Binary. These attributes are compared against an
-        /// existing attribute of an item. If any elements of the input are equal to the item
-        /// attribute, the expression evaluates to true.</p>
+        /// <code>AttributeValueList</code> can contain one or more
+        /// <code>AttributeValue</code> elements of type String, Number, or Binary.
+        /// These attributes are compared against an existing attribute of an item. If any
+        /// elements of the input are equal to the item attribute, the expression evaluates
+        /// to true.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than or equal
-        /// to the second value. </p>
+        /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than
+        /// or equal to the second value. </p>
         /// <p>
-        /// <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same
-        /// type, either String, Number, or Binary (not a set type). A target attribute matches if the
-        /// target value is greater than, or equal to, the first element and less than, or equal to,
-        /// the second element. If an item contains an <code>AttributeValue</code> element of a different type than
-        /// the one provided in the request, the value does not match. For example,
+        /// <code>AttributeValueList</code> must contain two <code>AttributeValue</code>
+        /// elements of the same type, either String, Number, or Binary (not a set type). A
+        /// target attribute matches if the target value is greater than, or equal to, the
+        /// first element and less than, or equal to, the second element. If an item
+        /// contains an <code>AttributeValue</code> element of a different type than the one
+        /// provided in the request, the value does not match. For example,
         /// <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
+        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+        /// "1"]}</code>
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see
-        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a>
-        /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>For usage examples of <code>AttributeValueList</code> and
+        /// <code>ComparisonOperator</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+        /// Conditional Parameters</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn comparison_operator(mut self, input: crate::model::ComparisonOperator) -> Self {
             self.comparison_operator = Some(input);
             self
         }
-        /// <p>A comparator for evaluating attributes. For example, equals, greater than, less than, etc.</p>
+        /// <p>A comparator for evaluating attributes. For example, equals, greater than, less than,
+        /// etc.</p>
         /// <p>The following comparison operators are available:</p>
         /// <p>
-        /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code>
+        /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS |
+        /// BEGINS_WITH | IN | BETWEEN</code>
         /// </p>
         /// <p>The following are descriptions of each comparison operator.</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.</p>
+        /// <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types,
+        /// including lists and maps.</p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> element of a different
-        /// type than the one provided in the request, the value does not match. For example,
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, Binary, String Set, Number Set, or Binary Set.
+        /// If an item contains an <code>AttributeValue</code> element of a different type
+        /// than the one provided in the request, the value does not match. For example,
         /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+        /// "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.</p>
+        /// <code>NE</code> : Not equal. <code>NE</code> is supported for all data types,
+        /// including lists and maps.</p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String,
-        /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a different
-        /// type than the one provided in the request, the value does not match. For example,
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// of type String, Number, Binary, String Set, Number Set, or Binary Set. If an
+        /// item contains an <code>AttributeValue</code> of a different type than the one
+        /// provided in the request, the value does not match. For example,
         /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+        /// "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>LE</code> : Less than or equal. </p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-        /// type than the one provided in the request, the value does not match. For example,
-        /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, or Binary (not a set type). If an item contains
+        /// an <code>AttributeValue</code> element of a different type than the one provided
+        /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+        /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+        /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>LT</code> : Less than. </p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String,
-        /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-        /// type than the one provided in the request, the value does not match. For example,
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// of type String, Number, or Binary (not a set type). If an item contains an
+        /// <code>AttributeValue</code> element of a different type than the one
+        /// provided in the request, the value does not match. For example,
         /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+        /// "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>GE</code> : Greater than or equal. </p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-        /// type than the one provided in the request, the value does not match. For example,
-        /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, or Binary (not a set type). If an item contains
+        /// an <code>AttributeValue</code> element of a different type than the one provided
+        /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+        /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+        /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>GT</code> : Greater than. </p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
-        /// type than the one provided in the request, the value does not match. For example,
-        /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, or Binary (not a set type). If an item contains
+        /// an <code>AttributeValue</code> element of a different type than the one provided
+        /// in the request, the value does not match. For example, <code>{"S":"6"}</code>
+        /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+        /// compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types, including lists and maps.</p>
+        /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported
+        /// for all data types, including lists and maps.</p>
         /// <note>
-        /// <p>This operator tests for the existence of an attribute, not its data type.  If the data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NOT_NULL</code> comparison operator.</p>
+        /// <p>This operator tests for the existence of an attribute, not its data type.
+        /// If the data type of attribute "<code>a</code>" is null, and you evaluate it
+        /// using <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This
+        /// result is because the attribute "<code>a</code>" exists; its data type is
+        /// not relevant to the <code>NOT_NULL</code> comparison operator.</p>
         /// </note>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types, including lists and maps.</p>
+        /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported
+        /// for all data types, including lists and maps.</p>
         /// <note>
-        /// <p>This operator tests for the nonexistence of an attribute, not its data type.  If the data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <code>false</code>. This is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code> comparison operator.</p>
+        /// <p>This operator tests for the nonexistence of an attribute, not its data
+        /// type. If the data type of attribute "<code>a</code>" is null, and you
+        /// evaluate it using <code>NULL</code>, the result is a Boolean
+        /// <code>false</code>. This is because the attribute "<code>a</code>"
+        /// exists; its data type is not relevant to the <code>NULL</code> comparison
+        /// operator.</p>
         /// </note>
         /// </li>
         /// <li>
         /// <p>
         /// <code>CONTAINS</code> : Checks for a subsequence, or value in a set.</p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, or Binary (not a set type). If the target attribute of the comparison is of type String, then
-        /// the operator checks for a substring match. If the target attribute of the comparison is
-        /// of type Binary, then the operator looks for a subsequence of the target that matches the input.
-        /// If the target attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the
-        /// operator evaluates to true if it finds an exact match with any member of the set.</p>
-        /// <p>CONTAINS is supported for lists: When evaluating "<code>a CONTAINS b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, or Binary (not a set type). If the target
+        /// attribute of the comparison is of type String, then the operator checks for a
+        /// substring match. If the target attribute of the comparison is of type Binary,
+        /// then the operator looks for a subsequence of the target that matches the input.
+        /// If the target attribute of the comparison is a set ("<code>SS</code>",
+        /// "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to
+        /// true if it finds an exact match with any member of the set.</p>
+        /// <p>CONTAINS is supported for lists: When evaluating "<code>a CONTAINS b</code>",
+        /// "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a
+        /// map, or a list.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in
-        /// a set.</p>
+        /// <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a
+        /// value in a set.</p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
-        /// Number, or Binary (not a set type). If the target attribute of the comparison is a String, then
-        /// the operator checks for the absence of a substring match. If the target attribute of the
-        /// comparison is Binary, then the operator checks for the absence of a subsequence of the
-        /// target that matches the input. If the target attribute of the comparison is a set ("<code>SS</code>",
-        /// "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it <i>does not</i> find an exact match with any member of the set.</p>
-        /// <p>NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// element of type String, Number, or Binary (not a set type). If the target
+        /// attribute of the comparison is a String, then the operator checks for the
+        /// absence of a substring match. If the target attribute of the comparison is
+        /// Binary, then the operator checks for the absence of a subsequence of the target
+        /// that matches the input. If the target attribute of the comparison is a set
+        /// ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the
+        /// operator evaluates to true if it <i>does not</i> find an exact
+        /// match with any member of the set.</p>
+        /// <p>NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS
+        /// b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot
+        /// be a set, a map, or a list.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>BEGINS_WITH</code> : Checks for a prefix. </p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or
-        /// Binary (not a Number or a set type). The target attribute of the comparison must be of type String or
-        /// Binary (not a Number or a set type).</p>
+        /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
+        /// of type String or Binary (not a Number or a set type). The target attribute of
+        /// the comparison must be of type String or Binary (not a Number or a set
+        /// type).</p>
         /// <p></p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>IN</code> : Checks for matching elements in a list.</p>
         /// <p>
-        /// <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code>
-        /// elements of type String, Number, or Binary. These attributes are compared against an
-        /// existing attribute of an item. If any elements of the input are equal to the item
-        /// attribute, the expression evaluates to true.</p>
+        /// <code>AttributeValueList</code> can contain one or more
+        /// <code>AttributeValue</code> elements of type String, Number, or Binary.
+        /// These attributes are compared against an existing attribute of an item. If any
+        /// elements of the input are equal to the item attribute, the expression evaluates
+        /// to true.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than or equal
-        /// to the second value. </p>
+        /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than
+        /// or equal to the second value. </p>
         /// <p>
-        /// <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same
-        /// type, either String, Number, or Binary (not a set type). A target attribute matches if the
-        /// target value is greater than, or equal to, the first element and less than, or equal to,
-        /// the second element. If an item contains an <code>AttributeValue</code> element of a different type than
-        /// the one provided in the request, the value does not match. For example,
+        /// <code>AttributeValueList</code> must contain two <code>AttributeValue</code>
+        /// elements of the same type, either String, Number, or Binary (not a set type). A
+        /// target attribute matches if the target value is greater than, or equal to, the
+        /// first element and less than, or equal to, the second element. If an item
+        /// contains an <code>AttributeValue</code> element of a different type than the one
+        /// provided in the request, the value does not match. For example,
         /// <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
+        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+        /// "1"]}</code>
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see
-        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a>
-        /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>For usage examples of <code>AttributeValueList</code> and
+        /// <code>ComparisonOperator</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+        /// Conditional Parameters</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_comparison_operator(
             mut self,
             input: std::option::Option<crate::model::ComparisonOperator>,
@@ -15100,9 +15906,11 @@ impl AsRef<str> for Select {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LocalSecondaryIndex {
-    /// <p>The name of the local secondary index. The name must be unique among all other indexes on this table.</p>
+    /// <p>The name of the local secondary index. The name must be unique among all other indexes
+    /// on this table.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
+    /// <p>The complete key schema for the local secondary index, consisting of one or more pairs
+    /// of attribute names and key types:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -15114,12 +15922,14 @@ pub struct LocalSecondaryIndex {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The partition key of an item is also known as its <i>hash
+    /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
+    /// an internal hash function to evenly distribute data items across partitions, based
+    /// on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>.
     /// The term "range attribute" derives from the way DynamoDB stores items with the same
-    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// partition key physically close together, in sorted order by the sort key
+    /// value.</p>
     /// </note>
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
     /// <p>Represents attributes that are copied (projected) from the table into the local
@@ -15128,11 +15938,13 @@ pub struct LocalSecondaryIndex {
     pub projection: std::option::Option<crate::model::Projection>,
 }
 impl LocalSecondaryIndex {
-    /// <p>The name of the local secondary index. The name must be unique among all other indexes on this table.</p>
+    /// <p>The name of the local secondary index. The name must be unique among all other indexes
+    /// on this table.</p>
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
+    /// <p>The complete key schema for the local secondary index, consisting of one or more pairs
+    /// of attribute names and key types:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -15144,12 +15956,14 @@ impl LocalSecondaryIndex {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The partition key of an item is also known as its <i>hash
+    /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
+    /// an internal hash function to evenly distribute data items across partitions, based
+    /// on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>.
     /// The term "range attribute" derives from the way DynamoDB stores items with the same
-    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// partition key physically close together, in sorted order by the sort key
+    /// value.</p>
     /// </note>
     pub fn key_schema(&self) -> std::option::Option<&[crate::model::KeySchemaElement]> {
         self.key_schema.as_deref()
@@ -15181,12 +15995,14 @@ pub mod local_secondary_index {
         pub(crate) projection: std::option::Option<crate::model::Projection>,
     }
     impl Builder {
-        /// <p>The name of the local secondary index. The name must be unique among all other indexes on this table.</p>
+        /// <p>The name of the local secondary index. The name must be unique among all other indexes
+        /// on this table.</p>
         pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_name = Some(input.into());
             self
         }
-        /// <p>The name of the local secondary index. The name must be unique among all other indexes on this table.</p>
+        /// <p>The name of the local secondary index. The name must be unique among all other indexes
+        /// on this table.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
@@ -15195,7 +16011,8 @@ pub mod local_secondary_index {
         ///
         /// To override the contents of this collection use [`set_key_schema`](Self::set_key_schema).
         ///
-        /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
+        /// <p>The complete key schema for the local secondary index, consisting of one or more pairs
+        /// of attribute names and key types:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -15207,12 +16024,14 @@ pub mod local_secondary_index {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-        /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-        /// evenly distribute data items across partitions, based on their partition key values.</p>
+        /// <p>The partition key of an item is also known as its <i>hash
+        /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
+        /// an internal hash function to evenly distribute data items across partitions, based
+        /// on their partition key values.</p>
         /// <p>The sort key of an item is also known as its <i>range attribute</i>.
         /// The term "range attribute" derives from the way DynamoDB stores items with the same
-        /// partition key physically close together, in sorted order by the sort key value.</p>
+        /// partition key physically close together, in sorted order by the sort key
+        /// value.</p>
         /// </note>
         pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
@@ -15220,7 +16039,8 @@ pub mod local_secondary_index {
             self.key_schema = Some(v);
             self
         }
-        /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
+        /// <p>The complete key schema for the local secondary index, consisting of one or more pairs
+        /// of attribute names and key types:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -15232,12 +16052,14 @@ pub mod local_secondary_index {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-        /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-        /// evenly distribute data items across partitions, based on their partition key values.</p>
+        /// <p>The partition key of an item is also known as its <i>hash
+        /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
+        /// an internal hash function to evenly distribute data items across partitions, based
+        /// on their partition key values.</p>
         /// <p>The sort key of an item is also known as its <i>range attribute</i>.
         /// The term "range attribute" derives from the way DynamoDB stores items with the same
-        /// partition key physically close together, in sorted order by the sort key value.</p>
+        /// partition key physically close together, in sorted order by the sort key
+        /// value.</p>
         /// </note>
         pub fn set_key_schema(
             mut self,
@@ -15284,9 +16106,11 @@ impl LocalSecondaryIndex {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalSecondaryIndex {
-    /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+    /// <p>The name of the global secondary index. The name must be unique among all other
+    /// indexes on this table.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
+    /// <p>The complete key schema for a global secondary index, which consists of one or more
+    /// pairs of attribute names and key types:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -15298,28 +16122,35 @@ pub struct GlobalSecondaryIndex {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The partition key of an item is also known as its <i>hash
+    /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
+    /// an internal hash function to evenly distribute data items across partitions, based
+    /// on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>.
     /// The term "range attribute" derives from the way DynamoDB stores items with the same
-    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// partition key physically close together, in sorted order by the sort key
+    /// value.</p>
     /// </note>
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
     /// <p>Represents attributes that are copied (projected) from the table into the global
     /// secondary index. These are in addition to the primary key attributes and index key
     /// attributes, which are automatically projected. </p>
     pub projection: std::option::Option<crate::model::Projection>,
-    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
-    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Represents the provisioned throughput settings for the specified global secondary
+    /// index.</p>
+    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+    /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
 }
 impl GlobalSecondaryIndex {
-    /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+    /// <p>The name of the global secondary index. The name must be unique among all other
+    /// indexes on this table.</p>
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
+    /// <p>The complete key schema for a global secondary index, which consists of one or more
+    /// pairs of attribute names and key types:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -15331,12 +16162,14 @@ impl GlobalSecondaryIndex {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The partition key of an item is also known as its <i>hash
+    /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
+    /// an internal hash function to evenly distribute data items across partitions, based
+    /// on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>.
     /// The term "range attribute" derives from the way DynamoDB stores items with the same
-    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// partition key physically close together, in sorted order by the sort key
+    /// value.</p>
     /// </note>
     pub fn key_schema(&self) -> std::option::Option<&[crate::model::KeySchemaElement]> {
         self.key_schema.as_deref()
@@ -15347,8 +16180,11 @@ impl GlobalSecondaryIndex {
     pub fn projection(&self) -> std::option::Option<&crate::model::Projection> {
         self.projection.as_ref()
     }
-    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
-    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Represents the provisioned throughput settings for the specified global secondary
+    /// index.</p>
+    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+    /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub fn provisioned_throughput(
         &self,
     ) -> std::option::Option<&crate::model::ProvisionedThroughput> {
@@ -15377,12 +16213,14 @@ pub mod global_secondary_index {
         pub(crate) provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
     }
     impl Builder {
-        /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+        /// <p>The name of the global secondary index. The name must be unique among all other
+        /// indexes on this table.</p>
         pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_name = Some(input.into());
             self
         }
-        /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+        /// <p>The name of the global secondary index. The name must be unique among all other
+        /// indexes on this table.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
@@ -15391,7 +16229,8 @@ pub mod global_secondary_index {
         ///
         /// To override the contents of this collection use [`set_key_schema`](Self::set_key_schema).
         ///
-        /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
+        /// <p>The complete key schema for a global secondary index, which consists of one or more
+        /// pairs of attribute names and key types:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -15403,12 +16242,14 @@ pub mod global_secondary_index {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-        /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-        /// evenly distribute data items across partitions, based on their partition key values.</p>
+        /// <p>The partition key of an item is also known as its <i>hash
+        /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
+        /// an internal hash function to evenly distribute data items across partitions, based
+        /// on their partition key values.</p>
         /// <p>The sort key of an item is also known as its <i>range attribute</i>.
         /// The term "range attribute" derives from the way DynamoDB stores items with the same
-        /// partition key physically close together, in sorted order by the sort key value.</p>
+        /// partition key physically close together, in sorted order by the sort key
+        /// value.</p>
         /// </note>
         pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
@@ -15416,7 +16257,8 @@ pub mod global_secondary_index {
             self.key_schema = Some(v);
             self
         }
-        /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
+        /// <p>The complete key schema for a global secondary index, which consists of one or more
+        /// pairs of attribute names and key types:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -15428,12 +16270,14 @@ pub mod global_secondary_index {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-        /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-        /// evenly distribute data items across partitions, based on their partition key values.</p>
+        /// <p>The partition key of an item is also known as its <i>hash
+        /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
+        /// an internal hash function to evenly distribute data items across partitions, based
+        /// on their partition key values.</p>
         /// <p>The sort key of an item is also known as its <i>range attribute</i>.
         /// The term "range attribute" derives from the way DynamoDB stores items with the same
-        /// partition key physically close together, in sorted order by the sort key value.</p>
+        /// partition key physically close together, in sorted order by the sort key
+        /// value.</p>
         /// </note>
         pub fn set_key_schema(
             mut self,
@@ -15459,8 +16303,11 @@ pub mod global_secondary_index {
             self.projection = input;
             self
         }
-        /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
-        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>Represents the provisioned throughput settings for the specified global secondary
+        /// index.</p>
+        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+        /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn provisioned_throughput(
             mut self,
             input: crate::model::ProvisionedThroughput,
@@ -15468,8 +16315,11 @@ pub mod global_secondary_index {
             self.provisioned_throughput = Some(input);
             self
         }
-        /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
-        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>Represents the provisioned throughput settings for the specified global secondary
+        /// index.</p>
+        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+        /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_provisioned_throughput(
             mut self,
             input: std::option::Option<crate::model::ProvisionedThroughput>,
@@ -15640,7 +16490,8 @@ impl Replica {
 pub struct ExportSummary {
     /// <p>The Amazon Resource Name (ARN) of the export.</p>
     pub export_arn: std::option::Option<std::string::String>,
-    /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
+    /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or
+    /// FAILED.</p>
     pub export_status: std::option::Option<crate::model::ExportStatus>,
 }
 impl ExportSummary {
@@ -15648,7 +16499,8 @@ impl ExportSummary {
     pub fn export_arn(&self) -> std::option::Option<&str> {
         self.export_arn.as_deref()
     }
-    /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
+    /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or
+    /// FAILED.</p>
     pub fn export_status(&self) -> std::option::Option<&crate::model::ExportStatus> {
         self.export_status.as_ref()
     }
@@ -15681,12 +16533,14 @@ pub mod export_summary {
             self.export_arn = input;
             self
         }
-        /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
+        /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or
+        /// FAILED.</p>
         pub fn export_status(mut self, input: crate::model::ExportStatus) -> Self {
             self.export_status = Some(input);
             self
         }
-        /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
+        /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or
+        /// FAILED.</p>
         pub fn set_export_status(
             mut self,
             input: std::option::Option<crate::model::ExportStatus>,
@@ -15777,7 +16631,8 @@ pub struct ContributorInsightsSummary {
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Name of the index associated with the summary, if any.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>Describes the current status for contributor insights for the given table and index, if applicable.</p>
+    /// <p>Describes the current status for contributor insights for the given table and index,
+    /// if applicable.</p>
     pub contributor_insights_status: std::option::Option<crate::model::ContributorInsightsStatus>,
 }
 impl ContributorInsightsSummary {
@@ -15789,7 +16644,8 @@ impl ContributorInsightsSummary {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>Describes the current status for contributor insights for the given table and index, if applicable.</p>
+    /// <p>Describes the current status for contributor insights for the given table and index,
+    /// if applicable.</p>
     pub fn contributor_insights_status(
         &self,
     ) -> std::option::Option<&crate::model::ContributorInsightsStatus> {
@@ -15840,7 +16696,8 @@ pub mod contributor_insights_summary {
             self.index_name = input;
             self
         }
-        /// <p>Describes the current status for contributor insights for the given table and index, if applicable.</p>
+        /// <p>Describes the current status for contributor insights for the given table and index,
+        /// if applicable.</p>
         pub fn contributor_insights_status(
             mut self,
             input: crate::model::ContributorInsightsStatus,
@@ -15848,7 +16705,8 @@ pub mod contributor_insights_summary {
             self.contributor_insights_status = Some(input);
             self
         }
-        /// <p>Describes the current status for contributor insights for the given table and index, if applicable.</p>
+        /// <p>Describes the current status for contributor insights for the given table and index,
+        /// if applicable.</p>
         pub fn set_contributor_insights_status(
             mut self,
             input: std::option::Option<crate::model::ContributorInsightsStatus>,
@@ -15888,29 +16746,30 @@ pub struct BackupSummary {
     /// <p>Name of the specified backup.</p>
     pub backup_name: std::option::Option<std::string::String>,
     /// <p>Time at which the backup was created.</p>
-    pub backup_creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-    /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This
-    /// <code>SYSTEM</code> on-demand backup expires automatically 35 days after its
-    /// creation.</p>
-    pub backup_expiry_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub backup_creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Time at which the automatic on-demand backup created by DynamoDB will
+    /// expire. This <code>SYSTEM</code> on-demand backup expires automatically 35 days after
+    /// its creation.</p>
+    pub backup_expiry_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED.</p>
     pub backup_status: std::option::Option<crate::model::BackupStatus>,
     /// <p>BackupType:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>USER</code> - You create and manage these using the on-demand backup feature.</p>
+    /// <code>USER</code> - You create and manage these using the on-demand backup
+    /// feature.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically
-    /// created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted
-    /// table to the state it was in just before the point of deletion.
-    /// </p>
+    /// <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled,
+    /// a <code>SYSTEM</code> backup is automatically created and is retained for 35
+    /// days (at no additional cost). System backups allow you to restore the deleted
+    /// table to the state it was in just before the point of deletion. </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.</p>
+    /// <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p>
     /// </li>
     /// </ul>
     pub backup_type: std::option::Option<crate::model::BackupType>,
@@ -15939,13 +16798,13 @@ impl BackupSummary {
         self.backup_name.as_deref()
     }
     /// <p>Time at which the backup was created.</p>
-    pub fn backup_creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn backup_creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.backup_creation_date_time.as_ref()
     }
-    /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This
-    /// <code>SYSTEM</code> on-demand backup expires automatically 35 days after its
-    /// creation.</p>
-    pub fn backup_expiry_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    /// <p>Time at which the automatic on-demand backup created by DynamoDB will
+    /// expire. This <code>SYSTEM</code> on-demand backup expires automatically 35 days after
+    /// its creation.</p>
+    pub fn backup_expiry_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.backup_expiry_date_time.as_ref()
     }
     /// <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED.</p>
@@ -15956,18 +16815,19 @@ impl BackupSummary {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>USER</code> - You create and manage these using the on-demand backup feature.</p>
+    /// <code>USER</code> - You create and manage these using the on-demand backup
+    /// feature.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically
-    /// created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted
-    /// table to the state it was in just before the point of deletion.
-    /// </p>
+    /// <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled,
+    /// a <code>SYSTEM</code> backup is automatically created and is retained for 35
+    /// days (at no additional cost). System backups allow you to restore the deleted
+    /// table to the state it was in just before the point of deletion. </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.</p>
+    /// <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p>
     /// </li>
     /// </ul>
     pub fn backup_type(&self) -> std::option::Option<&crate::model::BackupType> {
@@ -16005,8 +16865,8 @@ pub mod backup_summary {
         pub(crate) table_arn: std::option::Option<std::string::String>,
         pub(crate) backup_arn: std::option::Option<std::string::String>,
         pub(crate) backup_name: std::option::Option<std::string::String>,
-        pub(crate) backup_creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) backup_expiry_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) backup_creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) backup_expiry_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) backup_status: std::option::Option<crate::model::BackupStatus>,
         pub(crate) backup_type: std::option::Option<crate::model::BackupType>,
         pub(crate) backup_size_bytes: std::option::Option<i64>,
@@ -16063,31 +16923,31 @@ pub mod backup_summary {
             self
         }
         /// <p>Time at which the backup was created.</p>
-        pub fn backup_creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn backup_creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.backup_creation_date_time = Some(input);
             self
         }
         /// <p>Time at which the backup was created.</p>
         pub fn set_backup_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.backup_creation_date_time = input;
             self
         }
-        /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This
-        /// <code>SYSTEM</code> on-demand backup expires automatically 35 days after its
-        /// creation.</p>
-        pub fn backup_expiry_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        /// <p>Time at which the automatic on-demand backup created by DynamoDB will
+        /// expire. This <code>SYSTEM</code> on-demand backup expires automatically 35 days after
+        /// its creation.</p>
+        pub fn backup_expiry_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.backup_expiry_date_time = Some(input);
             self
         }
-        /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This
-        /// <code>SYSTEM</code> on-demand backup expires automatically 35 days after its
-        /// creation.</p>
+        /// <p>Time at which the automatic on-demand backup created by DynamoDB will
+        /// expire. This <code>SYSTEM</code> on-demand backup expires automatically 35 days after
+        /// its creation.</p>
         pub fn set_backup_expiry_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.backup_expiry_date_time = input;
             self
@@ -16109,18 +16969,19 @@ pub mod backup_summary {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>USER</code> - You create and manage these using the on-demand backup feature.</p>
+        /// <code>USER</code> - You create and manage these using the on-demand backup
+        /// feature.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically
-        /// created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted
-        /// table to the state it was in just before the point of deletion.
-        /// </p>
+        /// <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled,
+        /// a <code>SYSTEM</code> backup is automatically created and is retained for 35
+        /// days (at no additional cost). System backups allow you to restore the deleted
+        /// table to the state it was in just before the point of deletion. </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.</p>
+        /// <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p>
         /// </li>
         /// </ul>
         pub fn backup_type(mut self, input: crate::model::BackupType) -> Self {
@@ -16131,18 +16992,19 @@ pub mod backup_summary {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>USER</code> - You create and manage these using the on-demand backup feature.</p>
+        /// <code>USER</code> - You create and manage these using the on-demand backup
+        /// feature.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically
-        /// created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted
-        /// table to the state it was in just before the point of deletion.
-        /// </p>
+        /// <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled,
+        /// a <code>SYSTEM</code> backup is automatically created and is retained for 35
+        /// days (at no additional cost). System backups allow you to restore the deleted
+        /// table to the state it was in just before the point of deletion. </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.</p>
+        /// <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p>
         /// </li>
         /// </ul>
         pub fn set_backup_type(
@@ -16373,12 +17235,13 @@ impl AsRef<str> for BackupTypeFilter {
 pub struct ExportDescription {
     /// <p>The Amazon Resource Name (ARN) of the table export.</p>
     pub export_arn: std::option::Option<std::string::String>,
-    /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
+    /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or
+    /// FAILED.</p>
     pub export_status: std::option::Option<crate::model::ExportStatus>,
     /// <p>The time at which the export task began.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the export task completed.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the manifest file for the export task.</p>
     pub export_manifest: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the table that was exported.</p>
@@ -16386,33 +17249,36 @@ pub struct ExportDescription {
     /// <p>Unique ID of the table that was exported.</p>
     pub table_id: std::option::Option<std::string::String>,
     /// <p>Point in time from which table data was exported.</p>
-    pub export_time: std::option::Option<aws_smithy_types::Instant>,
+    pub export_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The client token that was provided for the export task. A client token makes calls to
     /// <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple
     /// identical calls have the same effect as one single call.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon S3 bucket containing the export.</p>
     pub s3_bucket: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account that owns the bucket containing the export.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the bucket containing the
+    /// export.</p>
     pub s3_bucket_owner: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket prefix used as the file name and path of the exported
     /// snapshot.</p>
     pub s3_prefix: std::option::Option<std::string::String>,
-    /// <p>Type of encryption used on the bucket where export data is stored. Valid values
-    /// for <code>S3SseAlgorithm</code> are:</p>
+    /// <p>Type of encryption used on the bucket where export data is stored. Valid values for
+    /// <code>S3SseAlgorithm</code> are:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p>
+    /// <code>AES256</code> - server-side encryption with Amazon S3 managed
+    /// keys</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>KMS</code> - server-side encryption with AWS KMS managed keys</p>
+    /// <code>KMS</code> - server-side encryption with KMS managed
+    /// keys</p>
     /// </li>
     /// </ul>
     pub s3_sse_algorithm: std::option::Option<crate::model::S3SseAlgorithm>,
-    /// <p>The ID of the AWS KMS managed key used to encrypt the S3 bucket where export data is
-    /// stored (if applicable).</p>
+    /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where
+    /// export data is stored (if applicable).</p>
     pub s3_sse_kms_key_id: std::option::Option<std::string::String>,
     /// <p>Status code for the result of the failed export.</p>
     pub failure_code: std::option::Option<std::string::String>,
@@ -16431,16 +17297,17 @@ impl ExportDescription {
     pub fn export_arn(&self) -> std::option::Option<&str> {
         self.export_arn.as_deref()
     }
-    /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
+    /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or
+    /// FAILED.</p>
     pub fn export_status(&self) -> std::option::Option<&crate::model::ExportStatus> {
         self.export_status.as_ref()
     }
     /// <p>The time at which the export task began.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time at which the export task completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The name of the manifest file for the export task.</p>
@@ -16456,7 +17323,7 @@ impl ExportDescription {
         self.table_id.as_deref()
     }
     /// <p>Point in time from which table data was exported.</p>
-    pub fn export_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn export_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.export_time.as_ref()
     }
     /// <p>The client token that was provided for the export task. A client token makes calls to
@@ -16469,7 +17336,8 @@ impl ExportDescription {
     pub fn s3_bucket(&self) -> std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
-    /// <p>The ID of the AWS account that owns the bucket containing the export.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the bucket containing the
+    /// export.</p>
     pub fn s3_bucket_owner(&self) -> std::option::Option<&str> {
         self.s3_bucket_owner.as_deref()
     }
@@ -16478,23 +17346,25 @@ impl ExportDescription {
     pub fn s3_prefix(&self) -> std::option::Option<&str> {
         self.s3_prefix.as_deref()
     }
-    /// <p>Type of encryption used on the bucket where export data is stored. Valid values
-    /// for <code>S3SseAlgorithm</code> are:</p>
+    /// <p>Type of encryption used on the bucket where export data is stored. Valid values for
+    /// <code>S3SseAlgorithm</code> are:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p>
+    /// <code>AES256</code> - server-side encryption with Amazon S3 managed
+    /// keys</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>KMS</code> - server-side encryption with AWS KMS managed keys</p>
+    /// <code>KMS</code> - server-side encryption with KMS managed
+    /// keys</p>
     /// </li>
     /// </ul>
     pub fn s3_sse_algorithm(&self) -> std::option::Option<&crate::model::S3SseAlgorithm> {
         self.s3_sse_algorithm.as_ref()
     }
-    /// <p>The ID of the AWS KMS managed key used to encrypt the S3 bucket where export data is
-    /// stored (if applicable).</p>
+    /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where
+    /// export data is stored (if applicable).</p>
     pub fn s3_sse_kms_key_id(&self) -> std::option::Option<&str> {
         self.s3_sse_kms_key_id.as_deref()
     }
@@ -16553,12 +17423,12 @@ pub mod export_description {
     pub struct Builder {
         pub(crate) export_arn: std::option::Option<std::string::String>,
         pub(crate) export_status: std::option::Option<crate::model::ExportStatus>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) export_manifest: std::option::Option<std::string::String>,
         pub(crate) table_arn: std::option::Option<std::string::String>,
         pub(crate) table_id: std::option::Option<std::string::String>,
-        pub(crate) export_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) export_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
         pub(crate) s3_bucket_owner: std::option::Option<std::string::String>,
@@ -16582,12 +17452,14 @@ pub mod export_description {
             self.export_arn = input;
             self
         }
-        /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
+        /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or
+        /// FAILED.</p>
         pub fn export_status(mut self, input: crate::model::ExportStatus) -> Self {
             self.export_status = Some(input);
             self
         }
-        /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
+        /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or
+        /// FAILED.</p>
         pub fn set_export_status(
             mut self,
             input: std::option::Option<crate::model::ExportStatus>,
@@ -16596,27 +17468,27 @@ pub mod export_description {
             self
         }
         /// <p>The time at which the export task began.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The time at which the export task began.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time at which the export task completed.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time at which the export task completed.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -16655,14 +17527,14 @@ pub mod export_description {
             self
         }
         /// <p>Point in time from which table data was exported.</p>
-        pub fn export_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn export_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.export_time = Some(input);
             self
         }
         /// <p>Point in time from which table data was exported.</p>
         pub fn set_export_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.export_time = input;
             self
@@ -16691,12 +17563,14 @@ pub mod export_description {
             self.s3_bucket = input;
             self
         }
-        /// <p>The ID of the AWS account that owns the bucket containing the export.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the bucket containing the
+        /// export.</p>
         pub fn s3_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The ID of the AWS account that owns the bucket containing the export.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the bucket containing the
+        /// export.</p>
         pub fn set_s3_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16716,32 +17590,36 @@ pub mod export_description {
             self.s3_prefix = input;
             self
         }
-        /// <p>Type of encryption used on the bucket where export data is stored. Valid values
-        /// for <code>S3SseAlgorithm</code> are:</p>
+        /// <p>Type of encryption used on the bucket where export data is stored. Valid values for
+        /// <code>S3SseAlgorithm</code> are:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p>
+        /// <code>AES256</code> - server-side encryption with Amazon S3 managed
+        /// keys</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>KMS</code> - server-side encryption with AWS KMS managed keys</p>
+        /// <code>KMS</code> - server-side encryption with KMS managed
+        /// keys</p>
         /// </li>
         /// </ul>
         pub fn s3_sse_algorithm(mut self, input: crate::model::S3SseAlgorithm) -> Self {
             self.s3_sse_algorithm = Some(input);
             self
         }
-        /// <p>Type of encryption used on the bucket where export data is stored. Valid values
-        /// for <code>S3SseAlgorithm</code> are:</p>
+        /// <p>Type of encryption used on the bucket where export data is stored. Valid values for
+        /// <code>S3SseAlgorithm</code> are:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p>
+        /// <code>AES256</code> - server-side encryption with Amazon S3 managed
+        /// keys</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>KMS</code> - server-side encryption with AWS KMS managed keys</p>
+        /// <code>KMS</code> - server-side encryption with KMS managed
+        /// keys</p>
         /// </li>
         /// </ul>
         pub fn set_s3_sse_algorithm(
@@ -16751,14 +17629,14 @@ pub mod export_description {
             self.s3_sse_algorithm = input;
             self
         }
-        /// <p>The ID of the AWS KMS managed key used to encrypt the S3 bucket where export data is
-        /// stored (if applicable).</p>
+        /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where
+        /// export data is stored (if applicable).</p>
         pub fn s3_sse_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_sse_kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the AWS KMS managed key used to encrypt the S3 bucket where export data is
-        /// stored (if applicable).</p>
+        /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where
+        /// export data is stored (if applicable).</p>
         pub fn set_s3_sse_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16967,31 +17845,21 @@ impl AsRef<str> for S3SseAlgorithm {
     }
 }
 
-/// <p>
-/// Represents a PartiQL statment that uses parameters.
-/// </p>
+/// <p> Represents a PartiQL statment that uses parameters. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterizedStatement {
-    /// <p>
-    /// A PartiQL statment that uses parameters.
-    /// </p>
+    /// <p> A PartiQL statment that uses parameters. </p>
     pub statement: std::option::Option<std::string::String>,
-    /// <p>
-    /// The parameter values.
-    /// </p>
+    /// <p> The parameter values. </p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
 }
 impl ParameterizedStatement {
-    /// <p>
-    /// A PartiQL statment that uses parameters.
-    /// </p>
+    /// <p> A PartiQL statment that uses parameters. </p>
     pub fn statement(&self) -> std::option::Option<&str> {
         self.statement.as_deref()
     }
-    /// <p>
-    /// The parameter values.
-    /// </p>
+    /// <p> The parameter values. </p>
     pub fn parameters(&self) -> std::option::Option<&[crate::model::AttributeValue]> {
         self.parameters.as_deref()
     }
@@ -17014,16 +17882,12 @@ pub mod parameterized_statement {
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
     }
     impl Builder {
-        /// <p>
-        /// A PartiQL statment that uses parameters.
-        /// </p>
+        /// <p> A PartiQL statment that uses parameters. </p>
         pub fn statement(mut self, input: impl Into<std::string::String>) -> Self {
             self.statement = Some(input.into());
             self
         }
-        /// <p>
-        /// A PartiQL statment that uses parameters.
-        /// </p>
+        /// <p> A PartiQL statment that uses parameters. </p>
         pub fn set_statement(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.statement = input;
             self
@@ -17032,18 +17896,14 @@ pub mod parameterized_statement {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>
-        /// The parameter values.
-        /// </p>
+        /// <p> The parameter values. </p>
         pub fn parameters(mut self, input: impl Into<crate::model::AttributeValue>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input.into());
             self.parameters = Some(v);
             self
         }
-        /// <p>
-        /// The parameter values.
-        /// </p>
+        /// <p> The parameter values. </p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
@@ -17546,7 +18406,8 @@ pub struct BackupDescription {
     pub backup_details: std::option::Option<crate::model::BackupDetails>,
     /// <p>Contains the details of the table when the backup was created. </p>
     pub source_table_details: std::option::Option<crate::model::SourceTableDetails>,
-    /// <p>Contains the details of the features enabled on the table when the backup was created. For example, LSIs, GSIs, streams, TTL.</p>
+    /// <p>Contains the details of the features enabled on the table when the backup was created.
+    /// For example, LSIs, GSIs, streams, TTL.</p>
     pub source_table_feature_details: std::option::Option<crate::model::SourceTableFeatureDetails>,
 }
 impl BackupDescription {
@@ -17558,7 +18419,8 @@ impl BackupDescription {
     pub fn source_table_details(&self) -> std::option::Option<&crate::model::SourceTableDetails> {
         self.source_table_details.as_ref()
     }
-    /// <p>Contains the details of the features enabled on the table when the backup was created. For example, LSIs, GSIs, streams, TTL.</p>
+    /// <p>Contains the details of the features enabled on the table when the backup was created.
+    /// For example, LSIs, GSIs, streams, TTL.</p>
     pub fn source_table_feature_details(
         &self,
     ) -> std::option::Option<&crate::model::SourceTableFeatureDetails> {
@@ -17615,7 +18477,8 @@ pub mod backup_description {
             self.source_table_details = input;
             self
         }
-        /// <p>Contains the details of the features enabled on the table when the backup was created. For example, LSIs, GSIs, streams, TTL.</p>
+        /// <p>Contains the details of the features enabled on the table when the backup was created.
+        /// For example, LSIs, GSIs, streams, TTL.</p>
         pub fn source_table_feature_details(
             mut self,
             input: crate::model::SourceTableFeatureDetails,
@@ -17623,7 +18486,8 @@ pub mod backup_description {
             self.source_table_feature_details = Some(input);
             self
         }
-        /// <p>Contains the details of the features enabled on the table when the backup was created. For example, LSIs, GSIs, streams, TTL.</p>
+        /// <p>Contains the details of the features enabled on the table when the backup was created.
+        /// For example, LSIs, GSIs, streams, TTL.</p>
         pub fn set_source_table_feature_details(
             mut self,
             input: std::option::Option<crate::model::SourceTableFeatureDetails>,
@@ -17648,35 +18512,41 @@ impl BackupDescription {
     }
 }
 
-/// <p>Contains the details of the features enabled on the table when the backup was created. For example, LSIs, GSIs, streams, TTL. </p>
+/// <p>Contains the details of the features enabled on the table when the backup was created.
+/// For example, LSIs, GSIs, streams, TTL. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceTableFeatureDetails {
-    /// <p>Represents the LSI properties for the table when the backup was created. It includes the IndexName, KeySchema and Projection for the LSIs on the table at the time of backup. </p>
+    /// <p>Represents the LSI properties for the table when the backup was created. It includes
+    /// the IndexName, KeySchema and Projection for the LSIs on the table at the time of backup.
+    /// </p>
     pub local_secondary_indexes:
         std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndexInfo>>,
-    /// <p>Represents the GSI properties for the table when the backup was created. It includes the
-    /// IndexName, KeySchema, Projection, and ProvisionedThroughput for the GSIs on the table at
-    /// the time of backup. </p>
+    /// <p>Represents the GSI properties for the table when the backup was created. It includes
+    /// the IndexName, KeySchema, Projection, and ProvisionedThroughput for the GSIs on the
+    /// table at the time of backup. </p>
     pub global_secondary_indexes:
         std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndexInfo>>,
     /// <p>Stream settings on the table when the backup was created.</p>
     pub stream_description: std::option::Option<crate::model::StreamSpecification>,
     /// <p>Time to Live settings on the table when the backup was created.</p>
     pub time_to_live_description: std::option::Option<crate::model::TimeToLiveDescription>,
-    /// <p>The description of the server-side encryption status on the table when the backup was created.</p>
+    /// <p>The description of the server-side encryption status on the table when the backup was
+    /// created.</p>
     pub sse_description: std::option::Option<crate::model::SseDescription>,
 }
 impl SourceTableFeatureDetails {
-    /// <p>Represents the LSI properties for the table when the backup was created. It includes the IndexName, KeySchema and Projection for the LSIs on the table at the time of backup. </p>
+    /// <p>Represents the LSI properties for the table when the backup was created. It includes
+    /// the IndexName, KeySchema and Projection for the LSIs on the table at the time of backup.
+    /// </p>
     pub fn local_secondary_indexes(
         &self,
     ) -> std::option::Option<&[crate::model::LocalSecondaryIndexInfo]> {
         self.local_secondary_indexes.as_deref()
     }
-    /// <p>Represents the GSI properties for the table when the backup was created. It includes the
-    /// IndexName, KeySchema, Projection, and ProvisionedThroughput for the GSIs on the table at
-    /// the time of backup. </p>
+    /// <p>Represents the GSI properties for the table when the backup was created. It includes
+    /// the IndexName, KeySchema, Projection, and ProvisionedThroughput for the GSIs on the
+    /// table at the time of backup. </p>
     pub fn global_secondary_indexes(
         &self,
     ) -> std::option::Option<&[crate::model::GlobalSecondaryIndexInfo]> {
@@ -17692,7 +18562,8 @@ impl SourceTableFeatureDetails {
     ) -> std::option::Option<&crate::model::TimeToLiveDescription> {
         self.time_to_live_description.as_ref()
     }
-    /// <p>The description of the server-side encryption status on the table when the backup was created.</p>
+    /// <p>The description of the server-side encryption status on the table when the backup was
+    /// created.</p>
     pub fn sse_description(&self) -> std::option::Option<&crate::model::SseDescription> {
         self.sse_description.as_ref()
     }
@@ -17728,7 +18599,9 @@ pub mod source_table_feature_details {
         ///
         /// To override the contents of this collection use [`set_local_secondary_indexes`](Self::set_local_secondary_indexes).
         ///
-        /// <p>Represents the LSI properties for the table when the backup was created. It includes the IndexName, KeySchema and Projection for the LSIs on the table at the time of backup. </p>
+        /// <p>Represents the LSI properties for the table when the backup was created. It includes
+        /// the IndexName, KeySchema and Projection for the LSIs on the table at the time of backup.
+        /// </p>
         pub fn local_secondary_indexes(
             mut self,
             input: impl Into<crate::model::LocalSecondaryIndexInfo>,
@@ -17738,7 +18611,9 @@ pub mod source_table_feature_details {
             self.local_secondary_indexes = Some(v);
             self
         }
-        /// <p>Represents the LSI properties for the table when the backup was created. It includes the IndexName, KeySchema and Projection for the LSIs on the table at the time of backup. </p>
+        /// <p>Represents the LSI properties for the table when the backup was created. It includes
+        /// the IndexName, KeySchema and Projection for the LSIs on the table at the time of backup.
+        /// </p>
         pub fn set_local_secondary_indexes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndexInfo>>,
@@ -17750,9 +18625,9 @@ pub mod source_table_feature_details {
         ///
         /// To override the contents of this collection use [`set_global_secondary_indexes`](Self::set_global_secondary_indexes).
         ///
-        /// <p>Represents the GSI properties for the table when the backup was created. It includes the
-        /// IndexName, KeySchema, Projection, and ProvisionedThroughput for the GSIs on the table at
-        /// the time of backup. </p>
+        /// <p>Represents the GSI properties for the table when the backup was created. It includes
+        /// the IndexName, KeySchema, Projection, and ProvisionedThroughput for the GSIs on the
+        /// table at the time of backup. </p>
         pub fn global_secondary_indexes(
             mut self,
             input: impl Into<crate::model::GlobalSecondaryIndexInfo>,
@@ -17762,9 +18637,9 @@ pub mod source_table_feature_details {
             self.global_secondary_indexes = Some(v);
             self
         }
-        /// <p>Represents the GSI properties for the table when the backup was created. It includes the
-        /// IndexName, KeySchema, Projection, and ProvisionedThroughput for the GSIs on the table at
-        /// the time of backup. </p>
+        /// <p>Represents the GSI properties for the table when the backup was created. It includes
+        /// the IndexName, KeySchema, Projection, and ProvisionedThroughput for the GSIs on the
+        /// table at the time of backup. </p>
         pub fn set_global_secondary_indexes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndexInfo>>,
@@ -17801,12 +18676,14 @@ pub mod source_table_feature_details {
             self.time_to_live_description = input;
             self
         }
-        /// <p>The description of the server-side encryption status on the table when the backup was created.</p>
+        /// <p>The description of the server-side encryption status on the table when the backup was
+        /// created.</p>
         pub fn sse_description(mut self, input: crate::model::SseDescription) -> Self {
             self.sse_description = Some(input);
             self
         }
-        /// <p>The description of the server-side encryption status on the table when the backup was created.</p>
+        /// <p>The description of the server-side encryption status on the table when the backup was
+        /// created.</p>
         pub fn set_sse_description(
             mut self,
             input: std::option::Option<crate::model::SseDescription>,
@@ -17833,14 +18710,15 @@ impl SourceTableFeatureDetails {
     }
 }
 
-/// <p>Represents the properties of a global secondary index for the table
-/// when the backup was created.</p>
+/// <p>Represents the properties of a global secondary index for the table when the backup
+/// was created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalSecondaryIndexInfo {
     /// <p>The name of the global secondary index.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
+    /// <p>The complete key schema for a global secondary index, which consists of one or more
+    /// pairs of attribute names and key types:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -17852,20 +18730,21 @@ pub struct GlobalSecondaryIndexInfo {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The partition key of an item is also known as its <i>hash
+    /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across
+    /// partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>.
-    /// The term "range attribute" derives from the way DynamoDB stores items with the same
-    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// The term "range attribute" derives from the way DynamoDB stores items with
+    /// the same partition key physically close together, in sorted order by the sort key
+    /// value.</p>
     /// </note>
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
-    /// <p>Represents attributes that are copied (projected) from the table into
-    /// the global secondary index. These are in addition to the primary
-    /// key attributes and index key attributes, which are automatically
-    /// projected. </p>
+    /// <p>Represents attributes that are copied (projected) from the table into the global
+    /// secondary index. These are in addition to the primary key attributes and index key
+    /// attributes, which are automatically projected. </p>
     pub projection: std::option::Option<crate::model::Projection>,
-    /// <p>Represents the provisioned throughput settings for the specified global secondary index. </p>
+    /// <p>Represents the provisioned throughput settings for the specified global secondary
+    /// index. </p>
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
 }
 impl GlobalSecondaryIndexInfo {
@@ -17873,7 +18752,8 @@ impl GlobalSecondaryIndexInfo {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
+    /// <p>The complete key schema for a global secondary index, which consists of one or more
+    /// pairs of attribute names and key types:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -17885,24 +18765,25 @@ impl GlobalSecondaryIndexInfo {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The partition key of an item is also known as its <i>hash
+    /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across
+    /// partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>.
-    /// The term "range attribute" derives from the way DynamoDB stores items with the same
-    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// The term "range attribute" derives from the way DynamoDB stores items with
+    /// the same partition key physically close together, in sorted order by the sort key
+    /// value.</p>
     /// </note>
     pub fn key_schema(&self) -> std::option::Option<&[crate::model::KeySchemaElement]> {
         self.key_schema.as_deref()
     }
-    /// <p>Represents attributes that are copied (projected) from the table into
-    /// the global secondary index. These are in addition to the primary
-    /// key attributes and index key attributes, which are automatically
-    /// projected. </p>
+    /// <p>Represents attributes that are copied (projected) from the table into the global
+    /// secondary index. These are in addition to the primary key attributes and index key
+    /// attributes, which are automatically projected. </p>
     pub fn projection(&self) -> std::option::Option<&crate::model::Projection> {
         self.projection.as_ref()
     }
-    /// <p>Represents the provisioned throughput settings for the specified global secondary index. </p>
+    /// <p>Represents the provisioned throughput settings for the specified global secondary
+    /// index. </p>
     pub fn provisioned_throughput(
         &self,
     ) -> std::option::Option<&crate::model::ProvisionedThroughput> {
@@ -17945,7 +18826,8 @@ pub mod global_secondary_index_info {
         ///
         /// To override the contents of this collection use [`set_key_schema`](Self::set_key_schema).
         ///
-        /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
+        /// <p>The complete key schema for a global secondary index, which consists of one or more
+        /// pairs of attribute names and key types:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -17957,12 +18839,13 @@ pub mod global_secondary_index_info {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-        /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-        /// evenly distribute data items across partitions, based on their partition key values.</p>
+        /// <p>The partition key of an item is also known as its <i>hash
+        /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across
+        /// partitions, based on their partition key values.</p>
         /// <p>The sort key of an item is also known as its <i>range attribute</i>.
-        /// The term "range attribute" derives from the way DynamoDB stores items with the same
-        /// partition key physically close together, in sorted order by the sort key value.</p>
+        /// The term "range attribute" derives from the way DynamoDB stores items with
+        /// the same partition key physically close together, in sorted order by the sort key
+        /// value.</p>
         /// </note>
         pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
@@ -17970,7 +18853,8 @@ pub mod global_secondary_index_info {
             self.key_schema = Some(v);
             self
         }
-        /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
+        /// <p>The complete key schema for a global secondary index, which consists of one or more
+        /// pairs of attribute names and key types:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -17982,12 +18866,13 @@ pub mod global_secondary_index_info {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-        /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-        /// evenly distribute data items across partitions, based on their partition key values.</p>
+        /// <p>The partition key of an item is also known as its <i>hash
+        /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across
+        /// partitions, based on their partition key values.</p>
         /// <p>The sort key of an item is also known as its <i>range attribute</i>.
-        /// The term "range attribute" derives from the way DynamoDB stores items with the same
-        /// partition key physically close together, in sorted order by the sort key value.</p>
+        /// The term "range attribute" derives from the way DynamoDB stores items with
+        /// the same partition key physically close together, in sorted order by the sort key
+        /// value.</p>
         /// </note>
         pub fn set_key_schema(
             mut self,
@@ -17996,18 +18881,16 @@ pub mod global_secondary_index_info {
             self.key_schema = input;
             self
         }
-        /// <p>Represents attributes that are copied (projected) from the table into
-        /// the global secondary index. These are in addition to the primary
-        /// key attributes and index key attributes, which are automatically
-        /// projected. </p>
+        /// <p>Represents attributes that are copied (projected) from the table into the global
+        /// secondary index. These are in addition to the primary key attributes and index key
+        /// attributes, which are automatically projected. </p>
         pub fn projection(mut self, input: crate::model::Projection) -> Self {
             self.projection = Some(input);
             self
         }
-        /// <p>Represents attributes that are copied (projected) from the table into
-        /// the global secondary index. These are in addition to the primary
-        /// key attributes and index key attributes, which are automatically
-        /// projected. </p>
+        /// <p>Represents attributes that are copied (projected) from the table into the global
+        /// secondary index. These are in addition to the primary key attributes and index key
+        /// attributes, which are automatically projected. </p>
         pub fn set_projection(
             mut self,
             input: std::option::Option<crate::model::Projection>,
@@ -18015,7 +18898,8 @@ pub mod global_secondary_index_info {
             self.projection = input;
             self
         }
-        /// <p>Represents the provisioned throughput settings for the specified global secondary index. </p>
+        /// <p>Represents the provisioned throughput settings for the specified global secondary
+        /// index. </p>
         pub fn provisioned_throughput(
             mut self,
             input: crate::model::ProvisionedThroughput,
@@ -18023,7 +18907,8 @@ pub mod global_secondary_index_info {
             self.provisioned_throughput = Some(input);
             self
         }
-        /// <p>Represents the provisioned throughput settings for the specified global secondary index. </p>
+        /// <p>Represents the provisioned throughput settings for the specified global secondary
+        /// index. </p>
         pub fn set_provisioned_throughput(
             mut self,
             input: std::option::Option<crate::model::ProvisionedThroughput>,
@@ -18049,14 +18934,15 @@ impl GlobalSecondaryIndexInfo {
     }
 }
 
-/// <p>Represents the properties of a local secondary index for the table
-/// when the backup was created.</p>
+/// <p>Represents the properties of a local secondary index for the table when the backup was
+/// created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LocalSecondaryIndexInfo {
     /// <p>Represents the name of the local secondary index.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The complete key schema for a local secondary index, which consists of one or more pairs of attribute names and key types:</p>
+    /// <p>The complete key schema for a local secondary index, which consists of one or more
+    /// pairs of attribute names and key types:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -18068,15 +18954,19 @@ pub struct LocalSecondaryIndexInfo {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The partition key of an item is also known as its <i>hash
+    /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
+    /// an internal hash function to evenly distribute data items across partitions, based
+    /// on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>.
     /// The term "range attribute" derives from the way DynamoDB stores items with the same
-    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// partition key physically close together, in sorted order by the sort key
+    /// value.</p>
     /// </note>
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
-    /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
+    /// <p>Represents attributes that are copied (projected) from the table into the global
+    /// secondary index. These are in addition to the primary key attributes and index key
+    /// attributes, which are automatically projected. </p>
     pub projection: std::option::Option<crate::model::Projection>,
 }
 impl LocalSecondaryIndexInfo {
@@ -18084,7 +18974,8 @@ impl LocalSecondaryIndexInfo {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>The complete key schema for a local secondary index, which consists of one or more pairs of attribute names and key types:</p>
+    /// <p>The complete key schema for a local secondary index, which consists of one or more
+    /// pairs of attribute names and key types:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -18096,17 +18987,21 @@ impl LocalSecondaryIndexInfo {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The partition key of an item is also known as its <i>hash
+    /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
+    /// an internal hash function to evenly distribute data items across partitions, based
+    /// on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>.
     /// The term "range attribute" derives from the way DynamoDB stores items with the same
-    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// partition key physically close together, in sorted order by the sort key
+    /// value.</p>
     /// </note>
     pub fn key_schema(&self) -> std::option::Option<&[crate::model::KeySchemaElement]> {
         self.key_schema.as_deref()
     }
-    /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
+    /// <p>Represents attributes that are copied (projected) from the table into the global
+    /// secondary index. These are in addition to the primary key attributes and index key
+    /// attributes, which are automatically projected. </p>
     pub fn projection(&self) -> std::option::Option<&crate::model::Projection> {
         self.projection.as_ref()
     }
@@ -18145,7 +19040,8 @@ pub mod local_secondary_index_info {
         ///
         /// To override the contents of this collection use [`set_key_schema`](Self::set_key_schema).
         ///
-        /// <p>The complete key schema for a local secondary index, which consists of one or more pairs of attribute names and key types:</p>
+        /// <p>The complete key schema for a local secondary index, which consists of one or more
+        /// pairs of attribute names and key types:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -18157,12 +19053,14 @@ pub mod local_secondary_index_info {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-        /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-        /// evenly distribute data items across partitions, based on their partition key values.</p>
+        /// <p>The partition key of an item is also known as its <i>hash
+        /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
+        /// an internal hash function to evenly distribute data items across partitions, based
+        /// on their partition key values.</p>
         /// <p>The sort key of an item is also known as its <i>range attribute</i>.
         /// The term "range attribute" derives from the way DynamoDB stores items with the same
-        /// partition key physically close together, in sorted order by the sort key value.</p>
+        /// partition key physically close together, in sorted order by the sort key
+        /// value.</p>
         /// </note>
         pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
@@ -18170,7 +19068,8 @@ pub mod local_secondary_index_info {
             self.key_schema = Some(v);
             self
         }
-        /// <p>The complete key schema for a local secondary index, which consists of one or more pairs of attribute names and key types:</p>
+        /// <p>The complete key schema for a local secondary index, which consists of one or more
+        /// pairs of attribute names and key types:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -18182,12 +19081,14 @@ pub mod local_secondary_index_info {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
-        /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
-        /// evenly distribute data items across partitions, based on their partition key values.</p>
+        /// <p>The partition key of an item is also known as its <i>hash
+        /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
+        /// an internal hash function to evenly distribute data items across partitions, based
+        /// on their partition key values.</p>
         /// <p>The sort key of an item is also known as its <i>range attribute</i>.
         /// The term "range attribute" derives from the way DynamoDB stores items with the same
-        /// partition key physically close together, in sorted order by the sort key value.</p>
+        /// partition key physically close together, in sorted order by the sort key
+        /// value.</p>
         /// </note>
         pub fn set_key_schema(
             mut self,
@@ -18196,12 +19097,16 @@ pub mod local_secondary_index_info {
             self.key_schema = input;
             self
         }
-        /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
+        /// <p>Represents attributes that are copied (projected) from the table into the global
+        /// secondary index. These are in addition to the primary key attributes and index key
+        /// attributes, which are automatically projected. </p>
         pub fn projection(mut self, input: crate::model::Projection) -> Self {
             self.projection = Some(input);
             self
         }
-        /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
+        /// <p>Represents attributes that are copied (projected) from the table into the global
+        /// secondary index. These are in addition to the primary key attributes and index key
+        /// attributes, which are automatically projected. </p>
         pub fn set_projection(
             mut self,
             input: std::option::Option<crate::model::Projection>,
@@ -18241,21 +19146,25 @@ pub struct SourceTableDetails {
     /// <p>Schema of the table. </p>
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
     /// <p>Time when the source table was created. </p>
-    pub table_creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub table_creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Read IOPs and Write IOPS on the table when the backup was created.</p>
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
     /// <p>Number of items in the table. Note that this is an approximate value. </p>
     pub item_count: std::option::Option<i64>,
-    /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
+    /// <p>Controls how you are charged for read and write throughput and how you manage
+    /// capacity. This setting can be changed later.</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for predictable workloads.</p>
+    /// <code>PROVISIONED</code> - Sets the read/write capacity mode to
+    /// <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for
+    /// predictable workloads.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
-    /// </p>
+    /// <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to
+    /// <code>PAY_PER_REQUEST</code>. We recommend using
+    /// <code>PAY_PER_REQUEST</code> for unpredictable workloads. </p>
     /// </li>
     /// </ul>
     pub billing_mode: std::option::Option<crate::model::BillingMode>,
@@ -18282,7 +19191,7 @@ impl SourceTableDetails {
         self.key_schema.as_deref()
     }
     /// <p>Time when the source table was created. </p>
-    pub fn table_creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn table_creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.table_creation_date_time.as_ref()
     }
     /// <p>Read IOPs and Write IOPS on the table when the backup was created.</p>
@@ -18295,16 +19204,20 @@ impl SourceTableDetails {
     pub fn item_count(&self) -> std::option::Option<i64> {
         self.item_count
     }
-    /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
+    /// <p>Controls how you are charged for read and write throughput and how you manage
+    /// capacity. This setting can be changed later.</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for predictable workloads.</p>
+    /// <code>PROVISIONED</code> - Sets the read/write capacity mode to
+    /// <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for
+    /// predictable workloads.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
-    /// </p>
+    /// <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to
+    /// <code>PAY_PER_REQUEST</code>. We recommend using
+    /// <code>PAY_PER_REQUEST</code> for unpredictable workloads. </p>
     /// </li>
     /// </ul>
     pub fn billing_mode(&self) -> std::option::Option<&crate::model::BillingMode> {
@@ -18337,7 +19250,7 @@ pub mod source_table_details {
         pub(crate) table_arn: std::option::Option<std::string::String>,
         pub(crate) table_size_bytes: std::option::Option<i64>,
         pub(crate) key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
-        pub(crate) table_creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) table_creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
         pub(crate) item_count: std::option::Option<i64>,
         pub(crate) billing_mode: std::option::Option<crate::model::BillingMode>,
@@ -18403,14 +19316,14 @@ pub mod source_table_details {
             self
         }
         /// <p>Time when the source table was created. </p>
-        pub fn table_creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn table_creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.table_creation_date_time = Some(input);
             self
         }
         /// <p>Time when the source table was created. </p>
         pub fn set_table_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.table_creation_date_time = input;
             self
@@ -18441,32 +19354,40 @@ pub mod source_table_details {
             self.item_count = input;
             self
         }
-        /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
+        /// <p>Controls how you are charged for read and write throughput and how you manage
+        /// capacity. This setting can be changed later.</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for predictable workloads.</p>
+        /// <code>PROVISIONED</code> - Sets the read/write capacity mode to
+        /// <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for
+        /// predictable workloads.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
-        /// </p>
+        /// <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to
+        /// <code>PAY_PER_REQUEST</code>. We recommend using
+        /// <code>PAY_PER_REQUEST</code> for unpredictable workloads. </p>
         /// </li>
         /// </ul>
         pub fn billing_mode(mut self, input: crate::model::BillingMode) -> Self {
             self.billing_mode = Some(input);
             self
         }
-        /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
+        /// <p>Controls how you are charged for read and write throughput and how you manage
+        /// capacity. This setting can be changed later.</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for predictable workloads.</p>
+        /// <code>PROVISIONED</code> - Sets the read/write capacity mode to
+        /// <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for
+        /// predictable workloads.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
-        /// </p>
+        /// <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to
+        /// <code>PAY_PER_REQUEST</code>. We recommend using
+        /// <code>PAY_PER_REQUEST</code> for unpredictable workloads. </p>
         /// </li>
         /// </ul>
         pub fn set_billing_mode(
@@ -18515,26 +19436,28 @@ pub struct BackupDetails {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>USER</code> - You create and manage these using the on-demand backup feature.</p>
+    /// <code>USER</code> - You create and manage these using the on-demand backup
+    /// feature.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically
-    /// created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted
-    /// table to the state it was in just before the point of deletion.
-    /// </p>
+    /// <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled,
+    /// a <code>SYSTEM</code> backup is automatically created and is retained for 35
+    /// days (at no additional cost). System backups allow you to restore the deleted
+    /// table to the state it was in just before the point of deletion. </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.</p>
+    /// <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p>
     /// </li>
     /// </ul>
     pub backup_type: std::option::Option<crate::model::BackupType>,
     /// <p>Time at which the backup was created. This is the request time of the backup. </p>
-    pub backup_creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-    /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code>
-    /// on-demand backup expires automatically 35 days after its creation.</p>
-    pub backup_expiry_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub backup_creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Time at which the automatic on-demand backup created by DynamoDB will
+    /// expire. This <code>SYSTEM</code> on-demand backup expires automatically 35 days after
+    /// its creation.</p>
+    pub backup_expiry_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BackupDetails {
     /// <p>ARN associated with the backup.</p>
@@ -18557,30 +19480,32 @@ impl BackupDetails {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>USER</code> - You create and manage these using the on-demand backup feature.</p>
+    /// <code>USER</code> - You create and manage these using the on-demand backup
+    /// feature.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically
-    /// created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted
-    /// table to the state it was in just before the point of deletion.
-    /// </p>
+    /// <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled,
+    /// a <code>SYSTEM</code> backup is automatically created and is retained for 35
+    /// days (at no additional cost). System backups allow you to restore the deleted
+    /// table to the state it was in just before the point of deletion. </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.</p>
+    /// <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p>
     /// </li>
     /// </ul>
     pub fn backup_type(&self) -> std::option::Option<&crate::model::BackupType> {
         self.backup_type.as_ref()
     }
     /// <p>Time at which the backup was created. This is the request time of the backup. </p>
-    pub fn backup_creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn backup_creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.backup_creation_date_time.as_ref()
     }
-    /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code>
-    /// on-demand backup expires automatically 35 days after its creation.</p>
-    pub fn backup_expiry_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    /// <p>Time at which the automatic on-demand backup created by DynamoDB will
+    /// expire. This <code>SYSTEM</code> on-demand backup expires automatically 35 days after
+    /// its creation.</p>
+    pub fn backup_expiry_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.backup_expiry_date_time.as_ref()
     }
 }
@@ -18608,8 +19533,8 @@ pub mod backup_details {
         pub(crate) backup_size_bytes: std::option::Option<i64>,
         pub(crate) backup_status: std::option::Option<crate::model::BackupStatus>,
         pub(crate) backup_type: std::option::Option<crate::model::BackupType>,
-        pub(crate) backup_creation_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) backup_expiry_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) backup_creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) backup_expiry_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>ARN associated with the backup.</p>
@@ -18659,18 +19584,19 @@ pub mod backup_details {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>USER</code> - You create and manage these using the on-demand backup feature.</p>
+        /// <code>USER</code> - You create and manage these using the on-demand backup
+        /// feature.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically
-        /// created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted
-        /// table to the state it was in just before the point of deletion.
-        /// </p>
+        /// <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled,
+        /// a <code>SYSTEM</code> backup is automatically created and is retained for 35
+        /// days (at no additional cost). System backups allow you to restore the deleted
+        /// table to the state it was in just before the point of deletion. </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.</p>
+        /// <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p>
         /// </li>
         /// </ul>
         pub fn backup_type(mut self, input: crate::model::BackupType) -> Self {
@@ -18681,18 +19607,19 @@ pub mod backup_details {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>USER</code> - You create and manage these using the on-demand backup feature.</p>
+        /// <code>USER</code> - You create and manage these using the on-demand backup
+        /// feature.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically
-        /// created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted
-        /// table to the state it was in just before the point of deletion.
-        /// </p>
+        /// <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled,
+        /// a <code>SYSTEM</code> backup is automatically created and is retained for 35
+        /// days (at no additional cost). System backups allow you to restore the deleted
+        /// table to the state it was in just before the point of deletion. </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.</p>
+        /// <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p>
         /// </li>
         /// </ul>
         pub fn set_backup_type(
@@ -18703,29 +19630,31 @@ pub mod backup_details {
             self
         }
         /// <p>Time at which the backup was created. This is the request time of the backup. </p>
-        pub fn backup_creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn backup_creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.backup_creation_date_time = Some(input);
             self
         }
         /// <p>Time at which the backup was created. This is the request time of the backup. </p>
         pub fn set_backup_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.backup_creation_date_time = input;
             self
         }
-        /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code>
-        /// on-demand backup expires automatically 35 days after its creation.</p>
-        pub fn backup_expiry_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        /// <p>Time at which the automatic on-demand backup created by DynamoDB will
+        /// expire. This <code>SYSTEM</code> on-demand backup expires automatically 35 days after
+        /// its creation.</p>
+        pub fn backup_expiry_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.backup_expiry_date_time = Some(input);
             self
         }
-        /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code>
-        /// on-demand backup expires automatically 35 days after its creation.</p>
+        /// <p>Time at which the automatic on-demand backup created by DynamoDB will
+        /// expire. This <code>SYSTEM</code> on-demand backup expires automatically 35 days after
+        /// its creation.</p>
         pub fn set_backup_expiry_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.backup_expiry_date_time = input;
             self
@@ -18753,8 +19682,8 @@ impl BackupDetails {
 
 /// <p>Represents an operation to perform - either <code>DeleteItem</code> or
 /// <code>PutItem</code>. You can only request one of these operations, not both, in a
-/// single <code>WriteRequest</code>. If you do need to perform both of these operations, you
-/// need to provide two separate <code>WriteRequest</code> objects.</p>
+/// single <code>WriteRequest</code>. If you do need to perform both of these operations,
+/// you need to provide two separate <code>WriteRequest</code> objects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WriteRequest {
@@ -18837,13 +19766,17 @@ impl WriteRequest {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRequest {
-    /// <p>A map of attribute name to attribute values, representing the primary key of the item to delete. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema.</p>
+    /// <p>A map of attribute name to attribute values, representing the primary key of the item
+    /// to delete. All of the table's primary key attributes must be specified, and their data
+    /// types must match those of the table's key schema.</p>
     pub key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
 }
 impl DeleteRequest {
-    /// <p>A map of attribute name to attribute values, representing the primary key of the item to delete. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema.</p>
+    /// <p>A map of attribute name to attribute values, representing the primary key of the item
+    /// to delete. All of the table's primary key attributes must be specified, and their data
+    /// types must match those of the table's key schema.</p>
     pub fn key(
         &self,
     ) -> std::option::Option<
@@ -18874,7 +19807,9 @@ pub mod delete_request {
         ///
         /// To override the contents of this collection use [`set_key`](Self::set_key).
         ///
-        /// <p>A map of attribute name to attribute values, representing the primary key of the item to delete. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema.</p>
+        /// <p>A map of attribute name to attribute values, representing the primary key of the item
+        /// to delete. All of the table's primary key attributes must be specified, and their data
+        /// types must match those of the table's key schema.</p>
         pub fn key(
             mut self,
             k: impl Into<std::string::String>,
@@ -18885,7 +19820,9 @@ pub mod delete_request {
             self.key = Some(hash_map);
             self
         }
-        /// <p>A map of attribute name to attribute values, representing the primary key of the item to delete. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema.</p>
+        /// <p>A map of attribute name to attribute values, representing the primary key of the item
+        /// to delete. All of the table's primary key attributes must be specified, and their data
+        /// types must match those of the table's key schema.</p>
         pub fn set_key(
             mut self,
             input: std::option::Option<
@@ -18912,9 +19849,9 @@ impl DeleteRequest {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRequest {
-    /// <p>A map of attribute name to attribute values, representing the primary key of an item to
-    /// be processed by <code>PutItem</code>. All of the table's primary key attributes must be
-    /// specified, and their data types must match those of the table's key schema. If any
+    /// <p>A map of attribute name to attribute values, representing the primary key of an item
+    /// to be processed by <code>PutItem</code>. All of the table's primary key attributes must
+    /// be specified, and their data types must match those of the table's key schema. If any
     /// attributes are present in the item that are part of an index key schema for the table,
     /// their types must match the index key schema.</p>
     pub item: std::option::Option<
@@ -18922,9 +19859,9 @@ pub struct PutRequest {
     >,
 }
 impl PutRequest {
-    /// <p>A map of attribute name to attribute values, representing the primary key of an item to
-    /// be processed by <code>PutItem</code>. All of the table's primary key attributes must be
-    /// specified, and their data types must match those of the table's key schema. If any
+    /// <p>A map of attribute name to attribute values, representing the primary key of an item
+    /// to be processed by <code>PutItem</code>. All of the table's primary key attributes must
+    /// be specified, and their data types must match those of the table's key schema. If any
     /// attributes are present in the item that are part of an index key schema for the table,
     /// their types must match the index key schema.</p>
     pub fn item(
@@ -18957,9 +19894,9 @@ pub mod put_request {
         ///
         /// To override the contents of this collection use [`set_item`](Self::set_item).
         ///
-        /// <p>A map of attribute name to attribute values, representing the primary key of an item to
-        /// be processed by <code>PutItem</code>. All of the table's primary key attributes must be
-        /// specified, and their data types must match those of the table's key schema. If any
+        /// <p>A map of attribute name to attribute values, representing the primary key of an item
+        /// to be processed by <code>PutItem</code>. All of the table's primary key attributes must
+        /// be specified, and their data types must match those of the table's key schema. If any
         /// attributes are present in the item that are part of an index key schema for the table,
         /// their types must match the index key schema.</p>
         pub fn item(
@@ -18972,9 +19909,9 @@ pub mod put_request {
             self.item = Some(hash_map);
             self
         }
-        /// <p>A map of attribute name to attribute values, representing the primary key of an item to
-        /// be processed by <code>PutItem</code>. All of the table's primary key attributes must be
-        /// specified, and their data types must match those of the table's key schema. If any
+        /// <p>A map of attribute name to attribute values, representing the primary key of an item
+        /// to be processed by <code>PutItem</code>. All of the table's primary key attributes must
+        /// be specified, and their data types must match those of the table's key schema. If any
         /// attributes are present in the item that are part of an index key schema for the table,
         /// their types must match the index key schema.</p>
         pub fn set_item(
@@ -18999,42 +19936,54 @@ impl PutRequest {
     }
 }
 
-/// <p>Represents a set of primary keys and, for each key, the attributes to retrieve from the table.</p>
-/// <p>For each primary key, you must provide <i>all</i> of the key attributes. For example, with a
-/// simple primary key, you only need to provide the partition key. For a composite
-/// primary key, you must provide <i>both</i> the partition key and the sort key.</p>
+/// <p>Represents a set of primary keys and, for each key, the attributes to retrieve from
+/// the table.</p>
+/// <p>For each primary key, you must provide <i>all</i> of the key attributes.
+/// For example, with a simple primary key, you only need to provide the partition key. For
+/// a composite primary key, you must provide <i>both</i> the partition key
+/// and the sort key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeysAndAttributes {
-    /// <p>The primary key attribute values that define the items and the attributes associated with the items.</p>
+    /// <p>The primary key attribute values that define the items and the attributes associated
+    /// with the items.</p>
     pub keys: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
     >,
-    /// <p>This is a legacy parameter.  Use <code>ProjectionExpression</code> instead.  For more information, see
-    /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more
+    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+    /// Conditional Parameters</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub attributes_to_get: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent
-    /// read is used; otherwise, an eventually consistent read is used.</p>
+    /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly
+    /// consistent read is used; otherwise, an eventually consistent read is used.</p>
     pub consistent_read: std::option::Option<bool>,
-    /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars,
-    /// sets, or elements of a JSON document. The attributes in the <code>ProjectionExpression</code> must be separated by
-    /// commas.</p>
-    /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>A string that identifies one or more attributes to retrieve from the table. These
+    /// attributes can include scalars, sets, or elements of a JSON document. The attributes in
+    /// the <code>ProjectionExpression</code> must be separated by commas.</p>
+    /// <p>If no attribute names are specified, then all attributes will be returned. If any of
+    /// the requested attributes are not found, they will not appear in the result.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub projection_expression: std::option::Option<std::string::String>,
-    /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+    /// <p>One or more substitution tokens for attribute names in an expression. The following
+    /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
     /// <li>
-    /// <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p>
+    /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
+    /// word.</p>
     /// </li>
     /// <li>
-    /// <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p>
+    /// <p>To create a placeholder for repeating occurrences of an attribute name in an
+    /// expression.</p>
     /// </li>
     /// <li>
-    /// <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p>
+    /// <p>To prevent special characters in an attribute name from being misinterpreted
+    /// in an expression.</p>
     /// </li>
     /// </ul>
-    /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+    /// <p>Use the <b>#</b> character in an expression to dereference
+    /// an attribute name. For example, consider the following attribute name:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -19042,7 +19991,10 @@ pub struct KeysAndAttributes {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
+    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
+    /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>). To work around this, you could specify the following for
+    /// <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -19059,14 +20011,18 @@ pub struct KeysAndAttributes {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+    /// <p>Tokens that begin with the <b>:</b> character are
+    /// <i>expression attribute values</i>, which are placeholders for the
+    /// actual value at runtime.</p>
     /// </note>
-    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl KeysAndAttributes {
-    /// <p>The primary key attribute values that define the items and the attributes associated with the items.</p>
+    /// <p>The primary key attribute values that define the items and the attributes associated
+    /// with the items.</p>
     pub fn keys(
         &self,
     ) -> std::option::Option<
@@ -19074,37 +20030,46 @@ impl KeysAndAttributes {
     > {
         self.keys.as_deref()
     }
-    /// <p>This is a legacy parameter.  Use <code>ProjectionExpression</code> instead.  For more information, see
-    /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more
+    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+    /// Conditional Parameters</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub fn attributes_to_get(&self) -> std::option::Option<&[std::string::String]> {
         self.attributes_to_get.as_deref()
     }
-    /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent
-    /// read is used; otherwise, an eventually consistent read is used.</p>
+    /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly
+    /// consistent read is used; otherwise, an eventually consistent read is used.</p>
     pub fn consistent_read(&self) -> std::option::Option<bool> {
         self.consistent_read
     }
-    /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars,
-    /// sets, or elements of a JSON document. The attributes in the <code>ProjectionExpression</code> must be separated by
-    /// commas.</p>
-    /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>A string that identifies one or more attributes to retrieve from the table. These
+    /// attributes can include scalars, sets, or elements of a JSON document. The attributes in
+    /// the <code>ProjectionExpression</code> must be separated by commas.</p>
+    /// <p>If no attribute names are specified, then all attributes will be returned. If any of
+    /// the requested attributes are not found, they will not appear in the result.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub fn projection_expression(&self) -> std::option::Option<&str> {
         self.projection_expression.as_deref()
     }
-    /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+    /// <p>One or more substitution tokens for attribute names in an expression. The following
+    /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
     /// <li>
-    /// <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p>
+    /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
+    /// word.</p>
     /// </li>
     /// <li>
-    /// <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p>
+    /// <p>To create a placeholder for repeating occurrences of an attribute name in an
+    /// expression.</p>
     /// </li>
     /// <li>
-    /// <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p>
+    /// <p>To prevent special characters in an attribute name from being misinterpreted
+    /// in an expression.</p>
     /// </li>
     /// </ul>
-    /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+    /// <p>Use the <b>#</b> character in an expression to dereference
+    /// an attribute name. For example, consider the following attribute name:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -19112,7 +20077,10 @@ impl KeysAndAttributes {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
+    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
+    /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>). To work around this, you could specify the following for
+    /// <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -19129,9 +20097,12 @@ impl KeysAndAttributes {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+    /// <p>Tokens that begin with the <b>:</b> character are
+    /// <i>expression attribute values</i>, which are placeholders for the
+    /// actual value at runtime.</p>
     /// </note>
-    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
     pub fn expression_attribute_names(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -19176,7 +20147,8 @@ pub mod keys_and_attributes {
         ///
         /// To override the contents of this collection use [`set_keys`](Self::set_keys).
         ///
-        /// <p>The primary key attribute values that define the items and the attributes associated with the items.</p>
+        /// <p>The primary key attribute values that define the items and the attributes associated
+        /// with the items.</p>
         pub fn keys(
             mut self,
             input: impl Into<
@@ -19188,7 +20160,8 @@ pub mod keys_and_attributes {
             self.keys = Some(v);
             self
         }
-        /// <p>The primary key attribute values that define the items and the attributes associated with the items.</p>
+        /// <p>The primary key attribute values that define the items and the attributes associated
+        /// with the items.</p>
         pub fn set_keys(
             mut self,
             input: std::option::Option<
@@ -19204,16 +20177,20 @@ pub mod keys_and_attributes {
         ///
         /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
         ///
-        /// <p>This is a legacy parameter.  Use <code>ProjectionExpression</code> instead.  For more information, see
-        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more
+        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+        /// Conditional Parameters</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn attributes_to_get(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attributes_to_get.unwrap_or_default();
             v.push(input.into());
             self.attributes_to_get = Some(v);
             self
         }
-        /// <p>This is a legacy parameter.  Use <code>ProjectionExpression</code> instead.  For more information, see
-        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more
+        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+        /// Conditional Parameters</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_attributes_to_get(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -19221,32 +20198,36 @@ pub mod keys_and_attributes {
             self.attributes_to_get = input;
             self
         }
-        /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent
-        /// read is used; otherwise, an eventually consistent read is used.</p>
+        /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly
+        /// consistent read is used; otherwise, an eventually consistent read is used.</p>
         pub fn consistent_read(mut self, input: bool) -> Self {
             self.consistent_read = Some(input);
             self
         }
-        /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent
-        /// read is used; otherwise, an eventually consistent read is used.</p>
+        /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly
+        /// consistent read is used; otherwise, an eventually consistent read is used.</p>
         pub fn set_consistent_read(mut self, input: std::option::Option<bool>) -> Self {
             self.consistent_read = input;
             self
         }
-        /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars,
-        /// sets, or elements of a JSON document. The attributes in the <code>ProjectionExpression</code> must be separated by
-        /// commas.</p>
-        /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>A string that identifies one or more attributes to retrieve from the table. These
+        /// attributes can include scalars, sets, or elements of a JSON document. The attributes in
+        /// the <code>ProjectionExpression</code> must be separated by commas.</p>
+        /// <p>If no attribute names are specified, then all attributes will be returned. If any of
+        /// the requested attributes are not found, they will not appear in the result.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn projection_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.projection_expression = Some(input.into());
             self
         }
-        /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars,
-        /// sets, or elements of a JSON document. The attributes in the <code>ProjectionExpression</code> must be separated by
-        /// commas.</p>
-        /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>A string that identifies one or more attributes to retrieve from the table. These
+        /// attributes can include scalars, sets, or elements of a JSON document. The attributes in
+        /// the <code>ProjectionExpression</code> must be separated by commas.</p>
+        /// <p>If no attribute names are specified, then all attributes will be returned. If any of
+        /// the requested attributes are not found, they will not appear in the result.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_projection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19258,19 +20239,24 @@ pub mod keys_and_attributes {
         ///
         /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
         ///
-        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <p>One or more substitution tokens for attribute names in an expression. The following
+        /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
         /// <li>
-        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p>
+        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
+        /// word.</p>
         /// </li>
         /// <li>
-        /// <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p>
+        /// <p>To create a placeholder for repeating occurrences of an attribute name in an
+        /// expression.</p>
         /// </li>
         /// <li>
-        /// <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p>
+        /// <p>To prevent special characters in an attribute name from being misinterpreted
+        /// in an expression.</p>
         /// </li>
         /// </ul>
-        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+        /// <p>Use the <b>#</b> character in an expression to dereference
+        /// an attribute name. For example, consider the following attribute name:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -19278,7 +20264,10 @@ pub mod keys_and_attributes {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
+        /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>). To work around this, you could specify the following for
+        /// <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -19295,9 +20284,12 @@ pub mod keys_and_attributes {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+        /// <p>Tokens that begin with the <b>:</b> character are
+        /// <i>expression attribute values</i>, which are placeholders for the
+        /// actual value at runtime.</p>
         /// </note>
-        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn expression_attribute_names(
             mut self,
             k: impl Into<std::string::String>,
@@ -19308,19 +20300,24 @@ pub mod keys_and_attributes {
             self.expression_attribute_names = Some(hash_map);
             self
         }
-        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <p>One or more substitution tokens for attribute names in an expression. The following
+        /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
         /// <li>
-        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p>
+        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
+        /// word.</p>
         /// </li>
         /// <li>
-        /// <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p>
+        /// <p>To create a placeholder for repeating occurrences of an attribute name in an
+        /// expression.</p>
         /// </li>
         /// <li>
-        /// <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p>
+        /// <p>To prevent special characters in an attribute name from being misinterpreted
+        /// in an expression.</p>
         /// </li>
         /// </ul>
-        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+        /// <p>Use the <b>#</b> character in an expression to dereference
+        /// an attribute name. For example, consider the following attribute name:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -19328,7 +20325,10 @@ pub mod keys_and_attributes {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
+        /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>). To work around this, you could specify the following for
+        /// <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -19345,9 +20345,12 @@ pub mod keys_and_attributes {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+        /// <p>Tokens that begin with the <b>:</b> character are
+        /// <i>expression attribute values</i>, which are placeholders for the
+        /// actual value at runtime.</p>
         /// </note>
-        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_expression_attribute_names(
             mut self,
             input: std::option::Option<
@@ -19376,43 +20379,29 @@ impl KeysAndAttributes {
     }
 }
 
-/// <p>
-/// A PartiQL batch statement response..
-/// </p>
+/// <p> A PartiQL batch statement response.. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchStatementResponse {
-    /// <p>
-    /// The error associated with a failed PartiQL batch statement.
-    /// </p>
+    /// <p> The error associated with a failed PartiQL batch statement. </p>
     pub error: std::option::Option<crate::model::BatchStatementError>,
-    /// <p>
-    /// The table name associated with a failed PartiQL batch statement.
-    /// </p>
+    /// <p> The table name associated with a failed PartiQL batch statement. </p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// A DynamoDB item associated with a BatchStatementResponse
-    /// </p>
+    /// <p> A DynamoDB item associated with a BatchStatementResponse </p>
     pub item: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
 }
 impl BatchStatementResponse {
-    /// <p>
-    /// The error associated with a failed PartiQL batch statement.
-    /// </p>
+    /// <p> The error associated with a failed PartiQL batch statement. </p>
     pub fn error(&self) -> std::option::Option<&crate::model::BatchStatementError> {
         self.error.as_ref()
     }
-    /// <p>
-    /// The table name associated with a failed PartiQL batch statement.
-    /// </p>
+    /// <p> The table name associated with a failed PartiQL batch statement. </p>
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>
-    /// A DynamoDB item associated with a BatchStatementResponse
-    /// </p>
+    /// <p> A DynamoDB item associated with a BatchStatementResponse </p>
     pub fn item(
         &self,
     ) -> std::option::Option<
@@ -19443,16 +20432,12 @@ pub mod batch_statement_response {
         >,
     }
     impl Builder {
-        /// <p>
-        /// The error associated with a failed PartiQL batch statement.
-        /// </p>
+        /// <p> The error associated with a failed PartiQL batch statement. </p>
         pub fn error(mut self, input: crate::model::BatchStatementError) -> Self {
             self.error = Some(input);
             self
         }
-        /// <p>
-        /// The error associated with a failed PartiQL batch statement.
-        /// </p>
+        /// <p> The error associated with a failed PartiQL batch statement. </p>
         pub fn set_error(
             mut self,
             input: std::option::Option<crate::model::BatchStatementError>,
@@ -19460,16 +20445,12 @@ pub mod batch_statement_response {
             self.error = input;
             self
         }
-        /// <p>
-        /// The table name associated with a failed PartiQL batch statement.
-        /// </p>
+        /// <p> The table name associated with a failed PartiQL batch statement. </p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The table name associated with a failed PartiQL batch statement.
-        /// </p>
+        /// <p> The table name associated with a failed PartiQL batch statement. </p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -19478,9 +20459,7 @@ pub mod batch_statement_response {
         ///
         /// To override the contents of this collection use [`set_item`](Self::set_item).
         ///
-        /// <p>
-        /// A DynamoDB item associated with a BatchStatementResponse
-        /// </p>
+        /// <p> A DynamoDB item associated with a BatchStatementResponse </p>
         pub fn item(
             mut self,
             k: impl Into<std::string::String>,
@@ -19491,9 +20470,7 @@ pub mod batch_statement_response {
             self.item = Some(hash_map);
             self
         }
-        /// <p>
-        /// A DynamoDB item associated with a BatchStatementResponse
-        /// </p>
+        /// <p> A DynamoDB item associated with a BatchStatementResponse </p>
         pub fn set_item(
             mut self,
             input: std::option::Option<
@@ -19520,31 +20497,21 @@ impl BatchStatementResponse {
     }
 }
 
-/// <p>
-/// An error associated with a statement in a PartiQL batch that was run.
-/// </p>
+/// <p> An error associated with a statement in a PartiQL batch that was run. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchStatementError {
-    /// <p>
-    /// The error code associated with the failed PartiQL batch statement.
-    /// </p>
+    /// <p> The error code associated with the failed PartiQL batch statement. </p>
     pub code: std::option::Option<crate::model::BatchStatementErrorCodeEnum>,
-    /// <p>
-    /// The error message associated with the PartiQL batch resposne.
-    /// </p>
+    /// <p> The error message associated with the PartiQL batch resposne. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl BatchStatementError {
-    /// <p>
-    /// The error code associated with the failed PartiQL batch statement.
-    /// </p>
+    /// <p> The error code associated with the failed PartiQL batch statement. </p>
     pub fn code(&self) -> std::option::Option<&crate::model::BatchStatementErrorCodeEnum> {
         self.code.as_ref()
     }
-    /// <p>
-    /// The error message associated with the PartiQL batch resposne.
-    /// </p>
+    /// <p> The error message associated with the PartiQL batch resposne. </p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -19567,16 +20534,12 @@ pub mod batch_statement_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The error code associated with the failed PartiQL batch statement.
-        /// </p>
+        /// <p> The error code associated with the failed PartiQL batch statement. </p>
         pub fn code(mut self, input: crate::model::BatchStatementErrorCodeEnum) -> Self {
             self.code = Some(input);
             self
         }
-        /// <p>
-        /// The error code associated with the failed PartiQL batch statement.
-        /// </p>
+        /// <p> The error code associated with the failed PartiQL batch statement. </p>
         pub fn set_code(
             mut self,
             input: std::option::Option<crate::model::BatchStatementErrorCodeEnum>,
@@ -19584,16 +20547,12 @@ pub mod batch_statement_error {
             self.code = input;
             self
         }
-        /// <p>
-        /// The error message associated with the PartiQL batch resposne.
-        /// </p>
+        /// <p> The error message associated with the PartiQL batch resposne. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>
-        /// The error message associated with the PartiQL batch resposne.
-        /// </p>
+        /// <p> The error message associated with the PartiQL batch resposne. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -19725,41 +20684,27 @@ impl AsRef<str> for BatchStatementErrorCodeEnum {
     }
 }
 
-/// <p>
-/// A PartiQL batch statement request.
-/// </p>
+/// <p> A PartiQL batch statement request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchStatementRequest {
-    /// <p>
-    /// A valid PartiQL statement.
-    /// </p>
+    /// <p> A valid PartiQL statement. </p>
     pub statement: std::option::Option<std::string::String>,
-    /// <p>
-    /// The parameters associated with a PartiQL statement in the batch request.
-    /// </p>
+    /// <p> The parameters associated with a PartiQL statement in the batch request. </p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
-    /// <p>
-    /// The read consistency of the PartiQL batch request.
-    /// </p>
+    /// <p> The read consistency of the PartiQL batch request. </p>
     pub consistent_read: std::option::Option<bool>,
 }
 impl BatchStatementRequest {
-    /// <p>
-    /// A valid PartiQL statement.
-    /// </p>
+    /// <p> A valid PartiQL statement. </p>
     pub fn statement(&self) -> std::option::Option<&str> {
         self.statement.as_deref()
     }
-    /// <p>
-    /// The parameters associated with a PartiQL statement in the batch request.
-    /// </p>
+    /// <p> The parameters associated with a PartiQL statement in the batch request. </p>
     pub fn parameters(&self) -> std::option::Option<&[crate::model::AttributeValue]> {
         self.parameters.as_deref()
     }
-    /// <p>
-    /// The read consistency of the PartiQL batch request.
-    /// </p>
+    /// <p> The read consistency of the PartiQL batch request. </p>
     pub fn consistent_read(&self) -> std::option::Option<bool> {
         self.consistent_read
     }
@@ -19784,16 +20729,12 @@ pub mod batch_statement_request {
         pub(crate) consistent_read: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>
-        /// A valid PartiQL statement.
-        /// </p>
+        /// <p> A valid PartiQL statement. </p>
         pub fn statement(mut self, input: impl Into<std::string::String>) -> Self {
             self.statement = Some(input.into());
             self
         }
-        /// <p>
-        /// A valid PartiQL statement.
-        /// </p>
+        /// <p> A valid PartiQL statement. </p>
         pub fn set_statement(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.statement = input;
             self
@@ -19802,18 +20743,14 @@ pub mod batch_statement_request {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>
-        /// The parameters associated with a PartiQL statement in the batch request.
-        /// </p>
+        /// <p> The parameters associated with a PartiQL statement in the batch request. </p>
         pub fn parameters(mut self, input: impl Into<crate::model::AttributeValue>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input.into());
             self.parameters = Some(v);
             self
         }
-        /// <p>
-        /// The parameters associated with a PartiQL statement in the batch request.
-        /// </p>
+        /// <p> The parameters associated with a PartiQL statement in the batch request. </p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
@@ -19821,16 +20758,12 @@ pub mod batch_statement_request {
             self.parameters = input;
             self
         }
-        /// <p>
-        /// The read consistency of the PartiQL batch request.
-        /// </p>
+        /// <p> The read consistency of the PartiQL batch request. </p>
         pub fn consistent_read(mut self, input: bool) -> Self {
             self.consistent_read = Some(input);
             self
         }
-        /// <p>
-        /// The read consistency of the PartiQL batch request.
-        /// </p>
+        /// <p> The read consistency of the PartiQL batch request. </p>
         pub fn set_consistent_read(mut self, input: std::option::Option<bool>) -> Self {
             self.consistent_read = input;
             self

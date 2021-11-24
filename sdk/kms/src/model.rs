@@ -324,7 +324,7 @@ pub struct KeyMetadata {
     /// Reference</i>.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time when the KMS key was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the KMS key is enabled. When <code>KeyState</code> is
     /// <code>Enabled</code> this value is true, otherwise it is false.</p>
     pub enabled: bool,
@@ -342,12 +342,12 @@ pub struct KeyMetadata {
     /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica
     /// keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting
     /// period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
-    pub deletion_date: std::option::Option<aws_smithy_types::Instant>,
+    pub deletion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the imported key material expires. When the key material expires, KMS
     /// deletes the key material and the KMS key becomes unusable. This value is present only for KMS
     /// keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code>
     /// is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
-    pub valid_to: std::option::Option<aws_smithy_types::Instant>,
+    pub valid_to: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The source of the key material for the KMS key. When this value is <code>AWS_KMS</code>,
     /// KMS created the key material. When this value is <code>EXTERNAL</code>, the key material was
     /// imported or the KMS key doesn't have any key material. When this value is
@@ -442,7 +442,7 @@ impl KeyMetadata {
         self.arn.as_deref()
     }
     /// <p>The date and time when the KMS key was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Specifies whether the KMS key is enabled. When <code>KeyState</code> is
@@ -470,14 +470,14 @@ impl KeyMetadata {
     /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica
     /// keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting
     /// period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
-    pub fn deletion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn deletion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deletion_date.as_ref()
     }
     /// <p>The time at which the imported key material expires. When the key material expires, KMS
     /// deletes the key material and the KMS key becomes unusable. This value is present only for KMS
     /// keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code>
     /// is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
-    pub fn valid_to(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn valid_to(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.valid_to.as_ref()
     }
     /// <p>The source of the key material for the KMS key. When this value is <code>AWS_KMS</code>,
@@ -631,13 +631,13 @@ pub mod key_metadata {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) key_usage: std::option::Option<crate::model::KeyUsageType>,
         pub(crate) key_state: std::option::Option<crate::model::KeyState>,
-        pub(crate) deletion_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) valid_to: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) deletion_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) valid_to: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) origin: std::option::Option<crate::model::OriginType>,
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
         pub(crate) cloud_hsm_cluster_id: std::option::Option<std::string::String>,
@@ -692,14 +692,14 @@ pub mod key_metadata {
             self
         }
         /// <p>The date and time when the KMS key was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date and time when the KMS key was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -759,7 +759,7 @@ pub mod key_metadata {
         /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica
         /// keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting
         /// period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
-        pub fn deletion_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn deletion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deletion_date = Some(input);
             self
         }
@@ -771,7 +771,7 @@ pub mod key_metadata {
         /// period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
         pub fn set_deletion_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.deletion_date = input;
             self
@@ -780,7 +780,7 @@ pub mod key_metadata {
         /// deletes the key material and the KMS key becomes unusable. This value is present only for KMS
         /// keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code>
         /// is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
-        pub fn valid_to(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn valid_to(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.valid_to = Some(input);
             self
         }
@@ -790,7 +790,7 @@ pub mod key_metadata {
         /// is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
         pub fn set_valid_to(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.valid_to = input;
             self
@@ -1832,7 +1832,7 @@ pub struct GrantListEntry {
     /// <p>The friendly name that identifies the grant. If a name was provided in the <a>CreateGrant</a> request, that name is returned. Otherwise this value is null.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The date and time when the grant was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identity that gets the permissions in the grant.</p>
     /// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the
     /// user or role designated as the grantee principal in the grant. However, when the grantee
@@ -1864,7 +1864,7 @@ impl GrantListEntry {
         self.name.as_deref()
     }
     /// <p>The date and time when the grant was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The identity that gets the permissions in the grant.</p>
@@ -1918,7 +1918,7 @@ pub mod grant_list_entry {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) grant_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) grantee_principal: std::option::Option<std::string::String>,
         pub(crate) retiring_principal: std::option::Option<std::string::String>,
         pub(crate) issuing_account: std::option::Option<std::string::String>,
@@ -1957,14 +1957,14 @@ pub mod grant_list_entry {
             self
         }
         /// <p>The date and time when the grant was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date and time when the grant was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -2435,10 +2435,10 @@ pub struct AliasListEntry {
     pub target_key_id: std::option::Option<std::string::String>,
     /// <p>Date and time that the alias was most recently created in the account and Region.
     /// Formatted as Unix time.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Date and time that the alias was most recently associated with a KMS key in the account
     /// and Region. Formatted as Unix time.</p>
-    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AliasListEntry {
     /// <p>String that contains the alias. This value begins with <code>alias/</code>.</p>
@@ -2455,12 +2455,12 @@ impl AliasListEntry {
     }
     /// <p>Date and time that the alias was most recently created in the account and Region.
     /// Formatted as Unix time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Date and time that the alias was most recently associated with a KMS key in the account
     /// and Region. Formatted as Unix time.</p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
 }
@@ -2484,8 +2484,8 @@ pub mod alias_list_entry {
         pub(crate) alias_name: std::option::Option<std::string::String>,
         pub(crate) alias_arn: std::option::Option<std::string::String>,
         pub(crate) target_key_id: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>String that contains the alias. This value begins with <code>alias/</code>.</p>
@@ -2523,7 +2523,7 @@ pub mod alias_list_entry {
         }
         /// <p>Date and time that the alias was most recently created in the account and Region.
         /// Formatted as Unix time.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -2531,14 +2531,14 @@ pub mod alias_list_entry {
         /// Formatted as Unix time.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>Date and time that the alias was most recently associated with a KMS key in the account
         /// and Region. Formatted as Unix time.</p>
-        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date = Some(input);
             self
         }
@@ -2546,7 +2546,7 @@ pub mod alias_list_entry {
         /// and Region. Formatted as Unix time.</p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date = input;
             self
@@ -2918,7 +2918,7 @@ pub struct CustomKeyStoresListEntry {
     /// </ul>
     pub connection_error_code: std::option::Option<crate::model::ConnectionErrorCodeType>,
     /// <p>The date and time when the custom key store was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CustomKeyStoresListEntry {
     /// <p>A unique identifier for the custom key store.</p>
@@ -3031,7 +3031,7 @@ impl CustomKeyStoresListEntry {
         self.connection_error_code.as_ref()
     }
     /// <p>The date and time when the custom key store was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -3061,7 +3061,7 @@ pub mod custom_key_stores_list_entry {
         pub(crate) connection_state: std::option::Option<crate::model::ConnectionStateType>,
         pub(crate) connection_error_code:
             std::option::Option<crate::model::ConnectionErrorCodeType>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A unique identifier for the custom key store.</p>
@@ -3312,14 +3312,14 @@ pub mod custom_key_stores_list_entry {
             self
         }
         /// <p>The date and time when the custom key store was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date and time when the custom key store was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self

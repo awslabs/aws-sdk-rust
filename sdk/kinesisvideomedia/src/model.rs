@@ -55,7 +55,7 @@ pub struct StartSelector {
     /// <p>A timestamp value. This value is required if you choose the PRODUCER_TIMESTAMP or the
     /// SERVER_TIMESTAMP as the <code>startSelectorType</code>. The <code>GetMedia</code> API then
     /// starts with the chunk containing the fragment that has the specified timestamp.</p>
-    pub start_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Continuation token that Kinesis Video Streams returned in the previous
     /// <code>GetMedia</code> response. The <code>GetMedia</code> API then starts with the chunk
     /// identified by the continuation token.</p>
@@ -100,7 +100,7 @@ impl StartSelector {
     /// <p>A timestamp value. This value is required if you choose the PRODUCER_TIMESTAMP or the
     /// SERVER_TIMESTAMP as the <code>startSelectorType</code>. The <code>GetMedia</code> API then
     /// starts with the chunk containing the fragment that has the specified timestamp.</p>
-    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
     /// <p>Continuation token that Kinesis Video Streams returned in the previous
@@ -128,7 +128,7 @@ pub mod start_selector {
     pub struct Builder {
         pub(crate) start_selector_type: std::option::Option<crate::model::StartSelectorType>,
         pub(crate) after_fragment_number: std::option::Option<std::string::String>,
-        pub(crate) start_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) continuation_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -215,7 +215,7 @@ pub mod start_selector {
         /// <p>A timestamp value. This value is required if you choose the PRODUCER_TIMESTAMP or the
         /// SERVER_TIMESTAMP as the <code>startSelectorType</code>. The <code>GetMedia</code> API then
         /// starts with the chunk containing the fragment that has the specified timestamp.</p>
-        pub fn start_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_timestamp = Some(input);
             self
         }
@@ -224,7 +224,7 @@ pub mod start_selector {
         /// starts with the chunk containing the fragment that has the specified timestamp.</p>
         pub fn set_start_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_timestamp = input;
             self

@@ -768,12 +768,12 @@ pub fn serialize_structure_crate_input_start_replay_input(
     if let Some(var_135) = &input.event_start_time {
         object
             .key("EventStartTime")
-            .instant(var_135, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_135, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_136) = &input.event_end_time {
         object
             .key("EventEndTime")
-            .instant(var_136, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_136, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_137) = &input.destination {
         let mut object_138 = object.key("Destination").start_object();
@@ -963,7 +963,7 @@ pub fn serialize_structure_crate_model_put_events_request_entry(
     if let Some(var_175) = &input.time {
         object
             .key("Time")
-            .instant(var_175, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_175, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_176) = &input.source {
         object.key("Source").string(var_176);
@@ -999,7 +999,7 @@ pub fn serialize_structure_crate_model_put_partner_events_request_entry(
     if let Some(var_184) = &input.time {
         object
             .key("Time")
-            .instant(var_184, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_184, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_185) = &input.source {
         object.key("Source").string(var_185);

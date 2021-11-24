@@ -1418,13 +1418,13 @@ pub struct DescribeContactOutput {
     /// <p>ARN of a satellite.</p>
     pub satellite_arn: std::option::Option<std::string::String>,
     /// <p>Start time of a contact.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>End time of a contact.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-    pub pre_pass_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub pre_pass_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    pub post_pass_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub post_pass_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Ground station for a contact.</p>
     pub ground_station: std::option::Option<std::string::String>,
     /// <p>Status of a contact.</p>
@@ -1455,19 +1455,19 @@ impl DescribeContactOutput {
         self.satellite_arn.as_deref()
     }
     /// <p>Start time of a contact.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>End time of a contact.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-    pub fn pre_pass_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn pre_pass_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.pre_pass_start_time.as_ref()
     }
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    pub fn post_pass_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn post_pass_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.post_pass_end_time.as_ref()
     }
     /// <p>Ground station for a contact.</p>
@@ -1531,10 +1531,10 @@ pub mod describe_contact_output {
         pub(crate) contact_id: std::option::Option<std::string::String>,
         pub(crate) mission_profile_arn: std::option::Option<std::string::String>,
         pub(crate) satellite_arn: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) pre_pass_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) post_pass_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) pre_pass_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) post_pass_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) ground_station: std::option::Option<std::string::String>,
         pub(crate) contact_status: std::option::Option<crate::model::ContactStatus>,
         pub(crate) error_message: std::option::Option<std::string::String>,
@@ -1583,53 +1583,53 @@ pub mod describe_contact_output {
             self
         }
         /// <p>Start time of a contact.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>Start time of a contact.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>End time of a contact.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>End time of a contact.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
         }
         /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-        pub fn pre_pass_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn pre_pass_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.pre_pass_start_time = Some(input);
             self
         }
         /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
         pub fn set_pre_pass_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.pre_pass_start_time = input;
             self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-        pub fn post_pass_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn post_pass_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.post_pass_end_time = Some(input);
             self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
         pub fn set_post_pass_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.post_pass_end_time = input;
             self

@@ -177,7 +177,7 @@ pub struct UsageRecord {
     /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
     /// <p>Your application can meter usage for up to one hour in the past. Make sure the
     /// timestamp value is not before the start of the software usage.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The CustomerIdentifier is obtained through the ResolveCustomer operation and
     /// represents an individual buyer in your application.</p>
     pub customer_identifier: std::option::Option<std::string::String>,
@@ -196,7 +196,7 @@ impl UsageRecord {
     /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
     /// <p>Your application can meter usage for up to one hour in the past. Make sure the
     /// timestamp value is not before the start of the software usage.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The CustomerIdentifier is obtained through the ResolveCustomer operation and
@@ -238,7 +238,7 @@ pub mod usage_record {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) customer_identifier: std::option::Option<std::string::String>,
         pub(crate) dimension: std::option::Option<std::string::String>,
         pub(crate) quantity: std::option::Option<i32>,
@@ -249,7 +249,7 @@ pub mod usage_record {
         /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
         /// <p>Your application can meter usage for up to one hour in the past. Make sure the
         /// timestamp value is not before the start of the software usage.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
@@ -258,7 +258,7 @@ pub mod usage_record {
         /// timestamp value is not before the start of the software usage.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self

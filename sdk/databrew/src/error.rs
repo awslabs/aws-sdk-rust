@@ -737,6 +737,117 @@ impl std::error::Error for CreateRecipeJobError {
     }
 }
 
+/// Error type for the `CreateRuleset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateRulesetError {
+    /// Kind of error that occurred.
+    pub kind: CreateRulesetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateRuleset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateRulesetErrorKind {
+    /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>A service quota is exceeded.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The input parameters for this request failed validation.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateRulesetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateRulesetErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateRulesetErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            CreateRulesetErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreateRulesetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateRulesetError {
+    fn code(&self) -> Option<&str> {
+        CreateRulesetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateRulesetError {
+    /// Creates a new `CreateRulesetError`.
+    pub fn new(kind: CreateRulesetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateRulesetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateRulesetErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateRulesetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateRulesetErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateRulesetErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateRulesetErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `CreateRulesetErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateRulesetErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateRulesetErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, CreateRulesetErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for CreateRulesetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateRulesetErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateRulesetErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            CreateRulesetErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateRulesetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateSchedule` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1291,6 +1402,117 @@ impl std::error::Error for DeleteRecipeVersionError {
             DeleteRecipeVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteRecipeVersionErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteRecipeVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteRuleset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteRulesetError {
+    /// Kind of error that occurred.
+    pub kind: DeleteRulesetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteRuleset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteRulesetErrorKind {
+    /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The input parameters for this request failed validation.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteRulesetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteRulesetErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteRulesetErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteRulesetErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteRulesetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteRulesetError {
+    fn code(&self) -> Option<&str> {
+        DeleteRulesetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteRulesetError {
+    /// Creates a new `DeleteRulesetError`.
+    pub fn new(kind: DeleteRulesetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteRulesetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteRulesetErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteRulesetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteRulesetErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteRulesetErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteRulesetErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteRulesetErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRulesetErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteRulesetErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, DeleteRulesetErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for DeleteRulesetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteRulesetErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteRulesetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteRulesetErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteRulesetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1909,6 +2131,109 @@ impl std::error::Error for DescribeRecipeError {
             DescribeRecipeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeRecipeErrorKind::ValidationException(_inner) => Some(_inner),
             DescribeRecipeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeRuleset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeRulesetError {
+    /// Kind of error that occurred.
+    pub kind: DescribeRulesetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeRuleset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeRulesetErrorKind {
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The input parameters for this request failed validation.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeRulesetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeRulesetErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeRulesetErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DescribeRulesetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeRulesetError {
+    fn code(&self) -> Option<&str> {
+        DescribeRulesetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeRulesetError {
+    /// Creates a new `DescribeRulesetError`.
+    pub fn new(kind: DescribeRulesetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeRulesetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeRulesetErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeRulesetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeRulesetErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeRulesetErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeRulesetErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeRulesetErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, DescribeRulesetErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for DescribeRulesetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeRulesetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeRulesetErrorKind::ValidationException(_inner) => Some(_inner),
+            DescribeRulesetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2581,6 +2906,109 @@ impl std::error::Error for ListRecipeVersionsError {
         match &self.kind {
             ListRecipeVersionsErrorKind::ValidationException(_inner) => Some(_inner),
             ListRecipeVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListRulesets` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListRulesetsError {
+    /// Kind of error that occurred.
+    pub kind: ListRulesetsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListRulesets` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListRulesetsErrorKind {
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The input parameters for this request failed validation.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListRulesetsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListRulesetsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListRulesetsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListRulesetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListRulesetsError {
+    fn code(&self) -> Option<&str> {
+        ListRulesetsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListRulesetsError {
+    /// Creates a new `ListRulesetsError`.
+    pub fn new(kind: ListRulesetsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListRulesetsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListRulesetsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListRulesetsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListRulesetsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListRulesetsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRulesetsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListRulesetsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, ListRulesetsErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for ListRulesetsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListRulesetsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListRulesetsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListRulesetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -4147,6 +4575,109 @@ impl std::error::Error for UpdateRecipeJobError {
             UpdateRecipeJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateRecipeJobErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateRecipeJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateRuleset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateRulesetError {
+    /// Kind of error that occurred.
+    pub kind: UpdateRulesetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateRuleset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateRulesetErrorKind {
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The input parameters for this request failed validation.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateRulesetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateRulesetErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateRulesetErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateRulesetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateRulesetError {
+    fn code(&self) -> Option<&str> {
+        UpdateRulesetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateRulesetError {
+    /// Creates a new `UpdateRulesetError`.
+    pub fn new(kind: UpdateRulesetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateRulesetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateRulesetErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateRulesetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateRulesetErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateRulesetErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRulesetErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateRulesetErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, UpdateRulesetErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for UpdateRulesetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateRulesetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateRulesetErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateRulesetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

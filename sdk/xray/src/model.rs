@@ -6,9 +6,9 @@ pub struct SamplingRuleRecord {
     /// <p>The sampling rule.</p>
     pub sampling_rule: std::option::Option<crate::model::SamplingRule>,
     /// <p>When the rule was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the rule was last modified.</p>
-    pub modified_at: std::option::Option<aws_smithy_types::Instant>,
+    pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SamplingRuleRecord {
     /// <p>The sampling rule.</p>
@@ -16,11 +16,11 @@ impl SamplingRuleRecord {
         self.sampling_rule.as_ref()
     }
     /// <p>When the rule was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>When the rule was last modified.</p>
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
 }
@@ -40,8 +40,8 @@ pub mod sampling_rule_record {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sampling_rule: std::option::Option<crate::model::SamplingRule>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) modified_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) modified_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The sampling rule.</p>
@@ -58,27 +58,27 @@ pub mod sampling_rule_record {
             self
         }
         /// <p>When the rule was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>When the rule was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>When the rule was last modified.</p>
-        pub fn modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.modified_at = Some(input);
             self
         }
         /// <p>When the rule was last modified.</p>
         pub fn set_modified_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.modified_at = input;
             self
@@ -1157,7 +1157,7 @@ impl UnprocessedTraceSegment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TelemetryRecord {
     /// <p></p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p></p>
     pub segments_received_count: std::option::Option<i32>,
     /// <p></p>
@@ -1171,7 +1171,7 @@ pub struct TelemetryRecord {
 }
 impl TelemetryRecord {
     /// <p></p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p></p>
@@ -1215,7 +1215,7 @@ pub mod telemetry_record {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) segments_received_count: std::option::Option<i32>,
         pub(crate) segments_sent_count: std::option::Option<i32>,
         pub(crate) segments_spillover_count: std::option::Option<i32>,
@@ -1225,14 +1225,14 @@ pub mod telemetry_record {
     }
     impl Builder {
         /// <p></p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p></p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -1732,7 +1732,7 @@ pub struct TraceSummary {
     /// <p>The revision number of a trace.</p>
     pub revision: i32,
     /// <p>The matched time stamp of a defined event.</p>
-    pub matched_event_time: std::option::Option<aws_smithy_types::Instant>,
+    pub matched_event_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TraceSummary {
     /// <p>The unique identifier for the request that generated the trace's segments and
@@ -1831,7 +1831,7 @@ impl TraceSummary {
         self.revision
     }
     /// <p>The matched time stamp of a defined event.</p>
-    pub fn matched_event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn matched_event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.matched_event_time.as_ref()
     }
 }
@@ -1896,7 +1896,7 @@ pub mod trace_summary {
         pub(crate) response_time_root_causes:
             std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCause>>,
         pub(crate) revision: std::option::Option<i32>,
-        pub(crate) matched_event_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) matched_event_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The unique identifier for the request that generated the trace's segments and
@@ -2205,14 +2205,14 @@ pub mod trace_summary {
             self
         }
         /// <p>The matched time stamp of a defined event.</p>
-        pub fn matched_event_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn matched_event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.matched_event_time = Some(input);
             self
         }
         /// <p>The matched time stamp of a defined event.</p>
         pub fn set_matched_event_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.matched_event_time = input;
             self
@@ -3860,9 +3860,9 @@ impl AnnotationValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
         if let AnnotationValue::BooleanValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`BooleanValue`](crate::model::AnnotationValue::BooleanValue).
@@ -3873,9 +3873,9 @@ impl AnnotationValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_number_value(&self) -> std::result::Result<&f64, &Self> {
         if let AnnotationValue::NumberValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`NumberValue`](crate::model::AnnotationValue::NumberValue).
@@ -3886,9 +3886,9 @@ impl AnnotationValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AnnotationValue::StringValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`StringValue`](crate::model::AnnotationValue::StringValue).
@@ -4257,9 +4257,9 @@ pub struct Service {
     /// <p>The service's state.</p>
     pub state: std::option::Option<std::string::String>,
     /// <p>The start time of the first segment that the service generated.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time of the last segment that the service generated.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Connections to downstream services.</p>
     pub edges: std::option::Option<std::vec::Vec<crate::model::Edge>>,
     /// <p>Aggregated statistics for the service.</p>
@@ -4319,11 +4319,11 @@ impl Service {
         self.state.as_deref()
     }
     /// <p>The start time of the first segment that the service generated.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the last segment that the service generated.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Connections to downstream services.</p>
@@ -4375,8 +4375,8 @@ pub mod service {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) edges: std::option::Option<std::vec::Vec<crate::model::Edge>>,
         pub(crate) summary_statistics: std::option::Option<crate::model::ServiceStatistics>,
         pub(crate) duration_histogram:
@@ -4505,27 +4505,27 @@ pub mod service {
             self
         }
         /// <p>The start time of the first segment that the service generated.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The start time of the first segment that the service generated.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The end time of the last segment that the service generated.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The end time of the last segment that the service generated.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -5023,9 +5023,9 @@ pub struct Edge {
     /// <p>Identifier of the edge. Unique within a service map.</p>
     pub reference_id: std::option::Option<i32>,
     /// <p>The start time of the first segment on the edge.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time of the last segment on the edge.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Response statistics for segments on the edge.</p>
     pub summary_statistics: std::option::Option<crate::model::EdgeStatistics>,
     /// <p>A histogram that maps the spread of client response times on an edge.</p>
@@ -5039,11 +5039,11 @@ impl Edge {
         self.reference_id
     }
     /// <p>The start time of the first segment on the edge.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the last segment on the edge.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Response statistics for segments on the edge.</p>
@@ -5078,8 +5078,8 @@ pub mod edge {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reference_id: std::option::Option<i32>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) summary_statistics: std::option::Option<crate::model::EdgeStatistics>,
         pub(crate) response_time_histogram:
             std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
@@ -5097,27 +5097,27 @@ pub mod edge {
             self
         }
         /// <p>The start time of the first segment on the edge.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The start time of the first segment on the edge.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The end time of the last segment on the edge.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The end time of the last segment on the edge.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -5438,7 +5438,7 @@ impl EdgeStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeSeriesServiceStatistics {
     /// <p>Timestamp of the window for which statistics are aggregated.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Response statistics for an edge.</p>
     pub edge_summary_statistics: std::option::Option<crate::model::EdgeStatistics>,
     /// <p>Response statistics for a service.</p>
@@ -5450,7 +5450,7 @@ pub struct TimeSeriesServiceStatistics {
 }
 impl TimeSeriesServiceStatistics {
     /// <p>Timestamp of the window for which statistics are aggregated.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>Response statistics for an edge.</p>
@@ -5497,7 +5497,7 @@ pub mod time_series_service_statistics {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) edge_summary_statistics: std::option::Option<crate::model::EdgeStatistics>,
         pub(crate) service_summary_statistics: std::option::Option<crate::model::ServiceStatistics>,
         pub(crate) service_forecast_statistics:
@@ -5507,14 +5507,14 @@ pub mod time_series_service_statistics {
     }
     impl Builder {
         /// <p>Timestamp of the window for which statistics are aggregated.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>Timestamp of the window for which statistics are aggregated.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -5786,7 +5786,7 @@ pub struct SamplingTargetDocument {
     /// <p>The number of requests per second that X-Ray allocated for this service.</p>
     pub reservoir_quota: std::option::Option<i32>,
     /// <p>When the reservoir quota expires.</p>
-    pub reservoir_quota_ttl: std::option::Option<aws_smithy_types::Instant>,
+    pub reservoir_quota_ttl: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of seconds for the service to wait before getting sampling targets
     /// again.</p>
     pub interval: std::option::Option<i32>,
@@ -5806,7 +5806,7 @@ impl SamplingTargetDocument {
         self.reservoir_quota
     }
     /// <p>When the reservoir quota expires.</p>
-    pub fn reservoir_quota_ttl(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn reservoir_quota_ttl(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.reservoir_quota_ttl.as_ref()
     }
     /// <p>The number of seconds for the service to wait before getting sampling targets
@@ -5835,7 +5835,7 @@ pub mod sampling_target_document {
         pub(crate) rule_name: std::option::Option<std::string::String>,
         pub(crate) fixed_rate: std::option::Option<f64>,
         pub(crate) reservoir_quota: std::option::Option<i32>,
-        pub(crate) reservoir_quota_ttl: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) reservoir_quota_ttl: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) interval: std::option::Option<i32>,
     }
     impl Builder {
@@ -5872,14 +5872,14 @@ pub mod sampling_target_document {
             self
         }
         /// <p>When the reservoir quota expires.</p>
-        pub fn reservoir_quota_ttl(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn reservoir_quota_ttl(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.reservoir_quota_ttl = Some(input);
             self
         }
         /// <p>When the reservoir quota expires.</p>
         pub fn set_reservoir_quota_ttl(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.reservoir_quota_ttl = input;
             self
@@ -5926,7 +5926,7 @@ pub struct SamplingStatisticsDocument {
     /// <p>A unique identifier for the service in hexadecimal.</p>
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The current time.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of requests that matched the rule.</p>
     pub request_count: i32,
     /// <p>The number of requests recorded.</p>
@@ -5944,7 +5944,7 @@ impl SamplingStatisticsDocument {
         self.client_id.as_deref()
     }
     /// <p>The current time.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The number of requests that matched the rule.</p>
@@ -5980,7 +5980,7 @@ pub mod sampling_statistics_document {
     pub struct Builder {
         pub(crate) rule_name: std::option::Option<std::string::String>,
         pub(crate) client_id: std::option::Option<std::string::String>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) request_count: std::option::Option<i32>,
         pub(crate) sampled_count: std::option::Option<i32>,
         pub(crate) borrow_count: std::option::Option<i32>,
@@ -6007,14 +6007,14 @@ pub mod sampling_statistics_document {
             self
         }
         /// <p>The current time.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The current time.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -6076,7 +6076,7 @@ pub struct SamplingStatisticSummary {
     /// <p>The name of the sampling rule.</p>
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>The start time of the reporting window.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of requests that matched the rule.</p>
     pub request_count: i32,
     /// <p>The number of requests recorded with borrowed reservoir quota.</p>
@@ -6090,7 +6090,7 @@ impl SamplingStatisticSummary {
         self.rule_name.as_deref()
     }
     /// <p>The start time of the reporting window.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The number of requests that matched the rule.</p>
@@ -6124,7 +6124,7 @@ pub mod sampling_statistic_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_name: std::option::Option<std::string::String>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) request_count: std::option::Option<i32>,
         pub(crate) borrow_count: std::option::Option<i32>,
         pub(crate) sampled_count: std::option::Option<i32>,
@@ -6141,14 +6141,14 @@ pub mod sampling_statistic_summary {
             self
         }
         /// <p>The start time of the reporting window.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The start time of the reporting window.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -6219,9 +6219,9 @@ pub struct InsightSummary {
     /// <p>The current state of the insight.</p>
     pub state: std::option::Option<crate::model::InsightState>,
     /// <p>The time, in Unix seconds, at which the insight began.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in Unix seconds, at which the insight ended.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A brief description of the insight.</p>
     pub summary: std::option::Option<std::string::String>,
     /// <p>The impact statistics of the client side service. This includes the number of requests
@@ -6235,7 +6235,7 @@ pub struct InsightSummary {
     /// <p>The service within the insight that is most impacted by the incident.</p>
     pub top_anomalous_services: std::option::Option<std::vec::Vec<crate::model::AnomalousService>>,
     /// <p>The time, in Unix seconds, that the insight was last updated.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl InsightSummary {
     /// <p>The insights unique identifier. </p>
@@ -6263,11 +6263,11 @@ impl InsightSummary {
         self.state.as_ref()
     }
     /// <p>The time, in Unix seconds, at which the insight began.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time, in Unix seconds, at which the insight ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>A brief description of the insight.</p>
@@ -6293,7 +6293,7 @@ impl InsightSummary {
         self.top_anomalous_services.as_deref()
     }
     /// <p>The time, in Unix seconds, that the insight was last updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -6334,8 +6334,8 @@ pub mod insight_summary {
         pub(crate) root_cause_service_id: std::option::Option<crate::model::ServiceId>,
         pub(crate) categories: std::option::Option<std::vec::Vec<crate::model::InsightCategory>>,
         pub(crate) state: std::option::Option<crate::model::InsightState>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) summary: std::option::Option<std::string::String>,
         pub(crate) client_request_impact_statistics:
             std::option::Option<crate::model::RequestImpactStatistics>,
@@ -6343,7 +6343,7 @@ pub mod insight_summary {
             std::option::Option<crate::model::RequestImpactStatistics>,
         pub(crate) top_anomalous_services:
             std::option::Option<std::vec::Vec<crate::model::AnomalousService>>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The insights unique identifier. </p>
@@ -6419,27 +6419,27 @@ pub mod insight_summary {
             self
         }
         /// <p>The time, in Unix seconds, at which the insight began.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The time, in Unix seconds, at which the insight began.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time, in Unix seconds, at which the insight ended.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time, in Unix seconds, at which the insight ended.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -6513,14 +6513,14 @@ pub mod insight_summary {
             self
         }
         /// <p>The time, in Unix seconds, that the insight was last updated.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The time, in Unix seconds, that the insight was last updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -7106,7 +7106,7 @@ pub struct InsightEvent {
     /// <p>A brief description of the event.</p>
     pub summary: std::option::Option<std::string::String>,
     /// <p>The time, in Unix seconds, at which the event was recorded.</p>
-    pub event_time: std::option::Option<aws_smithy_types::Instant>,
+    pub event_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service
     /// and whether the requests were faults or okay.</p>
     pub client_request_impact_statistics:
@@ -7124,7 +7124,7 @@ impl InsightEvent {
         self.summary.as_deref()
     }
     /// <p>The time, in Unix seconds, at which the event was recorded.</p>
-    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service
@@ -7170,7 +7170,7 @@ pub mod insight_event {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<std::string::String>,
-        pub(crate) event_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) event_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) client_request_impact_statistics:
             std::option::Option<crate::model::RequestImpactStatistics>,
         pub(crate) root_cause_service_request_impact_statistics:
@@ -7190,14 +7190,14 @@ pub mod insight_event {
             self
         }
         /// <p>The time, in Unix seconds, at which the event was recorded.</p>
-        pub fn event_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_time = Some(input);
             self
         }
         /// <p>The time, in Unix seconds, at which the event was recorded.</p>
         pub fn set_event_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.event_time = input;
             self
@@ -7298,9 +7298,9 @@ pub struct Insight {
     /// <p>The current state of the insight.</p>
     pub state: std::option::Option<crate::model::InsightState>,
     /// <p>The time, in Unix seconds, at which the insight began.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in Unix seconds, at which the insight ended.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A brief description of the insight.</p>
     pub summary: std::option::Option<std::string::String>,
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service
@@ -7340,11 +7340,11 @@ impl Insight {
         self.state.as_ref()
     }
     /// <p>The time, in Unix seconds, at which the insight began.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time, in Unix seconds, at which the insight ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>A brief description of the insight.</p>
@@ -7406,8 +7406,8 @@ pub mod insight {
         pub(crate) root_cause_service_id: std::option::Option<crate::model::ServiceId>,
         pub(crate) categories: std::option::Option<std::vec::Vec<crate::model::InsightCategory>>,
         pub(crate) state: std::option::Option<crate::model::InsightState>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) summary: std::option::Option<std::string::String>,
         pub(crate) client_request_impact_statistics:
             std::option::Option<crate::model::RequestImpactStatistics>,
@@ -7490,27 +7490,27 @@ pub mod insight {
             self
         }
         /// <p>The time, in Unix seconds, at which the insight began.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The time, in Unix seconds, at which the insight began.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time, in Unix seconds, at which the insight ended.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time, in Unix seconds, at which the insight ended.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self

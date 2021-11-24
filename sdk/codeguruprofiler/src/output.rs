@@ -525,13 +525,13 @@ pub struct GetRecommendationsOutput {
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub profile_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub profile_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The end time of the profile the analysis data is about. This is specified
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub profile_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub profile_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of recommendations that the analysis found for this profile.</p>
     pub recommendations: std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
     /// <p>
@@ -549,7 +549,7 @@ impl GetRecommendationsOutput {
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub fn profile_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn profile_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.profile_start_time.as_ref()
     }
     /// <p>
@@ -557,7 +557,7 @@ impl GetRecommendationsOutput {
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub fn profile_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn profile_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.profile_end_time.as_ref()
     }
     /// <p>The list of recommendations that the analysis found for this profile.</p>
@@ -589,8 +589,8 @@ pub mod get_recommendations_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
-        pub(crate) profile_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) profile_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) profile_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) profile_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) recommendations:
             std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
         pub(crate) anomalies: std::option::Option<std::vec::Vec<crate::model::Anomaly>>,
@@ -614,7 +614,7 @@ pub mod get_recommendations_output {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn profile_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn profile_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.profile_start_time = Some(input);
             self
         }
@@ -625,7 +625,7 @@ pub mod get_recommendations_output {
         /// </p>
         pub fn set_profile_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.profile_start_time = input;
             self
@@ -635,7 +635,7 @@ pub mod get_recommendations_output {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn profile_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn profile_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.profile_end_time = Some(input);
             self
         }
@@ -646,7 +646,7 @@ pub mod get_recommendations_output {
         /// </p>
         pub fn set_profile_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.profile_end_time = input;
             self
@@ -1041,14 +1041,14 @@ pub struct BatchGetFrameMetricDataOutput {
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The end time of the time period for the returned time series values.
     /// This is specified
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Resolution or granularity of the profile data used to generate the time series.
     /// This is the value used to jump through time steps in a time series. There are 3 valid values.
     /// </p>
@@ -1096,7 +1096,7 @@ impl BatchGetFrameMetricDataOutput {
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>
@@ -1105,7 +1105,7 @@ impl BatchGetFrameMetricDataOutput {
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Resolution or granularity of the profile data used to generate the time series.
@@ -1176,8 +1176,8 @@ pub mod batch_get_frame_metric_data_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) resolution: std::option::Option<crate::model::AggregationPeriod>,
         pub(crate) end_times: std::option::Option<std::vec::Vec<crate::model::TimestampStructure>>,
         pub(crate) unprocessed_end_times: std::option::Option<
@@ -1196,7 +1196,7 @@ pub mod batch_get_frame_metric_data_output {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -1208,7 +1208,7 @@ pub mod batch_get_frame_metric_data_output {
         /// </p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -1219,7 +1219,7 @@ pub mod batch_get_frame_metric_data_output {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
@@ -1231,7 +1231,7 @@ pub mod batch_get_frame_metric_data_output {
         /// </p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self

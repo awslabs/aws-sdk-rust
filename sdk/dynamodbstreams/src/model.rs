@@ -589,7 +589,7 @@ impl Identity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamRecord {
     /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub approximate_creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub approximate_creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The primary key attribute(s) for the DynamoDB item that was modified.</p>
     pub keys: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
@@ -631,7 +631,7 @@ impl StreamRecord {
     /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn approximate_creation_date_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.approximate_creation_date_time.as_ref()
     }
     /// <p>The primary key attribute(s) for the DynamoDB item that was modified.</p>
@@ -711,7 +711,7 @@ pub mod stream_record {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) approximate_creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) approximate_creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) keys: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         >,
@@ -727,14 +727,14 @@ pub mod stream_record {
     }
     impl Builder {
         /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-        pub fn approximate_creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn approximate_creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.approximate_creation_date_time = Some(input);
             self
         }
         /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
         pub fn set_approximate_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.approximate_creation_date_time = input;
             self
@@ -1044,9 +1044,9 @@ impl AttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_b(&self) -> std::result::Result<&aws_smithy_types::Blob, &Self> {
         if let AttributeValue::B(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`B`](crate::model::AttributeValue::B).
@@ -1057,9 +1057,9 @@ impl AttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_bool(&self) -> std::result::Result<&bool, &Self> {
         if let AttributeValue::Bool(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Bool`](crate::model::AttributeValue::Bool).
@@ -1070,9 +1070,9 @@ impl AttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_bs(&self) -> std::result::Result<&std::vec::Vec<aws_smithy_types::Blob>, &Self> {
         if let AttributeValue::Bs(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Bs`](crate::model::AttributeValue::Bs).
@@ -1083,9 +1083,9 @@ impl AttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_l(&self) -> std::result::Result<&std::vec::Vec<crate::model::AttributeValue>, &Self> {
         if let AttributeValue::L(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`L`](crate::model::AttributeValue::L).
@@ -1101,9 +1101,9 @@ impl AttributeValue {
         &Self,
     > {
         if let AttributeValue::M(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`M`](crate::model::AttributeValue::M).
@@ -1114,9 +1114,9 @@ impl AttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_n(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AttributeValue::N(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`N`](crate::model::AttributeValue::N).
@@ -1127,9 +1127,9 @@ impl AttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ns(&self) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
         if let AttributeValue::Ns(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Ns`](crate::model::AttributeValue::Ns).
@@ -1140,9 +1140,9 @@ impl AttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_null(&self) -> std::result::Result<&bool, &Self> {
         if let AttributeValue::Null(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Null`](crate::model::AttributeValue::Null).
@@ -1153,9 +1153,9 @@ impl AttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AttributeValue::S(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`S`](crate::model::AttributeValue::S).
@@ -1166,9 +1166,9 @@ impl AttributeValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ss(&self) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
         if let AttributeValue::Ss(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Ss`](crate::model::AttributeValue::Ss).
@@ -1304,7 +1304,7 @@ pub struct StreamDescription {
     /// </ul>
     pub stream_view_type: std::option::Option<crate::model::StreamViewType>,
     /// <p>The date and time when the request to create this stream was issued.</p>
-    pub creation_request_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_request_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The DynamoDB table with which the stream is associated.</p>
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The key attribute(s) of the stream's DynamoDB table.</p>
@@ -1388,7 +1388,7 @@ impl StreamDescription {
         self.stream_view_type.as_ref()
     }
     /// <p>The date and time when the request to create this stream was issued.</p>
-    pub fn creation_request_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_request_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_request_date_time.as_ref()
     }
     /// <p>The DynamoDB table with which the stream is associated.</p>
@@ -1441,7 +1441,7 @@ pub mod stream_description {
         pub(crate) stream_label: std::option::Option<std::string::String>,
         pub(crate) stream_status: std::option::Option<crate::model::StreamStatus>,
         pub(crate) stream_view_type: std::option::Option<crate::model::StreamViewType>,
-        pub(crate) creation_request_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_request_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
         pub(crate) shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
@@ -1597,14 +1597,14 @@ pub mod stream_description {
             self
         }
         /// <p>The date and time when the request to create this stream was issued.</p>
-        pub fn creation_request_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_request_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_request_date_time = Some(input);
             self
         }
         /// <p>The date and time when the request to create this stream was issued.</p>
         pub fn set_creation_request_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_request_date_time = input;
             self

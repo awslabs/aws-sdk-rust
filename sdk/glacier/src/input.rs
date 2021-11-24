@@ -71,6 +71,7 @@ pub type AbortMultipartUploadInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl AbortMultipartUploadInput {
     /// Consumes the builder and constructs an Operation<[`AbortMultipartUpload`](crate::operation::AbortMultipartUpload)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -171,11 +172,14 @@ impl AbortMultipartUploadInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -281,6 +285,7 @@ pub type AbortVaultLockInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl AbortVaultLockInput {
     /// Consumes the builder and constructs an Operation<[`AbortVaultLock`](crate::operation::AbortVaultLock)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -365,11 +370,14 @@ impl AbortVaultLockInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -506,6 +514,7 @@ pub type AddTagsToVaultInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl AddTagsToVaultInput {
     /// Consumes the builder and constructs an Operation<[`AddTagsToVault`](crate::operation::AddTagsToVault)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -559,9 +568,13 @@ impl AddTagsToVaultInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::AddTagsToVaultInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::AddTagsToVaultInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_kv("operation", "add");
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -571,7 +584,7 @@ impl AddTagsToVaultInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -601,11 +614,14 @@ impl AddTagsToVaultInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -764,6 +780,7 @@ pub type CompleteMultipartUploadInputOperationRetryAlias = aws_http::AwsErrorRet
 impl CompleteMultipartUploadInput {
     /// Consumes the builder and constructs an Operation<[`CompleteMultipartUpload`](crate::operation::CompleteMultipartUpload)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -904,11 +921,14 @@ impl CompleteMultipartUploadInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -1026,6 +1046,7 @@ pub type CompleteVaultLockInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl CompleteVaultLockInput {
     /// Consumes the builder and constructs an Operation<[`CompleteVaultLock`](crate::operation::CompleteVaultLock)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -1126,11 +1147,14 @@ impl CompleteVaultLockInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -1236,6 +1260,7 @@ pub type CreateVaultInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateVaultInput {
     /// Consumes the builder and constructs an Operation<[`CreateVault`](crate::operation::CreateVault)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -1320,11 +1345,14 @@ impl CreateVaultInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -1442,6 +1470,7 @@ pub type DeleteArchiveInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteArchiveInput {
     /// Consumes the builder and constructs an Operation<[`DeleteArchive`](crate::operation::DeleteArchive)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -1542,11 +1571,14 @@ impl DeleteArchiveInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -1652,6 +1684,7 @@ pub type DeleteVaultInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteVaultInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVault`](crate::operation::DeleteVault)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -1736,11 +1769,14 @@ impl DeleteVaultInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -1847,6 +1883,7 @@ pub type DeleteVaultAccessPolicyInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DeleteVaultAccessPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVaultAccessPolicy`](crate::operation::DeleteVaultAccessPolicy)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -1931,11 +1968,14 @@ impl DeleteVaultAccessPolicyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -2042,6 +2082,7 @@ pub type DeleteVaultNotificationsInputOperationRetryAlias = aws_http::AwsErrorRe
 impl DeleteVaultNotificationsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVaultNotifications`](crate::operation::DeleteVaultNotifications)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -2126,11 +2167,14 @@ impl DeleteVaultNotificationsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -2248,6 +2292,7 @@ pub type DescribeJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJob`](crate::operation::DescribeJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -2348,11 +2393,14 @@ impl DescribeJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -2458,6 +2506,7 @@ pub type DescribeVaultInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeVaultInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVault`](crate::operation::DescribeVault)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -2542,11 +2591,14 @@ impl DescribeVaultInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -2640,6 +2692,7 @@ pub type GetDataRetrievalPolicyInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl GetDataRetrievalPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetDataRetrievalPolicy`](crate::operation::GetDataRetrievalPolicy)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -2708,11 +2761,14 @@ impl GetDataRetrievalPolicyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -2912,6 +2968,7 @@ pub type GetJobOutputInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetJobOutputInput {
     /// Consumes the builder and constructs an Operation<[`GetJobOutput`](crate::operation::GetJobOutput)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -3036,11 +3093,14 @@ impl GetJobOutputInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -3146,6 +3206,7 @@ pub type GetVaultAccessPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl GetVaultAccessPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetVaultAccessPolicy`](crate::operation::GetVaultAccessPolicy)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -3230,11 +3291,14 @@ impl GetVaultAccessPolicyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -3340,6 +3404,7 @@ pub type GetVaultLockInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetVaultLockInput {
     /// Consumes the builder and constructs an Operation<[`GetVaultLock`](crate::operation::GetVaultLock)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -3424,11 +3489,14 @@ impl GetVaultLockInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -3534,6 +3602,7 @@ pub type GetVaultNotificationsInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl GetVaultNotificationsInput {
     /// Consumes the builder and constructs an Operation<[`GetVaultNotifications`](crate::operation::GetVaultNotifications)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -3618,11 +3687,14 @@ impl GetVaultNotificationsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -3743,6 +3815,7 @@ pub type InitiateJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl InitiateJobInput {
     /// Consumes the builder and constructs an Operation<[`InitiateJob`](crate::operation::InitiateJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -3832,11 +3905,14 @@ impl InitiateJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -3986,6 +4062,7 @@ pub type InitiateMultipartUploadInputOperationRetryAlias = aws_http::AwsErrorRet
 impl InitiateMultipartUploadInput {
     /// Consumes the builder and constructs an Operation<[`InitiateMultipartUpload`](crate::operation::InitiateMultipartUpload)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -4110,11 +4187,14 @@ impl InitiateMultipartUploadInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -4237,6 +4317,7 @@ pub type InitiateVaultLockInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl InitiateVaultLockInput {
     /// Consumes the builder and constructs an Operation<[`InitiateVaultLock`](crate::operation::InitiateVaultLock)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -4326,11 +4407,14 @@ impl InitiateVaultLockInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -4504,6 +4588,7 @@ pub type ListJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobs`](crate::operation::ListJobs)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -4557,12 +4642,15 @@ impl ListJobsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListJobsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListJobsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_58) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_58).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_58).encode(),
                 );
             }
             if let Some(inner_59) = &_input.marker {
@@ -4574,6 +4662,7 @@ impl ListJobsInput {
             if let Some(inner_61) = &_input.completed {
                 query.push_kv("completed", &aws_smithy_http::query::fmt_string(&inner_61));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -4583,7 +4672,7 @@ impl ListJobsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4607,11 +4696,14 @@ impl ListJobsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -4746,6 +4838,7 @@ pub type ListMultipartUploadsInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl ListMultipartUploadsInput {
     /// Consumes the builder and constructs an Operation<[`ListMultipartUploads`](crate::operation::ListMultipartUploads)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -4799,17 +4892,21 @@ impl ListMultipartUploadsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListMultipartUploadsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListMultipartUploadsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_64) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_64).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_64).encode(),
                 );
             }
             if let Some(inner_65) = &_input.marker {
                 query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_65));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -4819,7 +4916,7 @@ impl ListMultipartUploadsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4843,11 +4940,14 @@ impl ListMultipartUploadsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -4997,6 +5097,7 @@ pub type ListPartsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListPartsInput {
     /// Consumes the builder and constructs an Operation<[`ListParts`](crate::operation::ListParts)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -5066,7 +5167,10 @@ impl ListPartsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListPartsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListPartsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_69) = &_input.marker {
                 query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_69));
@@ -5074,9 +5178,10 @@ impl ListPartsInput {
             if let Some(inner_70) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_70).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_70).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -5086,7 +5191,7 @@ impl ListPartsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -5110,11 +5215,14 @@ impl ListPartsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -5205,6 +5313,7 @@ pub type ListProvisionedCapacityInputOperationRetryAlias = aws_http::AwsErrorRet
 impl ListProvisionedCapacityInput {
     /// Consumes the builder and constructs an Operation<[`ListProvisionedCapacity`](crate::operation::ListProvisionedCapacity)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -5273,11 +5382,14 @@ impl ListProvisionedCapacityInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -5383,6 +5495,7 @@ pub type ListTagsForVaultInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl ListTagsForVaultInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForVault`](crate::operation::ListTagsForVault)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -5467,11 +5580,14 @@ impl ListTagsForVaultInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -5595,6 +5711,7 @@ pub type ListVaultsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListVaultsInput {
     /// Consumes the builder and constructs an Operation<[`ListVaults`](crate::operation::ListVaults)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -5628,7 +5745,10 @@ impl ListVaultsInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListVaultsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListVaultsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_75) = &_input.marker {
                 query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_75));
@@ -5636,9 +5756,10 @@ impl ListVaultsInput {
             if let Some(inner_76) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_76).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_76).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -5648,7 +5769,7 @@ impl ListVaultsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -5672,11 +5793,14 @@ impl ListVaultsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -5769,6 +5893,7 @@ pub type PurchaseProvisionedCapacityInputOperationRetryAlias = aws_http::AwsErro
 impl PurchaseProvisionedCapacityInput {
     /// Consumes the builder and constructs an Operation<[`PurchaseProvisionedCapacity`](crate::operation::PurchaseProvisionedCapacity)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -5837,11 +5962,14 @@ impl PurchaseProvisionedCapacityInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -5968,6 +6096,7 @@ pub type RemoveTagsFromVaultInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl RemoveTagsFromVaultInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTagsFromVault`](crate::operation::RemoveTagsFromVault)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -6021,9 +6150,13 @@ impl RemoveTagsFromVaultInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::RemoveTagsFromVaultInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::RemoveTagsFromVaultInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_kv("operation", "remove");
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -6033,7 +6166,7 @@ impl RemoveTagsFromVaultInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -6065,11 +6198,14 @@ impl RemoveTagsFromVaultInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -6186,6 +6322,7 @@ pub type SetDataRetrievalPolicyInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl SetDataRetrievalPolicyInput {
     /// Consumes the builder and constructs an Operation<[`SetDataRetrievalPolicy`](crate::operation::SetDataRetrievalPolicy)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -6262,11 +6399,14 @@ impl SetDataRetrievalPolicyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -6395,6 +6535,7 @@ pub type SetVaultAccessPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl SetVaultAccessPolicyInput {
     /// Consumes the builder and constructs an Operation<[`SetVaultAccessPolicy`](crate::operation::SetVaultAccessPolicy)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -6484,11 +6625,14 @@ impl SetVaultAccessPolicyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -6621,6 +6765,7 @@ pub type SetVaultNotificationsInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl SetVaultNotificationsInput {
     /// Consumes the builder and constructs an Operation<[`SetVaultNotifications`](crate::operation::SetVaultNotifications)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -6712,11 +6857,14 @@ impl SetVaultNotificationsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -6872,6 +7020,7 @@ pub type UploadArchiveInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UploadArchiveInput {
     /// Consumes the builder and constructs an Operation<[`UploadArchive`](crate::operation::UploadArchive)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -7001,11 +7150,14 @@ impl UploadArchiveInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),
@@ -7179,6 +7331,7 @@ pub type UploadMultipartPartInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl UploadMultipartPartInput {
     /// Consumes the builder and constructs an Operation<[`UploadMultipartPart`](crate::operation::UploadMultipartPart)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -7324,11 +7477,14 @@ impl UploadMultipartPartInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         request.http_mut().headers_mut().insert(
             "x-amz-glacier-version",
             http::HeaderValue::from_static("2012-06-01"),

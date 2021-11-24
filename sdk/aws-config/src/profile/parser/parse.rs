@@ -280,7 +280,7 @@ fn prepare_line(line: &str, comments_need_whitespace: bool) -> &str {
     }
     comment_idx
         .map(|idx| &line[..idx])
-        .unwrap_or(&line)
+        .unwrap_or(line)
         // trimming the comment might result in more whitespace that needs to be handled
         .trim_matches(WHITESPACE)
 }

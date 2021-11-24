@@ -1867,7 +1867,7 @@ pub struct Node {
     /// <p>The Availability Zone in which the node resides</p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The date and time when the node was created.</p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The hostname for connecting to this node.</p>
     pub endpoint: std::option::Option<crate::model::Endpoint>,
 }
@@ -1885,7 +1885,7 @@ impl Node {
         self.availability_zone.as_deref()
     }
     /// <p>The date and time when the node was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The hostname for connecting to this node.</p>
@@ -1913,7 +1913,7 @@ pub mod node {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) endpoint: std::option::Option<crate::model::Endpoint>,
     }
     impl Builder {
@@ -1951,14 +1951,14 @@ pub mod node {
             self
         }
         /// <p>The date and time when the node was created.</p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
         /// <p>The date and time when the node was created.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
@@ -3454,7 +3454,7 @@ pub struct ShardDetail {
     /// <p>The size of the shard's snapshot</p>
     pub size: std::option::Option<std::string::String>,
     /// <p>The date and time that the shard's snapshot was created</p>
-    pub snapshot_creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub snapshot_creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ShardDetail {
     /// <p>The name of the shard</p>
@@ -3470,7 +3470,7 @@ impl ShardDetail {
         self.size.as_deref()
     }
     /// <p>The date and time that the shard's snapshot was created</p>
-    pub fn snapshot_creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn snapshot_creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.snapshot_creation_time.as_ref()
     }
 }
@@ -3493,7 +3493,7 @@ pub mod shard_detail {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) configuration: std::option::Option<crate::model::ShardConfiguration>,
         pub(crate) size: std::option::Option<std::string::String>,
-        pub(crate) snapshot_creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) snapshot_creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the shard</p>
@@ -3530,14 +3530,14 @@ pub mod shard_detail {
             self
         }
         /// <p>The date and time that the shard's snapshot was created</p>
-        pub fn snapshot_creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn snapshot_creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.snapshot_creation_time = Some(input);
             self
         }
         /// <p>The date and time that the shard's snapshot was created</p>
         pub fn set_snapshot_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.snapshot_creation_time = input;
             self
@@ -3642,7 +3642,7 @@ pub struct ServiceUpdate {
     /// <p>The unique ID of the service update</p>
     pub service_update_name: std::option::Option<std::string::String>,
     /// <p>The date when the service update is initially available</p>
-    pub release_date: std::option::Option<aws_smithy_types::Instant>,
+    pub release_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Provides details of the service update</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the service update</p>
@@ -3652,7 +3652,7 @@ pub struct ServiceUpdate {
     /// <p>A list of nodes updated by the service update</p>
     pub nodes_updated: std::option::Option<std::string::String>,
     /// <p>The date at which the service update will be automatically applied</p>
-    pub auto_update_start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub auto_update_start_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ServiceUpdate {
     /// <p>The name of the cluster to which the service update applies</p>
@@ -3664,7 +3664,7 @@ impl ServiceUpdate {
         self.service_update_name.as_deref()
     }
     /// <p>The date when the service update is initially available</p>
-    pub fn release_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn release_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.release_date.as_ref()
     }
     /// <p>Provides details of the service update</p>
@@ -3684,7 +3684,7 @@ impl ServiceUpdate {
         self.nodes_updated.as_deref()
     }
     /// <p>The date at which the service update will be automatically applied</p>
-    pub fn auto_update_start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn auto_update_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.auto_update_start_date.as_ref()
     }
 }
@@ -3710,12 +3710,12 @@ pub mod service_update {
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
         pub(crate) service_update_name: std::option::Option<std::string::String>,
-        pub(crate) release_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) release_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ServiceUpdateStatus>,
         pub(crate) r#type: std::option::Option<crate::model::ServiceUpdateType>,
         pub(crate) nodes_updated: std::option::Option<std::string::String>,
-        pub(crate) auto_update_start_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) auto_update_start_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the cluster to which the service update applies</p>
@@ -3742,14 +3742,14 @@ pub mod service_update {
             self
         }
         /// <p>The date when the service update is initially available</p>
-        pub fn release_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn release_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.release_date = Some(input);
             self
         }
         /// <p>The date when the service update is initially available</p>
         pub fn set_release_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.release_date = input;
             self
@@ -3804,14 +3804,14 @@ pub mod service_update {
             self
         }
         /// <p>The date at which the service update will be automatically applied</p>
-        pub fn auto_update_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn auto_update_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.auto_update_start_date = Some(input);
             self
         }
         /// <p>The date at which the service update will be automatically applied</p>
         pub fn set_auto_update_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.auto_update_start_date = input;
             self
@@ -4056,7 +4056,7 @@ pub struct Event {
     /// <p>The text of the event.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The date and time when the event occurred.</p>
-    pub date: std::option::Option<aws_smithy_types::Instant>,
+    pub date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Event {
     /// <p>The name for the source of the event. For example, if the event occurred at the cluster level, the identifier would be the name of the cluster.</p>
@@ -4072,7 +4072,7 @@ impl Event {
         self.message.as_deref()
     }
     /// <p>The date and time when the event occurred.</p>
-    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
 }
@@ -4095,7 +4095,7 @@ pub mod event {
         pub(crate) source_name: std::option::Option<std::string::String>,
         pub(crate) source_type: std::option::Option<crate::model::SourceType>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name for the source of the event. For example, if the event occurred at the cluster level, the identifier would be the name of the cluster.</p>
@@ -4132,12 +4132,12 @@ pub mod event {
             self
         }
         /// <p>The date and time when the event occurred.</p>
-        pub fn date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date = Some(input);
             self
         }
         /// <p>The date and time when the event occurred.</p>
-        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
+        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.date = input;
             self
         }

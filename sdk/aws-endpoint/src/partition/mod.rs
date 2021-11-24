@@ -156,7 +156,7 @@ impl ResolveAwsEndpoint for Partition {
             Regionalized::Regionalized => Some(region),
         };
         let endpoint_for_region = resolved_region
-            .and_then(|region| self.endpoints.get(&region))
+            .and_then(|region| self.endpoints.get(region))
             .unwrap_or(&self.default_endpoint);
         endpoint_for_region.resolve_endpoint(region)
     }

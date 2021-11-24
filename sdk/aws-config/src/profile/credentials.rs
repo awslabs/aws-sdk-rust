@@ -434,13 +434,13 @@ async fn build_provider_chain(
     factory: &NamedProviderFactory,
     profile_override: Option<&str>,
 ) -> Result<ProviderChain, ProfileFileError> {
-    let profile_set = super::parser::load(&fs, &env).await.map_err(|err| {
+    let profile_set = super::parser::load(fs, env).await.map_err(|err| {
         tracing::warn!(err = %err, "failed to parse profile");
         ProfileFileError::CouldNotParseProfile(err)
     })?;
     let repr = repr::resolve_chain(&profile_set, profile_override)?;
     tracing::info!(chain = ?repr, "constructed abstract provider from config file");
-    exec::ProviderChain::from_repr(fs.clone(), connector, region.region().await, repr, &factory)
+    exec::ProviderChain::from_repr(fs.clone(), connector, region.region().await, repr, factory)
 }
 
 #[cfg(test)]

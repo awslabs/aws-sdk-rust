@@ -3771,7 +3771,7 @@ pub struct DomainDeliverabilityTrackingOption {
     pub domain: std::option::Option<std::string::String>,
     /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the
     /// domain.</p>
-    pub subscription_start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub subscription_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that contains information about the inbox placement data settings for the
     /// domain.</p>
     pub inbox_placement_tracking_option:
@@ -3785,7 +3785,7 @@ impl DomainDeliverabilityTrackingOption {
     }
     /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the
     /// domain.</p>
-    pub fn subscription_start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn subscription_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.subscription_start_date.as_ref()
     }
     /// <p>An object that contains information about the inbox placement data settings for the
@@ -3815,7 +3815,7 @@ pub mod domain_deliverability_tracking_option {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
-        pub(crate) subscription_start_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) subscription_start_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) inbox_placement_tracking_option:
             std::option::Option<crate::model::InboxPlacementTrackingOption>,
     }
@@ -3834,7 +3834,7 @@ pub mod domain_deliverability_tracking_option {
         }
         /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the
         /// domain.</p>
-        pub fn subscription_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn subscription_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.subscription_start_date = Some(input);
             self
         }
@@ -3842,7 +3842,7 @@ pub mod domain_deliverability_tracking_option {
         /// domain.</p>
         pub fn set_subscription_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.subscription_start_date = input;
             self
@@ -4148,7 +4148,7 @@ pub struct SuppressedDestinationSummary {
     pub reason: std::option::Option<crate::model::SuppressionListReason>,
     /// <p>The date and time when the suppressed destination was last updated, shown in Unix time
     /// format.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SuppressedDestinationSummary {
     /// <p>The email address that's on the suppression list for your account.</p>
@@ -4161,7 +4161,7 @@ impl SuppressedDestinationSummary {
     }
     /// <p>The date and time when the suppressed destination was last updated, shown in Unix time
     /// format.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -4182,7 +4182,7 @@ pub mod suppressed_destination_summary {
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
         pub(crate) reason: std::option::Option<crate::model::SuppressionListReason>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The email address that's on the suppression list for your account.</p>
@@ -4213,7 +4213,7 @@ pub mod suppressed_destination_summary {
         }
         /// <p>The date and time when the suppressed destination was last updated, shown in Unix time
         /// format.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
@@ -4221,7 +4221,7 @@ pub mod suppressed_destination_summary {
         /// format.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -4255,7 +4255,7 @@ pub struct ImportJobSummary {
     /// <p>The status of the import job.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>The date and time when the import job was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ImportJobSummary {
     /// <p>A string that represents the import job ID.</p>
@@ -4272,7 +4272,7 @@ impl ImportJobSummary {
         self.job_status.as_ref()
     }
     /// <p>The date and time when the import job was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
@@ -4295,7 +4295,7 @@ pub mod import_job_summary {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) import_destination: std::option::Option<crate::model::ImportDestination>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A string that represents the import job ID.</p>
@@ -4337,14 +4337,14 @@ pub mod import_job_summary {
             self
         }
         /// <p>The date and time when the import job was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The date and time when the import job was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
@@ -4937,7 +4937,7 @@ pub struct EmailTemplateMetadata {
     /// <p>The name of the template.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The time and date the template was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EmailTemplateMetadata {
     /// <p>The name of the template.</p>
@@ -4945,7 +4945,7 @@ impl EmailTemplateMetadata {
         self.template_name.as_deref()
     }
     /// <p>The time and date the template was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
@@ -4964,7 +4964,7 @@ pub mod email_template_metadata {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the template.</p>
@@ -4981,14 +4981,14 @@ pub mod email_template_metadata {
             self
         }
         /// <p>The time and date the template was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time and date the template was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
@@ -5204,11 +5204,11 @@ pub struct DomainDeliverabilityCampaign {
     /// <p>The first time, in Unix time format, when the email message was delivered to any
     /// recipient's inbox. This value can help you determine how long it took for a campaign to
     /// deliver an email message.</p>
-    pub first_seen_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub first_seen_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time, in Unix time format, when the email message was delivered to any
     /// recipient's inbox. This value can help you determine how long it took for a campaign to
     /// deliver an email message.</p>
-    pub last_seen_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_seen_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of email messages that were delivered to recipients’ inboxes.</p>
     pub inbox_count: std::option::Option<i64>,
     /// <p>The number of email messages that were delivered to recipients' spam or junk mail
@@ -5257,13 +5257,13 @@ impl DomainDeliverabilityCampaign {
     /// <p>The first time, in Unix time format, when the email message was delivered to any
     /// recipient's inbox. This value can help you determine how long it took for a campaign to
     /// deliver an email message.</p>
-    pub fn first_seen_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn first_seen_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.first_seen_date_time.as_ref()
     }
     /// <p>The last time, in Unix time format, when the email message was delivered to any
     /// recipient's inbox. This value can help you determine how long it took for a campaign to
     /// deliver an email message.</p>
-    pub fn last_seen_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_seen_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_seen_date_time.as_ref()
     }
     /// <p>The number of email messages that were delivered to recipients’ inboxes.</p>
@@ -5333,8 +5333,8 @@ pub mod domain_deliverability_campaign {
         pub(crate) subject: std::option::Option<std::string::String>,
         pub(crate) from_address: std::option::Option<std::string::String>,
         pub(crate) sending_ips: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) first_seen_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_seen_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) first_seen_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_seen_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) inbox_count: std::option::Option<i64>,
         pub(crate) spam_count: std::option::Option<i64>,
         pub(crate) read_rate: std::option::Option<f64>,
@@ -5410,7 +5410,7 @@ pub mod domain_deliverability_campaign {
         /// <p>The first time, in Unix time format, when the email message was delivered to any
         /// recipient's inbox. This value can help you determine how long it took for a campaign to
         /// deliver an email message.</p>
-        pub fn first_seen_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn first_seen_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.first_seen_date_time = Some(input);
             self
         }
@@ -5419,7 +5419,7 @@ pub mod domain_deliverability_campaign {
         /// deliver an email message.</p>
         pub fn set_first_seen_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.first_seen_date_time = input;
             self
@@ -5427,7 +5427,7 @@ pub mod domain_deliverability_campaign {
         /// <p>The last time, in Unix time format, when the email message was delivered to any
         /// recipient's inbox. This value can help you determine how long it took for a campaign to
         /// deliver an email message.</p>
-        pub fn last_seen_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_seen_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_seen_date_time = Some(input);
             self
         }
@@ -5436,7 +5436,7 @@ pub mod domain_deliverability_campaign {
         /// deliver an email message.</p>
         pub fn set_last_seen_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_seen_date_time = input;
             self
@@ -5575,7 +5575,7 @@ pub struct DeliverabilityTestReport {
     /// <p>The sender address that you specified for the predictive inbox placement test.</p>
     pub from_email_address: std::option::Option<std::string::String>,
     /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test
     /// is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the
     /// test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use
@@ -5600,7 +5600,7 @@ impl DeliverabilityTestReport {
         self.from_email_address.as_deref()
     }
     /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test
@@ -5638,7 +5638,7 @@ pub mod deliverability_test_report {
         pub(crate) report_name: std::option::Option<std::string::String>,
         pub(crate) subject: std::option::Option<std::string::String>,
         pub(crate) from_email_address: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) deliverability_test_status:
             std::option::Option<crate::model::DeliverabilityTestStatus>,
     }
@@ -5687,14 +5687,14 @@ pub mod deliverability_test_report {
             self
         }
         /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
         /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -5968,7 +5968,7 @@ pub struct Contact {
     /// topics.</p>
     pub unsubscribe_all: bool,
     /// <p>A timestamp noting the last time the contact's information was updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Contact {
     /// <p>The contact's email address.</p>
@@ -5991,7 +5991,7 @@ impl Contact {
         self.unsubscribe_all
     }
     /// <p>A timestamp noting the last time the contact's information was updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
 }
@@ -6018,7 +6018,7 @@ pub mod contact {
         pub(crate) topic_default_preferences:
             std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
         pub(crate) unsubscribe_all: std::option::Option<bool>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The contact's email address.</p>
@@ -6091,14 +6091,14 @@ pub mod contact {
             self
         }
         /// <p>A timestamp noting the last time the contact's information was updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>A timestamp noting the last time the contact's information was updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self
@@ -6298,7 +6298,7 @@ pub struct ContactList {
     /// <p>The name of the contact list.</p>
     pub contact_list_name: std::option::Option<std::string::String>,
     /// <p>A timestamp noting the last time the contact list was updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ContactList {
     /// <p>The name of the contact list.</p>
@@ -6306,7 +6306,7 @@ impl ContactList {
         self.contact_list_name.as_deref()
     }
     /// <p>A timestamp noting the last time the contact list was updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
 }
@@ -6325,7 +6325,7 @@ pub mod contact_list {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_list_name: std::option::Option<std::string::String>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the contact list.</p>
@@ -6342,14 +6342,14 @@ pub mod contact_list {
             self
         }
         /// <p>A timestamp noting the last time the contact list was updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>A timestamp noting the last time the contact list was updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self
@@ -6381,7 +6381,7 @@ pub struct SuppressedDestination {
     pub reason: std::option::Option<crate::model::SuppressionListReason>,
     /// <p>The date and time when the suppressed destination was last updated, shown in Unix time
     /// format.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An optional value that can contain additional information about the reasons that the
     /// address was added to the suppression list for your account.</p>
     pub attributes: std::option::Option<crate::model::SuppressedDestinationAttributes>,
@@ -6397,7 +6397,7 @@ impl SuppressedDestination {
     }
     /// <p>The date and time when the suppressed destination was last updated, shown in Unix time
     /// format.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>An optional value that can contain additional information about the reasons that the
@@ -6426,7 +6426,7 @@ pub mod suppressed_destination {
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
         pub(crate) reason: std::option::Option<crate::model::SuppressionListReason>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) attributes: std::option::Option<crate::model::SuppressedDestinationAttributes>,
     }
     impl Builder {
@@ -6458,7 +6458,7 @@ pub mod suppressed_destination {
         }
         /// <p>The date and time when the suppressed destination was last updated, shown in Unix time
         /// format.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
@@ -6466,7 +6466,7 @@ pub mod suppressed_destination {
         /// format.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -7195,7 +7195,7 @@ pub struct DkimAttributes {
     /// <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
     pub current_signing_key_length: std::option::Option<crate::model::DkimSigningKeyLength>,
     /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
-    pub last_key_generation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_key_generation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DkimAttributes {
     /// <p>If the value is <code>true</code>, then the messages that you send from the identity
@@ -7282,7 +7282,9 @@ impl DkimAttributes {
         self.current_signing_key_length.as_ref()
     }
     /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
-    pub fn last_key_generation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_key_generation_timestamp(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_key_generation_timestamp.as_ref()
     }
 }
@@ -7319,7 +7321,7 @@ pub mod dkim_attributes {
         pub(crate) next_signing_key_length: std::option::Option<crate::model::DkimSigningKeyLength>,
         pub(crate) current_signing_key_length:
             std::option::Option<crate::model::DkimSigningKeyLength>,
-        pub(crate) last_key_generation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_key_generation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>If the value is <code>true</code>, then the messages that you send from the identity
@@ -7516,14 +7518,14 @@ pub mod dkim_attributes {
             self
         }
         /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
-        pub fn last_key_generation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_key_generation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_key_generation_timestamp = Some(input);
             self
         }
         /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
         pub fn set_last_key_generation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_key_generation_timestamp = input;
             self
@@ -7555,7 +7557,7 @@ impl DkimAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DailyVolume {
     /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
-    pub start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that contains inbox placement metrics for a specific day in the analysis
     /// period.</p>
     pub volume_statistics: std::option::Option<crate::model::VolumeStatistics>,
@@ -7565,7 +7567,7 @@ pub struct DailyVolume {
 }
 impl DailyVolume {
     /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>An object that contains inbox placement metrics for a specific day in the analysis
@@ -7596,21 +7598,21 @@ pub mod daily_volume {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) volume_statistics: std::option::Option<crate::model::VolumeStatistics>,
         pub(crate) domain_isp_placements:
             std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
     }
     impl Builder {
         /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
-        pub fn start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_date = Some(input);
             self
         }
         /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
         pub fn set_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_date = input;
             self
@@ -9032,7 +9034,7 @@ pub struct ReputationOptions {
     /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh
     /// start. When your account is given a fresh start, your reputation metrics are calculated
     /// starting from the date of the fresh start.</p>
-    pub last_fresh_start: std::option::Option<aws_smithy_types::Instant>,
+    pub last_fresh_start: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ReputationOptions {
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
@@ -9044,7 +9046,7 @@ impl ReputationOptions {
     /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh
     /// start. When your account is given a fresh start, your reputation metrics are calculated
     /// starting from the date of the fresh start.</p>
-    pub fn last_fresh_start(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_fresh_start(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_fresh_start.as_ref()
     }
 }
@@ -9066,7 +9068,7 @@ pub mod reputation_options {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reputation_metrics_enabled: std::option::Option<bool>,
-        pub(crate) last_fresh_start: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_fresh_start: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
@@ -9086,7 +9088,7 @@ pub mod reputation_options {
         /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh
         /// start. When your account is given a fresh start, your reputation metrics are calculated
         /// starting from the date of the fresh start.</p>
-        pub fn last_fresh_start(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_fresh_start(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_fresh_start = Some(input);
             self
         }
@@ -9095,7 +9097,7 @@ pub mod reputation_options {
         /// starting from the date of the fresh start.</p>
         pub fn set_last_fresh_start(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_fresh_start = input;
             self
@@ -9278,7 +9280,7 @@ pub struct BlacklistEntry {
     /// <p>The name of the blacklist that the IP address appears on.</p>
     pub rbl_name: std::option::Option<std::string::String>,
     /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
-    pub listing_time: std::option::Option<aws_smithy_types::Instant>,
+    pub listing_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Additional information about the blacklisting event, as provided by the blacklist
     /// maintainer.</p>
     pub description: std::option::Option<std::string::String>,
@@ -9289,7 +9291,7 @@ impl BlacklistEntry {
         self.rbl_name.as_deref()
     }
     /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
-    pub fn listing_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn listing_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.listing_time.as_ref()
     }
     /// <p>Additional information about the blacklisting event, as provided by the blacklist
@@ -9314,7 +9316,7 @@ pub mod blacklist_entry {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rbl_name: std::option::Option<std::string::String>,
-        pub(crate) listing_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) listing_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -9329,14 +9331,14 @@ pub mod blacklist_entry {
             self
         }
         /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
-        pub fn listing_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn listing_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.listing_time = Some(input);
             self
         }
         /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
         pub fn set_listing_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.listing_time = input;
             self

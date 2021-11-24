@@ -203,7 +203,7 @@ pub mod fluent_builders {
     /// <p>Returns a table that shows counts of resources that are noncompliant with their tag
     /// policies.</p>
     /// <p>For more information on tag policies, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag Policies</a> in
-    /// the <i>AWS Organizations User Guide.</i>
+    /// the <i>Organizations User Guide.</i>
     /// </p>
     /// <p>You can call this operation only from the organization's
     /// management account and from the us-east-1 Region.</p>
@@ -294,14 +294,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_region_filters`](Self::set_region_filters).
         ///
-        /// <p>Specifies a list of AWS Regions to limit the output by. If you use this parameter,
+        /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter,
         /// the count of returned noncompliant resources includes only resources in the specified
         /// Regions.</p>
         pub fn region_filters(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.region_filters(inp);
             self
         }
-        /// <p>Specifies a list of AWS Regions to limit the output by. If you use this parameter,
+        /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter,
         /// the count of returned noncompliant resources includes only resources in the specified
         /// Regions.</p>
         pub fn set_region_filters(
@@ -319,13 +319,16 @@ pub mod fluent_builders {
         /// specified types. The format of each resource type is
         /// <code>service[:resourceType]</code>. For example, specifying a resource type of
         /// <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances).
-        /// Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p>
+        /// Specifying a resource type of <code>ec2:instance</code> returns only EC2
+        /// instances.</p>
         /// <p>The string for each service name and resource type is the same as that embedded in a
-        /// resource's Amazon Resource Name (ARN). Consult the <i>AWS General
-        /// Reference</i> for the following:</p>
+        /// resource's Amazon Resource Name (ARN). Consult the <i>
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services General Reference</a>
+        /// </i>
+        /// for the following:</p>
         /// <ul>
         /// <li>
-        /// <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS Service Namespaces</a>.</p>
+        /// <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services Service Namespaces</a>.</p>
         /// </li>
         /// <li>
         /// <p>For resource type strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
@@ -333,7 +336,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-        /// (ARNs) and AWS Service Namespaces</a>.</p>
+        /// (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
         /// </li>
         /// </ul>
         /// <p>You can specify multiple resource types by using a comma separated array. The array
@@ -347,13 +350,16 @@ pub mod fluent_builders {
         /// specified types. The format of each resource type is
         /// <code>service[:resourceType]</code>. For example, specifying a resource type of
         /// <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances).
-        /// Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p>
+        /// Specifying a resource type of <code>ec2:instance</code> returns only EC2
+        /// instances.</p>
         /// <p>The string for each service name and resource type is the same as that embedded in a
-        /// resource's Amazon Resource Name (ARN). Consult the <i>AWS General
-        /// Reference</i> for the following:</p>
+        /// resource's Amazon Resource Name (ARN). Consult the <i>
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services General Reference</a>
+        /// </i>
+        /// for the following:</p>
         /// <ul>
         /// <li>
-        /// <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS Service Namespaces</a>.</p>
+        /// <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services Service Namespaces</a>.</p>
         /// </li>
         /// <li>
         /// <p>For resource type strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
@@ -361,7 +367,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-        /// (ARNs) and AWS Service Namespaces</a>.</p>
+        /// (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
         /// </li>
         /// </ul>
         /// <p>You can specify multiple resource types by using a comma separated array. The array
@@ -451,7 +457,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResources`.
     ///
     /// <p>Returns all the tagged or previously tagged resources that are located in the
-    /// specified Region for the AWS account.</p>
+    /// specified Amazon Web Services Region for the account.</p>
     /// <p>Depending on what information you want returned, you can also specify the
     /// following:</p>
     /// <ul>
@@ -464,7 +470,7 @@ pub mod fluent_builders {
     /// <li>
     /// <p>Information about compliance with the account's effective tag policy. For more
     /// information on tag policies, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
-    /// Policies</a> in the <i>AWS Organizations User Guide.</i>
+    /// Policies</a> in the <i>Organizations User Guide.</i>
     /// </p>
     /// </li>
     /// </ul>
@@ -552,8 +558,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).
         ///
         /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those
-        /// resources that have the specified tag and, if included, the specified value. Each
-        /// <code>TagFilter</code> must contain a key with values optional. A request can
+        /// resources that have tags with the specified keys and, if included, the specified values.
+        /// Each <code>TagFilter</code> must contain a key with values optional. A request can
         /// include up to 50 keys, and each key can include up to 20 values. </p>
         /// <p>Note the following when deciding how to use TagFilters:</p>
         /// <ul>
@@ -569,12 +575,12 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>If you specify a filter that contains more than one value for a key, the
-        /// response returns resources that match any of the specified values for that
-        /// key.</p>
+        /// response returns resources that match <i>any</i> of the specified
+        /// values for that key.</p>
         /// </li>
         /// <li>
-        /// <p>If you don't specify any values for a key, the response returns resources that
-        /// are tagged with that key and any or no value.</p>
+        /// <p>If you don't specify a value for a key, the response returns all resources
+        /// that are tagged with that key, with any or no value.</p>
         /// <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>,
         /// <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
         /// {keyC}</code>:</p>
@@ -612,8 +618,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those
-        /// resources that have the specified tag and, if included, the specified value. Each
-        /// <code>TagFilter</code> must contain a key with values optional. A request can
+        /// resources that have tags with the specified keys and, if included, the specified values.
+        /// Each <code>TagFilter</code> must contain a key with values optional. A request can
         /// include up to 50 keys, and each key can include up to 20 values. </p>
         /// <p>Note the following when deciding how to use TagFilters:</p>
         /// <ul>
@@ -629,12 +635,12 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>If you specify a filter that contains more than one value for a key, the
-        /// response returns resources that match any of the specified values for that
-        /// key.</p>
+        /// response returns resources that match <i>any</i> of the specified
+        /// values for that key.</p>
         /// </li>
         /// <li>
-        /// <p>If you don't specify any values for a key, the response returns resources that
-        /// are tagged with that key and any or no value.</p>
+        /// <p>If you don't specify a value for a key, the response returns all resources
+        /// that are tagged with that key, with any or no value.</p>
         /// <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>,
         /// <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
         /// {keyC}</code>:</p>
@@ -690,7 +696,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resources_per_page(input);
             self
         }
-        /// <p>AWS recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
+        /// <p>Amazon Web Services recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
         /// <p>A limit that restricts the number of tags (key and value pairs) returned by
         /// <code>GetResources</code> in paginated output. A resource with no tags is counted as
         /// having one tag (one key and value pair).</p>
@@ -710,7 +716,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags_per_page(inp);
             self
         }
-        /// <p>AWS recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
+        /// <p>Amazon Web Services recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
         /// <p>A limit that restricts the number of tags (key and value pairs) returned by
         /// <code>GetResources</code> in paginated output. A resource with no tags is counted as
         /// having one tag (one key and value pair).</p>
@@ -740,13 +746,15 @@ pub mod fluent_builders {
         /// instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2
         /// instances. </p>
         /// <p>The string for each service name and resource type is the same as that embedded in a
-        /// resource's Amazon Resource Name (ARN). Consult the <i>AWS General
-        /// Reference</i> for the following:</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-        /// AWS Service Namespaces</a>.</p>
+        /// resource's Amazon Resource Name (ARN). For the list of services whose resources you can
+        /// use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
         /// <p>You can specify multiple resource types by using an array. The array can include up to
         /// 100 items. Note that the length constraint requirement applies to each resource type
-        /// filter. </p>
+        /// filter. For example, the following string would limit the response to only Amazon EC2
+        /// instances, Amazon S3 buckets, or any Audit Manager resource:</p>
+        /// <p>
+        /// <code>ec2:instance,s3:bucket,auditmanager</code>
+        /// </p>
         pub fn resource_type_filters(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type_filters(inp);
             self
@@ -757,13 +765,15 @@ pub mod fluent_builders {
         /// instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2
         /// instances. </p>
         /// <p>The string for each service name and resource type is the same as that embedded in a
-        /// resource's Amazon Resource Name (ARN). Consult the <i>AWS General
-        /// Reference</i> for the following:</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-        /// AWS Service Namespaces</a>.</p>
+        /// resource's Amazon Resource Name (ARN). For the list of services whose resources you can
+        /// use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
         /// <p>You can specify multiple resource types by using an array. The array can include up to
         /// 100 items. Note that the length constraint requirement applies to each resource type
-        /// filter. </p>
+        /// filter. For example, the following string would limit the response to only Amazon EC2
+        /// instances, Amazon S3 buckets, or any Audit Manager resource:</p>
+        /// <p>
+        /// <code>ec2:instance,s3:bucket,auditmanager</code>
+        /// </p>
         pub fn set_resource_type_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -815,9 +825,9 @@ pub mod fluent_builders {
         /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error;
         /// it simply isn't included in the response.</p>
         /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
-        /// General Reference</i>.</p>
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+        /// <i>Amazon Web Services General Reference</i>.</p>
         pub fn resource_arn_list(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn_list(inp);
             self
@@ -830,9 +840,9 @@ pub mod fluent_builders {
         /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error;
         /// it simply isn't included in the response.</p>
         /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
-        /// General Reference</i>.</p>
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+        /// <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_resource_arn_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -843,7 +853,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTagKeys`.
     ///
-    /// <p>Returns all tag keys currently in use in the specified Region for the calling AWS
+    /// <p>Returns all tag keys currently in use in the specified Amazon Web Services Region for the calling
     /// account.</p>
     /// <p>This operation supports pagination, where the response can be sent in
     /// multiple pages. You should check the <code>PaginationToken</code> response parameter to determine
@@ -927,8 +937,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTagValues`.
     ///
-    /// <p>Returns all tag values for the specified key that are used in the specified AWS
-    /// Region for the calling AWS account.</p>
+    /// <p>Returns all tag values for the specified key that are used in the specified Amazon Web Services
+    /// Region for the calling account.</p>
     /// <p>This operation supports pagination, where the response can be sent in
     /// multiple pages. You should check the <code>PaginationToken</code> response parameter to determine
     /// if there are additional results available to return. Repeat the query, passing the
@@ -1009,13 +1019,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the tag key for which you want to list all existing values that are
-        /// currently used in the specified AWS Region for the calling AWS account.</p>
+        /// currently used in the specified Amazon Web Services Region for the calling account.</p>
         pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.key(inp);
             self
         }
         /// <p>Specifies the tag key for which you want to list all existing values that are
-        /// currently used in the specified AWS Region for the calling AWS account.</p>
+        /// currently used in the specified Amazon Web Services Region for the calling account.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_key(input);
             self
@@ -1116,16 +1126,19 @@ pub mod fluent_builders {
     /// <li>
     /// <p>Not all resources can have tags. For a list of services with resources that
     /// support tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the
-    /// Resource Groups Tagging API</a>.</p>
+    /// Resource Groups Tagging API</a>. If the resource doesn't yet support
+    /// this operation, the resource's service might support tagging using its own API
+    /// operations. For more information, refer to the documentation for that
+    /// service.</p>
     /// </li>
     /// <li>
-    /// <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>AWS General
+    /// <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>Amazon Web Services General
     /// Reference.</i>
     /// </p>
     /// </li>
     /// <li>
-    /// <p>You can only tag resources that are located in the specified AWS Region for
-    /// the AWS account.</p>
+    /// <p>You can only tag resources that are located in the specified Amazon Web Services Region for
+    /// the Amazon Web Services account.</p>
     /// </li>
     /// <li>
     /// <p>To add tags to a resource, you need the necessary permissions for the service
@@ -1139,6 +1152,25 @@ pub mod fluent_builders {
     /// administration services. Tags are not intended to be used for private or sensitive
     /// data.</p>
     /// </important>
+    /// <p>
+    /// <b>Minimum permissions</b>
+    /// </p>
+    /// <p>In addition to the <code>tag:TagResources</code> permission required by this
+    /// operation, you must also have the tagging permission defined by the service that created
+    /// the resource. For example, to tag an Amazon EC2 instance using the <code>TagResources</code>
+    /// operation, you must have both of the following permissions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>tag:TagResource</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ec2:CreateTags</code>
+    /// </p>
+    /// </li>
+    /// </ul>
     #[derive(std::fmt::Debug)]
     pub struct TagResources<
         C = aws_smithy_client::erase::DynConnector,
@@ -1201,8 +1233,8 @@ pub mod fluent_builders {
         ///
         /// <p>Specifies the list of ARNs of the resources that you want to apply tags to.</p>
         /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
         /// General Reference</i>.</p>
         pub fn resource_arn_list(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn_list(inp);
@@ -1210,8 +1242,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the list of ARNs of the resources that you want to apply tags to.</p>
         /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
         /// General Reference</i>.</p>
         pub fn set_resource_arn_list(
             mut self,
@@ -1260,8 +1292,29 @@ pub mod fluent_builders {
     /// want to untag.</p>
     /// </li>
     /// <li>
-    /// <p>You can only tag resources that are located in the specified AWS Region for
-    /// the calling AWS account.</p>
+    /// <p>You can only tag resources that are located in the specified Amazon Web Services Region for
+    /// the calling Amazon Web Services account.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>
+    /// <b>Minimum permissions</b>
+    /// </p>
+    /// <p>In addition to the <code>tag:UntagResources</code> permission required by this
+    /// operation, you must also have the remove tags permission defined by the service that
+    /// created the resource. For example, to remove the tags from an Amazon EC2 instance using the
+    /// <code>UntagResources</code> operation, you must have both of the following
+    /// permissions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>tag:UntagResource</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ec2:DeleteTags</code>
+    /// </p>
     /// </li>
     /// </ul>
     #[derive(std::fmt::Debug)]
@@ -1326,8 +1379,8 @@ pub mod fluent_builders {
         ///
         /// <p>Specifies a list of ARNs of the resources that you want to remove tags from.</p>
         /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
         /// General Reference</i>.</p>
         pub fn resource_arn_list(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn_list(inp);
@@ -1335,8 +1388,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies a list of ARNs of the resources that you want to remove tags from.</p>
         /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
         /// General Reference</i>.</p>
         pub fn set_resource_arn_list(
             mut self,
@@ -1370,7 +1423,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -1393,7 +1452,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

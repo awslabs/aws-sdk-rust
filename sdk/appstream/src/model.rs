@@ -12,7 +12,7 @@ pub struct Stack {
     /// <p>The stack name to display.</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The time the stack was created.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The storage connectors to enable.</p>
     pub storage_connectors: std::option::Option<std::vec::Vec<crate::model::StorageConnector>>,
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
@@ -48,7 +48,7 @@ impl Stack {
         self.display_name.as_deref()
     }
     /// <p>The time the stack was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The storage connectors to enable.</p>
@@ -115,7 +115,7 @@ pub mod stack {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) storage_connectors:
             std::option::Option<std::vec::Vec<crate::model::StorageConnector>>,
         pub(crate) redirect_url: std::option::Option<std::string::String>,
@@ -170,14 +170,14 @@ pub mod stack {
             self
         }
         /// <p>The time the stack was created.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The time the stack was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -1485,7 +1485,7 @@ pub struct Fleet {
     /// <p>The VPC configuration for the fleet.</p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>The time the fleet was created.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The fleet errors.</p>
     pub fleet_errors: std::option::Option<std::vec::Vec<crate::model::FleetError>>,
     /// <p>Indicates whether default internet access is enabled for the fleet.</p>
@@ -1689,7 +1689,7 @@ impl Fleet {
         self.vpc_config.as_ref()
     }
     /// <p>The time the fleet was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The fleet errors.</p>
@@ -1793,7 +1793,7 @@ pub mod fleet {
         pub(crate) disconnect_timeout_in_seconds: std::option::Option<i32>,
         pub(crate) state: std::option::Option<crate::model::FleetState>,
         pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) fleet_errors: std::option::Option<std::vec::Vec<crate::model::FleetError>>,
         pub(crate) enable_default_internet_access: std::option::Option<bool>,
         pub(crate) domain_join_info: std::option::Option<crate::model::DomainJoinInfo>,
@@ -2183,14 +2183,14 @@ pub mod fleet {
             self
         }
         /// <p>The time the fleet was created.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The time the fleet was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -3269,7 +3269,7 @@ pub struct DirectoryConfig {
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
     pub service_account_credentials: std::option::Option<crate::model::ServiceAccountCredentials>,
     /// <p>The time the directory configuration was created.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DirectoryConfig {
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
@@ -3289,7 +3289,7 @@ impl DirectoryConfig {
         self.service_account_credentials.as_ref()
     }
     /// <p>The time the directory configuration was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
@@ -3320,7 +3320,7 @@ pub mod directory_config {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) service_account_credentials:
             std::option::Option<crate::model::ServiceAccountCredentials>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
@@ -3377,14 +3377,14 @@ pub mod directory_config {
             self
         }
         /// <p>The time the directory configuration was created.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The time the directory configuration was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -3622,7 +3622,7 @@ pub struct ImageBuilder {
     /// <p>The reason why the last state change occurred.</p>
     pub state_change_reason: std::option::Option<crate::model::ImageBuilderStateChangeReason>,
     /// <p>The time stamp when the image builder was created.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Enables or disables default internet access for the image builder.</p>
     pub enable_default_internet_access: std::option::Option<bool>,
     /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
@@ -3787,7 +3787,7 @@ impl ImageBuilder {
         self.state_change_reason.as_ref()
     }
     /// <p>The time stamp when the image builder was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>Enables or disables default internet access for the image builder.</p>
@@ -3865,7 +3865,7 @@ pub mod image_builder {
         pub(crate) state: std::option::Option<crate::model::ImageBuilderState>,
         pub(crate) state_change_reason:
             std::option::Option<crate::model::ImageBuilderStateChangeReason>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) enable_default_internet_access: std::option::Option<bool>,
         pub(crate) domain_join_info: std::option::Option<crate::model::DomainJoinInfo>,
         pub(crate) network_access_configuration:
@@ -4212,14 +4212,14 @@ pub mod image_builder {
             self
         }
         /// <p>The time stamp when the image builder was created.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The time stamp when the image builder was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -4361,7 +4361,7 @@ pub struct ResourceError {
     /// <p>The error message.</p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The time the error occurred.</p>
-    pub error_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub error_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ResourceError {
     /// <p>The error code.</p>
@@ -4373,7 +4373,7 @@ impl ResourceError {
         self.error_message.as_deref()
     }
     /// <p>The time the error occurred.</p>
-    pub fn error_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn error_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.error_timestamp.as_ref()
     }
 }
@@ -4394,7 +4394,7 @@ pub mod resource_error {
     pub struct Builder {
         pub(crate) error_code: std::option::Option<crate::model::FleetErrorCode>,
         pub(crate) error_message: std::option::Option<std::string::String>,
-        pub(crate) error_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) error_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The error code.</p>
@@ -4424,14 +4424,14 @@ pub mod resource_error {
             self
         }
         /// <p>The time the error occurred.</p>
-        pub fn error_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn error_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.error_timestamp = Some(input);
             self
         }
         /// <p>The time the error occurred.</p>
         pub fn set_error_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.error_timestamp = input;
             self
@@ -4776,6 +4776,8 @@ impl AsRef<str> for ImageBuilderState {
 )]
 pub enum PlatformType {
     #[allow(missing_docs)] // documentation missing in model
+    AmazonLinux2,
+    #[allow(missing_docs)] // documentation missing in model
     Windows,
     #[allow(missing_docs)] // documentation missing in model
     WindowsServer2016,
@@ -4787,6 +4789,7 @@ pub enum PlatformType {
 impl std::convert::From<&str> for PlatformType {
     fn from(s: &str) -> Self {
         match s {
+            "AMAZON_LINUX2" => PlatformType::AmazonLinux2,
             "WINDOWS" => PlatformType::Windows,
             "WINDOWS_SERVER_2016" => PlatformType::WindowsServer2016,
             "WINDOWS_SERVER_2019" => PlatformType::WindowsServer2019,
@@ -4805,6 +4808,7 @@ impl PlatformType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PlatformType::AmazonLinux2 => "AMAZON_LINUX2",
             PlatformType::Windows => "WINDOWS",
             PlatformType::WindowsServer2016 => "WINDOWS_SERVER_2016",
             PlatformType::WindowsServer2019 => "WINDOWS_SERVER_2019",
@@ -4813,7 +4817,12 @@ impl PlatformType {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["WINDOWS", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019"]
+        &[
+            "AMAZON_LINUX2",
+            "WINDOWS",
+            "WINDOWS_SERVER_2016",
+            "WINDOWS_SERVER_2019",
+        ]
     }
 }
 impl AsRef<str> for PlatformType {
@@ -5049,7 +5058,7 @@ pub struct User {
     /// <p>The last name, or surname, of the user.</p>
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The date and time the user was created in the user pool.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The authentication type for the user.</p>
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
 }
@@ -5100,7 +5109,7 @@ impl User {
         self.last_name.as_deref()
     }
     /// <p>The date and time the user was created in the user pool.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The authentication type for the user.</p>
@@ -5134,7 +5143,7 @@ pub mod user {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) first_name: std::option::Option<std::string::String>,
         pub(crate) last_name: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
     }
     impl Builder {
@@ -5241,14 +5250,14 @@ pub mod user {
             self
         }
         /// <p>The date and time the user was created in the user pool.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The date and time the user was created in the user pool.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -5303,7 +5312,7 @@ pub struct UsageReportSubscription {
     /// <p>The schedule for generating usage reports.</p>
     pub schedule: std::option::Option<crate::model::UsageReportSchedule>,
     /// <p>The time when the last usage report was generated.</p>
-    pub last_generated_report_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_generated_report_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The errors that were returned if usage reports couldn't be generated.</p>
     pub subscription_errors:
         std::option::Option<std::vec::Vec<crate::model::LastReportGenerationExecutionError>>,
@@ -5324,7 +5333,7 @@ impl UsageReportSubscription {
         self.schedule.as_ref()
     }
     /// <p>The time when the last usage report was generated.</p>
-    pub fn last_generated_report_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_generated_report_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_generated_report_date.as_ref()
     }
     /// <p>The errors that were returned if usage reports couldn't be generated.</p>
@@ -5355,7 +5364,7 @@ pub mod usage_report_subscription {
     pub struct Builder {
         pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
         pub(crate) schedule: std::option::Option<crate::model::UsageReportSchedule>,
-        pub(crate) last_generated_report_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_generated_report_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) subscription_errors:
             std::option::Option<std::vec::Vec<crate::model::LastReportGenerationExecutionError>>,
     }
@@ -5399,14 +5408,14 @@ pub mod usage_report_subscription {
             self
         }
         /// <p>The time when the last usage report was generated.</p>
-        pub fn last_generated_report_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_generated_report_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_generated_report_date = Some(input);
             self
         }
         /// <p>The time when the last usage report was generated.</p>
         pub fn set_last_generated_report_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_generated_report_date = input;
             self
@@ -5663,9 +5672,9 @@ pub struct Session {
     /// <p>Specifies whether a user is connected to the streaming session.</p>
     pub connection_state: std::option::Option<crate::model::SessionConnectionState>,
     /// <p>The time when a streaming instance is dedicated for the user.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the streaming session is set to expire. This time is based on the <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming instance is terminated and the streaming session ends.</p>
-    pub max_expiration_time: std::option::Option<aws_smithy_types::Instant>,
+    pub max_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The authentication method. The user is authenticated using a streaming URL
     /// (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
@@ -5698,11 +5707,11 @@ impl Session {
         self.connection_state.as_ref()
     }
     /// <p>The time when a streaming instance is dedicated for the user.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time when the streaming session is set to expire. This time is based on the <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming instance is terminated and the streaming session ends.</p>
-    pub fn max_expiration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn max_expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.max_expiration_time.as_ref()
     }
     /// <p>The authentication method. The user is authenticated using a streaming URL
@@ -5748,8 +5757,8 @@ pub mod session {
         pub(crate) fleet_name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::SessionState>,
         pub(crate) connection_state: std::option::Option<crate::model::SessionConnectionState>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) max_expiration_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) max_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
         pub(crate) network_access_configuration:
             std::option::Option<crate::model::NetworkAccessConfiguration>,
@@ -5819,27 +5828,27 @@ pub mod session {
             self
         }
         /// <p>The time when a streaming instance is dedicated for the user.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The time when a streaming instance is dedicated for the user.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time when the streaming session is set to expire. This time is based on the <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming instance is terminated and the streaming session ends.</p>
-        pub fn max_expiration_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn max_expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.max_expiration_time = Some(input);
             self
         }
         /// <p>The time when the streaming session is set to expire. This time is based on the <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming instance is terminated and the streaming session ends.</p>
         pub fn set_max_expiration_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.max_expiration_time = input;
             self
@@ -6043,10 +6052,10 @@ pub struct Image {
     /// <p>The applications associated with the image.</p>
     pub applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
     /// <p>The time the image was created.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The release date of the public base image.
     /// For private images, this date is the release date of the base image from which the image was created.</p>
-    pub public_base_image_released_date: std::option::Option<aws_smithy_types::Instant>,
+    pub public_base_image_released_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image. </p>
     pub appstream_agent_version: std::option::Option<std::string::String>,
     /// <p>The permissions to provide to the destination AWS account for the specified image.</p>
@@ -6107,14 +6116,14 @@ impl Image {
         self.applications.as_deref()
     }
     /// <p>The time the image was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The release date of the public base image.
     /// For private images, this date is the release date of the base image from which the image was created.</p>
     pub fn public_base_image_released_date(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.public_base_image_released_date.as_ref()
     }
     /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image. </p>
@@ -6174,8 +6183,8 @@ pub mod image {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) state_change_reason: std::option::Option<crate::model::ImageStateChangeReason>,
         pub(crate) applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) public_base_image_released_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) public_base_image_released_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) appstream_agent_version: std::option::Option<std::string::String>,
         pub(crate) image_permissions: std::option::Option<crate::model::ImagePermissions>,
         pub(crate) image_errors: std::option::Option<std::vec::Vec<crate::model::ResourceError>>,
@@ -6328,21 +6337,24 @@ pub mod image {
             self
         }
         /// <p>The time the image was created.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The time the image was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
         }
         /// <p>The release date of the public base image.
         /// For private images, this date is the release date of the base image from which the image was created.</p>
-        pub fn public_base_image_released_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn public_base_image_released_date(
+            mut self,
+            input: aws_smithy_types::DateTime,
+        ) -> Self {
             self.public_base_image_released_date = Some(input);
             self
         }
@@ -6350,7 +6362,7 @@ pub mod image {
         /// For private images, this date is the release date of the base image from which the image was created.</p>
         pub fn set_public_base_image_released_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.public_base_image_released_date = input;
             self

@@ -438,9 +438,9 @@ pub struct ReplicationTask {
     /// </ul>
     pub stop_reason: std::option::Option<std::string::String>,
     /// <p>The date the replication task was created.</p>
-    pub replication_task_creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub replication_task_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the replication task is scheduled to start.</p>
-    pub replication_task_start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub replication_task_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
     /// <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want the CDC operation to start.
     /// Specifying both values results in an error.</p>
@@ -665,11 +665,11 @@ impl ReplicationTask {
     /// <p>The date the replication task was created.</p>
     pub fn replication_task_creation_date(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.replication_task_creation_date.as_ref()
     }
     /// <p>The date the replication task is scheduled to start.</p>
-    pub fn replication_task_start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn replication_task_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.replication_task_start_date.as_ref()
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
@@ -776,8 +776,8 @@ pub mod replication_task {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) last_failure_message: std::option::Option<std::string::String>,
         pub(crate) stop_reason: std::option::Option<std::string::String>,
-        pub(crate) replication_task_creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) replication_task_start_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) replication_task_creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) replication_task_start_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) cdc_start_position: std::option::Option<std::string::String>,
         pub(crate) cdc_stop_position: std::option::Option<std::string::String>,
         pub(crate) recovery_checkpoint: std::option::Option<std::string::String>,
@@ -1205,27 +1205,27 @@ pub mod replication_task {
             self
         }
         /// <p>The date the replication task was created.</p>
-        pub fn replication_task_creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn replication_task_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.replication_task_creation_date = Some(input);
             self
         }
         /// <p>The date the replication task was created.</p>
         pub fn set_replication_task_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.replication_task_creation_date = input;
             self
         }
         /// <p>The date the replication task is scheduled to start.</p>
-        pub fn replication_task_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn replication_task_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.replication_task_start_date = Some(input);
             self
         }
         /// <p>The date the replication task is scheduled to start.</p>
         pub fn set_replication_task_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.replication_task_start_date = input;
             self
@@ -1412,16 +1412,16 @@ pub struct ReplicationTaskStats {
     /// <p>The number of errors that have occurred during this task.</p>
     pub tables_errored: i32,
     /// <p>The date the replication task was started either with a fresh start or a target reload.</p>
-    pub fresh_start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub fresh_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the replication task was started either with a fresh start or a resume. For more information, see
     /// <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType">StartReplicationTaskType</a>.</p>
-    pub start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the replication task was stopped.</p>
-    pub stop_date: std::option::Option<aws_smithy_types::Instant>,
+    pub stop_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the replication task full load was started.</p>
-    pub full_load_start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub full_load_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the replication task full load was completed.</p>
-    pub full_load_finish_date: std::option::Option<aws_smithy_types::Instant>,
+    pub full_load_finish_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ReplicationTaskStats {
     /// <p>The percent complete for the full load migration task.</p>
@@ -1449,24 +1449,24 @@ impl ReplicationTaskStats {
         self.tables_errored
     }
     /// <p>The date the replication task was started either with a fresh start or a target reload.</p>
-    pub fn fresh_start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn fresh_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.fresh_start_date.as_ref()
     }
     /// <p>The date the replication task was started either with a fresh start or a resume. For more information, see
     /// <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType">StartReplicationTaskType</a>.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The date the replication task was stopped.</p>
-    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stop_date.as_ref()
     }
     /// <p>The date the replication task full load was started.</p>
-    pub fn full_load_start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn full_load_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.full_load_start_date.as_ref()
     }
     /// <p>The date the replication task full load was completed.</p>
-    pub fn full_load_finish_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn full_load_finish_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.full_load_finish_date.as_ref()
     }
 }
@@ -1502,11 +1502,11 @@ pub mod replication_task_stats {
         pub(crate) tables_loading: std::option::Option<i32>,
         pub(crate) tables_queued: std::option::Option<i32>,
         pub(crate) tables_errored: std::option::Option<i32>,
-        pub(crate) fresh_start_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) start_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) stop_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) full_load_start_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) full_load_finish_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) fresh_start_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) stop_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) full_load_start_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) full_load_finish_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The percent complete for the full load migration task.</p>
@@ -1570,21 +1570,21 @@ pub mod replication_task_stats {
             self
         }
         /// <p>The date the replication task was started either with a fresh start or a target reload.</p>
-        pub fn fresh_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn fresh_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.fresh_start_date = Some(input);
             self
         }
         /// <p>The date the replication task was started either with a fresh start or a target reload.</p>
         pub fn set_fresh_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.fresh_start_date = input;
             self
         }
         /// <p>The date the replication task was started either with a fresh start or a resume. For more information, see
         /// <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType">StartReplicationTaskType</a>.</p>
-        pub fn start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_date = Some(input);
             self
         }
@@ -1592,46 +1592,46 @@ pub mod replication_task_stats {
         /// <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType">StartReplicationTaskType</a>.</p>
         pub fn set_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_date = input;
             self
         }
         /// <p>The date the replication task was stopped.</p>
-        pub fn stop_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn stop_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stop_date = Some(input);
             self
         }
         /// <p>The date the replication task was stopped.</p>
         pub fn set_stop_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.stop_date = input;
             self
         }
         /// <p>The date the replication task full load was started.</p>
-        pub fn full_load_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn full_load_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.full_load_start_date = Some(input);
             self
         }
         /// <p>The date the replication task full load was started.</p>
         pub fn set_full_load_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.full_load_start_date = input;
             self
         }
         /// <p>The date the replication task full load was completed.</p>
-        pub fn full_load_finish_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn full_load_finish_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.full_load_finish_date = Some(input);
             self
         }
         /// <p>The date the replication task full load was completed.</p>
         pub fn set_full_load_finish_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.full_load_finish_date = input;
             self
@@ -1788,7 +1788,7 @@ pub struct ReplicationTaskAssessmentRun {
     /// <p>Date on which the assessment run was created using the
     /// <code>StartReplicationTaskAssessmentRun</code> operation.</p>
     pub replication_task_assessment_run_creation_date:
-        std::option::Option<aws_smithy_types::Instant>,
+        std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indication of the completion progress for the individual assessments specified to
     /// run.</p>
     pub assessment_progress:
@@ -1879,7 +1879,7 @@ impl ReplicationTaskAssessmentRun {
     /// <code>StartReplicationTaskAssessmentRun</code> operation.</p>
     pub fn replication_task_assessment_run_creation_date(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.replication_task_assessment_run_creation_date.as_ref()
     }
     /// <p>Indication of the completion progress for the individual assessments specified to
@@ -1954,7 +1954,7 @@ pub mod replication_task_assessment_run {
         pub(crate) replication_task_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) replication_task_assessment_run_creation_date:
-            std::option::Option<aws_smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) assessment_progress:
             std::option::Option<crate::model::ReplicationTaskAssessmentRunProgress>,
         pub(crate) last_failure_message: std::option::Option<std::string::String>,
@@ -2113,7 +2113,7 @@ pub mod replication_task_assessment_run {
         /// <code>StartReplicationTaskAssessmentRun</code> operation.</p>
         pub fn replication_task_assessment_run_creation_date(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.replication_task_assessment_run_creation_date = Some(input);
             self
@@ -2122,7 +2122,7 @@ pub mod replication_task_assessment_run {
         /// <code>StartReplicationTaskAssessmentRun</code> operation.</p>
         pub fn set_replication_task_assessment_run_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.replication_task_assessment_run_creation_date = input;
             self
@@ -2551,7 +2551,7 @@ pub struct RefreshSchemasStatus {
     /// <p>The status of the schema.</p>
     pub status: std::option::Option<crate::model::RefreshSchemasStatusTypeValue>,
     /// <p>The date the schema was last refreshed.</p>
-    pub last_refresh_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_refresh_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last failure message for the schema.</p>
     pub last_failure_message: std::option::Option<std::string::String>,
 }
@@ -2569,7 +2569,7 @@ impl RefreshSchemasStatus {
         self.status.as_ref()
     }
     /// <p>The date the schema was last refreshed.</p>
-    pub fn last_refresh_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_refresh_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_refresh_date.as_ref()
     }
     /// <p>The last failure message for the schema.</p>
@@ -2597,7 +2597,7 @@ pub mod refresh_schemas_status {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
         pub(crate) replication_instance_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RefreshSchemasStatusTypeValue>,
-        pub(crate) last_refresh_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_refresh_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_failure_message: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2638,14 +2638,14 @@ pub mod refresh_schemas_status {
             self
         }
         /// <p>The date the schema was last refreshed.</p>
-        pub fn last_refresh_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_refresh_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_refresh_date = Some(input);
             self
         }
         /// <p>The date the schema was last refreshed.</p>
         pub fn set_last_refresh_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_refresh_date = input;
             self
@@ -2844,7 +2844,7 @@ pub struct ReplicationInstance {
     /// instance.</p>
     pub allocated_storage: i32,
     /// <p>The time the replication instance was created.</p>
-    pub instance_create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub instance_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The VPC security group for the instance.</p>
     pub vpc_security_groups:
         std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
@@ -2900,7 +2900,7 @@ pub struct ReplicationInstance {
     pub secondary_availability_zone: std::option::Option<std::string::String>,
     /// <p> The expiration date of the free replication instance that is part of the Free DMS
     /// program. </p>
-    pub free_until: std::option::Option<aws_smithy_types::Instant>,
+    pub free_until: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The DNS name servers supported for the replication instance to access your on-premise source or target database.</p>
     pub dns_name_servers: std::option::Option<std::string::String>,
 }
@@ -3012,7 +3012,7 @@ impl ReplicationInstance {
         self.allocated_storage
     }
     /// <p>The time the replication instance was created.</p>
-    pub fn instance_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn instance_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.instance_create_time.as_ref()
     }
     /// <p>The VPC security group for the instance.</p>
@@ -3108,7 +3108,7 @@ impl ReplicationInstance {
     }
     /// <p> The expiration date of the free replication instance that is part of the Free DMS
     /// program. </p>
-    pub fn free_until(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn free_until(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.free_until.as_ref()
     }
     /// <p>The DNS name servers supported for the replication instance to access your on-premise source or target database.</p>
@@ -3185,7 +3185,7 @@ pub mod replication_instance {
         pub(crate) replication_instance_class: std::option::Option<std::string::String>,
         pub(crate) replication_instance_status: std::option::Option<std::string::String>,
         pub(crate) allocated_storage: std::option::Option<i32>,
-        pub(crate) instance_create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) instance_create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) vpc_security_groups:
             std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
@@ -3208,7 +3208,7 @@ pub mod replication_instance {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) publicly_accessible: std::option::Option<bool>,
         pub(crate) secondary_availability_zone: std::option::Option<std::string::String>,
-        pub(crate) free_until: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) free_until: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) dns_name_servers: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3448,14 +3448,14 @@ pub mod replication_instance {
             self
         }
         /// <p>The time the replication instance was created.</p>
-        pub fn instance_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn instance_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.instance_create_time = Some(input);
             self
         }
         /// <p>The time the replication instance was created.</p>
         pub fn set_instance_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.instance_create_time = input;
             self
@@ -3741,7 +3741,7 @@ pub mod replication_instance {
         }
         /// <p> The expiration date of the free replication instance that is part of the Free DMS
         /// program. </p>
-        pub fn free_until(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn free_until(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.free_until = Some(input);
             self
         }
@@ -3749,7 +3749,7 @@ pub mod replication_instance {
         /// program. </p>
         pub fn set_free_until(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.free_until = input;
             self
@@ -4668,7 +4668,7 @@ pub struct Endpoint {
     pub endpoint_type: std::option::Option<crate::model::ReplicationEndpointTypeValue>,
     /// <p>The database engine name. Valid values, depending on the EndpointType, include
     /// <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
-    /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+    /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
     /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
     /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
     /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
@@ -4716,25 +4716,7 @@ pub struct Endpoint {
     /// <p>The settings for the S3 target endpoint. For more information, see the
     /// <code>S3Settings</code> structure.</p>
     pub s3_settings: std::option::Option<crate::model::S3Settings>,
-    /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
-    /// <p>Possible settings include the following:</p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ServiceAccessRoleArn</code> -  - The Amazon Resource Name (ARN) used by the service access IAM role.
-    /// The role must allow the <code>iam:PassRole</code> action.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BucketName</code> - The name of the S3 bucket to use.</p>
-    /// </li>
-    /// </ul>
-    /// <p>Shorthand syntax for these settings is as follows:
-    /// <code>ServiceAccessRoleArn=string,BucketName=string,</code>
-    /// </p>
-    /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn":
-    /// "string", "BucketName": "string"} </code>
-    /// </p>
+    /// <p>The settings for the DMS Transfer type source. For more information, see the DmsTransferSettings structure.  </p>
     pub dms_transfer_settings: std::option::Option<crate::model::DmsTransferSettings>,
     /// <p>The settings for the MongoDB source endpoint. For more information, see the
     /// <code>MongoDbSettings</code> structure.</p>
@@ -4745,7 +4727,7 @@ pub struct Endpoint {
     /// <p>The settings for the Apache Kafka target endpoint. For more information, see the
     /// <code>KafkaSettings</code> structure.</p>
     pub kafka_settings: std::option::Option<crate::model::KafkaSettings>,
-    /// <p>The settings for the Elasticsearch source endpoint. For more information, see the
+    /// <p>The settings for the OpenSearch source endpoint. For more information, see the
     /// <code>ElasticsearchSettings</code> structure.</p>
     pub elasticsearch_settings: std::option::Option<crate::model::ElasticsearchSettings>,
     /// <p>The settings for the Amazon Neptune target endpoint. For more information, see the
@@ -4778,6 +4760,8 @@ pub struct Endpoint {
     /// <p>The settings for the Redis target endpoint. For more information, see the
     /// <code>RedisSettings</code> structure.</p>
     pub redis_settings: std::option::Option<crate::model::RedisSettings>,
+    /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+    pub gcp_my_sql_settings: std::option::Option<crate::model::GcpMySqlSettings>,
 }
 impl Endpoint {
     /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
@@ -4794,7 +4778,7 @@ impl Endpoint {
     }
     /// <p>The database engine name. Valid values, depending on the EndpointType, include
     /// <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
-    /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+    /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
     /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
     /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
     /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
@@ -4876,25 +4860,7 @@ impl Endpoint {
     pub fn s3_settings(&self) -> std::option::Option<&crate::model::S3Settings> {
         self.s3_settings.as_ref()
     }
-    /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
-    /// <p>Possible settings include the following:</p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ServiceAccessRoleArn</code> -  - The Amazon Resource Name (ARN) used by the service access IAM role.
-    /// The role must allow the <code>iam:PassRole</code> action.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BucketName</code> - The name of the S3 bucket to use.</p>
-    /// </li>
-    /// </ul>
-    /// <p>Shorthand syntax for these settings is as follows:
-    /// <code>ServiceAccessRoleArn=string,BucketName=string,</code>
-    /// </p>
-    /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn":
-    /// "string", "BucketName": "string"} </code>
-    /// </p>
+    /// <p>The settings for the DMS Transfer type source. For more information, see the DmsTransferSettings structure.  </p>
     pub fn dms_transfer_settings(&self) -> std::option::Option<&crate::model::DmsTransferSettings> {
         self.dms_transfer_settings.as_ref()
     }
@@ -4913,7 +4879,7 @@ impl Endpoint {
     pub fn kafka_settings(&self) -> std::option::Option<&crate::model::KafkaSettings> {
         self.kafka_settings.as_ref()
     }
-    /// <p>The settings for the Elasticsearch source endpoint. For more information, see the
+    /// <p>The settings for the OpenSearch source endpoint. For more information, see the
     /// <code>ElasticsearchSettings</code> structure.</p>
     pub fn elasticsearch_settings(
         &self,
@@ -4971,6 +4937,10 @@ impl Endpoint {
     pub fn redis_settings(&self) -> std::option::Option<&crate::model::RedisSettings> {
         self.redis_settings.as_ref()
     }
+    /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+    pub fn gcp_my_sql_settings(&self) -> std::option::Option<&crate::model::GcpMySqlSettings> {
+        self.gcp_my_sql_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for Endpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5015,6 +4985,7 @@ impl std::fmt::Debug for Endpoint {
         formatter.field("ibm_db2_settings", &self.ibm_db2_settings);
         formatter.field("doc_db_settings", &self.doc_db_settings);
         formatter.field("redis_settings", &self.redis_settings);
+        formatter.field("gcp_my_sql_settings", &self.gcp_my_sql_settings);
         formatter.finish()
     }
 }
@@ -5059,6 +5030,7 @@ pub mod endpoint {
         pub(crate) ibm_db2_settings: std::option::Option<crate::model::IbmDb2Settings>,
         pub(crate) doc_db_settings: std::option::Option<crate::model::DocDbSettings>,
         pub(crate) redis_settings: std::option::Option<crate::model::RedisSettings>,
+        pub(crate) gcp_my_sql_settings: std::option::Option<crate::model::GcpMySqlSettings>,
     }
     impl Builder {
         /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
@@ -5093,7 +5065,7 @@ pub mod endpoint {
         }
         /// <p>The database engine name. Valid values, depending on the EndpointType, include
         /// <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
-        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
         /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
         /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
         /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
@@ -5104,7 +5076,7 @@ pub mod endpoint {
         }
         /// <p>The database engine name. Valid values, depending on the EndpointType, include
         /// <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
-        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
         /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
         /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
         /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
@@ -5323,48 +5295,12 @@ pub mod endpoint {
             self.s3_settings = input;
             self
         }
-        /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
-        /// <p>Possible settings include the following:</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ServiceAccessRoleArn</code> -  - The Amazon Resource Name (ARN) used by the service access IAM role.
-        /// The role must allow the <code>iam:PassRole</code> action.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BucketName</code> - The name of the S3 bucket to use.</p>
-        /// </li>
-        /// </ul>
-        /// <p>Shorthand syntax for these settings is as follows:
-        /// <code>ServiceAccessRoleArn=string,BucketName=string,</code>
-        /// </p>
-        /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn":
-        /// "string", "BucketName": "string"} </code>
-        /// </p>
+        /// <p>The settings for the DMS Transfer type source. For more information, see the DmsTransferSettings structure.  </p>
         pub fn dms_transfer_settings(mut self, input: crate::model::DmsTransferSettings) -> Self {
             self.dms_transfer_settings = Some(input);
             self
         }
-        /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
-        /// <p>Possible settings include the following:</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ServiceAccessRoleArn</code> -  - The Amazon Resource Name (ARN) used by the service access IAM role.
-        /// The role must allow the <code>iam:PassRole</code> action.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BucketName</code> - The name of the S3 bucket to use.</p>
-        /// </li>
-        /// </ul>
-        /// <p>Shorthand syntax for these settings is as follows:
-        /// <code>ServiceAccessRoleArn=string,BucketName=string,</code>
-        /// </p>
-        /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn":
-        /// "string", "BucketName": "string"} </code>
-        /// </p>
+        /// <p>The settings for the DMS Transfer type source. For more information, see the DmsTransferSettings structure.  </p>
         pub fn set_dms_transfer_settings(
             mut self,
             input: std::option::Option<crate::model::DmsTransferSettings>,
@@ -5417,7 +5353,7 @@ pub mod endpoint {
             self.kafka_settings = input;
             self
         }
-        /// <p>The settings for the Elasticsearch source endpoint. For more information, see the
+        /// <p>The settings for the OpenSearch source endpoint. For more information, see the
         /// <code>ElasticsearchSettings</code> structure.</p>
         pub fn elasticsearch_settings(
             mut self,
@@ -5426,7 +5362,7 @@ pub mod endpoint {
             self.elasticsearch_settings = Some(input);
             self
         }
-        /// <p>The settings for the Elasticsearch source endpoint. For more information, see the
+        /// <p>The settings for the OpenSearch source endpoint. For more information, see the
         /// <code>ElasticsearchSettings</code> structure.</p>
         pub fn set_elasticsearch_settings(
             mut self,
@@ -5586,6 +5522,19 @@ pub mod endpoint {
             self.redis_settings = input;
             self
         }
+        /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+        pub fn gcp_my_sql_settings(mut self, input: crate::model::GcpMySqlSettings) -> Self {
+            self.gcp_my_sql_settings = Some(input);
+            self
+        }
+        /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+        pub fn set_gcp_my_sql_settings(
+            mut self,
+            input: std::option::Option<crate::model::GcpMySqlSettings>,
+        ) -> Self {
+            self.gcp_my_sql_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Endpoint`](crate::model::Endpoint)
         pub fn build(self) -> crate::model::Endpoint {
             crate::model::Endpoint {
@@ -5623,6 +5572,7 @@ pub mod endpoint {
                 ibm_db2_settings: self.ibm_db2_settings,
                 doc_db_settings: self.doc_db_settings,
                 redis_settings: self.redis_settings,
+                gcp_my_sql_settings: self.gcp_my_sql_settings,
             }
         }
     }
@@ -5631,6 +5581,564 @@ impl Endpoint {
     /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint)
     pub fn builder() -> crate::model::endpoint::Builder {
         crate::model::endpoint::Builder::default()
+    }
+}
+
+/// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GcpMySqlSettings {
+    /// <p>Specifies a script to run immediately after DMS connects to the endpoint.
+    /// The migration task continues running regardless if the SQL statement succeeds or fails.</p>
+    ///
+    /// <p>For this parameter, provide the code of the script itself, not the name of a file containing the script. </p>
+    pub after_connect_script: std::option::Option<std::string::String>,
+    /// <p>Adjusts the behavior of DMS when migrating from an SQL Server source database
+    /// that is hosted as part of an Always On availability group cluster. If you need DMS
+    /// to poll all the nodes in the Always On cluster for transaction backups, set this attribute to <code>false</code>. </p>
+    pub clean_source_metadata_on_mismatch: std::option::Option<bool>,
+    /// <p>Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify
+    /// the database using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code>
+    /// or <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a
+    /// MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify
+    /// the database only when you specify the schema in the table-mapping rules of the DMS task. </p>
+    pub database_name: std::option::Option<std::string::String>,
+    /// <p>Specifies how often to check the binary log for new changes/events when the database is idle. The default is five seconds.</p>
+    /// <p>Example: <code>eventsPollInterval=5;</code>
+    /// </p>
+    /// <p>In the example, DMS checks for changes in the binary logs every five seconds. </p>
+    pub events_poll_interval: std::option::Option<i32>,
+    /// <p>Specifies where to migrate source tables on the target, either to a single database or multiple databases.</p>
+    /// <p>Example: <code>targetDbType=MULTIPLE_DATABASES</code>
+    /// </p>
+    pub target_db_type: std::option::Option<crate::model::TargetDbType>,
+    /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible database.</p>
+    /// <p>Example: <code>maxFileSize=512</code>
+    /// </p>
+    pub max_file_size: std::option::Option<i32>,
+    /// <p>Improves performance when loading data into the MySQL-compatible target database. Specifies how many
+    /// threads to use to load the data into the MySQL-compatible target database. Setting a large number of
+    /// threads can have an adverse effect on database performance, because a separate connection is required
+    /// for each thread. The default is one.</p>
+    ///
+    /// <p>Example: <code>parallelLoadThreads=1</code>
+    /// </p>
+    pub parallel_load_threads: std::option::Option<i32>,
+    /// <p>Endpoint connection password.</p>
+    pub password: std::option::Option<std::string::String>,
+    /// <p></p>
+    pub port: std::option::Option<i32>,
+    /// <p>Endpoint TCP port.</p>
+    pub server_name: std::option::Option<std::string::String>,
+    /// <p>Specifies the time zone for the source MySQL database.</p>
+    ///
+    /// <p>Example: <code>serverTimezone=US/Pacific;</code>
+    /// </p>
+    ///
+    /// <p>Note: Do not enclose time zones in single quotes.</p>
+    pub server_timezone: std::option::Option<std::string::String>,
+    /// <p>Endpoint connection user name.</p>
+    pub username: std::option::Option<std::string::String>,
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS
+    /// as the trusted entity and grants the required permissions to access the value in
+    /// <code>SecretsManagerSecret.</code> The role must allow the <code>iam:PassRole</code> action.
+    /// <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret
+    /// that allows access to the MySQL endpoint.</p>
+    /// <note>
+    /// <p>You can specify one of two sets of values for these permissions. You can specify
+    /// the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text
+    /// values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>.
+    /// You can't specify both. For more information on creating this <code>SecretsManagerSecret</code>
+    /// and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to
+    /// access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the
+    /// Database Migration Service User Guide.
+    ///
+    /// </p>
+    /// </note>
+    pub secrets_manager_access_role_arn: std::option::Option<std::string::String>,
+    /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code>
+    /// that contains the MySQL endpoint connection details. </p>
+    pub secrets_manager_secret_id: std::option::Option<std::string::String>,
+}
+impl GcpMySqlSettings {
+    /// <p>Specifies a script to run immediately after DMS connects to the endpoint.
+    /// The migration task continues running regardless if the SQL statement succeeds or fails.</p>
+    ///
+    /// <p>For this parameter, provide the code of the script itself, not the name of a file containing the script. </p>
+    pub fn after_connect_script(&self) -> std::option::Option<&str> {
+        self.after_connect_script.as_deref()
+    }
+    /// <p>Adjusts the behavior of DMS when migrating from an SQL Server source database
+    /// that is hosted as part of an Always On availability group cluster. If you need DMS
+    /// to poll all the nodes in the Always On cluster for transaction backups, set this attribute to <code>false</code>. </p>
+    pub fn clean_source_metadata_on_mismatch(&self) -> std::option::Option<bool> {
+        self.clean_source_metadata_on_mismatch
+    }
+    /// <p>Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify
+    /// the database using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code>
+    /// or <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a
+    /// MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify
+    /// the database only when you specify the schema in the table-mapping rules of the DMS task. </p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>Specifies how often to check the binary log for new changes/events when the database is idle. The default is five seconds.</p>
+    /// <p>Example: <code>eventsPollInterval=5;</code>
+    /// </p>
+    /// <p>In the example, DMS checks for changes in the binary logs every five seconds. </p>
+    pub fn events_poll_interval(&self) -> std::option::Option<i32> {
+        self.events_poll_interval
+    }
+    /// <p>Specifies where to migrate source tables on the target, either to a single database or multiple databases.</p>
+    /// <p>Example: <code>targetDbType=MULTIPLE_DATABASES</code>
+    /// </p>
+    pub fn target_db_type(&self) -> std::option::Option<&crate::model::TargetDbType> {
+        self.target_db_type.as_ref()
+    }
+    /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible database.</p>
+    /// <p>Example: <code>maxFileSize=512</code>
+    /// </p>
+    pub fn max_file_size(&self) -> std::option::Option<i32> {
+        self.max_file_size
+    }
+    /// <p>Improves performance when loading data into the MySQL-compatible target database. Specifies how many
+    /// threads to use to load the data into the MySQL-compatible target database. Setting a large number of
+    /// threads can have an adverse effect on database performance, because a separate connection is required
+    /// for each thread. The default is one.</p>
+    ///
+    /// <p>Example: <code>parallelLoadThreads=1</code>
+    /// </p>
+    pub fn parallel_load_threads(&self) -> std::option::Option<i32> {
+        self.parallel_load_threads
+    }
+    /// <p>Endpoint connection password.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p></p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>Endpoint TCP port.</p>
+    pub fn server_name(&self) -> std::option::Option<&str> {
+        self.server_name.as_deref()
+    }
+    /// <p>Specifies the time zone for the source MySQL database.</p>
+    ///
+    /// <p>Example: <code>serverTimezone=US/Pacific;</code>
+    /// </p>
+    ///
+    /// <p>Note: Do not enclose time zones in single quotes.</p>
+    pub fn server_timezone(&self) -> std::option::Option<&str> {
+        self.server_timezone.as_deref()
+    }
+    /// <p>Endpoint connection user name.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS
+    /// as the trusted entity and grants the required permissions to access the value in
+    /// <code>SecretsManagerSecret.</code> The role must allow the <code>iam:PassRole</code> action.
+    /// <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret
+    /// that allows access to the MySQL endpoint.</p>
+    /// <note>
+    /// <p>You can specify one of two sets of values for these permissions. You can specify
+    /// the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text
+    /// values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>.
+    /// You can't specify both. For more information on creating this <code>SecretsManagerSecret</code>
+    /// and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to
+    /// access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the
+    /// Database Migration Service User Guide.
+    ///
+    /// </p>
+    /// </note>
+    pub fn secrets_manager_access_role_arn(&self) -> std::option::Option<&str> {
+        self.secrets_manager_access_role_arn.as_deref()
+    }
+    /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code>
+    /// that contains the MySQL endpoint connection details. </p>
+    pub fn secrets_manager_secret_id(&self) -> std::option::Option<&str> {
+        self.secrets_manager_secret_id.as_deref()
+    }
+}
+impl std::fmt::Debug for GcpMySqlSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GcpMySqlSettings");
+        formatter.field("after_connect_script", &self.after_connect_script);
+        formatter.field(
+            "clean_source_metadata_on_mismatch",
+            &self.clean_source_metadata_on_mismatch,
+        );
+        formatter.field("database_name", &self.database_name);
+        formatter.field("events_poll_interval", &self.events_poll_interval);
+        formatter.field("target_db_type", &self.target_db_type);
+        formatter.field("max_file_size", &self.max_file_size);
+        formatter.field("parallel_load_threads", &self.parallel_load_threads);
+        formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.field("port", &self.port);
+        formatter.field("server_name", &self.server_name);
+        formatter.field("server_timezone", &self.server_timezone);
+        formatter.field("username", &self.username);
+        formatter.field(
+            "secrets_manager_access_role_arn",
+            &self.secrets_manager_access_role_arn,
+        );
+        formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+        formatter.finish()
+    }
+}
+/// See [`GcpMySqlSettings`](crate::model::GcpMySqlSettings)
+pub mod gcp_my_sql_settings {
+    /// A builder for [`GcpMySqlSettings`](crate::model::GcpMySqlSettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) after_connect_script: std::option::Option<std::string::String>,
+        pub(crate) clean_source_metadata_on_mismatch: std::option::Option<bool>,
+        pub(crate) database_name: std::option::Option<std::string::String>,
+        pub(crate) events_poll_interval: std::option::Option<i32>,
+        pub(crate) target_db_type: std::option::Option<crate::model::TargetDbType>,
+        pub(crate) max_file_size: std::option::Option<i32>,
+        pub(crate) parallel_load_threads: std::option::Option<i32>,
+        pub(crate) password: std::option::Option<std::string::String>,
+        pub(crate) port: std::option::Option<i32>,
+        pub(crate) server_name: std::option::Option<std::string::String>,
+        pub(crate) server_timezone: std::option::Option<std::string::String>,
+        pub(crate) username: std::option::Option<std::string::String>,
+        pub(crate) secrets_manager_access_role_arn: std::option::Option<std::string::String>,
+        pub(crate) secrets_manager_secret_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies a script to run immediately after DMS connects to the endpoint.
+        /// The migration task continues running regardless if the SQL statement succeeds or fails.</p>
+        ///
+        /// <p>For this parameter, provide the code of the script itself, not the name of a file containing the script. </p>
+        pub fn after_connect_script(mut self, input: impl Into<std::string::String>) -> Self {
+            self.after_connect_script = Some(input.into());
+            self
+        }
+        /// <p>Specifies a script to run immediately after DMS connects to the endpoint.
+        /// The migration task continues running regardless if the SQL statement succeeds or fails.</p>
+        ///
+        /// <p>For this parameter, provide the code of the script itself, not the name of a file containing the script. </p>
+        pub fn set_after_connect_script(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.after_connect_script = input;
+            self
+        }
+        /// <p>Adjusts the behavior of DMS when migrating from an SQL Server source database
+        /// that is hosted as part of an Always On availability group cluster. If you need DMS
+        /// to poll all the nodes in the Always On cluster for transaction backups, set this attribute to <code>false</code>. </p>
+        pub fn clean_source_metadata_on_mismatch(mut self, input: bool) -> Self {
+            self.clean_source_metadata_on_mismatch = Some(input);
+            self
+        }
+        /// <p>Adjusts the behavior of DMS when migrating from an SQL Server source database
+        /// that is hosted as part of an Always On availability group cluster. If you need DMS
+        /// to poll all the nodes in the Always On cluster for transaction backups, set this attribute to <code>false</code>. </p>
+        pub fn set_clean_source_metadata_on_mismatch(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.clean_source_metadata_on_mismatch = input;
+            self
+        }
+        /// <p>Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify
+        /// the database using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code>
+        /// or <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a
+        /// MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify
+        /// the database only when you specify the schema in the table-mapping rules of the DMS task. </p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
+            self
+        }
+        /// <p>Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify
+        /// the database using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code>
+        /// or <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a
+        /// MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify
+        /// the database only when you specify the schema in the table-mapping rules of the DMS task. </p>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
+            self
+        }
+        /// <p>Specifies how often to check the binary log for new changes/events when the database is idle. The default is five seconds.</p>
+        /// <p>Example: <code>eventsPollInterval=5;</code>
+        /// </p>
+        /// <p>In the example, DMS checks for changes in the binary logs every five seconds. </p>
+        pub fn events_poll_interval(mut self, input: i32) -> Self {
+            self.events_poll_interval = Some(input);
+            self
+        }
+        /// <p>Specifies how often to check the binary log for new changes/events when the database is idle. The default is five seconds.</p>
+        /// <p>Example: <code>eventsPollInterval=5;</code>
+        /// </p>
+        /// <p>In the example, DMS checks for changes in the binary logs every five seconds. </p>
+        pub fn set_events_poll_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.events_poll_interval = input;
+            self
+        }
+        /// <p>Specifies where to migrate source tables on the target, either to a single database or multiple databases.</p>
+        /// <p>Example: <code>targetDbType=MULTIPLE_DATABASES</code>
+        /// </p>
+        pub fn target_db_type(mut self, input: crate::model::TargetDbType) -> Self {
+            self.target_db_type = Some(input);
+            self
+        }
+        /// <p>Specifies where to migrate source tables on the target, either to a single database or multiple databases.</p>
+        /// <p>Example: <code>targetDbType=MULTIPLE_DATABASES</code>
+        /// </p>
+        pub fn set_target_db_type(
+            mut self,
+            input: std::option::Option<crate::model::TargetDbType>,
+        ) -> Self {
+            self.target_db_type = input;
+            self
+        }
+        /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible database.</p>
+        /// <p>Example: <code>maxFileSize=512</code>
+        /// </p>
+        pub fn max_file_size(mut self, input: i32) -> Self {
+            self.max_file_size = Some(input);
+            self
+        }
+        /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible database.</p>
+        /// <p>Example: <code>maxFileSize=512</code>
+        /// </p>
+        pub fn set_max_file_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_file_size = input;
+            self
+        }
+        /// <p>Improves performance when loading data into the MySQL-compatible target database. Specifies how many
+        /// threads to use to load the data into the MySQL-compatible target database. Setting a large number of
+        /// threads can have an adverse effect on database performance, because a separate connection is required
+        /// for each thread. The default is one.</p>
+        ///
+        /// <p>Example: <code>parallelLoadThreads=1</code>
+        /// </p>
+        pub fn parallel_load_threads(mut self, input: i32) -> Self {
+            self.parallel_load_threads = Some(input);
+            self
+        }
+        /// <p>Improves performance when loading data into the MySQL-compatible target database. Specifies how many
+        /// threads to use to load the data into the MySQL-compatible target database. Setting a large number of
+        /// threads can have an adverse effect on database performance, because a separate connection is required
+        /// for each thread. The default is one.</p>
+        ///
+        /// <p>Example: <code>parallelLoadThreads=1</code>
+        /// </p>
+        pub fn set_parallel_load_threads(mut self, input: std::option::Option<i32>) -> Self {
+            self.parallel_load_threads = input;
+            self
+        }
+        /// <p>Endpoint connection password.</p>
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.password = Some(input.into());
+            self
+        }
+        /// <p>Endpoint connection password.</p>
+        pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.password = input;
+            self
+        }
+        /// <p></p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
+            self
+        }
+        /// <p>Endpoint TCP port.</p>
+        pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_name = Some(input.into());
+            self
+        }
+        /// <p>Endpoint TCP port.</p>
+        pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_name = input;
+            self
+        }
+        /// <p>Specifies the time zone for the source MySQL database.</p>
+        ///
+        /// <p>Example: <code>serverTimezone=US/Pacific;</code>
+        /// </p>
+        ///
+        /// <p>Note: Do not enclose time zones in single quotes.</p>
+        pub fn server_timezone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_timezone = Some(input.into());
+            self
+        }
+        /// <p>Specifies the time zone for the source MySQL database.</p>
+        ///
+        /// <p>Example: <code>serverTimezone=US/Pacific;</code>
+        /// </p>
+        ///
+        /// <p>Note: Do not enclose time zones in single quotes.</p>
+        pub fn set_server_timezone(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.server_timezone = input;
+            self
+        }
+        /// <p>Endpoint connection user name.</p>
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.username = Some(input.into());
+            self
+        }
+        /// <p>Endpoint connection user name.</p>
+        pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.username = input;
+            self
+        }
+        /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS
+        /// as the trusted entity and grants the required permissions to access the value in
+        /// <code>SecretsManagerSecret.</code> The role must allow the <code>iam:PassRole</code> action.
+        /// <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret
+        /// that allows access to the MySQL endpoint.</p>
+        /// <note>
+        /// <p>You can specify one of two sets of values for these permissions. You can specify
+        /// the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text
+        /// values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>.
+        /// You can't specify both. For more information on creating this <code>SecretsManagerSecret</code>
+        /// and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to
+        /// access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the
+        /// Database Migration Service User Guide.
+        ///
+        /// </p>
+        /// </note>
+        pub fn secrets_manager_access_role_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.secrets_manager_access_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS
+        /// as the trusted entity and grants the required permissions to access the value in
+        /// <code>SecretsManagerSecret.</code> The role must allow the <code>iam:PassRole</code> action.
+        /// <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret
+        /// that allows access to the MySQL endpoint.</p>
+        /// <note>
+        /// <p>You can specify one of two sets of values for these permissions. You can specify
+        /// the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text
+        /// values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>.
+        /// You can't specify both. For more information on creating this <code>SecretsManagerSecret</code>
+        /// and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to
+        /// access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the
+        /// Database Migration Service User Guide.
+        ///
+        /// </p>
+        /// </note>
+        pub fn set_secrets_manager_access_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.secrets_manager_access_role_arn = input;
+            self
+        }
+        /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code>
+        /// that contains the MySQL endpoint connection details. </p>
+        pub fn secrets_manager_secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secrets_manager_secret_id = Some(input.into());
+            self
+        }
+        /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code>
+        /// that contains the MySQL endpoint connection details. </p>
+        pub fn set_secrets_manager_secret_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.secrets_manager_secret_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GcpMySqlSettings`](crate::model::GcpMySqlSettings)
+        pub fn build(self) -> crate::model::GcpMySqlSettings {
+            crate::model::GcpMySqlSettings {
+                after_connect_script: self.after_connect_script,
+                clean_source_metadata_on_mismatch: self.clean_source_metadata_on_mismatch,
+                database_name: self.database_name,
+                events_poll_interval: self.events_poll_interval,
+                target_db_type: self.target_db_type,
+                max_file_size: self.max_file_size,
+                parallel_load_threads: self.parallel_load_threads,
+                password: self.password,
+                port: self.port,
+                server_name: self.server_name,
+                server_timezone: self.server_timezone,
+                username: self.username,
+                secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
+                secrets_manager_secret_id: self.secrets_manager_secret_id,
+            }
+        }
+    }
+}
+impl GcpMySqlSettings {
+    /// Creates a new builder-style object to manufacture [`GcpMySqlSettings`](crate::model::GcpMySqlSettings)
+    pub fn builder() -> crate::model::gcp_my_sql_settings::Builder {
+        crate::model::gcp_my_sql_settings::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TargetDbType {
+    #[allow(missing_docs)] // documentation missing in model
+    MultipleDatabases,
+    #[allow(missing_docs)] // documentation missing in model
+    SpecificDatabase,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TargetDbType {
+    fn from(s: &str) -> Self {
+        match s {
+            "multiple-databases" => TargetDbType::MultipleDatabases,
+            "specific-database" => TargetDbType::SpecificDatabase,
+            other => TargetDbType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TargetDbType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TargetDbType::from(s))
+    }
+}
+impl TargetDbType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TargetDbType::MultipleDatabases => "multiple-databases",
+            TargetDbType::SpecificDatabase => "specific-database",
+            TargetDbType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["multiple-databases", "specific-database"]
+    }
+}
+impl AsRef<str> for TargetDbType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -7344,7 +7852,7 @@ pub struct SybaseSettings {
     pub database_name: std::option::Option<std::string::String>,
     /// <p>Endpoint connection password.</p>
     pub password: std::option::Option<std::string::String>,
-    /// <p>Endpoint TCP port.</p>
+    /// <p>Endpoint TCP port. The default is 5000.</p>
     pub port: std::option::Option<i32>,
     /// <p>Fully qualified domain name of the endpoint.</p>
     pub server_name: std::option::Option<std::string::String>,
@@ -7379,7 +7887,7 @@ impl SybaseSettings {
     pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
-    /// <p>Endpoint TCP port.</p>
+    /// <p>Endpoint TCP port. The default is 5000.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
@@ -7469,12 +7977,12 @@ pub mod sybase_settings {
             self.password = input;
             self
         }
-        /// <p>Endpoint TCP port.</p>
+        /// <p>Endpoint TCP port. The default is 5000.</p>
         pub fn port(mut self, input: i32) -> Self {
             self.port = Some(input);
             self
         }
-        /// <p>Endpoint TCP port.</p>
+        /// <p>Endpoint TCP port. The default is 5000.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -9255,7 +9763,7 @@ pub struct MySqlSettings {
     /// you specify the schema in the table-mapping rules of the DMS task.</p>
     pub database_name: std::option::Option<std::string::String>,
     /// <p>Specifies how often to check the binary log for new
-    /// changes/events when the database is idle.</p>
+    /// changes/events when the database is idle. The default is five seconds.</p>
     /// <p>Example: <code>eventsPollInterval=5;</code>
     /// </p>
     /// <p>In the example, DMS checks for changes in the binary
@@ -9274,7 +9782,7 @@ pub struct MySqlSettings {
     /// <p>Improves performance when loading data into the MySQL-compatible target database.
     /// Specifies how many threads to use to load the data into the MySQL-compatible target
     /// database. Setting a large number of threads can have an adverse effect on database
-    /// performance, because a separate connection is required for each thread.</p>
+    /// performance, because a separate connection is required for each thread. The default is one.</p>
     /// <p>Example: <code>parallelLoadThreads=1</code>
     /// </p>
     pub parallel_load_threads: std::option::Option<i32>,
@@ -9337,7 +9845,7 @@ impl MySqlSettings {
         self.database_name.as_deref()
     }
     /// <p>Specifies how often to check the binary log for new
-    /// changes/events when the database is idle.</p>
+    /// changes/events when the database is idle. The default is five seconds.</p>
     /// <p>Example: <code>eventsPollInterval=5;</code>
     /// </p>
     /// <p>In the example, DMS checks for changes in the binary
@@ -9362,7 +9870,7 @@ impl MySqlSettings {
     /// <p>Improves performance when loading data into the MySQL-compatible target database.
     /// Specifies how many threads to use to load the data into the MySQL-compatible target
     /// database. Setting a large number of threads can have an adverse effect on database
-    /// performance, because a separate connection is required for each thread.</p>
+    /// performance, because a separate connection is required for each thread. The default is one.</p>
     /// <p>Example: <code>parallelLoadThreads=1</code>
     /// </p>
     pub fn parallel_load_threads(&self) -> std::option::Option<i32> {
@@ -9527,7 +10035,7 @@ pub mod my_sql_settings {
             self
         }
         /// <p>Specifies how often to check the binary log for new
-        /// changes/events when the database is idle.</p>
+        /// changes/events when the database is idle. The default is five seconds.</p>
         /// <p>Example: <code>eventsPollInterval=5;</code>
         /// </p>
         /// <p>In the example, DMS checks for changes in the binary
@@ -9537,7 +10045,7 @@ pub mod my_sql_settings {
             self
         }
         /// <p>Specifies how often to check the binary log for new
-        /// changes/events when the database is idle.</p>
+        /// changes/events when the database is idle. The default is five seconds.</p>
         /// <p>Example: <code>eventsPollInterval=5;</code>
         /// </p>
         /// <p>In the example, DMS checks for changes in the binary
@@ -9584,7 +10092,7 @@ pub mod my_sql_settings {
         /// <p>Improves performance when loading data into the MySQL-compatible target database.
         /// Specifies how many threads to use to load the data into the MySQL-compatible target
         /// database. Setting a large number of threads can have an adverse effect on database
-        /// performance, because a separate connection is required for each thread.</p>
+        /// performance, because a separate connection is required for each thread. The default is one.</p>
         /// <p>Example: <code>parallelLoadThreads=1</code>
         /// </p>
         pub fn parallel_load_threads(mut self, input: i32) -> Self {
@@ -9594,7 +10102,7 @@ pub mod my_sql_settings {
         /// <p>Improves performance when loading data into the MySQL-compatible target database.
         /// Specifies how many threads to use to load the data into the MySQL-compatible target
         /// database. Setting a large number of threads can have an adverse effect on database
-        /// performance, because a separate connection is required for each thread.</p>
+        /// performance, because a separate connection is required for each thread. The default is one.</p>
         /// <p>Example: <code>parallelLoadThreads=1</code>
         /// </p>
         pub fn set_parallel_load_threads(mut self, input: std::option::Option<i32>) -> Self {
@@ -9747,61 +10255,6 @@ impl MySqlSettings {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum TargetDbType {
-    #[allow(missing_docs)] // documentation missing in model
-    MultipleDatabases,
-    #[allow(missing_docs)] // documentation missing in model
-    SpecificDatabase,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for TargetDbType {
-    fn from(s: &str) -> Self {
-        match s {
-            "multiple-databases" => TargetDbType::MultipleDatabases,
-            "specific-database" => TargetDbType::SpecificDatabase,
-            other => TargetDbType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for TargetDbType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetDbType::from(s))
-    }
-}
-impl TargetDbType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TargetDbType::MultipleDatabases => "multiple-databases",
-            TargetDbType::SpecificDatabase => "specific-database",
-            TargetDbType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["multiple-databases", "specific-database"]
-    }
-}
-impl AsRef<str> for TargetDbType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
 /// <p>Provides information that defines a PostgreSQL endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -9853,7 +10306,7 @@ pub struct PostgreSqlSettings {
     pub heartbeat_frequency: std::option::Option<i32>,
     /// <p>Endpoint connection password.</p>
     pub password: std::option::Option<std::string::String>,
-    /// <p>Endpoint TCP port.</p>
+    /// <p>Endpoint TCP port. The default is 5432.</p>
     pub port: std::option::Option<i32>,
     /// <p>Fully qualified domain name of the endpoint.</p>
     pub server_name: std::option::Option<std::string::String>,
@@ -9967,7 +10420,7 @@ impl PostgreSqlSettings {
     pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
-    /// <p>Endpoint TCP port.</p>
+    /// <p>Endpoint TCP port. The default is 5432.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
@@ -10256,12 +10709,12 @@ pub mod postgre_sql_settings {
             self.password = input;
             self
         }
-        /// <p>Endpoint TCP port.</p>
+        /// <p>Endpoint TCP port. The default is 5432.</p>
         pub fn port(mut self, input: i32) -> Self {
             self.port = Some(input);
             self
         }
-        /// <p>Endpoint TCP port.</p>
+        /// <p>Endpoint TCP port. The default is 5432.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -11789,25 +12242,25 @@ impl NeptuneSettings {
     }
 }
 
-/// <p>Provides information that defines an Elasticsearch endpoint.</p>
+/// <p>Provides information that defines an OpenSearch endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ElasticsearchSettings {
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role.
     /// The role must allow the <code>iam:PassRole</code> action.</p>
     pub service_access_role_arn: std::option::Option<std::string::String>,
-    /// <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
+    /// <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport
     /// protocol (http/https) is not specified.</p>
     pub endpoint_uri: std::option::Option<std::string::String>,
     /// <p>The maximum percentage of records that can fail to be written before a full load
     /// operation stops.</p>
     /// <p>To avoid early failure, this counter is only effective after 1000 records
-    /// are transferred. Elasticsearch also has the concept of error monitoring during the
+    /// are transferred. OpenSearch also has the concept of error monitoring during the
     /// last 10 minutes of an Observation Window. If transfer of all records fail in the
     /// last 10 minutes, the full load operation stops. </p>
     pub full_load_error_percentage: std::option::Option<i32>,
     /// <p>The maximum number of seconds for which DMS retries failed API requests to the
-    /// Elasticsearch cluster.</p>
+    /// OpenSearch cluster.</p>
     pub error_retry_duration: std::option::Option<i32>,
 }
 impl ElasticsearchSettings {
@@ -11816,7 +12269,7 @@ impl ElasticsearchSettings {
     pub fn service_access_role_arn(&self) -> std::option::Option<&str> {
         self.service_access_role_arn.as_deref()
     }
-    /// <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
+    /// <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport
     /// protocol (http/https) is not specified.</p>
     pub fn endpoint_uri(&self) -> std::option::Option<&str> {
         self.endpoint_uri.as_deref()
@@ -11824,14 +12277,14 @@ impl ElasticsearchSettings {
     /// <p>The maximum percentage of records that can fail to be written before a full load
     /// operation stops.</p>
     /// <p>To avoid early failure, this counter is only effective after 1000 records
-    /// are transferred. Elasticsearch also has the concept of error monitoring during the
+    /// are transferred. OpenSearch also has the concept of error monitoring during the
     /// last 10 minutes of an Observation Window. If transfer of all records fail in the
     /// last 10 minutes, the full load operation stops. </p>
     pub fn full_load_error_percentage(&self) -> std::option::Option<i32> {
         self.full_load_error_percentage
     }
     /// <p>The maximum number of seconds for which DMS retries failed API requests to the
-    /// Elasticsearch cluster.</p>
+    /// OpenSearch cluster.</p>
     pub fn error_retry_duration(&self) -> std::option::Option<i32> {
         self.error_retry_duration
     }
@@ -11876,13 +12329,13 @@ pub mod elasticsearch_settings {
             self.service_access_role_arn = input;
             self
         }
-        /// <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
+        /// <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport
         /// protocol (http/https) is not specified.</p>
         pub fn endpoint_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_uri = Some(input.into());
             self
         }
-        /// <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
+        /// <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport
         /// protocol (http/https) is not specified.</p>
         pub fn set_endpoint_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_uri = input;
@@ -11891,7 +12344,7 @@ pub mod elasticsearch_settings {
         /// <p>The maximum percentage of records that can fail to be written before a full load
         /// operation stops.</p>
         /// <p>To avoid early failure, this counter is only effective after 1000 records
-        /// are transferred. Elasticsearch also has the concept of error monitoring during the
+        /// are transferred. OpenSearch also has the concept of error monitoring during the
         /// last 10 minutes of an Observation Window. If transfer of all records fail in the
         /// last 10 minutes, the full load operation stops. </p>
         pub fn full_load_error_percentage(mut self, input: i32) -> Self {
@@ -11901,7 +12354,7 @@ pub mod elasticsearch_settings {
         /// <p>The maximum percentage of records that can fail to be written before a full load
         /// operation stops.</p>
         /// <p>To avoid early failure, this counter is only effective after 1000 records
-        /// are transferred. Elasticsearch also has the concept of error monitoring during the
+        /// are transferred. OpenSearch also has the concept of error monitoring during the
         /// last 10 minutes of an Observation Window. If transfer of all records fail in the
         /// last 10 minutes, the full load operation stops. </p>
         pub fn set_full_load_error_percentage(mut self, input: std::option::Option<i32>) -> Self {
@@ -11909,13 +12362,13 @@ pub mod elasticsearch_settings {
             self
         }
         /// <p>The maximum number of seconds for which DMS retries failed API requests to the
-        /// Elasticsearch cluster.</p>
+        /// OpenSearch cluster.</p>
         pub fn error_retry_duration(mut self, input: i32) -> Self {
             self.error_retry_duration = Some(input);
             self
         }
         /// <p>The maximum number of seconds for which DMS retries failed API requests to the
-        /// Elasticsearch cluster.</p>
+        /// OpenSearch cluster.</p>
         pub fn set_error_retry_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.error_retry_duration = input;
             self
@@ -13950,6 +14403,14 @@ pub struct S3Settings {
     /// <p>This setting is supported in DMS versions 3.4.2 and later.</p>
     /// </note>
     pub cdc_path: std::option::Option<std::string::String>,
+    /// <p>When set to true, this parameter uses the task start time as the timestamp column value instead of
+    /// the time data is written to target. For full load, when <code>useTaskStartTimeForFullLoadTimestamp</code>
+    /// is set to <code>true</code>, each row of the timestamp column contains the task start time. For CDC loads,
+    /// each row of the timestamp column contains the transaction commit time.</p>
+    ///
+    /// <p>When <code>useTaskStartTimeForFullLoadTimestamp</code> is set to <code>false</code>, the full load timestamp
+    /// in the timestamp column increments with the time data arrives at the target. </p>
+    pub use_task_start_time_for_full_load_timestamp: std::option::Option<bool>,
     /// <p>A value that enables DMS to specify a predefined (canned) access control list for
     /// objects created in an Amazon S3 bucket as .csv or .parquet files. For more information
     /// about Amazon S3 canned ACLs, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
@@ -14428,6 +14889,16 @@ impl S3Settings {
     pub fn cdc_path(&self) -> std::option::Option<&str> {
         self.cdc_path.as_deref()
     }
+    /// <p>When set to true, this parameter uses the task start time as the timestamp column value instead of
+    /// the time data is written to target. For full load, when <code>useTaskStartTimeForFullLoadTimestamp</code>
+    /// is set to <code>true</code>, each row of the timestamp column contains the task start time. For CDC loads,
+    /// each row of the timestamp column contains the transaction commit time.</p>
+    ///
+    /// <p>When <code>useTaskStartTimeForFullLoadTimestamp</code> is set to <code>false</code>, the full load timestamp
+    /// in the timestamp column increments with the time data arrives at the target. </p>
+    pub fn use_task_start_time_for_full_load_timestamp(&self) -> std::option::Option<bool> {
+        self.use_task_start_time_for_full_load_timestamp
+    }
     /// <p>A value that enables DMS to specify a predefined (canned) access control list for
     /// objects created in an Amazon S3 bucket as .csv or .parquet files. For more information
     /// about Amazon S3 canned ACLs, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
@@ -14548,6 +15019,10 @@ impl std::fmt::Debug for S3Settings {
         formatter.field("csv_no_sup_value", &self.csv_no_sup_value);
         formatter.field("preserve_transactions", &self.preserve_transactions);
         formatter.field("cdc_path", &self.cdc_path);
+        formatter.field(
+            "use_task_start_time_for_full_load_timestamp",
+            &self.use_task_start_time_for_full_load_timestamp,
+        );
         formatter.field("canned_acl_for_objects", &self.canned_acl_for_objects);
         formatter.field("add_column_name", &self.add_column_name);
         formatter.field("cdc_max_batch_interval", &self.cdc_max_batch_interval);
@@ -14595,6 +15070,7 @@ pub mod s3_settings {
         pub(crate) csv_no_sup_value: std::option::Option<std::string::String>,
         pub(crate) preserve_transactions: std::option::Option<bool>,
         pub(crate) cdc_path: std::option::Option<std::string::String>,
+        pub(crate) use_task_start_time_for_full_load_timestamp: std::option::Option<bool>,
         pub(crate) canned_acl_for_objects:
             std::option::Option<crate::model::CannedAclForObjectsValue>,
         pub(crate) add_column_name: std::option::Option<bool>,
@@ -15535,6 +16011,31 @@ pub mod s3_settings {
             self.cdc_path = input;
             self
         }
+        /// <p>When set to true, this parameter uses the task start time as the timestamp column value instead of
+        /// the time data is written to target. For full load, when <code>useTaskStartTimeForFullLoadTimestamp</code>
+        /// is set to <code>true</code>, each row of the timestamp column contains the task start time. For CDC loads,
+        /// each row of the timestamp column contains the transaction commit time.</p>
+        ///
+        /// <p>When <code>useTaskStartTimeForFullLoadTimestamp</code> is set to <code>false</code>, the full load timestamp
+        /// in the timestamp column increments with the time data arrives at the target. </p>
+        pub fn use_task_start_time_for_full_load_timestamp(mut self, input: bool) -> Self {
+            self.use_task_start_time_for_full_load_timestamp = Some(input);
+            self
+        }
+        /// <p>When set to true, this parameter uses the task start time as the timestamp column value instead of
+        /// the time data is written to target. For full load, when <code>useTaskStartTimeForFullLoadTimestamp</code>
+        /// is set to <code>true</code>, each row of the timestamp column contains the task start time. For CDC loads,
+        /// each row of the timestamp column contains the transaction commit time.</p>
+        ///
+        /// <p>When <code>useTaskStartTimeForFullLoadTimestamp</code> is set to <code>false</code>, the full load timestamp
+        /// in the timestamp column increments with the time data arrives at the target. </p>
+        pub fn set_use_task_start_time_for_full_load_timestamp(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.use_task_start_time_for_full_load_timestamp = input;
+            self
+        }
         /// <p>A value that enables DMS to specify a predefined (canned) access control list for
         /// objects created in an Amazon S3 bucket as .csv or .parquet files. For more information
         /// about Amazon S3 canned ACLs, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
@@ -15751,6 +16252,8 @@ pub mod s3_settings {
                 csv_no_sup_value: self.csv_no_sup_value,
                 preserve_transactions: self.preserve_transactions,
                 cdc_path: self.cdc_path,
+                use_task_start_time_for_full_load_timestamp: self
+                    .use_task_start_time_for_full_load_timestamp,
                 canned_acl_for_objects: self.canned_acl_for_objects,
                 add_column_name: self.add_column_name,
                 cdc_max_batch_interval: self.cdc_max_batch_interval,
@@ -16532,19 +17035,20 @@ pub struct Certificate {
     /// contain two consecutive hyphens.</p>
     pub certificate_identifier: std::option::Option<std::string::String>,
     /// <p>The date that the certificate was created.</p>
-    pub certificate_creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub certificate_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
     pub certificate_pem: std::option::Option<std::string::String>,
-    /// <p>The location of an imported Oracle Wallet certificate for use with SSL.</p>
+    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code>
+    /// </p>
     pub certificate_wallet: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The owner of the certificate.</p>
     pub certificate_owner: std::option::Option<std::string::String>,
     /// <p>The beginning date that the certificate is valid.</p>
-    pub valid_from_date: std::option::Option<aws_smithy_types::Instant>,
+    pub valid_from_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The final date that the certificate is valid.</p>
-    pub valid_to_date: std::option::Option<aws_smithy_types::Instant>,
+    pub valid_to_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The signing algorithm for the certificate.</p>
     pub signing_algorithm: std::option::Option<std::string::String>,
     /// <p>The key length of the cryptographic algorithm being used.</p>
@@ -16558,14 +17062,15 @@ impl Certificate {
         self.certificate_identifier.as_deref()
     }
     /// <p>The date that the certificate was created.</p>
-    pub fn certificate_creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn certificate_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.certificate_creation_date.as_ref()
     }
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
     pub fn certificate_pem(&self) -> std::option::Option<&str> {
         self.certificate_pem.as_deref()
     }
-    /// <p>The location of an imported Oracle Wallet certificate for use with SSL.</p>
+    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code>
+    /// </p>
     pub fn certificate_wallet(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.certificate_wallet.as_ref()
     }
@@ -16578,11 +17083,11 @@ impl Certificate {
         self.certificate_owner.as_deref()
     }
     /// <p>The beginning date that the certificate is valid.</p>
-    pub fn valid_from_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn valid_from_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.valid_from_date.as_ref()
     }
     /// <p>The final date that the certificate is valid.</p>
-    pub fn valid_to_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn valid_to_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.valid_to_date.as_ref()
     }
     /// <p>The signing algorithm for the certificate.</p>
@@ -16617,13 +17122,13 @@ pub mod certificate {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_identifier: std::option::Option<std::string::String>,
-        pub(crate) certificate_creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) certificate_creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) certificate_pem: std::option::Option<std::string::String>,
         pub(crate) certificate_wallet: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
         pub(crate) certificate_owner: std::option::Option<std::string::String>,
-        pub(crate) valid_from_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) valid_to_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) valid_from_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) valid_to_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) signing_algorithm: std::option::Option<std::string::String>,
         pub(crate) key_length: std::option::Option<i32>,
     }
@@ -16646,14 +17151,14 @@ pub mod certificate {
             self
         }
         /// <p>The date that the certificate was created.</p>
-        pub fn certificate_creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn certificate_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.certificate_creation_date = Some(input);
             self
         }
         /// <p>The date that the certificate was created.</p>
         pub fn set_certificate_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.certificate_creation_date = input;
             self
@@ -16671,12 +17176,14 @@ pub mod certificate {
             self.certificate_pem = input;
             self
         }
-        /// <p>The location of an imported Oracle Wallet certificate for use with SSL.</p>
+        /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code>
+        /// </p>
         pub fn certificate_wallet(mut self, input: aws_smithy_types::Blob) -> Self {
             self.certificate_wallet = Some(input);
             self
         }
-        /// <p>The location of an imported Oracle Wallet certificate for use with SSL.</p>
+        /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code>
+        /// </p>
         pub fn set_certificate_wallet(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -16711,27 +17218,27 @@ pub mod certificate {
             self
         }
         /// <p>The beginning date that the certificate is valid.</p>
-        pub fn valid_from_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn valid_from_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.valid_from_date = Some(input);
             self
         }
         /// <p>The beginning date that the certificate is valid.</p>
         pub fn set_valid_from_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.valid_from_date = input;
             self
         }
         /// <p>The final date that the certificate is valid.</p>
-        pub fn valid_to_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn valid_to_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.valid_to_date = Some(input);
             self
         }
         /// <p>The final date that the certificate is valid.</p>
         pub fn set_valid_to_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.valid_to_date = input;
             self
@@ -16809,14 +17316,14 @@ pub struct TableStatistics {
     /// migrations where DynamoDB is the target).</p>
     pub full_load_error_rows: i64,
     /// <p>The time when the full load operation started.</p>
-    pub full_load_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub full_load_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the full load operation completed.</p>
-    pub full_load_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub full_load_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A value that indicates if the table was reloaded (<code>true</code>)
     /// or loaded as part of a new full load operation (<code>false</code>).</p>
     pub full_load_reloaded: std::option::Option<bool>,
     /// <p>The last time a table was updated.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The state of the tables described.</p>
     /// <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table
     /// cancelled | Table error | Table all | Table updates | Table is being reloaded</p>
@@ -16914,11 +17421,11 @@ impl TableStatistics {
         self.full_load_error_rows
     }
     /// <p>The time when the full load operation started.</p>
-    pub fn full_load_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn full_load_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.full_load_start_time.as_ref()
     }
     /// <p>The time when the full load operation completed.</p>
-    pub fn full_load_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn full_load_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.full_load_end_time.as_ref()
     }
     /// <p>A value that indicates if the table was reloaded (<code>true</code>)
@@ -16927,7 +17434,7 @@ impl TableStatistics {
         self.full_load_reloaded
     }
     /// <p>The last time a table was updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>The state of the tables described.</p>
@@ -17048,10 +17555,10 @@ pub mod table_statistics {
         pub(crate) full_load_rows: std::option::Option<i64>,
         pub(crate) full_load_condtnl_chk_failed_rows: std::option::Option<i64>,
         pub(crate) full_load_error_rows: std::option::Option<i64>,
-        pub(crate) full_load_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) full_load_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) full_load_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) full_load_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) full_load_reloaded: std::option::Option<bool>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) table_state: std::option::Option<std::string::String>,
         pub(crate) validation_pending_records: std::option::Option<i64>,
         pub(crate) validation_failed_records: std::option::Option<i64>,
@@ -17158,27 +17665,27 @@ pub mod table_statistics {
             self
         }
         /// <p>The time when the full load operation started.</p>
-        pub fn full_load_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn full_load_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.full_load_start_time = Some(input);
             self
         }
         /// <p>The time when the full load operation started.</p>
         pub fn set_full_load_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.full_load_start_time = input;
             self
         }
         /// <p>The time when the full load operation completed.</p>
-        pub fn full_load_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn full_load_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.full_load_end_time = Some(input);
             self
         }
         /// <p>The time when the full load operation completed.</p>
         pub fn set_full_load_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.full_load_end_time = input;
             self
@@ -17196,14 +17703,14 @@ pub mod table_statistics {
             self
         }
         /// <p>The last time a table was updated.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The last time a table was updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -17536,7 +18043,7 @@ pub struct ReplicationTaskIndividualAssessment {
     /// <p>Date when this individual assessment was started as part of running the
     /// <code>StartReplicationTaskAssessmentRun</code> operation.</p>
     pub replication_task_individual_assessment_start_date:
-        std::option::Option<aws_smithy_types::Instant>,
+        std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ReplicationTaskIndividualAssessment {
     /// <p>Amazon Resource Name (ARN) of this individual assessment.</p>
@@ -17593,7 +18100,7 @@ impl ReplicationTaskIndividualAssessment {
     /// <code>StartReplicationTaskAssessmentRun</code> operation.</p>
     pub fn replication_task_individual_assessment_start_date(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.replication_task_individual_assessment_start_date
             .as_ref()
     }
@@ -17633,7 +18140,7 @@ pub mod replication_task_individual_assessment {
         pub(crate) individual_assessment_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) replication_task_individual_assessment_start_date:
-            std::option::Option<aws_smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Amazon Resource Name (ARN) of this individual assessment.</p>
@@ -17763,7 +18270,7 @@ pub mod replication_task_individual_assessment {
         /// <code>StartReplicationTaskAssessmentRun</code> operation.</p>
         pub fn replication_task_individual_assessment_start_date(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.replication_task_individual_assessment_start_date = Some(input);
             self
@@ -17772,7 +18279,7 @@ pub mod replication_task_individual_assessment {
         /// <code>StartReplicationTaskAssessmentRun</code> operation.</p>
         pub fn set_replication_task_individual_assessment_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.replication_task_individual_assessment_start_date = input;
             self
@@ -17808,7 +18315,7 @@ pub struct ReplicationTaskAssessmentResult {
     /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
     pub replication_task_arn: std::option::Option<std::string::String>,
     /// <p>The date the task assessment was completed. </p>
-    pub replication_task_last_assessment_date: std::option::Option<aws_smithy_types::Instant>,
+    pub replication_task_last_assessment_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The status of the task assessment. </p>
     pub assessment_status: std::option::Option<std::string::String>,
     /// <p> The file containing the results of the task assessment. </p>
@@ -17835,7 +18342,7 @@ impl ReplicationTaskAssessmentResult {
     /// <p>The date the task assessment was completed. </p>
     pub fn replication_task_last_assessment_date(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.replication_task_last_assessment_date.as_ref()
     }
     /// <p> The status of the task assessment. </p>
@@ -17887,7 +18394,7 @@ pub mod replication_task_assessment_result {
         pub(crate) replication_task_identifier: std::option::Option<std::string::String>,
         pub(crate) replication_task_arn: std::option::Option<std::string::String>,
         pub(crate) replication_task_last_assessment_date:
-            std::option::Option<aws_smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) assessment_status: std::option::Option<std::string::String>,
         pub(crate) assessment_results_file: std::option::Option<std::string::String>,
         pub(crate) assessment_results: std::option::Option<std::string::String>,
@@ -17928,7 +18435,7 @@ pub mod replication_task_assessment_result {
         /// <p>The date the task assessment was completed. </p>
         pub fn replication_task_last_assessment_date(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.replication_task_last_assessment_date = Some(input);
             self
@@ -17936,7 +18443,7 @@ pub mod replication_task_assessment_result {
         /// <p>The date the task assessment was completed. </p>
         pub fn set_replication_task_last_assessment_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.replication_task_last_assessment_date = input;
             self
@@ -18243,12 +18750,12 @@ pub struct PendingMaintenanceAction {
     /// action is applied to the resource during its first maintenance window after this date. If
     /// this date is specified, any <code>next-maintenance</code> opt-in requests are
     /// ignored.</p>
-    pub auto_applied_after_date: std::option::Option<aws_smithy_types::Instant>,
+    pub auto_applied_after_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the maintenance action will be automatically applied. The maintenance
     /// action is applied to the resource on this date regardless of the maintenance window for the
     /// resource. If this date is specified, any <code>immediate</code> opt-in requests are
     /// ignored.</p>
-    pub forced_apply_date: std::option::Option<aws_smithy_types::Instant>,
+    pub forced_apply_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of opt-in request that has been received for the resource.</p>
     pub opt_in_status: std::option::Option<std::string::String>,
     /// <p>The effective date when the pending maintenance action will be applied to the resource.
@@ -18257,7 +18764,7 @@ pub struct PendingMaintenanceAction {
     /// <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter values.
     /// This value is blank if an opt-in request has not been received and nothing has been
     /// specified for <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
-    pub current_apply_date: std::option::Option<aws_smithy_types::Instant>,
+    pub current_apply_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A description providing more detail about the maintenance action.</p>
     pub description: std::option::Option<std::string::String>,
 }
@@ -18270,14 +18777,14 @@ impl PendingMaintenanceAction {
     /// action is applied to the resource during its first maintenance window after this date. If
     /// this date is specified, any <code>next-maintenance</code> opt-in requests are
     /// ignored.</p>
-    pub fn auto_applied_after_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn auto_applied_after_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.auto_applied_after_date.as_ref()
     }
     /// <p>The date when the maintenance action will be automatically applied. The maintenance
     /// action is applied to the resource on this date regardless of the maintenance window for the
     /// resource. If this date is specified, any <code>immediate</code> opt-in requests are
     /// ignored.</p>
-    pub fn forced_apply_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn forced_apply_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.forced_apply_date.as_ref()
     }
     /// <p>The type of opt-in request that has been received for the resource.</p>
@@ -18290,7 +18797,7 @@ impl PendingMaintenanceAction {
     /// <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter values.
     /// This value is blank if an opt-in request has not been received and nothing has been
     /// specified for <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
-    pub fn current_apply_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn current_apply_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.current_apply_date.as_ref()
     }
     /// <p>A description providing more detail about the maintenance action.</p>
@@ -18317,10 +18824,10 @@ pub mod pending_maintenance_action {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<std::string::String>,
-        pub(crate) auto_applied_after_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) forced_apply_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) auto_applied_after_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) forced_apply_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) opt_in_status: std::option::Option<std::string::String>,
-        pub(crate) current_apply_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) current_apply_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -18338,7 +18845,7 @@ pub mod pending_maintenance_action {
         /// action is applied to the resource during its first maintenance window after this date. If
         /// this date is specified, any <code>next-maintenance</code> opt-in requests are
         /// ignored.</p>
-        pub fn auto_applied_after_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn auto_applied_after_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.auto_applied_after_date = Some(input);
             self
         }
@@ -18348,7 +18855,7 @@ pub mod pending_maintenance_action {
         /// ignored.</p>
         pub fn set_auto_applied_after_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.auto_applied_after_date = input;
             self
@@ -18357,7 +18864,7 @@ pub mod pending_maintenance_action {
         /// action is applied to the resource on this date regardless of the maintenance window for the
         /// resource. If this date is specified, any <code>immediate</code> opt-in requests are
         /// ignored.</p>
-        pub fn forced_apply_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn forced_apply_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.forced_apply_date = Some(input);
             self
         }
@@ -18367,7 +18874,7 @@ pub mod pending_maintenance_action {
         /// ignored.</p>
         pub fn set_forced_apply_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.forced_apply_date = input;
             self
@@ -18391,7 +18898,7 @@ pub mod pending_maintenance_action {
         /// <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter values.
         /// This value is blank if an opt-in request has not been received and nothing has been
         /// specified for <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
-        pub fn current_apply_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn current_apply_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.current_apply_date = Some(input);
             self
         }
@@ -18403,7 +18910,7 @@ pub mod pending_maintenance_action {
         /// specified for <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
         pub fn set_current_apply_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.current_apply_date = input;
             self
@@ -18789,7 +19296,7 @@ pub struct Event {
     /// <p>The event categories available for the specified source type.</p>
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date of the event.</p>
-    pub date: std::option::Option<aws_smithy_types::Instant>,
+    pub date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Event {
     /// <p> The identifier of an event source.</p>
@@ -18810,7 +19317,7 @@ impl Event {
         self.event_categories.as_deref()
     }
     /// <p>The date of the event.</p>
-    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
 }
@@ -18835,7 +19342,7 @@ pub mod event {
         pub(crate) source_type: std::option::Option<crate::model::SourceType>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p> The identifier of an event source.</p>
@@ -18896,12 +19403,12 @@ pub mod event {
             self
         }
         /// <p>The date of the event.</p>
-        pub fn date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date = Some(input);
             self
         }
         /// <p>The date of the event.</p>
-        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
+        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.date = input;
             self
         }

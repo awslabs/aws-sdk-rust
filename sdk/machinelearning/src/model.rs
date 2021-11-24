@@ -318,7 +318,7 @@ pub struct RealtimeEndpointInfo {
     /// <p> The maximum processing rate for the real-time endpoint for <code>MLModel</code>, measured in incoming requests per second.</p>
     pub peak_requests_per_second: i32,
     /// <p>The time that the request to create the real-time endpoint for the <code>MLModel</code> was received. The time is expressed in epoch time.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The URI that specifies where to send real-time prediction requests for the <code>MLModel</code>.</p>
     /// <p>
     /// <b>Note:</b> The application must wait until the real-time endpoint is ready before using this URI.</p>
@@ -346,7 +346,7 @@ impl RealtimeEndpointInfo {
         self.peak_requests_per_second
     }
     /// <p>The time that the request to create the real-time endpoint for the <code>MLModel</code> was received. The time is expressed in epoch time.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The URI that specifies where to send real-time prediction requests for the <code>MLModel</code>.</p>
@@ -391,7 +391,7 @@ pub mod realtime_endpoint_info {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) peak_requests_per_second: std::option::Option<i32>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) endpoint_url: std::option::Option<std::string::String>,
         pub(crate) endpoint_status: std::option::Option<crate::model::RealtimeEndpointStatus>,
     }
@@ -407,14 +407,14 @@ pub mod realtime_endpoint_info {
             self
         }
         /// <p>The time that the request to create the real-time endpoint for the <code>MLModel</code> was received. The time is expressed in epoch time.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time that the request to create the real-time endpoint for the <code>MLModel</code> was received. The time is expressed in epoch time.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1317,9 +1317,9 @@ pub struct MlModel {
     /// <p>The AWS user account from which the <code>MLModel</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     pub created_by_iam_user: std::option::Option<std::string::String>,
     /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The current status of an <code>MLModel</code>. This element can have one of the following values: </p>
@@ -1431,15 +1431,15 @@ pub struct MlModel {
     #[allow(missing_docs)] // documentation missing in model
     pub score_threshold: std::option::Option<f32>,
     /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
-    pub score_threshold_last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub score_threshold_last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A description of the most recent details about accessing the <code>MLModel</code>.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>Long integer type that is a 64-bit signed number.</p>
     pub compute_time: std::option::Option<i64>,
     /// <p>A timestamp represented in epoch time.</p>
-    pub finished_at: std::option::Option<aws_smithy_types::Instant>,
+    pub finished_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp represented in epoch time.</p>
-    pub started_at: std::option::Option<aws_smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MlModel {
     /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
@@ -1455,11 +1455,11 @@ impl MlModel {
         self.created_by_iam_user.as_deref()
     }
     /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
@@ -1595,7 +1595,7 @@ impl MlModel {
     /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
     pub fn score_threshold_last_updated_at(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.score_threshold_last_updated_at.as_ref()
     }
     /// <p>A description of the most recent details about accessing the <code>MLModel</code>.</p>
@@ -1607,11 +1607,11 @@ impl MlModel {
         self.compute_time
     }
     /// <p>A timestamp represented in epoch time.</p>
-    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.finished_at.as_ref()
     }
     /// <p>A timestamp represented in epoch time.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
 }
@@ -1652,8 +1652,8 @@ pub mod ml_model {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
         pub(crate) training_data_source_id: std::option::Option<std::string::String>,
         pub(crate) created_by_iam_user: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::EntityStatus>,
         pub(crate) size_in_bytes: std::option::Option<i64>,
@@ -1665,11 +1665,11 @@ pub mod ml_model {
         pub(crate) algorithm: std::option::Option<crate::model::Algorithm>,
         pub(crate) ml_model_type: std::option::Option<crate::model::MlModelType>,
         pub(crate) score_threshold: std::option::Option<f32>,
-        pub(crate) score_threshold_last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) score_threshold_last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) compute_time: std::option::Option<i64>,
-        pub(crate) finished_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) finished_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
@@ -1709,27 +1709,27 @@ pub mod ml_model {
             self
         }
         /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -2037,14 +2037,17 @@ pub mod ml_model {
             self
         }
         /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
-        pub fn score_threshold_last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn score_threshold_last_updated_at(
+            mut self,
+            input: aws_smithy_types::DateTime,
+        ) -> Self {
             self.score_threshold_last_updated_at = Some(input);
             self
         }
         /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
         pub fn set_score_threshold_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.score_threshold_last_updated_at = input;
             self
@@ -2070,27 +2073,27 @@ pub mod ml_model {
             self
         }
         /// <p>A timestamp represented in epoch time.</p>
-        pub fn finished_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn finished_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.finished_at = Some(input);
             self
         }
         /// <p>A timestamp represented in epoch time.</p>
         pub fn set_finished_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.finished_at = input;
             self
         }
         /// <p>A timestamp represented in epoch time.</p>
-        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started_at = Some(input);
             self
         }
         /// <p>A timestamp represented in epoch time.</p>
         pub fn set_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started_at = input;
             self
@@ -2369,9 +2372,9 @@ pub struct Evaluation {
     /// <p>The AWS user account that invoked the evaluation. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     pub created_by_iam_user: std::option::Option<std::string::String>,
     /// <p>The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the evaluation. This element can have one of the following values:</p>
@@ -2421,9 +2424,9 @@ pub struct Evaluation {
     /// <p>Long integer type that is a 64-bit signed number.</p>
     pub compute_time: std::option::Option<i64>,
     /// <p>A timestamp represented in epoch time.</p>
-    pub finished_at: std::option::Option<aws_smithy_types::Instant>,
+    pub finished_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp represented in epoch time.</p>
-    pub started_at: std::option::Option<aws_smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Evaluation {
     /// <p>The ID that is assigned to the <code>Evaluation</code> at creation.</p>
@@ -2447,11 +2450,11 @@ impl Evaluation {
         self.created_by_iam_user.as_deref()
     }
     /// <p>The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
@@ -2513,11 +2516,11 @@ impl Evaluation {
         self.compute_time
     }
     /// <p>A timestamp represented in epoch time.</p>
-    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.finished_at.as_ref()
     }
     /// <p>A timestamp represented in epoch time.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
 }
@@ -2552,15 +2555,15 @@ pub mod evaluation {
         pub(crate) evaluation_data_source_id: std::option::Option<std::string::String>,
         pub(crate) input_data_location_s3: std::option::Option<std::string::String>,
         pub(crate) created_by_iam_user: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::EntityStatus>,
         pub(crate) performance_metrics: std::option::Option<crate::model::PerformanceMetrics>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) compute_time: std::option::Option<i64>,
-        pub(crate) finished_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) finished_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID that is assigned to the <code>Evaluation</code> at creation.</p>
@@ -2626,27 +2629,27 @@ pub mod evaluation {
             self
         }
         /// <p>The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -2784,27 +2787,27 @@ pub mod evaluation {
             self
         }
         /// <p>A timestamp represented in epoch time.</p>
-        pub fn finished_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn finished_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.finished_at = Some(input);
             self
         }
         /// <p>A timestamp represented in epoch time.</p>
         pub fn set_finished_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.finished_at = input;
             self
         }
         /// <p>A timestamp represented in epoch time.</p>
-        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started_at = Some(input);
             self
         }
         /// <p>A timestamp represented in epoch time.</p>
         pub fn set_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started_at = input;
             self
@@ -2972,10 +2975,10 @@ pub struct DataSource {
     /// <p>The AWS user account from which the <code>DataSource</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     pub created_by_iam_user: std::option::Option<std::string::String>,
     /// <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to the
     /// <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total number of observations contained in the data files that the <code>DataSource</code> references.</p>
     pub data_size_in_bytes: std::option::Option<i64>,
     /// <p>The number of data files referenced by the <code>DataSource</code>.</p>
@@ -3016,9 +3019,9 @@ pub struct DataSource {
     /// <p>Long integer type that is a 64-bit signed number.</p>
     pub compute_time: std::option::Option<i64>,
     /// <p>A timestamp represented in epoch time.</p>
-    pub finished_at: std::option::Option<aws_smithy_types::Instant>,
+    pub finished_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp represented in epoch time.</p>
-    pub started_at: std::option::Option<aws_smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DataSource {
     /// <p>The ID that is assigned to the <code>DataSource</code> during creation.</p>
@@ -3039,12 +3042,12 @@ impl DataSource {
         self.created_by_iam_user.as_deref()
     }
     /// <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time of the most recent edit to the
     /// <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The total number of observations contained in the data files that the <code>DataSource</code> references.</p>
@@ -3107,11 +3110,11 @@ impl DataSource {
         self.compute_time
     }
     /// <p>A timestamp represented in epoch time.</p>
-    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.finished_at.as_ref()
     }
     /// <p>A timestamp represented in epoch time.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
 }
@@ -3149,8 +3152,8 @@ pub mod data_source {
         pub(crate) data_location_s3: std::option::Option<std::string::String>,
         pub(crate) data_rearrangement: std::option::Option<std::string::String>,
         pub(crate) created_by_iam_user: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_size_in_bytes: std::option::Option<i64>,
         pub(crate) number_of_files: std::option::Option<i64>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3161,8 +3164,8 @@ pub mod data_source {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) compute_statistics: std::option::Option<bool>,
         pub(crate) compute_time: std::option::Option<i64>,
-        pub(crate) finished_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) finished_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID that is assigned to the <code>DataSource</code> during creation.</p>
@@ -3220,21 +3223,21 @@ pub mod data_source {
             self
         }
         /// <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time of the most recent edit to the
         /// <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
@@ -3242,7 +3245,7 @@ pub mod data_source {
         /// <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -3395,27 +3398,27 @@ pub mod data_source {
             self
         }
         /// <p>A timestamp represented in epoch time.</p>
-        pub fn finished_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn finished_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.finished_at = Some(input);
             self
         }
         /// <p>A timestamp represented in epoch time.</p>
         pub fn set_finished_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.finished_at = input;
             self
         }
         /// <p>A timestamp represented in epoch time.</p>
-        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started_at = Some(input);
             self
         }
         /// <p>A timestamp represented in epoch time.</p>
         pub fn set_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started_at = input;
             self
@@ -3576,9 +3579,9 @@ pub struct BatchPrediction {
     /// <p>The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     pub created_by_iam_user: std::option::Option<std::string::String>,
     /// <p>The time that the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to the <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the <code>BatchPrediction</code>. This element can have one of the following values:</p>
@@ -3612,9 +3615,9 @@ pub struct BatchPrediction {
     /// <p>Long integer type that is a 64-bit signed number.</p>
     pub compute_time: std::option::Option<i64>,
     /// <p>A timestamp represented in epoch time.</p>
-    pub finished_at: std::option::Option<aws_smithy_types::Instant>,
+    pub finished_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp represented in epoch time.</p>
-    pub started_at: std::option::Option<aws_smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Long integer type that is a 64-bit signed number.</p>
     pub total_record_count: std::option::Option<i64>,
     /// <p>Long integer type that is a 64-bit signed number.</p>
@@ -3644,11 +3647,11 @@ impl BatchPrediction {
         self.created_by_iam_user.as_deref()
     }
     /// <p>The time that the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time of the most recent edit to the <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
@@ -3694,11 +3697,11 @@ impl BatchPrediction {
         self.compute_time
     }
     /// <p>A timestamp represented in epoch time.</p>
-    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.finished_at.as_ref()
     }
     /// <p>A timestamp represented in epoch time.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>Long integer type that is a 64-bit signed number.</p>
@@ -3746,15 +3749,15 @@ pub mod batch_prediction {
         pub(crate) batch_prediction_data_source_id: std::option::Option<std::string::String>,
         pub(crate) input_data_location_s3: std::option::Option<std::string::String>,
         pub(crate) created_by_iam_user: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::EntityStatus>,
         pub(crate) output_uri: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) compute_time: std::option::Option<i64>,
-        pub(crate) finished_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) finished_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) total_record_count: std::option::Option<i64>,
         pub(crate) invalid_record_count: std::option::Option<i64>,
     }
@@ -3829,27 +3832,27 @@ pub mod batch_prediction {
             self
         }
         /// <p>The time that the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time that the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time of the most recent edit to the <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The time of the most recent edit to the <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -3952,27 +3955,27 @@ pub mod batch_prediction {
             self
         }
         /// <p>A timestamp represented in epoch time.</p>
-        pub fn finished_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn finished_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.finished_at = Some(input);
             self
         }
         /// <p>A timestamp represented in epoch time.</p>
         pub fn set_finished_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.finished_at = input;
             self
         }
         /// <p>A timestamp represented in epoch time.</p>
-        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started_at = Some(input);
             self
         }
         /// <p>A timestamp represented in epoch time.</p>
         pub fn set_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started_at = input;
             self

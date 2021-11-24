@@ -22,10 +22,12 @@ use std::time::{Duration, UNIX_EPOCH};
 /// Validate that for CN regions we set the URI correctly
 #[tokio::test]
 async fn generate_random_cn() {
-    let creds = Credentials::from_keys(
+    let creds = Credentials::new(
         "ANOTREAL",
         "notrealrnrELgWzOk3IfjzDKtFBhDby",
         Some("notarealsessiontoken".to_string()),
+        None,
+        "test",
     );
     let conn = TestConnection::new(vec![(
         http::Request::builder()
@@ -53,10 +55,12 @@ async fn generate_random_cn() {
 
 #[tokio::test]
 async fn generate_random() {
-    let creds = Credentials::from_keys(
+    let creds = Credentials::new(
         "ANOTREAL",
         "notrealrnrELgWzOk3IfjzDKtFBhDby",
         Some("notarealsessiontoken".to_string()),
+        None,
+        "test",
     );
     let conn = TestConnection::new(vec![(
         http::Request::builder()
@@ -105,10 +109,12 @@ async fn generate_random() {
 
 #[tokio::test]
 async fn generate_random_malformed_response() {
-    let creds = Credentials::from_keys(
+    let creds = Credentials::new(
         "ANOTREAL",
         "notrealrnrELgWzOk3IfjzDKtFBhDby",
         Some("notarealsessiontoken".to_string()),
+        None,
+        "test",
     );
     let conn = TestConnection::new(vec![(
         http::Request::builder().body(SdkBody::from(r#"{"NumberOfBytes":64}"#)).unwrap(),
@@ -134,10 +140,12 @@ async fn generate_random_malformed_response() {
 
 #[tokio::test]
 async fn generate_random_keystore_not_found() {
-    let creds = Credentials::from_keys(
+    let creds = Credentials::new(
         "ANOTREAL",
         "notrealrnrELgWzOk3IfjzDKtFBhDby",
         Some("notarealsessiontoken".to_string()),
+        None,
+        "test",
     );
     let conf = Config::builder()
         .region(Region::new("us-east-1"))

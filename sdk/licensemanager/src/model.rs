@@ -1127,7 +1127,7 @@ pub struct LicenseConfigurationUsage {
     /// <p>ID of the account that owns the resource.</p>
     pub resource_owner_id: std::option::Option<std::string::String>,
     /// <p>Time when the license configuration was initially associated with the resource.</p>
-    pub association_time: std::option::Option<aws_smithy_types::Instant>,
+    pub association_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Number of licenses consumed by the resource.</p>
     pub consumed_licenses: std::option::Option<i64>,
 }
@@ -1149,7 +1149,7 @@ impl LicenseConfigurationUsage {
         self.resource_owner_id.as_deref()
     }
     /// <p>Time when the license configuration was initially associated with the resource.</p>
-    pub fn association_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn association_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.association_time.as_ref()
     }
     /// <p>Number of licenses consumed by the resource.</p>
@@ -1179,7 +1179,7 @@ pub mod license_configuration_usage {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) resource_status: std::option::Option<std::string::String>,
         pub(crate) resource_owner_id: std::option::Option<std::string::String>,
-        pub(crate) association_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) association_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) consumed_licenses: std::option::Option<i64>,
     }
     impl Builder {
@@ -1233,14 +1233,14 @@ pub mod license_configuration_usage {
             self
         }
         /// <p>Time when the license configuration was initially associated with the resource.</p>
-        pub fn association_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn association_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.association_time = Some(input);
             self
         }
         /// <p>Time when the license configuration was initially associated with the resource.</p>
         pub fn set_association_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.association_time = input;
             self
@@ -4557,11 +4557,11 @@ pub struct LicenseConversionTask {
     /// <p>The status message for the conversion task.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The time the conversion task was started at.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the usage operation value of the resource was changed.</p>
-    pub license_conversion_time: std::option::Option<aws_smithy_types::Instant>,
+    pub license_conversion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the conversion task was completed.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LicenseConversionTask {
     /// <p>The ID of the license type conversion task.</p>
@@ -4594,15 +4594,15 @@ impl LicenseConversionTask {
         self.status_message.as_deref()
     }
     /// <p>The time the conversion task was started at.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time the usage operation value of the resource was changed.</p>
-    pub fn license_conversion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn license_conversion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.license_conversion_time.as_ref()
     }
     /// <p>The time the conversion task was completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -4641,9 +4641,9 @@ pub mod license_conversion_task {
             std::option::Option<crate::model::LicenseConversionContext>,
         pub(crate) status: std::option::Option<crate::model::LicenseConversionTaskStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) license_conversion_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) license_conversion_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the license type conversion task.</p>
@@ -4730,40 +4730,40 @@ pub mod license_conversion_task {
             self
         }
         /// <p>The time the conversion task was started at.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The time the conversion task was started at.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time the usage operation value of the resource was changed.</p>
-        pub fn license_conversion_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn license_conversion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.license_conversion_time = Some(input);
             self
         }
         /// <p>The time the usage operation value of the resource was changed.</p>
         pub fn set_license_conversion_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.license_conversion_time = input;
             self
         }
         /// <p>The time the conversion task was completed.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time the conversion task was completed.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -5354,11 +5354,11 @@ impl LicenseConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutomatedDiscoveryInformation {
     /// <p>Time that automated discovery last ran.</p>
-    pub last_run_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_run_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AutomatedDiscoveryInformation {
     /// <p>Time that automated discovery last ran.</p>
-    pub fn last_run_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_run_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_run_time.as_ref()
     }
 }
@@ -5375,18 +5375,18 @@ pub mod automated_discovery_information {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_run_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_run_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Time that automated discovery last ran.</p>
-        pub fn last_run_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_run_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_run_time = Some(input);
             self
         }
         /// <p>Time that automated discovery last ran.</p>
         pub fn set_last_run_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_run_time = input;
             self
@@ -5632,7 +5632,7 @@ pub struct LicenseOperationFailure {
     /// <p>Error message.</p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>Failure time.</p>
-    pub failure_time: std::option::Option<aws_smithy_types::Instant>,
+    pub failure_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Name of the operation.</p>
     pub operation_name: std::option::Option<std::string::String>,
     /// <p>ID of the Amazon Web Services account that owns the resource.</p>
@@ -5656,7 +5656,7 @@ impl LicenseOperationFailure {
         self.error_message.as_deref()
     }
     /// <p>Failure time.</p>
-    pub fn failure_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn failure_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.failure_time.as_ref()
     }
     /// <p>Name of the operation.</p>
@@ -5699,7 +5699,7 @@ pub mod license_operation_failure {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) error_message: std::option::Option<std::string::String>,
-        pub(crate) failure_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) failure_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) operation_name: std::option::Option<std::string::String>,
         pub(crate) resource_owner_id: std::option::Option<std::string::String>,
         pub(crate) operation_requested_by: std::option::Option<std::string::String>,
@@ -5743,14 +5743,14 @@ pub mod license_operation_failure {
             self
         }
         /// <p>Failure time.</p>
-        pub fn failure_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn failure_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.failure_time = Some(input);
             self
         }
         /// <p>Failure time.</p>
         pub fn set_failure_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.failure_time = input;
             self
@@ -5846,7 +5846,7 @@ pub struct LicenseConfigurationAssociation {
     /// <p>ID of the Amazon Web Services account that owns the resource consuming licenses.</p>
     pub resource_owner_id: std::option::Option<std::string::String>,
     /// <p>Time when the license configuration was associated with the resource.</p>
-    pub association_time: std::option::Option<aws_smithy_types::Instant>,
+    pub association_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
     pub ami_association_scope: std::option::Option<std::string::String>,
 }
@@ -5864,7 +5864,7 @@ impl LicenseConfigurationAssociation {
         self.resource_owner_id.as_deref()
     }
     /// <p>Time when the license configuration was associated with the resource.</p>
-    pub fn association_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn association_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.association_time.as_ref()
     }
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
@@ -5892,7 +5892,7 @@ pub mod license_configuration_association {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) resource_owner_id: std::option::Option<std::string::String>,
-        pub(crate) association_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) association_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) ami_association_scope: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5933,14 +5933,14 @@ pub mod license_configuration_association {
             self
         }
         /// <p>Time when the license configuration was associated with the resource.</p>
-        pub fn association_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn association_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.association_time = Some(input);
             self
         }
         /// <p>Time when the license configuration was associated with the resource.</p>
         pub fn set_association_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.association_time = input;
             self

@@ -961,7 +961,7 @@ pub struct GetUploadStatusOutput {
     /// <p>The reason for an upload failure.</p>
     pub failure_reason: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date at which the upload was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetUploadStatusOutput {
     /// <p>The ID of the upload.</p>
@@ -989,7 +989,7 @@ impl GetUploadStatusOutput {
         self.failure_reason.as_deref()
     }
     /// <p>The date at which the upload was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
 }
@@ -1018,7 +1018,7 @@ pub mod get_upload_status_output {
         pub(crate) namespace_name: std::option::Option<std::string::String>,
         pub(crate) namespace_version: std::option::Option<i64>,
         pub(crate) failure_reason: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the upload.</p>
@@ -1100,14 +1100,14 @@ pub mod get_upload_status_output {
             self
         }
         /// <p>The date at which the upload was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date at which the upload was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self

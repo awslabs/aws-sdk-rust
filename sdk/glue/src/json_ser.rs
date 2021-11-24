@@ -3764,7 +3764,7 @@ pub fn serialize_structure_crate_model_partition_input(
     if let Some(var_802) = &input.last_access_time {
         object
             .key("LastAccessTime")
-            .instant(var_802, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_802, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_803) = &input.storage_descriptor {
         let mut object_804 = object.key("StorageDescriptor").start_object();
@@ -3786,7 +3786,7 @@ pub fn serialize_structure_crate_model_partition_input(
     if let Some(var_809) = &input.last_analyzed_time {
         object
             .key("LastAnalyzedTime")
-            .instant(var_809, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_809, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -4360,12 +4360,12 @@ pub fn serialize_structure_crate_model_table_input(
     if let Some(var_928) = &input.last_access_time {
         object
             .key("LastAccessTime")
-            .instant(var_928, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_928, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_929) = &input.last_analyzed_time {
         object
             .key("LastAnalyzedTime")
-            .instant(var_929, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_929, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if input.retention != 0 {
         object.key("Retention").number(
@@ -4646,12 +4646,12 @@ pub fn serialize_structure_crate_model_task_run_filter_criteria(
     if let Some(var_992) = &input.started_before {
         object
             .key("StartedBefore")
-            .instant(var_992, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_992, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_993) = &input.started_after {
         object
             .key("StartedAfter")
-            .instant(var_993, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_993, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -4688,22 +4688,22 @@ pub fn serialize_structure_crate_model_transform_filter_criteria(
     if let Some(var_1000) = &input.created_before {
         object
             .key("CreatedBefore")
-            .instant(var_1000, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_1000, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_1001) = &input.created_after {
         object
             .key("CreatedAfter")
-            .instant(var_1001, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_1001, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_1002) = &input.last_modified_before {
         object
             .key("LastModifiedBefore")
-            .instant(var_1002, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_1002, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_1003) = &input.last_modified_after {
         object
             .key("LastModifiedAfter")
-            .instant(var_1003, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_1003, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_1004) = &input.schema {
         let mut array_1005 = object.key("Schema").start_array();
@@ -4955,7 +4955,7 @@ pub fn serialize_structure_crate_model_column_statistics(
     if let Some(var_1047) = &input.analyzed_time {
         object
             .key("AnalyzedTime")
-            .instant(var_1047, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_1047, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_1048) = &input.statistics_data {
         let mut object_1049 = object.key("StatisticsData").start_object();
@@ -5808,12 +5808,12 @@ pub fn serialize_structure_crate_model_date_column_statistics_data(
     if let Some(var_1220) = &input.minimum_value {
         object
             .key("MinimumValue")
-            .instant(var_1220, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_1220, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_1221) = &input.maximum_value {
         object
             .key("MaximumValue")
-            .instant(var_1221, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_1221, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     {
         object.key("NumberOfNulls").number(

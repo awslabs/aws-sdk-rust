@@ -9,7 +9,6 @@ use aws_smithy_http::operation;
 use aws_smithy_http::operation::Operation;
 use aws_smithy_http::response::ParseHttpResponse;
 use aws_smithy_http::result::SdkError;
-use std::error::Error;
 use std::future::Future;
 use std::marker::PhantomData;
 use std::pin::Pin;
@@ -67,22 +66,28 @@ type BoxedResultFuture<T, E> = Pin<Box<dyn Future<Output = Result<T, E>> + Send>
 /// `T`: The happy path return of the response parser
 /// `E`: The error path return of the response parser
 /// `R`: The type of the retry policy
-impl<S, O, T, E, R> tower::Service<operation::Operation<O, R>> for ParseResponseService<S, O, R>
+impl<InnerService, ResponseHandler, SuccessResponse, FailureResponse, RetryPolicy>
+    tower::Service<operation::Operation<ResponseHandler, RetryPolicy>>
+    for ParseResponseService<InnerService, ResponseHandler, RetryPolicy>
 where
-    S: Service<operation::Request, Response = operation::Response, Error = SendOperationError>,
-    S::Future: Send + 'static,
-    O: ParseHttpResponse<Output = Result<T, E>> + Send + Sync + 'static,
-    E: Error,
+    InnerService:
+        Service<operation::Request, Response = operation::Response, Error = SendOperationError>,
+    InnerService::Future: Send + 'static,
+    ResponseHandler: ParseHttpResponse<Output = Result<SuccessResponse, FailureResponse>>
+        + Send
+        + Sync
+        + 'static,
+    FailureResponse: std::error::Error,
 {
-    type Response = aws_smithy_http::result::SdkSuccess<T>;
-    type Error = aws_smithy_http::result::SdkError<E>;
+    type Response = aws_smithy_http::result::SdkSuccess<SuccessResponse>;
+    type Error = aws_smithy_http::result::SdkError<FailureResponse>;
     type Future = BoxedResultFuture<Self::Response, Self::Error>;
 
     fn poll_ready(&mut self, cx: &mut Context<'_>) -> Poll<Result<(), Self::Error>> {
         self.inner.poll_ready(cx).map_err(|err| err.into())
     }
 
-    fn call(&mut self, req: Operation<O, R>) -> Self::Future {
+    fn call(&mut self, req: Operation<ResponseHandler, RetryPolicy>) -> Self::Future {
         let (req, parts) = req.into_request_response();
         let handler = parts.response_handler;
         // send_operation records the full request-response lifecycle.
@@ -124,6 +129,9 @@ where
                     .record("message", &display(err)),
                 Err(SdkError::ConstructionFailure(err)) => inner_span
                     .record("status", &"construction_failure")
+                    .record("message", &display(err)),
+                Err(SdkError::TimeoutError(err)) => inner_span
+                    .record("status", &"timeout_error")
                     .record("message", &display(err)),
             };
             resp

@@ -8,6 +8,7 @@ edition = "2018"
 
 [dependencies]
 aws-config = { path = "../../sdk/aws-config" }
+aws-smithy-types-convert = { path = "../../sdk/aws-smithy-types-convert", features = ["convert-chrono"] }
 aws-sdk-cognitoidentityprovider = { package = "aws-sdk-cognitoidentityprovider", path = "../../sdk/cognitoidentityprovider" }
 aws-types = { path = "../../sdk/aws-types" }
 tokio = { version = "1", features = ["full"] }

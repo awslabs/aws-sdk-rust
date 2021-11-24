@@ -595,10 +595,10 @@ pub struct DescribeNotificationRuleOutput {
     /// (not sending notifications).</p>
     pub status: std::option::Option<crate::model::NotificationRuleStatus>,
     /// <p>The date and time the notification rule was created, in timestamp format.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the notification rule was most recently updated, in timestamp
     /// format.</p>
-    pub last_modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags associated with the notification rule.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -641,12 +641,12 @@ impl DescribeNotificationRuleOutput {
         self.status.as_ref()
     }
     /// <p>The date and time the notification rule was created, in timestamp format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The date and time the notification rule was most recently updated, in timestamp
     /// format.</p>
-    pub fn last_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_timestamp.as_ref()
     }
     /// <p>The tags associated with the notification rule.</p>
@@ -688,8 +688,8 @@ pub mod describe_notification_rule_output {
         pub(crate) detail_type: std::option::Option<crate::model::DetailType>,
         pub(crate) created_by: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::NotificationRuleStatus>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -808,21 +808,21 @@ pub mod describe_notification_rule_output {
             self
         }
         /// <p>The date and time the notification rule was created, in timestamp format.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The date and time the notification rule was created, in timestamp format.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The date and time the notification rule was most recently updated, in timestamp
         /// format.</p>
-        pub fn last_modified_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_timestamp = Some(input);
             self
         }
@@ -830,7 +830,7 @@ pub mod describe_notification_rule_output {
         /// format.</p>
         pub fn set_last_modified_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_timestamp = input;
             self

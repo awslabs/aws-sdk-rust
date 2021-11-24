@@ -9979,7 +9979,7 @@ pub mod fluent_builders {
         ///
         /// <p>If the <code>EndDateType</code> is <code>limited</code>, the Capacity Reservation is cancelled within an hour from the specified time. For example, if you specify
         /// 5/31/2019, 13:30:55, the Capacity Reservation is guaranteed to end between 13:30:55 and 14:30:55 on 5/31/2019.</p>
-        pub fn end_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_date(inp);
             self
         }
@@ -9994,7 +9994,7 @@ pub mod fluent_builders {
         /// 5/31/2019, 13:30:55, the Capacity Reservation is guaranteed to end between 13:30:55 and 14:30:55 on 5/31/2019.</p>
         pub fn set_end_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_date(input);
             self
@@ -10312,7 +10312,7 @@ pub mod fluent_builders {
         /// is guaranteed to expire between <code>13:30:55</code> and <code>14:30:55</code> on
         /// <code>5/31/2019</code>.
         /// </p>
-        pub fn end_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_date(inp);
             self
         }
@@ -10326,7 +10326,7 @@ pub mod fluent_builders {
         /// </p>
         pub fn set_end_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_date(input);
             self
@@ -11902,7 +11902,7 @@ pub mod fluent_builders {
         /// <p>The start date and time of the request, in UTC format (for example,
         /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
         /// The default is to start fulfilling the request immediately.</p>
-        pub fn valid_from(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn valid_from(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.valid_from(inp);
             self
         }
@@ -11911,7 +11911,7 @@ pub mod fluent_builders {
         /// The default is to start fulfilling the request immediately.</p>
         pub fn set_valid_from(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_valid_from(input);
             self
@@ -11919,7 +11919,7 @@ pub mod fluent_builders {
         /// <p>The end date and time of the request, in UTC format (for example,
         /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
         /// At this point, no new EC2 Fleet requests are placed or able to fulfill the request. If no value is specified, the request remains until you cancel it.</p>
-        pub fn valid_until(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn valid_until(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.valid_until(inp);
             self
         }
@@ -11928,7 +11928,7 @@ pub mod fluent_builders {
         /// At this point, no new EC2 Fleet requests are placed or able to fulfill the request. If no value is specified, the request remains until you cancel it.</p>
         pub fn set_valid_until(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_valid_until(input);
             self
@@ -15927,6 +15927,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_vpc_peering_connection_id(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn core_network_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_arn(inp);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_core_network_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_arn(input);
             self
         }
     }
@@ -31083,7 +31096,7 @@ pub mod fluent_builders {
         }
         /// <p>The start date and time for the events, in UTC format (for example,
         /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
@@ -31091,7 +31104,7 @@ pub mod fluent_builders {
         /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
@@ -39347,27 +39360,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time when the network insights analyses started.</p>
-        pub fn analysis_start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn analysis_start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.analysis_start_time(inp);
             self
         }
         /// <p>The time when the network insights analyses started.</p>
         pub fn set_analysis_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_analysis_start_time(input);
             self
         }
         /// <p>The time when the network insights analyses ended.</p>
-        pub fn analysis_end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn analysis_end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.analysis_end_time(inp);
             self
         }
         /// <p>The time when the network insights analyses ended.</p>
         pub fn set_analysis_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_analysis_end_time(input);
             self
@@ -44461,7 +44474,7 @@ pub mod fluent_builders {
         }
         /// <p>The starting date and time for the events, in UTC format (for example,
         /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
@@ -44469,7 +44482,7 @@ pub mod fluent_builders {
         /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
@@ -45311,7 +45324,7 @@ pub mod fluent_builders {
         /// <p>The date and time, up to the current date, from which to stop retrieving the price
         /// history data, in UTC format (for example,
         /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
@@ -45320,7 +45333,7 @@ pub mod fluent_builders {
         /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -45386,7 +45399,7 @@ pub mod fluent_builders {
         /// <p>The date and time, up to the past 90 days, from which to start retrieving the price
         /// history data, in UTC format (for example,
         /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
@@ -45395,7 +45408,7 @@ pub mod fluent_builders {
         /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
@@ -54297,7 +54310,7 @@ pub mod fluent_builders {
         /// nearest minute.</p>
         /// <p>You can’t specify a date in the past. The upper limit for <code>DeprecateAt</code> is 10
         /// years from now.</p>
-        pub fn deprecate_at(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn deprecate_at(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.deprecate_at(inp);
             self
         }
@@ -54309,7 +54322,7 @@ pub mod fluent_builders {
         /// years from now.</p>
         pub fn set_deprecate_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_deprecate_at(input);
             self
@@ -60237,7 +60250,7 @@ pub mod fluent_builders {
         /// <p>You must provide an <code>EndDate</code> value if <code>EndDateType</code> is
         /// <code>limited</code>. Omit <code>EndDate</code> if <code>EndDateType</code> is
         /// <code>unlimited</code>.</p>
-        pub fn end_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_date(inp);
             self
         }
@@ -60251,7 +60264,7 @@ pub mod fluent_builders {
         /// <code>unlimited</code>.</p>
         pub fn set_end_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_date(input);
             self
@@ -60438,7 +60451,7 @@ pub mod fluent_builders {
         /// to expire between <code>13:30:55</code> and <code>14:30:55</code> on <code>5/31/2019</code>.</p>
         /// <p>You can't specify <b>EndDate</b> and <b>
         /// RemoveEndDate</b> in the same request.</p>
-        pub fn end_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_date(inp);
             self
         }
@@ -60452,7 +60465,7 @@ pub mod fluent_builders {
         /// RemoveEndDate</b> in the same request.</p>
         pub fn set_end_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_date(input);
             self
@@ -62704,14 +62717,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new date and time when the event will take place.</p>
-        pub fn not_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn not_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.not_before(inp);
             self
         }
         /// <p>The new date and time when the event will take place.</p>
         pub fn set_not_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_not_before(input);
             self
@@ -64431,6 +64444,21 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_customer_owned_ipv4_pool(input);
+            self
+        }
+        /// <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in this subnet
+        /// should return synthetic IPv6 addresses for IPv4-only destinations.</p>
+        pub fn enable_dns64(mut self, inp: crate::model::AttributeBooleanValue) -> Self {
+            self.inner = self.inner.enable_dns64(inp);
+            self
+        }
+        /// <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in this subnet
+        /// should return synthetic IPv6 addresses for IPv4-only destinations.</p>
+        pub fn set_enable_dns64(
+            mut self,
+            input: std::option::Option<crate::model::AttributeBooleanValue>,
+        ) -> Self {
+            self.inner = self.inner.set_enable_dns64(input);
             self
         }
     }
@@ -67651,12 +67679,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pool_tag_specifications(input);
             self
         }
-        /// <para>Reserved.</para>
+        /// <p>Reserved.</p>
         pub fn multi_region(mut self, inp: bool) -> Self {
             self.inner = self.inner.multi_region(inp);
             self
         }
-        /// <para>Reserved.</para>
+        /// <p>Reserved.</p>
         pub fn set_multi_region(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_multi_region(input);
             self
@@ -67941,14 +67969,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time at which to purchase the Reserved Instance, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-        pub fn purchase_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn purchase_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.purchase_time(inp);
             self
         }
         /// <p>The time at which to purchase the Reserved Instance, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
         pub fn set_purchase_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_purchase_time(input);
             self
@@ -70209,6 +70237,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_peering_connection_id(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn core_network_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_arn(inp);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_core_network_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ReplaceRouteTableAssociation`.
     ///
@@ -70531,14 +70572,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time at which the reported instance health state ended.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
         /// <p>The time at which the reported instance health state ended.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -70669,14 +70710,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time at which the reported instance health state began.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
         /// <p>The time at which the reported instance health state began.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
@@ -71025,7 +71066,7 @@ pub mod fluent_builders {
         /// active at this date and time and remains active until it expires or is canceled.</p>
         /// <p>The specified start date and time cannot be equal to the current date and time. You
         /// must specify a start date and time that occurs after the current date and time.</p>
-        pub fn valid_from(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn valid_from(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.valid_from(inp);
             self
         }
@@ -71037,7 +71078,7 @@ pub mod fluent_builders {
         /// must specify a start date and time that occurs after the current date and time.</p>
         pub fn set_valid_from(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_valid_from(input);
             self
@@ -71057,7 +71098,7 @@ pub mod fluent_builders {
         /// was created.</p>
         /// </li>
         /// </ul>
-        pub fn valid_until(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn valid_until(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.valid_until(inp);
             self
         }
@@ -71078,7 +71119,7 @@ pub mod fluent_builders {
         /// </ul>
         pub fn set_valid_until(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_valid_until(input);
             self
@@ -75660,7 +75701,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -75683,7 +75730,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

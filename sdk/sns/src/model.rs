@@ -72,6 +72,672 @@ impl Tag {
     }
 }
 
+/// <p>Gives a detailed description of failed messages in the batch.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchResultErrorEntry {
+    /// <p>The <code>Id</code> of an entry in a batch request</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>An error code representing why the action failed on this entry.</p>
+    pub code: std::option::Option<std::string::String>,
+    /// <p>A message explaining why the action failed on this entry.</p>
+    pub message: std::option::Option<std::string::String>,
+    /// <p>Specifies whether the error happened due to the caller of the batch API action.</p>
+    pub sender_fault: bool,
+}
+impl BatchResultErrorEntry {
+    /// <p>The <code>Id</code> of an entry in a batch request</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>An error code representing why the action failed on this entry.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A message explaining why the action failed on this entry.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>Specifies whether the error happened due to the caller of the batch API action.</p>
+    pub fn sender_fault(&self) -> bool {
+        self.sender_fault
+    }
+}
+impl std::fmt::Debug for BatchResultErrorEntry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchResultErrorEntry");
+        formatter.field("id", &self.id);
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.field("sender_fault", &self.sender_fault);
+        formatter.finish()
+    }
+}
+/// See [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry)
+pub mod batch_result_error_entry {
+    /// A builder for [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) sender_fault: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The <code>Id</code> of an entry in a batch request</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The <code>Id</code> of an entry in a batch request</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>An error code representing why the action failed on this entry.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        /// <p>An error code representing why the action failed on this entry.</p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>A message explaining why the action failed on this entry.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message explaining why the action failed on this entry.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>Specifies whether the error happened due to the caller of the batch API action.</p>
+        pub fn sender_fault(mut self, input: bool) -> Self {
+            self.sender_fault = Some(input);
+            self
+        }
+        /// <p>Specifies whether the error happened due to the caller of the batch API action.</p>
+        pub fn set_sender_fault(mut self, input: std::option::Option<bool>) -> Self {
+            self.sender_fault = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry)
+        pub fn build(self) -> crate::model::BatchResultErrorEntry {
+            crate::model::BatchResultErrorEntry {
+                id: self.id,
+                code: self.code,
+                message: self.message,
+                sender_fault: self.sender_fault.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl BatchResultErrorEntry {
+    /// Creates a new builder-style object to manufacture [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry)
+    pub fn builder() -> crate::model::batch_result_error_entry::Builder {
+        crate::model::batch_result_error_entry::Builder::default()
+    }
+}
+
+/// <p>Encloses data related to a successful message in a batch request for topic.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PublishBatchResultEntry {
+    /// <p>The <code>Id</code> of an entry in a batch request.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>An identifier for the message.</p>
+    pub message_id: std::option::Option<std::string::String>,
+    /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
+    /// <p>The large, non-consecutive number that Amazon SNS assigns to each message.</p>
+    /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
+    pub sequence_number: std::option::Option<std::string::String>,
+}
+impl PublishBatchResultEntry {
+    /// <p>The <code>Id</code> of an entry in a batch request.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>An identifier for the message.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
+    /// <p>The large, non-consecutive number that Amazon SNS assigns to each message.</p>
+    /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
+    pub fn sequence_number(&self) -> std::option::Option<&str> {
+        self.sequence_number.as_deref()
+    }
+}
+impl std::fmt::Debug for PublishBatchResultEntry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PublishBatchResultEntry");
+        formatter.field("id", &self.id);
+        formatter.field("message_id", &self.message_id);
+        formatter.field("sequence_number", &self.sequence_number);
+        formatter.finish()
+    }
+}
+/// See [`PublishBatchResultEntry`](crate::model::PublishBatchResultEntry)
+pub mod publish_batch_result_entry {
+    /// A builder for [`PublishBatchResultEntry`](crate::model::PublishBatchResultEntry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) message_id: std::option::Option<std::string::String>,
+        pub(crate) sequence_number: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The <code>Id</code> of an entry in a batch request.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The <code>Id</code> of an entry in a batch request.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>An identifier for the message.</p>
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_id = Some(input.into());
+            self
+        }
+        /// <p>An identifier for the message.</p>
+        pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message_id = input;
+            self
+        }
+        /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
+        /// <p>The large, non-consecutive number that Amazon SNS assigns to each message.</p>
+        /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
+        pub fn sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sequence_number = Some(input.into());
+            self
+        }
+        /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
+        /// <p>The large, non-consecutive number that Amazon SNS assigns to each message.</p>
+        /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
+        pub fn set_sequence_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sequence_number = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PublishBatchResultEntry`](crate::model::PublishBatchResultEntry)
+        pub fn build(self) -> crate::model::PublishBatchResultEntry {
+            crate::model::PublishBatchResultEntry {
+                id: self.id,
+                message_id: self.message_id,
+                sequence_number: self.sequence_number,
+            }
+        }
+    }
+}
+impl PublishBatchResultEntry {
+    /// Creates a new builder-style object to manufacture [`PublishBatchResultEntry`](crate::model::PublishBatchResultEntry)
+    pub fn builder() -> crate::model::publish_batch_result_entry::Builder {
+        crate::model::publish_batch_result_entry::Builder::default()
+    }
+}
+
+/// <p>Contains the details of a single Amazon SNS message along with an <code>Id</code> that identifies a message within the batch. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PublishBatchRequestEntry {
+    /// <p>An identifier for the message in this batch.</p>  
+    /// <note>
+    /// <p>The <code>Ids</code> of a batch request must be unique within a request. </p>
+    /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_). </p>
+    /// </note>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The body of the message.</p>
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The subject of the batch message.</p>
+    pub subject: std::option::Option<std::string::String>,
+    /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must: </p>                
+    /// <ul>
+    /// <li>
+    /// <p>be a syntactically valid JSON object; and</p>
+    /// </li>
+    /// <li>
+    /// <p>contain at least a top-level JSON key of "default" with a value that is a string.</p>
+    /// </li>
+    /// </ul>
+    /// <p>You can define other top-level keys that define the message you want to send to a
+    /// specific transport protocol (e.g. http). </p>
+    pub message_structure: std::option::Option<std::string::String>,
+    /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-attributes.html">Amazon SNS message attributes</a> in the Amazon SNS Developer Guide.</p>
+    pub message_attributes: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
+    >,
+    /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
+    /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your topic, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p>
+    /// </li>
+    /// <li>
+    /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the topic doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the topic has a <code>ContentBasedDeduplication</code> set, your
+    /// <code>MessageDeduplicationId</code> overrides the generated one. </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled, and then another
+    /// message with a <code>MessageDeduplicationId</code> that is the same as the one
+    /// generated for the first <code>MessageDeduplicationId</code>, the two messages
+    /// are treated as duplicates and only one copy of the message is delivered. </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful for troubleshooting delivery issues).</p>
+    /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SNS can't detect duplicate messages. </p>
+    /// <p>Amazon SNS continues to keep track of the message deduplication ID even after the message is received and deleted. </p>
+    /// </note>
+    /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters.</p>
+    /// <p>
+    /// <code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+    pub message_deduplication_id: std::option::Option<std::string::String>,
+    /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
+    /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion. </p>
+    /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails. </p>
+    /// <p>The length of <code>MessageGroupId</code> is 128 characters.</p>
+    /// <p>
+    /// <code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>      
+    ///
+    ///
+    /// <important>
+    /// <p>
+    /// <code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics. </p>
+    /// </important>
+    pub message_group_id: std::option::Option<std::string::String>,
+}
+impl PublishBatchRequestEntry {
+    /// <p>An identifier for the message in this batch.</p>  
+    /// <note>
+    /// <p>The <code>Ids</code> of a batch request must be unique within a request. </p>
+    /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_). </p>
+    /// </note>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The body of the message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The subject of the batch message.</p>
+    pub fn subject(&self) -> std::option::Option<&str> {
+        self.subject.as_deref()
+    }
+    /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must: </p>                
+    /// <ul>
+    /// <li>
+    /// <p>be a syntactically valid JSON object; and</p>
+    /// </li>
+    /// <li>
+    /// <p>contain at least a top-level JSON key of "default" with a value that is a string.</p>
+    /// </li>
+    /// </ul>
+    /// <p>You can define other top-level keys that define the message you want to send to a
+    /// specific transport protocol (e.g. http). </p>
+    pub fn message_structure(&self) -> std::option::Option<&str> {
+        self.message_structure.as_deref()
+    }
+    /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-attributes.html">Amazon SNS message attributes</a> in the Amazon SNS Developer Guide.</p>
+    pub fn message_attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
+    > {
+        self.message_attributes.as_ref()
+    }
+    /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
+    /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your topic, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p>
+    /// </li>
+    /// <li>
+    /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the topic doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the topic has a <code>ContentBasedDeduplication</code> set, your
+    /// <code>MessageDeduplicationId</code> overrides the generated one. </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled, and then another
+    /// message with a <code>MessageDeduplicationId</code> that is the same as the one
+    /// generated for the first <code>MessageDeduplicationId</code>, the two messages
+    /// are treated as duplicates and only one copy of the message is delivered. </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful for troubleshooting delivery issues).</p>
+    /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SNS can't detect duplicate messages. </p>
+    /// <p>Amazon SNS continues to keep track of the message deduplication ID even after the message is received and deleted. </p>
+    /// </note>
+    /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters.</p>
+    /// <p>
+    /// <code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+    pub fn message_deduplication_id(&self) -> std::option::Option<&str> {
+        self.message_deduplication_id.as_deref()
+    }
+    /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
+    /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion. </p>
+    /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails. </p>
+    /// <p>The length of <code>MessageGroupId</code> is 128 characters.</p>
+    /// <p>
+    /// <code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>      
+    ///
+    ///
+    /// <important>
+    /// <p>
+    /// <code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics. </p>
+    /// </important>
+    pub fn message_group_id(&self) -> std::option::Option<&str> {
+        self.message_group_id.as_deref()
+    }
+}
+impl std::fmt::Debug for PublishBatchRequestEntry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PublishBatchRequestEntry");
+        formatter.field("id", &self.id);
+        formatter.field("message", &self.message);
+        formatter.field("subject", &self.subject);
+        formatter.field("message_structure", &self.message_structure);
+        formatter.field("message_attributes", &self.message_attributes);
+        formatter.field("message_deduplication_id", &self.message_deduplication_id);
+        formatter.field("message_group_id", &self.message_group_id);
+        formatter.finish()
+    }
+}
+/// See [`PublishBatchRequestEntry`](crate::model::PublishBatchRequestEntry)
+pub mod publish_batch_request_entry {
+    /// A builder for [`PublishBatchRequestEntry`](crate::model::PublishBatchRequestEntry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) subject: std::option::Option<std::string::String>,
+        pub(crate) message_structure: std::option::Option<std::string::String>,
+        pub(crate) message_attributes: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
+        >,
+        pub(crate) message_deduplication_id: std::option::Option<std::string::String>,
+        pub(crate) message_group_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>An identifier for the message in this batch.</p>  
+        /// <note>
+        /// <p>The <code>Ids</code> of a batch request must be unique within a request. </p>
+        /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_). </p>
+        /// </note>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>An identifier for the message in this batch.</p>  
+        /// <note>
+        /// <p>The <code>Ids</code> of a batch request must be unique within a request. </p>
+        /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_). </p>
+        /// </note>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The body of the message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The body of the message.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The subject of the batch message.</p>
+        pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subject = Some(input.into());
+            self
+        }
+        /// <p>The subject of the batch message.</p>
+        pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subject = input;
+            self
+        }
+        /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must: </p>                
+        /// <ul>
+        /// <li>
+        /// <p>be a syntactically valid JSON object; and</p>
+        /// </li>
+        /// <li>
+        /// <p>contain at least a top-level JSON key of "default" with a value that is a string.</p>
+        /// </li>
+        /// </ul>
+        /// <p>You can define other top-level keys that define the message you want to send to a
+        /// specific transport protocol (e.g. http). </p>
+        pub fn message_structure(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_structure = Some(input.into());
+            self
+        }
+        /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must: </p>                
+        /// <ul>
+        /// <li>
+        /// <p>be a syntactically valid JSON object; and</p>
+        /// </li>
+        /// <li>
+        /// <p>contain at least a top-level JSON key of "default" with a value that is a string.</p>
+        /// </li>
+        /// </ul>
+        /// <p>You can define other top-level keys that define the message you want to send to a
+        /// specific transport protocol (e.g. http). </p>
+        pub fn set_message_structure(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.message_structure = input;
+            self
+        }
+        /// Adds a key-value pair to `message_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_message_attributes`](Self::set_message_attributes).
+        ///
+        /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-attributes.html">Amazon SNS message attributes</a> in the Amazon SNS Developer Guide.</p>
+        pub fn message_attributes(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<crate::model::MessageAttributeValue>,
+        ) -> Self {
+            let mut hash_map = self.message_attributes.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.message_attributes = Some(hash_map);
+            self
+        }
+        /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-attributes.html">Amazon SNS message attributes</a> in the Amazon SNS Developer Guide.</p>
+        pub fn set_message_attributes(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
+            >,
+        ) -> Self {
+            self.message_attributes = input;
+            self
+        }
+        /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
+        /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your topic, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p>
+        /// </li>
+        /// <li>
+        /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the topic doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the topic has a <code>ContentBasedDeduplication</code> set, your
+        /// <code>MessageDeduplicationId</code> overrides the generated one. </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled, and then another
+        /// message with a <code>MessageDeduplicationId</code> that is the same as the one
+        /// generated for the first <code>MessageDeduplicationId</code>, the two messages
+        /// are treated as duplicates and only one copy of the message is delivered. </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful for troubleshooting delivery issues).</p>
+        /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SNS can't detect duplicate messages. </p>
+        /// <p>Amazon SNS continues to keep track of the message deduplication ID even after the message is received and deleted. </p>
+        /// </note>
+        /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters.</p>
+        /// <p>
+        /// <code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+        pub fn message_deduplication_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_deduplication_id = Some(input.into());
+            self
+        }
+        /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
+        /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your topic, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p>
+        /// </li>
+        /// <li>
+        /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the topic doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the topic has a <code>ContentBasedDeduplication</code> set, your
+        /// <code>MessageDeduplicationId</code> overrides the generated one. </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled, and then another
+        /// message with a <code>MessageDeduplicationId</code> that is the same as the one
+        /// generated for the first <code>MessageDeduplicationId</code>, the two messages
+        /// are treated as duplicates and only one copy of the message is delivered. </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful for troubleshooting delivery issues).</p>
+        /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SNS can't detect duplicate messages. </p>
+        /// <p>Amazon SNS continues to keep track of the message deduplication ID even after the message is received and deleted. </p>
+        /// </note>
+        /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters.</p>
+        /// <p>
+        /// <code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+        pub fn set_message_deduplication_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.message_deduplication_id = input;
+            self
+        }
+        /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
+        /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion. </p>
+        /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails. </p>
+        /// <p>The length of <code>MessageGroupId</code> is 128 characters.</p>
+        /// <p>
+        /// <code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>      
+        ///
+        ///
+        /// <important>
+        /// <p>
+        /// <code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics. </p>
+        /// </important>
+        pub fn message_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_group_id = Some(input.into());
+            self
+        }
+        /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
+        /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion. </p>
+        /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails. </p>
+        /// <p>The length of <code>MessageGroupId</code> is 128 characters.</p>
+        /// <p>
+        /// <code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>      
+        ///
+        ///
+        /// <important>
+        /// <p>
+        /// <code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics. </p>
+        /// </important>
+        pub fn set_message_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.message_group_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PublishBatchRequestEntry`](crate::model::PublishBatchRequestEntry)
+        pub fn build(self) -> crate::model::PublishBatchRequestEntry {
+            crate::model::PublishBatchRequestEntry {
+                id: self.id,
+                message: self.message,
+                subject: self.subject,
+                message_structure: self.message_structure,
+                message_attributes: self.message_attributes,
+                message_deduplication_id: self.message_deduplication_id,
+                message_group_id: self.message_group_id,
+            }
+        }
+    }
+}
+impl PublishBatchRequestEntry {
+    /// Creates a new builder-style object to manufacture [`PublishBatchRequestEntry`](crate::model::PublishBatchRequestEntry)
+    pub fn builder() -> crate::model::publish_batch_request_entry::Builder {
+        crate::model::publish_batch_request_entry::Builder::default()
+    }
+}
+
 /// <p>The user-specified message attribute value. For string data types, the value attribute
 /// has the same restrictions on the content as the message body. For more information, see
 /// <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>.</p>
@@ -381,10 +1047,10 @@ impl Subscription {
 }
 
 /// <p>A verified or pending destination phone number in the SMS sandbox.</p>
-/// <p>When you start using Amazon SNS to send SMS messages, your account is in the
+/// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the
 /// <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for
 /// you to try Amazon SNS features without risking your reputation as an SMS sender. While your
-/// account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
+/// Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
 /// SMS messages only to verified destination phone numbers. For more information, including how to
 /// move out of the sandbox to send messages without restrictions,
 /// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
@@ -630,7 +1296,7 @@ impl PlatformApplication {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhoneNumberInformation {
     /// <p>The date and time when the phone number was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The phone number.</p>
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The status of the phone number.</p>
@@ -644,7 +1310,7 @@ pub struct PhoneNumberInformation {
 }
 impl PhoneNumberInformation {
     /// <p>The date and time when the phone number was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The phone number.</p>
@@ -686,7 +1352,7 @@ pub mod phone_number_information {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) phone_number: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) iso2_country_code: std::option::Option<std::string::String>,
@@ -696,14 +1362,14 @@ pub mod phone_number_information {
     }
     impl Builder {
         /// <p>The date and time when the phone number was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time when the phone number was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -917,18 +1583,18 @@ impl AsRef<str> for RouteType {
     }
 }
 
-/// <p>Endpoint for mobile app and device.</p>
+/// <p>The endpoint for mobile app and device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Endpoint {
-    /// <p>EndpointArn for mobile app and device.</p>
+    /// <p>The <code>EndpointArn</code> for mobile app and device.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
     /// <p>Attributes for endpoint.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Endpoint {
-    /// <p>EndpointArn for mobile app and device.</p>
+    /// <p>The <code>EndpointArn</code> for mobile app and device.</p>
     pub fn endpoint_arn(&self) -> std::option::Option<&str> {
         self.endpoint_arn.as_deref()
     }
@@ -960,12 +1626,12 @@ pub mod endpoint {
         >,
     }
     impl Builder {
-        /// <p>EndpointArn for mobile app and device.</p>
+        /// <p>The <code>EndpointArn</code> for mobile app and device.</p>
         pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_arn = Some(input.into());
             self
         }
-        /// <p>EndpointArn for mobile app and device.</p>
+        /// <p>The <code>EndpointArn</code> for mobile app and device.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_arn = input;
             self

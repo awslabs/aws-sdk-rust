@@ -66,6 +66,7 @@ pub type BatchMeterUsageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl BatchMeterUsageInput {
     /// Consumes the builder and constructs an Operation<[`BatchMeterUsage`](crate::operation::BatchMeterUsage)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -122,11 +123,14 @@ impl BatchMeterUsageInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -184,7 +188,7 @@ pub mod meter_usage_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_code: std::option::Option<std::string::String>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) usage_dimension: std::option::Option<std::string::String>,
         pub(crate) usage_quantity: std::option::Option<i32>,
         pub(crate) dry_run: std::option::Option<bool>,
@@ -209,7 +213,7 @@ pub mod meter_usage_input {
         /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can
         /// meter usage for up to one hour in the past. Make sure the timestamp value is not before
         /// the start of the software usage.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
@@ -218,7 +222,7 @@ pub mod meter_usage_input {
         /// the start of the software usage.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -319,6 +323,7 @@ pub type MeterUsageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl MeterUsageInput {
     /// Consumes the builder and constructs an Operation<[`MeterUsage`](crate::operation::MeterUsage)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -374,11 +379,14 @@ impl MeterUsageInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -498,6 +506,7 @@ pub type RegisterUsageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl RegisterUsageInput {
     /// Consumes the builder and constructs an Operation<[`RegisterUsage`](crate::operation::RegisterUsage)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -553,11 +562,14 @@ impl RegisterUsageInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -654,6 +666,7 @@ pub type ResolveCustomerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl ResolveCustomerInput {
     /// Consumes the builder and constructs an Operation<[`ResolveCustomer`](crate::operation::ResolveCustomer)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -710,11 +723,14 @@ impl ResolveCustomerInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -842,7 +858,7 @@ pub struct MeterUsageInput {
     /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can
     /// meter usage for up to one hour in the past. Make sure the timestamp value is not before
     /// the start of the software usage.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>It will be one of the fcp dimension name provided during the publishing of the
     /// product.</p>
     pub usage_dimension: std::option::Option<std::string::String>,
@@ -870,7 +886,7 @@ impl MeterUsageInput {
     /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can
     /// meter usage for up to one hour in the past. Make sure the timestamp value is not before
     /// the start of the software usage.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>It will be one of the fcp dimension name provided during the publishing of the

@@ -2253,7 +2253,7 @@ pub fn serialize_structure_crate_model_date_time_parameter(
             {
                 array_481
                     .value()
-                    .instant(item_482, aws_smithy_types::instant::Format::EpochSeconds);
+                    .date_time(item_482, aws_smithy_types::date_time::Format::EpochSeconds)?;
             }
         }
         array_481.finish();

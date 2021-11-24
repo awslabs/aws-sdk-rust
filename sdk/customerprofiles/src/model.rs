@@ -1910,9 +1910,9 @@ pub struct ScheduledTriggerProperties {
     /// transfer for each flow run.</p>
     pub data_pull_mode: std::option::Option<crate::model::DataPullMode>,
     /// <p>Specifies the scheduled start time for a scheduled-trigger flow.</p>
-    pub schedule_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub schedule_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the scheduled end time for a scheduled-trigger flow.</p>
-    pub schedule_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub schedule_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the time zone used when referring to the date and time of a
     /// scheduled-triggered flow, such as America/New_York.</p>
     pub timezone: std::option::Option<std::string::String>,
@@ -1921,7 +1921,7 @@ pub struct ScheduledTriggerProperties {
     pub schedule_offset: std::option::Option<i64>,
     /// <p>Specifies the date range for the records to import from the connector in the first flow
     /// run.</p>
-    pub first_execution_from: std::option::Option<aws_smithy_types::Instant>,
+    pub first_execution_from: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ScheduledTriggerProperties {
     /// <p>The scheduling expression that determines the rate at which the schedule will run, for
@@ -1935,11 +1935,11 @@ impl ScheduledTriggerProperties {
         self.data_pull_mode.as_ref()
     }
     /// <p>Specifies the scheduled start time for a scheduled-trigger flow.</p>
-    pub fn schedule_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn schedule_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.schedule_start_time.as_ref()
     }
     /// <p>Specifies the scheduled end time for a scheduled-trigger flow.</p>
-    pub fn schedule_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn schedule_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.schedule_end_time.as_ref()
     }
     /// <p>Specifies the time zone used when referring to the date and time of a
@@ -1954,7 +1954,7 @@ impl ScheduledTriggerProperties {
     }
     /// <p>Specifies the date range for the records to import from the connector in the first flow
     /// run.</p>
-    pub fn first_execution_from(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn first_execution_from(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.first_execution_from.as_ref()
     }
 }
@@ -1979,11 +1979,11 @@ pub mod scheduled_trigger_properties {
     pub struct Builder {
         pub(crate) schedule_expression: std::option::Option<std::string::String>,
         pub(crate) data_pull_mode: std::option::Option<crate::model::DataPullMode>,
-        pub(crate) schedule_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) schedule_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) schedule_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) schedule_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) timezone: std::option::Option<std::string::String>,
         pub(crate) schedule_offset: std::option::Option<i64>,
-        pub(crate) first_execution_from: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) first_execution_from: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The scheduling expression that determines the rate at which the schedule will run, for
@@ -2017,27 +2017,27 @@ pub mod scheduled_trigger_properties {
             self
         }
         /// <p>Specifies the scheduled start time for a scheduled-trigger flow.</p>
-        pub fn schedule_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn schedule_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.schedule_start_time = Some(input);
             self
         }
         /// <p>Specifies the scheduled start time for a scheduled-trigger flow.</p>
         pub fn set_schedule_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.schedule_start_time = input;
             self
         }
         /// <p>Specifies the scheduled end time for a scheduled-trigger flow.</p>
-        pub fn schedule_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn schedule_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.schedule_end_time = Some(input);
             self
         }
         /// <p>Specifies the scheduled end time for a scheduled-trigger flow.</p>
         pub fn set_schedule_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.schedule_end_time = input;
             self
@@ -2068,7 +2068,7 @@ pub mod scheduled_trigger_properties {
         }
         /// <p>Specifies the date range for the records to import from the connector in the first flow
         /// run.</p>
-        pub fn first_execution_from(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn first_execution_from(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.first_execution_from = Some(input);
             self
         }
@@ -2076,7 +2076,7 @@ pub mod scheduled_trigger_properties {
         /// run.</p>
         pub fn set_first_execution_from(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.first_execution_from = input;
             self
@@ -4804,9 +4804,9 @@ pub struct ListProfileObjectTypeItem {
     /// <p>Description of the profile object type.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the domain was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -4821,11 +4821,11 @@ impl ListProfileObjectTypeItem {
         self.description.as_deref()
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -4855,8 +4855,8 @@ pub mod list_profile_object_type_item {
     pub struct Builder {
         pub(crate) object_type_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -4886,27 +4886,27 @@ pub mod list_profile_object_type_item {
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -5155,9 +5155,9 @@ pub struct ListIntegrationItem {
     /// <p>The name of the profile object type.</p>
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the domain was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -5176,11 +5176,11 @@ impl ListIntegrationItem {
         self.object_type_name.as_deref()
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -5212,8 +5212,8 @@ pub mod list_integration_item {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) uri: std::option::Option<std::string::String>,
         pub(crate) object_type_name: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -5253,27 +5253,27 @@ pub mod list_integration_item {
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -5330,9 +5330,9 @@ pub struct ListDomainItem {
     /// <p>The unique name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the domain was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -5343,11 +5343,11 @@ impl ListDomainItem {
         self.domain_name.as_deref()
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -5375,8 +5375,8 @@ pub mod list_domain_item {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -5393,27 +5393,27 @@ pub mod list_domain_item {
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self

@@ -435,12 +435,12 @@ pub fn serialize_structure_crate_input_get_ec2_recommendation_projected_metrics_
     if let Some(var_108) = &input.start_time {
         object
             .key("startTime")
-            .instant(var_108, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_108, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_109) = &input.end_time {
         object
             .key("endTime")
-            .instant(var_109, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_109, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_110) = &input.recommendation_preferences {
         let mut object_111 = object.key("recommendationPreferences").start_object();

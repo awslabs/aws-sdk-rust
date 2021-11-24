@@ -378,12 +378,12 @@ pub fn serialize_structure_crate_model_comprehend_medical_async_job_filter(
     if let Some(var_68) = &input.submit_time_before {
         object
             .key("SubmitTimeBefore")
-            .instant(var_68, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_68, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_69) = &input.submit_time_after {
         object
             .key("SubmitTimeAfter")
-            .instant(var_69, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_69, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

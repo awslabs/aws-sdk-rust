@@ -11,27 +11,25 @@
 //! implement your own credential provider.
 //!
 //! ### With static credentials
-//! [`Credentials`](crate::Credentials) implement
-//! [`ProvideCredentials](crate::credentials::ProvideCredentials) directly, so no custom provider
-//! implementation is required:
-//! ```rust
-//! use aws_types::Credentials;
-//! # mod dynamodb {
-//! # use aws_types::credentials::ProvideCredentials;
-//! # pub struct Config;
-//! # impl Config {
-//! #    pub fn builder() -> Self {
-//! #        Config
-//! #    }
-//! #    pub fn credentials_provider(self, provider: impl ProvideCredentials + 'static) -> Self {
-//! #       self
-//! #    }
-//! # }
-//! # }
 //!
-//! let my_creds = Credentials::from_keys("akid", "secret_key", None);
-//! let conf = dynamodb::Config::builder().credentials_provider(my_creds);
-//! ```
+//! _Note: In general, you should prefer to use the credential providers that come
+//! with the AWS SDK to get credentials. It is __NOT__ secure to hardcode credentials
+//! into your application. Only use this approach if you really know what you're doing._
+//!
+#![cfg_attr(
+    feature = "hardcoded-credentials",
+    doc = r##"
+See [`Credentials::from_keys`] for an example on how to use static credentials.
+    "##
+)]
+#![cfg_attr(
+    not(feature = "hardcoded-credentials"),
+    doc = r##"
+Enable the `hardcoded-credentials` feature to be able to use `Credentials::from_keys` to
+construct credentials from hardcoded values.
+    "##
+)]
+//!
 //! ### With dynamically loaded credentials
 //! If you are loading credentials dynamically, you can provide your own implementation of
 //! [`ProvideCredentials`](crate::credentials::ProvideCredentials). Generally, this is best done by

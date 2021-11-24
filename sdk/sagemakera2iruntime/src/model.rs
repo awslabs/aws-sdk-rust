@@ -198,7 +198,7 @@ pub struct HumanLoopSummary {
     /// <p>The status of the human loop. </p>
     pub human_loop_status: std::option::Option<crate::model::HumanLoopStatus>,
     /// <p>When Amazon Augmented AI created the human loop.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason why the human loop failed. A failure reason is returned when the status of the
     /// human loop is <code>Failed</code>.</p>
     pub failure_reason: std::option::Option<std::string::String>,
@@ -216,7 +216,7 @@ impl HumanLoopSummary {
         self.human_loop_status.as_ref()
     }
     /// <p>When Amazon Augmented AI created the human loop.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The reason why the human loop failed. A failure reason is returned when the status of the
@@ -249,7 +249,7 @@ pub mod human_loop_summary {
     pub struct Builder {
         pub(crate) human_loop_name: std::option::Option<std::string::String>,
         pub(crate) human_loop_status: std::option::Option<crate::model::HumanLoopStatus>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) flow_definition_arn: std::option::Option<std::string::String>,
     }
@@ -281,14 +281,14 @@ pub mod human_loop_summary {
             self
         }
         /// <p>When Amazon Augmented AI created the human loop.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>When Amazon Augmented AI created the human loop.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self

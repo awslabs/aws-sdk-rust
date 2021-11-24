@@ -30,7 +30,7 @@ pub fn serialize_structure_crate_model_start_selector(
     if let Some(var_7) = &input.start_timestamp {
         object
             .key("StartTimestamp")
-            .instant(var_7, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_7, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_8) = &input.continuation_token {
         object.key("ContinuationToken").string(var_8);

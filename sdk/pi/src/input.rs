@@ -8,8 +8,8 @@ pub mod describe_dimension_keys_input {
     pub struct Builder {
         pub(crate) service_type: std::option::Option<crate::model::ServiceType>,
         pub(crate) identifier: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) metric: std::option::Option<std::string::String>,
         pub(crate) period_in_seconds: std::option::Option<i32>,
         pub(crate) group_by: std::option::Option<crate::model::DimensionGroup>,
@@ -59,7 +59,7 @@ pub mod describe_dimension_keys_input {
         /// that data points equal to or greater than <code>StartTime</code> are returned.</p>
         /// <p>The value for <code>StartTime</code> must be earlier than the value for
         /// <code>EndTime</code>.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -70,7 +70,7 @@ pub mod describe_dimension_keys_input {
         /// <code>EndTime</code>.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -80,7 +80,7 @@ pub mod describe_dimension_keys_input {
         /// returned.</p>
         /// <p>The value for <code>EndTime</code> must be later than the value for
         /// <code>StartTime</code>.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
@@ -91,7 +91,7 @@ pub mod describe_dimension_keys_input {
         /// <code>StartTime</code>.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -343,6 +343,7 @@ pub type DescribeDimensionKeysInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl DescribeDimensionKeysInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDimensionKeys`](crate::operation::DescribeDimensionKeys)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -401,11 +402,14 @@ impl DescribeDimensionKeysInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -572,6 +576,7 @@ pub type GetDimensionKeyDetailsInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl GetDimensionKeyDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetDimensionKeyDetails`](crate::operation::GetDimensionKeyDetails)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -630,11 +635,14 @@ impl GetDimensionKeyDetailsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -694,8 +702,8 @@ pub mod get_resource_metrics_input {
         pub(crate) service_type: std::option::Option<crate::model::ServiceType>,
         pub(crate) identifier: std::option::Option<std::string::String>,
         pub(crate) metric_queries: std::option::Option<std::vec::Vec<crate::model::MetricQuery>>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) period_in_seconds: std::option::Option<i32>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -758,7 +766,7 @@ pub mod get_resource_metrics_input {
         /// <i>inclusive</i> - data points equal to or greater than <code>StartTime</code>
         /// will be returned.</p>
         /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -769,7 +777,7 @@ pub mod get_resource_metrics_input {
         /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -777,7 +785,7 @@ pub mod get_resource_metrics_input {
         /// <p>The date and time specifying the end of the requested time series data.  The value specified is
         /// <i>exclusive</i> - data points less than (but not equal to) <code>EndTime</code> will be returned.</p>
         /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
@@ -786,7 +794,7 @@ pub mod get_resource_metrics_input {
         /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -914,6 +922,7 @@ pub type GetResourceMetricsInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl GetResourceMetricsInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceMetrics`](crate::operation::GetResourceMetrics)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -970,11 +979,14 @@ impl GetResourceMetricsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1045,11 +1057,11 @@ pub struct GetResourceMetricsInput {
     /// <i>inclusive</i> - data points equal to or greater than <code>StartTime</code>
     /// will be returned.</p>
     /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time specifying the end of the requested time series data.  The value specified is
     /// <i>exclusive</i> - data points less than (but not equal to) <code>EndTime</code> will be returned.</p>
     /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as
     /// one second, or as long as one day (86400 seconds).  Valid values are:</p>
     ///
@@ -1113,13 +1125,13 @@ impl GetResourceMetricsInput {
     /// <i>inclusive</i> - data points equal to or greater than <code>StartTime</code>
     /// will be returned.</p>
     /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time specifying the end of the requested time series data.  The value specified is
     /// <i>exclusive</i> - data points less than (but not equal to) <code>EndTime</code> will be returned.</p>
     /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as
@@ -1264,13 +1276,13 @@ pub struct DescribeDimensionKeysInput {
     /// that data points equal to or greater than <code>StartTime</code> are returned.</p>
     /// <p>The value for <code>StartTime</code> must be earlier than the value for
     /// <code>EndTime</code>.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time specifying the end of the requested time series data. The value specified is
     /// <i>exclusive</i>, which means that data points less than (but not equal to) <code>EndTime</code> are
     /// returned.</p>
     /// <p>The value for <code>EndTime</code> must be later than the value for
     /// <code>StartTime</code>.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
     ///
@@ -1369,7 +1381,7 @@ impl DescribeDimensionKeysInput {
     /// that data points equal to or greater than <code>StartTime</code> are returned.</p>
     /// <p>The value for <code>StartTime</code> must be earlier than the value for
     /// <code>EndTime</code>.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time specifying the end of the requested time series data. The value specified is
@@ -1377,7 +1389,7 @@ impl DescribeDimensionKeysInput {
     /// returned.</p>
     /// <p>The value for <code>EndTime</code> must be later than the value for
     /// <code>StartTime</code>.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The name of a Performance Insights metric to be measured.</p>

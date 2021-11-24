@@ -217,7 +217,7 @@ pub struct GetObjectOutput {
     /// <p>The ETag that represents a unique instance of the object.</p>
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>The date and time that the object was last modified.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate
     /// success. All other status codes indicate the type of error that occurred.</p>
     pub status_code: i32,
@@ -250,7 +250,7 @@ impl GetObjectOutput {
         self.e_tag.as_deref()
     }
     /// <p>The date and time that the object was last modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate
@@ -285,7 +285,7 @@ pub mod get_object_output {
         pub(crate) content_length: std::option::Option<i64>,
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status_code: std::option::Option<i32>,
     }
     impl Builder {
@@ -363,14 +363,14 @@ pub mod get_object_output {
             self
         }
         /// <p>The date and time that the object was last modified.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>The date and time that the object was last modified.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -424,7 +424,7 @@ pub struct DescribeObjectOutput {
     /// <p>Headers with a custom user-defined value are also accepted.</p>
     pub cache_control: std::option::Option<std::string::String>,
     /// <p>The date and time that the object was last modified.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeObjectOutput {
     /// <p>The ETag that represents a unique instance of the object.</p>
@@ -446,7 +446,7 @@ impl DescribeObjectOutput {
         self.cache_control.as_deref()
     }
     /// <p>The date and time that the object was last modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
 }
@@ -471,7 +471,7 @@ pub mod describe_object_output {
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) content_length: std::option::Option<i64>,
         pub(crate) cache_control: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ETag that represents a unique instance of the object.</p>
@@ -522,14 +522,14 @@ pub mod describe_object_output {
             self
         }
         /// <p>The date and time that the object was last modified.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>The date and time that the object was last modified.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self

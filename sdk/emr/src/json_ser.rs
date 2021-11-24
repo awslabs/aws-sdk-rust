@@ -259,12 +259,12 @@ pub fn serialize_structure_crate_input_describe_job_flows_input(
     if let Some(var_56) = &input.created_after {
         object
             .key("CreatedAfter")
-            .instant(var_56, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_56, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_57) = &input.created_before {
         object
             .key("CreatedBefore")
-            .instant(var_57, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_57, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_58) = &input.job_flow_ids {
         let mut array_59 = object.key("JobFlowIds").start_array();
@@ -408,12 +408,12 @@ pub fn serialize_structure_crate_input_list_clusters_input(
     if let Some(var_80) = &input.created_after {
         object
             .key("CreatedAfter")
-            .instant(var_80, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_80, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_81) = &input.created_before {
         object
             .key("CreatedBefore")
-            .instant(var_81, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_81, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_82) = &input.cluster_states {
         let mut array_83 = object.key("ClusterStates").start_array();
@@ -509,12 +509,12 @@ pub fn serialize_structure_crate_input_list_notebook_executions_input(
     if let Some(var_103) = &input.from {
         object
             .key("From")
-            .instant(var_103, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_103, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_104) = &input.to {
         object
             .key("To")
-            .instant(var_104, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_104, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_105) = &input.marker {
         object.key("Marker").string(var_105);

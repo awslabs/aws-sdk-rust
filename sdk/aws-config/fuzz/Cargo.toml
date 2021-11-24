@@ -11,9 +11,12 @@ cargo-fuzz = true
 
 [dependencies]
 libfuzzer-sys = "0.4"
+aws-config = { path = ".." }
 
 [dependencies.aws-types]
-path = ".."
+path = "../../../sdk/build/aws-sdk/sdk/aws-types"
+
+
 
 # Prevent this from interfering with workspaces
 [workspace]

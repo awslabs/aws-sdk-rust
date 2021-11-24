@@ -23,7 +23,7 @@ pub fn serialize_structure_crate_input_activate_pipeline_input(
     if let Some(var_6) = &input.start_timestamp {
         object
             .key("startTimestamp")
-            .instant(var_6, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_6, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

@@ -46,6 +46,7 @@ pub type AddNotificationChannelInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl AddNotificationChannelInput {
     /// Consumes the builder and constructs an Operation<[`AddNotificationChannel`](crate::operation::AddNotificationChannel)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -99,11 +100,14 @@ impl AddNotificationChannelInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -179,6 +183,7 @@ pub type DescribeAccountHealthInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl DescribeAccountHealthInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountHealth`](crate::operation::DescribeAccountHealth)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -224,11 +229,14 @@ impl DescribeAccountHealthInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -277,44 +285,40 @@ pub mod describe_account_overview_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) from_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) to_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) from_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) to_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>
-        /// The start of the time range passed in. The start time granularity is at the
-        /// day level. The floor of the start time is used. Returned information occurred after this day.
-        /// </p>
-        pub fn from_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        /// <p> The start of the time range passed in. The start time granularity is at the day
+        /// level. The floor of the start time is used. Returned information occurred after this
+        /// day. </p>
+        pub fn from_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.from_time = Some(input);
             self
         }
-        /// <p>
-        /// The start of the time range passed in. The start time granularity is at the
-        /// day level. The floor of the start time is used. Returned information occurred after this day.
-        /// </p>
+        /// <p> The start of the time range passed in. The start time granularity is at the day
+        /// level. The floor of the start time is used. Returned information occurred after this
+        /// day. </p>
         pub fn set_from_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.from_time = input;
             self
         }
-        /// <p>
-        /// The end of the time range passed in. The start time granularity is at the
-        /// day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.
-        /// </p>
-        pub fn to_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        /// <p> The end of the time range passed in. The start time granularity is at the day level.
+        /// The floor of the start time is used. Returned information occurred before this day. If
+        /// this is not specified, then the current day is used. </p>
+        pub fn to_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.to_time = Some(input);
             self
         }
-        /// <p>
-        /// The end of the time range passed in. The start time granularity is at the
-        /// day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.
-        /// </p>
+        /// <p> The end of the time range passed in. The start time granularity is at the day level.
+        /// The floor of the start time is used. Returned information occurred before this day. If
+        /// this is not specified, then the current day is used. </p>
         pub fn set_to_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.to_time = input;
             self
@@ -341,6 +345,7 @@ pub type DescribeAccountOverviewInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DescribeAccountOverviewInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountOverview`](crate::operation::DescribeAccountOverview)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -394,11 +399,14 @@ impl DescribeAccountOverviewInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -456,20 +464,27 @@ pub mod describe_anomaly_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the anomaly.
-        /// </p>
+        /// <p> The ID of the anomaly. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the anomaly.
-        /// </p>
+        /// <p> The ID of the anomaly. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
+            self
+        }
+        /// <p>The ID of the member account.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the member account.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeAnomalyInput`](crate::input::DescribeAnomalyInput)
@@ -479,7 +494,10 @@ pub mod describe_anomaly_input {
             crate::input::DescribeAnomalyInput,
             aws_smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::DescribeAnomalyInput { id: self.id })
+            Ok(crate::input::DescribeAnomalyInput {
+                id: self.id,
+                account_id: self.account_id,
+            })
         }
     }
 }
@@ -490,6 +508,7 @@ pub type DescribeAnomalyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl DescribeAnomalyInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAnomaly`](crate::operation::DescribeAnomaly)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -522,6 +541,16 @@ impl DescribeAnomalyInput {
             write!(output, "/anomalies/{Id}", Id = id).expect("formatting should succeed");
             Ok(())
         }
+        fn uri_query(
+            _input: &crate::input::DescribeAnomalyInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_2) = &_input.account_id {
+                query.push_kv("AccountId", &aws_smithy_http::query::fmt_string(&inner_2));
+            }
+            Ok(())
+        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeAnomalyInput,
@@ -530,6 +559,7 @@ impl DescribeAnomalyInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -550,11 +580,14 @@ impl DescribeAnomalyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -606,16 +639,12 @@ pub mod describe_feedback_input {
         pub(crate) insight_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the insight for which the feedback was provided.
-        /// </p>
+        /// <p> The ID of the insight for which the feedback was provided. </p>
         pub fn insight_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.insight_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the insight for which the feedback was provided.
-        /// </p>
+        /// <p> The ID of the insight for which the feedback was provided. </p>
         pub fn set_insight_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.insight_id = input;
             self
@@ -640,6 +669,7 @@ pub type DescribeFeedbackInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DescribeFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFeedback`](crate::operation::DescribeFeedback)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -691,11 +721,14 @@ impl DescribeFeedbackInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -753,20 +786,27 @@ pub mod describe_insight_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the insight.
-        /// </p>
+        /// <p> The ID of the insight. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the insight.
-        /// </p>
+        /// <p> The ID of the insight. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
+            self
+        }
+        /// <p>The ID of the member account in the organization.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the member account in the organization.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeInsightInput`](crate::input::DescribeInsightInput)
@@ -776,7 +816,10 @@ pub mod describe_insight_input {
             crate::input::DescribeInsightInput,
             aws_smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::DescribeInsightInput { id: self.id })
+            Ok(crate::input::DescribeInsightInput {
+                id: self.id,
+                account_id: self.account_id,
+            })
         }
     }
 }
@@ -787,6 +830,7 @@ pub type DescribeInsightInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl DescribeInsightInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInsight`](crate::operation::DescribeInsight)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -801,15 +845,15 @@ impl DescribeInsightInput {
             _input: &crate::input::DescribeInsightInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_2 = &_input.id;
-            let input_2 =
-                input_2
+            let input_3 = &_input.id;
+            let input_3 =
+                input_3
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_2, false);
+            let id = aws_smithy_http::label::fmt_string(input_3, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -817,6 +861,16 @@ impl DescribeInsightInput {
                 });
             }
             write!(output, "/insights/{Id}", Id = id).expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::DescribeInsightInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_4) = &_input.account_id {
+                query.push_kv("AccountId", &aws_smithy_http::query::fmt_string(&inner_4));
+            }
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -827,6 +881,7 @@ impl DescribeInsightInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -847,11 +902,14 @@ impl DescribeInsightInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -894,6 +952,645 @@ impl DescribeInsightInput {
     }
 }
 
+/// See [`DescribeOrganizationHealthInput`](crate::input::DescribeOrganizationHealthInput)
+pub mod describe_organization_health_input {
+    /// A builder for [`DescribeOrganizationHealthInput`](crate::input::DescribeOrganizationHealthInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The ID of the Amazon Web Services account.</p>
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.account_ids.unwrap_or_default();
+            v.push(input.into());
+            self.account_ids = Some(v);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account.</p>
+        pub fn set_account_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.account_ids = input;
+            self
+        }
+        /// Appends an item to `organizational_unit_ids`.
+        ///
+        /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
+        ///
+        /// <p>The ID of the organizational unit.</p>
+        pub fn organizational_unit_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.organizational_unit_ids.unwrap_or_default();
+            v.push(input.into());
+            self.organizational_unit_ids = Some(v);
+            self
+        }
+        /// <p>The ID of the organizational unit.</p>
+        pub fn set_organizational_unit_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.organizational_unit_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeOrganizationHealthInput`](crate::input::DescribeOrganizationHealthInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeOrganizationHealthInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeOrganizationHealthInput {
+                account_ids: self.account_ids,
+                organizational_unit_ids: self.organizational_unit_ids,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeOrganizationHealthInputOperationOutputAlias =
+    crate::operation::DescribeOrganizationHealth;
+#[doc(hidden)]
+pub type DescribeOrganizationHealthInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeOrganizationHealthInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeOrganizationHealth`](crate::operation::DescribeOrganizationHealth)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeOrganizationHealth,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeOrganizationHealthInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/organization/health").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeOrganizationHealthInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeOrganizationHealthInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_organization_health(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeOrganizationHealth::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeOrganizationHealth",
+            "devopsguru",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeOrganizationHealthInput`](crate::input::DescribeOrganizationHealthInput)
+    pub fn builder() -> crate::input::describe_organization_health_input::Builder {
+        crate::input::describe_organization_health_input::Builder::default()
+    }
+}
+
+/// See [`DescribeOrganizationOverviewInput`](crate::input::DescribeOrganizationOverviewInput)
+pub mod describe_organization_overview_input {
+    /// A builder for [`DescribeOrganizationOverviewInput`](crate::input::DescribeOrganizationOverviewInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) from_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) to_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p> The start of the time range passed in. The start time granularity is at the day
+        /// level. The floor of the start time is used. Returned information occurred after this
+        /// day. </p>
+        pub fn from_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.from_time = Some(input);
+            self
+        }
+        /// <p> The start of the time range passed in. The start time granularity is at the day
+        /// level. The floor of the start time is used. Returned information occurred after this
+        /// day. </p>
+        pub fn set_from_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.from_time = input;
+            self
+        }
+        /// <p> The end of the time range passed in. The start time granularity is at the day level.
+        /// The floor of the start time is used. Returned information occurred before this day. If
+        /// this is not specified, then the current day is used. </p>
+        pub fn to_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.to_time = Some(input);
+            self
+        }
+        /// <p> The end of the time range passed in. The start time granularity is at the day level.
+        /// The floor of the start time is used. Returned information occurred before this day. If
+        /// this is not specified, then the current day is used. </p>
+        pub fn set_to_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.to_time = input;
+            self
+        }
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The ID of the Amazon Web Services account.</p>
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.account_ids.unwrap_or_default();
+            v.push(input.into());
+            self.account_ids = Some(v);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account.</p>
+        pub fn set_account_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.account_ids = input;
+            self
+        }
+        /// Appends an item to `organizational_unit_ids`.
+        ///
+        /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
+        ///
+        /// <p>The ID of the organizational unit.</p>
+        pub fn organizational_unit_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.organizational_unit_ids.unwrap_or_default();
+            v.push(input.into());
+            self.organizational_unit_ids = Some(v);
+            self
+        }
+        /// <p>The ID of the organizational unit.</p>
+        pub fn set_organizational_unit_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.organizational_unit_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeOrganizationOverviewInput`](crate::input::DescribeOrganizationOverviewInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeOrganizationOverviewInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeOrganizationOverviewInput {
+                from_time: self.from_time,
+                to_time: self.to_time,
+                account_ids: self.account_ids,
+                organizational_unit_ids: self.organizational_unit_ids,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeOrganizationOverviewInputOperationOutputAlias =
+    crate::operation::DescribeOrganizationOverview;
+#[doc(hidden)]
+pub type DescribeOrganizationOverviewInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeOrganizationOverviewInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeOrganizationOverview`](crate::operation::DescribeOrganizationOverview)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeOrganizationOverview,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeOrganizationOverviewInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/organization/overview").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeOrganizationOverviewInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeOrganizationOverviewInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_organization_overview(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeOrganizationOverview::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeOrganizationOverview",
+            "devopsguru",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeOrganizationOverviewInput`](crate::input::DescribeOrganizationOverviewInput)
+    pub fn builder() -> crate::input::describe_organization_overview_input::Builder {
+        crate::input::describe_organization_overview_input::Builder::default()
+    }
+}
+
+/// See [`DescribeOrganizationResourceCollectionHealthInput`](crate::input::DescribeOrganizationResourceCollectionHealthInput)
+pub mod describe_organization_resource_collection_health_input {
+    /// A builder for [`DescribeOrganizationResourceCollectionHealthInput`](crate::input::DescribeOrganizationResourceCollectionHealthInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_resource_collection_type:
+            std::option::Option<crate::model::OrganizationResourceCollectionType>,
+        pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
+        /// are defined. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
+        /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        pub fn organization_resource_collection_type(
+            mut self,
+            input: crate::model::OrganizationResourceCollectionType,
+        ) -> Self {
+            self.organization_resource_collection_type = Some(input);
+            self
+        }
+        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
+        /// are defined. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
+        /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        pub fn set_organization_resource_collection_type(
+            mut self,
+            input: std::option::Option<crate::model::OrganizationResourceCollectionType>,
+        ) -> Self {
+            self.organization_resource_collection_type = input;
+            self
+        }
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The ID of the Amazon Web Services account.</p>
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.account_ids.unwrap_or_default();
+            v.push(input.into());
+            self.account_ids = Some(v);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account.</p>
+        pub fn set_account_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.account_ids = input;
+            self
+        }
+        /// Appends an item to `organizational_unit_ids`.
+        ///
+        /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
+        ///
+        /// <p>The ID of the organizational unit.</p>
+        pub fn organizational_unit_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.organizational_unit_ids.unwrap_or_default();
+            v.push(input.into());
+            self.organizational_unit_ids = Some(v);
+            self
+        }
+        /// <p>The ID of the organizational unit.</p>
+        pub fn set_organizational_unit_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.organizational_unit_ids = input;
+            self
+        }
+        /// <p>The pagination token to use to retrieve
+        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token to use to retrieve
+        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeOrganizationResourceCollectionHealthInput`](crate::input::DescribeOrganizationResourceCollectionHealthInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeOrganizationResourceCollectionHealthInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(
+                crate::input::DescribeOrganizationResourceCollectionHealthInput {
+                    organization_resource_collection_type: self
+                        .organization_resource_collection_type,
+                    account_ids: self.account_ids,
+                    organizational_unit_ids: self.organizational_unit_ids,
+                    next_token: self.next_token,
+                    max_results: self.max_results,
+                },
+            )
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeOrganizationResourceCollectionHealthInputOperationOutputAlias =
+    crate::operation::DescribeOrganizationResourceCollectionHealth;
+#[doc(hidden)]
+pub type DescribeOrganizationResourceCollectionHealthInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl DescribeOrganizationResourceCollectionHealthInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeOrganizationResourceCollectionHealth`](crate::operation::DescribeOrganizationResourceCollectionHealth)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeOrganizationResourceCollectionHealth,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeOrganizationResourceCollectionHealthInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/organization/health/resource-collection")
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeOrganizationResourceCollectionHealthInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeOrganizationResourceCollectionHealthInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_organization_resource_collection_health(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeOrganizationResourceCollectionHealth::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeOrganizationResourceCollectionHealth",
+            "devopsguru",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeOrganizationResourceCollectionHealthInput`](crate::input::DescribeOrganizationResourceCollectionHealthInput)
+    pub fn builder() -> crate::input::describe_organization_resource_collection_health_input::Builder
+    {
+        crate::input::describe_organization_resource_collection_health_input::Builder::default()
+    }
+}
+
 /// See [`DescribeResourceCollectionHealthInput`](crate::input::DescribeResourceCollectionHealthInput)
 pub mod describe_resource_collection_health_input {
     /// A builder for [`DescribeResourceCollectionHealthInput`](crate::input::DescribeResourceCollectionHealthInput)
@@ -905,10 +1602,9 @@ pub mod describe_resource_collection_health_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// An AWS resource collection type. This type specifies how analyzed AWS resources are defined. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
-        /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.       
-        /// </p>
+        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
+        /// are defined. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
+        /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn resource_collection_type(
             mut self,
             input: crate::model::ResourceCollectionType,
@@ -916,10 +1612,9 @@ pub mod describe_resource_collection_health_input {
             self.resource_collection_type = Some(input);
             self
         }
-        /// <p>
-        /// An AWS resource collection type. This type specifies how analyzed AWS resources are defined. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
-        /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.       
-        /// </p>
+        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
+        /// are defined. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
+        /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn set_resource_collection_type(
             mut self,
             input: std::option::Option<crate::model::ResourceCollectionType>,
@@ -961,6 +1656,7 @@ pub type DescribeResourceCollectionHealthInputOperationRetryAlias = aws_http::Aw
 impl DescribeResourceCollectionHealthInput {
     /// Consumes the builder and constructs an Operation<[`DescribeResourceCollectionHealth`](crate::operation::DescribeResourceCollectionHealth)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -975,15 +1671,15 @@ impl DescribeResourceCollectionHealthInput {
             _input: &crate::input::DescribeResourceCollectionHealthInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_3 = &_input.resource_collection_type;
-            let input_3 =
-                input_3
+            let input_5 = &_input.resource_collection_type;
+            let input_5 =
+                input_5
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_collection_type",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_collection_type = aws_smithy_http::label::fmt_string(input_3, false);
+            let resource_collection_type = aws_smithy_http::label::fmt_string(input_5, false);
             if resource_collection_type.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_collection_type",
@@ -1001,11 +1697,12 @@ impl DescribeResourceCollectionHealthInput {
         fn uri_query(
             _input: &crate::input::DescribeResourceCollectionHealthInput,
             mut output: &mut String,
-        ) {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_4) = &_input.next_token {
-                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_4));
+            if let Some(inner_6) = &_input.next_token {
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_6));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -1015,7 +1712,7 @@ impl DescribeResourceCollectionHealthInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1036,11 +1733,14 @@ impl DescribeResourceCollectionHealthInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1109,6 +1809,7 @@ pub type DescribeServiceIntegrationInputOperationRetryAlias = aws_http::AwsError
 impl DescribeServiceIntegrationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeServiceIntegration`](crate::operation::DescribeServiceIntegration)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1154,11 +1855,14 @@ impl DescribeServiceIntegrationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1242,6 +1946,7 @@ pub type GetCostEstimationInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl GetCostEstimationInput {
     /// Consumes the builder and constructs an Operation<[`GetCostEstimation`](crate::operation::GetCostEstimation)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1259,11 +1964,15 @@ impl GetCostEstimationInput {
             write!(output, "/cost-estimation").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::GetCostEstimationInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::GetCostEstimationInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_5) = &_input.next_token {
-                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_5));
+            if let Some(inner_7) = &_input.next_token {
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_7));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -1273,7 +1982,7 @@ impl GetCostEstimationInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1294,11 +2003,14 @@ impl GetCostEstimationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1352,10 +2064,8 @@ pub mod get_resource_collection_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The type of AWS resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for
-        /// AWS CloudFormation stacks.
-        /// </p>
+        /// <p> The type of Amazon Web Services resource collections to return. The one valid value is
+        /// <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
         pub fn resource_collection_type(
             mut self,
             input: crate::model::ResourceCollectionType,
@@ -1363,10 +2073,8 @@ pub mod get_resource_collection_input {
             self.resource_collection_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of AWS resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for
-        /// AWS CloudFormation stacks.
-        /// </p>
+        /// <p> The type of Amazon Web Services resource collections to return. The one valid value is
+        /// <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
         pub fn set_resource_collection_type(
             mut self,
             input: std::option::Option<crate::model::ResourceCollectionType>,
@@ -1407,6 +2115,7 @@ pub type GetResourceCollectionInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl GetResourceCollectionInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceCollection`](crate::operation::GetResourceCollection)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1421,15 +2130,15 @@ impl GetResourceCollectionInput {
             _input: &crate::input::GetResourceCollectionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_6 = &_input.resource_collection_type;
-            let input_6 =
-                input_6
+            let input_8 = &_input.resource_collection_type;
+            let input_8 =
+                input_8
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_collection_type",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_collection_type = aws_smithy_http::label::fmt_string(input_6, false);
+            let resource_collection_type = aws_smithy_http::label::fmt_string(input_8, false);
             if resource_collection_type.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_collection_type",
@@ -1444,11 +2153,15 @@ impl GetResourceCollectionInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::GetResourceCollectionInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::GetResourceCollectionInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_7) = &_input.next_token {
-                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_7));
+            if let Some(inner_9) = &_input.next_token {
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_9));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -1458,7 +2171,7 @@ impl GetResourceCollectionInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1479,11 +2192,14 @@ impl GetResourceCollectionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1536,34 +2252,27 @@ pub mod list_anomalies_for_insight_input {
         pub(crate) start_time_range: std::option::Option<crate::model::StartTimeRange>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the insight. The returned anomalies belong to this insight.
-        /// </p>
+        /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
         pub fn insight_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.insight_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the insight. The returned anomalies belong to this insight.
-        /// </p>
+        /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
         pub fn set_insight_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.insight_id = input;
             self
         }
-        /// <p>
-        /// A time range used to specify when the requested anomalies started. All returned anomalies started
-        /// during this time range.
-        /// </p>
+        /// <p> A time range used to specify when the requested anomalies started. All returned
+        /// anomalies started during this time range. </p>
         pub fn start_time_range(mut self, input: crate::model::StartTimeRange) -> Self {
             self.start_time_range = Some(input);
             self
         }
-        /// <p>
-        /// A time range used to specify when the requested anomalies started. All returned anomalies started
-        /// during this time range.
-        /// </p>
+        /// <p> A time range used to specify when the requested anomalies started. All returned
+        /// anomalies started during this time range. </p>
         pub fn set_start_time_range(
             mut self,
             input: std::option::Option<crate::model::StartTimeRange>,
@@ -1595,6 +2304,16 @@ pub mod list_anomalies_for_insight_input {
             self.next_token = input;
             self
         }
+        /// <p>The ID of the Amazon Web Services account. </p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account. </p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListAnomaliesForInsightInput`](crate::input::ListAnomaliesForInsightInput)
         pub fn build(
             self,
@@ -1607,6 +2326,7 @@ pub mod list_anomalies_for_insight_input {
                 start_time_range: self.start_time_range,
                 max_results: self.max_results,
                 next_token: self.next_token,
+                account_id: self.account_id,
             })
         }
     }
@@ -1619,6 +2339,7 @@ pub type ListAnomaliesForInsightInputOperationRetryAlias = aws_http::AwsErrorRet
 impl ListAnomaliesForInsightInput {
     /// Consumes the builder and constructs an Operation<[`ListAnomaliesForInsight`](crate::operation::ListAnomaliesForInsight)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1633,15 +2354,15 @@ impl ListAnomaliesForInsightInput {
             _input: &crate::input::ListAnomaliesForInsightInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_8 = &_input.insight_id;
-            let input_8 =
-                input_8
+            let input_10 = &_input.insight_id;
+            let input_10 =
+                input_10
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "insight_id",
                         details: "cannot be empty or unset",
                     })?;
-            let insight_id = aws_smithy_http::label::fmt_string(input_8, false);
+            let insight_id = aws_smithy_http::label::fmt_string(input_10, false);
             if insight_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "insight_id",
@@ -1692,11 +2413,14 @@ impl ListAnomaliesForInsightInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1756,17 +2480,16 @@ pub mod list_events_input {
         pub(crate) filters: std::option::Option<crate::model::ListEventsFilters>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// A <code>ListEventsFilters</code> object used to specify which events to return.
+        /// <p> A <code>ListEventsFilters</code> object used to specify which events to return.
         /// </p>
         pub fn filters(mut self, input: crate::model::ListEventsFilters) -> Self {
             self.filters = Some(input);
             self
         }
-        /// <p>
-        /// A <code>ListEventsFilters</code> object used to specify which events to return.
+        /// <p> A <code>ListEventsFilters</code> object used to specify which events to return.
         /// </p>
         pub fn set_filters(
             mut self,
@@ -1799,6 +2522,16 @@ pub mod list_events_input {
             self.next_token = input;
             self
         }
+        /// <p>The ID of the Amazon Web Services account. </p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account. </p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListEventsInput`](crate::input::ListEventsInput)
         pub fn build(
             self,
@@ -1810,6 +2543,7 @@ pub mod list_events_input {
                 filters: self.filters,
                 max_results: self.max_results,
                 next_token: self.next_token,
+                account_id: self.account_id,
             })
         }
     }
@@ -1821,6 +2555,7 @@ pub type ListEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListEventsInput {
     /// Consumes the builder and constructs an Operation<[`ListEvents`](crate::operation::ListEvents)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1871,11 +2606,14 @@ impl ListEventsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1937,16 +2675,14 @@ pub mod list_insights_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// A filter used to filter the returned insights by their status. You can specify one status filter.
-        /// </p>
+        /// <p> A filter used to filter the returned insights by their status. You can specify one
+        /// status filter. </p>
         pub fn status_filter(mut self, input: crate::model::ListInsightsStatusFilter) -> Self {
             self.status_filter = Some(input);
             self
         }
-        /// <p>
-        /// A filter used to filter the returned insights by their status. You can specify one status filter.
-        /// </p>
+        /// <p> A filter used to filter the returned insights by their status. You can specify one
+        /// status filter. </p>
         pub fn set_status_filter(
             mut self,
             input: std::option::Option<crate::model::ListInsightsStatusFilter>,
@@ -2000,6 +2736,7 @@ pub type ListInsightsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListInsightsInput {
     /// Consumes the builder and constructs an Operation<[`ListInsights`](crate::operation::ListInsights)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2050,11 +2787,14 @@ impl ListInsightsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2147,6 +2887,7 @@ pub type ListNotificationChannelsInputOperationRetryAlias = aws_http::AwsErrorRe
 impl ListNotificationChannelsInput {
     /// Consumes the builder and constructs an Operation<[`ListNotificationChannels`](crate::operation::ListNotificationChannels)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2200,11 +2941,14 @@ impl ListNotificationChannelsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2255,6 +2999,233 @@ impl ListNotificationChannelsInput {
     }
 }
 
+/// See [`ListOrganizationInsightsInput`](crate::input::ListOrganizationInsightsInput)
+pub mod list_organization_insights_input {
+    /// A builder for [`ListOrganizationInsightsInput`](crate::input::ListOrganizationInsightsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status_filter: std::option::Option<crate::model::ListInsightsStatusFilter>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> A filter used by <code>ListInsights</code> to specify which insights to return.
+        /// </p>
+        pub fn status_filter(mut self, input: crate::model::ListInsightsStatusFilter) -> Self {
+            self.status_filter = Some(input);
+            self
+        }
+        /// <p> A filter used by <code>ListInsights</code> to specify which insights to return.
+        /// </p>
+        pub fn set_status_filter(
+            mut self,
+            input: std::option::Option<crate::model::ListInsightsStatusFilter>,
+        ) -> Self {
+            self.status_filter = input;
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The ID of the Amazon Web Services account. </p>
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.account_ids.unwrap_or_default();
+            v.push(input.into());
+            self.account_ids = Some(v);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account. </p>
+        pub fn set_account_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.account_ids = input;
+            self
+        }
+        /// Appends an item to `organizational_unit_ids`.
+        ///
+        /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
+        ///
+        /// <p>The ID of the organizational unit.</p>
+        pub fn organizational_unit_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.organizational_unit_ids.unwrap_or_default();
+            v.push(input.into());
+            self.organizational_unit_ids = Some(v);
+            self
+        }
+        /// <p>The ID of the organizational unit.</p>
+        pub fn set_organizational_unit_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.organizational_unit_ids = input;
+            self
+        }
+        /// <p>The pagination token to use to retrieve
+        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token to use to retrieve
+        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListOrganizationInsightsInput`](crate::input::ListOrganizationInsightsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListOrganizationInsightsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListOrganizationInsightsInput {
+                status_filter: self.status_filter,
+                max_results: self.max_results,
+                account_ids: self.account_ids,
+                organizational_unit_ids: self.organizational_unit_ids,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListOrganizationInsightsInputOperationOutputAlias =
+    crate::operation::ListOrganizationInsights;
+#[doc(hidden)]
+pub type ListOrganizationInsightsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListOrganizationInsightsInput {
+    /// Consumes the builder and constructs an Operation<[`ListOrganizationInsights`](crate::operation::ListOrganizationInsights)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListOrganizationInsights,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListOrganizationInsightsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/organization/insights").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListOrganizationInsightsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListOrganizationInsightsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_organization_insights(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListOrganizationInsights::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListOrganizationInsights",
+            "devopsguru",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListOrganizationInsightsInput`](crate::input::ListOrganizationInsightsInput)
+    pub fn builder() -> crate::input::list_organization_insights_input::Builder {
+        crate::input::list_organization_insights_input::Builder::default()
+    }
+}
+
 /// See [`ListRecommendationsInput`](crate::input::ListRecommendationsInput)
 pub mod list_recommendations_input {
     /// A builder for [`ListRecommendationsInput`](crate::input::ListRecommendationsInput)
@@ -2264,18 +3235,15 @@ pub mod list_recommendations_input {
         pub(crate) insight_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) locale: std::option::Option<crate::model::Locale>,
+        pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the requested insight.
-        /// </p>
+        /// <p> The ID of the requested insight. </p>
         pub fn insight_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.insight_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the requested insight.
-        /// </p>
+        /// <p> The ID of the requested insight. </p>
         pub fn set_insight_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.insight_id = input;
             self
@@ -2302,6 +3270,16 @@ pub mod list_recommendations_input {
             self.locale = input;
             self
         }
+        /// <p>The ID of the Amazon Web Services account. </p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account. </p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListRecommendationsInput`](crate::input::ListRecommendationsInput)
         pub fn build(
             self,
@@ -2313,6 +3291,7 @@ pub mod list_recommendations_input {
                 insight_id: self.insight_id,
                 next_token: self.next_token,
                 locale: self.locale,
+                account_id: self.account_id,
             })
         }
     }
@@ -2324,6 +3303,7 @@ pub type ListRecommendationsInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ListRecommendations`](crate::operation::ListRecommendations)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2375,11 +3355,14 @@ impl ListRecommendationsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2439,16 +3422,12 @@ pub mod put_feedback_input {
         pub(crate) insight_feedback: std::option::Option<crate::model::InsightFeedback>,
     }
     impl Builder {
-        /// <p>
-        /// The feedback from customers is about the recommendations in this insight.
-        /// </p>
+        /// <p> The feedback from customers is about the recommendations in this insight. </p>
         pub fn insight_feedback(mut self, input: crate::model::InsightFeedback) -> Self {
             self.insight_feedback = Some(input);
             self
         }
-        /// <p>
-        /// The feedback from customers is about the recommendations in this insight.
-        /// </p>
+        /// <p> The feedback from customers is about the recommendations in this insight. </p>
         pub fn set_insight_feedback(
             mut self,
             input: std::option::Option<crate::model::InsightFeedback>,
@@ -2476,6 +3455,7 @@ pub type PutFeedbackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl PutFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`PutFeedback`](crate::operation::PutFeedback)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2526,11 +3506,14 @@ impl PutFeedbackInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2590,16 +3573,12 @@ pub mod remove_notification_channel_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the notification channel to be removed.
-        /// </p>
+        /// <p> The ID of the notification channel to be removed. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the notification channel to be removed.
-        /// </p>
+        /// <p> The ID of the notification channel to be removed. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2623,6 +3602,7 @@ pub type RemoveNotificationChannelInputOperationRetryAlias = aws_http::AwsErrorR
 impl RemoveNotificationChannelInput {
     /// Consumes the builder and constructs an Operation<[`RemoveNotificationChannel`](crate::operation::RemoveNotificationChannel)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2637,15 +3617,15 @@ impl RemoveNotificationChannelInput {
             _input: &crate::input::RemoveNotificationChannelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_9 = &_input.id;
-            let input_9 =
-                input_9
+            let input_11 = &_input.id;
+            let input_11 =
+                input_11
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_9, false);
+            let id = aws_smithy_http::label::fmt_string(input_11, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -2683,11 +3663,14 @@ impl RemoveNotificationChannelInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2743,15 +3726,13 @@ pub mod search_insights_input {
         pub(crate) r#type: std::option::Option<crate::model::InsightType>,
     }
     impl Builder {
-        /// <p>
-        /// The start of the time range passed in. Returned insights occurred after this time.
+        /// <p> The start of the time range passed in. Returned insights occurred after this time.
         /// </p>
         pub fn start_time_range(mut self, input: crate::model::StartTimeRange) -> Self {
             self.start_time_range = Some(input);
             self
         }
-        /// <p>
-        /// The start of the time range passed in. Returned insights occurred after this time.
+        /// <p> The start of the time range passed in. Returned insights occurred after this time.
         /// </p>
         pub fn set_start_time_range(
             mut self,
@@ -2760,16 +3741,14 @@ pub mod search_insights_input {
             self.start_time_range = input;
             self
         }
-        /// <p>
-        /// A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search.
-        /// </p>
+        /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and
+        /// status filters on your insight search. </p>
         pub fn filters(mut self, input: crate::model::SearchInsightsFilters) -> Self {
             self.filters = Some(input);
             self
         }
-        /// <p>
-        /// A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search.
-        /// </p>
+        /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and
+        /// status filters on your insight search. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::SearchInsightsFilters>,
@@ -2801,16 +3780,14 @@ pub mod search_insights_input {
             self.next_token = input;
             self
         }
-        /// <p>
-        /// The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).
-        /// </p>
+        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
+        /// <code>PROACTIVE</code>). </p>
         pub fn r#type(mut self, input: crate::model::InsightType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>
-        /// The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).
-        /// </p>
+        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
+        /// <code>PROACTIVE</code>). </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::InsightType>) -> Self {
             self.r#type = input;
             self
@@ -2839,6 +3816,7 @@ pub type SearchInsightsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl SearchInsightsInput {
     /// Consumes the builder and constructs an Operation<[`SearchInsights`](crate::operation::SearchInsights)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2890,11 +3868,14 @@ impl SearchInsightsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2945,6 +3926,243 @@ impl SearchInsightsInput {
     }
 }
 
+/// See [`SearchOrganizationInsightsInput`](crate::input::SearchOrganizationInsightsInput)
+pub mod search_organization_insights_input {
+    /// A builder for [`SearchOrganizationInsightsInput`](crate::input::SearchOrganizationInsightsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) start_time_range: std::option::Option<crate::model::StartTimeRange>,
+        pub(crate) filters: std::option::Option<crate::model::SearchOrganizationInsightsFilters>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::InsightType>,
+    }
+    impl Builder {
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The ID of the Amazon Web Services account. </p>
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.account_ids.unwrap_or_default();
+            v.push(input.into());
+            self.account_ids = Some(v);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account. </p>
+        pub fn set_account_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.account_ids = input;
+            self
+        }
+        /// <p> A time range used to specify when the behavior of an insight or anomaly started.
+        /// </p>
+        pub fn start_time_range(mut self, input: crate::model::StartTimeRange) -> Self {
+            self.start_time_range = Some(input);
+            self
+        }
+        /// <p> A time range used to specify when the behavior of an insight or anomaly started.
+        /// </p>
+        pub fn set_start_time_range(
+            mut self,
+            input: std::option::Option<crate::model::StartTimeRange>,
+        ) -> Self {
+            self.start_time_range = input;
+            self
+        }
+        /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the
+        /// severity and status filters on your insight search. </p>
+        pub fn filters(mut self, input: crate::model::SearchOrganizationInsightsFilters) -> Self {
+            self.filters = Some(input);
+            self
+        }
+        /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the
+        /// severity and status filters on your insight search. </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<crate::model::SearchOrganizationInsightsFilters>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The pagination token to use to retrieve
+        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token to use to retrieve
+        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
+        /// <code>PROACTIVE</code>). </p>
+        pub fn r#type(mut self, input: crate::model::InsightType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
+        /// <code>PROACTIVE</code>). </p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::InsightType>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SearchOrganizationInsightsInput`](crate::input::SearchOrganizationInsightsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::SearchOrganizationInsightsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::SearchOrganizationInsightsInput {
+                account_ids: self.account_ids,
+                start_time_range: self.start_time_range,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                r#type: self.r#type,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type SearchOrganizationInsightsInputOperationOutputAlias =
+    crate::operation::SearchOrganizationInsights;
+#[doc(hidden)]
+pub type SearchOrganizationInsightsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl SearchOrganizationInsightsInput {
+    /// Consumes the builder and constructs an Operation<[`SearchOrganizationInsights`](crate::operation::SearchOrganizationInsights)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SearchOrganizationInsights,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::SearchOrganizationInsightsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/organization/insights/search").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::SearchOrganizationInsightsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::SearchOrganizationInsightsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_search_organization_insights(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SearchOrganizationInsights::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SearchOrganizationInsights",
+            "devopsguru",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`SearchOrganizationInsightsInput`](crate::input::SearchOrganizationInsightsInput)
+    pub fn builder() -> crate::input::search_organization_insights_input::Builder {
+        crate::input::search_organization_insights_input::Builder::default()
+    }
+}
+
 /// See [`StartCostEstimationInput`](crate::input::StartCostEstimationInput)
 pub mod start_cost_estimation_input {
     /// A builder for [`StartCostEstimationInput`](crate::input::StartCostEstimationInput)
@@ -2956,7 +4174,7 @@ pub mod start_cost_estimation_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The collection of AWS resources used to create a monthly DevOps Guru cost estimate.</p>
+        /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
         pub fn resource_collection(
             mut self,
             input: crate::model::CostEstimationResourceCollectionFilter,
@@ -2964,7 +4182,7 @@ pub mod start_cost_estimation_input {
             self.resource_collection = Some(input);
             self
         }
-        /// <p>The collection of AWS resources used to create a monthly DevOps Guru cost estimate.</p>
+        /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
         pub fn set_resource_collection(
             mut self,
             input: std::option::Option<crate::model::CostEstimationResourceCollectionFilter>,
@@ -3003,6 +4221,7 @@ pub type StartCostEstimationInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl StartCostEstimationInput {
     /// Consumes the builder and constructs an Operation<[`StartCostEstimation`](crate::operation::StartCostEstimation)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -3057,11 +4276,14 @@ impl StartCostEstimationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3123,16 +4345,14 @@ pub mod update_resource_collection_input {
             std::option::Option<crate::model::UpdateResourceCollectionFilter>,
     }
     impl Builder {
-        /// <p>
-        /// Specifies if the resource collection in the request is added or deleted to the resource collection.
-        /// </p>
+        /// <p> Specifies if the resource collection in the request is added or deleted to the
+        /// resource collection. </p>
         pub fn action(mut self, input: crate::model::UpdateResourceCollectionAction) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p>
-        /// Specifies if the resource collection in the request is added or deleted to the resource collection.
-        /// </p>
+        /// <p> Specifies if the resource collection in the request is added or deleted to the
+        /// resource collection. </p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::UpdateResourceCollectionAction>,
@@ -3140,9 +4360,7 @@ pub mod update_resource_collection_input {
             self.action = input;
             self
         }
-        /// <p>
-        /// Contains information used to update a collection of AWS resources.
-        /// </p>
+        /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
         pub fn resource_collection(
             mut self,
             input: crate::model::UpdateResourceCollectionFilter,
@@ -3150,9 +4368,7 @@ pub mod update_resource_collection_input {
             self.resource_collection = Some(input);
             self
         }
-        /// <p>
-        /// Contains information used to update a collection of AWS resources.
-        /// </p>
+        /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
         pub fn set_resource_collection(
             mut self,
             input: std::option::Option<crate::model::UpdateResourceCollectionFilter>,
@@ -3182,6 +4398,7 @@ pub type UpdateResourceCollectionInputOperationRetryAlias = aws_http::AwsErrorRe
 impl UpdateResourceCollectionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResourceCollection`](crate::operation::UpdateResourceCollection)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3235,11 +4452,14 @@ impl UpdateResourceCollectionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3300,10 +4520,8 @@ pub mod update_service_integration_input {
             std::option::Option<crate::model::UpdateServiceIntegrationConfig>,
     }
     impl Builder {
-        /// <p>
-        /// An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you
-        /// want to update it to enabled or disabled.
-        /// </p>
+        /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service
+        /// you want to update, and whether you want to update it to enabled or disabled. </p>
         pub fn service_integration(
             mut self,
             input: crate::model::UpdateServiceIntegrationConfig,
@@ -3311,10 +4529,8 @@ pub mod update_service_integration_input {
             self.service_integration = Some(input);
             self
         }
-        /// <p>
-        /// An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you
-        /// want to update it to enabled or disabled.
-        /// </p>
+        /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service
+        /// you want to update, and whether you want to update it to enabled or disabled. </p>
         pub fn set_service_integration(
             mut self,
             input: std::option::Option<crate::model::UpdateServiceIntegrationConfig>,
@@ -3343,6 +4559,7 @@ pub type UpdateServiceIntegrationInputOperationRetryAlias = aws_http::AwsErrorRe
 impl UpdateServiceIntegrationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateServiceIntegration`](crate::operation::UpdateServiceIntegration)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3396,11 +4613,14 @@ impl UpdateServiceIntegrationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3455,17 +4675,13 @@ impl UpdateServiceIntegrationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceIntegrationInput {
-    /// <p>
-    /// An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you
-    /// want to update it to enabled or disabled.
-    /// </p>
+    /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service
+    /// you want to update, and whether you want to update it to enabled or disabled. </p>
     pub service_integration: std::option::Option<crate::model::UpdateServiceIntegrationConfig>,
 }
 impl UpdateServiceIntegrationInput {
-    /// <p>
-    /// An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you
-    /// want to update it to enabled or disabled.
-    /// </p>
+    /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service
+    /// you want to update, and whether you want to update it to enabled or disabled. </p>
     pub fn service_integration(
         &self,
     ) -> std::option::Option<&crate::model::UpdateServiceIntegrationConfig> {
@@ -3484,25 +4700,19 @@ impl std::fmt::Debug for UpdateServiceIntegrationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceCollectionInput {
-    /// <p>
-    /// Specifies if the resource collection in the request is added or deleted to the resource collection.
-    /// </p>
+    /// <p> Specifies if the resource collection in the request is added or deleted to the
+    /// resource collection. </p>
     pub action: std::option::Option<crate::model::UpdateResourceCollectionAction>,
-    /// <p>
-    /// Contains information used to update a collection of AWS resources.
-    /// </p>
+    /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
     pub resource_collection: std::option::Option<crate::model::UpdateResourceCollectionFilter>,
 }
 impl UpdateResourceCollectionInput {
-    /// <p>
-    /// Specifies if the resource collection in the request is added or deleted to the resource collection.
-    /// </p>
+    /// <p> Specifies if the resource collection in the request is added or deleted to the
+    /// resource collection. </p>
     pub fn action(&self) -> std::option::Option<&crate::model::UpdateResourceCollectionAction> {
         self.action.as_ref()
     }
-    /// <p>
-    /// Contains information used to update a collection of AWS resources.
-    /// </p>
+    /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
     pub fn resource_collection(
         &self,
     ) -> std::option::Option<&crate::model::UpdateResourceCollectionFilter> {
@@ -3522,14 +4732,14 @@ impl std::fmt::Debug for UpdateResourceCollectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartCostEstimationInput {
-    /// <p>The collection of AWS resources used to create a monthly DevOps Guru cost estimate.</p>
+    /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
     pub resource_collection:
         std::option::Option<crate::model::CostEstimationResourceCollectionFilter>,
     /// <p>The idempotency token used to identify each cost estimate request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl StartCostEstimationInput {
-    /// <p>The collection of AWS resources used to create a monthly DevOps Guru cost estimate.</p>
+    /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
     pub fn resource_collection(
         &self,
     ) -> std::option::Option<&crate::model::CostEstimationResourceCollectionFilter> {
@@ -3552,14 +4762,78 @@ impl std::fmt::Debug for StartCostEstimationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SearchInsightsInput {
-    /// <p>
-    /// The start of the time range passed in. Returned insights occurred after this time.
+pub struct SearchOrganizationInsightsInput {
+    /// <p>The ID of the Amazon Web Services account. </p>
+    pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p> A time range used to specify when the behavior of an insight or anomaly started.
     /// </p>
     pub start_time_range: std::option::Option<crate::model::StartTimeRange>,
-    /// <p>
-    /// A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search.
+    /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the
+    /// severity and status filters on your insight search. </p>
+    pub filters: std::option::Option<crate::model::SearchOrganizationInsightsFilters>,
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
+    /// <code>PROACTIVE</code>). </p>
+    pub r#type: std::option::Option<crate::model::InsightType>,
+}
+impl SearchOrganizationInsightsInput {
+    /// <p>The ID of the Amazon Web Services account. </p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+    /// <p> A time range used to specify when the behavior of an insight or anomaly started.
     /// </p>
+    pub fn start_time_range(&self) -> std::option::Option<&crate::model::StartTimeRange> {
+        self.start_time_range.as_ref()
+    }
+    /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the
+    /// severity and status filters on your insight search. </p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::SearchOrganizationInsightsFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
+    /// <code>PROACTIVE</code>). </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::InsightType> {
+        self.r#type.as_ref()
+    }
+}
+impl std::fmt::Debug for SearchOrganizationInsightsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchOrganizationInsightsInput");
+        formatter.field("account_ids", &self.account_ids);
+        formatter.field("start_time_range", &self.start_time_range);
+        formatter.field("filters", &self.filters);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SearchInsightsInput {
+    /// <p> The start of the time range passed in. Returned insights occurred after this time.
+    /// </p>
+    pub start_time_range: std::option::Option<crate::model::StartTimeRange>,
+    /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and
+    /// status filters on your insight search. </p>
     pub filters: std::option::Option<crate::model::SearchInsightsFilters>,
     /// <p>The maximum number of results to return with a single call.
     /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -3567,21 +4841,18 @@ pub struct SearchInsightsInput {
     /// <p>The pagination token to use to retrieve
     /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).
-    /// </p>
+    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
+    /// <code>PROACTIVE</code>). </p>
     pub r#type: std::option::Option<crate::model::InsightType>,
 }
 impl SearchInsightsInput {
-    /// <p>
-    /// The start of the time range passed in. Returned insights occurred after this time.
+    /// <p> The start of the time range passed in. Returned insights occurred after this time.
     /// </p>
     pub fn start_time_range(&self) -> std::option::Option<&crate::model::StartTimeRange> {
         self.start_time_range.as_ref()
     }
-    /// <p>
-    /// A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search.
-    /// </p>
+    /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and
+    /// status filters on your insight search. </p>
     pub fn filters(&self) -> std::option::Option<&crate::model::SearchInsightsFilters> {
         self.filters.as_ref()
     }
@@ -3595,9 +4866,8 @@ impl SearchInsightsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).
-    /// </p>
+    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
+    /// <code>PROACTIVE</code>). </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::InsightType> {
         self.r#type.as_ref()
     }
@@ -3618,15 +4888,11 @@ impl std::fmt::Debug for SearchInsightsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveNotificationChannelInput {
-    /// <p>
-    /// The ID of the notification channel to be removed.
-    /// </p>
+    /// <p> The ID of the notification channel to be removed. </p>
     pub id: std::option::Option<std::string::String>,
 }
 impl RemoveNotificationChannelInput {
-    /// <p>
-    /// The ID of the notification channel to be removed.
-    /// </p>
+    /// <p> The ID of the notification channel to be removed. </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -3643,15 +4909,11 @@ impl std::fmt::Debug for RemoveNotificationChannelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutFeedbackInput {
-    /// <p>
-    /// The feedback from customers is about the recommendations in this insight.
-    /// </p>
+    /// <p> The feedback from customers is about the recommendations in this insight. </p>
     pub insight_feedback: std::option::Option<crate::model::InsightFeedback>,
 }
 impl PutFeedbackInput {
-    /// <p>
-    /// The feedback from customers is about the recommendations in this insight.
-    /// </p>
+    /// <p> The feedback from customers is about the recommendations in this insight. </p>
     pub fn insight_feedback(&self) -> std::option::Option<&crate::model::InsightFeedback> {
         self.insight_feedback.as_ref()
     }
@@ -3668,20 +4930,18 @@ impl std::fmt::Debug for PutFeedbackInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecommendationsInput {
-    /// <p>
-    /// The ID of the requested insight.
-    /// </p>
+    /// <p> The ID of the requested insight. </p>
     pub insight_id: std::option::Option<std::string::String>,
     /// <p>The pagination token to use to retrieve
     /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A locale that specifies the language to use for recommendations.</p>
     pub locale: std::option::Option<crate::model::Locale>,
+    /// <p>The ID of the Amazon Web Services account. </p>
+    pub account_id: std::option::Option<std::string::String>,
 }
 impl ListRecommendationsInput {
-    /// <p>
-    /// The ID of the requested insight.
-    /// </p>
+    /// <p> The ID of the requested insight. </p>
     pub fn insight_id(&self) -> std::option::Option<&str> {
         self.insight_id.as_deref()
     }
@@ -3694,6 +4954,10 @@ impl ListRecommendationsInput {
     pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
         self.locale.as_ref()
     }
+    /// <p>The ID of the Amazon Web Services account. </p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRecommendationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3701,6 +4965,62 @@ impl std::fmt::Debug for ListRecommendationsInput {
         formatter.field("insight_id", &self.insight_id);
         formatter.field("next_token", &self.next_token);
         formatter.field("locale", &self.locale);
+        formatter.field("account_id", &self.account_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListOrganizationInsightsInput {
+    /// <p> A filter used by <code>ListInsights</code> to specify which insights to return.
+    /// </p>
+    pub status_filter: std::option::Option<crate::model::ListInsightsStatusFilter>,
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The ID of the Amazon Web Services account. </p>
+    pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The ID of the organizational unit.</p>
+    pub organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListOrganizationInsightsInput {
+    /// <p> A filter used by <code>ListInsights</code> to specify which insights to return.
+    /// </p>
+    pub fn status_filter(&self) -> std::option::Option<&crate::model::ListInsightsStatusFilter> {
+        self.status_filter.as_ref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The ID of the Amazon Web Services account. </p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+    /// <p>The ID of the organizational unit.</p>
+    pub fn organizational_unit_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.organizational_unit_ids.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListOrganizationInsightsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListOrganizationInsightsInput");
+        formatter.field("status_filter", &self.status_filter);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("account_ids", &self.account_ids);
+        formatter.field("organizational_unit_ids", &self.organizational_unit_ids);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }
@@ -3732,9 +5052,8 @@ impl std::fmt::Debug for ListNotificationChannelsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInsightsInput {
-    /// <p>
-    /// A filter used to filter the returned insights by their status. You can specify one status filter.
-    /// </p>
+    /// <p> A filter used to filter the returned insights by their status. You can specify one
+    /// status filter. </p>
     pub status_filter: std::option::Option<crate::model::ListInsightsStatusFilter>,
     /// <p>The maximum number of results to return with a single call.
     /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -3744,9 +5063,8 @@ pub struct ListInsightsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInsightsInput {
-    /// <p>
-    /// A filter used to filter the returned insights by their status. You can specify one status filter.
-    /// </p>
+    /// <p> A filter used to filter the returned insights by their status. You can specify one
+    /// status filter. </p>
     pub fn status_filter(&self) -> std::option::Option<&crate::model::ListInsightsStatusFilter> {
         self.status_filter.as_ref()
     }
@@ -3775,8 +5093,7 @@ impl std::fmt::Debug for ListInsightsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventsInput {
-    /// <p>
-    /// A <code>ListEventsFilters</code> object used to specify which events to return.
+    /// <p> A <code>ListEventsFilters</code> object used to specify which events to return.
     /// </p>
     pub filters: std::option::Option<crate::model::ListEventsFilters>,
     /// <p>The maximum number of results to return with a single call.
@@ -3785,10 +5102,11 @@ pub struct ListEventsInput {
     /// <p>The pagination token to use to retrieve
     /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>The ID of the Amazon Web Services account. </p>
+    pub account_id: std::option::Option<std::string::String>,
 }
 impl ListEventsInput {
-    /// <p>
-    /// A <code>ListEventsFilters</code> object used to specify which events to return.
+    /// <p> A <code>ListEventsFilters</code> object used to specify which events to return.
     /// </p>
     pub fn filters(&self) -> std::option::Option<&crate::model::ListEventsFilters> {
         self.filters.as_ref()
@@ -3803,6 +5121,10 @@ impl ListEventsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The ID of the Amazon Web Services account. </p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3810,6 +5132,7 @@ impl std::fmt::Debug for ListEventsInput {
         formatter.field("filters", &self.filters);
         formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &self.next_token);
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }
@@ -3818,14 +5141,10 @@ impl std::fmt::Debug for ListEventsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnomaliesForInsightInput {
-    /// <p>
-    /// The ID of the insight. The returned anomalies belong to this insight.
-    /// </p>
+    /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
     pub insight_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// A time range used to specify when the requested anomalies started. All returned anomalies started
-    /// during this time range.
-    /// </p>
+    /// <p> A time range used to specify when the requested anomalies started. All returned
+    /// anomalies started during this time range. </p>
     pub start_time_range: std::option::Option<crate::model::StartTimeRange>,
     /// <p>The maximum number of results to return with a single call.
     /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -3833,18 +5152,16 @@ pub struct ListAnomaliesForInsightInput {
     /// <p>The pagination token to use to retrieve
     /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>The ID of the Amazon Web Services account. </p>
+    pub account_id: std::option::Option<std::string::String>,
 }
 impl ListAnomaliesForInsightInput {
-    /// <p>
-    /// The ID of the insight. The returned anomalies belong to this insight.
-    /// </p>
+    /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
     pub fn insight_id(&self) -> std::option::Option<&str> {
         self.insight_id.as_deref()
     }
-    /// <p>
-    /// A time range used to specify when the requested anomalies started. All returned anomalies started
-    /// during this time range.
-    /// </p>
+    /// <p> A time range used to specify when the requested anomalies started. All returned
+    /// anomalies started during this time range. </p>
     pub fn start_time_range(&self) -> std::option::Option<&crate::model::StartTimeRange> {
         self.start_time_range.as_ref()
     }
@@ -3858,6 +5175,10 @@ impl ListAnomaliesForInsightInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The ID of the Amazon Web Services account. </p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAnomaliesForInsightInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3866,6 +5187,7 @@ impl std::fmt::Debug for ListAnomaliesForInsightInput {
         formatter.field("start_time_range", &self.start_time_range);
         formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &self.next_token);
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }
@@ -3874,20 +5196,16 @@ impl std::fmt::Debug for ListAnomaliesForInsightInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceCollectionInput {
-    /// <p>
-    /// The type of AWS resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for
-    /// AWS CloudFormation stacks.
-    /// </p>
+    /// <p> The type of Amazon Web Services resource collections to return. The one valid value is
+    /// <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
     pub resource_collection_type: std::option::Option<crate::model::ResourceCollectionType>,
     /// <p>The pagination token to use to retrieve
     /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceCollectionInput {
-    /// <p>
-    /// The type of AWS resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for
-    /// AWS CloudFormation stacks.
-    /// </p>
+    /// <p> The type of Amazon Web Services resource collections to return. The one valid value is
+    /// <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection_type(
         &self,
     ) -> std::option::Option<&crate::model::ResourceCollectionType> {
@@ -3946,20 +5264,18 @@ impl std::fmt::Debug for DescribeServiceIntegrationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourceCollectionHealthInput {
-    /// <p>
-    /// An AWS resource collection type. This type specifies how analyzed AWS resources are defined. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
-    /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.       
-    /// </p>
+    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
+    /// are defined. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
+    /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub resource_collection_type: std::option::Option<crate::model::ResourceCollectionType>,
     /// <p>The pagination token to use to retrieve
     /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeResourceCollectionHealthInput {
-    /// <p>
-    /// An AWS resource collection type. This type specifies how analyzed AWS resources are defined. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
-    /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.       
-    /// </p>
+    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
+    /// are defined. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
+    /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection_type(
         &self,
     ) -> std::option::Option<&crate::model::ResourceCollectionType> {
@@ -3983,24 +5299,168 @@ impl std::fmt::Debug for DescribeResourceCollectionHealthInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeOrganizationResourceCollectionHealthInput {
+    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
+    /// are defined. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
+    /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    pub organization_resource_collection_type:
+        std::option::Option<crate::model::OrganizationResourceCollectionType>,
+    /// <p>The ID of the Amazon Web Services account.</p>
+    pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The ID of the organizational unit.</p>
+    pub organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl DescribeOrganizationResourceCollectionHealthInput {
+    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
+    /// are defined. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
+    /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    pub fn organization_resource_collection_type(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationResourceCollectionType> {
+        self.organization_resource_collection_type.as_ref()
+    }
+    /// <p>The ID of the Amazon Web Services account.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+    /// <p>The ID of the organizational unit.</p>
+    pub fn organizational_unit_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.organizational_unit_ids.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for DescribeOrganizationResourceCollectionHealthInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeOrganizationResourceCollectionHealthInput");
+        formatter.field(
+            "organization_resource_collection_type",
+            &self.organization_resource_collection_type,
+        );
+        formatter.field("account_ids", &self.account_ids);
+        formatter.field("organizational_unit_ids", &self.organizational_unit_ids);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeOrganizationOverviewInput {
+    /// <p> The start of the time range passed in. The start time granularity is at the day
+    /// level. The floor of the start time is used. Returned information occurred after this
+    /// day. </p>
+    pub from_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The end of the time range passed in. The start time granularity is at the day level.
+    /// The floor of the start time is used. Returned information occurred before this day. If
+    /// this is not specified, then the current day is used. </p>
+    pub to_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The ID of the Amazon Web Services account.</p>
+    pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The ID of the organizational unit.</p>
+    pub organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeOrganizationOverviewInput {
+    /// <p> The start of the time range passed in. The start time granularity is at the day
+    /// level. The floor of the start time is used. Returned information occurred after this
+    /// day. </p>
+    pub fn from_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.from_time.as_ref()
+    }
+    /// <p> The end of the time range passed in. The start time granularity is at the day level.
+    /// The floor of the start time is used. Returned information occurred before this day. If
+    /// this is not specified, then the current day is used. </p>
+    pub fn to_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.to_time.as_ref()
+    }
+    /// <p>The ID of the Amazon Web Services account.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+    /// <p>The ID of the organizational unit.</p>
+    pub fn organizational_unit_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.organizational_unit_ids.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeOrganizationOverviewInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeOrganizationOverviewInput");
+        formatter.field("from_time", &self.from_time);
+        formatter.field("to_time", &self.to_time);
+        formatter.field("account_ids", &self.account_ids);
+        formatter.field("organizational_unit_ids", &self.organizational_unit_ids);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeOrganizationHealthInput {
+    /// <p>The ID of the Amazon Web Services account.</p>
+    pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The ID of the organizational unit.</p>
+    pub organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeOrganizationHealthInput {
+    /// <p>The ID of the Amazon Web Services account.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+    /// <p>The ID of the organizational unit.</p>
+    pub fn organizational_unit_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.organizational_unit_ids.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeOrganizationHealthInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeOrganizationHealthInput");
+        formatter.field("account_ids", &self.account_ids);
+        formatter.field("organizational_unit_ids", &self.organizational_unit_ids);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInsightInput {
-    /// <p>
-    /// The ID of the insight.
-    /// </p>
+    /// <p> The ID of the insight. </p>
     pub id: std::option::Option<std::string::String>,
+    /// <p>The ID of the member account in the organization.</p>
+    pub account_id: std::option::Option<std::string::String>,
 }
 impl DescribeInsightInput {
-    /// <p>
-    /// The ID of the insight.
-    /// </p>
+    /// <p> The ID of the insight. </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
+    }
+    /// <p>The ID of the member account in the organization.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl std::fmt::Debug for DescribeInsightInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInsightInput");
         formatter.field("id", &self.id);
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }
@@ -4009,15 +5469,11 @@ impl std::fmt::Debug for DescribeInsightInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFeedbackInput {
-    /// <p>
-    /// The ID of the insight for which the feedback was provided.
-    /// </p>
+    /// <p> The ID of the insight for which the feedback was provided. </p>
     pub insight_id: std::option::Option<std::string::String>,
 }
 impl DescribeFeedbackInput {
-    /// <p>
-    /// The ID of the insight for which the feedback was provided.
-    /// </p>
+    /// <p> The ID of the insight for which the feedback was provided. </p>
     pub fn insight_id(&self) -> std::option::Option<&str> {
         self.insight_id.as_deref()
     }
@@ -4034,23 +5490,26 @@ impl std::fmt::Debug for DescribeFeedbackInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnomalyInput {
-    /// <p>
-    /// The ID of the anomaly.
-    /// </p>
+    /// <p> The ID of the anomaly. </p>
     pub id: std::option::Option<std::string::String>,
+    /// <p>The ID of the member account.</p>
+    pub account_id: std::option::Option<std::string::String>,
 }
 impl DescribeAnomalyInput {
-    /// <p>
-    /// The ID of the anomaly.
-    /// </p>
+    /// <p> The ID of the anomaly. </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
+    }
+    /// <p>The ID of the member account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl std::fmt::Debug for DescribeAnomalyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAnomalyInput");
         formatter.field("id", &self.id);
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }
@@ -4059,30 +5518,26 @@ impl std::fmt::Debug for DescribeAnomalyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountOverviewInput {
-    /// <p>
-    /// The start of the time range passed in. The start time granularity is at the
-    /// day level. The floor of the start time is used. Returned information occurred after this day.
-    /// </p>
-    pub from_time: std::option::Option<aws_smithy_types::Instant>,
-    /// <p>
-    /// The end of the time range passed in. The start time granularity is at the
-    /// day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.
-    /// </p>
-    pub to_time: std::option::Option<aws_smithy_types::Instant>,
+    /// <p> The start of the time range passed in. The start time granularity is at the day
+    /// level. The floor of the start time is used. Returned information occurred after this
+    /// day. </p>
+    pub from_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The end of the time range passed in. The start time granularity is at the day level.
+    /// The floor of the start time is used. Returned information occurred before this day. If
+    /// this is not specified, then the current day is used. </p>
+    pub to_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeAccountOverviewInput {
-    /// <p>
-    /// The start of the time range passed in. The start time granularity is at the
-    /// day level. The floor of the start time is used. Returned information occurred after this day.
-    /// </p>
-    pub fn from_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    /// <p> The start of the time range passed in. The start time granularity is at the day
+    /// level. The floor of the start time is used. Returned information occurred after this
+    /// day. </p>
+    pub fn from_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.from_time.as_ref()
     }
-    /// <p>
-    /// The end of the time range passed in. The start time granularity is at the
-    /// day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.
-    /// </p>
-    pub fn to_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    /// <p> The end of the time range passed in. The start time granularity is at the day level.
+    /// The floor of the start time is used. Returned information occurred before this day. If
+    /// this is not specified, then the current day is used. </p>
+    pub fn to_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.to_time.as_ref()
     }
 }

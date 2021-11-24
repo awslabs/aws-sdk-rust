@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use aws_smithy_types::Instant;
+use aws_smithy_types::DateTime;
 use std::error::Error as StdError;
 use std::fmt;
 
@@ -22,7 +22,7 @@ pub enum Error {
     MessageTooLong,
     PayloadTooLong,
     PreludeChecksumMismatch(u32, u32),
-    TimestampValueTooLarge(Instant),
+    TimestampValueTooLarge(DateTime),
     Marshalling(String),
     Unmarshalling(String),
 }

@@ -140,9 +140,9 @@ pub struct VoiceConnectorGroup {
     /// <p>The Amazon Chime Voice Connectors to which to route inbound calls.</p>
     pub voice_connector_items: std::option::Option<std::vec::Vec<crate::model::VoiceConnectorItem>>,
     /// <p>The Amazon Chime Voice Connector group creation time stamp, in ISO 8601 format.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The updated Amazon Chime Voice Connector group time stamp, in ISO 8601 format.</p>
-    pub updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the specified Amazon Chime Voice Connector group.</p>
     pub voice_connector_group_arn: std::option::Option<std::string::String>,
 }
@@ -162,11 +162,11 @@ impl VoiceConnectorGroup {
         self.voice_connector_items.as_deref()
     }
     /// <p>The Amazon Chime Voice Connector group creation time stamp, in ISO 8601 format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The updated Amazon Chime Voice Connector group time stamp, in ISO 8601 format.</p>
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     /// <p>The ARN of the specified Amazon Chime Voice Connector group.</p>
@@ -196,8 +196,8 @@ pub mod voice_connector_group {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) voice_connector_items:
             std::option::Option<std::vec::Vec<crate::model::VoiceConnectorItem>>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) voice_connector_group_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -247,27 +247,27 @@ pub mod voice_connector_group {
             self
         }
         /// <p>The Amazon Chime Voice Connector group creation time stamp, in ISO 8601 format.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The Amazon Chime Voice Connector group creation time stamp, in ISO 8601 format.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The updated Amazon Chime Voice Connector group time stamp, in ISO 8601 format.</p>
-        pub fn updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_timestamp = Some(input);
             self
         }
         /// <p>The updated Amazon Chime Voice Connector group time stamp, in ISO 8601 format.</p>
         pub fn set_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_timestamp = input;
             self
@@ -402,9 +402,9 @@ pub struct VoiceConnector {
     /// <p>Designates whether encryption is required for the Amazon Chime Voice Connector.</p>
     pub require_encryption: std::option::Option<bool>,
     /// <p>The Amazon Chime Voice Connector creation timestamp, in ISO 8601 format.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The updated Amazon Chime Voice Connector timestamp, in ISO 8601 format.</p>
-    pub updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the specified Amazon Chime Voice Connector.</p>
     pub voice_connector_arn: std::option::Option<std::string::String>,
 }
@@ -433,11 +433,11 @@ impl VoiceConnector {
         self.require_encryption
     }
     /// <p>The Amazon Chime Voice Connector creation timestamp, in ISO 8601 format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The updated Amazon Chime Voice Connector timestamp, in ISO 8601 format.</p>
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     /// <p>The ARN of the specified Amazon Chime Voice Connector.</p>
@@ -470,8 +470,8 @@ pub mod voice_connector {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) outbound_host_name: std::option::Option<std::string::String>,
         pub(crate) require_encryption: std::option::Option<bool>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) voice_connector_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -541,27 +541,27 @@ pub mod voice_connector {
             self
         }
         /// <p>The Amazon Chime Voice Connector creation timestamp, in ISO 8601 format.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The Amazon Chime Voice Connector creation timestamp, in ISO 8601 format.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The updated Amazon Chime Voice Connector timestamp, in ISO 8601 format.</p>
-        pub fn updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_timestamp = Some(input);
             self
         }
         /// <p>The updated Amazon Chime Voice Connector timestamp, in ISO 8601 format.</p>
         pub fn set_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_timestamp = input;
             self
@@ -830,9 +830,9 @@ pub struct User {
     /// <p>The user invite status.</p>
     pub user_invitation_status: std::option::Option<crate::model::InviteStatus>,
     /// <p>Date and time when the user is registered, in ISO 8601 format.</p>
-    pub registered_on: std::option::Option<aws_smithy_types::Instant>,
+    pub registered_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Date and time when the user is invited to the Amazon Chime account, in ISO 8601 format.</p>
-    pub invited_on: std::option::Option<aws_smithy_types::Instant>,
+    pub invited_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Alexa for Business metadata.</p>
     pub alexa_for_business_metadata: std::option::Option<crate::model::AlexaForBusinessMetadata>,
     /// <p>The user's personal meeting PIN.</p>
@@ -878,11 +878,11 @@ impl User {
         self.user_invitation_status.as_ref()
     }
     /// <p>Date and time when the user is registered, in ISO 8601 format.</p>
-    pub fn registered_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn registered_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.registered_on.as_ref()
     }
     /// <p>Date and time when the user is invited to the Amazon Chime account, in ISO 8601 format.</p>
-    pub fn invited_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn invited_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.invited_on.as_ref()
     }
     /// <p>The Alexa for Business metadata.</p>
@@ -936,8 +936,8 @@ pub mod user {
         pub(crate) user_type: std::option::Option<crate::model::UserType>,
         pub(crate) user_registration_status: std::option::Option<crate::model::RegistrationStatus>,
         pub(crate) user_invitation_status: std::option::Option<crate::model::InviteStatus>,
-        pub(crate) registered_on: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) invited_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) registered_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) invited_on: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) alexa_for_business_metadata:
             std::option::Option<crate::model::AlexaForBusinessMetadata>,
         pub(crate) personal_pin: std::option::Option<std::string::String>,
@@ -1049,27 +1049,27 @@ pub mod user {
             self
         }
         /// <p>Date and time when the user is registered, in ISO 8601 format.</p>
-        pub fn registered_on(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn registered_on(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.registered_on = Some(input);
             self
         }
         /// <p>Date and time when the user is registered, in ISO 8601 format.</p>
         pub fn set_registered_on(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.registered_on = input;
             self
         }
         /// <p>Date and time when the user is invited to the Amazon Chime account, in ISO 8601 format.</p>
-        pub fn invited_on(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn invited_on(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.invited_on = Some(input);
             self
         }
         /// <p>Date and time when the user is invited to the Amazon Chime account, in ISO 8601 format.</p>
         pub fn set_invited_on(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.invited_on = input;
             self
@@ -1475,9 +1475,9 @@ pub struct SipRule {
     pub target_applications:
         std::option::Option<std::vec::Vec<crate::model::SipRuleTargetApplication>>,
     /// <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the SIP rule was last updated, in ISO 8601 format.</p>
-    pub updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SipRule {
     /// <p>The SIP rule ID.</p>
@@ -1513,11 +1513,11 @@ impl SipRule {
         self.target_applications.as_deref()
     }
     /// <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which the SIP rule was last updated, in ISO 8601 format.</p>
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
 }
@@ -1548,8 +1548,8 @@ pub mod sip_rule {
         pub(crate) trigger_value: std::option::Option<std::string::String>,
         pub(crate) target_applications:
             std::option::Option<std::vec::Vec<crate::model::SipRuleTargetApplication>>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The SIP rule ID.</p>
@@ -1643,27 +1643,27 @@ pub mod sip_rule {
             self
         }
         /// <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time at which the SIP rule was last updated, in ISO 8601 format.</p>
-        pub fn updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_timestamp = Some(input);
             self
         }
         /// <p>The time at which the SIP rule was last updated, in ISO 8601 format.</p>
         pub fn set_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_timestamp = input;
             self
@@ -1911,9 +1911,9 @@ pub struct SipMediaApplication {
     /// <p>List of endpoints for SIP media application. Currently, only one endpoint per SIP media application is permitted.</p>
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::SipMediaApplicationEndpoint>>,
     /// <p>The SIP media application creation timestamp, in ISO 8601 format.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The SIP media application updated timestamp, in ISO 8601 format.</p>
-    pub updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SipMediaApplication {
     /// <p>The SIP media application ID.</p>
@@ -1933,11 +1933,11 @@ impl SipMediaApplication {
         self.endpoints.as_deref()
     }
     /// <p>The SIP media application creation timestamp, in ISO 8601 format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The SIP media application updated timestamp, in ISO 8601 format.</p>
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
 }
@@ -1964,8 +1964,8 @@ pub mod sip_media_application {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) endpoints:
             std::option::Option<std::vec::Vec<crate::model::SipMediaApplicationEndpoint>>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The SIP media application ID.</p>
@@ -2024,27 +2024,27 @@ pub mod sip_media_application {
             self
         }
         /// <p>The SIP media application creation timestamp, in ISO 8601 format.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The SIP media application creation timestamp, in ISO 8601 format.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The SIP media application updated timestamp, in ISO 8601 format.</p>
-        pub fn updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_timestamp = Some(input);
             self
         }
         /// <p>The SIP media application updated timestamp, in ISO 8601 format.</p>
         pub fn set_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_timestamp = input;
             self
@@ -2136,7 +2136,7 @@ pub struct RoomMembership {
     /// <p>The identifier of the user that invited the room member.</p>
     pub invited_by: std::option::Option<std::string::String>,
     /// <p>The room membership update timestamp, in ISO 8601 format.</p>
-    pub updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RoomMembership {
     /// <p>The room ID.</p>
@@ -2156,7 +2156,7 @@ impl RoomMembership {
         self.invited_by.as_deref()
     }
     /// <p>The room membership update timestamp, in ISO 8601 format.</p>
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
 }
@@ -2181,7 +2181,7 @@ pub mod room_membership {
         pub(crate) member: std::option::Option<crate::model::Member>,
         pub(crate) role: std::option::Option<crate::model::RoomMembershipRole>,
         pub(crate) invited_by: std::option::Option<std::string::String>,
-        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The room ID.</p>
@@ -2228,14 +2228,14 @@ pub mod room_membership {
             self
         }
         /// <p>The room membership update timestamp, in ISO 8601 format.</p>
-        pub fn updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_timestamp = Some(input);
             self
         }
         /// <p>The room membership update timestamp, in ISO 8601 format.</p>
         pub fn set_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_timestamp = input;
             self
@@ -2519,9 +2519,9 @@ pub struct Room {
     /// <p>The identifier of the room creator.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The room creation timestamp, in ISO 8601 format.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The room update timestamp, in ISO 8601 format.</p>
-    pub updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Room {
     /// <p>The room ID.</p>
@@ -2541,11 +2541,11 @@ impl Room {
         self.created_by.as_deref()
     }
     /// <p>The room creation timestamp, in ISO 8601 format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The room update timestamp, in ISO 8601 format.</p>
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
 }
@@ -2571,8 +2571,8 @@ pub mod room {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) created_by: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The room ID.</p>
@@ -2616,27 +2616,27 @@ pub mod room {
             self
         }
         /// <p>The room creation timestamp, in ISO 8601 format.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The room creation timestamp, in ISO 8601 format.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The room update timestamp, in ISO 8601 format.</p>
-        pub fn updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_timestamp = Some(input);
             self
         }
         /// <p>The room update timestamp, in ISO 8601 format.</p>
         pub fn set_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_timestamp = input;
             self
@@ -2678,11 +2678,11 @@ pub struct ProxySession {
     /// <p>The proxy session capabilities.</p>
     pub capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
     /// <p>The created time stamp, in ISO 8601 format.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The updated time stamp, in ISO 8601 format.</p>
-    pub updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ended time stamp, in ISO 8601 format.</p>
-    pub ended_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub ended_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The proxy session participants.</p>
     pub participants: std::option::Option<std::vec::Vec<crate::model::Participant>>,
     /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
@@ -2718,15 +2718,15 @@ impl ProxySession {
         self.capabilities.as_deref()
     }
     /// <p>The created time stamp, in ISO 8601 format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The updated time stamp, in ISO 8601 format.</p>
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     /// <p>The ended time stamp, in ISO 8601 format.</p>
-    pub fn ended_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn ended_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ended_timestamp.as_ref()
     }
     /// <p>The proxy session participants.</p>
@@ -2779,9 +2779,9 @@ pub mod proxy_session {
         pub(crate) status: std::option::Option<crate::model::ProxySessionStatus>,
         pub(crate) expiry_minutes: std::option::Option<i32>,
         pub(crate) capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) ended_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) ended_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) participants: std::option::Option<std::vec::Vec<crate::model::Participant>>,
         pub(crate) number_selection_behavior:
             std::option::Option<crate::model::NumberSelectionBehavior>,
@@ -2868,40 +2868,40 @@ pub mod proxy_session {
             self
         }
         /// <p>The created time stamp, in ISO 8601 format.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The created time stamp, in ISO 8601 format.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The updated time stamp, in ISO 8601 format.</p>
-        pub fn updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_timestamp = Some(input);
             self
         }
         /// <p>The updated time stamp, in ISO 8601 format.</p>
         pub fn set_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_timestamp = input;
             self
         }
         /// <p>The ended time stamp, in ISO 8601 format.</p>
-        pub fn ended_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn ended_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.ended_timestamp = Some(input);
             self
         }
         /// <p>The ended time stamp, in ISO 8601 format.</p>
         pub fn set_ended_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.ended_timestamp = input;
             self
@@ -3393,11 +3393,11 @@ pub struct PhoneNumber {
     /// <p>The outbound calling name status.</p>
     pub calling_name_status: std::option::Option<crate::model::CallingNameStatus>,
     /// <p>The phone number creation timestamp, in ISO 8601 format.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The updated phone number timestamp, in ISO 8601 format.</p>
-    pub updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The deleted phone number timestamp, in ISO 8601 format.</p>
-    pub deletion_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PhoneNumber {
     /// <p>The phone number ID.</p>
@@ -3441,15 +3441,15 @@ impl PhoneNumber {
         self.calling_name_status.as_ref()
     }
     /// <p>The phone number creation timestamp, in ISO 8601 format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The updated phone number timestamp, in ISO 8601 format.</p>
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     /// <p>The deleted phone number timestamp, in ISO 8601 format.</p>
-    pub fn deletion_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn deletion_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deletion_timestamp.as_ref()
     }
 }
@@ -3489,9 +3489,9 @@ pub mod phone_number {
             std::option::Option<std::vec::Vec<crate::model::PhoneNumberAssociation>>,
         pub(crate) calling_name: std::option::Option<std::string::String>,
         pub(crate) calling_name_status: std::option::Option<crate::model::CallingNameStatus>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) deletion_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The phone number ID.</p>
@@ -3628,40 +3628,40 @@ pub mod phone_number {
             self
         }
         /// <p>The phone number creation timestamp, in ISO 8601 format.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The phone number creation timestamp, in ISO 8601 format.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The updated phone number timestamp, in ISO 8601 format.</p>
-        pub fn updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_timestamp = Some(input);
             self
         }
         /// <p>The updated phone number timestamp, in ISO 8601 format.</p>
         pub fn set_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_timestamp = input;
             self
         }
         /// <p>The deleted phone number timestamp, in ISO 8601 format.</p>
-        pub fn deletion_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn deletion_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deletion_timestamp = Some(input);
             self
         }
         /// <p>The deleted phone number timestamp, in ISO 8601 format.</p>
         pub fn set_deletion_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.deletion_timestamp = input;
             self
@@ -3772,7 +3772,7 @@ pub struct PhoneNumberAssociation {
     /// ID, or Amazon Chime Voice Connector group ID.</p>
     pub name: std::option::Option<crate::model::PhoneNumberAssociationName>,
     /// <p>The timestamp of the phone number association, in ISO 8601 format.</p>
-    pub associated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub associated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PhoneNumberAssociation {
     /// <p>Contains the ID for the entity specified in Name.</p>
@@ -3785,7 +3785,7 @@ impl PhoneNumberAssociation {
         self.name.as_ref()
     }
     /// <p>The timestamp of the phone number association, in ISO 8601 format.</p>
-    pub fn associated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn associated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.associated_timestamp.as_ref()
     }
 }
@@ -3806,7 +3806,7 @@ pub mod phone_number_association {
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<crate::model::PhoneNumberAssociationName>,
-        pub(crate) associated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) associated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Contains the ID for the entity specified in Name.</p>
@@ -3835,14 +3835,14 @@ pub mod phone_number_association {
             self
         }
         /// <p>The timestamp of the phone number association, in ISO 8601 format.</p>
-        pub fn associated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn associated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.associated_timestamp = Some(input);
             self
         }
         /// <p>The timestamp of the phone number association, in ISO 8601 format.</p>
         pub fn set_associated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.associated_timestamp = input;
             self
@@ -4473,9 +4473,9 @@ pub struct Bot {
     /// <p>When true, the bot is stopped from running in your account.</p>
     pub disabled: std::option::Option<bool>,
     /// <p>The bot creation timestamp, in ISO 8601 format.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The updated bot timestamp, in ISO 8601 format.</p>
-    pub updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The bot email address.</p>
     pub bot_email: std::option::Option<std::string::String>,
     /// <p>The security token used to authenticate Amazon Chime with the outgoing event endpoint.</p>
@@ -4503,11 +4503,11 @@ impl Bot {
         self.disabled
     }
     /// <p>The bot creation timestamp, in ISO 8601 format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The updated bot timestamp, in ISO 8601 format.</p>
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     /// <p>The bot email address.</p>
@@ -4545,8 +4545,8 @@ pub mod bot {
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) bot_type: std::option::Option<crate::model::BotType>,
         pub(crate) disabled: std::option::Option<bool>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) bot_email: std::option::Option<std::string::String>,
         pub(crate) security_token: std::option::Option<std::string::String>,
     }
@@ -4602,27 +4602,27 @@ pub mod bot {
             self
         }
         /// <p>The bot creation timestamp, in ISO 8601 format.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The bot creation timestamp, in ISO 8601 format.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The updated bot timestamp, in ISO 8601 format.</p>
-        pub fn updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_timestamp = Some(input);
             self
         }
         /// <p>The updated bot timestamp, in ISO 8601 format.</p>
         pub fn set_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_timestamp = input;
             self
@@ -4818,7 +4818,7 @@ pub struct Account {
     /// Guide</i>.</p>
     pub account_type: std::option::Option<crate::model::AccountType>,
     /// <p>The Amazon Chime account creation timestamp, in ISO 8601 format.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The default license for the Amazon Chime account.</p>
     pub default_license: std::option::Option<crate::model::License>,
     /// <p>Supported licenses for the Amazon Chime account.</p>
@@ -4849,7 +4849,7 @@ impl Account {
         self.account_type.as_ref()
     }
     /// <p>The Amazon Chime account creation timestamp, in ISO 8601 format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The default license for the Amazon Chime account.</p>
@@ -4896,7 +4896,7 @@ pub mod account {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) account_type: std::option::Option<crate::model::AccountType>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) default_license: std::option::Option<crate::model::License>,
         pub(crate) supported_licenses: std::option::Option<std::vec::Vec<crate::model::License>>,
         pub(crate) account_status: std::option::Option<crate::model::AccountStatus>,
@@ -4955,14 +4955,14 @@ pub mod account {
             self
         }
         /// <p>The Amazon Chime account creation timestamp, in ISO 8601 format.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The Amazon Chime account creation timestamp, in ISO 8601 format.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
@@ -5419,6 +5419,9 @@ pub struct EngineTranscribeMedicalSettings {
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
     pub region: std::option::Option<crate::model::TranscribeMedicalRegion>,
+    /// <p>Set this field to <code>PHI</code> to identify personal health information in the transcription output.</p>
+    pub content_identification_type:
+        std::option::Option<crate::model::TranscribeMedicalContentIdentificationType>,
 }
 impl EngineTranscribeMedicalSettings {
     /// <p>The language code specified for the Amazon Transcribe Medical engine.</p>
@@ -5443,6 +5446,12 @@ impl EngineTranscribeMedicalSettings {
     pub fn region(&self) -> std::option::Option<&crate::model::TranscribeMedicalRegion> {
         self.region.as_ref()
     }
+    /// <p>Set this field to <code>PHI</code> to identify personal health information in the transcription output.</p>
+    pub fn content_identification_type(
+        &self,
+    ) -> std::option::Option<&crate::model::TranscribeMedicalContentIdentificationType> {
+        self.content_identification_type.as_ref()
+    }
 }
 impl std::fmt::Debug for EngineTranscribeMedicalSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5452,6 +5461,10 @@ impl std::fmt::Debug for EngineTranscribeMedicalSettings {
         formatter.field("r#type", &self.r#type);
         formatter.field("vocabulary_name", &self.vocabulary_name);
         formatter.field("region", &self.region);
+        formatter.field(
+            "content_identification_type",
+            &self.content_identification_type,
+        );
         formatter.finish()
     }
 }
@@ -5466,6 +5479,8 @@ pub mod engine_transcribe_medical_settings {
         pub(crate) r#type: std::option::Option<crate::model::TranscribeMedicalType>,
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
         pub(crate) region: std::option::Option<crate::model::TranscribeMedicalRegion>,
+        pub(crate) content_identification_type:
+            std::option::Option<crate::model::TranscribeMedicalContentIdentificationType>,
     }
     impl Builder {
         /// <p>The language code specified for the Amazon Transcribe Medical engine.</p>
@@ -5533,6 +5548,22 @@ pub mod engine_transcribe_medical_settings {
             self.region = input;
             self
         }
+        /// <p>Set this field to <code>PHI</code> to identify personal health information in the transcription output.</p>
+        pub fn content_identification_type(
+            mut self,
+            input: crate::model::TranscribeMedicalContentIdentificationType,
+        ) -> Self {
+            self.content_identification_type = Some(input);
+            self
+        }
+        /// <p>Set this field to <code>PHI</code> to identify personal health information in the transcription output.</p>
+        pub fn set_content_identification_type(
+            mut self,
+            input: std::option::Option<crate::model::TranscribeMedicalContentIdentificationType>,
+        ) -> Self {
+            self.content_identification_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings)
         pub fn build(self) -> crate::model::EngineTranscribeMedicalSettings {
             crate::model::EngineTranscribeMedicalSettings {
@@ -5541,6 +5572,7 @@ pub mod engine_transcribe_medical_settings {
                 r#type: self.r#type,
                 vocabulary_name: self.vocabulary_name,
                 region: self.region,
+                content_identification_type: self.content_identification_type,
             }
         }
     }
@@ -5549,6 +5581,57 @@ impl EngineTranscribeMedicalSettings {
     /// Creates a new builder-style object to manufacture [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings)
     pub fn builder() -> crate::model::engine_transcribe_medical_settings::Builder {
         crate::model::engine_transcribe_medical_settings::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TranscribeMedicalContentIdentificationType {
+    #[allow(missing_docs)] // documentation missing in model
+    Phi,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TranscribeMedicalContentIdentificationType {
+    fn from(s: &str) -> Self {
+        match s {
+            "PHI" => TranscribeMedicalContentIdentificationType::Phi,
+            other => TranscribeMedicalContentIdentificationType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TranscribeMedicalContentIdentificationType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TranscribeMedicalContentIdentificationType::from(s))
+    }
+}
+impl TranscribeMedicalContentIdentificationType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TranscribeMedicalContentIdentificationType::Phi => "PHI",
+            TranscribeMedicalContentIdentificationType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["PHI"]
+    }
+}
+impl AsRef<str> for TranscribeMedicalContentIdentificationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -5834,6 +5917,27 @@ pub struct EngineTranscribeSettings {
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The AWS Region passed to Amazon Transcribe. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
     pub region: std::option::Option<crate::model::TranscribeRegion>,
+    /// <p>Generates partial transcription results that are less likely to change as meeting attendees speak. It does so by only allowing the last few words from the partial results to change.</p>
+    pub enable_partial_results_stabilization: std::option::Option<bool>,
+    /// <p>The stabity level of a partial results transcription. Determines how stable you want the transcription results to be. A higher level means the transcription results are less likely to change.</p>
+    pub partial_results_stability:
+        std::option::Option<crate::model::TranscribePartialResultsStability>,
+    /// <p>Set this field to <code>PII</code> to identify personal health information in the transcription output.</p>
+    pub content_identification_type:
+        std::option::Option<crate::model::TranscribeContentIdentificationType>,
+    /// <p>Set this field to <code>PII</code> to redact personally identifiable information in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
+    pub content_redaction_type: std::option::Option<crate::model::TranscribeContentRedactionType>,
+    /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
+    /// <p>
+    /// <code>PIIEntityTypes</code> must be comma-separated. The available values are:
+    /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+    /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
+    ///
+    /// <p>
+    /// <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
+    pub pii_entity_types: std::option::Option<std::string::String>,
+    /// <p>The name of the language model used during transcription.</p>
+    pub language_model_name: std::option::Option<std::string::String>,
 }
 impl EngineTranscribeSettings {
     /// <p>The language code specified for the Amazon Transcribe engine.</p>
@@ -5858,6 +5962,43 @@ impl EngineTranscribeSettings {
     pub fn region(&self) -> std::option::Option<&crate::model::TranscribeRegion> {
         self.region.as_ref()
     }
+    /// <p>Generates partial transcription results that are less likely to change as meeting attendees speak. It does so by only allowing the last few words from the partial results to change.</p>
+    pub fn enable_partial_results_stabilization(&self) -> std::option::Option<bool> {
+        self.enable_partial_results_stabilization
+    }
+    /// <p>The stabity level of a partial results transcription. Determines how stable you want the transcription results to be. A higher level means the transcription results are less likely to change.</p>
+    pub fn partial_results_stability(
+        &self,
+    ) -> std::option::Option<&crate::model::TranscribePartialResultsStability> {
+        self.partial_results_stability.as_ref()
+    }
+    /// <p>Set this field to <code>PII</code> to identify personal health information in the transcription output.</p>
+    pub fn content_identification_type(
+        &self,
+    ) -> std::option::Option<&crate::model::TranscribeContentIdentificationType> {
+        self.content_identification_type.as_ref()
+    }
+    /// <p>Set this field to <code>PII</code> to redact personally identifiable information in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
+    pub fn content_redaction_type(
+        &self,
+    ) -> std::option::Option<&crate::model::TranscribeContentRedactionType> {
+        self.content_redaction_type.as_ref()
+    }
+    /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
+    /// <p>
+    /// <code>PIIEntityTypes</code> must be comma-separated. The available values are:
+    /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+    /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
+    ///
+    /// <p>
+    /// <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
+    pub fn pii_entity_types(&self) -> std::option::Option<&str> {
+        self.pii_entity_types.as_deref()
+    }
+    /// <p>The name of the language model used during transcription.</p>
+    pub fn language_model_name(&self) -> std::option::Option<&str> {
+        self.language_model_name.as_deref()
+    }
 }
 impl std::fmt::Debug for EngineTranscribeSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5867,6 +6008,18 @@ impl std::fmt::Debug for EngineTranscribeSettings {
         formatter.field("vocabulary_filter_name", &self.vocabulary_filter_name);
         formatter.field("vocabulary_name", &self.vocabulary_name);
         formatter.field("region", &self.region);
+        formatter.field(
+            "enable_partial_results_stabilization",
+            &self.enable_partial_results_stabilization,
+        );
+        formatter.field("partial_results_stability", &self.partial_results_stability);
+        formatter.field(
+            "content_identification_type",
+            &self.content_identification_type,
+        );
+        formatter.field("content_redaction_type", &self.content_redaction_type);
+        formatter.field("pii_entity_types", &self.pii_entity_types);
+        formatter.field("language_model_name", &self.language_model_name);
         formatter.finish()
     }
 }
@@ -5882,6 +6035,15 @@ pub mod engine_transcribe_settings {
         pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
         pub(crate) region: std::option::Option<crate::model::TranscribeRegion>,
+        pub(crate) enable_partial_results_stabilization: std::option::Option<bool>,
+        pub(crate) partial_results_stability:
+            std::option::Option<crate::model::TranscribePartialResultsStability>,
+        pub(crate) content_identification_type:
+            std::option::Option<crate::model::TranscribeContentIdentificationType>,
+        pub(crate) content_redaction_type:
+            std::option::Option<crate::model::TranscribeContentRedactionType>,
+        pub(crate) pii_entity_types: std::option::Option<std::string::String>,
+        pub(crate) language_model_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The language code specified for the Amazon Transcribe engine.</p>
@@ -5952,6 +6114,107 @@ pub mod engine_transcribe_settings {
             self.region = input;
             self
         }
+        /// <p>Generates partial transcription results that are less likely to change as meeting attendees speak. It does so by only allowing the last few words from the partial results to change.</p>
+        pub fn enable_partial_results_stabilization(mut self, input: bool) -> Self {
+            self.enable_partial_results_stabilization = Some(input);
+            self
+        }
+        /// <p>Generates partial transcription results that are less likely to change as meeting attendees speak. It does so by only allowing the last few words from the partial results to change.</p>
+        pub fn set_enable_partial_results_stabilization(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.enable_partial_results_stabilization = input;
+            self
+        }
+        /// <p>The stabity level of a partial results transcription. Determines how stable you want the transcription results to be. A higher level means the transcription results are less likely to change.</p>
+        pub fn partial_results_stability(
+            mut self,
+            input: crate::model::TranscribePartialResultsStability,
+        ) -> Self {
+            self.partial_results_stability = Some(input);
+            self
+        }
+        /// <p>The stabity level of a partial results transcription. Determines how stable you want the transcription results to be. A higher level means the transcription results are less likely to change.</p>
+        pub fn set_partial_results_stability(
+            mut self,
+            input: std::option::Option<crate::model::TranscribePartialResultsStability>,
+        ) -> Self {
+            self.partial_results_stability = input;
+            self
+        }
+        /// <p>Set this field to <code>PII</code> to identify personal health information in the transcription output.</p>
+        pub fn content_identification_type(
+            mut self,
+            input: crate::model::TranscribeContentIdentificationType,
+        ) -> Self {
+            self.content_identification_type = Some(input);
+            self
+        }
+        /// <p>Set this field to <code>PII</code> to identify personal health information in the transcription output.</p>
+        pub fn set_content_identification_type(
+            mut self,
+            input: std::option::Option<crate::model::TranscribeContentIdentificationType>,
+        ) -> Self {
+            self.content_identification_type = input;
+            self
+        }
+        /// <p>Set this field to <code>PII</code> to redact personally identifiable information in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
+        pub fn content_redaction_type(
+            mut self,
+            input: crate::model::TranscribeContentRedactionType,
+        ) -> Self {
+            self.content_redaction_type = Some(input);
+            self
+        }
+        /// <p>Set this field to <code>PII</code> to redact personally identifiable information in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
+        pub fn set_content_redaction_type(
+            mut self,
+            input: std::option::Option<crate::model::TranscribeContentRedactionType>,
+        ) -> Self {
+            self.content_redaction_type = input;
+            self
+        }
+        /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
+        /// <p>
+        /// <code>PIIEntityTypes</code> must be comma-separated. The available values are:
+        /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+        /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
+        ///
+        /// <p>
+        /// <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
+        pub fn pii_entity_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pii_entity_types = Some(input.into());
+            self
+        }
+        /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
+        /// <p>
+        /// <code>PIIEntityTypes</code> must be comma-separated. The available values are:
+        /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+        /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
+        ///
+        /// <p>
+        /// <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
+        pub fn set_pii_entity_types(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.pii_entity_types = input;
+            self
+        }
+        /// <p>The name of the language model used during transcription.</p>
+        pub fn language_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_model_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the language model used during transcription.</p>
+        pub fn set_language_model_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_model_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings)
         pub fn build(self) -> crate::model::EngineTranscribeSettings {
             crate::model::EngineTranscribeSettings {
@@ -5960,6 +6223,12 @@ pub mod engine_transcribe_settings {
                 vocabulary_filter_name: self.vocabulary_filter_name,
                 vocabulary_name: self.vocabulary_name,
                 region: self.region,
+                enable_partial_results_stabilization: self.enable_partial_results_stabilization,
+                partial_results_stability: self.partial_results_stability,
+                content_identification_type: self.content_identification_type,
+                content_redaction_type: self.content_redaction_type,
+                pii_entity_types: self.pii_entity_types,
+                language_model_name: self.language_model_name,
             }
         }
     }
@@ -5968,6 +6237,167 @@ impl EngineTranscribeSettings {
     /// Creates a new builder-style object to manufacture [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings)
     pub fn builder() -> crate::model::engine_transcribe_settings::Builder {
         crate::model::engine_transcribe_settings::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TranscribeContentRedactionType {
+    #[allow(missing_docs)] // documentation missing in model
+    Pii,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TranscribeContentRedactionType {
+    fn from(s: &str) -> Self {
+        match s {
+            "PII" => TranscribeContentRedactionType::Pii,
+            other => TranscribeContentRedactionType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TranscribeContentRedactionType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TranscribeContentRedactionType::from(s))
+    }
+}
+impl TranscribeContentRedactionType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TranscribeContentRedactionType::Pii => "PII",
+            TranscribeContentRedactionType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["PII"]
+    }
+}
+impl AsRef<str> for TranscribeContentRedactionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TranscribeContentIdentificationType {
+    #[allow(missing_docs)] // documentation missing in model
+    Pii,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TranscribeContentIdentificationType {
+    fn from(s: &str) -> Self {
+        match s {
+            "PII" => TranscribeContentIdentificationType::Pii,
+            other => TranscribeContentIdentificationType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TranscribeContentIdentificationType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TranscribeContentIdentificationType::from(s))
+    }
+}
+impl TranscribeContentIdentificationType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TranscribeContentIdentificationType::Pii => "PII",
+            TranscribeContentIdentificationType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["PII"]
+    }
+}
+impl AsRef<str> for TranscribeContentIdentificationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TranscribePartialResultsStability {
+    #[allow(missing_docs)] // documentation missing in model
+    High,
+    #[allow(missing_docs)] // documentation missing in model
+    Low,
+    #[allow(missing_docs)] // documentation missing in model
+    Medium,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TranscribePartialResultsStability {
+    fn from(s: &str) -> Self {
+        match s {
+            "high" => TranscribePartialResultsStability::High,
+            "low" => TranscribePartialResultsStability::Low,
+            "medium" => TranscribePartialResultsStability::Medium,
+            other => TranscribePartialResultsStability::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TranscribePartialResultsStability {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TranscribePartialResultsStability::from(s))
+    }
+}
+impl TranscribePartialResultsStability {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TranscribePartialResultsStability::High => "high",
+            TranscribePartialResultsStability::Low => "low",
+            TranscribePartialResultsStability::Medium => "medium",
+            TranscribePartialResultsStability::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["high", "low", "medium"]
+    }
+}
+impl AsRef<str> for TranscribePartialResultsStability {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -8181,9 +8611,9 @@ pub struct PhoneNumberOrder {
     /// number status.</p>
     pub ordered_phone_numbers: std::option::Option<std::vec::Vec<crate::model::OrderedPhoneNumber>>,
     /// <p>The phone number order creation time stamp, in ISO 8601 format.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The updated phone number order time stamp, in ISO 8601 format.</p>
-    pub updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PhoneNumberOrder {
     /// <p>The phone number order ID.</p>
@@ -8206,11 +8636,11 @@ impl PhoneNumberOrder {
         self.ordered_phone_numbers.as_deref()
     }
     /// <p>The phone number order creation time stamp, in ISO 8601 format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The updated phone number order time stamp, in ISO 8601 format.</p>
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
 }
@@ -8237,8 +8667,8 @@ pub mod phone_number_order {
         pub(crate) status: std::option::Option<crate::model::PhoneNumberOrderStatus>,
         pub(crate) ordered_phone_numbers:
             std::option::Option<std::vec::Vec<crate::model::OrderedPhoneNumber>>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The phone number order ID.</p>
@@ -8305,27 +8735,27 @@ pub mod phone_number_order {
             self
         }
         /// <p>The phone number order creation time stamp, in ISO 8601 format.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The phone number order creation time stamp, in ISO 8601 format.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The updated phone number order time stamp, in ISO 8601 format.</p>
-        pub fn updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_timestamp = Some(input);
             self
         }
         /// <p>The updated phone number order time stamp, in ISO 8601 format.</p>
         pub fn set_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_timestamp = input;
             self
@@ -8916,9 +9346,9 @@ pub struct MediaCapturePipeline {
     /// <p>ARN of the destination to which the media artifacts are saved.</p>
     pub sink_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the capture pipeline was created, in ISO 8601 format.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the capture pipeline was updated, in ISO 8601 format.</p>
-    pub updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
     pub chime_sdk_meeting_configuration:
         std::option::Option<crate::model::ChimeSdkMeetingConfiguration>,
@@ -8949,11 +9379,11 @@ impl MediaCapturePipeline {
         self.sink_arn.as_deref()
     }
     /// <p>The time at which the capture pipeline was created, in ISO 8601 format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which the capture pipeline was updated, in ISO 8601 format.</p>
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     /// <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
@@ -8993,8 +9423,8 @@ pub mod media_capture_pipeline {
         pub(crate) status: std::option::Option<crate::model::MediaPipelineStatus>,
         pub(crate) sink_type: std::option::Option<crate::model::MediaPipelineSinkType>,
         pub(crate) sink_arn: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) chime_sdk_meeting_configuration:
             std::option::Option<crate::model::ChimeSdkMeetingConfiguration>,
     }
@@ -9072,27 +9502,27 @@ pub mod media_capture_pipeline {
             self
         }
         /// <p>The time at which the capture pipeline was created, in ISO 8601 format.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which the capture pipeline was created, in ISO 8601 format.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time at which the capture pipeline was updated, in ISO 8601 format.</p>
-        pub fn updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_timestamp = Some(input);
             self
         }
         /// <p>The time at which the capture pipeline was updated, in ISO 8601 format.</p>
         pub fn set_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_timestamp = input;
             self
@@ -10146,7 +10576,7 @@ pub struct ChannelSummary {
     /// <p>The metadata of the channel.</p>
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The time at which the last message in a channel was sent.</p>
-    pub last_message_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_message_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ChannelSummary {
     /// <p>The name of the channel.</p>
@@ -10170,7 +10600,7 @@ impl ChannelSummary {
         self.metadata.as_deref()
     }
     /// <p>The time at which the last message in a channel was sent.</p>
-    pub fn last_message_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_message_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_message_timestamp.as_ref()
     }
 }
@@ -10197,7 +10627,7 @@ pub mod channel_summary {
         pub(crate) mode: std::option::Option<crate::model::ChannelMode>,
         pub(crate) privacy: std::option::Option<crate::model::ChannelPrivacy>,
         pub(crate) metadata: std::option::Option<std::string::String>,
-        pub(crate) last_message_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_message_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the channel.</p>
@@ -10254,14 +10684,14 @@ pub mod channel_summary {
             self
         }
         /// <p>The time at which the last message in a channel was sent.</p>
-        pub fn last_message_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_message_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_message_timestamp = Some(input);
             self
         }
         /// <p>The time at which the last message in a channel was sent.</p>
         pub fn set_last_message_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_message_timestamp = input;
             self
@@ -10481,11 +10911,11 @@ pub struct ChannelMessageSummary {
     /// <p>The type of message.</p>
     pub r#type: std::option::Option<crate::model::ChannelMessageType>,
     /// <p>The time at which the message summary was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a message was last updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a message was last edited.</p>
-    pub last_edited_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_edited_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message sender.</p>
     pub sender: std::option::Option<crate::model::Identity>,
     /// <p>Indicates whether a message was redacted.</p>
@@ -10509,15 +10939,15 @@ impl ChannelMessageSummary {
         self.r#type.as_ref()
     }
     /// <p>The time at which the message summary was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which a message was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The time at which a message was last edited.</p>
-    pub fn last_edited_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_edited_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_edited_timestamp.as_ref()
     }
     /// <p>The message sender.</p>
@@ -10554,9 +10984,9 @@ pub mod channel_message_summary {
         pub(crate) content: std::option::Option<std::string::String>,
         pub(crate) metadata: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ChannelMessageType>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_edited_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_edited_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) sender: std::option::Option<crate::model::Identity>,
         pub(crate) redacted: std::option::Option<bool>,
     }
@@ -10605,40 +11035,40 @@ pub mod channel_message_summary {
             self
         }
         /// <p>The time at which the message summary was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which the message summary was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time at which a message was last updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>The time at which a message was last updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self
         }
         /// <p>The time at which a message was last edited.</p>
-        pub fn last_edited_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_edited_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_edited_timestamp = Some(input);
             self
         }
         /// <p>The time at which a message was last edited.</p>
         pub fn set_last_edited_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_edited_timestamp = input;
             self
@@ -10837,7 +11267,7 @@ pub struct AppInstanceUserMembershipSummary {
     /// <p>The type of <code>ChannelMembership</code>.</p>
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The time at which a message was last read.</p>
-    pub read_marker_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub read_marker_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AppInstanceUserMembershipSummary {
     /// <p>The type of <code>ChannelMembership</code>.</p>
@@ -10845,7 +11275,7 @@ impl AppInstanceUserMembershipSummary {
         self.r#type.as_ref()
     }
     /// <p>The time at which a message was last read.</p>
-    pub fn read_marker_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn read_marker_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.read_marker_timestamp.as_ref()
     }
 }
@@ -10864,7 +11294,7 @@ pub mod app_instance_user_membership_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ChannelMembershipType>,
-        pub(crate) read_marker_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) read_marker_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The type of <code>ChannelMembership</code>.</p>
@@ -10881,14 +11311,14 @@ pub mod app_instance_user_membership_summary {
             self
         }
         /// <p>The time at which a message was last read.</p>
-        pub fn read_marker_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn read_marker_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.read_marker_timestamp = Some(input);
             self
         }
         /// <p>The time at which a message was last read.</p>
         pub fn set_read_marker_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.read_marker_timestamp = input;
             self
@@ -11611,13 +12041,13 @@ impl AsRef<str> for EmailStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminationHealth {
     /// <p>The timestamp, in ISO 8601 format.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The source IP address.</p>
     pub source: std::option::Option<std::string::String>,
 }
 impl TerminationHealth {
     /// <p>The timestamp, in ISO 8601 format.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The source IP address.</p>
@@ -11639,19 +12069,19 @@ pub mod termination_health {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The timestamp, in ISO 8601 format.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The timestamp, in ISO 8601 format.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -11749,11 +12179,11 @@ pub struct ChannelMessage {
     /// <p>The message type.</p>
     pub r#type: std::option::Option<crate::model::ChannelMessageType>,
     /// <p>The time at which the message was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a message was edited.</p>
-    pub last_edited_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_edited_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a message was updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message sender.</p>
     pub sender: std::option::Option<crate::model::Identity>,
     /// <p>Hides the content of a message.</p>
@@ -11783,15 +12213,15 @@ impl ChannelMessage {
         self.r#type.as_ref()
     }
     /// <p>The time at which the message was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which a message was edited.</p>
-    pub fn last_edited_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_edited_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_edited_timestamp.as_ref()
     }
     /// <p>The time at which a message was updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The message sender.</p>
@@ -11835,9 +12265,9 @@ pub mod channel_message {
         pub(crate) content: std::option::Option<std::string::String>,
         pub(crate) metadata: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ChannelMessageType>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_edited_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_edited_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) sender: std::option::Option<crate::model::Identity>,
         pub(crate) redacted: std::option::Option<bool>,
         pub(crate) persistence: std::option::Option<crate::model::ChannelMessagePersistenceType>,
@@ -11897,40 +12327,40 @@ pub mod channel_message {
             self
         }
         /// <p>The time at which the message was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which the message was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time at which a message was edited.</p>
-        pub fn last_edited_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_edited_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_edited_timestamp = Some(input);
             self
         }
         /// <p>The time at which a message was edited.</p>
         pub fn set_last_edited_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_edited_timestamp = input;
             self
         }
         /// <p>The time at which a message was updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>The time at which a message was updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self
@@ -12104,7 +12534,7 @@ pub struct ChannelModerator {
     /// <p>The ARN of the moderator's channel.</p>
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the moderator was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>AppInstanceUser</code> who created the moderator.</p>
     pub created_by: std::option::Option<crate::model::Identity>,
 }
@@ -12118,7 +12548,7 @@ impl ChannelModerator {
         self.channel_arn.as_deref()
     }
     /// <p>The time at which the moderator was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The <code>AppInstanceUser</code> who created the moderator.</p>
@@ -12144,7 +12574,7 @@ pub mod channel_moderator {
     pub struct Builder {
         pub(crate) moderator: std::option::Option<crate::model::Identity>,
         pub(crate) channel_arn: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<crate::model::Identity>,
     }
     impl Builder {
@@ -12169,14 +12599,14 @@ pub mod channel_moderator {
             self
         }
         /// <p>The time at which the moderator was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which the moderator was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
@@ -12225,9 +12655,9 @@ pub struct ChannelMembership {
     /// <p>The ARN of the member's channel.</p>
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the channel membership was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a channel membership was last updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ChannelMembership {
     /// <p>The identifier of the member who invited another member.</p>
@@ -12247,11 +12677,11 @@ impl ChannelMembership {
         self.channel_arn.as_deref()
     }
     /// <p>The time at which the channel membership was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which a channel membership was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
 }
@@ -12277,8 +12707,8 @@ pub mod channel_membership {
         pub(crate) r#type: std::option::Option<crate::model::ChannelMembershipType>,
         pub(crate) member: std::option::Option<crate::model::Identity>,
         pub(crate) channel_arn: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the member who invited another member.</p>
@@ -12328,27 +12758,27 @@ pub mod channel_membership {
             self
         }
         /// <p>The time at which the channel membership was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which the channel membership was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time at which a channel membership was last updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>The time at which a channel membership was last updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self
@@ -12382,7 +12812,7 @@ pub struct ChannelBan {
     /// <p>The ARN of the channel from which a member is being banned.</p>
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the ban was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>AppInstanceUser</code> who created the ban.</p>
     pub created_by: std::option::Option<crate::model::Identity>,
 }
@@ -12396,7 +12826,7 @@ impl ChannelBan {
         self.channel_arn.as_deref()
     }
     /// <p>The time at which the ban was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The <code>AppInstanceUser</code> who created the ban.</p>
@@ -12422,7 +12852,7 @@ pub mod channel_ban {
     pub struct Builder {
         pub(crate) member: std::option::Option<crate::model::Identity>,
         pub(crate) channel_arn: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<crate::model::Identity>,
     }
     impl Builder {
@@ -12447,14 +12877,14 @@ pub mod channel_ban {
             self
         }
         /// <p>The time at which the ban was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which the ban was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
@@ -12507,11 +12937,11 @@ pub struct Channel {
     /// <p>The <code>AppInstanceUser</code> who created the channel.</p>
     pub created_by: std::option::Option<crate::model::Identity>,
     /// <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a member sent the last message in the channel.</p>
-    pub last_message_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_message_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a channel was last updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Channel {
     /// <p>The name of the channel.</p>
@@ -12539,15 +12969,15 @@ impl Channel {
         self.created_by.as_ref()
     }
     /// <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which a member sent the last message in the channel.</p>
-    pub fn last_message_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_message_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_message_timestamp.as_ref()
     }
     /// <p>The time at which a channel was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
 }
@@ -12578,9 +13008,9 @@ pub mod channel {
         pub(crate) privacy: std::option::Option<crate::model::ChannelPrivacy>,
         pub(crate) metadata: std::option::Option<std::string::String>,
         pub(crate) created_by: std::option::Option<crate::model::Identity>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_message_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_message_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the channel.</p>
@@ -12650,40 +13080,40 @@ pub mod channel {
             self
         }
         /// <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time at which a member sent the last message in the channel.</p>
-        pub fn last_message_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_message_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_message_timestamp = Some(input);
             self
         }
         /// <p>The time at which a member sent the last message in the channel.</p>
         pub fn set_last_message_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_message_timestamp = input;
             self
         }
         /// <p>The time at which a channel was last updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>The time at which a channel was last updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self
@@ -12720,11 +13150,11 @@ pub struct AppInstanceUser {
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AppInstanceUser {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -12736,7 +13166,7 @@ impl AppInstanceUser {
         self.name.as_deref()
     }
     /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
@@ -12744,7 +13174,7 @@ impl AppInstanceUser {
         self.metadata.as_deref()
     }
     /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
 }
@@ -12767,9 +13197,9 @@ pub mod app_instance_user {
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) metadata: std::option::Option<std::string::String>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -12796,14 +13226,14 @@ pub mod app_instance_user {
             self
         }
         /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
@@ -12819,14 +13249,14 @@ pub mod app_instance_user {
             self
         }
         /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self
@@ -12859,7 +13289,7 @@ pub struct AppInstanceAdmin {
     /// <p>The ARN of the <code>AppInstance</code> for which the user is an administrator.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The time at which an administrator was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AppInstanceAdmin {
     /// <p>The <code>AppInstanceAdmin</code> data.</p>
@@ -12871,7 +13301,7 @@ impl AppInstanceAdmin {
         self.app_instance_arn.as_deref()
     }
     /// <p>The time at which an administrator was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
@@ -12892,7 +13322,7 @@ pub mod app_instance_admin {
     pub struct Builder {
         pub(crate) admin: std::option::Option<crate::model::Identity>,
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The <code>AppInstanceAdmin</code> data.</p>
@@ -12919,14 +13349,14 @@ pub mod app_instance_admin {
             self
         }
         /// <p>The time at which an administrator was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which an administrator was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
@@ -12959,9 +13389,9 @@ pub struct AppInstance {
     /// <p>The metadata of an <code>AppInstance</code>.</p>
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The time at which an <code>AppInstance</code> was created. In epoch milliseconds.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time an <code>AppInstance</code> was last updated. In epoch milliseconds.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AppInstance {
     /// <p>The ARN of the messaging instance.</p>
@@ -12977,11 +13407,11 @@ impl AppInstance {
         self.metadata.as_deref()
     }
     /// <p>The time at which an <code>AppInstance</code> was created. In epoch milliseconds.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time an <code>AppInstance</code> was last updated. In epoch milliseconds.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
 }
@@ -13005,8 +13435,8 @@ pub mod app_instance {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) metadata: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the messaging instance.</p>
@@ -13043,27 +13473,27 @@ pub mod app_instance {
             self
         }
         /// <p>The time at which an <code>AppInstance</code> was created. In epoch milliseconds.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time at which an <code>AppInstance</code> was created. In epoch milliseconds.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time an <code>AppInstance</code> was last updated. In epoch milliseconds.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>The time an <code>AppInstance</code> was last updated. In epoch milliseconds.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self

@@ -1013,9 +1013,9 @@ pub struct GetBulkPublishDetailsOutput {
     /// unique within a region.
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// The date/time at which the last bulk publish was initiated.
-    pub bulk_publish_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub bulk_publish_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
-    pub bulk_publish_complete_time: std::option::Option<aws_smithy_types::Instant>,
+    pub bulk_publish_complete_time: std::option::Option<aws_smithy_types::DateTime>,
     /// Status of the last bulk publish operation, valid values are:
     /// <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p>
     /// <p>IN_PROGRESS - Data is being published to the configured stream</p>
@@ -1033,11 +1033,11 @@ impl GetBulkPublishDetailsOutput {
         self.identity_pool_id.as_deref()
     }
     /// The date/time at which the last bulk publish was initiated.
-    pub fn bulk_publish_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn bulk_publish_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.bulk_publish_start_time.as_ref()
     }
     /// If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
-    pub fn bulk_publish_complete_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn bulk_publish_complete_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.bulk_publish_complete_time.as_ref()
     }
     /// Status of the last bulk publish operation, valid values are:
@@ -1074,8 +1074,8 @@ pub mod get_bulk_publish_details_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
-        pub(crate) bulk_publish_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) bulk_publish_complete_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) bulk_publish_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) bulk_publish_complete_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) bulk_publish_status: std::option::Option<crate::model::BulkPublishStatus>,
         pub(crate) failure_message: std::option::Option<std::string::String>,
     }
@@ -1098,27 +1098,27 @@ pub mod get_bulk_publish_details_output {
             self
         }
         /// The date/time at which the last bulk publish was initiated.
-        pub fn bulk_publish_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn bulk_publish_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.bulk_publish_start_time = Some(input);
             self
         }
         /// The date/time at which the last bulk publish was initiated.
         pub fn set_bulk_publish_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.bulk_publish_start_time = input;
             self
         }
         /// If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
-        pub fn bulk_publish_complete_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn bulk_publish_complete_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.bulk_publish_complete_time = Some(input);
             self
         }
         /// If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
         pub fn set_bulk_publish_complete_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.bulk_publish_complete_time = input;
             self

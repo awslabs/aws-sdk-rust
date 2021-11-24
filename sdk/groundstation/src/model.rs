@@ -882,13 +882,13 @@ pub struct ContactData {
     /// <p>ARN of a satellite.</p>
     pub satellite_arn: std::option::Option<std::string::String>,
     /// <p>Start time of a contact.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>End time of a contact.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-    pub pre_pass_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub pre_pass_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    pub post_pass_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub post_pass_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Name of a ground station.</p>
     pub ground_station: std::option::Option<std::string::String>,
     /// <p>Status of a contact.</p>
@@ -917,19 +917,19 @@ impl ContactData {
         self.satellite_arn.as_deref()
     }
     /// <p>Start time of a contact.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>End time of a contact.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-    pub fn pre_pass_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn pre_pass_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.pre_pass_start_time.as_ref()
     }
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    pub fn post_pass_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn post_pass_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.post_pass_end_time.as_ref()
     }
     /// <p>Name of a ground station.</p>
@@ -988,10 +988,10 @@ pub mod contact_data {
         pub(crate) contact_id: std::option::Option<std::string::String>,
         pub(crate) mission_profile_arn: std::option::Option<std::string::String>,
         pub(crate) satellite_arn: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) pre_pass_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) post_pass_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) pre_pass_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) post_pass_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) ground_station: std::option::Option<std::string::String>,
         pub(crate) contact_status: std::option::Option<crate::model::ContactStatus>,
         pub(crate) error_message: std::option::Option<std::string::String>,
@@ -1039,53 +1039,53 @@ pub mod contact_data {
             self
         }
         /// <p>Start time of a contact.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>Start time of a contact.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>End time of a contact.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>End time of a contact.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
         }
         /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-        pub fn pre_pass_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn pre_pass_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.pre_pass_start_time = Some(input);
             self
         }
         /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
         pub fn set_pre_pass_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.pre_pass_start_time = input;
             self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-        pub fn post_pass_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn post_pass_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.post_pass_end_time = Some(input);
             self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
         pub fn set_post_pass_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.post_pass_end_time = input;
             self
@@ -1696,9 +1696,9 @@ impl ConfigDetails {
         &self,
     ) -> std::result::Result<&crate::model::AntennaDemodDecodeDetails, &Self> {
         if let ConfigDetails::AntennaDemodDecodeDetails(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`AntennaDemodDecodeDetails`](crate::model::ConfigDetails::AntennaDemodDecodeDetails).
@@ -1711,9 +1711,9 @@ impl ConfigDetails {
         &self,
     ) -> std::result::Result<&crate::model::EndpointDetails, &Self> {
         if let ConfigDetails::EndpointDetails(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`EndpointDetails`](crate::model::ConfigDetails::EndpointDetails).
@@ -1726,9 +1726,9 @@ impl ConfigDetails {
         &self,
     ) -> std::result::Result<&crate::model::S3RecordingDetails, &Self> {
         if let ConfigDetails::S3RecordingDetails(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`S3RecordingDetails`](crate::model::ConfigDetails::S3RecordingDetails).
@@ -2222,9 +2222,9 @@ impl ConfigTypeData {
         &self,
     ) -> std::result::Result<&crate::model::AntennaDownlinkConfig, &Self> {
         if let ConfigTypeData::AntennaDownlinkConfig(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`AntennaDownlinkConfig`](crate::model::ConfigTypeData::AntennaDownlinkConfig).
@@ -2237,9 +2237,9 @@ impl ConfigTypeData {
         &self,
     ) -> std::result::Result<&crate::model::AntennaDownlinkDemodDecodeConfig, &Self> {
         if let ConfigTypeData::AntennaDownlinkDemodDecodeConfig(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`AntennaDownlinkDemodDecodeConfig`](crate::model::ConfigTypeData::AntennaDownlinkDemodDecodeConfig).
@@ -2252,9 +2252,9 @@ impl ConfigTypeData {
         &self,
     ) -> std::result::Result<&crate::model::AntennaUplinkConfig, &Self> {
         if let ConfigTypeData::AntennaUplinkConfig(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`AntennaUplinkConfig`](crate::model::ConfigTypeData::AntennaUplinkConfig).
@@ -2267,9 +2267,9 @@ impl ConfigTypeData {
         &self,
     ) -> std::result::Result<&crate::model::DataflowEndpointConfig, &Self> {
         if let ConfigTypeData::DataflowEndpointConfig(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`DataflowEndpointConfig`](crate::model::ConfigTypeData::DataflowEndpointConfig).
@@ -2282,9 +2282,9 @@ impl ConfigTypeData {
         &self,
     ) -> std::result::Result<&crate::model::S3RecordingConfig, &Self> {
         if let ConfigTypeData::S3RecordingConfig(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`S3RecordingConfig`](crate::model::ConfigTypeData::S3RecordingConfig).
@@ -2295,9 +2295,9 @@ impl ConfigTypeData {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tracking_config(&self) -> std::result::Result<&crate::model::TrackingConfig, &Self> {
         if let ConfigTypeData::TrackingConfig(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`TrackingConfig`](crate::model::ConfigTypeData::TrackingConfig).
@@ -2310,9 +2310,9 @@ impl ConfigTypeData {
         &self,
     ) -> std::result::Result<&crate::model::UplinkEchoConfig, &Self> {
         if let ConfigTypeData::UplinkEchoConfig(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`UplinkEchoConfig`](crate::model::ConfigTypeData::UplinkEchoConfig).

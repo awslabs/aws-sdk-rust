@@ -3391,9 +3391,9 @@ pub struct UtteranceData {
     /// <p>The total number of individuals that used the utterance.</p>
     pub distinct_users: std::option::Option<i32>,
     /// <p>The date that the utterance was first recorded.</p>
-    pub first_uttered_date: std::option::Option<aws_smithy_types::Instant>,
+    pub first_uttered_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the utterance was last recorded.</p>
-    pub last_uttered_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_uttered_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UtteranceData {
     /// <p>The text that was entered by the user or the text representation of
@@ -3410,11 +3410,11 @@ impl UtteranceData {
         self.distinct_users
     }
     /// <p>The date that the utterance was first recorded.</p>
-    pub fn first_uttered_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn first_uttered_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.first_uttered_date.as_ref()
     }
     /// <p>The date that the utterance was last recorded.</p>
-    pub fn last_uttered_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_uttered_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_uttered_date.as_ref()
     }
 }
@@ -3438,8 +3438,8 @@ pub mod utterance_data {
         pub(crate) utterance_string: std::option::Option<std::string::String>,
         pub(crate) count: std::option::Option<i32>,
         pub(crate) distinct_users: std::option::Option<i32>,
-        pub(crate) first_uttered_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_uttered_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) first_uttered_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_uttered_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The text that was entered by the user or the text representation of
@@ -3478,27 +3478,27 @@ pub mod utterance_data {
             self
         }
         /// <p>The date that the utterance was first recorded.</p>
-        pub fn first_uttered_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn first_uttered_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.first_uttered_date = Some(input);
             self
         }
         /// <p>The date that the utterance was first recorded.</p>
         pub fn set_first_uttered_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.first_uttered_date = input;
             self
         }
         /// <p>The date that the utterance was last recorded.</p>
-        pub fn last_uttered_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_uttered_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_uttered_date = Some(input);
             self
         }
         /// <p>The date that the utterance was last recorded.</p>
         pub fn set_last_uttered_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_uttered_date = input;
             self
@@ -3587,9 +3587,9 @@ pub struct SlotTypeMetadata {
     pub description: std::option::Option<std::string::String>,
     /// <p>The date that the slot type was updated. When you create a
     /// resource, the creation date and last updated date are the same. </p>
-    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the slot type was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of the slot type.</p>
     pub version: std::option::Option<std::string::String>,
 }
@@ -3604,11 +3604,11 @@ impl SlotTypeMetadata {
     }
     /// <p>The date that the slot type was updated. When you create a
     /// resource, the creation date and last updated date are the same. </p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>The date that the slot type was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The version of the slot type.</p>
@@ -3635,8 +3635,8 @@ pub mod slot_type_metadata {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3662,7 +3662,7 @@ pub mod slot_type_metadata {
         }
         /// <p>The date that the slot type was updated. When you create a
         /// resource, the creation date and last updated date are the same. </p>
-        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date = Some(input);
             self
         }
@@ -3670,20 +3670,20 @@ pub mod slot_type_metadata {
         /// resource, the creation date and last updated date are the same. </p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date = input;
             self
         }
         /// <p>The date that the slot type was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date that the slot type was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -3740,7 +3740,7 @@ pub struct MigrationSummary {
     /// <p>The strategy used to conduct the migration.</p>
     pub migration_strategy: std::option::Option<crate::model::MigrationStrategy>,
     /// <p>The date and time that the migration started.</p>
-    pub migration_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub migration_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MigrationSummary {
     /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
@@ -3778,7 +3778,7 @@ impl MigrationSummary {
         self.migration_strategy.as_ref()
     }
     /// <p>The date and time that the migration started.</p>
-    pub fn migration_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn migration_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.migration_timestamp.as_ref()
     }
 }
@@ -3811,7 +3811,7 @@ pub mod migration_summary {
         pub(crate) v2_bot_role: std::option::Option<std::string::String>,
         pub(crate) migration_status: std::option::Option<crate::model::MigrationStatus>,
         pub(crate) migration_strategy: std::option::Option<crate::model::MigrationStrategy>,
-        pub(crate) migration_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) migration_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
@@ -3911,14 +3911,14 @@ pub mod migration_summary {
             self
         }
         /// <p>The date and time that the migration started.</p>
-        pub fn migration_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn migration_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.migration_timestamp = Some(input);
             self
         }
         /// <p>The date and time that the migration started.</p>
         pub fn set_migration_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.migration_timestamp = input;
             self
@@ -4370,9 +4370,9 @@ pub struct IntentMetadata {
     pub description: std::option::Option<std::string::String>,
     /// <p>The date that the intent was updated. When you create an intent,
     /// the creation date and last updated date are the same.</p>
-    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the intent was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of the intent.</p>
     pub version: std::option::Option<std::string::String>,
 }
@@ -4387,11 +4387,11 @@ impl IntentMetadata {
     }
     /// <p>The date that the intent was updated. When you create an intent,
     /// the creation date and last updated date are the same.</p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>The date that the intent was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The version of the intent.</p>
@@ -4418,8 +4418,8 @@ pub mod intent_metadata {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4445,7 +4445,7 @@ pub mod intent_metadata {
         }
         /// <p>The date that the intent was updated. When you create an intent,
         /// the creation date and last updated date are the same.</p>
-        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date = Some(input);
             self
         }
@@ -4453,20 +4453,20 @@ pub mod intent_metadata {
         /// the creation date and last updated date are the same.</p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date = input;
             self
         }
         /// <p>The date that the intent was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date that the intent was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -4863,9 +4863,9 @@ pub struct BotMetadata {
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The date that the bot was updated. When you create a bot, the
     /// creation date and last updated date are the same. </p>
-    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the bot was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of the bot. For a new bot, the version is always
     /// <code>$LATEST</code>.</p>
     pub version: std::option::Option<std::string::String>,
@@ -4885,11 +4885,11 @@ impl BotMetadata {
     }
     /// <p>The date that the bot was updated. When you create a bot, the
     /// creation date and last updated date are the same. </p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>The date that the bot was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The version of the bot. For a new bot, the version is always
@@ -4919,8 +4919,8 @@ pub mod bot_metadata {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
-        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4956,7 +4956,7 @@ pub mod bot_metadata {
         }
         /// <p>The date that the bot was updated. When you create a bot, the
         /// creation date and last updated date are the same. </p>
-        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date = Some(input);
             self
         }
@@ -4964,20 +4964,20 @@ pub mod bot_metadata {
         /// creation date and last updated date are the same. </p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date = input;
             self
         }
         /// <p>The date that the bot was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date that the bot was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -5036,7 +5036,7 @@ pub struct BotChannelAssociation {
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>The date that the association between the Amazon Lex bot and the channel
     /// was created. </p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the type of association by indicating the type of channel
     /// being established between the Amazon Lex bot and the external messaging
     /// platform.</p>
@@ -5095,7 +5095,7 @@ impl BotChannelAssociation {
     }
     /// <p>The date that the association between the Amazon Lex bot and the channel
     /// was created. </p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>Specifies the type of association by indicating the type of channel
@@ -5165,7 +5165,7 @@ pub mod bot_channel_association {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) bot_alias: std::option::Option<std::string::String>,
         pub(crate) bot_name: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) r#type: std::option::Option<crate::model::ChannelType>,
         pub(crate) bot_configuration: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -5230,7 +5230,7 @@ pub mod bot_channel_association {
         }
         /// <p>The date that the association between the Amazon Lex bot and the channel
         /// was created. </p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
@@ -5238,7 +5238,7 @@ pub mod bot_channel_association {
         /// was created. </p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -5507,9 +5507,9 @@ pub struct BotAliasMetadata {
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>The date that the bot alias was updated. When you create a
     /// resource, the creation date and last updated date are the same.</p>
-    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the bot alias was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Checksum of the bot alias.</p>
     pub checksum: std::option::Option<std::string::String>,
     /// <p>Settings that determine how Amazon Lex uses conversation logs for the
@@ -5535,11 +5535,11 @@ impl BotAliasMetadata {
     }
     /// <p>The date that the bot alias was updated. When you create a
     /// resource, the creation date and last updated date are the same.</p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>The date that the bot alias was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>Checksum of the bot alias.</p>
@@ -5578,8 +5578,8 @@ pub mod bot_alias_metadata {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) bot_name: std::option::Option<std::string::String>,
-        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) checksum: std::option::Option<std::string::String>,
         pub(crate) conversation_logs: std::option::Option<crate::model::ConversationLogsResponse>,
     }
@@ -5626,7 +5626,7 @@ pub mod bot_alias_metadata {
         }
         /// <p>The date that the bot alias was updated. When you create a
         /// resource, the creation date and last updated date are the same.</p>
-        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date = Some(input);
             self
         }
@@ -5634,20 +5634,20 @@ pub mod bot_alias_metadata {
         /// resource, the creation date and last updated date are the same.</p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date = input;
             self
         }
         /// <p>The date that the bot alias was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date that the bot alias was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self

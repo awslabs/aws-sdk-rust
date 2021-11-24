@@ -211,6 +211,7 @@ pub type CreateChangesetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl CreateChangesetInput {
     /// Consumes the builder and constructs an Operation<[`CreateChangeset`](crate::operation::CreateChangeset)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -282,11 +283,14 @@ impl CreateChangesetInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -392,6 +396,7 @@ pub type GetProgrammaticAccessCredentialsInputOperationRetryAlias = aws_http::Aw
 impl GetProgrammaticAccessCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`GetProgrammaticAccessCredentials`](crate::operation::GetProgrammaticAccessCredentials)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -412,13 +417,12 @@ impl GetProgrammaticAccessCredentialsInput {
         fn uri_query(
             _input: &crate::input::GetProgrammaticAccessCredentialsInput,
             mut output: &mut String,
-        ) {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.duration_in_minutes != 0 {
                 query.push_kv(
                     "durationInMinutes",
-                    &aws_smithy_types::primitive::Encoder::from(_input.duration_in_minutes)
-                        .encode(),
+                    aws_smithy_types::primitive::Encoder::from(_input.duration_in_minutes).encode(),
                 );
             }
             if let Some(inner_2) = &_input.environment_id {
@@ -427,6 +431,7 @@ impl GetProgrammaticAccessCredentialsInput {
                     &aws_smithy_http::query::fmt_string(&inner_2),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -436,7 +441,7 @@ impl GetProgrammaticAccessCredentialsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -457,11 +462,14 @@ impl GetProgrammaticAccessCredentialsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -570,6 +578,7 @@ pub type GetWorkingLocationInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl GetWorkingLocationInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkingLocation`](crate::operation::GetWorkingLocation)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -621,11 +630,14 @@ impl GetWorkingLocationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);

@@ -719,9 +719,9 @@ pub struct DescribeFlowOutput {
     /// </p>
     pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
     /// <p> Specifies when the flow was created. </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies when the flow was last updated. </p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The ARN of the user who created the flow. </p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p> Specifies the user name of the account that performed the most recent update. </p>
@@ -788,11 +788,11 @@ impl DescribeFlowOutput {
         self.tasks.as_deref()
     }
     /// <p> Specifies when the flow was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> Specifies when the flow was last updated. </p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p> The ARN of the user who created the flow. </p>
@@ -857,8 +857,8 @@ pub mod describe_flow_output {
         pub(crate) last_run_execution_details: std::option::Option<crate::model::ExecutionDetails>,
         pub(crate) trigger_config: std::option::Option<crate::model::TriggerConfig>,
         pub(crate) tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
         pub(crate) last_updated_by: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -1029,27 +1029,27 @@ pub mod describe_flow_output {
             self
         }
         /// <p> Specifies when the flow was created. </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p> Specifies when the flow was created. </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p> Specifies when the flow was last updated. </p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p> Specifies when the flow was last updated. </p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self

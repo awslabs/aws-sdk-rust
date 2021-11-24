@@ -552,13 +552,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bot to build. The identifier is returned in
-        /// the response from the  operation.</p>
+        /// the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
         pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bot_id(inp);
             self
         }
         /// <p>The identifier of the bot to build. The identifier is returned in
-        /// the response from the  operation.</p>
+        /// the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_id(input);
             self
@@ -872,15 +872,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the bot that this alias points to. You can use the
-        /// operation to change the bot
-        /// version associated with the alias.</p>
+        /// <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the
+        /// bot version associated with the alias.</p>
         pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bot_version(inp);
             self
         }
         /// <p>The version of the bot that this alias points to. You can use the
-        /// operation to change the bot
-        /// version associated with the alias.</p>
+        /// <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the
+        /// bot version associated with the alias.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_version(input);
             self
@@ -2885,7 +2885,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBotVersion`.
     ///
     /// <p>Deletes a specific version of a bot. To delete all version of a bot,
-    /// use the <a>DeleteBot</a> operation.</p>
+    /// use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBot.html">DeleteBot</a> operation.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteBotVersion<
         C = aws_smithy_client::erase::DynConnector,
@@ -3674,9 +3674,9 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes stored utterances.</p>
     /// <p>Amazon Lex stores the utterances that users send to your bot. Utterances
-    /// are stored for 15 days for use with the  operation, and then stored
-    /// indefinitely for use in improving the ability of your bot to respond to
-    /// user input..</p>
+    /// are stored for 15 days for use with the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a> operation, and
+    /// then stored indefinitely for use in improving the ability of your bot
+    /// to respond to user input..</p>
     /// <p>Use the <code>DeleteUtterances</code> operation to manually delete
     /// utterances for a specific session. When you use the
     /// <code>DeleteUtterances</code> operation, utterances stored for
@@ -3769,13 +3769,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the session with the user. The ID is
-        /// returned in the response from the  and  operations.</p>
+        /// returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a> and <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a> operations.</p>
         pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.session_id(inp);
             self
         }
         /// <p>The unique identifier of the session with the user. The ID is
-        /// returned in the response from the  and  operations.</p>
+        /// returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a> and <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a> operations.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_session_id(input);
             self
@@ -5380,7 +5380,7 @@ pub mod fluent_builders {
     /// <p>To use a built-in intent as a the base for your own intent, include
     /// the built-in intent signature in the <code>parentIntentSignature</code>
     /// parameter when you call the <code>CreateIntent</code> operation. For
-    /// more information, see <a>CreateIntent</a>.</p>
+    /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateIntent.html">CreateIntent</a>.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListBuiltInIntents<
         C = aws_smithy_client::erase::DynConnector,
@@ -6570,13 +6570,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the import. It is included in the response
-        /// from the  operation.</p>
+        /// from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
         pub fn import_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.import_id(inp);
             self
         }
         /// <p>The unique identifier for the import. It is included in the response
-        /// from the  operation.</p>
+        /// from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
         pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_import_id(input);
             self
@@ -6884,13 +6884,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the bot to update. This identifier is
-        /// returned by the <a>CreateBot</a> operation.</p>
+        /// returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
         pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bot_id(inp);
             self
         }
         /// <p>The unique identifier of the bot to update. This identifier is
-        /// returned by the <a>CreateBot</a> operation.</p>
+        /// returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_id(input);
             self
@@ -7288,7 +7288,7 @@ pub mod fluent_builders {
     /// <p>The password is not required. If you don't supply a password, Amazon Lex
     /// generates a zip file that is not protected by a password. This is the
     /// archive that is available at the pre-signed S3 URL provided by the
-    /// operation.</p>
+    /// <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation.</p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateExport<
         C = aws_smithy_client::erase::DynConnector,
@@ -8170,7 +8170,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -8193,7 +8199,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

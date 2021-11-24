@@ -4846,6 +4846,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_config_name(input);
             self
         }
+        /// <p>The deployment configuration for an endpoint, which contains the desired deployment
+        /// strategy and rollback configurations.</p>
+        pub fn deployment_config(mut self, inp: crate::model::DeploymentConfig) -> Self {
+            self.inner = self.inner.deployment_config(inp);
+            self
+        }
+        /// <p>The deployment configuration for an endpoint, which contains the desired deployment
+        /// strategy and rollback configurations.</p>
+        pub fn set_deployment_config(
+            mut self,
+            input: std::option::Option<crate::model::DeploymentConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_deployment_config(input);
+            self
+        }
         /// Appends an item to `Tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -10996,27 +11011,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>When the component started.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
         /// <p>When the component started.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
         }
         /// <p>When the component ended.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
         /// <p>When the component ended.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -18846,27 +18861,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only actions created on or after the specified time.</p>
-        pub fn created_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_after(inp);
             self
         }
         /// <p>A filter that returns only actions created on or after the specified time.</p>
         pub fn set_created_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_created_after(input);
             self
         }
         /// <p>A filter that returns only actions created on or before the specified time.</p>
-        pub fn created_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_before(inp);
             self
         }
         /// <p>A filter that returns only actions created on or before the specified time.</p>
         pub fn set_created_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_created_before(input);
             self
@@ -18981,7 +18996,7 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only algorithms created after the specified time
         /// (timestamp).</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
@@ -18989,14 +19004,14 @@ pub mod fluent_builders {
         /// (timestamp).</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only algorithms created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
@@ -19004,7 +19019,7 @@ pub mod fluent_builders {
         /// (timestamp).</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
@@ -19176,53 +19191,53 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only AppImageConfigs created on or before the specified time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
         /// <p>A filter that returns only AppImageConfigs created on or before the specified time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only AppImageConfigs created on or after the specified time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
         /// <p>A filter that returns only AppImageConfigs created on or after the specified time.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only AppImageConfigs modified on or before the specified time.</p>
-        pub fn modified_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn modified_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.modified_time_before(inp);
             self
         }
         /// <p>A filter that returns only AppImageConfigs modified on or before the specified time.</p>
         pub fn set_modified_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only AppImageConfigs modified on or after the specified time.</p>
-        pub fn modified_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn modified_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.modified_time_after(inp);
             self
         }
         /// <p>A filter that returns only AppImageConfigs modified on or after the specified time.</p>
         pub fn set_modified_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_modified_time_after(input);
             self
@@ -19468,27 +19483,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only artifacts created on or after the specified time.</p>
-        pub fn created_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_after(inp);
             self
         }
         /// <p>A filter that returns only artifacts created on or after the specified time.</p>
         pub fn set_created_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_created_after(input);
             self
         }
         /// <p>A filter that returns only artifacts created on or before the specified time.</p>
-        pub fn created_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_before(inp);
             self
         }
         /// <p>A filter that returns only artifacts created on or before the specified time.</p>
         pub fn set_created_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_created_before(input);
             self
@@ -19661,27 +19676,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only associations created on or after the specified time.</p>
-        pub fn created_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_after(inp);
             self
         }
         /// <p>A filter that returns only associations created on or after the specified time.</p>
         pub fn set_created_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_created_after(input);
             self
         }
         /// <p>A filter that returns only associations created on or before the specified time.</p>
-        pub fn created_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_before(inp);
             self
         }
         /// <p>A filter that returns only associations created on or before the specified time.</p>
         pub fn set_created_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_created_before(input);
             self
@@ -19795,53 +19810,53 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
-        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(inp);
             self
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
         pub fn set_last_modified_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
-        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(inp);
             self
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
         pub fn set_last_modified_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
@@ -20131,7 +20146,7 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only Git repositories that were created after the specified
         /// time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
@@ -20139,14 +20154,14 @@ pub mod fluent_builders {
         /// time.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only Git repositories that were created before the specified
         /// time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
@@ -20154,14 +20169,14 @@ pub mod fluent_builders {
         /// time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only Git repositories that were last modified after the
         /// specified time.</p>
-        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(inp);
             self
         }
@@ -20169,14 +20184,14 @@ pub mod fluent_builders {
         /// specified time.</p>
         pub fn set_last_modified_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only Git repositories that were last modified before the
         /// specified time.</p>
-        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(inp);
             self
         }
@@ -20184,7 +20199,7 @@ pub mod fluent_builders {
         /// specified time.</p>
         pub fn set_last_modified_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
@@ -20342,7 +20357,7 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns the model compilation jobs that were created after a specified
         /// time. </p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
@@ -20350,14 +20365,14 @@ pub mod fluent_builders {
         /// time. </p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns the model compilation jobs that were created before a specified
         /// time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
@@ -20365,14 +20380,14 @@ pub mod fluent_builders {
         /// time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns the model compilation jobs that were modified after a specified
         /// time.</p>
-        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(inp);
             self
         }
@@ -20380,14 +20395,14 @@ pub mod fluent_builders {
         /// time.</p>
         pub fn set_last_modified_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns the model compilation jobs that were modified before a specified
         /// time.</p>
-        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(inp);
             self
         }
@@ -20395,7 +20410,7 @@ pub mod fluent_builders {
         /// time.</p>
         pub fn set_last_modified_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
@@ -20535,27 +20550,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only contexts created on or after the specified time.</p>
-        pub fn created_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_after(inp);
             self
         }
         /// <p>A filter that returns only contexts created on or after the specified time.</p>
         pub fn set_created_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_created_after(input);
             self
         }
         /// <p>A filter that returns only contexts created on or before the specified time.</p>
-        pub fn created_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_before(inp);
             self
         }
         /// <p>A filter that returns only contexts created on or before the specified time.</p>
         pub fn set_created_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_created_before(input);
             self
@@ -20752,7 +20767,7 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only data quality monitoring job definitions created before the
         /// specified time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
@@ -20760,14 +20775,14 @@ pub mod fluent_builders {
         /// specified time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only data quality monitoring job definitions created after the
         /// specified time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
@@ -20775,7 +20790,7 @@ pub mod fluent_builders {
         /// specified time.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
@@ -20861,53 +20876,53 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter fleets where packaging job was created after specified time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
         /// <p>Filter fleets where packaging job was created after specified time.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>Filter fleets where the edge packaging job was created before specified time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
         /// <p>Filter fleets where the edge packaging job was created before specified time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>Select fleets where the job was updated after X</p>
-        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(inp);
             self
         }
         /// <p>Select fleets where the job was updated after X</p>
         pub fn set_last_modified_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>Select fleets where the job was updated before X</p>
-        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(inp);
             self
         }
         /// <p>Select fleets where the job was updated before X</p>
         pub fn set_last_modified_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
@@ -21032,14 +21047,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>Select fleets where the job was updated after X</p>
-        pub fn latest_heartbeat_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn latest_heartbeat_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.latest_heartbeat_after(inp);
             self
         }
         /// <p>Select fleets where the job was updated after X</p>
         pub fn set_latest_heartbeat_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_latest_heartbeat_after(input);
             self
@@ -21230,53 +21245,53 @@ pub mod fluent_builders {
             self
         }
         /// <p>Select jobs where the job was created after specified time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
         /// <p>Select jobs where the job was created after specified time.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>Select jobs where the job was created before specified time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
         /// <p>Select jobs where the job was created before specified time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>Select jobs where the job was updated after specified time.</p>
-        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(inp);
             self
         }
         /// <p>Select jobs where the job was updated after specified time.</p>
         pub fn set_last_modified_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>Select jobs where the job was updated before specified time.</p>
-        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(inp);
             self
         }
         /// <p>Select jobs where the job was updated before specified time.</p>
         pub fn set_last_modified_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
@@ -21473,7 +21488,7 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only endpoint configurations created before the specified
         /// time (timestamp).</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
@@ -21481,14 +21496,14 @@ pub mod fluent_builders {
         /// time (timestamp).</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only endpoint configurations with a creation time greater
         /// than or equal to the specified time (timestamp).</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
@@ -21496,7 +21511,7 @@ pub mod fluent_builders {
         /// than or equal to the specified time (timestamp).</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
@@ -21630,7 +21645,7 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only endpoints that were created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
@@ -21638,14 +21653,14 @@ pub mod fluent_builders {
         /// (timestamp).</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only endpoints with a creation time greater than or equal to
         /// the specified time (timestamp).</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
@@ -21653,14 +21668,14 @@ pub mod fluent_builders {
         /// the specified time (timestamp).</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p> A filter that returns only endpoints that were modified before the specified
         /// timestamp. </p>
-        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(inp);
             self
         }
@@ -21668,14 +21683,14 @@ pub mod fluent_builders {
         /// timestamp. </p>
         pub fn set_last_modified_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p> A filter that returns only endpoints that were modified after the specified
         /// timestamp. </p>
-        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(inp);
             self
         }
@@ -21683,7 +21698,7 @@ pub mod fluent_builders {
         /// timestamp. </p>
         pub fn set_last_modified_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
@@ -21764,27 +21779,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only experiments created after the specified time.</p>
-        pub fn created_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_after(inp);
             self
         }
         /// <p>A filter that returns only experiments created after the specified time.</p>
         pub fn set_created_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_created_after(input);
             self
         }
         /// <p>A filter that returns only experiments created before the specified time.</p>
-        pub fn created_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_before(inp);
             self
         }
         /// <p>A filter that returns only experiments created before the specified time.</p>
         pub fn set_created_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_created_before(input);
             self
@@ -21948,7 +21963,7 @@ pub mod fluent_builders {
         }
         /// <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific
         /// date and time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
@@ -21956,14 +21971,14 @@ pub mod fluent_builders {
         /// date and time.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>Use this parameter to search for <code>FeatureGroups</code>s created before a specific
         /// date and time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
@@ -21971,7 +21986,7 @@ pub mod fluent_builders {
         /// date and time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
@@ -22083,27 +22098,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only flow definitions with a creation time greater than or equal to the specified timestamp.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
         /// <p>A filter that returns only flow definitions with a creation time greater than or equal to the specified timestamp.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only flow definitions that were created before the specified timestamp.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
         /// <p>A filter that returns only flow definitions that were created before the specified timestamp.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
@@ -22202,27 +22217,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only human task user interfaces with a creation time greater than or equal to the specified timestamp.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
         /// <p>A filter that returns only human task user interfaces with a creation time greater than or equal to the specified timestamp.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only human task user interfaces that were created before the specified timestamp.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
         /// <p>A filter that returns only human task user interfaces that were created before the specified timestamp.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
@@ -22402,7 +22417,7 @@ pub mod fluent_builders {
         /// <p>A filter that returns only tuning jobs that were created after the
         /// specified
         /// time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
@@ -22411,7 +22426,7 @@ pub mod fluent_builders {
         /// time.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
@@ -22419,7 +22434,7 @@ pub mod fluent_builders {
         /// <p>A filter that returns only tuning jobs that were created before the
         /// specified
         /// time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
@@ -22428,14 +22443,14 @@ pub mod fluent_builders {
         /// time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only tuning jobs that were modified after the specified
         /// time.</p>
-        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(inp);
             self
         }
@@ -22443,14 +22458,14 @@ pub mod fluent_builders {
         /// time.</p>
         pub fn set_last_modified_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only tuning jobs that were modified before the specified
         /// time.</p>
-        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(inp);
             self
         }
@@ -22458,7 +22473,7 @@ pub mod fluent_builders {
         /// time.</p>
         pub fn set_last_modified_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
@@ -22542,53 +22557,53 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only images created on or after the specified time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
         /// <p>A filter that returns only images created on or after the specified time.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only images created on or before the specified time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
         /// <p>A filter that returns only images created on or before the specified time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only images modified on or after the specified time.</p>
-        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(inp);
             self
         }
         /// <p>A filter that returns only images modified on or after the specified time.</p>
         pub fn set_last_modified_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only images modified on or before the specified time.</p>
-        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(inp);
             self
         }
         /// <p>A filter that returns only images modified on or before the specified time.</p>
         pub fn set_last_modified_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
@@ -22716,27 +22731,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only versions created on or after the specified time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
         /// <p>A filter that returns only versions created on or after the specified time.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only versions created on or before the specified time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
         /// <p>A filter that returns only versions created on or before the specified time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
@@ -22752,27 +22767,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only versions modified on or after the specified time.</p>
-        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(inp);
             self
         }
         /// <p>A filter that returns only versions modified on or after the specified time.</p>
         pub fn set_last_modified_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only versions modified on or before the specified time.</p>
-        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(inp);
             self
         }
         /// <p>A filter that returns only versions modified on or before the specified time.</p>
         pub fn set_last_modified_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
@@ -22887,7 +22902,7 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only labeling jobs created after the specified time
         /// (timestamp).</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
@@ -22895,14 +22910,14 @@ pub mod fluent_builders {
         /// (timestamp).</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only labeling jobs created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
@@ -22910,14 +22925,14 @@ pub mod fluent_builders {
         /// (timestamp).</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only labeling jobs modified after the specified time
         /// (timestamp).</p>
-        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(inp);
             self
         }
@@ -22925,14 +22940,14 @@ pub mod fluent_builders {
         /// (timestamp).</p>
         pub fn set_last_modified_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only labeling jobs modified before the specified time
         /// (timestamp).</p>
-        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(inp);
             self
         }
@@ -22940,7 +22955,7 @@ pub mod fluent_builders {
         /// (timestamp).</p>
         pub fn set_last_modified_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
@@ -23118,7 +23133,7 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only labeling jobs created after the specified time
         /// (timestamp).</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
@@ -23126,14 +23141,14 @@ pub mod fluent_builders {
         /// (timestamp).</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only labeling jobs created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
@@ -23141,7 +23156,7 @@ pub mod fluent_builders {
         /// (timestamp).</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
@@ -23331,27 +23346,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only model bias jobs created before a specified time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
         /// <p>A filter that returns only model bias jobs created before a specified time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only model bias jobs created after a specified time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
         /// <p>A filter that returns only model bias jobs created after a specified time.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
@@ -23498,7 +23513,7 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only model explainability jobs created before a specified
         /// time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
@@ -23506,14 +23521,14 @@ pub mod fluent_builders {
         /// time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only model explainability jobs created after a specified
         /// time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
@@ -23521,7 +23536,7 @@ pub mod fluent_builders {
         /// time.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
@@ -23587,27 +23602,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only model groups created after the specified time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
         /// <p>A filter that returns only model groups created after the specified time.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only model groups created before the specified time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
         /// <p>A filter that returns only model groups created before the specified time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
@@ -23739,7 +23754,7 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only model packages created after the specified time
         /// (timestamp).</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
@@ -23747,14 +23762,14 @@ pub mod fluent_builders {
         /// (timestamp).</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only model packages created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
@@ -23762,7 +23777,7 @@ pub mod fluent_builders {
         /// (timestamp).</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
@@ -24049,7 +24064,7 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only model quality monitoring job definitions created before the
         /// specified time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
@@ -24057,14 +24072,14 @@ pub mod fluent_builders {
         /// specified time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only model quality monitoring job definitions created after the
         /// specified time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
@@ -24072,7 +24087,7 @@ pub mod fluent_builders {
         /// specified time.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
@@ -24204,7 +24219,7 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only models created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
@@ -24212,14 +24227,14 @@ pub mod fluent_builders {
         /// (timestamp).</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only models with a creation time greater than or equal to the
         /// specified time (timestamp).</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
@@ -24227,7 +24242,7 @@ pub mod fluent_builders {
         /// specified time (timestamp).</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
@@ -24371,79 +24386,79 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter for jobs scheduled before a specified time.</p>
-        pub fn scheduled_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn scheduled_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.scheduled_time_before(inp);
             self
         }
         /// <p>Filter for jobs scheduled before a specified time.</p>
         pub fn set_scheduled_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_scheduled_time_before(input);
             self
         }
         /// <p>Filter for jobs scheduled after a specified time.</p>
-        pub fn scheduled_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn scheduled_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.scheduled_time_after(inp);
             self
         }
         /// <p>Filter for jobs scheduled after a specified time.</p>
         pub fn set_scheduled_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_scheduled_time_after(input);
             self
         }
         /// <p>A filter that returns only jobs created before a specified time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
         /// <p>A filter that returns only jobs created before a specified time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only jobs created after a specified time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
         /// <p>A filter that returns only jobs created after a specified time.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only jobs modified after a specified time.</p>
-        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(inp);
             self
         }
         /// <p>A filter that returns only jobs modified after a specified time.</p>
         pub fn set_last_modified_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only jobs modified before a specified time.</p>
-        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(inp);
             self
         }
         /// <p>A filter that returns only jobs modified before a specified time.</p>
         pub fn set_last_modified_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
@@ -24633,53 +24648,53 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only monitoring schedules created before a specified time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
         /// <p>A filter that returns only monitoring schedules created before a specified time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only monitoring schedules created after a specified time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
         /// <p>A filter that returns only monitoring schedules created after a specified time.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only monitoring schedules modified before a specified time.</p>
-        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(inp);
             self
         }
         /// <p>A filter that returns only monitoring schedules modified before a specified time.</p>
         pub fn set_last_modified_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only monitoring schedules modified after a specified time.</p>
-        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(inp);
             self
         }
         /// <p>A filter that returns only monitoring schedules modified after a specified time.</p>
         pub fn set_last_modified_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
@@ -24865,7 +24880,7 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only lifecycle configurations that were created before the
         /// specified time (timestamp).</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
@@ -24873,14 +24888,14 @@ pub mod fluent_builders {
         /// specified time (timestamp).</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only lifecycle configurations that were created after the
         /// specified time (timestamp).</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
@@ -24888,14 +24903,14 @@ pub mod fluent_builders {
         /// specified time (timestamp).</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only lifecycle configurations that were modified before the
         /// specified time (timestamp).</p>
-        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(inp);
             self
         }
@@ -24903,14 +24918,14 @@ pub mod fluent_builders {
         /// specified time (timestamp).</p>
         pub fn set_last_modified_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only lifecycle configurations that were modified after the
         /// specified time (timestamp).</p>
-        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(inp);
             self
         }
@@ -24918,7 +24933,7 @@ pub mod fluent_builders {
         /// specified time (timestamp).</p>
         pub fn set_last_modified_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
@@ -25063,7 +25078,7 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only notebook instances that were created before the
         /// specified time (timestamp). </p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
@@ -25071,14 +25086,14 @@ pub mod fluent_builders {
         /// specified time (timestamp). </p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only notebook instances that were created after the specified
         /// time (timestamp).</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
@@ -25086,14 +25101,14 @@ pub mod fluent_builders {
         /// time (timestamp).</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only notebook instances that were modified before the
         /// specified time (timestamp).</p>
-        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(inp);
             self
         }
@@ -25101,14 +25116,14 @@ pub mod fluent_builders {
         /// specified time (timestamp).</p>
         pub fn set_last_modified_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only notebook instances that were modified after the
         /// specified time (timestamp).</p>
-        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(inp);
             self
         }
@@ -25116,7 +25131,7 @@ pub mod fluent_builders {
         /// specified time (timestamp).</p>
         pub fn set_last_modified_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
@@ -25271,7 +25286,7 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns the pipeline executions that were created after a specified
         /// time.</p>
-        pub fn created_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_after(inp);
             self
         }
@@ -25279,14 +25294,14 @@ pub mod fluent_builders {
         /// time.</p>
         pub fn set_created_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_created_after(input);
             self
         }
         /// <p>A filter that returns the pipeline executions that were created before a specified
         /// time.</p>
-        pub fn created_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_before(inp);
             self
         }
@@ -25294,7 +25309,7 @@ pub mod fluent_builders {
         /// time.</p>
         pub fn set_created_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_created_before(input);
             self
@@ -25627,7 +25642,7 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns the pipelines that were created after a specified
         /// time.</p>
-        pub fn created_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_after(inp);
             self
         }
@@ -25635,14 +25650,14 @@ pub mod fluent_builders {
         /// time.</p>
         pub fn set_created_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_created_after(input);
             self
         }
         /// <p>A filter that returns the pipelines that were created before a specified
         /// time.</p>
-        pub fn created_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_before(inp);
             self
         }
@@ -25650,7 +25665,7 @@ pub mod fluent_builders {
         /// time.</p>
         pub fn set_created_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_created_before(input);
             self
@@ -25764,53 +25779,53 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only processing jobs created after the specified time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
         /// <p>A filter that returns only processing jobs created after the specified time.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only processing jobs created after the specified time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
         /// <p>A filter that returns only processing jobs created after the specified time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only processing jobs modified after the specified time.</p>
-        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(inp);
             self
         }
         /// <p>A filter that returns only processing jobs modified after the specified time.</p>
         pub fn set_last_modified_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only processing jobs modified before the specified time.</p>
-        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(inp);
             self
         }
         /// <p>A filter that returns only processing jobs modified before the specified time.</p>
         pub fn set_last_modified_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
@@ -25952,7 +25967,7 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns the projects that were created after a specified
         /// time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
@@ -25960,14 +25975,14 @@ pub mod fluent_builders {
         /// time.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns the projects that were created before a specified
         /// time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
@@ -25975,7 +25990,7 @@ pub mod fluent_builders {
         /// time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
@@ -26150,53 +26165,53 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only Lifecycle Configurations created on or before the specified time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
         /// <p>A filter that returns only Lifecycle Configurations created on or before the specified time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only Lifecycle Configurations created on or after the specified time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
         /// <p>A filter that returns only Lifecycle Configurations created on or after the specified time.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only Lifecycle Configurations modified before the specified time.</p>
-        pub fn modified_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn modified_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.modified_time_before(inp);
             self
         }
         /// <p>A filter that returns only Lifecycle Configurations modified before the specified time.</p>
         pub fn set_modified_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only Lifecycle Configurations modified after the specified time.</p>
-        pub fn modified_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn modified_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.modified_time_after(inp);
             self
         }
         /// <p>A filter that returns only Lifecycle Configurations modified after the specified time.</p>
         pub fn set_modified_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_modified_time_after(input);
             self
@@ -26530,7 +26545,7 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only training jobs created after the specified time
         /// (timestamp).</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
@@ -26538,14 +26553,14 @@ pub mod fluent_builders {
         /// (timestamp).</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only training jobs created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
@@ -26553,14 +26568,14 @@ pub mod fluent_builders {
         /// (timestamp).</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only training jobs modified after the specified time
         /// (timestamp).</p>
-        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(inp);
             self
         }
@@ -26568,14 +26583,14 @@ pub mod fluent_builders {
         /// (timestamp).</p>
         pub fn set_last_modified_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only training jobs modified before the specified time
         /// (timestamp).</p>
-        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(inp);
             self
         }
@@ -26583,7 +26598,7 @@ pub mod fluent_builders {
         /// (timestamp).</p>
         pub fn set_last_modified_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
@@ -26858,53 +26873,53 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only transform jobs created after the specified time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(inp);
             self
         }
         /// <p>A filter that returns only transform jobs created after the specified time.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only transform jobs created before the specified time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(inp);
             self
         }
         /// <p>A filter that returns only transform jobs created before the specified time.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only transform jobs modified after the specified time.</p>
-        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(inp);
             self
         }
         /// <p>A filter that returns only transform jobs modified after the specified time.</p>
         pub fn set_last_modified_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only transform jobs modified before the specified time.</p>
-        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(inp);
             self
         }
         /// <p>A filter that returns only transform jobs modified before the specified time.</p>
         pub fn set_last_modified_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
@@ -27109,27 +27124,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only components created after the specified time.</p>
-        pub fn created_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_after(inp);
             self
         }
         /// <p>A filter that returns only components created after the specified time.</p>
         pub fn set_created_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_created_after(input);
             self
         }
         /// <p>A filter that returns only components created before the specified time.</p>
-        pub fn created_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_before(inp);
             self
         }
         /// <p>A filter that returns only components created before the specified time.</p>
         pub fn set_created_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_created_before(input);
             self
@@ -27277,27 +27292,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only trials created after the specified time.</p>
-        pub fn created_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_after(inp);
             self
         }
         /// <p>A filter that returns only trials created after the specified time.</p>
         pub fn set_created_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_created_after(input);
             self
         }
         /// <p>A filter that returns only trials created before the specified time.</p>
-        pub fn created_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_before(inp);
             self
         }
         /// <p>A filter that returns only trials created before the specified time.</p>
         pub fn set_created_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_created_before(input);
             self
@@ -30693,17 +30708,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_exclude_retained_variant_properties(input);
             self
         }
-        /// <p>The deployment configuration for the endpoint to be updated.</p>
+        /// <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
         pub fn deployment_config(mut self, inp: crate::model::DeploymentConfig) -> Self {
             self.inner = self.inner.deployment_config(inp);
             self
         }
-        /// <p>The deployment configuration for the endpoint to be updated.</p>
+        /// <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
         pub fn set_deployment_config(
             mut self,
             input: std::option::Option<crate::model::DeploymentConfig>,
         ) -> Self {
             self.inner = self.inner.set_deployment_config(input);
+            self
+        }
+        /// <p>Specifies whether to reuse the last deployment configuration. The default value is
+        /// false (the configuration is not reused).</p>
+        pub fn retain_deployment_config(mut self, inp: bool) -> Self {
+            self.inner = self.inner.retain_deployment_config(inp);
+            self
+        }
+        /// <p>Specifies whether to reuse the last deployment configuration. The default value is
+        /// false (the configuration is not reused).</p>
+        pub fn set_retain_deployment_config(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_retain_deployment_config(input);
             self
         }
     }
@@ -32363,27 +32390,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>When the component started.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
         /// <p>When the component started.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
         }
         /// <p>When the component ended.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
         /// <p>When the component ended.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -32904,7 +32931,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -32927,7 +32960,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

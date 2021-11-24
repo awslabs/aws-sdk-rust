@@ -1583,14 +1583,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>Copies the object if it has been modified since the specified time.</p>
-        pub fn copy_source_if_modified_since(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn copy_source_if_modified_since(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.copy_source_if_modified_since(inp);
             self
         }
         /// <p>Copies the object if it has been modified since the specified time.</p>
         pub fn set_copy_source_if_modified_since(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_copy_source_if_modified_since(input);
             self
@@ -1609,27 +1609,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>Copies the object if it hasn't been modified since the specified time.</p>
-        pub fn copy_source_if_unmodified_since(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn copy_source_if_unmodified_since(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.copy_source_if_unmodified_since(inp);
             self
         }
         /// <p>Copies the object if it hasn't been modified since the specified time.</p>
         pub fn set_copy_source_if_unmodified_since(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_copy_source_if_unmodified_since(input);
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
-        pub fn expires(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn expires(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.expires(inp);
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
         pub fn set_expires(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_expires(input);
             self
@@ -2016,14 +2016,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time when you want the copied object's Object Lock to expire.</p>
-        pub fn object_lock_retain_until_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn object_lock_retain_until_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.object_lock_retain_until_date(inp);
             self
         }
         /// <p>The date and time when you want the copied object's Object Lock to expire.</p>
         pub fn set_object_lock_retain_until_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_object_lock_retain_until_date(input);
             self
@@ -2776,14 +2776,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
-        pub fn expires(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn expires(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.expires(inp);
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
         pub fn set_expires(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_expires(input);
             self
@@ -3081,14 +3081,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the date and time when you want the Object Lock to expire.</p>
-        pub fn object_lock_retain_until_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn object_lock_retain_until_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.object_lock_retain_until_date(inp);
             self
         }
         /// <p>Specifies the date and time when you want the Object Lock to expire.</p>
         pub fn set_object_lock_retain_until_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_object_lock_retain_until_date(input);
             self
@@ -7665,7 +7665,7 @@ pub mod fluent_builders {
         }
         /// <p>Return the object only if it has been modified since the specified time, otherwise
         /// return a 304 (not modified).</p>
-        pub fn if_modified_since(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn if_modified_since(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.if_modified_since(inp);
             self
         }
@@ -7673,7 +7673,7 @@ pub mod fluent_builders {
         /// return a 304 (not modified).</p>
         pub fn set_if_modified_since(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_if_modified_since(input);
             self
@@ -7695,7 +7695,7 @@ pub mod fluent_builders {
         }
         /// <p>Return the object only if it has not been modified since the specified time, otherwise
         /// return a 412 (precondition failed).</p>
-        pub fn if_unmodified_since(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn if_unmodified_since(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.if_unmodified_since(inp);
             self
         }
@@ -7703,7 +7703,7 @@ pub mod fluent_builders {
         /// return a 412 (precondition failed).</p>
         pub fn set_if_unmodified_since(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_if_unmodified_since(input);
             self
@@ -7804,14 +7804,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>Sets the <code>Expires</code> header of the response.</p>
-        pub fn response_expires(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn response_expires(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.response_expires(inp);
             self
         }
         /// <p>Sets the <code>Expires</code> header of the response.</p>
         pub fn set_response_expires(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_response_expires(input);
             self
@@ -9117,7 +9117,7 @@ pub mod fluent_builders {
         }
         /// <p>Return the object only if it has been modified since the specified time, otherwise
         /// return a 304 (not modified).</p>
-        pub fn if_modified_since(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn if_modified_since(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.if_modified_since(inp);
             self
         }
@@ -9125,7 +9125,7 @@ pub mod fluent_builders {
         /// return a 304 (not modified).</p>
         pub fn set_if_modified_since(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_if_modified_since(input);
             self
@@ -9147,7 +9147,7 @@ pub mod fluent_builders {
         }
         /// <p>Return the object only if it has not been modified since the specified time, otherwise
         /// return a 412 (precondition failed).</p>
-        pub fn if_unmodified_since(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn if_unmodified_since(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.if_unmodified_since(inp);
             self
         }
@@ -9155,7 +9155,7 @@ pub mod fluent_builders {
         /// return a 412 (precondition failed).</p>
         pub fn set_if_unmodified_since(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_if_unmodified_since(input);
             self
@@ -14679,7 +14679,7 @@ pub mod fluent_builders {
         }
         /// <p>The date and time at which the object is no longer cacheable. For more information, see
         /// <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
-        pub fn expires(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn expires(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.expires(inp);
             self
         }
@@ -14687,7 +14687,7 @@ pub mod fluent_builders {
         /// <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
         pub fn set_expires(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_expires(input);
             self
@@ -15028,7 +15028,7 @@ pub mod fluent_builders {
         }
         /// <p>The date and time when you want this object's Object Lock to expire. Must be formatted
         /// as a timestamp parameter.</p>
-        pub fn object_lock_retain_until_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn object_lock_retain_until_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.object_lock_retain_until_date(inp);
             self
         }
@@ -15036,7 +15036,7 @@ pub mod fluent_builders {
         /// as a timestamp parameter.</p>
         pub fn set_object_lock_retain_until_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_object_lock_retain_until_date(input);
             self
@@ -17894,14 +17894,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>Copies the object if it has been modified since the specified time.</p>
-        pub fn copy_source_if_modified_since(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn copy_source_if_modified_since(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.copy_source_if_modified_since(inp);
             self
         }
         /// <p>Copies the object if it has been modified since the specified time.</p>
         pub fn set_copy_source_if_modified_since(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_copy_source_if_modified_since(input);
             self
@@ -17920,14 +17920,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>Copies the object if it hasn't been modified since the specified time.</p>
-        pub fn copy_source_if_unmodified_since(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn copy_source_if_unmodified_since(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.copy_source_if_unmodified_since(inp);
             self
         }
         /// <p>Copies the object if it hasn't been modified since the specified time.</p>
         pub fn set_copy_source_if_unmodified_since(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_copy_source_if_unmodified_since(input);
             self
@@ -18583,14 +18583,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
-        pub fn expires(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn expires(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.expires(inp);
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
         pub fn set_expires(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_expires(input);
             self
@@ -18606,14 +18606,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time that the object was last modified.</p>
-        pub fn last_modified(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified(inp);
             self
         }
         /// <p>The date and time that the object was last modified.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_last_modified(input);
             self
@@ -18689,14 +18689,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time when Object Lock is configured to expire.</p>
-        pub fn object_lock_retain_until_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn object_lock_retain_until_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.object_lock_retain_until_date(inp);
             self
         }
         /// <p>The date and time when Object Lock is configured to expire.</p>
         pub fn set_object_lock_retain_until_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_object_lock_retain_until_date(input);
             self
@@ -18862,7 +18862,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -18885,7 +18891,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

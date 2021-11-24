@@ -129,7 +129,7 @@ pub fn serialize_structure_crate_model_record_patch(
     if let Some(var_28) = &input.device_last_modified_date {
         object
             .key("DeviceLastModifiedDate")
-            .instant(var_28, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_28, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

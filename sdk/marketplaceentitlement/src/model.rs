@@ -23,7 +23,7 @@ pub struct Entitlement {
     /// expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date
     /// is the date at which the customer will renew or cancel their contract. Customers who are opting
     /// to renew their contract will still have entitlements with an expiration date.</p>
-    pub expiration_date: std::option::Option<aws_smithy_types::Instant>,
+    pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Entitlement {
     /// <p>The product code for which the given entitlement applies. Product codes are provided by
@@ -52,7 +52,7 @@ impl Entitlement {
     /// expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date
     /// is the date at which the customer will renew or cancel their contract. Customers who are opting
     /// to renew their contract will still have entitlements with an expiration date.</p>
-    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
 }
@@ -77,7 +77,7 @@ pub mod entitlement {
         pub(crate) dimension: std::option::Option<std::string::String>,
         pub(crate) customer_identifier: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<crate::model::EntitlementValue>,
-        pub(crate) expiration_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The product code for which the given entitlement applies. Product codes are provided by
@@ -142,7 +142,7 @@ pub mod entitlement {
         /// expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date
         /// is the date at which the customer will renew or cancel their contract. Customers who are opting
         /// to renew their contract will still have entitlements with an expiration date.</p>
-        pub fn expiration_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_date = Some(input);
             self
         }
@@ -152,7 +152,7 @@ pub mod entitlement {
         /// to renew their contract will still have entitlements with an expiration date.</p>
         pub fn set_expiration_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiration_date = input;
             self
@@ -208,9 +208,9 @@ impl EntitlementValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
         if let EntitlementValue::BooleanValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`BooleanValue`](crate::model::EntitlementValue::BooleanValue).
@@ -221,9 +221,9 @@ impl EntitlementValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_double_value(&self) -> std::result::Result<&f64, &Self> {
         if let EntitlementValue::DoubleValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`DoubleValue`](crate::model::EntitlementValue::DoubleValue).
@@ -234,9 +234,9 @@ impl EntitlementValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_integer_value(&self) -> std::result::Result<&i32, &Self> {
         if let EntitlementValue::IntegerValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`IntegerValue`](crate::model::EntitlementValue::IntegerValue).
@@ -247,9 +247,9 @@ impl EntitlementValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let EntitlementValue::StringValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`StringValue`](crate::model::EntitlementValue::StringValue).

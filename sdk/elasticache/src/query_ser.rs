@@ -159,12 +159,12 @@ pub fn serialize_structure_crate_model_time_range_filter(
     #[allow(unused_mut)]
     let mut scope_48 = writer.prefix("StartTime");
     if let Some(var_49) = &input.start_time {
-        scope_48.instant(var_49, aws_smithy_types::instant::Format::DateTime);
+        scope_48.date_time(var_49, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_50 = writer.prefix("EndTime");
     if let Some(var_51) = &input.end_time {
-        scope_50.instant(var_51, aws_smithy_types::instant::Format::DateTime);
+        scope_50.date_time(var_51, aws_smithy_types::date_time::Format::DateTime)?;
     }
     Ok(())
 }

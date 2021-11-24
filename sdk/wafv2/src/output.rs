@@ -178,7 +178,7 @@ pub struct UpdateManagedRuleSetVersionExpiryDateOutput {
     pub expiring_version: std::option::Option<std::string::String>,
     /// <p>The time that the version will expire. </p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-    pub expiry_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub expiry_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub next_lock_token: std::option::Option<std::string::String>,
 }
@@ -189,7 +189,7 @@ impl UpdateManagedRuleSetVersionExpiryDateOutput {
     }
     /// <p>The time that the version will expire. </p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-    pub fn expiry_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiry_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiry_timestamp.as_ref()
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -213,7 +213,7 @@ pub mod update_managed_rule_set_version_expiry_date_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expiring_version: std::option::Option<std::string::String>,
-        pub(crate) expiry_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expiry_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) next_lock_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -232,7 +232,7 @@ pub mod update_managed_rule_set_version_expiry_date_output {
         }
         /// <p>The time that the version will expire. </p>
         /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-        pub fn expiry_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiry_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiry_timestamp = Some(input);
             self
         }
@@ -240,7 +240,7 @@ pub mod update_managed_rule_set_version_expiry_date_output {
         /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
         pub fn set_expiry_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiry_timestamp = input;
             self

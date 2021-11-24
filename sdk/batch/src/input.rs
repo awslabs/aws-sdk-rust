@@ -53,6 +53,7 @@ pub type CancelJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CancelJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelJob`](crate::operation::CancelJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -103,11 +104,14 @@ impl CancelJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -165,6 +169,7 @@ pub mod create_compute_environment_input {
         pub(crate) compute_environment_name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::CeType>,
         pub(crate) state: std::option::Option<crate::model::CeState>,
+        pub(crate) unmanagedv_cpus: std::option::Option<i32>,
         pub(crate) compute_resources: std::option::Option<crate::model::ComputeResource>,
         pub(crate) service_role: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -225,6 +230,30 @@ pub mod create_compute_environment_input {
         /// <code>minvCpus</code> value after instances become idle.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::CeState>) -> Self {
             self.state = input;
+            self
+        }
+        /// <p>The maximum number of vCPUs for an
+        /// unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new
+        /// share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
+        /// reserved.</p>
+        ///
+        /// <note>
+        /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>/</p>
+        /// </note>
+        pub fn unmanagedv_cpus(mut self, input: i32) -> Self {
+            self.unmanagedv_cpus = Some(input);
+            self
+        }
+        /// <p>The maximum number of vCPUs for an
+        /// unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new
+        /// share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
+        /// reserved.</p>
+        ///
+        /// <note>
+        /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>/</p>
+        /// </note>
+        pub fn set_unmanagedv_cpus(mut self, input: std::option::Option<i32>) -> Self {
+            self.unmanagedv_cpus = input;
             self
         }
         /// <p>Details about the compute resources managed by the compute environment. This parameter is required for managed
@@ -332,6 +361,7 @@ pub mod create_compute_environment_input {
                 compute_environment_name: self.compute_environment_name,
                 r#type: self.r#type,
                 state: self.state,
+                unmanagedv_cpus: self.unmanagedv_cpus.unwrap_or_default(),
                 compute_resources: self.compute_resources,
                 service_role: self.service_role,
                 tags: self.tags,
@@ -347,6 +377,7 @@ pub type CreateComputeEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRe
 impl CreateComputeEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`CreateComputeEnvironment`](crate::operation::CreateComputeEnvironment)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -400,11 +431,14 @@ impl CreateComputeEnvironmentInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -463,6 +497,7 @@ pub mod create_job_queue_input {
     pub struct Builder {
         pub(crate) job_queue_name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::JqState>,
+        pub(crate) scheduling_policy_arn: std::option::Option<std::string::String>,
         pub(crate) priority: std::option::Option<i32>,
         pub(crate) compute_environment_order:
             std::option::Option<std::vec::Vec<crate::model::ComputeEnvironmentOrder>>,
@@ -498,6 +533,33 @@ pub mod create_job_queue_input {
         /// finish.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::JqState>) -> Self {
             self.state = input;
+            self
+        }
+        /// <p>Amazon Resource Name (ARN) of the fair share scheduling
+        /// policy. If this parameter is specified, the job queue will use a fair share scheduling policy. If this parameter is
+        /// not specified, the job queue will use a first in, first out (FIFO) scheduling policy. Once a job queue is created,
+        /// the fair share scheduling policy can be replaced but not removed. The format is
+        /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+        /// </code>.
+        /// For example,
+        /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+        pub fn scheduling_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.scheduling_policy_arn = Some(input.into());
+            self
+        }
+        /// <p>Amazon Resource Name (ARN) of the fair share scheduling
+        /// policy. If this parameter is specified, the job queue will use a fair share scheduling policy. If this parameter is
+        /// not specified, the job queue will use a first in, first out (FIFO) scheduling policy. Once a job queue is created,
+        /// the fair share scheduling policy can be replaced but not removed. The format is
+        /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+        /// </code>.
+        /// For example,
+        /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+        pub fn set_scheduling_policy_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.scheduling_policy_arn = input;
             self
         }
         /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
@@ -597,6 +659,7 @@ pub mod create_job_queue_input {
             Ok(crate::input::CreateJobQueueInput {
                 job_queue_name: self.job_queue_name,
                 state: self.state,
+                scheduling_policy_arn: self.scheduling_policy_arn,
                 priority: self.priority.unwrap_or_default(),
                 compute_environment_order: self.compute_environment_order,
                 tags: self.tags,
@@ -611,6 +674,7 @@ pub type CreateJobQueueInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateJobQueueInput {
     /// Consumes the builder and constructs an Operation<[`CreateJobQueue`](crate::operation::CreateJobQueue)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -662,11 +726,14 @@ impl CreateJobQueueInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -717,6 +784,211 @@ impl CreateJobQueueInput {
     }
 }
 
+/// See [`CreateSchedulingPolicyInput`](crate::input::CreateSchedulingPolicyInput)
+pub mod create_scheduling_policy_input {
+    /// A builder for [`CreateSchedulingPolicyInput`](crate::input::CreateSchedulingPolicyInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) fairshare_policy: std::option::Option<crate::model::FairsharePolicy>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The name of the scheduling
+        /// policy. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the scheduling
+        /// policy. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The fair share policy of the scheduling
+        /// policy.</p>
+        pub fn fairshare_policy(mut self, input: crate::model::FairsharePolicy) -> Self {
+            self.fairshare_policy = Some(input);
+            self
+        }
+        /// <p>The fair share policy of the scheduling
+        /// policy.</p>
+        pub fn set_fairshare_policy(
+            mut self,
+            input: std::option::Option<crate::model::FairsharePolicy>,
+        ) -> Self {
+            self.fairshare_policy = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag
+        /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
+        /// Reference</i>.</p>
+        /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag
+        /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
+        /// Reference</i>.</p>
+        /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateSchedulingPolicyInput`](crate::input::CreateSchedulingPolicyInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateSchedulingPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateSchedulingPolicyInput {
+                name: self.name,
+                fairshare_policy: self.fairshare_policy,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateSchedulingPolicyInputOperationOutputAlias = crate::operation::CreateSchedulingPolicy;
+#[doc(hidden)]
+pub type CreateSchedulingPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateSchedulingPolicyInput {
+    /// Consumes the builder and constructs an Operation<[`CreateSchedulingPolicy`](crate::operation::CreateSchedulingPolicy)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateSchedulingPolicy,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CreateSchedulingPolicyInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/v1/createschedulingpolicy").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateSchedulingPolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateSchedulingPolicyInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_scheduling_policy(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateSchedulingPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateSchedulingPolicy",
+            "batch",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateSchedulingPolicyInput`](crate::input::CreateSchedulingPolicyInput)
+    pub fn builder() -> crate::input::create_scheduling_policy_input::Builder {
+        crate::input::create_scheduling_policy_input::Builder::default()
+    }
+}
+
 /// See [`DeleteComputeEnvironmentInput`](crate::input::DeleteComputeEnvironmentInput)
 pub mod delete_compute_environment_input {
     /// A builder for [`DeleteComputeEnvironmentInput`](crate::input::DeleteComputeEnvironmentInput)
@@ -760,6 +1032,7 @@ pub type DeleteComputeEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRe
 impl DeleteComputeEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteComputeEnvironment`](crate::operation::DeleteComputeEnvironment)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -813,11 +1086,14 @@ impl DeleteComputeEnvironmentInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -907,6 +1183,7 @@ pub type DeleteJobQueueInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteJobQueueInput {
     /// Consumes the builder and constructs an Operation<[`DeleteJobQueue`](crate::operation::DeleteJobQueue)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -958,11 +1235,14 @@ impl DeleteJobQueueInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1013,6 +1293,157 @@ impl DeleteJobQueueInput {
     }
 }
 
+/// See [`DeleteSchedulingPolicyInput`](crate::input::DeleteSchedulingPolicyInput)
+pub mod delete_scheduling_policy_input {
+    /// A builder for [`DeleteSchedulingPolicyInput`](crate::input::DeleteSchedulingPolicyInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the scheduling policy to
+        /// delete.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the scheduling policy to
+        /// delete.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteSchedulingPolicyInput`](crate::input::DeleteSchedulingPolicyInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteSchedulingPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteSchedulingPolicyInput { arn: self.arn })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteSchedulingPolicyInputOperationOutputAlias = crate::operation::DeleteSchedulingPolicy;
+#[doc(hidden)]
+pub type DeleteSchedulingPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteSchedulingPolicyInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteSchedulingPolicy`](crate::operation::DeleteSchedulingPolicy)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteSchedulingPolicy,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteSchedulingPolicyInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/v1/deleteschedulingpolicy").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteSchedulingPolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteSchedulingPolicyInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_scheduling_policy(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteSchedulingPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteSchedulingPolicy",
+            "batch",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteSchedulingPolicyInput`](crate::input::DeleteSchedulingPolicyInput)
+    pub fn builder() -> crate::input::delete_scheduling_policy_input::Builder {
+        crate::input::delete_scheduling_policy_input::Builder::default()
+    }
+}
+
 /// See [`DeregisterJobDefinitionInput`](crate::input::DeregisterJobDefinitionInput)
 pub mod deregister_job_definition_input {
     /// A builder for [`DeregisterJobDefinitionInput`](crate::input::DeregisterJobDefinitionInput)
@@ -1056,6 +1487,7 @@ pub type DeregisterJobDefinitionInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DeregisterJobDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterJobDefinition`](crate::operation::DeregisterJobDefinition)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1109,11 +1541,14 @@ impl DeregisterJobDefinitionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1263,6 +1698,7 @@ pub type DescribeComputeEnvironmentsInputOperationRetryAlias = aws_http::AwsErro
 impl DescribeComputeEnvironmentsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeComputeEnvironments`](crate::operation::DescribeComputeEnvironments)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1315,11 +1751,14 @@ impl DescribeComputeEnvironmentsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1501,6 +1940,7 @@ pub type DescribeJobDefinitionsInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl DescribeJobDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobDefinitions`](crate::operation::DescribeJobDefinitions)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1554,11 +1994,14 @@ impl DescribeJobDefinitionsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1705,6 +2148,7 @@ pub type DescribeJobQueuesInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl DescribeJobQueuesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobQueues`](crate::operation::DescribeJobQueues)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1756,11 +2200,14 @@ impl DescribeJobQueuesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1857,6 +2304,7 @@ pub type DescribeJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeJobsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobs`](crate::operation::DescribeJobs)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1907,11 +2355,14 @@ impl DescribeJobsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1959,6 +2410,167 @@ impl DescribeJobsInput {
     /// Creates a new builder-style object to manufacture [`DescribeJobsInput`](crate::input::DescribeJobsInput)
     pub fn builder() -> crate::input::describe_jobs_input::Builder {
         crate::input::describe_jobs_input::Builder::default()
+    }
+}
+
+/// See [`DescribeSchedulingPoliciesInput`](crate::input::DescribeSchedulingPoliciesInput)
+pub mod describe_scheduling_policies_input {
+    /// A builder for [`DescribeSchedulingPoliciesInput`](crate::input::DescribeSchedulingPoliciesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `arns`.
+        ///
+        /// To override the contents of this collection use [`set_arns`](Self::set_arns).
+        ///
+        /// <p>A list of up to 100 scheduling policy
+        /// Amazon Resource Name (ARN) entries.</p>
+        pub fn arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.arns.unwrap_or_default();
+            v.push(input.into());
+            self.arns = Some(v);
+            self
+        }
+        /// <p>A list of up to 100 scheduling policy
+        /// Amazon Resource Name (ARN) entries.</p>
+        pub fn set_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.arns = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeSchedulingPoliciesInput`](crate::input::DescribeSchedulingPoliciesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeSchedulingPoliciesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeSchedulingPoliciesInput { arns: self.arns })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeSchedulingPoliciesInputOperationOutputAlias =
+    crate::operation::DescribeSchedulingPolicies;
+#[doc(hidden)]
+pub type DescribeSchedulingPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeSchedulingPoliciesInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeSchedulingPolicies`](crate::operation::DescribeSchedulingPolicies)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeSchedulingPolicies,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeSchedulingPoliciesInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/v1/describeschedulingpolicies").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeSchedulingPoliciesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeSchedulingPoliciesInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_scheduling_policies(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeSchedulingPolicies::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeSchedulingPolicies",
+            "batch",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeSchedulingPoliciesInput`](crate::input::DescribeSchedulingPoliciesInput)
+    pub fn builder() -> crate::input::describe_scheduling_policies_input::Builder {
+        crate::input::describe_scheduling_policies_input::Builder::default()
     }
 }
 
@@ -2192,6 +2804,7 @@ pub type ListJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobs`](crate::operation::ListJobs)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2242,11 +2855,14 @@ impl ListJobsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2294,6 +2910,195 @@ impl ListJobsInput {
     }
 }
 
+/// See [`ListSchedulingPoliciesInput`](crate::input::ListSchedulingPoliciesInput)
+pub mod list_scheduling_policies_input {
+    /// A builder for [`ListSchedulingPoliciesInput`](crate::input::ListSchedulingPoliciesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The maximum number of results returned by <code>ListSchedulingPolicies</code> in paginated output. When this
+        /// parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single page
+        /// and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This value can be
+        /// between 1 and 100. If this parameter isn't used, then
+        /// <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value
+        /// if applicable.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results returned by <code>ListSchedulingPolicies</code> in paginated output. When this
+        /// parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single page
+        /// and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This value can be
+        /// between 1 and 100. If this parameter isn't used, then
+        /// <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value
+        /// if applicable.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListSchedulingPolicies</code> request
+        /// where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
+        /// from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
+        /// when there are no more results to return.</p>
+        /// <note>
+        /// <p>This token should be treated as an opaque identifier that's only used to
+        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// </note>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListSchedulingPolicies</code> request
+        /// where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
+        /// from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
+        /// when there are no more results to return.</p>
+        /// <note>
+        /// <p>This token should be treated as an opaque identifier that's only used to
+        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// </note>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSchedulingPoliciesInput`](crate::input::ListSchedulingPoliciesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListSchedulingPoliciesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListSchedulingPoliciesInput {
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListSchedulingPoliciesInputOperationOutputAlias = crate::operation::ListSchedulingPolicies;
+#[doc(hidden)]
+pub type ListSchedulingPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListSchedulingPoliciesInput {
+    /// Consumes the builder and constructs an Operation<[`ListSchedulingPolicies`](crate::operation::ListSchedulingPolicies)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListSchedulingPolicies,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListSchedulingPoliciesInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/v1/listschedulingpolicies").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListSchedulingPoliciesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListSchedulingPoliciesInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_scheduling_policies(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListSchedulingPolicies::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListSchedulingPolicies",
+            "batch",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListSchedulingPoliciesInput`](crate::input::ListSchedulingPoliciesInput)
+    pub fn builder() -> crate::input::list_scheduling_policies_input::Builder {
+        crate::input::list_scheduling_policies_input::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
 pub mod list_tags_for_resource_input {
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
@@ -2303,14 +3108,14 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, and job
-        /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
+        /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, and job
-        /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
+        /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2335,6 +3140,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2396,11 +3202,14 @@ impl ListTagsForResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2454,6 +3263,7 @@ pub mod register_job_definition_input {
         pub(crate) parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) scheduling_priority: std::option::Option<i32>,
         pub(crate) container_properties: std::option::Option<crate::model::ContainerProperties>,
         pub(crate) node_properties: std::option::Option<crate::model::NodeProperties>,
         pub(crate) retry_strategy: std::option::Option<crate::model::RetryStrategy>,
@@ -2529,6 +3339,24 @@ pub mod register_job_definition_input {
             >,
         ) -> Self {
             self.parameters = input;
+            self
+        }
+        /// <p>The scheduling priority for jobs that are
+        /// submitted with this job definition. This will only affect jobs in job queues with a fair share policy. Jobs with a
+        /// higher scheduling priority will be scheduled before jobs with a lower scheduling priority.</p>
+        ///
+        /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
+        pub fn scheduling_priority(mut self, input: i32) -> Self {
+            self.scheduling_priority = Some(input);
+            self
+        }
+        /// <p>The scheduling priority for jobs that are
+        /// submitted with this job definition. This will only affect jobs in job queues with a fair share policy. Jobs with a
+        /// higher scheduling priority will be scheduled before jobs with a lower scheduling priority.</p>
+        ///
+        /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
+        pub fn set_scheduling_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.scheduling_priority = input;
             self
         }
         /// <p>An object with various properties specific to single-node container-based jobs. If the job definition's
@@ -2696,6 +3524,7 @@ pub mod register_job_definition_input {
                 job_definition_name: self.job_definition_name,
                 r#type: self.r#type,
                 parameters: self.parameters,
+                scheduling_priority: self.scheduling_priority.unwrap_or_default(),
                 container_properties: self.container_properties,
                 node_properties: self.node_properties,
                 retry_strategy: self.retry_strategy,
@@ -2714,6 +3543,7 @@ pub type RegisterJobDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl RegisterJobDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`RegisterJobDefinition`](crate::operation::RegisterJobDefinition)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2767,11 +3597,14 @@ impl RegisterJobDefinitionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2830,6 +3663,8 @@ pub mod submit_job_input {
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_queue: std::option::Option<std::string::String>,
+        pub(crate) share_identifier: std::option::Option<std::string::String>,
+        pub(crate) scheduling_priority_override: std::option::Option<i32>,
         pub(crate) array_properties: std::option::Option<crate::model::ArrayProperties>,
         pub(crate) depends_on: std::option::Option<std::vec::Vec<crate::model::JobDependency>>,
         pub(crate) job_definition: std::option::Option<std::string::String>,
@@ -2866,6 +3701,41 @@ pub mod submit_job_input {
         /// <p>The job queue where the job is submitted. You can specify either the name or the Amazon Resource Name (ARN) of the queue.</p>
         pub fn set_job_queue(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_queue = input;
+            self
+        }
+        /// <p>The share identifier for the
+        /// job.</p>
+        pub fn share_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.share_identifier = Some(input.into());
+            self
+        }
+        /// <p>The share identifier for the
+        /// job.</p>
+        pub fn set_share_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.share_identifier = input;
+            self
+        }
+        /// <p>The scheduling priority for the job. This
+        /// will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be
+        /// scheduled before jobs with a lower scheduling priority. This will override any scheduling priority in the job
+        /// definition.</p>
+        ///
+        /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
+        pub fn scheduling_priority_override(mut self, input: i32) -> Self {
+            self.scheduling_priority_override = Some(input);
+            self
+        }
+        /// <p>The scheduling priority for the job. This
+        /// will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be
+        /// scheduled before jobs with a lower scheduling priority. This will override any scheduling priority in the job
+        /// definition.</p>
+        ///
+        /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
+        pub fn set_scheduling_priority_override(mut self, input: std::option::Option<i32>) -> Self {
+            self.scheduling_priority_override = input;
             self
         }
         /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and
@@ -3092,6 +3962,8 @@ pub mod submit_job_input {
             Ok(crate::input::SubmitJobInput {
                 job_name: self.job_name,
                 job_queue: self.job_queue,
+                share_identifier: self.share_identifier,
+                scheduling_priority_override: self.scheduling_priority_override.unwrap_or_default(),
                 array_properties: self.array_properties,
                 depends_on: self.depends_on,
                 job_definition: self.job_definition,
@@ -3113,6 +3985,7 @@ pub type SubmitJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl SubmitJobInput {
     /// Consumes the builder and constructs an Operation<[`SubmitJob`](crate::operation::SubmitJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3163,11 +4036,14 @@ impl SubmitJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3228,14 +4104,14 @@ pub mod tag_resource_input {
         >,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, and job
-        /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
+        /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, and job
-        /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
+        /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3290,6 +4166,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3356,11 +4233,14 @@ impl TagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3466,6 +4346,7 @@ pub type TerminateJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TerminateJobInput {
     /// Consumes the builder and constructs an Operation<[`TerminateJob`](crate::operation::TerminateJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3516,11 +4397,14 @@ impl TerminateJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3581,14 +4465,14 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, and job
-        /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
+        /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, and job
-        /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
+        /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3633,6 +4517,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3666,13 +4551,17 @@ impl UntagResourceInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::UntagResourceInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_4) = &_input.tag_keys {
                 for inner_5 in inner_4 {
                     query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_5));
                 }
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -3682,7 +4571,7 @@ impl UntagResourceInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3703,11 +4592,14 @@ impl UntagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3758,6 +4650,7 @@ pub mod update_compute_environment_input {
     pub struct Builder {
         pub(crate) compute_environment: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::CeState>,
+        pub(crate) unmanagedv_cpus: std::option::Option<i32>,
         pub(crate) compute_resources: std::option::Option<crate::model::ComputeResourceUpdate>,
         pub(crate) service_role: std::option::Option<std::string::String>,
     }
@@ -3799,6 +4692,24 @@ pub mod update_compute_environment_input {
         /// <code>minvCpus</code> value after instances become idle.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::CeState>) -> Self {
             self.state = input;
+            self
+        }
+        /// <p>The maximum number of vCPUs expected to
+        /// be used for an unmanaged compute environment. This parameter should not be specified for a managed compute
+        /// environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share
+        /// identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
+        /// reserved.</p>
+        pub fn unmanagedv_cpus(mut self, input: i32) -> Self {
+            self.unmanagedv_cpus = Some(input);
+            self
+        }
+        /// <p>The maximum number of vCPUs expected to
+        /// be used for an unmanaged compute environment. This parameter should not be specified for a managed compute
+        /// environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share
+        /// identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
+        /// reserved.</p>
+        pub fn set_unmanagedv_cpus(mut self, input: std::option::Option<i32>) -> Self {
+            self.unmanagedv_cpus = input;
             self
         }
         /// <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment.
@@ -3868,6 +4779,7 @@ pub mod update_compute_environment_input {
             Ok(crate::input::UpdateComputeEnvironmentInput {
                 compute_environment: self.compute_environment,
                 state: self.state,
+                unmanagedv_cpus: self.unmanagedv_cpus.unwrap_or_default(),
                 compute_resources: self.compute_resources,
                 service_role: self.service_role,
             })
@@ -3882,6 +4794,7 @@ pub type UpdateComputeEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRe
 impl UpdateComputeEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateComputeEnvironment`](crate::operation::UpdateComputeEnvironment)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3935,11 +4848,14 @@ impl UpdateComputeEnvironmentInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3998,6 +4914,7 @@ pub mod update_job_queue_input {
     pub struct Builder {
         pub(crate) job_queue: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::JqState>,
+        pub(crate) scheduling_policy_arn: std::option::Option<std::string::String>,
         pub(crate) priority: std::option::Option<i32>,
         pub(crate) compute_environment_order:
             std::option::Option<std::vec::Vec<crate::model::ComputeEnvironmentOrder>>,
@@ -4025,6 +4942,29 @@ pub mod update_job_queue_input {
         /// queue can finish.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::JqState>) -> Self {
             self.state = input;
+            self
+        }
+        /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can
+        /// be replaced but not removed. The format is
+        /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+        /// </code>.
+        /// For example,
+        /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+        pub fn scheduling_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.scheduling_policy_arn = Some(input.into());
+            self
+        }
+        /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can
+        /// be replaced but not removed. The format is
+        /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+        /// </code>.
+        /// For example,
+        /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+        pub fn set_scheduling_policy_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.scheduling_policy_arn = input;
             self
         }
         /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
@@ -4095,6 +5035,7 @@ pub mod update_job_queue_input {
             Ok(crate::input::UpdateJobQueueInput {
                 job_queue: self.job_queue,
                 state: self.state,
+                scheduling_policy_arn: self.scheduling_policy_arn,
                 priority: self.priority.unwrap_or_default(),
                 compute_environment_order: self.compute_environment_order,
             })
@@ -4108,6 +5049,7 @@ pub type UpdateJobQueueInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateJobQueueInput {
     /// Consumes the builder and constructs an Operation<[`UpdateJobQueue`](crate::operation::UpdateJobQueue)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4159,11 +5101,14 @@ impl UpdateJobQueueInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4214,6 +5159,204 @@ impl UpdateJobQueueInput {
     }
 }
 
+/// See [`UpdateSchedulingPolicyInput`](crate::input::UpdateSchedulingPolicyInput)
+pub mod update_scheduling_policy_input {
+    /// A builder for [`UpdateSchedulingPolicyInput`](crate::input::UpdateSchedulingPolicyInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) fairshare_policy: std::option::Option<crate::model::FairsharePolicy>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The fair share
+        /// policy.</p>
+        pub fn fairshare_policy(mut self, input: crate::model::FairsharePolicy) -> Self {
+            self.fairshare_policy = Some(input);
+            self
+        }
+        /// <p>The fair share
+        /// policy.</p>
+        pub fn set_fairshare_policy(
+            mut self,
+            input: std::option::Option<crate::model::FairsharePolicy>,
+        ) -> Self {
+            self.fairshare_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateSchedulingPolicyInput`](crate::input::UpdateSchedulingPolicyInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateSchedulingPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateSchedulingPolicyInput {
+                arn: self.arn,
+                fairshare_policy: self.fairshare_policy,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateSchedulingPolicyInputOperationOutputAlias = crate::operation::UpdateSchedulingPolicy;
+#[doc(hidden)]
+pub type UpdateSchedulingPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateSchedulingPolicyInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateSchedulingPolicy`](crate::operation::UpdateSchedulingPolicy)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateSchedulingPolicy,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateSchedulingPolicyInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/v1/updateschedulingpolicy").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateSchedulingPolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateSchedulingPolicyInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_scheduling_policy(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateSchedulingPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateSchedulingPolicy",
+            "batch",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateSchedulingPolicyInput`](crate::input::UpdateSchedulingPolicyInput)
+    pub fn builder() -> crate::input::update_scheduling_policy_input::Builder {
+        crate::input::update_scheduling_policy_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateSchedulingPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The fair share
+    /// policy.</p>
+    pub fairshare_policy: std::option::Option<crate::model::FairsharePolicy>,
+}
+impl UpdateSchedulingPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The fair share
+    /// policy.</p>
+    pub fn fairshare_policy(&self) -> std::option::Option<&crate::model::FairsharePolicy> {
+        self.fairshare_policy.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateSchedulingPolicyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateSchedulingPolicyInput");
+        formatter.field("arn", &self.arn);
+        formatter.field("fairshare_policy", &self.fairshare_policy);
+        formatter.finish()
+    }
+}
+
 /// <p>Contains the parameters for <code>UpdateJobQueue</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4224,6 +5367,13 @@ pub struct UpdateJobQueueInput {
     /// jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the
     /// queue can finish.</p>
     pub state: std::option::Option<crate::model::JqState>,
+    /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can
+    /// be replaced but not removed. The format is
+    /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+    /// </code>.
+    /// For example,
+    /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+    pub scheduling_policy_arn: std::option::Option<std::string::String>,
     /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
     /// <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is
     /// determined in descending order, for example, a job queue with a priority value of <code>10</code> is given scheduling
@@ -4254,6 +5404,15 @@ impl UpdateJobQueueInput {
     pub fn state(&self) -> std::option::Option<&crate::model::JqState> {
         self.state.as_ref()
     }
+    /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can
+    /// be replaced but not removed. The format is
+    /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+    /// </code>.
+    /// For example,
+    /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+    pub fn scheduling_policy_arn(&self) -> std::option::Option<&str> {
+        self.scheduling_policy_arn.as_deref()
+    }
     /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
     /// <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is
     /// determined in descending order, for example, a job queue with a priority value of <code>10</code> is given scheduling
@@ -4283,6 +5442,7 @@ impl std::fmt::Debug for UpdateJobQueueInput {
         let mut formatter = f.debug_struct("UpdateJobQueueInput");
         formatter.field("job_queue", &self.job_queue);
         formatter.field("state", &self.state);
+        formatter.field("scheduling_policy_arn", &self.scheduling_policy_arn);
         formatter.field("priority", &self.priority);
         formatter.field("compute_environment_order", &self.compute_environment_order);
         formatter.finish()
@@ -4305,6 +5465,12 @@ pub struct UpdateComputeEnvironmentInput {
     /// compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
     /// <code>minvCpus</code> value after instances become idle.</p>
     pub state: std::option::Option<crate::model::CeState>,
+    /// <p>The maximum number of vCPUs expected to
+    /// be used for an unmanaged compute environment. This parameter should not be specified for a managed compute
+    /// environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share
+    /// identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
+    /// reserved.</p>
+    pub unmanagedv_cpus: i32,
     /// <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment.
     /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
     /// Environments</a> in the <i>Batch User Guide</i>.</p>
@@ -4344,6 +5510,14 @@ impl UpdateComputeEnvironmentInput {
     pub fn state(&self) -> std::option::Option<&crate::model::CeState> {
         self.state.as_ref()
     }
+    /// <p>The maximum number of vCPUs expected to
+    /// be used for an unmanaged compute environment. This parameter should not be specified for a managed compute
+    /// environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share
+    /// identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
+    /// reserved.</p>
+    pub fn unmanagedv_cpus(&self) -> i32 {
+        self.unmanagedv_cpus
+    }
     /// <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment.
     /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
     /// Environments</a> in the <i>Batch User Guide</i>.</p>
@@ -4375,6 +5549,7 @@ impl std::fmt::Debug for UpdateComputeEnvironmentInput {
         let mut formatter = f.debug_struct("UpdateComputeEnvironmentInput");
         formatter.field("compute_environment", &self.compute_environment);
         formatter.field("state", &self.state);
+        formatter.field("unmanagedv_cpus", &self.unmanagedv_cpus);
         formatter.field("compute_resources", &self.compute_resources);
         formatter.field("service_role", &self.service_role);
         formatter.finish()
@@ -4385,15 +5560,15 @@ impl std::fmt::Debug for UpdateComputeEnvironmentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, and job
-    /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
+    /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, and job
-    /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
+    /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -4447,8 +5622,8 @@ impl std::fmt::Debug for TerminateJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, and job
-    /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
+    /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags that you apply to the resource to help you categorize and organize your resources. Each tag consists of
     /// a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
@@ -4457,8 +5632,8 @@ pub struct TagResourceInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, and job
-    /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
+    /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -4490,6 +5665,16 @@ pub struct SubmitJobInput {
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The job queue where the job is submitted. You can specify either the name or the Amazon Resource Name (ARN) of the queue.</p>
     pub job_queue: std::option::Option<std::string::String>,
+    /// <p>The share identifier for the
+    /// job.</p>
+    pub share_identifier: std::option::Option<std::string::String>,
+    /// <p>The scheduling priority for the job. This
+    /// will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be
+    /// scheduled before jobs with a lower scheduling priority. This will override any scheduling priority in the job
+    /// definition.</p>
+    ///
+    /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
+    pub scheduling_priority_override: i32,
     /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and
     /// 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the
     /// <i>Batch User Guide</i>.</p>
@@ -4553,6 +5738,20 @@ impl SubmitJobInput {
     /// <p>The job queue where the job is submitted. You can specify either the name or the Amazon Resource Name (ARN) of the queue.</p>
     pub fn job_queue(&self) -> std::option::Option<&str> {
         self.job_queue.as_deref()
+    }
+    /// <p>The share identifier for the
+    /// job.</p>
+    pub fn share_identifier(&self) -> std::option::Option<&str> {
+        self.share_identifier.as_deref()
+    }
+    /// <p>The scheduling priority for the job. This
+    /// will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be
+    /// scheduled before jobs with a lower scheduling priority. This will override any scheduling priority in the job
+    /// definition.</p>
+    ///
+    /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
+    pub fn scheduling_priority_override(&self) -> i32 {
+        self.scheduling_priority_override
     }
     /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and
     /// 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the
@@ -4637,6 +5836,11 @@ impl std::fmt::Debug for SubmitJobInput {
         let mut formatter = f.debug_struct("SubmitJobInput");
         formatter.field("job_name", &self.job_name);
         formatter.field("job_queue", &self.job_queue);
+        formatter.field("share_identifier", &self.share_identifier);
+        formatter.field(
+            "scheduling_priority_override",
+            &self.scheduling_priority_override,
+        );
         formatter.field("array_properties", &self.array_properties);
         formatter.field("depends_on", &self.depends_on);
         formatter.field("job_definition", &self.job_definition);
@@ -4669,6 +5873,12 @@ pub struct RegisterJobDefinitionInput {
     /// from the job definition.</p>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The scheduling priority for jobs that are
+    /// submitted with this job definition. This will only affect jobs in job queues with a fair share policy. Jobs with a
+    /// higher scheduling priority will be scheduled before jobs with a lower scheduling priority.</p>
+    ///
+    /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
+    pub scheduling_priority: i32,
     /// <p>An object with various properties specific to single-node container-based jobs. If the job definition's
     /// <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code>
     /// or <code>nodeProperties</code>.</p>
@@ -4731,6 +5941,14 @@ impl RegisterJobDefinitionInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.parameters.as_ref()
+    }
+    /// <p>The scheduling priority for jobs that are
+    /// submitted with this job definition. This will only affect jobs in job queues with a fair share policy. Jobs with a
+    /// higher scheduling priority will be scheduled before jobs with a lower scheduling priority.</p>
+    ///
+    /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
+    pub fn scheduling_priority(&self) -> i32 {
+        self.scheduling_priority
     }
     /// <p>An object with various properties specific to single-node container-based jobs. If the job definition's
     /// <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code>
@@ -4796,6 +6014,7 @@ impl std::fmt::Debug for RegisterJobDefinitionInput {
         formatter.field("job_definition_name", &self.job_definition_name);
         formatter.field("r#type", &self.r#type);
         formatter.field("parameters", &self.parameters);
+        formatter.field("scheduling_priority", &self.scheduling_priority);
         formatter.field("container_properties", &self.container_properties);
         formatter.field("node_properties", &self.node_properties);
         formatter.field("retry_strategy", &self.retry_strategy);
@@ -4811,13 +6030,13 @@ impl std::fmt::Debug for RegisterJobDefinitionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, and job
-    /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
+    /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, and job
-    /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
+    /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -4826,6 +6045,60 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListSchedulingPoliciesInput {
+    /// <p>The maximum number of results returned by <code>ListSchedulingPolicies</code> in paginated output. When this
+    /// parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single page
+    /// and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
+    /// another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This value can be
+    /// between 1 and 100. If this parameter isn't used, then
+    /// <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value
+    /// if applicable.</p>
+    pub max_results: i32,
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListSchedulingPolicies</code> request
+    /// where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
+    /// from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
+    /// when there are no more results to return.</p>
+    /// <note>
+    /// <p>This token should be treated as an opaque identifier that's only used to
+    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSchedulingPoliciesInput {
+    /// <p>The maximum number of results returned by <code>ListSchedulingPolicies</code> in paginated output. When this
+    /// parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single page
+    /// and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
+    /// another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This value can be
+    /// between 1 and 100. If this parameter isn't used, then
+    /// <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value
+    /// if applicable.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListSchedulingPolicies</code> request
+    /// where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
+    /// from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
+    /// when there are no more results to return.</p>
+    /// <note>
+    /// <p>This token should be treated as an opaque identifier that's only used to
+    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListSchedulingPoliciesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListSchedulingPoliciesInput");
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }
@@ -4995,6 +6268,29 @@ impl std::fmt::Debug for ListJobsInput {
         formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &self.next_token);
         formatter.field("filters", &self.filters);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeSchedulingPoliciesInput {
+    /// <p>A list of up to 100 scheduling policy
+    /// Amazon Resource Name (ARN) entries.</p>
+    pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeSchedulingPoliciesInput {
+    /// <p>A list of up to 100 scheduling policy
+    /// Amazon Resource Name (ARN) entries.</p>
+    pub fn arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.arns.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeSchedulingPoliciesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeSchedulingPoliciesInput");
+        formatter.field("arns", &self.arns);
         formatter.finish()
     }
 }
@@ -5242,6 +6538,29 @@ impl std::fmt::Debug for DeregisterJobDefinitionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteSchedulingPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the scheduling policy to
+    /// delete.</p>
+    pub arn: std::option::Option<std::string::String>,
+}
+impl DeleteSchedulingPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the scheduling policy to
+    /// delete.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteSchedulingPolicyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteSchedulingPolicyInput");
+        formatter.field("arn", &self.arn);
+        formatter.finish()
+    }
+}
+
 /// <p>Contains the parameters for <code>DeleteJobQueue</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5284,6 +6603,55 @@ impl std::fmt::Debug for DeleteComputeEnvironmentInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateSchedulingPolicyInput {
+    /// <p>The name of the scheduling
+    /// policy. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The fair share policy of the scheduling
+    /// policy.</p>
+    pub fairshare_policy: std::option::Option<crate::model::FairsharePolicy>,
+    /// <p>The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag
+    /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
+    /// Reference</i>.</p>
+    /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateSchedulingPolicyInput {
+    /// <p>The name of the scheduling
+    /// policy. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The fair share policy of the scheduling
+    /// policy.</p>
+    pub fn fairshare_policy(&self) -> std::option::Option<&crate::model::FairsharePolicy> {
+        self.fairshare_policy.as_ref()
+    }
+    /// <p>The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag
+    /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
+    /// Reference</i>.</p>
+    /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateSchedulingPolicyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateSchedulingPolicyInput");
+        formatter.field("name", &self.name);
+        formatter.field("fairshare_policy", &self.fairshare_policy);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
 /// <p>Contains the parameters for <code>CreateJobQueue</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5295,6 +6663,15 @@ pub struct CreateJobQueueInput {
     /// job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can
     /// finish.</p>
     pub state: std::option::Option<crate::model::JqState>,
+    /// <p>Amazon Resource Name (ARN) of the fair share scheduling
+    /// policy. If this parameter is specified, the job queue will use a fair share scheduling policy. If this parameter is
+    /// not specified, the job queue will use a first in, first out (FIFO) scheduling policy. Once a job queue is created,
+    /// the fair share scheduling policy can be replaced but not removed. The format is
+    /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+    /// </code>.
+    /// For example,
+    /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+    pub scheduling_policy_arn: std::option::Option<std::string::String>,
     /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
     /// <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is
     /// determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling
@@ -5330,6 +6707,17 @@ impl CreateJobQueueInput {
     /// finish.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::JqState> {
         self.state.as_ref()
+    }
+    /// <p>Amazon Resource Name (ARN) of the fair share scheduling
+    /// policy. If this parameter is specified, the job queue will use a fair share scheduling policy. If this parameter is
+    /// not specified, the job queue will use a first in, first out (FIFO) scheduling policy. Once a job queue is created,
+    /// the fair share scheduling policy can be replaced but not removed. The format is
+    /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+    /// </code>.
+    /// For example,
+    /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+    pub fn scheduling_policy_arn(&self) -> std::option::Option<&str> {
+        self.scheduling_policy_arn.as_deref()
     }
     /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
     /// <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is
@@ -5369,6 +6757,7 @@ impl std::fmt::Debug for CreateJobQueueInput {
         let mut formatter = f.debug_struct("CreateJobQueueInput");
         formatter.field("job_queue_name", &self.job_queue_name);
         formatter.field("state", &self.state);
+        formatter.field("scheduling_policy_arn", &self.scheduling_policy_arn);
         formatter.field("priority", &self.priority);
         formatter.field("compute_environment_order", &self.compute_environment_order);
         formatter.field("tags", &self.tags);
@@ -5397,6 +6786,15 @@ pub struct CreateComputeEnvironmentInput {
     /// compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
     /// <code>minvCpus</code> value after instances become idle.</p>
     pub state: std::option::Option<crate::model::CeState>,
+    /// <p>The maximum number of vCPUs for an
+    /// unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new
+    /// share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
+    /// reserved.</p>
+    ///
+    /// <note>
+    /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>/</p>
+    /// </note>
+    pub unmanagedv_cpus: i32,
     /// <p>Details about the compute resources managed by the compute environment. This parameter is required for managed
     /// compute environments. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
     pub compute_resources: std::option::Option<crate::model::ComputeResource>,
@@ -5452,6 +6850,17 @@ impl CreateComputeEnvironmentInput {
     pub fn state(&self) -> std::option::Option<&crate::model::CeState> {
         self.state.as_ref()
     }
+    /// <p>The maximum number of vCPUs for an
+    /// unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new
+    /// share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
+    /// reserved.</p>
+    ///
+    /// <note>
+    /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>/</p>
+    /// </note>
+    pub fn unmanagedv_cpus(&self) -> i32 {
+        self.unmanagedv_cpus
+    }
     /// <p>Details about the compute resources managed by the compute environment. This parameter is required for managed
     /// compute environments. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
     pub fn compute_resources(&self) -> std::option::Option<&crate::model::ComputeResource> {
@@ -5497,6 +6906,7 @@ impl std::fmt::Debug for CreateComputeEnvironmentInput {
         formatter.field("compute_environment_name", &self.compute_environment_name);
         formatter.field("r#type", &self.r#type);
         formatter.field("state", &self.state);
+        formatter.field("unmanagedv_cpus", &self.unmanagedv_cpus);
         formatter.field("compute_resources", &self.compute_resources);
         formatter.field("service_role", &self.service_role);
         formatter.field("tags", &self.tags);

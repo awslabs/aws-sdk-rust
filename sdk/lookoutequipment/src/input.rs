@@ -106,6 +106,7 @@ pub type CreateDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataset`](crate::operation::CreateDataset)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -164,11 +165,14 @@ impl CreateDatasetInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -427,6 +431,7 @@ pub type CreateInferenceSchedulerInputOperationRetryAlias = aws_http::AwsErrorRe
 impl CreateInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`CreateInferenceScheduler`](crate::operation::CreateInferenceScheduler)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -488,11 +493,14 @@ impl CreateInferenceSchedulerInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -555,10 +563,10 @@ pub mod create_model_input {
         pub(crate) labels_input_configuration:
             std::option::Option<crate::model::LabelsInputConfiguration>,
         pub(crate) client_token: std::option::Option<std::string::String>,
-        pub(crate) training_data_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) training_data_end_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) evaluation_data_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) evaluation_data_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) training_data_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) training_data_end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) evaluation_data_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) evaluation_data_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) data_pre_processing_configuration:
             std::option::Option<crate::model::DataPreProcessingConfiguration>,
@@ -632,7 +640,7 @@ pub mod create_model_input {
         }
         /// <p>Indicates the time reference in the dataset that should be used to begin the subset of
         /// training data for the ML model. </p>
-        pub fn training_data_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn training_data_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.training_data_start_time = Some(input);
             self
         }
@@ -640,14 +648,14 @@ pub mod create_model_input {
         /// training data for the ML model. </p>
         pub fn set_training_data_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.training_data_start_time = input;
             self
         }
         /// <p>Indicates the time reference in the dataset that should be used to end the subset of
         /// training data for the ML model. </p>
-        pub fn training_data_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn training_data_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.training_data_end_time = Some(input);
             self
         }
@@ -655,14 +663,14 @@ pub mod create_model_input {
         /// training data for the ML model. </p>
         pub fn set_training_data_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.training_data_end_time = input;
             self
         }
         /// <p>Indicates the time reference in the dataset that should be used to begin the subset of
         /// evaluation data for the ML model. </p>
-        pub fn evaluation_data_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn evaluation_data_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.evaluation_data_start_time = Some(input);
             self
         }
@@ -670,14 +678,14 @@ pub mod create_model_input {
         /// evaluation data for the ML model. </p>
         pub fn set_evaluation_data_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.evaluation_data_start_time = input;
             self
         }
         /// <p> Indicates the time reference in the dataset that should be used to end the subset of
         /// evaluation data for the ML model. </p>
-        pub fn evaluation_data_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn evaluation_data_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.evaluation_data_end_time = Some(input);
             self
         }
@@ -685,7 +693,7 @@ pub mod create_model_input {
         /// evaluation data for the ML model. </p>
         pub fn set_evaluation_data_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.evaluation_data_end_time = input;
             self
@@ -816,6 +824,7 @@ pub type CreateModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateModelInput {
     /// Consumes the builder and constructs an Operation<[`CreateModel`](crate::operation::CreateModel)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -874,11 +883,14 @@ impl CreateModelInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -968,6 +980,7 @@ pub type DeleteDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1023,11 +1036,14 @@ impl DeleteDatasetInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1121,6 +1137,7 @@ pub type DeleteInferenceSchedulerInputOperationRetryAlias = aws_http::AwsErrorRe
 impl DeleteInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInferenceScheduler`](crate::operation::DeleteInferenceScheduler)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1179,11 +1196,14 @@ impl DeleteInferenceSchedulerInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1273,6 +1293,7 @@ pub type DeleteModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteModelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteModel`](crate::operation::DeleteModel)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1328,11 +1349,14 @@ impl DeleteModelInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1423,6 +1447,7 @@ pub type DescribeDataIngestionJobInputOperationRetryAlias = aws_http::AwsErrorRe
 impl DescribeDataIngestionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataIngestionJob`](crate::operation::DescribeDataIngestionJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1481,11 +1506,14 @@ impl DescribeDataIngestionJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1575,6 +1603,7 @@ pub type DescribeDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl DescribeDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataset`](crate::operation::DescribeDataset)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1631,11 +1660,14 @@ impl DescribeDatasetInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1729,6 +1761,7 @@ pub type DescribeInferenceSchedulerInputOperationRetryAlias = aws_http::AwsError
 impl DescribeInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInferenceScheduler`](crate::operation::DescribeInferenceScheduler)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1787,11 +1820,14 @@ impl DescribeInferenceSchedulerInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1881,6 +1917,7 @@ pub type DescribeModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeModelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeModel`](crate::operation::DescribeModel)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1936,11 +1973,14 @@ impl DescribeModelInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2071,6 +2111,7 @@ pub type ListDataIngestionJobsInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl ListDataIngestionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListDataIngestionJobs`](crate::operation::ListDataIngestionJobs)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2129,11 +2170,14 @@ impl ListDataIngestionJobsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2252,6 +2296,7 @@ pub type ListDatasetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListDatasetsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasets`](crate::operation::ListDatasets)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2307,11 +2352,14 @@ impl ListDatasetsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2371,8 +2419,8 @@ pub mod list_inference_executions_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
-        pub(crate) data_start_time_after: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) data_end_time_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) data_start_time_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) data_end_time_before: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::InferenceExecutionStatus>,
     }
     impl Builder {
@@ -2413,7 +2461,7 @@ pub mod list_inference_executions_input {
         }
         /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the
         /// inference execution. </p>
-        pub fn data_start_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn data_start_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.data_start_time_after = Some(input);
             self
         }
@@ -2421,14 +2469,14 @@ pub mod list_inference_executions_input {
         /// inference execution. </p>
         pub fn set_data_start_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.data_start_time_after = input;
             self
         }
         /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the
         /// inference execution. </p>
-        pub fn data_end_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn data_end_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.data_end_time_before = Some(input);
             self
         }
@@ -2436,7 +2484,7 @@ pub mod list_inference_executions_input {
         /// inference execution. </p>
         pub fn set_data_end_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.data_end_time_before = input;
             self
@@ -2480,6 +2528,7 @@ pub type ListInferenceExecutionsInputOperationRetryAlias = aws_http::AwsErrorRet
 impl ListInferenceExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListInferenceExecutions`](crate::operation::ListInferenceExecutions)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2538,11 +2587,14 @@ impl ListInferenceExecutionsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2677,6 +2729,7 @@ pub type ListInferenceSchedulersInputOperationRetryAlias = aws_http::AwsErrorRet
 impl ListInferenceSchedulersInput {
     /// Consumes the builder and constructs an Operation<[`ListInferenceSchedulers`](crate::operation::ListInferenceSchedulers)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2735,11 +2788,14 @@ impl ListInferenceSchedulersInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2885,6 +2941,7 @@ pub type ListModelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListModelsInput {
     /// Consumes the builder and constructs an Operation<[`ListModels`](crate::operation::ListModels)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2940,11 +2997,14 @@ impl ListModelsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3036,6 +3096,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3094,11 +3155,14 @@ impl ListTagsForResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3237,6 +3301,7 @@ pub type StartDataIngestionJobInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl StartDataIngestionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartDataIngestionJob`](crate::operation::StartDataIngestionJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -3298,11 +3363,14 @@ impl StartDataIngestionJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3396,6 +3464,7 @@ pub type StartInferenceSchedulerInputOperationRetryAlias = aws_http::AwsErrorRet
 impl StartInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`StartInferenceScheduler`](crate::operation::StartInferenceScheduler)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3454,11 +3523,14 @@ impl StartInferenceSchedulerInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3551,6 +3623,7 @@ pub type StopInferenceSchedulerInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl StopInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`StopInferenceScheduler`](crate::operation::StopInferenceScheduler)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3609,11 +3682,14 @@ impl StopInferenceSchedulerInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3728,6 +3804,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3783,11 +3860,14 @@ impl TagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3900,6 +3980,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3955,11 +4036,14 @@ impl UntagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4152,6 +4236,7 @@ pub type UpdateInferenceSchedulerInputOperationRetryAlias = aws_http::AwsErrorRe
 impl UpdateInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInferenceScheduler`](crate::operation::UpdateInferenceScheduler)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4210,11 +4295,14 @@ impl UpdateInferenceSchedulerInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4642,10 +4730,10 @@ pub struct ListInferenceExecutionsInput {
     pub inference_scheduler_name: std::option::Option<std::string::String>,
     /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the
     /// inference execution. </p>
-    pub data_start_time_after: std::option::Option<aws_smithy_types::Instant>,
+    pub data_start_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the
     /// inference execution. </p>
-    pub data_end_time_before: std::option::Option<aws_smithy_types::Instant>,
+    pub data_end_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the inference execution. </p>
     pub status: std::option::Option<crate::model::InferenceExecutionStatus>,
 }
@@ -4665,12 +4753,12 @@ impl ListInferenceExecutionsInput {
     }
     /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the
     /// inference execution. </p>
-    pub fn data_start_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn data_start_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.data_start_time_after.as_ref()
     }
     /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the
     /// inference execution. </p>
-    pub fn data_end_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn data_end_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.data_end_time_before.as_ref()
     }
     /// <p>The status of the inference execution. </p>
@@ -4937,16 +5025,16 @@ pub struct CreateModelInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of
     /// training data for the ML model. </p>
-    pub training_data_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub training_data_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the time reference in the dataset that should be used to end the subset of
     /// training data for the ML model. </p>
-    pub training_data_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub training_data_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of
     /// evaluation data for the ML model. </p>
-    pub evaluation_data_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub evaluation_data_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Indicates the time reference in the dataset that should be used to end the subset of
     /// evaluation data for the ML model. </p>
-    pub evaluation_data_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub evaluation_data_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source
     /// being used to create the ML model. </p>
     pub role_arn: std::option::Option<std::string::String>,
@@ -4997,22 +5085,22 @@ impl CreateModelInput {
     }
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of
     /// training data for the ML model. </p>
-    pub fn training_data_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn training_data_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_data_start_time.as_ref()
     }
     /// <p>Indicates the time reference in the dataset that should be used to end the subset of
     /// training data for the ML model. </p>
-    pub fn training_data_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn training_data_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_data_end_time.as_ref()
     }
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of
     /// evaluation data for the ML model. </p>
-    pub fn evaluation_data_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn evaluation_data_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.evaluation_data_start_time.as_ref()
     }
     /// <p> Indicates the time reference in the dataset that should be used to end the subset of
     /// evaluation data for the ML model. </p>
-    pub fn evaluation_data_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn evaluation_data_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.evaluation_data_end_time.as_ref()
     }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source

@@ -52,9 +52,14 @@ impl Debug for Credentials {
     }
 }
 
+#[cfg(feature = "hardcoded-credentials")]
 const STATIC_CREDENTIALS: &str = "Static";
 
 impl Credentials {
+    /// Creates `Credentials`.
+    ///
+    /// This is intended to be used from a custom credentials provider implementation.
+    /// It is __NOT__ secure to hardcode credentials into your application.
     pub fn new(
         access_key_id: impl Into<String>,
         secret_access_key: impl Into<String>,
@@ -71,6 +76,37 @@ impl Credentials {
         }))
     }
 
+    /// Creates `Credentials` from hardcoded access key, secret key, and session token.
+    ///
+    /// _Note: In general, you should prefer to use the credential providers that come
+    /// with the AWS SDK to get credentials. It is __NOT__ secure to hardcode credentials
+    /// into your application. If you're writing a custom credentials provider, then
+    /// use [`Credentials::new`] instead of this._
+    ///
+    /// This function requires the `hardcoded-credentials` feature to be enabled.
+    ///
+    /// [`Credentials`](crate::Credentials) implement
+    /// [`ProvideCredentials`](crate::credentials::ProvideCredentials) directly, so no custom provider
+    /// implementation is required when wiring these up to a client:
+    /// ```rust
+    /// use aws_types::Credentials;
+    /// # mod dynamodb {
+    /// # use aws_types::credentials::ProvideCredentials;
+    /// # pub struct Config;
+    /// # impl Config {
+    /// #    pub fn builder() -> Self {
+    /// #        Config
+    /// #    }
+    /// #    pub fn credentials_provider(self, provider: impl ProvideCredentials + 'static) -> Self {
+    /// #       self
+    /// #    }
+    /// # }
+    /// # }
+    ///
+    /// let my_creds = Credentials::from_keys("akid", "secret_key", None);
+    /// let conf = dynamodb::Config::builder().credentials_provider(my_creds);
+    /// ```
+    #[cfg(feature = "hardcoded-credentials")]
     pub fn from_keys(
         access_key_id: impl Into<String>,
         secret_access_key: impl Into<String>,
@@ -85,22 +121,27 @@ impl Credentials {
         )
     }
 
+    /// Returns the access key ID.
     pub fn access_key_id(&self) -> &str {
         &self.0.access_key_id
     }
 
+    /// Returns the secret access key.
     pub fn secret_access_key(&self) -> &str {
         &self.0.secret_access_key
     }
 
+    /// Returns the time when the credentials will expire.
     pub fn expiry(&self) -> Option<SystemTime> {
         self.0.expires_after
     }
 
+    /// Returns a mutable reference to the time when the credentials will expire.
     pub fn expiry_mut(&mut self) -> &mut Option<SystemTime> {
         &mut Arc::make_mut(&mut self.0).expires_after
     }
 
+    /// Returns the session token.
     pub fn session_token(&self) -> Option<&str> {
         self.0.session_token.as_deref()
     }

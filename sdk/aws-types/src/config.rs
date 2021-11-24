@@ -9,24 +9,36 @@
 //!
 //! This module contains an shared configuration representation that is agnostic from a specific service.
 
-use aws_smithy_types::retry::RetryConfig;
+use std::sync::Arc;
 
+use aws_smithy_async::rt::sleep::AsyncSleep;
+use aws_smithy_types::retry::RetryConfig;
+use aws_smithy_types::timeout::TimeoutConfig;
+
+use crate::app_name::AppName;
 use crate::credentials::SharedCredentialsProvider;
 use crate::region::Region;
 
 /// AWS Shared Configuration
+#[derive(Debug)]
 pub struct Config {
+    app_name: Option<AppName>,
+    credentials_provider: Option<SharedCredentialsProvider>,
     region: Option<Region>,
     retry_config: Option<RetryConfig>,
-    credentials_provider: Option<SharedCredentialsProvider>,
+    sleep_impl: Option<Arc<dyn AsyncSleep>>,
+    timeout_config: Option<TimeoutConfig>,
 }
 
 /// Builder for AWS Shared Configuration
-#[derive(Default)]
+#[derive(Debug, Default)]
 pub struct Builder {
+    app_name: Option<AppName>,
+    credentials_provider: Option<SharedCredentialsProvider>,
     region: Option<Region>,
     retry_config: Option<RetryConfig>,
-    credentials_provider: Option<SharedCredentialsProvider>,
+    sleep_impl: Option<Arc<dyn AsyncSleep>>,
+    timeout_config: Option<TimeoutConfig>,
 }
 
 impl Builder {
@@ -100,6 +112,107 @@ impl Builder {
         self
     }
 
+    /// Set the [`TimeoutConfig`] for the builder
+    ///
+    /// # Examples
+    ///
+    /// ```rust
+    /// # use std::time::Duration;
+    /// use aws_types::config::Config;
+    /// use aws_smithy_types::timeout::TimeoutConfig;
+    ///
+    /// let timeout_config = TimeoutConfig::new()
+    ///     .with_api_call_attempt_timeout(Some(Duration::from_secs(1)));
+    /// let config = Config::builder().timeout_config(timeout_config).build();
+    /// ```
+    pub fn timeout_config(mut self, timeout_config: TimeoutConfig) -> Self {
+        self.set_timeout_config(Some(timeout_config));
+        self
+    }
+
+    /// Set the [`TimeoutConfig`] for the builder
+    ///
+    /// # Examples
+    /// ```rust
+    /// # use std::time::Duration;
+    /// use aws_types::config::{Config, Builder};
+    /// use aws_smithy_types::timeout::TimeoutConfig;
+    ///
+    /// fn set_preferred_timeouts(builder: &mut Builder) {
+    ///     let timeout_config = TimeoutConfig::new()
+    ///         .with_api_call_attempt_timeout(Some(Duration::from_secs(2)))
+    ///         .with_api_call_timeout(Some(Duration::from_secs(5)));
+    ///     builder.set_timeout_config(Some(timeout_config));
+    /// }
+    ///
+    /// let mut builder = Config::builder();
+    /// set_preferred_timeouts(&mut builder);
+    /// let config = builder.build();
+    /// ```
+    pub fn set_timeout_config(&mut self, timeout_config: Option<TimeoutConfig>) -> &mut Self {
+        self.timeout_config = timeout_config;
+        self
+    }
+
+    #[doc(hidden)]
+    /// Set the sleep implementation for the builder. The sleep implementation is used to create
+    /// timeout futures.
+    ///
+    /// # Examples
+    ///
+    /// ```rust
+    /// use std::sync::Arc;
+    /// use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep};
+    /// use aws_types::config::Config;
+    ///
+    /// ##[derive(Debug)]
+    /// pub struct ForeverSleep;
+    ///
+    /// impl AsyncSleep for ForeverSleep {
+    ///     fn sleep(&self, duration: std::time::Duration) -> Sleep {
+    ///         Sleep::new(std::future::pending())
+    ///     }
+    /// }
+    ///
+    /// let sleep_impl = Arc::new(ForeverSleep);
+    /// let config = Config::builder().sleep_impl(sleep_impl).build();
+    /// ```
+    pub fn sleep_impl(mut self, sleep_impl: Arc<dyn AsyncSleep>) -> Self {
+        self.set_sleep_impl(Some(sleep_impl));
+        self
+    }
+
+    #[doc(hidden)]
+    /// Set the sleep implementation for the builder. The sleep implementation is used to create
+    /// timeout futures.
+    ///
+    /// # Examples
+    /// ```rust
+    /// # use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep};
+    /// # use aws_types::config::{Builder, Config};
+    /// #[derive(Debug)]
+    /// pub struct ForeverSleep;
+    ///
+    /// impl AsyncSleep for ForeverSleep {
+    ///     fn sleep(&self, duration: std::time::Duration) -> Sleep {
+    ///         Sleep::new(std::future::pending())
+    ///     }
+    /// }
+    ///
+    /// fn set_never_ending_sleep_impl(builder: &mut Builder) {
+    ///     let sleep_impl = std::sync::Arc::new(ForeverSleep);
+    ///     builder.set_sleep_impl(Some(sleep_impl));
+    /// }
+    ///
+    /// let mut builder = Config::builder();
+    /// set_never_ending_sleep_impl(&mut builder);
+    /// let config = builder.build();
+    /// ```
+    pub fn set_sleep_impl(&mut self, sleep_impl: Option<Arc<dyn AsyncSleep>>) -> &mut Self {
+        self.sleep_impl = sleep_impl;
+        self
+    }
+
     /// Set the credentials provider for the builder
     ///
     /// # Examples
@@ -109,7 +222,7 @@ impl Builder {
     /// fn make_provider() -> impl ProvideCredentials {
     ///   // ...
     ///   # use aws_types::Credentials;
-    ///   # Credentials::from_keys("test", "test", None)
+    ///   # Credentials::new("test", "test", None, None, "example")
     /// }
     ///
     /// let config = Config::builder()
@@ -130,7 +243,7 @@ impl Builder {
     /// fn make_provider() -> impl ProvideCredentials {
     ///   // ...
     ///   # use aws_types::Credentials;
-    ///   # Credentials::from_keys("test", "test", None)
+    ///   # Credentials::new("test", "test", None, None, "example")
     /// }
     ///
     /// fn override_provider() -> bool {
@@ -152,12 +265,33 @@ impl Builder {
         self
     }
 
+    /// Sets the name of the app that is using the client.
+    ///
+    /// This _optional_ name is used to identify the application in the user agent that
+    /// gets sent along with requests.
+    pub fn app_name(mut self, app_name: AppName) -> Self {
+        self.set_app_name(Some(app_name));
+        self
+    }
+
+    /// Sets the name of the app that is using the client.
+    ///
+    /// This _optional_ name is used to identify the application in the user agent that
+    /// gets sent along with requests.
+    pub fn set_app_name(&mut self, app_name: Option<AppName>) -> &mut Self {
+        self.app_name = app_name;
+        self
+    }
+
     /// Build a [`Config`](Config) from this builder
     pub fn build(self) -> Config {
         Config {
+            app_name: self.app_name,
+            credentials_provider: self.credentials_provider,
             region: self.region,
             retry_config: self.retry_config,
-            credentials_provider: self.credentials_provider,
+            sleep_impl: self.sleep_impl,
+            timeout_config: self.timeout_config,
         }
     }
 }
@@ -173,9 +307,25 @@ impl Config {
         self.retry_config.as_ref()
     }
 
+    /// Configured timeout config
+    pub fn timeout_config(&self) -> Option<&TimeoutConfig> {
+        self.timeout_config.as_ref()
+    }
+
+    #[doc(hidden)]
+    /// Configured sleep implementation
+    pub fn sleep_impl(&self) -> Option<Arc<dyn AsyncSleep>> {
+        self.sleep_impl.clone()
+    }
+
     /// Configured credentials provider
     pub fn credentials_provider(&self) -> Option<&SharedCredentialsProvider> {
         self.credentials_provider.as_ref()
+    }
+
+    /// Configured app name
+    pub fn app_name(&self) -> Option<&AppName> {
+        self.app_name.as_ref()
     }
 
     /// Config builder

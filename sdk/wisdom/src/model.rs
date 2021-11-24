@@ -15,7 +15,7 @@ pub struct KnowledgeBaseData {
     pub status: std::option::Option<crate::model::KnowledgeBaseStatus>,
     /// <p>An epoch timestamp indicating the most recent content modification inside the knowledge
     /// base. If no content exists in a knowledge base, this value is unset.</p>
-    pub last_content_modification_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_content_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Source configuration information about the knowledge base.</p>
     pub source_configuration: std::option::Option<crate::model::SourceConfiguration>,
     /// <p>Information about how to render the content.</p>
@@ -54,7 +54,7 @@ impl KnowledgeBaseData {
     /// base. If no content exists in a knowledge base, this value is unset.</p>
     pub fn last_content_modification_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_content_modification_time.as_ref()
     }
     /// <p>Source configuration information about the knowledge base.</p>
@@ -119,7 +119,7 @@ pub mod knowledge_base_data {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) knowledge_base_type: std::option::Option<crate::model::KnowledgeBaseType>,
         pub(crate) status: std::option::Option<crate::model::KnowledgeBaseStatus>,
-        pub(crate) last_content_modification_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_content_modification_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_configuration: std::option::Option<crate::model::SourceConfiguration>,
         pub(crate) rendering_configuration:
             std::option::Option<crate::model::RenderingConfiguration>,
@@ -195,7 +195,7 @@ pub mod knowledge_base_data {
         }
         /// <p>An epoch timestamp indicating the most recent content modification inside the knowledge
         /// base. If no content exists in a knowledge base, this value is unset.</p>
-        pub fn last_content_modification_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_content_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_content_modification_time = Some(input);
             self
         }
@@ -203,7 +203,7 @@ pub mod knowledge_base_data {
         /// base. If no content exists in a knowledge base, this value is unset.</p>
         pub fn set_last_content_modification_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_content_modification_time = input;
             self
@@ -513,9 +513,9 @@ impl SourceConfiguration {
         &self,
     ) -> std::result::Result<&crate::model::AppIntegrationsConfiguration, &Self> {
         if let SourceConfiguration::AppIntegrations(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`AppIntegrations`](crate::model::SourceConfiguration::AppIntegrations).
@@ -1761,7 +1761,7 @@ pub struct ContentData {
     /// <p>The URL of the content.</p>
     pub url: std::option::Option<std::string::String>,
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
-    pub url_expiry: std::option::Option<aws_smithy_types::Instant>,
+    pub url_expiry: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ContentData {
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
@@ -1824,7 +1824,7 @@ impl ContentData {
         self.url.as_deref()
     }
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
-    pub fn url_expiry(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn url_expiry(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.url_expiry.as_ref()
     }
 }
@@ -1871,7 +1871,7 @@ pub mod content_data {
         >,
         pub(crate) link_out_uri: std::option::Option<std::string::String>,
         pub(crate) url: std::option::Option<std::string::String>,
-        pub(crate) url_expiry: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) url_expiry: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the content.</p>
@@ -2046,14 +2046,14 @@ pub mod content_data {
             self
         }
         /// <p>The expiration time of the URL as an epoch timestamp.</p>
-        pub fn url_expiry(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn url_expiry(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.url_expiry = Some(input);
             self
         }
         /// <p>The expiration time of the URL as an epoch timestamp.</p>
         pub fn set_url_expiry(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.url_expiry = input;
             self
@@ -3883,9 +3883,9 @@ impl AssistantAssociationOutputData {
         &self,
     ) -> std::result::Result<&crate::model::KnowledgeBaseAssociationData, &Self> {
         if let AssistantAssociationOutputData::KnowledgeBaseAssociation(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`KnowledgeBaseAssociation`](crate::model::AssistantAssociationOutputData::KnowledgeBaseAssociation).
@@ -4260,9 +4260,9 @@ impl AssistantAssociationInputData {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_knowledge_base_id(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AssistantAssociationInputData::KnowledgeBaseId(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`KnowledgeBaseId`](crate::model::AssistantAssociationInputData::KnowledgeBaseId).

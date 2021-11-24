@@ -530,6 +530,160 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stat(input);
             self
         }
+        /// <p>A single metric anomaly detector to be deleted.</p>
+        /// <p>When using <code>SingleMetricAnomalyDetector</code>,
+        /// you cannot include the following parameters in the same operation:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Dimensions</code>,</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MetricName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Namespace</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Stat</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Instead, specify the single metric anomaly detector attributes
+        /// as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
+        pub fn single_metric_anomaly_detector(
+            mut self,
+            inp: crate::model::SingleMetricAnomalyDetector,
+        ) -> Self {
+            self.inner = self.inner.single_metric_anomaly_detector(inp);
+            self
+        }
+        /// <p>A single metric anomaly detector to be deleted.</p>
+        /// <p>When using <code>SingleMetricAnomalyDetector</code>,
+        /// you cannot include the following parameters in the same operation:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Dimensions</code>,</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MetricName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Namespace</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Stat</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Instead, specify the single metric anomaly detector attributes
+        /// as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
+        pub fn set_single_metric_anomaly_detector(
+            mut self,
+            input: std::option::Option<crate::model::SingleMetricAnomalyDetector>,
+        ) -> Self {
+            self.inner = self.inner.set_single_metric_anomaly_detector(input);
+            self
+        }
+        /// <p>The metric math anomaly detector to be deleted.</p>
+        /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Dimensions</code>,</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MetricName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Namespace</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Stat</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Instead, specify the metric math anomaly detector attributes as part of the
+        /// <code>MetricMathAnomalyDetector</code> property.</p>
+        pub fn metric_math_anomaly_detector(
+            mut self,
+            inp: crate::model::MetricMathAnomalyDetector,
+        ) -> Self {
+            self.inner = self.inner.metric_math_anomaly_detector(inp);
+            self
+        }
+        /// <p>The metric math anomaly detector to be deleted.</p>
+        /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Dimensions</code>,</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MetricName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Namespace</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Stat</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Instead, specify the metric math anomaly detector attributes as part of the
+        /// <code>MetricMathAnomalyDetector</code> property.</p>
+        pub fn set_metric_math_anomaly_detector(
+            mut self,
+            input: std::option::Option<crate::model::MetricMathAnomalyDetector>,
+        ) -> Self {
+            self.inner = self.inner.set_metric_math_anomaly_detector(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DeleteDashboards`.
     ///
@@ -765,6 +919,9 @@ pub mod fluent_builders {
     /// <p>Retrieves the history for the specified alarm. You can filter the results by date range or item type.
     /// If an alarm name is not specified, the histories for either all metric alarms or all composite alarms are returned.</p>
     /// <p>CloudWatch retains the history of an alarm even if you delete the alarm.</p>
+    /// <p>To use this operation and return information about a composite alarm, you must be signed on with
+    /// the <code>cloudwatch:DescribeAlarmHistory</code> permission that is scoped to <code>*</code>. You can't return information
+    /// about composite alarms if your <code>cloudwatch:DescribeAlarmHistory</code> permission has a narrower scope.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeAlarmHistory<
         C = aws_smithy_client::erase::DynConnector,
@@ -864,27 +1021,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>The starting date to retrieve alarm history.</p>
-        pub fn start_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_date(inp);
             self
         }
         /// <p>The starting date to retrieve alarm history.</p>
         pub fn set_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_date(input);
             self
         }
         /// <p>The ending date to retrieve alarm history.</p>
-        pub fn end_date(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_date(inp);
             self
         }
         /// <p>The ending date to retrieve alarm history.</p>
         pub fn set_end_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_date(input);
             self
@@ -928,6 +1085,9 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the specified alarms. You can filter the results by specifying a prefix for the alarm
     /// name, the alarm state, or a prefix for any action.</p>
+    /// <p>To use this operation and return information about composite alarms, you must be signed on with
+    /// the <code>cloudwatch:DescribeAlarms</code> permission that is scoped to <code>*</code>. You can't return information
+    /// about composite alarms if your <code>cloudwatch:DescribeAlarms</code> permission has a narrower scope.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeAlarms<
         C = aws_smithy_client::erase::DynConnector,
@@ -1331,9 +1491,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAnomalyDetectors`.
     ///
-    /// <p>Lists the anomaly detection models that you have created in your account. You can list all
-    /// models in your account or filter the results to only the models that are related to a
-    /// certain namespace, metric name, or metric dimension.</p>
+    /// <p>Lists the anomaly detection models that you have created in your account.
+    /// For single metric anomaly detectors,
+    /// you can list all of the models in your account or filter the results
+    /// to only the models that are related to a certain namespace, metric name, or metric dimension.
+    /// For metric math anomaly detectors,
+    /// you can list them by adding <code>METRIC_MATH</code> to the <code>AnomalyDetectorTypes</code> array.
+    /// This will return all metric math anomaly detectors in your account.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeAnomalyDetectors<
         C = aws_smithy_client::erase::DynConnector,
@@ -1461,6 +1625,28 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
         ) -> Self {
             self.inner = self.inner.set_dimensions(input);
+            self
+        }
+        /// Appends an item to `AnomalyDetectorTypes`.
+        ///
+        /// To override the contents of this collection use [`set_anomaly_detector_types`](Self::set_anomaly_detector_types).
+        ///
+        /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>.
+        /// If empty, defaults to <code>SINGLE_METRIC</code>.</p>
+        pub fn anomaly_detector_types(
+            mut self,
+            inp: impl Into<crate::model::AnomalyDetectorType>,
+        ) -> Self {
+            self.inner = self.inner.anomaly_detector_types(inp);
+            self
+        }
+        /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>.
+        /// If empty, defaults to <code>SINGLE_METRIC</code>.</p>
+        pub fn set_anomaly_detector_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorType>>,
+        ) -> Self {
+            self.inner = self.inner.set_anomaly_detector_types(input);
             self
         }
     }
@@ -2043,7 +2229,7 @@ pub mod fluent_builders {
         /// <p>The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as
         /// <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
         /// <code>2019-07-01T23:59:59</code>.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
@@ -2052,7 +2238,7 @@ pub mod fluent_builders {
         /// <code>2019-07-01T23:59:59</code>.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
@@ -2060,7 +2246,7 @@ pub mod fluent_builders {
         /// <p>The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as
         /// <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
         /// <code>2019-07-01T23:59:59</code>.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
@@ -2069,7 +2255,7 @@ pub mod fluent_builders {
         /// <code>2019-07-01T23:59:59</code>.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -2338,7 +2524,7 @@ pub mod fluent_builders {
         /// the beginning and end of an hour. For example, if the <code>Period</code> of a metric
         /// is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a faster response
         /// from CloudWatch than setting 12:07 or 12:29 as the <code>StartTime</code>.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
@@ -2374,7 +2560,7 @@ pub mod fluent_builders {
         /// from CloudWatch than setting 12:07 or 12:29 as the <code>StartTime</code>.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
@@ -2386,7 +2572,7 @@ pub mod fluent_builders {
         /// the beginning and end of an hour. For example, if the <code>Period</code> of a metric
         /// is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster response
         /// from CloudWatch than setting 12:07 or 12:29 as the <code>EndTime</code>.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
@@ -2399,7 +2585,7 @@ pub mod fluent_builders {
         /// from CloudWatch than setting 12:07 or 12:29 as the <code>EndTime</code>.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -2646,7 +2832,7 @@ pub mod fluent_builders {
         /// period of 5 seconds, you receive data
         /// timestamped between 15:02:15 and 15:07:15.
         /// </p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
@@ -2679,7 +2865,7 @@ pub mod fluent_builders {
         /// </p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
@@ -2687,7 +2873,7 @@ pub mod fluent_builders {
         /// <p>The time stamp that determines the last data point to return.</p>
         /// <p>The value specified is exclusive; results include data points up to the specified time stamp.
         /// In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
@@ -2696,7 +2882,7 @@ pub mod fluent_builders {
         /// In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -3627,6 +3813,166 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration(input);
             self
         }
+        /// <p>A single metric anomaly detector to be created.</p>
+        /// <p>When using <code>SingleMetricAnomalyDetector</code>,
+        /// you cannot include the following parameters in the same operation:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Dimensions</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MetricName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Namespace</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Stat</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Instead, specify the single metric anomaly detector attributes
+        /// as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
+        pub fn single_metric_anomaly_detector(
+            mut self,
+            inp: crate::model::SingleMetricAnomalyDetector,
+        ) -> Self {
+            self.inner = self.inner.single_metric_anomaly_detector(inp);
+            self
+        }
+        /// <p>A single metric anomaly detector to be created.</p>
+        /// <p>When using <code>SingleMetricAnomalyDetector</code>,
+        /// you cannot include the following parameters in the same operation:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Dimensions</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MetricName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Namespace</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Stat</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Instead, specify the single metric anomaly detector attributes
+        /// as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
+        pub fn set_single_metric_anomaly_detector(
+            mut self,
+            input: std::option::Option<crate::model::SingleMetricAnomalyDetector>,
+        ) -> Self {
+            self.inner = self.inner.set_single_metric_anomaly_detector(input);
+            self
+        }
+        /// <p>The metric math anomaly detector to be created.</p>
+        ///
+        /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Dimensions</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MetricName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Namespace</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Stat</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Instead, specify the metric math anomaly detector attributes
+        /// as part of the property <code>MetricMathAnomalyDetector</code>.</p>
+        pub fn metric_math_anomaly_detector(
+            mut self,
+            inp: crate::model::MetricMathAnomalyDetector,
+        ) -> Self {
+            self.inner = self.inner.metric_math_anomaly_detector(inp);
+            self
+        }
+        /// <p>The metric math anomaly detector to be created.</p>
+        ///
+        /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Dimensions</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MetricName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Namespace</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Stat</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Instead, specify the metric math anomaly detector attributes
+        /// as part of the property <code>MetricMathAnomalyDetector</code>.</p>
+        pub fn set_metric_math_anomaly_detector(
+            mut self,
+            input: std::option::Option<crate::model::MetricMathAnomalyDetector>,
+        ) -> Self {
+            self.inner = self.inner.set_metric_math_anomaly_detector(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `PutCompositeAlarm`.
     ///
@@ -3663,6 +4009,10 @@ pub mod fluent_builders {
     /// alarm can be in <code>INSUFFICIENT_DATA</code> state.</p>
     /// <p>When you update an existing alarm, its state is left unchanged, but the update
     /// completely overwrites the previous configuration of the alarm.</p>
+    ///
+    /// <p>To use this operation, you must be signed on with
+    /// the <code>cloudwatch:PutCompositeAlarm</code> permission that is scoped to <code>*</code>. You can't create a
+    /// composite alarms if your <code>cloudwatch:PutCompositeAlarm</code> permission has a narrower scope.</p>
     ///
     /// <p>If you are an IAM user, you must have <code>iam:CreateServiceLinkedRole</code> to create
     /// a composite alarm that has Systems Manager OpsItem actions.</p>
@@ -4282,7 +4632,7 @@ pub mod fluent_builders {
     ///
     ///
     /// <p>The first time you create an alarm in the
-    /// Management Console, the CLI, or by using the PutMetricAlarm API, CloudWatch
+    /// Amazon Web Services Management Console, the CLI, or by using the PutMetricAlarm API, CloudWatch
     /// creates the necessary service-linked role for you. The service-linked roles
     /// are called <code>AWSServiceRoleForCloudWatchEvents</code> and
     /// <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>.
@@ -5082,7 +5432,7 @@ pub mod fluent_builders {
     /// <p>Creates or updates a metric stream. Metric streams can automatically stream CloudWatch metrics
     /// to Amazon Web Services destinations including
     /// Amazon S3 and to many third-party solutions.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Metric-Streams.html">
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Metric-Streams.html">
     /// Using Metric Streams</a>.</p>
     /// <p>To create a metric stream,
     /// you must be logged on to an account that has the <code>iam:PassRole</code> permission
@@ -5848,7 +6198,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -5871,7 +6227,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

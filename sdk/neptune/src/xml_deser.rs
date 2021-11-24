@@ -5815,9 +5815,9 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
             s if s.matches("SnapshotCreateTime") /* SnapshotCreateTime com.amazonaws.neptune#DBClusterSnapshot$SnapshotCreateTime */ =>  {
                 let var_180 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.neptune#TStamp`)"))
                         ?
@@ -5898,9 +5898,9 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
             s if s.matches("ClusterCreateTime") /* ClusterCreateTime com.amazonaws.neptune#DBClusterSnapshot$ClusterCreateTime */ =>  {
                 let var_186 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.neptune#TStamp`)"))
                         ?
@@ -6257,9 +6257,9 @@ pub fn deser_structure_crate_model_db_cluster(
             s if s.matches("EarliestRestorableTime") /* EarliestRestorableTime com.amazonaws.neptune#DBCluster$EarliestRestorableTime */ =>  {
                 let var_211 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.neptune#TStamp`)"))
                         ?
@@ -6338,9 +6338,9 @@ pub fn deser_structure_crate_model_db_cluster(
             s if s.matches("LatestRestorableTime") /* LatestRestorableTime com.amazonaws.neptune#DBCluster$LatestRestorableTime */ =>  {
                 let var_217 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.neptune#TStamp`)"))
                         ?
@@ -6564,9 +6564,9 @@ pub fn deser_structure_crate_model_db_cluster(
             s if s.matches("ClusterCreateTime") /* ClusterCreateTime com.amazonaws.neptune#DBCluster$ClusterCreateTime */ =>  {
                 let var_235 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.neptune#TStamp`)"))
                         ?
@@ -6633,9 +6633,9 @@ pub fn deser_structure_crate_model_db_cluster(
             s if s.matches("AutomaticRestartTime") /* AutomaticRestartTime com.amazonaws.neptune#DBCluster$AutomaticRestartTime */ =>  {
                 let var_240 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.neptune#TStamp`)"))
                         ?
@@ -6785,9 +6785,9 @@ pub fn deser_structure_crate_model_db_instance(
             s if s.matches("InstanceCreateTime") /* InstanceCreateTime com.amazonaws.neptune#DBInstance$InstanceCreateTime */ =>  {
                 let var_249 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.neptune#TStamp`)"))
                         ?
@@ -6903,9 +6903,9 @@ pub fn deser_structure_crate_model_db_instance(
             s if s.matches("LatestRestorableTime") /* LatestRestorableTime com.amazonaws.neptune#DBInstance$LatestRestorableTime */ =>  {
                 let var_259 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.neptune#TStamp`)"))
                         ?
@@ -9034,9 +9034,9 @@ pub fn deser_structure_crate_model_event(
             s if s.matches("Date") /* Date com.amazonaws.neptune#Event$Date */ =>  {
                 let var_361 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.neptune#TStamp`)"))
                         ?
@@ -9443,9 +9443,9 @@ pub fn deser_structure_crate_model_pending_maintenance_action(
             s if s.matches("AutoAppliedAfterDate") /* AutoAppliedAfterDate com.amazonaws.neptune#PendingMaintenanceAction$AutoAppliedAfterDate */ =>  {
                 let var_386 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.neptune#TStamp`)"))
                         ?
@@ -9457,9 +9457,9 @@ pub fn deser_structure_crate_model_pending_maintenance_action(
             s if s.matches("ForcedApplyDate") /* ForcedApplyDate com.amazonaws.neptune#PendingMaintenanceAction$ForcedApplyDate */ =>  {
                 let var_387 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.neptune#TStamp`)"))
                         ?
@@ -9484,9 +9484,9 @@ pub fn deser_structure_crate_model_pending_maintenance_action(
             s if s.matches("CurrentApplyDate") /* CurrentApplyDate com.amazonaws.neptune#PendingMaintenanceAction$CurrentApplyDate */ =>  {
                 let var_389 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.neptune#TStamp`)"))
                         ?

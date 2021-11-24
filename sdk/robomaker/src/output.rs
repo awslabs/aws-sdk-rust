@@ -8,10 +8,10 @@ pub struct UpdateWorldTemplateOutput {
     /// <p>The name of the world template.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds since the epoch, when the world template was last
     /// updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateWorldTemplateOutput {
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
@@ -23,12 +23,12 @@ impl UpdateWorldTemplateOutput {
         self.name.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world template was last
     /// updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -50,8 +50,8 @@ pub mod update_world_template_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (arn) of the world template.</p>
@@ -75,21 +75,21 @@ pub mod update_world_template_output {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the world template was last
         /// updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
@@ -97,7 +97,7 @@ pub mod update_world_template_output {
         /// updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -140,7 +140,7 @@ pub struct UpdateSimulationApplicationOutput {
     pub rendering_engine: std::option::Option<crate::model::RenderingEngine>,
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last
     /// updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The revision id of the simulation application.</p>
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The object that contains the Docker image URI used for your simulation
@@ -180,7 +180,7 @@ impl UpdateSimulationApplicationOutput {
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last
     /// updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The revision id of the simulation application.</p>
@@ -223,7 +223,7 @@ pub mod update_simulation_application_output {
             std::option::Option<crate::model::SimulationSoftwareSuite>,
         pub(crate) robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
         pub(crate) rendering_engine: std::option::Option<crate::model::RenderingEngine>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
         pub(crate) environment: std::option::Option<crate::model::Environment>,
     }
@@ -321,7 +321,7 @@ pub mod update_simulation_application_output {
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation application was last
         /// updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
@@ -329,7 +329,7 @@ pub mod update_simulation_application_output {
         /// updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -399,7 +399,7 @@ pub struct UpdateRobotApplicationOutput {
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The time, in milliseconds since the epoch, when the robot application was last
     /// updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The revision id of the robot application.</p>
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The object that contains the Docker image URI for your robot application.</p>
@@ -428,7 +428,7 @@ impl UpdateRobotApplicationOutput {
     }
     /// <p>The time, in milliseconds since the epoch, when the robot application was last
     /// updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The revision id of the robot application.</p>
@@ -465,7 +465,7 @@ pub mod update_robot_application_output {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
         pub(crate) robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
         pub(crate) environment: std::option::Option<crate::model::Environment>,
     }
@@ -534,7 +534,7 @@ pub mod update_robot_application_output {
         }
         /// <p>The time, in milliseconds since the epoch, when the robot application was last
         /// updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
@@ -542,7 +542,7 @@ pub mod update_robot_application_output {
         /// updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -733,7 +733,7 @@ pub struct SyncDeploymentJobOutput {
     /// </dl>
     pub failure_code: std::option::Option<crate::model::DeploymentJobErrorCode>,
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SyncDeploymentJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the synchronization request.</p>
@@ -828,7 +828,7 @@ impl SyncDeploymentJobOutput {
         self.failure_code.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -863,7 +863,7 @@ pub mod sync_deployment_job_output {
             std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) failure_code: std::option::Option<crate::model::DeploymentJobErrorCode>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the synchronization request.</p>
@@ -1083,14 +1083,14 @@ pub mod sync_deployment_job_output {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1176,7 +1176,7 @@ pub struct StartSimulationJobBatchOutput {
     pub status: std::option::Option<crate::model::SimulationJobBatchStatus>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was
     /// created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
     /// request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
@@ -1260,7 +1260,7 @@ impl StartSimulationJobBatchOutput {
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was
     /// created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -1330,7 +1330,7 @@ pub mod start_simulation_job_batch_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::SimulationJobBatchStatus>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) batch_policy: std::option::Option<crate::model::BatchPolicy>,
         pub(crate) failure_code: std::option::Option<crate::model::SimulationJobBatchErrorCode>,
@@ -1469,7 +1469,7 @@ pub mod start_simulation_job_batch_output {
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation job batch was
         /// created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
@@ -1477,7 +1477,7 @@ pub mod start_simulation_job_batch_output {
         /// created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -3044,10 +3044,10 @@ pub struct DescribeWorldTemplateOutput {
     /// <p>The name of the world template.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds since the epoch, when the world template was last
     /// updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A map that contains tag keys and tag values that are attached to the world
     /// template.</p>
     pub tags:
@@ -3070,12 +3070,12 @@ impl DescribeWorldTemplateOutput {
         self.name.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world template was last
     /// updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world
@@ -3113,8 +3113,8 @@ pub mod describe_world_template_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -3157,21 +3157,21 @@ pub mod describe_world_template_output {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the world template was last
         /// updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
@@ -3179,7 +3179,7 @@ pub mod describe_world_template_output {
         /// updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -3283,7 +3283,7 @@ pub struct DescribeWorldGenerationJobOutput {
     pub status: std::option::Option<crate::model::WorldGenerationJobStatus>,
     /// <p>The time, in milliseconds since the epoch, when the world generation job was
     /// created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The failure code of the world generation job if it failed:</p>
     /// <dl>
     /// <dt>InternalServiceError</dt>
@@ -3371,7 +3371,7 @@ impl DescribeWorldGenerationJobOutput {
     }
     /// <p>The time, in milliseconds since the epoch, when the world generation job was
     /// created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The failure code of the world generation job if it failed:</p>
@@ -3466,7 +3466,7 @@ pub mod describe_world_generation_job_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::WorldGenerationJobStatus>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_code: std::option::Option<crate::model::WorldGenerationJobErrorCode>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -3569,7 +3569,7 @@ pub mod describe_world_generation_job_output {
         }
         /// <p>The time, in milliseconds since the epoch, when the world generation job was
         /// created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
@@ -3577,7 +3577,7 @@ pub mod describe_world_generation_job_output {
         /// created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -3823,7 +3823,7 @@ pub struct DescribeWorldExportJobOutput {
     /// </dl>
     pub status: std::option::Option<crate::model::WorldExportJobStatus>,
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The failure code of the world export job if it failed:</p>
     /// <dl>
     /// <dt>InternalServiceError</dt>
@@ -3903,7 +3903,7 @@ impl DescribeWorldExportJobOutput {
         self.status.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The failure code of the world export job if it failed:</p>
@@ -3988,7 +3988,7 @@ pub mod describe_world_export_job_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::WorldExportJobStatus>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_code: std::option::Option<crate::model::WorldExportJobErrorCode>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -4078,14 +4078,14 @@ pub mod describe_world_export_job_output {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -4284,7 +4284,7 @@ pub struct DescribeWorldOutput {
     /// <p>The world template.</p>
     pub template: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A map that contains tag keys and tag values that are attached to the world.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -4306,7 +4306,7 @@ impl DescribeWorldOutput {
         self.template.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world.</p>
@@ -4342,7 +4342,7 @@ pub mod describe_world_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) generation_job: std::option::Option<std::string::String>,
         pub(crate) template: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -4385,14 +4385,14 @@ pub mod describe_world_output {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -4514,10 +4514,10 @@ pub struct DescribeSimulationJobBatchOutput {
     pub status: std::option::Option<crate::model::SimulationJobBatchStatus>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last
     /// updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was
     /// created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
     /// request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
@@ -4601,12 +4601,12 @@ impl DescribeSimulationJobBatchOutput {
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last
     /// updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was
     /// created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4677,8 +4677,8 @@ pub mod describe_simulation_job_batch_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::SimulationJobBatchStatus>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) batch_policy: std::option::Option<crate::model::BatchPolicy>,
         pub(crate) failure_code: std::option::Option<crate::model::SimulationJobBatchErrorCode>,
@@ -4817,7 +4817,7 @@ pub mod describe_simulation_job_batch_output {
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last
         /// updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
@@ -4825,14 +4825,14 @@ pub mod describe_simulation_job_batch_output {
         /// updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation job batch was
         /// created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
@@ -4840,7 +4840,7 @@ pub mod describe_simulation_job_batch_output {
         /// created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -5036,10 +5036,10 @@ pub struct DescribeSimulationJobOutput {
     pub status: std::option::Option<crate::model::SimulationJobStatus>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last
     /// started.</p>
-    pub last_started_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last
     /// updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The failure behavior for the simulation job.</p>
     pub failure_behavior: std::option::Option<crate::model::FailureBehavior>,
     /// <p>The failure code of the simulation job if it failed:</p>
@@ -5156,12 +5156,12 @@ impl DescribeSimulationJobOutput {
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last
     /// started.</p>
-    pub fn last_started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_started_at.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last
     /// updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The failure behavior for the simulation job.</p>
@@ -5340,8 +5340,8 @@ pub mod describe_simulation_job_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::SimulationJobStatus>,
-        pub(crate) last_started_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_started_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_behavior: std::option::Option<crate::model::FailureBehavior>,
         pub(crate) failure_code: std::option::Option<crate::model::SimulationJobErrorCode>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
@@ -5399,7 +5399,7 @@ pub mod describe_simulation_job_output {
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation job was last
         /// started.</p>
-        pub fn last_started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_started_at = Some(input);
             self
         }
@@ -5407,14 +5407,14 @@ pub mod describe_simulation_job_output {
         /// started.</p>
         pub fn set_last_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_started_at = input;
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation job was last
         /// updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
@@ -5422,7 +5422,7 @@ pub mod describe_simulation_job_output {
         /// updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -5849,7 +5849,7 @@ pub struct DescribeSimulationApplicationOutput {
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last
     /// updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of all tags added to the specified simulation application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -5897,7 +5897,7 @@ impl DescribeSimulationApplicationOutput {
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last
     /// updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The list of all tags added to the specified simulation application.</p>
@@ -5951,7 +5951,7 @@ pub mod describe_simulation_application_output {
         pub(crate) robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
         pub(crate) rendering_engine: std::option::Option<crate::model::RenderingEngine>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -6062,7 +6062,7 @@ pub mod describe_simulation_application_output {
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation application was last
         /// updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
@@ -6070,7 +6070,7 @@ pub mod describe_simulation_application_output {
         /// updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -6171,7 +6171,7 @@ pub struct DescribeRobotApplicationOutput {
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the robot application was last
     /// updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of all tags added to the specified robot application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -6208,7 +6208,7 @@ impl DescribeRobotApplicationOutput {
     }
     /// <p>The time, in milliseconds since the epoch, when the robot application was last
     /// updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The list of all tags added to the specified robot application.</p>
@@ -6256,7 +6256,7 @@ pub mod describe_robot_application_output {
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
         pub(crate) robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -6338,7 +6338,7 @@ pub mod describe_robot_application_output {
         }
         /// <p>The time, in milliseconds since the epoch, when the robot application was last
         /// updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
@@ -6346,7 +6346,7 @@ pub mod describe_robot_application_output {
         /// updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -6440,13 +6440,13 @@ pub struct DescribeRobotOutput {
     /// <p>The Greengrass group id.</p>
     pub greengrass_group_id: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The target architecture of the robot application.</p>
     pub architecture: std::option::Option<crate::model::Architecture>,
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
     pub last_deployment_job: std::option::Option<std::string::String>,
     /// <p>The time of the last deployment job.</p>
-    pub last_deployment_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_deployment_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of all tags added to the specified robot.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -6473,7 +6473,7 @@ impl DescribeRobotOutput {
         self.greengrass_group_id.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The target architecture of the robot application.</p>
@@ -6485,7 +6485,7 @@ impl DescribeRobotOutput {
         self.last_deployment_job.as_deref()
     }
     /// <p>The time of the last deployment job.</p>
-    pub fn last_deployment_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_deployment_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_deployment_time.as_ref()
     }
     /// <p>The list of all tags added to the specified robot.</p>
@@ -6523,10 +6523,10 @@ pub mod describe_robot_output {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RobotStatus>,
         pub(crate) greengrass_group_id: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) architecture: std::option::Option<crate::model::Architecture>,
         pub(crate) last_deployment_job: std::option::Option<std::string::String>,
-        pub(crate) last_deployment_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_deployment_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -6586,14 +6586,14 @@ pub mod describe_robot_output {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -6625,14 +6625,14 @@ pub mod describe_robot_output {
             self
         }
         /// <p>The time of the last deployment job.</p>
-        pub fn last_deployment_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_deployment_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_deployment_time = Some(input);
             self
         }
         /// <p>The time of the last deployment job.</p>
         pub fn set_last_deployment_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_deployment_time = input;
             self
@@ -6697,13 +6697,13 @@ pub struct DescribeFleetOutput {
     /// <p>A list of robots.</p>
     pub robots: std::option::Option<std::vec::Vec<crate::model::Robot>>,
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the last deployment.</p>
     pub last_deployment_status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
     pub last_deployment_job: std::option::Option<std::string::String>,
     /// <p>The time of the last deployment.</p>
-    pub last_deployment_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_deployment_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of all tags added to the specified fleet.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -6722,7 +6722,7 @@ impl DescribeFleetOutput {
         self.robots.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The status of the last deployment.</p>
@@ -6734,7 +6734,7 @@ impl DescribeFleetOutput {
         self.last_deployment_job.as_deref()
     }
     /// <p>The time of the last deployment.</p>
-    pub fn last_deployment_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_deployment_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_deployment_time.as_ref()
     }
     /// <p>The list of all tags added to the specified fleet.</p>
@@ -6768,10 +6768,10 @@ pub mod describe_fleet_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) robots: std::option::Option<std::vec::Vec<crate::model::Robot>>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_deployment_status: std::option::Option<crate::model::DeploymentStatus>,
         pub(crate) last_deployment_job: std::option::Option<std::string::String>,
-        pub(crate) last_deployment_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_deployment_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -6817,14 +6817,14 @@ pub mod describe_fleet_output {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -6856,14 +6856,14 @@ pub mod describe_fleet_output {
             self
         }
         /// <p>The time of the last deployment.</p>
-        pub fn last_deployment_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_deployment_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_deployment_time = Some(input);
             self
         }
         /// <p>The time of the last deployment.</p>
         pub fn set_last_deployment_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_deployment_time = input;
             self
@@ -6935,7 +6935,7 @@ pub struct DescribeDeploymentJobOutput {
     /// <p>The deployment job failure code.</p>
     pub failure_code: std::option::Option<crate::model::DeploymentJobErrorCode>,
     /// <p>The time, in milliseconds since the epoch, when the deployment job was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of robot deployment summaries.</p>
     pub robot_deployment_summary: std::option::Option<std::vec::Vec<crate::model::RobotDeployment>>,
     /// <p>The list of all tags added to the specified deployment job.</p>
@@ -6974,7 +6974,7 @@ impl DescribeDeploymentJobOutput {
         self.failure_code.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the deployment job was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A list of robot deployment summaries.</p>
@@ -7024,7 +7024,7 @@ pub mod describe_deployment_job_output {
             std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) failure_code: std::option::Option<crate::model::DeploymentJobErrorCode>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) robot_deployment_summary:
             std::option::Option<std::vec::Vec<crate::model::RobotDeployment>>,
         pub(crate) tags: std::option::Option<
@@ -7127,14 +7127,14 @@ pub mod describe_deployment_job_output {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the deployment job was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the deployment job was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -7443,7 +7443,7 @@ pub struct CreateWorldTemplateOutput {
     /// request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the world template.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to the world
@@ -7462,7 +7462,7 @@ impl CreateWorldTemplateOutput {
         self.client_request_token.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The name of the world template.</p>
@@ -7497,7 +7497,7 @@ pub mod create_world_template_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -7530,14 +7530,14 @@ pub mod create_world_template_output {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -7639,7 +7639,7 @@ pub struct CreateWorldGenerationJobOutput {
     pub status: std::option::Option<crate::model::WorldGenerationJobStatus>,
     /// <p>The time, in milliseconds since the epoch, when the world generator job was
     /// created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The failure code of the world generator job if it failed:</p>
     /// <dl>
     /// <dt>InternalServiceError</dt>
@@ -7723,7 +7723,7 @@ impl CreateWorldGenerationJobOutput {
     }
     /// <p>The time, in milliseconds since the epoch, when the world generator job was
     /// created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The failure code of the world generator job if it failed:</p>
@@ -7806,7 +7806,7 @@ pub mod create_world_generation_job_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::WorldGenerationJobStatus>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_code: std::option::Option<crate::model::WorldGenerationJobErrorCode>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) template: std::option::Option<std::string::String>,
@@ -7906,7 +7906,7 @@ pub mod create_world_generation_job_output {
         }
         /// <p>The time, in milliseconds since the epoch, when the world generator job was
         /// created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
@@ -7914,7 +7914,7 @@ pub mod create_world_generation_job_output {
         /// created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -8129,7 +8129,7 @@ pub struct CreateWorldExportJobOutput {
     /// </dl>
     pub status: std::option::Option<crate::model::WorldExportJobStatus>,
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The failure code of the world export job if it failed:</p>
     /// <dl>
     /// <dt>InternalServiceError</dt>
@@ -8211,7 +8211,7 @@ impl CreateWorldExportJobOutput {
         self.status.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The failure code of the world export job if it failed:</p>
@@ -8292,7 +8292,7 @@ pub mod create_world_export_job_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::WorldExportJobStatus>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_code: std::option::Option<crate::model::WorldExportJobErrorCode>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) output_location: std::option::Option<crate::model::OutputLocation>,
@@ -8380,14 +8380,14 @@ pub mod create_world_export_job_output {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -8562,10 +8562,10 @@ pub struct CreateSimulationJobOutput {
     pub status: std::option::Option<crate::model::SimulationJobStatus>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last
     /// started.</p>
-    pub last_started_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last
     /// updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>the failure behavior for the simulation job.</p>
     pub failure_behavior: std::option::Option<crate::model::FailureBehavior>,
     /// <p>The failure code of the simulation job if it failed:</p>
@@ -8672,12 +8672,12 @@ impl CreateSimulationJobOutput {
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last
     /// started.</p>
-    pub fn last_started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_started_at.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last
     /// updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>the failure behavior for the simulation job.</p>
@@ -8842,8 +8842,8 @@ pub mod create_simulation_job_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::SimulationJobStatus>,
-        pub(crate) last_started_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_started_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_behavior: std::option::Option<crate::model::FailureBehavior>,
         pub(crate) failure_code: std::option::Option<crate::model::SimulationJobErrorCode>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -8889,7 +8889,7 @@ pub mod create_simulation_job_output {
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation job was last
         /// started.</p>
-        pub fn last_started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_started_at = Some(input);
             self
         }
@@ -8897,14 +8897,14 @@ pub mod create_simulation_job_output {
         /// started.</p>
         pub fn set_last_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_started_at = input;
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation job was last
         /// updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
@@ -8912,7 +8912,7 @@ pub mod create_simulation_job_output {
         /// updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -9304,7 +9304,7 @@ pub struct CreateSimulationApplicationVersionOutput {
     pub rendering_engine: std::option::Option<crate::model::RenderingEngine>,
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last
     /// updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The revision ID of the simulation application.</p>
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The object that contains the Docker image URI used to create the simulation
@@ -9344,7 +9344,7 @@ impl CreateSimulationApplicationVersionOutput {
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last
     /// updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The revision ID of the simulation application.</p>
@@ -9387,7 +9387,7 @@ pub mod create_simulation_application_version_output {
             std::option::Option<crate::model::SimulationSoftwareSuite>,
         pub(crate) robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
         pub(crate) rendering_engine: std::option::Option<crate::model::RenderingEngine>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
         pub(crate) environment: std::option::Option<crate::model::Environment>,
     }
@@ -9485,7 +9485,7 @@ pub mod create_simulation_application_version_output {
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation application was last
         /// updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
@@ -9493,7 +9493,7 @@ pub mod create_simulation_application_version_output {
         /// updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -9567,7 +9567,7 @@ pub struct CreateSimulationApplicationOutput {
     pub rendering_engine: std::option::Option<crate::model::RenderingEngine>,
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last
     /// updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The revision id of the simulation application.</p>
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The list of all tags added to the simulation application.</p>
@@ -9610,7 +9610,7 @@ impl CreateSimulationApplicationOutput {
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last
     /// updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The revision id of the simulation application.</p>
@@ -9661,7 +9661,7 @@ pub mod create_simulation_application_output {
             std::option::Option<crate::model::SimulationSoftwareSuite>,
         pub(crate) robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
         pub(crate) rendering_engine: std::option::Option<crate::model::RenderingEngine>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -9762,7 +9762,7 @@ pub mod create_simulation_application_output {
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation application was last
         /// updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
@@ -9770,7 +9770,7 @@ pub mod create_simulation_application_output {
         /// updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -9866,7 +9866,7 @@ pub struct CreateRobotApplicationVersionOutput {
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The time, in milliseconds since the epoch, when the robot application was last
     /// updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The revision id of the robot application.</p>
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The object that contains the Docker image URI used to create your robot
@@ -9896,7 +9896,7 @@ impl CreateRobotApplicationVersionOutput {
     }
     /// <p>The time, in milliseconds since the epoch, when the robot application was last
     /// updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The revision id of the robot application.</p>
@@ -9934,7 +9934,7 @@ pub mod create_robot_application_version_output {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
         pub(crate) robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
         pub(crate) environment: std::option::Option<crate::model::Environment>,
     }
@@ -10003,7 +10003,7 @@ pub mod create_robot_application_version_output {
         }
         /// <p>The time, in milliseconds since the epoch, when the robot application was last
         /// updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
@@ -10011,7 +10011,7 @@ pub mod create_robot_application_version_output {
         /// updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -10079,7 +10079,7 @@ pub struct CreateRobotApplicationOutput {
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The time, in milliseconds since the epoch, when the robot application was last
     /// updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The revision id of the robot application.</p>
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The list of all tags added to the robot application.</p>
@@ -10112,7 +10112,7 @@ impl CreateRobotApplicationOutput {
     }
     /// <p>The time, in milliseconds since the epoch, when the robot application was last
     /// updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The revision id of the robot application.</p>
@@ -10158,7 +10158,7 @@ pub mod create_robot_application_output {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
         pub(crate) robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -10230,7 +10230,7 @@ pub mod create_robot_application_output {
         }
         /// <p>The time, in milliseconds since the epoch, when the robot application was last
         /// updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
@@ -10238,7 +10238,7 @@ pub mod create_robot_application_output {
         /// updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -10325,7 +10325,7 @@ pub struct CreateRobotOutput {
     /// <p>The name of the robot.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the Greengrass group associated with the robot.</p>
     pub greengrass_group_id: std::option::Option<std::string::String>,
     /// <p>The target architecture of the robot.</p>
@@ -10344,7 +10344,7 @@ impl CreateRobotOutput {
         self.name.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Greengrass group associated with the robot.</p>
@@ -10383,7 +10383,7 @@ pub mod create_robot_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) greengrass_group_id: std::option::Option<std::string::String>,
         pub(crate) architecture: std::option::Option<crate::model::Architecture>,
         pub(crate) tags: std::option::Option<
@@ -10412,14 +10412,14 @@ pub mod create_robot_output {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -10504,7 +10504,7 @@ pub struct CreateFleetOutput {
     /// <p>The name of the fleet.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of all tags added to the fleet.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -10519,7 +10519,7 @@ impl CreateFleetOutput {
         self.name.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The list of all tags added to the fleet.</p>
@@ -10548,7 +10548,7 @@ pub mod create_fleet_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -10575,14 +10575,14 @@ pub mod create_fleet_output {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -10708,7 +10708,7 @@ pub struct CreateDeploymentJobOutput {
     /// </dl>
     pub failure_code: std::option::Option<crate::model::DeploymentJobErrorCode>,
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The deployment configuration.</p>
     pub deployment_config: std::option::Option<crate::model::DeploymentConfig>,
     /// <p>The list of all tags added to the deployment job.</p>
@@ -10803,7 +10803,7 @@ impl CreateDeploymentJobOutput {
         self.failure_code.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The deployment configuration.</p>
@@ -10849,7 +10849,7 @@ pub mod create_deployment_job_output {
             std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) failure_code: std::option::Option<crate::model::DeploymentJobErrorCode>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) deployment_config: std::option::Option<crate::model::DeploymentConfig>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -11058,14 +11058,14 @@ pub mod create_deployment_job_output {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self

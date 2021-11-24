@@ -90,13 +90,13 @@ impl MetricKeyDataPoints {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataPoint {
     /// <p>The time, in epoch format, associated with a particular <code>Value</code>.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The actual value associated with a particular <code>Timestamp</code>.</p>
     pub value: std::option::Option<f64>,
 }
 impl DataPoint {
     /// <p>The time, in epoch format, associated with a particular <code>Value</code>.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The actual value associated with a particular <code>Timestamp</code>.</p>
@@ -118,19 +118,19 @@ pub mod data_point {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) value: std::option::Option<f64>,
     }
     impl Builder {
         /// <p>The time, in epoch format, associated with a particular <code>Value</code>.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The time, in epoch format, associated with a particular <code>Value</code>.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self

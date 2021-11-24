@@ -938,6 +938,38 @@ impl aws_smithy_http::response::ParseStrictResponse for Publish {
     }
 }
 
+/// Operation shape for `PublishBatch`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`publish_batch`](crate::client::Client::publish_batch).
+///
+/// See [`crate::client::fluent_builders::PublishBatch`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PublishBatch {
+    _private: (),
+}
+impl PublishBatch {
+    /// Creates a new builder-style object to manufacture [`PublishBatchInput`](crate::input::PublishBatchInput)
+    pub fn builder() -> crate::input::publish_batch_input::Builder {
+        crate::input::publish_batch_input::Builder::default()
+    }
+    /// Creates a new `PublishBatch` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PublishBatch {
+    type Output =
+        std::result::Result<crate::output::PublishBatchOutput, crate::error::PublishBatchError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_publish_batch_error(response)
+        } else {
+            crate::operation_deser::parse_publish_batch_response(response)
+        }
+    }
+}
+
 /// Operation shape for `RemovePermission`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

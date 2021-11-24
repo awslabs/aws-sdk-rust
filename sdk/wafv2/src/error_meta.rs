@@ -71,6 +71,12 @@ pub enum Error {
     /// account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
     /// <i>WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
+    /// <p>The operation failed because you don't have the permissions that your logging configuration requires. For information, see
+    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a>
+    /// in the <i>WAF Developer Guide</i>.</p>
+    WafLogDestinationPermissionIssueException(
+        crate::error::WafLogDestinationPermissionIssueException,
+    ),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>WAF couldn’t save your changes because you tried to update or delete a resource
@@ -111,6 +117,7 @@ impl std::fmt::Display for Error {
             Error::WafInvalidPermissionPolicyException(inner) => inner.fmt(f),
             Error::WafInvalidResourceException(inner) => inner.fmt(f),
             Error::WafLimitsExceededException(inner) => inner.fmt(f),
+            Error::WafLogDestinationPermissionIssueException(inner) => inner.fmt(f),
             Error::WafNonexistentItemException(inner) => inner.fmt(f),
             Error::WafOptimisticLockException(inner) => inner.fmt(f),
             Error::WafServiceLinkedRoleErrorException(inner) => inner.fmt(f),
@@ -1131,6 +1138,7 @@ where
                 crate::error::PutLoggingConfigurationErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
                 crate::error::PutLoggingConfigurationErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
                 crate::error::PutLoggingConfigurationErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+                crate::error::PutLoggingConfigurationErrorKind::WafLogDestinationPermissionIssueException(inner) => Error::WafLogDestinationPermissionIssueException(inner),
                 crate::error::PutLoggingConfigurationErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
                 crate::error::PutLoggingConfigurationErrorKind::WafOptimisticLockException(inner) => Error::WafOptimisticLockException(inner),
                 crate::error::PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException(inner) => Error::WafServiceLinkedRoleErrorException(inner),

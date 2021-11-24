@@ -430,7 +430,7 @@ pub struct GetTraceSummariesOutput {
     /// frame.</p>
     pub trace_summaries: std::option::Option<std::vec::Vec<crate::model::TraceSummary>>,
     /// <p>The start time of this page of results.</p>
-    pub approximate_time: std::option::Option<aws_smithy_types::Instant>,
+    pub approximate_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total number of traces processed, including traces that did not match the specified
     /// filter expression.</p>
     pub traces_processed_count: std::option::Option<i64>,
@@ -445,7 +445,7 @@ impl GetTraceSummariesOutput {
         self.trace_summaries.as_deref()
     }
     /// <p>The start time of this page of results.</p>
-    pub fn approximate_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn approximate_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.approximate_time.as_ref()
     }
     /// <p>The total number of traces processed, including traces that did not match the specified
@@ -476,7 +476,7 @@ pub mod get_trace_summaries_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trace_summaries: std::option::Option<std::vec::Vec<crate::model::TraceSummary>>,
-        pub(crate) approximate_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) approximate_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) traces_processed_count: std::option::Option<i64>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
@@ -503,14 +503,14 @@ pub mod get_trace_summaries_output {
             self
         }
         /// <p>The start time of this page of results.</p>
-        pub fn approximate_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn approximate_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.approximate_time = Some(input);
             self
         }
         /// <p>The start time of this page of results.</p>
         pub fn set_approximate_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.approximate_time = input;
             self
@@ -762,9 +762,9 @@ impl GetTimeSeriesServiceStatisticsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceGraphOutput {
     /// <p>The start of the time frame for which the graph was generated.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the time frame for which the graph was generated.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The services that have processed a traced request during the specified time
     /// frame.</p>
     pub services: std::option::Option<std::vec::Vec<crate::model::Service>>,
@@ -777,11 +777,11 @@ pub struct GetServiceGraphOutput {
 }
 impl GetServiceGraphOutput {
     /// <p>The start of the time frame for which the graph was generated.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time frame for which the graph was generated.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The services that have processed a traced request during the specified time
@@ -820,35 +820,35 @@ pub mod get_service_graph_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) services: std::option::Option<std::vec::Vec<crate::model::Service>>,
         pub(crate) contains_old_group_versions: std::option::Option<bool>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The start of the time frame for which the graph was generated.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The start of the time frame for which the graph was generated.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The end of the time frame for which the graph was generated.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The end of the time frame for which the graph was generated.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -927,7 +927,7 @@ pub struct GetSamplingTargetsOutput {
     /// <p>The last time a user changed the sampling rule configuration. If
     /// the sampling rule configuration changed since the service last retrieved it, the service
     /// should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
-    pub last_rule_modification: std::option::Option<aws_smithy_types::Instant>,
+    pub last_rule_modification: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not
     /// process.</p>
     pub unprocessed_statistics:
@@ -943,7 +943,7 @@ impl GetSamplingTargetsOutput {
     /// <p>The last time a user changed the sampling rule configuration. If
     /// the sampling rule configuration changed since the service last retrieved it, the service
     /// should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
-    pub fn last_rule_modification(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_rule_modification(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_rule_modification.as_ref()
     }
     /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not
@@ -971,7 +971,7 @@ pub mod get_sampling_targets_output {
     pub struct Builder {
         pub(crate) sampling_target_documents:
             std::option::Option<std::vec::Vec<crate::model::SamplingTargetDocument>>,
-        pub(crate) last_rule_modification: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_rule_modification: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) unprocessed_statistics:
             std::option::Option<std::vec::Vec<crate::model::UnprocessedStatistics>>,
     }
@@ -1001,7 +1001,7 @@ pub mod get_sampling_targets_output {
         /// <p>The last time a user changed the sampling rule configuration. If
         /// the sampling rule configuration changed since the service last retrieved it, the service
         /// should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
-        pub fn last_rule_modification(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_rule_modification(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_rule_modification = Some(input);
             self
         }
@@ -1010,7 +1010,7 @@ pub mod get_sampling_targets_output {
         /// should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
         pub fn set_last_rule_modification(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_rule_modification = input;
             self
@@ -1338,13 +1338,13 @@ pub struct GetInsightImpactGraphOutput {
     /// <p>The insight's unique identifier.</p>
     pub insight_id: std::option::Option<std::string::String>,
     /// <p>The provided start time.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The provided end time. </p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in Unix seconds, at which the service graph started.</p>
-    pub service_graph_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub service_graph_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in Unix seconds, at which the service graph ended.</p>
-    pub service_graph_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub service_graph_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services instrumented services related to the insight.</p>
     pub services: std::option::Option<std::vec::Vec<crate::model::InsightImpactGraphService>>,
     /// <p>Pagination token.</p>
@@ -1356,19 +1356,19 @@ impl GetInsightImpactGraphOutput {
         self.insight_id.as_deref()
     }
     /// <p>The provided start time.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The provided end time. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The time, in Unix seconds, at which the service graph started.</p>
-    pub fn service_graph_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn service_graph_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.service_graph_start_time.as_ref()
     }
     /// <p>The time, in Unix seconds, at which the service graph ended.</p>
-    pub fn service_graph_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn service_graph_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.service_graph_end_time.as_ref()
     }
     /// <p>The Amazon Web Services instrumented services related to the insight.</p>
@@ -1400,10 +1400,10 @@ pub mod get_insight_impact_graph_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_id: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) service_graph_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) service_graph_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) service_graph_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) service_graph_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) services:
             std::option::Option<std::vec::Vec<crate::model::InsightImpactGraphService>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1420,53 +1420,53 @@ pub mod get_insight_impact_graph_output {
             self
         }
         /// <p>The provided start time.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The provided start time.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The provided end time. </p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The provided end time. </p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
         }
         /// <p>The time, in Unix seconds, at which the service graph started.</p>
-        pub fn service_graph_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn service_graph_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.service_graph_start_time = Some(input);
             self
         }
         /// <p>The time, in Unix seconds, at which the service graph started.</p>
         pub fn set_service_graph_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.service_graph_start_time = input;
             self
         }
         /// <p>The time, in Unix seconds, at which the service graph ended.</p>
-        pub fn service_graph_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn service_graph_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.service_graph_end_time = Some(input);
             self
         }
         /// <p>The time, in Unix seconds, at which the service graph ended.</p>
         pub fn set_service_graph_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.service_graph_end_time = input;
             self

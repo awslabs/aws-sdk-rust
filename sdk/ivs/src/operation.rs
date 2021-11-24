@@ -464,6 +464,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStreamKey {
     }
 }
 
+/// Operation shape for `GetStreamSession`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_stream_session`](crate::client::Client::get_stream_session).
+///
+/// See [`crate::client::fluent_builders::GetStreamSession`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetStreamSession {
+    _private: (),
+}
+impl GetStreamSession {
+    /// Creates a new builder-style object to manufacture [`GetStreamSessionInput`](crate::input::GetStreamSessionInput)
+    pub fn builder() -> crate::input::get_stream_session_input::Builder {
+        crate::input::get_stream_session_input::Builder::default()
+    }
+    /// Creates a new `GetStreamSession` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetStreamSession {
+    type Output = std::result::Result<
+        crate::output::GetStreamSessionOutput,
+        crate::error::GetStreamSessionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_stream_session_error(response)
+        } else {
+            crate::operation_deser::parse_get_stream_session_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ImportPlaybackKeyPair`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -658,6 +692,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStreams {
             crate::operation_deser::parse_list_streams_error(response)
         } else {
             crate::operation_deser::parse_list_streams_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListStreamSessions`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_stream_sessions`](crate::client::Client::list_stream_sessions).
+///
+/// See [`crate::client::fluent_builders::ListStreamSessions`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListStreamSessions {
+    _private: (),
+}
+impl ListStreamSessions {
+    /// Creates a new builder-style object to manufacture [`ListStreamSessionsInput`](crate::input::ListStreamSessionsInput)
+    pub fn builder() -> crate::input::list_stream_sessions_input::Builder {
+        crate::input::list_stream_sessions_input::Builder::default()
+    }
+    /// Creates a new `ListStreamSessions` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListStreamSessions {
+    type Output = std::result::Result<
+        crate::output::ListStreamSessionsOutput,
+        crate::error::ListStreamSessionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_stream_sessions_error(response)
+        } else {
+            crate::operation_deser::parse_list_stream_sessions_response(response)
         }
     }
 }

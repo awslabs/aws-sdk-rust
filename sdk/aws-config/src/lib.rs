@@ -89,6 +89,14 @@ mod json_credentials;
 #[cfg(feature = "http-provider")]
 mod http_provider;
 
+// Re-export types from smithy-types
+pub use aws_smithy_types::retry::RetryConfig;
+pub use aws_smithy_types::timeout::TimeoutConfig;
+
+// Re-export types from aws-types
+pub use aws_types::app_name::{AppName, InvalidAppName};
+pub use aws_types::config::Config;
+
 /// Create an environment loader for AWS Configuration
 ///
 /// # Examples
@@ -117,11 +125,17 @@ pub use loader::ConfigLoader;
 
 #[cfg(feature = "default-provider")]
 mod loader {
-    use crate::default_provider::{credentials, region, retry_config};
-    use crate::meta::region::ProvideRegion;
+    use std::sync::Arc;
+
+    use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
     use aws_smithy_types::retry::RetryConfig;
+    use aws_smithy_types::timeout::TimeoutConfig;
+    use aws_types::app_name::AppName;
     use aws_types::config::Config;
     use aws_types::credentials::{ProvideCredentials, SharedCredentialsProvider};
+
+    use crate::default_provider::{app_name, credentials, region, retry_config, timeout_config};
+    use crate::meta::region::ProvideRegion;
 
     /// Load a cross-service [`Config`](aws_types::config::Config) from the environment
     ///
@@ -131,9 +145,12 @@ mod loader {
     /// chain will not be used.
     #[derive(Default, Debug)]
     pub struct ConfigLoader {
+        app_name: Option<AppName>,
+        credentials_provider: Option<SharedCredentialsProvider>,
         region: Option<Box<dyn ProvideRegion>>,
         retry_config: Option<RetryConfig>,
-        credentials_provider: Option<SharedCredentialsProvider>,
+        sleep: Option<Arc<dyn AsyncSleep>>,
+        timeout_config: Option<TimeoutConfig>,
     }
 
     impl ConfigLoader {
@@ -169,15 +186,50 @@ mod loader {
             self
         }
 
-        /// Override the credentials provider used to build [`Config`](aws_types::config::Config).
+        /// Override the timeout config used to build [`Config`](aws_types::config::Config).
+        /// **Note: This only sets timeouts for calls to AWS services.** Timeouts for the credentials
+        /// provider chain are configured separately.
+        ///
         /// # Examples
+        /// ```rust
+        /// # use std::time::Duration;
+        /// # use aws_smithy_types::timeout::TimeoutConfig;
+        /// # async fn create_config() {
+        ///  let timeout_config = TimeoutConfig::new().with_api_call_timeout(Some(Duration::from_secs(1)));
+        ///  let config = aws_config::from_env()
+        ///     .timeout_config(timeout_config)
+        ///     .load()
+        ///     .await;
+        /// # }
+        /// ```
+        pub fn timeout_config(mut self, timeout_config: TimeoutConfig) -> Self {
+            self.timeout_config = Some(timeout_config);
+            self
+        }
+
+        /// Override the sleep implementation for this [`ConfigLoader`]. The sleep implementation
+        /// is used to create timeout futures.
+        pub fn sleep_impl(mut self, sleep: impl AsyncSleep + 'static) -> Self {
+            // it's possible that we could wrapping an `Arc in an `Arc` and that's OK
+            self.sleep = Some(Arc::new(sleep));
+            self
+        }
+
+        /// Override the credentials provider used to build [`Config`](aws_types::config::Config).
+        ///
+        /// # Examples
+        ///
         /// Override the credentials provider but load the default value for region:
         /// ```rust
         /// # use aws_types::Credentials;
-        ///  async fn create_config() {
+        /// # fn create_my_credential_provider() -> Credentials {
+        /// #     Credentials::new("example", "example", None, None, "example")
+        /// # }
+        /// # async fn create_config() {
         /// let config = aws_config::from_env()
-        ///     .credentials_provider(Credentials::from_keys("accesskey", "secretkey", None))
-        ///     .load().await;
+        ///     .credentials_provider(create_my_credential_provider())
+        ///     .load()
+        ///     .await;
         /// # }
         /// ```
         pub fn credentials_provider(
@@ -210,6 +262,33 @@ mod loader {
                 retry_config::default_provider().retry_config().await
             };
 
+            let app_name = if self.app_name.is_some() {
+                self.app_name
+            } else {
+                app_name::default_provider().app_name().await
+            };
+
+            let timeout_config = if let Some(timeout_config) = self.timeout_config {
+                timeout_config
+            } else {
+                timeout_config::default_provider().timeout_config().await
+            };
+
+            let sleep_impl = if self.sleep.is_none() {
+                if default_async_sleep().is_none() {
+                    tracing::warn!(
+                        "An implementation of AsyncSleep was requested by calling default_async_sleep \
+                         but no default was set.
+                         This happened when ConfigLoader::load was called during Config construction. \
+                         You can fix this by setting a sleep_impl on the ConfigLoader before calling \
+                         load or by enabling the rt-tokio feature"
+                    );
+                }
+                default_async_sleep()
+            } else {
+                self.sleep
+            };
+
             let credentials_provider = if let Some(provider) = self.credentials_provider {
                 provider
             } else {
@@ -218,11 +297,15 @@ mod loader {
                 SharedCredentialsProvider::new(builder.build().await)
             };
 
-            Config::builder()
+            let mut builder = Config::builder()
                 .region(region)
                 .retry_config(retry_config)
-                .credentials_provider(credentials_provider)
-                .build()
+                .timeout_config(timeout_config)
+                .credentials_provider(credentials_provider);
+
+            builder.set_app_name(app_name);
+            builder.set_sleep_impl(sleep_impl);
+            builder.build()
         }
     }
 }

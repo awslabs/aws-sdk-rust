@@ -1843,7 +1843,7 @@ pub struct SigningJob {
     /// the certificate used for the signing job.</p>
     pub signing_material: std::option::Option<crate::model::SigningMaterial>,
     /// <p>The date and time that the signing job was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the signing job.</p>
     pub status: std::option::Option<crate::model::SigningStatus>,
     /// <p>Indicates whether the signing job is revoked.</p>
@@ -1857,7 +1857,7 @@ pub struct SigningJob {
     /// <p>The name of a signing platform.</p>
     pub platform_display_name: std::option::Option<std::string::String>,
     /// <p>The time when the signature of a signing job expires.</p>
-    pub signature_expires_at: std::option::Option<aws_smithy_types::Instant>,
+    pub signature_expires_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The AWS account ID of the job owner.</p>
     pub job_owner: std::option::Option<std::string::String>,
     /// <p>The AWS account ID of the job invoker.</p>
@@ -1884,7 +1884,7 @@ impl SigningJob {
         self.signing_material.as_ref()
     }
     /// <p>The date and time that the signing job was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The status of the signing job.</p>
@@ -1912,7 +1912,7 @@ impl SigningJob {
         self.platform_display_name.as_deref()
     }
     /// <p>The time when the signature of a signing job expires.</p>
-    pub fn signature_expires_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn signature_expires_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.signature_expires_at.as_ref()
     }
     /// <p>The AWS account ID of the job owner.</p>
@@ -1954,14 +1954,14 @@ pub mod signing_job {
         pub(crate) source: std::option::Option<crate::model::Source>,
         pub(crate) signed_object: std::option::Option<crate::model::SignedObject>,
         pub(crate) signing_material: std::option::Option<crate::model::SigningMaterial>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::SigningStatus>,
         pub(crate) is_revoked: std::option::Option<bool>,
         pub(crate) profile_name: std::option::Option<std::string::String>,
         pub(crate) profile_version: std::option::Option<std::string::String>,
         pub(crate) platform_id: std::option::Option<std::string::String>,
         pub(crate) platform_display_name: std::option::Option<std::string::String>,
-        pub(crate) signature_expires_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) signature_expires_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) job_owner: std::option::Option<std::string::String>,
         pub(crate) job_invoker: std::option::Option<std::string::String>,
     }
@@ -2019,14 +2019,14 @@ pub mod signing_job {
             self
         }
         /// <p>The date and time that the signing job was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the signing job was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -2101,14 +2101,14 @@ pub mod signing_job {
             self
         }
         /// <p>The time when the signature of a signing job expires.</p>
-        pub fn signature_expires_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn signature_expires_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.signature_expires_at = Some(input);
             self
         }
         /// <p>The time when the signature of a signing job expires.</p>
         pub fn set_signature_expires_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.signature_expires_at = input;
             self
@@ -2465,19 +2465,19 @@ impl Permission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SigningProfileRevocationRecord {
     /// <p>The time when revocation becomes effective.</p>
-    pub revocation_effective_from: std::option::Option<aws_smithy_types::Instant>,
+    pub revocation_effective_from: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the signing profile was revoked.</p>
-    pub revoked_at: std::option::Option<aws_smithy_types::Instant>,
+    pub revoked_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identity of the revoker.</p>
     pub revoked_by: std::option::Option<std::string::String>,
 }
 impl SigningProfileRevocationRecord {
     /// <p>The time when revocation becomes effective.</p>
-    pub fn revocation_effective_from(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn revocation_effective_from(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.revocation_effective_from.as_ref()
     }
     /// <p>The time when the signing profile was revoked.</p>
-    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.revoked_at.as_ref()
     }
     /// <p>The identity of the revoker.</p>
@@ -2500,33 +2500,33 @@ pub mod signing_profile_revocation_record {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) revocation_effective_from: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) revoked_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) revocation_effective_from: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) revoked_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) revoked_by: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The time when revocation becomes effective.</p>
-        pub fn revocation_effective_from(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn revocation_effective_from(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.revocation_effective_from = Some(input);
             self
         }
         /// <p>The time when revocation becomes effective.</p>
         pub fn set_revocation_effective_from(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.revocation_effective_from = input;
             self
         }
         /// <p>The time when the signing profile was revoked.</p>
-        pub fn revoked_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn revoked_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.revoked_at = Some(input);
             self
         }
         /// <p>The time when the signing profile was revoked.</p>
         pub fn set_revoked_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.revoked_at = input;
             self
@@ -2565,7 +2565,7 @@ pub struct SigningJobRevocationRecord {
     /// <p>A caller-supplied reason for revocation.</p>
     pub reason: std::option::Option<std::string::String>,
     /// <p>The time of revocation.</p>
-    pub revoked_at: std::option::Option<aws_smithy_types::Instant>,
+    pub revoked_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identity of the revoker.</p>
     pub revoked_by: std::option::Option<std::string::String>,
 }
@@ -2575,7 +2575,7 @@ impl SigningJobRevocationRecord {
         self.reason.as_deref()
     }
     /// <p>The time of revocation.</p>
-    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.revoked_at.as_ref()
     }
     /// <p>The identity of the revoker.</p>
@@ -2599,7 +2599,7 @@ pub mod signing_job_revocation_record {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reason: std::option::Option<std::string::String>,
-        pub(crate) revoked_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) revoked_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) revoked_by: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2614,14 +2614,14 @@ pub mod signing_job_revocation_record {
             self
         }
         /// <p>The time of revocation.</p>
-        pub fn revoked_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn revoked_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.revoked_at = Some(input);
             self
         }
         /// <p>The time of revocation.</p>
         pub fn set_revoked_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.revoked_at = input;
             self

@@ -858,7 +858,7 @@ pub struct DescribeReturnShippingLabelOutput {
     /// <p>The status information of the task on a Snow device that is being returned to AWS.</p>
     pub status: std::option::Option<crate::model::ShippingLabelStatus>,
     /// <p>The expiration date of the current return shipping label.</p>
-    pub expiration_date: std::option::Option<aws_smithy_types::Instant>,
+    pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeReturnShippingLabelOutput {
     /// <p>The status information of the task on a Snow device that is being returned to AWS.</p>
@@ -866,7 +866,7 @@ impl DescribeReturnShippingLabelOutput {
         self.status.as_ref()
     }
     /// <p>The expiration date of the current return shipping label.</p>
-    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
 }
@@ -885,7 +885,7 @@ pub mod describe_return_shipping_label_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ShippingLabelStatus>,
-        pub(crate) expiration_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The status information of the task on a Snow device that is being returned to AWS.</p>
@@ -902,14 +902,14 @@ pub mod describe_return_shipping_label_output {
             self
         }
         /// <p>The expiration date of the current return shipping label.</p>
-        pub fn expiration_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_date = Some(input);
             self
         }
         /// <p>The expiration date of the current return shipping label.</p>
         pub fn set_expiration_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiration_date = input;
             self

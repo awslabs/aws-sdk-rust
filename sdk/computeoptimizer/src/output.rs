@@ -412,7 +412,7 @@ pub struct GetEnrollmentStatusOutput {
     pub member_accounts_enrolled: bool,
     /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last
     /// updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The count of organization member accounts that are opted in to the service, if your
     /// account is an organization management account.</p>
     pub number_of_member_accounts_opted_in: std::option::Option<i32>,
@@ -436,7 +436,7 @@ impl GetEnrollmentStatusOutput {
     }
     /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last
     /// updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The count of organization member accounts that are opted in to the service, if your
@@ -468,7 +468,7 @@ pub mod get_enrollment_status_output {
         pub(crate) status: std::option::Option<crate::model::Status>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
         pub(crate) member_accounts_enrolled: std::option::Option<bool>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) number_of_member_accounts_opted_in: std::option::Option<i32>,
     }
     impl Builder {
@@ -515,7 +515,7 @@ pub mod get_enrollment_status_output {
         }
         /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last
         /// updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
@@ -523,7 +523,7 @@ pub mod get_enrollment_status_output {
         /// updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self

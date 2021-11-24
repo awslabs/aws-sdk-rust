@@ -106,6 +106,8 @@ pub struct DeleteAnomalyDetectorError {
 pub enum DeleteAnomalyDetectorErrorKind {
     /// <p>Request processing has failed due to some unknown error, exception, or failure.</p>
     InternalServiceFault(crate::error::InternalServiceFault),
+    /// <p>Parameters were used together that cannot be used together.</p>
+    InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value of an input parameter is bad or out-of-range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>An input parameter that is required is missing.</p>
@@ -119,6 +121,9 @@ impl std::fmt::Display for DeleteAnomalyDetectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DeleteAnomalyDetectorErrorKind::InternalServiceFault(_inner) => _inner.fmt(f),
+            DeleteAnomalyDetectorErrorKind::InvalidParameterCombinationException(_inner) => {
+                _inner.fmt(f)
+            }
             DeleteAnomalyDetectorErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
             DeleteAnomalyDetectorErrorKind::MissingRequiredParameterException(_inner) => {
                 _inner.fmt(f)
@@ -187,6 +192,13 @@ impl DeleteAnomalyDetectorError {
             DeleteAnomalyDetectorErrorKind::InternalServiceFault(_)
         )
     }
+    /// Returns `true` if the error kind is `DeleteAnomalyDetectorErrorKind::InvalidParameterCombinationException`.
+    pub fn is_invalid_parameter_combination_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAnomalyDetectorErrorKind::InvalidParameterCombinationException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DeleteAnomalyDetectorErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
@@ -213,6 +225,9 @@ impl std::error::Error for DeleteAnomalyDetectorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteAnomalyDetectorErrorKind::InternalServiceFault(_inner) => Some(_inner),
+            DeleteAnomalyDetectorErrorKind::InvalidParameterCombinationException(_inner) => {
+                Some(_inner)
+            }
             DeleteAnomalyDetectorErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             DeleteAnomalyDetectorErrorKind::MissingRequiredParameterException(_inner) => {
                 Some(_inner)
@@ -851,6 +866,8 @@ pub enum DescribeAnomalyDetectorsErrorKind {
     InternalServiceFault(crate::error::InternalServiceFault),
     /// <p>The next token specified is invalid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
+    /// <p>Parameters were used together that cannot be used together.</p>
+    InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value of an input parameter is bad or out-of-range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -861,6 +878,9 @@ impl std::fmt::Display for DescribeAnomalyDetectorsError {
         match &self.kind {
             DescribeAnomalyDetectorsErrorKind::InternalServiceFault(_inner) => _inner.fmt(f),
             DescribeAnomalyDetectorsErrorKind::InvalidNextToken(_inner) => _inner.fmt(f),
+            DescribeAnomalyDetectorsErrorKind::InvalidParameterCombinationException(_inner) => {
+                _inner.fmt(f)
+            }
             DescribeAnomalyDetectorsErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
@@ -934,6 +954,13 @@ impl DescribeAnomalyDetectorsError {
             DescribeAnomalyDetectorsErrorKind::InvalidNextToken(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeAnomalyDetectorsErrorKind::InvalidParameterCombinationException`.
+    pub fn is_invalid_parameter_combination_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAnomalyDetectorsErrorKind::InvalidParameterCombinationException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DescribeAnomalyDetectorsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
@@ -947,6 +974,9 @@ impl std::error::Error for DescribeAnomalyDetectorsError {
         match &self.kind {
             DescribeAnomalyDetectorsErrorKind::InternalServiceFault(_inner) => Some(_inner),
             DescribeAnomalyDetectorsErrorKind::InvalidNextToken(_inner) => Some(_inner),
+            DescribeAnomalyDetectorsErrorKind::InvalidParameterCombinationException(_inner) => {
+                Some(_inner)
+            }
             DescribeAnomalyDetectorsErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
             }
@@ -2587,6 +2617,8 @@ pub struct PutAnomalyDetectorError {
 pub enum PutAnomalyDetectorErrorKind {
     /// <p>Request processing has failed due to some unknown error, exception, or failure.</p>
     InternalServiceFault(crate::error::InternalServiceFault),
+    /// <p>Parameters were used together that cannot be used together.</p>
+    InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value of an input parameter is bad or out-of-range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The operation exceeded one or more limits.</p>
@@ -2600,6 +2632,9 @@ impl std::fmt::Display for PutAnomalyDetectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             PutAnomalyDetectorErrorKind::InternalServiceFault(_inner) => _inner.fmt(f),
+            PutAnomalyDetectorErrorKind::InvalidParameterCombinationException(_inner) => {
+                _inner.fmt(f)
+            }
             PutAnomalyDetectorErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
             PutAnomalyDetectorErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             PutAnomalyDetectorErrorKind::MissingRequiredParameterException(_inner) => _inner.fmt(f),
@@ -2666,6 +2701,13 @@ impl PutAnomalyDetectorError {
             PutAnomalyDetectorErrorKind::InternalServiceFault(_)
         )
     }
+    /// Returns `true` if the error kind is `PutAnomalyDetectorErrorKind::InvalidParameterCombinationException`.
+    pub fn is_invalid_parameter_combination_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutAnomalyDetectorErrorKind::InvalidParameterCombinationException(_)
+        )
+    }
     /// Returns `true` if the error kind is `PutAnomalyDetectorErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
@@ -2692,6 +2734,9 @@ impl std::error::Error for PutAnomalyDetectorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             PutAnomalyDetectorErrorKind::InternalServiceFault(_inner) => Some(_inner),
+            PutAnomalyDetectorErrorKind::InvalidParameterCombinationException(_inner) => {
+                Some(_inner)
+            }
             PutAnomalyDetectorErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             PutAnomalyDetectorErrorKind::LimitExceededException(_inner) => Some(_inner),
             PutAnomalyDetectorErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),

@@ -1153,8 +1153,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates a route</a> given the following required parameters:
     /// <code>DeparturePostiton</code> and <code>DestinationPosition</code>. Requires that
     /// you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create a
-    /// route calculator resource</a>
-    /// </p>
+    /// route calculator resource</a>.</p>
     /// <p>By default, a request that doesn't specify a departure time uses the best time of day
     /// to travel with the best traffic conditions when calculating the route.</p>
     /// <p>Additional options include:</p>
@@ -1167,7 +1166,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>You can't specify both <code>DepartureTime</code> and
     /// <code>DepartureNow</code> in a single request. Specifying both
-    /// parameters returns an error message.</p>
+    /// parameters returns a validation error.</p>
     /// </note>
     /// </li>
     /// <li>
@@ -1236,12 +1235,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the route calculator resource that you want to use to calculate a route. </p>
+        /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
         pub fn calculator_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.calculator_name(inp);
             self
         }
-        /// <p>The name of the route calculator resource that you want to use to calculate a route. </p>
+        /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
         pub fn set_calculator_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1429,7 +1428,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_travel_mode(input);
             self
         }
-        /// <p>Specifies the desired time of departure. Uses the given time to calculate a route.
+        /// <p>Specifies the desired time of departure. Uses the given time to calculate the route.
         /// Otherwise, the best time of day to travel with the best traffic conditions is used to
         /// calculate the route.</p>
         /// <note>
@@ -1444,11 +1443,11 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn departure_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn departure_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.departure_time(inp);
             self
         }
-        /// <p>Specifies the desired time of departure. Uses the given time to calculate a route.
+        /// <p>Specifies the desired time of departure. Uses the given time to calculate the route.
         /// Otherwise, the best time of day to travel with the best traffic conditions is used to
         /// calculate the route.</p>
         /// <note>
@@ -1465,7 +1464,7 @@ pub mod fluent_builders {
         /// </ul>
         pub fn set_departure_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_departure_time(input);
             self
@@ -1765,6 +1764,9 @@ pub mod fluent_builders {
         /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
         /// + - = . _ : / @. </p>
         /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
+        /// </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -1795,6 +1797,9 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
         /// + - = . _ : / @. </p>
+        /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
         /// </li>
         /// </ul>
         pub fn set_tags(
@@ -1977,6 +1982,9 @@ pub mod fluent_builders {
         /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : /
         /// @. </p>
         /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
+        /// </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -2008,6 +2016,9 @@ pub mod fluent_builders {
         /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : /
         /// @. </p>
         /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
+        /// </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -2021,8 +2032,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePlaceIndex`.
     ///
-    /// <p>Creates a place index resource in your AWS account, which supports functions with
-    /// geospatial data sourced from your chosen data provider.</p>
+    /// <p>Creates a place index resource in your AWS account. Use a place index resource to
+    /// geocode addresses and other text queries by using the <code>SearchPlaceIndexForText</code> operation,
+    /// and reverse geocode coordinates by using the <code>SearchPlaceIndexForPosition</code> operation.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreatePlaceIndex<
         C = aws_smithy_client::erase::DynConnector,
@@ -2115,7 +2127,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_index_name(input);
             self
         }
-        /// <p>Specifies the data provider of geospatial data.</p>
+        /// <p>Specifies the geospatial data provider for the new place index.</p>
         /// <note>
         /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering
         /// <code>HERE</code> returns an error.</p>
@@ -2132,7 +2144,8 @@ pub mod fluent_builders {
         /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'
         /// coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p>
         /// <important>
-        /// <p>Place index resources using HERE Technologies as a data provider can't <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
+        /// <p>If you specify HERE Technologies (<code>Here</code>) as the data provider,
+        /// you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
         /// <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
         /// for Amazon Location Service.</p>
         /// </important>
@@ -2144,7 +2157,7 @@ pub mod fluent_builders {
             self.inner = self.inner.data_source(inp);
             self
         }
-        /// <p>Specifies the data provider of geospatial data.</p>
+        /// <p>Specifies the geospatial data provider for the new place index.</p>
         /// <note>
         /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering
         /// <code>HERE</code> returns an error.</p>
@@ -2161,7 +2174,8 @@ pub mod fluent_builders {
         /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'
         /// coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p>
         /// <important>
-        /// <p>Place index resources using HERE Technologies as a data provider can't <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
+        /// <p>If you specify HERE Technologies (<code>Here</code>) as the data provider,
+        /// you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
         /// <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
         /// for Amazon Location Service.</p>
         /// </important>
@@ -2218,27 +2232,30 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair helps
-        /// manage, identify, search, and filter your resources by labelling them.</p>
+        /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you
+        /// manage, identify, search, and filter your resources.</p>
         /// <p>Format: <code>"key" : "value"</code>
         /// </p>
         /// <p>Restrictions:</p>
         /// <ul>
         /// <li>
-        /// <p>Maximum 50 tags per resource</p>
+        /// <p>Maximum 50 tags per resource.</p>
         /// </li>
         /// <li>
-        /// <p>Each resource tag must be unique with a maximum of one value.</p>
+        /// <p>Each tag key must be unique and must have exactly one associated value.</p>
         /// </li>
         /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
         /// </li>
         /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
         /// </li>
         /// <li>
         /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
-        /// = . _ : / @. </p>
+        /// = . _ : / @</p>
+        /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
         /// </li>
         /// </ul>
         pub fn tags(
@@ -2249,27 +2266,30 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k, v);
             self
         }
-        /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair helps
-        /// manage, identify, search, and filter your resources by labelling them.</p>
+        /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you
+        /// manage, identify, search, and filter your resources.</p>
         /// <p>Format: <code>"key" : "value"</code>
         /// </p>
         /// <p>Restrictions:</p>
         /// <ul>
         /// <li>
-        /// <p>Maximum 50 tags per resource</p>
+        /// <p>Maximum 50 tags per resource.</p>
         /// </li>
         /// <li>
-        /// <p>Each resource tag must be unique with a maximum of one value.</p>
+        /// <p>Each tag key must be unique and must have exactly one associated value.</p>
         /// </li>
         /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
         /// </li>
         /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
         /// </li>
         /// <li>
         /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
-        /// = . _ : / @. </p>
+        /// = . _ : / @</p>
+        /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
         /// </li>
         /// </ul>
         pub fn set_tags(
@@ -2488,6 +2508,9 @@ pub mod fluent_builders {
         /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
         /// + - = . _ : / @. </p>
         /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
+        /// </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -2524,6 +2547,9 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
         /// + - = . _ : / @. </p>
+        /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
         /// </li>
         /// </ul>
         pub fn set_tags(
@@ -2732,6 +2758,9 @@ pub mod fluent_builders {
         /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
         /// + - = . _ : / @. </p>
         /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
+        /// </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -2763,6 +2792,9 @@ pub mod fluent_builders {
         /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
         /// + - = . _ : / @. </p>
         /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
+        /// </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -2786,9 +2818,9 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
-        /// ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored.
-        /// This helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
-        /// Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
+        /// ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored.
+        /// This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through.
+        /// Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map.
         /// </p>
         /// </li>
         /// </ul>
@@ -2810,9 +2842,9 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
-        /// ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored.
-        /// This helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
-        /// Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
+        /// ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored.
+        /// This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through.
+        /// Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map.
         /// </p>
         /// </li>
         /// </ul>
@@ -3848,7 +3880,7 @@ pub mod fluent_builders {
         /// <code>EndTimeExclusive</code>.</p>
         /// </li>
         /// </ul>
-        pub fn start_time_inclusive(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time_inclusive(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time_inclusive(inp);
             self
         }
@@ -3864,7 +3896,7 @@ pub mod fluent_builders {
         /// </ul>
         pub fn set_start_time_inclusive(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time_inclusive(input);
             self
@@ -3879,7 +3911,7 @@ pub mod fluent_builders {
         /// <code>StartTimeInclusive</code>.</p>
         /// </li>
         /// </ul>
-        pub fn end_time_exclusive(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time_exclusive(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time_exclusive(inp);
             self
         }
@@ -3895,7 +3927,7 @@ pub mod fluent_builders {
         /// </ul>
         pub fn set_end_time_exclusive(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time_exclusive(input);
             self
@@ -5463,46 +5495,58 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_position`](Self::set_position).
         ///
-        /// <p>Specifies a coordinate for the query defined by a longitude, and latitude.</p>
-        /// <ul>
-        /// <li>
-        /// <p>The first position is the X coordinate, or longitude.</p>
-        /// </li>
-        /// <li>
-        /// <p>The second position is the Y coordinate, or latitude. </p>
-        /// </li>
-        /// </ul>
-        /// <p>For example, <code>position=xLongitude&amp;position=yLatitude</code> .</p>
+        /// <p>Specifies the longitude and latitude of the position to query.</p>
+        /// <p>
+        /// This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude;
+        /// the second number represents the Y coordinate, or latitude.</p>
+        /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with
+        /// longitude <code>-123.1174</code> and
+        /// latitude <code>49.2847</code>.</p>
         pub fn position(mut self, inp: impl Into<f64>) -> Self {
             self.inner = self.inner.position(inp);
             self
         }
-        /// <p>Specifies a coordinate for the query defined by a longitude, and latitude.</p>
-        /// <ul>
-        /// <li>
-        /// <p>The first position is the X coordinate, or longitude.</p>
-        /// </li>
-        /// <li>
-        /// <p>The second position is the Y coordinate, or latitude. </p>
-        /// </li>
-        /// </ul>
-        /// <p>For example, <code>position=xLongitude&amp;position=yLatitude</code> .</p>
+        /// <p>Specifies the longitude and latitude of the position to query.</p>
+        /// <p>
+        /// This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude;
+        /// the second number represents the Y coordinate, or latitude.</p>
+        /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with
+        /// longitude <code>-123.1174</code> and
+        /// latitude <code>49.2847</code>.</p>
         pub fn set_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.inner = self.inner.set_position(input);
             self
         }
-        /// <p>An optional paramer. The maximum number of results returned per request. </p>
+        /// <p>An optional parameter. The maximum number of results returned per request.</p>
         /// <p>Default value: <code>50</code>
         /// </p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
-        /// <p>An optional paramer. The maximum number of results returned per request. </p>
+        /// <p>An optional parameter. The maximum number of results returned per request.</p>
         /// <p>Default value: <code>50</code>
         /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
+        /// <code>en</code> for English.</p>
+        /// <p>This setting affects the languages used in the results. It does not change which
+        /// results are returned. If the language is not specified, or not supported for a
+        /// particular result, the partner automatically chooses a language for the result.</p>
+        pub fn language(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language(inp);
+            self
+        }
+        /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
+        /// <code>en</code> for English.</p>
+        /// <p>This setting affects the languages used in the results. It does not change which
+        /// results are returned. If the language is not specified, or not supported for a
+        /// particular result, the partner automatically chooses a language for the result.</p>
+        pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_language(input);
             self
         }
     }
@@ -5510,13 +5554,14 @@ pub mod fluent_builders {
     ///
     /// <p>Geocodes free-form text, such as an address, name, city, or region to allow you to
     /// search for Places or points of interest. </p>
-    /// <p>Includes the option to apply additional parameters to narrow your list of
-    /// results.</p>
+    /// <p>Optional parameters let you narrow your search results by bounding box or
+    /// country, or bias your search toward a specific position on the globe.</p>
     /// <note>
     /// <p>You can search for places near a given position using <code>BiasPosition</code>, or
     /// filter results within a bounding box using <code>FilterBBox</code>. Providing both
     /// parameters simultaneously returns an error.</p>
     /// </note>
+    /// <p>Search results are returned in order of highest to lowest relevance.</p>
     #[derive(std::fmt::Debug)]
     pub struct SearchPlaceIndexForText<
         C = aws_smithy_client::erase::DynConnector,
@@ -5584,14 +5629,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The address, name,
-        /// city, or region to be used in the search. In free-form text format. For example, <code>123 Any
+        /// city, or region to be used in the search in free-form text format. For example, <code>123 Any
         /// Street</code>.</p>
         pub fn text(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(inp);
             self
         }
         /// <p>The address, name,
-        /// city, or region to be used in the search. In free-form text format. For example, <code>123 Any
+        /// city, or region to be used in the search in free-form text format. For example, <code>123 Any
         /// Street</code>.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
@@ -5601,32 +5646,36 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_bias_position`](Self::set_bias_position).
         ///
-        /// <p>Searches for results closest to the given position. An optional parameter defined by
-        /// longitude, and latitude.</p>
-        /// <ul>
-        /// <li>
-        /// <p>The first <code>bias</code> position is the X coordinate, or longitude.</p>
-        /// </li>
-        /// <li>
-        /// <p>The second <code>bias</code> position is the Y coordinate, or latitude. </p>
-        /// </li>
-        /// </ul>
-        /// <p>For example, <code>bias=xLongitude&amp;bias=yLatitude</code>.</p>
+        /// <p>An optional parameter that indicates a preference for places that are closer to a specified position.</p>
+        /// <p>
+        /// If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the
+        /// second number represents the Y coordinate, or latitude.</p>
+        /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with
+        /// longitude <code>-123.1174</code> and
+        /// latitude <code>49.2847</code>.</p>
+        /// <note>
+        /// <p>
+        /// <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options
+        /// results in an error.
+        /// </p>
+        /// </note>
         pub fn bias_position(mut self, inp: impl Into<f64>) -> Self {
             self.inner = self.inner.bias_position(inp);
             self
         }
-        /// <p>Searches for results closest to the given position. An optional parameter defined by
-        /// longitude, and latitude.</p>
-        /// <ul>
-        /// <li>
-        /// <p>The first <code>bias</code> position is the X coordinate, or longitude.</p>
-        /// </li>
-        /// <li>
-        /// <p>The second <code>bias</code> position is the Y coordinate, or latitude. </p>
-        /// </li>
-        /// </ul>
-        /// <p>For example, <code>bias=xLongitude&amp;bias=yLatitude</code>.</p>
+        /// <p>An optional parameter that indicates a preference for places that are closer to a specified position.</p>
+        /// <p>
+        /// If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the
+        /// second number represents the Y coordinate, or latitude.</p>
+        /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with
+        /// longitude <code>-123.1174</code> and
+        /// latitude <code>49.2847</code>.</p>
+        /// <note>
+        /// <p>
+        /// <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options
+        /// results in an error.
+        /// </p>
+        /// </note>
         pub fn set_bias_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.inner = self.inner.set_bias_position(input);
             self
@@ -5635,64 +5684,38 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filter_b_box`](Self::set_filter_b_box).
         ///
-        /// <p>Filters the results by returning only Places within the provided bounding box. An
-        /// optional parameter.</p>
-        /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner:</p>
-        /// <ul>
-        /// <li>
-        /// <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower
-        /// southwest corner.</p>
-        /// </li>
-        /// <li>
-        /// <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower
-        /// southwest corner.</p>
-        /// </li>
-        /// </ul>
-        /// <p>For example, <code>bbox=xLongitudeSW&amp;bbox=yLatitudeSW</code>.</p>
-        /// <p>The next <code>bbox</code> parameters describe the upper northeast corner:</p>
-        /// <ul>
-        /// <li>
-        /// <p>The third <code>bbox</code> position is the X coordinate, or longitude of the
-        /// upper northeast corner.</p>
-        /// </li>
-        /// <li>
-        /// <p>The fourth <code>bbox</code> position is the Y coordinate, or longitude of the
-        /// upper northeast corner.</p>
-        /// </li>
-        /// </ul>
-        /// <p>For example, <code>bbox=xLongitudeNE&amp;bbox=yLatitudeNE</code>
+        /// <p>An optional parameter that limits the search results by returning only places that are within the provided bounding box.</p>
+        /// <p>
+        /// If provided, this parameter must contain a total of four consecutive numbers in two pairs.
+        /// The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively)
+        /// of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively)
+        /// of the northeast corner of the bounding box.</p>
+        /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents
+        /// a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>,
+        /// and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p>
+        /// <note>
+        /// <p>
+        /// <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.
         /// </p>
+        /// </note>
         pub fn filter_b_box(mut self, inp: impl Into<f64>) -> Self {
             self.inner = self.inner.filter_b_box(inp);
             self
         }
-        /// <p>Filters the results by returning only Places within the provided bounding box. An
-        /// optional parameter.</p>
-        /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner:</p>
-        /// <ul>
-        /// <li>
-        /// <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower
-        /// southwest corner.</p>
-        /// </li>
-        /// <li>
-        /// <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower
-        /// southwest corner.</p>
-        /// </li>
-        /// </ul>
-        /// <p>For example, <code>bbox=xLongitudeSW&amp;bbox=yLatitudeSW</code>.</p>
-        /// <p>The next <code>bbox</code> parameters describe the upper northeast corner:</p>
-        /// <ul>
-        /// <li>
-        /// <p>The third <code>bbox</code> position is the X coordinate, or longitude of the
-        /// upper northeast corner.</p>
-        /// </li>
-        /// <li>
-        /// <p>The fourth <code>bbox</code> position is the Y coordinate, or longitude of the
-        /// upper northeast corner.</p>
-        /// </li>
-        /// </ul>
-        /// <p>For example, <code>bbox=xLongitudeNE&amp;bbox=yLatitudeNE</code>
+        /// <p>An optional parameter that limits the search results by returning only places that are within the provided bounding box.</p>
+        /// <p>
+        /// If provided, this parameter must contain a total of four consecutive numbers in two pairs.
+        /// The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively)
+        /// of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively)
+        /// of the northeast corner of the bounding box.</p>
+        /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents
+        /// a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>,
+        /// and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p>
+        /// <note>
+        /// <p>
+        /// <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.
         /// </p>
+        /// </note>
         pub fn set_filter_b_box(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.inner = self.inner.set_filter_b_box(input);
             self
@@ -5701,12 +5724,11 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filter_countries`](Self::set_filter_countries).
         ///
-        /// <p>Limits the search to the given a list of countries/regions. An optional
-        /// parameter.</p>
+        /// <p>An optional parameter that limits the search results by returning only places that are in a specified list of countries.</p>
         /// <ul>
         /// <li>
-        /// <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
-        /// country code. For example, Australia uses three upper-case characters:
+        /// <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
+        /// country codes. For example, Australia uses three upper-case characters:
         /// <code>AUS</code>.</p>
         /// </li>
         /// </ul>
@@ -5714,12 +5736,11 @@ pub mod fluent_builders {
             self.inner = self.inner.filter_countries(inp);
             self
         }
-        /// <p>Limits the search to the given a list of countries/regions. An optional
-        /// parameter.</p>
+        /// <p>An optional parameter that limits the search results by returning only places that are in a specified list of countries.</p>
         /// <ul>
         /// <li>
-        /// <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
-        /// country code. For example, Australia uses three upper-case characters:
+        /// <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
+        /// country codes. For example, Australia uses three upper-case characters:
         /// <code>AUS</code>.</p>
         /// </li>
         /// </ul>
@@ -5742,6 +5763,24 @@ pub mod fluent_builders {
         /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
+        /// <code>en</code> for English.</p>
+        /// <p>This setting affects the languages used in the results. It does not change which
+        /// results are returned. If the language is not specified, or not supported for a
+        /// particular result, the partner automatically chooses a language for the result.</p>
+        pub fn language(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language(inp);
+            self
+        }
+        /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
+        /// <code>en</code> for English.</p>
+        /// <p>This setting affects the languages used in the results. It does not change which
+        /// results are returned. If the language is not specified, or not supported for a
+        /// particular result, the partner automatically chooses a language for the result.</p>
+        pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_language(input);
             self
         }
     }
@@ -5843,11 +5882,30 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
+        /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you
+        /// manage, identify, search, and filter your resources.</p>
+        /// <p>Format: <code>"key" : "value"</code>
+        /// </p>
+        /// <p>Restrictions:</p>
         /// <ul>
         /// <li>
-        /// <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code>
-        /// </p>
+        /// <p>Maximum 50 tags per resource.</p>
+        /// </li>
+        /// <li>
+        /// <p>Each tag key must be unique and must have exactly one associated value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
+        /// = . _ : / @</p>
+        /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
         /// </li>
         /// </ul>
         pub fn tags(
@@ -5858,11 +5916,30 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k, v);
             self
         }
-        /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
+        /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you
+        /// manage, identify, search, and filter your resources.</p>
+        /// <p>Format: <code>"key" : "value"</code>
+        /// </p>
+        /// <p>Restrictions:</p>
         /// <ul>
         /// <li>
-        /// <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code>
-        /// </p>
+        /// <p>Maximum 50 tags per resource.</p>
+        /// </li>
+        /// <li>
+        /// <p>Each tag key must be unique and must have exactly one associated value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
+        /// = . _ : / @</p>
+        /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
         /// </li>
         /// </ul>
         pub fn set_tags(
@@ -6605,7 +6682,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -6628,7 +6711,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

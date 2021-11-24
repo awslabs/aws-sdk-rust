@@ -12,16 +12,18 @@ pub mod create_capacity_provider_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The name of the capacity provider. Up to 255 characters are allowed, including letters
-        /// (upper and lowercase), numbers, underscores, and hyphens. The name cannot be prefixed
-        /// with "<code>aws</code>", "<code>ecs</code>", or "<code>fargate</code>".</p>
+        /// <p>The name of the capacity provider. Up to 255 characters are allowed. They include
+        /// letters (both upper and lowercase letters), numbers, underscores (_), and hyphens (-).
+        /// The name can't be prefixed with "<code>aws</code>", "<code>ecs</code>", or
+        /// "<code>fargate</code>".</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the capacity provider. Up to 255 characters are allowed, including letters
-        /// (upper and lowercase), numbers, underscores, and hyphens. The name cannot be prefixed
-        /// with "<code>aws</code>", "<code>ecs</code>", or "<code>fargate</code>".</p>
+        /// <p>The name of the capacity provider. Up to 255 characters are allowed. They include
+        /// letters (both upper and lowercase letters), numbers, underscores (_), and hyphens (-).
+        /// The name can't be prefixed with "<code>aws</code>", "<code>ecs</code>", or
+        /// "<code>fargate</code>".</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -46,9 +48,9 @@ pub mod create_capacity_provider_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata that you apply to the capacity provider to help you categorize and
-        /// organize them. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>The metadata that you apply to the capacity provider to categorize and organize them
+        /// more conveniently. Each tag consists of a key and an optional value. You define both of
+        /// them.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
         /// <li>
@@ -86,9 +88,9 @@ pub mod create_capacity_provider_input {
             self.tags = Some(v);
             self
         }
-        /// <p>The metadata that you apply to the capacity provider to help you categorize and
-        /// organize them. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>The metadata that you apply to the capacity provider to categorize and organize them
+        /// more conveniently. Each tag consists of a key and an optional value. You define both of
+        /// them.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
         /// <li>
@@ -149,6 +151,7 @@ pub type CreateCapacityProviderInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl CreateCapacityProviderInput {
     /// Consumes the builder and constructs an Operation<[`CreateCapacityProvider`](crate::operation::CreateCapacityProvider)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -207,11 +210,14 @@ impl CreateCapacityProviderInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -277,14 +283,14 @@ pub mod create_cluster_input {
             std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
     }
     impl Builder {
-        /// <p>The name of your cluster. If you do not specify a name for your cluster, you create a
-        /// cluster named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. </p>
+        /// <p>The name of your cluster. If you don't specify a name for your cluster, you create a
+        /// cluster that's named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. </p>
         pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_name = Some(input.into());
             self
         }
-        /// <p>The name of your cluster. If you do not specify a name for your cluster, you create a
-        /// cluster named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. </p>
+        /// <p>The name of your cluster. If you don't specify a name for your cluster, you create a
+        /// cluster that's named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. </p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_name = input;
             self
@@ -294,7 +300,7 @@ pub mod create_cluster_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The metadata that you apply to the cluster to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value, both of which you define.</p>
+        /// Each tag consists of a key and an optional value. You define both.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
         /// <li>
@@ -333,7 +339,7 @@ pub mod create_cluster_input {
             self
         }
         /// <p>The metadata that you apply to the cluster to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value, both of which you define.</p>
+        /// Each tag consists of a key and an optional value. You define both.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
         /// <li>
@@ -377,7 +383,7 @@ pub mod create_cluster_input {
         /// To override the contents of this collection use [`set_settings`](Self::set_settings).
         ///
         /// <p>The setting to use when creating a cluster. This parameter is used to enable CloudWatch
-        /// Container Insights for a cluster. If this value is specified, it will override the
+        /// Container Insights for a cluster. If this value is specified, it overrides the
         /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
         /// <a>PutAccountSettingDefault</a>.</p>
         pub fn settings(mut self, input: impl Into<crate::model::ClusterSetting>) -> Self {
@@ -387,7 +393,7 @@ pub mod create_cluster_input {
             self
         }
         /// <p>The setting to use when creating a cluster. This parameter is used to enable CloudWatch
-        /// Container Insights for a cluster. If this value is specified, it will override the
+        /// Container Insights for a cluster. If this value is specified, it overrides the
         /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
         /// <a>PutAccountSettingDefault</a>.</p>
         pub fn set_settings(
@@ -397,12 +403,14 @@ pub mod create_cluster_input {
             self.settings = input;
             self
         }
-        /// <p>The execute command configuration for the cluster.</p>
+        /// <p>The
+        /// execute command configuration for the cluster.</p>
         pub fn configuration(mut self, input: crate::model::ClusterConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>The execute command configuration for the cluster.</p>
+        /// <p>The
+        /// execute command configuration for the cluster.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ClusterConfiguration>,
@@ -420,8 +428,9 @@ pub mod create_cluster_input {
         /// strategy when calling the <a>CreateService</a> or <a>RunTask</a>
         /// actions.</p>
         /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
-        /// provider must already be created and not already associated with another cluster. New
-        /// Auto Scaling group capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
+        /// provider must be created but not associated with another cluster. New Auto Scaling group
+        /// capacity providers can be created with the <a>CreateCapacityProvider</a> API
+        /// operation.</p>
         /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
         /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
         /// available to all accounts and only need to be associated with a cluster to be
@@ -440,8 +449,9 @@ pub mod create_cluster_input {
         /// strategy when calling the <a>CreateService</a> or <a>RunTask</a>
         /// actions.</p>
         /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
-        /// provider must already be created and not already associated with another cluster. New
-        /// Auto Scaling group capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
+        /// provider must be created but not associated with another cluster. New Auto Scaling group
+        /// capacity providers can be created with the <a>CreateCapacityProvider</a> API
+        /// operation.</p>
         /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
         /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
         /// available to all accounts and only need to be associated with a cluster to be
@@ -459,13 +469,13 @@ pub mod create_cluster_input {
         ///
         /// To override the contents of this collection use [`set_default_capacity_provider_strategy`](Self::set_default_capacity_provider_strategy).
         ///
-        /// <p>The capacity provider strategy to set as the default for the cluster. When a default
-        /// capacity provider strategy is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity
+        /// <p>The capacity provider strategy to set as the default for the cluster. After a default
+        /// capacity provider strategy is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity
         /// provider strategy or launch type specified, the default capacity provider strategy for
         /// the cluster is used.</p>
-        /// <p>If a default capacity provider strategy is not defined for a cluster during creation,
-        /// it can be defined later with the <a>PutClusterCapacityProviders</a> API
-        /// operation.</p>
+        /// <p>If a default capacity provider strategy isn't defined for a cluster when it was
+        /// created, it can be defined later with the <a>PutClusterCapacityProviders</a>
+        /// API operation.</p>
         pub fn default_capacity_provider_strategy(
             mut self,
             input: impl Into<crate::model::CapacityProviderStrategyItem>,
@@ -475,13 +485,13 @@ pub mod create_cluster_input {
             self.default_capacity_provider_strategy = Some(v);
             self
         }
-        /// <p>The capacity provider strategy to set as the default for the cluster. When a default
-        /// capacity provider strategy is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity
+        /// <p>The capacity provider strategy to set as the default for the cluster. After a default
+        /// capacity provider strategy is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity
         /// provider strategy or launch type specified, the default capacity provider strategy for
         /// the cluster is used.</p>
-        /// <p>If a default capacity provider strategy is not defined for a cluster during creation,
-        /// it can be defined later with the <a>PutClusterCapacityProviders</a> API
-        /// operation.</p>
+        /// <p>If a default capacity provider strategy isn't defined for a cluster when it was
+        /// created, it can be defined later with the <a>PutClusterCapacityProviders</a>
+        /// API operation.</p>
         pub fn set_default_capacity_provider_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
@@ -514,6 +524,7 @@ pub type CreateClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateClusterInput {
     /// Consumes the builder and constructs an Operation<[`CreateCluster`](crate::operation::CreateCluster)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -569,11 +580,14 @@ impl CreateClusterInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -659,13 +673,13 @@ pub mod create_service_input {
         pub(crate) enable_execute_command: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to run your service.
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that you run your service on.
         /// If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster = Some(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to run your service.
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that you run your service on.
         /// If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
@@ -686,19 +700,19 @@ pub mod create_service_input {
             self
         }
         /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full ARN of the task definition to run in your service. If a <code>revision</code> is
-        /// not specified, the latest <code>ACTIVE</code> revision is used.</p>
-        /// <p>A task definition must be specified if the service is using either the
-        /// <code>ECS</code> or <code>CODE_DEPLOY</code> deployment controllers.</p>
+        /// full ARN of the task definition to run in your service. If a <code>revision</code>
+        /// isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
+        /// <p>A task definition must be specified if the service uses either the <code>ECS</code> or
+        /// <code>CODE_DEPLOY</code> deployment controllers.</p>
         pub fn task_definition(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_definition = Some(input.into());
             self
         }
         /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full ARN of the task definition to run in your service. If a <code>revision</code> is
-        /// not specified, the latest <code>ACTIVE</code> revision is used.</p>
-        /// <p>A task definition must be specified if the service is using either the
-        /// <code>ECS</code> or <code>CODE_DEPLOY</code> deployment controllers.</p>
+        /// full ARN of the task definition to run in your service. If a <code>revision</code>
+        /// isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
+        /// <p>A task definition must be specified if the service uses either the <code>ECS</code> or
+        /// <code>CODE_DEPLOY</code> deployment controllers.</p>
         pub fn set_task_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -713,40 +727,41 @@ pub mod create_service_input {
         /// <p>A load balancer object representing the load balancers to use with your service. For
         /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load Balancing</a> in the
         /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>If the service is using the rolling update (<code>ECS</code>) deployment controller
-        /// and using either an Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to
-        /// attach to the service. The service-linked role is required for services that make use of
-        /// multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECS</a> in the
+        /// <p>If the service uses the rolling update (<code>ECS</code>) deployment controller and
+        /// using either an Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to attach
+        /// to the service. The service-linked role is required for services that use multiple
+        /// target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECS</a> in the
         /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>If the service is using the <code>CODE_DEPLOY</code> deployment controller, the
-        /// service is required to use either an Application Load Balancer or Network Load Balancer. When creating an CodeDeploy deployment
-        /// group, you specify two target groups (referred to as a <code>targetGroupPair</code>).
-        /// During a deployment, CodeDeploy determines which task set in your service has the status
-        /// <code>PRIMARY</code> and associates one target group with it, and then associates
-        /// the other target group with the replacement task set. The load balancer can also have up
-        /// to two listeners: a required listener for production traffic and an optional listener
-        /// that allows you perform validation tests with Lambda functions before routing production
-        /// traffic to it.</p>
+        /// <p>If the service uses the <code>CODE_DEPLOY</code> deployment controller, the service is
+        /// required to use either an Application Load Balancer or Network Load Balancer. When creating an CodeDeploy deployment group, you
+        /// specify two target groups (referred to as a <code>targetGroupPair</code>). During a
+        /// deployment, CodeDeploy determines which task set in your service has the status
+        /// <code>PRIMARY</code>, and it associates one target group with it. Then, it also
+        /// associates the other target group with the replacement task set. The load balancer can
+        /// also have up to two listeners: a required listener for production traffic and an
+        /// optional listener that you can use to perform validation tests with Lambda functions
+        /// before routing production traffic to it.</p>
         /// <p>After you create a service using the <code>ECS</code> deployment controller, the load
-        /// balancer name or target group ARN, container name, and container port specified in the
-        /// service definition are immutable. If you are using the <code>CODE_DEPLOY</code>
+        /// balancer name or target group ARN, container name, and container port that's specified
+        /// in the service definition are immutable. If you use the <code>CODE_DEPLOY</code>
         /// deployment controller, these values can be changed when updating the service.</p>
         /// <p>For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target group ARN,
-        /// the container name (as it appears in a container definition), and the container port to
-        /// access from the load balancer. The load balancer name parameter must be omitted. When a
-        /// task from this service is placed on a container instance, the container instance and
-        /// port combination is registered as a target in the target group specified here.</p>
-        /// <p>For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
-        /// appears in a container definition), and the container port to access from the load
-        /// balancer. The target group ARN parameter must be omitted. When a task from this service
-        /// is placed on a container instance, the container instance is registered with the load
-        /// balancer specified here.</p>
+        /// the container name, and the container port to access from the load balancer. The
+        /// container name must be as it appears in a container definition. The load balancer name
+        /// parameter must be omitted. When a task from this service is placed on a container
+        /// instance, the container instance and port combination is registered as a target in the
+        /// target group that's specified here.</p>
+        /// <p>For Classic Load Balancers, this object must contain the load balancer name, the container name , and
+        /// the container port to access from the load balancer. The container name must be as it
+        /// appears in a container definition. The target group ARN parameter must be omitted. When
+        /// a task from this service is placed on a container instance, the container instance is
+        /// registered with the load balancer that's specified here.</p>
         /// <p>Services with tasks that use the <code>awsvpc</code> network mode (for example, those
-        /// with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are
-        /// not supported. Also, when you create any target groups for these services, you must
-        /// choose <code>ip</code> as the target type, not <code>instance</code>, because tasks that
-        /// use the <code>awsvpc</code> network mode are associated with an elastic network
-        /// interface, not an Amazon EC2 instance.</p>
+        /// with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
+        /// aren't supported. Also, when you create any target groups for these services, you must
+        /// choose <code>ip</code> as the target type, not <code>instance</code>. This is because
+        /// tasks that use the <code>awsvpc</code> network mode are associated with an elastic
+        /// network interface, not an Amazon EC2 instance.</p>
         pub fn load_balancers(mut self, input: impl Into<crate::model::LoadBalancer>) -> Self {
             let mut v = self.load_balancers.unwrap_or_default();
             v.push(input.into());
@@ -756,40 +771,41 @@ pub mod create_service_input {
         /// <p>A load balancer object representing the load balancers to use with your service. For
         /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load Balancing</a> in the
         /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>If the service is using the rolling update (<code>ECS</code>) deployment controller
-        /// and using either an Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to
-        /// attach to the service. The service-linked role is required for services that make use of
-        /// multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECS</a> in the
+        /// <p>If the service uses the rolling update (<code>ECS</code>) deployment controller and
+        /// using either an Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to attach
+        /// to the service. The service-linked role is required for services that use multiple
+        /// target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECS</a> in the
         /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>If the service is using the <code>CODE_DEPLOY</code> deployment controller, the
-        /// service is required to use either an Application Load Balancer or Network Load Balancer. When creating an CodeDeploy deployment
-        /// group, you specify two target groups (referred to as a <code>targetGroupPair</code>).
-        /// During a deployment, CodeDeploy determines which task set in your service has the status
-        /// <code>PRIMARY</code> and associates one target group with it, and then associates
-        /// the other target group with the replacement task set. The load balancer can also have up
-        /// to two listeners: a required listener for production traffic and an optional listener
-        /// that allows you perform validation tests with Lambda functions before routing production
-        /// traffic to it.</p>
+        /// <p>If the service uses the <code>CODE_DEPLOY</code> deployment controller, the service is
+        /// required to use either an Application Load Balancer or Network Load Balancer. When creating an CodeDeploy deployment group, you
+        /// specify two target groups (referred to as a <code>targetGroupPair</code>). During a
+        /// deployment, CodeDeploy determines which task set in your service has the status
+        /// <code>PRIMARY</code>, and it associates one target group with it. Then, it also
+        /// associates the other target group with the replacement task set. The load balancer can
+        /// also have up to two listeners: a required listener for production traffic and an
+        /// optional listener that you can use to perform validation tests with Lambda functions
+        /// before routing production traffic to it.</p>
         /// <p>After you create a service using the <code>ECS</code> deployment controller, the load
-        /// balancer name or target group ARN, container name, and container port specified in the
-        /// service definition are immutable. If you are using the <code>CODE_DEPLOY</code>
+        /// balancer name or target group ARN, container name, and container port that's specified
+        /// in the service definition are immutable. If you use the <code>CODE_DEPLOY</code>
         /// deployment controller, these values can be changed when updating the service.</p>
         /// <p>For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target group ARN,
-        /// the container name (as it appears in a container definition), and the container port to
-        /// access from the load balancer. The load balancer name parameter must be omitted. When a
-        /// task from this service is placed on a container instance, the container instance and
-        /// port combination is registered as a target in the target group specified here.</p>
-        /// <p>For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
-        /// appears in a container definition), and the container port to access from the load
-        /// balancer. The target group ARN parameter must be omitted. When a task from this service
-        /// is placed on a container instance, the container instance is registered with the load
-        /// balancer specified here.</p>
+        /// the container name, and the container port to access from the load balancer. The
+        /// container name must be as it appears in a container definition. The load balancer name
+        /// parameter must be omitted. When a task from this service is placed on a container
+        /// instance, the container instance and port combination is registered as a target in the
+        /// target group that's specified here.</p>
+        /// <p>For Classic Load Balancers, this object must contain the load balancer name, the container name , and
+        /// the container port to access from the load balancer. The container name must be as it
+        /// appears in a container definition. The target group ARN parameter must be omitted. When
+        /// a task from this service is placed on a container instance, the container instance is
+        /// registered with the load balancer that's specified here.</p>
         /// <p>Services with tasks that use the <code>awsvpc</code> network mode (for example, those
-        /// with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are
-        /// not supported. Also, when you create any target groups for these services, you must
-        /// choose <code>ip</code> as the target type, not <code>instance</code>, because tasks that
-        /// use the <code>awsvpc</code> network mode are associated with an elastic network
-        /// interface, not an Amazon EC2 instance.</p>
+        /// with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
+        /// aren't supported. Also, when you create any target groups for these services, you must
+        /// choose <code>ip</code> as the target type, not <code>instance</code>. This is because
+        /// tasks that use the <code>awsvpc</code> network mode are associated with an elastic
+        /// network interface, not an Amazon EC2 instance.</p>
         pub fn set_load_balancers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
@@ -806,7 +822,7 @@ pub mod create_service_input {
         /// discovery</a>.</p>
         /// <note>
         /// <p>Each service may be associated with one service registry. Multiple service
-        /// registries per service isn't supported.</p>
+        /// registries for each service isn't supported.</p>
         /// </note>
         pub fn service_registries(
             mut self,
@@ -822,7 +838,7 @@ pub mod create_service_input {
         /// discovery</a>.</p>
         /// <note>
         /// <p>Each service may be associated with one service registry. Multiple service
-        /// registries per service isn't supported.</p>
+        /// registries for each service isn't supported.</p>
         /// </note>
         pub fn set_service_registries(
             mut self,
@@ -833,8 +849,8 @@ pub mod create_service_input {
         }
         /// <p>The number of instantiations of the specified task definition to place and keep
         /// running on your cluster.</p>
-        /// <p>This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or is not
-        /// specified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this is not
+        /// <p>This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't
+        /// specified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't
         /// required.</p>
         pub fn desired_count(mut self, input: i32) -> Self {
             self.desired_count = Some(input);
@@ -842,26 +858,26 @@ pub mod create_service_input {
         }
         /// <p>The number of instantiations of the specified task definition to place and keep
         /// running on your cluster.</p>
-        /// <p>This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or is not
-        /// specified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this is not
+        /// <p>This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't
+        /// specified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't
         /// required.</p>
         pub fn set_desired_count(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_count = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 32 ASCII characters are allowed.</p>
+        /// <p>An identifier that you provide to ensure the idempotency of the request. It must be
+        /// unique and is case sensitive. Up to 32 ASCII characters are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 32 ASCII characters are allowed.</p>
+        /// <p>An identifier that you provide to ensure the idempotency of the request. It must be
+        /// unique and is case sensitive. Up to 32 ASCII characters are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The infrastructure on which to run your service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+        /// <p>The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
         /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand
         /// infrastructure.</p>
@@ -872,7 +888,7 @@ pub mod create_service_input {
         /// </note>
         /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your
         /// cluster.</p>
-        /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
+        /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or
         /// virtual machine (VM) capacity registered to your cluster.</p>
         /// <p>A service can use either a launch type or a capacity provider strategy. If a
         /// <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
@@ -881,7 +897,7 @@ pub mod create_service_input {
             self.launch_type = Some(input);
             self
         }
-        /// <p>The infrastructure on which to run your service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+        /// <p>The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
         /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand
         /// infrastructure.</p>
@@ -892,7 +908,7 @@ pub mod create_service_input {
         /// </note>
         /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your
         /// cluster.</p>
-        /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
+        /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or
         /// virtual machine (VM) capacity registered to your cluster.</p>
         /// <p>A service can use either a launch type or a capacity provider strategy. If a
         /// <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
@@ -938,8 +954,8 @@ pub mod create_service_input {
         }
         /// <p>The platform version that your tasks in the service are running on. A platform version
         /// is specified only for tasks using the Fargate launch type. If one isn't
-        /// specified, the <code>LATEST</code> platform version is used by default. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
+        /// specified, the <code>LATEST</code> platform version is used. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
         /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform_version = Some(input.into());
@@ -947,8 +963,8 @@ pub mod create_service_input {
         }
         /// <p>The platform version that your tasks in the service are running on. A platform version
         /// is specified only for tasks using the Fargate launch type. If one isn't
-        /// specified, the <code>LATEST</code> platform version is used by default. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
+        /// specified, the <code>LATEST</code> platform version is used. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
         /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_platform_version(
             mut self,
@@ -959,16 +975,16 @@ pub mod create_service_input {
         }
         /// <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your
         /// load balancer on your behalf. This parameter is only permitted if you are using a load
-        /// balancer with your service and your task definition does not use the <code>awsvpc</code>
+        /// balancer with your service and your task definition doesn't use the <code>awsvpc</code>
         /// network mode. If you specify the <code>role</code> parameter, you must also specify a
         /// load balancer object with the <code>loadBalancers</code> parameter.</p>
         /// <important>
         /// <p>If your account has already created the Amazon ECS service-linked role, that role is
-        /// used by default for your service unless you specify a role here. The service-linked
-        /// role is required if your task definition uses the <code>awsvpc</code> network mode
-        /// or if the service is configured to use service discovery, an external deployment
-        /// controller, multiple target groups, or Elastic Inference accelerators in which case
-        /// you should not specify a role here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+        /// used for your service unless you specify a role here. The service-linked role is
+        /// required if your task definition uses the <code>awsvpc</code> network mode or if the
+        /// service is configured to use service discovery, an external deployment controller,
+        /// multiple target groups, or Elastic Inference accelerators in which case you don't
+        /// specify a role here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
         /// service-linked roles for Amazon ECS</a> in the
         /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// </important>
@@ -983,16 +999,16 @@ pub mod create_service_input {
         }
         /// <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your
         /// load balancer on your behalf. This parameter is only permitted if you are using a load
-        /// balancer with your service and your task definition does not use the <code>awsvpc</code>
+        /// balancer with your service and your task definition doesn't use the <code>awsvpc</code>
         /// network mode. If you specify the <code>role</code> parameter, you must also specify a
         /// load balancer object with the <code>loadBalancers</code> parameter.</p>
         /// <important>
         /// <p>If your account has already created the Amazon ECS service-linked role, that role is
-        /// used by default for your service unless you specify a role here. The service-linked
-        /// role is required if your task definition uses the <code>awsvpc</code> network mode
-        /// or if the service is configured to use service discovery, an external deployment
-        /// controller, multiple target groups, or Elastic Inference accelerators in which case
-        /// you should not specify a role here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+        /// used for your service unless you specify a role here. The service-linked role is
+        /// required if your task definition uses the <code>awsvpc</code> network mode or if the
+        /// service is configured to use service discovery, an external deployment controller,
+        /// multiple target groups, or Elastic Inference accelerators in which case you don't
+        /// specify a role here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
         /// service-linked roles for Amazon ECS</a> in the
         /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// </important>
@@ -1028,8 +1044,8 @@ pub mod create_service_input {
         /// To override the contents of this collection use [`set_placement_constraints`](Self::set_placement_constraints).
         ///
         /// <p>An array of placement constraint objects to use for tasks in your service. You can
-        /// specify a maximum of 10 constraints per task (this limit includes constraints in the
-        /// task definition and those specified at runtime).</p>
+        /// specify a maximum of 10 constraints for each task. This limit includes constraints in
+        /// the task definition and those specified at runtime.</p>
         pub fn placement_constraints(
             mut self,
             input: impl Into<crate::model::PlacementConstraint>,
@@ -1040,8 +1056,8 @@ pub mod create_service_input {
             self
         }
         /// <p>An array of placement constraint objects to use for tasks in your service. You can
-        /// specify a maximum of 10 constraints per task (this limit includes constraints in the
-        /// task definition and those specified at runtime).</p>
+        /// specify a maximum of 10 constraints for each task. This limit includes constraints in
+        /// the task definition and those specified at runtime.</p>
         pub fn set_placement_constraints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
@@ -1054,7 +1070,7 @@ pub mod create_service_input {
         /// To override the contents of this collection use [`set_placement_strategy`](Self::set_placement_strategy).
         ///
         /// <p>The placement strategy objects to use for tasks in your service. You can specify a
-        /// maximum of 5 strategy rules per service.</p>
+        /// maximum of 5 strategy rules for each service.</p>
         pub fn placement_strategy(
             mut self,
             input: impl Into<crate::model::PlacementStrategy>,
@@ -1065,7 +1081,7 @@ pub mod create_service_input {
             self
         }
         /// <p>The placement strategy objects to use for tasks in your service. You can specify a
-        /// maximum of 5 strategy rules per service.</p>
+        /// maximum of 5 strategy rules for each service.</p>
         pub fn set_placement_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
@@ -1075,8 +1091,8 @@ pub mod create_service_input {
         }
         /// <p>The network configuration for the service. This parameter is required for task
         /// definitions that use the <code>awsvpc</code> network mode to receive their own elastic
-        /// network interface, and it is not supported for other network modes. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
+        /// network interface, and it isn't supported for other network modes. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
         /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
             self.network_configuration = Some(input);
@@ -1084,8 +1100,8 @@ pub mod create_service_input {
         }
         /// <p>The network configuration for the service. This parameter is required for task
         /// definitions that use the <code>awsvpc</code> network mode to receive their own elastic
-        /// network interface, and it is not supported for other network modes. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
+        /// network interface, and it isn't supported for other network modes. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
         /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_network_configuration(
             mut self,
@@ -1094,30 +1110,34 @@ pub mod create_service_input {
             self.network_configuration = input;
             self
         }
-        /// <p>The period of time, in seconds, that the Amazon ECS service scheduler should ignore
-        /// unhealthy Elastic Load Balancing target health checks after a task has first started. This is only used
-        /// when your service is configured to use a load balancer. If your service has a load
-        /// balancer defined and you don't specify a health check grace period value, the default
-        /// value of <code>0</code> is used.</p>
+        /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
+        /// Elastic Load Balancing target health checks after a task has first started. This is only used when your
+        /// service is configured to use a load balancer. If your service has a load balancer
+        /// defined and you don't specify a health check grace period value, the default value of
+        /// <code>0</code> is used.</p>
         /// <p>If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you
-        /// can specify a health check grace period of up to 2,147,483,647 seconds. During that
-        /// time, the Amazon ECS service scheduler ignores health check status. This grace period can
-        /// prevent the service scheduler from marking tasks as unhealthy and stopping them before
-        /// they have time to come up.</p>
+        /// can specify a health check grace period of up to
+        /// 2,147,483,647
+        /// seconds (about 69 years). During that time, the Amazon ECS service
+        /// scheduler ignores health check status. This grace period can prevent the service
+        /// scheduler from marking tasks as unhealthy and stopping them before they have time to
+        /// come up.</p>
         pub fn health_check_grace_period_seconds(mut self, input: i32) -> Self {
             self.health_check_grace_period_seconds = Some(input);
             self
         }
-        /// <p>The period of time, in seconds, that the Amazon ECS service scheduler should ignore
-        /// unhealthy Elastic Load Balancing target health checks after a task has first started. This is only used
-        /// when your service is configured to use a load balancer. If your service has a load
-        /// balancer defined and you don't specify a health check grace period value, the default
-        /// value of <code>0</code> is used.</p>
+        /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
+        /// Elastic Load Balancing target health checks after a task has first started. This is only used when your
+        /// service is configured to use a load balancer. If your service has a load balancer
+        /// defined and you don't specify a health check grace period value, the default value of
+        /// <code>0</code> is used.</p>
         /// <p>If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you
-        /// can specify a health check grace period of up to 2,147,483,647 seconds. During that
-        /// time, the Amazon ECS service scheduler ignores health check status. This grace period can
-        /// prevent the service scheduler from marking tasks as unhealthy and stopping them before
-        /// they have time to come up.</p>
+        /// can specify a health check grace period of up to
+        /// 2,147,483,647
+        /// seconds (about 69 years). During that time, the Amazon ECS service
+        /// scheduler ignores health check status. This grace period can prevent the service
+        /// scheduler from marking tasks as unhealthy and stopping them before they have time to
+        /// come up.</p>
         pub fn set_health_check_grace_period_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -1134,9 +1154,8 @@ pub mod create_service_input {
         /// maintains the desired number of tasks across your cluster. By default, the
         /// service scheduler spreads tasks across Availability Zones. You can use task
         /// placement strategies and constraints to customize task placement decisions. This
-        /// scheduler strategy is required if the service is using the
-        /// <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller
-        /// types.</p>
+        /// scheduler strategy is required if the service uses the <code>CODE_DEPLOY</code>
+        /// or <code>EXTERNAL</code> deployment controller types.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -1144,7 +1163,7 @@ pub mod create_service_input {
         /// task on each active container instance that meets all of the task placement
         /// constraints that you specify in your cluster. The service scheduler also
         /// evaluates the task placement constraints for running tasks and will stop tasks
-        /// that do not meet the placement constraints. When you're using this strategy, you
+        /// that don't meet the placement constraints. When you're using this strategy, you
         /// don't need to specify a desired number of tasks, a task placement strategy, or
         /// use Service Auto Scaling policies.</p>
         /// <note>
@@ -1167,9 +1186,8 @@ pub mod create_service_input {
         /// maintains the desired number of tasks across your cluster. By default, the
         /// service scheduler spreads tasks across Availability Zones. You can use task
         /// placement strategies and constraints to customize task placement decisions. This
-        /// scheduler strategy is required if the service is using the
-        /// <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller
-        /// types.</p>
+        /// scheduler strategy is required if the service uses the <code>CODE_DEPLOY</code>
+        /// or <code>EXTERNAL</code> deployment controller types.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -1177,7 +1195,7 @@ pub mod create_service_input {
         /// task on each active container instance that meets all of the task placement
         /// constraints that you specify in your cluster. The service scheduler also
         /// evaluates the task placement constraints for running tasks and will stop tasks
-        /// that do not meet the placement constraints. When you're using this strategy, you
+        /// that don't meet the placement constraints. When you're using this strategy, you
         /// don't need to specify a desired number of tasks, a task placement strategy, or
         /// use Service Auto Scaling policies.</p>
         /// <note>
@@ -1309,19 +1327,19 @@ pub mod create_service_input {
             self
         }
         /// <p>Specifies whether to propagate the tags from the task definition or the service to the
-        /// tasks in the service. If no value is specified, the tags are not propagated. Tags can
+        /// tasks in the service. If no value is specified, the tags aren't propagated. Tags can
         /// only be propagated to the tasks within the service during service creation. To add tags
-        /// to a task after service creation or task creation, use the <a>TagResource</a> API
-        /// action.</p>
+        /// to a task after service creation or task creation, use the <a>TagResource</a>
+        /// API action.</p>
         pub fn propagate_tags(mut self, input: crate::model::PropagateTags) -> Self {
             self.propagate_tags = Some(input);
             self
         }
         /// <p>Specifies whether to propagate the tags from the task definition or the service to the
-        /// tasks in the service. If no value is specified, the tags are not propagated. Tags can
+        /// tasks in the service. If no value is specified, the tags aren't propagated. Tags can
         /// only be propagated to the tasks within the service during service creation. To add tags
-        /// to a task after service creation or task creation, use the <a>TagResource</a> API
-        /// action.</p>
+        /// to a task after service creation or task creation, use the <a>TagResource</a>
+        /// API action.</p>
         pub fn set_propagate_tags(
             mut self,
             input: std::option::Option<crate::model::PropagateTags>,
@@ -1329,14 +1347,14 @@ pub mod create_service_input {
             self.propagate_tags = input;
             self
         }
-        /// <p>Whether or not the execute command functionality is enabled for the service. If
+        /// <p>Determines whether the execute command functionality is enabled for the service. If
         /// <code>true</code>, this enables execute command functionality on all containers in
         /// the service tasks.</p>
         pub fn enable_execute_command(mut self, input: bool) -> Self {
             self.enable_execute_command = Some(input);
             self
         }
-        /// <p>Whether or not the execute command functionality is enabled for the service. If
+        /// <p>Determines whether the execute command functionality is enabled for the service. If
         /// <code>true</code>, this enables execute command functionality on all containers in
         /// the service tasks.</p>
         pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
@@ -1384,6 +1402,7 @@ pub type CreateServiceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateServiceInput {
     /// Consumes the builder and constructs an Operation<[`CreateService`](crate::operation::CreateService)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1439,11 +1458,14 @@ impl CreateServiceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1628,16 +1650,16 @@ pub mod create_task_set_input {
             self.service_registries = input;
             self
         }
-        /// <p>The launch type that new tasks in the task set will use. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The launch type that new tasks in the task set uses. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+        /// Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// <p>If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
         /// parameter must be omitted.</p>
         pub fn launch_type(mut self, input: crate::model::LaunchType) -> Self {
             self.launch_type = Some(input);
             self
         }
-        /// <p>The launch type that new tasks in the task set will use. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The launch type that new tasks in the task set uses. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+        /// Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// <p>If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
         /// parameter must be omitted.</p>
         pub fn set_launch_type(
@@ -1705,16 +1727,16 @@ pub mod create_task_set_input {
             self.capacity_provider_strategy = input;
             self
         }
-        /// <p>The platform version that the tasks in the task set should use. A platform version is
+        /// <p>The platform version that the tasks in the task set uses. A platform version is
         /// specified only for tasks using the Fargate launch type. If one isn't
-        /// specified, the <code>LATEST</code> platform version is used by default.</p>
+        /// specified, the <code>LATEST</code> platform version is used.</p>
         pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform_version = Some(input.into());
             self
         }
-        /// <p>The platform version that the tasks in the task set should use. A platform version is
+        /// <p>The platform version that the tasks in the task set uses. A platform version is
         /// specified only for tasks using the Fargate launch type. If one isn't
-        /// specified, the <code>LATEST</code> platform version is used by default.</p>
+        /// specified, the <code>LATEST</code> platform version is used.</p>
         pub fn set_platform_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1734,14 +1756,14 @@ pub mod create_task_set_input {
             self.scale = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 32 ASCII characters are allowed.</p>
+        /// <p>The identifier that you provide to ensure the idempotency of the request. It's case
+        /// sensitive and must be unique. It can be up to 32 ASCII characters are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 32 ASCII characters are allowed.</p>
+        /// <p>The identifier that you provide to ensure the idempotency of the request. It's case
+        /// sensitive and must be unique. It can be up to 32 ASCII characters are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1751,8 +1773,8 @@ pub mod create_task_set_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The metadata that you apply to the task set to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value, both of which you define. When a
-        /// service is deleted, the tags are deleted as well.</p>
+        /// Each tag consists of a key and an optional value. You define both. When a service is
+        /// deleted, the tags are deleted.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
         /// <li>
@@ -1791,8 +1813,8 @@ pub mod create_task_set_input {
             self
         }
         /// <p>The metadata that you apply to the task set to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value, both of which you define. When a
-        /// service is deleted, the tags are deleted as well.</p>
+        /// Each tag consists of a key and an optional value. You define both. When a service is
+        /// deleted, the tags are deleted.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
         /// <li>
@@ -1863,6 +1885,7 @@ pub type CreateTaskSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateTaskSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateTaskSet`](crate::operation::CreateTaskSet)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1919,11 +1942,14 @@ impl CreateTaskSetInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1984,7 +2010,7 @@ pub mod delete_account_setting_input {
         pub(crate) principal_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The resource name for which to disable the account setting. If
+        /// <p>The resource name to disable the account setting for. If
         /// <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is
         /// affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for
         /// your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is
@@ -1995,7 +2021,7 @@ pub mod delete_account_setting_input {
             self.name = Some(input);
             self
         }
-        /// <p>The resource name for which to disable the account setting. If
+        /// <p>The resource name to disable the account setting for. If
         /// <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is
         /// affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for
         /// your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is
@@ -2006,20 +2032,20 @@ pub mod delete_account_setting_input {
             self.name = input;
             self
         }
-        /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you
-        /// specify the root user, it disables the account setting for all IAM users, IAM roles, and
-        /// the root user of the account unless an IAM user or role explicitly overrides these
-        /// settings. If this field is omitted, the setting is changed only for the authenticated
-        /// user.</p>
+        /// <p>The Amazon Resource Name (ARN) of the principal. It can be an IAM user, IAM role, or
+        /// the root user. If you specify the root user, it disables the account setting for all IAM
+        /// users, IAM roles, and the root user of the account unless an IAM user or role explicitly
+        /// overrides these settings. If this field is omitted, the setting is changed only for the
+        /// authenticated user.</p>
         pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you
-        /// specify the root user, it disables the account setting for all IAM users, IAM roles, and
-        /// the root user of the account unless an IAM user or role explicitly overrides these
-        /// settings. If this field is omitted, the setting is changed only for the authenticated
-        /// user.</p>
+        /// <p>The Amazon Resource Name (ARN) of the principal. It can be an IAM user, IAM role, or
+        /// the root user. If you specify the root user, it disables the account setting for all IAM
+        /// users, IAM roles, and the root user of the account unless an IAM user or role explicitly
+        /// overrides these settings. If this field is omitted, the setting is changed only for the
+        /// authenticated user.</p>
         pub fn set_principal_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2048,6 +2074,7 @@ pub type DeleteAccountSettingInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl DeleteAccountSettingInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAccountSetting`](crate::operation::DeleteAccountSetting)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2106,11 +2133,14 @@ impl DeleteAccountSettingInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2187,8 +2217,8 @@ pub mod delete_attributes_input {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The attributes to delete from your resource. You can specify up to 10 attributes per
-        /// request. For custom attributes, specify the attribute name and target ID, but do not
+        /// <p>The attributes to delete from your resource. You can specify up to 10 attributes for
+        /// each request. For custom attributes, specify the attribute name and target ID, but don't
         /// specify the value. If you specify the target ID using the short form, you must also
         /// specify the target type.</p>
         pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
@@ -2197,8 +2227,8 @@ pub mod delete_attributes_input {
             self.attributes = Some(v);
             self
         }
-        /// <p>The attributes to delete from your resource. You can specify up to 10 attributes per
-        /// request. For custom attributes, specify the attribute name and target ID, but do not
+        /// <p>The attributes to delete from your resource. You can specify up to 10 attributes for
+        /// each request. For custom attributes, specify the attribute name and target ID, but don't
         /// specify the value. If you specify the target ID using the short form, you must also
         /// specify the target type.</p>
         pub fn set_attributes(
@@ -2229,6 +2259,7 @@ pub type DeleteAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DeleteAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAttributes`](crate::operation::DeleteAttributes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2285,11 +2316,14 @@ impl DeleteAttributesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2382,6 +2416,7 @@ pub type DeleteCapacityProviderInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl DeleteCapacityProviderInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCapacityProvider`](crate::operation::DeleteCapacityProvider)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2440,11 +2475,14 @@ impl DeleteCapacityProviderInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2534,6 +2572,7 @@ pub type DeleteClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteClusterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCluster`](crate::operation::DeleteCluster)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2589,11 +2628,14 @@ impl DeleteClusterInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2677,16 +2719,16 @@ pub mod delete_service_input {
             self.service = input;
             self
         }
-        /// <p>If <code>true</code>, allows you to delete a service even if it has not been scaled
-        /// down to zero tasks. It is only necessary to use this if the service is using the
-        /// <code>REPLICA</code> scheduling strategy.</p>
+        /// <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled down to
+        /// zero tasks. It's only necessary to use this if the service uses the <code>REPLICA</code>
+        /// scheduling strategy.</p>
         pub fn force(mut self, input: bool) -> Self {
             self.force = Some(input);
             self
         }
-        /// <p>If <code>true</code>, allows you to delete a service even if it has not been scaled
-        /// down to zero tasks. It is only necessary to use this if the service is using the
-        /// <code>REPLICA</code> scheduling strategy.</p>
+        /// <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled down to
+        /// zero tasks. It's only necessary to use this if the service uses the <code>REPLICA</code>
+        /// scheduling strategy.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
@@ -2713,6 +2755,7 @@ pub type DeleteServiceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteServiceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteService`](crate::operation::DeleteService)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2768,11 +2811,14 @@ impl DeleteServiceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2836,13 +2882,13 @@ pub mod delete_task_set_input {
     }
     impl Builder {
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
-        /// set exists in to delete.</p>
+        /// set found in to delete.</p>
         pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster = Some(input.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
-        /// set exists in to delete.</p>
+        /// set found in to delete.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -2869,14 +2915,14 @@ pub mod delete_task_set_input {
             self.task_set = input;
             self
         }
-        /// <p>If <code>true</code>, this allows you to delete a task set even if it hasn't been
-        /// scaled down to zero.</p>
+        /// <p>If <code>true</code>, you can delete a task set even if it hasn't been scaled down to
+        /// zero.</p>
         pub fn force(mut self, input: bool) -> Self {
             self.force = Some(input);
             self
         }
-        /// <p>If <code>true</code>, this allows you to delete a task set even if it hasn't been
-        /// scaled down to zero.</p>
+        /// <p>If <code>true</code>, you can delete a task set even if it hasn't been scaled down to
+        /// zero.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
@@ -2904,6 +2950,7 @@ pub type DeleteTaskSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteTaskSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTaskSet`](crate::operation::DeleteTaskSet)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2960,11 +3007,14 @@ impl DeleteTaskSetInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3053,12 +3103,12 @@ pub mod deregister_container_instance_input {
             self.container_instance = input;
             self
         }
-        /// <p>Forces the deregistration of the container instance. If you have tasks running on the
+        /// <p>Forces the container instance to be deregistered. If you have tasks running on the
         /// container instance when you deregister it with the <code>force</code> option, these
         /// tasks remain running until you terminate the instance or the tasks stop through some
-        /// other means, but they are orphaned (no longer monitored or accounted for by Amazon ECS). If
-        /// an orphaned task on your container instance is part of an Amazon ECS service, then the
-        /// service scheduler starts another copy of that task, on a different container instance if
+        /// other means, but they're orphaned (no longer monitored or accounted for by Amazon ECS). If an
+        /// orphaned task on your container instance is part of an Amazon ECS service, then the service
+        /// scheduler starts another copy of that task, on a different container instance if
         /// possible. </p>
         /// <p>Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an Application Load Balancer
         /// target group are deregistered. They begin connection draining according to the settings
@@ -3067,12 +3117,12 @@ pub mod deregister_container_instance_input {
             self.force = Some(input);
             self
         }
-        /// <p>Forces the deregistration of the container instance. If you have tasks running on the
+        /// <p>Forces the container instance to be deregistered. If you have tasks running on the
         /// container instance when you deregister it with the <code>force</code> option, these
         /// tasks remain running until you terminate the instance or the tasks stop through some
-        /// other means, but they are orphaned (no longer monitored or accounted for by Amazon ECS). If
-        /// an orphaned task on your container instance is part of an Amazon ECS service, then the
-        /// service scheduler starts another copy of that task, on a different container instance if
+        /// other means, but they're orphaned (no longer monitored or accounted for by Amazon ECS). If an
+        /// orphaned task on your container instance is part of an Amazon ECS service, then the service
+        /// scheduler starts another copy of that task, on a different container instance if
         /// possible. </p>
         /// <p>Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an Application Load Balancer
         /// target group are deregistered. They begin connection draining according to the settings
@@ -3104,6 +3154,7 @@ pub type DeregisterContainerInstanceInputOperationRetryAlias = aws_http::AwsErro
 impl DeregisterContainerInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterContainerInstance`](crate::operation::DeregisterContainerInstance)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3161,11 +3212,14 @@ impl DeregisterContainerInstanceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3263,6 +3317,7 @@ pub type DeregisterTaskDefinitionInputOperationRetryAlias = aws_http::AwsErrorRe
 impl DeregisterTaskDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterTaskDefinition`](crate::operation::DeregisterTaskDefinition)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3321,11 +3376,14 @@ impl DeregisterTaskDefinitionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3415,7 +3473,7 @@ pub mod describe_capacity_providers_input {
         ///
         /// <p>Specifies whether or not you want to see the resource tags for the capacity provider.
         /// If <code>TAGS</code> is specified, the tags are included in the response. If this field
-        /// is omitted, tags are not included in the response.</p>
+        /// is omitted, tags aren't included in the response.</p>
         pub fn include(mut self, input: impl Into<crate::model::CapacityProviderField>) -> Self {
             let mut v = self.include.unwrap_or_default();
             v.push(input.into());
@@ -3424,7 +3482,7 @@ pub mod describe_capacity_providers_input {
         }
         /// <p>Specifies whether or not you want to see the resource tags for the capacity provider.
         /// If <code>TAGS</code> is specified, the tags are included in the response. If this field
-        /// is omitted, tags are not included in the response.</p>
+        /// is omitted, tags aren't included in the response.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderField>>,
@@ -3510,6 +3568,7 @@ pub type DescribeCapacityProvidersInputOperationRetryAlias = aws_http::AwsErrorR
 impl DescribeCapacityProvidersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCapacityProviders`](crate::operation::DescribeCapacityProviders)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3568,11 +3627,14 @@ impl DescribeCapacityProvidersInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3658,8 +3720,8 @@ pub mod describe_clusters_input {
         ///
         /// To override the contents of this collection use [`set_include`](Self::set_include).
         ///
-        /// <p>Whether to include additional information about the clusters in the response. If this
-        /// field is omitted, this information isn't included.</p>
+        /// <p>Determines whether to include additional information about the clusters in the
+        /// response. If this field is omitted, this information isn't included.</p>
         /// <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container instances
         /// or tasks within the cluster are included.</p>
         /// <p>If <code>SETTINGS</code> is specified, the settings for the cluster are
@@ -3676,8 +3738,8 @@ pub mod describe_clusters_input {
             self.include = Some(v);
             self
         }
-        /// <p>Whether to include additional information about the clusters in the response. If this
-        /// field is omitted, this information isn't included.</p>
+        /// <p>Determines whether to include additional information about the clusters in the
+        /// response. If this field is omitted, this information isn't included.</p>
         /// <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container instances
         /// or tasks within the cluster are included.</p>
         /// <p>If <code>SETTINGS</code> is specified, the settings for the cluster are
@@ -3716,6 +3778,7 @@ pub type DescribeClustersInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DescribeClustersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeClusters`](crate::operation::DescribeClusters)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3772,11 +3835,14 @@ impl DescribeClustersInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3879,8 +3945,10 @@ pub mod describe_container_instances_input {
         /// To override the contents of this collection use [`set_include`](Self::set_include).
         ///
         /// <p>Specifies whether you want to see the resource tags for the container instance. If
-        /// <code>TAGS</code> is specified, the tags are included in the response. If this field
-        /// is omitted, tags are not included in the response.</p>
+        /// <code>TAGS</code> is specified, the tags are included in the response. If
+        /// <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health
+        /// is included in the response. If this field is omitted, tags and container instance
+        /// health status aren't included in the response.</p>
         pub fn include(mut self, input: impl Into<crate::model::ContainerInstanceField>) -> Self {
             let mut v = self.include.unwrap_or_default();
             v.push(input.into());
@@ -3888,8 +3956,10 @@ pub mod describe_container_instances_input {
             self
         }
         /// <p>Specifies whether you want to see the resource tags for the container instance. If
-        /// <code>TAGS</code> is specified, the tags are included in the response. If this field
-        /// is omitted, tags are not included in the response.</p>
+        /// <code>TAGS</code> is specified, the tags are included in the response. If
+        /// <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health
+        /// is included in the response. If this field is omitted, tags and container instance
+        /// health status aren't included in the response.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContainerInstanceField>>,
@@ -3920,6 +3990,7 @@ pub type DescribeContainerInstancesInputOperationRetryAlias = aws_http::AwsError
 impl DescribeContainerInstancesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeContainerInstances`](crate::operation::DescribeContainerInstances)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3978,11 +4049,14 @@ impl DescribeContainerInstancesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4083,18 +4157,18 @@ pub mod describe_services_input {
         ///
         /// To override the contents of this collection use [`set_include`](Self::set_include).
         ///
-        /// <p>Specifies whether you want to see the resource tags for the service. If
+        /// <p>Determines whether you want to see the resource tags for the service. If
         /// <code>TAGS</code> is specified, the tags are included in the response. If this field
-        /// is omitted, tags are not included in the response.</p>
+        /// is omitted, tags aren't included in the response.</p>
         pub fn include(mut self, input: impl Into<crate::model::ServiceField>) -> Self {
             let mut v = self.include.unwrap_or_default();
             v.push(input.into());
             self.include = Some(v);
             self
         }
-        /// <p>Specifies whether you want to see the resource tags for the service. If
+        /// <p>Determines whether you want to see the resource tags for the service. If
         /// <code>TAGS</code> is specified, the tags are included in the response. If this field
-        /// is omitted, tags are not included in the response.</p>
+        /// is omitted, tags aren't included in the response.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceField>>,
@@ -4124,6 +4198,7 @@ pub type DescribeServicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DescribeServicesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeServices`](crate::operation::DescribeServices)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4180,11 +4255,14 @@ impl DescribeServicesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4268,18 +4346,18 @@ pub mod describe_task_definition_input {
         ///
         /// To override the contents of this collection use [`set_include`](Self::set_include).
         ///
-        /// <p>Specifies whether to see the resource tags for the task definition. If
+        /// <p>Determines whether to see the resource tags for the task definition. If
         /// <code>TAGS</code> is specified, the tags are included in the response. If this field
-        /// is omitted, tags are not included in the response.</p>
+        /// is omitted, tags aren't included in the response.</p>
         pub fn include(mut self, input: impl Into<crate::model::TaskDefinitionField>) -> Self {
             let mut v = self.include.unwrap_or_default();
             v.push(input.into());
             self.include = Some(v);
             self
         }
-        /// <p>Specifies whether to see the resource tags for the task definition. If
+        /// <p>Determines whether to see the resource tags for the task definition. If
         /// <code>TAGS</code> is specified, the tags are included in the response. If this field
-        /// is omitted, tags are not included in the response.</p>
+        /// is omitted, tags aren't included in the response.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TaskDefinitionField>>,
@@ -4308,6 +4386,7 @@ pub type DescribeTaskDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl DescribeTaskDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTaskDefinition`](crate::operation::DescribeTaskDefinition)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4366,11 +4445,14 @@ impl DescribeTaskDefinitionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4470,8 +4552,8 @@ pub mod describe_tasks_input {
         /// To override the contents of this collection use [`set_include`](Self::set_include).
         ///
         /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code>
-        /// is specified, the tags are included in the response. If this field is omitted, tags are
-        /// not included in the response.</p>
+        /// is specified, the tags are included in the response. If this field is omitted, tags
+        /// aren't included in the response.</p>
         pub fn include(mut self, input: impl Into<crate::model::TaskField>) -> Self {
             let mut v = self.include.unwrap_or_default();
             v.push(input.into());
@@ -4479,8 +4561,8 @@ pub mod describe_tasks_input {
             self
         }
         /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code>
-        /// is specified, the tags are included in the response. If this field is omitted, tags are
-        /// not included in the response.</p>
+        /// is specified, the tags are included in the response. If this field is omitted, tags
+        /// aren't included in the response.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TaskField>>,
@@ -4510,6 +4592,7 @@ pub type DescribeTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeTasksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTasks`](crate::operation::DescribeTasks)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4565,11 +4648,14 @@ impl DescribeTasksInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4680,7 +4766,7 @@ pub mod describe_task_sets_input {
         /// To override the contents of this collection use [`set_include`](Self::set_include).
         ///
         /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is
-        /// specified, the tags are included in the response. If this field is omitted, tags are not
+        /// specified, the tags are included in the response. If this field is omitted, tags aren't
         /// included in the response.</p>
         pub fn include(mut self, input: impl Into<crate::model::TaskSetField>) -> Self {
             let mut v = self.include.unwrap_or_default();
@@ -4689,7 +4775,7 @@ pub mod describe_task_sets_input {
             self
         }
         /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is
-        /// specified, the tags are included in the response. If this field is omitted, tags are not
+        /// specified, the tags are included in the response. If this field is omitted, tags aren't
         /// included in the response.</p>
         pub fn set_include(
             mut self,
@@ -4721,6 +4807,7 @@ pub type DescribeTaskSetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DescribeTaskSetsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTaskSets`](crate::operation::DescribeTaskSets)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4777,11 +4864,14 @@ impl DescribeTaskSetsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4857,14 +4947,14 @@ pub mod discover_poll_endpoint_input {
             self.container_instance = input;
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to which the container instance
-        /// belongs.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs
+        /// to.</p>
         pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster = Some(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to which the container instance
-        /// belongs.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs
+        /// to.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -4890,6 +4980,7 @@ pub type DiscoverPollEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl DiscoverPollEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DiscoverPollEndpoint`](crate::operation::DiscoverPollEndpoint)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4948,11 +5039,14 @@ impl DiscoverPollEndpointInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5094,6 +5188,7 @@ pub type ExecuteCommandInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ExecuteCommandInput {
     /// Consumes the builder and constructs an Operation<[`ExecuteCommand`](crate::operation::ExecuteCommand)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5150,11 +5245,14 @@ impl ExecuteCommandInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5229,14 +5327,14 @@ pub mod list_account_settings_input {
             self.name = input;
             self
         }
-        /// <p>The value of the account settings with which to filter results. You must also specify
-        /// an account setting name to use this parameter.</p>
+        /// <p>The value of the account settings to filter results with. You must also specify an
+        /// account setting name to use this parameter.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The value of the account settings with which to filter results. You must also specify
-        /// an account setting name to use this parameter.</p>
+        /// <p>The value of the account settings to filter results with. You must also specify an
+        /// account setting name to use this parameter.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -5266,25 +5364,25 @@ pub mod list_account_settings_input {
             self.principal_arn = input;
             self
         }
-        /// <p>Specifies whether to return the effective settings. If <code>true</code>, the account
+        /// <p>Determines whether to return the effective settings. If <code>true</code>, the account
         /// settings for the root user or the default setting for the <code>principalArn</code> are
         /// returned. If <code>false</code>, the account settings for the <code>principalArn</code>
-        /// are returned if they are set. Otherwise, no account settings are returned.</p>
+        /// are returned if they're set. Otherwise, no account settings are returned.</p>
         pub fn effective_settings(mut self, input: bool) -> Self {
             self.effective_settings = Some(input);
             self
         }
-        /// <p>Specifies whether to return the effective settings. If <code>true</code>, the account
+        /// <p>Determines whether to return the effective settings. If <code>true</code>, the account
         /// settings for the root user or the default setting for the <code>principalArn</code> are
         /// returned. If <code>false</code>, the account settings for the <code>principalArn</code>
-        /// are returned if they are set. Otherwise, no account settings are returned.</p>
+        /// are returned if they're set. Otherwise, no account settings are returned.</p>
         pub fn set_effective_settings(mut self, input: std::option::Option<bool>) -> Self {
             self.effective_settings = input;
             self
         }
         /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code>
         /// request indicating that more results are available to fulfill the request and further
-        /// calls will be needed. If <code>maxResults</code> was provided, it is possible the number
+        /// calls will be needed. If <code>maxResults</code> was provided, it's possible the number
         /// of results to be fewer than <code>maxResults</code>.</p>
         /// <note>
         /// <p>This token should be treated as an opaque identifier that is only used to
@@ -5296,7 +5394,7 @@ pub mod list_account_settings_input {
         }
         /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code>
         /// request indicating that more results are available to fulfill the request and further
-        /// calls will be needed. If <code>maxResults</code> was provided, it is possible the number
+        /// calls will be needed. If <code>maxResults</code> was provided, it's possible the number
         /// of results to be fewer than <code>maxResults</code>.</p>
         /// <note>
         /// <p>This token should be treated as an opaque identifier that is only used to
@@ -5313,7 +5411,7 @@ pub mod list_account_settings_input {
         /// of the initial request can be seen by sending another <code>ListAccountSettings</code>
         /// request with the returned <code>nextToken</code> value. This value can be between
         /// 1 and 10. If this
-        /// parameter is not used, then <code>ListAccountSettings</code> returns up to
+        /// parameter isn't used, then <code>ListAccountSettings</code> returns up to
         /// 10 results and a <code>nextToken</code> value
         /// if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5327,7 +5425,7 @@ pub mod list_account_settings_input {
         /// of the initial request can be seen by sending another <code>ListAccountSettings</code>
         /// request with the returned <code>nextToken</code> value. This value can be between
         /// 1 and 10. If this
-        /// parameter is not used, then <code>ListAccountSettings</code> returns up to
+        /// parameter isn't used, then <code>ListAccountSettings</code> returns up to
         /// 10 results and a <code>nextToken</code> value
         /// if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
@@ -5359,6 +5457,7 @@ pub type ListAccountSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListAccountSettingsInput {
     /// Consumes the builder and constructs an Operation<[`ListAccountSettings`](crate::operation::ListAccountSettings)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5415,11 +5514,14 @@ impl ListAccountSettingsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5496,12 +5598,12 @@ pub mod list_attributes_input {
             self.cluster = input;
             self
         }
-        /// <p>The type of the target with which to list attributes.</p>
+        /// <p>The type of the target to list attributes with.</p>
         pub fn target_type(mut self, input: crate::model::TargetType) -> Self {
             self.target_type = Some(input);
             self
         }
-        /// <p>The type of the target with which to list attributes.</p>
+        /// <p>The type of the target to list attributes with.</p>
         pub fn set_target_type(
             mut self,
             input: std::option::Option<crate::model::TargetType>,
@@ -5509,12 +5611,12 @@ pub mod list_attributes_input {
             self.target_type = input;
             self
         }
-        /// <p>The name of the attribute with which to filter the results. </p>
+        /// <p>The name of the attribute to filter the results with. </p>
         pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.attribute_name = Some(input.into());
             self
         }
-        /// <p>The name of the attribute with which to filter the results. </p>
+        /// <p>The name of the attribute to filter the results with. </p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5522,14 +5624,14 @@ pub mod list_attributes_input {
             self.attribute_name = input;
             self
         }
-        /// <p>The value of the attribute with which to filter results. You must also specify an
-        /// attribute name to use this parameter.</p>
+        /// <p>The value of the attribute to filter results with. You must also specify an attribute
+        /// name to use this parameter.</p>
         pub fn attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.attribute_value = Some(input.into());
             self
         }
-        /// <p>The value of the attribute with which to filter results. You must also specify an
-        /// attribute name to use this parameter.</p>
+        /// <p>The value of the attribute to filter results with. You must also specify an attribute
+        /// name to use this parameter.</p>
         pub fn set_attribute_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5538,9 +5640,9 @@ pub mod list_attributes_input {
             self
         }
         /// <p>The <code>nextToken</code> value returned from a <code>ListAttributes</code> request
-        /// indicating that more results are available to fulfill the request and further calls will
-        /// be needed. If <code>maxResults</code> was provided, it is possible the number of results
-        /// to be fewer than <code>maxResults</code>.</p>
+        /// indicating that more results are available to fulfill the request and further calls are
+        /// needed. If <code>maxResults</code> was provided, it's possible the number of results to
+        /// be fewer than <code>maxResults</code>.</p>
         /// <note>
         /// <p>This token should be treated as an opaque identifier that is only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -5550,9 +5652,9 @@ pub mod list_attributes_input {
             self
         }
         /// <p>The <code>nextToken</code> value returned from a <code>ListAttributes</code> request
-        /// indicating that more results are available to fulfill the request and further calls will
-        /// be needed. If <code>maxResults</code> was provided, it is possible the number of results
-        /// to be fewer than <code>maxResults</code>.</p>
+        /// indicating that more results are available to fulfill the request and further calls are
+        /// needed. If <code>maxResults</code> was provided, it's possible the number of results to
+        /// be fewer than <code>maxResults</code>.</p>
         /// <note>
         /// <p>This token should be treated as an opaque identifier that is only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -5561,25 +5663,25 @@ pub mod list_attributes_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of cluster results returned by <code>ListAttributes</code> in
+        /// <p>The maximum number of cluster results that <code>ListAttributes</code> returned in
         /// paginated output. When this parameter is used, <code>ListAttributes</code> only returns
         /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
         /// response element. The remaining results of the initial request can be seen by sending
         /// another <code>ListAttributes</code> request with the returned <code>nextToken</code>
         /// value. This value can be between 1 and 100. If this
-        /// parameter is not used, then <code>ListAttributes</code> returns up to
+        /// parameter isn't used, then <code>ListAttributes</code> returns up to
         /// 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of cluster results returned by <code>ListAttributes</code> in
+        /// <p>The maximum number of cluster results that <code>ListAttributes</code> returned in
         /// paginated output. When this parameter is used, <code>ListAttributes</code> only returns
         /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
         /// response element. The remaining results of the initial request can be seen by sending
         /// another <code>ListAttributes</code> request with the returned <code>nextToken</code>
         /// value. This value can be between 1 and 100. If this
-        /// parameter is not used, then <code>ListAttributes</code> returns up to
+        /// parameter isn't used, then <code>ListAttributes</code> returns up to
         /// 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
@@ -5610,6 +5712,7 @@ pub type ListAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListAttributesInput {
     /// Consumes the builder and constructs an Operation<[`ListAttributes`](crate::operation::ListAttributes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5666,11 +5769,14 @@ impl ListAttributesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5732,9 +5838,9 @@ pub mod list_clusters_input {
     }
     impl Builder {
         /// <p>The <code>nextToken</code> value returned from a <code>ListClusters</code> request
-        /// indicating that more results are available to fulfill the request and further calls will
-        /// be needed. If <code>maxResults</code> was provided, it is possible the number of results
-        /// to be fewer than <code>maxResults</code>.</p>
+        /// indicating that more results are available to fulfill the request and further calls are
+        /// needed. If <code>maxResults</code> was provided, it's possible the number of results to
+        /// be fewer than <code>maxResults</code>.</p>
         /// <note>
         /// <p>This token should be treated as an opaque identifier that is only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -5744,9 +5850,9 @@ pub mod list_clusters_input {
             self
         }
         /// <p>The <code>nextToken</code> value returned from a <code>ListClusters</code> request
-        /// indicating that more results are available to fulfill the request and further calls will
-        /// be needed. If <code>maxResults</code> was provided, it is possible the number of results
-        /// to be fewer than <code>maxResults</code>.</p>
+        /// indicating that more results are available to fulfill the request and further calls are
+        /// needed. If <code>maxResults</code> was provided, it's possible the number of results to
+        /// be fewer than <code>maxResults</code>.</p>
         /// <note>
         /// <p>This token should be treated as an opaque identifier that is only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -5755,26 +5861,26 @@ pub mod list_clusters_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of cluster results returned by <code>ListClusters</code> in
+        /// <p>The maximum number of cluster results that <code>ListClusters</code> returned in
         /// paginated output. When this parameter is used, <code>ListClusters</code> only returns
         /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
         /// response element. The remaining results of the initial request can be seen by sending
         /// another <code>ListClusters</code> request with the returned <code>nextToken</code>
         /// value. This value can be between 1 and 100. If this
-        /// parameter is not used, then <code>ListClusters</code> returns up to
-        /// 100 results and a <code>nextToken</code> value if applicable.</p>
+        /// parameter isn't used, then <code>ListClusters</code> returns up to 100
+        /// results and a <code>nextToken</code> value if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of cluster results returned by <code>ListClusters</code> in
+        /// <p>The maximum number of cluster results that <code>ListClusters</code> returned in
         /// paginated output. When this parameter is used, <code>ListClusters</code> only returns
         /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
         /// response element. The remaining results of the initial request can be seen by sending
         /// another <code>ListClusters</code> request with the returned <code>nextToken</code>
         /// value. This value can be between 1 and 100. If this
-        /// parameter is not used, then <code>ListClusters</code> returns up to
-        /// 100 results and a <code>nextToken</code> value if applicable.</p>
+        /// parameter isn't used, then <code>ListClusters</code> returns up to 100
+        /// results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5800,6 +5906,7 @@ pub type ListClustersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListClustersInput {
     /// Consumes the builder and constructs an Operation<[`ListClusters`](crate::operation::ListClusters)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5855,11 +5962,14 @@ impl ListClustersInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5951,8 +6061,8 @@ pub mod list_container_instances_input {
         }
         /// <p>The <code>nextToken</code> value returned from a <code>ListContainerInstances</code>
         /// request indicating that more results are available to fulfill the request and further
-        /// calls will be needed. If <code>maxResults</code> was provided, it is possible the number
-        /// of results to be fewer than <code>maxResults</code>.</p>
+        /// calls are needed. If <code>maxResults</code> was provided, it's possible the number of
+        /// results to be fewer than <code>maxResults</code>.</p>
         /// <note>
         /// <p>This token should be treated as an opaque identifier that is only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -5963,8 +6073,8 @@ pub mod list_container_instances_input {
         }
         /// <p>The <code>nextToken</code> value returned from a <code>ListContainerInstances</code>
         /// request indicating that more results are available to fulfill the request and further
-        /// calls will be needed. If <code>maxResults</code> was provided, it is possible the number
-        /// of results to be fewer than <code>maxResults</code>.</p>
+        /// calls are needed. If <code>maxResults</code> was provided, it's possible the number of
+        /// results to be fewer than <code>maxResults</code>.</p>
         /// <note>
         /// <p>This token should be treated as an opaque identifier that is only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -5973,28 +6083,30 @@ pub mod list_container_instances_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of container instance results returned by
-        /// <code>ListContainerInstances</code> in paginated output. When this parameter is
-        /// used, <code>ListContainerInstances</code> only returns <code>maxResults</code> results
-        /// in a single page along with a <code>nextToken</code> response element. The remaining
-        /// results of the initial request can be seen by sending another
-        /// <code>ListContainerInstances</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this
-        /// parameter is not used, then <code>ListContainerInstances</code> returns up to
-        /// 100 results and a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of container instance results that
+        /// <code>ListContainerInstances</code> returned in paginated output. When this
+        /// parameter is used, <code>ListContainerInstances</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListContainerInstances</code> request with the returned
+        /// <code>nextToken</code> value. This value can be between 1 and
+        /// 100. If this parameter isn't used, then
+        /// <code>ListContainerInstances</code> returns up to 100 results and
+        /// a <code>nextToken</code> value if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of container instance results returned by
-        /// <code>ListContainerInstances</code> in paginated output. When this parameter is
-        /// used, <code>ListContainerInstances</code> only returns <code>maxResults</code> results
-        /// in a single page along with a <code>nextToken</code> response element. The remaining
-        /// results of the initial request can be seen by sending another
-        /// <code>ListContainerInstances</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this
-        /// parameter is not used, then <code>ListContainerInstances</code> returns up to
-        /// 100 results and a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of container instance results that
+        /// <code>ListContainerInstances</code> returned in paginated output. When this
+        /// parameter is used, <code>ListContainerInstances</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListContainerInstances</code> request with the returned
+        /// <code>nextToken</code> value. This value can be between 1 and
+        /// 100. If this parameter isn't used, then
+        /// <code>ListContainerInstances</code> returns up to 100 results and
+        /// a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6002,7 +6114,7 @@ pub mod list_container_instances_input {
         /// <p>Filters the container instances by status. For example, if you specify the
         /// <code>DRAINING</code> status, the results include only container instances that have
         /// been set to <code>DRAINING</code> using <a>UpdateContainerInstancesState</a>.
-        /// If you do not specify this parameter, the default is to include container instances set
+        /// If you don't specify this parameter, the default is to include container instances set
         /// to all states other than <code>INACTIVE</code>.</p>
         pub fn status(mut self, input: crate::model::ContainerInstanceStatus) -> Self {
             self.status = Some(input);
@@ -6011,7 +6123,7 @@ pub mod list_container_instances_input {
         /// <p>Filters the container instances by status. For example, if you specify the
         /// <code>DRAINING</code> status, the results include only container instances that have
         /// been set to <code>DRAINING</code> using <a>UpdateContainerInstancesState</a>.
-        /// If you do not specify this parameter, the default is to include container instances set
+        /// If you don't specify this parameter, the default is to include container instances set
         /// to all states other than <code>INACTIVE</code>.</p>
         pub fn set_status(
             mut self,
@@ -6044,6 +6156,7 @@ pub type ListContainerInstancesInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl ListContainerInstancesInput {
     /// Consumes the builder and constructs an Operation<[`ListContainerInstances`](crate::operation::ListContainerInstances)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6102,11 +6215,14 @@ impl ListContainerInstancesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6206,26 +6322,26 @@ pub mod list_services_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of service results returned by <code>ListServices</code> in
+        /// <p>The maximum number of service results that <code>ListServices</code> returned in
         /// paginated output. When this parameter is used, <code>ListServices</code> only returns
         /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
         /// response element. The remaining results of the initial request can be seen by sending
         /// another <code>ListServices</code> request with the returned <code>nextToken</code>
         /// value. This value can be between 1 and 100. If
-        /// this parameter is not used, then <code>ListServices</code> returns up to
+        /// this parameter isn't used, then <code>ListServices</code> returns up to
         /// 10 results and a <code>nextToken</code> value if
         /// applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of service results returned by <code>ListServices</code> in
+        /// <p>The maximum number of service results that <code>ListServices</code> returned in
         /// paginated output. When this parameter is used, <code>ListServices</code> only returns
         /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
         /// response element. The remaining results of the initial request can be seen by sending
         /// another <code>ListServices</code> request with the returned <code>nextToken</code>
         /// value. This value can be between 1 and 100. If
-        /// this parameter is not used, then <code>ListServices</code> returns up to
+        /// this parameter isn't used, then <code>ListServices</code> returns up to
         /// 10 results and a <code>nextToken</code> value if
         /// applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
@@ -6284,6 +6400,7 @@ pub type ListServicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListServicesInput {
     /// Consumes the builder and constructs an Operation<[`ListServices`](crate::operation::ListServices)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6339,11 +6456,14 @@ impl ListServicesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6403,14 +6523,14 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the
         /// supported resources are Amazon ECS tasks, services, task definitions, clusters, and container
         /// instances.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the
         /// supported resources are Amazon ECS tasks, services, task definitions, clusters, and container
         /// instances.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -6437,6 +6557,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6495,11 +6616,14 @@ impl ListTagsForResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6562,7 +6686,7 @@ pub mod list_task_definition_families_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The <code>familyPrefix</code> is a string that is used to filter the results of
+        /// <p>The <code>familyPrefix</code> is a string that's used to filter the results of
         /// <code>ListTaskDefinitionFamilies</code>. If you specify a <code>familyPrefix</code>,
         /// only task definition family names that begin with the <code>familyPrefix</code> string
         /// are returned.</p>
@@ -6570,7 +6694,7 @@ pub mod list_task_definition_families_input {
             self.family_prefix = Some(input.into());
             self
         }
-        /// <p>The <code>familyPrefix</code> is a string that is used to filter the results of
+        /// <p>The <code>familyPrefix</code> is a string that's used to filter the results of
         /// <code>ListTaskDefinitionFamilies</code>. If you specify a <code>familyPrefix</code>,
         /// only task definition family names that begin with the <code>familyPrefix</code> string
         /// are returned.</p>
@@ -6581,8 +6705,8 @@ pub mod list_task_definition_families_input {
             self.family_prefix = input;
             self
         }
-        /// <p>The task definition family status with which to filter the
-        /// <code>ListTaskDefinitionFamilies</code> results. By default, both
+        /// <p>The task definition family status to filter the
+        /// <code>ListTaskDefinitionFamilies</code> results with. By default, both
         /// <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are listed.
         /// If this parameter is set to <code>ACTIVE</code>, only task definition families that have
         /// an <code>ACTIVE</code> task definition revision are returned. If this parameter is set
@@ -6594,8 +6718,8 @@ pub mod list_task_definition_families_input {
             self.status = Some(input);
             self
         }
-        /// <p>The task definition family status with which to filter the
-        /// <code>ListTaskDefinitionFamilies</code> results. By default, both
+        /// <p>The task definition family status to filter the
+        /// <code>ListTaskDefinitionFamilies</code> results with. By default, both
         /// <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are listed.
         /// If this parameter is set to <code>ACTIVE</code>, only task definition families that have
         /// an <code>ACTIVE</code> task definition revision are returned. If this parameter is set
@@ -6636,28 +6760,28 @@ pub mod list_task_definition_families_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of task definition family results returned by
-        /// <code>ListTaskDefinitionFamilies</code> in paginated output. When this parameter is
-        /// used, <code>ListTaskDefinitions</code> only returns <code>maxResults</code> results in a
-        /// single page along with a <code>nextToken</code> response element. The remaining results
-        /// of the initial request can be seen by sending another
+        /// <p>The maximum number of task definition family results that
+        /// <code>ListTaskDefinitionFamilies</code> returned in paginated output. When this
+        /// parameter is used, <code>ListTaskDefinitions</code> only returns <code>maxResults</code>
+        /// results in a single page along with a <code>nextToken</code> response element. The
+        /// remaining results of the initial request can be seen by sending another
         /// <code>ListTaskDefinitionFamilies</code> request with the returned
         /// <code>nextToken</code> value. This value can be between 1 and
-        /// 100. If this parameter is not used, then
+        /// 100. If this parameter isn't used, then
         /// <code>ListTaskDefinitionFamilies</code> returns up to 100 results
         /// and a <code>nextToken</code> value if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of task definition family results returned by
-        /// <code>ListTaskDefinitionFamilies</code> in paginated output. When this parameter is
-        /// used, <code>ListTaskDefinitions</code> only returns <code>maxResults</code> results in a
-        /// single page along with a <code>nextToken</code> response element. The remaining results
-        /// of the initial request can be seen by sending another
+        /// <p>The maximum number of task definition family results that
+        /// <code>ListTaskDefinitionFamilies</code> returned in paginated output. When this
+        /// parameter is used, <code>ListTaskDefinitions</code> only returns <code>maxResults</code>
+        /// results in a single page along with a <code>nextToken</code> response element. The
+        /// remaining results of the initial request can be seen by sending another
         /// <code>ListTaskDefinitionFamilies</code> request with the returned
         /// <code>nextToken</code> value. This value can be between 1 and
-        /// 100. If this parameter is not used, then
+        /// 100. If this parameter isn't used, then
         /// <code>ListTaskDefinitionFamilies</code> returns up to 100 results
         /// and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
@@ -6688,6 +6812,7 @@ pub type ListTaskDefinitionFamiliesInputOperationRetryAlias = aws_http::AwsError
 impl ListTaskDefinitionFamiliesInput {
     /// Consumes the builder and constructs an Operation<[`ListTaskDefinitionFamilies`](crate::operation::ListTaskDefinitionFamilies)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6745,11 +6870,14 @@ impl ListTaskDefinitionFamiliesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6813,16 +6941,16 @@ pub mod list_task_definitions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The full family name with which to filter the <code>ListTaskDefinitions</code>
-        /// results. Specifying a <code>familyPrefix</code> limits the listed task definitions to
-        /// task definition revisions that belong to that family.</p>
+        /// <p>The full family name to filter the <code>ListTaskDefinitions</code> results with.
+        /// Specifying a <code>familyPrefix</code> limits the listed task definitions to task
+        /// definition revisions that belong to that family.</p>
         pub fn family_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.family_prefix = Some(input.into());
             self
         }
-        /// <p>The full family name with which to filter the <code>ListTaskDefinitions</code>
-        /// results. Specifying a <code>familyPrefix</code> limits the listed task definitions to
-        /// task definition revisions that belong to that family.</p>
+        /// <p>The full family name to filter the <code>ListTaskDefinitions</code> results with.
+        /// Specifying a <code>familyPrefix</code> limits the listed task definitions to task
+        /// definition revisions that belong to that family.</p>
         pub fn set_family_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6830,9 +6958,9 @@ pub mod list_task_definitions_input {
             self.family_prefix = input;
             self
         }
-        /// <p>The task definition status with which to filter the <code>ListTaskDefinitions</code>
-        /// results. By default, only <code>ACTIVE</code> task definitions are listed. By setting
-        /// this parameter to <code>INACTIVE</code>, you can view task definitions that are
+        /// <p>The task definition status to filter the <code>ListTaskDefinitions</code> results
+        /// with. By default, only <code>ACTIVE</code> task definitions are listed. By setting this
+        /// parameter to <code>INACTIVE</code>, you can view task definitions that are
         /// <code>INACTIVE</code> as long as an active task or service still references them. If
         /// you paginate the resulting output, be sure to keep the <code>status</code> value
         /// constant in each subsequent request.</p>
@@ -6840,9 +6968,9 @@ pub mod list_task_definitions_input {
             self.status = Some(input);
             self
         }
-        /// <p>The task definition status with which to filter the <code>ListTaskDefinitions</code>
-        /// results. By default, only <code>ACTIVE</code> task definitions are listed. By setting
-        /// this parameter to <code>INACTIVE</code>, you can view task definitions that are
+        /// <p>The task definition status to filter the <code>ListTaskDefinitions</code> results
+        /// with. By default, only <code>ACTIVE</code> task definitions are listed. By setting this
+        /// parameter to <code>INACTIVE</code>, you can view task definitions that are
         /// <code>INACTIVE</code> as long as an active task or service still references them. If
         /// you paginate the resulting output, be sure to keep the <code>status</code> value
         /// constant in each subsequent request.</p>
@@ -6853,22 +6981,22 @@ pub mod list_task_definitions_input {
             self.status = input;
             self
         }
-        /// <p>The order in which to sort the results. Valid values are <code>ASC</code> and
-        /// <code>DESC</code>. By default (<code>ASC</code>), task definitions are listed
+        /// <p>The order to sort the results in. Valid values are <code>ASC</code> and
+        /// <code>DESC</code>. By default, (<code>ASC</code>) task definitions are listed
         /// lexicographically by family name and in ascending numerical order by revision so that
         /// the newest task definitions in a family are listed last. Setting this parameter to
-        /// <code>DESC</code> reverses the sort order on family name and revision so that the
-        /// newest task definitions in a family are listed first.</p>
+        /// <code>DESC</code> reverses the sort order on family name and revision. This is so
+        /// that the newest task definitions in a family are listed first.</p>
         pub fn sort(mut self, input: crate::model::SortOrder) -> Self {
             self.sort = Some(input);
             self
         }
-        /// <p>The order in which to sort the results. Valid values are <code>ASC</code> and
-        /// <code>DESC</code>. By default (<code>ASC</code>), task definitions are listed
+        /// <p>The order to sort the results in. Valid values are <code>ASC</code> and
+        /// <code>DESC</code>. By default, (<code>ASC</code>) task definitions are listed
         /// lexicographically by family name and in ascending numerical order by revision so that
         /// the newest task definitions in a family are listed last. Setting this parameter to
-        /// <code>DESC</code> reverses the sort order on family name and revision so that the
-        /// newest task definitions in a family are listed first.</p>
+        /// <code>DESC</code> reverses the sort order on family name and revision. This is so
+        /// that the newest task definitions in a family are listed first.</p>
         pub fn set_sort(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
             self.sort = input;
             self
@@ -6897,26 +7025,26 @@ pub mod list_task_definitions_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of task definition results returned by
-        /// <code>ListTaskDefinitions</code> in paginated output. When this parameter is used,
+        /// <p>The maximum number of task definition results that <code>ListTaskDefinitions</code>
+        /// returned in paginated output. When this parameter is used,
         /// <code>ListTaskDefinitions</code> only returns <code>maxResults</code> results in a
         /// single page along with a <code>nextToken</code> response element. The remaining results
         /// of the initial request can be seen by sending another <code>ListTaskDefinitions</code>
         /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If this parameter is not used, then
+        /// 1 and 100. If this parameter isn't used, then
         /// <code>ListTaskDefinitions</code> returns up to 100 results and a
         /// <code>nextToken</code> value if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of task definition results returned by
-        /// <code>ListTaskDefinitions</code> in paginated output. When this parameter is used,
+        /// <p>The maximum number of task definition results that <code>ListTaskDefinitions</code>
+        /// returned in paginated output. When this parameter is used,
         /// <code>ListTaskDefinitions</code> only returns <code>maxResults</code> results in a
         /// single page along with a <code>nextToken</code> response element. The remaining results
         /// of the initial request can be seen by sending another <code>ListTaskDefinitions</code>
         /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If this parameter is not used, then
+        /// 1 and 100. If this parameter isn't used, then
         /// <code>ListTaskDefinitions</code> returns up to 100 results and a
         /// <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
@@ -6947,6 +7075,7 @@ pub type ListTaskDefinitionsInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTaskDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`ListTaskDefinitions`](crate::operation::ListTaskDefinitions)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7003,11 +7132,14 @@ impl ListTaskDefinitionsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7122,7 +7254,7 @@ pub mod list_tasks_input {
         }
         /// <p>The <code>nextToken</code> value returned from a <code>ListTasks</code> request
         /// indicating that more results are available to fulfill the request and further calls will
-        /// be needed. If <code>maxResults</code> was provided, it is possible the number of results
+        /// be needed. If <code>maxResults</code> was provided, it's possible the number of results
         /// to be fewer than <code>maxResults</code>.</p>
         /// <note>
         /// <p>This token should be treated as an opaque identifier that is only used to
@@ -7134,7 +7266,7 @@ pub mod list_tasks_input {
         }
         /// <p>The <code>nextToken</code> value returned from a <code>ListTasks</code> request
         /// indicating that more results are available to fulfill the request and further calls will
-        /// be needed. If <code>maxResults</code> was provided, it is possible the number of results
+        /// be needed. If <code>maxResults</code> was provided, it's possible the number of results
         /// to be fewer than <code>maxResults</code>.</p>
         /// <note>
         /// <p>This token should be treated as an opaque identifier that is only used to
@@ -7144,38 +7276,38 @@ pub mod list_tasks_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of task results returned by <code>ListTasks</code> in paginated
+        /// <p>The maximum number of task results that <code>ListTasks</code> returned in paginated
         /// output. When this parameter is used, <code>ListTasks</code> only returns
         /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
         /// response element. The remaining results of the initial request can be seen by sending
         /// another <code>ListTasks</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If this parameter is
-        /// not used, then <code>ListTasks</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// This value can be between 1 and 100. If this parameter
+        /// isn't used, then <code>ListTasks</code> returns up to 100 results and
+        /// a <code>nextToken</code> value if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of task results returned by <code>ListTasks</code> in paginated
+        /// <p>The maximum number of task results that <code>ListTasks</code> returned in paginated
         /// output. When this parameter is used, <code>ListTasks</code> only returns
         /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
         /// response element. The remaining results of the initial request can be seen by sending
         /// another <code>ListTasks</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If this parameter is
-        /// not used, then <code>ListTasks</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// This value can be between 1 and 100. If this parameter
+        /// isn't used, then <code>ListTasks</code> returns up to 100 results and
+        /// a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The <code>startedBy</code> value with which to filter the task results. Specifying a
+        /// <p>The <code>startedBy</code> value to filter the task results with. Specifying a
         /// <code>startedBy</code> value limits the results to tasks that were started with that
         /// value.</p>
         pub fn started_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.started_by = Some(input.into());
             self
         }
-        /// <p>The <code>startedBy</code> value with which to filter the task results. Specifying a
+        /// <p>The <code>startedBy</code> value to filter the task results with. Specifying a
         /// <code>startedBy</code> value limits the results to tasks that were started with that
         /// value.</p>
         pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -7199,12 +7331,12 @@ pub mod list_tasks_input {
         /// <p>The task desired status to use when filtering the <code>ListTasks</code> results.
         /// Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to
         /// tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful
-        /// for debugging tasks that are not starting properly or have died or finished. The default
+        /// for debugging tasks that aren't starting properly or have died or finished. The default
         /// status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
         /// status to <code>RUNNING</code>.</p>
         /// <note>
         /// <p>Although you can filter results based on a desired status of <code>PENDING</code>,
-        /// this does not return any results. Amazon ECS never sets the desired status of a task to
+        /// this doesn't return any results. Amazon ECS never sets the desired status of a task to
         /// that value (only a task's <code>lastStatus</code> may have a value of
         /// <code>PENDING</code>).</p>
         /// </note>
@@ -7215,12 +7347,12 @@ pub mod list_tasks_input {
         /// <p>The task desired status to use when filtering the <code>ListTasks</code> results.
         /// Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to
         /// tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful
-        /// for debugging tasks that are not starting properly or have died or finished. The default
+        /// for debugging tasks that aren't starting properly or have died or finished. The default
         /// status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
         /// status to <code>RUNNING</code>.</p>
         /// <note>
         /// <p>Although you can filter results based on a desired status of <code>PENDING</code>,
-        /// this does not return any results. Amazon ECS never sets the desired status of a task to
+        /// this doesn't return any results. Amazon ECS never sets the desired status of a task to
         /// that value (only a task's <code>lastStatus</code> may have a value of
         /// <code>PENDING</code>).</p>
         /// </note>
@@ -7270,6 +7402,7 @@ pub type ListTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListTasks`](crate::operation::ListTasks)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7325,11 +7458,14 @@ impl ListTasksInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7478,6 +7614,7 @@ pub type PutAccountSettingInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl PutAccountSettingInput {
     /// Consumes the builder and constructs an Operation<[`PutAccountSetting`](crate::operation::PutAccountSetting)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7534,11 +7671,14 @@ impl PutAccountSettingInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7657,6 +7797,7 @@ pub type PutAccountSettingDefaultInputOperationRetryAlias = aws_http::AwsErrorRe
 impl PutAccountSettingDefaultInput {
     /// Consumes the builder and constructs an Operation<[`PutAccountSettingDefault`](crate::operation::PutAccountSettingDefault)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7715,11 +7856,14 @@ impl PutAccountSettingDefaultInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7797,7 +7941,7 @@ pub mod put_attributes_input {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes
-        /// per resource. You can specify up to 10 attributes in a single call.</p>
+        /// for each resource. You can specify up to 10 attributes in a single call.</p>
         pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
             v.push(input.into());
@@ -7805,7 +7949,7 @@ pub mod put_attributes_input {
             self
         }
         /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes
-        /// per resource. You can specify up to 10 attributes in a single call.</p>
+        /// for each resource. You can specify up to 10 attributes in a single call.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -7834,6 +7978,7 @@ pub type PutAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl PutAttributesInput {
     /// Consumes the builder and constructs an Operation<[`PutAttributes`](crate::operation::PutAttributes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7889,11 +8034,14 @@ impl PutAttributesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7957,13 +8105,13 @@ pub mod put_cluster_capacity_providers_input {
     }
     impl Builder {
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to modify the capacity provider
-        /// settings for. If you do not specify a cluster, the default cluster is assumed.</p>
+        /// settings for. If you don't specify a cluster, the default cluster is assumed.</p>
         pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster = Some(input.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to modify the capacity provider
-        /// settings for. If you do not specify a cluster, the default cluster is assumed.</p>
+        /// settings for. If you don't specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -8074,6 +8222,7 @@ pub type PutClusterCapacityProvidersInputOperationRetryAlias = aws_http::AwsErro
 impl PutClusterCapacityProvidersInput {
     /// Consumes the builder and constructs an Operation<[`PutClusterCapacityProviders`](crate::operation::PutClusterCapacityProviders)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8131,11 +8280,14 @@ impl PutClusterCapacityProvidersInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8204,14 +8356,14 @@ pub mod register_container_instance_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster with which to register your container
-        /// instance. If you do not specify a cluster, the default cluster is assumed.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance
+        /// with. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster = Some(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster with which to register your container
-        /// instance. If you do not specify a cluster, the default cluster is assumed.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance
+        /// with. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -8276,14 +8428,14 @@ pub mod register_container_instance_input {
             self.total_resources = input;
             self
         }
-        /// <p>The version information for the Amazon ECS container agent and Docker daemon running on the
-        /// container instance.</p>
+        /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on
+        /// the container instance.</p>
         pub fn version_info(mut self, input: crate::model::VersionInfo) -> Self {
             self.version_info = Some(input);
             self
         }
-        /// <p>The version information for the Amazon ECS container agent and Docker daemon running on the
-        /// container instance.</p>
+        /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on
+        /// the container instance.</p>
         pub fn set_version_info(
             mut self,
             input: std::option::Option<crate::model::VersionInfo>,
@@ -8349,8 +8501,7 @@ pub mod register_container_instance_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The metadata that you apply to the container instance to help you categorize and
-        /// organize them. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// organize them. Each tag consists of a key and an optional value. You define both.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
         /// <li>
@@ -8389,8 +8540,7 @@ pub mod register_container_instance_input {
             self
         }
         /// <p>The metadata that you apply to the container instance to help you categorize and
-        /// organize them. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// organize them. Each tag consists of a key and an optional value. You define both.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
         /// <li>
@@ -8458,6 +8608,7 @@ pub type RegisterContainerInstanceInputOperationRetryAlias = aws_http::AwsErrorR
 impl RegisterContainerInstanceInput {
     /// Consumes the builder and constructs an Operation<[`RegisterContainerInstance`](crate::operation::RegisterContainerInstance)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8516,11 +8667,14 @@ impl RegisterContainerInstanceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8600,16 +8754,16 @@ pub mod register_task_definition_input {
         pub(crate) runtime_platform: std::option::Option<crate::model::RuntimePlatform>,
     }
     impl Builder {
-        /// <p>You must specify a <code>family</code> for a task definition, which allows you to
-        /// track multiple versions of the same task definition. The <code>family</code> is used as
-        /// a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
+        /// <p>You must specify a <code>family</code> for a task definition. You can use it track
+        /// multiple versions of the same task definition. The <code>family</code> is used as a name
+        /// for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
         pub fn family(mut self, input: impl Into<std::string::String>) -> Self {
             self.family = Some(input.into());
             self
         }
-        /// <p>You must specify a <code>family</code> for a task definition, which allows you to
-        /// track multiple versions of the same task definition. The <code>family</code> is used as
-        /// a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
+        /// <p>You must specify a <code>family</code> for a task definition. You can use it track
+        /// multiple versions of the same task definition. The <code>family</code> is used as a name
+        /// for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
         pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.family = input;
             self
@@ -8747,7 +8901,7 @@ pub mod register_task_definition_input {
         ///
         /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
         ///
-        /// <p>A list of volume definitions in JSON format that containers in your task may
+        /// <p>A list of volume definitions in JSON format that containers in your task might
         /// use.</p>
         pub fn volumes(mut self, input: impl Into<crate::model::Volume>) -> Self {
             let mut v = self.volumes.unwrap_or_default();
@@ -8755,7 +8909,7 @@ pub mod register_task_definition_input {
             self.volumes = Some(v);
             self
         }
-        /// <p>A list of volume definitions in JSON format that containers in your task may
+        /// <p>A list of volume definitions in JSON format that containers in your task might
         /// use.</p>
         pub fn set_volumes(
             mut self,
@@ -8769,8 +8923,8 @@ pub mod register_task_definition_input {
         /// To override the contents of this collection use [`set_placement_constraints`](Self::set_placement_constraints).
         ///
         /// <p>An array of placement constraint objects to use for the task. You can specify a
-        /// maximum of 10 constraints per task (this limit includes constraints in the task
-        /// definition and those specified at runtime).</p>
+        /// maximum of 10 constraints for each task. This limit includes constraints in the task
+        /// definition and those specified at runtime.</p>
         pub fn placement_constraints(
             mut self,
             input: impl Into<crate::model::TaskDefinitionPlacementConstraint>,
@@ -8781,8 +8935,8 @@ pub mod register_task_definition_input {
             self
         }
         /// <p>An array of placement constraint objects to use for the task. You can specify a
-        /// maximum of 10 constraints per task (this limit includes constraints in the task
-        /// definition and those specified at runtime).</p>
+        /// maximum of 10 constraints for each task. This limit includes constraints in the task
+        /// definition and those specified at runtime.</p>
         pub fn set_placement_constraints(
             mut self,
             input: std::option::Option<
@@ -8796,7 +8950,7 @@ pub mod register_task_definition_input {
         ///
         /// To override the contents of this collection use [`set_requires_compatibilities`](Self::set_requires_compatibilities).
         ///
-        /// <p>The task launch type that Amazon ECS should validate the task definition against. A client
+        /// <p>The task launch type that Amazon ECS validates the task definition against. A client
         /// exception is returned if the task definition doesn't validate against the
         /// compatibilities specified. If no value is specified, the parameter is omitted from the
         /// response.</p>
@@ -8809,7 +8963,7 @@ pub mod register_task_definition_input {
             self.requires_compatibilities = Some(v);
             self
         }
-        /// <p>The task launch type that Amazon ECS should validate the task definition against. A client
+        /// <p>The task launch type that Amazon ECS validates the task definition against. A client
         /// exception is returned if the task definition doesn't validate against the
         /// compatibilities specified. If no value is specified, the parameter is omitted from the
         /// response.</p>
@@ -8821,20 +8975,22 @@ pub mod register_task_definition_input {
             self
         }
         /// <p>The number of CPU units used by the task. It can be expressed as an integer using CPU
-        /// units, for example <code>1024</code>, or as a string using vCPUs, for example <code>1
-        /// vCPU</code> or <code>1 vcpu</code>, in a task definition. String values are
+        /// units (for example, <code>1024</code>) or as a string using vCPUs (for example, <code>1
+        /// vCPU</code> or <code>1 vcpu</code>) in a task definition. String values are
         /// converted to an integer indicating the CPU units when the task definition is
         /// registered.</p>
         /// <note>
         /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We
         /// recommend specifying container-level resources for Windows containers.</p>
         /// </note>
-        /// <p>If you are using the EC2 launch type, this field is optional. Supported
+        /// <p>If you're using the EC2 launch type, this field is optional. Supported
         /// values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and
         /// <code>10240</code> CPU units (<code>10</code> vCPUs).</p>
-        /// <p>If you are using the Fargate launch type, this field is required and you
+        /// <p>If you're using the Fargate launch type, this field is required and you
         /// must use one of the following values, which determines your range of supported values
         /// for the <code>memory</code> parameter:</p>
+        /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on
+        /// Fargate.</p>
         /// <ul>
         /// <li>
         /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
@@ -8857,20 +9013,22 @@ pub mod register_task_definition_input {
             self
         }
         /// <p>The number of CPU units used by the task. It can be expressed as an integer using CPU
-        /// units, for example <code>1024</code>, or as a string using vCPUs, for example <code>1
-        /// vCPU</code> or <code>1 vcpu</code>, in a task definition. String values are
+        /// units (for example, <code>1024</code>) or as a string using vCPUs (for example, <code>1
+        /// vCPU</code> or <code>1 vcpu</code>) in a task definition. String values are
         /// converted to an integer indicating the CPU units when the task definition is
         /// registered.</p>
         /// <note>
         /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We
         /// recommend specifying container-level resources for Windows containers.</p>
         /// </note>
-        /// <p>If you are using the EC2 launch type, this field is optional. Supported
+        /// <p>If you're using the EC2 launch type, this field is optional. Supported
         /// values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and
         /// <code>10240</code> CPU units (<code>10</code> vCPUs).</p>
-        /// <p>If you are using the Fargate launch type, this field is required and you
+        /// <p>If you're using the Fargate launch type, this field is required and you
         /// must use one of the following values, which determines your range of supported values
         /// for the <code>memory</code> parameter:</p>
+        /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on
+        /// Fargate.</p>
         /// <ul>
         /// <li>
         /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
@@ -8893,8 +9051,8 @@ pub mod register_task_definition_input {
             self
         }
         /// <p>The amount of memory (in MiB) used by the task. It can be expressed as an integer
-        /// using MiB, for example <code>1024</code>, or as a string using GB, for example
-        /// <code>1GB</code> or <code>1 GB</code>, in a task definition. String values are
+        /// using MiB (for example ,<code>1024</code>) or as a string using GB (for example,
+        /// <code>1GB</code> or <code>1 GB</code>) in a task definition. String values are
         /// converted to an integer indicating the MiB when the task definition is
         /// registered.</p>
         /// <note>
@@ -8903,8 +9061,10 @@ pub mod register_task_definition_input {
         /// </note>
         /// <p>If using the EC2 launch type, this field is optional.</p>
         /// <p>If using the Fargate launch type, this field is required and you must
-        /// use one of the following values, which determines your range of supported values for the
-        /// <code>cpu</code> parameter:</p>
+        /// use one of the following values. This determines your range of supported values for the
+        /// <code>cpu</code> parameter.</p>
+        /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on
+        /// Fargate.</p>
         /// <ul>
         /// <li>
         /// <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p>
@@ -8927,8 +9087,8 @@ pub mod register_task_definition_input {
             self
         }
         /// <p>The amount of memory (in MiB) used by the task. It can be expressed as an integer
-        /// using MiB, for example <code>1024</code>, or as a string using GB, for example
-        /// <code>1GB</code> or <code>1 GB</code>, in a task definition. String values are
+        /// using MiB (for example ,<code>1024</code>) or as a string using GB (for example,
+        /// <code>1GB</code> or <code>1 GB</code>) in a task definition. String values are
         /// converted to an integer indicating the MiB when the task definition is
         /// registered.</p>
         /// <note>
@@ -8937,8 +9097,10 @@ pub mod register_task_definition_input {
         /// </note>
         /// <p>If using the EC2 launch type, this field is optional.</p>
         /// <p>If using the Fargate launch type, this field is required and you must
-        /// use one of the following values, which determines your range of supported values for the
-        /// <code>cpu</code> parameter:</p>
+        /// use one of the following values. This determines your range of supported values for the
+        /// <code>cpu</code> parameter.</p>
+        /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on
+        /// Fargate.</p>
         /// <ul>
         /// <li>
         /// <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p>
@@ -8965,7 +9127,7 @@ pub mod register_task_definition_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The metadata that you apply to the task definition to help you categorize and organize
-        /// them. Each tag consists of a key and an optional value, both of which you define.</p>
+        /// them. Each tag consists of a key and an optional value. You define both of them.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
         /// <li>
@@ -9004,7 +9166,7 @@ pub mod register_task_definition_input {
             self
         }
         /// <p>The metadata that you apply to the task definition to help you categorize and organize
-        /// them. Each tag consists of a key and an optional value, both of which you define.</p>
+        /// them. Each tag consists of a key and an optional value. You define both of them.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
         /// <li>
@@ -9209,15 +9371,14 @@ pub mod register_task_definition_input {
         /// tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
         /// storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
         /// <note>
-        /// <p>This parameter is only supported for tasks hosted on Fargate using the following platform versions:</p>
+        /// <p>This parameter is only supported for tasks hosted on Fargate using
+        /// the following platform versions:</p>
         /// <ul>
         /// <li>
-        /// <p>Linux platform
-        /// version <code>1.4.0</code> or later.</p>
+        /// <p>Linux platform version <code>1.4.0</code> or later.</p>
         /// </li>
         /// <li>
-        /// <p>Windows platform
-        /// version <code>1.0.0</code> or later.</p>
+        /// <p>Windows platform version <code>1.0.0</code> or later.</p>
         /// </li>
         /// </ul>
         /// </note>
@@ -9230,15 +9391,14 @@ pub mod register_task_definition_input {
         /// tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
         /// storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
         /// <note>
-        /// <p>This parameter is only supported for tasks hosted on Fargate using the following platform versions:</p>
+        /// <p>This parameter is only supported for tasks hosted on Fargate using
+        /// the following platform versions:</p>
         /// <ul>
         /// <li>
-        /// <p>Linux platform
-        /// version <code>1.4.0</code> or later.</p>
+        /// <p>Linux platform version <code>1.4.0</code> or later.</p>
         /// </li>
         /// <li>
-        /// <p>Windows platform
-        /// version <code>1.0.0</code> or later.</p>
+        /// <p>Windows platform version <code>1.0.0</code> or later.</p>
         /// </li>
         /// </ul>
         /// </note>
@@ -9249,14 +9409,18 @@ pub mod register_task_definition_input {
             self.ephemeral_storage = input;
             self
         }
-        /// <p>The operating system  that your tasks definitions run on. A platform family is specified only for tasks using the Fargate launch type. </p>
-        /// <p>When you specify a task definition in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
+        /// <p>The operating system that your tasks definitions run on. A platform family is
+        /// specified only for tasks using the Fargate launch type. </p>
+        /// <p>When you specify a task definition in a service, this value must match the
+        /// <code>runtimePlatform</code> value of the service.</p>
         pub fn runtime_platform(mut self, input: crate::model::RuntimePlatform) -> Self {
             self.runtime_platform = Some(input);
             self
         }
-        /// <p>The operating system  that your tasks definitions run on. A platform family is specified only for tasks using the Fargate launch type. </p>
-        /// <p>When you specify a task definition in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
+        /// <p>The operating system that your tasks definitions run on. A platform family is
+        /// specified only for tasks using the Fargate launch type. </p>
+        /// <p>When you specify a task definition in a service, this value must match the
+        /// <code>runtimePlatform</code> value of the service.</p>
         pub fn set_runtime_platform(
             mut self,
             input: std::option::Option<crate::model::RuntimePlatform>,
@@ -9300,6 +9464,7 @@ pub type RegisterTaskDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl RegisterTaskDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`RegisterTaskDefinition`](crate::operation::RegisterTaskDefinition)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -9358,11 +9523,14 @@ impl RegisterTaskDefinitionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -9450,7 +9618,8 @@ pub mod run_task_input {
         /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or
         /// <code>launchType</code> is specified, the
         /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
-        /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+        /// <p>When you use cluster auto scaling, you must specify
+        /// <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
         /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
         pub fn capacity_provider_strategy(
             mut self,
@@ -9466,7 +9635,8 @@ pub mod run_task_input {
         /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or
         /// <code>launchType</code> is specified, the
         /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
-        /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+        /// <p>When you use cluster auto scaling, you must specify
+        /// <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
         /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
         pub fn set_capacity_provider_strategy(
             mut self,
@@ -9475,26 +9645,26 @@ pub mod run_task_input {
             self.capacity_provider_strategy = input;
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to run your task.
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on.
         /// If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster = Some(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to run your task.
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on.
         /// If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
         }
         /// <p>The number of instantiations of the specified task to place on your cluster. You can
-        /// specify up to 10 tasks per call.</p>
+        /// specify up to 10 tasks for each call.</p>
         pub fn count(mut self, input: i32) -> Self {
             self.count = Some(input);
             self
         }
         /// <p>The number of instantiations of the specified task to place on your cluster. You can
-        /// specify up to 10 tasks per call.</p>
+        /// specify up to 10 tasks for each call.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
@@ -9513,16 +9683,16 @@ pub mod run_task_input {
             self.enable_ecs_managed_tags = input;
             self
         }
-        /// <p>Whether or not to enable the execute command functionality for the containers in this
-        /// task. If <code>true</code>, this enables execute command functionality on all containers
-        /// in the task.</p>
+        /// <p>Determines whether to enable the execute command functionality for the containers in
+        /// this task. If <code>true</code>, this enables execute command functionality on all
+        /// containers in the task.</p>
         pub fn enable_execute_command(mut self, input: bool) -> Self {
             self.enable_execute_command = Some(input);
             self
         }
-        /// <p>Whether or not to enable the execute command functionality for the containers in this
-        /// task. If <code>true</code>, this enables execute command functionality on all containers
-        /// in the task.</p>
+        /// <p>Determines whether to enable the execute command functionality for the containers in
+        /// this task. If <code>true</code>, this enables execute command functionality on all
+        /// containers in the task.</p>
         pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_execute_command = input;
             self
@@ -9539,8 +9709,8 @@ pub mod run_task_input {
             self.group = input;
             self
         }
-        /// <p>The infrastructure on which to run your standalone task. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The infrastructure to run your standalone task on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+        /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand
         /// infrastructure.</p>
         /// <note>
@@ -9550,18 +9720,19 @@ pub mod run_task_input {
         /// </note>
         /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your
         /// cluster.</p>
-        /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
+        /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or
         /// virtual machine (VM) capacity registered to your cluster.</p>
         /// <p>A task can use either a launch type or a capacity provider strategy. If a
         /// <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
         /// parameter must be omitted.</p>
-        /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+        /// <p>When you use cluster auto scaling, you must specify
+        /// <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
         pub fn launch_type(mut self, input: crate::model::LaunchType) -> Self {
             self.launch_type = Some(input);
             self
         }
-        /// <p>The infrastructure on which to run your standalone task. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The infrastructure to run your standalone task on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+        /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand
         /// infrastructure.</p>
         /// <note>
@@ -9571,12 +9742,13 @@ pub mod run_task_input {
         /// </note>
         /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your
         /// cluster.</p>
-        /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
+        /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or
         /// virtual machine (VM) capacity registered to your cluster.</p>
         /// <p>A task can use either a launch type or a capacity provider strategy. If a
         /// <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
         /// parameter must be omitted.</p>
-        /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+        /// <p>When you use cluster auto scaling, you must specify
+        /// <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
         pub fn set_launch_type(
             mut self,
             input: std::option::Option<crate::model::LaunchType>,
@@ -9586,8 +9758,8 @@ pub mod run_task_input {
         }
         /// <p>The network configuration for the task. This parameter is required for task
         /// definitions that use the <code>awsvpc</code> network mode to receive their own elastic
-        /// network interface, and it is not supported for other network modes. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
+        /// network interface, and it isn't supported for other network modes. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
         /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
             self.network_configuration = Some(input);
@@ -9595,8 +9767,8 @@ pub mod run_task_input {
         }
         /// <p>The network configuration for the task. This parameter is required for task
         /// definitions that use the <code>awsvpc</code> network mode to receive their own elastic
-        /// network interface, and it is not supported for other network modes. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
+        /// network interface, and it isn't supported for other network modes. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
         /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_network_configuration(
             mut self,
@@ -9607,7 +9779,7 @@ pub mod run_task_input {
         }
         /// <p>A list of container overrides in JSON format that specify the name of a container in
         /// the specified task definition and the overrides it should receive. You can override the
-        /// default command for a container (that is specified in the task definition or Docker
+        /// default command for a container (that's specified in the task definition or Docker
         /// image) with a <code>command</code> override. You can also override existing environment
         /// variables (that are specified in the task definition or Docker image) on a container or
         /// add new environment variables to it with an <code>environment</code> override.</p>
@@ -9619,7 +9791,7 @@ pub mod run_task_input {
         }
         /// <p>A list of container overrides in JSON format that specify the name of a container in
         /// the specified task definition and the overrides it should receive. You can override the
-        /// default command for a container (that is specified in the task definition or Docker
+        /// default command for a container (that's specified in the task definition or Docker
         /// image) with a <code>command</code> override. You can also override existing environment
         /// variables (that are specified in the task definition or Docker image) on a container or
         /// add new environment variables to it with an <code>environment</code> override.</p>
@@ -9637,8 +9809,8 @@ pub mod run_task_input {
         /// To override the contents of this collection use [`set_placement_constraints`](Self::set_placement_constraints).
         ///
         /// <p>An array of placement constraint objects to use for the task. You can specify up to 10
-        /// constraints per task (including constraints in the task definition and those specified
-        /// at runtime).</p>
+        /// constraints for each task (including constraints in the task definition and those
+        /// specified at runtime).</p>
         pub fn placement_constraints(
             mut self,
             input: impl Into<crate::model::PlacementConstraint>,
@@ -9649,8 +9821,8 @@ pub mod run_task_input {
             self
         }
         /// <p>An array of placement constraint objects to use for the task. You can specify up to 10
-        /// constraints per task (including constraints in the task definition and those specified
-        /// at runtime).</p>
+        /// constraints for each task (including constraints in the task definition and those
+        /// specified at runtime).</p>
         pub fn set_placement_constraints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
@@ -9663,7 +9835,7 @@ pub mod run_task_input {
         /// To override the contents of this collection use [`set_placement_strategy`](Self::set_placement_strategy).
         ///
         /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5
-        /// strategy rules per task.</p>
+        /// strategy rules for each task.</p>
         pub fn placement_strategy(
             mut self,
             input: impl Into<crate::model::PlacementStrategy>,
@@ -9674,7 +9846,7 @@ pub mod run_task_input {
             self
         }
         /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5
-        /// strategy rules per task.</p>
+        /// strategy rules for each task.</p>
         pub fn set_placement_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
@@ -9682,18 +9854,18 @@ pub mod run_task_input {
             self.placement_strategy = input;
             self
         }
-        /// <p>The platform version the task should use. A platform version is only specified for
-        /// tasks hosted on Fargate. If one is not specified, the <code>LATEST</code>
-        /// platform version is used by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the
-        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The platform version the task uses. A platform version is only specified for tasks
+        /// hosted on Fargate. If one isn't specified, the <code>LATEST</code>
+        /// platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
+        /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform_version = Some(input.into());
             self
         }
-        /// <p>The platform version the task should use. A platform version is only specified for
-        /// tasks hosted on Fargate. If one is not specified, the <code>LATEST</code>
-        /// platform version is used by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the
-        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The platform version the task uses. A platform version is only specified for tasks
+        /// hosted on Fargate. If one isn't specified, the <code>LATEST</code>
+        /// platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
+        /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_platform_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9702,7 +9874,7 @@ pub mod run_task_input {
             self
         }
         /// <p>Specifies whether to propagate the tags from the task definition to the task. If no
-        /// value is specified, the tags are not propagated. Tags can only be propagated to the task
+        /// value is specified, the tags aren't propagated. Tags can only be propagated to the task
         /// during task creation. To add tags to a task after task creation, use the <a>TagResource</a> API action.</p>
         /// <note>
         /// <p>An error will be received if you specify the <code>SERVICE</code> option when
@@ -9713,7 +9885,7 @@ pub mod run_task_input {
             self
         }
         /// <p>Specifies whether to propagate the tags from the task definition to the task. If no
-        /// value is specified, the tags are not propagated. Tags can only be propagated to the task
+        /// value is specified, the tags aren't propagated. Tags can only be propagated to the task
         /// during task creation. To add tags to a task after task creation, use the <a>TagResource</a> API action.</p>
         /// <note>
         /// <p>An error will be received if you specify the <code>SERVICE</code> option when
@@ -9743,7 +9915,7 @@ pub mod run_task_input {
         /// job to your task with the <code>startedBy</code> parameter. You can then identify which
         /// tasks belong to that job by filtering the results of a <a>ListTasks</a> call
         /// with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase),
-        /// numbers, hyphens, and underscores are allowed.</p>
+        /// numbers, hyphens (-), and underscores (_) are allowed.</p>
         /// <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter
         /// contains the deployment ID of the service that starts it.</p>
         pub fn started_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9755,7 +9927,7 @@ pub mod run_task_input {
         /// job to your task with the <code>startedBy</code> parameter. You can then identify which
         /// tasks belong to that job by filtering the results of a <a>ListTasks</a> call
         /// with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase),
-        /// numbers, hyphens, and underscores are allowed.</p>
+        /// numbers, hyphens (-), and underscores (_) are allowed.</p>
         /// <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter
         /// contains the deployment ID of the service that starts it.</p>
         pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -9846,10 +10018,11 @@ pub mod run_task_input {
             self
         }
         /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full ARN of the task definition to run. If a <code>revision</code> is not specified,
+        /// full ARN of the task definition to run. If a <code>revision</code> isn't specified,
         /// the latest <code>ACTIVE</code> revision is used.</p>
-        /// <p>The full ARN value must match the value that you specified ias the <code>Resource</code>
-        /// of the IAM principal's permissions policy. For example, if the <code>Resource</code> is
+        /// <p>The full ARN value must match the value that you specified as the
+        /// <code>Resource</code> of the IAM principal's permissions policy. For example, if the
+        /// <code>Resource</code> is
         /// arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
         /// <code>taskDefinition</code> ARN value must be
         /// <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
@@ -9858,10 +10031,11 @@ pub mod run_task_input {
             self
         }
         /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full ARN of the task definition to run. If a <code>revision</code> is not specified,
+        /// full ARN of the task definition to run. If a <code>revision</code> isn't specified,
         /// the latest <code>ACTIVE</code> revision is used.</p>
-        /// <p>The full ARN value must match the value that you specified ias the <code>Resource</code>
-        /// of the IAM principal's permissions policy. For example, if the <code>Resource</code> is
+        /// <p>The full ARN value must match the value that you specified as the
+        /// <code>Resource</code> of the IAM principal's permissions policy. For example, if the
+        /// <code>Resource</code> is
         /// arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
         /// <code>taskDefinition</code> ARN value must be
         /// <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
@@ -9906,6 +10080,7 @@ pub type RunTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl RunTaskInput {
     /// Consumes the builder and constructs an Operation<[`RunTask`](crate::operation::RunTask)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -9961,11 +10136,14 @@ impl RunTaskInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -10031,13 +10209,13 @@ pub mod start_task_input {
         pub(crate) task_definition: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to start your task.
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster where to start your task.
         /// If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster = Some(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to start your task.
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster where to start your task.
         /// If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
@@ -10047,16 +10225,16 @@ pub mod start_task_input {
         ///
         /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).
         ///
-        /// <p>The container instance IDs or full ARN entries for the container instances on which
-        /// you would like to place your task. You can specify up to 10 container instances.</p>
+        /// <p>The container instance IDs or full ARN entries for the container instances where you
+        /// would like to place your task. You can specify up to 10 container instances.</p>
         pub fn container_instances(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.container_instances.unwrap_or_default();
             v.push(input.into());
             self.container_instances = Some(v);
             self
         }
-        /// <p>The container instance IDs or full ARN entries for the container instances on which
-        /// you would like to place your task. You can specify up to 10 container instances.</p>
+        /// <p>The container instance IDs or full ARN entries for the container instances where you
+        /// would like to place your task. You can specify up to 10 container instances.</p>
         pub fn set_container_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10120,8 +10298,8 @@ pub mod start_task_input {
             self
         }
         /// <p>A list of container overrides in JSON format that specify the name of a container in
-        /// the specified task definition and the overrides it should receive. You can override the
-        /// default command for a container (that is specified in the task definition or Docker
+        /// the specified task definition and the overrides it receives. You can override the
+        /// default command for a container (that's specified in the task definition or Docker
         /// image) with a <code>command</code> override. You can also override existing environment
         /// variables (that are specified in the task definition or Docker image) on a container or
         /// add new environment variables to it with an <code>environment</code> override.</p>
@@ -10134,8 +10312,8 @@ pub mod start_task_input {
             self
         }
         /// <p>A list of container overrides in JSON format that specify the name of a container in
-        /// the specified task definition and the overrides it should receive. You can override the
-        /// default command for a container (that is specified in the task definition or Docker
+        /// the specified task definition and the overrides it receives. You can override the
+        /// default command for a container (that's specified in the task definition or Docker
         /// image) with a <code>command</code> override. You can also override existing environment
         /// variables (that are specified in the task definition or Docker image) on a container or
         /// add new environment variables to it with an <code>environment</code> override.</p>
@@ -10151,13 +10329,13 @@ pub mod start_task_input {
             self
         }
         /// <p>Specifies whether to propagate the tags from the task definition or the service to the
-        /// task. If no value is specified, the tags are not propagated.</p>
+        /// task. If no value is specified, the tags aren't propagated.</p>
         pub fn propagate_tags(mut self, input: crate::model::PropagateTags) -> Self {
             self.propagate_tags = Some(input);
             self
         }
         /// <p>Specifies whether to propagate the tags from the task definition or the service to the
-        /// task. If no value is specified, the tags are not propagated.</p>
+        /// task. If no value is specified, the tags aren't propagated.</p>
         pub fn set_propagate_tags(
             mut self,
             input: std::option::Option<crate::model::PropagateTags>,
@@ -10180,8 +10358,8 @@ pub mod start_task_input {
         /// job to your task with the <code>startedBy</code> parameter. You can then identify which
         /// tasks belong to that job by filtering the results of a <a>ListTasks</a> call
         /// with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase),
-        /// numbers, hyphens, and underscores are allowed.</p>
-        /// <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter
+        /// numbers, hyphens (-), and underscores (_) are allowed.</p>
+        /// <p>If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter
         /// contains the deployment ID of the service that starts it.</p>
         pub fn started_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.started_by = Some(input.into());
@@ -10192,8 +10370,8 @@ pub mod start_task_input {
         /// job to your task with the <code>startedBy</code> parameter. You can then identify which
         /// tasks belong to that job by filtering the results of a <a>ListTasks</a> call
         /// with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase),
-        /// numbers, hyphens, and underscores are allowed.</p>
-        /// <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter
+        /// numbers, hyphens (-), and underscores (_) are allowed.</p>
+        /// <p>If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter
         /// contains the deployment ID of the service that starts it.</p>
         pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.started_by = input;
@@ -10283,14 +10461,14 @@ pub mod start_task_input {
             self
         }
         /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full ARN of the task definition to start. If a <code>revision</code> is not specified,
+        /// full ARN of the task definition to start. If a <code>revision</code> isn't specified,
         /// the latest <code>ACTIVE</code> revision is used.</p>
         pub fn task_definition(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_definition = Some(input.into());
             self
         }
         /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full ARN of the task definition to start. If a <code>revision</code> is not specified,
+        /// full ARN of the task definition to start. If a <code>revision</code> isn't specified,
         /// the latest <code>ACTIVE</code> revision is used.</p>
         pub fn set_task_definition(
             mut self,
@@ -10328,6 +10506,7 @@ pub type StartTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StartTaskInput {
     /// Consumes the builder and constructs an Operation<[`StartTask`](crate::operation::StartTask)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -10383,11 +10562,14 @@ impl StartTaskInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -10469,7 +10651,7 @@ pub mod stop_task_input {
             self.task = input;
             self
         }
-        /// <p>An optional message specified when a task is stopped. For example, if you are using a
+        /// <p>An optional message specified when a task is stopped. For example, if you're using a
         /// custom scheduler, you can use this parameter to specify the reason for stopping the task
         /// here, and the message appears in subsequent <a>DescribeTasks</a> API
         /// operations on this task. Up to 255 characters are allowed in this message.</p>
@@ -10477,7 +10659,7 @@ pub mod stop_task_input {
             self.reason = Some(input.into());
             self
         }
-        /// <p>An optional message specified when a task is stopped. For example, if you are using a
+        /// <p>An optional message specified when a task is stopped. For example, if you're using a
         /// custom scheduler, you can use this parameter to specify the reason for stopping the task
         /// here, and the message appears in subsequent <a>DescribeTasks</a> API
         /// operations on this task. Up to 255 characters are allowed in this message.</p>
@@ -10505,6 +10687,7 @@ pub type StopTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StopTaskInput {
     /// Consumes the builder and constructs an Operation<[`StopTask`](crate::operation::StopTask)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -10560,11 +10743,14 @@ impl StopTaskInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -10677,6 +10863,7 @@ pub type SubmitAttachmentStateChangesInputOperationRetryAlias = aws_http::AwsErr
 impl SubmitAttachmentStateChangesInput {
     /// Consumes the builder and constructs an Operation<[`SubmitAttachmentStateChanges`](crate::operation::SubmitAttachmentStateChanges)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -10734,11 +10921,14 @@ impl SubmitAttachmentStateChangesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -10859,12 +11049,12 @@ pub mod submit_container_state_change_input {
             self.status = input;
             self
         }
-        /// <p>The exit code returned for the state change request.</p>
+        /// <p>The exit code that's returned for the state change request.</p>
         pub fn exit_code(mut self, input: i32) -> Self {
             self.exit_code = Some(input);
             self
         }
-        /// <p>The exit code returned for the state change request.</p>
+        /// <p>The exit code that's returned for the state change request.</p>
         pub fn set_exit_code(mut self, input: std::option::Option<i32>) -> Self {
             self.exit_code = input;
             self
@@ -10926,6 +11116,7 @@ pub type SubmitContainerStateChangeInputOperationRetryAlias = aws_http::AwsError
 impl SubmitContainerStateChangeInput {
     /// Consumes the builder and constructs an Operation<[`SubmitContainerStateChange`](crate::operation::SubmitContainerStateChange)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -10983,11 +11174,14 @@ impl SubmitContainerStateChangeInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -11054,9 +11248,9 @@ pub mod submit_task_state_change_input {
             std::option::Option<std::vec::Vec<crate::model::AttachmentStateChange>>,
         pub(crate) managed_agents:
             std::option::Option<std::vec::Vec<crate::model::ManagedAgentStateChange>>,
-        pub(crate) pull_started_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) pull_stopped_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) execution_stopped_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) pull_started_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) pull_stopped_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) execution_stopped_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
@@ -11103,14 +11297,14 @@ pub mod submit_task_state_change_input {
         ///
         /// To override the contents of this collection use [`set_containers`](Self::set_containers).
         ///
-        /// <p>Any containers associated with the state change request.</p>
+        /// <p>Any containers that's associated with the state change request.</p>
         pub fn containers(mut self, input: impl Into<crate::model::ContainerStateChange>) -> Self {
             let mut v = self.containers.unwrap_or_default();
             v.push(input.into());
             self.containers = Some(v);
             self
         }
-        /// <p>Any containers associated with the state change request.</p>
+        /// <p>Any containers that's associated with the state change request.</p>
         pub fn set_containers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContainerStateChange>>,
@@ -11144,7 +11338,7 @@ pub mod submit_task_state_change_input {
         ///
         /// To override the contents of this collection use [`set_managed_agents`](Self::set_managed_agents).
         ///
-        /// <p>The details for the managed agent associated with the task.</p>
+        /// <p>The details for the managed agent that's associated with the task.</p>
         pub fn managed_agents(
             mut self,
             input: impl Into<crate::model::ManagedAgentStateChange>,
@@ -11154,7 +11348,7 @@ pub mod submit_task_state_change_input {
             self.managed_agents = Some(v);
             self
         }
-        /// <p>The details for the managed agent associated with the task.</p>
+        /// <p>The details for the managed agent that's associated with the task.</p>
         pub fn set_managed_agents(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ManagedAgentStateChange>>,
@@ -11162,41 +11356,41 @@ pub mod submit_task_state_change_input {
             self.managed_agents = input;
             self
         }
-        /// <p>The Unix timestamp for when the container image pull began.</p>
-        pub fn pull_started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        /// <p>The Unix timestamp for the time when the container image pull started.</p>
+        pub fn pull_started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.pull_started_at = Some(input);
             self
         }
-        /// <p>The Unix timestamp for when the container image pull began.</p>
+        /// <p>The Unix timestamp for the time when the container image pull started.</p>
         pub fn set_pull_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.pull_started_at = input;
             self
         }
-        /// <p>The Unix timestamp for when the container image pull completed.</p>
-        pub fn pull_stopped_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        /// <p>The Unix timestamp for the time when the container image pull completed.</p>
+        pub fn pull_stopped_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.pull_stopped_at = Some(input);
             self
         }
-        /// <p>The Unix timestamp for when the container image pull completed.</p>
+        /// <p>The Unix timestamp for the time when the container image pull completed.</p>
         pub fn set_pull_stopped_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.pull_stopped_at = input;
             self
         }
-        /// <p>The Unix timestamp for when the task execution stopped.</p>
-        pub fn execution_stopped_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        /// <p>The Unix timestamp for the time when the task execution stopped.</p>
+        pub fn execution_stopped_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.execution_stopped_at = Some(input);
             self
         }
-        /// <p>The Unix timestamp for when the task execution stopped.</p>
+        /// <p>The Unix timestamp for the time when the task execution stopped.</p>
         pub fn set_execution_stopped_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.execution_stopped_at = input;
             self
@@ -11230,6 +11424,7 @@ pub type SubmitTaskStateChangeInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl SubmitTaskStateChangeInput {
     /// Consumes the builder and constructs an Operation<[`SubmitTaskStateChange`](crate::operation::SubmitTaskStateChange)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -11288,11 +11483,14 @@ impl SubmitTaskStateChangeInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -11353,15 +11551,15 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources
-        /// are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
+        /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are
+        /// Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
         /// instances.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources
-        /// are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
+        /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are
+        /// Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
         /// instances.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
@@ -11469,6 +11667,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -11524,11 +11723,14 @@ impl TagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -11589,16 +11791,16 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-        /// resources are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and
-        /// container instances.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resources
+        /// are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
+        /// instances.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-        /// resources are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and
-        /// container instances.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resources
+        /// are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
+        /// instances.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -11643,6 +11845,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -11698,11 +11901,14 @@ impl UntagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -11774,7 +11980,7 @@ pub mod update_capacity_provider_input {
             self.name = input;
             self
         }
-        /// <p>An object representing the parameters to update for the Auto Scaling group capacity
+        /// <p>An object that represent the parameters to update for the Auto Scaling group capacity
         /// provider.</p>
         pub fn auto_scaling_group_provider(
             mut self,
@@ -11783,7 +11989,7 @@ pub mod update_capacity_provider_input {
             self.auto_scaling_group_provider = Some(input);
             self
         }
-        /// <p>An object representing the parameters to update for the Auto Scaling group capacity
+        /// <p>An object that represent the parameters to update for the Auto Scaling group capacity
         /// provider.</p>
         pub fn set_auto_scaling_group_provider(
             mut self,
@@ -11813,6 +12019,7 @@ pub type UpdateCapacityProviderInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl UpdateCapacityProviderInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCapacityProvider`](crate::operation::UpdateCapacityProvider)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -11871,11 +12078,14 @@ impl UpdateCapacityProviderInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -12001,6 +12211,7 @@ pub type UpdateClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateClusterInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCluster`](crate::operation::UpdateCluster)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -12056,11 +12267,14 @@ impl UpdateClusterInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -12136,7 +12350,7 @@ pub mod update_cluster_settings_input {
         /// To override the contents of this collection use [`set_settings`](Self::set_settings).
         ///
         /// <p>The setting to use by default for a cluster. This parameter is used to enable CloudWatch
-        /// Container Insights for a cluster. If this value is specified, it will override the
+        /// Container Insights for a cluster. If this value is specified, it overrides the
         /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
         /// <a>PutAccountSettingDefault</a>.</p>
         pub fn settings(mut self, input: impl Into<crate::model::ClusterSetting>) -> Self {
@@ -12146,7 +12360,7 @@ pub mod update_cluster_settings_input {
             self
         }
         /// <p>The setting to use by default for a cluster. This parameter is used to enable CloudWatch
-        /// Container Insights for a cluster. If this value is specified, it will override the
+        /// Container Insights for a cluster. If this value is specified, it overrides the
         /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
         /// <a>PutAccountSettingDefault</a>.</p>
         pub fn set_settings(
@@ -12177,6 +12391,7 @@ pub type UpdateClusterSettingsInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl UpdateClusterSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateClusterSettings`](crate::operation::UpdateClusterSettings)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -12235,11 +12450,14 @@ impl UpdateClusterSettingsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -12312,14 +12530,14 @@ pub mod update_container_agent_input {
             self.cluster = input;
             self
         }
-        /// <p>The container instance ID or full ARN entries for the container instance on which
-        /// you would like to update the Amazon ECS container agent.</p>
+        /// <p>The container instance ID or full ARN entries for the container instance where you
+        /// would like to update the Amazon ECS container agent.</p>
         pub fn container_instance(mut self, input: impl Into<std::string::String>) -> Self {
             self.container_instance = Some(input.into());
             self
         }
-        /// <p>The container instance ID or full ARN entries for the container instance on which
-        /// you would like to update the Amazon ECS container agent.</p>
+        /// <p>The container instance ID or full ARN entries for the container instance where you
+        /// would like to update the Amazon ECS container agent.</p>
         pub fn set_container_instance(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12348,6 +12566,7 @@ pub type UpdateContainerAgentInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl UpdateContainerAgentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateContainerAgent`](crate::operation::UpdateContainerAgent)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -12406,11 +12625,14 @@ impl UpdateContainerAgentInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -12503,24 +12725,22 @@ pub mod update_container_instances_state_input {
             self.container_instances = input;
             self
         }
-        /// <p>The container instance state with which to update the container instance. The only
-        /// valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A
-        /// container instance can only be updated to <code>DRAINING</code> status once it has
-        /// reached an <code>ACTIVE</code> state. If a container instance is in
-        /// <code>REGISTERING</code>, <code>DEREGISTERING</code>, or
-        /// <code>REGISTRATION_FAILED</code> state you can describe the container instance but
-        /// will be unable to update the container instance state.</p>
+        /// <p>The container instance state to update the container instance with. The only valid
+        /// values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A container
+        /// instance can only be updated to <code>DRAINING</code> status once it has reached an
+        /// <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>,
+        /// <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can
+        /// describe the container instance but can't update the container instance state.</p>
         pub fn status(mut self, input: crate::model::ContainerInstanceStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The container instance state with which to update the container instance. The only
-        /// valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A
-        /// container instance can only be updated to <code>DRAINING</code> status once it has
-        /// reached an <code>ACTIVE</code> state. If a container instance is in
-        /// <code>REGISTERING</code>, <code>DEREGISTERING</code>, or
-        /// <code>REGISTRATION_FAILED</code> state you can describe the container instance but
-        /// will be unable to update the container instance state.</p>
+        /// <p>The container instance state to update the container instance with. The only valid
+        /// values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A container
+        /// instance can only be updated to <code>DRAINING</code> status once it has reached an
+        /// <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>,
+        /// <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can
+        /// describe the container instance but can't update the container instance state.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ContainerInstanceStatus>,
@@ -12551,6 +12771,7 @@ pub type UpdateContainerInstancesStateInputOperationRetryAlias = aws_http::AwsEr
 impl UpdateContainerInstancesStateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateContainerInstancesState`](crate::operation::UpdateContainerInstancesState)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -12608,11 +12829,14 @@ impl UpdateContainerInstancesStateInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -12688,13 +12912,13 @@ pub mod update_service_input {
         pub(crate) enable_execute_command: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on.
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on.
         /// If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster = Some(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on.
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on.
         /// If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
@@ -12748,11 +12972,11 @@ pub mod update_service_input {
         /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
         ///
         /// <p>The capacity provider strategy to update the service to use.</p>
-        /// <p>If the service is using the default capacity provider strategy for the cluster, the
+        /// <p>if the service uses the default capacity provider strategy for the cluster, the
         /// service can be updated to use one or more capacity providers as opposed to the default
         /// capacity provider strategy. However, when a service is using a capacity provider
-        /// strategy that is not the default capacity provider strategy, the service cannot be
-        /// updated to use the cluster's default capacity provider strategy.</p>
+        /// strategy that's not the default capacity provider strategy, the service can't be updated
+        /// to use the cluster's default capacity provider strategy.</p>
         /// <p>A capacity provider strategy consists of one or more capacity providers along with the
         /// <code>base</code> and <code>weight</code> to assign to them. A capacity provider
         /// must be associated with the cluster to be used in a capacity provider strategy. The
@@ -12778,11 +13002,11 @@ pub mod update_service_input {
             self
         }
         /// <p>The capacity provider strategy to update the service to use.</p>
-        /// <p>If the service is using the default capacity provider strategy for the cluster, the
+        /// <p>if the service uses the default capacity provider strategy for the cluster, the
         /// service can be updated to use one or more capacity providers as opposed to the default
         /// capacity provider strategy. However, when a service is using a capacity provider
-        /// strategy that is not the default capacity provider strategy, the service cannot be
-        /// updated to use the cluster's default capacity provider strategy.</p>
+        /// strategy that's not the default capacity provider strategy, the service can't be updated
+        /// to use the cluster's default capacity provider strategy.</p>
         /// <p>A capacity provider strategy consists of one or more capacity providers along with the
         /// <code>base</code> and <code>weight</code> to assign to them. A capacity provider
         /// must be associated with the cluster to be used in a capacity provider strategy. The
@@ -12845,8 +13069,8 @@ pub mod update_service_input {
         /// unchanged. If this value is specified, it will override any existing placement
         /// constraints defined for the service. To remove all existing placement constraints,
         /// specify an empty array.</p>
-        /// <p>You can specify a maximum of 10 constraints per task (this limit includes constraints
-        /// in the task definition and those specified at runtime).</p>
+        /// <p>You can specify a maximum of 10 constraints for each task. This limit includes
+        /// constraints in the task definition and those specified at runtime.</p>
         pub fn placement_constraints(
             mut self,
             input: impl Into<crate::model::PlacementConstraint>,
@@ -12861,8 +13085,8 @@ pub mod update_service_input {
         /// unchanged. If this value is specified, it will override any existing placement
         /// constraints defined for the service. To remove all existing placement constraints,
         /// specify an empty array.</p>
-        /// <p>You can specify a maximum of 10 constraints per task (this limit includes constraints
-        /// in the task definition and those specified at runtime).</p>
+        /// <p>You can specify a maximum of 10 constraints for each task. This limit includes
+        /// constraints in the task definition and those specified at runtime.</p>
         pub fn set_placement_constraints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
@@ -12878,7 +13102,7 @@ pub mod update_service_input {
         /// specified, the existing placement strategy for the service will remain unchanged. If
         /// this value is specified, it will override the existing placement strategy defined for
         /// the service. To remove an existing placement strategy, specify an empty object.</p>
-        /// <p>You can specify a maximum of five strategy rules per service.</p>
+        /// <p>You can specify a maximum of five strategy rules for each service.</p>
         pub fn placement_strategy(
             mut self,
             input: impl Into<crate::model::PlacementStrategy>,
@@ -12892,7 +13116,7 @@ pub mod update_service_input {
         /// specified, the existing placement strategy for the service will remain unchanged. If
         /// this value is specified, it will override the existing placement strategy defined for
         /// the service. To remove an existing placement strategy, specify an empty object.</p>
-        /// <p>You can specify a maximum of five strategy rules per service.</p>
+        /// <p>You can specify a maximum of five strategy rules for each service.</p>
         pub fn set_placement_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
@@ -12900,19 +13124,19 @@ pub mod update_service_input {
             self.placement_strategy = input;
             self
         }
-        /// <p>The platform version on which your tasks in the service are running. A platform
-        /// version is only specified for tasks using the Fargate launch type. If a
-        /// platform version is not specified, the <code>LATEST</code> platform version is used by
-        /// default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
+        /// <p>The platform version that your tasks in the service run on. A platform version is only
+        /// specified for tasks using the Fargate launch type. If a platform version
+        /// is not specified, the <code>LATEST</code> platform version is used. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
         /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform_version = Some(input.into());
             self
         }
-        /// <p>The platform version on which your tasks in the service are running. A platform
-        /// version is only specified for tasks using the Fargate launch type. If a
-        /// platform version is not specified, the <code>LATEST</code> platform version is used by
-        /// default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
+        /// <p>The platform version that your tasks in the service run on. A platform version is only
+        /// specified for tasks using the Fargate launch type. If a platform version
+        /// is not specified, the <code>LATEST</code> platform version is used. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
         /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_platform_version(
             mut self,
@@ -12921,44 +13145,44 @@ pub mod update_service_input {
             self.platform_version = input;
             self
         }
-        /// <p>Whether to force a new deployment of the service. Deployments are not forced by
-        /// default. You can use this option to trigger a new deployment with no service definition
-        /// changes. For example, you can update a service's tasks to use a newer Docker image with
-        /// the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate tasks
-        /// onto a newer platform version.</p>
+        /// <p>Determines whether to force a new deployment of the service. By default, deployments
+        /// aren't forced. You can use this option to start a new deployment with no service
+        /// definition changes. For example, you can update a service's tasks to use a newer Docker
+        /// image with the same image/tag combination (<code>my_image:latest</code>) or to roll
+        /// Fargate tasks onto a newer platform version.</p>
         pub fn force_new_deployment(mut self, input: bool) -> Self {
             self.force_new_deployment = Some(input);
             self
         }
-        /// <p>Whether to force a new deployment of the service. Deployments are not forced by
-        /// default. You can use this option to trigger a new deployment with no service definition
-        /// changes. For example, you can update a service's tasks to use a newer Docker image with
-        /// the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate tasks
-        /// onto a newer platform version.</p>
+        /// <p>Determines whether to force a new deployment of the service. By default, deployments
+        /// aren't forced. You can use this option to start a new deployment with no service
+        /// definition changes. For example, you can update a service's tasks to use a newer Docker
+        /// image with the same image/tag combination (<code>my_image:latest</code>) or to roll
+        /// Fargate tasks onto a newer platform version.</p>
         pub fn set_force_new_deployment(mut self, input: std::option::Option<bool>) -> Self {
             self.force_new_deployment = input;
             self
         }
-        /// <p>The period of time, in seconds, that the Amazon ECS service scheduler should ignore
-        /// unhealthy Elastic Load Balancing target health checks after a task has first started. This is only valid
-        /// if your service is configured to use a load balancer. If your service's tasks take a
-        /// while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace
-        /// period of up to 2,147,483,647 seconds. During that time, the Amazon ECS service
-        /// scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS
-        /// service scheduler from marking tasks as unhealthy and stopping them before they have
-        /// time to come up.</p>
+        /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
+        /// Elastic Load Balancing target health checks after a task has first started. This is only valid if your
+        /// service is configured to use a load balancer. If your service's tasks take a while to
+        /// start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of
+        /// up to 2,147,483,647 seconds. During that time, the Amazon ECS service scheduler ignores
+        /// the Elastic Load Balancing health check status. This grace period can prevent the ECS service scheduler
+        /// from marking tasks as unhealthy and stopping them before they have time to come
+        /// up.</p>
         pub fn health_check_grace_period_seconds(mut self, input: i32) -> Self {
             self.health_check_grace_period_seconds = Some(input);
             self
         }
-        /// <p>The period of time, in seconds, that the Amazon ECS service scheduler should ignore
-        /// unhealthy Elastic Load Balancing target health checks after a task has first started. This is only valid
-        /// if your service is configured to use a load balancer. If your service's tasks take a
-        /// while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace
-        /// period of up to 2,147,483,647 seconds. During that time, the Amazon ECS service
-        /// scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS
-        /// service scheduler from marking tasks as unhealthy and stopping them before they have
-        /// time to come up.</p>
+        /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
+        /// Elastic Load Balancing target health checks after a task has first started. This is only valid if your
+        /// service is configured to use a load balancer. If your service's tasks take a while to
+        /// start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of
+        /// up to 2,147,483,647 seconds. During that time, the Amazon ECS service scheduler ignores
+        /// the Elastic Load Balancing health check status. This grace period can prevent the ECS service scheduler
+        /// from marking tasks as unhealthy and stopping them before they have time to come
+        /// up.</p>
         pub fn set_health_check_grace_period_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -13014,6 +13238,7 @@ pub type UpdateServiceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateServiceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateService`](crate::operation::UpdateService)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -13069,11 +13294,14 @@ impl UpdateServiceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -13195,6 +13423,7 @@ pub type UpdateServicePrimaryTaskSetInputOperationRetryAlias = aws_http::AwsErro
 impl UpdateServicePrimaryTaskSetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateServicePrimaryTaskSet`](crate::operation::UpdateServicePrimaryTaskSet)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -13252,11 +13481,14 @@ impl UpdateServicePrimaryTaskSetInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -13320,23 +13552,23 @@ pub mod update_task_set_input {
     }
     impl Builder {
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
-        /// set exists in.</p>
+        /// set is found in.</p>
         pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster = Some(input.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
-        /// set exists in.</p>
+        /// set is found in.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.</p>
         pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
             self.service = Some(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service = input;
             self
@@ -13386,6 +13618,7 @@ pub type UpdateTaskSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateTaskSetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTaskSet`](crate::operation::UpdateTaskSet)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -13442,11 +13675,14 @@ impl UpdateTaskSetInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -13502,9 +13738,9 @@ impl UpdateTaskSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTaskSetInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
-    /// set exists in.</p>
+    /// set is found in.</p>
     pub cluster: std::option::Option<std::string::String>,
-    /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.</p>
+    /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.</p>
     pub service: std::option::Option<std::string::String>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the task set to update.</p>
     pub task_set: std::option::Option<std::string::String>,
@@ -13514,11 +13750,11 @@ pub struct UpdateTaskSetInput {
 }
 impl UpdateTaskSetInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
-    /// set exists in.</p>
+    /// set is found in.</p>
     pub fn cluster(&self) -> std::option::Option<&str> {
         self.cluster.as_deref()
     }
-    /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.</p>
+    /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.</p>
     pub fn service(&self) -> std::option::Option<&str> {
         self.service.as_deref()
     }
@@ -13586,7 +13822,7 @@ impl std::fmt::Debug for UpdateServicePrimaryTaskSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceInput {
-    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on.
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on.
     /// If you do not specify a cluster, the default cluster is assumed.</p>
     pub cluster: std::option::Option<std::string::String>,
     /// <p>The name of the service to update.</p>
@@ -13601,11 +13837,11 @@ pub struct UpdateServiceInput {
     /// the task definition and then stops an old task after the new version is running.</p>
     pub task_definition: std::option::Option<std::string::String>,
     /// <p>The capacity provider strategy to update the service to use.</p>
-    /// <p>If the service is using the default capacity provider strategy for the cluster, the
+    /// <p>if the service uses the default capacity provider strategy for the cluster, the
     /// service can be updated to use one or more capacity providers as opposed to the default
     /// capacity provider strategy. However, when a service is using a capacity provider
-    /// strategy that is not the default capacity provider strategy, the service cannot be
-    /// updated to use the cluster's default capacity provider strategy.</p>
+    /// strategy that's not the default capacity provider strategy, the service can't be updated
+    /// to use the cluster's default capacity provider strategy.</p>
     /// <p>A capacity provider strategy consists of one or more capacity providers along with the
     /// <code>base</code> and <code>weight</code> to assign to them. A capacity provider
     /// must be associated with the cluster to be used in a capacity provider strategy. The
@@ -13633,36 +13869,36 @@ pub struct UpdateServiceInput {
     /// unchanged. If this value is specified, it will override any existing placement
     /// constraints defined for the service. To remove all existing placement constraints,
     /// specify an empty array.</p>
-    /// <p>You can specify a maximum of 10 constraints per task (this limit includes constraints
-    /// in the task definition and those specified at runtime).</p>
+    /// <p>You can specify a maximum of 10 constraints for each task. This limit includes
+    /// constraints in the task definition and those specified at runtime.</p>
     pub placement_constraints:
         std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
     /// <p>The task placement strategy objects to update the service to use. If no value is
     /// specified, the existing placement strategy for the service will remain unchanged. If
     /// this value is specified, it will override the existing placement strategy defined for
     /// the service. To remove an existing placement strategy, specify an empty object.</p>
-    /// <p>You can specify a maximum of five strategy rules per service.</p>
+    /// <p>You can specify a maximum of five strategy rules for each service.</p>
     pub placement_strategy: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
-    /// <p>The platform version on which your tasks in the service are running. A platform
-    /// version is only specified for tasks using the Fargate launch type. If a
-    /// platform version is not specified, the <code>LATEST</code> platform version is used by
-    /// default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
+    /// <p>The platform version that your tasks in the service run on. A platform version is only
+    /// specified for tasks using the Fargate launch type. If a platform version
+    /// is not specified, the <code>LATEST</code> platform version is used. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
     /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub platform_version: std::option::Option<std::string::String>,
-    /// <p>Whether to force a new deployment of the service. Deployments are not forced by
-    /// default. You can use this option to trigger a new deployment with no service definition
-    /// changes. For example, you can update a service's tasks to use a newer Docker image with
-    /// the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate tasks
-    /// onto a newer platform version.</p>
+    /// <p>Determines whether to force a new deployment of the service. By default, deployments
+    /// aren't forced. You can use this option to start a new deployment with no service
+    /// definition changes. For example, you can update a service's tasks to use a newer Docker
+    /// image with the same image/tag combination (<code>my_image:latest</code>) or to roll
+    /// Fargate tasks onto a newer platform version.</p>
     pub force_new_deployment: bool,
-    /// <p>The period of time, in seconds, that the Amazon ECS service scheduler should ignore
-    /// unhealthy Elastic Load Balancing target health checks after a task has first started. This is only valid
-    /// if your service is configured to use a load balancer. If your service's tasks take a
-    /// while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace
-    /// period of up to 2,147,483,647 seconds. During that time, the Amazon ECS service
-    /// scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS
-    /// service scheduler from marking tasks as unhealthy and stopping them before they have
-    /// time to come up.</p>
+    /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
+    /// Elastic Load Balancing target health checks after a task has first started. This is only valid if your
+    /// service is configured to use a load balancer. If your service's tasks take a while to
+    /// start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of
+    /// up to 2,147,483,647 seconds. During that time, the Amazon ECS service scheduler ignores
+    /// the Elastic Load Balancing health check status. This grace period can prevent the ECS service scheduler
+    /// from marking tasks as unhealthy and stopping them before they have time to come
+    /// up.</p>
     pub health_check_grace_period_seconds: std::option::Option<i32>,
     /// <p>If <code>true</code>, this enables execute command functionality on all task
     /// containers.</p>
@@ -13671,7 +13907,7 @@ pub struct UpdateServiceInput {
     pub enable_execute_command: std::option::Option<bool>,
 }
 impl UpdateServiceInput {
-    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on.
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on.
     /// If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn cluster(&self) -> std::option::Option<&str> {
         self.cluster.as_deref()
@@ -13694,11 +13930,11 @@ impl UpdateServiceInput {
         self.task_definition.as_deref()
     }
     /// <p>The capacity provider strategy to update the service to use.</p>
-    /// <p>If the service is using the default capacity provider strategy for the cluster, the
+    /// <p>if the service uses the default capacity provider strategy for the cluster, the
     /// service can be updated to use one or more capacity providers as opposed to the default
     /// capacity provider strategy. However, when a service is using a capacity provider
-    /// strategy that is not the default capacity provider strategy, the service cannot be
-    /// updated to use the cluster's default capacity provider strategy.</p>
+    /// strategy that's not the default capacity provider strategy, the service can't be updated
+    /// to use the cluster's default capacity provider strategy.</p>
     /// <p>A capacity provider strategy consists of one or more capacity providers along with the
     /// <code>base</code> and <code>weight</code> to assign to them. A capacity provider
     /// must be associated with the cluster to be used in a capacity provider strategy. The
@@ -13737,8 +13973,8 @@ impl UpdateServiceInput {
     /// unchanged. If this value is specified, it will override any existing placement
     /// constraints defined for the service. To remove all existing placement constraints,
     /// specify an empty array.</p>
-    /// <p>You can specify a maximum of 10 constraints per task (this limit includes constraints
-    /// in the task definition and those specified at runtime).</p>
+    /// <p>You can specify a maximum of 10 constraints for each task. This limit includes
+    /// constraints in the task definition and those specified at runtime.</p>
     pub fn placement_constraints(
         &self,
     ) -> std::option::Option<&[crate::model::PlacementConstraint]> {
@@ -13748,34 +13984,34 @@ impl UpdateServiceInput {
     /// specified, the existing placement strategy for the service will remain unchanged. If
     /// this value is specified, it will override the existing placement strategy defined for
     /// the service. To remove an existing placement strategy, specify an empty object.</p>
-    /// <p>You can specify a maximum of five strategy rules per service.</p>
+    /// <p>You can specify a maximum of five strategy rules for each service.</p>
     pub fn placement_strategy(&self) -> std::option::Option<&[crate::model::PlacementStrategy]> {
         self.placement_strategy.as_deref()
     }
-    /// <p>The platform version on which your tasks in the service are running. A platform
-    /// version is only specified for tasks using the Fargate launch type. If a
-    /// platform version is not specified, the <code>LATEST</code> platform version is used by
-    /// default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
+    /// <p>The platform version that your tasks in the service run on. A platform version is only
+    /// specified for tasks using the Fargate launch type. If a platform version
+    /// is not specified, the <code>LATEST</code> platform version is used. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
     /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn platform_version(&self) -> std::option::Option<&str> {
         self.platform_version.as_deref()
     }
-    /// <p>Whether to force a new deployment of the service. Deployments are not forced by
-    /// default. You can use this option to trigger a new deployment with no service definition
-    /// changes. For example, you can update a service's tasks to use a newer Docker image with
-    /// the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate tasks
-    /// onto a newer platform version.</p>
+    /// <p>Determines whether to force a new deployment of the service. By default, deployments
+    /// aren't forced. You can use this option to start a new deployment with no service
+    /// definition changes. For example, you can update a service's tasks to use a newer Docker
+    /// image with the same image/tag combination (<code>my_image:latest</code>) or to roll
+    /// Fargate tasks onto a newer platform version.</p>
     pub fn force_new_deployment(&self) -> bool {
         self.force_new_deployment
     }
-    /// <p>The period of time, in seconds, that the Amazon ECS service scheduler should ignore
-    /// unhealthy Elastic Load Balancing target health checks after a task has first started. This is only valid
-    /// if your service is configured to use a load balancer. If your service's tasks take a
-    /// while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace
-    /// period of up to 2,147,483,647 seconds. During that time, the Amazon ECS service
-    /// scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS
-    /// service scheduler from marking tasks as unhealthy and stopping them before they have
-    /// time to come up.</p>
+    /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
+    /// Elastic Load Balancing target health checks after a task has first started. This is only valid if your
+    /// service is configured to use a load balancer. If your service's tasks take a while to
+    /// start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of
+    /// up to 2,147,483,647 seconds. During that time, the Amazon ECS service scheduler ignores
+    /// the Elastic Load Balancing health check status. This grace period can prevent the ECS service scheduler
+    /// from marking tasks as unhealthy and stopping them before they have time to come
+    /// up.</p>
     pub fn health_check_grace_period_seconds(&self) -> std::option::Option<i32> {
         self.health_check_grace_period_seconds
     }
@@ -13822,13 +14058,12 @@ pub struct UpdateContainerInstancesStateInput {
     pub cluster: std::option::Option<std::string::String>,
     /// <p>A list of container instance IDs or full ARN entries.</p>
     pub container_instances: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The container instance state with which to update the container instance. The only
-    /// valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A
-    /// container instance can only be updated to <code>DRAINING</code> status once it has
-    /// reached an <code>ACTIVE</code> state. If a container instance is in
-    /// <code>REGISTERING</code>, <code>DEREGISTERING</code>, or
-    /// <code>REGISTRATION_FAILED</code> state you can describe the container instance but
-    /// will be unable to update the container instance state.</p>
+    /// <p>The container instance state to update the container instance with. The only valid
+    /// values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A container
+    /// instance can only be updated to <code>DRAINING</code> status once it has reached an
+    /// <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>,
+    /// <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can
+    /// describe the container instance but can't update the container instance state.</p>
     pub status: std::option::Option<crate::model::ContainerInstanceStatus>,
 }
 impl UpdateContainerInstancesStateInput {
@@ -13841,13 +14076,12 @@ impl UpdateContainerInstancesStateInput {
     pub fn container_instances(&self) -> std::option::Option<&[std::string::String]> {
         self.container_instances.as_deref()
     }
-    /// <p>The container instance state with which to update the container instance. The only
-    /// valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A
-    /// container instance can only be updated to <code>DRAINING</code> status once it has
-    /// reached an <code>ACTIVE</code> state. If a container instance is in
-    /// <code>REGISTERING</code>, <code>DEREGISTERING</code>, or
-    /// <code>REGISTRATION_FAILED</code> state you can describe the container instance but
-    /// will be unable to update the container instance state.</p>
+    /// <p>The container instance state to update the container instance with. The only valid
+    /// values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A container
+    /// instance can only be updated to <code>DRAINING</code> status once it has reached an
+    /// <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>,
+    /// <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can
+    /// describe the container instance but can't update the container instance state.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ContainerInstanceStatus> {
         self.status.as_ref()
     }
@@ -13869,8 +14103,8 @@ pub struct UpdateContainerAgentInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is
     /// running on. If you do not specify a cluster, the default cluster is assumed.</p>
     pub cluster: std::option::Option<std::string::String>,
-    /// <p>The container instance ID or full ARN entries for the container instance on which
-    /// you would like to update the Amazon ECS container agent.</p>
+    /// <p>The container instance ID or full ARN entries for the container instance where you
+    /// would like to update the Amazon ECS container agent.</p>
     pub container_instance: std::option::Option<std::string::String>,
 }
 impl UpdateContainerAgentInput {
@@ -13879,8 +14113,8 @@ impl UpdateContainerAgentInput {
     pub fn cluster(&self) -> std::option::Option<&str> {
         self.cluster.as_deref()
     }
-    /// <p>The container instance ID or full ARN entries for the container instance on which
-    /// you would like to update the Amazon ECS container agent.</p>
+    /// <p>The container instance ID or full ARN entries for the container instance where you
+    /// would like to update the Amazon ECS container agent.</p>
     pub fn container_instance(&self) -> std::option::Option<&str> {
         self.container_instance.as_deref()
     }
@@ -13901,7 +14135,7 @@ pub struct UpdateClusterSettingsInput {
     /// <p>The name of the cluster to modify the settings for.</p>
     pub cluster: std::option::Option<std::string::String>,
     /// <p>The setting to use by default for a cluster. This parameter is used to enable CloudWatch
-    /// Container Insights for a cluster. If this value is specified, it will override the
+    /// Container Insights for a cluster. If this value is specified, it overrides the
     /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
     /// <a>PutAccountSettingDefault</a>.</p>
     pub settings: std::option::Option<std::vec::Vec<crate::model::ClusterSetting>>,
@@ -13912,7 +14146,7 @@ impl UpdateClusterSettingsInput {
         self.cluster.as_deref()
     }
     /// <p>The setting to use by default for a cluster. This parameter is used to enable CloudWatch
-    /// Container Insights for a cluster. If this value is specified, it will override the
+    /// Container Insights for a cluster. If this value is specified, it overrides the
     /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
     /// <a>PutAccountSettingDefault</a>.</p>
     pub fn settings(&self) -> std::option::Option<&[crate::model::ClusterSetting]> {
@@ -13969,7 +14203,7 @@ impl std::fmt::Debug for UpdateClusterInput {
 pub struct UpdateCapacityProviderInput {
     /// <p>The name of the capacity provider to update.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>An object representing the parameters to update for the Auto Scaling group capacity
+    /// <p>An object that represent the parameters to update for the Auto Scaling group capacity
     /// provider.</p>
     pub auto_scaling_group_provider:
         std::option::Option<crate::model::AutoScalingGroupProviderUpdate>,
@@ -13979,7 +14213,7 @@ impl UpdateCapacityProviderInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>An object representing the parameters to update for the Auto Scaling group capacity
+    /// <p>An object that represent the parameters to update for the Auto Scaling group capacity
     /// provider.</p>
     pub fn auto_scaling_group_provider(
         &self,
@@ -14003,17 +14237,17 @@ impl std::fmt::Debug for UpdateCapacityProviderInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-    /// resources are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and
-    /// container instances.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resources
+    /// are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
+    /// instances.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-    /// resources are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and
-    /// container instances.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resources
+    /// are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
+    /// instances.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -14035,8 +14269,8 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources
-    /// are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
+    /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are
+    /// Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
     /// instances.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
@@ -14074,8 +14308,8 @@ pub struct TagResourceInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources
-    /// are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
+    /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are
+    /// Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
     /// instances.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
@@ -14137,18 +14371,18 @@ pub struct SubmitTaskStateChangeInput {
     pub status: std::option::Option<std::string::String>,
     /// <p>The reason for the state change request.</p>
     pub reason: std::option::Option<std::string::String>,
-    /// <p>Any containers associated with the state change request.</p>
+    /// <p>Any containers that's associated with the state change request.</p>
     pub containers: std::option::Option<std::vec::Vec<crate::model::ContainerStateChange>>,
     /// <p>Any attachments associated with the state change request.</p>
     pub attachments: std::option::Option<std::vec::Vec<crate::model::AttachmentStateChange>>,
-    /// <p>The details for the managed agent associated with the task.</p>
+    /// <p>The details for the managed agent that's associated with the task.</p>
     pub managed_agents: std::option::Option<std::vec::Vec<crate::model::ManagedAgentStateChange>>,
-    /// <p>The Unix timestamp for when the container image pull began.</p>
-    pub pull_started_at: std::option::Option<aws_smithy_types::Instant>,
-    /// <p>The Unix timestamp for when the container image pull completed.</p>
-    pub pull_stopped_at: std::option::Option<aws_smithy_types::Instant>,
-    /// <p>The Unix timestamp for when the task execution stopped.</p>
-    pub execution_stopped_at: std::option::Option<aws_smithy_types::Instant>,
+    /// <p>The Unix timestamp for the time when the container image pull started.</p>
+    pub pull_started_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The Unix timestamp for the time when the container image pull completed.</p>
+    pub pull_stopped_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The Unix timestamp for the time when the task execution stopped.</p>
+    pub execution_stopped_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SubmitTaskStateChangeInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
@@ -14167,7 +14401,7 @@ impl SubmitTaskStateChangeInput {
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
-    /// <p>Any containers associated with the state change request.</p>
+    /// <p>Any containers that's associated with the state change request.</p>
     pub fn containers(&self) -> std::option::Option<&[crate::model::ContainerStateChange]> {
         self.containers.as_deref()
     }
@@ -14175,20 +14409,20 @@ impl SubmitTaskStateChangeInput {
     pub fn attachments(&self) -> std::option::Option<&[crate::model::AttachmentStateChange]> {
         self.attachments.as_deref()
     }
-    /// <p>The details for the managed agent associated with the task.</p>
+    /// <p>The details for the managed agent that's associated with the task.</p>
     pub fn managed_agents(&self) -> std::option::Option<&[crate::model::ManagedAgentStateChange]> {
         self.managed_agents.as_deref()
     }
-    /// <p>The Unix timestamp for when the container image pull began.</p>
-    pub fn pull_started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    /// <p>The Unix timestamp for the time when the container image pull started.</p>
+    pub fn pull_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.pull_started_at.as_ref()
     }
-    /// <p>The Unix timestamp for when the container image pull completed.</p>
-    pub fn pull_stopped_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    /// <p>The Unix timestamp for the time when the container image pull completed.</p>
+    pub fn pull_stopped_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.pull_stopped_at.as_ref()
     }
-    /// <p>The Unix timestamp for when the task execution stopped.</p>
-    pub fn execution_stopped_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    /// <p>The Unix timestamp for the time when the task execution stopped.</p>
+    pub fn execution_stopped_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.execution_stopped_at.as_ref()
     }
 }
@@ -14223,7 +14457,7 @@ pub struct SubmitContainerStateChangeInput {
     pub runtime_id: std::option::Option<std::string::String>,
     /// <p>The status of the state change request.</p>
     pub status: std::option::Option<std::string::String>,
-    /// <p>The exit code returned for the state change request.</p>
+    /// <p>The exit code that's returned for the state change request.</p>
     pub exit_code: std::option::Option<i32>,
     /// <p>The reason for the state change request.</p>
     pub reason: std::option::Option<std::string::String>,
@@ -14251,7 +14485,7 @@ impl SubmitContainerStateChangeInput {
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The exit code returned for the state change request.</p>
+    /// <p>The exit code that's returned for the state change request.</p>
     pub fn exit_code(&self) -> std::option::Option<i32> {
         self.exit_code
     }
@@ -14318,7 +14552,7 @@ pub struct StopTaskInput {
     pub cluster: std::option::Option<std::string::String>,
     /// <p>The task ID or full Amazon Resource Name (ARN) of the task to stop.</p>
     pub task: std::option::Option<std::string::String>,
-    /// <p>An optional message specified when a task is stopped. For example, if you are using a
+    /// <p>An optional message specified when a task is stopped. For example, if you're using a
     /// custom scheduler, you can use this parameter to specify the reason for stopping the task
     /// here, and the message appears in subsequent <a>DescribeTasks</a> API
     /// operations on this task. Up to 255 characters are allowed in this message.</p>
@@ -14334,7 +14568,7 @@ impl StopTaskInput {
     pub fn task(&self) -> std::option::Option<&str> {
         self.task.as_deref()
     }
-    /// <p>An optional message specified when a task is stopped. For example, if you are using a
+    /// <p>An optional message specified when a task is stopped. For example, if you're using a
     /// custom scheduler, you can use this parameter to specify the reason for stopping the task
     /// here, and the message appears in subsequent <a>DescribeTasks</a> API
     /// operations on this task. Up to 255 characters are allowed in this message.</p>
@@ -14356,11 +14590,11 @@ impl std::fmt::Debug for StopTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTaskInput {
-    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to start your task.
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster where to start your task.
     /// If you do not specify a cluster, the default cluster is assumed.</p>
     pub cluster: std::option::Option<std::string::String>,
-    /// <p>The container instance IDs or full ARN entries for the container instances on which
-    /// you would like to place your task. You can specify up to 10 container instances.</p>
+    /// <p>The container instance IDs or full ARN entries for the container instances where you
+    /// would like to place your task. You can specify up to 10 container instances.</p>
     pub container_instances: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
@@ -14377,8 +14611,8 @@ pub struct StartTaskInput {
     /// elastic network interface by using the <code>awsvpc</code> networking mode.</p>
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
     /// <p>A list of container overrides in JSON format that specify the name of a container in
-    /// the specified task definition and the overrides it should receive. You can override the
-    /// default command for a container (that is specified in the task definition or Docker
+    /// the specified task definition and the overrides it receives. You can override the
+    /// default command for a container (that's specified in the task definition or Docker
     /// image) with a <code>command</code> override. You can also override existing environment
     /// variables (that are specified in the task definition or Docker image) on a container or
     /// add new environment variables to it with an <code>environment</code> override.</p>
@@ -14388,7 +14622,7 @@ pub struct StartTaskInput {
     /// </note>
     pub overrides: std::option::Option<crate::model::TaskOverride>,
     /// <p>Specifies whether to propagate the tags from the task definition or the service to the
-    /// task. If no value is specified, the tags are not propagated.</p>
+    /// task. If no value is specified, the tags aren't propagated.</p>
     pub propagate_tags: std::option::Option<crate::model::PropagateTags>,
     /// <p>The reference ID to use for the task.</p>
     pub reference_id: std::option::Option<std::string::String>,
@@ -14397,8 +14631,8 @@ pub struct StartTaskInput {
     /// job to your task with the <code>startedBy</code> parameter. You can then identify which
     /// tasks belong to that job by filtering the results of a <a>ListTasks</a> call
     /// with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase),
-    /// numbers, hyphens, and underscores are allowed.</p>
-    /// <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter
+    /// numbers, hyphens (-), and underscores (_) are allowed.</p>
+    /// <p>If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter
     /// contains the deployment ID of the service that starts it.</p>
     pub started_by: std::option::Option<std::string::String>,
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each
@@ -14436,18 +14670,18 @@ pub struct StartTaskInput {
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-    /// full ARN of the task definition to start. If a <code>revision</code> is not specified,
+    /// full ARN of the task definition to start. If a <code>revision</code> isn't specified,
     /// the latest <code>ACTIVE</code> revision is used.</p>
     pub task_definition: std::option::Option<std::string::String>,
 }
 impl StartTaskInput {
-    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to start your task.
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster where to start your task.
     /// If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn cluster(&self) -> std::option::Option<&str> {
         self.cluster.as_deref()
     }
-    /// <p>The container instance IDs or full ARN entries for the container instances on which
-    /// you would like to place your task. You can specify up to 10 container instances.</p>
+    /// <p>The container instance IDs or full ARN entries for the container instances where you
+    /// would like to place your task. You can specify up to 10 container instances.</p>
     pub fn container_instances(&self) -> std::option::Option<&[std::string::String]> {
         self.container_instances.as_deref()
     }
@@ -14476,8 +14710,8 @@ impl StartTaskInput {
         self.network_configuration.as_ref()
     }
     /// <p>A list of container overrides in JSON format that specify the name of a container in
-    /// the specified task definition and the overrides it should receive. You can override the
-    /// default command for a container (that is specified in the task definition or Docker
+    /// the specified task definition and the overrides it receives. You can override the
+    /// default command for a container (that's specified in the task definition or Docker
     /// image) with a <code>command</code> override. You can also override existing environment
     /// variables (that are specified in the task definition or Docker image) on a container or
     /// add new environment variables to it with an <code>environment</code> override.</p>
@@ -14489,7 +14723,7 @@ impl StartTaskInput {
         self.overrides.as_ref()
     }
     /// <p>Specifies whether to propagate the tags from the task definition or the service to the
-    /// task. If no value is specified, the tags are not propagated.</p>
+    /// task. If no value is specified, the tags aren't propagated.</p>
     pub fn propagate_tags(&self) -> std::option::Option<&crate::model::PropagateTags> {
         self.propagate_tags.as_ref()
     }
@@ -14502,8 +14736,8 @@ impl StartTaskInput {
     /// job to your task with the <code>startedBy</code> parameter. You can then identify which
     /// tasks belong to that job by filtering the results of a <a>ListTasks</a> call
     /// with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase),
-    /// numbers, hyphens, and underscores are allowed.</p>
-    /// <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter
+    /// numbers, hyphens (-), and underscores (_) are allowed.</p>
+    /// <p>If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter
     /// contains the deployment ID of the service that starts it.</p>
     pub fn started_by(&self) -> std::option::Option<&str> {
         self.started_by.as_deref()
@@ -14545,7 +14779,7 @@ impl StartTaskInput {
         self.tags.as_deref()
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-    /// full ARN of the task definition to start. If a <code>revision</code> is not specified,
+    /// full ARN of the task definition to start. If a <code>revision</code> isn't specified,
     /// the latest <code>ACTIVE</code> revision is used.</p>
     pub fn task_definition(&self) -> std::option::Option<&str> {
         self.task_definition.as_deref()
@@ -14579,29 +14813,30 @@ pub struct RunTaskInput {
     /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or
     /// <code>launchType</code> is specified, the
     /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
-    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+    /// <p>When you use cluster auto scaling, you must specify
+    /// <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
     /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
     pub capacity_provider_strategy:
         std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
-    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to run your task.
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on.
     /// If you do not specify a cluster, the default cluster is assumed.</p>
     pub cluster: std::option::Option<std::string::String>,
     /// <p>The number of instantiations of the specified task to place on your cluster. You can
-    /// specify up to 10 tasks per call.</p>
+    /// specify up to 10 tasks for each call.</p>
     pub count: std::option::Option<i32>,
     /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
     /// Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub enable_ecs_managed_tags: bool,
-    /// <p>Whether or not to enable the execute command functionality for the containers in this
-    /// task. If <code>true</code>, this enables execute command functionality on all containers
-    /// in the task.</p>
+    /// <p>Determines whether to enable the execute command functionality for the containers in
+    /// this task. If <code>true</code>, this enables execute command functionality on all
+    /// containers in the task.</p>
     pub enable_execute_command: bool,
     /// <p>The name of the task group to associate with the task. The default value is the family
     /// name of the task definition (for example, <code>family:my-family-name</code>).</p>
     pub group: std::option::Option<std::string::String>,
-    /// <p>The infrastructure on which to run your standalone task. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The infrastructure to run your standalone task on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+    /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand
     /// infrastructure.</p>
     /// <note>
@@ -14611,22 +14846,23 @@ pub struct RunTaskInput {
     /// </note>
     /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your
     /// cluster.</p>
-    /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
+    /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or
     /// virtual machine (VM) capacity registered to your cluster.</p>
     /// <p>A task can use either a launch type or a capacity provider strategy. If a
     /// <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
     /// parameter must be omitted.</p>
-    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+    /// <p>When you use cluster auto scaling, you must specify
+    /// <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
     pub launch_type: std::option::Option<crate::model::LaunchType>,
     /// <p>The network configuration for the task. This parameter is required for task
     /// definitions that use the <code>awsvpc</code> network mode to receive their own elastic
-    /// network interface, and it is not supported for other network modes. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
+    /// network interface, and it isn't supported for other network modes. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
     /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
     /// <p>A list of container overrides in JSON format that specify the name of a container in
     /// the specified task definition and the overrides it should receive. You can override the
-    /// default command for a container (that is specified in the task definition or Docker
+    /// default command for a container (that's specified in the task definition or Docker
     /// image) with a <code>command</code> override. You can also override existing environment
     /// variables (that are specified in the task definition or Docker image) on a container or
     /// add new environment variables to it with an <code>environment</code> override.</p>
@@ -14634,20 +14870,20 @@ pub struct RunTaskInput {
     /// formatting characters of the override structure.</p>
     pub overrides: std::option::Option<crate::model::TaskOverride>,
     /// <p>An array of placement constraint objects to use for the task. You can specify up to 10
-    /// constraints per task (including constraints in the task definition and those specified
-    /// at runtime).</p>
+    /// constraints for each task (including constraints in the task definition and those
+    /// specified at runtime).</p>
     pub placement_constraints:
         std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
     /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5
-    /// strategy rules per task.</p>
+    /// strategy rules for each task.</p>
     pub placement_strategy: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
-    /// <p>The platform version the task should use. A platform version is only specified for
-    /// tasks hosted on Fargate. If one is not specified, the <code>LATEST</code>
-    /// platform version is used by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the
-    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The platform version the task uses. A platform version is only specified for tasks
+    /// hosted on Fargate. If one isn't specified, the <code>LATEST</code>
+    /// platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
+    /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no
-    /// value is specified, the tags are not propagated. Tags can only be propagated to the task
+    /// value is specified, the tags aren't propagated. Tags can only be propagated to the task
     /// during task creation. To add tags to a task after task creation, use the <a>TagResource</a> API action.</p>
     /// <note>
     /// <p>An error will be received if you specify the <code>SERVICE</code> option when
@@ -14662,7 +14898,7 @@ pub struct RunTaskInput {
     /// job to your task with the <code>startedBy</code> parameter. You can then identify which
     /// tasks belong to that job by filtering the results of a <a>ListTasks</a> call
     /// with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase),
-    /// numbers, hyphens, and underscores are allowed.</p>
+    /// numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter
     /// contains the deployment ID of the service that starts it.</p>
     pub started_by: std::option::Option<std::string::String>,
@@ -14701,10 +14937,11 @@ pub struct RunTaskInput {
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-    /// full ARN of the task definition to run. If a <code>revision</code> is not specified,
+    /// full ARN of the task definition to run. If a <code>revision</code> isn't specified,
     /// the latest <code>ACTIVE</code> revision is used.</p>
-    /// <p>The full ARN value must match the value that you specified ias the <code>Resource</code>
-    /// of the IAM principal's permissions policy. For example, if the <code>Resource</code> is
+    /// <p>The full ARN value must match the value that you specified as the
+    /// <code>Resource</code> of the IAM principal's permissions policy. For example, if the
+    /// <code>Resource</code> is
     /// arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
     /// <code>taskDefinition</code> ARN value must be
     /// <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
@@ -14716,20 +14953,21 @@ impl RunTaskInput {
     /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or
     /// <code>launchType</code> is specified, the
     /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
-    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+    /// <p>When you use cluster auto scaling, you must specify
+    /// <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
     /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
     pub fn capacity_provider_strategy(
         &self,
     ) -> std::option::Option<&[crate::model::CapacityProviderStrategyItem]> {
         self.capacity_provider_strategy.as_deref()
     }
-    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to run your task.
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on.
     /// If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn cluster(&self) -> std::option::Option<&str> {
         self.cluster.as_deref()
     }
     /// <p>The number of instantiations of the specified task to place on your cluster. You can
-    /// specify up to 10 tasks per call.</p>
+    /// specify up to 10 tasks for each call.</p>
     pub fn count(&self) -> std::option::Option<i32> {
         self.count
     }
@@ -14739,9 +14977,9 @@ impl RunTaskInput {
     pub fn enable_ecs_managed_tags(&self) -> bool {
         self.enable_ecs_managed_tags
     }
-    /// <p>Whether or not to enable the execute command functionality for the containers in this
-    /// task. If <code>true</code>, this enables execute command functionality on all containers
-    /// in the task.</p>
+    /// <p>Determines whether to enable the execute command functionality for the containers in
+    /// this task. If <code>true</code>, this enables execute command functionality on all
+    /// containers in the task.</p>
     pub fn enable_execute_command(&self) -> bool {
         self.enable_execute_command
     }
@@ -14750,8 +14988,8 @@ impl RunTaskInput {
     pub fn group(&self) -> std::option::Option<&str> {
         self.group.as_deref()
     }
-    /// <p>The infrastructure on which to run your standalone task. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The infrastructure to run your standalone task on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+    /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand
     /// infrastructure.</p>
     /// <note>
@@ -14761,19 +14999,20 @@ impl RunTaskInput {
     /// </note>
     /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your
     /// cluster.</p>
-    /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
+    /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or
     /// virtual machine (VM) capacity registered to your cluster.</p>
     /// <p>A task can use either a launch type or a capacity provider strategy. If a
     /// <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
     /// parameter must be omitted.</p>
-    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+    /// <p>When you use cluster auto scaling, you must specify
+    /// <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
     pub fn launch_type(&self) -> std::option::Option<&crate::model::LaunchType> {
         self.launch_type.as_ref()
     }
     /// <p>The network configuration for the task. This parameter is required for task
     /// definitions that use the <code>awsvpc</code> network mode to receive their own elastic
-    /// network interface, and it is not supported for other network modes. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
+    /// network interface, and it isn't supported for other network modes. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
     /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn network_configuration(
         &self,
@@ -14782,7 +15021,7 @@ impl RunTaskInput {
     }
     /// <p>A list of container overrides in JSON format that specify the name of a container in
     /// the specified task definition and the overrides it should receive. You can override the
-    /// default command for a container (that is specified in the task definition or Docker
+    /// default command for a container (that's specified in the task definition or Docker
     /// image) with a <code>command</code> override. You can also override existing environment
     /// variables (that are specified in the task definition or Docker image) on a container or
     /// add new environment variables to it with an <code>environment</code> override.</p>
@@ -14792,27 +15031,27 @@ impl RunTaskInput {
         self.overrides.as_ref()
     }
     /// <p>An array of placement constraint objects to use for the task. You can specify up to 10
-    /// constraints per task (including constraints in the task definition and those specified
-    /// at runtime).</p>
+    /// constraints for each task (including constraints in the task definition and those
+    /// specified at runtime).</p>
     pub fn placement_constraints(
         &self,
     ) -> std::option::Option<&[crate::model::PlacementConstraint]> {
         self.placement_constraints.as_deref()
     }
     /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5
-    /// strategy rules per task.</p>
+    /// strategy rules for each task.</p>
     pub fn placement_strategy(&self) -> std::option::Option<&[crate::model::PlacementStrategy]> {
         self.placement_strategy.as_deref()
     }
-    /// <p>The platform version the task should use. A platform version is only specified for
-    /// tasks hosted on Fargate. If one is not specified, the <code>LATEST</code>
-    /// platform version is used by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the
-    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The platform version the task uses. A platform version is only specified for tasks
+    /// hosted on Fargate. If one isn't specified, the <code>LATEST</code>
+    /// platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
+    /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn platform_version(&self) -> std::option::Option<&str> {
         self.platform_version.as_deref()
     }
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no
-    /// value is specified, the tags are not propagated. Tags can only be propagated to the task
+    /// value is specified, the tags aren't propagated. Tags can only be propagated to the task
     /// during task creation. To add tags to a task after task creation, use the <a>TagResource</a> API action.</p>
     /// <note>
     /// <p>An error will be received if you specify the <code>SERVICE</code> option when
@@ -14831,7 +15070,7 @@ impl RunTaskInput {
     /// job to your task with the <code>startedBy</code> parameter. You can then identify which
     /// tasks belong to that job by filtering the results of a <a>ListTasks</a> call
     /// with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase),
-    /// numbers, hyphens, and underscores are allowed.</p>
+    /// numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter
     /// contains the deployment ID of the service that starts it.</p>
     pub fn started_by(&self) -> std::option::Option<&str> {
@@ -14874,10 +15113,11 @@ impl RunTaskInput {
         self.tags.as_deref()
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-    /// full ARN of the task definition to run. If a <code>revision</code> is not specified,
+    /// full ARN of the task definition to run. If a <code>revision</code> isn't specified,
     /// the latest <code>ACTIVE</code> revision is used.</p>
-    /// <p>The full ARN value must match the value that you specified ias the <code>Resource</code>
-    /// of the IAM principal's permissions policy. For example, if the <code>Resource</code> is
+    /// <p>The full ARN value must match the value that you specified as the
+    /// <code>Resource</code> of the IAM principal's permissions policy. For example, if the
+    /// <code>Resource</code> is
     /// arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
     /// <code>taskDefinition</code> ARN value must be
     /// <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
@@ -14916,9 +15156,9 @@ impl std::fmt::Debug for RunTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTaskDefinitionInput {
-    /// <p>You must specify a <code>family</code> for a task definition, which allows you to
-    /// track multiple versions of the same task definition. The <code>family</code> is used as
-    /// a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
+    /// <p>You must specify a <code>family</code> for a task definition. You can use it track
+    /// multiple versions of the same task definition. The <code>family</code> is used as a name
+    /// for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
     pub family: std::option::Option<std::string::String>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can
     /// assume. All containers in this task are granted the permissions that are specified in
@@ -14963,34 +15203,36 @@ pub struct RegisterTaskDefinitionInput {
     /// that make up your task.</p>
     pub container_definitions:
         std::option::Option<std::vec::Vec<crate::model::ContainerDefinition>>,
-    /// <p>A list of volume definitions in JSON format that containers in your task may
+    /// <p>A list of volume definitions in JSON format that containers in your task might
     /// use.</p>
     pub volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
     /// <p>An array of placement constraint objects to use for the task. You can specify a
-    /// maximum of 10 constraints per task (this limit includes constraints in the task
-    /// definition and those specified at runtime).</p>
+    /// maximum of 10 constraints for each task. This limit includes constraints in the task
+    /// definition and those specified at runtime.</p>
     pub placement_constraints:
         std::option::Option<std::vec::Vec<crate::model::TaskDefinitionPlacementConstraint>>,
-    /// <p>The task launch type that Amazon ECS should validate the task definition against. A client
+    /// <p>The task launch type that Amazon ECS validates the task definition against. A client
     /// exception is returned if the task definition doesn't validate against the
     /// compatibilities specified. If no value is specified, the parameter is omitted from the
     /// response.</p>
     pub requires_compatibilities: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
     /// <p>The number of CPU units used by the task. It can be expressed as an integer using CPU
-    /// units, for example <code>1024</code>, or as a string using vCPUs, for example <code>1
-    /// vCPU</code> or <code>1 vcpu</code>, in a task definition. String values are
+    /// units (for example, <code>1024</code>) or as a string using vCPUs (for example, <code>1
+    /// vCPU</code> or <code>1 vcpu</code>) in a task definition. String values are
     /// converted to an integer indicating the CPU units when the task definition is
     /// registered.</p>
     /// <note>
     /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We
     /// recommend specifying container-level resources for Windows containers.</p>
     /// </note>
-    /// <p>If you are using the EC2 launch type, this field is optional. Supported
+    /// <p>If you're using the EC2 launch type, this field is optional. Supported
     /// values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and
     /// <code>10240</code> CPU units (<code>10</code> vCPUs).</p>
-    /// <p>If you are using the Fargate launch type, this field is required and you
+    /// <p>If you're using the Fargate launch type, this field is required and you
     /// must use one of the following values, which determines your range of supported values
     /// for the <code>memory</code> parameter:</p>
+    /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on
+    /// Fargate.</p>
     /// <ul>
     /// <li>
     /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
@@ -15010,8 +15252,8 @@ pub struct RegisterTaskDefinitionInput {
     /// </ul>
     pub cpu: std::option::Option<std::string::String>,
     /// <p>The amount of memory (in MiB) used by the task. It can be expressed as an integer
-    /// using MiB, for example <code>1024</code>, or as a string using GB, for example
-    /// <code>1GB</code> or <code>1 GB</code>, in a task definition. String values are
+    /// using MiB (for example ,<code>1024</code>) or as a string using GB (for example,
+    /// <code>1GB</code> or <code>1 GB</code>) in a task definition. String values are
     /// converted to an integer indicating the MiB when the task definition is
     /// registered.</p>
     /// <note>
@@ -15020,8 +15262,10 @@ pub struct RegisterTaskDefinitionInput {
     /// </note>
     /// <p>If using the EC2 launch type, this field is optional.</p>
     /// <p>If using the Fargate launch type, this field is required and you must
-    /// use one of the following values, which determines your range of supported values for the
-    /// <code>cpu</code> parameter:</p>
+    /// use one of the following values. This determines your range of supported values for the
+    /// <code>cpu</code> parameter.</p>
+    /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on
+    /// Fargate.</p>
     /// <ul>
     /// <li>
     /// <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p>
@@ -15041,7 +15285,7 @@ pub struct RegisterTaskDefinitionInput {
     /// </ul>
     pub memory: std::option::Option<std::string::String>,
     /// <p>The metadata that you apply to the task definition to help you categorize and organize
-    /// them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// them. Each tag consists of a key and an optional value. You define both of them.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -15141,27 +15385,28 @@ pub struct RegisterTaskDefinitionInput {
     /// tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
     /// storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
     /// <note>
-    /// <p>This parameter is only supported for tasks hosted on Fargate using the following platform versions:</p>
+    /// <p>This parameter is only supported for tasks hosted on Fargate using
+    /// the following platform versions:</p>
     /// <ul>
     /// <li>
-    /// <p>Linux platform
-    /// version <code>1.4.0</code> or later.</p>
+    /// <p>Linux platform version <code>1.4.0</code> or later.</p>
     /// </li>
     /// <li>
-    /// <p>Windows platform
-    /// version <code>1.0.0</code> or later.</p>
+    /// <p>Windows platform version <code>1.0.0</code> or later.</p>
     /// </li>
     /// </ul>
     /// </note>
     pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
-    /// <p>The operating system  that your tasks definitions run on. A platform family is specified only for tasks using the Fargate launch type. </p>
-    /// <p>When you specify a task definition in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
+    /// <p>The operating system that your tasks definitions run on. A platform family is
+    /// specified only for tasks using the Fargate launch type. </p>
+    /// <p>When you specify a task definition in a service, this value must match the
+    /// <code>runtimePlatform</code> value of the service.</p>
     pub runtime_platform: std::option::Option<crate::model::RuntimePlatform>,
 }
 impl RegisterTaskDefinitionInput {
-    /// <p>You must specify a <code>family</code> for a task definition, which allows you to
-    /// track multiple versions of the same task definition. The <code>family</code> is used as
-    /// a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
+    /// <p>You must specify a <code>family</code> for a task definition. You can use it track
+    /// multiple versions of the same task definition. The <code>family</code> is used as a name
+    /// for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
     pub fn family(&self) -> std::option::Option<&str> {
         self.family.as_deref()
     }
@@ -15217,20 +15462,20 @@ impl RegisterTaskDefinitionInput {
     ) -> std::option::Option<&[crate::model::ContainerDefinition]> {
         self.container_definitions.as_deref()
     }
-    /// <p>A list of volume definitions in JSON format that containers in your task may
+    /// <p>A list of volume definitions in JSON format that containers in your task might
     /// use.</p>
     pub fn volumes(&self) -> std::option::Option<&[crate::model::Volume]> {
         self.volumes.as_deref()
     }
     /// <p>An array of placement constraint objects to use for the task. You can specify a
-    /// maximum of 10 constraints per task (this limit includes constraints in the task
-    /// definition and those specified at runtime).</p>
+    /// maximum of 10 constraints for each task. This limit includes constraints in the task
+    /// definition and those specified at runtime.</p>
     pub fn placement_constraints(
         &self,
     ) -> std::option::Option<&[crate::model::TaskDefinitionPlacementConstraint]> {
         self.placement_constraints.as_deref()
     }
-    /// <p>The task launch type that Amazon ECS should validate the task definition against. A client
+    /// <p>The task launch type that Amazon ECS validates the task definition against. A client
     /// exception is returned if the task definition doesn't validate against the
     /// compatibilities specified. If no value is specified, the parameter is omitted from the
     /// response.</p>
@@ -15238,20 +15483,22 @@ impl RegisterTaskDefinitionInput {
         self.requires_compatibilities.as_deref()
     }
     /// <p>The number of CPU units used by the task. It can be expressed as an integer using CPU
-    /// units, for example <code>1024</code>, or as a string using vCPUs, for example <code>1
-    /// vCPU</code> or <code>1 vcpu</code>, in a task definition. String values are
+    /// units (for example, <code>1024</code>) or as a string using vCPUs (for example, <code>1
+    /// vCPU</code> or <code>1 vcpu</code>) in a task definition. String values are
     /// converted to an integer indicating the CPU units when the task definition is
     /// registered.</p>
     /// <note>
     /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We
     /// recommend specifying container-level resources for Windows containers.</p>
     /// </note>
-    /// <p>If you are using the EC2 launch type, this field is optional. Supported
+    /// <p>If you're using the EC2 launch type, this field is optional. Supported
     /// values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and
     /// <code>10240</code> CPU units (<code>10</code> vCPUs).</p>
-    /// <p>If you are using the Fargate launch type, this field is required and you
+    /// <p>If you're using the Fargate launch type, this field is required and you
     /// must use one of the following values, which determines your range of supported values
     /// for the <code>memory</code> parameter:</p>
+    /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on
+    /// Fargate.</p>
     /// <ul>
     /// <li>
     /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
@@ -15273,8 +15520,8 @@ impl RegisterTaskDefinitionInput {
         self.cpu.as_deref()
     }
     /// <p>The amount of memory (in MiB) used by the task. It can be expressed as an integer
-    /// using MiB, for example <code>1024</code>, or as a string using GB, for example
-    /// <code>1GB</code> or <code>1 GB</code>, in a task definition. String values are
+    /// using MiB (for example ,<code>1024</code>) or as a string using GB (for example,
+    /// <code>1GB</code> or <code>1 GB</code>) in a task definition. String values are
     /// converted to an integer indicating the MiB when the task definition is
     /// registered.</p>
     /// <note>
@@ -15283,8 +15530,10 @@ impl RegisterTaskDefinitionInput {
     /// </note>
     /// <p>If using the EC2 launch type, this field is optional.</p>
     /// <p>If using the Fargate launch type, this field is required and you must
-    /// use one of the following values, which determines your range of supported values for the
-    /// <code>cpu</code> parameter:</p>
+    /// use one of the following values. This determines your range of supported values for the
+    /// <code>cpu</code> parameter.</p>
+    /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on
+    /// Fargate.</p>
     /// <ul>
     /// <li>
     /// <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p>
@@ -15306,7 +15555,7 @@ impl RegisterTaskDefinitionInput {
         self.memory.as_deref()
     }
     /// <p>The metadata that you apply to the task definition to help you categorize and organize
-    /// them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// them. Each tag consists of a key and an optional value. You define both of them.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -15417,23 +15666,24 @@ impl RegisterTaskDefinitionInput {
     /// tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
     /// storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
     /// <note>
-    /// <p>This parameter is only supported for tasks hosted on Fargate using the following platform versions:</p>
+    /// <p>This parameter is only supported for tasks hosted on Fargate using
+    /// the following platform versions:</p>
     /// <ul>
     /// <li>
-    /// <p>Linux platform
-    /// version <code>1.4.0</code> or later.</p>
+    /// <p>Linux platform version <code>1.4.0</code> or later.</p>
     /// </li>
     /// <li>
-    /// <p>Windows platform
-    /// version <code>1.0.0</code> or later.</p>
+    /// <p>Windows platform version <code>1.0.0</code> or later.</p>
     /// </li>
     /// </ul>
     /// </note>
     pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
-    /// <p>The operating system  that your tasks definitions run on. A platform family is specified only for tasks using the Fargate launch type. </p>
-    /// <p>When you specify a task definition in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
+    /// <p>The operating system that your tasks definitions run on. A platform family is
+    /// specified only for tasks using the Fargate launch type. </p>
+    /// <p>When you specify a task definition in a service, this value must match the
+    /// <code>runtimePlatform</code> value of the service.</p>
     pub fn runtime_platform(&self) -> std::option::Option<&crate::model::RuntimePlatform> {
         self.runtime_platform.as_ref()
     }
@@ -15466,8 +15716,8 @@ impl std::fmt::Debug for RegisterTaskDefinitionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterContainerInstanceInput {
-    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster with which to register your container
-    /// instance. If you do not specify a cluster, the default cluster is assumed.</p>
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance
+    /// with. If you do not specify a cluster, the default cluster is assumed.</p>
     pub cluster: std::option::Option<std::string::String>,
     /// <p>The instance identity document for the EC2 instance to register. This document can be
     /// found by running the following command from the instance: <code>curl
@@ -15481,8 +15731,8 @@ pub struct RegisterContainerInstanceInput {
     pub instance_identity_document_signature: std::option::Option<std::string::String>,
     /// <p>The resources available on the instance.</p>
     pub total_resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
-    /// <p>The version information for the Amazon ECS container agent and Docker daemon running on the
-    /// container instance.</p>
+    /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on
+    /// the container instance.</p>
     pub version_info: std::option::Option<crate::model::VersionInfo>,
     /// <p>The ARN of the container instance (if it was previously registered).</p>
     pub container_instance_arn: std::option::Option<std::string::String>,
@@ -15492,8 +15742,7 @@ pub struct RegisterContainerInstanceInput {
     /// type is a GPU.</p>
     pub platform_devices: std::option::Option<std::vec::Vec<crate::model::PlatformDevice>>,
     /// <p>The metadata that you apply to the container instance to help you categorize and
-    /// organize them. Each tag consists of a key and an optional value, both of which you
-    /// define.</p>
+    /// organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -15528,8 +15777,8 @@ pub struct RegisterContainerInstanceInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl RegisterContainerInstanceInput {
-    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster with which to register your container
-    /// instance. If you do not specify a cluster, the default cluster is assumed.</p>
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance
+    /// with. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn cluster(&self) -> std::option::Option<&str> {
         self.cluster.as_deref()
     }
@@ -15551,8 +15800,8 @@ impl RegisterContainerInstanceInput {
     pub fn total_resources(&self) -> std::option::Option<&[crate::model::Resource]> {
         self.total_resources.as_deref()
     }
-    /// <p>The version information for the Amazon ECS container agent and Docker daemon running on the
-    /// container instance.</p>
+    /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on
+    /// the container instance.</p>
     pub fn version_info(&self) -> std::option::Option<&crate::model::VersionInfo> {
         self.version_info.as_ref()
     }
@@ -15570,8 +15819,7 @@ impl RegisterContainerInstanceInput {
         self.platform_devices.as_deref()
     }
     /// <p>The metadata that you apply to the container instance to help you categorize and
-    /// organize them. Each tag consists of a key and an optional value, both of which you
-    /// define.</p>
+    /// organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -15634,7 +15882,7 @@ impl std::fmt::Debug for RegisterContainerInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutClusterCapacityProvidersInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to modify the capacity provider
-    /// settings for. If you do not specify a cluster, the default cluster is assumed.</p>
+    /// settings for. If you don't specify a cluster, the default cluster is assumed.</p>
     pub cluster: std::option::Option<std::string::String>,
     /// <p>The name of one or more capacity providers to associate with the cluster.</p>
     /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
@@ -15665,7 +15913,7 @@ pub struct PutClusterCapacityProvidersInput {
 }
 impl PutClusterCapacityProvidersInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to modify the capacity provider
-    /// settings for. If you do not specify a cluster, the default cluster is assumed.</p>
+    /// settings for. If you don't specify a cluster, the default cluster is assumed.</p>
     pub fn cluster(&self) -> std::option::Option<&str> {
         self.cluster.as_deref()
     }
@@ -15722,7 +15970,7 @@ pub struct PutAttributesInput {
     /// attributes. If you do not specify a cluster, the default cluster is assumed.</p>
     pub cluster: std::option::Option<std::string::String>,
     /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes
-    /// per resource. You can specify up to 10 attributes in a single call.</p>
+    /// for each resource. You can specify up to 10 attributes in a single call.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
 impl PutAttributesInput {
@@ -15732,7 +15980,7 @@ impl PutAttributesInput {
         self.cluster.as_deref()
     }
     /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes
-    /// per resource. You can specify up to 10 attributes in a single call.</p>
+    /// for each resource. You can specify up to 10 attributes in a single call.</p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
         self.attributes.as_deref()
     }
@@ -15877,23 +16125,23 @@ pub struct ListTasksInput {
     pub family: std::option::Option<std::string::String>,
     /// <p>The <code>nextToken</code> value returned from a <code>ListTasks</code> request
     /// indicating that more results are available to fulfill the request and further calls will
-    /// be needed. If <code>maxResults</code> was provided, it is possible the number of results
+    /// be needed. If <code>maxResults</code> was provided, it's possible the number of results
     /// to be fewer than <code>maxResults</code>.</p>
     /// <note>
     /// <p>This token should be treated as an opaque identifier that is only used to
     /// retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of task results returned by <code>ListTasks</code> in paginated
+    /// <p>The maximum number of task results that <code>ListTasks</code> returned in paginated
     /// output. When this parameter is used, <code>ListTasks</code> only returns
     /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
     /// response element. The remaining results of the initial request can be seen by sending
     /// another <code>ListTasks</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 100. If this parameter is
-    /// not used, then <code>ListTasks</code> returns up to 100 results and a
-    /// <code>nextToken</code> value if applicable.</p>
+    /// This value can be between 1 and 100. If this parameter
+    /// isn't used, then <code>ListTasks</code> returns up to 100 results and
+    /// a <code>nextToken</code> value if applicable.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The <code>startedBy</code> value with which to filter the task results. Specifying a
+    /// <p>The <code>startedBy</code> value to filter the task results with. Specifying a
     /// <code>startedBy</code> value limits the results to tasks that were started with that
     /// value.</p>
     pub started_by: std::option::Option<std::string::String>,
@@ -15904,12 +16152,12 @@ pub struct ListTasksInput {
     /// <p>The task desired status to use when filtering the <code>ListTasks</code> results.
     /// Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to
     /// tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful
-    /// for debugging tasks that are not starting properly or have died or finished. The default
+    /// for debugging tasks that aren't starting properly or have died or finished. The default
     /// status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
     /// status to <code>RUNNING</code>.</p>
     /// <note>
     /// <p>Although you can filter results based on a desired status of <code>PENDING</code>,
-    /// this does not return any results. Amazon ECS never sets the desired status of a task to
+    /// this doesn't return any results. Amazon ECS never sets the desired status of a task to
     /// that value (only a task's <code>lastStatus</code> may have a value of
     /// <code>PENDING</code>).</p>
     /// </note>
@@ -15938,7 +16186,7 @@ impl ListTasksInput {
     }
     /// <p>The <code>nextToken</code> value returned from a <code>ListTasks</code> request
     /// indicating that more results are available to fulfill the request and further calls will
-    /// be needed. If <code>maxResults</code> was provided, it is possible the number of results
+    /// be needed. If <code>maxResults</code> was provided, it's possible the number of results
     /// to be fewer than <code>maxResults</code>.</p>
     /// <note>
     /// <p>This token should be treated as an opaque identifier that is only used to
@@ -15947,18 +16195,18 @@ impl ListTasksInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of task results returned by <code>ListTasks</code> in paginated
+    /// <p>The maximum number of task results that <code>ListTasks</code> returned in paginated
     /// output. When this parameter is used, <code>ListTasks</code> only returns
     /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
     /// response element. The remaining results of the initial request can be seen by sending
     /// another <code>ListTasks</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 100. If this parameter is
-    /// not used, then <code>ListTasks</code> returns up to 100 results and a
-    /// <code>nextToken</code> value if applicable.</p>
+    /// This value can be between 1 and 100. If this parameter
+    /// isn't used, then <code>ListTasks</code> returns up to 100 results and
+    /// a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The <code>startedBy</code> value with which to filter the task results. Specifying a
+    /// <p>The <code>startedBy</code> value to filter the task results with. Specifying a
     /// <code>startedBy</code> value limits the results to tasks that were started with that
     /// value.</p>
     pub fn started_by(&self) -> std::option::Option<&str> {
@@ -15973,12 +16221,12 @@ impl ListTasksInput {
     /// <p>The task desired status to use when filtering the <code>ListTasks</code> results.
     /// Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to
     /// tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful
-    /// for debugging tasks that are not starting properly or have died or finished. The default
+    /// for debugging tasks that aren't starting properly or have died or finished. The default
     /// status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
     /// status to <code>RUNNING</code>.</p>
     /// <note>
     /// <p>Although you can filter results based on a desired status of <code>PENDING</code>,
-    /// this does not return any results. Amazon ECS never sets the desired status of a task to
+    /// this doesn't return any results. Amazon ECS never sets the desired status of a task to
     /// that value (only a task's <code>lastStatus</code> may have a value of
     /// <code>PENDING</code>).</p>
     /// </note>
@@ -16010,23 +16258,23 @@ impl std::fmt::Debug for ListTasksInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTaskDefinitionsInput {
-    /// <p>The full family name with which to filter the <code>ListTaskDefinitions</code>
-    /// results. Specifying a <code>familyPrefix</code> limits the listed task definitions to
-    /// task definition revisions that belong to that family.</p>
+    /// <p>The full family name to filter the <code>ListTaskDefinitions</code> results with.
+    /// Specifying a <code>familyPrefix</code> limits the listed task definitions to task
+    /// definition revisions that belong to that family.</p>
     pub family_prefix: std::option::Option<std::string::String>,
-    /// <p>The task definition status with which to filter the <code>ListTaskDefinitions</code>
-    /// results. By default, only <code>ACTIVE</code> task definitions are listed. By setting
-    /// this parameter to <code>INACTIVE</code>, you can view task definitions that are
+    /// <p>The task definition status to filter the <code>ListTaskDefinitions</code> results
+    /// with. By default, only <code>ACTIVE</code> task definitions are listed. By setting this
+    /// parameter to <code>INACTIVE</code>, you can view task definitions that are
     /// <code>INACTIVE</code> as long as an active task or service still references them. If
     /// you paginate the resulting output, be sure to keep the <code>status</code> value
     /// constant in each subsequent request.</p>
     pub status: std::option::Option<crate::model::TaskDefinitionStatus>,
-    /// <p>The order in which to sort the results. Valid values are <code>ASC</code> and
-    /// <code>DESC</code>. By default (<code>ASC</code>), task definitions are listed
+    /// <p>The order to sort the results in. Valid values are <code>ASC</code> and
+    /// <code>DESC</code>. By default, (<code>ASC</code>) task definitions are listed
     /// lexicographically by family name and in ascending numerical order by revision so that
     /// the newest task definitions in a family are listed last. Setting this parameter to
-    /// <code>DESC</code> reverses the sort order on family name and revision so that the
-    /// newest task definitions in a family are listed first.</p>
+    /// <code>DESC</code> reverses the sort order on family name and revision. This is so
+    /// that the newest task definitions in a family are listed first.</p>
     pub sort: std::option::Option<crate::model::SortOrder>,
     /// <p>The <code>nextToken</code> value returned from a <code>ListTaskDefinitions</code>
     /// request indicating that more results are available to fulfill the request and further
@@ -16037,39 +16285,39 @@ pub struct ListTaskDefinitionsInput {
     /// retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of task definition results returned by
-    /// <code>ListTaskDefinitions</code> in paginated output. When this parameter is used,
+    /// <p>The maximum number of task definition results that <code>ListTaskDefinitions</code>
+    /// returned in paginated output. When this parameter is used,
     /// <code>ListTaskDefinitions</code> only returns <code>maxResults</code> results in a
     /// single page along with a <code>nextToken</code> response element. The remaining results
     /// of the initial request can be seen by sending another <code>ListTaskDefinitions</code>
     /// request with the returned <code>nextToken</code> value. This value can be between
-    /// 1 and 100. If this parameter is not used, then
+    /// 1 and 100. If this parameter isn't used, then
     /// <code>ListTaskDefinitions</code> returns up to 100 results and a
     /// <code>nextToken</code> value if applicable.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListTaskDefinitionsInput {
-    /// <p>The full family name with which to filter the <code>ListTaskDefinitions</code>
-    /// results. Specifying a <code>familyPrefix</code> limits the listed task definitions to
-    /// task definition revisions that belong to that family.</p>
+    /// <p>The full family name to filter the <code>ListTaskDefinitions</code> results with.
+    /// Specifying a <code>familyPrefix</code> limits the listed task definitions to task
+    /// definition revisions that belong to that family.</p>
     pub fn family_prefix(&self) -> std::option::Option<&str> {
         self.family_prefix.as_deref()
     }
-    /// <p>The task definition status with which to filter the <code>ListTaskDefinitions</code>
-    /// results. By default, only <code>ACTIVE</code> task definitions are listed. By setting
-    /// this parameter to <code>INACTIVE</code>, you can view task definitions that are
+    /// <p>The task definition status to filter the <code>ListTaskDefinitions</code> results
+    /// with. By default, only <code>ACTIVE</code> task definitions are listed. By setting this
+    /// parameter to <code>INACTIVE</code>, you can view task definitions that are
     /// <code>INACTIVE</code> as long as an active task or service still references them. If
     /// you paginate the resulting output, be sure to keep the <code>status</code> value
     /// constant in each subsequent request.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::TaskDefinitionStatus> {
         self.status.as_ref()
     }
-    /// <p>The order in which to sort the results. Valid values are <code>ASC</code> and
-    /// <code>DESC</code>. By default (<code>ASC</code>), task definitions are listed
+    /// <p>The order to sort the results in. Valid values are <code>ASC</code> and
+    /// <code>DESC</code>. By default, (<code>ASC</code>) task definitions are listed
     /// lexicographically by family name and in ascending numerical order by revision so that
     /// the newest task definitions in a family are listed last. Setting this parameter to
-    /// <code>DESC</code> reverses the sort order on family name and revision so that the
-    /// newest task definitions in a family are listed first.</p>
+    /// <code>DESC</code> reverses the sort order on family name and revision. This is so
+    /// that the newest task definitions in a family are listed first.</p>
     pub fn sort(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.sort.as_ref()
     }
@@ -16084,13 +16332,13 @@ impl ListTaskDefinitionsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of task definition results returned by
-    /// <code>ListTaskDefinitions</code> in paginated output. When this parameter is used,
+    /// <p>The maximum number of task definition results that <code>ListTaskDefinitions</code>
+    /// returned in paginated output. When this parameter is used,
     /// <code>ListTaskDefinitions</code> only returns <code>maxResults</code> results in a
     /// single page along with a <code>nextToken</code> response element. The remaining results
     /// of the initial request can be seen by sending another <code>ListTaskDefinitions</code>
     /// request with the returned <code>nextToken</code> value. This value can be between
-    /// 1 and 100. If this parameter is not used, then
+    /// 1 and 100. If this parameter isn't used, then
     /// <code>ListTaskDefinitions</code> returns up to 100 results and a
     /// <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
@@ -16113,13 +16361,13 @@ impl std::fmt::Debug for ListTaskDefinitionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTaskDefinitionFamiliesInput {
-    /// <p>The <code>familyPrefix</code> is a string that is used to filter the results of
+    /// <p>The <code>familyPrefix</code> is a string that's used to filter the results of
     /// <code>ListTaskDefinitionFamilies</code>. If you specify a <code>familyPrefix</code>,
     /// only task definition family names that begin with the <code>familyPrefix</code> string
     /// are returned.</p>
     pub family_prefix: std::option::Option<std::string::String>,
-    /// <p>The task definition family status with which to filter the
-    /// <code>ListTaskDefinitionFamilies</code> results. By default, both
+    /// <p>The task definition family status to filter the
+    /// <code>ListTaskDefinitionFamilies</code> results with. By default, both
     /// <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are listed.
     /// If this parameter is set to <code>ACTIVE</code>, only task definition families that have
     /// an <code>ACTIVE</code> task definition revision are returned. If this parameter is set
@@ -16138,28 +16386,28 @@ pub struct ListTaskDefinitionFamiliesInput {
     /// retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of task definition family results returned by
-    /// <code>ListTaskDefinitionFamilies</code> in paginated output. When this parameter is
-    /// used, <code>ListTaskDefinitions</code> only returns <code>maxResults</code> results in a
-    /// single page along with a <code>nextToken</code> response element. The remaining results
-    /// of the initial request can be seen by sending another
+    /// <p>The maximum number of task definition family results that
+    /// <code>ListTaskDefinitionFamilies</code> returned in paginated output. When this
+    /// parameter is used, <code>ListTaskDefinitions</code> only returns <code>maxResults</code>
+    /// results in a single page along with a <code>nextToken</code> response element. The
+    /// remaining results of the initial request can be seen by sending another
     /// <code>ListTaskDefinitionFamilies</code> request with the returned
     /// <code>nextToken</code> value. This value can be between 1 and
-    /// 100. If this parameter is not used, then
+    /// 100. If this parameter isn't used, then
     /// <code>ListTaskDefinitionFamilies</code> returns up to 100 results
     /// and a <code>nextToken</code> value if applicable.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListTaskDefinitionFamiliesInput {
-    /// <p>The <code>familyPrefix</code> is a string that is used to filter the results of
+    /// <p>The <code>familyPrefix</code> is a string that's used to filter the results of
     /// <code>ListTaskDefinitionFamilies</code>. If you specify a <code>familyPrefix</code>,
     /// only task definition family names that begin with the <code>familyPrefix</code> string
     /// are returned.</p>
     pub fn family_prefix(&self) -> std::option::Option<&str> {
         self.family_prefix.as_deref()
     }
-    /// <p>The task definition family status with which to filter the
-    /// <code>ListTaskDefinitionFamilies</code> results. By default, both
+    /// <p>The task definition family status to filter the
+    /// <code>ListTaskDefinitionFamilies</code> results with. By default, both
     /// <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are listed.
     /// If this parameter is set to <code>ACTIVE</code>, only task definition families that have
     /// an <code>ACTIVE</code> task definition revision are returned. If this parameter is set
@@ -16182,14 +16430,14 @@ impl ListTaskDefinitionFamiliesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of task definition family results returned by
-    /// <code>ListTaskDefinitionFamilies</code> in paginated output. When this parameter is
-    /// used, <code>ListTaskDefinitions</code> only returns <code>maxResults</code> results in a
-    /// single page along with a <code>nextToken</code> response element. The remaining results
-    /// of the initial request can be seen by sending another
+    /// <p>The maximum number of task definition family results that
+    /// <code>ListTaskDefinitionFamilies</code> returned in paginated output. When this
+    /// parameter is used, <code>ListTaskDefinitions</code> only returns <code>maxResults</code>
+    /// results in a single page along with a <code>nextToken</code> response element. The
+    /// remaining results of the initial request can be seen by sending another
     /// <code>ListTaskDefinitionFamilies</code> request with the returned
     /// <code>nextToken</code> value. This value can be between 1 and
-    /// 100. If this parameter is not used, then
+    /// 100. If this parameter isn't used, then
     /// <code>ListTaskDefinitionFamilies</code> returns up to 100 results
     /// and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
@@ -16211,13 +16459,13 @@ impl std::fmt::Debug for ListTaskDefinitionFamiliesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the
     /// supported resources are Amazon ECS tasks, services, task definitions, clusters, and container
     /// instances.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the
     /// supported resources are Amazon ECS tasks, services, task definitions, clusters, and container
     /// instances.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
@@ -16248,13 +16496,13 @@ pub struct ListServicesInput {
     /// retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of service results returned by <code>ListServices</code> in
+    /// <p>The maximum number of service results that <code>ListServices</code> returned in
     /// paginated output. When this parameter is used, <code>ListServices</code> only returns
     /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
     /// response element. The remaining results of the initial request can be seen by sending
     /// another <code>ListServices</code> request with the returned <code>nextToken</code>
     /// value. This value can be between 1 and 100. If
-    /// this parameter is not used, then <code>ListServices</code> returns up to
+    /// this parameter isn't used, then <code>ListServices</code> returns up to
     /// 10 results and a <code>nextToken</code> value if
     /// applicable.</p>
     pub max_results: std::option::Option<i32>,
@@ -16281,13 +16529,13 @@ impl ListServicesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of service results returned by <code>ListServices</code> in
+    /// <p>The maximum number of service results that <code>ListServices</code> returned in
     /// paginated output. When this parameter is used, <code>ListServices</code> only returns
     /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
     /// response element. The remaining results of the initial request can be seen by sending
     /// another <code>ListServices</code> request with the returned <code>nextToken</code>
     /// value. This value can be between 1 and 100. If
-    /// this parameter is not used, then <code>ListServices</code> returns up to
+    /// this parameter isn't used, then <code>ListServices</code> returns up to
     /// 10 results and a <code>nextToken</code> value if
     /// applicable.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
@@ -16328,27 +16576,28 @@ pub struct ListContainerInstancesInput {
     pub filter: std::option::Option<std::string::String>,
     /// <p>The <code>nextToken</code> value returned from a <code>ListContainerInstances</code>
     /// request indicating that more results are available to fulfill the request and further
-    /// calls will be needed. If <code>maxResults</code> was provided, it is possible the number
-    /// of results to be fewer than <code>maxResults</code>.</p>
+    /// calls are needed. If <code>maxResults</code> was provided, it's possible the number of
+    /// results to be fewer than <code>maxResults</code>.</p>
     /// <note>
     /// <p>This token should be treated as an opaque identifier that is only used to
     /// retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of container instance results returned by
-    /// <code>ListContainerInstances</code> in paginated output. When this parameter is
-    /// used, <code>ListContainerInstances</code> only returns <code>maxResults</code> results
-    /// in a single page along with a <code>nextToken</code> response element. The remaining
-    /// results of the initial request can be seen by sending another
-    /// <code>ListContainerInstances</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 100. If this
-    /// parameter is not used, then <code>ListContainerInstances</code> returns up to
-    /// 100 results and a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of container instance results that
+    /// <code>ListContainerInstances</code> returned in paginated output. When this
+    /// parameter is used, <code>ListContainerInstances</code> only returns
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. The remaining results of the initial request can be seen by sending
+    /// another <code>ListContainerInstances</code> request with the returned
+    /// <code>nextToken</code> value. This value can be between 1 and
+    /// 100. If this parameter isn't used, then
+    /// <code>ListContainerInstances</code> returns up to 100 results and
+    /// a <code>nextToken</code> value if applicable.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>Filters the container instances by status. For example, if you specify the
     /// <code>DRAINING</code> status, the results include only container instances that have
     /// been set to <code>DRAINING</code> using <a>UpdateContainerInstancesState</a>.
-    /// If you do not specify this parameter, the default is to include container instances set
+    /// If you don't specify this parameter, the default is to include container instances set
     /// to all states other than <code>INACTIVE</code>.</p>
     pub status: std::option::Option<crate::model::ContainerInstanceStatus>,
 }
@@ -16366,8 +16615,8 @@ impl ListContainerInstancesInput {
     }
     /// <p>The <code>nextToken</code> value returned from a <code>ListContainerInstances</code>
     /// request indicating that more results are available to fulfill the request and further
-    /// calls will be needed. If <code>maxResults</code> was provided, it is possible the number
-    /// of results to be fewer than <code>maxResults</code>.</p>
+    /// calls are needed. If <code>maxResults</code> was provided, it's possible the number of
+    /// results to be fewer than <code>maxResults</code>.</p>
     /// <note>
     /// <p>This token should be treated as an opaque identifier that is only used to
     /// retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -16375,22 +16624,23 @@ impl ListContainerInstancesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of container instance results returned by
-    /// <code>ListContainerInstances</code> in paginated output. When this parameter is
-    /// used, <code>ListContainerInstances</code> only returns <code>maxResults</code> results
-    /// in a single page along with a <code>nextToken</code> response element. The remaining
-    /// results of the initial request can be seen by sending another
-    /// <code>ListContainerInstances</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 100. If this
-    /// parameter is not used, then <code>ListContainerInstances</code> returns up to
-    /// 100 results and a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of container instance results that
+    /// <code>ListContainerInstances</code> returned in paginated output. When this
+    /// parameter is used, <code>ListContainerInstances</code> only returns
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. The remaining results of the initial request can be seen by sending
+    /// another <code>ListContainerInstances</code> request with the returned
+    /// <code>nextToken</code> value. This value can be between 1 and
+    /// 100. If this parameter isn't used, then
+    /// <code>ListContainerInstances</code> returns up to 100 results and
+    /// a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>Filters the container instances by status. For example, if you specify the
     /// <code>DRAINING</code> status, the results include only container instances that have
     /// been set to <code>DRAINING</code> using <a>UpdateContainerInstancesState</a>.
-    /// If you do not specify this parameter, the default is to include container instances set
+    /// If you don't specify this parameter, the default is to include container instances set
     /// to all states other than <code>INACTIVE</code>.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ContainerInstanceStatus> {
         self.status.as_ref()
@@ -16413,29 +16663,29 @@ impl std::fmt::Debug for ListContainerInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersInput {
     /// <p>The <code>nextToken</code> value returned from a <code>ListClusters</code> request
-    /// indicating that more results are available to fulfill the request and further calls will
-    /// be needed. If <code>maxResults</code> was provided, it is possible the number of results
-    /// to be fewer than <code>maxResults</code>.</p>
+    /// indicating that more results are available to fulfill the request and further calls are
+    /// needed. If <code>maxResults</code> was provided, it's possible the number of results to
+    /// be fewer than <code>maxResults</code>.</p>
     /// <note>
     /// <p>This token should be treated as an opaque identifier that is only used to
     /// retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of cluster results returned by <code>ListClusters</code> in
+    /// <p>The maximum number of cluster results that <code>ListClusters</code> returned in
     /// paginated output. When this parameter is used, <code>ListClusters</code> only returns
     /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
     /// response element. The remaining results of the initial request can be seen by sending
     /// another <code>ListClusters</code> request with the returned <code>nextToken</code>
     /// value. This value can be between 1 and 100. If this
-    /// parameter is not used, then <code>ListClusters</code> returns up to
-    /// 100 results and a <code>nextToken</code> value if applicable.</p>
+    /// parameter isn't used, then <code>ListClusters</code> returns up to 100
+    /// results and a <code>nextToken</code> value if applicable.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListClustersInput {
     /// <p>The <code>nextToken</code> value returned from a <code>ListClusters</code> request
-    /// indicating that more results are available to fulfill the request and further calls will
-    /// be needed. If <code>maxResults</code> was provided, it is possible the number of results
-    /// to be fewer than <code>maxResults</code>.</p>
+    /// indicating that more results are available to fulfill the request and further calls are
+    /// needed. If <code>maxResults</code> was provided, it's possible the number of results to
+    /// be fewer than <code>maxResults</code>.</p>
     /// <note>
     /// <p>This token should be treated as an opaque identifier that is only used to
     /// retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -16443,14 +16693,14 @@ impl ListClustersInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of cluster results returned by <code>ListClusters</code> in
+    /// <p>The maximum number of cluster results that <code>ListClusters</code> returned in
     /// paginated output. When this parameter is used, <code>ListClusters</code> only returns
     /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
     /// response element. The remaining results of the initial request can be seen by sending
     /// another <code>ListClusters</code> request with the returned <code>nextToken</code>
     /// value. This value can be between 1 and 100. If this
-    /// parameter is not used, then <code>ListClusters</code> returns up to
-    /// 100 results and a <code>nextToken</code> value if applicable.</p>
+    /// parameter isn't used, then <code>ListClusters</code> returns up to 100
+    /// results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -16471,29 +16721,29 @@ pub struct ListAttributesInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to list attributes.
     /// If you do not specify a cluster, the default cluster is assumed.</p>
     pub cluster: std::option::Option<std::string::String>,
-    /// <p>The type of the target with which to list attributes.</p>
+    /// <p>The type of the target to list attributes with.</p>
     pub target_type: std::option::Option<crate::model::TargetType>,
-    /// <p>The name of the attribute with which to filter the results. </p>
+    /// <p>The name of the attribute to filter the results with. </p>
     pub attribute_name: std::option::Option<std::string::String>,
-    /// <p>The value of the attribute with which to filter results. You must also specify an
-    /// attribute name to use this parameter.</p>
+    /// <p>The value of the attribute to filter results with. You must also specify an attribute
+    /// name to use this parameter.</p>
     pub attribute_value: std::option::Option<std::string::String>,
     /// <p>The <code>nextToken</code> value returned from a <code>ListAttributes</code> request
-    /// indicating that more results are available to fulfill the request and further calls will
-    /// be needed. If <code>maxResults</code> was provided, it is possible the number of results
-    /// to be fewer than <code>maxResults</code>.</p>
+    /// indicating that more results are available to fulfill the request and further calls are
+    /// needed. If <code>maxResults</code> was provided, it's possible the number of results to
+    /// be fewer than <code>maxResults</code>.</p>
     /// <note>
     /// <p>This token should be treated as an opaque identifier that is only used to
     /// retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of cluster results returned by <code>ListAttributes</code> in
+    /// <p>The maximum number of cluster results that <code>ListAttributes</code> returned in
     /// paginated output. When this parameter is used, <code>ListAttributes</code> only returns
     /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
     /// response element. The remaining results of the initial request can be seen by sending
     /// another <code>ListAttributes</code> request with the returned <code>nextToken</code>
     /// value. This value can be between 1 and 100. If this
-    /// parameter is not used, then <code>ListAttributes</code> returns up to
+    /// parameter isn't used, then <code>ListAttributes</code> returns up to
     /// 100 results and a <code>nextToken</code> value if applicable.</p>
     pub max_results: std::option::Option<i32>,
 }
@@ -16503,23 +16753,23 @@ impl ListAttributesInput {
     pub fn cluster(&self) -> std::option::Option<&str> {
         self.cluster.as_deref()
     }
-    /// <p>The type of the target with which to list attributes.</p>
+    /// <p>The type of the target to list attributes with.</p>
     pub fn target_type(&self) -> std::option::Option<&crate::model::TargetType> {
         self.target_type.as_ref()
     }
-    /// <p>The name of the attribute with which to filter the results. </p>
+    /// <p>The name of the attribute to filter the results with. </p>
     pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
-    /// <p>The value of the attribute with which to filter results. You must also specify an
-    /// attribute name to use this parameter.</p>
+    /// <p>The value of the attribute to filter results with. You must also specify an attribute
+    /// name to use this parameter.</p>
     pub fn attribute_value(&self) -> std::option::Option<&str> {
         self.attribute_value.as_deref()
     }
     /// <p>The <code>nextToken</code> value returned from a <code>ListAttributes</code> request
-    /// indicating that more results are available to fulfill the request and further calls will
-    /// be needed. If <code>maxResults</code> was provided, it is possible the number of results
-    /// to be fewer than <code>maxResults</code>.</p>
+    /// indicating that more results are available to fulfill the request and further calls are
+    /// needed. If <code>maxResults</code> was provided, it's possible the number of results to
+    /// be fewer than <code>maxResults</code>.</p>
     /// <note>
     /// <p>This token should be treated as an opaque identifier that is only used to
     /// retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -16527,13 +16777,13 @@ impl ListAttributesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of cluster results returned by <code>ListAttributes</code> in
+    /// <p>The maximum number of cluster results that <code>ListAttributes</code> returned in
     /// paginated output. When this parameter is used, <code>ListAttributes</code> only returns
     /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
     /// response element. The remaining results of the initial request can be seen by sending
     /// another <code>ListAttributes</code> request with the returned <code>nextToken</code>
     /// value. This value can be between 1 and 100. If this
-    /// parameter is not used, then <code>ListAttributes</code> returns up to
+    /// parameter isn't used, then <code>ListAttributes</code> returns up to
     /// 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
@@ -16558,8 +16808,8 @@ impl std::fmt::Debug for ListAttributesInput {
 pub struct ListAccountSettingsInput {
     /// <p>The name of the account setting you want to list the settings for.</p>
     pub name: std::option::Option<crate::model::SettingName>,
-    /// <p>The value of the account settings with which to filter results. You must also specify
-    /// an account setting name to use this parameter.</p>
+    /// <p>The value of the account settings to filter results with. You must also specify an
+    /// account setting name to use this parameter.</p>
     pub value: std::option::Option<std::string::String>,
     /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If
     /// this field is omitted, the account settings are listed only for the authenticated
@@ -16569,14 +16819,14 @@ pub struct ListAccountSettingsInput {
     /// explicit account settings set for them.</p>
     /// </note>
     pub principal_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies whether to return the effective settings. If <code>true</code>, the account
+    /// <p>Determines whether to return the effective settings. If <code>true</code>, the account
     /// settings for the root user or the default setting for the <code>principalArn</code> are
     /// returned. If <code>false</code>, the account settings for the <code>principalArn</code>
-    /// are returned if they are set. Otherwise, no account settings are returned.</p>
+    /// are returned if they're set. Otherwise, no account settings are returned.</p>
     pub effective_settings: bool,
     /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code>
     /// request indicating that more results are available to fulfill the request and further
-    /// calls will be needed. If <code>maxResults</code> was provided, it is possible the number
+    /// calls will be needed. If <code>maxResults</code> was provided, it's possible the number
     /// of results to be fewer than <code>maxResults</code>.</p>
     /// <note>
     /// <p>This token should be treated as an opaque identifier that is only used to
@@ -16590,7 +16840,7 @@ pub struct ListAccountSettingsInput {
     /// of the initial request can be seen by sending another <code>ListAccountSettings</code>
     /// request with the returned <code>nextToken</code> value. This value can be between
     /// 1 and 10. If this
-    /// parameter is not used, then <code>ListAccountSettings</code> returns up to
+    /// parameter isn't used, then <code>ListAccountSettings</code> returns up to
     /// 10 results and a <code>nextToken</code> value
     /// if applicable.</p>
     pub max_results: i32,
@@ -16600,8 +16850,8 @@ impl ListAccountSettingsInput {
     pub fn name(&self) -> std::option::Option<&crate::model::SettingName> {
         self.name.as_ref()
     }
-    /// <p>The value of the account settings with which to filter results. You must also specify
-    /// an account setting name to use this parameter.</p>
+    /// <p>The value of the account settings to filter results with. You must also specify an
+    /// account setting name to use this parameter.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -16615,16 +16865,16 @@ impl ListAccountSettingsInput {
     pub fn principal_arn(&self) -> std::option::Option<&str> {
         self.principal_arn.as_deref()
     }
-    /// <p>Specifies whether to return the effective settings. If <code>true</code>, the account
+    /// <p>Determines whether to return the effective settings. If <code>true</code>, the account
     /// settings for the root user or the default setting for the <code>principalArn</code> are
     /// returned. If <code>false</code>, the account settings for the <code>principalArn</code>
-    /// are returned if they are set. Otherwise, no account settings are returned.</p>
+    /// are returned if they're set. Otherwise, no account settings are returned.</p>
     pub fn effective_settings(&self) -> bool {
         self.effective_settings
     }
     /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code>
     /// request indicating that more results are available to fulfill the request and further
-    /// calls will be needed. If <code>maxResults</code> was provided, it is possible the number
+    /// calls will be needed. If <code>maxResults</code> was provided, it's possible the number
     /// of results to be fewer than <code>maxResults</code>.</p>
     /// <note>
     /// <p>This token should be treated as an opaque identifier that is only used to
@@ -16640,7 +16890,7 @@ impl ListAccountSettingsInput {
     /// of the initial request can be seen by sending another <code>ListAccountSettings</code>
     /// request with the returned <code>nextToken</code> value. This value can be between
     /// 1 and 10. If this
-    /// parameter is not used, then <code>ListAccountSettings</code> returns up to
+    /// parameter isn't used, then <code>ListAccountSettings</code> returns up to
     /// 10 results and a <code>nextToken</code> value
     /// if applicable.</p>
     pub fn max_results(&self) -> i32 {
@@ -16720,8 +16970,8 @@ pub struct DiscoverPollEndpointInput {
     /// <p>The container instance ID or full ARN of the container instance.
     /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
     pub container_instance: std::option::Option<std::string::String>,
-    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to which the container instance
-    /// belongs.</p>
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs
+    /// to.</p>
     pub cluster: std::option::Option<std::string::String>,
 }
 impl DiscoverPollEndpointInput {
@@ -16730,8 +16980,8 @@ impl DiscoverPollEndpointInput {
     pub fn container_instance(&self) -> std::option::Option<&str> {
         self.container_instance.as_deref()
     }
-    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to which the container instance
-    /// belongs.</p>
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs
+    /// to.</p>
     pub fn cluster(&self) -> std::option::Option<&str> {
         self.cluster.as_deref()
     }
@@ -16758,7 +17008,7 @@ pub struct DescribeTaskSetsInput {
     /// describe.</p>
     pub task_sets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is
-    /// specified, the tags are included in the response. If this field is omitted, tags are not
+    /// specified, the tags are included in the response. If this field is omitted, tags aren't
     /// included in the response.</p>
     pub include: std::option::Option<std::vec::Vec<crate::model::TaskSetField>>,
 }
@@ -16778,7 +17028,7 @@ impl DescribeTaskSetsInput {
         self.task_sets.as_deref()
     }
     /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is
-    /// specified, the tags are included in the response. If this field is omitted, tags are not
+    /// specified, the tags are included in the response. If this field is omitted, tags aren't
     /// included in the response.</p>
     pub fn include(&self) -> std::option::Option<&[crate::model::TaskSetField]> {
         self.include.as_deref()
@@ -16806,8 +17056,8 @@ pub struct DescribeTasksInput {
     /// <p>A list of up to 100 task IDs or full ARN entries.</p>
     pub tasks: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code>
-    /// is specified, the tags are included in the response. If this field is omitted, tags are
-    /// not included in the response.</p>
+    /// is specified, the tags are included in the response. If this field is omitted, tags
+    /// aren't included in the response.</p>
     pub include: std::option::Option<std::vec::Vec<crate::model::TaskField>>,
 }
 impl DescribeTasksInput {
@@ -16822,8 +17072,8 @@ impl DescribeTasksInput {
         self.tasks.as_deref()
     }
     /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code>
-    /// is specified, the tags are included in the response. If this field is omitted, tags are
-    /// not included in the response.</p>
+    /// is specified, the tags are included in the response. If this field is omitted, tags
+    /// aren't included in the response.</p>
     pub fn include(&self) -> std::option::Option<&[crate::model::TaskField]> {
         self.include.as_deref()
     }
@@ -16847,9 +17097,9 @@ pub struct DescribeTaskDefinitionInput {
     /// specific revision in the family, or full Amazon Resource Name (ARN) of the task definition to
     /// describe.</p>
     pub task_definition: std::option::Option<std::string::String>,
-    /// <p>Specifies whether to see the resource tags for the task definition. If
+    /// <p>Determines whether to see the resource tags for the task definition. If
     /// <code>TAGS</code> is specified, the tags are included in the response. If this field
-    /// is omitted, tags are not included in the response.</p>
+    /// is omitted, tags aren't included in the response.</p>
     pub include: std::option::Option<std::vec::Vec<crate::model::TaskDefinitionField>>,
 }
 impl DescribeTaskDefinitionInput {
@@ -16860,9 +17110,9 @@ impl DescribeTaskDefinitionInput {
     pub fn task_definition(&self) -> std::option::Option<&str> {
         self.task_definition.as_deref()
     }
-    /// <p>Specifies whether to see the resource tags for the task definition. If
+    /// <p>Determines whether to see the resource tags for the task definition. If
     /// <code>TAGS</code> is specified, the tags are included in the response. If this field
-    /// is omitted, tags are not included in the response.</p>
+    /// is omitted, tags aren't included in the response.</p>
     pub fn include(&self) -> std::option::Option<&[crate::model::TaskDefinitionField]> {
         self.include.as_deref()
     }
@@ -16887,9 +17137,9 @@ pub struct DescribeServicesInput {
     /// <p>A list of services to describe. You may specify up to 10 services to describe in a
     /// single operation.</p>
     pub services: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies whether you want to see the resource tags for the service. If
+    /// <p>Determines whether you want to see the resource tags for the service. If
     /// <code>TAGS</code> is specified, the tags are included in the response. If this field
-    /// is omitted, tags are not included in the response.</p>
+    /// is omitted, tags aren't included in the response.</p>
     pub include: std::option::Option<std::vec::Vec<crate::model::ServiceField>>,
 }
 impl DescribeServicesInput {
@@ -16904,9 +17154,9 @@ impl DescribeServicesInput {
     pub fn services(&self) -> std::option::Option<&[std::string::String]> {
         self.services.as_deref()
     }
-    /// <p>Specifies whether you want to see the resource tags for the service. If
+    /// <p>Determines whether you want to see the resource tags for the service. If
     /// <code>TAGS</code> is specified, the tags are included in the response. If this field
-    /// is omitted, tags are not included in the response.</p>
+    /// is omitted, tags aren't included in the response.</p>
     pub fn include(&self) -> std::option::Option<&[crate::model::ServiceField]> {
         self.include.as_deref()
     }
@@ -16933,8 +17183,10 @@ pub struct DescribeContainerInstancesInput {
     /// <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.</p>
     pub container_instances: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies whether you want to see the resource tags for the container instance. If
-    /// <code>TAGS</code> is specified, the tags are included in the response. If this field
-    /// is omitted, tags are not included in the response.</p>
+    /// <code>TAGS</code> is specified, the tags are included in the response. If
+    /// <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health
+    /// is included in the response. If this field is omitted, tags and container instance
+    /// health status aren't included in the response.</p>
     pub include: std::option::Option<std::vec::Vec<crate::model::ContainerInstanceField>>,
 }
 impl DescribeContainerInstancesInput {
@@ -16950,8 +17202,10 @@ impl DescribeContainerInstancesInput {
         self.container_instances.as_deref()
     }
     /// <p>Specifies whether you want to see the resource tags for the container instance. If
-    /// <code>TAGS</code> is specified, the tags are included in the response. If this field
-    /// is omitted, tags are not included in the response.</p>
+    /// <code>TAGS</code> is specified, the tags are included in the response. If
+    /// <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health
+    /// is included in the response. If this field is omitted, tags and container instance
+    /// health status aren't included in the response.</p>
     pub fn include(&self) -> std::option::Option<&[crate::model::ContainerInstanceField]> {
         self.include.as_deref()
     }
@@ -16973,8 +17227,8 @@ pub struct DescribeClustersInput {
     /// <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN) entries.
     /// If you do not specify a cluster, the default cluster is assumed.</p>
     pub clusters: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Whether to include additional information about the clusters in the response. If this
-    /// field is omitted, this information isn't included.</p>
+    /// <p>Determines whether to include additional information about the clusters in the
+    /// response. If this field is omitted, this information isn't included.</p>
     /// <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container instances
     /// or tasks within the cluster are included.</p>
     /// <p>If <code>SETTINGS</code> is specified, the settings for the cluster are
@@ -16993,8 +17247,8 @@ impl DescribeClustersInput {
     pub fn clusters(&self) -> std::option::Option<&[std::string::String]> {
         self.clusters.as_deref()
     }
-    /// <p>Whether to include additional information about the clusters in the response. If this
-    /// field is omitted, this information isn't included.</p>
+    /// <p>Determines whether to include additional information about the clusters in the
+    /// response. If this field is omitted, this information isn't included.</p>
     /// <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container instances
     /// or tasks within the cluster are included.</p>
     /// <p>If <code>SETTINGS</code> is specified, the settings for the cluster are
@@ -17027,7 +17281,7 @@ pub struct DescribeCapacityProvidersInput {
     pub capacity_providers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies whether or not you want to see the resource tags for the capacity provider.
     /// If <code>TAGS</code> is specified, the tags are included in the response. If this field
-    /// is omitted, tags are not included in the response.</p>
+    /// is omitted, tags aren't included in the response.</p>
     pub include: std::option::Option<std::vec::Vec<crate::model::CapacityProviderField>>,
     /// <p>The maximum number of account setting results returned by
     /// <code>DescribeCapacityProviders</code> in paginated output. When this parameter is
@@ -17059,7 +17313,7 @@ impl DescribeCapacityProvidersInput {
     }
     /// <p>Specifies whether or not you want to see the resource tags for the capacity provider.
     /// If <code>TAGS</code> is specified, the tags are included in the response. If this field
-    /// is omitted, tags are not included in the response.</p>
+    /// is omitted, tags aren't included in the response.</p>
     pub fn include(&self) -> std::option::Option<&[crate::model::CapacityProviderField]> {
         self.include.as_deref()
     }
@@ -17135,12 +17389,12 @@ pub struct DeregisterContainerInstanceInput {
     /// <p>The container instance ID or full ARN of the container instance to deregister.
     /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
     pub container_instance: std::option::Option<std::string::String>,
-    /// <p>Forces the deregistration of the container instance. If you have tasks running on the
+    /// <p>Forces the container instance to be deregistered. If you have tasks running on the
     /// container instance when you deregister it with the <code>force</code> option, these
     /// tasks remain running until you terminate the instance or the tasks stop through some
-    /// other means, but they are orphaned (no longer monitored or accounted for by Amazon ECS). If
-    /// an orphaned task on your container instance is part of an Amazon ECS service, then the
-    /// service scheduler starts another copy of that task, on a different container instance if
+    /// other means, but they're orphaned (no longer monitored or accounted for by Amazon ECS). If an
+    /// orphaned task on your container instance is part of an Amazon ECS service, then the service
+    /// scheduler starts another copy of that task, on a different container instance if
     /// possible. </p>
     /// <p>Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an Application Load Balancer
     /// target group are deregistered. They begin connection draining according to the settings
@@ -17158,12 +17412,12 @@ impl DeregisterContainerInstanceInput {
     pub fn container_instance(&self) -> std::option::Option<&str> {
         self.container_instance.as_deref()
     }
-    /// <p>Forces the deregistration of the container instance. If you have tasks running on the
+    /// <p>Forces the container instance to be deregistered. If you have tasks running on the
     /// container instance when you deregister it with the <code>force</code> option, these
     /// tasks remain running until you terminate the instance or the tasks stop through some
-    /// other means, but they are orphaned (no longer monitored or accounted for by Amazon ECS). If
-    /// an orphaned task on your container instance is part of an Amazon ECS service, then the
-    /// service scheduler starts another copy of that task, on a different container instance if
+    /// other means, but they're orphaned (no longer monitored or accounted for by Amazon ECS). If an
+    /// orphaned task on your container instance is part of an Amazon ECS service, then the service
+    /// scheduler starts another copy of that task, on a different container instance if
     /// possible. </p>
     /// <p>Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an Application Load Balancer
     /// target group are deregistered. They begin connection draining according to the settings
@@ -17187,20 +17441,20 @@ impl std::fmt::Debug for DeregisterContainerInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTaskSetInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
-    /// set exists in to delete.</p>
+    /// set found in to delete.</p>
     pub cluster: std::option::Option<std::string::String>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that hosts the task set to
     /// delete.</p>
     pub service: std::option::Option<std::string::String>,
     /// <p>The task set ID or full Amazon Resource Name (ARN) of the task set to delete.</p>
     pub task_set: std::option::Option<std::string::String>,
-    /// <p>If <code>true</code>, this allows you to delete a task set even if it hasn't been
-    /// scaled down to zero.</p>
+    /// <p>If <code>true</code>, you can delete a task set even if it hasn't been scaled down to
+    /// zero.</p>
     pub force: std::option::Option<bool>,
 }
 impl DeleteTaskSetInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
-    /// set exists in to delete.</p>
+    /// set found in to delete.</p>
     pub fn cluster(&self) -> std::option::Option<&str> {
         self.cluster.as_deref()
     }
@@ -17213,8 +17467,8 @@ impl DeleteTaskSetInput {
     pub fn task_set(&self) -> std::option::Option<&str> {
         self.task_set.as_deref()
     }
-    /// <p>If <code>true</code>, this allows you to delete a task set even if it hasn't been
-    /// scaled down to zero.</p>
+    /// <p>If <code>true</code>, you can delete a task set even if it hasn't been scaled down to
+    /// zero.</p>
     pub fn force(&self) -> std::option::Option<bool> {
         self.force
     }
@@ -17239,9 +17493,9 @@ pub struct DeleteServiceInput {
     pub cluster: std::option::Option<std::string::String>,
     /// <p>The name of the service to delete.</p>
     pub service: std::option::Option<std::string::String>,
-    /// <p>If <code>true</code>, allows you to delete a service even if it has not been scaled
-    /// down to zero tasks. It is only necessary to use this if the service is using the
-    /// <code>REPLICA</code> scheduling strategy.</p>
+    /// <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled down to
+    /// zero tasks. It's only necessary to use this if the service uses the <code>REPLICA</code>
+    /// scheduling strategy.</p>
     pub force: std::option::Option<bool>,
 }
 impl DeleteServiceInput {
@@ -17254,9 +17508,9 @@ impl DeleteServiceInput {
     pub fn service(&self) -> std::option::Option<&str> {
         self.service.as_deref()
     }
-    /// <p>If <code>true</code>, allows you to delete a service even if it has not been scaled
-    /// down to zero tasks. It is only necessary to use this if the service is using the
-    /// <code>REPLICA</code> scheduling strategy.</p>
+    /// <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled down to
+    /// zero tasks. It's only necessary to use this if the service uses the <code>REPLICA</code>
+    /// scheduling strategy.</p>
     pub fn force(&self) -> std::option::Option<bool> {
         self.force
     }
@@ -17320,8 +17574,8 @@ pub struct DeleteAttributesInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to delete
     /// attributes. If you do not specify a cluster, the default cluster is assumed.</p>
     pub cluster: std::option::Option<std::string::String>,
-    /// <p>The attributes to delete from your resource. You can specify up to 10 attributes per
-    /// request. For custom attributes, specify the attribute name and target ID, but do not
+    /// <p>The attributes to delete from your resource. You can specify up to 10 attributes for
+    /// each request. For custom attributes, specify the attribute name and target ID, but don't
     /// specify the value. If you specify the target ID using the short form, you must also
     /// specify the target type.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -17332,8 +17586,8 @@ impl DeleteAttributesInput {
     pub fn cluster(&self) -> std::option::Option<&str> {
         self.cluster.as_deref()
     }
-    /// <p>The attributes to delete from your resource. You can specify up to 10 attributes per
-    /// request. For custom attributes, specify the attribute name and target ID, but do not
+    /// <p>The attributes to delete from your resource. You can specify up to 10 attributes for
+    /// each request. For custom attributes, specify the attribute name and target ID, but don't
     /// specify the value. If you specify the target ID using the short form, you must also
     /// specify the target type.</p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
@@ -17353,7 +17607,7 @@ impl std::fmt::Debug for DeleteAttributesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccountSettingInput {
-    /// <p>The resource name for which to disable the account setting. If
+    /// <p>The resource name to disable the account setting for. If
     /// <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is
     /// affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for
     /// your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is
@@ -17361,15 +17615,15 @@ pub struct DeleteAccountSettingInput {
     /// <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container
     /// instances is affected.</p>
     pub name: std::option::Option<crate::model::SettingName>,
-    /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you
-    /// specify the root user, it disables the account setting for all IAM users, IAM roles, and
-    /// the root user of the account unless an IAM user or role explicitly overrides these
-    /// settings. If this field is omitted, the setting is changed only for the authenticated
-    /// user.</p>
+    /// <p>The Amazon Resource Name (ARN) of the principal. It can be an IAM user, IAM role, or
+    /// the root user. If you specify the root user, it disables the account setting for all IAM
+    /// users, IAM roles, and the root user of the account unless an IAM user or role explicitly
+    /// overrides these settings. If this field is omitted, the setting is changed only for the
+    /// authenticated user.</p>
     pub principal_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAccountSettingInput {
-    /// <p>The resource name for which to disable the account setting. If
+    /// <p>The resource name to disable the account setting for. If
     /// <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is
     /// affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for
     /// your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is
@@ -17379,11 +17633,11 @@ impl DeleteAccountSettingInput {
     pub fn name(&self) -> std::option::Option<&crate::model::SettingName> {
         self.name.as_ref()
     }
-    /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you
-    /// specify the root user, it disables the account setting for all IAM users, IAM roles, and
-    /// the root user of the account unless an IAM user or role explicitly overrides these
-    /// settings. If this field is omitted, the setting is changed only for the authenticated
-    /// user.</p>
+    /// <p>The Amazon Resource Name (ARN) of the principal. It can be an IAM user, IAM role, or
+    /// the root user. If you specify the root user, it disables the account setting for all IAM
+    /// users, IAM roles, and the root user of the account unless an IAM user or role explicitly
+    /// overrides these settings. If this field is omitted, the setting is changed only for the
+    /// authenticated user.</p>
     pub fn principal_arn(&self) -> std::option::Option<&str> {
         self.principal_arn.as_deref()
     }
@@ -17422,8 +17676,8 @@ pub struct CreateTaskSetInput {
     /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
     /// Discovery</a>.</p>
     pub service_registries: std::option::Option<std::vec::Vec<crate::model::ServiceRegistry>>,
-    /// <p>The launch type that new tasks in the task set will use. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The launch type that new tasks in the task set uses. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+    /// Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
     /// parameter must be omitted.</p>
     pub launch_type: std::option::Option<crate::model::LaunchType>,
@@ -17448,19 +17702,19 @@ pub struct CreateTaskSetInput {
     /// list of available capacity providers for a cluster after the cluster is created.</p>
     pub capacity_provider_strategy:
         std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
-    /// <p>The platform version that the tasks in the task set should use. A platform version is
+    /// <p>The platform version that the tasks in the task set uses. A platform version is
     /// specified only for tasks using the Fargate launch type. If one isn't
-    /// specified, the <code>LATEST</code> platform version is used by default.</p>
+    /// specified, the <code>LATEST</code> platform version is used.</p>
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>A floating-point percentage of the desired number of tasks to place and keep running
     /// in the task set.</p>
     pub scale: std::option::Option<crate::model::Scale>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 32 ASCII characters are allowed.</p>
+    /// <p>The identifier that you provide to ensure the idempotency of the request. It's case
+    /// sensitive and must be unique. It can be up to 32 ASCII characters are allowed.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The metadata that you apply to the task set to help you categorize and organize them.
-    /// Each tag consists of a key and an optional value, both of which you define. When a
-    /// service is deleted, the tags are deleted as well.</p>
+    /// Each tag consists of a key and an optional value. You define both. When a service is
+    /// deleted, the tags are deleted.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -17532,8 +17786,8 @@ impl CreateTaskSetInput {
     pub fn service_registries(&self) -> std::option::Option<&[crate::model::ServiceRegistry]> {
         self.service_registries.as_deref()
     }
-    /// <p>The launch type that new tasks in the task set will use. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The launch type that new tasks in the task set uses. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+    /// Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
     /// parameter must be omitted.</p>
     pub fn launch_type(&self) -> std::option::Option<&crate::model::LaunchType> {
@@ -17563,9 +17817,9 @@ impl CreateTaskSetInput {
     ) -> std::option::Option<&[crate::model::CapacityProviderStrategyItem]> {
         self.capacity_provider_strategy.as_deref()
     }
-    /// <p>The platform version that the tasks in the task set should use. A platform version is
+    /// <p>The platform version that the tasks in the task set uses. A platform version is
     /// specified only for tasks using the Fargate launch type. If one isn't
-    /// specified, the <code>LATEST</code> platform version is used by default.</p>
+    /// specified, the <code>LATEST</code> platform version is used.</p>
     pub fn platform_version(&self) -> std::option::Option<&str> {
         self.platform_version.as_deref()
     }
@@ -17574,14 +17828,14 @@ impl CreateTaskSetInput {
     pub fn scale(&self) -> std::option::Option<&crate::model::Scale> {
         self.scale.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 32 ASCII characters are allowed.</p>
+    /// <p>The identifier that you provide to ensure the idempotency of the request. It's case
+    /// sensitive and must be unique. It can be up to 32 ASCII characters are allowed.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The metadata that you apply to the task set to help you categorize and organize them.
-    /// Each tag consists of a key and an optional value, both of which you define. When a
-    /// service is deleted, the tags are deleted as well.</p>
+    /// Each tag consists of a key and an optional value. You define both. When a service is
+    /// deleted, the tags are deleted.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -17644,7 +17898,7 @@ impl std::fmt::Debug for CreateTaskSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceInput {
-    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to run your service.
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that you run your service on.
     /// If you do not specify a cluster, the default cluster is assumed.</p>
     pub cluster: std::option::Option<std::string::String>,
     /// <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. Service names must be unique within
@@ -17652,67 +17906,68 @@ pub struct CreateServiceInput {
     /// Region or across multiple Regions.</p>
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-    /// full ARN of the task definition to run in your service. If a <code>revision</code> is
-    /// not specified, the latest <code>ACTIVE</code> revision is used.</p>
-    /// <p>A task definition must be specified if the service is using either the
-    /// <code>ECS</code> or <code>CODE_DEPLOY</code> deployment controllers.</p>
+    /// full ARN of the task definition to run in your service. If a <code>revision</code>
+    /// isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
+    /// <p>A task definition must be specified if the service uses either the <code>ECS</code> or
+    /// <code>CODE_DEPLOY</code> deployment controllers.</p>
     pub task_definition: std::option::Option<std::string::String>,
     /// <p>A load balancer object representing the load balancers to use with your service. For
     /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load Balancing</a> in the
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// <p>If the service is using the rolling update (<code>ECS</code>) deployment controller
-    /// and using either an Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to
-    /// attach to the service. The service-linked role is required for services that make use of
-    /// multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECS</a> in the
+    /// <p>If the service uses the rolling update (<code>ECS</code>) deployment controller and
+    /// using either an Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to attach
+    /// to the service. The service-linked role is required for services that use multiple
+    /// target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECS</a> in the
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// <p>If the service is using the <code>CODE_DEPLOY</code> deployment controller, the
-    /// service is required to use either an Application Load Balancer or Network Load Balancer. When creating an CodeDeploy deployment
-    /// group, you specify two target groups (referred to as a <code>targetGroupPair</code>).
-    /// During a deployment, CodeDeploy determines which task set in your service has the status
-    /// <code>PRIMARY</code> and associates one target group with it, and then associates
-    /// the other target group with the replacement task set. The load balancer can also have up
-    /// to two listeners: a required listener for production traffic and an optional listener
-    /// that allows you perform validation tests with Lambda functions before routing production
-    /// traffic to it.</p>
+    /// <p>If the service uses the <code>CODE_DEPLOY</code> deployment controller, the service is
+    /// required to use either an Application Load Balancer or Network Load Balancer. When creating an CodeDeploy deployment group, you
+    /// specify two target groups (referred to as a <code>targetGroupPair</code>). During a
+    /// deployment, CodeDeploy determines which task set in your service has the status
+    /// <code>PRIMARY</code>, and it associates one target group with it. Then, it also
+    /// associates the other target group with the replacement task set. The load balancer can
+    /// also have up to two listeners: a required listener for production traffic and an
+    /// optional listener that you can use to perform validation tests with Lambda functions
+    /// before routing production traffic to it.</p>
     /// <p>After you create a service using the <code>ECS</code> deployment controller, the load
-    /// balancer name or target group ARN, container name, and container port specified in the
-    /// service definition are immutable. If you are using the <code>CODE_DEPLOY</code>
+    /// balancer name or target group ARN, container name, and container port that's specified
+    /// in the service definition are immutable. If you use the <code>CODE_DEPLOY</code>
     /// deployment controller, these values can be changed when updating the service.</p>
     /// <p>For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target group ARN,
-    /// the container name (as it appears in a container definition), and the container port to
-    /// access from the load balancer. The load balancer name parameter must be omitted. When a
-    /// task from this service is placed on a container instance, the container instance and
-    /// port combination is registered as a target in the target group specified here.</p>
-    /// <p>For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
-    /// appears in a container definition), and the container port to access from the load
-    /// balancer. The target group ARN parameter must be omitted. When a task from this service
-    /// is placed on a container instance, the container instance is registered with the load
-    /// balancer specified here.</p>
+    /// the container name, and the container port to access from the load balancer. The
+    /// container name must be as it appears in a container definition. The load balancer name
+    /// parameter must be omitted. When a task from this service is placed on a container
+    /// instance, the container instance and port combination is registered as a target in the
+    /// target group that's specified here.</p>
+    /// <p>For Classic Load Balancers, this object must contain the load balancer name, the container name , and
+    /// the container port to access from the load balancer. The container name must be as it
+    /// appears in a container definition. The target group ARN parameter must be omitted. When
+    /// a task from this service is placed on a container instance, the container instance is
+    /// registered with the load balancer that's specified here.</p>
     /// <p>Services with tasks that use the <code>awsvpc</code> network mode (for example, those
-    /// with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are
-    /// not supported. Also, when you create any target groups for these services, you must
-    /// choose <code>ip</code> as the target type, not <code>instance</code>, because tasks that
-    /// use the <code>awsvpc</code> network mode are associated with an elastic network
-    /// interface, not an Amazon EC2 instance.</p>
+    /// with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
+    /// aren't supported. Also, when you create any target groups for these services, you must
+    /// choose <code>ip</code> as the target type, not <code>instance</code>. This is because
+    /// tasks that use the <code>awsvpc</code> network mode are associated with an elastic
+    /// network interface, not an Amazon EC2 instance.</p>
     pub load_balancers: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
     /// <p>The details of the service discovery registry to associate with this service. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
     /// discovery</a>.</p>
     /// <note>
     /// <p>Each service may be associated with one service registry. Multiple service
-    /// registries per service isn't supported.</p>
+    /// registries for each service isn't supported.</p>
     /// </note>
     pub service_registries: std::option::Option<std::vec::Vec<crate::model::ServiceRegistry>>,
     /// <p>The number of instantiations of the specified task definition to place and keep
     /// running on your cluster.</p>
-    /// <p>This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or is not
-    /// specified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this is not
+    /// <p>This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't
+    /// specified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't
     /// required.</p>
     pub desired_count: std::option::Option<i32>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 32 ASCII characters are allowed.</p>
+    /// <p>An identifier that you provide to ensure the idempotency of the request. It must be
+    /// unique and is case sensitive. Up to 32 ASCII characters are allowed.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The infrastructure on which to run your service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+    /// <p>The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
     /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand
     /// infrastructure.</p>
@@ -17723,7 +17978,7 @@ pub struct CreateServiceInput {
     /// </note>
     /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your
     /// cluster.</p>
-    /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
+    /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or
     /// virtual machine (VM) capacity registered to your cluster.</p>
     /// <p>A service can use either a launch type or a capacity provider strategy. If a
     /// <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
@@ -17739,22 +17994,22 @@ pub struct CreateServiceInput {
         std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
     /// <p>The platform version that your tasks in the service are running on. A platform version
     /// is specified only for tasks using the Fargate launch type. If one isn't
-    /// specified, the <code>LATEST</code> platform version is used by default. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
+    /// specified, the <code>LATEST</code> platform version is used. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
     /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your
     /// load balancer on your behalf. This parameter is only permitted if you are using a load
-    /// balancer with your service and your task definition does not use the <code>awsvpc</code>
+    /// balancer with your service and your task definition doesn't use the <code>awsvpc</code>
     /// network mode. If you specify the <code>role</code> parameter, you must also specify a
     /// load balancer object with the <code>loadBalancers</code> parameter.</p>
     /// <important>
     /// <p>If your account has already created the Amazon ECS service-linked role, that role is
-    /// used by default for your service unless you specify a role here. The service-linked
-    /// role is required if your task definition uses the <code>awsvpc</code> network mode
-    /// or if the service is configured to use service discovery, an external deployment
-    /// controller, multiple target groups, or Elastic Inference accelerators in which case
-    /// you should not specify a role here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+    /// used for your service unless you specify a role here. The service-linked role is
+    /// required if your task definition uses the <code>awsvpc</code> network mode or if the
+    /// service is configured to use service discovery, an external deployment controller,
+    /// multiple target groups, or Elastic Inference accelerators in which case you don't
+    /// specify a role here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
     /// service-linked roles for Amazon ECS</a> in the
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </important>
@@ -17768,29 +18023,31 @@ pub struct CreateServiceInput {
     /// and the ordering of stopping and starting tasks.</p>
     pub deployment_configuration: std::option::Option<crate::model::DeploymentConfiguration>,
     /// <p>An array of placement constraint objects to use for tasks in your service. You can
-    /// specify a maximum of 10 constraints per task (this limit includes constraints in the
-    /// task definition and those specified at runtime).</p>
+    /// specify a maximum of 10 constraints for each task. This limit includes constraints in
+    /// the task definition and those specified at runtime.</p>
     pub placement_constraints:
         std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
     /// <p>The placement strategy objects to use for tasks in your service. You can specify a
-    /// maximum of 5 strategy rules per service.</p>
+    /// maximum of 5 strategy rules for each service.</p>
     pub placement_strategy: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
     /// <p>The network configuration for the service. This parameter is required for task
     /// definitions that use the <code>awsvpc</code> network mode to receive their own elastic
-    /// network interface, and it is not supported for other network modes. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
+    /// network interface, and it isn't supported for other network modes. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
     /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
-    /// <p>The period of time, in seconds, that the Amazon ECS service scheduler should ignore
-    /// unhealthy Elastic Load Balancing target health checks after a task has first started. This is only used
-    /// when your service is configured to use a load balancer. If your service has a load
-    /// balancer defined and you don't specify a health check grace period value, the default
-    /// value of <code>0</code> is used.</p>
+    /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
+    /// Elastic Load Balancing target health checks after a task has first started. This is only used when your
+    /// service is configured to use a load balancer. If your service has a load balancer
+    /// defined and you don't specify a health check grace period value, the default value of
+    /// <code>0</code> is used.</p>
     /// <p>If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you
-    /// can specify a health check grace period of up to 2,147,483,647 seconds. During that
-    /// time, the Amazon ECS service scheduler ignores health check status. This grace period can
-    /// prevent the service scheduler from marking tasks as unhealthy and stopping them before
-    /// they have time to come up.</p>
+    /// can specify a health check grace period of up to
+    /// 2,147,483,647
+    /// seconds (about 69 years). During that time, the Amazon ECS service
+    /// scheduler ignores health check status. This grace period can prevent the service
+    /// scheduler from marking tasks as unhealthy and stopping them before they have time to
+    /// come up.</p>
     pub health_check_grace_period_seconds: std::option::Option<i32>,
     /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
     /// <p>There are two service scheduler strategies available:</p>
@@ -17801,9 +18058,8 @@ pub struct CreateServiceInput {
     /// maintains the desired number of tasks across your cluster. By default, the
     /// service scheduler spreads tasks across Availability Zones. You can use task
     /// placement strategies and constraints to customize task placement decisions. This
-    /// scheduler strategy is required if the service is using the
-    /// <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller
-    /// types.</p>
+    /// scheduler strategy is required if the service uses the <code>CODE_DEPLOY</code>
+    /// or <code>EXTERNAL</code> deployment controller types.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -17811,7 +18067,7 @@ pub struct CreateServiceInput {
     /// task on each active container instance that meets all of the task placement
     /// constraints that you specify in your cluster. The service scheduler also
     /// evaluates the task placement constraints for running tasks and will stop tasks
-    /// that do not meet the placement constraints. When you're using this strategy, you
+    /// that don't meet the placement constraints. When you're using this strategy, you
     /// don't need to specify a desired number of tasks, a task placement strategy, or
     /// use Service Auto Scaling policies.</p>
     /// <note>
@@ -17865,18 +18121,18 @@ pub struct CreateServiceInput {
     /// Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub enable_ecs_managed_tags: bool,
     /// <p>Specifies whether to propagate the tags from the task definition or the service to the
-    /// tasks in the service. If no value is specified, the tags are not propagated. Tags can
+    /// tasks in the service. If no value is specified, the tags aren't propagated. Tags can
     /// only be propagated to the tasks within the service during service creation. To add tags
-    /// to a task after service creation or task creation, use the <a>TagResource</a> API
-    /// action.</p>
+    /// to a task after service creation or task creation, use the <a>TagResource</a>
+    /// API action.</p>
     pub propagate_tags: std::option::Option<crate::model::PropagateTags>,
-    /// <p>Whether or not the execute command functionality is enabled for the service. If
+    /// <p>Determines whether the execute command functionality is enabled for the service. If
     /// <code>true</code>, this enables execute command functionality on all containers in
     /// the service tasks.</p>
     pub enable_execute_command: bool,
 }
 impl CreateServiceInput {
-    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to run your service.
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that you run your service on.
     /// If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn cluster(&self) -> std::option::Option<&str> {
         self.cluster.as_deref()
@@ -17888,50 +18144,51 @@ impl CreateServiceInput {
         self.service_name.as_deref()
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-    /// full ARN of the task definition to run in your service. If a <code>revision</code> is
-    /// not specified, the latest <code>ACTIVE</code> revision is used.</p>
-    /// <p>A task definition must be specified if the service is using either the
-    /// <code>ECS</code> or <code>CODE_DEPLOY</code> deployment controllers.</p>
+    /// full ARN of the task definition to run in your service. If a <code>revision</code>
+    /// isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
+    /// <p>A task definition must be specified if the service uses either the <code>ECS</code> or
+    /// <code>CODE_DEPLOY</code> deployment controllers.</p>
     pub fn task_definition(&self) -> std::option::Option<&str> {
         self.task_definition.as_deref()
     }
     /// <p>A load balancer object representing the load balancers to use with your service. For
     /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load Balancing</a> in the
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// <p>If the service is using the rolling update (<code>ECS</code>) deployment controller
-    /// and using either an Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to
-    /// attach to the service. The service-linked role is required for services that make use of
-    /// multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECS</a> in the
+    /// <p>If the service uses the rolling update (<code>ECS</code>) deployment controller and
+    /// using either an Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to attach
+    /// to the service. The service-linked role is required for services that use multiple
+    /// target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECS</a> in the
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// <p>If the service is using the <code>CODE_DEPLOY</code> deployment controller, the
-    /// service is required to use either an Application Load Balancer or Network Load Balancer. When creating an CodeDeploy deployment
-    /// group, you specify two target groups (referred to as a <code>targetGroupPair</code>).
-    /// During a deployment, CodeDeploy determines which task set in your service has the status
-    /// <code>PRIMARY</code> and associates one target group with it, and then associates
-    /// the other target group with the replacement task set. The load balancer can also have up
-    /// to two listeners: a required listener for production traffic and an optional listener
-    /// that allows you perform validation tests with Lambda functions before routing production
-    /// traffic to it.</p>
+    /// <p>If the service uses the <code>CODE_DEPLOY</code> deployment controller, the service is
+    /// required to use either an Application Load Balancer or Network Load Balancer. When creating an CodeDeploy deployment group, you
+    /// specify two target groups (referred to as a <code>targetGroupPair</code>). During a
+    /// deployment, CodeDeploy determines which task set in your service has the status
+    /// <code>PRIMARY</code>, and it associates one target group with it. Then, it also
+    /// associates the other target group with the replacement task set. The load balancer can
+    /// also have up to two listeners: a required listener for production traffic and an
+    /// optional listener that you can use to perform validation tests with Lambda functions
+    /// before routing production traffic to it.</p>
     /// <p>After you create a service using the <code>ECS</code> deployment controller, the load
-    /// balancer name or target group ARN, container name, and container port specified in the
-    /// service definition are immutable. If you are using the <code>CODE_DEPLOY</code>
+    /// balancer name or target group ARN, container name, and container port that's specified
+    /// in the service definition are immutable. If you use the <code>CODE_DEPLOY</code>
     /// deployment controller, these values can be changed when updating the service.</p>
     /// <p>For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target group ARN,
-    /// the container name (as it appears in a container definition), and the container port to
-    /// access from the load balancer. The load balancer name parameter must be omitted. When a
-    /// task from this service is placed on a container instance, the container instance and
-    /// port combination is registered as a target in the target group specified here.</p>
-    /// <p>For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
-    /// appears in a container definition), and the container port to access from the load
-    /// balancer. The target group ARN parameter must be omitted. When a task from this service
-    /// is placed on a container instance, the container instance is registered with the load
-    /// balancer specified here.</p>
+    /// the container name, and the container port to access from the load balancer. The
+    /// container name must be as it appears in a container definition. The load balancer name
+    /// parameter must be omitted. When a task from this service is placed on a container
+    /// instance, the container instance and port combination is registered as a target in the
+    /// target group that's specified here.</p>
+    /// <p>For Classic Load Balancers, this object must contain the load balancer name, the container name , and
+    /// the container port to access from the load balancer. The container name must be as it
+    /// appears in a container definition. The target group ARN parameter must be omitted. When
+    /// a task from this service is placed on a container instance, the container instance is
+    /// registered with the load balancer that's specified here.</p>
     /// <p>Services with tasks that use the <code>awsvpc</code> network mode (for example, those
-    /// with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are
-    /// not supported. Also, when you create any target groups for these services, you must
-    /// choose <code>ip</code> as the target type, not <code>instance</code>, because tasks that
-    /// use the <code>awsvpc</code> network mode are associated with an elastic network
-    /// interface, not an Amazon EC2 instance.</p>
+    /// with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
+    /// aren't supported. Also, when you create any target groups for these services, you must
+    /// choose <code>ip</code> as the target type, not <code>instance</code>. This is because
+    /// tasks that use the <code>awsvpc</code> network mode are associated with an elastic
+    /// network interface, not an Amazon EC2 instance.</p>
     pub fn load_balancers(&self) -> std::option::Option<&[crate::model::LoadBalancer]> {
         self.load_balancers.as_deref()
     }
@@ -17940,25 +18197,25 @@ impl CreateServiceInput {
     /// discovery</a>.</p>
     /// <note>
     /// <p>Each service may be associated with one service registry. Multiple service
-    /// registries per service isn't supported.</p>
+    /// registries for each service isn't supported.</p>
     /// </note>
     pub fn service_registries(&self) -> std::option::Option<&[crate::model::ServiceRegistry]> {
         self.service_registries.as_deref()
     }
     /// <p>The number of instantiations of the specified task definition to place and keep
     /// running on your cluster.</p>
-    /// <p>This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or is not
-    /// specified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this is not
+    /// <p>This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't
+    /// specified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't
     /// required.</p>
     pub fn desired_count(&self) -> std::option::Option<i32> {
         self.desired_count
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 32 ASCII characters are allowed.</p>
+    /// <p>An identifier that you provide to ensure the idempotency of the request. It must be
+    /// unique and is case sensitive. Up to 32 ASCII characters are allowed.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The infrastructure on which to run your service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+    /// <p>The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
     /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand
     /// infrastructure.</p>
@@ -17969,7 +18226,7 @@ impl CreateServiceInput {
     /// </note>
     /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your
     /// cluster.</p>
-    /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
+    /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or
     /// virtual machine (VM) capacity registered to your cluster.</p>
     /// <p>A service can use either a launch type or a capacity provider strategy. If a
     /// <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
@@ -17990,24 +18247,24 @@ impl CreateServiceInput {
     }
     /// <p>The platform version that your tasks in the service are running on. A platform version
     /// is specified only for tasks using the Fargate launch type. If one isn't
-    /// specified, the <code>LATEST</code> platform version is used by default. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
+    /// specified, the <code>LATEST</code> platform version is used. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
     /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn platform_version(&self) -> std::option::Option<&str> {
         self.platform_version.as_deref()
     }
     /// <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your
     /// load balancer on your behalf. This parameter is only permitted if you are using a load
-    /// balancer with your service and your task definition does not use the <code>awsvpc</code>
+    /// balancer with your service and your task definition doesn't use the <code>awsvpc</code>
     /// network mode. If you specify the <code>role</code> parameter, you must also specify a
     /// load balancer object with the <code>loadBalancers</code> parameter.</p>
     /// <important>
     /// <p>If your account has already created the Amazon ECS service-linked role, that role is
-    /// used by default for your service unless you specify a role here. The service-linked
-    /// role is required if your task definition uses the <code>awsvpc</code> network mode
-    /// or if the service is configured to use service discovery, an external deployment
-    /// controller, multiple target groups, or Elastic Inference accelerators in which case
-    /// you should not specify a role here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+    /// used for your service unless you specify a role here. The service-linked role is
+    /// required if your task definition uses the <code>awsvpc</code> network mode or if the
+    /// service is configured to use service discovery, an external deployment controller,
+    /// multiple target groups, or Elastic Inference accelerators in which case you don't
+    /// specify a role here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
     /// service-linked roles for Amazon ECS</a> in the
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </important>
@@ -18027,38 +18284,40 @@ impl CreateServiceInput {
         self.deployment_configuration.as_ref()
     }
     /// <p>An array of placement constraint objects to use for tasks in your service. You can
-    /// specify a maximum of 10 constraints per task (this limit includes constraints in the
-    /// task definition and those specified at runtime).</p>
+    /// specify a maximum of 10 constraints for each task. This limit includes constraints in
+    /// the task definition and those specified at runtime.</p>
     pub fn placement_constraints(
         &self,
     ) -> std::option::Option<&[crate::model::PlacementConstraint]> {
         self.placement_constraints.as_deref()
     }
     /// <p>The placement strategy objects to use for tasks in your service. You can specify a
-    /// maximum of 5 strategy rules per service.</p>
+    /// maximum of 5 strategy rules for each service.</p>
     pub fn placement_strategy(&self) -> std::option::Option<&[crate::model::PlacementStrategy]> {
         self.placement_strategy.as_deref()
     }
     /// <p>The network configuration for the service. This parameter is required for task
     /// definitions that use the <code>awsvpc</code> network mode to receive their own elastic
-    /// network interface, and it is not supported for other network modes. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
+    /// network interface, and it isn't supported for other network modes. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
     /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn network_configuration(
         &self,
     ) -> std::option::Option<&crate::model::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
-    /// <p>The period of time, in seconds, that the Amazon ECS service scheduler should ignore
-    /// unhealthy Elastic Load Balancing target health checks after a task has first started. This is only used
-    /// when your service is configured to use a load balancer. If your service has a load
-    /// balancer defined and you don't specify a health check grace period value, the default
-    /// value of <code>0</code> is used.</p>
+    /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
+    /// Elastic Load Balancing target health checks after a task has first started. This is only used when your
+    /// service is configured to use a load balancer. If your service has a load balancer
+    /// defined and you don't specify a health check grace period value, the default value of
+    /// <code>0</code> is used.</p>
     /// <p>If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you
-    /// can specify a health check grace period of up to 2,147,483,647 seconds. During that
-    /// time, the Amazon ECS service scheduler ignores health check status. This grace period can
-    /// prevent the service scheduler from marking tasks as unhealthy and stopping them before
-    /// they have time to come up.</p>
+    /// can specify a health check grace period of up to
+    /// 2,147,483,647
+    /// seconds (about 69 years). During that time, the Amazon ECS service
+    /// scheduler ignores health check status. This grace period can prevent the service
+    /// scheduler from marking tasks as unhealthy and stopping them before they have time to
+    /// come up.</p>
     pub fn health_check_grace_period_seconds(&self) -> std::option::Option<i32> {
         self.health_check_grace_period_seconds
     }
@@ -18071,9 +18330,8 @@ impl CreateServiceInput {
     /// maintains the desired number of tasks across your cluster. By default, the
     /// service scheduler spreads tasks across Availability Zones. You can use task
     /// placement strategies and constraints to customize task placement decisions. This
-    /// scheduler strategy is required if the service is using the
-    /// <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller
-    /// types.</p>
+    /// scheduler strategy is required if the service uses the <code>CODE_DEPLOY</code>
+    /// or <code>EXTERNAL</code> deployment controller types.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -18081,7 +18339,7 @@ impl CreateServiceInput {
     /// task on each active container instance that meets all of the task placement
     /// constraints that you specify in your cluster. The service scheduler also
     /// evaluates the task placement constraints for running tasks and will stop tasks
-    /// that do not meet the placement constraints. When you're using this strategy, you
+    /// that don't meet the placement constraints. When you're using this strategy, you
     /// don't need to specify a desired number of tasks, a task placement strategy, or
     /// use Service Auto Scaling policies.</p>
     /// <note>
@@ -18145,14 +18403,14 @@ impl CreateServiceInput {
         self.enable_ecs_managed_tags
     }
     /// <p>Specifies whether to propagate the tags from the task definition or the service to the
-    /// tasks in the service. If no value is specified, the tags are not propagated. Tags can
+    /// tasks in the service. If no value is specified, the tags aren't propagated. Tags can
     /// only be propagated to the tasks within the service during service creation. To add tags
-    /// to a task after service creation or task creation, use the <a>TagResource</a> API
-    /// action.</p>
+    /// to a task after service creation or task creation, use the <a>TagResource</a>
+    /// API action.</p>
     pub fn propagate_tags(&self) -> std::option::Option<&crate::model::PropagateTags> {
         self.propagate_tags.as_ref()
     }
-    /// <p>Whether or not the execute command functionality is enabled for the service. If
+    /// <p>Determines whether the execute command functionality is enabled for the service. If
     /// <code>true</code>, this enables execute command functionality on all containers in
     /// the service tasks.</p>
     pub fn enable_execute_command(&self) -> bool {
@@ -18198,11 +18456,11 @@ impl std::fmt::Debug for CreateServiceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterInput {
-    /// <p>The name of your cluster. If you do not specify a name for your cluster, you create a
-    /// cluster named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. </p>
+    /// <p>The name of your cluster. If you don't specify a name for your cluster, you create a
+    /// cluster that's named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. </p>
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The metadata that you apply to the cluster to help you categorize and organize them.
-    /// Each tag consists of a key and an optional value, both of which you define.</p>
+    /// Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -18236,11 +18494,12 @@ pub struct CreateClusterInput {
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The setting to use when creating a cluster. This parameter is used to enable CloudWatch
-    /// Container Insights for a cluster. If this value is specified, it will override the
+    /// Container Insights for a cluster. If this value is specified, it overrides the
     /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
     /// <a>PutAccountSettingDefault</a>.</p>
     pub settings: std::option::Option<std::vec::Vec<crate::model::ClusterSetting>>,
-    /// <p>The execute command configuration for the cluster.</p>
+    /// <p>The
+    /// execute command configuration for the cluster.</p>
     pub configuration: std::option::Option<crate::model::ClusterConfiguration>,
     /// <p>The short name of one or more capacity providers to associate with the cluster. A
     /// capacity provider must be associated with a cluster before it can be included as part of
@@ -18248,8 +18507,9 @@ pub struct CreateClusterInput {
     /// strategy when calling the <a>CreateService</a> or <a>RunTask</a>
     /// actions.</p>
     /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
-    /// provider must already be created and not already associated with another cluster. New
-    /// Auto Scaling group capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
+    /// provider must be created but not associated with another cluster. New Auto Scaling group
+    /// capacity providers can be created with the <a>CreateCapacityProvider</a> API
+    /// operation.</p>
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
     /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
     /// available to all accounts and only need to be associated with a cluster to be
@@ -18257,24 +18517,24 @@ pub struct CreateClusterInput {
     /// <p>The <a>PutClusterCapacityProviders</a> API operation is used to update the
     /// list of available capacity providers for a cluster after the cluster is created.</p>
     pub capacity_providers: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The capacity provider strategy to set as the default for the cluster. When a default
-    /// capacity provider strategy is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity
+    /// <p>The capacity provider strategy to set as the default for the cluster. After a default
+    /// capacity provider strategy is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity
     /// provider strategy or launch type specified, the default capacity provider strategy for
     /// the cluster is used.</p>
-    /// <p>If a default capacity provider strategy is not defined for a cluster during creation,
-    /// it can be defined later with the <a>PutClusterCapacityProviders</a> API
-    /// operation.</p>
+    /// <p>If a default capacity provider strategy isn't defined for a cluster when it was
+    /// created, it can be defined later with the <a>PutClusterCapacityProviders</a>
+    /// API operation.</p>
     pub default_capacity_provider_strategy:
         std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
 }
 impl CreateClusterInput {
-    /// <p>The name of your cluster. If you do not specify a name for your cluster, you create a
-    /// cluster named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. </p>
+    /// <p>The name of your cluster. If you don't specify a name for your cluster, you create a
+    /// cluster that's named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. </p>
     pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
     /// <p>The metadata that you apply to the cluster to help you categorize and organize them.
-    /// Each tag consists of a key and an optional value, both of which you define.</p>
+    /// Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -18310,13 +18570,14 @@ impl CreateClusterInput {
         self.tags.as_deref()
     }
     /// <p>The setting to use when creating a cluster. This parameter is used to enable CloudWatch
-    /// Container Insights for a cluster. If this value is specified, it will override the
+    /// Container Insights for a cluster. If this value is specified, it overrides the
     /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
     /// <a>PutAccountSettingDefault</a>.</p>
     pub fn settings(&self) -> std::option::Option<&[crate::model::ClusterSetting]> {
         self.settings.as_deref()
     }
-    /// <p>The execute command configuration for the cluster.</p>
+    /// <p>The
+    /// execute command configuration for the cluster.</p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::ClusterConfiguration> {
         self.configuration.as_ref()
     }
@@ -18326,8 +18587,9 @@ impl CreateClusterInput {
     /// strategy when calling the <a>CreateService</a> or <a>RunTask</a>
     /// actions.</p>
     /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
-    /// provider must already be created and not already associated with another cluster. New
-    /// Auto Scaling group capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
+    /// provider must be created but not associated with another cluster. New Auto Scaling group
+    /// capacity providers can be created with the <a>CreateCapacityProvider</a> API
+    /// operation.</p>
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
     /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
     /// available to all accounts and only need to be associated with a cluster to be
@@ -18337,13 +18599,13 @@ impl CreateClusterInput {
     pub fn capacity_providers(&self) -> std::option::Option<&[std::string::String]> {
         self.capacity_providers.as_deref()
     }
-    /// <p>The capacity provider strategy to set as the default for the cluster. When a default
-    /// capacity provider strategy is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity
+    /// <p>The capacity provider strategy to set as the default for the cluster. After a default
+    /// capacity provider strategy is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity
     /// provider strategy or launch type specified, the default capacity provider strategy for
     /// the cluster is used.</p>
-    /// <p>If a default capacity provider strategy is not defined for a cluster during creation,
-    /// it can be defined later with the <a>PutClusterCapacityProviders</a> API
-    /// operation.</p>
+    /// <p>If a default capacity provider strategy isn't defined for a cluster when it was
+    /// created, it can be defined later with the <a>PutClusterCapacityProviders</a>
+    /// API operation.</p>
     pub fn default_capacity_provider_strategy(
         &self,
     ) -> std::option::Option<&[crate::model::CapacityProviderStrategyItem]> {
@@ -18370,15 +18632,16 @@ impl std::fmt::Debug for CreateClusterInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCapacityProviderInput {
-    /// <p>The name of the capacity provider. Up to 255 characters are allowed, including letters
-    /// (upper and lowercase), numbers, underscores, and hyphens. The name cannot be prefixed
-    /// with "<code>aws</code>", "<code>ecs</code>", or "<code>fargate</code>".</p>
+    /// <p>The name of the capacity provider. Up to 255 characters are allowed. They include
+    /// letters (both upper and lowercase letters), numbers, underscores (_), and hyphens (-).
+    /// The name can't be prefixed with "<code>aws</code>", "<code>ecs</code>", or
+    /// "<code>fargate</code>".</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The details of the Auto Scaling group for the capacity provider.</p>
     pub auto_scaling_group_provider: std::option::Option<crate::model::AutoScalingGroupProvider>,
-    /// <p>The metadata that you apply to the capacity provider to help you categorize and
-    /// organize them. Each tag consists of a key and an optional value, both of which you
-    /// define.</p>
+    /// <p>The metadata that you apply to the capacity provider to categorize and organize them
+    /// more conveniently. Each tag consists of a key and an optional value. You define both of
+    /// them.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -18413,9 +18676,10 @@ pub struct CreateCapacityProviderInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateCapacityProviderInput {
-    /// <p>The name of the capacity provider. Up to 255 characters are allowed, including letters
-    /// (upper and lowercase), numbers, underscores, and hyphens. The name cannot be prefixed
-    /// with "<code>aws</code>", "<code>ecs</code>", or "<code>fargate</code>".</p>
+    /// <p>The name of the capacity provider. Up to 255 characters are allowed. They include
+    /// letters (both upper and lowercase letters), numbers, underscores (_), and hyphens (-).
+    /// The name can't be prefixed with "<code>aws</code>", "<code>ecs</code>", or
+    /// "<code>fargate</code>".</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -18425,9 +18689,9 @@ impl CreateCapacityProviderInput {
     ) -> std::option::Option<&crate::model::AutoScalingGroupProvider> {
         self.auto_scaling_group_provider.as_ref()
     }
-    /// <p>The metadata that you apply to the capacity provider to help you categorize and
-    /// organize them. Each tag consists of a key and an optional value, both of which you
-    /// define.</p>
+    /// <p>The metadata that you apply to the capacity provider to categorize and organize them
+    /// more conveniently. Each tag consists of a key and an optional value. You define both of
+    /// them.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>

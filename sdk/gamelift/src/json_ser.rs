@@ -923,12 +923,12 @@ pub fn serialize_structure_crate_input_describe_fleet_events_input(
     if let Some(var_211) = &input.start_time {
         object
             .key("StartTime")
-            .instant(var_211, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_211, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_212) = &input.end_time {
         object
             .key("EndTime")
-            .instant(var_212, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_212, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_213) = &input.limit {
         object.key("Limit").number(

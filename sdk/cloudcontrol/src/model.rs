@@ -50,7 +50,7 @@ pub struct ProgressEvent {
     /// </ul>
     pub operation_status: std::option::Option<crate::model::OperationStatus>,
     /// <p>When the resource operation request was initiated.</p>
-    pub event_time: std::option::Option<aws_smithy_types::Instant>,
+    pub event_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A JSON string containing the resource model, consisting of each resource property and its
     /// current value.</p>
     pub resource_model: std::option::Option<std::string::String>,
@@ -61,7 +61,7 @@ pub struct ProgressEvent {
     /// Line Interface User Guide for Extension Development</i>.</p>
     pub error_code: std::option::Option<crate::model::HandlerErrorCode>,
     /// <p>When to next request the status of this resource operation request.</p>
-    pub retry_after: std::option::Option<aws_smithy_types::Instant>,
+    pub retry_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ProgressEvent {
     /// <p>The name of the resource type used in the operation.</p>
@@ -119,7 +119,7 @@ impl ProgressEvent {
         self.operation_status.as_ref()
     }
     /// <p>When the resource operation request was initiated.</p>
-    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>A JSON string containing the resource model, consisting of each resource property and its
@@ -138,7 +138,7 @@ impl ProgressEvent {
         self.error_code.as_ref()
     }
     /// <p>When to next request the status of this resource operation request.</p>
-    pub fn retry_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn retry_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.retry_after.as_ref()
     }
 }
@@ -169,11 +169,11 @@ pub mod progress_event {
         pub(crate) request_token: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<crate::model::Operation>,
         pub(crate) operation_status: std::option::Option<crate::model::OperationStatus>,
-        pub(crate) event_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) event_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) resource_model: std::option::Option<std::string::String>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<crate::model::HandlerErrorCode>,
-        pub(crate) retry_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) retry_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the resource type used in the operation.</p>
@@ -304,14 +304,14 @@ pub mod progress_event {
             self
         }
         /// <p>When the resource operation request was initiated.</p>
-        pub fn event_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_time = Some(input);
             self
         }
         /// <p>When the resource operation request was initiated.</p>
         pub fn set_event_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.event_time = input;
             self
@@ -362,14 +362,14 @@ pub mod progress_event {
             self
         }
         /// <p>When to next request the status of this resource operation request.</p>
-        pub fn retry_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn retry_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.retry_after = Some(input);
             self
         }
         /// <p>When to next request the status of this resource operation request.</p>
         pub fn set_retry_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.retry_after = input;
             self

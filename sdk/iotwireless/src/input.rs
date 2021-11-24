@@ -80,6 +80,7 @@ pub type AssociateAwsAccountWithPartnerAccountInputOperationRetryAlias =
 impl AssociateAwsAccountWithPartnerAccountInput {
     /// Consumes the builder and constructs an Operation<[`AssociateAwsAccountWithPartnerAccount`](crate::operation::AssociateAwsAccountWithPartnerAccount)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -135,11 +136,14 @@ impl AssociateAwsAccountWithPartnerAccountInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -187,6 +191,558 @@ impl AssociateAwsAccountWithPartnerAccountInput {
     /// Creates a new builder-style object to manufacture [`AssociateAwsAccountWithPartnerAccountInput`](crate::input::AssociateAwsAccountWithPartnerAccountInput)
     pub fn builder() -> crate::input::associate_aws_account_with_partner_account_input::Builder {
         crate::input::associate_aws_account_with_partner_account_input::Builder::default()
+    }
+}
+
+/// See [`AssociateMulticastGroupWithFuotaTaskInput`](crate::input::AssociateMulticastGroupWithFuotaTaskInput)
+pub mod associate_multicast_group_with_fuota_task_input {
+    /// A builder for [`AssociateMulticastGroupWithFuotaTaskInput`](crate::input::AssociateMulticastGroupWithFuotaTaskInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) multicast_group_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn multicast_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.multicast_group_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_multicast_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.multicast_group_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateMulticastGroupWithFuotaTaskInput`](crate::input::AssociateMulticastGroupWithFuotaTaskInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::AssociateMulticastGroupWithFuotaTaskInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::AssociateMulticastGroupWithFuotaTaskInput {
+                id: self.id,
+                multicast_group_id: self.multicast_group_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type AssociateMulticastGroupWithFuotaTaskInputOperationOutputAlias =
+    crate::operation::AssociateMulticastGroupWithFuotaTask;
+#[doc(hidden)]
+pub type AssociateMulticastGroupWithFuotaTaskInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl AssociateMulticastGroupWithFuotaTaskInput {
+    /// Consumes the builder and constructs an Operation<[`AssociateMulticastGroupWithFuotaTask`](crate::operation::AssociateMulticastGroupWithFuotaTask)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AssociateMulticastGroupWithFuotaTask,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::AssociateMulticastGroupWithFuotaTaskInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_1 = &_input.id;
+            let input_1 =
+                input_1
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_1, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/fuota-tasks/{Id}/multicast-group", Id = id)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::AssociateMulticastGroupWithFuotaTaskInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::AssociateMulticastGroupWithFuotaTaskInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_associate_multicast_group_with_fuota_task(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssociateMulticastGroupWithFuotaTask::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AssociateMulticastGroupWithFuotaTask",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`AssociateMulticastGroupWithFuotaTaskInput`](crate::input::AssociateMulticastGroupWithFuotaTaskInput)
+    pub fn builder() -> crate::input::associate_multicast_group_with_fuota_task_input::Builder {
+        crate::input::associate_multicast_group_with_fuota_task_input::Builder::default()
+    }
+}
+
+/// See [`AssociateWirelessDeviceWithFuotaTaskInput`](crate::input::AssociateWirelessDeviceWithFuotaTaskInput)
+pub mod associate_wireless_device_with_fuota_task_input {
+    /// A builder for [`AssociateWirelessDeviceWithFuotaTaskInput`](crate::input::AssociateWirelessDeviceWithFuotaTaskInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) wireless_device_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The ID of the wireless device.</p>
+        pub fn wireless_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.wireless_device_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the wireless device.</p>
+        pub fn set_wireless_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.wireless_device_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateWirelessDeviceWithFuotaTaskInput`](crate::input::AssociateWirelessDeviceWithFuotaTaskInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::AssociateWirelessDeviceWithFuotaTaskInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::AssociateWirelessDeviceWithFuotaTaskInput {
+                id: self.id,
+                wireless_device_id: self.wireless_device_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type AssociateWirelessDeviceWithFuotaTaskInputOperationOutputAlias =
+    crate::operation::AssociateWirelessDeviceWithFuotaTask;
+#[doc(hidden)]
+pub type AssociateWirelessDeviceWithFuotaTaskInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl AssociateWirelessDeviceWithFuotaTaskInput {
+    /// Consumes the builder and constructs an Operation<[`AssociateWirelessDeviceWithFuotaTask`](crate::operation::AssociateWirelessDeviceWithFuotaTask)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AssociateWirelessDeviceWithFuotaTask,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::AssociateWirelessDeviceWithFuotaTaskInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_2 = &_input.id;
+            let input_2 =
+                input_2
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_2, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/fuota-tasks/{Id}/wireless-device", Id = id)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::AssociateWirelessDeviceWithFuotaTaskInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::AssociateWirelessDeviceWithFuotaTaskInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_associate_wireless_device_with_fuota_task(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssociateWirelessDeviceWithFuotaTask::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AssociateWirelessDeviceWithFuotaTask",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithFuotaTaskInput`](crate::input::AssociateWirelessDeviceWithFuotaTaskInput)
+    pub fn builder() -> crate::input::associate_wireless_device_with_fuota_task_input::Builder {
+        crate::input::associate_wireless_device_with_fuota_task_input::Builder::default()
+    }
+}
+
+/// See [`AssociateWirelessDeviceWithMulticastGroupInput`](crate::input::AssociateWirelessDeviceWithMulticastGroupInput)
+pub mod associate_wireless_device_with_multicast_group_input {
+    /// A builder for [`AssociateWirelessDeviceWithMulticastGroupInput`](crate::input::AssociateWirelessDeviceWithMulticastGroupInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) wireless_device_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The ID of the wireless device.</p>
+        pub fn wireless_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.wireless_device_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the wireless device.</p>
+        pub fn set_wireless_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.wireless_device_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateWirelessDeviceWithMulticastGroupInput`](crate::input::AssociateWirelessDeviceWithMulticastGroupInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::AssociateWirelessDeviceWithMulticastGroupInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(
+                crate::input::AssociateWirelessDeviceWithMulticastGroupInput {
+                    id: self.id,
+                    wireless_device_id: self.wireless_device_id,
+                },
+            )
+        }
+    }
+}
+#[doc(hidden)]
+pub type AssociateWirelessDeviceWithMulticastGroupInputOperationOutputAlias =
+    crate::operation::AssociateWirelessDeviceWithMulticastGroup;
+#[doc(hidden)]
+pub type AssociateWirelessDeviceWithMulticastGroupInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl AssociateWirelessDeviceWithMulticastGroupInput {
+    /// Consumes the builder and constructs an Operation<[`AssociateWirelessDeviceWithMulticastGroup`](crate::operation::AssociateWirelessDeviceWithMulticastGroup)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AssociateWirelessDeviceWithMulticastGroup,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::AssociateWirelessDeviceWithMulticastGroupInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_3 = &_input.id;
+            let input_3 =
+                input_3
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_3, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/multicast-groups/{Id}/wireless-device", Id = id)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::AssociateWirelessDeviceWithMulticastGroupInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::AssociateWirelessDeviceWithMulticastGroupInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_associate_wireless_device_with_multicast_group(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssociateWirelessDeviceWithMulticastGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AssociateWirelessDeviceWithMulticastGroup",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithMulticastGroupInput`](crate::input::AssociateWirelessDeviceWithMulticastGroupInput)
+    pub fn builder() -> crate::input::associate_wireless_device_with_multicast_group_input::Builder
+    {
+        crate::input::associate_wireless_device_with_multicast_group_input::Builder::default()
     }
 }
 
@@ -242,6 +798,7 @@ pub type AssociateWirelessDeviceWithThingInputOperationRetryAlias = aws_http::Aw
 impl AssociateWirelessDeviceWithThingInput {
     /// Consumes the builder and constructs an Operation<[`AssociateWirelessDeviceWithThing`](crate::operation::AssociateWirelessDeviceWithThing)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -256,15 +813,15 @@ impl AssociateWirelessDeviceWithThingInput {
             _input: &crate::input::AssociateWirelessDeviceWithThingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_1 = &_input.id;
-            let input_1 =
-                input_1
+            let input_4 = &_input.id;
+            let input_4 =
+                input_4
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_1, false);
+            let id = aws_smithy_http::label::fmt_string(input_4, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -310,11 +867,14 @@ impl AssociateWirelessDeviceWithThingInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -421,6 +981,7 @@ pub type AssociateWirelessGatewayWithCertificateInputOperationRetryAlias =
 impl AssociateWirelessGatewayWithCertificateInput {
     /// Consumes the builder and constructs an Operation<[`AssociateWirelessGatewayWithCertificate`](crate::operation::AssociateWirelessGatewayWithCertificate)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -435,15 +996,15 @@ impl AssociateWirelessGatewayWithCertificateInput {
             _input: &crate::input::AssociateWirelessGatewayWithCertificateInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_2 = &_input.id;
-            let input_2 =
-                input_2
+            let input_5 = &_input.id;
+            let input_5 =
+                input_5
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_2, false);
+            let id = aws_smithy_http::label::fmt_string(input_5, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -489,11 +1050,14 @@ impl AssociateWirelessGatewayWithCertificateInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -596,6 +1160,7 @@ pub type AssociateWirelessGatewayWithThingInputOperationRetryAlias = aws_http::A
 impl AssociateWirelessGatewayWithThingInput {
     /// Consumes the builder and constructs an Operation<[`AssociateWirelessGatewayWithThing`](crate::operation::AssociateWirelessGatewayWithThing)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -610,15 +1175,15 @@ impl AssociateWirelessGatewayWithThingInput {
             _input: &crate::input::AssociateWirelessGatewayWithThingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_3 = &_input.id;
-            let input_3 =
-                input_3
+            let input_6 = &_input.id;
+            let input_6 =
+                input_6
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_3, false);
+            let id = aws_smithy_http::label::fmt_string(input_6, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -664,11 +1229,14 @@ impl AssociateWirelessGatewayWithThingInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -716,6 +1284,156 @@ impl AssociateWirelessGatewayWithThingInput {
     /// Creates a new builder-style object to manufacture [`AssociateWirelessGatewayWithThingInput`](crate::input::AssociateWirelessGatewayWithThingInput)
     pub fn builder() -> crate::input::associate_wireless_gateway_with_thing_input::Builder {
         crate::input::associate_wireless_gateway_with_thing_input::Builder::default()
+    }
+}
+
+/// See [`CancelMulticastGroupSessionInput`](crate::input::CancelMulticastGroupSessionInput)
+pub mod cancel_multicast_group_session_input {
+    /// A builder for [`CancelMulticastGroupSessionInput`](crate::input::CancelMulticastGroupSessionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CancelMulticastGroupSessionInput`](crate::input::CancelMulticastGroupSessionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CancelMulticastGroupSessionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CancelMulticastGroupSessionInput { id: self.id })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CancelMulticastGroupSessionInputOperationOutputAlias =
+    crate::operation::CancelMulticastGroupSession;
+#[doc(hidden)]
+pub type CancelMulticastGroupSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CancelMulticastGroupSessionInput {
+    /// Consumes the builder and constructs an Operation<[`CancelMulticastGroupSession`](crate::operation::CancelMulticastGroupSession)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CancelMulticastGroupSession,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CancelMulticastGroupSessionInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_7 = &_input.id;
+            let input_7 =
+                input_7
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_7, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/multicast-groups/{Id}/session", Id = id)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CancelMulticastGroupSessionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CancelMulticastGroupSessionInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CancelMulticastGroupSession::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CancelMulticastGroupSession",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CancelMulticastGroupSessionInput`](crate::input::CancelMulticastGroupSessionInput)
+    pub fn builder() -> crate::input::cancel_multicast_group_session_input::Builder {
+        crate::input::cancel_multicast_group_session_input::Builder::default()
     }
 }
 
@@ -845,6 +1563,7 @@ pub type CreateDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl CreateDestinationInput {
     /// Consumes the builder and constructs an Operation<[`CreateDestination`](crate::operation::CreateDestination)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -899,11 +1618,14 @@ impl CreateDestinationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1044,6 +1766,7 @@ pub type CreateDeviceProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl CreateDeviceProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeviceProfile`](crate::operation::CreateDeviceProfile)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -1098,11 +1821,14 @@ impl CreateDeviceProfileInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1150,6 +1876,472 @@ impl CreateDeviceProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateDeviceProfileInput`](crate::input::CreateDeviceProfileInput)
     pub fn builder() -> crate::input::create_device_profile_input::Builder {
         crate::input::create_device_profile_input::Builder::default()
+    }
+}
+
+/// See [`CreateFuotaTaskInput`](crate::input::CreateFuotaTaskInput)
+pub mod create_fuota_task_input {
+    /// A builder for [`CreateFuotaTaskInput`](crate::input::CreateFuotaTaskInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanFuotaTask>,
+        pub(crate) firmware_update_image: std::option::Option<std::string::String>,
+        pub(crate) firmware_update_role: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The name of a FUOTA task.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of a FUOTA task.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the new resource.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the new resource.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// <p>The LoRaWAN information used with a FUOTA task.</p>
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanFuotaTask) -> Self {
+            self.lo_ra_wan = Some(input);
+            self
+        }
+        /// <p>The LoRaWAN information used with a FUOTA task.</p>
+        pub fn set_lo_ra_wan(
+            mut self,
+            input: std::option::Option<crate::model::LoRaWanFuotaTask>,
+        ) -> Self {
+            self.lo_ra_wan = input;
+            self
+        }
+        /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+        pub fn firmware_update_image(mut self, input: impl Into<std::string::String>) -> Self {
+            self.firmware_update_image = Some(input.into());
+            self
+        }
+        /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+        pub fn set_firmware_update_image(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firmware_update_image = input;
+            self
+        }
+        /// <p>The firmware update role that is to be used with a FUOTA task.</p>
+        pub fn firmware_update_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.firmware_update_role = Some(input.into());
+            self
+        }
+        /// <p>The firmware update role that is to be used with a FUOTA task.</p>
+        pub fn set_firmware_update_role(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firmware_update_role = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateFuotaTaskInput`](crate::input::CreateFuotaTaskInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateFuotaTaskInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateFuotaTaskInput {
+                name: self.name,
+                description: self.description,
+                client_request_token: self.client_request_token,
+                lo_ra_wan: self.lo_ra_wan,
+                firmware_update_image: self.firmware_update_image,
+                firmware_update_role: self.firmware_update_role,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateFuotaTaskInputOperationOutputAlias = crate::operation::CreateFuotaTask;
+#[doc(hidden)]
+pub type CreateFuotaTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateFuotaTaskInput {
+    /// Consumes the builder and constructs an Operation<[`CreateFuotaTask`](crate::operation::CreateFuotaTask)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateFuotaTask,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CreateFuotaTaskInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/fuota-tasks").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateFuotaTaskInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateFuotaTaskInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_request_token.is_none() {
+            self.client_request_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_fuota_task(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateFuotaTask::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateFuotaTask",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateFuotaTaskInput`](crate::input::CreateFuotaTaskInput)
+    pub fn builder() -> crate::input::create_fuota_task_input::Builder {
+        crate::input::create_fuota_task_input::Builder::default()
+    }
+}
+
+/// See [`CreateMulticastGroupInput`](crate::input::CreateMulticastGroupInput)
+pub mod create_multicast_group_input {
+    /// A builder for [`CreateMulticastGroupInput`](crate::input::CreateMulticastGroupInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticast>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The name of the multicast group.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the multicast group.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the multicast group.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the multicast group.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the
+        /// same token as a resource that already exists, an exception occurs. If you omit this value,
+        /// AWS SDKs will automatically generate a unique client request. </p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the
+        /// same token as a resource that already exists, an exception occurs. If you omit this value,
+        /// AWS SDKs will automatically generate a unique client request. </p>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanMulticast) -> Self {
+            self.lo_ra_wan = Some(input);
+            self
+        }
+        /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
+        pub fn set_lo_ra_wan(
+            mut self,
+            input: std::option::Option<crate::model::LoRaWanMulticast>,
+        ) -> Self {
+            self.lo_ra_wan = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateMulticastGroupInput`](crate::input::CreateMulticastGroupInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateMulticastGroupInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateMulticastGroupInput {
+                name: self.name,
+                description: self.description,
+                client_request_token: self.client_request_token,
+                lo_ra_wan: self.lo_ra_wan,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateMulticastGroupInputOperationOutputAlias = crate::operation::CreateMulticastGroup;
+#[doc(hidden)]
+pub type CreateMulticastGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateMulticastGroupInput {
+    /// Consumes the builder and constructs an Operation<[`CreateMulticastGroup`](crate::operation::CreateMulticastGroup)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateMulticastGroup,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CreateMulticastGroupInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/multicast-groups").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateMulticastGroupInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateMulticastGroupInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_request_token.is_none() {
+            self.client_request_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_multicast_group(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateMulticastGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateMulticastGroup",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateMulticastGroupInput`](crate::input::CreateMulticastGroupInput)
+    pub fn builder() -> crate::input::create_multicast_group_input::Builder {
+        crate::input::create_multicast_group_input::Builder::default()
     }
 }
 
@@ -1243,6 +2435,7 @@ pub type CreateServiceProfileInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl CreateServiceProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateServiceProfile`](crate::operation::CreateServiceProfile)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -1299,11 +2492,14 @@ impl CreateServiceProfileInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1486,6 +2682,7 @@ pub type CreateWirelessDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl CreateWirelessDeviceInput {
     /// Consumes the builder and constructs an Operation<[`CreateWirelessDevice`](crate::operation::CreateWirelessDevice)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -1542,11 +2739,14 @@ impl CreateWirelessDeviceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1699,6 +2899,7 @@ pub type CreateWirelessGatewayInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl CreateWirelessGatewayInput {
     /// Consumes the builder and constructs an Operation<[`CreateWirelessGateway`](crate::operation::CreateWirelessGateway)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -1755,11 +2956,14 @@ impl CreateWirelessGatewayInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1868,6 +3072,7 @@ pub type CreateWirelessGatewayTaskInputOperationRetryAlias = aws_http::AwsErrorR
 impl CreateWirelessGatewayTaskInput {
     /// Consumes the builder and constructs an Operation<[`CreateWirelessGatewayTask`](crate::operation::CreateWirelessGatewayTask)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1882,15 +3087,15 @@ impl CreateWirelessGatewayTaskInput {
             _input: &crate::input::CreateWirelessGatewayTaskInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_4 = &_input.id;
-            let input_4 =
-                input_4
+            let input_8 = &_input.id;
+            let input_8 =
+                input_8
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_4, false);
+            let id = aws_smithy_http::label::fmt_string(input_8, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -1937,11 +3142,14 @@ impl CreateWirelessGatewayTaskInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2096,6 +3304,7 @@ pub type CreateWirelessGatewayTaskDefinitionInputOperationRetryAlias =
 impl CreateWirelessGatewayTaskDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`CreateWirelessGatewayTaskDefinition`](crate::operation::CreateWirelessGatewayTaskDefinition)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -2152,11 +3361,14 @@ impl CreateWirelessGatewayTaskDefinitionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2244,6 +3456,7 @@ pub type DeleteDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl DeleteDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDestination`](crate::operation::DeleteDestination)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2258,15 +3471,15 @@ impl DeleteDestinationInput {
             _input: &crate::input::DeleteDestinationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_5 = &_input.name;
-            let input_5 =
-                input_5
+            let input_9 = &_input.name;
+            let input_9 =
+                input_9
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_5, false);
+            let name = aws_smithy_http::label::fmt_string(input_9, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -2304,11 +3517,14 @@ impl DeleteDestinationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2388,6 +3604,7 @@ pub type DeleteDeviceProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl DeleteDeviceProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDeviceProfile`](crate::operation::DeleteDeviceProfile)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2402,15 +3619,15 @@ impl DeleteDeviceProfileInput {
             _input: &crate::input::DeleteDeviceProfileInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_6 = &_input.id;
-            let input_6 =
-                input_6
+            let input_10 = &_input.id;
+            let input_10 =
+                input_10
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_6, false);
+            let id = aws_smithy_http::label::fmt_string(input_10, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -2448,11 +3665,14 @@ impl DeleteDeviceProfileInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2495,6 +3715,302 @@ impl DeleteDeviceProfileInput {
     }
 }
 
+/// See [`DeleteFuotaTaskInput`](crate::input::DeleteFuotaTaskInput)
+pub mod delete_fuota_task_input {
+    /// A builder for [`DeleteFuotaTaskInput`](crate::input::DeleteFuotaTaskInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteFuotaTaskInput`](crate::input::DeleteFuotaTaskInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteFuotaTaskInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteFuotaTaskInput { id: self.id })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteFuotaTaskInputOperationOutputAlias = crate::operation::DeleteFuotaTask;
+#[doc(hidden)]
+pub type DeleteFuotaTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteFuotaTaskInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteFuotaTask`](crate::operation::DeleteFuotaTask)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteFuotaTask,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteFuotaTaskInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_11 = &_input.id;
+            let input_11 =
+                input_11
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_11, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/fuota-tasks/{Id}", Id = id).expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteFuotaTaskInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteFuotaTaskInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteFuotaTask::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteFuotaTask",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteFuotaTaskInput`](crate::input::DeleteFuotaTaskInput)
+    pub fn builder() -> crate::input::delete_fuota_task_input::Builder {
+        crate::input::delete_fuota_task_input::Builder::default()
+    }
+}
+
+/// See [`DeleteMulticastGroupInput`](crate::input::DeleteMulticastGroupInput)
+pub mod delete_multicast_group_input {
+    /// A builder for [`DeleteMulticastGroupInput`](crate::input::DeleteMulticastGroupInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteMulticastGroupInput`](crate::input::DeleteMulticastGroupInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteMulticastGroupInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteMulticastGroupInput { id: self.id })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteMulticastGroupInputOperationOutputAlias = crate::operation::DeleteMulticastGroup;
+#[doc(hidden)]
+pub type DeleteMulticastGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteMulticastGroupInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteMulticastGroup`](crate::operation::DeleteMulticastGroup)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteMulticastGroup,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteMulticastGroupInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_12 = &_input.id;
+            let input_12 =
+                input_12
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_12, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/multicast-groups/{Id}", Id = id).expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteMulticastGroupInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteMulticastGroupInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteMulticastGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteMulticastGroup",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteMulticastGroupInput`](crate::input::DeleteMulticastGroupInput)
+    pub fn builder() -> crate::input::delete_multicast_group_input::Builder {
+        crate::input::delete_multicast_group_input::Builder::default()
+    }
+}
+
 /// See [`DeleteServiceProfileInput`](crate::input::DeleteServiceProfileInput)
 pub mod delete_service_profile_input {
     /// A builder for [`DeleteServiceProfileInput`](crate::input::DeleteServiceProfileInput)
@@ -2532,6 +4048,7 @@ pub type DeleteServiceProfileInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl DeleteServiceProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteServiceProfile`](crate::operation::DeleteServiceProfile)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2546,15 +4063,15 @@ impl DeleteServiceProfileInput {
             _input: &crate::input::DeleteServiceProfileInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_7 = &_input.id;
-            let input_7 =
-                input_7
+            let input_13 = &_input.id;
+            let input_13 =
+                input_13
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_7, false);
+            let id = aws_smithy_http::label::fmt_string(input_13, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -2592,11 +4109,14 @@ impl DeleteServiceProfileInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2676,6 +4196,7 @@ pub type DeleteWirelessDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl DeleteWirelessDeviceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWirelessDevice`](crate::operation::DeleteWirelessDevice)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2690,15 +4211,15 @@ impl DeleteWirelessDeviceInput {
             _input: &crate::input::DeleteWirelessDeviceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_8 = &_input.id;
-            let input_8 =
-                input_8
+            let input_14 = &_input.id;
+            let input_14 =
+                input_14
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_8, false);
+            let id = aws_smithy_http::label::fmt_string(input_14, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -2736,11 +4257,14 @@ impl DeleteWirelessDeviceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2820,6 +4344,7 @@ pub type DeleteWirelessGatewayInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl DeleteWirelessGatewayInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWirelessGateway`](crate::operation::DeleteWirelessGateway)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2834,15 +4359,15 @@ impl DeleteWirelessGatewayInput {
             _input: &crate::input::DeleteWirelessGatewayInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_9 = &_input.id;
-            let input_9 =
-                input_9
+            let input_15 = &_input.id;
+            let input_15 =
+                input_15
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_9, false);
+            let id = aws_smithy_http::label::fmt_string(input_15, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -2880,11 +4405,14 @@ impl DeleteWirelessGatewayInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2965,6 +4493,7 @@ pub type DeleteWirelessGatewayTaskInputOperationRetryAlias = aws_http::AwsErrorR
 impl DeleteWirelessGatewayTaskInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWirelessGatewayTask`](crate::operation::DeleteWirelessGatewayTask)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2979,15 +4508,15 @@ impl DeleteWirelessGatewayTaskInput {
             _input: &crate::input::DeleteWirelessGatewayTaskInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_10 = &_input.id;
-            let input_10 =
-                input_10
+            let input_16 = &_input.id;
+            let input_16 =
+                input_16
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_10, false);
+            let id = aws_smithy_http::label::fmt_string(input_16, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -3026,11 +4555,14 @@ impl DeleteWirelessGatewayTaskInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3112,6 +4644,7 @@ pub type DeleteWirelessGatewayTaskDefinitionInputOperationRetryAlias =
 impl DeleteWirelessGatewayTaskDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWirelessGatewayTaskDefinition`](crate::operation::DeleteWirelessGatewayTaskDefinition)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3126,15 +4659,15 @@ impl DeleteWirelessGatewayTaskDefinitionInput {
             _input: &crate::input::DeleteWirelessGatewayTaskDefinitionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_11 = &_input.id;
-            let input_11 =
-                input_11
+            let input_17 = &_input.id;
+            let input_17 =
+                input_17
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_11, false);
+            let id = aws_smithy_http::label::fmt_string(input_17, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -3173,11 +4706,14 @@ impl DeleteWirelessGatewayTaskDefinitionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3281,6 +4817,7 @@ pub type DisassociateAwsAccountFromPartnerAccountInputOperationRetryAlias =
 impl DisassociateAwsAccountFromPartnerAccountInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateAwsAccountFromPartnerAccount`](crate::operation::DisassociateAwsAccountFromPartnerAccount)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3295,15 +4832,15 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
             _input: &crate::input::DisassociateAwsAccountFromPartnerAccountInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_12 = &_input.partner_account_id;
-            let input_12 =
-                input_12
+            let input_18 = &_input.partner_account_id;
+            let input_18 =
+                input_18
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "partner_account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let partner_account_id = aws_smithy_http::label::fmt_string(input_12, false);
+            let partner_account_id = aws_smithy_http::label::fmt_string(input_18, false);
             if partner_account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "partner_account_id",
@@ -3321,14 +4858,15 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
         fn uri_query(
             _input: &crate::input::DisassociateAwsAccountFromPartnerAccountInput,
             mut output: &mut String,
-        ) {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_13) = &_input.partner_type {
+            if let Some(inner_19) = &_input.partner_type {
                 query.push_kv(
                     "partnerType",
-                    &aws_smithy_http::query::fmt_string(&inner_13),
+                    &aws_smithy_http::query::fmt_string(&inner_19),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -3338,7 +4876,7 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3359,11 +4897,14 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3406,6 +4947,573 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
     }
 }
 
+/// See [`DisassociateMulticastGroupFromFuotaTaskInput`](crate::input::DisassociateMulticastGroupFromFuotaTaskInput)
+pub mod disassociate_multicast_group_from_fuota_task_input {
+    /// A builder for [`DisassociateMulticastGroupFromFuotaTaskInput`](crate::input::DisassociateMulticastGroupFromFuotaTaskInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) multicast_group_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn multicast_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.multicast_group_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_multicast_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.multicast_group_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisassociateMulticastGroupFromFuotaTaskInput`](crate::input::DisassociateMulticastGroupFromFuotaTaskInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DisassociateMulticastGroupFromFuotaTaskInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DisassociateMulticastGroupFromFuotaTaskInput {
+                id: self.id,
+                multicast_group_id: self.multicast_group_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DisassociateMulticastGroupFromFuotaTaskInputOperationOutputAlias =
+    crate::operation::DisassociateMulticastGroupFromFuotaTask;
+#[doc(hidden)]
+pub type DisassociateMulticastGroupFromFuotaTaskInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl DisassociateMulticastGroupFromFuotaTaskInput {
+    /// Consumes the builder and constructs an Operation<[`DisassociateMulticastGroupFromFuotaTask`](crate::operation::DisassociateMulticastGroupFromFuotaTask)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DisassociateMulticastGroupFromFuotaTask,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DisassociateMulticastGroupFromFuotaTaskInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_20 = &_input.id;
+            let input_20 =
+                input_20
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_20, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_21 = &_input.multicast_group_id;
+            let input_21 =
+                input_21
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "multicast_group_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let multicast_group_id = aws_smithy_http::label::fmt_string(input_21, false);
+            if multicast_group_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "multicast_group_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/fuota-tasks/{Id}/multicast-groups/{MulticastGroupId}",
+                Id = id,
+                MulticastGroupId = multicast_group_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DisassociateMulticastGroupFromFuotaTaskInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DisassociateMulticastGroupFromFuotaTaskInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisassociateMulticastGroupFromFuotaTask::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DisassociateMulticastGroupFromFuotaTask",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DisassociateMulticastGroupFromFuotaTaskInput`](crate::input::DisassociateMulticastGroupFromFuotaTaskInput)
+    pub fn builder() -> crate::input::disassociate_multicast_group_from_fuota_task_input::Builder {
+        crate::input::disassociate_multicast_group_from_fuota_task_input::Builder::default()
+    }
+}
+
+/// See [`DisassociateWirelessDeviceFromFuotaTaskInput`](crate::input::DisassociateWirelessDeviceFromFuotaTaskInput)
+pub mod disassociate_wireless_device_from_fuota_task_input {
+    /// A builder for [`DisassociateWirelessDeviceFromFuotaTaskInput`](crate::input::DisassociateWirelessDeviceFromFuotaTaskInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) wireless_device_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The ID of the wireless device.</p>
+        pub fn wireless_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.wireless_device_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the wireless device.</p>
+        pub fn set_wireless_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.wireless_device_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisassociateWirelessDeviceFromFuotaTaskInput`](crate::input::DisassociateWirelessDeviceFromFuotaTaskInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DisassociateWirelessDeviceFromFuotaTaskInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DisassociateWirelessDeviceFromFuotaTaskInput {
+                id: self.id,
+                wireless_device_id: self.wireless_device_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DisassociateWirelessDeviceFromFuotaTaskInputOperationOutputAlias =
+    crate::operation::DisassociateWirelessDeviceFromFuotaTask;
+#[doc(hidden)]
+pub type DisassociateWirelessDeviceFromFuotaTaskInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl DisassociateWirelessDeviceFromFuotaTaskInput {
+    /// Consumes the builder and constructs an Operation<[`DisassociateWirelessDeviceFromFuotaTask`](crate::operation::DisassociateWirelessDeviceFromFuotaTask)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DisassociateWirelessDeviceFromFuotaTask,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DisassociateWirelessDeviceFromFuotaTaskInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_22 = &_input.id;
+            let input_22 =
+                input_22
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_22, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_23 = &_input.wireless_device_id;
+            let input_23 =
+                input_23
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "wireless_device_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let wireless_device_id = aws_smithy_http::label::fmt_string(input_23, false);
+            if wireless_device_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "wireless_device_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/fuota-tasks/{Id}/wireless-devices/{WirelessDeviceId}",
+                Id = id,
+                WirelessDeviceId = wireless_device_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DisassociateWirelessDeviceFromFuotaTaskInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DisassociateWirelessDeviceFromFuotaTaskInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisassociateWirelessDeviceFromFuotaTask::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DisassociateWirelessDeviceFromFuotaTask",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromFuotaTaskInput`](crate::input::DisassociateWirelessDeviceFromFuotaTaskInput)
+    pub fn builder() -> crate::input::disassociate_wireless_device_from_fuota_task_input::Builder {
+        crate::input::disassociate_wireless_device_from_fuota_task_input::Builder::default()
+    }
+}
+
+/// See [`DisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::DisassociateWirelessDeviceFromMulticastGroupInput)
+pub mod disassociate_wireless_device_from_multicast_group_input {
+    /// A builder for [`DisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::DisassociateWirelessDeviceFromMulticastGroupInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) wireless_device_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The ID of the wireless device.</p>
+        pub fn wireless_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.wireless_device_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the wireless device.</p>
+        pub fn set_wireless_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.wireless_device_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::DisassociateWirelessDeviceFromMulticastGroupInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DisassociateWirelessDeviceFromMulticastGroupInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(
+                crate::input::DisassociateWirelessDeviceFromMulticastGroupInput {
+                    id: self.id,
+                    wireless_device_id: self.wireless_device_id,
+                },
+            )
+        }
+    }
+}
+#[doc(hidden)]
+pub type DisassociateWirelessDeviceFromMulticastGroupInputOperationOutputAlias =
+    crate::operation::DisassociateWirelessDeviceFromMulticastGroup;
+#[doc(hidden)]
+pub type DisassociateWirelessDeviceFromMulticastGroupInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl DisassociateWirelessDeviceFromMulticastGroupInput {
+    /// Consumes the builder and constructs an Operation<[`DisassociateWirelessDeviceFromMulticastGroup`](crate::operation::DisassociateWirelessDeviceFromMulticastGroup)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DisassociateWirelessDeviceFromMulticastGroup,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DisassociateWirelessDeviceFromMulticastGroupInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_24 = &_input.id;
+            let input_24 =
+                input_24
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_24, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_25 = &_input.wireless_device_id;
+            let input_25 =
+                input_25
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "wireless_device_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let wireless_device_id = aws_smithy_http::label::fmt_string(input_25, false);
+            if wireless_device_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "wireless_device_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/multicast-groups/{Id}/wireless-devices/{WirelessDeviceId}",
+                Id = id,
+                WirelessDeviceId = wireless_device_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DisassociateWirelessDeviceFromMulticastGroupInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DisassociateWirelessDeviceFromMulticastGroupInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisassociateWirelessDeviceFromMulticastGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DisassociateWirelessDeviceFromMulticastGroup",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::DisassociateWirelessDeviceFromMulticastGroupInput)
+    pub fn builder(
+    ) -> crate::input::disassociate_wireless_device_from_multicast_group_input::Builder {
+        crate::input::disassociate_wireless_device_from_multicast_group_input::Builder::default()
+    }
+}
+
 /// See [`DisassociateWirelessDeviceFromThingInput`](crate::input::DisassociateWirelessDeviceFromThingInput)
 pub mod disassociate_wireless_device_from_thing_input {
     /// A builder for [`DisassociateWirelessDeviceFromThingInput`](crate::input::DisassociateWirelessDeviceFromThingInput)
@@ -3445,6 +5553,7 @@ pub type DisassociateWirelessDeviceFromThingInputOperationRetryAlias =
 impl DisassociateWirelessDeviceFromThingInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateWirelessDeviceFromThing`](crate::operation::DisassociateWirelessDeviceFromThing)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3459,15 +5568,15 @@ impl DisassociateWirelessDeviceFromThingInput {
             _input: &crate::input::DisassociateWirelessDeviceFromThingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_14 = &_input.id;
-            let input_14 =
-                input_14
+            let input_26 = &_input.id;
+            let input_26 =
+                input_26
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_14, false);
+            let id = aws_smithy_http::label::fmt_string(input_26, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -3506,11 +5615,14 @@ impl DisassociateWirelessDeviceFromThingInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3592,6 +5704,7 @@ pub type DisassociateWirelessGatewayFromCertificateInputOperationRetryAlias =
 impl DisassociateWirelessGatewayFromCertificateInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateWirelessGatewayFromCertificate`](crate::operation::DisassociateWirelessGatewayFromCertificate)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3606,15 +5719,15 @@ impl DisassociateWirelessGatewayFromCertificateInput {
             _input: &crate::input::DisassociateWirelessGatewayFromCertificateInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_15 = &_input.id;
-            let input_15 =
-                input_15
+            let input_27 = &_input.id;
+            let input_27 =
+                input_27
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_15, false);
+            let id = aws_smithy_http::label::fmt_string(input_27, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -3653,11 +5766,14 @@ impl DisassociateWirelessGatewayFromCertificateInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3740,6 +5856,7 @@ pub type DisassociateWirelessGatewayFromThingInputOperationRetryAlias =
 impl DisassociateWirelessGatewayFromThingInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateWirelessGatewayFromThing`](crate::operation::DisassociateWirelessGatewayFromThing)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3754,15 +5871,15 @@ impl DisassociateWirelessGatewayFromThingInput {
             _input: &crate::input::DisassociateWirelessGatewayFromThingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_16 = &_input.id;
-            let input_16 =
-                input_16
+            let input_28 = &_input.id;
+            let input_28 =
+                input_28
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_16, false);
+            let id = aws_smithy_http::label::fmt_string(input_28, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -3801,11 +5918,14 @@ impl DisassociateWirelessGatewayFromThingInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3885,6 +6005,7 @@ pub type GetDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetDestinationInput {
     /// Consumes the builder and constructs an Operation<[`GetDestination`](crate::operation::GetDestination)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3899,15 +6020,15 @@ impl GetDestinationInput {
             _input: &crate::input::GetDestinationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_17 = &_input.name;
-            let input_17 =
-                input_17
+            let input_29 = &_input.name;
+            let input_29 =
+                input_29
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_17, false);
+            let name = aws_smithy_http::label::fmt_string(input_29, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -3945,11 +6066,14 @@ impl GetDestinationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4029,6 +6153,7 @@ pub type GetDeviceProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl GetDeviceProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetDeviceProfile`](crate::operation::GetDeviceProfile)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4043,15 +6168,15 @@ impl GetDeviceProfileInput {
             _input: &crate::input::GetDeviceProfileInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_18 = &_input.id;
-            let input_18 =
-                input_18
+            let input_30 = &_input.id;
+            let input_30 =
+                input_30
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_18, false);
+            let id = aws_smithy_http::label::fmt_string(input_30, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -4089,11 +6214,14 @@ impl GetDeviceProfileInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4136,6 +6264,154 @@ impl GetDeviceProfileInput {
     }
 }
 
+/// See [`GetFuotaTaskInput`](crate::input::GetFuotaTaskInput)
+pub mod get_fuota_task_input {
+    /// A builder for [`GetFuotaTaskInput`](crate::input::GetFuotaTaskInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetFuotaTaskInput`](crate::input::GetFuotaTaskInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetFuotaTaskInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetFuotaTaskInput { id: self.id })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetFuotaTaskInputOperationOutputAlias = crate::operation::GetFuotaTask;
+#[doc(hidden)]
+pub type GetFuotaTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetFuotaTaskInput {
+    /// Consumes the builder and constructs an Operation<[`GetFuotaTask`](crate::operation::GetFuotaTask)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetFuotaTask,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetFuotaTaskInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_31 = &_input.id;
+            let input_31 =
+                input_31
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_31, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/fuota-tasks/{Id}", Id = id).expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetFuotaTaskInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetFuotaTaskInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetFuotaTask::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetFuotaTask",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetFuotaTaskInput`](crate::input::GetFuotaTaskInput)
+    pub fn builder() -> crate::input::get_fuota_task_input::Builder {
+        crate::input::get_fuota_task_input::Builder::default()
+    }
+}
+
 /// See [`GetLogLevelsByResourceTypesInput`](crate::input::GetLogLevelsByResourceTypesInput)
 pub mod get_log_levels_by_resource_types_input {
     /// A builder for [`GetLogLevelsByResourceTypesInput`](crate::input::GetLogLevelsByResourceTypesInput)
@@ -4162,6 +6438,7 @@ pub type GetLogLevelsByResourceTypesInputOperationRetryAlias = aws_http::AwsErro
 impl GetLogLevelsByResourceTypesInput {
     /// Consumes the builder and constructs an Operation<[`GetLogLevelsByResourceTypes`](crate::operation::GetLogLevelsByResourceTypes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4207,11 +6484,14 @@ impl GetLogLevelsByResourceTypesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4251,6 +6531,304 @@ impl GetLogLevelsByResourceTypesInput {
     /// Creates a new builder-style object to manufacture [`GetLogLevelsByResourceTypesInput`](crate::input::GetLogLevelsByResourceTypesInput)
     pub fn builder() -> crate::input::get_log_levels_by_resource_types_input::Builder {
         crate::input::get_log_levels_by_resource_types_input::Builder::default()
+    }
+}
+
+/// See [`GetMulticastGroupInput`](crate::input::GetMulticastGroupInput)
+pub mod get_multicast_group_input {
+    /// A builder for [`GetMulticastGroupInput`](crate::input::GetMulticastGroupInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMulticastGroupInput`](crate::input::GetMulticastGroupInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetMulticastGroupInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetMulticastGroupInput { id: self.id })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetMulticastGroupInputOperationOutputAlias = crate::operation::GetMulticastGroup;
+#[doc(hidden)]
+pub type GetMulticastGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetMulticastGroupInput {
+    /// Consumes the builder and constructs an Operation<[`GetMulticastGroup`](crate::operation::GetMulticastGroup)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetMulticastGroup,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetMulticastGroupInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_32 = &_input.id;
+            let input_32 =
+                input_32
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_32, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/multicast-groups/{Id}", Id = id).expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetMulticastGroupInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetMulticastGroupInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetMulticastGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetMulticastGroup",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetMulticastGroupInput`](crate::input::GetMulticastGroupInput)
+    pub fn builder() -> crate::input::get_multicast_group_input::Builder {
+        crate::input::get_multicast_group_input::Builder::default()
+    }
+}
+
+/// See [`GetMulticastGroupSessionInput`](crate::input::GetMulticastGroupSessionInput)
+pub mod get_multicast_group_session_input {
+    /// A builder for [`GetMulticastGroupSessionInput`](crate::input::GetMulticastGroupSessionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMulticastGroupSessionInput`](crate::input::GetMulticastGroupSessionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetMulticastGroupSessionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetMulticastGroupSessionInput { id: self.id })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetMulticastGroupSessionInputOperationOutputAlias =
+    crate::operation::GetMulticastGroupSession;
+#[doc(hidden)]
+pub type GetMulticastGroupSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetMulticastGroupSessionInput {
+    /// Consumes the builder and constructs an Operation<[`GetMulticastGroupSession`](crate::operation::GetMulticastGroupSession)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetMulticastGroupSession,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetMulticastGroupSessionInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_33 = &_input.id;
+            let input_33 =
+                input_33
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_33, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/multicast-groups/{Id}/session", Id = id)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetMulticastGroupSessionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetMulticastGroupSessionInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetMulticastGroupSession::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetMulticastGroupSession",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetMulticastGroupSessionInput`](crate::input::GetMulticastGroupSessionInput)
+    pub fn builder() -> crate::input::get_multicast_group_session_input::Builder {
+        crate::input::get_multicast_group_session_input::Builder::default()
     }
 }
 
@@ -4311,6 +6889,7 @@ pub type GetPartnerAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl GetPartnerAccountInput {
     /// Consumes the builder and constructs an Operation<[`GetPartnerAccount`](crate::operation::GetPartnerAccount)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4325,15 +6904,15 @@ impl GetPartnerAccountInput {
             _input: &crate::input::GetPartnerAccountInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_19 = &_input.partner_account_id;
-            let input_19 =
-                input_19
+            let input_34 = &_input.partner_account_id;
+            let input_34 =
+                input_34
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "partner_account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let partner_account_id = aws_smithy_http::label::fmt_string(input_19, false);
+            let partner_account_id = aws_smithy_http::label::fmt_string(input_34, false);
             if partner_account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "partner_account_id",
@@ -4348,14 +6927,18 @@ impl GetPartnerAccountInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::GetPartnerAccountInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::GetPartnerAccountInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_20) = &_input.partner_type {
+            if let Some(inner_35) = &_input.partner_type {
                 query.push_kv(
                     "partnerType",
-                    &aws_smithy_http::query::fmt_string(&inner_20),
+                    &aws_smithy_http::query::fmt_string(&inner_35),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -4365,7 +6948,7 @@ impl GetPartnerAccountInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4386,11 +6969,14 @@ impl GetPartnerAccountInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4430,6 +7016,212 @@ impl GetPartnerAccountInput {
     /// Creates a new builder-style object to manufacture [`GetPartnerAccountInput`](crate::input::GetPartnerAccountInput)
     pub fn builder() -> crate::input::get_partner_account_input::Builder {
         crate::input::get_partner_account_input::Builder::default()
+    }
+}
+
+/// See [`GetResourceEventConfigurationInput`](crate::input::GetResourceEventConfigurationInput)
+pub mod get_resource_event_configuration_input {
+    /// A builder for [`GetResourceEventConfigurationInput`](crate::input::GetResourceEventConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) identifier: std::option::Option<std::string::String>,
+        pub(crate) identifier_type: std::option::Option<crate::model::IdentifierType>,
+        pub(crate) partner_type: std::option::Option<crate::model::EventNotificationPartnerType>,
+    }
+    impl Builder {
+        /// <p>Resource identifier to opt in for event messaging.</p>
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.identifier = Some(input.into());
+            self
+        }
+        /// <p>Resource identifier to opt in for event messaging.</p>
+        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identifier = input;
+            self
+        }
+        /// <p>Identifier type of the particular resource identifier for event configuration.</p>
+        pub fn identifier_type(mut self, input: crate::model::IdentifierType) -> Self {
+            self.identifier_type = Some(input);
+            self
+        }
+        /// <p>Identifier type of the particular resource identifier for event configuration.</p>
+        pub fn set_identifier_type(
+            mut self,
+            input: std::option::Option<crate::model::IdentifierType>,
+        ) -> Self {
+            self.identifier_type = input;
+            self
+        }
+        /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+        pub fn partner_type(mut self, input: crate::model::EventNotificationPartnerType) -> Self {
+            self.partner_type = Some(input);
+            self
+        }
+        /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+        pub fn set_partner_type(
+            mut self,
+            input: std::option::Option<crate::model::EventNotificationPartnerType>,
+        ) -> Self {
+            self.partner_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetResourceEventConfigurationInput`](crate::input::GetResourceEventConfigurationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetResourceEventConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetResourceEventConfigurationInput {
+                identifier: self.identifier,
+                identifier_type: self.identifier_type,
+                partner_type: self.partner_type,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetResourceEventConfigurationInputOperationOutputAlias =
+    crate::operation::GetResourceEventConfiguration;
+#[doc(hidden)]
+pub type GetResourceEventConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetResourceEventConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`GetResourceEventConfiguration`](crate::operation::GetResourceEventConfiguration)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetResourceEventConfiguration,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetResourceEventConfigurationInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_36 = &_input.identifier;
+            let input_36 =
+                input_36
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "identifier",
+                        details: "cannot be empty or unset",
+                    })?;
+            let identifier = aws_smithy_http::label::fmt_string(input_36, false);
+            if identifier.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "identifier",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/event-configurations/{Identifier}",
+                Identifier = identifier
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::GetResourceEventConfigurationInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_37) = &_input.identifier_type {
+                query.push_kv(
+                    "identifierType",
+                    &aws_smithy_http::query::fmt_string(&inner_37),
+                );
+            }
+            if let Some(inner_38) = &_input.partner_type {
+                query.push_kv(
+                    "partnerType",
+                    &aws_smithy_http::query::fmt_string(&inner_38),
+                );
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetResourceEventConfigurationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetResourceEventConfigurationInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetResourceEventConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetResourceEventConfiguration",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetResourceEventConfigurationInput`](crate::input::GetResourceEventConfigurationInput)
+    pub fn builder() -> crate::input::get_resource_event_configuration_input::Builder {
+        crate::input::get_resource_event_configuration_input::Builder::default()
     }
 }
 
@@ -4492,6 +7284,7 @@ pub type GetResourceLogLevelInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl GetResourceLogLevelInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceLogLevel`](crate::operation::GetResourceLogLevel)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4506,15 +7299,15 @@ impl GetResourceLogLevelInput {
             _input: &crate::input::GetResourceLogLevelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_21 = &_input.resource_identifier;
-            let input_21 =
-                input_21
+            let input_39 = &_input.resource_identifier;
+            let input_39 =
+                input_39
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_identifier",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_identifier = aws_smithy_http::label::fmt_string(input_21, false);
+            let resource_identifier = aws_smithy_http::label::fmt_string(input_39, false);
             if resource_identifier.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_identifier",
@@ -4529,14 +7322,18 @@ impl GetResourceLogLevelInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::GetResourceLogLevelInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::GetResourceLogLevelInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_22) = &_input.resource_type {
+            if let Some(inner_40) = &_input.resource_type {
                 query.push_kv(
                     "resourceType",
-                    &aws_smithy_http::query::fmt_string(&inner_22),
+                    &aws_smithy_http::query::fmt_string(&inner_40),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -4546,7 +7343,7 @@ impl GetResourceLogLevelInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4567,11 +7364,14 @@ impl GetResourceLogLevelInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4656,6 +7456,7 @@ pub type GetServiceEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl GetServiceEndpointInput {
     /// Consumes the builder and constructs an Operation<[`GetServiceEndpoint`](crate::operation::GetServiceEndpoint)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4673,14 +7474,18 @@ impl GetServiceEndpointInput {
             write!(output, "/service-endpoint").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::GetServiceEndpointInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::GetServiceEndpointInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_23) = &_input.service_type {
+            if let Some(inner_41) = &_input.service_type {
                 query.push_kv(
                     "serviceType",
-                    &aws_smithy_http::query::fmt_string(&inner_23),
+                    &aws_smithy_http::query::fmt_string(&inner_41),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -4690,7 +7495,7 @@ impl GetServiceEndpointInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4711,11 +7516,14 @@ impl GetServiceEndpointInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4795,6 +7603,7 @@ pub type GetServiceProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl GetServiceProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetServiceProfile`](crate::operation::GetServiceProfile)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4809,15 +7618,15 @@ impl GetServiceProfileInput {
             _input: &crate::input::GetServiceProfileInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_24 = &_input.id;
-            let input_24 =
-                input_24
+            let input_42 = &_input.id;
+            let input_42 =
+                input_42
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_24, false);
+            let id = aws_smithy_http::label::fmt_string(input_42, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -4855,11 +7664,14 @@ impl GetServiceProfileInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4956,6 +7768,7 @@ pub type GetWirelessDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl GetWirelessDeviceInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessDevice`](crate::operation::GetWirelessDevice)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4970,15 +7783,15 @@ impl GetWirelessDeviceInput {
             _input: &crate::input::GetWirelessDeviceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_25 = &_input.identifier;
-            let input_25 =
-                input_25
+            let input_43 = &_input.identifier;
+            let input_43 =
+                input_43
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identifier",
                         details: "cannot be empty or unset",
                     })?;
-            let identifier = aws_smithy_http::label::fmt_string(input_25, false);
+            let identifier = aws_smithy_http::label::fmt_string(input_43, false);
             if identifier.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identifier",
@@ -4993,14 +7806,18 @@ impl GetWirelessDeviceInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::GetWirelessDeviceInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::GetWirelessDeviceInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_26) = &_input.identifier_type {
+            if let Some(inner_44) = &_input.identifier_type {
                 query.push_kv(
                     "identifierType",
-                    &aws_smithy_http::query::fmt_string(&inner_26),
+                    &aws_smithy_http::query::fmt_string(&inner_44),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -5010,7 +7827,7 @@ impl GetWirelessDeviceInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -5031,11 +7848,14 @@ impl GetWirelessDeviceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5121,6 +7941,7 @@ pub type GetWirelessDeviceStatisticsInputOperationRetryAlias = aws_http::AwsErro
 impl GetWirelessDeviceStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessDeviceStatistics`](crate::operation::GetWirelessDeviceStatistics)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5135,15 +7956,15 @@ impl GetWirelessDeviceStatisticsInput {
             _input: &crate::input::GetWirelessDeviceStatisticsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_27 = &_input.wireless_device_id;
-            let input_27 =
-                input_27
+            let input_45 = &_input.wireless_device_id;
+            let input_45 =
+                input_45
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "wireless_device_id",
                         details: "cannot be empty or unset",
                     })?;
-            let wireless_device_id = aws_smithy_http::label::fmt_string(input_27, false);
+            let wireless_device_id = aws_smithy_http::label::fmt_string(input_45, false);
             if wireless_device_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "wireless_device_id",
@@ -5186,11 +8007,14 @@ impl GetWirelessDeviceStatisticsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5287,6 +8111,7 @@ pub type GetWirelessGatewayInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl GetWirelessGatewayInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessGateway`](crate::operation::GetWirelessGateway)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5301,15 +8126,15 @@ impl GetWirelessGatewayInput {
             _input: &crate::input::GetWirelessGatewayInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_28 = &_input.identifier;
-            let input_28 =
-                input_28
+            let input_46 = &_input.identifier;
+            let input_46 =
+                input_46
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identifier",
                         details: "cannot be empty or unset",
                     })?;
-            let identifier = aws_smithy_http::label::fmt_string(input_28, false);
+            let identifier = aws_smithy_http::label::fmt_string(input_46, false);
             if identifier.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identifier",
@@ -5324,14 +8149,18 @@ impl GetWirelessGatewayInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::GetWirelessGatewayInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::GetWirelessGatewayInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_29) = &_input.identifier_type {
+            if let Some(inner_47) = &_input.identifier_type {
                 query.push_kv(
                     "identifierType",
-                    &aws_smithy_http::query::fmt_string(&inner_29),
+                    &aws_smithy_http::query::fmt_string(&inner_47),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -5341,7 +8170,7 @@ impl GetWirelessGatewayInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -5362,11 +8191,14 @@ impl GetWirelessGatewayInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5447,6 +8279,7 @@ pub type GetWirelessGatewayCertificateInputOperationRetryAlias = aws_http::AwsEr
 impl GetWirelessGatewayCertificateInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessGatewayCertificate`](crate::operation::GetWirelessGatewayCertificate)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5461,15 +8294,15 @@ impl GetWirelessGatewayCertificateInput {
             _input: &crate::input::GetWirelessGatewayCertificateInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_30 = &_input.id;
-            let input_30 =
-                input_30
+            let input_48 = &_input.id;
+            let input_48 =
+                input_48
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_30, false);
+            let id = aws_smithy_http::label::fmt_string(input_48, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -5508,11 +8341,14 @@ impl GetWirelessGatewayCertificateInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5594,6 +8430,7 @@ pub type GetWirelessGatewayFirmwareInformationInputOperationRetryAlias =
 impl GetWirelessGatewayFirmwareInformationInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessGatewayFirmwareInformation`](crate::operation::GetWirelessGatewayFirmwareInformation)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5608,15 +8445,15 @@ impl GetWirelessGatewayFirmwareInformationInput {
             _input: &crate::input::GetWirelessGatewayFirmwareInformationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_31 = &_input.id;
-            let input_31 =
-                input_31
+            let input_49 = &_input.id;
+            let input_49 =
+                input_49
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_31, false);
+            let id = aws_smithy_http::label::fmt_string(input_49, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -5659,11 +8496,14 @@ impl GetWirelessGatewayFirmwareInformationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5749,6 +8589,7 @@ pub type GetWirelessGatewayStatisticsInputOperationRetryAlias = aws_http::AwsErr
 impl GetWirelessGatewayStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessGatewayStatistics`](crate::operation::GetWirelessGatewayStatistics)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5763,15 +8604,15 @@ impl GetWirelessGatewayStatisticsInput {
             _input: &crate::input::GetWirelessGatewayStatisticsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_32 = &_input.wireless_gateway_id;
-            let input_32 =
-                input_32
+            let input_50 = &_input.wireless_gateway_id;
+            let input_50 =
+                input_50
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "wireless_gateway_id",
                         details: "cannot be empty or unset",
                     })?;
-            let wireless_gateway_id = aws_smithy_http::label::fmt_string(input_32, false);
+            let wireless_gateway_id = aws_smithy_http::label::fmt_string(input_50, false);
             if wireless_gateway_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "wireless_gateway_id",
@@ -5814,11 +8655,14 @@ impl GetWirelessGatewayStatisticsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5898,6 +8742,7 @@ pub type GetWirelessGatewayTaskInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl GetWirelessGatewayTaskInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessGatewayTask`](crate::operation::GetWirelessGatewayTask)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5912,15 +8757,15 @@ impl GetWirelessGatewayTaskInput {
             _input: &crate::input::GetWirelessGatewayTaskInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_33 = &_input.id;
-            let input_33 =
-                input_33
+            let input_51 = &_input.id;
+            let input_51 =
+                input_51
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_33, false);
+            let id = aws_smithy_http::label::fmt_string(input_51, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -5959,11 +8804,14 @@ impl GetWirelessGatewayTaskInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6044,6 +8892,7 @@ pub type GetWirelessGatewayTaskDefinitionInputOperationRetryAlias = aws_http::Aw
 impl GetWirelessGatewayTaskDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessGatewayTaskDefinition`](crate::operation::GetWirelessGatewayTaskDefinition)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6058,15 +8907,15 @@ impl GetWirelessGatewayTaskDefinitionInput {
             _input: &crate::input::GetWirelessGatewayTaskDefinitionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_34 = &_input.id;
-            let input_34 =
-                input_34
+            let input_52 = &_input.id;
+            let input_52 =
+                input_52
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_34, false);
+            let id = aws_smithy_http::label::fmt_string(input_52, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -6105,11 +8954,14 @@ impl GetWirelessGatewayTaskDefinitionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6203,6 +9055,7 @@ pub type ListDestinationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl ListDestinationsInput {
     /// Consumes the builder and constructs an Operation<[`ListDestinations`](crate::operation::ListDestinations)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6220,17 +9073,21 @@ impl ListDestinationsInput {
             write!(output, "/destinations").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListDestinationsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListDestinationsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_35) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_35));
+            if let Some(inner_53) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_53));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -6240,7 +9097,7 @@ impl ListDestinationsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -6261,11 +9118,14 @@ impl ListDestinationsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6359,6 +9219,7 @@ pub type ListDeviceProfilesInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl ListDeviceProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListDeviceProfiles`](crate::operation::ListDeviceProfiles)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6376,17 +9237,21 @@ impl ListDeviceProfilesInput {
             write!(output, "/device-profiles").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListDeviceProfilesInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListDeviceProfilesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_36) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
+            if let Some(inner_54) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_54));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -6396,7 +9261,7 @@ impl ListDeviceProfilesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -6417,11 +9282,14 @@ impl ListDeviceProfilesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6461,6 +9329,527 @@ impl ListDeviceProfilesInput {
     /// Creates a new builder-style object to manufacture [`ListDeviceProfilesInput`](crate::input::ListDeviceProfilesInput)
     pub fn builder() -> crate::input::list_device_profiles_input::Builder {
         crate::input::list_device_profiles_input::Builder::default()
+    }
+}
+
+/// See [`ListFuotaTasksInput`](crate::input::ListFuotaTasksInput)
+pub mod list_fuota_tasks_input {
+    /// A builder for [`ListFuotaTasksInput`](crate::input::ListFuotaTasksInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListFuotaTasksInput`](crate::input::ListFuotaTasksInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListFuotaTasksInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListFuotaTasksInput {
+                next_token: self.next_token,
+                max_results: self.max_results.unwrap_or_default(),
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListFuotaTasksInputOperationOutputAlias = crate::operation::ListFuotaTasks;
+#[doc(hidden)]
+pub type ListFuotaTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListFuotaTasksInput {
+    /// Consumes the builder and constructs an Operation<[`ListFuotaTasks`](crate::operation::ListFuotaTasks)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListFuotaTasks,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListFuotaTasksInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/fuota-tasks").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::ListFuotaTasksInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_55) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_55));
+            }
+            if _input.max_results != 0 {
+                query.push_kv(
+                    "maxResults",
+                    aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                );
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListFuotaTasksInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListFuotaTasksInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListFuotaTasks::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListFuotaTasks",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListFuotaTasksInput`](crate::input::ListFuotaTasksInput)
+    pub fn builder() -> crate::input::list_fuota_tasks_input::Builder {
+        crate::input::list_fuota_tasks_input::Builder::default()
+    }
+}
+
+/// See [`ListMulticastGroupsInput`](crate::input::ListMulticastGroupsInput)
+pub mod list_multicast_groups_input {
+    /// A builder for [`ListMulticastGroupsInput`](crate::input::ListMulticastGroupsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMulticastGroupsInput`](crate::input::ListMulticastGroupsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListMulticastGroupsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListMulticastGroupsInput {
+                next_token: self.next_token,
+                max_results: self.max_results.unwrap_or_default(),
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListMulticastGroupsInputOperationOutputAlias = crate::operation::ListMulticastGroups;
+#[doc(hidden)]
+pub type ListMulticastGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListMulticastGroupsInput {
+    /// Consumes the builder and constructs an Operation<[`ListMulticastGroups`](crate::operation::ListMulticastGroups)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListMulticastGroups,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListMulticastGroupsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/multicast-groups").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::ListMulticastGroupsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_56) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_56));
+            }
+            if _input.max_results != 0 {
+                query.push_kv(
+                    "maxResults",
+                    aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                );
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListMulticastGroupsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListMulticastGroupsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListMulticastGroups::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListMulticastGroups",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListMulticastGroupsInput`](crate::input::ListMulticastGroupsInput)
+    pub fn builder() -> crate::input::list_multicast_groups_input::Builder {
+        crate::input::list_multicast_groups_input::Builder::default()
+    }
+}
+
+/// See [`ListMulticastGroupsByFuotaTaskInput`](crate::input::ListMulticastGroupsByFuotaTaskInput)
+pub mod list_multicast_groups_by_fuota_task_input {
+    /// A builder for [`ListMulticastGroupsByFuotaTaskInput`](crate::input::ListMulticastGroupsByFuotaTaskInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMulticastGroupsByFuotaTaskInput`](crate::input::ListMulticastGroupsByFuotaTaskInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListMulticastGroupsByFuotaTaskInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListMulticastGroupsByFuotaTaskInput {
+                id: self.id,
+                next_token: self.next_token,
+                max_results: self.max_results.unwrap_or_default(),
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListMulticastGroupsByFuotaTaskInputOperationOutputAlias =
+    crate::operation::ListMulticastGroupsByFuotaTask;
+#[doc(hidden)]
+pub type ListMulticastGroupsByFuotaTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListMulticastGroupsByFuotaTaskInput {
+    /// Consumes the builder and constructs an Operation<[`ListMulticastGroupsByFuotaTask`](crate::operation::ListMulticastGroupsByFuotaTask)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListMulticastGroupsByFuotaTask,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListMulticastGroupsByFuotaTaskInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_57 = &_input.id;
+            let input_57 =
+                input_57
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_57, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/fuota-tasks/{Id}/multicast-groups", Id = id)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::ListMulticastGroupsByFuotaTaskInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_58) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_58));
+            }
+            if _input.max_results != 0 {
+                query.push_kv(
+                    "maxResults",
+                    aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                );
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListMulticastGroupsByFuotaTaskInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListMulticastGroupsByFuotaTaskInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListMulticastGroupsByFuotaTask::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListMulticastGroupsByFuotaTask",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListMulticastGroupsByFuotaTaskInput`](crate::input::ListMulticastGroupsByFuotaTaskInput)
+    pub fn builder() -> crate::input::list_multicast_groups_by_fuota_task_input::Builder {
+        crate::input::list_multicast_groups_by_fuota_task_input::Builder::default()
     }
 }
 
@@ -6515,6 +9904,7 @@ pub type ListPartnerAccountsInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListPartnerAccountsInput {
     /// Consumes the builder and constructs an Operation<[`ListPartnerAccounts`](crate::operation::ListPartnerAccounts)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6532,17 +9922,21 @@ impl ListPartnerAccountsInput {
             write!(output, "/partner-accounts").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListPartnerAccountsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListPartnerAccountsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_37) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+            if let Some(inner_59) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_59));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -6552,7 +9946,7 @@ impl ListPartnerAccountsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -6573,11 +9967,14 @@ impl ListPartnerAccountsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6671,6 +10068,7 @@ pub type ListServiceProfilesInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListServiceProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListServiceProfiles`](crate::operation::ListServiceProfiles)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6688,17 +10086,21 @@ impl ListServiceProfilesInput {
             write!(output, "/service-profiles").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListServiceProfilesInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListServiceProfilesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_38) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_38));
+            if let Some(inner_60) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_60));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -6708,7 +10110,7 @@ impl ListServiceProfilesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -6729,11 +10131,14 @@ impl ListServiceProfilesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6815,6 +10220,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6832,14 +10238,18 @@ impl ListTagsForResourceInput {
             write!(output, "/tags").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListTagsForResourceInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListTagsForResourceInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_39) = &_input.resource_arn {
+            if let Some(inner_61) = &_input.resource_arn {
                 query.push_kv(
                     "resourceArn",
-                    &aws_smithy_http::query::fmt_string(&inner_39),
+                    &aws_smithy_http::query::fmt_string(&inner_61),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -6849,7 +10259,7 @@ impl ListTagsForResourceInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -6870,11 +10280,14 @@ impl ListTagsForResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6929,6 +10342,8 @@ pub mod list_wireless_devices_input {
         pub(crate) device_profile_id: std::option::Option<std::string::String>,
         pub(crate) service_profile_id: std::option::Option<std::string::String>,
         pub(crate) wireless_device_type: std::option::Option<crate::model::WirelessDeviceType>,
+        pub(crate) fuota_task_id: std::option::Option<std::string::String>,
+        pub(crate) multicast_group_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The maximum number of results to return in this operation.</p>
@@ -7003,6 +10418,32 @@ pub mod list_wireless_devices_input {
             self.wireless_device_type = input;
             self
         }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn fuota_task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fuota_task_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_fuota_task_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.fuota_task_id = input;
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn multicast_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.multicast_group_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_multicast_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.multicast_group_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListWirelessDevicesInput`](crate::input::ListWirelessDevicesInput)
         pub fn build(
             self,
@@ -7017,6 +10458,8 @@ pub mod list_wireless_devices_input {
                 device_profile_id: self.device_profile_id,
                 service_profile_id: self.service_profile_id,
                 wireless_device_type: self.wireless_device_type,
+                fuota_task_id: self.fuota_task_id,
+                multicast_group_id: self.multicast_group_id,
             })
         }
     }
@@ -7028,6 +10471,7 @@ pub type ListWirelessDevicesInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListWirelessDevicesInput {
     /// Consumes the builder and constructs an Operation<[`ListWirelessDevices`](crate::operation::ListWirelessDevices)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7045,41 +10489,57 @@ impl ListWirelessDevicesInput {
             write!(output, "/wireless-devices").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListWirelessDevicesInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListWirelessDevicesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_40) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
+            if let Some(inner_62) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_62));
             }
-            if let Some(inner_41) = &_input.destination_name {
+            if let Some(inner_63) = &_input.destination_name {
                 query.push_kv(
                     "destinationName",
-                    &aws_smithy_http::query::fmt_string(&inner_41),
+                    &aws_smithy_http::query::fmt_string(&inner_63),
                 );
             }
-            if let Some(inner_42) = &_input.device_profile_id {
+            if let Some(inner_64) = &_input.device_profile_id {
                 query.push_kv(
                     "deviceProfileId",
-                    &aws_smithy_http::query::fmt_string(&inner_42),
+                    &aws_smithy_http::query::fmt_string(&inner_64),
                 );
             }
-            if let Some(inner_43) = &_input.service_profile_id {
+            if let Some(inner_65) = &_input.service_profile_id {
                 query.push_kv(
                     "serviceProfileId",
-                    &aws_smithy_http::query::fmt_string(&inner_43),
+                    &aws_smithy_http::query::fmt_string(&inner_65),
                 );
             }
-            if let Some(inner_44) = &_input.wireless_device_type {
+            if let Some(inner_66) = &_input.wireless_device_type {
                 query.push_kv(
                     "wirelessDeviceType",
-                    &aws_smithy_http::query::fmt_string(&inner_44),
+                    &aws_smithy_http::query::fmt_string(&inner_66),
                 );
             }
+            if let Some(inner_67) = &_input.fuota_task_id {
+                query.push_kv(
+                    "fuotaTaskId",
+                    &aws_smithy_http::query::fmt_string(&inner_67),
+                );
+            }
+            if let Some(inner_68) = &_input.multicast_group_id {
+                query.push_kv(
+                    "multicastGroupId",
+                    &aws_smithy_http::query::fmt_string(&inner_68),
+                );
+            }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -7089,7 +10549,7 @@ impl ListWirelessDevicesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -7110,11 +10570,14 @@ impl ListWirelessDevicesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7208,6 +10671,7 @@ pub type ListWirelessGatewaysInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl ListWirelessGatewaysInput {
     /// Consumes the builder and constructs an Operation<[`ListWirelessGateways`](crate::operation::ListWirelessGateways)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7225,17 +10689,21 @@ impl ListWirelessGatewaysInput {
             write!(output, "/wireless-gateways").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListWirelessGatewaysInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListWirelessGatewaysInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_45) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_45));
+            if let Some(inner_69) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_69));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -7245,7 +10713,7 @@ impl ListWirelessGatewaysInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -7266,11 +10734,14 @@ impl ListWirelessGatewaysInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7384,6 +10855,7 @@ pub type ListWirelessGatewayTaskDefinitionsInputOperationRetryAlias = aws_http::
 impl ListWirelessGatewayTaskDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`ListWirelessGatewayTaskDefinitions`](crate::operation::ListWirelessGatewayTaskDefinitions)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7405,23 +10877,24 @@ impl ListWirelessGatewayTaskDefinitionsInput {
         fn uri_query(
             _input: &crate::input::ListWirelessGatewayTaskDefinitionsInput,
             mut output: &mut String,
-        ) {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_46) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_46));
+            if let Some(inner_70) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_70));
             }
-            if let Some(inner_47) = &_input.task_definition_type {
+            if let Some(inner_71) = &_input.task_definition_type {
                 query.push_kv(
                     "taskDefinitionType",
-                    &aws_smithy_http::query::fmt_string(&inner_47),
+                    &aws_smithy_http::query::fmt_string(&inner_71),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -7431,7 +10904,7 @@ impl ListWirelessGatewayTaskDefinitionsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -7452,11 +10925,14 @@ impl ListWirelessGatewayTaskDefinitionsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7570,6 +11046,7 @@ pub type PutResourceLogLevelInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl PutResourceLogLevelInput {
     /// Consumes the builder and constructs an Operation<[`PutResourceLogLevel`](crate::operation::PutResourceLogLevel)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7584,15 +11061,15 @@ impl PutResourceLogLevelInput {
             _input: &crate::input::PutResourceLogLevelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_48 = &_input.resource_identifier;
-            let input_48 =
-                input_48
+            let input_72 = &_input.resource_identifier;
+            let input_72 =
+                input_72
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_identifier",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_identifier = aws_smithy_http::label::fmt_string(input_48, false);
+            let resource_identifier = aws_smithy_http::label::fmt_string(input_72, false);
             if resource_identifier.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_identifier",
@@ -7607,14 +11084,18 @@ impl PutResourceLogLevelInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::PutResourceLogLevelInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::PutResourceLogLevelInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_49) = &_input.resource_type {
+            if let Some(inner_73) = &_input.resource_type {
                 query.push_kv(
                     "resourceType",
-                    &aws_smithy_http::query::fmt_string(&inner_49),
+                    &aws_smithy_http::query::fmt_string(&inner_73),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -7624,7 +11105,7 @@ impl PutResourceLogLevelInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -7653,11 +11134,14 @@ impl PutResourceLogLevelInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7734,6 +11218,7 @@ pub type ResetAllResourceLogLevelsInputOperationRetryAlias = aws_http::AwsErrorR
 impl ResetAllResourceLogLevelsInput {
     /// Consumes the builder and constructs an Operation<[`ResetAllResourceLogLevels`](crate::operation::ResetAllResourceLogLevels)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7779,11 +11264,14 @@ impl ResetAllResourceLogLevelsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7885,6 +11373,7 @@ pub type ResetResourceLogLevelInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl ResetResourceLogLevelInput {
     /// Consumes the builder and constructs an Operation<[`ResetResourceLogLevel`](crate::operation::ResetResourceLogLevel)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7899,15 +11388,15 @@ impl ResetResourceLogLevelInput {
             _input: &crate::input::ResetResourceLogLevelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_50 = &_input.resource_identifier;
-            let input_50 =
-                input_50
+            let input_74 = &_input.resource_identifier;
+            let input_74 =
+                input_74
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_identifier",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_identifier = aws_smithy_http::label::fmt_string(input_50, false);
+            let resource_identifier = aws_smithy_http::label::fmt_string(input_74, false);
             if resource_identifier.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_identifier",
@@ -7922,14 +11411,18 @@ impl ResetResourceLogLevelInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ResetResourceLogLevelInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ResetResourceLogLevelInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_51) = &_input.resource_type {
+            if let Some(inner_75) = &_input.resource_type {
                 query.push_kv(
                     "resourceType",
-                    &aws_smithy_http::query::fmt_string(&inner_51),
+                    &aws_smithy_http::query::fmt_string(&inner_75),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -7939,7 +11432,7 @@ impl ResetResourceLogLevelInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -7960,11 +11453,14 @@ impl ResetResourceLogLevelInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8004,6 +11500,201 @@ impl ResetResourceLogLevelInput {
     /// Creates a new builder-style object to manufacture [`ResetResourceLogLevelInput`](crate::input::ResetResourceLogLevelInput)
     pub fn builder() -> crate::input::reset_resource_log_level_input::Builder {
         crate::input::reset_resource_log_level_input::Builder::default()
+    }
+}
+
+/// See [`SendDataToMulticastGroupInput`](crate::input::SendDataToMulticastGroupInput)
+pub mod send_data_to_multicast_group_input {
+    /// A builder for [`SendDataToMulticastGroupInput`](crate::input::SendDataToMulticastGroupInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) payload_data: std::option::Option<std::string::String>,
+        pub(crate) wireless_metadata: std::option::Option<crate::model::MulticastWirelessMetadata>,
+    }
+    impl Builder {
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The binary to be sent to the end device, encoded in base64.</p>
+        pub fn payload_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.payload_data = Some(input.into());
+            self
+        }
+        /// <p>The binary to be sent to the end device, encoded in base64.</p>
+        pub fn set_payload_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.payload_data = input;
+            self
+        }
+        /// <p>Wireless metadata that is to be sent to multicast group.</p>
+        pub fn wireless_metadata(mut self, input: crate::model::MulticastWirelessMetadata) -> Self {
+            self.wireless_metadata = Some(input);
+            self
+        }
+        /// <p>Wireless metadata that is to be sent to multicast group.</p>
+        pub fn set_wireless_metadata(
+            mut self,
+            input: std::option::Option<crate::model::MulticastWirelessMetadata>,
+        ) -> Self {
+            self.wireless_metadata = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SendDataToMulticastGroupInput`](crate::input::SendDataToMulticastGroupInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::SendDataToMulticastGroupInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::SendDataToMulticastGroupInput {
+                id: self.id,
+                payload_data: self.payload_data,
+                wireless_metadata: self.wireless_metadata,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type SendDataToMulticastGroupInputOperationOutputAlias =
+    crate::operation::SendDataToMulticastGroup;
+#[doc(hidden)]
+pub type SendDataToMulticastGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl SendDataToMulticastGroupInput {
+    /// Consumes the builder and constructs an Operation<[`SendDataToMulticastGroup`](crate::operation::SendDataToMulticastGroup)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SendDataToMulticastGroup,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::SendDataToMulticastGroupInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_76 = &_input.id;
+            let input_76 =
+                input_76
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_76, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/multicast-groups/{Id}/data", Id = id)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::SendDataToMulticastGroupInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::SendDataToMulticastGroupInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_send_data_to_multicast_group(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SendDataToMulticastGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SendDataToMulticastGroup",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`SendDataToMulticastGroupInput`](crate::input::SendDataToMulticastGroupInput)
+    pub fn builder() -> crate::input::send_data_to_multicast_group_input::Builder {
+        crate::input::send_data_to_multicast_group_input::Builder::default()
     }
 }
 
@@ -8086,6 +11777,7 @@ pub type SendDataToWirelessDeviceInputOperationRetryAlias = aws_http::AwsErrorRe
 impl SendDataToWirelessDeviceInput {
     /// Consumes the builder and constructs an Operation<[`SendDataToWirelessDevice`](crate::operation::SendDataToWirelessDevice)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8100,15 +11792,15 @@ impl SendDataToWirelessDeviceInput {
             _input: &crate::input::SendDataToWirelessDeviceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_52 = &_input.id;
-            let input_52 =
-                input_52
+            let input_77 = &_input.id;
+            let input_77 =
+                input_77
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_52, false);
+            let id = aws_smithy_http::label::fmt_string(input_77, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -8155,11 +11847,14 @@ impl SendDataToWirelessDeviceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8207,6 +11902,777 @@ impl SendDataToWirelessDeviceInput {
     /// Creates a new builder-style object to manufacture [`SendDataToWirelessDeviceInput`](crate::input::SendDataToWirelessDeviceInput)
     pub fn builder() -> crate::input::send_data_to_wireless_device_input::Builder {
         crate::input::send_data_to_wireless_device_input::Builder::default()
+    }
+}
+
+/// See [`StartBulkAssociateWirelessDeviceWithMulticastGroupInput`](crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput)
+pub mod start_bulk_associate_wireless_device_with_multicast_group_input {
+    /// A builder for [`StartBulkAssociateWirelessDeviceWithMulticastGroupInput`](crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) query_string: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
+        pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_string = Some(input.into());
+            self
+        }
+        /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
+        pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_string = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartBulkAssociateWirelessDeviceWithMulticastGroupInput`](crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(
+                crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
+                    id: self.id,
+                    query_string: self.query_string,
+                    tags: self.tags,
+                },
+            )
+        }
+    }
+}
+#[doc(hidden)]
+pub type StartBulkAssociateWirelessDeviceWithMulticastGroupInputOperationOutputAlias =
+    crate::operation::StartBulkAssociateWirelessDeviceWithMulticastGroup;
+#[doc(hidden)]
+pub type StartBulkAssociateWirelessDeviceWithMulticastGroupInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
+    /// Consumes the builder and constructs an Operation<[`StartBulkAssociateWirelessDeviceWithMulticastGroup`](crate::operation::StartBulkAssociateWirelessDeviceWithMulticastGroup)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartBulkAssociateWirelessDeviceWithMulticastGroup,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_78 = &_input.id;
+            let input_78 =
+                input_78
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_78, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/multicast-groups/{Id}/bulk", Id = id)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PATCH").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_start_bulk_associate_wireless_device_with_multicast_group(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartBulkAssociateWirelessDeviceWithMulticastGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartBulkAssociateWirelessDeviceWithMulticastGroup",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`StartBulkAssociateWirelessDeviceWithMulticastGroupInput`](crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput)
+    pub fn builder(
+    ) -> crate::input::start_bulk_associate_wireless_device_with_multicast_group_input::Builder
+    {
+        crate::input::start_bulk_associate_wireless_device_with_multicast_group_input::Builder::default()
+    }
+}
+
+/// See [`StartBulkDisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput)
+pub mod start_bulk_disassociate_wireless_device_from_multicast_group_input {
+    /// A builder for [`StartBulkDisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) query_string: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
+        pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_string = Some(input.into());
+            self
+        }
+        /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
+        pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_string = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartBulkDisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(
+                crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
+                    id: self.id,
+                    query_string: self.query_string,
+                    tags: self.tags,
+                },
+            )
+        }
+    }
+}
+#[doc(hidden)]
+pub type StartBulkDisassociateWirelessDeviceFromMulticastGroupInputOperationOutputAlias =
+    crate::operation::StartBulkDisassociateWirelessDeviceFromMulticastGroup;
+#[doc(hidden)]
+pub type StartBulkDisassociateWirelessDeviceFromMulticastGroupInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
+    /// Consumes the builder and constructs an Operation<[`StartBulkDisassociateWirelessDeviceFromMulticastGroup`](crate::operation::StartBulkDisassociateWirelessDeviceFromMulticastGroup)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartBulkDisassociateWirelessDeviceFromMulticastGroup,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_79 = &_input.id;
+            let input_79 =
+                input_79
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_79, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/multicast-groups/{Id}/bulk", Id = id)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_start_bulk_disassociate_wireless_device_from_multicast_group(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartBulkDisassociateWirelessDeviceFromMulticastGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartBulkDisassociateWirelessDeviceFromMulticastGroup",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`StartBulkDisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput)
+    pub fn builder(
+    ) -> crate::input::start_bulk_disassociate_wireless_device_from_multicast_group_input::Builder
+    {
+        crate::input::start_bulk_disassociate_wireless_device_from_multicast_group_input::Builder::default()
+    }
+}
+
+/// See [`StartFuotaTaskInput`](crate::input::StartFuotaTaskInput)
+pub mod start_fuota_task_input {
+    /// A builder for [`StartFuotaTaskInput`](crate::input::StartFuotaTaskInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanStartFuotaTask>,
+    }
+    impl Builder {
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The LoRaWAN information used to start a FUOTA task.</p>
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanStartFuotaTask) -> Self {
+            self.lo_ra_wan = Some(input);
+            self
+        }
+        /// <p>The LoRaWAN information used to start a FUOTA task.</p>
+        pub fn set_lo_ra_wan(
+            mut self,
+            input: std::option::Option<crate::model::LoRaWanStartFuotaTask>,
+        ) -> Self {
+            self.lo_ra_wan = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartFuotaTaskInput`](crate::input::StartFuotaTaskInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StartFuotaTaskInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StartFuotaTaskInput {
+                id: self.id,
+                lo_ra_wan: self.lo_ra_wan,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StartFuotaTaskInputOperationOutputAlias = crate::operation::StartFuotaTask;
+#[doc(hidden)]
+pub type StartFuotaTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl StartFuotaTaskInput {
+    /// Consumes the builder and constructs an Operation<[`StartFuotaTask`](crate::operation::StartFuotaTask)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartFuotaTask,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::StartFuotaTaskInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_80 = &_input.id;
+            let input_80 =
+                input_80
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_80, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/fuota-tasks/{Id}", Id = id).expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::StartFuotaTaskInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::StartFuotaTaskInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_start_fuota_task(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartFuotaTask::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartFuotaTask",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`StartFuotaTaskInput`](crate::input::StartFuotaTaskInput)
+    pub fn builder() -> crate::input::start_fuota_task_input::Builder {
+        crate::input::start_fuota_task_input::Builder::default()
+    }
+}
+
+/// See [`StartMulticastGroupSessionInput`](crate::input::StartMulticastGroupSessionInput)
+pub mod start_multicast_group_session_input {
+    /// A builder for [`StartMulticastGroupSessionInput`](crate::input::StartMulticastGroupSessionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticastSession>,
+    }
+    impl Builder {
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The LoRaWAN information used with the multicast session.</p>
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanMulticastSession) -> Self {
+            self.lo_ra_wan = Some(input);
+            self
+        }
+        /// <p>The LoRaWAN information used with the multicast session.</p>
+        pub fn set_lo_ra_wan(
+            mut self,
+            input: std::option::Option<crate::model::LoRaWanMulticastSession>,
+        ) -> Self {
+            self.lo_ra_wan = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartMulticastGroupSessionInput`](crate::input::StartMulticastGroupSessionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StartMulticastGroupSessionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StartMulticastGroupSessionInput {
+                id: self.id,
+                lo_ra_wan: self.lo_ra_wan,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StartMulticastGroupSessionInputOperationOutputAlias =
+    crate::operation::StartMulticastGroupSession;
+#[doc(hidden)]
+pub type StartMulticastGroupSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl StartMulticastGroupSessionInput {
+    /// Consumes the builder and constructs an Operation<[`StartMulticastGroupSession`](crate::operation::StartMulticastGroupSession)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartMulticastGroupSession,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::StartMulticastGroupSessionInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_81 = &_input.id;
+            let input_81 =
+                input_81
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_81, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/multicast-groups/{Id}/session", Id = id)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::StartMulticastGroupSessionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::StartMulticastGroupSessionInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_start_multicast_group_session(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartMulticastGroupSession::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartMulticastGroupSession",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`StartMulticastGroupSessionInput`](crate::input::StartMulticastGroupSessionInput)
+    pub fn builder() -> crate::input::start_multicast_group_session_input::Builder {
+        crate::input::start_multicast_group_session_input::Builder::default()
     }
 }
 
@@ -8270,6 +12736,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8287,14 +12754,18 @@ impl TagResourceInput {
             write!(output, "/tags").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::TagResourceInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::TagResourceInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_53) = &_input.resource_arn {
+            if let Some(inner_82) = &_input.resource_arn {
                 query.push_kv(
                     "resourceArn",
-                    &aws_smithy_http::query::fmt_string(&inner_53),
+                    &aws_smithy_http::query::fmt_string(&inner_82),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -8304,7 +12775,7 @@ impl TagResourceInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -8330,11 +12801,14 @@ impl TagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8422,6 +12896,7 @@ pub type TestWirelessDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl TestWirelessDeviceInput {
     /// Consumes the builder and constructs an Operation<[`TestWirelessDevice`](crate::operation::TestWirelessDevice)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8436,15 +12911,15 @@ impl TestWirelessDeviceInput {
             _input: &crate::input::TestWirelessDeviceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_54 = &_input.id;
-            let input_54 =
-                input_54
+            let input_83 = &_input.id;
+            let input_83 =
+                input_83
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_54, false);
+            let id = aws_smithy_http::label::fmt_string(input_83, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -8483,11 +12958,14 @@ impl TestWirelessDeviceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8590,6 +13068,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8607,19 +13086,23 @@ impl UntagResourceInput {
             write!(output, "/tags").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::UntagResourceInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_55) = &_input.resource_arn {
+            if let Some(inner_84) = &_input.resource_arn {
                 query.push_kv(
                     "resourceArn",
-                    &aws_smithy_http::query::fmt_string(&inner_55),
+                    &aws_smithy_http::query::fmt_string(&inner_84),
                 );
             }
-            if let Some(inner_56) = &_input.tag_keys {
-                for inner_57 in inner_56 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_57));
+            if let Some(inner_85) = &_input.tag_keys {
+                for inner_86 in inner_85 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_86));
                 }
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -8629,7 +13112,7 @@ impl UntagResourceInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -8650,11 +13133,14 @@ impl UntagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8787,6 +13273,7 @@ pub type UpdateDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl UpdateDestinationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDestination`](crate::operation::UpdateDestination)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8801,15 +13288,15 @@ impl UpdateDestinationInput {
             _input: &crate::input::UpdateDestinationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_58 = &_input.name;
-            let input_58 =
-                input_58
+            let input_87 = &_input.name;
+            let input_87 =
+                input_87
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_58, false);
+            let name = aws_smithy_http::label::fmt_string(input_87, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -8853,11 +13340,14 @@ impl UpdateDestinationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8905,6 +13395,239 @@ impl UpdateDestinationInput {
     /// Creates a new builder-style object to manufacture [`UpdateDestinationInput`](crate::input::UpdateDestinationInput)
     pub fn builder() -> crate::input::update_destination_input::Builder {
         crate::input::update_destination_input::Builder::default()
+    }
+}
+
+/// See [`UpdateFuotaTaskInput`](crate::input::UpdateFuotaTaskInput)
+pub mod update_fuota_task_input {
+    /// A builder for [`UpdateFuotaTaskInput`](crate::input::UpdateFuotaTaskInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanFuotaTask>,
+        pub(crate) firmware_update_image: std::option::Option<std::string::String>,
+        pub(crate) firmware_update_role: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The name of a FUOTA task.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of a FUOTA task.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the new resource.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the new resource.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The LoRaWAN information used with a FUOTA task.</p>
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanFuotaTask) -> Self {
+            self.lo_ra_wan = Some(input);
+            self
+        }
+        /// <p>The LoRaWAN information used with a FUOTA task.</p>
+        pub fn set_lo_ra_wan(
+            mut self,
+            input: std::option::Option<crate::model::LoRaWanFuotaTask>,
+        ) -> Self {
+            self.lo_ra_wan = input;
+            self
+        }
+        /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+        pub fn firmware_update_image(mut self, input: impl Into<std::string::String>) -> Self {
+            self.firmware_update_image = Some(input.into());
+            self
+        }
+        /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+        pub fn set_firmware_update_image(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firmware_update_image = input;
+            self
+        }
+        /// <p>The firmware update role that is to be used with a FUOTA task.</p>
+        pub fn firmware_update_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.firmware_update_role = Some(input.into());
+            self
+        }
+        /// <p>The firmware update role that is to be used with a FUOTA task.</p>
+        pub fn set_firmware_update_role(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firmware_update_role = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateFuotaTaskInput`](crate::input::UpdateFuotaTaskInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateFuotaTaskInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateFuotaTaskInput {
+                id: self.id,
+                name: self.name,
+                description: self.description,
+                lo_ra_wan: self.lo_ra_wan,
+                firmware_update_image: self.firmware_update_image,
+                firmware_update_role: self.firmware_update_role,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateFuotaTaskInputOperationOutputAlias = crate::operation::UpdateFuotaTask;
+#[doc(hidden)]
+pub type UpdateFuotaTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateFuotaTaskInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateFuotaTask`](crate::operation::UpdateFuotaTask)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateFuotaTask,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateFuotaTaskInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_88 = &_input.id;
+            let input_88 =
+                input_88
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_88, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/fuota-tasks/{Id}", Id = id).expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateFuotaTaskInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PATCH").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateFuotaTaskInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_fuota_task(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFuotaTask::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateFuotaTask",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateFuotaTaskInput`](crate::input::UpdateFuotaTaskInput)
+    pub fn builder() -> crate::input::update_fuota_task_input::Builder {
+        crate::input::update_fuota_task_input::Builder::default()
     }
 }
 
@@ -9001,6 +13724,7 @@ pub type UpdateLogLevelsByResourceTypesInputOperationRetryAlias = aws_http::AwsE
 impl UpdateLogLevelsByResourceTypesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLogLevelsByResourceTypes`](crate::operation::UpdateLogLevelsByResourceTypes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -9053,11 +13777,14 @@ impl UpdateLogLevelsByResourceTypesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -9105,6 +13832,211 @@ impl UpdateLogLevelsByResourceTypesInput {
     /// Creates a new builder-style object to manufacture [`UpdateLogLevelsByResourceTypesInput`](crate::input::UpdateLogLevelsByResourceTypesInput)
     pub fn builder() -> crate::input::update_log_levels_by_resource_types_input::Builder {
         crate::input::update_log_levels_by_resource_types_input::Builder::default()
+    }
+}
+
+/// See [`UpdateMulticastGroupInput`](crate::input::UpdateMulticastGroupInput)
+pub mod update_multicast_group_input {
+    /// A builder for [`UpdateMulticastGroupInput`](crate::input::UpdateMulticastGroupInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticast>,
+    }
+    impl Builder {
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The name of the multicast group.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the multicast group.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the new resource.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the new resource.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanMulticast) -> Self {
+            self.lo_ra_wan = Some(input);
+            self
+        }
+        /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
+        pub fn set_lo_ra_wan(
+            mut self,
+            input: std::option::Option<crate::model::LoRaWanMulticast>,
+        ) -> Self {
+            self.lo_ra_wan = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateMulticastGroupInput`](crate::input::UpdateMulticastGroupInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateMulticastGroupInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateMulticastGroupInput {
+                id: self.id,
+                name: self.name,
+                description: self.description,
+                lo_ra_wan: self.lo_ra_wan,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateMulticastGroupInputOperationOutputAlias = crate::operation::UpdateMulticastGroup;
+#[doc(hidden)]
+pub type UpdateMulticastGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateMulticastGroupInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateMulticastGroup`](crate::operation::UpdateMulticastGroup)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateMulticastGroup,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateMulticastGroupInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_89 = &_input.id;
+            let input_89 =
+                input_89
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_89, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/multicast-groups/{Id}", Id = id).expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateMulticastGroupInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PATCH").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateMulticastGroupInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_multicast_group(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateMulticastGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateMulticastGroup",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateMulticastGroupInput`](crate::input::UpdateMulticastGroupInput)
+    pub fn builder() -> crate::input::update_multicast_group_input::Builder {
+        crate::input::update_multicast_group_input::Builder::default()
     }
 }
 
@@ -9180,6 +14112,7 @@ pub type UpdatePartnerAccountInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl UpdatePartnerAccountInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePartnerAccount`](crate::operation::UpdatePartnerAccount)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -9194,15 +14127,15 @@ impl UpdatePartnerAccountInput {
             _input: &crate::input::UpdatePartnerAccountInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_59 = &_input.partner_account_id;
-            let input_59 =
-                input_59
+            let input_90 = &_input.partner_account_id;
+            let input_90 =
+                input_90
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "partner_account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let partner_account_id = aws_smithy_http::label::fmt_string(input_59, false);
+            let partner_account_id = aws_smithy_http::label::fmt_string(input_90, false);
             if partner_account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "partner_account_id",
@@ -9217,14 +14150,18 @@ impl UpdatePartnerAccountInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::UpdatePartnerAccountInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::UpdatePartnerAccountInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_60) = &_input.partner_type {
+            if let Some(inner_91) = &_input.partner_type {
                 query.push_kv(
                     "partnerType",
-                    &aws_smithy_http::query::fmt_string(&inner_60),
+                    &aws_smithy_http::query::fmt_string(&inner_91),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -9234,7 +14171,7 @@ impl UpdatePartnerAccountInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("PATCH").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -9263,11 +14200,14 @@ impl UpdatePartnerAccountInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -9315,6 +14255,261 @@ impl UpdatePartnerAccountInput {
     /// Creates a new builder-style object to manufacture [`UpdatePartnerAccountInput`](crate::input::UpdatePartnerAccountInput)
     pub fn builder() -> crate::input::update_partner_account_input::Builder {
         crate::input::update_partner_account_input::Builder::default()
+    }
+}
+
+/// See [`UpdateResourceEventConfigurationInput`](crate::input::UpdateResourceEventConfigurationInput)
+pub mod update_resource_event_configuration_input {
+    /// A builder for [`UpdateResourceEventConfigurationInput`](crate::input::UpdateResourceEventConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) identifier: std::option::Option<std::string::String>,
+        pub(crate) identifier_type: std::option::Option<crate::model::IdentifierType>,
+        pub(crate) partner_type: std::option::Option<crate::model::EventNotificationPartnerType>,
+        pub(crate) device_registration_state:
+            std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
+        pub(crate) proximity: std::option::Option<crate::model::ProximityEventConfiguration>,
+    }
+    impl Builder {
+        /// <p>Resource identifier to opt in for event messaging.</p>
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.identifier = Some(input.into());
+            self
+        }
+        /// <p>Resource identifier to opt in for event messaging.</p>
+        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identifier = input;
+            self
+        }
+        /// <p>Identifier type of the particular resource identifier for event configuration.</p>
+        pub fn identifier_type(mut self, input: crate::model::IdentifierType) -> Self {
+            self.identifier_type = Some(input);
+            self
+        }
+        /// <p>Identifier type of the particular resource identifier for event configuration.</p>
+        pub fn set_identifier_type(
+            mut self,
+            input: std::option::Option<crate::model::IdentifierType>,
+        ) -> Self {
+            self.identifier_type = input;
+            self
+        }
+        /// <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+        pub fn partner_type(mut self, input: crate::model::EventNotificationPartnerType) -> Self {
+            self.partner_type = Some(input);
+            self
+        }
+        /// <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+        pub fn set_partner_type(
+            mut self,
+            input: std::option::Option<crate::model::EventNotificationPartnerType>,
+        ) -> Self {
+            self.partner_type = input;
+            self
+        }
+        /// <p>Event configuration for the device registration state event</p>
+        pub fn device_registration_state(
+            mut self,
+            input: crate::model::DeviceRegistrationStateEventConfiguration,
+        ) -> Self {
+            self.device_registration_state = Some(input);
+            self
+        }
+        /// <p>Event configuration for the device registration state event</p>
+        pub fn set_device_registration_state(
+            mut self,
+            input: std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
+        ) -> Self {
+            self.device_registration_state = input;
+            self
+        }
+        /// <p>Event configuration for the Proximity event</p>
+        pub fn proximity(mut self, input: crate::model::ProximityEventConfiguration) -> Self {
+            self.proximity = Some(input);
+            self
+        }
+        /// <p>Event configuration for the Proximity event</p>
+        pub fn set_proximity(
+            mut self,
+            input: std::option::Option<crate::model::ProximityEventConfiguration>,
+        ) -> Self {
+            self.proximity = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateResourceEventConfigurationInput`](crate::input::UpdateResourceEventConfigurationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateResourceEventConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateResourceEventConfigurationInput {
+                identifier: self.identifier,
+                identifier_type: self.identifier_type,
+                partner_type: self.partner_type,
+                device_registration_state: self.device_registration_state,
+                proximity: self.proximity,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateResourceEventConfigurationInputOperationOutputAlias =
+    crate::operation::UpdateResourceEventConfiguration;
+#[doc(hidden)]
+pub type UpdateResourceEventConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateResourceEventConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateResourceEventConfiguration`](crate::operation::UpdateResourceEventConfiguration)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateResourceEventConfiguration,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateResourceEventConfigurationInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_92 = &_input.identifier;
+            let input_92 =
+                input_92
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "identifier",
+                        details: "cannot be empty or unset",
+                    })?;
+            let identifier = aws_smithy_http::label::fmt_string(input_92, false);
+            if identifier.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "identifier",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/event-configurations/{Identifier}",
+                Identifier = identifier
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::UpdateResourceEventConfigurationInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_93) = &_input.identifier_type {
+                query.push_kv(
+                    "identifierType",
+                    &aws_smithy_http::query::fmt_string(&inner_93),
+                );
+            }
+            if let Some(inner_94) = &_input.partner_type {
+                query.push_kv(
+                    "partnerType",
+                    &aws_smithy_http::query::fmt_string(&inner_94),
+                );
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateResourceEventConfigurationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("PATCH").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateResourceEventConfigurationInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_resource_event_configuration(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateResourceEventConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateResourceEventConfiguration",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateResourceEventConfigurationInput`](crate::input::UpdateResourceEventConfigurationInput)
+    pub fn builder() -> crate::input::update_resource_event_configuration_input::Builder {
+        crate::input::update_resource_event_configuration_input::Builder::default()
     }
 }
 
@@ -9411,6 +14606,7 @@ pub type UpdateWirelessDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl UpdateWirelessDeviceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWirelessDevice`](crate::operation::UpdateWirelessDevice)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -9425,15 +14621,15 @@ impl UpdateWirelessDeviceInput {
             _input: &crate::input::UpdateWirelessDeviceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_61 = &_input.id;
-            let input_61 =
-                input_61
+            let input_95 = &_input.id;
+            let input_95 =
+                input_95
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_61, false);
+            let id = aws_smithy_http::label::fmt_string(input_95, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -9479,11 +14675,14 @@ impl UpdateWirelessDeviceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -9643,6 +14842,7 @@ pub type UpdateWirelessGatewayInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl UpdateWirelessGatewayInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWirelessGateway`](crate::operation::UpdateWirelessGateway)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -9657,15 +14857,15 @@ impl UpdateWirelessGatewayInput {
             _input: &crate::input::UpdateWirelessGatewayInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_62 = &_input.id;
-            let input_62 =
-                input_62
+            let input_96 = &_input.id;
+            let input_96 =
+                input_96
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_62, false);
+            let id = aws_smithy_http::label::fmt_string(input_96, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -9711,11 +14911,14 @@ impl UpdateWirelessGatewayInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -9867,6 +15070,58 @@ impl std::fmt::Debug for UpdateWirelessDeviceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateResourceEventConfigurationInput {
+    /// <p>Resource identifier to opt in for event messaging.</p>
+    pub identifier: std::option::Option<std::string::String>,
+    /// <p>Identifier type of the particular resource identifier for event configuration.</p>
+    pub identifier_type: std::option::Option<crate::model::IdentifierType>,
+    /// <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+    pub partner_type: std::option::Option<crate::model::EventNotificationPartnerType>,
+    /// <p>Event configuration for the device registration state event</p>
+    pub device_registration_state:
+        std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
+    /// <p>Event configuration for the Proximity event</p>
+    pub proximity: std::option::Option<crate::model::ProximityEventConfiguration>,
+}
+impl UpdateResourceEventConfigurationInput {
+    /// <p>Resource identifier to opt in for event messaging.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>Identifier type of the particular resource identifier for event configuration.</p>
+    pub fn identifier_type(&self) -> std::option::Option<&crate::model::IdentifierType> {
+        self.identifier_type.as_ref()
+    }
+    /// <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+    pub fn partner_type(&self) -> std::option::Option<&crate::model::EventNotificationPartnerType> {
+        self.partner_type.as_ref()
+    }
+    /// <p>Event configuration for the device registration state event</p>
+    pub fn device_registration_state(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceRegistrationStateEventConfiguration> {
+        self.device_registration_state.as_ref()
+    }
+    /// <p>Event configuration for the Proximity event</p>
+    pub fn proximity(&self) -> std::option::Option<&crate::model::ProximityEventConfiguration> {
+        self.proximity.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateResourceEventConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateResourceEventConfigurationInput");
+        formatter.field("identifier", &self.identifier);
+        formatter.field("identifier_type", &self.identifier_type);
+        formatter.field("partner_type", &self.partner_type);
+        formatter.field("device_registration_state", &self.device_registration_state);
+        formatter.field("proximity", &self.proximity);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePartnerAccountInput {
     /// <p>The Sidewalk account credentials.</p>
     pub sidewalk: std::option::Option<crate::model::SidewalkUpdateAccount>,
@@ -9895,6 +15150,48 @@ impl std::fmt::Debug for UpdatePartnerAccountInput {
         formatter.field("sidewalk", &self.sidewalk);
         formatter.field("partner_account_id", &self.partner_account_id);
         formatter.field("partner_type", &self.partner_type);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateMulticastGroupInput {
+    /// <p>The ID of the multicast group.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The name of the multicast group.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the new resource.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
+    pub lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticast>,
+}
+impl UpdateMulticastGroupInput {
+    /// <p>The ID of the multicast group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the multicast group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the new resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanMulticast> {
+        self.lo_ra_wan.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateMulticastGroupInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateMulticastGroupInput");
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("lo_ra_wan", &self.lo_ra_wan);
         formatter.finish()
     }
 }
@@ -9942,6 +15239,62 @@ impl std::fmt::Debug for UpdateLogLevelsByResourceTypesInput {
             "wireless_gateway_log_options",
             &self.wireless_gateway_log_options,
         );
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFuotaTaskInput {
+    /// <p>The ID of a FUOTA task.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The name of a FUOTA task.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the new resource.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The LoRaWAN information used with a FUOTA task.</p>
+    pub lo_ra_wan: std::option::Option<crate::model::LoRaWanFuotaTask>,
+    /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+    pub firmware_update_image: std::option::Option<std::string::String>,
+    /// <p>The firmware update role that is to be used with a FUOTA task.</p>
+    pub firmware_update_role: std::option::Option<std::string::String>,
+}
+impl UpdateFuotaTaskInput {
+    /// <p>The ID of a FUOTA task.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of a FUOTA task.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the new resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The LoRaWAN information used with a FUOTA task.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanFuotaTask> {
+        self.lo_ra_wan.as_ref()
+    }
+    /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+    pub fn firmware_update_image(&self) -> std::option::Option<&str> {
+        self.firmware_update_image.as_deref()
+    }
+    /// <p>The firmware update role that is to be used with a FUOTA task.</p>
+    pub fn firmware_update_role(&self) -> std::option::Option<&str> {
+        self.firmware_update_role.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateFuotaTaskInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateFuotaTaskInput");
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("lo_ra_wan", &self.lo_ra_wan);
+        formatter.field("firmware_update_image", &self.firmware_update_image);
+        formatter.field("firmware_update_role", &self.firmware_update_role);
         formatter.finish()
     }
 }
@@ -10075,6 +15428,134 @@ impl std::fmt::Debug for TagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartMulticastGroupSessionInput {
+    /// <p>The ID of the multicast group.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The LoRaWAN information used with the multicast session.</p>
+    pub lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticastSession>,
+}
+impl StartMulticastGroupSessionInput {
+    /// <p>The ID of the multicast group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The LoRaWAN information used with the multicast session.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanMulticastSession> {
+        self.lo_ra_wan.as_ref()
+    }
+}
+impl std::fmt::Debug for StartMulticastGroupSessionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartMulticastGroupSessionInput");
+        formatter.field("id", &self.id);
+        formatter.field("lo_ra_wan", &self.lo_ra_wan);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartFuotaTaskInput {
+    /// <p>The ID of a FUOTA task.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The LoRaWAN information used to start a FUOTA task.</p>
+    pub lo_ra_wan: std::option::Option<crate::model::LoRaWanStartFuotaTask>,
+}
+impl StartFuotaTaskInput {
+    /// <p>The ID of a FUOTA task.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The LoRaWAN information used to start a FUOTA task.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanStartFuotaTask> {
+        self.lo_ra_wan.as_ref()
+    }
+}
+impl std::fmt::Debug for StartFuotaTaskInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartFuotaTaskInput");
+        formatter.field("id", &self.id);
+        formatter.field("lo_ra_wan", &self.lo_ra_wan);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
+    /// <p>The ID of the multicast group.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
+    pub query_string: std::option::Option<std::string::String>,
+    /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
+    /// <p>The ID of the multicast group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+    /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter =
+            f.debug_struct("StartBulkDisassociateWirelessDeviceFromMulticastGroupInput");
+        formatter.field("id", &self.id);
+        formatter.field("query_string", &self.query_string);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
+    /// <p>The ID of the multicast group.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
+    pub query_string: std::option::Option<std::string::String>,
+    /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
+    /// <p>The ID of the multicast group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+    /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter =
+            f.debug_struct("StartBulkAssociateWirelessDeviceWithMulticastGroupInput");
+        formatter.field("id", &self.id);
+        formatter.field("query_string", &self.query_string);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendDataToWirelessDeviceInput {
     /// <p>The ID of the wireless device to receive the data.</p>
     pub id: std::option::Option<std::string::String>,
@@ -10108,6 +15589,43 @@ impl std::fmt::Debug for SendDataToWirelessDeviceInput {
         let mut formatter = f.debug_struct("SendDataToWirelessDeviceInput");
         formatter.field("id", &self.id);
         formatter.field("transmit_mode", &self.transmit_mode);
+        formatter.field("payload_data", &self.payload_data);
+        formatter.field("wireless_metadata", &self.wireless_metadata);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SendDataToMulticastGroupInput {
+    /// <p>The ID of the multicast group.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The binary to be sent to the end device, encoded in base64.</p>
+    pub payload_data: std::option::Option<std::string::String>,
+    /// <p>Wireless metadata that is to be sent to multicast group.</p>
+    pub wireless_metadata: std::option::Option<crate::model::MulticastWirelessMetadata>,
+}
+impl SendDataToMulticastGroupInput {
+    /// <p>The ID of the multicast group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The binary to be sent to the end device, encoded in base64.</p>
+    pub fn payload_data(&self) -> std::option::Option<&str> {
+        self.payload_data.as_deref()
+    }
+    /// <p>Wireless metadata that is to be sent to multicast group.</p>
+    pub fn wireless_metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::MulticastWirelessMetadata> {
+        self.wireless_metadata.as_ref()
+    }
+}
+impl std::fmt::Debug for SendDataToMulticastGroupInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SendDataToMulticastGroupInput");
+        formatter.field("id", &self.id);
         formatter.field("payload_data", &self.payload_data);
         formatter.field("wireless_metadata", &self.wireless_metadata);
         formatter.finish()
@@ -10273,6 +15791,10 @@ pub struct ListWirelessDevicesInput {
     pub service_profile_id: std::option::Option<std::string::String>,
     /// <p>A filter to list only the wireless devices that use this wireless device type.</p>
     pub wireless_device_type: std::option::Option<crate::model::WirelessDeviceType>,
+    /// <p>The ID of a FUOTA task.</p>
+    pub fuota_task_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the multicast group.</p>
+    pub multicast_group_id: std::option::Option<std::string::String>,
 }
 impl ListWirelessDevicesInput {
     /// <p>The maximum number of results to return in this operation.</p>
@@ -10299,6 +15821,14 @@ impl ListWirelessDevicesInput {
     pub fn wireless_device_type(&self) -> std::option::Option<&crate::model::WirelessDeviceType> {
         self.wireless_device_type.as_ref()
     }
+    /// <p>The ID of a FUOTA task.</p>
+    pub fn fuota_task_id(&self) -> std::option::Option<&str> {
+        self.fuota_task_id.as_deref()
+    }
+    /// <p>The ID of the multicast group.</p>
+    pub fn multicast_group_id(&self) -> std::option::Option<&str> {
+        self.multicast_group_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListWirelessDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10309,6 +15839,8 @@ impl std::fmt::Debug for ListWirelessDevicesInput {
         formatter.field("device_profile_id", &self.device_profile_id);
         formatter.field("service_profile_id", &self.service_profile_id);
         formatter.field("wireless_device_type", &self.wireless_device_type);
+        formatter.field("fuota_task_id", &self.fuota_task_id);
+        formatter.field("multicast_group_id", &self.multicast_group_id);
         formatter.finish()
     }
 }
@@ -10384,6 +15916,97 @@ impl ListPartnerAccountsInput {
 impl std::fmt::Debug for ListPartnerAccountsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPartnerAccountsInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMulticastGroupsByFuotaTaskInput {
+    /// <p>The ID of a FUOTA task.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub max_results: i32,
+}
+impl ListMulticastGroupsByFuotaTaskInput {
+    /// <p>The ID of a FUOTA task.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListMulticastGroupsByFuotaTaskInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMulticastGroupsByFuotaTaskInput");
+        formatter.field("id", &self.id);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMulticastGroupsInput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub max_results: i32,
+}
+impl ListMulticastGroupsInput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListMulticastGroupsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMulticastGroupsInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListFuotaTasksInput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub max_results: i32,
+}
+impl ListFuotaTasksInput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListFuotaTasksInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListFuotaTasksInput");
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
         formatter.finish()
@@ -10703,6 +16326,41 @@ impl std::fmt::Debug for GetResourceLogLevelInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetResourceEventConfigurationInput {
+    /// <p>Resource identifier to opt in for event messaging.</p>
+    pub identifier: std::option::Option<std::string::String>,
+    /// <p>Identifier type of the particular resource identifier for event configuration.</p>
+    pub identifier_type: std::option::Option<crate::model::IdentifierType>,
+    /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+    pub partner_type: std::option::Option<crate::model::EventNotificationPartnerType>,
+}
+impl GetResourceEventConfigurationInput {
+    /// <p>Resource identifier to opt in for event messaging.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>Identifier type of the particular resource identifier for event configuration.</p>
+    pub fn identifier_type(&self) -> std::option::Option<&crate::model::IdentifierType> {
+        self.identifier_type.as_ref()
+    }
+    /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+    pub fn partner_type(&self) -> std::option::Option<&crate::model::EventNotificationPartnerType> {
+        self.partner_type.as_ref()
+    }
+}
+impl std::fmt::Debug for GetResourceEventConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetResourceEventConfigurationInput");
+        formatter.field("identifier", &self.identifier);
+        formatter.field("identifier_type", &self.identifier_type);
+        formatter.field("partner_type", &self.partner_type);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPartnerAccountInput {
     /// <p>The partner account ID to disassociate from the AWS account.</p>
     pub partner_account_id: std::option::Option<std::string::String>,
@@ -10731,10 +16389,73 @@ impl std::fmt::Debug for GetPartnerAccountInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMulticastGroupSessionInput {
+    /// <p>The ID of the multicast group.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl GetMulticastGroupSessionInput {
+    /// <p>The ID of the multicast group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for GetMulticastGroupSessionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMulticastGroupSessionInput");
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMulticastGroupInput {
+    /// <p>The ID of the multicast group.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl GetMulticastGroupInput {
+    /// <p>The ID of the multicast group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for GetMulticastGroupInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMulticastGroupInput");
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLogLevelsByResourceTypesInput {}
 impl std::fmt::Debug for GetLogLevelsByResourceTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLogLevelsByResourceTypesInput");
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetFuotaTaskInput {
+    /// <p>The ID of a FUOTA task.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl GetFuotaTaskInput {
+    /// <p>The ID of a FUOTA task.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for GetFuotaTaskInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetFuotaTaskInput");
+        formatter.field("id", &self.id);
         formatter.finish()
     }
 }
@@ -10840,6 +16561,90 @@ impl std::fmt::Debug for DisassociateWirelessDeviceFromThingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateWirelessDeviceFromThingInput");
         formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateWirelessDeviceFromMulticastGroupInput {
+    /// <p>The ID of the multicast group.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The ID of the wireless device.</p>
+    pub wireless_device_id: std::option::Option<std::string::String>,
+}
+impl DisassociateWirelessDeviceFromMulticastGroupInput {
+    /// <p>The ID of the multicast group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ID of the wireless device.</p>
+    pub fn wireless_device_id(&self) -> std::option::Option<&str> {
+        self.wireless_device_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DisassociateWirelessDeviceFromMulticastGroupInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateWirelessDeviceFromMulticastGroupInput");
+        formatter.field("id", &self.id);
+        formatter.field("wireless_device_id", &self.wireless_device_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateWirelessDeviceFromFuotaTaskInput {
+    /// <p>The ID of a FUOTA task.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The ID of the wireless device.</p>
+    pub wireless_device_id: std::option::Option<std::string::String>,
+}
+impl DisassociateWirelessDeviceFromFuotaTaskInput {
+    /// <p>The ID of a FUOTA task.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ID of the wireless device.</p>
+    pub fn wireless_device_id(&self) -> std::option::Option<&str> {
+        self.wireless_device_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DisassociateWirelessDeviceFromFuotaTaskInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateWirelessDeviceFromFuotaTaskInput");
+        formatter.field("id", &self.id);
+        formatter.field("wireless_device_id", &self.wireless_device_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateMulticastGroupFromFuotaTaskInput {
+    /// <p>The ID of a FUOTA task.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The ID of the multicast group.</p>
+    pub multicast_group_id: std::option::Option<std::string::String>,
+}
+impl DisassociateMulticastGroupFromFuotaTaskInput {
+    /// <p>The ID of a FUOTA task.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ID of the multicast group.</p>
+    pub fn multicast_group_id(&self) -> std::option::Option<&str> {
+        self.multicast_group_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DisassociateMulticastGroupFromFuotaTaskInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateMulticastGroupFromFuotaTaskInput");
+        formatter.field("id", &self.id);
+        formatter.field("multicast_group_id", &self.multicast_group_id);
         formatter.finish()
     }
 }
@@ -10972,6 +16777,48 @@ impl DeleteServiceProfileInput {
 impl std::fmt::Debug for DeleteServiceProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteServiceProfileInput");
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteMulticastGroupInput {
+    /// <p>The ID of the multicast group.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl DeleteMulticastGroupInput {
+    /// <p>The ID of the multicast group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteMulticastGroupInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteMulticastGroupInput");
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteFuotaTaskInput {
+    /// <p>The ID of a FUOTA task.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl DeleteFuotaTaskInput {
+    /// <p>The ID of a FUOTA task.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteFuotaTaskInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteFuotaTaskInput");
         formatter.field("id", &self.id);
         formatter.finish()
     }
@@ -11256,6 +17103,122 @@ impl std::fmt::Debug for CreateServiceProfileInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateMulticastGroupInput {
+    /// <p>The name of the multicast group.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the multicast group.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the
+    /// same token as a resource that already exists, an exception occurs. If you omit this value,
+    /// AWS SDKs will automatically generate a unique client request. </p>
+    pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
+    pub lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticast>,
+    /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateMulticastGroupInput {
+    /// <p>The name of the multicast group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the multicast group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the
+    /// same token as a resource that already exists, an exception occurs. If you omit this value,
+    /// AWS SDKs will automatically generate a unique client request. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanMulticast> {
+        self.lo_ra_wan.as_ref()
+    }
+    /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateMulticastGroupInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateMulticastGroupInput");
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("client_request_token", &self.client_request_token);
+        formatter.field("lo_ra_wan", &self.lo_ra_wan);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateFuotaTaskInput {
+    /// <p>The name of a FUOTA task.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the new resource.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
+    pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>The LoRaWAN information used with a FUOTA task.</p>
+    pub lo_ra_wan: std::option::Option<crate::model::LoRaWanFuotaTask>,
+    /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+    pub firmware_update_image: std::option::Option<std::string::String>,
+    /// <p>The firmware update role that is to be used with a FUOTA task.</p>
+    pub firmware_update_role: std::option::Option<std::string::String>,
+    /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateFuotaTaskInput {
+    /// <p>The name of a FUOTA task.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the new resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The LoRaWAN information used with a FUOTA task.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanFuotaTask> {
+        self.lo_ra_wan.as_ref()
+    }
+    /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+    pub fn firmware_update_image(&self) -> std::option::Option<&str> {
+        self.firmware_update_image.as_deref()
+    }
+    /// <p>The firmware update role that is to be used with a FUOTA task.</p>
+    pub fn firmware_update_role(&self) -> std::option::Option<&str> {
+        self.firmware_update_role.as_deref()
+    }
+    /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateFuotaTaskInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateFuotaTaskInput");
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("client_request_token", &self.client_request_token);
+        formatter.field("lo_ra_wan", &self.lo_ra_wan);
+        formatter.field("firmware_update_image", &self.firmware_update_image);
+        formatter.field("firmware_update_role", &self.firmware_update_role);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeviceProfileInput {
     /// <p>The name of the new resource.</p>
     pub name: std::option::Option<std::string::String>,
@@ -11361,6 +17324,27 @@ impl std::fmt::Debug for CreateDestinationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CancelMulticastGroupSessionInput {
+    /// <p>The ID of the multicast group.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl CancelMulticastGroupSessionInput {
+    /// <p>The ID of the multicast group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for CancelMulticastGroupSessionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CancelMulticastGroupSessionInput");
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateWirelessGatewayWithThingInput {
     /// <p>The ID of the resource to update.</p>
     pub id: std::option::Option<std::string::String>,
@@ -11438,6 +17422,90 @@ impl std::fmt::Debug for AssociateWirelessDeviceWithThingInput {
         let mut formatter = f.debug_struct("AssociateWirelessDeviceWithThingInput");
         formatter.field("id", &self.id);
         formatter.field("thing_arn", &self.thing_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateWirelessDeviceWithMulticastGroupInput {
+    /// <p>The ID of the multicast group.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The ID of the wireless device.</p>
+    pub wireless_device_id: std::option::Option<std::string::String>,
+}
+impl AssociateWirelessDeviceWithMulticastGroupInput {
+    /// <p>The ID of the multicast group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ID of the wireless device.</p>
+    pub fn wireless_device_id(&self) -> std::option::Option<&str> {
+        self.wireless_device_id.as_deref()
+    }
+}
+impl std::fmt::Debug for AssociateWirelessDeviceWithMulticastGroupInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateWirelessDeviceWithMulticastGroupInput");
+        formatter.field("id", &self.id);
+        formatter.field("wireless_device_id", &self.wireless_device_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateWirelessDeviceWithFuotaTaskInput {
+    /// <p>The ID of a FUOTA task.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The ID of the wireless device.</p>
+    pub wireless_device_id: std::option::Option<std::string::String>,
+}
+impl AssociateWirelessDeviceWithFuotaTaskInput {
+    /// <p>The ID of a FUOTA task.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ID of the wireless device.</p>
+    pub fn wireless_device_id(&self) -> std::option::Option<&str> {
+        self.wireless_device_id.as_deref()
+    }
+}
+impl std::fmt::Debug for AssociateWirelessDeviceWithFuotaTaskInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateWirelessDeviceWithFuotaTaskInput");
+        formatter.field("id", &self.id);
+        formatter.field("wireless_device_id", &self.wireless_device_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateMulticastGroupWithFuotaTaskInput {
+    /// <p>The ID of a FUOTA task.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The ID of the multicast group.</p>
+    pub multicast_group_id: std::option::Option<std::string::String>,
+}
+impl AssociateMulticastGroupWithFuotaTaskInput {
+    /// <p>The ID of a FUOTA task.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ID of the multicast group.</p>
+    pub fn multicast_group_id(&self) -> std::option::Option<&str> {
+        self.multicast_group_id.as_deref()
+    }
+}
+impl std::fmt::Debug for AssociateMulticastGroupWithFuotaTaskInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateMulticastGroupWithFuotaTaskInput");
+        formatter.field("id", &self.id);
+        formatter.field("multicast_group_id", &self.multicast_group_id);
         formatter.finish()
     }
 }

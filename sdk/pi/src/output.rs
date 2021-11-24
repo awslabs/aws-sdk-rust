@@ -6,11 +6,11 @@ pub struct GetResourceMetricsOutput {
     /// <p>The start time for the returned metrics, after alignment to a granular boundary (as
     /// specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or
     /// equal to the value of the user-specified <code>StartTime</code>.</p>
-    pub aligned_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub aligned_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time for the returned metrics, after alignment to a granular boundary (as
     /// specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than
     /// or equal to the value of the user-specified <code>Endtime</code>.</p>
-    pub aligned_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub aligned_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from
     /// this data source.</p>
     /// <p>To use a DB instance as a data source, you specify its
@@ -29,13 +29,13 @@ impl GetResourceMetricsOutput {
     /// <p>The start time for the returned metrics, after alignment to a granular boundary (as
     /// specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or
     /// equal to the value of the user-specified <code>StartTime</code>.</p>
-    pub fn aligned_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn aligned_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.aligned_start_time.as_ref()
     }
     /// <p>The end time for the returned metrics, after alignment to a granular boundary (as
     /// specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than
     /// or equal to the value of the user-specified <code>Endtime</code>.</p>
-    pub fn aligned_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn aligned_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.aligned_end_time.as_ref()
     }
     /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from
@@ -75,8 +75,8 @@ pub mod get_resource_metrics_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) aligned_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) aligned_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) aligned_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) aligned_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) identifier: std::option::Option<std::string::String>,
         pub(crate) metric_list:
             std::option::Option<std::vec::Vec<crate::model::MetricKeyDataPoints>>,
@@ -86,7 +86,7 @@ pub mod get_resource_metrics_output {
         /// <p>The start time for the returned metrics, after alignment to a granular boundary (as
         /// specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or
         /// equal to the value of the user-specified <code>StartTime</code>.</p>
-        pub fn aligned_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn aligned_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.aligned_start_time = Some(input);
             self
         }
@@ -95,7 +95,7 @@ pub mod get_resource_metrics_output {
         /// equal to the value of the user-specified <code>StartTime</code>.</p>
         pub fn set_aligned_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.aligned_start_time = input;
             self
@@ -103,7 +103,7 @@ pub mod get_resource_metrics_output {
         /// <p>The end time for the returned metrics, after alignment to a granular boundary (as
         /// specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than
         /// or equal to the value of the user-specified <code>Endtime</code>.</p>
-        pub fn aligned_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn aligned_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.aligned_end_time = Some(input);
             self
         }
@@ -112,7 +112,7 @@ pub mod get_resource_metrics_output {
         /// or equal to the value of the user-specified <code>Endtime</code>.</p>
         pub fn set_aligned_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.aligned_end_time = input;
             self
@@ -259,11 +259,11 @@ pub struct DescribeDimensionKeysOutput {
     /// <p>The start time for the returned dimension keys, after alignment to a granular boundary (as
     /// specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or
     /// equal to the value of the user-specified <code>StartTime</code>.</p>
-    pub aligned_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub aligned_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time for the returned dimension keys, after alignment to a granular boundary (as
     /// specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than
     /// or equal to the value of the user-specified <code>Endtime</code>.</p>
-    pub aligned_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub aligned_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If <code>PartitionBy</code> was present in the request, <code>PartitionKeys</code> contains the breakdown of dimension keys by the specified partitions.</p>
     pub partition_keys: std::option::Option<std::vec::Vec<crate::model::ResponsePartitionKey>>,
     /// <p>The dimension keys that were requested.</p>
@@ -277,13 +277,13 @@ impl DescribeDimensionKeysOutput {
     /// <p>The start time for the returned dimension keys, after alignment to a granular boundary (as
     /// specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or
     /// equal to the value of the user-specified <code>StartTime</code>.</p>
-    pub fn aligned_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn aligned_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.aligned_start_time.as_ref()
     }
     /// <p>The end time for the returned dimension keys, after alignment to a granular boundary (as
     /// specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than
     /// or equal to the value of the user-specified <code>Endtime</code>.</p>
-    pub fn aligned_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn aligned_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.aligned_end_time.as_ref()
     }
     /// <p>If <code>PartitionBy</code> was present in the request, <code>PartitionKeys</code> contains the breakdown of dimension keys by the specified partitions.</p>
@@ -318,8 +318,8 @@ pub mod describe_dimension_keys_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) aligned_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) aligned_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) aligned_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) aligned_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) partition_keys:
             std::option::Option<std::vec::Vec<crate::model::ResponsePartitionKey>>,
         pub(crate) keys: std::option::Option<std::vec::Vec<crate::model::DimensionKeyDescription>>,
@@ -329,7 +329,7 @@ pub mod describe_dimension_keys_output {
         /// <p>The start time for the returned dimension keys, after alignment to a granular boundary (as
         /// specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or
         /// equal to the value of the user-specified <code>StartTime</code>.</p>
-        pub fn aligned_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn aligned_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.aligned_start_time = Some(input);
             self
         }
@@ -338,7 +338,7 @@ pub mod describe_dimension_keys_output {
         /// equal to the value of the user-specified <code>StartTime</code>.</p>
         pub fn set_aligned_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.aligned_start_time = input;
             self
@@ -346,7 +346,7 @@ pub mod describe_dimension_keys_output {
         /// <p>The end time for the returned dimension keys, after alignment to a granular boundary (as
         /// specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than
         /// or equal to the value of the user-specified <code>Endtime</code>.</p>
-        pub fn aligned_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn aligned_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.aligned_end_time = Some(input);
             self
         }
@@ -355,7 +355,7 @@ pub mod describe_dimension_keys_output {
         /// or equal to the value of the user-specified <code>Endtime</code>.</p>
         pub fn set_aligned_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.aligned_end_time = input;
             self

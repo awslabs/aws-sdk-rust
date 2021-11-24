@@ -11,7 +11,7 @@ pub fn ser_payload_create_cache_policy_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_cache_policy_input_cache_policy_config(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_cache_policy_input_cache_policy_config(payload)?
     ))
 }
 
@@ -27,7 +27,7 @@ pub fn ser_payload_create_cloud_front_origin_access_identity_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_cloud_front_origin_access_identity_input_cloud_front_origin_access_identity_config(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_cloud_front_origin_access_identity_input_cloud_front_origin_access_identity_config(payload)?
     ))
 }
 
@@ -43,7 +43,7 @@ pub fn ser_payload_create_distribution_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_distribution_input_distribution_config(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_distribution_input_distribution_config(payload)?
     ))
 }
 
@@ -59,7 +59,7 @@ pub fn ser_payload_create_distribution_with_tags_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_distribution_with_tags_input_distribution_config_with_tags(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_distribution_with_tags_input_distribution_config_with_tags(payload)?
     ))
 }
 
@@ -75,7 +75,7 @@ pub fn ser_payload_create_field_level_encryption_config_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_field_level_encryption_config_input_field_level_encryption_config(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_field_level_encryption_config_input_field_level_encryption_config(payload)?
     ))
 }
 
@@ -91,7 +91,7 @@ pub fn ser_payload_create_field_level_encryption_profile_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_field_level_encryption_profile_input_field_level_encryption_profile_config(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_field_level_encryption_profile_input_field_level_encryption_profile_config(payload)?
     ))
 }
 
@@ -105,7 +105,7 @@ pub fn serialize_operation_crate_operation_create_function(
         let mut root = writer
             .start_el("CreateFunctionRequest")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_input_create_function_input(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_input_create_function_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -122,7 +122,7 @@ pub fn ser_payload_create_invalidation_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_invalidation_input_invalidation_batch(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_invalidation_input_invalidation_batch(payload)?
     ))
 }
 
@@ -138,7 +138,7 @@ pub fn ser_payload_create_key_group_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_key_group_input_key_group_config(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_key_group_input_key_group_config(payload)?
     ))
 }
 
@@ -154,7 +154,7 @@ pub fn ser_payload_create_monitoring_subscription_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_monitoring_subscription_input_monitoring_subscription(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_monitoring_subscription_input_monitoring_subscription(payload)?
     ))
 }
 
@@ -170,7 +170,7 @@ pub fn ser_payload_create_origin_request_policy_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_origin_request_policy_input_origin_request_policy_config(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_origin_request_policy_input_origin_request_policy_config(payload)?
     ))
 }
 
@@ -186,7 +186,7 @@ pub fn ser_payload_create_public_key_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_public_key_input_public_key_config(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_public_key_input_public_key_config(payload)?
     ))
 }
 
@@ -201,7 +201,7 @@ pub fn serialize_operation_crate_operation_create_realtime_log_config(
             .start_el("CreateRealtimeLogConfigRequest")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_input_create_realtime_log_config_input(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -219,7 +219,7 @@ pub fn ser_payload_create_response_headers_policy_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_response_headers_policy_input_response_headers_policy_config(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_response_headers_policy_input_response_headers_policy_config(payload)?
     ))
 }
 
@@ -235,7 +235,7 @@ pub fn ser_payload_create_streaming_distribution_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_streaming_distribution_input_streaming_distribution_config(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_streaming_distribution_input_streaming_distribution_config(payload)?
     ))
 }
 
@@ -251,7 +251,7 @@ pub fn ser_payload_create_streaming_distribution_with_tags_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_streaming_distribution_with_tags_input_streaming_distribution_config_with_tags(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_streaming_distribution_with_tags_input_streaming_distribution_config_with_tags(payload)?
     ))
 }
 
@@ -266,7 +266,7 @@ pub fn serialize_operation_crate_operation_delete_realtime_log_config(
             .start_el("DeleteRealtimeLogConfigRequest")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_input_delete_realtime_log_config_input(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -282,9 +282,7 @@ pub fn serialize_operation_crate_operation_get_realtime_log_config(
         let mut root = writer
             .start_el("GetRealtimeLogConfigRequest")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_input_get_realtime_log_config_input(
-            &&input, root,
-        )?
+        crate::xml_ser::serialize_structure_crate_input_get_realtime_log_config_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -299,7 +297,7 @@ pub fn serialize_operation_crate_operation_list_distributions_by_realtime_log_co
         let mut root = writer
             .start_el("ListDistributionsByRealtimeLogConfigRequest")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_input_list_distributions_by_realtime_log_config_input(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_input_list_distributions_by_realtime_log_config_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -316,7 +314,7 @@ pub fn ser_payload_tag_resource_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_tag_resource_input_tags(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_tag_resource_input_tags(payload)?
     ))
 }
 
@@ -330,7 +328,7 @@ pub fn serialize_operation_crate_operation_test_function(
         let mut root = writer
             .start_el("TestFunctionRequest")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_input_test_function_input(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_input_test_function_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -347,7 +345,7 @@ pub fn ser_payload_untag_resource_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_untag_resource_input_tag_keys(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_untag_resource_input_tag_keys(payload)?
     ))
 }
 
@@ -363,7 +361,7 @@ pub fn ser_payload_update_cache_policy_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_cache_policy_input_cache_policy_config(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_cache_policy_input_cache_policy_config(payload)?
     ))
 }
 
@@ -379,7 +377,7 @@ pub fn ser_payload_update_cloud_front_origin_access_identity_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_cloud_front_origin_access_identity_input_cloud_front_origin_access_identity_config(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_cloud_front_origin_access_identity_input_cloud_front_origin_access_identity_config(payload)?
     ))
 }
 
@@ -395,7 +393,7 @@ pub fn ser_payload_update_distribution_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_distribution_input_distribution_config(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_distribution_input_distribution_config(payload)?
     ))
 }
 
@@ -411,7 +409,7 @@ pub fn ser_payload_update_field_level_encryption_config_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_field_level_encryption_config_input_field_level_encryption_config(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_field_level_encryption_config_input_field_level_encryption_config(payload)?
     ))
 }
 
@@ -427,7 +425,7 @@ pub fn ser_payload_update_field_level_encryption_profile_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_field_level_encryption_profile_input_field_level_encryption_profile_config(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_field_level_encryption_profile_input_field_level_encryption_profile_config(payload)?
     ))
 }
 
@@ -441,7 +439,7 @@ pub fn serialize_operation_crate_operation_update_function(
         let mut root = writer
             .start_el("UpdateFunctionRequest")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_input_update_function_input(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_input_update_function_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -458,7 +456,7 @@ pub fn ser_payload_update_key_group_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_key_group_input_key_group_config(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_key_group_input_key_group_config(payload)?
     ))
 }
 
@@ -474,7 +472,7 @@ pub fn ser_payload_update_origin_request_policy_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_origin_request_policy_input_origin_request_policy_config(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_origin_request_policy_input_origin_request_policy_config(payload)?
     ))
 }
 
@@ -490,7 +488,7 @@ pub fn ser_payload_update_public_key_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_public_key_input_public_key_config(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_public_key_input_public_key_config(payload)?
     ))
 }
 
@@ -505,7 +503,7 @@ pub fn serialize_operation_crate_operation_update_realtime_log_config(
             .start_el("UpdateRealtimeLogConfigRequest")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_input_update_realtime_log_config_input(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -523,7 +521,7 @@ pub fn ser_payload_update_response_headers_policy_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_response_headers_policy_input_response_headers_policy_config(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_response_headers_policy_input_response_headers_policy_config(payload)?
     ))
 }
 
@@ -539,7 +537,7 @@ pub fn ser_payload_update_streaming_distribution_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_streaming_distribution_input_streaming_distribution_config(&payload)?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_streaming_distribution_input_streaming_distribution_config(payload)?
     ))
 }
 

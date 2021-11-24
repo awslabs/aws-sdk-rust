@@ -1045,12 +1045,12 @@ pub fn serialize_structure_crate_model_scheduled_trigger_properties(
     if let Some(var_256) = &input.schedule_start_time {
         object
             .key("ScheduleStartTime")
-            .instant(var_256, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_256, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_257) = &input.schedule_end_time {
         object
             .key("ScheduleEndTime")
-            .instant(var_257, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_257, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_258) = &input.timezone {
         object.key("Timezone").string(var_258);
@@ -1064,7 +1064,7 @@ pub fn serialize_structure_crate_model_scheduled_trigger_properties(
     if let Some(var_260) = &input.first_execution_from {
         object
             .key("FirstExecutionFrom")
-            .instant(var_260, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_260, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

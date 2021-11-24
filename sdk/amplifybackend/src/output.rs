@@ -2,6 +2,120 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateBackendStorageOutput {
+    /// <p>The app ID.</p>
+    pub app_id: std::option::Option<std::string::String>,
+    /// <p>The name of the backend environment.</p>
+    pub backend_environment_name: std::option::Option<std::string::String>,
+    /// <p>The ID for the job.</p>
+    pub job_id: std::option::Option<std::string::String>,
+    /// <p>The current status of the request.</p>
+    pub status: std::option::Option<std::string::String>,
+}
+impl UpdateBackendStorageOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateBackendStorageOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateBackendStorageOutput");
+        formatter.field("app_id", &self.app_id);
+        formatter.field("backend_environment_name", &self.backend_environment_name);
+        formatter.field("job_id", &self.job_id);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`UpdateBackendStorageOutput`](crate::output::UpdateBackendStorageOutput)
+pub mod update_backend_storage_output {
+    /// A builder for [`UpdateBackendStorageOutput`](crate::output::UpdateBackendStorageOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_id: std::option::Option<std::string::String>,
+        pub(crate) backend_environment_name: std::option::Option<std::string::String>,
+        pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The app ID.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_id = Some(input.into());
+            self
+        }
+        /// <p>The app ID.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_id = input;
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backend_environment_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn set_backend_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backend_environment_name = input;
+            self
+        }
+        /// <p>The ID for the job.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        /// <p>The ID for the job.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// <p>The current status of the request.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The current status of the request.</p>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateBackendStorageOutput`](crate::output::UpdateBackendStorageOutput)
+        pub fn build(self) -> crate::output::UpdateBackendStorageOutput {
+            crate::output::UpdateBackendStorageOutput {
+                app_id: self.app_id,
+                backend_environment_name: self.backend_environment_name,
+                job_id: self.job_id,
+                status: self.status,
+            }
+        }
+    }
+}
+impl UpdateBackendStorageOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateBackendStorageOutput`](crate::output::UpdateBackendStorageOutput)
+    pub fn builder() -> crate::output::update_backend_storage_output::Builder {
+        crate::output::update_backend_storage_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBackendJobOutput {
     /// <p>The app ID.</p>
     pub app_id: std::option::Option<std::string::String>,
@@ -795,6 +909,88 @@ impl RemoveAllBackendsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListS3BucketsOutput {
+    /// <p>The list of S3 buckets.</p>
+    pub buckets: std::option::Option<std::vec::Vec<crate::model::S3BucketInfo>>,
+    /// <p>Reserved for future use.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListS3BucketsOutput {
+    /// <p>The list of S3 buckets.</p>
+    pub fn buckets(&self) -> std::option::Option<&[crate::model::S3BucketInfo]> {
+        self.buckets.as_deref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListS3BucketsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListS3BucketsOutput");
+        formatter.field("buckets", &self.buckets);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListS3BucketsOutput`](crate::output::ListS3BucketsOutput)
+pub mod list_s3_buckets_output {
+    /// A builder for [`ListS3BucketsOutput`](crate::output::ListS3BucketsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) buckets: std::option::Option<std::vec::Vec<crate::model::S3BucketInfo>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `buckets`.
+        ///
+        /// To override the contents of this collection use [`set_buckets`](Self::set_buckets).
+        ///
+        /// <p>The list of S3 buckets.</p>
+        pub fn buckets(mut self, input: impl Into<crate::model::S3BucketInfo>) -> Self {
+            let mut v = self.buckets.unwrap_or_default();
+            v.push(input.into());
+            self.buckets = Some(v);
+            self
+        }
+        /// <p>The list of S3 buckets.</p>
+        pub fn set_buckets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::S3BucketInfo>>,
+        ) -> Self {
+            self.buckets = input;
+            self
+        }
+        /// <p>Reserved for future use.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Reserved for future use.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListS3BucketsOutput`](crate::output::ListS3BucketsOutput)
+        pub fn build(self) -> crate::output::ListS3BucketsOutput {
+            crate::output::ListS3BucketsOutput {
+                buckets: self.buckets,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListS3BucketsOutput {
+    /// Creates a new builder-style object to manufacture [`ListS3BucketsOutput`](crate::output::ListS3BucketsOutput)
+    pub fn builder() -> crate::output::list_s3_buckets_output::Builder {
+        crate::output::list_s3_buckets_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackendJobsOutput {
     /// <p>An array of jobs and their properties.</p>
     pub jobs: std::option::Option<std::vec::Vec<crate::model::BackendJobRespObj>>,
@@ -871,6 +1067,120 @@ impl ListBackendJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListBackendJobsOutput`](crate::output::ListBackendJobsOutput)
     pub fn builder() -> crate::output::list_backend_jobs_output::Builder {
         crate::output::list_backend_jobs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportBackendStorageOutput {
+    /// <p>The app ID.</p>
+    pub app_id: std::option::Option<std::string::String>,
+    /// <p>The name of the backend environment.</p>
+    pub backend_environment_name: std::option::Option<std::string::String>,
+    /// <p>The ID for the job.</p>
+    pub job_id: std::option::Option<std::string::String>,
+    /// <p>The current status of the request.</p>
+    pub status: std::option::Option<std::string::String>,
+}
+impl ImportBackendStorageOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
+impl std::fmt::Debug for ImportBackendStorageOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportBackendStorageOutput");
+        formatter.field("app_id", &self.app_id);
+        formatter.field("backend_environment_name", &self.backend_environment_name);
+        formatter.field("job_id", &self.job_id);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`ImportBackendStorageOutput`](crate::output::ImportBackendStorageOutput)
+pub mod import_backend_storage_output {
+    /// A builder for [`ImportBackendStorageOutput`](crate::output::ImportBackendStorageOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_id: std::option::Option<std::string::String>,
+        pub(crate) backend_environment_name: std::option::Option<std::string::String>,
+        pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The app ID.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_id = Some(input.into());
+            self
+        }
+        /// <p>The app ID.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_id = input;
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backend_environment_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn set_backend_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backend_environment_name = input;
+            self
+        }
+        /// <p>The ID for the job.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        /// <p>The ID for the job.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// <p>The current status of the request.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The current status of the request.</p>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportBackendStorageOutput`](crate::output::ImportBackendStorageOutput)
+        pub fn build(self) -> crate::output::ImportBackendStorageOutput {
+            crate::output::ImportBackendStorageOutput {
+                app_id: self.app_id,
+                backend_environment_name: self.backend_environment_name,
+                job_id: self.job_id,
+                status: self.status,
+            }
+        }
+    }
+}
+impl ImportBackendStorageOutput {
+    /// Creates a new builder-style object to manufacture [`ImportBackendStorageOutput`](crate::output::ImportBackendStorageOutput)
+    pub fn builder() -> crate::output::import_backend_storage_output::Builder {
+        crate::output::import_backend_storage_output::Builder::default()
     }
 }
 
@@ -1137,6 +1447,132 @@ impl GetTokenOutput {
     /// Creates a new builder-style object to manufacture [`GetTokenOutput`](crate::output::GetTokenOutput)
     pub fn builder() -> crate::output::get_token_output::Builder {
         crate::output::get_token_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetBackendStorageOutput {
+    /// <p>The app ID.</p>
+    pub app_id: std::option::Option<std::string::String>,
+    /// <p>The name of the backend environment.</p>
+    pub backend_environment_name: std::option::Option<std::string::String>,
+    /// <p>The resource configuration for the backend storage resource.</p>
+    pub resource_config: std::option::Option<crate::model::GetBackendStorageResourceConfig>,
+    /// <p>The name of the storage resource.</p>
+    pub resource_name: std::option::Option<std::string::String>,
+}
+impl GetBackendStorageOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The resource configuration for the backend storage resource.</p>
+    pub fn resource_config(
+        &self,
+    ) -> std::option::Option<&crate::model::GetBackendStorageResourceConfig> {
+        self.resource_config.as_ref()
+    }
+    /// <p>The name of the storage resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
+impl std::fmt::Debug for GetBackendStorageOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetBackendStorageOutput");
+        formatter.field("app_id", &self.app_id);
+        formatter.field("backend_environment_name", &self.backend_environment_name);
+        formatter.field("resource_config", &self.resource_config);
+        formatter.field("resource_name", &self.resource_name);
+        formatter.finish()
+    }
+}
+/// See [`GetBackendStorageOutput`](crate::output::GetBackendStorageOutput)
+pub mod get_backend_storage_output {
+    /// A builder for [`GetBackendStorageOutput`](crate::output::GetBackendStorageOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_id: std::option::Option<std::string::String>,
+        pub(crate) backend_environment_name: std::option::Option<std::string::String>,
+        pub(crate) resource_config:
+            std::option::Option<crate::model::GetBackendStorageResourceConfig>,
+        pub(crate) resource_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The app ID.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_id = Some(input.into());
+            self
+        }
+        /// <p>The app ID.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_id = input;
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backend_environment_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn set_backend_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backend_environment_name = input;
+            self
+        }
+        /// <p>The resource configuration for the backend storage resource.</p>
+        pub fn resource_config(
+            mut self,
+            input: crate::model::GetBackendStorageResourceConfig,
+        ) -> Self {
+            self.resource_config = Some(input);
+            self
+        }
+        /// <p>The resource configuration for the backend storage resource.</p>
+        pub fn set_resource_config(
+            mut self,
+            input: std::option::Option<crate::model::GetBackendStorageResourceConfig>,
+        ) -> Self {
+            self.resource_config = input;
+            self
+        }
+        /// <p>The name of the storage resource.</p>
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the storage resource.</p>
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetBackendStorageOutput`](crate::output::GetBackendStorageOutput)
+        pub fn build(self) -> crate::output::GetBackendStorageOutput {
+            crate::output::GetBackendStorageOutput {
+                app_id: self.app_id,
+                backend_environment_name: self.backend_environment_name,
+                resource_config: self.resource_config,
+                resource_name: self.resource_name,
+            }
+        }
+    }
+}
+impl GetBackendStorageOutput {
+    /// Creates a new builder-style object to manufacture [`GetBackendStorageOutput`](crate::output::GetBackendStorageOutput)
+    pub fn builder() -> crate::output::get_backend_storage_output::Builder {
+        crate::output::get_backend_storage_output::Builder::default()
     }
 }
 
@@ -2083,6 +2519,120 @@ impl DeleteTokenOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteBackendStorageOutput {
+    /// <p>The app ID.</p>
+    pub app_id: std::option::Option<std::string::String>,
+    /// <p>The name of the backend environment.</p>
+    pub backend_environment_name: std::option::Option<std::string::String>,
+    /// <p>The ID for the job.</p>
+    pub job_id: std::option::Option<std::string::String>,
+    /// <p>The current status of the request.</p>
+    pub status: std::option::Option<std::string::String>,
+}
+impl DeleteBackendStorageOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteBackendStorageOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteBackendStorageOutput");
+        formatter.field("app_id", &self.app_id);
+        formatter.field("backend_environment_name", &self.backend_environment_name);
+        formatter.field("job_id", &self.job_id);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`DeleteBackendStorageOutput`](crate::output::DeleteBackendStorageOutput)
+pub mod delete_backend_storage_output {
+    /// A builder for [`DeleteBackendStorageOutput`](crate::output::DeleteBackendStorageOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_id: std::option::Option<std::string::String>,
+        pub(crate) backend_environment_name: std::option::Option<std::string::String>,
+        pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The app ID.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_id = Some(input.into());
+            self
+        }
+        /// <p>The app ID.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_id = input;
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backend_environment_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn set_backend_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backend_environment_name = input;
+            self
+        }
+        /// <p>The ID for the job.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        /// <p>The ID for the job.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// <p>The current status of the request.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The current status of the request.</p>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteBackendStorageOutput`](crate::output::DeleteBackendStorageOutput)
+        pub fn build(self) -> crate::output::DeleteBackendStorageOutput {
+            crate::output::DeleteBackendStorageOutput {
+                app_id: self.app_id,
+                backend_environment_name: self.backend_environment_name,
+                job_id: self.job_id,
+                status: self.status,
+            }
+        }
+    }
+}
+impl DeleteBackendStorageOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBackendStorageOutput`](crate::output::DeleteBackendStorageOutput)
+    pub fn builder() -> crate::output::delete_backend_storage_output::Builder {
+        crate::output::delete_backend_storage_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackendAuthOutput {
     /// <p>The app ID.</p>
     pub app_id: std::option::Option<std::string::String>,
@@ -2647,6 +3197,120 @@ impl CreateTokenOutput {
     /// Creates a new builder-style object to manufacture [`CreateTokenOutput`](crate::output::CreateTokenOutput)
     pub fn builder() -> crate::output::create_token_output::Builder {
         crate::output::create_token_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateBackendStorageOutput {
+    /// <p>The app ID.</p>
+    pub app_id: std::option::Option<std::string::String>,
+    /// <p>The name of the backend environment.</p>
+    pub backend_environment_name: std::option::Option<std::string::String>,
+    /// <p>The ID for the job.</p>
+    pub job_id: std::option::Option<std::string::String>,
+    /// <p>The current status of the request.</p>
+    pub status: std::option::Option<std::string::String>,
+}
+impl CreateBackendStorageOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateBackendStorageOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateBackendStorageOutput");
+        formatter.field("app_id", &self.app_id);
+        formatter.field("backend_environment_name", &self.backend_environment_name);
+        formatter.field("job_id", &self.job_id);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`CreateBackendStorageOutput`](crate::output::CreateBackendStorageOutput)
+pub mod create_backend_storage_output {
+    /// A builder for [`CreateBackendStorageOutput`](crate::output::CreateBackendStorageOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_id: std::option::Option<std::string::String>,
+        pub(crate) backend_environment_name: std::option::Option<std::string::String>,
+        pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The app ID.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_id = Some(input.into());
+            self
+        }
+        /// <p>The app ID.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_id = input;
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backend_environment_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn set_backend_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backend_environment_name = input;
+            self
+        }
+        /// <p>The ID for the job.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        /// <p>The ID for the job.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// <p>The current status of the request.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The current status of the request.</p>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateBackendStorageOutput`](crate::output::CreateBackendStorageOutput)
+        pub fn build(self) -> crate::output::CreateBackendStorageOutput {
+            crate::output::CreateBackendStorageOutput {
+                app_id: self.app_id,
+                backend_environment_name: self.backend_environment_name,
+                job_id: self.job_id,
+                status: self.status,
+            }
+        }
+    }
+}
+impl CreateBackendStorageOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBackendStorageOutput`](crate::output::CreateBackendStorageOutput)
+    pub fn builder() -> crate::output::create_backend_storage_output::Builder {
+        crate::output::create_backend_storage_output::Builder::default()
     }
 }
 

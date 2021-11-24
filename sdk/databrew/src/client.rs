@@ -115,6 +115,13 @@ where
     pub fn create_recipe_job(&self) -> fluent_builders::CreateRecipeJob<C, M, R> {
         fluent_builders::CreateRecipeJob::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `CreateRuleset` operation.
+    ///
+    /// See [`CreateRuleset`](crate::client::fluent_builders::CreateRuleset) for more information about the
+    /// operation and its arguments.
+    pub fn create_ruleset(&self) -> fluent_builders::CreateRuleset<C, M, R> {
+        fluent_builders::CreateRuleset::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `CreateSchedule` operation.
     ///
     /// See [`CreateSchedule`](crate::client::fluent_builders::CreateSchedule) for more information about the
@@ -149,6 +156,13 @@ where
     /// operation and its arguments.
     pub fn delete_recipe_version(&self) -> fluent_builders::DeleteRecipeVersion<C, M, R> {
         fluent_builders::DeleteRecipeVersion::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteRuleset` operation.
+    ///
+    /// See [`DeleteRuleset`](crate::client::fluent_builders::DeleteRuleset) for more information about the
+    /// operation and its arguments.
+    pub fn delete_ruleset(&self) -> fluent_builders::DeleteRuleset<C, M, R> {
+        fluent_builders::DeleteRuleset::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DeleteSchedule` operation.
     ///
@@ -191,6 +205,13 @@ where
     /// operation and its arguments.
     pub fn describe_recipe(&self) -> fluent_builders::DescribeRecipe<C, M, R> {
         fluent_builders::DescribeRecipe::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeRuleset` operation.
+    ///
+    /// See [`DescribeRuleset`](crate::client::fluent_builders::DescribeRuleset) for more information about the
+    /// operation and its arguments.
+    pub fn describe_ruleset(&self) -> fluent_builders::DescribeRuleset<C, M, R> {
+        fluent_builders::DescribeRuleset::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DescribeSchedule` operation.
     ///
@@ -240,6 +261,13 @@ where
     /// operation and its arguments.
     pub fn list_recipe_versions(&self) -> fluent_builders::ListRecipeVersions<C, M, R> {
         fluent_builders::ListRecipeVersions::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListRulesets` operation.
+    ///
+    /// See [`ListRulesets`](crate::client::fluent_builders::ListRulesets) for more information about the
+    /// operation and its arguments.
+    pub fn list_rulesets(&self) -> fluent_builders::ListRulesets<C, M, R> {
+        fluent_builders::ListRulesets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListSchedules` operation.
     ///
@@ -340,6 +368,13 @@ where
     /// operation and its arguments.
     pub fn update_recipe_job(&self) -> fluent_builders::UpdateRecipeJob<C, M, R> {
         fluent_builders::UpdateRecipeJob::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UpdateRuleset` operation.
+    ///
+    /// See [`UpdateRuleset`](crate::client::fluent_builders::UpdateRuleset) for more information about the
+    /// operation and its arguments.
+    pub fn update_ruleset(&self) -> fluent_builders::UpdateRuleset<C, M, R> {
+        fluent_builders::UpdateRuleset::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `UpdateSchedule` operation.
     ///
@@ -829,6 +864,26 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ProfileConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_configuration(input);
+            self
+        }
+        /// Appends an item to `ValidationConfigurations`.
+        ///
+        /// To override the contents of this collection use [`set_validation_configurations`](Self::set_validation_configurations).
+        ///
+        /// <p>List of validation configurations that are applied to the profile job.</p>
+        pub fn validation_configurations(
+            mut self,
+            inp: impl Into<crate::model::ValidationConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.validation_configurations(inp);
+            self
+        }
+        /// <p>List of validation configurations that are applied to the profile job.</p>
+        pub fn set_validation_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
+        ) -> Self {
+            self.inner = self.inner.set_validation_configurations(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
@@ -1456,6 +1511,143 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateRuleset`.
+    ///
+    /// <p>Creates a new ruleset that can be used in a profile job to validate
+    /// the data quality of a dataset.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateRuleset<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_ruleset_input::Builder,
+    }
+    impl<C, M, R> CreateRuleset<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateRuleset`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateRulesetOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateRulesetError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateRulesetInputOperationOutputAlias,
+                crate::output::CreateRulesetOutput,
+                crate::error::CreateRulesetError,
+                crate::input::CreateRulesetInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the ruleset to be created. Valid characters are alphanumeric
+        /// (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of the ruleset to be created. Valid characters are alphanumeric
+        /// (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The description of the ruleset.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of the ruleset.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the
+        /// ruleset is associated with.</p>
+        pub fn target_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the
+        /// ruleset is associated with.</p>
+        pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_target_arn(input);
+            self
+        }
+        /// Appends an item to `Rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>A list of rules that are defined with the ruleset. A rule includes
+        /// one or more checks to be validated on a DataBrew dataset.</p>
+        pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
+            self.inner = self.inner.rules(inp);
+            self
+        }
+        /// <p>A list of rules that are defined with the ruleset. A rule includes
+        /// one or more checks to be validated on a DataBrew dataset.</p>
+        pub fn set_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
+        ) -> Self {
+            self.inner = self.inner.set_rules(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Metadata tags to apply to the ruleset.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k, v);
+            self
+        }
+        /// <p>Metadata tags to apply to the ruleset.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateSchedule`.
     ///
     /// <p>Creates a new schedule for one or more DataBrew jobs. Jobs can be run at a specific
@@ -1882,6 +2074,76 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_recipe_version(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteRuleset`.
+    ///
+    /// <p>Deletes a ruleset.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteRuleset<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_ruleset_input::Builder,
+    }
+    impl<C, M, R> DeleteRuleset<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteRuleset`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteRulesetOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteRulesetError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteRulesetInputOperationOutputAlias,
+                crate::output::DeleteRulesetOutput,
+                crate::error::DeleteRulesetError,
+                crate::input::DeleteRulesetInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the ruleset to be deleted.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of the ruleset to be deleted.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -2328,6 +2590,76 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_recipe_version(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeRuleset`.
+    ///
+    /// <p>Retrieves detailed information about the ruleset.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeRuleset<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_ruleset_input::Builder,
+    }
+    impl<C, M, R> DescribeRuleset<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeRuleset`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeRulesetOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeRulesetError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeRulesetInputOperationOutputAlias,
+                crate::output::DescribeRulesetOutput,
+                crate::error::DescribeRulesetError,
+                crate::input::DescribeRulesetInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the ruleset to be described.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of the ruleset to be described.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -2950,6 +3282,103 @@ pub mod fluent_builders {
         /// <p>The name of the recipe for which to return version information.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListRulesets`.
+    ///
+    /// <p>List all rulesets available in the current account or rulesets associated
+    /// with a specific resource (dataset).</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListRulesets<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_rulesets_input::Builder,
+    }
+    impl<C, M, R> ListRulesets<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListRulesets`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListRulesetsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListRulesetsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListRulesetsInputOperationOutputAlias,
+                crate::output::ListRulesetsOutput,
+                crate::error::ListRulesetsError,
+                crate::input::ListRulesetsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter
+        /// indicates to return only those rulesets that are associated with the specified resource.</p>
+        pub fn target_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter
+        /// indicates to return only those rulesets that are associated with the specified resource.</p>
+        pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_target_arn(input);
+            self
+        }
+        /// <p>The maximum number of results to return in this request.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return in this request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>A token generated by DataBrew that specifies where to continue pagination
+        /// if a previous request was truncated. To get the next set of pages, pass in
+        /// the NextToken value from the response object of the previous page call.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>A token generated by DataBrew that specifies where to continue pagination
+        /// if a previous request was truncated. To get the next set of pages, pass in
+        /// the NextToken value from the response object of the previous page call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -4059,6 +4488,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_location(input);
             self
         }
+        /// Appends an item to `ValidationConfigurations`.
+        ///
+        /// To override the contents of this collection use [`set_validation_configurations`](Self::set_validation_configurations).
+        ///
+        /// <p>List of validation configurations that are applied to the profile job.</p>
+        pub fn validation_configurations(
+            mut self,
+            inp: impl Into<crate::model::ValidationConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.validation_configurations(inp);
+            self
+        }
+        /// <p>List of validation configurations that are applied to the profile job.</p>
+        pub fn set_validation_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
+        ) -> Self {
+            self.inner = self.inner.set_validation_configurations(input);
+            self
+        }
         /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
         /// be assumed when DataBrew runs the job.</p>
         pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -4530,6 +4979,105 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateRuleset`.
+    ///
+    /// <p>Updates specified ruleset.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateRuleset<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_ruleset_input::Builder,
+    }
+    impl<C, M, R> UpdateRuleset<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateRuleset`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateRulesetOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateRulesetError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateRulesetInputOperationOutputAlias,
+                crate::output::UpdateRulesetOutput,
+                crate::error::UpdateRulesetError,
+                crate::input::UpdateRulesetInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the ruleset to be updated.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of the ruleset to be updated.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The description of the ruleset.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of the ruleset.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Appends an item to `Rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more
+        /// checks to be validated on a DataBrew dataset.</p>
+        pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
+            self.inner = self.inner.rules(inp);
+            self
+        }
+        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more
+        /// checks to be validated on a DataBrew dataset.</p>
+        pub fn set_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
+        ) -> Self {
+            self.inner = self.inner.set_rules(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateSchedule`.
     ///
     /// <p>Modifies the definition of an existing DataBrew schedule.</p>
@@ -4641,7 +5189,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -4664,7 +5218,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

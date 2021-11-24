@@ -1707,7 +1707,7 @@ pub struct DescribeWorkflowExecutionOutput {
     /// <p>The number of tasks for this workflow execution. This includes open and closed tasks of all types.</p>
     pub open_counts: std::option::Option<crate::model::WorkflowExecutionOpenCounts>,
     /// <p>The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action.</p>
-    pub latest_activity_task_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub latest_activity_task_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an
     /// executionContext (a free-form string) when closing a decision task using <a>RespondDecisionTaskCompleted</a>.</p>
     pub latest_execution_context: std::option::Option<std::string::String>,
@@ -1730,7 +1730,7 @@ impl DescribeWorkflowExecutionOutput {
     /// <p>The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action.</p>
     pub fn latest_activity_task_timestamp(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_activity_task_timestamp.as_ref()
     }
     /// <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an
@@ -1763,7 +1763,7 @@ pub mod describe_workflow_execution_output {
         pub(crate) execution_configuration:
             std::option::Option<crate::model::WorkflowExecutionConfiguration>,
         pub(crate) open_counts: std::option::Option<crate::model::WorkflowExecutionOpenCounts>,
-        pub(crate) latest_activity_task_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) latest_activity_task_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) latest_execution_context: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1810,14 +1810,14 @@ pub mod describe_workflow_execution_output {
             self
         }
         /// <p>The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action.</p>
-        pub fn latest_activity_task_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn latest_activity_task_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.latest_activity_task_timestamp = Some(input);
             self
         }
         /// <p>The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action.</p>
         pub fn set_latest_activity_task_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.latest_activity_task_timestamp = input;
             self

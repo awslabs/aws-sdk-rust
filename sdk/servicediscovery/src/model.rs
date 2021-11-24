@@ -1935,7 +1935,7 @@ pub struct ServiceSummary {
     /// </important>
     pub health_check_custom_config: std::option::Option<crate::model::HealthCheckCustomConfig>,
     /// <p>The date and time that the service was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ServiceSummary {
     /// <p>The ID that Cloud Map assigned to the service when you created it.</p>
@@ -2012,7 +2012,7 @@ impl ServiceSummary {
         self.health_check_custom_config.as_ref()
     }
     /// <p>The date and time that the service was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
 }
@@ -2051,7 +2051,7 @@ pub mod service_summary {
         pub(crate) health_check_config: std::option::Option<crate::model::HealthCheckConfig>,
         pub(crate) health_check_custom_config:
             std::option::Option<crate::model::HealthCheckCustomConfig>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID that Cloud Map assigned to the service when you created it.</p>
@@ -2227,14 +2227,14 @@ pub mod service_summary {
             self
         }
         /// <p>The date and time that the service was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
         /// <p>The date and time that the service was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -3761,7 +3761,7 @@ pub struct NamespaceSummary {
     /// <p>The properties of the namespace.</p>
     pub properties: std::option::Option<crate::model::NamespaceProperties>,
     /// <p>The date and time that the namespace was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl NamespaceSummary {
     /// <p>The ID of the namespace.</p>
@@ -3794,7 +3794,7 @@ impl NamespaceSummary {
         self.properties.as_ref()
     }
     /// <p>The date and time that the namespace was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
 }
@@ -3825,7 +3825,7 @@ pub mod namespace_summary {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) service_count: std::option::Option<i32>,
         pub(crate) properties: std::option::Option<crate::model::NamespaceProperties>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the namespace.</p>
@@ -3904,14 +3904,14 @@ pub mod namespace_summary {
             self
         }
         /// <p>The date and time that the namespace was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
         /// <p>The date and time that the namespace was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -4847,7 +4847,7 @@ pub struct Service {
     /// <p>The date and time that the service was created, in Unix format and Coordinated Universal Time (UTC). The value
     /// of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents
     /// Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of
     /// running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a
     /// date/timestamp).</p>
@@ -4925,7 +4925,7 @@ impl Service {
     /// <p>The date and time that the service was created, in Unix format and Coordinated Universal Time (UTC). The value
     /// of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents
     /// Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of
@@ -4973,7 +4973,7 @@ pub mod service {
         pub(crate) health_check_config: std::option::Option<crate::model::HealthCheckConfig>,
         pub(crate) health_check_custom_config:
             std::option::Option<crate::model::HealthCheckCustomConfig>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) creator_request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5144,7 +5144,7 @@ pub mod service {
         /// <p>The date and time that the service was created, in Unix format and Coordinated Universal Time (UTC). The value
         /// of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents
         /// Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
@@ -5153,7 +5153,7 @@ pub mod service {
         /// Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -5274,11 +5274,11 @@ pub struct Operation {
     /// <p>The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC).
     /// The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code>
     /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format
     /// and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For example,
     /// the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub update_date: std::option::Option<aws_smithy_types::Instant>,
+    pub update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the target entity that's associated with the operation:</p>
     /// <dl>
     /// <dt>NAMESPACE</dt>
@@ -5378,13 +5378,13 @@ impl Operation {
     /// <p>The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC).
     /// The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code>
     /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format
     /// and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For example,
     /// the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
     /// <p>The name of the target entity that's associated with the operation:</p>
@@ -5435,8 +5435,8 @@ pub mod operation {
         pub(crate) status: std::option::Option<crate::model::OperationStatus>,
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) update_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) targets: std::option::Option<
             std::collections::HashMap<crate::model::OperationTargetType, std::string::String>,
         >,
@@ -5613,7 +5613,7 @@ pub mod operation {
         /// <p>The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC).
         /// The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code>
         /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
@@ -5622,7 +5622,7 @@ pub mod operation {
         /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -5630,7 +5630,7 @@ pub mod operation {
         /// <p>The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format
         /// and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For example,
         /// the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn update_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_date = Some(input);
             self
         }
@@ -5639,7 +5639,7 @@ pub mod operation {
         /// the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_update_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_date = input;
             self
@@ -5893,7 +5893,7 @@ pub struct Namespace {
     /// <p>The date that the namespace was created, in Unix date/time format and Coordinated Universal Time (UTC). The
     /// value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code>
     /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of
     /// running an operation twice. </p>
     pub creator_request_id: std::option::Option<std::string::String>,
@@ -5946,7 +5946,7 @@ impl Namespace {
     /// <p>The date that the namespace was created, in Unix date/time format and Coordinated Universal Time (UTC). The
     /// value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code>
     /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of
@@ -5983,7 +5983,7 @@ pub mod namespace {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) service_count: std::option::Option<i32>,
         pub(crate) properties: std::option::Option<crate::model::NamespaceProperties>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) creator_request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6095,7 +6095,7 @@ pub mod namespace {
         /// <p>The date that the namespace was created, in Unix date/time format and Coordinated Universal Time (UTC). The
         /// value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code>
         /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
@@ -6104,7 +6104,7 @@ pub mod namespace {
         /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self

@@ -1118,7 +1118,7 @@ pub fn serialize_structure_crate_model_domain_name_configuration(
     if let Some(var_296) = &input.certificate_upload_date {
         object
             .key("certificateUploadDate")
-            .instant(var_296, aws_smithy_types::instant::Format::DateTime);
+            .date_time(var_296, aws_smithy_types::date_time::Format::DateTime)?;
     }
     if let Some(var_297) = &input.domain_name_status {
         object.key("domainNameStatus").string(var_297.as_str());

@@ -291,6 +291,13 @@ where
     pub fn publish(&self) -> fluent_builders::Publish<C, M, R> {
         fluent_builders::Publish::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `PublishBatch` operation.
+    ///
+    /// See [`PublishBatch`](crate::client::fluent_builders::PublishBatch) for more information about the
+    /// operation and its arguments.
+    pub fn publish_batch(&self) -> fluent_builders::PublishBatch<C, M, R> {
+        fluent_builders::PublishBatch::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `RemovePermission` operation.
     ///
     /// See [`RemovePermission`](crate::client::fluent_builders::RemovePermission) for more information about the
@@ -386,7 +393,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddPermission`.
     ///
     /// <p>Adds a statement to a topic's access control policy, granting access for the specified
-    /// accounts to the specified actions.</p>
+    /// Amazon Web Services accounts to the specified actions.</p>
     #[derive(std::fmt::Debug)]
     pub struct AddPermission<
         C = aws_smithy_client::erase::DynConnector,
@@ -467,15 +474,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_aws_account_id`](Self::set_aws_account_id).
         ///
-        /// <p>The account IDs of the users (principals) who will be given access to the
-        /// specified actions. The users must have account, but do not need to be signed up for
+        /// <p>The Amazon Web Services account IDs of the users (principals) who will be given access to the
+        /// specified actions. The users must have Amazon Web Services account, but do not need to be signed up for
         /// this service.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
         }
-        /// <p>The account IDs of the users (principals) who will be given access to the
-        /// specified actions. The users must have account, but do not need to be signed up for
+        /// <p>The Amazon Web Services account IDs of the users (principals) who will be given access to the
+        /// specified actions. The users must have Amazon Web Services account, but do not need to be signed up for
         /// this service.</p>
         pub fn set_aws_account_id(
             mut self,
@@ -507,7 +514,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CheckIfPhoneNumberIsOptedOut`.
     ///
     /// <p>Accepts a phone number and indicates whether the phone holder has opted out of
-    /// receiving SMS messages from your account. You cannot send SMS messages to a number that
+    /// receiving SMS messages from your Amazon Web Services account. You cannot send SMS messages to a number that
     /// is opted out.</p>
     /// <p>To resume sending messages, you can opt in the number by using the
     /// <code>OptInPhoneNumber</code> action.</p>
@@ -701,9 +708,14 @@ pub mod fluent_builders {
     /// and <code>PlatformCredential</code> is <code>secret key</code>.</p>
     /// </li>
     /// <li>
-    /// <p>For <code>APNS</code> and <code>APNS_SANDBOX</code>,
+    /// <p>For <code>APNS</code> and <code>APNS_SANDBOX</code> using certificate credentials,
     /// <code>PlatformPrincipal</code> is <code>SSL certificate</code> and
     /// <code>PlatformCredential</code> is <code>private key</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>For <code>APNS</code> and <code>APNS_SANDBOX</code> using token credentials,
+    /// <code>PlatformPrincipal</code> is <code>signing key ID</code> and
+    /// <code>PlatformCredential</code> is <code>signing key</code>.</p>
     /// </li>
     /// <li>
     /// <p>For <code>GCM</code> (Firebase Cloud Messaging), there is no
@@ -975,12 +987,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSMSSandboxPhoneNumber`.
     ///
-    /// <p>Adds a destination phone number to an account in the SMS sandbox and sends a
+    /// <p>Adds a destination phone number to an Amazon Web Services account in the SMS sandbox and sends a
     /// one-time password (OTP) to that phone number.</p>
-    /// <p>When you start using Amazon SNS to send SMS messages, your account is in the
+    /// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the
     /// <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for
     /// you to try Amazon SNS features without risking your reputation as an SMS sender. While your
-    /// account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
+    /// Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
     /// SMS messages only to verified destination phone numbers. For more information, including how to
     /// move out of the sandbox to send messages without restrictions,
     /// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
@@ -1491,11 +1503,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSMSSandboxPhoneNumber`.
     ///
-    /// <p>Deletes an account's verified or pending phone number from the SMS sandbox.</p>
-    /// <p>When you start using Amazon SNS to send SMS messages, your account is in the
+    /// <p>Deletes an Amazon Web Services account's verified or pending phone number from the SMS sandbox.</p>
+    /// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the
     /// <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for
     /// you to try Amazon SNS features without risking your reputation as an SMS sender. While your
-    /// account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
+    /// Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
     /// SMS messages only to verified destination phone numbers. For more information, including how to
     /// move out of the sandbox to send messages without restrictions,
     /// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
@@ -1789,7 +1801,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSMSAttributes`.
     ///
-    /// <p>Returns the settings for sending SMS messages from your account.</p>
+    /// <p>Returns the settings for sending SMS messages from your Amazon Web Services account.</p>
     /// <p>These settings are set with the <code>SetSMSAttributes</code> action.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetSMSAttributes<
@@ -1873,11 +1885,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSMSSandboxAccountStatus`.
     ///
-    /// <p>Retrieves the SMS sandbox status for the calling account in the target Region.</p>
-    /// <p>When you start using Amazon SNS to send SMS messages, your account is in the
+    /// <p>Retrieves the SMS sandbox status for the calling Amazon Web Services account in the target Amazon Web Services Region.</p>
+    /// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the
     /// <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for
     /// you to try Amazon SNS features without risking your reputation as an SMS sender. While your
-    /// account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
+    /// Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
     /// SMS messages only to verified destination phone numbers. For more information, including how to
     /// move out of the sandbox to send messages without restrictions,
     /// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
@@ -2181,7 +2193,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOriginationNumbers`.
     ///
-    /// <p>Lists the calling account's dedicated origination numbers and their metadata. For
+    /// <p>Lists the calling Amazon Web Services account's dedicated origination numbers and their metadata. For
     /// more information about origination numbers, see <a href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities-origination-numbers.html">Origination numbers</a> in the <i>Amazon SNS Developer
     /// Guide</i>.</p>
     #[derive(std::fmt::Debug)]
@@ -2425,12 +2437,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSMSSandboxPhoneNumbers`.
     ///
-    /// <p>Lists the calling account's current verified and pending destination phone numbers
+    /// <p>Lists the calling Amazon Web Services account's current verified and pending destination phone numbers
     /// in the SMS sandbox.</p>
-    /// <p>When you start using Amazon SNS to send SMS messages, your account is in the
+    /// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the
     /// <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for
     /// you to try Amazon SNS features without risking your reputation as an SMS sender. While your
-    /// account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
+    /// Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
     /// SMS messages only to verified destination phone numbers. For more information, including how to
     /// move out of the sandbox to send messages without restrictions,
     /// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
@@ -2897,16 +2909,16 @@ pub mod fluent_builders {
     /// <p>If you send a message to a topic, Amazon SNS delivers the message to each endpoint that is
     /// subscribed to the topic. The format of the message depends on the notification protocol
     /// for each subscribed endpoint.</p>
-    /// <p>When a <code>messageId</code> is returned, the message has been saved and Amazon SNS
-    /// will attempt to deliver it shortly.</p>
-    /// <p>To use the <code>Publish</code> action for sending a message to a mobile endpoint,
+    /// <p>When a <code>messageId</code> is returned, the message is saved and Amazon SNS
+    /// immediately deliverers it to subscribers.</p>
+    /// <p>To use the <code>Publish</code> action for publishing a message to a mobile endpoint,
     /// such as an app on a Kindle device or mobile phone, you must specify the EndpointArn for
     /// the TargetArn parameter. The EndpointArn is returned when making a call with the
     /// <code>CreatePlatformEndpoint</code> action. </p>
     /// <p>For more information about formatting messages, see <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send Custom
     /// Platform-Specific Payloads in Messages to Mobile Devices</a>. </p>
     /// <important>
-    /// <p>You can publish messages only to topics and endpoints in the same Region.</p>
+    /// <p>You can publish messages only to topics and endpoints in the same Amazon Web Services Region.</p>
     /// </important>
     #[derive(std::fmt::Debug)]
     pub struct Publish<
@@ -3230,7 +3242,7 @@ pub mod fluent_builders {
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
         /// <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric characters
-        /// (a-z, A-Z, 0-9) and punctuation
+        /// <code>(a-z, A-Z, 0-9)</code> and punctuation
         /// <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
         /// <p>Every message must have a unique <code>MessageDeduplicationId</code>, which is a token
         /// used for deduplication of sent messages. If a message with a particular
@@ -3246,7 +3258,7 @@ pub mod fluent_builders {
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
         /// <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric characters
-        /// (a-z, A-Z, 0-9) and punctuation
+        /// <code>(a-z, A-Z, 0-9)</code> and punctuation
         /// <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
         /// <p>Every message must have a unique <code>MessageDeduplicationId</code>, which is a token
         /// used for deduplication of sent messages. If a message with a particular
@@ -3264,8 +3276,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
-        /// <code>MessageGroupId</code> can contain up to 128 alphanumeric characters (a-z, A-Z,
-        /// 0-9) and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+        /// <code>MessageGroupId</code> can contain up to 128 alphanumeric characters
+        /// <code>(a-z, A-Z, 0-9)</code> and punctuation
+        /// <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>        
         /// <p>The <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
         /// specific message group. Messages that belong to the same message group are processed in
         /// a FIFO manner (however, messages in different message groups might be processed out of
@@ -3275,8 +3288,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
-        /// <code>MessageGroupId</code> can contain up to 128 alphanumeric characters (a-z, A-Z,
-        /// 0-9) and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+        /// <code>MessageGroupId</code> can contain up to 128 alphanumeric characters
+        /// <code>(a-z, A-Z, 0-9)</code> and punctuation
+        /// <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>        
         /// <p>The <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
         /// specific message group. Messages that belong to the same message group are processed in
         /// a FIFO manner (however, messages in different message groups might be processed out of
@@ -3286,6 +3300,105 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_message_group_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PublishBatch`.
+    ///
+    /// <p>Publishes up to ten messages to the specified topic. This is a batch version of <code>Publish</code>. For FIFO topics, multiple messages within a single batch are published in the order they are sent, and messages are deduplicated within the batch and across batches for 5 minutes.</p>
+    /// <p>The result of publishing each message is reported individually in the response. Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of <code>200</code>.</p>
+    /// <p>The maximum allowed individual message size and the maximum total payload size (the sum of the individual lengths of all of the batched messages) are both 256 KB (262,144 bytes). </p>
+    /// <p>Some actions take lists of parameters. These lists are specified using the <code>param.n</code> notation. Values of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this: </p>
+    /// <p>&AttributeName.1=first</p>
+    /// <p>&AttributeName.2=second</p>  
+    /// <p>If you send a batch message to a topic, Amazon SNS publishes the batch message to each endpoint that is
+    /// subscribed to the topic. The format of the batch message depends on the notification protocol
+    /// for each subscribed endpoint.</p>
+    /// <p>When a <code>messageId</code> is returned, the batch message is saved and Amazon SNS immediately delivers the message to subscribers.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct PublishBatch<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::publish_batch_input::Builder,
+    }
+    impl<C, M, R> PublishBatch<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `PublishBatch`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PublishBatchOutput,
+            aws_smithy_http::result::SdkError<crate::error::PublishBatchError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::PublishBatchInputOperationOutputAlias,
+                crate::output::PublishBatchOutput,
+                crate::error::PublishBatchError,
+                crate::input::PublishBatchInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
+        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(inp);
+            self
+        }
+        /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_topic_arn(input);
+            self
+        }
+        /// Appends an item to `PublishBatchRequestEntries`.
+        ///
+        /// To override the contents of this collection use [`set_publish_batch_request_entries`](Self::set_publish_batch_request_entries).
+        ///
+        /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
+        pub fn publish_batch_request_entries(
+            mut self,
+            inp: impl Into<crate::model::PublishBatchRequestEntry>,
+        ) -> Self {
+            self.inner = self.inner.publish_batch_request_entries(inp);
+            self
+        }
+        /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
+        pub fn set_publish_batch_request_entries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PublishBatchRequestEntry>>,
+        ) -> Self {
+            self.inner = self.inner.set_publish_batch_request_entries(input);
             self
         }
     }
@@ -3593,22 +3706,44 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>PlatformCredential</code> – The credential received from the
-        /// notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-        /// <code>PlatformCredential</code> is <code>private key</code>. For
-        /// <code>GCM</code> (Firebase Cloud Messaging), <code>PlatformCredential</code>
-        /// is <code>API key</code>. For <code>ADM</code>, <code>PlatformCredential</code>
-        /// is <code>client secret</code>.</p>
+        /// <code>PlatformCredential</code> – The credential received from the notification service.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For ADM, <code>PlatformCredential</code>is client secret.</p>
         /// </li>
         /// <li>
-        /// <p>
-        /// <code>PlatformPrincipal</code> – The principal received from the
-        /// notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-        /// <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
-        /// <code>GCM</code> (Firebase Cloud Messaging), there is no
-        /// <code>PlatformPrincipal</code>. For <code>ADM</code>,
-        /// <code>PlatformPrincipal</code> is <code>client id</code>.</p>
+        /// <p>For Apple Services using certificate credentials, <code>PlatformCredential</code> is private key.</p>
         /// </li>
+        /// <li>
+        /// <p>For Apple Services using token credentials, <code>PlatformCredential</code> is signing key.</p>
+        /// </li>
+        /// <li>
+        /// <p>For GCM (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PlatformPrincipal</code> – The principal received from the notification service.</p>  
+        /// <ul>
+        /// <li>
+        /// <p>For ADM, <code>PlatformPrincipal</code>is client id.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Apple Services using certificate credentials, <code>PlatformPrincipal</code> is SSL certificate.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Apple Services using token credentials, <code>PlatformPrincipal</code> is signing key ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>For GCM (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <ul>
         /// <li>
         /// <p>
         /// <code>EventEndpointCreated</code> – Topic ARN to which
@@ -3647,6 +3782,17 @@ pub mod fluent_builders {
         /// of successfully delivered messages.</p>
         /// </li>
         /// </ul>
+        /// <p>The following attributes only apply to <code>APNs</code> token-based authentication:</p>  
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple developer account team.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ApplePlatformBundleID</code> – The bundle identifier that's assigned to your iOS app.</p>
+        /// </li>
+        /// </ul>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -3660,22 +3806,44 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>PlatformCredential</code> – The credential received from the
-        /// notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-        /// <code>PlatformCredential</code> is <code>private key</code>. For
-        /// <code>GCM</code> (Firebase Cloud Messaging), <code>PlatformCredential</code>
-        /// is <code>API key</code>. For <code>ADM</code>, <code>PlatformCredential</code>
-        /// is <code>client secret</code>.</p>
+        /// <code>PlatformCredential</code> – The credential received from the notification service.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For ADM, <code>PlatformCredential</code>is client secret.</p>
         /// </li>
         /// <li>
-        /// <p>
-        /// <code>PlatformPrincipal</code> – The principal received from the
-        /// notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-        /// <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
-        /// <code>GCM</code> (Firebase Cloud Messaging), there is no
-        /// <code>PlatformPrincipal</code>. For <code>ADM</code>,
-        /// <code>PlatformPrincipal</code> is <code>client id</code>.</p>
+        /// <p>For Apple Services using certificate credentials, <code>PlatformCredential</code> is private key.</p>
         /// </li>
+        /// <li>
+        /// <p>For Apple Services using token credentials, <code>PlatformCredential</code> is signing key.</p>
+        /// </li>
+        /// <li>
+        /// <p>For GCM (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PlatformPrincipal</code> – The principal received from the notification service.</p>  
+        /// <ul>
+        /// <li>
+        /// <p>For ADM, <code>PlatformPrincipal</code>is client id.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Apple Services using certificate credentials, <code>PlatformPrincipal</code> is SSL certificate.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Apple Services using token credentials, <code>PlatformPrincipal</code> is signing key ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>For GCM (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <ul>
         /// <li>
         /// <p>
         /// <code>EventEndpointCreated</code> – Topic ARN to which
@@ -3712,6 +3880,17 @@ pub mod fluent_builders {
         /// <p>
         /// <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100)
         /// of successfully delivered messages.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The following attributes only apply to <code>APNs</code> token-based authentication:</p>  
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple developer account team.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ApplePlatformBundleID</code> – The bundle identifier that's assigned to your iOS app.</p>
         /// </li>
         /// </ul>
         pub fn set_attributes(
@@ -3797,7 +3976,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The default settings for sending SMS messages from your account. You can set values
+        /// <p>The default settings for sending SMS messages from your Amazon Web Services account. You can set values
         /// for the following attribute names:</p>
         /// <p>
         /// <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend
@@ -3842,15 +4021,14 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>Transactional</code> – Critical messages that support customer
-        /// transactions, such as one-time passcodes for multi-factor authentication. Amazon
-        /// SNS optimizes the message delivery to achieve the highest reliability.</p>
+        /// transactions, such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the message delivery to achieve the highest reliability.</p>
         /// </li>
         /// </ul>
         /// <p>
         /// <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive daily SMS
         /// usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report as a CSV file to
         /// the bucket. The report includes the following information for each SMS message that was
-        /// successfully delivered by your account:</p>
+        /// successfully delivered by your Amazon Web Services account:</p>
         /// <ul>
         /// <li>
         /// <p>Time that the message was published (in UTC)</p>
@@ -3891,7 +4069,7 @@ pub mod fluent_builders {
             self.inner = self.inner.attributes(k, v);
             self
         }
-        /// <p>The default settings for sending SMS messages from your account. You can set values
+        /// <p>The default settings for sending SMS messages from your Amazon Web Services account. You can set values
         /// for the following attribute names:</p>
         /// <p>
         /// <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend
@@ -3936,15 +4114,14 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>Transactional</code> – Critical messages that support customer
-        /// transactions, such as one-time passcodes for multi-factor authentication. Amazon
-        /// SNS optimizes the message delivery to achieve the highest reliability.</p>
+        /// transactions, such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the message delivery to achieve the highest reliability.</p>
         /// </li>
         /// </ul>
         /// <p>
         /// <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive daily SMS
         /// usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report as a CSV file to
         /// the bucket. The report includes the following information for each SMS message that was
-        /// successfully delivered by your account:</p>
+        /// successfully delivered by your Amazon Web Services account:</p>
         /// <ul>
         /// <li>
         /// <p>Time that the message was published (in UTC)</p>
@@ -4400,7 +4577,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `Subscribe`.
     ///
     /// <p>Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email, or
-    /// if the endpoint and the topic are not in the same account, the endpoint owner must
+    /// if the endpoint and the topic are not in the same Amazon Web Services account, the endpoint owner must
     /// run the <code>ConfirmSubscription</code> action to confirm the subscription.</p>
     /// <p>You call the <code>ConfirmSubscription</code> action with the token from the
     /// subscription response. Confirmation tokens are valid for three days.</p>
@@ -4828,7 +5005,7 @@ pub mod fluent_builders {
     /// existing tag.</p>
     /// </li>
     /// <li>
-    /// <p>Tagging actions are limited to 10 TPS per account, per Region. If your
+    /// <p>Tagging actions are limited to 10 TPS per Amazon Web Services account, per Amazon Web Services Region. If your
     /// application requires a higher throughput, file a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support request</a>.</p>
     /// </li>
     /// </ul>
@@ -5087,11 +5264,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `VerifySMSSandboxPhoneNumber`.
     ///
-    /// <p>Verifies a destination phone number with a one-time password (OTP) for the calling account.</p>
-    /// <p>When you start using Amazon SNS to send SMS messages, your account is in the
+    /// <p>Verifies a destination phone number with a one-time password (OTP) for the calling Amazon Web Services account.</p>
+    /// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the
     /// <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for
     /// you to try Amazon SNS features without risking your reputation as an SMS sender. While your
-    /// account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
+    /// Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
     /// SMS messages only to verified destination phone numbers. For more information, including how to
     /// move out of the sandbox to send messages without restrictions,
     /// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
@@ -5183,7 +5360,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -5206,7 +5389,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

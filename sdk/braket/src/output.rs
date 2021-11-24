@@ -239,9 +239,9 @@ pub struct GetQuantumTaskOutput {
     /// <p>The folder in the S3 bucket where task results are stored.</p>
     pub output_s3_directory: std::option::Option<std::string::String>,
     /// <p>The time at which the task was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the task ended.</p>
-    pub ended_at: std::option::Option<aws_smithy_types::Instant>,
+    pub ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags that belong to this task.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -280,11 +280,11 @@ impl GetQuantumTaskOutput {
         self.output_s3_directory.as_deref()
     }
     /// <p>The time at which the task was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time at which the task ended.</p>
-    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
     /// <p>The tags that belong to this task.</p>
@@ -326,8 +326,8 @@ pub mod get_quantum_task_output {
         pub(crate) shots: std::option::Option<i64>,
         pub(crate) output_s3_bucket: std::option::Option<std::string::String>,
         pub(crate) output_s3_directory: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) ended_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) ended_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -432,27 +432,27 @@ pub mod get_quantum_task_output {
             self
         }
         /// <p>The time at which the task was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time at which the task was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time at which the task ended.</p>
-        pub fn ended_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.ended_at = Some(input);
             self
         }
         /// <p>The time at which the task ended.</p>
         pub fn set_ended_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.ended_at = input;
             self

@@ -6494,9 +6494,9 @@ pub fn deser_structure_crate_model_replication_group(
             s if s.matches("AuthTokenLastModifiedDate") /* AuthTokenLastModifiedDate com.amazonaws.elasticache#ReplicationGroup$AuthTokenLastModifiedDate */ =>  {
                 let var_210 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -6594,9 +6594,9 @@ pub fn deser_structure_crate_model_replication_group(
             s if s.matches("ReplicationGroupCreateTime") /* ReplicationGroupCreateTime com.amazonaws.elasticache#ReplicationGroup$ReplicationGroupCreateTime */ =>  {
                 let var_218 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -6779,9 +6779,9 @@ pub fn deser_structure_crate_model_snapshot(
             s if s.matches("CacheClusterCreateTime") /* CacheClusterCreateTime com.amazonaws.elasticache#Snapshot$CacheClusterCreateTime */ =>  {
                 let var_231 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -7123,9 +7123,9 @@ pub fn deser_structure_crate_model_cache_cluster(
             s if s.matches("CacheClusterCreateTime") /* CacheClusterCreateTime com.amazonaws.elasticache#CacheCluster$CacheClusterCreateTime */ =>  {
                 let var_256 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -7294,9 +7294,9 @@ pub fn deser_structure_crate_model_cache_cluster(
             s if s.matches("AuthTokenLastModifiedDate") /* AuthTokenLastModifiedDate com.amazonaws.elasticache#CacheCluster$AuthTokenLastModifiedDate */ =>  {
                 let var_270 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -8316,9 +8316,9 @@ pub fn deser_structure_crate_model_reserved_cache_node(
             s if s.matches("StartTime") /* StartTime com.amazonaws.elasticache#ReservedCacheNode$StartTime */ =>  {
                 let var_310 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -9611,9 +9611,9 @@ pub fn deser_structure_crate_model_event(
             s if s.matches("Date") /* Date com.amazonaws.elasticache#Event$Date */ =>  {
                 let var_378 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -9771,9 +9771,9 @@ pub fn deser_structure_crate_model_service_update(
             s if s.matches("ServiceUpdateReleaseDate") /* ServiceUpdateReleaseDate com.amazonaws.elasticache#ServiceUpdate$ServiceUpdateReleaseDate */ =>  {
                 let var_388 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -9785,9 +9785,9 @@ pub fn deser_structure_crate_model_service_update(
             s if s.matches("ServiceUpdateEndDate") /* ServiceUpdateEndDate com.amazonaws.elasticache#ServiceUpdate$ServiceUpdateEndDate */ =>  {
                 let var_389 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -9813,9 +9813,9 @@ pub fn deser_structure_crate_model_service_update(
             s if s.matches("ServiceUpdateRecommendedApplyByDate") /* ServiceUpdateRecommendedApplyByDate com.amazonaws.elasticache#ServiceUpdate$ServiceUpdateRecommendedApplyByDate */ =>  {
                 let var_391 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -9974,9 +9974,9 @@ pub fn deser_structure_crate_model_update_action(
             s if s.matches("ServiceUpdateReleaseDate") /* ServiceUpdateReleaseDate com.amazonaws.elasticache#UpdateAction$ServiceUpdateReleaseDate */ =>  {
                 let var_402 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -10016,9 +10016,9 @@ pub fn deser_structure_crate_model_update_action(
             s if s.matches("ServiceUpdateRecommendedApplyByDate") /* ServiceUpdateRecommendedApplyByDate com.amazonaws.elasticache#UpdateAction$ServiceUpdateRecommendedApplyByDate */ =>  {
                 let var_405 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -10044,9 +10044,9 @@ pub fn deser_structure_crate_model_update_action(
             s if s.matches("UpdateActionAvailableDate") /* UpdateActionAvailableDate com.amazonaws.elasticache#UpdateAction$UpdateActionAvailableDate */ =>  {
                 let var_407 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -10085,9 +10085,9 @@ pub fn deser_structure_crate_model_update_action(
             s if s.matches("UpdateActionStatusModifiedDate") /* UpdateActionStatusModifiedDate com.amazonaws.elasticache#UpdateAction$UpdateActionStatusModifiedDate */ =>  {
                 let var_410 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -10763,9 +10763,9 @@ pub fn deser_structure_crate_model_node_snapshot(
             s if s.matches("CacheNodeCreateTime") /* CacheNodeCreateTime com.amazonaws.elasticache#NodeSnapshot$CacheNodeCreateTime */ =>  {
                 let var_454 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -10777,9 +10777,9 @@ pub fn deser_structure_crate_model_node_snapshot(
             s if s.matches("SnapshotCreateTime") /* SnapshotCreateTime com.amazonaws.elasticache#NodeSnapshot$SnapshotCreateTime */ =>  {
                 let var_455 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -10891,9 +10891,9 @@ pub fn deser_structure_crate_model_cache_node(
             s if s.matches("CacheNodeCreateTime") /* CacheNodeCreateTime com.amazonaws.elasticache#CacheNode$CacheNodeCreateTime */ =>  {
                 let var_460 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -11681,9 +11681,9 @@ pub fn deser_structure_crate_model_cache_node_update_status(
             s if s.matches("NodeDeletionDate") /* NodeDeletionDate com.amazonaws.elasticache#CacheNodeUpdateStatus$NodeDeletionDate */ =>  {
                 let var_502 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -11695,9 +11695,9 @@ pub fn deser_structure_crate_model_cache_node_update_status(
             s if s.matches("NodeUpdateStartDate") /* NodeUpdateStartDate com.amazonaws.elasticache#CacheNodeUpdateStatus$NodeUpdateStartDate */ =>  {
                 let var_503 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -11709,9 +11709,9 @@ pub fn deser_structure_crate_model_cache_node_update_status(
             s if s.matches("NodeUpdateEndDate") /* NodeUpdateEndDate com.amazonaws.elasticache#CacheNodeUpdateStatus$NodeUpdateEndDate */ =>  {
                 let var_504 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -11737,9 +11737,9 @@ pub fn deser_structure_crate_model_cache_node_update_status(
             s if s.matches("NodeUpdateInitiatedDate") /* NodeUpdateInitiatedDate com.amazonaws.elasticache#CacheNodeUpdateStatus$NodeUpdateInitiatedDate */ =>  {
                 let var_506 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -11751,9 +11751,9 @@ pub fn deser_structure_crate_model_cache_node_update_status(
             s if s.matches("NodeUpdateStatusModifiedDate") /* NodeUpdateStatusModifiedDate com.amazonaws.elasticache#CacheNodeUpdateStatus$NodeUpdateStatusModifiedDate */ =>  {
                 let var_507 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -12024,9 +12024,9 @@ pub fn deser_structure_crate_model_node_group_member_update_status(
             s if s.matches("NodeDeletionDate") /* NodeDeletionDate com.amazonaws.elasticache#NodeGroupMemberUpdateStatus$NodeDeletionDate */ =>  {
                 let var_519 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -12038,9 +12038,9 @@ pub fn deser_structure_crate_model_node_group_member_update_status(
             s if s.matches("NodeUpdateStartDate") /* NodeUpdateStartDate com.amazonaws.elasticache#NodeGroupMemberUpdateStatus$NodeUpdateStartDate */ =>  {
                 let var_520 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -12052,9 +12052,9 @@ pub fn deser_structure_crate_model_node_group_member_update_status(
             s if s.matches("NodeUpdateEndDate") /* NodeUpdateEndDate com.amazonaws.elasticache#NodeGroupMemberUpdateStatus$NodeUpdateEndDate */ =>  {
                 let var_521 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -12080,9 +12080,9 @@ pub fn deser_structure_crate_model_node_group_member_update_status(
             s if s.matches("NodeUpdateInitiatedDate") /* NodeUpdateInitiatedDate com.amazonaws.elasticache#NodeGroupMemberUpdateStatus$NodeUpdateInitiatedDate */ =>  {
                 let var_523 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
@@ -12094,9 +12094,9 @@ pub fn deser_structure_crate_model_node_group_member_update_status(
             s if s.matches("NodeUpdateStatusModifiedDate") /* NodeUpdateStatusModifiedDate com.amazonaws.elasticache#NodeGroupMemberUpdateStatus$NodeUpdateStatusModifiedDate */ =>  {
                 let var_524 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?

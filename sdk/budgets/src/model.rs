@@ -1785,7 +1785,7 @@ pub struct Budget {
     /// <p>Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage.</p>
     pub budget_type: std::option::Option<crate::model::BudgetType>,
     /// <p>The last time that you updated this budget.</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Budget {
     /// <p>The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters aren't allowed in <code>BudgetName</code>.</p>
@@ -1866,7 +1866,7 @@ impl Budget {
         self.budget_type.as_ref()
     }
     /// <p>The last time that you updated this budget.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -1905,7 +1905,7 @@ pub mod budget {
         pub(crate) time_period: std::option::Option<crate::model::TimePeriod>,
         pub(crate) calculated_spend: std::option::Option<crate::model::CalculatedSpend>,
         pub(crate) budget_type: std::option::Option<crate::model::BudgetType>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters aren't allowed in <code>BudgetName</code>.</p>
@@ -2109,14 +2109,14 @@ pub mod budget {
             self
         }
         /// <p>The last time that you updated this budget.</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
         /// <p>The last time that you updated this budget.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -2392,20 +2392,20 @@ impl Spend {
 pub struct TimePeriod {
     /// <p>The start date for a budget. If you created your budget and didn't specify a start date, AWS defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p>
     /// <p>You can change your start date with the <code>UpdateBudget</code> operation.</p>
-    pub start: std::option::Option<aws_smithy_types::Instant>,
+    pub start: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end date for a budget. If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p>
     /// <p>After the end date, AWS deletes the budget and all associated notifications and subscribers. You can change your end date with the <code>UpdateBudget</code> operation.</p>
-    pub end: std::option::Option<aws_smithy_types::Instant>,
+    pub end: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimePeriod {
     /// <p>The start date for a budget. If you created your budget and didn't specify a start date, AWS defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p>
     /// <p>You can change your start date with the <code>UpdateBudget</code> operation.</p>
-    pub fn start(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start.as_ref()
     }
     /// <p>The end date for a budget. If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p>
     /// <p>After the end date, AWS deletes the budget and all associated notifications and subscribers. You can change your end date with the <code>UpdateBudget</code> operation.</p>
-    pub fn end(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end.as_ref()
     }
 }
@@ -2423,31 +2423,31 @@ pub mod time_period {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The start date for a budget. If you created your budget and didn't specify a start date, AWS defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p>
         /// <p>You can change your start date with the <code>UpdateBudget</code> operation.</p>
-        pub fn start(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start = Some(input);
             self
         }
         /// <p>The start date for a budget. If you created your budget and didn't specify a start date, AWS defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p>
         /// <p>You can change your start date with the <code>UpdateBudget</code> operation.</p>
-        pub fn set_start(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
+        pub fn set_start(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.start = input;
             self
         }
         /// <p>The end date for a budget. If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p>
         /// <p>After the end date, AWS deletes the budget and all associated notifications and subscribers. You can change your end date with the <code>UpdateBudget</code> operation.</p>
-        pub fn end(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end = Some(input);
             self
         }
         /// <p>The end date for a budget. If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p>
         /// <p>After the end date, AWS deletes the budget and all associated notifications and subscribers. You can change your end date with the <code>UpdateBudget</code> operation.</p>
-        pub fn set_end(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
+        pub fn set_end(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.end = input;
             self
         }
@@ -3204,7 +3204,7 @@ impl BudgetedAndActualAmounts {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionHistory {
     /// <p> A generic time stamp. In Java, it is transformed to a <code>Date</code> object.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The status of action at the time of the event.
     /// </p>
@@ -3220,7 +3220,7 @@ pub struct ActionHistory {
 }
 impl ActionHistory {
     /// <p> A generic time stamp. In Java, it is transformed to a <code>Date</code> object.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>
@@ -3260,21 +3260,21 @@ pub mod action_history {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::ActionStatus>,
         pub(crate) event_type: std::option::Option<crate::model::EventType>,
         pub(crate) action_history_details: std::option::Option<crate::model::ActionHistoryDetails>,
     }
     impl Builder {
         /// <p> A generic time stamp. In Java, it is transformed to a <code>Date</code> object.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p> A generic time stamp. In Java, it is transformed to a <code>Date</code> object.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self

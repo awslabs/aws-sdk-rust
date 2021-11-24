@@ -2943,16 +2943,16 @@ pub struct ScheduledAction {
     /// </ul>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
     /// <p>The date and time that the action is scheduled to begin, in UTC.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the action is scheduled to end, in UTC.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the
     /// scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out
     /// to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling
     /// scales in to the maximum capacity.</p>
     pub scalable_target_action: std::option::Option<crate::model::ScalableTargetAction>,
     /// <p>The date and time that the scheduled action was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ScheduledAction {
     /// <p>The name of the scheduled action.</p>
@@ -3154,11 +3154,11 @@ impl ScheduledAction {
         self.scalable_dimension.as_ref()
     }
     /// <p>The date and time that the action is scheduled to begin, in UTC.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time that the action is scheduled to end, in UTC.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the
@@ -3171,7 +3171,7 @@ impl ScheduledAction {
         self.scalable_target_action.as_ref()
     }
     /// <p>The date and time that the scheduled action was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -3205,10 +3205,10 @@ pub mod scheduled_action {
         pub(crate) timezone: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) scalable_target_action: std::option::Option<crate::model::ScalableTargetAction>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the scheduled action.</p>
@@ -3634,27 +3634,27 @@ pub mod scheduled_action {
             self
         }
         /// <p>The date and time that the action is scheduled to begin, in UTC.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The date and time that the action is scheduled to begin, in UTC.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The date and time that the action is scheduled to end, in UTC.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The date and time that the action is scheduled to end, in UTC.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -3679,14 +3679,14 @@ pub mod scheduled_action {
             self
         }
         /// <p>The date and time that the scheduled action was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The date and time that the scheduled action was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -3892,7 +3892,7 @@ pub struct ScalingPolicy {
     /// <p>The CloudWatch alarms associated with the scaling policy.</p>
     pub alarms: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
     /// <p>The Unix timestamp for when the scaling policy was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ScalingPolicy {
     /// <p>The Amazon Resource Name (ARN) of the scaling policy.</p>
@@ -4084,7 +4084,7 @@ impl ScalingPolicy {
         self.alarms.as_deref()
     }
     /// <p>The Unix timestamp for when the scaling policy was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -4127,7 +4127,7 @@ pub mod scaling_policy {
         pub(crate) target_tracking_scaling_policy_configuration:
             std::option::Option<crate::model::TargetTrackingScalingPolicyConfiguration>,
         pub(crate) alarms: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the scaling policy.</p>
@@ -4547,14 +4547,14 @@ pub mod scaling_policy {
             self
         }
         /// <p>The Unix timestamp for when the scaling policy was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The Unix timestamp for when the scaling policy was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -4749,9 +4749,9 @@ pub struct ScalingActivity {
     /// <p>A simple description of what caused the scaling activity to happen.</p>
     pub cause: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for when the scaling activity began.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for when the scaling activity ended.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the status of the scaling activity.</p>
     pub status_code: std::option::Option<crate::model::ScalingActivityStatusCode>,
     /// <p>A simple message about the current status of the scaling activity.</p>
@@ -4933,11 +4933,11 @@ impl ScalingActivity {
         self.cause.as_deref()
     }
     /// <p>The Unix timestamp for when the scaling activity began.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The Unix timestamp for when the scaling activity ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Indicates the status of the scaling activity.</p>
@@ -4982,8 +4982,8 @@ pub mod scaling_activity {
         pub(crate) scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status_code: std::option::Option<crate::model::ScalingActivityStatusCode>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) details: std::option::Option<std::string::String>,
@@ -5352,27 +5352,27 @@ pub mod scaling_activity {
             self
         }
         /// <p>The Unix timestamp for when the scaling activity began.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The Unix timestamp for when the scaling activity began.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The Unix timestamp for when the scaling activity ended.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The Unix timestamp for when the scaling activity ended.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -5683,7 +5683,7 @@ pub struct ScalableTarget {
     /// behalf.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for when the scalable target was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state.
     /// </p>
     pub suspended_state: std::option::Option<crate::model::SuspendedState>,
@@ -5864,7 +5864,7 @@ impl ScalableTarget {
         self.role_arn.as_deref()
     }
     /// <p>The Unix timestamp for when the scalable target was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state.
@@ -5899,7 +5899,7 @@ pub mod scalable_target {
         pub(crate) min_capacity: std::option::Option<i32>,
         pub(crate) max_capacity: std::option::Option<i32>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) suspended_state: std::option::Option<crate::model::SuspendedState>,
     }
     impl Builder {
@@ -6270,14 +6270,14 @@ pub mod scalable_target {
             self
         }
         /// <p>The Unix timestamp for when the scalable target was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The Unix timestamp for when the scalable target was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self

@@ -91,7 +91,7 @@ pub fn serialize_structure_crate_input_create_timeline_event_input(
     if let Some(var_27) = &input.event_time {
         object
             .key("eventTime")
-            .instant(var_27, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_27, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_28) = &input.event_type {
         object.key("eventType").string(var_28);
@@ -544,7 +544,7 @@ pub fn serialize_structure_crate_input_update_timeline_event_input(
     if let Some(var_124) = &input.event_time {
         object
             .key("eventTime")
-            .instant(var_124, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_124, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_125) = &input.event_type {
         object.key("eventType").string(var_125);
@@ -695,7 +695,7 @@ pub fn serialize_structure_crate_model_trigger_details(
     if let Some(var_148) = &input.timestamp {
         object
             .key("timestamp")
-            .instant(var_148, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_148, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_149) = &input.raw_data {
         object.key("rawData").string(var_149);
@@ -833,12 +833,12 @@ pub fn serialize_union_crate_model_condition(
         crate::model::Condition::Before(inner) => {
             object_142
                 .key("before")
-                .instant(inner, aws_smithy_types::instant::Format::EpochSeconds);
+                .date_time(inner, aws_smithy_types::date_time::Format::EpochSeconds)?;
         }
         crate::model::Condition::After(inner) => {
             object_142
                 .key("after")
-                .instant(inner, aws_smithy_types::instant::Format::EpochSeconds);
+                .date_time(inner, aws_smithy_types::date_time::Format::EpochSeconds)?;
         }
         crate::model::Condition::Equals(inner) => {
             let mut object_164 = object_142.key("equals").start_object();

@@ -133,6 +133,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationFsxWindows
     }
 }
 
+/// Operation shape for `CreateLocationHdfs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_location_hdfs`](crate::client::Client::create_location_hdfs).
+///
+/// See [`crate::client::fluent_builders::CreateLocationHdfs`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateLocationHdfs {
+    _private: (),
+}
+impl CreateLocationHdfs {
+    /// Creates a new builder-style object to manufacture [`CreateLocationHdfsInput`](crate::input::CreateLocationHdfsInput)
+    pub fn builder() -> crate::input::create_location_hdfs_input::Builder {
+        crate::input::create_location_hdfs_input::Builder::default()
+    }
+    /// Creates a new `CreateLocationHdfs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateLocationHdfs {
+    type Output = std::result::Result<
+        crate::output::CreateLocationHdfsOutput,
+        crate::error::CreateLocationHdfsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_location_hdfs_error(response)
+        } else {
+            crate::operation_deser::parse_create_location_hdfs_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateLocationNfs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -493,6 +527,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationFsxWindo
             crate::operation_deser::parse_describe_location_fsx_windows_error(response)
         } else {
             crate::operation_deser::parse_describe_location_fsx_windows_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeLocationHdfs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_location_hdfs`](crate::client::Client::describe_location_hdfs).
+///
+/// See [`crate::client::fluent_builders::DescribeLocationHdfs`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeLocationHdfs {
+    _private: (),
+}
+impl DescribeLocationHdfs {
+    /// Creates a new builder-style object to manufacture [`DescribeLocationHdfsInput`](crate::input::DescribeLocationHdfsInput)
+    pub fn builder() -> crate::input::describe_location_hdfs_input::Builder {
+        crate::input::describe_location_hdfs_input::Builder::default()
+    }
+    /// Creates a new `DescribeLocationHdfs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationHdfs {
+    type Output = std::result::Result<
+        crate::output::DescribeLocationHdfsOutput,
+        crate::error::DescribeLocationHdfsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_location_hdfs_error(response)
+        } else {
+            crate::operation_deser::parse_describe_location_hdfs_response(response)
         }
     }
 }
@@ -988,6 +1056,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAgent {
             crate::operation_deser::parse_update_agent_error(response)
         } else {
             crate::operation_deser::parse_update_agent_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateLocationHdfs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_location_hdfs`](crate::client::Client::update_location_hdfs).
+///
+/// See [`crate::client::fluent_builders::UpdateLocationHdfs`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateLocationHdfs {
+    _private: (),
+}
+impl UpdateLocationHdfs {
+    /// Creates a new builder-style object to manufacture [`UpdateLocationHdfsInput`](crate::input::UpdateLocationHdfsInput)
+    pub fn builder() -> crate::input::update_location_hdfs_input::Builder {
+        crate::input::update_location_hdfs_input::Builder::default()
+    }
+    /// Creates a new `UpdateLocationHdfs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateLocationHdfs {
+    type Output = std::result::Result<
+        crate::output::UpdateLocationHdfsOutput,
+        crate::error::UpdateLocationHdfsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_location_hdfs_error(response)
+        } else {
+            crate::operation_deser::parse_update_location_hdfs_response(response)
         }
     }
 }

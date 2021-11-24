@@ -2238,7 +2238,7 @@ pub struct PutRetentionSettingsOutput {
     /// <p>The retention settings.</p>
     pub retention_settings: std::option::Option<crate::model::RetentionSettings>,
     /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
-    pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PutRetentionSettingsOutput {
     /// <p>The retention settings.</p>
@@ -2246,7 +2246,7 @@ impl PutRetentionSettingsOutput {
         self.retention_settings.as_ref()
     }
     /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
-    pub fn initiate_deletion_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn initiate_deletion_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.initiate_deletion_timestamp.as_ref()
     }
 }
@@ -2268,7 +2268,7 @@ pub mod put_retention_settings_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retention_settings: std::option::Option<crate::model::RetentionSettings>,
-        pub(crate) initiate_deletion_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The retention settings.</p>
@@ -2285,14 +2285,14 @@ pub mod put_retention_settings_output {
             self
         }
         /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
-        pub fn initiate_deletion_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn initiate_deletion_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.initiate_deletion_timestamp = Some(input);
             self
         }
         /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
         pub fn set_initiate_deletion_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.initiate_deletion_timestamp = input;
             self
@@ -2455,7 +2455,7 @@ pub struct PutAppInstanceRetentionSettingsOutput {
     pub app_instance_retention_settings:
         std::option::Option<crate::model::AppInstanceRetentionSettings>,
     /// <p>The time at which the API deletes data.</p>
-    pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PutAppInstanceRetentionSettingsOutput {
     /// <p>The time in days to retain data. Data type: number.</p>
@@ -2465,7 +2465,7 @@ impl PutAppInstanceRetentionSettingsOutput {
         self.app_instance_retention_settings.as_ref()
     }
     /// <p>The time at which the API deletes data.</p>
-    pub fn initiate_deletion_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn initiate_deletion_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.initiate_deletion_timestamp.as_ref()
     }
 }
@@ -2491,7 +2491,7 @@ pub mod put_app_instance_retention_settings_output {
     pub struct Builder {
         pub(crate) app_instance_retention_settings:
             std::option::Option<crate::model::AppInstanceRetentionSettings>,
-        pub(crate) initiate_deletion_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The time in days to retain data. Data type: number.</p>
@@ -2511,14 +2511,14 @@ pub mod put_app_instance_retention_settings_output {
             self
         }
         /// <p>The time at which the API deletes data.</p>
-        pub fn initiate_deletion_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn initiate_deletion_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.initiate_deletion_timestamp = Some(input);
             self
         }
         /// <p>The time at which the API deletes data.</p>
         pub fn set_initiate_deletion_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.initiate_deletion_timestamp = input;
             self
@@ -6095,7 +6095,7 @@ pub struct GetRetentionSettingsOutput {
     /// <p>The retention settings.</p>
     pub retention_settings: std::option::Option<crate::model::RetentionSettings>,
     /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
-    pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetRetentionSettingsOutput {
     /// <p>The retention settings.</p>
@@ -6103,7 +6103,7 @@ impl GetRetentionSettingsOutput {
         self.retention_settings.as_ref()
     }
     /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
-    pub fn initiate_deletion_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn initiate_deletion_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.initiate_deletion_timestamp.as_ref()
     }
 }
@@ -6125,7 +6125,7 @@ pub mod get_retention_settings_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retention_settings: std::option::Option<crate::model::RetentionSettings>,
-        pub(crate) initiate_deletion_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The retention settings.</p>
@@ -6142,14 +6142,14 @@ pub mod get_retention_settings_output {
             self
         }
         /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
-        pub fn initiate_deletion_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn initiate_deletion_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.initiate_deletion_timestamp = Some(input);
             self
         }
         /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
         pub fn set_initiate_deletion_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.initiate_deletion_timestamp = input;
             self
@@ -6234,7 +6234,7 @@ pub struct GetPhoneNumberSettingsOutput {
     /// <p>The default outbound calling name for the account.</p>
     pub calling_name: std::option::Option<std::string::String>,
     /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
-    pub calling_name_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub calling_name_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetPhoneNumberSettingsOutput {
     /// <p>The default outbound calling name for the account.</p>
@@ -6244,7 +6244,7 @@ impl GetPhoneNumberSettingsOutput {
     /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
     pub fn calling_name_updated_timestamp(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.calling_name_updated_timestamp.as_ref()
     }
 }
@@ -6266,7 +6266,7 @@ pub mod get_phone_number_settings_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) calling_name: std::option::Option<std::string::String>,
-        pub(crate) calling_name_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) calling_name_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The default outbound calling name for the account.</p>
@@ -6280,14 +6280,14 @@ pub mod get_phone_number_settings_output {
             self
         }
         /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
-        pub fn calling_name_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn calling_name_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.calling_name_updated_timestamp = Some(input);
             self
         }
         /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
         pub fn set_calling_name_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.calling_name_updated_timestamp = input;
             self
@@ -6976,7 +6976,7 @@ pub struct GetAppInstanceRetentionSettingsOutput {
     pub app_instance_retention_settings:
         std::option::Option<crate::model::AppInstanceRetentionSettings>,
     /// <p>The timestamp representing the time at which the specified items are retained, in Epoch Seconds.</p>
-    pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetAppInstanceRetentionSettingsOutput {
     /// <p>The retention settings for the <code>AppInstance</code>.</p>
@@ -6986,7 +6986,7 @@ impl GetAppInstanceRetentionSettingsOutput {
         self.app_instance_retention_settings.as_ref()
     }
     /// <p>The timestamp representing the time at which the specified items are retained, in Epoch Seconds.</p>
-    pub fn initiate_deletion_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn initiate_deletion_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.initiate_deletion_timestamp.as_ref()
     }
 }
@@ -7012,7 +7012,7 @@ pub mod get_app_instance_retention_settings_output {
     pub struct Builder {
         pub(crate) app_instance_retention_settings:
             std::option::Option<crate::model::AppInstanceRetentionSettings>,
-        pub(crate) initiate_deletion_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The retention settings for the <code>AppInstance</code>.</p>
@@ -7032,14 +7032,14 @@ pub mod get_app_instance_retention_settings_output {
             self
         }
         /// <p>The timestamp representing the time at which the specified items are retained, in Epoch Seconds.</p>
-        pub fn initiate_deletion_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn initiate_deletion_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.initiate_deletion_timestamp = Some(input);
             self
         }
         /// <p>The timestamp representing the time at which the specified items are retained, in Epoch Seconds.</p>
         pub fn set_initiate_deletion_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.initiate_deletion_timestamp = input;
             self

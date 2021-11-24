@@ -147,9 +147,9 @@ impl Action {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ssm_automation(&self) -> std::result::Result<&crate::model::SsmAutomation, &Self> {
         if let Action::SsmAutomation(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`SsmAutomation`](crate::model::Action::SsmAutomation).
@@ -410,9 +410,9 @@ impl ChatChannel {
         &self,
     ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
         if let ChatChannel::ChatbotSns(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`ChatbotSns`](crate::model::ChatChannel::ChatbotSns).
@@ -423,9 +423,9 @@ impl ChatChannel {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_empty(&self) -> std::result::Result<&crate::model::EmptyChatChannel, &Self> {
         if let ChatChannel::Empty(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Empty`](crate::model::ChatChannel::Empty).
@@ -490,9 +490,9 @@ impl NotificationTargetItem {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sns_topic_arn(&self) -> std::result::Result<&std::string::String, &Self> {
         if let NotificationTargetItem::SnsTopicArn(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`SnsTopicArn`](crate::model::NotificationTargetItem::SnsTopicArn).
@@ -532,9 +532,9 @@ impl UpdateReplicationSetAction {
         &self,
     ) -> std::result::Result<&crate::model::AddRegionAction, &Self> {
         if let UpdateReplicationSetAction::AddRegionAction(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`AddRegionAction`](crate::model::UpdateReplicationSetAction::AddRegionAction).
@@ -547,9 +547,9 @@ impl UpdateReplicationSetAction {
         &self,
     ) -> std::result::Result<&crate::model::DeleteRegionAction, &Self> {
         if let UpdateReplicationSetAction::DeleteRegionAction(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`DeleteRegionAction`](crate::model::UpdateReplicationSetAction::DeleteRegionAction).
@@ -721,9 +721,9 @@ impl RelatedItemsUpdate {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_item_to_add(&self) -> std::result::Result<&crate::model::RelatedItem, &Self> {
         if let RelatedItemsUpdate::ItemToAdd(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`ItemToAdd`](crate::model::RelatedItemsUpdate::ItemToAdd).
@@ -734,9 +734,9 @@ impl RelatedItemsUpdate {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_item_to_remove(&self) -> std::result::Result<&crate::model::ItemIdentifier, &Self> {
         if let RelatedItemsUpdate::ItemToRemove(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`ItemToRemove`](crate::model::RelatedItemsUpdate::ItemToRemove).
@@ -1054,9 +1054,9 @@ impl ItemValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_arn(&self) -> std::result::Result<&std::string::String, &Self> {
         if let ItemValue::Arn(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Arn`](crate::model::ItemValue::Arn).
@@ -1067,9 +1067,9 @@ impl ItemValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_metric_definition(&self) -> std::result::Result<&std::string::String, &Self> {
         if let ItemValue::MetricDefinition(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`MetricDefinition`](crate::model::ItemValue::MetricDefinition).
@@ -1080,9 +1080,9 @@ impl ItemValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_url(&self) -> std::result::Result<&std::string::String, &Self> {
         if let ItemValue::Url(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Url`](crate::model::ItemValue::Url).
@@ -1237,7 +1237,7 @@ pub struct TriggerDetails {
     /// <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
     pub trigger_arn: std::option::Option<std::string::String>,
     /// <p>The time that the incident was detected.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
     pub raw_data: std::option::Option<std::string::String>,
 }
@@ -1253,7 +1253,7 @@ impl TriggerDetails {
         self.trigger_arn.as_deref()
     }
     /// <p>The time that the incident was detected.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
@@ -1279,7 +1279,7 @@ pub mod trigger_details {
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
         pub(crate) trigger_arn: std::option::Option<std::string::String>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) raw_data: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1308,14 +1308,14 @@ pub mod trigger_details {
             self
         }
         /// <p>The time that the incident was detected.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The time that the incident was detected.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -1357,9 +1357,9 @@ pub struct EventSummary {
     /// <p>The timeline event ID.</p>
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The time that the event occurred.</p>
-    pub event_time: std::option::Option<aws_smithy_types::Instant>,
+    pub event_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the timeline event was last updated.</p>
-    pub event_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub event_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
     pub event_type: std::option::Option<std::string::String>,
 }
@@ -1373,11 +1373,11 @@ impl EventSummary {
         self.event_id.as_deref()
     }
     /// <p>The time that the event occurred.</p>
-    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>The time that the timeline event was last updated.</p>
-    pub fn event_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn event_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_updated_time.as_ref()
     }
     /// <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
@@ -1404,8 +1404,8 @@ pub mod event_summary {
     pub struct Builder {
         pub(crate) incident_record_arn: std::option::Option<std::string::String>,
         pub(crate) event_id: std::option::Option<std::string::String>,
-        pub(crate) event_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) event_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) event_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) event_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event_type: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1433,27 +1433,27 @@ pub mod event_summary {
             self
         }
         /// <p>The time that the event occurred.</p>
-        pub fn event_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_time = Some(input);
             self
         }
         /// <p>The time that the event occurred.</p>
         pub fn set_event_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.event_time = input;
             self
         }
         /// <p>The time that the timeline event was last updated.</p>
-        pub fn event_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn event_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_updated_time = Some(input);
             self
         }
         /// <p>The time that the timeline event was last updated.</p>
         pub fn set_event_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.event_updated_time = input;
             self
@@ -1677,9 +1677,9 @@ impl Filter {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum Condition {
     /// <p>After the specified timestamp.</p>
-    After(aws_smithy_types::Instant),
+    After(aws_smithy_types::DateTime),
     /// <p>Before the specified timestamp</p>
-    Before(aws_smithy_types::Instant),
+    Before(aws_smithy_types::DateTime),
     /// <p>The value is equal to the provided string or integer. </p>
     Equals(crate::model::AttributeValueList),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -1693,26 +1693,26 @@ pub enum Condition {
     Unknown,
 }
 impl Condition {
-    /// Tries to convert the enum instance into [`After`](crate::model::Condition::After), extracting the inner [`Instant`](aws_smithy_types::Instant).
+    /// Tries to convert the enum instance into [`After`](crate::model::Condition::After), extracting the inner [`DateTime`](aws_smithy_types::DateTime).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_after(&self) -> std::result::Result<&aws_smithy_types::Instant, &Self> {
+    pub fn as_after(&self) -> std::result::Result<&aws_smithy_types::DateTime, &Self> {
         if let Condition::After(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`After`](crate::model::Condition::After).
     pub fn is_after(&self) -> bool {
         self.as_after().is_ok()
     }
-    /// Tries to convert the enum instance into [`Before`](crate::model::Condition::Before), extracting the inner [`Instant`](aws_smithy_types::Instant).
+    /// Tries to convert the enum instance into [`Before`](crate::model::Condition::Before), extracting the inner [`DateTime`](aws_smithy_types::DateTime).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_before(&self) -> std::result::Result<&aws_smithy_types::Instant, &Self> {
+    pub fn as_before(&self) -> std::result::Result<&aws_smithy_types::DateTime, &Self> {
         if let Condition::Before(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Before`](crate::model::Condition::Before).
@@ -1723,9 +1723,9 @@ impl Condition {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_equals(&self) -> std::result::Result<&crate::model::AttributeValueList, &Self> {
         if let Condition::Equals(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Equals`](crate::model::Condition::Equals).
@@ -1761,9 +1761,9 @@ impl AttributeValueList {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_integer_values(&self) -> std::result::Result<&std::vec::Vec<i32>, &Self> {
         if let AttributeValueList::IntegerValues(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`IntegerValues`](crate::model::AttributeValueList::IntegerValues).
@@ -1776,9 +1776,9 @@ impl AttributeValueList {
         &self,
     ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
         if let AttributeValueList::StringValues(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`StringValues`](crate::model::AttributeValueList::StringValues).
@@ -1897,9 +1897,9 @@ pub struct IncidentRecordSummary {
     /// <p>Defines the impact to customers and applications.</p>
     pub impact: std::option::Option<i32>,
     /// <p>The time the incident was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the incident was resolved.</p>
-    pub resolved_time: std::option::Option<aws_smithy_types::Instant>,
+    pub resolved_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>What caused Incident Manager to create the incident.</p>
     pub incident_record_source: std::option::Option<crate::model::IncidentRecordSource>,
 }
@@ -1922,11 +1922,11 @@ impl IncidentRecordSummary {
         self.impact
     }
     /// <p>The time the incident was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the incident was resolved.</p>
-    pub fn resolved_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn resolved_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.resolved_time.as_ref()
     }
     /// <p>What caused Incident Manager to create the incident.</p>
@@ -1959,8 +1959,8 @@ pub mod incident_record_summary {
         pub(crate) title: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::IncidentRecordStatus>,
         pub(crate) impact: std::option::Option<i32>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) resolved_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) resolved_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) incident_record_source: std::option::Option<crate::model::IncidentRecordSource>,
     }
     impl Builder {
@@ -2010,27 +2010,27 @@ pub mod incident_record_summary {
             self
         }
         /// <p>The time the incident was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time the incident was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time the incident was resolved.</p>
-        pub fn resolved_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn resolved_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.resolved_time = Some(input);
             self
         }
         /// <p>The time the incident was resolved.</p>
         pub fn set_resolved_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.resolved_time = input;
             self
@@ -2197,9 +2197,9 @@ pub struct TimelineEvent {
     /// <p>The ID of the timeline event.</p>
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The time that the event occurred.</p>
-    pub event_time: std::option::Option<aws_smithy_types::Instant>,
+    pub event_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the timeline event was last updated.</p>
-    pub event_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub event_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom
     /// Event</code> type.</p>
     pub event_type: std::option::Option<std::string::String>,
@@ -2216,11 +2216,11 @@ impl TimelineEvent {
         self.event_id.as_deref()
     }
     /// <p>The time that the event occurred.</p>
-    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>The time that the timeline event was last updated.</p>
-    pub fn event_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn event_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_updated_time.as_ref()
     }
     /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom
@@ -2253,8 +2253,8 @@ pub mod timeline_event {
     pub struct Builder {
         pub(crate) incident_record_arn: std::option::Option<std::string::String>,
         pub(crate) event_id: std::option::Option<std::string::String>,
-        pub(crate) event_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) event_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) event_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) event_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event_type: std::option::Option<std::string::String>,
         pub(crate) event_data: std::option::Option<std::string::String>,
     }
@@ -2283,27 +2283,27 @@ pub mod timeline_event {
             self
         }
         /// <p>The time that the event occurred.</p>
-        pub fn event_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_time = Some(input);
             self
         }
         /// <p>The time that the event occurred.</p>
         pub fn set_event_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.event_time = input;
             self
         }
         /// <p>The time that the timeline event was last updated.</p>
-        pub fn event_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn event_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_updated_time = Some(input);
             self
         }
         /// <p>The time that the timeline event was last updated.</p>
         pub fn set_event_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.event_updated_time = input;
             self
@@ -2624,11 +2624,11 @@ pub struct ReplicationSet {
     /// replication set. </p>
     pub deletion_protected: std::option::Option<bool>,
     /// <p>When the replication set was created.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Details about who created the replication set.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>When the replication set was last updated.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Who last modified the replication set.</p>
     pub last_modified_by: std::option::Option<std::string::String>,
 }
@@ -2657,7 +2657,7 @@ impl ReplicationSet {
         self.deletion_protected
     }
     /// <p>When the replication set was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>Details about who created the replication set.</p>
@@ -2665,7 +2665,7 @@ impl ReplicationSet {
         self.created_by.as_deref()
     }
     /// <p>When the replication set was last updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Who last modified the replication set.</p>
@@ -2699,9 +2699,9 @@ pub mod replication_set {
         >,
         pub(crate) status: std::option::Option<crate::model::ReplicationSetStatus>,
         pub(crate) deletion_protected: std::option::Option<bool>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_by: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2770,14 +2770,14 @@ pub mod replication_set {
             self
         }
         /// <p>When the replication set was created.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>When the replication set was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -2793,14 +2793,14 @@ pub mod replication_set {
             self
         }
         /// <p>When the replication set was last updated.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>When the replication set was last updated.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -2918,7 +2918,7 @@ pub struct RegionInfo {
     /// <p>Information displayed about the status of the Amazon Web Services Region.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
-    pub status_update_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub status_update_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RegionInfo {
     /// <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.</p>
@@ -2934,7 +2934,7 @@ impl RegionInfo {
         self.status_message.as_deref()
     }
     /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
-    pub fn status_update_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn status_update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.status_update_date_time.as_ref()
     }
 }
@@ -2957,7 +2957,7 @@ pub mod region_info {
         pub(crate) sse_kms_key_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RegionStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) status_update_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) status_update_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.</p>
@@ -3000,14 +3000,14 @@ pub mod region_info {
             self
         }
         /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
-        pub fn status_update_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn status_update_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.status_update_date_time = Some(input);
             self
         }
         /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
         pub fn set_status_update_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.status_update_date_time = input;
             self
@@ -3109,11 +3109,11 @@ pub struct IncidentRecord {
     /// <p>The impact of the incident on customers and applications.</p>
     pub impact: std::option::Option<i32>,
     /// <p>The time that Incident Manager created the incident record.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
-    pub resolved_time: std::option::Option<aws_smithy_types::Instant>,
+    pub resolved_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the incident was most recently modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Who modified the incident most recently.</p>
     pub last_modified_by: std::option::Option<std::string::String>,
     /// <p>The runbook, or automation document, that's run at the beginning of the incident.</p>
@@ -3153,15 +3153,15 @@ impl IncidentRecord {
         self.impact
     }
     /// <p>The time that Incident Manager created the incident record.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
-    pub fn resolved_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn resolved_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.resolved_time.as_ref()
     }
     /// <p>The time at which the incident was most recently modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Who modified the incident most recently.</p>
@@ -3227,9 +3227,9 @@ pub mod incident_record {
         pub(crate) summary: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::IncidentRecordStatus>,
         pub(crate) impact: std::option::Option<i32>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) resolved_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) resolved_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_by: std::option::Option<std::string::String>,
         pub(crate) automation_executions:
             std::option::Option<std::vec::Vec<crate::model::AutomationExecution>>,
@@ -3296,40 +3296,40 @@ pub mod incident_record {
             self
         }
         /// <p>The time that Incident Manager created the incident record.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time that Incident Manager created the incident record.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
-        pub fn resolved_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn resolved_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.resolved_time = Some(input);
             self
         }
         /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
         pub fn set_resolved_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.resolved_time = input;
             self
         }
         /// <p>The time at which the incident was most recently modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The time at which the incident was most recently modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -3483,9 +3483,9 @@ impl AutomationExecution {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ssm_execution_arn(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AutomationExecution::SsmExecutionArn(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`SsmExecutionArn`](crate::model::AutomationExecution::SsmExecutionArn).

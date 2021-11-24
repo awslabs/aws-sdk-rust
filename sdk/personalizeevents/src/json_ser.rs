@@ -93,7 +93,7 @@ pub fn serialize_structure_crate_model_event(
     if let Some(var_23) = &input.sent_at {
         object
             .key("sentAt")
-            .instant(var_23, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_23, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_24) = &input.recommendation_id {
         object.key("recommendationId").string(var_24);

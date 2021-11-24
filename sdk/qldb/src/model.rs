@@ -99,7 +99,7 @@ pub struct LedgerEncryptionDescription {
     /// in the case of an error. (Epoch time format is the number of seconds that have elapsed
     /// since 12:00:00 AM January 1, 1970 UTC.)</p>
     /// <p>This parameter is undefined if the KMS key is accessible.</p>
-    pub inaccessible_kms_key_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub inaccessible_kms_key_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LedgerEncryptionDescription {
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for
@@ -145,7 +145,7 @@ impl LedgerEncryptionDescription {
     /// <p>This parameter is undefined if the KMS key is accessible.</p>
     pub fn inaccessible_kms_key_date_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.inaccessible_kms_key_date_time.as_ref()
     }
 }
@@ -169,7 +169,7 @@ pub mod ledger_encryption_description {
     pub struct Builder {
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
         pub(crate) encryption_status: std::option::Option<crate::model::EncryptionStatus>,
-        pub(crate) inaccessible_kms_key_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) inaccessible_kms_key_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for
@@ -257,7 +257,7 @@ pub mod ledger_encryption_description {
         /// in the case of an error. (Epoch time format is the number of seconds that have elapsed
         /// since 12:00:00 AM January 1, 1970 UTC.)</p>
         /// <p>This parameter is undefined if the KMS key is accessible.</p>
-        pub fn inaccessible_kms_key_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn inaccessible_kms_key_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inaccessible_kms_key_date_time = Some(input);
             self
         }
@@ -267,7 +267,7 @@ pub mod ledger_encryption_description {
         /// <p>This parameter is undefined if the KMS key is accessible.</p>
         pub fn set_inaccessible_kms_key_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inaccessible_kms_key_date_time = input;
             self
@@ -519,7 +519,7 @@ pub struct LedgerSummary {
     pub state: std::option::Option<crate::model::LedgerState>,
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
     /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LedgerSummary {
     /// <p>The name of the ledger.</p>
@@ -532,7 +532,7 @@ impl LedgerSummary {
     }
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
     /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
@@ -553,7 +553,7 @@ pub mod ledger_summary {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::LedgerState>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
@@ -578,7 +578,7 @@ pub mod ledger_summary {
         }
         /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
         /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
@@ -586,7 +586,7 @@ pub mod ledger_summary {
         /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
@@ -619,15 +619,15 @@ pub struct JournalS3ExportDescription {
     pub export_id: std::option::Option<std::string::String>,
     /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time
     /// format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub export_creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub export_creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current state of the journal export job.</p>
     pub status: std::option::Option<crate::model::ExportStatus>,
     /// <p>The inclusive start date and time for the range of journal contents that are specified
     /// in the original export request.</p>
-    pub inclusive_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The exclusive end date and time for the range of journal contents that are specified in
     /// the original export request.</p>
-    pub exclusive_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal
     /// contents.</p>
     pub s3_export_configuration: std::option::Option<crate::model::S3ExportConfiguration>,
@@ -655,7 +655,7 @@ impl JournalS3ExportDescription {
     }
     /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time
     /// format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn export_creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn export_creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.export_creation_time.as_ref()
     }
     /// <p>The current state of the journal export job.</p>
@@ -664,12 +664,12 @@ impl JournalS3ExportDescription {
     }
     /// <p>The inclusive start date and time for the range of journal contents that are specified
     /// in the original export request.</p>
-    pub fn inclusive_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn inclusive_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.inclusive_start_time.as_ref()
     }
     /// <p>The exclusive end date and time for the range of journal contents that are specified in
     /// the original export request.</p>
-    pub fn exclusive_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn exclusive_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.exclusive_end_time.as_ref()
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal
@@ -716,10 +716,10 @@ pub mod journal_s3_export_description {
     pub struct Builder {
         pub(crate) ledger_name: std::option::Option<std::string::String>,
         pub(crate) export_id: std::option::Option<std::string::String>,
-        pub(crate) export_creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) export_creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::ExportStatus>,
-        pub(crate) inclusive_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) exclusive_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) s3_export_configuration:
             std::option::Option<crate::model::S3ExportConfiguration>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -747,7 +747,7 @@ pub mod journal_s3_export_description {
         }
         /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time
         /// format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-        pub fn export_creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn export_creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.export_creation_time = Some(input);
             self
         }
@@ -755,7 +755,7 @@ pub mod journal_s3_export_description {
         /// format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         pub fn set_export_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.export_creation_time = input;
             self
@@ -775,7 +775,7 @@ pub mod journal_s3_export_description {
         }
         /// <p>The inclusive start date and time for the range of journal contents that are specified
         /// in the original export request.</p>
-        pub fn inclusive_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn inclusive_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inclusive_start_time = Some(input);
             self
         }
@@ -783,14 +783,14 @@ pub mod journal_s3_export_description {
         /// in the original export request.</p>
         pub fn set_inclusive_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inclusive_start_time = input;
             self
         }
         /// <p>The exclusive end date and time for the range of journal contents that are specified in
         /// the original export request.</p>
-        pub fn exclusive_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn exclusive_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.exclusive_end_time = Some(input);
             self
         }
@@ -798,7 +798,7 @@ pub mod journal_s3_export_description {
         /// the original export request.</p>
         pub fn set_exclusive_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.exclusive_end_time = input;
             self
@@ -1327,12 +1327,12 @@ pub struct JournalKinesisStreamDescription {
     /// <p>The date and time, in epoch time format, when the QLDB journal stream was created.
     /// (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970
     /// UTC.)</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The inclusive start date and time from which to start streaming journal data.</p>
-    pub inclusive_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is
     /// undefined, the stream runs indefinitely until you cancel it.</p>
-    pub exclusive_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
     /// journal stream to write data records to a Kinesis Data Streams resource.</p>
     pub role_arn: std::option::Option<std::string::String>,
@@ -1360,16 +1360,16 @@ impl JournalKinesisStreamDescription {
     /// <p>The date and time, in epoch time format, when the QLDB journal stream was created.
     /// (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970
     /// UTC.)</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The inclusive start date and time from which to start streaming journal data.</p>
-    pub fn inclusive_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn inclusive_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.inclusive_start_time.as_ref()
     }
     /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is
     /// undefined, the stream runs indefinitely until you cancel it.</p>
-    pub fn exclusive_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn exclusive_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.exclusive_end_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
@@ -1431,9 +1431,9 @@ pub mod journal_kinesis_stream_description {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ledger_name: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) inclusive_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) exclusive_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) stream_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1456,7 +1456,7 @@ pub mod journal_kinesis_stream_description {
         /// <p>The date and time, in epoch time format, when the QLDB journal stream was created.
         /// (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970
         /// UTC.)</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
@@ -1465,27 +1465,27 @@ pub mod journal_kinesis_stream_description {
         /// UTC.)</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The inclusive start date and time from which to start streaming journal data.</p>
-        pub fn inclusive_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn inclusive_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inclusive_start_time = Some(input);
             self
         }
         /// <p>The inclusive start date and time from which to start streaming journal data.</p>
         pub fn set_inclusive_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inclusive_start_time = input;
             self
         }
         /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is
         /// undefined, the stream runs indefinitely until you cancel it.</p>
-        pub fn exclusive_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn exclusive_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.exclusive_end_time = Some(input);
             self
         }
@@ -1493,7 +1493,7 @@ pub mod journal_kinesis_stream_description {
         /// undefined, the stream runs indefinitely until you cancel it.</p>
         pub fn set_exclusive_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.exclusive_end_time = input;
             self

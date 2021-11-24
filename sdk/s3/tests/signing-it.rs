@@ -12,10 +12,12 @@ use std::time::{Duration, UNIX_EPOCH};
 
 #[tokio::test]
 async fn test_signer() -> Result<(), aws_sdk_s3::Error> {
-    let creds = Credentials::from_keys(
+    let creds = Credentials::new(
         "ANOTREAL",
         "notrealrnrELgWzOk3IfjzDKtFBhDby",
         Some("notarealsessiontoken".to_string()),
+        None,
+        "test",
     );
     let conf = aws_sdk_s3::Config::builder()
         .credentials_provider(creds)

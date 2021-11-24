@@ -119,9 +119,9 @@ pub struct UpdateEnvironmentOutput {
     /// <p>The URL to the CNAME for this environment.</p>
     pub cname: std::option::Option<std::string::String>,
     /// <p>The creation date for this environment.</p>
-    pub date_created: std::option::Option<aws_smithy_types::Instant>,
+    pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last modified date for this environment.</p>
-    pub date_updated: std::option::Option<aws_smithy_types::Instant>,
+    pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current operational status of the environment:</p>
     ///
     /// <ul>
@@ -243,11 +243,11 @@ impl UpdateEnvironmentOutput {
         self.cname.as_deref()
     }
     /// <p>The creation date for this environment.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The last modified date for this environment.</p>
-    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_updated.as_ref()
     }
     /// <p>The current operational status of the environment:</p>
@@ -391,8 +391,8 @@ pub mod update_environment_output {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) endpoint_url: std::option::Option<std::string::String>,
         pub(crate) cname: std::option::Option<std::string::String>,
-        pub(crate) date_created: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) date_updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) date_updated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::EnvironmentStatus>,
         pub(crate) abortable_operation_in_progress: std::option::Option<bool>,
         pub(crate) health: std::option::Option<crate::model::EnvironmentHealth>,
@@ -528,27 +528,27 @@ pub mod update_environment_output {
             self
         }
         /// <p>The creation date for this environment.</p>
-        pub fn date_created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_created = Some(input);
             self
         }
         /// <p>The creation date for this environment.</p>
         pub fn set_date_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_created = input;
             self
         }
         /// <p>The last modified date for this environment.</p>
-        pub fn date_updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_updated = Some(input);
             self
         }
         /// <p>The last modified date for this environment.</p>
         pub fn set_date_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_updated = input;
             self
@@ -875,9 +875,9 @@ pub struct UpdateConfigurationTemplateOutput {
     /// </ul>
     pub deployment_status: std::option::Option<crate::model::ConfigurationDeploymentStatus>,
     /// <p>The date (in UTC time) when this configuration set was created.</p>
-    pub date_created: std::option::Option<aws_smithy_types::Instant>,
+    pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date (in UTC time) when this configuration set was last modified.</p>
-    pub date_updated: std::option::Option<aws_smithy_types::Instant>,
+    pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of the configuration options and their values in this configuration
     /// set.</p>
     pub option_settings:
@@ -941,11 +941,11 @@ impl UpdateConfigurationTemplateOutput {
         self.deployment_status.as_ref()
     }
     /// <p>The date (in UTC time) when this configuration set was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The date (in UTC time) when this configuration set was last modified.</p>
-    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_updated.as_ref()
     }
     /// <p>A list of the configuration options and their values in this configuration
@@ -986,8 +986,8 @@ pub mod update_configuration_template_output {
         pub(crate) environment_name: std::option::Option<std::string::String>,
         pub(crate) deployment_status:
             std::option::Option<crate::model::ConfigurationDeploymentStatus>,
-        pub(crate) date_created: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) date_updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) date_updated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) option_settings:
             std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
     }
@@ -1133,27 +1133,27 @@ pub mod update_configuration_template_output {
             self
         }
         /// <p>The date (in UTC time) when this configuration set was created.</p>
-        pub fn date_created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_created = Some(input);
             self
         }
         /// <p>The date (in UTC time) when this configuration set was created.</p>
         pub fn set_date_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_created = input;
             self
         }
         /// <p>The date (in UTC time) when this configuration set was last modified.</p>
-        pub fn date_updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_updated = Some(input);
             self
         }
         /// <p>The date (in UTC time) when this configuration set was last modified.</p>
         pub fn set_date_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_updated = input;
             self
@@ -1443,9 +1443,9 @@ pub struct TerminateEnvironmentOutput {
     /// <p>The URL to the CNAME for this environment.</p>
     pub cname: std::option::Option<std::string::String>,
     /// <p>The creation date for this environment.</p>
-    pub date_created: std::option::Option<aws_smithy_types::Instant>,
+    pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last modified date for this environment.</p>
-    pub date_updated: std::option::Option<aws_smithy_types::Instant>,
+    pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current operational status of the environment:</p>
     ///
     /// <ul>
@@ -1567,11 +1567,11 @@ impl TerminateEnvironmentOutput {
         self.cname.as_deref()
     }
     /// <p>The creation date for this environment.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The last modified date for this environment.</p>
-    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_updated.as_ref()
     }
     /// <p>The current operational status of the environment:</p>
@@ -1715,8 +1715,8 @@ pub mod terminate_environment_output {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) endpoint_url: std::option::Option<std::string::String>,
         pub(crate) cname: std::option::Option<std::string::String>,
-        pub(crate) date_created: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) date_updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) date_updated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::EnvironmentStatus>,
         pub(crate) abortable_operation_in_progress: std::option::Option<bool>,
         pub(crate) health: std::option::Option<crate::model::EnvironmentHealth>,
@@ -1852,27 +1852,27 @@ pub mod terminate_environment_output {
             self
         }
         /// <p>The creation date for this environment.</p>
-        pub fn date_created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_created = Some(input);
             self
         }
         /// <p>The creation date for this environment.</p>
         pub fn set_date_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_created = input;
             self
         }
         /// <p>The last modified date for this environment.</p>
-        pub fn date_updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_updated = Some(input);
             self
         }
         /// <p>The last modified date for this environment.</p>
         pub fn set_date_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_updated = input;
             self
@@ -2808,7 +2808,7 @@ pub struct DescribeInstancesHealthOutput {
     pub instance_health_list:
         std::option::Option<std::vec::Vec<crate::model::SingleInstanceHealth>>,
     /// <p>The date and time that the health information was retrieved.</p>
-    pub refreshed_at: std::option::Option<aws_smithy_types::Instant>,
+    pub refreshed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Pagination token for the next page of results, if available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -2822,7 +2822,7 @@ impl DescribeInstancesHealthOutput {
         self.instance_health_list.as_deref()
     }
     /// <p>The date and time that the health information was retrieved.</p>
-    pub fn refreshed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn refreshed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.refreshed_at.as_ref()
     }
     /// <p>Pagination token for the next page of results, if available.</p>
@@ -2847,7 +2847,7 @@ pub mod describe_instances_health_output {
     pub struct Builder {
         pub(crate) instance_health_list:
             std::option::Option<std::vec::Vec<crate::model::SingleInstanceHealth>>,
-        pub(crate) refreshed_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) refreshed_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2878,14 +2878,14 @@ pub mod describe_instances_health_output {
             self
         }
         /// <p>The date and time that the health information was retrieved.</p>
-        pub fn refreshed_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn refreshed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.refreshed_at = Some(input);
             self
         }
         /// <p>The date and time that the health information was retrieved.</p>
         pub fn set_refreshed_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.refreshed_at = input;
             self
@@ -3338,7 +3338,7 @@ pub struct DescribeEnvironmentHealthOutput {
     /// <p>Summary health information for the instances in the environment.</p>
     pub instances_health: std::option::Option<crate::model::InstanceHealthSummary>,
     /// <p>The date and time that the health information was retrieved.</p>
-    pub refreshed_at: std::option::Option<aws_smithy_types::Instant>,
+    pub refreshed_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeEnvironmentHealthOutput {
     /// <p>The environment's name.</p>
@@ -3374,7 +3374,7 @@ impl DescribeEnvironmentHealthOutput {
         self.instances_health.as_ref()
     }
     /// <p>The date and time that the health information was retrieved.</p>
-    pub fn refreshed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn refreshed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.refreshed_at.as_ref()
     }
 }
@@ -3405,7 +3405,7 @@ pub mod describe_environment_health_output {
         pub(crate) causes: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) application_metrics: std::option::Option<crate::model::ApplicationMetrics>,
         pub(crate) instances_health: std::option::Option<crate::model::InstanceHealthSummary>,
-        pub(crate) refreshed_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) refreshed_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The environment's name.</p>
@@ -3511,14 +3511,14 @@ pub mod describe_environment_health_output {
             self
         }
         /// <p>The date and time that the health information was retrieved.</p>
-        pub fn refreshed_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn refreshed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.refreshed_at = Some(input);
             self
         }
         /// <p>The date and time that the health information was retrieved.</p>
         pub fn set_refreshed_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.refreshed_at = input;
             self
@@ -4285,9 +4285,9 @@ pub struct CreateEnvironmentOutput {
     /// <p>The URL to the CNAME for this environment.</p>
     pub cname: std::option::Option<std::string::String>,
     /// <p>The creation date for this environment.</p>
-    pub date_created: std::option::Option<aws_smithy_types::Instant>,
+    pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last modified date for this environment.</p>
-    pub date_updated: std::option::Option<aws_smithy_types::Instant>,
+    pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current operational status of the environment:</p>
     ///
     /// <ul>
@@ -4409,11 +4409,11 @@ impl CreateEnvironmentOutput {
         self.cname.as_deref()
     }
     /// <p>The creation date for this environment.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The last modified date for this environment.</p>
-    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_updated.as_ref()
     }
     /// <p>The current operational status of the environment:</p>
@@ -4557,8 +4557,8 @@ pub mod create_environment_output {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) endpoint_url: std::option::Option<std::string::String>,
         pub(crate) cname: std::option::Option<std::string::String>,
-        pub(crate) date_created: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) date_updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) date_updated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::EnvironmentStatus>,
         pub(crate) abortable_operation_in_progress: std::option::Option<bool>,
         pub(crate) health: std::option::Option<crate::model::EnvironmentHealth>,
@@ -4694,27 +4694,27 @@ pub mod create_environment_output {
             self
         }
         /// <p>The creation date for this environment.</p>
-        pub fn date_created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_created = Some(input);
             self
         }
         /// <p>The creation date for this environment.</p>
         pub fn set_date_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_created = input;
             self
         }
         /// <p>The last modified date for this environment.</p>
-        pub fn date_updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_updated = Some(input);
             self
         }
         /// <p>The last modified date for this environment.</p>
         pub fn set_date_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_updated = input;
             self
@@ -5041,9 +5041,9 @@ pub struct CreateConfigurationTemplateOutput {
     /// </ul>
     pub deployment_status: std::option::Option<crate::model::ConfigurationDeploymentStatus>,
     /// <p>The date (in UTC time) when this configuration set was created.</p>
-    pub date_created: std::option::Option<aws_smithy_types::Instant>,
+    pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date (in UTC time) when this configuration set was last modified.</p>
-    pub date_updated: std::option::Option<aws_smithy_types::Instant>,
+    pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of the configuration options and their values in this configuration
     /// set.</p>
     pub option_settings:
@@ -5107,11 +5107,11 @@ impl CreateConfigurationTemplateOutput {
         self.deployment_status.as_ref()
     }
     /// <p>The date (in UTC time) when this configuration set was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The date (in UTC time) when this configuration set was last modified.</p>
-    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_updated.as_ref()
     }
     /// <p>A list of the configuration options and their values in this configuration
@@ -5152,8 +5152,8 @@ pub mod create_configuration_template_output {
         pub(crate) environment_name: std::option::Option<std::string::String>,
         pub(crate) deployment_status:
             std::option::Option<crate::model::ConfigurationDeploymentStatus>,
-        pub(crate) date_created: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) date_updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) date_updated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) option_settings:
             std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
     }
@@ -5299,27 +5299,27 @@ pub mod create_configuration_template_output {
             self
         }
         /// <p>The date (in UTC time) when this configuration set was created.</p>
-        pub fn date_created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_created = Some(input);
             self
         }
         /// <p>The date (in UTC time) when this configuration set was created.</p>
         pub fn set_date_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_created = input;
             self
         }
         /// <p>The date (in UTC time) when this configuration set was last modified.</p>
-        pub fn date_updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_updated = Some(input);
             self
         }
         /// <p>The date (in UTC time) when this configuration set was last modified.</p>
         pub fn set_date_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.date_updated = input;
             self

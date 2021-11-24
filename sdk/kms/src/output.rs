@@ -455,7 +455,7 @@ pub struct ScheduleKeyDeletionOutput {
     /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not
     /// appear. The deletion date for the primary key isn't known until its last replica key is
     /// deleted.</p>
-    pub deletion_date: std::option::Option<aws_smithy_types::Instant>,
+    pub deletion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the KMS key.</p>
     /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
     /// key</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -475,7 +475,7 @@ impl ScheduleKeyDeletionOutput {
     /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not
     /// appear. The deletion date for the primary key isn't known until its last replica key is
     /// deleted.</p>
-    pub fn deletion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn deletion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deletion_date.as_ref()
     }
     /// <p>The current status of the KMS key.</p>
@@ -509,7 +509,7 @@ pub mod schedule_key_deletion_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
-        pub(crate) deletion_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) deletion_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) key_state: std::option::Option<crate::model::KeyState>,
         pub(crate) pending_window_in_days: std::option::Option<i32>,
     }
@@ -528,7 +528,7 @@ pub mod schedule_key_deletion_output {
         /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not
         /// appear. The deletion date for the primary key isn't known until its last replica key is
         /// deleted.</p>
-        pub fn deletion_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn deletion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deletion_date = Some(input);
             self
         }
@@ -538,7 +538,7 @@ pub mod schedule_key_deletion_output {
         /// deleted.</p>
         pub fn set_deletion_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.deletion_date = input;
             self
@@ -2012,7 +2012,7 @@ pub struct GetParametersForImportOutput {
     /// <p>The time at which the import token and public key are no longer valid. After this time,
     /// you cannot use them to make an <a>ImportKeyMaterial</a> request and you must send
     /// another <code>GetParametersForImport</code> request to get new ones.</p>
-    pub parameters_valid_to: std::option::Option<aws_smithy_types::Instant>,
+    pub parameters_valid_to: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetParametersForImportOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <a>ImportKeyMaterial</a> request. This is the same KMS key specified in the <code>GetParametersForImport</code>
@@ -2032,7 +2032,7 @@ impl GetParametersForImportOutput {
     /// <p>The time at which the import token and public key are no longer valid. After this time,
     /// you cannot use them to make an <a>ImportKeyMaterial</a> request and you must send
     /// another <code>GetParametersForImport</code> request to get new ones.</p>
-    pub fn parameters_valid_to(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn parameters_valid_to(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.parameters_valid_to.as_ref()
     }
 }
@@ -2055,7 +2055,7 @@ pub mod get_parameters_for_import_output {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) import_token: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) public_key: std::option::Option<aws_smithy_types::Blob>,
-        pub(crate) parameters_valid_to: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) parameters_valid_to: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <a>ImportKeyMaterial</a> request. This is the same KMS key specified in the <code>GetParametersForImport</code>
@@ -2101,7 +2101,7 @@ pub mod get_parameters_for_import_output {
         /// <p>The time at which the import token and public key are no longer valid. After this time,
         /// you cannot use them to make an <a>ImportKeyMaterial</a> request and you must send
         /// another <code>GetParametersForImport</code> request to get new ones.</p>
-        pub fn parameters_valid_to(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn parameters_valid_to(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.parameters_valid_to = Some(input);
             self
         }
@@ -2110,7 +2110,7 @@ pub mod get_parameters_for_import_output {
         /// another <code>GetParametersForImport</code> request to get new ones.</p>
         pub fn set_parameters_valid_to(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.parameters_valid_to = input;
             self

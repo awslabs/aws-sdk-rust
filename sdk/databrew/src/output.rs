@@ -54,6 +54,58 @@ impl UpdateScheduleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateRulesetOutput {
+    /// <p>The name of the updated ruleset.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl UpdateRulesetOutput {
+    /// <p>The name of the updated ruleset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateRulesetOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateRulesetOutput");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`UpdateRulesetOutput`](crate::output::UpdateRulesetOutput)
+pub mod update_ruleset_output {
+    /// A builder for [`UpdateRulesetOutput`](crate::output::UpdateRulesetOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the updated ruleset.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the updated ruleset.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateRulesetOutput`](crate::output::UpdateRulesetOutput)
+        pub fn build(self) -> crate::output::UpdateRulesetOutput {
+            crate::output::UpdateRulesetOutput { name: self.name }
+        }
+    }
+}
+impl UpdateRulesetOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRulesetOutput`](crate::output::UpdateRulesetOutput)
+    pub fn builder() -> crate::output::update_ruleset_output::Builder {
+        crate::output::update_ruleset_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRecipeJobOutput {
     /// <p>The name of the job that you updated.</p>
     pub name: std::option::Option<std::string::String>,
@@ -160,13 +212,13 @@ impl UpdateRecipeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectOutput {
     /// <p>The date and time that the project was last modified.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the project that you updated.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateProjectOutput {
     /// <p>The date and time that the project was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The name of the project that you updated.</p>
@@ -188,19 +240,19 @@ pub mod update_project_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The date and time that the project was last modified.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The date and time that the project was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -472,7 +524,7 @@ impl std::fmt::Debug for StartProjectSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartProjectSessionOutput");
         formatter.field("name", &self.name);
-        formatter.field("client_session_id", &self.client_session_id);
+        formatter.field("client_session_id", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -879,6 +931,92 @@ impl ListSchedulesOutput {
     /// Creates a new builder-style object to manufacture [`ListSchedulesOutput`](crate::output::ListSchedulesOutput)
     pub fn builder() -> crate::output::list_schedules_output::Builder {
         crate::output::list_schedules_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListRulesetsOutput {
+    /// <p>A list of RulesetItem. RulesetItem contains meta data of a ruleset.</p>
+    pub rulesets: std::option::Option<std::vec::Vec<crate::model::RulesetItem>>,
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of
+    /// results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRulesetsOutput {
+    /// <p>A list of RulesetItem. RulesetItem contains meta data of a ruleset.</p>
+    pub fn rulesets(&self) -> std::option::Option<&[crate::model::RulesetItem]> {
+        self.rulesets.as_deref()
+    }
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListRulesetsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListRulesetsOutput");
+        formatter.field("rulesets", &self.rulesets);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListRulesetsOutput`](crate::output::ListRulesetsOutput)
+pub mod list_rulesets_output {
+    /// A builder for [`ListRulesetsOutput`](crate::output::ListRulesetsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rulesets: std::option::Option<std::vec::Vec<crate::model::RulesetItem>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `rulesets`.
+        ///
+        /// To override the contents of this collection use [`set_rulesets`](Self::set_rulesets).
+        ///
+        /// <p>A list of RulesetItem. RulesetItem contains meta data of a ruleset.</p>
+        pub fn rulesets(mut self, input: impl Into<crate::model::RulesetItem>) -> Self {
+            let mut v = self.rulesets.unwrap_or_default();
+            v.push(input.into());
+            self.rulesets = Some(v);
+            self
+        }
+        /// <p>A list of RulesetItem. RulesetItem contains meta data of a ruleset.</p>
+        pub fn set_rulesets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RulesetItem>>,
+        ) -> Self {
+            self.rulesets = input;
+            self
+        }
+        /// <p>A token that you can use in a subsequent call to retrieve the next set of
+        /// results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token that you can use in a subsequent call to retrieve the next set of
+        /// results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListRulesetsOutput`](crate::output::ListRulesetsOutput)
+        pub fn build(self) -> crate::output::ListRulesetsOutput {
+            crate::output::ListRulesetsOutput {
+                rulesets: self.rulesets,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListRulesetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRulesetsOutput`](crate::output::ListRulesetsOutput)
+    pub fn builder() -> crate::output::list_rulesets_output::Builder {
+        crate::output::list_rulesets_output::Builder::default()
     }
 }
 
@@ -1403,7 +1541,7 @@ impl ListDatasetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScheduleOutput {
     /// <p>The date and time that the schedule was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier (user name) of the user who created the schedule. </p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The name or names of one or more jobs to be run by using the schedule.</p>
@@ -1411,7 +1549,7 @@ pub struct DescribeScheduleOutput {
     /// <p>The identifier (user name) of the user who last modified the schedule.</p>
     pub last_modified_by: std::option::Option<std::string::String>,
     /// <p>The date and time that the schedule was last modified.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The date or dates and time or times when the jobs are to be run for the schedule. For
@@ -1426,7 +1564,7 @@ pub struct DescribeScheduleOutput {
 }
 impl DescribeScheduleOutput {
     /// <p>The date and time that the schedule was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The identifier (user name) of the user who created the schedule. </p>
@@ -1442,7 +1580,7 @@ impl DescribeScheduleOutput {
         self.last_modified_by.as_deref()
     }
     /// <p>The date and time that the schedule was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
@@ -1488,11 +1626,11 @@ pub mod describe_schedule_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
         pub(crate) job_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) last_modified_by: std::option::Option<std::string::String>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) cron_expression: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -1502,14 +1640,14 @@ pub mod describe_schedule_output {
     }
     impl Builder {
         /// <p>The date and time that the schedule was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
         /// <p>The date and time that the schedule was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -1557,14 +1695,14 @@ pub mod describe_schedule_output {
             self
         }
         /// <p>The date and time that the schedule was last modified.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The date and time that the schedule was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -1657,21 +1795,293 @@ impl DescribeScheduleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeRulesetOutput {
+    /// <p>The name of the ruleset.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the ruleset.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is
+    /// associated with.</p>
+    pub target_arn: std::option::Option<std::string::String>,
+    /// <p>A list of rules that are defined with the ruleset. A rule includes one
+    /// or more checks to be validated on a DataBrew dataset.</p>
+    pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
+    /// <p>The date and time that the ruleset was created.</p>
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The Amazon Resource Name (ARN) of the user who created the ruleset.</p>
+    pub created_by: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the user who last modified the ruleset.</p>
+    pub last_modified_by: std::option::Option<std::string::String>,
+    /// <p>The modification date and time of the ruleset.</p>
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The Amazon Resource Name (ARN) for the ruleset.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>Metadata tags that have been applied to the ruleset.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribeRulesetOutput {
+    /// <p>The name of the ruleset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the ruleset.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is
+    /// associated with.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>A list of rules that are defined with the ruleset. A rule includes one
+    /// or more checks to be validated on a DataBrew dataset.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
+        self.rules.as_deref()
+    }
+    /// <p>The date and time that the ruleset was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.create_date.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user who created the ruleset.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user who last modified the ruleset.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// <p>The modification date and time of the ruleset.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_date.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the ruleset.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Metadata tags that have been applied to the ruleset.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeRulesetOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeRulesetOutput");
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("target_arn", &self.target_arn);
+        formatter.field("rules", &self.rules);
+        formatter.field("create_date", &self.create_date);
+        formatter.field("created_by", &self.created_by);
+        formatter.field("last_modified_by", &self.last_modified_by);
+        formatter.field("last_modified_date", &self.last_modified_date);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`DescribeRulesetOutput`](crate::output::DescribeRulesetOutput)
+pub mod describe_ruleset_output {
+    /// A builder for [`DescribeRulesetOutput`](crate::output::DescribeRulesetOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) target_arn: std::option::Option<std::string::String>,
+        pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) created_by: std::option::Option<std::string::String>,
+        pub(crate) last_modified_by: std::option::Option<std::string::String>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The name of the ruleset.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the ruleset.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the ruleset.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the ruleset.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is
+        /// associated with.</p>
+        pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is
+        /// associated with.</p>
+        pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_arn = input;
+            self
+        }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>A list of rules that are defined with the ruleset. A rule includes one
+        /// or more checks to be validated on a DataBrew dataset.</p>
+        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+            let mut v = self.rules.unwrap_or_default();
+            v.push(input.into());
+            self.rules = Some(v);
+            self
+        }
+        /// <p>A list of rules that are defined with the ruleset. A rule includes one
+        /// or more checks to be validated on a DataBrew dataset.</p>
+        pub fn set_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
+        ) -> Self {
+            self.rules = input;
+            self
+        }
+        /// <p>The date and time that the ruleset was created.</p>
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.create_date = Some(input);
+            self
+        }
+        /// <p>The date and time that the ruleset was created.</p>
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.create_date = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the user who created the ruleset.</p>
+        pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.created_by = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the user who created the ruleset.</p>
+        pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.created_by = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the user who last modified the ruleset.</p>
+        pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_modified_by = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the user who last modified the ruleset.</p>
+        pub fn set_last_modified_by(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_modified_by = input;
+            self
+        }
+        /// <p>The modification date and time of the ruleset.</p>
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_date = Some(input);
+            self
+        }
+        /// <p>The modification date and time of the ruleset.</p>
+        pub fn set_last_modified_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_date = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the ruleset.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the ruleset.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Metadata tags that have been applied to the ruleset.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>Metadata tags that have been applied to the ruleset.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeRulesetOutput`](crate::output::DescribeRulesetOutput)
+        pub fn build(self) -> crate::output::DescribeRulesetOutput {
+            crate::output::DescribeRulesetOutput {
+                name: self.name,
+                description: self.description,
+                target_arn: self.target_arn,
+                rules: self.rules,
+                create_date: self.create_date,
+                created_by: self.created_by,
+                last_modified_by: self.last_modified_by,
+                last_modified_date: self.last_modified_date,
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl DescribeRulesetOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeRulesetOutput`](crate::output::DescribeRulesetOutput)
+    pub fn builder() -> crate::output::describe_ruleset_output::Builder {
+        crate::output::describe_ruleset_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecipeOutput {
     /// <p>The identifier (user name) of the user who created the recipe.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The date and time that the recipe was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier (user name) of the user who last modified the recipe.</p>
     pub last_modified_by: std::option::Option<std::string::String>,
     /// <p>The date and time that the recipe was last modified.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the project associated with this recipe.</p>
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The identifier (user name) of the user who last published the recipe.</p>
     pub published_by: std::option::Option<std::string::String>,
     /// <p>The date and time when the recipe was last published.</p>
-    pub published_date: std::option::Option<aws_smithy_types::Instant>,
+    pub published_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the recipe.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the recipe.</p>
@@ -1693,7 +2103,7 @@ impl DescribeRecipeOutput {
         self.created_by.as_deref()
     }
     /// <p>The date and time that the recipe was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The identifier (user name) of the user who last modified the recipe.</p>
@@ -1701,7 +2111,7 @@ impl DescribeRecipeOutput {
         self.last_modified_by.as_deref()
     }
     /// <p>The date and time that the recipe was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The name of the project associated with this recipe.</p>
@@ -1713,7 +2123,7 @@ impl DescribeRecipeOutput {
         self.published_by.as_deref()
     }
     /// <p>The date and time when the recipe was last published.</p>
-    pub fn published_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn published_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.published_date.as_ref()
     }
     /// <p>The description of the recipe.</p>
@@ -1771,12 +2181,12 @@ pub mod describe_recipe_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_by: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_by: std::option::Option<std::string::String>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) project_name: std::option::Option<std::string::String>,
         pub(crate) published_by: std::option::Option<std::string::String>,
-        pub(crate) published_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) published_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) steps: std::option::Option<std::vec::Vec<crate::model::RecipeStep>>,
@@ -1798,14 +2208,14 @@ pub mod describe_recipe_output {
             self
         }
         /// <p>The date and time that the recipe was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
         /// <p>The date and time that the recipe was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -1824,14 +2234,14 @@ pub mod describe_recipe_output {
             self
         }
         /// <p>The date and time that the recipe was last modified.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The date and time that the recipe was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -1857,14 +2267,14 @@ pub mod describe_recipe_output {
             self
         }
         /// <p>The date and time when the recipe was last published.</p>
-        pub fn published_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn published_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.published_date = Some(input);
             self
         }
         /// <p>The date and time when the recipe was last published.</p>
         pub fn set_published_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.published_date = input;
             self
@@ -1990,13 +2400,13 @@ impl DescribeRecipeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectOutput {
     /// <p>The date and time that the project was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier (user name) of the user who created the project.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The dataset associated with the project.</p>
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The date and time that the project was last modified.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier (user name) of the user who last modified the project.</p>
     pub last_modified_by: std::option::Option<std::string::String>,
     /// <p>The name of the project.</p>
@@ -2033,11 +2443,11 @@ pub struct DescribeProjectOutput {
     /// <p>The identifier (user name) of the user that opened the project for use. </p>
     pub opened_by: std::option::Option<std::string::String>,
     /// <p>The date and time when the project was opened. </p>
-    pub open_date: std::option::Option<aws_smithy_types::Instant>,
+    pub open_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeProjectOutput {
     /// <p>The date and time that the project was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The identifier (user name) of the user who created the project.</p>
@@ -2049,7 +2459,7 @@ impl DescribeProjectOutput {
         self.dataset_name.as_deref()
     }
     /// <p>The date and time that the project was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The identifier (user name) of the user who last modified the project.</p>
@@ -2108,7 +2518,7 @@ impl DescribeProjectOutput {
         self.opened_by.as_deref()
     }
     /// <p>The date and time when the project was opened. </p>
-    pub fn open_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn open_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.open_date.as_ref()
     }
 }
@@ -2138,10 +2548,10 @@ pub mod describe_project_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
         pub(crate) dataset_name: std::option::Option<std::string::String>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_by: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) recipe_name: std::option::Option<std::string::String>,
@@ -2153,18 +2563,18 @@ pub mod describe_project_output {
         >,
         pub(crate) session_status: std::option::Option<crate::model::SessionStatus>,
         pub(crate) opened_by: std::option::Option<std::string::String>,
-        pub(crate) open_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) open_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The date and time that the project was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
         /// <p>The date and time that the project was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -2190,14 +2600,14 @@ pub mod describe_project_output {
             self
         }
         /// <p>The date and time that the project was last modified.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The date and time that the project was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -2346,14 +2756,14 @@ pub mod describe_project_output {
             self
         }
         /// <p>The date and time when the project was opened. </p>
-        pub fn open_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn open_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.open_date = Some(input);
             self
         }
         /// <p>The date and time when the project was opened. </p>
         pub fn set_open_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.open_date = input;
             self
@@ -2393,7 +2803,7 @@ pub struct DescribeJobRunOutput {
     /// <p>The number of times that DataBrew has attempted to run the job.</p>
     pub attempt: i32,
     /// <p>The date and time when the job completed processing.</p>
-    pub completed_on: std::option::Option<aws_smithy_types::Instant>,
+    pub completed_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the dataset for the job to process.</p>
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>A message indicating an error (if any) that was encountered when the job ran.</p>
@@ -2406,6 +2816,9 @@ pub struct DescribeJobRunOutput {
     /// and override default parameters of evaluations. When configuration is null, the
     /// profile job will run with default settings.</p>
     pub profile_configuration: std::option::Option<crate::model::ProfileConfiguration>,
+    /// <p>List of validation configurations that are applied to the profile job.</p>
+    pub validation_configurations:
+        std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
     /// <p>The unique identifier of the job run.</p>
     pub run_id: std::option::Option<std::string::String>,
     /// <p>The current state of the job run entity itself.</p>
@@ -2427,7 +2840,7 @@ pub struct DescribeJobRunOutput {
     /// <p>The Amazon Resource Name (ARN) of the user who started the job run.</p>
     pub started_by: std::option::Option<std::string::String>,
     /// <p>The date and time when the job run began.</p>
-    pub started_on: std::option::Option<aws_smithy_types::Instant>,
+    pub started_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
     /// profile job will be executed. If a JobSample value is not provided, the default value
     /// will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the
@@ -2440,7 +2853,7 @@ impl DescribeJobRunOutput {
         self.attempt
     }
     /// <p>The date and time when the job completed processing.</p>
-    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed_on.as_ref()
     }
     /// <p>The name of the dataset for the job to process.</p>
@@ -2466,6 +2879,12 @@ impl DescribeJobRunOutput {
         &self,
     ) -> std::option::Option<&crate::model::ProfileConfiguration> {
         self.profile_configuration.as_ref()
+    }
+    /// <p>List of validation configurations that are applied to the profile job.</p>
+    pub fn validation_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ValidationConfiguration]> {
+        self.validation_configurations.as_deref()
     }
     /// <p>The unique identifier of the job run.</p>
     pub fn run_id(&self) -> std::option::Option<&str> {
@@ -2506,7 +2925,7 @@ impl DescribeJobRunOutput {
         self.started_by.as_deref()
     }
     /// <p>The date and time when the job run began.</p>
-    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_on.as_ref()
     }
     /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
@@ -2527,6 +2946,7 @@ impl std::fmt::Debug for DescribeJobRunOutput {
         formatter.field("execution_time", &self.execution_time);
         formatter.field("job_name", &self.job_name);
         formatter.field("profile_configuration", &self.profile_configuration);
+        formatter.field("validation_configurations", &self.validation_configurations);
         formatter.field("run_id", &self.run_id);
         formatter.field("state", &self.state);
         formatter.field("log_subscription", &self.log_subscription);
@@ -2548,12 +2968,14 @@ pub mod describe_job_run_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attempt: std::option::Option<i32>,
-        pub(crate) completed_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) completed_on: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) execution_time: std::option::Option<i32>,
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) profile_configuration: std::option::Option<crate::model::ProfileConfiguration>,
+        pub(crate) validation_configurations:
+            std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
         pub(crate) run_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::JobRunState>,
         pub(crate) log_subscription: std::option::Option<crate::model::LogSubscription>,
@@ -2565,7 +2987,7 @@ pub mod describe_job_run_output {
             std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
         pub(crate) recipe_reference: std::option::Option<crate::model::RecipeReference>,
         pub(crate) started_by: std::option::Option<std::string::String>,
-        pub(crate) started_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started_on: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) job_sample: std::option::Option<crate::model::JobSample>,
     }
     impl Builder {
@@ -2580,14 +3002,14 @@ pub mod describe_job_run_output {
             self
         }
         /// <p>The date and time when the job completed processing.</p>
-        pub fn completed_on(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completed_on(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completed_on = Some(input);
             self
         }
         /// <p>The date and time when the job completed processing.</p>
         pub fn set_completed_on(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completed_on = input;
             self
@@ -2650,6 +3072,28 @@ pub mod describe_job_run_output {
             input: std::option::Option<crate::model::ProfileConfiguration>,
         ) -> Self {
             self.profile_configuration = input;
+            self
+        }
+        /// Appends an item to `validation_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_validation_configurations`](Self::set_validation_configurations).
+        ///
+        /// <p>List of validation configurations that are applied to the profile job.</p>
+        pub fn validation_configurations(
+            mut self,
+            input: impl Into<crate::model::ValidationConfiguration>,
+        ) -> Self {
+            let mut v = self.validation_configurations.unwrap_or_default();
+            v.push(input.into());
+            self.validation_configurations = Some(v);
+            self
+        }
+        /// <p>List of validation configurations that are applied to the profile job.</p>
+        pub fn set_validation_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
+        ) -> Self {
+            self.validation_configurations = input;
             self
         }
         /// <p>The unique identifier of the job run.</p>
@@ -2786,14 +3230,14 @@ pub mod describe_job_run_output {
             self
         }
         /// <p>The date and time when the job run began.</p>
-        pub fn started_on(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started_on(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started_on = Some(input);
             self
         }
         /// <p>The date and time when the job run began.</p>
         pub fn set_started_on(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started_on = input;
             self
@@ -2827,6 +3271,7 @@ pub mod describe_job_run_output {
                 execution_time: self.execution_time.unwrap_or_default(),
                 job_name: self.job_name,
                 profile_configuration: self.profile_configuration,
+                validation_configurations: self.validation_configurations,
                 run_id: self.run_id,
                 state: self.state,
                 log_subscription: self.log_subscription,
@@ -2854,7 +3299,7 @@ impl DescribeJobRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobOutput {
     /// <p>The date and time that the job was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier (user name) of the user associated with the creation of the job.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The dataset that the job acts upon.</p>
@@ -2894,7 +3339,7 @@ pub struct DescribeJobOutput {
     /// <p>The identifier (user name) of the user who last modified the job.</p>
     pub last_modified_by: std::option::Option<std::string::String>,
     /// <p>The date and time that the job was last modified.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether Amazon CloudWatch logging is enabled for this job.</p>
     pub log_subscription: std::option::Option<crate::model::LogSubscription>,
     /// <p>The maximum number of compute nodes that DataBrew can consume when the job processes
@@ -2915,6 +3360,9 @@ pub struct DescribeJobOutput {
     /// and override default parameters of evaluations. When configuration is null, the
     /// profile job will run with default settings.</p>
     pub profile_configuration: std::option::Option<crate::model::ProfileConfiguration>,
+    /// <p>List of validation configurations that are applied to the profile job.</p>
+    pub validation_configurations:
+        std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
     /// <p>Represents the name and version of a DataBrew recipe.</p>
     pub recipe_reference: std::option::Option<crate::model::RecipeReference>,
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
@@ -2934,7 +3382,7 @@ pub struct DescribeJobOutput {
 }
 impl DescribeJobOutput {
     /// <p>The date and time that the job was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The identifier (user name) of the user associated with the creation of the job.</p>
@@ -2990,7 +3438,7 @@ impl DescribeJobOutput {
         self.last_modified_by.as_deref()
     }
     /// <p>The date and time that the job was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>Indicates whether Amazon CloudWatch logging is enabled for this job.</p>
@@ -3030,6 +3478,12 @@ impl DescribeJobOutput {
         &self,
     ) -> std::option::Option<&crate::model::ProfileConfiguration> {
         self.profile_configuration.as_ref()
+    }
+    /// <p>List of validation configurations that are applied to the profile job.</p>
+    pub fn validation_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ValidationConfiguration]> {
+        self.validation_configurations.as_deref()
     }
     /// <p>Represents the name and version of a DataBrew recipe.</p>
     pub fn recipe_reference(&self) -> std::option::Option<&crate::model::RecipeReference> {
@@ -3082,6 +3536,7 @@ impl std::fmt::Debug for DescribeJobOutput {
         formatter.field("database_outputs", &self.database_outputs);
         formatter.field("project_name", &self.project_name);
         formatter.field("profile_configuration", &self.profile_configuration);
+        formatter.field("validation_configurations", &self.validation_configurations);
         formatter.field("recipe_reference", &self.recipe_reference);
         formatter.field("resource_arn", &self.resource_arn);
         formatter.field("role_arn", &self.role_arn);
@@ -3097,7 +3552,7 @@ pub mod describe_job_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) encryption_key_arn: std::option::Option<std::string::String>,
@@ -3105,7 +3560,7 @@ pub mod describe_job_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::JobType>,
         pub(crate) last_modified_by: std::option::Option<std::string::String>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) log_subscription: std::option::Option<crate::model::LogSubscription>,
         pub(crate) max_capacity: std::option::Option<i32>,
         pub(crate) max_retries: std::option::Option<i32>,
@@ -3116,6 +3571,8 @@ pub mod describe_job_output {
             std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
         pub(crate) project_name: std::option::Option<std::string::String>,
         pub(crate) profile_configuration: std::option::Option<crate::model::ProfileConfiguration>,
+        pub(crate) validation_configurations:
+            std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
         pub(crate) recipe_reference: std::option::Option<crate::model::RecipeReference>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -3127,14 +3584,14 @@ pub mod describe_job_output {
     }
     impl Builder {
         /// <p>The date and time that the job was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
         /// <p>The date and time that the job was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -3267,14 +3724,14 @@ pub mod describe_job_output {
             self
         }
         /// <p>The date and time that the job was last modified.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The date and time that the job was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -3403,6 +3860,28 @@ pub mod describe_job_output {
             self.profile_configuration = input;
             self
         }
+        /// Appends an item to `validation_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_validation_configurations`](Self::set_validation_configurations).
+        ///
+        /// <p>List of validation configurations that are applied to the profile job.</p>
+        pub fn validation_configurations(
+            mut self,
+            input: impl Into<crate::model::ValidationConfiguration>,
+        ) -> Self {
+            let mut v = self.validation_configurations.unwrap_or_default();
+            v.push(input.into());
+            self.validation_configurations = Some(v);
+            self
+        }
+        /// <p>List of validation configurations that are applied to the profile job.</p>
+        pub fn set_validation_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
+        ) -> Self {
+            self.validation_configurations = input;
+            self
+        }
         /// <p>Represents the name and version of a DataBrew recipe.</p>
         pub fn recipe_reference(mut self, input: crate::model::RecipeReference) -> Self {
             self.recipe_reference = Some(input);
@@ -3510,6 +3989,7 @@ pub mod describe_job_output {
                 database_outputs: self.database_outputs,
                 project_name: self.project_name,
                 profile_configuration: self.profile_configuration,
+                validation_configurations: self.validation_configurations,
                 recipe_reference: self.recipe_reference,
                 resource_arn: self.resource_arn,
                 role_arn: self.role_arn,
@@ -3534,10 +4014,11 @@ pub struct DescribeDatasetOutput {
     /// <p>The identifier (user name) of the user who created the dataset.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The date and time that the dataset was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the dataset.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
+    /// <p>The file format of a dataset that is created from an Amazon S3 file
+    /// or folder.</p>
     pub format: std::option::Option<crate::model::InputFormat>,
     /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
     /// Excel, or JSON input.</p>
@@ -3546,12 +4027,14 @@ pub struct DescribeDatasetOutput {
     /// Amazon S3.</p>
     pub input: std::option::Option<crate::model::Input>,
     /// <p>The date and time that the dataset was last modified.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier (user name) of the user who last modified the dataset.</p>
     pub last_modified_by: std::option::Option<std::string::String>,
-    /// <p>The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.</p>
+    /// <p>The location of the data for this dataset, Amazon S3 or the
+    /// Glue Data Catalog.</p>
     pub source: std::option::Option<crate::model::Source>,
-    /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
+    /// <p>A set of options that defines how DataBrew interprets an Amazon S3
+    /// path of the dataset.</p>
     pub path_options: std::option::Option<crate::model::PathOptions>,
     /// <p>Metadata tags associated with this dataset.</p>
     pub tags:
@@ -3565,14 +4048,15 @@ impl DescribeDatasetOutput {
         self.created_by.as_deref()
     }
     /// <p>The date and time that the dataset was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The name of the dataset.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
+    /// <p>The file format of a dataset that is created from an Amazon S3 file
+    /// or folder.</p>
     pub fn format(&self) -> std::option::Option<&crate::model::InputFormat> {
         self.format.as_ref()
     }
@@ -3587,18 +4071,20 @@ impl DescribeDatasetOutput {
         self.input.as_ref()
     }
     /// <p>The date and time that the dataset was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The identifier (user name) of the user who last modified the dataset.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&str> {
         self.last_modified_by.as_deref()
     }
-    /// <p>The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.</p>
+    /// <p>The location of the data for this dataset, Amazon S3 or the
+    /// Glue Data Catalog.</p>
     pub fn source(&self) -> std::option::Option<&crate::model::Source> {
         self.source.as_ref()
     }
-    /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
+    /// <p>A set of options that defines how DataBrew interprets an Amazon S3
+    /// path of the dataset.</p>
     pub fn path_options(&self) -> std::option::Option<&crate::model::PathOptions> {
         self.path_options.as_ref()
     }
@@ -3639,12 +4125,12 @@ pub mod describe_dataset_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_by: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) format: std::option::Option<crate::model::InputFormat>,
         pub(crate) format_options: std::option::Option<crate::model::FormatOptions>,
         pub(crate) input: std::option::Option<crate::model::Input>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_by: std::option::Option<std::string::String>,
         pub(crate) source: std::option::Option<crate::model::Source>,
         pub(crate) path_options: std::option::Option<crate::model::PathOptions>,
@@ -3665,14 +4151,14 @@ pub mod describe_dataset_output {
             self
         }
         /// <p>The date and time that the dataset was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
         /// <p>The date and time that the dataset was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -3687,12 +4173,14 @@ pub mod describe_dataset_output {
             self.name = input;
             self
         }
-        /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
+        /// <p>The file format of a dataset that is created from an Amazon S3 file
+        /// or folder.</p>
         pub fn format(mut self, input: crate::model::InputFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
+        /// <p>The file format of a dataset that is created from an Amazon S3 file
+        /// or folder.</p>
         pub fn set_format(mut self, input: std::option::Option<crate::model::InputFormat>) -> Self {
             self.format = input;
             self
@@ -3725,14 +4213,14 @@ pub mod describe_dataset_output {
             self
         }
         /// <p>The date and time that the dataset was last modified.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The date and time that the dataset was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -3750,22 +4238,26 @@ pub mod describe_dataset_output {
             self.last_modified_by = input;
             self
         }
-        /// <p>The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.</p>
+        /// <p>The location of the data for this dataset, Amazon S3 or the
+        /// Glue Data Catalog.</p>
         pub fn source(mut self, input: crate::model::Source) -> Self {
             self.source = Some(input);
             self
         }
-        /// <p>The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.</p>
+        /// <p>The location of the data for this dataset, Amazon S3 or the
+        /// Glue Data Catalog.</p>
         pub fn set_source(mut self, input: std::option::Option<crate::model::Source>) -> Self {
             self.source = input;
             self
         }
-        /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
+        /// <p>A set of options that defines how DataBrew interprets an Amazon S3
+        /// path of the dataset.</p>
         pub fn path_options(mut self, input: crate::model::PathOptions) -> Self {
             self.path_options = Some(input);
             self
         }
-        /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
+        /// <p>A set of options that defines how DataBrew interprets an Amazon S3
+        /// path of the dataset.</p>
         pub fn set_path_options(
             mut self,
             input: std::option::Option<crate::model::PathOptions>,
@@ -3883,6 +4375,58 @@ impl DeleteScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput)
     pub fn builder() -> crate::output::delete_schedule_output::Builder {
         crate::output::delete_schedule_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteRulesetOutput {
+    /// <p>The name of the deleted ruleset.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl DeleteRulesetOutput {
+    /// <p>The name of the deleted ruleset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteRulesetOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteRulesetOutput");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`DeleteRulesetOutput`](crate::output::DeleteRulesetOutput)
+pub mod delete_ruleset_output {
+    /// A builder for [`DeleteRulesetOutput`](crate::output::DeleteRulesetOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the deleted ruleset.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the deleted ruleset.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteRulesetOutput`](crate::output::DeleteRulesetOutput)
+        pub fn build(self) -> crate::output::DeleteRulesetOutput {
+            crate::output::DeleteRulesetOutput { name: self.name }
+        }
+    }
+}
+impl DeleteRulesetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRulesetOutput`](crate::output::DeleteRulesetOutput)
+    pub fn builder() -> crate::output::delete_ruleset_output::Builder {
+        crate::output::delete_ruleset_output::Builder::default()
     }
 }
 
@@ -4167,6 +4711,58 @@ impl CreateScheduleOutput {
     /// Creates a new builder-style object to manufacture [`CreateScheduleOutput`](crate::output::CreateScheduleOutput)
     pub fn builder() -> crate::output::create_schedule_output::Builder {
         crate::output::create_schedule_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateRulesetOutput {
+    /// <p>The unique name of the created ruleset.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl CreateRulesetOutput {
+    /// <p>The unique name of the created ruleset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateRulesetOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateRulesetOutput");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`CreateRulesetOutput`](crate::output::CreateRulesetOutput)
+pub mod create_ruleset_output {
+    /// A builder for [`CreateRulesetOutput`](crate::output::CreateRulesetOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique name of the created ruleset.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The unique name of the created ruleset.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateRulesetOutput`](crate::output::CreateRulesetOutput)
+        pub fn build(self) -> crate::output::CreateRulesetOutput {
+            crate::output::CreateRulesetOutput { name: self.name }
+        }
+    }
+}
+impl CreateRulesetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRulesetOutput`](crate::output::CreateRulesetOutput)
+    pub fn builder() -> crate::output::create_ruleset_output::Builder {
+        crate::output::create_ruleset_output::Builder::default()
     }
 }
 

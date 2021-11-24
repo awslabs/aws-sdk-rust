@@ -68,6 +68,7 @@ pub type AssociateTrackerConsumerInputOperationRetryAlias = aws_http::AwsErrorRe
 impl AssociateTrackerConsumerInput {
     /// Consumes the builder and constructs an Operation<[`AssociateTrackerConsumer`](crate::operation::AssociateTrackerConsumer)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -143,11 +144,14 @@ impl AssociateTrackerConsumerInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -273,6 +277,7 @@ pub type BatchDeleteDevicePositionHistoryInputOperationRetryAlias = aws_http::Aw
 impl BatchDeleteDevicePositionHistoryInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteDevicePositionHistory`](crate::operation::BatchDeleteDevicePositionHistory)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -347,11 +352,14 @@ impl BatchDeleteDevicePositionHistoryInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -465,6 +473,7 @@ pub type BatchDeleteGeofenceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl BatchDeleteGeofenceInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteGeofence`](crate::operation::BatchDeleteGeofence)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -538,11 +547,14 @@ impl BatchDeleteGeofenceInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -664,6 +676,7 @@ pub type BatchEvaluateGeofencesInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl BatchEvaluateGeofencesInput {
     /// Consumes the builder and constructs an Operation<[`BatchEvaluateGeofences`](crate::operation::BatchEvaluateGeofences)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -739,11 +752,14 @@ impl BatchEvaluateGeofencesInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_requirements = aws_sig_auth::signer::SigningRequirements::Disabled;
@@ -869,6 +885,7 @@ pub type BatchGetDevicePositionInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl BatchGetDevicePositionInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetDevicePosition`](crate::operation::BatchGetDevicePosition)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -944,11 +961,14 @@ impl BatchGetDevicePositionInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1066,6 +1086,7 @@ pub type BatchPutGeofenceInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl BatchPutGeofenceInput {
     /// Consumes the builder and constructs an Operation<[`BatchPutGeofence`](crate::operation::BatchPutGeofence)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1139,11 +1160,14 @@ impl BatchPutGeofenceInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1255,6 +1279,7 @@ pub type BatchUpdateDevicePositionInputOperationRetryAlias = aws_http::AwsErrorR
 impl BatchUpdateDevicePositionInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpdateDevicePosition`](crate::operation::BatchUpdateDevicePosition)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1330,11 +1355,14 @@ impl BatchUpdateDevicePositionInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1396,7 +1424,7 @@ pub mod calculate_route_input {
         pub(crate) destination_position: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) waypoint_positions: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
         pub(crate) travel_mode: std::option::Option<crate::model::TravelMode>,
-        pub(crate) departure_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) departure_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) depart_now: std::option::Option<bool>,
         pub(crate) distance_unit: std::option::Option<crate::model::DistanceUnit>,
         pub(crate) include_leg_geometry: std::option::Option<bool>,
@@ -1406,12 +1434,12 @@ pub mod calculate_route_input {
             std::option::Option<crate::model::CalculateRouteTruckModeOptions>,
     }
     impl Builder {
-        /// <p>The name of the route calculator resource that you want to use to calculate a route. </p>
+        /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
         pub fn calculator_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.calculator_name = Some(input.into());
             self
         }
-        /// <p>The name of the route calculator resource that you want to use to calculate a route. </p>
+        /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
         pub fn set_calculator_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1605,7 +1633,7 @@ pub mod calculate_route_input {
             self.travel_mode = input;
             self
         }
-        /// <p>Specifies the desired time of departure. Uses the given time to calculate a route.
+        /// <p>Specifies the desired time of departure. Uses the given time to calculate the route.
         /// Otherwise, the best time of day to travel with the best traffic conditions is used to
         /// calculate the route.</p>
         /// <note>
@@ -1620,11 +1648,11 @@ pub mod calculate_route_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn departure_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn departure_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.departure_time = Some(input);
             self
         }
-        /// <p>Specifies the desired time of departure. Uses the given time to calculate a route.
+        /// <p>Specifies the desired time of departure. Uses the given time to calculate the route.
         /// Otherwise, the best time of day to travel with the best traffic conditions is used to
         /// calculate the route.</p>
         /// <note>
@@ -1641,7 +1669,7 @@ pub mod calculate_route_input {
         /// </ul>
         pub fn set_departure_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.departure_time = input;
             self
@@ -1777,6 +1805,7 @@ pub type CalculateRouteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CalculateRouteInput {
     /// Consumes the builder and constructs an Operation<[`CalculateRoute`](crate::operation::CalculateRoute)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1850,11 +1879,14 @@ impl CalculateRouteInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2058,6 +2090,9 @@ pub mod create_geofence_collection_input {
         /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
         /// + - = . _ : / @. </p>
         /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
+        /// </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -2090,6 +2125,9 @@ pub mod create_geofence_collection_input {
         /// <li>
         /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
         /// + - = . _ : / @. </p>
+        /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
         /// </li>
         /// </ul>
         pub fn set_tags(
@@ -2139,6 +2177,7 @@ pub type CreateGeofenceCollectionInputOperationRetryAlias = aws_http::AwsErrorRe
 impl CreateGeofenceCollectionInput {
     /// Consumes the builder and constructs an Operation<[`CreateGeofenceCollection`](crate::operation::CreateGeofenceCollection)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2194,11 +2233,14 @@ impl CreateGeofenceCollectionInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2362,6 +2404,9 @@ pub mod create_map_input {
         /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : /
         /// @. </p>
         /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
+        /// </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -2395,6 +2440,9 @@ pub mod create_map_input {
         /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : /
         /// @. </p>
         /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
+        /// </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -2427,6 +2475,7 @@ pub type CreateMapInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateMapInput {
     /// Consumes the builder and constructs an Operation<[`CreateMap`](crate::operation::CreateMap)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2479,11 +2528,14 @@ impl CreateMapInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2585,7 +2637,7 @@ pub mod create_place_index_input {
             self.index_name = input;
             self
         }
-        /// <p>Specifies the data provider of geospatial data.</p>
+        /// <p>Specifies the geospatial data provider for the new place index.</p>
         /// <note>
         /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering
         /// <code>HERE</code> returns an error.</p>
@@ -2602,7 +2654,8 @@ pub mod create_place_index_input {
         /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'
         /// coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p>
         /// <important>
-        /// <p>Place index resources using HERE Technologies as a data provider can't <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
+        /// <p>If you specify HERE Technologies (<code>Here</code>) as the data provider,
+        /// you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
         /// <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
         /// for Amazon Location Service.</p>
         /// </important>
@@ -2614,7 +2667,7 @@ pub mod create_place_index_input {
             self.data_source = Some(input.into());
             self
         }
-        /// <p>Specifies the data provider of geospatial data.</p>
+        /// <p>Specifies the geospatial data provider for the new place index.</p>
         /// <note>
         /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering
         /// <code>HERE</code> returns an error.</p>
@@ -2631,7 +2684,8 @@ pub mod create_place_index_input {
         /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'
         /// coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p>
         /// <important>
-        /// <p>Place index resources using HERE Technologies as a data provider can't <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
+        /// <p>If you specify HERE Technologies (<code>Here</code>) as the data provider,
+        /// you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
         /// <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
         /// for Amazon Location Service.</p>
         /// </important>
@@ -2688,27 +2742,30 @@ pub mod create_place_index_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair helps
-        /// manage, identify, search, and filter your resources by labelling them.</p>
+        /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you
+        /// manage, identify, search, and filter your resources.</p>
         /// <p>Format: <code>"key" : "value"</code>
         /// </p>
         /// <p>Restrictions:</p>
         /// <ul>
         /// <li>
-        /// <p>Maximum 50 tags per resource</p>
+        /// <p>Maximum 50 tags per resource.</p>
         /// </li>
         /// <li>
-        /// <p>Each resource tag must be unique with a maximum of one value.</p>
+        /// <p>Each tag key must be unique and must have exactly one associated value.</p>
         /// </li>
         /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
         /// </li>
         /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
         /// </li>
         /// <li>
         /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
-        /// = . _ : / @. </p>
+        /// = . _ : / @</p>
+        /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
         /// </li>
         /// </ul>
         pub fn tags(
@@ -2721,27 +2778,30 @@ pub mod create_place_index_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair helps
-        /// manage, identify, search, and filter your resources by labelling them.</p>
+        /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you
+        /// manage, identify, search, and filter your resources.</p>
         /// <p>Format: <code>"key" : "value"</code>
         /// </p>
         /// <p>Restrictions:</p>
         /// <ul>
         /// <li>
-        /// <p>Maximum 50 tags per resource</p>
+        /// <p>Maximum 50 tags per resource.</p>
         /// </li>
         /// <li>
-        /// <p>Each resource tag must be unique with a maximum of one value.</p>
+        /// <p>Each tag key must be unique and must have exactly one associated value.</p>
         /// </li>
         /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
         /// </li>
         /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
         /// </li>
         /// <li>
         /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
-        /// = . _ : / @. </p>
+        /// = . _ : / @</p>
+        /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
         /// </li>
         /// </ul>
         pub fn set_tags(
@@ -2778,6 +2838,7 @@ pub type CreatePlaceIndexInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl CreatePlaceIndexInput {
     /// Consumes the builder and constructs an Operation<[`CreatePlaceIndex`](crate::operation::CreatePlaceIndex)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2831,11 +2892,14 @@ impl CreatePlaceIndexInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3045,6 +3109,9 @@ pub mod create_route_calculator_input {
         /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
         /// + - = . _ : / @. </p>
         /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
+        /// </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -3084,6 +3151,9 @@ pub mod create_route_calculator_input {
         /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
         /// + - = . _ : / @. </p>
         /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
+        /// </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -3118,6 +3188,7 @@ pub type CreateRouteCalculatorInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl CreateRouteCalculatorInput {
     /// Consumes the builder and constructs an Operation<[`CreateRouteCalculator`](crate::operation::CreateRouteCalculator)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3173,11 +3244,14 @@ impl CreateRouteCalculatorInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3381,6 +3455,9 @@ pub mod create_tracker_input {
         /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
         /// + - = . _ : / @. </p>
         /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
+        /// </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -3414,6 +3491,9 @@ pub mod create_tracker_input {
         /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
         /// + - = . _ : / @. </p>
         /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
+        /// </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -3437,9 +3517,9 @@ pub mod create_tracker_input {
         /// <li>
         /// <p>
         /// <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
-        /// ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored.
-        /// This helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
-        /// Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
+        /// ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored.
+        /// This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through.
+        /// Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map.
         /// </p>
         /// </li>
         /// </ul>
@@ -3461,9 +3541,9 @@ pub mod create_tracker_input {
         /// <li>
         /// <p>
         /// <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
-        /// ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored.
-        /// This helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
-        /// Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
+        /// ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored.
+        /// This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through.
+        /// Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map.
         /// </p>
         /// </li>
         /// </ul>
@@ -3501,6 +3581,7 @@ pub type CreateTrackerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateTrackerInput {
     /// Consumes the builder and constructs an Operation<[`CreateTracker`](crate::operation::CreateTracker)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3553,11 +3634,14 @@ impl CreateTrackerInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3651,6 +3735,7 @@ pub type DeleteGeofenceCollectionInputOperationRetryAlias = aws_http::AwsErrorRe
 impl DeleteGeofenceCollectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGeofenceCollection`](crate::operation::DeleteGeofenceCollection)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3718,11 +3803,14 @@ impl DeleteGeofenceCollectionInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3802,6 +3890,7 @@ pub type DeleteMapInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteMapInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMap`](crate::operation::DeleteMap)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3865,11 +3954,14 @@ impl DeleteMapInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3949,6 +4041,7 @@ pub type DeletePlaceIndexInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DeletePlaceIndexInput {
     /// Consumes the builder and constructs an Operation<[`DeletePlaceIndex`](crate::operation::DeletePlaceIndex)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4016,11 +4109,14 @@ impl DeletePlaceIndexInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4105,6 +4201,7 @@ pub type DeleteRouteCalculatorInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl DeleteRouteCalculatorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRouteCalculator`](crate::operation::DeleteRouteCalculator)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4172,11 +4269,14 @@ impl DeleteRouteCalculatorInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4258,6 +4358,7 @@ pub type DeleteTrackerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteTrackerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTracker`](crate::operation::DeleteTracker)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4325,11 +4426,14 @@ impl DeleteTrackerInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4415,6 +4519,7 @@ pub type DescribeGeofenceCollectionInputOperationRetryAlias = aws_http::AwsError
 impl DescribeGeofenceCollectionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGeofenceCollection`](crate::operation::DescribeGeofenceCollection)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4482,11 +4587,14 @@ impl DescribeGeofenceCollectionInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_requirements = aws_sig_auth::signer::SigningRequirements::Disabled;
@@ -4569,6 +4677,7 @@ pub type DescribeMapInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeMapInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMap`](crate::operation::DescribeMap)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4632,11 +4741,14 @@ impl DescribeMapInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_requirements = aws_sig_auth::signer::SigningRequirements::Disabled;
@@ -4719,6 +4831,7 @@ pub type DescribePlaceIndexInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl DescribePlaceIndexInput {
     /// Consumes the builder and constructs an Operation<[`DescribePlaceIndex`](crate::operation::DescribePlaceIndex)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4786,11 +4899,14 @@ impl DescribePlaceIndexInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_requirements = aws_sig_auth::signer::SigningRequirements::Disabled;
@@ -4877,6 +4993,7 @@ pub type DescribeRouteCalculatorInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DescribeRouteCalculatorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRouteCalculator`](crate::operation::DescribeRouteCalculator)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4944,11 +5061,14 @@ impl DescribeRouteCalculatorInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_requirements = aws_sig_auth::signer::SigningRequirements::Disabled;
@@ -5031,6 +5151,7 @@ pub type DescribeTrackerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl DescribeTrackerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTracker`](crate::operation::DescribeTracker)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5098,11 +5219,14 @@ impl DescribeTrackerInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_requirements = aws_sig_auth::signer::SigningRequirements::Disabled;
@@ -5214,6 +5338,7 @@ pub type DisassociateTrackerConsumerInputOperationRetryAlias = aws_http::AwsErro
 impl DisassociateTrackerConsumerInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateTrackerConsumer`](crate::operation::DisassociateTrackerConsumer)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5297,11 +5422,14 @@ impl DisassociateTrackerConsumerInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5395,6 +5523,7 @@ pub type GetDevicePositionInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl GetDevicePositionInput {
     /// Consumes the builder and constructs an Operation<[`GetDevicePosition`](crate::operation::GetDevicePosition)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5478,11 +5607,14 @@ impl GetDevicePositionInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5534,8 +5666,8 @@ pub mod get_device_position_history_input {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) start_time_inclusive: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time_exclusive: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time_inclusive: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time_exclusive: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The tracker resource receiving the request for the device position history.</p>
@@ -5584,7 +5716,7 @@ pub mod get_device_position_history_input {
         /// <code>EndTimeExclusive</code>.</p>
         /// </li>
         /// </ul>
-        pub fn start_time_inclusive(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time_inclusive(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time_inclusive = Some(input);
             self
         }
@@ -5600,7 +5732,7 @@ pub mod get_device_position_history_input {
         /// </ul>
         pub fn set_start_time_inclusive(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time_inclusive = input;
             self
@@ -5615,7 +5747,7 @@ pub mod get_device_position_history_input {
         /// <code>StartTimeInclusive</code>.</p>
         /// </li>
         /// </ul>
-        pub fn end_time_exclusive(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time_exclusive(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time_exclusive = Some(input);
             self
         }
@@ -5631,7 +5763,7 @@ pub mod get_device_position_history_input {
         /// </ul>
         pub fn set_end_time_exclusive(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time_exclusive = input;
             self
@@ -5661,6 +5793,7 @@ pub type GetDevicePositionHistoryInputOperationRetryAlias = aws_http::AwsErrorRe
 impl GetDevicePositionHistoryInput {
     /// Consumes the builder and constructs an Operation<[`GetDevicePositionHistory`](crate::operation::GetDevicePositionHistory)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5752,11 +5885,14 @@ impl GetDevicePositionHistoryInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5861,6 +5997,7 @@ pub type GetGeofenceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetGeofenceInput {
     /// Consumes the builder and constructs an Operation<[`GetGeofence`](crate::operation::GetGeofence)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5944,11 +6081,14 @@ impl GetGeofenceInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6139,6 +6279,7 @@ pub type GetMapGlyphsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetMapGlyphsInput {
     /// Consumes the builder and constructs an Operation<[`GetMapGlyphs`](crate::operation::GetMapGlyphs)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6238,11 +6379,14 @@ impl GetMapGlyphsInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6382,6 +6526,7 @@ pub type GetMapSpritesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetMapSpritesInput {
     /// Consumes the builder and constructs an Operation<[`GetMapSprites`](crate::operation::GetMapSprites)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6465,11 +6610,14 @@ impl GetMapSpritesInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6551,6 +6699,7 @@ pub type GetMapStyleDescriptorInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl GetMapStyleDescriptorInput {
     /// Consumes the builder and constructs an Operation<[`GetMapStyleDescriptor`](crate::operation::GetMapStyleDescriptor)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6618,11 +6767,14 @@ impl GetMapStyleDescriptorInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6740,6 +6892,7 @@ pub type GetMapTileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetMapTileInput {
     /// Consumes the builder and constructs an Operation<[`GetMapTile`](crate::operation::GetMapTile)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6855,11 +7008,14 @@ impl GetMapTileInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6975,6 +7131,7 @@ pub type ListDevicePositionsInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListDevicePositionsInput {
     /// Consumes the builder and constructs an Operation<[`ListDevicePositions`](crate::operation::ListDevicePositions)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7048,11 +7205,14 @@ impl ListDevicePositionsInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7165,6 +7325,7 @@ pub type ListGeofenceCollectionsInputOperationRetryAlias = aws_http::AwsErrorRet
 impl ListGeofenceCollectionsInput {
     /// Consumes the builder and constructs an Operation<[`ListGeofenceCollections`](crate::operation::ListGeofenceCollections)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7220,11 +7381,14 @@ impl ListGeofenceCollectionsInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7335,6 +7499,7 @@ pub type ListGeofencesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListGeofencesInput {
     /// Consumes the builder and constructs an Operation<[`ListGeofences`](crate::operation::ListGeofences)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7407,11 +7572,14 @@ impl ListGeofencesInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7521,6 +7689,7 @@ pub type ListMapsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListMapsInput {
     /// Consumes the builder and constructs an Operation<[`ListMaps`](crate::operation::ListMaps)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7573,11 +7742,14 @@ impl ListMapsInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7686,6 +7858,7 @@ pub type ListPlaceIndexesInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl ListPlaceIndexesInput {
     /// Consumes the builder and constructs an Operation<[`ListPlaceIndexes`](crate::operation::ListPlaceIndexes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7739,11 +7912,14 @@ impl ListPlaceIndexesInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7855,6 +8031,7 @@ pub type ListRouteCalculatorsInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl ListRouteCalculatorsInput {
     /// Consumes the builder and constructs an Operation<[`ListRouteCalculators`](crate::operation::ListRouteCalculators)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7910,11 +8087,14 @@ impl ListRouteCalculatorsInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8016,6 +8196,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8079,11 +8260,14 @@ impl ListTagsForResourceInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("metadata.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8199,6 +8383,7 @@ pub type ListTrackerConsumersInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl ListTrackerConsumersInput {
     /// Consumes the builder and constructs an Operation<[`ListTrackerConsumers`](crate::operation::ListTrackerConsumers)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8274,11 +8459,14 @@ impl ListTrackerConsumersInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8390,6 +8578,7 @@ pub type ListTrackersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListTrackersInput {
     /// Consumes the builder and constructs an Operation<[`ListTrackers`](crate::operation::ListTrackers)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8442,11 +8631,14 @@ impl ListTrackersInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8572,6 +8764,7 @@ pub type PutGeofenceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl PutGeofenceInput {
     /// Consumes the builder and constructs an Operation<[`PutGeofence`](crate::operation::PutGeofence)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8660,11 +8853,14 @@ impl PutGeofenceInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8724,6 +8920,7 @@ pub mod search_place_index_for_position_input {
         pub(crate) index_name: std::option::Option<std::string::String>,
         pub(crate) position: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) language: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the place index resource you want to use for the search.</p>
@@ -8740,48 +8937,60 @@ pub mod search_place_index_for_position_input {
         ///
         /// To override the contents of this collection use [`set_position`](Self::set_position).
         ///
-        /// <p>Specifies a coordinate for the query defined by a longitude, and latitude.</p>
-        /// <ul>
-        /// <li>
-        /// <p>The first position is the X coordinate, or longitude.</p>
-        /// </li>
-        /// <li>
-        /// <p>The second position is the Y coordinate, or latitude. </p>
-        /// </li>
-        /// </ul>
-        /// <p>For example, <code>position=xLongitude&amp;position=yLatitude</code> .</p>
+        /// <p>Specifies the longitude and latitude of the position to query.</p>
+        /// <p>
+        /// This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude;
+        /// the second number represents the Y coordinate, or latitude.</p>
+        /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with
+        /// longitude <code>-123.1174</code> and
+        /// latitude <code>49.2847</code>.</p>
         pub fn position(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.position.unwrap_or_default();
             v.push(input.into());
             self.position = Some(v);
             self
         }
-        /// <p>Specifies a coordinate for the query defined by a longitude, and latitude.</p>
-        /// <ul>
-        /// <li>
-        /// <p>The first position is the X coordinate, or longitude.</p>
-        /// </li>
-        /// <li>
-        /// <p>The second position is the Y coordinate, or latitude. </p>
-        /// </li>
-        /// </ul>
-        /// <p>For example, <code>position=xLongitude&amp;position=yLatitude</code> .</p>
+        /// <p>Specifies the longitude and latitude of the position to query.</p>
+        /// <p>
+        /// This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude;
+        /// the second number represents the Y coordinate, or latitude.</p>
+        /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with
+        /// longitude <code>-123.1174</code> and
+        /// latitude <code>49.2847</code>.</p>
         pub fn set_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.position = input;
             self
         }
-        /// <p>An optional paramer. The maximum number of results returned per request. </p>
+        /// <p>An optional parameter. The maximum number of results returned per request.</p>
         /// <p>Default value: <code>50</code>
         /// </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>An optional paramer. The maximum number of results returned per request. </p>
+        /// <p>An optional parameter. The maximum number of results returned per request.</p>
         /// <p>Default value: <code>50</code>
         /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
+            self
+        }
+        /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
+        /// <code>en</code> for English.</p>
+        /// <p>This setting affects the languages used in the results. It does not change which
+        /// results are returned. If the language is not specified, or not supported for a
+        /// particular result, the partner automatically chooses a language for the result.</p>
+        pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language = Some(input.into());
+            self
+        }
+        /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
+        /// <code>en</code> for English.</p>
+        /// <p>This setting affects the languages used in the results. It does not change which
+        /// results are returned. If the language is not specified, or not supported for a
+        /// particular result, the partner automatically chooses a language for the result.</p>
+        pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.language = input;
             self
         }
         /// Consumes the builder and constructs a [`SearchPlaceIndexForPositionInput`](crate::input::SearchPlaceIndexForPositionInput)
@@ -8795,6 +9004,7 @@ pub mod search_place_index_for_position_input {
                 index_name: self.index_name,
                 position: self.position,
                 max_results: self.max_results.unwrap_or_default(),
+                language: self.language,
             })
         }
     }
@@ -8807,6 +9017,7 @@ pub type SearchPlaceIndexForPositionInputOperationRetryAlias = aws_http::AwsErro
 impl SearchPlaceIndexForPositionInput {
     /// Consumes the builder and constructs an Operation<[`SearchPlaceIndexForPosition`](crate::operation::SearchPlaceIndexForPosition)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8881,11 +9092,14 @@ impl SearchPlaceIndexForPositionInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8948,6 +9162,7 @@ pub mod search_place_index_for_text_input {
         pub(crate) filter_b_box: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) filter_countries: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) language: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the place index resource you want to use for the search.</p>
@@ -8961,14 +9176,14 @@ pub mod search_place_index_for_text_input {
             self
         }
         /// <p>The address, name,
-        /// city, or region to be used in the search. In free-form text format. For example, <code>123 Any
+        /// city, or region to be used in the search in free-form text format. For example, <code>123 Any
         /// Street</code>.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
         /// <p>The address, name,
-        /// city, or region to be used in the search. In free-form text format. For example, <code>123 Any
+        /// city, or region to be used in the search in free-form text format. For example, <code>123 Any
         /// Street</code>.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
@@ -8978,34 +9193,38 @@ pub mod search_place_index_for_text_input {
         ///
         /// To override the contents of this collection use [`set_bias_position`](Self::set_bias_position).
         ///
-        /// <p>Searches for results closest to the given position. An optional parameter defined by
-        /// longitude, and latitude.</p>
-        /// <ul>
-        /// <li>
-        /// <p>The first <code>bias</code> position is the X coordinate, or longitude.</p>
-        /// </li>
-        /// <li>
-        /// <p>The second <code>bias</code> position is the Y coordinate, or latitude. </p>
-        /// </li>
-        /// </ul>
-        /// <p>For example, <code>bias=xLongitude&amp;bias=yLatitude</code>.</p>
+        /// <p>An optional parameter that indicates a preference for places that are closer to a specified position.</p>
+        /// <p>
+        /// If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the
+        /// second number represents the Y coordinate, or latitude.</p>
+        /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with
+        /// longitude <code>-123.1174</code> and
+        /// latitude <code>49.2847</code>.</p>
+        /// <note>
+        /// <p>
+        /// <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options
+        /// results in an error.
+        /// </p>
+        /// </note>
         pub fn bias_position(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.bias_position.unwrap_or_default();
             v.push(input.into());
             self.bias_position = Some(v);
             self
         }
-        /// <p>Searches for results closest to the given position. An optional parameter defined by
-        /// longitude, and latitude.</p>
-        /// <ul>
-        /// <li>
-        /// <p>The first <code>bias</code> position is the X coordinate, or longitude.</p>
-        /// </li>
-        /// <li>
-        /// <p>The second <code>bias</code> position is the Y coordinate, or latitude. </p>
-        /// </li>
-        /// </ul>
-        /// <p>For example, <code>bias=xLongitude&amp;bias=yLatitude</code>.</p>
+        /// <p>An optional parameter that indicates a preference for places that are closer to a specified position.</p>
+        /// <p>
+        /// If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the
+        /// second number represents the Y coordinate, or latitude.</p>
+        /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with
+        /// longitude <code>-123.1174</code> and
+        /// latitude <code>49.2847</code>.</p>
+        /// <note>
+        /// <p>
+        /// <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options
+        /// results in an error.
+        /// </p>
+        /// </note>
         pub fn set_bias_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.bias_position = input;
             self
@@ -9014,66 +9233,40 @@ pub mod search_place_index_for_text_input {
         ///
         /// To override the contents of this collection use [`set_filter_b_box`](Self::set_filter_b_box).
         ///
-        /// <p>Filters the results by returning only Places within the provided bounding box. An
-        /// optional parameter.</p>
-        /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner:</p>
-        /// <ul>
-        /// <li>
-        /// <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower
-        /// southwest corner.</p>
-        /// </li>
-        /// <li>
-        /// <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower
-        /// southwest corner.</p>
-        /// </li>
-        /// </ul>
-        /// <p>For example, <code>bbox=xLongitudeSW&amp;bbox=yLatitudeSW</code>.</p>
-        /// <p>The next <code>bbox</code> parameters describe the upper northeast corner:</p>
-        /// <ul>
-        /// <li>
-        /// <p>The third <code>bbox</code> position is the X coordinate, or longitude of the
-        /// upper northeast corner.</p>
-        /// </li>
-        /// <li>
-        /// <p>The fourth <code>bbox</code> position is the Y coordinate, or longitude of the
-        /// upper northeast corner.</p>
-        /// </li>
-        /// </ul>
-        /// <p>For example, <code>bbox=xLongitudeNE&amp;bbox=yLatitudeNE</code>
+        /// <p>An optional parameter that limits the search results by returning only places that are within the provided bounding box.</p>
+        /// <p>
+        /// If provided, this parameter must contain a total of four consecutive numbers in two pairs.
+        /// The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively)
+        /// of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively)
+        /// of the northeast corner of the bounding box.</p>
+        /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents
+        /// a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>,
+        /// and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p>
+        /// <note>
+        /// <p>
+        /// <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.
         /// </p>
+        /// </note>
         pub fn filter_b_box(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.filter_b_box.unwrap_or_default();
             v.push(input.into());
             self.filter_b_box = Some(v);
             self
         }
-        /// <p>Filters the results by returning only Places within the provided bounding box. An
-        /// optional parameter.</p>
-        /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner:</p>
-        /// <ul>
-        /// <li>
-        /// <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower
-        /// southwest corner.</p>
-        /// </li>
-        /// <li>
-        /// <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower
-        /// southwest corner.</p>
-        /// </li>
-        /// </ul>
-        /// <p>For example, <code>bbox=xLongitudeSW&amp;bbox=yLatitudeSW</code>.</p>
-        /// <p>The next <code>bbox</code> parameters describe the upper northeast corner:</p>
-        /// <ul>
-        /// <li>
-        /// <p>The third <code>bbox</code> position is the X coordinate, or longitude of the
-        /// upper northeast corner.</p>
-        /// </li>
-        /// <li>
-        /// <p>The fourth <code>bbox</code> position is the Y coordinate, or longitude of the
-        /// upper northeast corner.</p>
-        /// </li>
-        /// </ul>
-        /// <p>For example, <code>bbox=xLongitudeNE&amp;bbox=yLatitudeNE</code>
+        /// <p>An optional parameter that limits the search results by returning only places that are within the provided bounding box.</p>
+        /// <p>
+        /// If provided, this parameter must contain a total of four consecutive numbers in two pairs.
+        /// The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively)
+        /// of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively)
+        /// of the northeast corner of the bounding box.</p>
+        /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents
+        /// a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>,
+        /// and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p>
+        /// <note>
+        /// <p>
+        /// <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.
         /// </p>
+        /// </note>
         pub fn set_filter_b_box(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.filter_b_box = input;
             self
@@ -9082,12 +9275,11 @@ pub mod search_place_index_for_text_input {
         ///
         /// To override the contents of this collection use [`set_filter_countries`](Self::set_filter_countries).
         ///
-        /// <p>Limits the search to the given a list of countries/regions. An optional
-        /// parameter.</p>
+        /// <p>An optional parameter that limits the search results by returning only places that are in a specified list of countries.</p>
         /// <ul>
         /// <li>
-        /// <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
-        /// country code. For example, Australia uses three upper-case characters:
+        /// <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
+        /// country codes. For example, Australia uses three upper-case characters:
         /// <code>AUS</code>.</p>
         /// </li>
         /// </ul>
@@ -9097,12 +9289,11 @@ pub mod search_place_index_for_text_input {
             self.filter_countries = Some(v);
             self
         }
-        /// <p>Limits the search to the given a list of countries/regions. An optional
-        /// parameter.</p>
+        /// <p>An optional parameter that limits the search results by returning only places that are in a specified list of countries.</p>
         /// <ul>
         /// <li>
-        /// <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
-        /// country code. For example, Australia uses three upper-case characters:
+        /// <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
+        /// country codes. For example, Australia uses three upper-case characters:
         /// <code>AUS</code>.</p>
         /// </li>
         /// </ul>
@@ -9127,6 +9318,24 @@ pub mod search_place_index_for_text_input {
             self.max_results = input;
             self
         }
+        /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
+        /// <code>en</code> for English.</p>
+        /// <p>This setting affects the languages used in the results. It does not change which
+        /// results are returned. If the language is not specified, or not supported for a
+        /// particular result, the partner automatically chooses a language for the result.</p>
+        pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language = Some(input.into());
+            self
+        }
+        /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
+        /// <code>en</code> for English.</p>
+        /// <p>This setting affects the languages used in the results. It does not change which
+        /// results are returned. If the language is not specified, or not supported for a
+        /// particular result, the partner automatically chooses a language for the result.</p>
+        pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.language = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SearchPlaceIndexForTextInput`](crate::input::SearchPlaceIndexForTextInput)
         pub fn build(
             self,
@@ -9141,6 +9350,7 @@ pub mod search_place_index_for_text_input {
                 filter_b_box: self.filter_b_box,
                 filter_countries: self.filter_countries,
                 max_results: self.max_results.unwrap_or_default(),
+                language: self.language,
             })
         }
     }
@@ -9153,6 +9363,7 @@ pub type SearchPlaceIndexForTextInputOperationRetryAlias = aws_http::AwsErrorRet
 impl SearchPlaceIndexForTextInput {
     /// Consumes the builder and constructs an Operation<[`SearchPlaceIndexForText`](crate::operation::SearchPlaceIndexForText)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -9228,11 +9439,14 @@ impl SearchPlaceIndexForTextInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -9321,11 +9535,30 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
+        /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you
+        /// manage, identify, search, and filter your resources.</p>
+        /// <p>Format: <code>"key" : "value"</code>
+        /// </p>
+        /// <p>Restrictions:</p>
         /// <ul>
         /// <li>
-        /// <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code>
-        /// </p>
+        /// <p>Maximum 50 tags per resource.</p>
+        /// </li>
+        /// <li>
+        /// <p>Each tag key must be unique and must have exactly one associated value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
+        /// = . _ : / @</p>
+        /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
         /// </li>
         /// </ul>
         pub fn tags(
@@ -9338,11 +9571,30 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
+        /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you
+        /// manage, identify, search, and filter your resources.</p>
+        /// <p>Format: <code>"key" : "value"</code>
+        /// </p>
+        /// <p>Restrictions:</p>
         /// <ul>
         /// <li>
-        /// <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code>
-        /// </p>
+        /// <p>Maximum 50 tags per resource.</p>
+        /// </li>
+        /// <li>
+        /// <p>Each tag key must be unique and must have exactly one associated value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
+        /// = . _ : / @</p>
+        /// </li>
+        /// <li>
+        /// <p>Cannot use "aws:" as a prefix for a key.</p>
         /// </li>
         /// </ul>
         pub fn set_tags(
@@ -9375,6 +9627,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -9443,11 +9696,14 @@ impl TagResourceInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("metadata.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -9570,6 +9826,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -9603,13 +9860,17 @@ impl UntagResourceInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::UntagResourceInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_47) = &_input.tag_keys {
                 for inner_48 in inner_47 {
                     query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_48));
                 }
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -9619,7 +9880,7 @@ impl UntagResourceInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -9642,11 +9903,14 @@ impl UntagResourceInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("metadata.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -9804,6 +10068,7 @@ pub type UpdateGeofenceCollectionInputOperationRetryAlias = aws_http::AwsErrorRe
 impl UpdateGeofenceCollectionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGeofenceCollection`](crate::operation::UpdateGeofenceCollection)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -9879,11 +10144,14 @@ impl UpdateGeofenceCollectionInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -10000,6 +10268,7 @@ pub type UpdateMapInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateMapInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMap`](crate::operation::UpdateMap)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -10068,11 +10337,14 @@ impl UpdateMapInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -10208,6 +10480,7 @@ pub type UpdatePlaceIndexInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl UpdatePlaceIndexInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePlaceIndex`](crate::operation::UpdatePlaceIndex)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -10281,11 +10554,14 @@ impl UpdatePlaceIndexInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -10409,6 +10685,7 @@ pub type UpdateRouteCalculatorInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl UpdateRouteCalculatorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRouteCalculator`](crate::operation::UpdateRouteCalculator)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -10484,11 +10761,14 @@ impl UpdateRouteCalculatorInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -10697,6 +10977,7 @@ pub type UpdateTrackerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateTrackerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTracker`](crate::operation::UpdateTracker)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -10769,11 +11050,14 @@ impl UpdateTrackerInput {
         );
         let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
         request.properties_mut().insert(endpoint_prefix);
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -10937,7 +11221,7 @@ pub struct GetDevicePositionHistoryInput {
     /// <code>EndTimeExclusive</code>.</p>
     /// </li>
     /// </ul>
-    pub start_time_inclusive: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time_inclusive: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time
     /// that the request is made.</p>
@@ -10948,7 +11232,7 @@ pub struct GetDevicePositionHistoryInput {
     /// <code>StartTimeInclusive</code>.</p>
     /// </li>
     /// </ul>
-    pub end_time_exclusive: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time_exclusive: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetDevicePositionHistoryInput {
     /// <p>The tracker resource receiving the request for the device position history.</p>
@@ -10976,7 +11260,7 @@ impl GetDevicePositionHistoryInput {
     /// <code>EndTimeExclusive</code>.</p>
     /// </li>
     /// </ul>
-    pub fn start_time_inclusive(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time_inclusive(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time_inclusive.as_ref()
     }
     /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
@@ -10989,7 +11273,7 @@ impl GetDevicePositionHistoryInput {
     /// <code>StartTimeInclusive</code>.</p>
     /// </li>
     /// </ul>
-    pub fn end_time_exclusive(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time_exclusive(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time_exclusive.as_ref()
     }
 }
@@ -11334,6 +11618,9 @@ pub struct CreateTrackerInput {
     /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
     /// + - = . _ : / @. </p>
     /// </li>
+    /// <li>
+    /// <p>Cannot use "aws:" as a prefix for a key.</p>
+    /// </li>
     /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -11350,9 +11637,9 @@ pub struct CreateTrackerInput {
     /// <li>
     /// <p>
     /// <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
-    /// ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored.
-    /// This helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
-    /// Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
+    /// ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored.
+    /// This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through.
+    /// Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map.
     /// </p>
     /// </li>
     /// </ul>
@@ -11429,6 +11716,9 @@ impl CreateTrackerInput {
     /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
     /// + - = . _ : / @. </p>
     /// </li>
+    /// <li>
+    /// <p>Cannot use "aws:" as a prefix for a key.</p>
+    /// </li>
     /// </ul>
     pub fn tags(
         &self,
@@ -11449,9 +11739,9 @@ impl CreateTrackerInput {
     /// <li>
     /// <p>
     /// <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
-    /// ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored.
-    /// This helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
-    /// Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
+    /// ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored.
+    /// This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through.
+    /// Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map.
     /// </p>
     /// </li>
     /// </ul>
@@ -11631,7 +11921,7 @@ impl std::fmt::Debug for DescribeTrackerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CalculateRouteInput {
-    /// <p>The name of the route calculator resource that you want to use to calculate a route. </p>
+    /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
     pub calculator_name: std::option::Option<std::string::String>,
     /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
     /// <code>[longitude, latitude]</code>.</p>
@@ -11699,7 +11989,7 @@ pub struct CalculateRouteInput {
     /// <p>Default Value: <code>Car</code>
     /// </p>
     pub travel_mode: std::option::Option<crate::model::TravelMode>,
-    /// <p>Specifies the desired time of departure. Uses the given time to calculate a route.
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route.
     /// Otherwise, the best time of day to travel with the best traffic conditions is used to
     /// calculate the route.</p>
     /// <note>
@@ -11714,7 +12004,7 @@ pub struct CalculateRouteInput {
     /// </p>
     /// </li>
     /// </ul>
-    pub departure_time: std::option::Option<aws_smithy_types::Instant>,
+    pub departure_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Sets the time of departure as the current time. Uses the current time to calculate a
     /// route. Otherwise, the best time of day to travel with the best traffic conditions is
     /// used to calculate the route.</p>
@@ -11745,7 +12035,7 @@ pub struct CalculateRouteInput {
     pub truck_mode_options: std::option::Option<crate::model::CalculateRouteTruckModeOptions>,
 }
 impl CalculateRouteInput {
-    /// <p>The name of the route calculator resource that you want to use to calculate a route. </p>
+    /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
     pub fn calculator_name(&self) -> std::option::Option<&str> {
         self.calculator_name.as_deref()
     }
@@ -11823,7 +12113,7 @@ impl CalculateRouteInput {
     pub fn travel_mode(&self) -> std::option::Option<&crate::model::TravelMode> {
         self.travel_mode.as_ref()
     }
-    /// <p>Specifies the desired time of departure. Uses the given time to calculate a route.
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route.
     /// Otherwise, the best time of day to travel with the best traffic conditions is used to
     /// calculate the route.</p>
     /// <note>
@@ -11838,7 +12128,7 @@ impl CalculateRouteInput {
     /// </p>
     /// </li>
     /// </ul>
-    pub fn departure_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn departure_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.departure_time.as_ref()
     }
     /// <p>Sets the time of departure as the current time. Uses the current time to calculate a
@@ -12013,6 +12303,9 @@ pub struct CreateRouteCalculatorInput {
     /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
     /// + - = . _ : / @. </p>
     /// </li>
+    /// <li>
+    /// <p>Cannot use "aws:" as a prefix for a key.</p>
+    /// </li>
     /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -12094,6 +12387,9 @@ impl CreateRouteCalculatorInput {
     /// <li>
     /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
     /// + - = . _ : / @. </p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot use "aws:" as a prefix for a key.</p>
     /// </li>
     /// </ul>
     pub fn tags(
@@ -12203,55 +12499,43 @@ pub struct SearchPlaceIndexForTextInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The address, name,
-    /// city, or region to be used in the search. In free-form text format. For example, <code>123 Any
+    /// city, or region to be used in the search in free-form text format. For example, <code>123 Any
     /// Street</code>.</p>
     pub text: std::option::Option<std::string::String>,
-    /// <p>Searches for results closest to the given position. An optional parameter defined by
-    /// longitude, and latitude.</p>
-    /// <ul>
-    /// <li>
-    /// <p>The first <code>bias</code> position is the X coordinate, or longitude.</p>
-    /// </li>
-    /// <li>
-    /// <p>The second <code>bias</code> position is the Y coordinate, or latitude. </p>
-    /// </li>
-    /// </ul>
-    /// <p>For example, <code>bias=xLongitude&amp;bias=yLatitude</code>.</p>
-    pub bias_position: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>Filters the results by returning only Places within the provided bounding box. An
-    /// optional parameter.</p>
-    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner:</p>
-    /// <ul>
-    /// <li>
-    /// <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower
-    /// southwest corner.</p>
-    /// </li>
-    /// <li>
-    /// <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower
-    /// southwest corner.</p>
-    /// </li>
-    /// </ul>
-    /// <p>For example, <code>bbox=xLongitudeSW&amp;bbox=yLatitudeSW</code>.</p>
-    /// <p>The next <code>bbox</code> parameters describe the upper northeast corner:</p>
-    /// <ul>
-    /// <li>
-    /// <p>The third <code>bbox</code> position is the X coordinate, or longitude of the
-    /// upper northeast corner.</p>
-    /// </li>
-    /// <li>
-    /// <p>The fourth <code>bbox</code> position is the Y coordinate, or longitude of the
-    /// upper northeast corner.</p>
-    /// </li>
-    /// </ul>
-    /// <p>For example, <code>bbox=xLongitudeNE&amp;bbox=yLatitudeNE</code>
+    /// <p>An optional parameter that indicates a preference for places that are closer to a specified position.</p>
+    /// <p>
+    /// If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the
+    /// second number represents the Y coordinate, or latitude.</p>
+    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with
+    /// longitude <code>-123.1174</code> and
+    /// latitude <code>49.2847</code>.</p>
+    /// <note>
+    /// <p>
+    /// <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options
+    /// results in an error.
     /// </p>
+    /// </note>
+    pub bias_position: std::option::Option<std::vec::Vec<f64>>,
+    /// <p>An optional parameter that limits the search results by returning only places that are within the provided bounding box.</p>
+    /// <p>
+    /// If provided, this parameter must contain a total of four consecutive numbers in two pairs.
+    /// The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively)
+    /// of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively)
+    /// of the northeast corner of the bounding box.</p>
+    /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents
+    /// a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>,
+    /// and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p>
+    /// <note>
+    /// <p>
+    /// <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.
+    /// </p>
+    /// </note>
     pub filter_b_box: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>Limits the search to the given a list of countries/regions. An optional
-    /// parameter.</p>
+    /// <p>An optional parameter that limits the search results by returning only places that are in a specified list of countries.</p>
     /// <ul>
     /// <li>
-    /// <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
-    /// country code. For example, Australia uses three upper-case characters:
+    /// <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
+    /// country codes. For example, Australia uses three upper-case characters:
     /// <code>AUS</code>.</p>
     /// </li>
     /// </ul>
@@ -12260,6 +12544,12 @@ pub struct SearchPlaceIndexForTextInput {
     /// <p>The default: <code>50</code>
     /// </p>
     pub max_results: i32,
+    /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
+    /// <code>en</code> for English.</p>
+    /// <p>This setting affects the languages used in the results. It does not change which
+    /// results are returned. If the language is not specified, or not supported for a
+    /// particular result, the partner automatically chooses a language for the result.</p>
+    pub language: std::option::Option<std::string::String>,
 }
 impl SearchPlaceIndexForTextInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
@@ -12267,61 +12557,49 @@ impl SearchPlaceIndexForTextInput {
         self.index_name.as_deref()
     }
     /// <p>The address, name,
-    /// city, or region to be used in the search. In free-form text format. For example, <code>123 Any
+    /// city, or region to be used in the search in free-form text format. For example, <code>123 Any
     /// Street</code>.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>Searches for results closest to the given position. An optional parameter defined by
-    /// longitude, and latitude.</p>
-    /// <ul>
-    /// <li>
-    /// <p>The first <code>bias</code> position is the X coordinate, or longitude.</p>
-    /// </li>
-    /// <li>
-    /// <p>The second <code>bias</code> position is the Y coordinate, or latitude. </p>
-    /// </li>
-    /// </ul>
-    /// <p>For example, <code>bias=xLongitude&amp;bias=yLatitude</code>.</p>
+    /// <p>An optional parameter that indicates a preference for places that are closer to a specified position.</p>
+    /// <p>
+    /// If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the
+    /// second number represents the Y coordinate, or latitude.</p>
+    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with
+    /// longitude <code>-123.1174</code> and
+    /// latitude <code>49.2847</code>.</p>
+    /// <note>
+    /// <p>
+    /// <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options
+    /// results in an error.
+    /// </p>
+    /// </note>
     pub fn bias_position(&self) -> std::option::Option<&[f64]> {
         self.bias_position.as_deref()
     }
-    /// <p>Filters the results by returning only Places within the provided bounding box. An
-    /// optional parameter.</p>
-    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner:</p>
-    /// <ul>
-    /// <li>
-    /// <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower
-    /// southwest corner.</p>
-    /// </li>
-    /// <li>
-    /// <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower
-    /// southwest corner.</p>
-    /// </li>
-    /// </ul>
-    /// <p>For example, <code>bbox=xLongitudeSW&amp;bbox=yLatitudeSW</code>.</p>
-    /// <p>The next <code>bbox</code> parameters describe the upper northeast corner:</p>
-    /// <ul>
-    /// <li>
-    /// <p>The third <code>bbox</code> position is the X coordinate, or longitude of the
-    /// upper northeast corner.</p>
-    /// </li>
-    /// <li>
-    /// <p>The fourth <code>bbox</code> position is the Y coordinate, or longitude of the
-    /// upper northeast corner.</p>
-    /// </li>
-    /// </ul>
-    /// <p>For example, <code>bbox=xLongitudeNE&amp;bbox=yLatitudeNE</code>
+    /// <p>An optional parameter that limits the search results by returning only places that are within the provided bounding box.</p>
+    /// <p>
+    /// If provided, this parameter must contain a total of four consecutive numbers in two pairs.
+    /// The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively)
+    /// of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively)
+    /// of the northeast corner of the bounding box.</p>
+    /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents
+    /// a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>,
+    /// and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p>
+    /// <note>
+    /// <p>
+    /// <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.
     /// </p>
+    /// </note>
     pub fn filter_b_box(&self) -> std::option::Option<&[f64]> {
         self.filter_b_box.as_deref()
     }
-    /// <p>Limits the search to the given a list of countries/regions. An optional
-    /// parameter.</p>
+    /// <p>An optional parameter that limits the search results by returning only places that are in a specified list of countries.</p>
     /// <ul>
     /// <li>
-    /// <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
-    /// country code. For example, Australia uses three upper-case characters:
+    /// <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
+    /// country codes. For example, Australia uses three upper-case characters:
     /// <code>AUS</code>.</p>
     /// </li>
     /// </ul>
@@ -12334,6 +12612,14 @@ impl SearchPlaceIndexForTextInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
+    /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
+    /// <code>en</code> for English.</p>
+    /// <p>This setting affects the languages used in the results. It does not change which
+    /// results are returned. If the language is not specified, or not supported for a
+    /// particular result, the partner automatically chooses a language for the result.</p>
+    pub fn language(&self) -> std::option::Option<&str> {
+        self.language.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchPlaceIndexForTextInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12344,6 +12630,7 @@ impl std::fmt::Debug for SearchPlaceIndexForTextInput {
         formatter.field("filter_b_box", &"*** Sensitive Data Redacted ***");
         formatter.field("filter_countries", &self.filter_countries);
         formatter.field("max_results", &self.max_results);
+        formatter.field("language", &self.language);
         formatter.finish()
     }
 }
@@ -12354,45 +12641,53 @@ impl std::fmt::Debug for SearchPlaceIndexForTextInput {
 pub struct SearchPlaceIndexForPositionInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>Specifies a coordinate for the query defined by a longitude, and latitude.</p>
-    /// <ul>
-    /// <li>
-    /// <p>The first position is the X coordinate, or longitude.</p>
-    /// </li>
-    /// <li>
-    /// <p>The second position is the Y coordinate, or latitude. </p>
-    /// </li>
-    /// </ul>
-    /// <p>For example, <code>position=xLongitude&amp;position=yLatitude</code> .</p>
+    /// <p>Specifies the longitude and latitude of the position to query.</p>
+    /// <p>
+    /// This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude;
+    /// the second number represents the Y coordinate, or latitude.</p>
+    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with
+    /// longitude <code>-123.1174</code> and
+    /// latitude <code>49.2847</code>.</p>
     pub position: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>An optional paramer. The maximum number of results returned per request. </p>
+    /// <p>An optional parameter. The maximum number of results returned per request.</p>
     /// <p>Default value: <code>50</code>
     /// </p>
     pub max_results: i32,
+    /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
+    /// <code>en</code> for English.</p>
+    /// <p>This setting affects the languages used in the results. It does not change which
+    /// results are returned. If the language is not specified, or not supported for a
+    /// particular result, the partner automatically chooses a language for the result.</p>
+    pub language: std::option::Option<std::string::String>,
 }
 impl SearchPlaceIndexForPositionInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>Specifies a coordinate for the query defined by a longitude, and latitude.</p>
-    /// <ul>
-    /// <li>
-    /// <p>The first position is the X coordinate, or longitude.</p>
-    /// </li>
-    /// <li>
-    /// <p>The second position is the Y coordinate, or latitude. </p>
-    /// </li>
-    /// </ul>
-    /// <p>For example, <code>position=xLongitude&amp;position=yLatitude</code> .</p>
+    /// <p>Specifies the longitude and latitude of the position to query.</p>
+    /// <p>
+    /// This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude;
+    /// the second number represents the Y coordinate, or latitude.</p>
+    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with
+    /// longitude <code>-123.1174</code> and
+    /// latitude <code>49.2847</code>.</p>
     pub fn position(&self) -> std::option::Option<&[f64]> {
         self.position.as_deref()
     }
-    /// <p>An optional paramer. The maximum number of results returned per request. </p>
+    /// <p>An optional parameter. The maximum number of results returned per request.</p>
     /// <p>Default value: <code>50</code>
     /// </p>
     pub fn max_results(&self) -> i32 {
         self.max_results
+    }
+    /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
+    /// <code>en</code> for English.</p>
+    /// <p>This setting affects the languages used in the results. It does not change which
+    /// results are returned. If the language is not specified, or not supported for a
+    /// particular result, the partner automatically chooses a language for the result.</p>
+    pub fn language(&self) -> std::option::Option<&str> {
+        self.language.as_deref()
     }
 }
 impl std::fmt::Debug for SearchPlaceIndexForPositionInput {
@@ -12401,6 +12696,7 @@ impl std::fmt::Debug for SearchPlaceIndexForPositionInput {
         formatter.field("index_name", &self.index_name);
         formatter.field("position", &"*** Sensitive Data Redacted ***");
         formatter.field("max_results", &self.max_results);
+        formatter.field("language", &self.language);
         formatter.finish()
     }
 }
@@ -12462,7 +12758,7 @@ pub struct CreatePlaceIndexInput {
     /// </li>
     /// </ul>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the data provider of geospatial data.</p>
+    /// <p>Specifies the geospatial data provider for the new place index.</p>
     /// <note>
     /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering
     /// <code>HERE</code> returns an error.</p>
@@ -12479,7 +12775,8 @@ pub struct CreatePlaceIndexInput {
     /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'
     /// coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p>
     /// <important>
-    /// <p>Place index resources using HERE Technologies as a data provider can't <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
+    /// <p>If you specify HERE Technologies (<code>Here</code>) as the data provider,
+    /// you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
     /// <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
     /// for Amazon Location Service.</p>
     /// </important>
@@ -12495,27 +12792,30 @@ pub struct CreatePlaceIndexInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the data storage option requesting Places.</p>
     pub data_source_configuration: std::option::Option<crate::model::DataSourceConfiguration>,
-    /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair helps
-    /// manage, identify, search, and filter your resources by labelling them.</p>
+    /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you
+    /// manage, identify, search, and filter your resources.</p>
     /// <p>Format: <code>"key" : "value"</code>
     /// </p>
     /// <p>Restrictions:</p>
     /// <ul>
     /// <li>
-    /// <p>Maximum 50 tags per resource</p>
+    /// <p>Maximum 50 tags per resource.</p>
     /// </li>
     /// <li>
-    /// <p>Each resource tag must be unique with a maximum of one value.</p>
+    /// <p>Each tag key must be unique and must have exactly one associated value.</p>
     /// </li>
     /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
     /// </li>
     /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
+    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
     /// </li>
     /// <li>
     /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
-    /// = . _ : / @. </p>
+    /// = . _ : / @</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot use "aws:" as a prefix for a key.</p>
     /// </li>
     /// </ul>
     pub tags:
@@ -12539,7 +12839,7 @@ impl CreatePlaceIndexInput {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>Specifies the data provider of geospatial data.</p>
+    /// <p>Specifies the geospatial data provider for the new place index.</p>
     /// <note>
     /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering
     /// <code>HERE</code> returns an error.</p>
@@ -12556,7 +12856,8 @@ impl CreatePlaceIndexInput {
     /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'
     /// coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p>
     /// <important>
-    /// <p>Place index resources using HERE Technologies as a data provider can't <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
+    /// <p>If you specify HERE Technologies (<code>Here</code>) as the data provider,
+    /// you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
     /// <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
     /// for Amazon Location Service.</p>
     /// </important>
@@ -12582,27 +12883,30 @@ impl CreatePlaceIndexInput {
     ) -> std::option::Option<&crate::model::DataSourceConfiguration> {
         self.data_source_configuration.as_ref()
     }
-    /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair helps
-    /// manage, identify, search, and filter your resources by labelling them.</p>
+    /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you
+    /// manage, identify, search, and filter your resources.</p>
     /// <p>Format: <code>"key" : "value"</code>
     /// </p>
     /// <p>Restrictions:</p>
     /// <ul>
     /// <li>
-    /// <p>Maximum 50 tags per resource</p>
+    /// <p>Maximum 50 tags per resource.</p>
     /// </li>
     /// <li>
-    /// <p>Each resource tag must be unique with a maximum of one value.</p>
+    /// <p>Each tag key must be unique and must have exactly one associated value.</p>
     /// </li>
     /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
     /// </li>
     /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
+    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
     /// </li>
     /// <li>
     /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
-    /// = . _ : / @. </p>
+    /// = . _ : / @</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot use "aws:" as a prefix for a key.</p>
     /// </li>
     /// </ul>
     pub fn tags(
@@ -13052,6 +13356,9 @@ pub struct CreateMapInput {
     /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : /
     /// @. </p>
     /// </li>
+    /// <li>
+    /// <p>Cannot use "aws:" as a prefix for a key.</p>
+    /// </li>
     /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -13107,6 +13414,9 @@ impl CreateMapInput {
     /// <li>
     /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : /
     /// @. </p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot use "aws:" as a prefix for a key.</p>
     /// </li>
     /// </ul>
     pub fn tags(
@@ -13504,6 +13814,9 @@ pub struct CreateGeofenceCollectionInput {
     /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
     /// + - = . _ : / @. </p>
     /// </li>
+    /// <li>
+    /// <p>Cannot use "aws:" as a prefix for a key.</p>
+    /// </li>
     /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -13580,6 +13893,9 @@ impl CreateGeofenceCollectionInput {
     /// <li>
     /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
     /// + - = . _ : / @. </p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot use "aws:" as a prefix for a key.</p>
     /// </li>
     /// </ul>
     pub fn tags(
@@ -13773,11 +14089,30 @@ pub struct TagResourceInput {
     /// </li>
     /// </ul>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
+    /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you
+    /// manage, identify, search, and filter your resources.</p>
+    /// <p>Format: <code>"key" : "value"</code>
+    /// </p>
+    /// <p>Restrictions:</p>
     /// <ul>
     /// <li>
-    /// <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code>
-    /// </p>
+    /// <p>Maximum 50 tags per resource.</p>
+    /// </li>
+    /// <li>
+    /// <p>Each tag key must be unique and must have exactly one associated value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
+    /// = . _ : / @</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot use "aws:" as a prefix for a key.</p>
     /// </li>
     /// </ul>
     pub tags:
@@ -13794,11 +14129,30 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
+    /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you
+    /// manage, identify, search, and filter your resources.</p>
+    /// <p>Format: <code>"key" : "value"</code>
+    /// </p>
+    /// <p>Restrictions:</p>
     /// <ul>
     /// <li>
-    /// <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code>
-    /// </p>
+    /// <p>Maximum 50 tags per resource.</p>
+    /// </li>
+    /// <li>
+    /// <p>Each tag key must be unique and must have exactly one associated value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
+    /// = . _ : / @</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot use "aws:" as a prefix for a key.</p>
     /// </li>
     /// </ul>
     pub fn tags(

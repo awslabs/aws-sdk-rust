@@ -1210,7 +1210,7 @@ pub struct WorkGroupSummary {
     /// <p>The workgroup description.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The workgroup creation date and time.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The engine version setting for all queries on the workgroup. Queries on the
     /// <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine
     /// regardless of this setting.</p>
@@ -1230,7 +1230,7 @@ impl WorkGroupSummary {
         self.description.as_deref()
     }
     /// <p>The workgroup creation date and time.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The engine version setting for all queries on the workgroup. Queries on the
@@ -1260,7 +1260,7 @@ pub mod work_group_summary {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::WorkGroupState>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) engine_version: std::option::Option<crate::model::EngineVersion>,
     }
     impl Builder {
@@ -1298,14 +1298,14 @@ pub mod work_group_summary {
             self
         }
         /// <p>The workgroup creation date and time.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The workgroup creation date and time.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -1353,9 +1353,9 @@ pub struct TableMetadata {
     /// <p>The name of the table.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The time that the table was created.</p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the table was accessed.</p>
-    pub last_access_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_access_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of table. In Athena, only <code>EXTERNAL_TABLE</code> is
     /// supported.</p>
     pub table_type: std::option::Option<std::string::String>,
@@ -1373,11 +1373,11 @@ impl TableMetadata {
         self.name.as_deref()
     }
     /// <p>The time that the table was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The last time the table was accessed.</p>
-    pub fn last_access_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_access_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_access_time.as_ref()
     }
     /// <p>The type of table. In Athena, only <code>EXTERNAL_TABLE</code> is
@@ -1421,8 +1421,8 @@ pub mod table_metadata {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_access_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_access_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) table_type: std::option::Option<std::string::String>,
         pub(crate) columns: std::option::Option<std::vec::Vec<crate::model::Column>>,
         pub(crate) partition_keys: std::option::Option<std::vec::Vec<crate::model::Column>>,
@@ -1442,27 +1442,27 @@ pub mod table_metadata {
             self
         }
         /// <p>The time that the table was created.</p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
         /// <p>The time that the table was created.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p>The last time the table was accessed.</p>
-        pub fn last_access_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_access_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_access_time = Some(input);
             self
         }
         /// <p>The last time the table was accessed.</p>
         pub fn set_last_access_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_access_time = input;
             self
@@ -1662,7 +1662,7 @@ pub struct PreparedStatementSummary {
     /// <p>The name of the prepared statement.</p>
     pub statement_name: std::option::Option<std::string::String>,
     /// <p>The last modified time of the prepared statement.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PreparedStatementSummary {
     /// <p>The name of the prepared statement.</p>
@@ -1670,7 +1670,7 @@ impl PreparedStatementSummary {
         self.statement_name.as_deref()
     }
     /// <p>The last modified time of the prepared statement.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -1689,7 +1689,7 @@ pub mod prepared_statement_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) statement_name: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the prepared statement.</p>
@@ -1706,14 +1706,14 @@ pub mod prepared_statement_summary {
             self
         }
         /// <p>The last modified time of the prepared statement.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The last modified time of the prepared statement.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -1949,7 +1949,7 @@ pub struct WorkGroup {
     /// <p>The workgroup description.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time the workgroup was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl WorkGroup {
     /// <p>The workgroup name.</p>
@@ -1975,7 +1975,7 @@ impl WorkGroup {
         self.description.as_deref()
     }
     /// <p>The date and time the workgroup was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -2000,7 +2000,7 @@ pub mod work_group {
         pub(crate) state: std::option::Option<crate::model::WorkGroupState>,
         pub(crate) configuration: std::option::Option<crate::model::WorkGroupConfiguration>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The workgroup name.</p>
@@ -2062,14 +2062,14 @@ pub mod work_group {
             self
         }
         /// <p>The date and time the workgroup was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The date and time the workgroup was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -3444,9 +3444,9 @@ pub struct QueryExecutionStatus {
     /// <p>Further detail about the status of the query.</p>
     pub state_change_reason: std::option::Option<std::string::String>,
     /// <p>The date and time that the query was submitted.</p>
-    pub submission_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub submission_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the query completed.</p>
-    pub completion_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub completion_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl QueryExecutionStatus {
     /// <p>The state of query execution. <code>QUEUED</code> indicates that the query has been
@@ -3469,11 +3469,11 @@ impl QueryExecutionStatus {
         self.state_change_reason.as_deref()
     }
     /// <p>The date and time that the query was submitted.</p>
-    pub fn submission_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submission_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submission_date_time.as_ref()
     }
     /// <p>The date and time that the query completed.</p>
-    pub fn completion_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completion_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_date_time.as_ref()
     }
 }
@@ -3495,8 +3495,8 @@ pub mod query_execution_status {
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::QueryExecutionState>,
         pub(crate) state_change_reason: std::option::Option<std::string::String>,
-        pub(crate) submission_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completion_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submission_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completion_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The state of query execution. <code>QUEUED</code> indicates that the query has been
@@ -3548,27 +3548,27 @@ pub mod query_execution_status {
             self
         }
         /// <p>The date and time that the query was submitted.</p>
-        pub fn submission_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submission_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submission_date_time = Some(input);
             self
         }
         /// <p>The date and time that the query was submitted.</p>
         pub fn set_submission_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submission_date_time = input;
             self
         }
         /// <p>The date and time that the query completed.</p>
-        pub fn completion_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completion_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completion_date_time = Some(input);
             self
         }
         /// <p>The date and time that the query completed.</p>
         pub fn set_completion_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completion_date_time = input;
             self
@@ -3730,7 +3730,7 @@ pub struct PreparedStatement {
     /// <p>The description of the prepared statement.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The last modified time of the prepared statement.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PreparedStatement {
     /// <p>The name of the prepared statement.</p>
@@ -3750,7 +3750,7 @@ impl PreparedStatement {
         self.description.as_deref()
     }
     /// <p>The last modified time of the prepared statement.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -3775,7 +3775,7 @@ pub mod prepared_statement {
         pub(crate) query_statement: std::option::Option<std::string::String>,
         pub(crate) work_group_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the prepared statement.</p>
@@ -3828,14 +3828,14 @@ pub mod prepared_statement {
             self
         }
         /// <p>The last modified time of the prepared statement.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The last modified time of the prepared statement.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self

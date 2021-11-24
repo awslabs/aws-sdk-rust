@@ -6,12 +6,12 @@ pub struct UpdateVodSourceOutput {
     /// <p>The ARN of the VOD source.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the VOD source was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The HTTP package configurations.</p>
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
     /// <p>The ARN for the VOD source.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the source location associated with the VOD source.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the VOD source.</p>
@@ -26,7 +26,7 @@ impl UpdateVodSourceOutput {
         self.arn.as_deref()
     }
     /// <p>The timestamp that indicates when the VOD source was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The HTTP package configurations.</p>
@@ -36,7 +36,7 @@ impl UpdateVodSourceOutput {
         self.http_package_configurations.as_deref()
     }
     /// <p>The ARN for the VOD source.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The name of the source location associated with the VOD source.</p>
@@ -78,10 +78,10 @@ pub mod update_vod_source_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) http_package_configurations:
             std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -100,14 +100,14 @@ pub mod update_vod_source_output {
             self
         }
         /// <p>The timestamp that indicates when the VOD source was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The timestamp that indicates when the VOD source was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -135,14 +135,14 @@ pub mod update_vod_source_output {
             self
         }
         /// <p>The ARN for the VOD source.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The ARN for the VOD source.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -228,14 +228,14 @@ pub struct UpdateSourceLocationOutput {
     /// <p>The ARN of the source location.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the source location was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The default segment delivery configuration settings.</p>
     pub default_segment_delivery_configuration:
         std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
     /// <p>The HTTP package configuration settings for the source location.</p>
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
     /// <p>The timestamp that indicates when the source location was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the source location.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the source location.</p>
@@ -252,7 +252,7 @@ impl UpdateSourceLocationOutput {
         self.arn.as_deref()
     }
     /// <p>The timestamp that indicates when the source location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The default segment delivery configuration settings.</p>
@@ -266,7 +266,7 @@ impl UpdateSourceLocationOutput {
         self.http_configuration.as_ref()
     }
     /// <p>The timestamp that indicates when the source location was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The name of the source location.</p>
@@ -306,11 +306,11 @@ pub mod update_source_location_output {
     pub struct Builder {
         pub(crate) access_configuration: std::option::Option<crate::model::AccessConfiguration>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) default_segment_delivery_configuration:
             std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
         pub(crate) http_configuration: std::option::Option<crate::model::HttpConfiguration>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -341,14 +341,14 @@ pub mod update_source_location_output {
             self
         }
         /// <p>The timestamp that indicates when the source location was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The timestamp that indicates when the source location was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -383,14 +383,14 @@ pub mod update_source_location_output {
             self
         }
         /// <p>The timestamp that indicates when the source location was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The timestamp that indicates when the source location was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -466,11 +466,11 @@ pub struct UpdateChannelOutput {
     /// <p>Indicates whether the channel is in a running state or not.</p>
     pub channel_state: std::option::Option<crate::model::ChannelState>,
     /// <p>The timestamp of when the channel was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
     pub filler_slate: std::option::Option<crate::model::SlateSource>,
     /// <p>The timestamp of when the channel was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The channel's output properties.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
     /// <p>The channel's playback mode.</p>
@@ -493,7 +493,7 @@ impl UpdateChannelOutput {
         self.channel_state.as_ref()
     }
     /// <p>The timestamp of when the channel was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
@@ -501,7 +501,7 @@ impl UpdateChannelOutput {
         self.filler_slate.as_ref()
     }
     /// <p>The timestamp of when the channel was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The channel's output properties.</p>
@@ -544,9 +544,9 @@ pub mod update_channel_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) channel_state: std::option::Option<crate::model::ChannelState>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) filler_slate: std::option::Option<crate::model::SlateSource>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
         pub(crate) playback_mode: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -588,14 +588,14 @@ pub mod update_channel_output {
             self
         }
         /// <p>The timestamp of when the channel was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The timestamp of when the channel was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -614,14 +614,14 @@ pub mod update_channel_output {
             self
         }
         /// <p>The timestamp of when the channel was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The timestamp of when the channel was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -2774,12 +2774,12 @@ pub struct DescribeVodSourceOutput {
     /// <p>The ARN of the VOD source.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the VOD source was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The HTTP package configurations.</p>
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
     /// <p>The ARN for the VOD source.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the source location associated with the VOD source.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the VOD source.</p>
@@ -2794,7 +2794,7 @@ impl DescribeVodSourceOutput {
         self.arn.as_deref()
     }
     /// <p>The timestamp that indicates when the VOD source was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The HTTP package configurations.</p>
@@ -2804,7 +2804,7 @@ impl DescribeVodSourceOutput {
         self.http_package_configurations.as_deref()
     }
     /// <p>The ARN for the VOD source.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The name of the source location associated with the VOD source.</p>
@@ -2846,10 +2846,10 @@ pub mod describe_vod_source_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) http_package_configurations:
             std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -2868,14 +2868,14 @@ pub mod describe_vod_source_output {
             self
         }
         /// <p>The timestamp that indicates when the VOD source was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The timestamp that indicates when the VOD source was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2903,14 +2903,14 @@ pub mod describe_vod_source_output {
             self
         }
         /// <p>The ARN for the VOD source.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The ARN for the VOD source.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -2996,14 +2996,14 @@ pub struct DescribeSourceLocationOutput {
     /// <p>The ARN of the source location.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the source location was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The default segment delivery configuration settings.</p>
     pub default_segment_delivery_configuration:
         std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
     /// <p>The HTTP package configuration settings for the source location.</p>
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
     /// <p>The timestamp that indicates when the source location was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the source location.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the source location.</p>
@@ -3020,7 +3020,7 @@ impl DescribeSourceLocationOutput {
         self.arn.as_deref()
     }
     /// <p>The timestamp that indicates when the source location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The default segment delivery configuration settings.</p>
@@ -3034,7 +3034,7 @@ impl DescribeSourceLocationOutput {
         self.http_configuration.as_ref()
     }
     /// <p>The timestamp that indicates when the source location was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The name of the source location.</p>
@@ -3074,11 +3074,11 @@ pub mod describe_source_location_output {
     pub struct Builder {
         pub(crate) access_configuration: std::option::Option<crate::model::AccessConfiguration>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) default_segment_delivery_configuration:
             std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
         pub(crate) http_configuration: std::option::Option<crate::model::HttpConfiguration>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -3109,14 +3109,14 @@ pub mod describe_source_location_output {
             self
         }
         /// <p>The timestamp that indicates when the source location was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The timestamp that indicates when the source location was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -3151,14 +3151,14 @@ pub mod describe_source_location_output {
             self
         }
         /// <p>The timestamp that indicates when the source location was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The timestamp that indicates when the source location was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -3234,11 +3234,11 @@ pub struct DescribeProgramOutput {
     /// <p>The name of the channel that the program belongs to.</p>
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the program was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the program.</p>
     pub program_name: std::option::Option<std::string::String>,
     /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
-    pub scheduled_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The source location name.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The name that's used to refer to a VOD source.</p>
@@ -3258,7 +3258,7 @@ impl DescribeProgramOutput {
         self.channel_name.as_deref()
     }
     /// <p>The timestamp of when the program was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The name of the program.</p>
@@ -3266,7 +3266,7 @@ impl DescribeProgramOutput {
         self.program_name.as_deref()
     }
     /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
-    pub fn scheduled_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn scheduled_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.scheduled_start_time.as_ref()
     }
     /// <p>The source location name.</p>
@@ -3301,9 +3301,9 @@ pub mod describe_program_output {
         pub(crate) ad_breaks: std::option::Option<std::vec::Vec<crate::model::AdBreak>>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) channel_name: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) program_name: std::option::Option<std::string::String>,
-        pub(crate) scheduled_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) vod_source_name: std::option::Option<std::string::String>,
     }
@@ -3348,14 +3348,14 @@ pub mod describe_program_output {
             self
         }
         /// <p>The timestamp of when the program was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The timestamp of when the program was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -3371,14 +3371,14 @@ pub mod describe_program_output {
             self
         }
         /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
-        pub fn scheduled_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn scheduled_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.scheduled_start_time = Some(input);
             self
         }
         /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
         pub fn set_scheduled_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.scheduled_start_time = input;
             self
@@ -3442,11 +3442,11 @@ pub struct DescribeChannelOutput {
     /// <p>Indicates whether the channel is in a running state or not.</p>
     pub channel_state: std::option::Option<crate::model::ChannelState>,
     /// <p>The timestamp of when the channel was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
     pub filler_slate: std::option::Option<crate::model::SlateSource>,
     /// <p>The timestamp of when the channel was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The channel's output properties.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
     /// <p>The channel's playback mode.</p>
@@ -3469,7 +3469,7 @@ impl DescribeChannelOutput {
         self.channel_state.as_ref()
     }
     /// <p>The timestamp of when the channel was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
@@ -3477,7 +3477,7 @@ impl DescribeChannelOutput {
         self.filler_slate.as_ref()
     }
     /// <p>The timestamp of when the channel was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The channel's output properties.</p>
@@ -3520,9 +3520,9 @@ pub mod describe_channel_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) channel_state: std::option::Option<crate::model::ChannelState>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) filler_slate: std::option::Option<crate::model::SlateSource>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
         pub(crate) playback_mode: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -3564,14 +3564,14 @@ pub mod describe_channel_output {
             self
         }
         /// <p>The timestamp of when the channel was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The timestamp of when the channel was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -3590,14 +3590,14 @@ pub mod describe_channel_output {
             self
         }
         /// <p>The timestamp of when the channel was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The timestamp of when the channel was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -3899,12 +3899,12 @@ pub struct CreateVodSourceOutput {
     /// <p>The ARN of the VOD source.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the VOD source was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The HTTP package configurations.</p>
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
     /// <p>The ARN for the VOD source.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the source location associated with the VOD source.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the VOD source.</p>
@@ -3919,7 +3919,7 @@ impl CreateVodSourceOutput {
         self.arn.as_deref()
     }
     /// <p>The timestamp that indicates when the VOD source was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The HTTP package configurations.</p>
@@ -3929,7 +3929,7 @@ impl CreateVodSourceOutput {
         self.http_package_configurations.as_deref()
     }
     /// <p>The ARN for the VOD source.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The name of the source location associated with the VOD source.</p>
@@ -3971,10 +3971,10 @@ pub mod create_vod_source_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) http_package_configurations:
             std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -3993,14 +3993,14 @@ pub mod create_vod_source_output {
             self
         }
         /// <p>The timestamp that indicates when the VOD source was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The timestamp that indicates when the VOD source was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -4028,14 +4028,14 @@ pub mod create_vod_source_output {
             self
         }
         /// <p>The ARN for the VOD source.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The ARN for the VOD source.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -4121,14 +4121,14 @@ pub struct CreateSourceLocationOutput {
     /// <p>The ARN of the source location.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the source location was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The default segment delivery configuration settings.</p>
     pub default_segment_delivery_configuration:
         std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
     /// <p>The HTTP package configuration settings for the source location.</p>
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
     /// <p>The timestamp that indicates when the source location was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the source location.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the source location.</p>
@@ -4145,7 +4145,7 @@ impl CreateSourceLocationOutput {
         self.arn.as_deref()
     }
     /// <p>The timestamp that indicates when the source location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The default segment delivery configuration settings.</p>
@@ -4159,7 +4159,7 @@ impl CreateSourceLocationOutput {
         self.http_configuration.as_ref()
     }
     /// <p>The timestamp that indicates when the source location was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The name of the source location.</p>
@@ -4199,11 +4199,11 @@ pub mod create_source_location_output {
     pub struct Builder {
         pub(crate) access_configuration: std::option::Option<crate::model::AccessConfiguration>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) default_segment_delivery_configuration:
             std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
         pub(crate) http_configuration: std::option::Option<crate::model::HttpConfiguration>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -4234,14 +4234,14 @@ pub mod create_source_location_output {
             self
         }
         /// <p>The timestamp that indicates when the source location was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The timestamp that indicates when the source location was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -4276,14 +4276,14 @@ pub mod create_source_location_output {
             self
         }
         /// <p>The timestamp that indicates when the source location was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The timestamp that indicates when the source location was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -4359,11 +4359,11 @@ pub struct CreateProgramOutput {
     /// <p>The name of the channel that the program belongs to.</p>
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the program was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the program.</p>
     pub program_name: std::option::Option<std::string::String>,
     /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
-    pub scheduled_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The source location name.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The name that's used to refer to a VOD source.</p>
@@ -4383,7 +4383,7 @@ impl CreateProgramOutput {
         self.channel_name.as_deref()
     }
     /// <p>The timestamp of when the program was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The name of the program.</p>
@@ -4391,7 +4391,7 @@ impl CreateProgramOutput {
         self.program_name.as_deref()
     }
     /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
-    pub fn scheduled_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn scheduled_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.scheduled_start_time.as_ref()
     }
     /// <p>The source location name.</p>
@@ -4426,9 +4426,9 @@ pub mod create_program_output {
         pub(crate) ad_breaks: std::option::Option<std::vec::Vec<crate::model::AdBreak>>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) channel_name: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) program_name: std::option::Option<std::string::String>,
-        pub(crate) scheduled_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) vod_source_name: std::option::Option<std::string::String>,
     }
@@ -4473,14 +4473,14 @@ pub mod create_program_output {
             self
         }
         /// <p>The timestamp of when the program was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The timestamp of when the program was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -4496,14 +4496,14 @@ pub mod create_program_output {
             self
         }
         /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
-        pub fn scheduled_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn scheduled_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.scheduled_start_time = Some(input);
             self
         }
         /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
         pub fn set_scheduled_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.scheduled_start_time = input;
             self
@@ -4731,11 +4731,11 @@ pub struct CreateChannelOutput {
     /// <p>Indicates whether the channel is in a running state or not.</p>
     pub channel_state: std::option::Option<crate::model::ChannelState>,
     /// <p>The timestamp of when the channel was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
     pub filler_slate: std::option::Option<crate::model::SlateSource>,
     /// <p>The timestamp of when the channel was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The channel's output properties.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
     /// <p>The channel's playback mode.</p>
@@ -4758,7 +4758,7 @@ impl CreateChannelOutput {
         self.channel_state.as_ref()
     }
     /// <p>The timestamp of when the channel was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
@@ -4766,7 +4766,7 @@ impl CreateChannelOutput {
         self.filler_slate.as_ref()
     }
     /// <p>The timestamp of when the channel was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The channel's output properties.</p>
@@ -4809,9 +4809,9 @@ pub mod create_channel_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) channel_state: std::option::Option<crate::model::ChannelState>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) filler_slate: std::option::Option<crate::model::SlateSource>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
         pub(crate) playback_mode: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -4853,14 +4853,14 @@ pub mod create_channel_output {
             self
         }
         /// <p>The timestamp of when the channel was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The timestamp of when the channel was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -4879,14 +4879,14 @@ pub mod create_channel_output {
             self
         }
         /// <p>The timestamp of when the channel was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>The timestamp of when the channel was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self

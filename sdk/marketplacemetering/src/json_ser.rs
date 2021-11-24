@@ -33,7 +33,7 @@ pub fn serialize_structure_crate_input_meter_usage_input(
     if let Some(var_7) = &input.timestamp {
         object
             .key("Timestamp")
-            .instant(var_7, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_7, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_8) = &input.usage_dimension {
         object.key("UsageDimension").string(var_8);
@@ -100,7 +100,7 @@ pub fn serialize_structure_crate_model_usage_record(
     if let Some(var_19) = &input.timestamp {
         object
             .key("Timestamp")
-            .instant(var_19, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_19, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_20) = &input.customer_identifier {
         object.key("CustomerIdentifier").string(var_20);

@@ -19,13 +19,14 @@ use tracing::Instrument;
 /// * Finally, if a provider returns any other error condition, an error will be returned immediately.
 ///
 /// # Examples
+///
 /// ```rust
 /// use aws_config::meta::credentials::CredentialsProviderChain;
-/// use aws_types::Credentials;
-/// use aws_config::environment;
 /// use aws_config::environment::credentials::EnvironmentVariableCredentialsProvider;
+/// use aws_config::profile::ProfileFileCredentialsProvider;
+///
 /// let provider = CredentialsProviderChain::first_try("Environment", EnvironmentVariableCredentialsProvider::new())
-///     .or_else("Static", Credentials::from_keys("someacceskeyid", "somesecret", None));
+///     .or_else("Profile", ProfileFileCredentialsProvider::builder().build());
 /// ```
 #[derive(Debug)]
 pub struct CredentialsProviderChain {

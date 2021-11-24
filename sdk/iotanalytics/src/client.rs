@@ -2257,7 +2257,7 @@ pub mod fluent_builders {
         /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or
         /// after the given time. See the field <code>triggers.schedule</code> in the
         /// <code>CreateDataset</code> request. (timestamp)</p>
-        pub fn scheduled_on_or_after(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn scheduled_on_or_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.scheduled_on_or_after(inp);
             self
         }
@@ -2266,7 +2266,7 @@ pub mod fluent_builders {
         /// <code>CreateDataset</code> request. (timestamp)</p>
         pub fn set_scheduled_on_or_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_scheduled_on_or_after(input);
             self
@@ -2274,7 +2274,7 @@ pub mod fluent_builders {
         /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the
         /// given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code>
         /// request. (timestamp)</p>
-        pub fn scheduled_before(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn scheduled_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.scheduled_before(inp);
             self
         }
@@ -2283,7 +2283,7 @@ pub mod fluent_builders {
         /// request. (timestamp)</p>
         pub fn set_scheduled_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_scheduled_before(input);
             self
@@ -2863,27 +2863,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>The start of the time window from which sample messages are retrieved.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
         /// <p>The start of the time window from which sample messages are retrieved.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
         }
         /// <p>The end of the time window from which sample messages are retrieved.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
         /// <p>The end of the time window from which sample messages are retrieved.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -2964,7 +2964,7 @@ pub mod fluent_builders {
         /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
         /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the
         /// <code>channelMessages</code> object.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
@@ -2973,7 +2973,7 @@ pub mod fluent_builders {
         /// <code>channelMessages</code> object.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
@@ -2981,7 +2981,7 @@ pub mod fluent_builders {
         /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
         /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the
         /// <code>channelMessages</code> object.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
@@ -2990,7 +2990,7 @@ pub mod fluent_builders {
         /// <code>channelMessages</code> object.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -3715,7 +3715,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -3738,7 +3744,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

@@ -668,7 +668,7 @@ pub struct StateMachineListItem {
     /// <p></p>
     pub r#type: std::option::Option<crate::model::StateMachineType>,
     /// <p>The date the state machine is created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StateMachineListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
@@ -706,7 +706,7 @@ impl StateMachineListItem {
         self.r#type.as_ref()
     }
     /// <p>The date the state machine is created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -729,7 +729,7 @@ pub mod state_machine_list_item {
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::StateMachineType>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
@@ -813,14 +813,14 @@ pub mod state_machine_list_item {
             self
         }
         /// <p>The date the state machine is created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date the state machine is created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -933,9 +933,9 @@ pub struct ExecutionListItem {
     /// <p>The current status of the execution.</p>
     pub status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>The date the execution started.</p>
-    pub start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the execution already ended, the date the execution stopped.</p>
-    pub stop_date: std::option::Option<aws_smithy_types::Instant>,
+    pub stop_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ExecutionListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
@@ -977,11 +977,11 @@ impl ExecutionListItem {
         self.status.as_ref()
     }
     /// <p>The date the execution started.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>If the execution already ended, the date the execution stopped.</p>
-    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stop_date.as_ref()
     }
 }
@@ -1007,8 +1007,8 @@ pub mod execution_list_item {
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ExecutionStatus>,
-        pub(crate) start_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) stop_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) stop_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
@@ -1105,27 +1105,27 @@ pub mod execution_list_item {
             self
         }
         /// <p>The date the execution started.</p>
-        pub fn start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_date = Some(input);
             self
         }
         /// <p>The date the execution started.</p>
         pub fn set_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_date = input;
             self
         }
         /// <p>If the execution already ended, the date the execution stopped.</p>
-        pub fn stop_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn stop_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stop_date = Some(input);
             self
         }
         /// <p>If the execution already ended, the date the execution stopped.</p>
         pub fn set_stop_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.stop_date = input;
             self
@@ -1248,7 +1248,7 @@ pub struct ActivityListItem {
     /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The date the activity is created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ActivityListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
@@ -1282,7 +1282,7 @@ impl ActivityListItem {
         self.name.as_deref()
     }
     /// <p>The date the activity is created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -1303,7 +1303,7 @@ pub mod activity_list_item {
     pub struct Builder {
         pub(crate) activity_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
@@ -1371,14 +1371,14 @@ pub mod activity_list_item {
             self
         }
         /// <p>The date the activity is created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date the activity is created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -1405,7 +1405,7 @@ impl ActivityListItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HistoryEvent {
     /// <p>The date and time the event occurred.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of the event.</p>
     pub r#type: std::option::Option<crate::model::HistoryEventType>,
     /// <p>The id of the event. Events are numbered sequentially, starting at one.</p>
@@ -1506,7 +1506,7 @@ pub struct HistoryEvent {
 }
 impl HistoryEvent {
     /// <p>The date and time the event occurred.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The type of the event.</p>
@@ -1858,7 +1858,7 @@ pub mod history_event {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) r#type: std::option::Option<crate::model::HistoryEventType>,
         pub(crate) id: std::option::Option<i64>,
         pub(crate) previous_event_id: std::option::Option<i64>,
@@ -1929,14 +1929,14 @@ pub mod history_event {
     }
     impl Builder {
         /// <p>The date and time the event occurred.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The date and time the event occurred.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self

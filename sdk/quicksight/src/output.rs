@@ -11253,7 +11253,7 @@ pub struct DeleteAnalysisOutput {
     /// <p>The ID of the deleted analysis.</p>
     pub analysis_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the analysis is scheduled to be deleted.</p>
-    pub deletion_time: std::option::Option<aws_smithy_types::Instant>,
+    pub deletion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
@@ -11271,7 +11271,7 @@ impl DeleteAnalysisOutput {
         self.analysis_id.as_deref()
     }
     /// <p>The date and time that the analysis is scheduled to be deleted.</p>
-    pub fn deletion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn deletion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deletion_time.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -11299,7 +11299,7 @@ pub mod delete_analysis_output {
         pub(crate) status: std::option::Option<i32>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) analysis_id: std::option::Option<std::string::String>,
-        pub(crate) deletion_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) deletion_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -11334,14 +11334,14 @@ pub mod delete_analysis_output {
             self
         }
         /// <p>The date and time that the analysis is scheduled to be deleted.</p>
-        pub fn deletion_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn deletion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deletion_time = Some(input);
             self
         }
         /// <p>The date and time that the analysis is scheduled to be deleted.</p>
         pub fn set_deletion_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.deletion_time = input;
             self

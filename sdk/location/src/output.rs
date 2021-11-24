@@ -278,10 +278,10 @@ pub struct GetDevicePositionOutput {
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub sample_time: std::option::Option<aws_smithy_types::Instant>,
+    pub sample_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub received_time: std::option::Option<aws_smithy_types::Instant>,
+    pub received_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last known device position.</p>
     pub position: std::option::Option<std::vec::Vec<f64>>,
 }
@@ -292,12 +292,12 @@ impl GetDevicePositionOutput {
     }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.sample_time.as_ref()
     }
     /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn received_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn received_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.received_time.as_ref()
     }
     /// <p>The last known device position.</p>
@@ -322,8 +322,8 @@ pub mod get_device_position_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
-        pub(crate) sample_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) received_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) sample_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) received_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) position: std::option::Option<std::vec::Vec<f64>>,
     }
     impl Builder {
@@ -339,7 +339,7 @@ pub mod get_device_position_output {
         }
         /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn sample_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn sample_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.sample_time = Some(input);
             self
         }
@@ -347,14 +347,14 @@ pub mod get_device_position_output {
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_sample_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.sample_time = input;
             self
         }
         /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn received_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn received_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.received_time = Some(input);
             self
         }
@@ -362,7 +362,7 @@ pub mod get_device_position_output {
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_received_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.received_time = input;
             self
@@ -816,7 +816,7 @@ pub struct CreateTrackerOutput {
     pub tracker_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateTrackerOutput {
     /// <p>The name of the tracker resource.</p>
@@ -837,7 +837,7 @@ impl CreateTrackerOutput {
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
@@ -858,7 +858,7 @@ pub mod create_tracker_output {
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
         pub(crate) tracker_arn: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the tracker resource.</p>
@@ -899,7 +899,7 @@ pub mod create_tracker_output {
         }
         /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -907,7 +907,7 @@ pub mod create_tracker_output {
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
@@ -976,7 +976,7 @@ pub struct UpdateTrackerOutput {
     pub tracker_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateTrackerOutput {
     /// <p>The name of the updated tracker resource.</p>
@@ -996,7 +996,7 @@ impl UpdateTrackerOutput {
     }
     /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -1017,7 +1017,7 @@ pub mod update_tracker_output {
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
         pub(crate) tracker_arn: std::option::Option<std::string::String>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the updated tracker resource.</p>
@@ -1056,7 +1056,7 @@ pub mod update_tracker_output {
         }
         /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
@@ -1064,7 +1064,7 @@ pub mod update_tracker_output {
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self
@@ -1114,10 +1114,10 @@ pub struct DescribeTrackerOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a> assigned to the Amazon Location resource.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The position filtering method of the tracker resource.</p>
@@ -1162,12 +1162,12 @@ impl DescribeTrackerOutput {
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a> assigned to the Amazon Location resource.</p>
@@ -1209,8 +1209,8 @@ pub mod describe_tracker_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) position_filtering: std::option::Option<crate::model::PositionFiltering>,
     }
@@ -1316,7 +1316,7 @@ pub mod describe_tracker_output {
         }
         /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -1324,14 +1324,14 @@ pub mod describe_tracker_output {
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
@@ -1339,7 +1339,7 @@ pub mod describe_tracker_output {
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self
@@ -1713,7 +1713,7 @@ pub struct CreateRouteCalculatorOutput {
     /// </p>
     /// </li>
     /// </ul>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateRouteCalculatorOutput {
     /// <p>The name of the route calculator resource. </p>
@@ -1745,7 +1745,7 @@ impl CreateRouteCalculatorOutput {
     /// </p>
     /// </li>
     /// </ul>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
@@ -1766,7 +1766,7 @@ pub mod create_route_calculator_output {
     pub struct Builder {
         pub(crate) calculator_name: std::option::Option<std::string::String>,
         pub(crate) calculator_arn: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the route calculator resource. </p>
@@ -1829,7 +1829,7 @@ pub mod create_route_calculator_output {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -1843,7 +1843,7 @@ pub mod create_route_calculator_output {
         /// </ul>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
@@ -1913,7 +1913,7 @@ pub struct UpdateRouteCalculatorOutput {
     pub calculator_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateRouteCalculatorOutput {
     /// <p>The name of the updated route calculator resource.</p>
@@ -1934,7 +1934,7 @@ impl UpdateRouteCalculatorOutput {
     }
     /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -1955,7 +1955,7 @@ pub mod update_route_calculator_output {
     pub struct Builder {
         pub(crate) calculator_name: std::option::Option<std::string::String>,
         pub(crate) calculator_arn: std::option::Option<std::string::String>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the updated route calculator resource.</p>
@@ -2002,7 +2002,7 @@ pub mod update_route_calculator_output {
         }
         /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
@@ -2010,7 +2010,7 @@ pub mod update_route_calculator_output {
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self
@@ -2061,7 +2061,7 @@ pub struct DescribeRouteCalculatorOutput {
     /// </p>
     /// </li>
     /// </ul>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// <ul>
@@ -2070,7 +2070,7 @@ pub struct DescribeRouteCalculatorOutput {
     /// </p>
     /// </li>
     /// </ul>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The data provider of traffic and road network data. Indicates one of the available
     /// providers:</p>
     /// <ul>
@@ -2125,7 +2125,7 @@ impl DescribeRouteCalculatorOutput {
     /// </p>
     /// </li>
     /// </ul>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
@@ -2136,7 +2136,7 @@ impl DescribeRouteCalculatorOutput {
     /// </p>
     /// </li>
     /// </ul>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The data provider of traffic and road network data. Indicates one of the available
@@ -2189,8 +2189,8 @@ pub mod describe_route_calculator_output {
         pub(crate) calculator_arn: std::option::Option<std::string::String>,
         pub(crate) pricing_plan: std::option::Option<crate::model::PricingPlan>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_source: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -2272,7 +2272,7 @@ pub mod describe_route_calculator_output {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -2286,7 +2286,7 @@ pub mod describe_route_calculator_output {
         /// </ul>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
@@ -2299,7 +2299,7 @@ pub mod describe_route_calculator_output {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
@@ -2313,7 +2313,7 @@ pub mod describe_route_calculator_output {
         /// </ul>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self
@@ -2407,22 +2407,26 @@ impl DescribeRouteCalculatorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForTextOutput {
-    /// <p>Contains a summary of the request. Contains the <code>BiasPosition</code>,
-    /// <code>DataSource</code>, <code>FilterBBox</code>, <code>FilterCountries</code>,
-    /// <code>MaxResults</code>, <code>ResultBBox</code>, and <code>Text</code>.</p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>,
+    /// <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
+    /// and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and
+    /// the bounding box, <code>ResultBBox</code>, which surrounds the search results.
+    /// </p>
     pub summary: std::option::Option<crate::model::SearchPlaceIndexForTextSummary>,
-    /// <p>A list of Places closest to the specified position. Each result contains additional
+    /// <p>A list of Places matching the input text. Each result contains additional
     /// information about the specific point of interest. </p>
     pub results: std::option::Option<std::vec::Vec<crate::model::SearchForTextResult>>,
 }
 impl SearchPlaceIndexForTextOutput {
-    /// <p>Contains a summary of the request. Contains the <code>BiasPosition</code>,
-    /// <code>DataSource</code>, <code>FilterBBox</code>, <code>FilterCountries</code>,
-    /// <code>MaxResults</code>, <code>ResultBBox</code>, and <code>Text</code>.</p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>,
+    /// <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
+    /// and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and
+    /// the bounding box, <code>ResultBBox</code>, which surrounds the search results.
+    /// </p>
     pub fn summary(&self) -> std::option::Option<&crate::model::SearchPlaceIndexForTextSummary> {
         self.summary.as_ref()
     }
-    /// <p>A list of Places closest to the specified position. Each result contains additional
+    /// <p>A list of Places matching the input text. Each result contains additional
     /// information about the specific point of interest. </p>
     pub fn results(&self) -> std::option::Option<&[crate::model::SearchForTextResult]> {
         self.results.as_deref()
@@ -2446,16 +2450,20 @@ pub mod search_place_index_for_text_output {
         pub(crate) results: std::option::Option<std::vec::Vec<crate::model::SearchForTextResult>>,
     }
     impl Builder {
-        /// <p>Contains a summary of the request. Contains the <code>BiasPosition</code>,
-        /// <code>DataSource</code>, <code>FilterBBox</code>, <code>FilterCountries</code>,
-        /// <code>MaxResults</code>, <code>ResultBBox</code>, and <code>Text</code>.</p>
+        /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>,
+        /// <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
+        /// and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and
+        /// the bounding box, <code>ResultBBox</code>, which surrounds the search results.
+        /// </p>
         pub fn summary(mut self, input: crate::model::SearchPlaceIndexForTextSummary) -> Self {
             self.summary = Some(input);
             self
         }
-        /// <p>Contains a summary of the request. Contains the <code>BiasPosition</code>,
-        /// <code>DataSource</code>, <code>FilterBBox</code>, <code>FilterCountries</code>,
-        /// <code>MaxResults</code>, <code>ResultBBox</code>, and <code>Text</code>.</p>
+        /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>,
+        /// <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
+        /// and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and
+        /// the bounding box, <code>ResultBBox</code>, which surrounds the search results.
+        /// </p>
         pub fn set_summary(
             mut self,
             input: std::option::Option<crate::model::SearchPlaceIndexForTextSummary>,
@@ -2467,7 +2475,7 @@ pub mod search_place_index_for_text_output {
         ///
         /// To override the contents of this collection use [`set_results`](Self::set_results).
         ///
-        /// <p>A list of Places closest to the specified position. Each result contains additional
+        /// <p>A list of Places matching the input text. Each result contains additional
         /// information about the specific point of interest. </p>
         pub fn results(mut self, input: impl Into<crate::model::SearchForTextResult>) -> Self {
             let mut v = self.results.unwrap_or_default();
@@ -2475,7 +2483,7 @@ pub mod search_place_index_for_text_output {
             self.results = Some(v);
             self
         }
-        /// <p>A list of Places closest to the specified position. Each result contains additional
+        /// <p>A list of Places matching the input text. Each result contains additional
         /// information about the specific point of interest. </p>
         pub fn set_results(
             mut self,
@@ -2504,14 +2512,18 @@ impl SearchPlaceIndexForTextOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForPositionOutput {
-    /// <p>Contains a summary of the request.</p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>,
+    /// <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index.
+    /// </p>
     pub summary: std::option::Option<crate::model::SearchPlaceIndexForPositionSummary>,
     /// <p>Returns a list of Places closest to the specified position. Each result contains
     /// additional information about the Places returned.</p>
     pub results: std::option::Option<std::vec::Vec<crate::model::SearchForPositionResult>>,
 }
 impl SearchPlaceIndexForPositionOutput {
-    /// <p>Contains a summary of the request.</p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>,
+    /// <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index.
+    /// </p>
     pub fn summary(
         &self,
     ) -> std::option::Option<&crate::model::SearchPlaceIndexForPositionSummary> {
@@ -2542,12 +2554,16 @@ pub mod search_place_index_for_position_output {
             std::option::Option<std::vec::Vec<crate::model::SearchForPositionResult>>,
     }
     impl Builder {
-        /// <p>Contains a summary of the request.</p>
+        /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>,
+        /// <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index.
+        /// </p>
         pub fn summary(mut self, input: crate::model::SearchPlaceIndexForPositionSummary) -> Self {
             self.summary = Some(input);
             self
         }
-        /// <p>Contains a summary of the request.</p>
+        /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>,
+        /// <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index.
+        /// </p>
         pub fn set_summary(
             mut self,
             input: std::option::Option<crate::model::SearchPlaceIndexForPositionSummary>,
@@ -2598,8 +2614,8 @@ impl SearchPlaceIndexForPositionOutput {
 pub struct ListPlaceIndexesOutput {
     /// <p>Lists the place index resources that exist in your AWS account</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::ListPlaceIndexesResponseEntry>>,
-    /// <p>A pagination token indicating there are additional pages available. You can use the
-    /// token in a following request to fetch the next set of results.</p>
+    /// <p>A pagination token indicating that there are additional pages available. You can use the
+    /// token in a new request to fetch the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPlaceIndexesOutput {
@@ -2607,8 +2623,8 @@ impl ListPlaceIndexesOutput {
     pub fn entries(&self) -> std::option::Option<&[crate::model::ListPlaceIndexesResponseEntry]> {
         self.entries.as_deref()
     }
-    /// <p>A pagination token indicating there are additional pages available. You can use the
-    /// token in a following request to fetch the next set of results.</p>
+    /// <p>A pagination token indicating that there are additional pages available. You can use the
+    /// token in a new request to fetch the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2654,14 +2670,14 @@ pub mod list_place_indexes_output {
             self.entries = input;
             self
         }
-        /// <p>A pagination token indicating there are additional pages available. You can use the
-        /// token in a following request to fetch the next set of results.</p>
+        /// <p>A pagination token indicating that there are additional pages available. You can use the
+        /// token in a new request to fetch the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token indicating there are additional pages available. You can use the
-        /// token in a following request to fetch the next set of results.</p>
+        /// <p>A pagination token indicating that there are additional pages available. You can use the
+        /// token in a new request to fetch the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2700,7 +2716,7 @@ pub struct CreatePlaceIndexOutput {
     pub index_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
     /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreatePlaceIndexOutput {
     /// <p>The name for the place index resource.</p>
@@ -2721,7 +2737,7 @@ impl CreatePlaceIndexOutput {
     }
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
     /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
@@ -2742,7 +2758,7 @@ pub mod create_place_index_output {
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
         pub(crate) index_arn: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name for the place index resource.</p>
@@ -2783,7 +2799,7 @@ pub mod create_place_index_output {
         }
         /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
         /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -2791,7 +2807,7 @@ pub mod create_place_index_output {
         /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
@@ -2861,7 +2877,7 @@ pub struct UpdatePlaceIndexOutput {
     pub index_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format:
     /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdatePlaceIndexOutput {
     /// <p>The name of the updated place index resource.</p>
@@ -2882,7 +2898,7 @@ impl UpdatePlaceIndexOutput {
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format:
     /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -2903,7 +2919,7 @@ pub mod update_place_index_output {
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
         pub(crate) index_arn: std::option::Option<std::string::String>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the updated place index resource.</p>
@@ -2944,7 +2960,7 @@ pub mod update_place_index_output {
         }
         /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format:
         /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
@@ -2952,7 +2968,7 @@ pub mod update_place_index_output {
         /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self
@@ -2997,11 +3013,11 @@ pub struct DescribePlaceIndexOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
     /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
     /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
-    /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -3014,7 +3030,7 @@ pub struct DescribePlaceIndexOutput {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: std::option::Option<std::string::String>,
     /// <p>The specified data storage option for requesting Places.</p>
     pub data_source_configuration: std::option::Option<crate::model::DataSourceConfiguration>,
@@ -3050,15 +3066,15 @@ impl DescribePlaceIndexOutput {
     }
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
     /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
     /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
-    /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+    /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -3071,7 +3087,7 @@ impl DescribePlaceIndexOutput {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn data_source(&self) -> std::option::Option<&str> {
         self.data_source.as_deref()
     }
@@ -3114,8 +3130,8 @@ pub mod describe_place_index_output {
         pub(crate) index_arn: std::option::Option<std::string::String>,
         pub(crate) pricing_plan: std::option::Option<crate::model::PricingPlan>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_source: std::option::Option<std::string::String>,
         pub(crate) data_source_configuration:
             std::option::Option<crate::model::DataSourceConfiguration>,
@@ -3187,7 +3203,7 @@ pub mod describe_place_index_output {
         }
         /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
         /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -3195,14 +3211,14 @@ pub mod describe_place_index_output {
         /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
         /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
@@ -3210,12 +3226,12 @@ pub mod describe_place_index_output {
         /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self
         }
-        /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+        /// <p>The data provider of geospatial data. Values can be one of the following:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -3228,12 +3244,12 @@ pub mod describe_place_index_output {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+        /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
         }
-        /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+        /// <p>The data provider of geospatial data. Values can be one of the following:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -3246,7 +3262,7 @@ pub mod describe_place_index_output {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+        /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_source = input;
             self
@@ -3723,7 +3739,7 @@ pub struct CreateMapOutput {
     pub map_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateMapOutput {
     /// <p>The name of the map resource.</p>
@@ -3744,7 +3760,7 @@ impl CreateMapOutput {
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
@@ -3765,7 +3781,7 @@ pub mod create_map_output {
     pub struct Builder {
         pub(crate) map_name: std::option::Option<std::string::String>,
         pub(crate) map_arn: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the map resource.</p>
@@ -3806,7 +3822,7 @@ pub mod create_map_output {
         }
         /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -3814,7 +3830,7 @@ pub mod create_map_output {
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
@@ -3883,7 +3899,7 @@ pub struct UpdateMapOutput {
     pub map_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateMapOutput {
     /// <p>The name of the updated map resource.</p>
@@ -3903,7 +3919,7 @@ impl UpdateMapOutput {
     }
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -3924,7 +3940,7 @@ pub mod update_map_output {
     pub struct Builder {
         pub(crate) map_name: std::option::Option<std::string::String>,
         pub(crate) map_arn: std::option::Option<std::string::String>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the updated map resource.</p>
@@ -3963,7 +3979,7 @@ pub mod update_map_output {
         }
         /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
@@ -3971,7 +3987,7 @@ pub mod update_map_output {
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self
@@ -4024,10 +4040,10 @@ pub struct DescribeMapOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeMapOutput {
     /// <p>The map style selected from an available provider.</p>
@@ -4073,12 +4089,12 @@ impl DescribeMapOutput {
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -4112,8 +4128,8 @@ pub mod describe_map_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The map style selected from an available provider.</p>
@@ -4229,7 +4245,7 @@ pub mod describe_map_output {
         }
         /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -4237,14 +4253,14 @@ pub mod describe_map_output {
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
@@ -4252,7 +4268,7 @@ pub mod describe_map_output {
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self
@@ -4289,11 +4305,11 @@ pub struct PutGeofenceOutput {
     /// <p>The timestamp for when the geofence was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PutGeofenceOutput {
     /// <p>The geofence identifier entered in the request.</p>
@@ -4303,13 +4319,13 @@ impl PutGeofenceOutput {
     /// <p>The timestamp for when the geofence was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -4329,8 +4345,8 @@ pub mod put_geofence_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The geofence identifier entered in the request.</p>
@@ -4346,7 +4362,7 @@ pub mod put_geofence_output {
         /// <p>The timestamp for when the geofence was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -4355,7 +4371,7 @@ pub mod put_geofence_output {
         /// </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
@@ -4363,7 +4379,7 @@ pub mod put_geofence_output {
         /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
@@ -4372,7 +4388,7 @@ pub mod put_geofence_output {
         /// </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self
@@ -4522,11 +4538,11 @@ pub struct GetGeofenceOutput {
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetGeofenceOutput {
     /// <p>The geofence identifier.</p>
@@ -4569,13 +4585,13 @@ impl GetGeofenceOutput {
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -4599,8 +4615,8 @@ pub mod get_geofence_output {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
         pub(crate) geometry: std::option::Option<crate::model::GeofenceGeometry>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The geofence identifier.</p>
@@ -4689,7 +4705,7 @@ pub mod get_geofence_output {
         /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -4698,7 +4714,7 @@ pub mod get_geofence_output {
         /// </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
@@ -4706,7 +4722,7 @@ pub mod get_geofence_output {
         /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
@@ -4715,7 +4731,7 @@ pub mod get_geofence_output {
         /// </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self
@@ -5087,7 +5103,7 @@ pub struct CreateGeofenceCollectionOutput {
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateGeofenceCollectionOutput {
     /// <p>The name for the geofence collection.</p>
@@ -5109,7 +5125,7 @@ impl CreateGeofenceCollectionOutput {
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
@@ -5130,7 +5146,7 @@ pub mod create_geofence_collection_output {
     pub struct Builder {
         pub(crate) collection_name: std::option::Option<std::string::String>,
         pub(crate) collection_arn: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name for the geofence collection.</p>
@@ -5178,7 +5194,7 @@ pub mod create_geofence_collection_output {
         /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -5187,7 +5203,7 @@ pub mod create_geofence_collection_output {
         /// </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
@@ -5258,7 +5274,7 @@ pub struct UpdateGeofenceCollectionOutput {
     /// <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateGeofenceCollectionOutput {
     /// <p>The name of the updated geofence collection.</p>
@@ -5280,7 +5296,7 @@ impl UpdateGeofenceCollectionOutput {
     /// <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -5301,7 +5317,7 @@ pub mod update_geofence_collection_output {
     pub struct Builder {
         pub(crate) collection_name: std::option::Option<std::string::String>,
         pub(crate) collection_arn: std::option::Option<std::string::String>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the updated geofence collection.</p>
@@ -5349,7 +5365,7 @@ pub mod update_geofence_collection_output {
         /// <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
@@ -5358,7 +5374,7 @@ pub mod update_geofence_collection_output {
         /// </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self
@@ -5412,11 +5428,11 @@ pub struct DescribeGeofenceCollectionOutput {
     /// <p>The timestamp for when the geofence resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeGeofenceCollectionOutput {
     /// <p>The name of the geofence collection.</p>
@@ -5463,13 +5479,13 @@ impl DescribeGeofenceCollectionOutput {
     /// <p>The timestamp for when the geofence resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -5503,8 +5519,8 @@ pub mod describe_geofence_collection_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the geofence collection.</p>
@@ -5627,7 +5643,7 @@ pub mod describe_geofence_collection_output {
         /// <p>The timestamp for when the geofence resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
@@ -5636,7 +5652,7 @@ pub mod describe_geofence_collection_output {
         /// </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
@@ -5644,7 +5660,7 @@ pub mod describe_geofence_collection_output {
         /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
@@ -5653,7 +5669,7 @@ pub mod describe_geofence_collection_output {
         /// </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self

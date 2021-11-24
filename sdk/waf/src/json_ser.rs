@@ -1299,12 +1299,12 @@ pub fn serialize_structure_crate_model_time_window(
     if let Some(var_206) = &input.start_time {
         object
             .key("StartTime")
-            .instant(var_206, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_206, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_207) = &input.end_time {
         object
             .key("EndTime")
-            .instant(var_207, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_207, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

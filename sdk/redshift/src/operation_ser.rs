@@ -903,12 +903,12 @@ pub fn serialize_operation_crate_operation_create_scheduled_action(
     #[allow(unused_mut)]
     let mut scope_266 = writer.prefix("StartTime");
     if let Some(var_267) = &input.start_time {
-        scope_266.instant(var_267, aws_smithy_types::instant::Format::DateTime);
+        scope_266.date_time(var_267, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_268 = writer.prefix("EndTime");
     if let Some(var_269) = &input.end_time {
-        scope_268.instant(var_269, aws_smithy_types::instant::Format::DateTime);
+        scope_268.date_time(var_269, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_270 = writer.prefix("Enable");
@@ -1693,12 +1693,12 @@ pub fn serialize_operation_crate_operation_describe_cluster_snapshots(
     #[allow(unused_mut)]
     let mut scope_451 = writer.prefix("StartTime");
     if let Some(var_452) = &input.start_time {
-        scope_451.instant(var_452, aws_smithy_types::instant::Format::DateTime);
+        scope_451.date_time(var_452, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_453 = writer.prefix("EndTime");
     if let Some(var_454) = &input.end_time {
-        scope_453.instant(var_454, aws_smithy_types::instant::Format::DateTime);
+        scope_453.date_time(var_454, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_455 = writer.prefix("MaxRecords");
@@ -2123,12 +2123,12 @@ pub fn serialize_operation_crate_operation_describe_events(
     #[allow(unused_mut)]
     let mut scope_564 = writer.prefix("StartTime");
     if let Some(var_565) = &input.start_time {
-        scope_564.instant(var_565, aws_smithy_types::instant::Format::DateTime);
+        scope_564.date_time(var_565, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_566 = writer.prefix("EndTime");
     if let Some(var_567) = &input.end_time {
-        scope_566.instant(var_567, aws_smithy_types::instant::Format::DateTime);
+        scope_566.date_time(var_567, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_568 = writer.prefix("Duration");
@@ -2544,12 +2544,12 @@ pub fn serialize_operation_crate_operation_describe_scheduled_actions(
     #[allow(unused_mut)]
     let mut scope_675 = writer.prefix("StartTime");
     if let Some(var_676) = &input.start_time {
-        scope_675.instant(var_676, aws_smithy_types::instant::Format::DateTime);
+        scope_675.date_time(var_676, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_677 = writer.prefix("EndTime");
     if let Some(var_678) = &input.end_time {
-        scope_677.instant(var_678, aws_smithy_types::instant::Format::DateTime);
+        scope_677.date_time(var_678, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_679 = writer.prefix("Active");
@@ -3345,12 +3345,12 @@ pub fn serialize_operation_crate_operation_modify_cluster_maintenance(
     #[allow(unused_mut)]
     let mut scope_903 = writer.prefix("DeferMaintenanceStartTime");
     if let Some(var_904) = &input.defer_maintenance_start_time {
-        scope_903.instant(var_904, aws_smithy_types::instant::Format::DateTime);
+        scope_903.date_time(var_904, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_905 = writer.prefix("DeferMaintenanceEndTime");
     if let Some(var_906) = &input.defer_maintenance_end_time {
-        scope_905.instant(var_906, aws_smithy_types::instant::Format::DateTime);
+        scope_905.date_time(var_906, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_907 = writer.prefix("DeferMaintenanceDuration");
@@ -3600,12 +3600,12 @@ pub fn serialize_operation_crate_operation_modify_scheduled_action(
     #[allow(unused_mut)]
     let mut scope_973 = writer.prefix("StartTime");
     if let Some(var_974) = &input.start_time {
-        scope_973.instant(var_974, aws_smithy_types::instant::Format::DateTime);
+        scope_973.date_time(var_974, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_975 = writer.prefix("EndTime");
     if let Some(var_976) = &input.end_time {
-        scope_975.instant(var_976, aws_smithy_types::instant::Format::DateTime);
+        scope_975.date_time(var_976, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_977 = writer.prefix("Enable");

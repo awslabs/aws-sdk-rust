@@ -1737,7 +1737,7 @@ pub struct GetBucketOutput {
     /// <p></p>
     pub public_access_block_enabled: bool,
     /// <p>The creation date of the Outposts bucket.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetBucketOutput {
     /// <p>The Outposts bucket requested.</p>
@@ -1749,7 +1749,7 @@ impl GetBucketOutput {
         self.public_access_block_enabled
     }
     /// <p>The creation date of the Outposts bucket.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -1773,7 +1773,7 @@ pub mod get_bucket_output {
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) public_access_block_enabled: std::option::Option<bool>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Outposts bucket requested.</p>
@@ -1797,14 +1797,14 @@ pub mod get_bucket_output {
             self
         }
         /// <p>The creation date of the Outposts bucket.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The creation date of the Outposts bucket.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -2071,7 +2071,7 @@ pub struct GetAccessPointForObjectLambdaOutput {
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetAccessPointForObjectLambdaOutput {
     /// <p>The name of the Object Lambda Access Point.</p>
@@ -2085,7 +2085,7 @@ impl GetAccessPointForObjectLambdaOutput {
         self.public_access_block_configuration.as_ref()
     }
     /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -2110,7 +2110,7 @@ pub mod get_access_point_for_object_lambda_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) public_access_block_configuration:
             std::option::Option<crate::model::PublicAccessBlockConfiguration>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the Object Lambda Access Point.</p>
@@ -2140,14 +2140,14 @@ pub mod get_access_point_for_object_lambda_output {
             self
         }
         /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -2255,7 +2255,7 @@ pub struct GetAccessPointOutput {
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     /// <p>The date and time when the specified access point was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name or alias of the access point.</p>
     pub alias: std::option::Option<std::string::String>,
     /// <p>The ARN of the access point.</p>
@@ -2300,7 +2300,7 @@ impl GetAccessPointOutput {
         self.public_access_block_configuration.as_ref()
     }
     /// <p>The date and time when the specified access point was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The name or alias of the access point.</p>
@@ -2349,7 +2349,7 @@ pub mod get_access_point_output {
         pub(crate) vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
         pub(crate) public_access_block_configuration:
             std::option::Option<crate::model::PublicAccessBlockConfiguration>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) alias: std::option::Option<std::string::String>,
         pub(crate) access_point_arn: std::option::Option<std::string::String>,
         pub(crate) endpoints: std::option::Option<
@@ -2444,14 +2444,14 @@ pub mod get_access_point_output {
             self
         }
         /// <p>The date and time when the specified access point was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date and time when the specified access point was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self

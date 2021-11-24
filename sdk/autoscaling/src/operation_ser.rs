@@ -1177,12 +1177,12 @@ pub fn serialize_operation_crate_operation_describe_scheduled_actions(
     #[allow(unused_mut)]
     let mut scope_306 = writer.prefix("StartTime");
     if let Some(var_307) = &input.start_time {
-        scope_306.instant(var_307, aws_smithy_types::instant::Format::DateTime);
+        scope_306.date_time(var_307, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_308 = writer.prefix("EndTime");
     if let Some(var_309) = &input.end_time {
-        scope_308.instant(var_309, aws_smithy_types::instant::Format::DateTime);
+        scope_308.date_time(var_309, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_310 = writer.prefix("NextToken");
@@ -1543,12 +1543,12 @@ pub fn serialize_operation_crate_operation_get_predictive_scaling_forecast(
     #[allow(unused_mut)]
     let mut scope_398 = writer.prefix("StartTime");
     if let Some(var_399) = &input.start_time {
-        scope_398.instant(var_399, aws_smithy_types::instant::Format::DateTime);
+        scope_398.date_time(var_399, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_400 = writer.prefix("EndTime");
     if let Some(var_401) = &input.end_time {
-        scope_400.instant(var_401, aws_smithy_types::instant::Format::DateTime);
+        scope_400.date_time(var_401, aws_smithy_types::date_time::Format::DateTime)?;
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -1764,17 +1764,17 @@ pub fn serialize_operation_crate_operation_put_scheduled_update_group_action(
     #[allow(unused_mut)]
     let mut scope_462 = writer.prefix("Time");
     if let Some(var_463) = &input.time {
-        scope_462.instant(var_463, aws_smithy_types::instant::Format::DateTime);
+        scope_462.date_time(var_463, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_464 = writer.prefix("StartTime");
     if let Some(var_465) = &input.start_time {
-        scope_464.instant(var_465, aws_smithy_types::instant::Format::DateTime);
+        scope_464.date_time(var_465, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_466 = writer.prefix("EndTime");
     if let Some(var_467) = &input.end_time {
-        scope_466.instant(var_467, aws_smithy_types::instant::Format::DateTime);
+        scope_466.date_time(var_467, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_468 = writer.prefix("Recurrence");

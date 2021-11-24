@@ -27,6 +27,7 @@ use aws_smithy_http_tower::map_request::{
     AsyncMapRequestLayer, AsyncMapRequestService, MapRequestLayer, MapRequestService,
 };
 use aws_smithy_types::retry::{ErrorKind, RetryKind};
+use aws_smithy_types::timeout::TimeoutConfig;
 use aws_types::os_shim_internal::{Env, Fs};
 use bytes::Bytes;
 use http::uri::InvalidUri;
@@ -39,9 +40,6 @@ use crate::provider_config::{HttpSettings, ProviderConfig};
 use crate::{profile, PKG_VERSION};
 use tokio::sync::OnceCell;
 
-const USER_AGENT: AwsUserAgent =
-    AwsUserAgent::new_from_environment(ApiMetadata::new("imds", PKG_VERSION));
-
 mod token;
 
 // 6 hours
@@ -49,6 +47,10 @@ const DEFAULT_TOKEN_TTL: Duration = Duration::from_secs(21_600);
 const DEFAULT_ATTEMPTS: u32 = 4;
 const DEFAULT_CONNECT_TIMEOUT: Duration = Duration::from_secs(1);
 const DEFAULT_READ_TIMEOUT: Duration = Duration::from_secs(1);
+
+fn user_agent() -> AwsUserAgent {
+    AwsUserAgent::new_from_environment(Env::real(), ApiMetadata::new("imds", PKG_VERSION))
+}
 
 /// IMDSv2 Client
 ///
@@ -185,6 +187,7 @@ impl Client {
                 Ok(token_failure) => *token_failure,
                 Err(other) => ImdsError::Unexpected(other),
             },
+            SdkError::TimeoutError(err) => ImdsError::IoError(err),
             SdkError::DispatchFailure(err) => ImdsError::IoError(err.into()),
             SdkError::ResponseError { err, .. } => ImdsError::IoError(err),
             SdkError::ServiceError {
@@ -215,7 +218,7 @@ impl Client {
             .body(SdkBody::empty())
             .expect("valid request");
         let mut request = operation::Request::new(request);
-        request.properties_mut().insert(USER_AGENT);
+        request.properties_mut().insert(user_agent());
         Ok(Operation::new(request, ImdsGetResponseHandler)
             .with_metadata(Metadata::new("get", "imds"))
             .with_retry_policy(ImdsErrorPolicy))
@@ -257,7 +260,7 @@ impl Display for ImdsError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
             ImdsError::FailedToLoadToken(inner) => {
-                write!(f, "failed to load session token: {}", inner)
+                write!(f, "Failed to load session token: {}", inner)
             }
             ImdsError::InvalidPath => write!(
                 f,
@@ -542,19 +545,22 @@ impl Builder {
         let endpoint = Endpoint::immutable(endpoint);
         let retry_config = retry::Config::default()
             .with_max_attempts(self.max_attempts.unwrap_or(DEFAULT_ATTEMPTS));
+        let timeout_config = TimeoutConfig::default();
         let token_loader = token::TokenMiddleware::new(
             connector.clone(),
             config.time_source(),
             endpoint.clone(),
             self.token_ttl.unwrap_or(DEFAULT_TOKEN_TTL),
             retry_config.clone(),
+            timeout_config.clone(),
         );
         let middleware = ImdsMiddleware { token_loader };
         let inner_client = aws_smithy_client::Builder::new()
             .connector(connector.clone())
             .middleware(middleware)
             .build()
-            .with_retry_config(retry_config);
+            .with_retry_config(retry_config)
+            .with_timeout_config(timeout_config);
         let client = Client {
             endpoint,
             inner: inner_client,

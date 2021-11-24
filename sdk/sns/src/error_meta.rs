@@ -5,22 +5,29 @@
 pub enum Error {
     /// <p>Indicates that the user has been denied access to the requested resource.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    /// <p>Two or more batch entries in the request have the same <code>Id</code>.</p>
+    BatchEntryIdsNotDistinctException(crate::error::BatchEntryIdsNotDistinctException),
+    /// <p>The length of all the batch messages put together is more than the limit.</p>
+    BatchRequestTooLongException(crate::error::BatchRequestTooLongException),
     /// <p>Can't perform multiple operations on a tag simultaneously. Perform the operations
     /// sequentially.</p>
     ConcurrentAccessException(crate::error::ConcurrentAccessException),
+    /// <p>The batch request doesn't contain any entries.</p>
+    EmptyBatchRequestException(crate::error::EmptyBatchRequestException),
     /// <p>Exception error indicating endpoint disabled.</p>
     EndpointDisabledException(crate::error::EndpointDisabledException),
-    /// <p>Indicates that the number of filter polices in your account exceeds the limit. To
-    /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services Support
+    /// <p>Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To
+    /// add more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support
     /// Center.</p>
     FilterPolicyLimitExceededException(crate::error::FilterPolicyLimitExceededException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
+    /// <p>The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification. </p>
+    InvalidBatchEntryIdException(crate::error::InvalidBatchEntryIdException),
     /// <p>Indicates that a request parameter does not comply with the associated
     /// constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your
     /// request using Signature Version 4.</p>
@@ -49,7 +56,7 @@ pub enum Error {
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>Indicates that the specified phone number opted out of receiving SMS messages from
-    /// your account. You can't send SMS messages to phone numbers that opt out.</p>
+    /// your Amazon Web Services account. You can't send SMS messages to phone numbers that opt out.</p>
     OptedOutException(crate::error::OptedOutException),
     /// <p>Exception error indicating platform application disabled.</p>
     PlatformApplicationDisabledException(crate::error::PlatformApplicationDisabledException),
@@ -67,9 +74,10 @@ pub enum Error {
     /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then
     /// retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
-    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds
-    /// the limit for your account.</p>
+    /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
+    /// <p>The batch request contains more entries than permissible.</p>
+    TooManyEntriesInBatchRequestException(crate::error::TooManyEntriesInBatchRequestException),
     /// <p>Indicates that the customer already owns the maximum allowed number of topics.</p>
     TopicLimitExceededException(crate::error::TopicLimitExceededException),
     /// <p>Indicates that a request parameter does not comply with the associated
@@ -86,10 +94,14 @@ impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AuthorizationErrorException(inner) => inner.fmt(f),
+            Error::BatchEntryIdsNotDistinctException(inner) => inner.fmt(f),
+            Error::BatchRequestTooLongException(inner) => inner.fmt(f),
             Error::ConcurrentAccessException(inner) => inner.fmt(f),
+            Error::EmptyBatchRequestException(inner) => inner.fmt(f),
             Error::EndpointDisabledException(inner) => inner.fmt(f),
             Error::FilterPolicyLimitExceededException(inner) => inner.fmt(f),
             Error::InternalErrorException(inner) => inner.fmt(f),
+            Error::InvalidBatchEntryIdException(inner) => inner.fmt(f),
             Error::InvalidParameterException(inner) => inner.fmt(f),
             Error::InvalidParameterValueException(inner) => inner.fmt(f),
             Error::InvalidSecurityException(inner) => inner.fmt(f),
@@ -108,6 +120,7 @@ impl std::fmt::Display for Error {
             Error::TagLimitExceededException(inner) => inner.fmt(f),
             Error::TagPolicyException(inner) => inner.fmt(f),
             Error::ThrottledException(inner) => inner.fmt(f),
+            Error::TooManyEntriesInBatchRequestException(inner) => inner.fmt(f),
             Error::TopicLimitExceededException(inner) => inner.fmt(f),
             Error::UserErrorException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
@@ -957,6 +970,76 @@ where
                     Error::PlatformApplicationDisabledException(inner)
                 }
                 crate::error::PublishErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PublishBatchError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PublishBatchError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::PublishBatchErrorKind::AuthorizationErrorException(inner) => {
+                    Error::AuthorizationErrorException(inner)
+                }
+                crate::error::PublishBatchErrorKind::BatchEntryIdsNotDistinctException(inner) => {
+                    Error::BatchEntryIdsNotDistinctException(inner)
+                }
+                crate::error::PublishBatchErrorKind::BatchRequestTooLongException(inner) => {
+                    Error::BatchRequestTooLongException(inner)
+                }
+                crate::error::PublishBatchErrorKind::EmptyBatchRequestException(inner) => {
+                    Error::EmptyBatchRequestException(inner)
+                }
+                crate::error::PublishBatchErrorKind::EndpointDisabledException(inner) => {
+                    Error::EndpointDisabledException(inner)
+                }
+                crate::error::PublishBatchErrorKind::InternalErrorException(inner) => {
+                    Error::InternalErrorException(inner)
+                }
+                crate::error::PublishBatchErrorKind::InvalidBatchEntryIdException(inner) => {
+                    Error::InvalidBatchEntryIdException(inner)
+                }
+                crate::error::PublishBatchErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::PublishBatchErrorKind::InvalidParameterValueException(inner) => {
+                    Error::InvalidParameterValueException(inner)
+                }
+                crate::error::PublishBatchErrorKind::InvalidSecurityException(inner) => {
+                    Error::InvalidSecurityException(inner)
+                }
+                crate::error::PublishBatchErrorKind::KmsAccessDeniedException(inner) => {
+                    Error::KmsAccessDeniedException(inner)
+                }
+                crate::error::PublishBatchErrorKind::KmsDisabledException(inner) => {
+                    Error::KmsDisabledException(inner)
+                }
+                crate::error::PublishBatchErrorKind::KmsInvalidStateException(inner) => {
+                    Error::KmsInvalidStateException(inner)
+                }
+                crate::error::PublishBatchErrorKind::KmsNotFoundException(inner) => {
+                    Error::KmsNotFoundException(inner)
+                }
+                crate::error::PublishBatchErrorKind::KmsOptInRequired(inner) => {
+                    Error::KmsOptInRequired(inner)
+                }
+                crate::error::PublishBatchErrorKind::KmsThrottlingException(inner) => {
+                    Error::KmsThrottlingException(inner)
+                }
+                crate::error::PublishBatchErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::PublishBatchErrorKind::PlatformApplicationDisabledException(
+                    inner,
+                ) => Error::PlatformApplicationDisabledException(inner),
+                crate::error::PublishBatchErrorKind::TooManyEntriesInBatchRequestException(
+                    inner,
+                ) => Error::TooManyEntriesInBatchRequestException(inner),
+                crate::error::PublishBatchErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

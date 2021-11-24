@@ -9606,7 +9606,7 @@ pub struct ProjectVersionDescription {
     /// <p>The Amazon Resource Name (ARN) of the model version. </p>
     pub project_version_arn: std::option::Option<std::string::String>,
     /// <p>The Unix datetime for the date and time that training started.</p>
-    pub creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The minimum number of inference units used by the model. For more information,
     /// see <a>StartProjectVersion</a>.</p>
     pub min_inference_units: std::option::Option<i32>,
@@ -9618,7 +9618,7 @@ pub struct ProjectVersionDescription {
     /// This value is only returned if the model version has been successfully trained.</p>
     pub billable_training_time_in_seconds: std::option::Option<i64>,
     /// <p>The Unix date and time that training of the model ended.</p>
-    pub training_end_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub training_end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The location where training results are saved.</p>
     pub output_config: std::option::Option<crate::model::OutputConfig>,
     /// <p>Contains information about the training results.</p>
@@ -9639,7 +9639,7 @@ impl ProjectVersionDescription {
         self.project_version_arn.as_deref()
     }
     /// <p>The Unix datetime for the date and time that training started.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The minimum number of inference units used by the model. For more information,
@@ -9661,7 +9661,7 @@ impl ProjectVersionDescription {
         self.billable_training_time_in_seconds
     }
     /// <p>The Unix date and time that training of the model ended.</p>
-    pub fn training_end_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn training_end_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_end_timestamp.as_ref()
     }
     /// <p>The location where training results are saved.</p>
@@ -9719,12 +9719,12 @@ pub mod project_version_description {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_version_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) min_inference_units: std::option::Option<i32>,
         pub(crate) status: std::option::Option<crate::model::ProjectVersionStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) billable_training_time_in_seconds: std::option::Option<i64>,
-        pub(crate) training_end_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) training_end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) output_config: std::option::Option<crate::model::OutputConfig>,
         pub(crate) training_data_result: std::option::Option<crate::model::TrainingDataResult>,
         pub(crate) testing_data_result: std::option::Option<crate::model::TestingDataResult>,
@@ -9747,14 +9747,14 @@ pub mod project_version_description {
             self
         }
         /// <p>The Unix datetime for the date and time that training started.</p>
-        pub fn creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
         /// <p>The Unix datetime for the date and time that training started.</p>
         pub fn set_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_timestamp = input;
             self
@@ -9813,14 +9813,14 @@ pub mod project_version_description {
             self
         }
         /// <p>The Unix date and time that training of the model ended.</p>
-        pub fn training_end_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn training_end_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.training_end_timestamp = Some(input);
             self
         }
         /// <p>The Unix date and time that training of the model ended.</p>
         pub fn set_training_end_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.training_end_timestamp = input;
             self
@@ -10745,7 +10745,7 @@ pub struct ProjectDescription {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for the date and time that the project was created.</p>
-    pub creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the project.</p>
     pub status: std::option::Option<crate::model::ProjectStatus>,
     /// <p>
@@ -10759,7 +10759,7 @@ impl ProjectDescription {
         self.project_arn.as_deref()
     }
     /// <p>The Unix timestamp for the date and time that the project was created.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The current status of the project.</p>
@@ -10790,7 +10790,7 @@ pub mod project_description {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::ProjectStatus>,
         pub(crate) datasets: std::option::Option<std::vec::Vec<crate::model::DatasetMetadata>>,
     }
@@ -10806,14 +10806,14 @@ pub mod project_description {
             self
         }
         /// <p>The Unix timestamp for the date and time that the project was created.</p>
-        pub fn creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
         /// <p>The Unix timestamp for the date and time that the project was created.</p>
         pub fn set_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_timestamp = input;
             self
@@ -10882,7 +10882,7 @@ pub struct DatasetMetadata {
     /// <p>
     /// The Unix timestamp for the date and time that the dataset was created.
     /// </p>
-    pub creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The type of the dataset.
     /// </p>
@@ -10910,7 +10910,7 @@ impl DatasetMetadata {
     /// <p>
     /// The Unix timestamp for the date and time that the dataset was created.
     /// </p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>
@@ -10966,7 +10966,7 @@ pub mod dataset_metadata {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) dataset_type: std::option::Option<crate::model::DatasetType>,
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DatasetStatus>,
@@ -10977,7 +10977,7 @@ pub mod dataset_metadata {
         /// <p>
         /// The Unix timestamp for the date and time that the dataset was created.
         /// </p>
-        pub fn creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
@@ -10986,7 +10986,7 @@ pub mod dataset_metadata {
         /// </p>
         pub fn set_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_timestamp = input;
             self
@@ -11367,11 +11367,11 @@ pub struct DatasetDescription {
     /// <p>
     /// The Unix timestamp for the time and date that the dataset was created.
     /// </p>
-    pub creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The Unix timestamp for the date and time that the dataset was last updated.
     /// </p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The status of the dataset.
     /// </p>
@@ -11395,13 +11395,13 @@ impl DatasetDescription {
     /// <p>
     /// The Unix timestamp for the time and date that the dataset was created.
     /// </p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>
     /// The Unix timestamp for the date and time that the dataset was last updated.
     /// </p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>
@@ -11451,8 +11451,8 @@ pub mod dataset_description {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::DatasetStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) status_message_code: std::option::Option<crate::model::DatasetStatusMessageCode>,
@@ -11462,7 +11462,7 @@ pub mod dataset_description {
         /// <p>
         /// The Unix timestamp for the time and date that the dataset was created.
         /// </p>
-        pub fn creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
@@ -11471,7 +11471,7 @@ pub mod dataset_description {
         /// </p>
         pub fn set_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_timestamp = input;
             self
@@ -11479,7 +11479,7 @@ pub mod dataset_description {
         /// <p>
         /// The Unix timestamp for the date and time that the dataset was last updated.
         /// </p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
@@ -11488,7 +11488,7 @@ pub mod dataset_description {
         /// </p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self

@@ -1153,12 +1153,12 @@ pub fn serialize_structure_crate_input_get_resource_config_history_input(
     if let Some(var_193) = &input.later_time {
         object
             .key("laterTime")
-            .instant(var_193, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_193, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_194) = &input.earlier_time {
         object
             .key("earlierTime")
-            .instant(var_194, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_194, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_195) = &input.chronological_order {
         object.key("chronologicalOrder").string(var_195.as_str());
@@ -1614,7 +1614,7 @@ pub fn serialize_structure_crate_input_put_remediation_exceptions_input(
     if let Some(var_287) = &input.expiration_time {
         object
             .key("ExpirationTime")
-            .instant(var_287, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_287, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -2246,7 +2246,7 @@ pub fn serialize_structure_crate_model_evaluation(
     if let Some(var_412) = &input.ordering_timestamp {
         object
             .key("OrderingTimestamp")
-            .instant(var_412, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_412, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -2270,7 +2270,7 @@ pub fn serialize_structure_crate_model_external_evaluation(
     if let Some(var_417) = &input.ordering_timestamp {
         object
             .key("OrderingTimestamp")
-            .instant(var_417, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_417, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

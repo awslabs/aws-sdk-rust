@@ -1423,7 +1423,7 @@ pub struct Node {
     /// the DAX cluster.</p>
     pub endpoint: std::option::Option<crate::model::Endpoint>,
     /// <p>The date and time (in UNIX epoch format) when the node was launched.</p>
-    pub node_create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub node_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Availability Zone (AZ) in which the node has been deployed.</p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The current status of the node. For example: <code>available</code>.</p>
@@ -1445,7 +1445,7 @@ impl Node {
         self.endpoint.as_ref()
     }
     /// <p>The date and time (in UNIX epoch format) when the node was launched.</p>
-    pub fn node_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn node_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.node_create_time.as_ref()
     }
     /// <p>The Availability Zone (AZ) in which the node has been deployed.</p>
@@ -1482,7 +1482,7 @@ pub mod node {
     pub struct Builder {
         pub(crate) node_id: std::option::Option<std::string::String>,
         pub(crate) endpoint: std::option::Option<crate::model::Endpoint>,
-        pub(crate) node_create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) node_create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
         pub(crate) node_status: std::option::Option<std::string::String>,
         pub(crate) parameter_group_status: std::option::Option<std::string::String>,
@@ -1515,14 +1515,14 @@ pub mod node {
             self
         }
         /// <p>The date and time (in UNIX epoch format) when the node was launched.</p>
-        pub fn node_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn node_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.node_create_time = Some(input);
             self
         }
         /// <p>The date and time (in UNIX epoch format) when the node was launched.</p>
         pub fn set_node_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.node_create_time = input;
             self
@@ -2302,7 +2302,7 @@ pub struct Event {
     /// <p>A user-defined message associated with the event.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The date and time when the event occurred.</p>
-    pub date: std::option::Option<aws_smithy_types::Instant>,
+    pub date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Event {
     /// <p>The source of the event. For example, if the event occurred at the node level, the
@@ -2320,7 +2320,7 @@ impl Event {
         self.message.as_deref()
     }
     /// <p>The date and time when the event occurred.</p>
-    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
 }
@@ -2343,7 +2343,7 @@ pub mod event {
         pub(crate) source_name: std::option::Option<std::string::String>,
         pub(crate) source_type: std::option::Option<crate::model::SourceType>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The source of the event. For example, if the event occurred at the node level, the
@@ -2384,12 +2384,12 @@ pub mod event {
             self
         }
         /// <p>The date and time when the event occurred.</p>
-        pub fn date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date = Some(input);
             self
         }
         /// <p>The date and time when the event occurred.</p>
-        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
+        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.date = input;
             self
         }

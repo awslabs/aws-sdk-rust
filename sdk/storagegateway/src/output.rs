@@ -6637,7 +6637,7 @@ pub struct DescribeAvailabilityMonitorTestOutput {
     pub status: std::option::Option<crate::model::AvailabilityMonitorTestStatus>,
     /// <p>The time the high availability monitoring test was started. If a test hasn't been
     /// performed, the value of this field is null.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeAvailabilityMonitorTestOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
@@ -6652,7 +6652,7 @@ impl DescribeAvailabilityMonitorTestOutput {
     }
     /// <p>The time the high availability monitoring test was started. If a test hasn't been
     /// performed, the value of this field is null.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
@@ -6673,7 +6673,7 @@ pub mod describe_availability_monitor_test_output {
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::AvailabilityMonitorTestStatus>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
@@ -6705,7 +6705,7 @@ pub mod describe_availability_monitor_test_output {
         }
         /// <p>The time the high availability monitoring test was started. If a test hasn't been
         /// performed, the value of this field is null.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -6713,7 +6713,7 @@ pub mod describe_availability_monitor_test_output {
         /// performed, the value of this field is null.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self

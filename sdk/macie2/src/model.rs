@@ -1149,7 +1149,7 @@ pub struct JobDetails {
     /// <p>The unique identifier for the job that ran most recently and is configured to analyze data in the bucket, either the latest run of a recurring job or the only run of a one-time job.</p> <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
     pub last_job_id: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job (lastJobId) started. If the job is a recurring job, this value indicates when the most recent run started.</p> <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
-    pub last_job_run_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_job_run_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl JobDetails {
     /// <p>Specifies whether any one-time or recurring jobs are configured to analyze data in the bucket. Possible values are:</p> <ul><li><p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more jobs and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the bucket criteria (S3BucketCriteriaForJob) for at least one job that previously ran.</p></li> <li><p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs, all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li> <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li></ul> <p></p>
@@ -1165,7 +1165,7 @@ impl JobDetails {
         self.last_job_id.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job (lastJobId) started. If the job is a recurring job, this value indicates when the most recent run started.</p> <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
-    pub fn last_job_run_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_job_run_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_job_run_time.as_ref()
     }
 }
@@ -1188,7 +1188,7 @@ pub mod job_details {
         pub(crate) is_defined_in_job: std::option::Option<crate::model::IsDefinedInJob>,
         pub(crate) is_monitored_by_job: std::option::Option<crate::model::IsMonitoredByJob>,
         pub(crate) last_job_id: std::option::Option<std::string::String>,
-        pub(crate) last_job_run_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_job_run_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Specifies whether any one-time or recurring jobs are configured to analyze data in the bucket. Possible values are:</p> <ul><li><p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more jobs and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the bucket criteria (S3BucketCriteriaForJob) for at least one job that previously ran.</p></li> <li><p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs, all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li> <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li></ul> <p></p>
@@ -1228,14 +1228,14 @@ pub mod job_details {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the job (lastJobId) started. If the job is a recurring job, this value indicates when the most recent run started.</p> <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
-        pub fn last_job_run_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_job_run_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_job_run_time = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the job (lastJobId) started. If the job is a recurring job, this value indicates when the most recent run started.</p> <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
         pub fn set_last_job_run_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_job_run_time = input;
             self
@@ -2637,7 +2637,7 @@ pub struct Member {
     /// <p>The email address for the account.</p>
     pub email: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
-    pub invited_at: std::option::Option<aws_smithy_types::Instant>,
+    pub invited_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
     pub master_account_id: std::option::Option<std::string::String>,
     /// <p>The current status of the relationship between the account and the administrator account.</p>
@@ -2646,7 +2646,7 @@ pub struct Member {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Member {
     /// <p>The Amazon Web Services account ID for the account.</p>
@@ -2666,7 +2666,7 @@ impl Member {
         self.email.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
-    pub fn invited_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn invited_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.invited_at.as_ref()
     }
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
@@ -2685,7 +2685,7 @@ impl Member {
         self.tags.as_ref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -2714,13 +2714,13 @@ pub mod member {
         pub(crate) administrator_account_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) email: std::option::Option<std::string::String>,
-        pub(crate) invited_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) invited_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) master_account_id: std::option::Option<std::string::String>,
         pub(crate) relationship_status: std::option::Option<crate::model::RelationshipStatus>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Web Services account ID for the account.</p>
@@ -2767,14 +2767,14 @@ pub mod member {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
-        pub fn invited_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn invited_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.invited_at = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
         pub fn set_invited_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.invited_at = input;
             self
@@ -2831,14 +2831,14 @@ pub mod member {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -2968,13 +2968,13 @@ impl AsRef<str> for RelationshipStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedDataIdentifierSummary {
-    /// <p>The category of sensitive data that the managed data identifier detects: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
+    /// <p>The category of sensitive data that the managed data identifier detects: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
     pub category: std::option::Option<crate::model::SensitiveDataItemCategory>,
     /// <p>The unique identifier for the managed data identifier. This is a string that describes the type of sensitive data that the managed data identifier detects. For example: OPENSSH_PRIVATE_KEY for OpenSSH private keys, CREDIT_CARD_NUMBER for credit card numbers, or USA_PASSPORT_NUMBER for US passport numbers.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl ManagedDataIdentifierSummary {
-    /// <p>The category of sensitive data that the managed data identifier detects: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
+    /// <p>The category of sensitive data that the managed data identifier detects: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
     pub fn category(&self) -> std::option::Option<&crate::model::SensitiveDataItemCategory> {
         self.category.as_ref()
     }
@@ -3001,12 +3001,12 @@ pub mod managed_data_identifier_summary {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The category of sensitive data that the managed data identifier detects: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
+        /// <p>The category of sensitive data that the managed data identifier detects: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
         pub fn category(mut self, input: crate::model::SensitiveDataItemCategory) -> Self {
             self.category = Some(input);
             self
         }
-        /// <p>The category of sensitive data that the managed data identifier detects: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
+        /// <p>The category of sensitive data that the managed data identifier detects: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
         pub fn set_category(
             mut self,
             input: std::option::Option<crate::model::SensitiveDataItemCategory>,
@@ -3117,7 +3117,7 @@ pub struct Invitation {
     /// <p>The unique identifier for the invitation. Amazon Macie uses this identifier to validate the inviter account with the invitee account.</p>
     pub invitation_id: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the invitation was sent.</p>
-    pub invited_at: std::option::Option<aws_smithy_types::Instant>,
+    pub invited_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the relationship between the account that sent the invitation (<i>inviter account</i>) and the account that received the invitation (<i>invitee account</i>).</p>
     pub relationship_status: std::option::Option<crate::model::RelationshipStatus>,
 }
@@ -3131,7 +3131,7 @@ impl Invitation {
         self.invitation_id.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the invitation was sent.</p>
-    pub fn invited_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn invited_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.invited_at.as_ref()
     }
     /// <p>The status of the relationship between the account that sent the invitation (<i>inviter account</i>) and the account that received the invitation (<i>invitee account</i>).</p>
@@ -3157,7 +3157,7 @@ pub mod invitation {
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) invitation_id: std::option::Option<std::string::String>,
-        pub(crate) invited_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) invited_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) relationship_status: std::option::Option<crate::model::RelationshipStatus>,
     }
     impl Builder {
@@ -3185,14 +3185,14 @@ pub mod invitation {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the invitation was sent.</p>
-        pub fn invited_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn invited_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.invited_at = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the invitation was sent.</p>
         pub fn set_invited_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.invited_at = input;
             self
@@ -3465,7 +3465,7 @@ pub struct CustomDataIdentifierSummary {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The custom description of the custom data identifier.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the custom data identifier.</p>
@@ -3479,7 +3479,7 @@ impl CustomDataIdentifierSummary {
         self.arn.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The custom description of the custom data identifier.</p>
@@ -3513,7 +3513,7 @@ pub mod custom_data_identifier_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3530,14 +3530,14 @@ pub mod custom_data_identifier_summary {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -3599,7 +3599,7 @@ pub struct JobSummary {
     pub bucket_definitions:
         std::option::Option<std::vec::Vec<crate::model::S3BucketDefinitionForJob>>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the job.</p>
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
@@ -3623,7 +3623,7 @@ impl JobSummary {
         self.bucket_definitions.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The unique identifier for the job.</p>
@@ -3678,7 +3678,7 @@ pub mod job_summary {
     pub struct Builder {
         pub(crate) bucket_definitions:
             std::option::Option<std::vec::Vec<crate::model::S3BucketDefinitionForJob>>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) job_type: std::option::Option<crate::model::JobType>,
@@ -3711,14 +3711,14 @@ pub mod job_summary {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -4481,15 +4481,15 @@ impl AsRef<str> for SimpleCriterionKeyForJob {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserPausedDetails {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job or job run will expire and be cancelled if you don't resume it first.</p>
-    pub job_expires_at: std::option::Option<aws_smithy_types::Instant>,
+    pub job_expires_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to notify you of the job or job run's pending expiration and cancellation. This value is null if a job has been paused for less than 23 days.</p>
     pub job_imminent_expiration_health_event_arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when you paused the job.</p>
-    pub job_paused_at: std::option::Option<aws_smithy_types::Instant>,
+    pub job_paused_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UserPausedDetails {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job or job run will expire and be cancelled if you don't resume it first.</p>
-    pub fn job_expires_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn job_expires_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.job_expires_at.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to notify you of the job or job run's pending expiration and cancellation. This value is null if a job has been paused for less than 23 days.</p>
@@ -4497,7 +4497,7 @@ impl UserPausedDetails {
         self.job_imminent_expiration_health_event_arn.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when you paused the job.</p>
-    pub fn job_paused_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn job_paused_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.job_paused_at.as_ref()
     }
 }
@@ -4519,21 +4519,21 @@ pub mod user_paused_details {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) job_expires_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) job_expires_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) job_imminent_expiration_health_event_arn:
             std::option::Option<std::string::String>,
-        pub(crate) job_paused_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) job_paused_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the job or job run will expire and be cancelled if you don't resume it first.</p>
-        pub fn job_expires_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn job_expires_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.job_expires_at = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the job or job run will expire and be cancelled if you don't resume it first.</p>
         pub fn set_job_expires_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.job_expires_at = input;
             self
@@ -4555,14 +4555,14 @@ pub mod user_paused_details {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when you paused the job.</p>
-        pub fn job_paused_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn job_paused_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.job_paused_at = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when you paused the job.</p>
         pub fn set_job_paused_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.job_paused_at = input;
             self
@@ -5495,7 +5495,7 @@ pub struct UsageRecord {
     /// <p>The unique identifier for the Amazon Web Services account that the data applies to.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.</p>
-    pub free_trial_start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub free_trial_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of objects that contains usage data and quotas for the account. Each object contains the data for a specific usage metric and the corresponding quota.</p>
     pub usage: std::option::Option<std::vec::Vec<crate::model::UsageByAccount>>,
 }
@@ -5505,7 +5505,7 @@ impl UsageRecord {
         self.account_id.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.</p>
-    pub fn free_trial_start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn free_trial_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.free_trial_start_date.as_ref()
     }
     /// <p>An array of objects that contains usage data and quotas for the account. Each object contains the data for a specific usage metric and the corresponding quota.</p>
@@ -5529,7 +5529,7 @@ pub mod usage_record {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
-        pub(crate) free_trial_start_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) free_trial_start_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) usage: std::option::Option<std::vec::Vec<crate::model::UsageByAccount>>,
     }
     impl Builder {
@@ -5544,14 +5544,14 @@ pub mod usage_record {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.</p>
-        pub fn free_trial_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn free_trial_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.free_trial_start_date = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.</p>
         pub fn set_free_trial_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.free_trial_start_date = input;
             self
@@ -6536,7 +6536,7 @@ pub struct Finding {
     /// <p>The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All sensitive data findings are considered new (unique) because they derive from individual classification jobs.</p>
     pub count: i64,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the finding was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the finding.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the finding. This is a random string that Amazon Macie generates and assigns to a finding when it creates the finding.</p>
@@ -6560,7 +6560,7 @@ pub struct Finding {
     /// <p>The type of the finding.</p>
     pub r#type: std::option::Option<crate::model::FindingType>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive data findings, this value is the same as the value for the createdAt property. All sensitive data findings are considered new (unique) because they derive from individual classification jobs.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Finding {
     /// <p>The unique identifier for the Amazon Web Services account that the finding applies to. This is typically the account that owns the affected resource.</p>
@@ -6586,7 +6586,7 @@ impl Finding {
         self.count
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the finding was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The description of the finding.</p>
@@ -6634,7 +6634,7 @@ impl Finding {
         self.r#type.as_ref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive data findings, this value is the same as the value for the createdAt property. All sensitive data findings are considered new (unique) because they derive from individual classification jobs.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -6673,7 +6673,7 @@ pub mod finding {
         pub(crate) category: std::option::Option<crate::model::FindingCategory>,
         pub(crate) classification_details: std::option::Option<crate::model::ClassificationDetails>,
         pub(crate) count: std::option::Option<i64>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) partition: std::option::Option<std::string::String>,
@@ -6685,7 +6685,7 @@ pub mod finding {
         pub(crate) severity: std::option::Option<crate::model::Severity>,
         pub(crate) title: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::FindingType>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The unique identifier for the Amazon Web Services account that the finding applies to. This is typically the account that owns the affected resource.</p>
@@ -6748,14 +6748,14 @@ pub mod finding {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the finding was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the finding was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -6880,14 +6880,14 @@ pub mod finding {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive data findings, this value is the same as the value for the createdAt property. All sensitive data findings are considered new (unique) because they derive from individual classification jobs.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive data findings, this value is the same as the value for the createdAt property. All sensitive data findings are considered new (unique) because they derive from individual classification jobs.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -7263,7 +7263,7 @@ pub struct S3Object {
     /// <p>The full key (name) that's assigned to the object.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the object was last modified.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The path to the object, including the full key (name).</p>
     pub path: std::option::Option<std::string::String>,
     /// <p>Specifies whether the object is publicly accessible due to the combination of permissions settings that apply to the object.</p>
@@ -7297,7 +7297,7 @@ impl S3Object {
         self.key.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the object was last modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The path to the object, including the full key (name).</p>
@@ -7359,7 +7359,7 @@ pub mod s3_object {
         pub(crate) e_tag: std::option::Option<std::string::String>,
         pub(crate) extension: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) public_access: std::option::Option<bool>,
         pub(crate) server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
@@ -7410,14 +7410,14 @@ pub mod s3_object {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the object was last modified.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the object was last modified.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -7843,7 +7843,7 @@ pub struct S3Bucket {
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of server-side encryption that's used by default to encrypt objects in the bucket.</p>
     pub default_server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
     /// <p>The name of the bucket.</p>
@@ -7867,7 +7867,7 @@ impl S3Bucket {
         self.arn.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The type of server-side encryption that's used by default to encrypt objects in the bucket.</p>
@@ -7922,7 +7922,7 @@ pub mod s3_bucket {
         pub(crate) allows_unencrypted_object_uploads:
             std::option::Option<crate::model::AllowsUnencryptedObjectUploads>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) default_server_side_encryption:
             std::option::Option<crate::model::ServerSideEncryption>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7958,14 +7958,14 @@ pub mod s3_bucket {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -9845,13 +9845,13 @@ impl SessionIssuer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionContextAttributes {
     /// <p>The date and time, in UTC and ISO 8601 format, when the credentials were issued.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
     pub mfa_authenticated: bool,
 }
 impl SessionContextAttributes {
     /// <p>The date and time, in UTC and ISO 8601 format, when the credentials were issued.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Specifies whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
@@ -9873,19 +9873,19 @@ pub mod session_context_attributes {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) mfa_authenticated: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The date and time, in UTC and ISO 8601 format, when the credentials were issued.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date and time, in UTC and ISO 8601 format, when the credentials were issued.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -10769,9 +10769,9 @@ pub struct ApiCallDetails {
     /// <p>The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.</p>
     pub api_service_name: std::option::Option<std::string::String>,
     /// <p>The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced the finding.</p>
-    pub first_seen: std::option::Option<aws_smithy_types::Instant>,
+    pub first_seen: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The most recent date and time, in UTC and extended ISO 8601 format, when the specified operation (api) was invoked and produced the finding.</p>
-    pub last_seen: std::option::Option<aws_smithy_types::Instant>,
+    pub last_seen: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ApiCallDetails {
     /// <p>The name of the operation that was invoked most recently and produced the finding.</p>
@@ -10783,11 +10783,11 @@ impl ApiCallDetails {
         self.api_service_name.as_deref()
     }
     /// <p>The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced the finding.</p>
-    pub fn first_seen(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn first_seen(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.first_seen.as_ref()
     }
     /// <p>The most recent date and time, in UTC and extended ISO 8601 format, when the specified operation (api) was invoked and produced the finding.</p>
-    pub fn last_seen(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_seen(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_seen.as_ref()
     }
 }
@@ -10809,8 +10809,8 @@ pub mod api_call_details {
     pub struct Builder {
         pub(crate) api: std::option::Option<std::string::String>,
         pub(crate) api_service_name: std::option::Option<std::string::String>,
-        pub(crate) first_seen: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_seen: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) first_seen: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_seen: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the operation that was invoked most recently and produced the finding.</p>
@@ -10837,27 +10837,27 @@ pub mod api_call_details {
             self
         }
         /// <p>The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced the finding.</p>
-        pub fn first_seen(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn first_seen(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.first_seen = Some(input);
             self
         }
         /// <p>The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced the finding.</p>
         pub fn set_first_seen(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.first_seen = input;
             self
         }
         /// <p>The most recent date and time, in UTC and extended ISO 8601 format, when the specified operation (api) was invoked and produced the finding.</p>
-        pub fn last_seen(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_seen(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_seen = Some(input);
             self
         }
         /// <p>The most recent date and time, in UTC and extended ISO 8601 format, when the specified operation (api) was invoked and produced the finding.</p>
         pub fn set_last_seen(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_seen = input;
             self
@@ -11223,17 +11223,17 @@ impl ClassificationResult {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClassificationResultStatus {
-    /// <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE - Amazon Macie successfully completed its analysis of the S3 object that the finding applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data in the S3 object that the finding applies to. For example, the object is an archive file that contains files in an unsupported format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object is a file in an unsupported format.</p></li></ul>
+    /// <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE - Amazon Macie successfully completed its analysis of the S3 object that the finding applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data in the S3 object that the finding applies to. For example, the object is an archive file that contains files in an unsupported format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object is a file that uses an unsupported format.</p></li></ul>
     pub code: std::option::Option<std::string::String>,
-    /// <p>A brief description of the status of the finding. Amazon Macie uses this value to notify you of any errors, warnings, or considerations that might impact your analysis of the finding.</p>
+    /// <p>A brief description of the status of the finding. This value is null if the status (code) of the finding is COMPLETE.</p> <p>Amazon Macie uses this value to notify you of any errors, warnings, or considerations that might impact your analysis of the finding and the affected S3 object. Possible values are:</p> <ul><li><p>ARCHIVE_CONTAINS_UNPROCESSED_FILES - The object is an archive file and Macie extracted and analyzed only some or none of the files in the archive. To determine which files Macie analyzed, if any, you can refer to the corresponding sensitive data discovery result for the finding (ClassificationDetails.detailedResultsLocation).</p></li> <li><p>ARCHIVE_EXCEEDS_SIZE_LIMIT - The object is an archive file whose total storage size exceeds the size quota for this type of archive.</p></li> <li><p>ARCHIVE_NESTING_LEVEL_OVER_LIMIT - The object is an archive file whose nested depth exceeds the quota for the maximum number of nested levels that Macie analyzes for this type of archive.</p></li> <li><p>ARCHIVE_TOTAL_BYTES_EXTRACTED_OVER_LIMIT - The object is an archive file that exceeds the quota for the maximum amount of data that Macie extracts and analyzes for this type of archive.</p></li> <li><p>ARCHIVE_TOTAL_DOCUMENTS_PROCESSED_OVER_LIMIT - The object is an archive file that contains more than the maximum number of files that Macie extracts and analyzes for this type of archive.</p></li> <li><p>FILE_EXCEEDS_SIZE_LIMIT - The storage size of the object exceeds the size quota for this type of file.</p></li> <li><p>INVALID_ENCRYPTION - The object is encrypted using server-side encryption but Macie isn’t allowed to use the key. Macie can’t decrypt and analyze the object.</p></li> <li><p>INVALID_KMS_KEY - The object is encrypted with an KMS key that was disabled or is being deleted. Macie can’t decrypt and analyze the object.</p></li> <li><p>INVALID_OBJECT_STATE - The object doesn’t use a supported Amazon S3 storage class. For more information, see <a href="https://docs.aws.amazon.com/macie/latest/user/data-classification.html">Discovering sensitive data</a> in the <i>Amazon Macie User Guide</i>.</p></li> <li><p>JSON_NESTING_LEVEL_OVER_LIMIT - The object contains JSON data and the nested depth of the data exceeds the quota for the number of nested levels that Macie analyzes for this type of file.</p></li> <li><p>MALFORMED_FILE - The object is a malformed or corrupted file. An error occurred when Macie attempted to detect the file’s type or extract data from the file.</p></li> <li><p>OBJECT_VERSION_MISMATCH - The object was changed while Macie was analyzing it.</p></li> <li><p>NO_SUCH_BUCKET_AVAILABLE - The object was in a bucket that was deleted shortly before or when Macie attempted to analyze the object.</p></li> <li><p>MALFORMED_OR_FILE_SIZE_EXCEEDS_LIMIT - The object is a Microsoft Office file that is malformed or exceeds the size quota for this type of file. If the file is malformed, an error occurred when Macie attempted to extract data from the file.</p></li> <li><p>OOXML_UNCOMPRESSED_SIZE_EXCEEDS_LIMIT - The object is an Office Open XML file that exceeds the size quota for this type of file.</p></li> <li><p>OOXML_UNCOMPRESSED_RATIO_EXCEEDS_LIMIT - The object is an Office Open XML file whose compression ratio exceeds the compression quota for this type of file.</p></li> <li><p>PERMISSION_DENIED - Macie isn’t allowed to access the object. The object’s permissions settings prevent Macie from analyzing the object.</p></li> <li><p>SOURCE_OBJECT_NO_LONGER_AVAILABLE - The object was deleted shortly before or when Macie attempted to analyze it.</p></li> <li><p>UNABLE_TO_PARSE_FILE - The object is a file that contains structured data and an error occurred when Macie attempted to parse the data.</p></li> <li><p>UNSUPPORTED_FILE_TYPE_EXCEPTION - The object is a file that uses an unsupported file or storage format. For more information, see <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-formats.html">Supported file and storage formats</a> in the <i>Amazon Macie User Guide</i>.</p></li></ul> <p>For information about sensitive data discovery quotas for files, see <a href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Amazon Macie quotas</a> in the <i>Amazon Macie User Guide</i>.</p>
     pub reason: std::option::Option<std::string::String>,
 }
 impl ClassificationResultStatus {
-    /// <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE - Amazon Macie successfully completed its analysis of the S3 object that the finding applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data in the S3 object that the finding applies to. For example, the object is an archive file that contains files in an unsupported format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object is a file in an unsupported format.</p></li></ul>
+    /// <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE - Amazon Macie successfully completed its analysis of the S3 object that the finding applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data in the S3 object that the finding applies to. For example, the object is an archive file that contains files in an unsupported format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object is a file that uses an unsupported format.</p></li></ul>
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
-    /// <p>A brief description of the status of the finding. Amazon Macie uses this value to notify you of any errors, warnings, or considerations that might impact your analysis of the finding.</p>
+    /// <p>A brief description of the status of the finding. This value is null if the status (code) of the finding is COMPLETE.</p> <p>Amazon Macie uses this value to notify you of any errors, warnings, or considerations that might impact your analysis of the finding and the affected S3 object. Possible values are:</p> <ul><li><p>ARCHIVE_CONTAINS_UNPROCESSED_FILES - The object is an archive file and Macie extracted and analyzed only some or none of the files in the archive. To determine which files Macie analyzed, if any, you can refer to the corresponding sensitive data discovery result for the finding (ClassificationDetails.detailedResultsLocation).</p></li> <li><p>ARCHIVE_EXCEEDS_SIZE_LIMIT - The object is an archive file whose total storage size exceeds the size quota for this type of archive.</p></li> <li><p>ARCHIVE_NESTING_LEVEL_OVER_LIMIT - The object is an archive file whose nested depth exceeds the quota for the maximum number of nested levels that Macie analyzes for this type of archive.</p></li> <li><p>ARCHIVE_TOTAL_BYTES_EXTRACTED_OVER_LIMIT - The object is an archive file that exceeds the quota for the maximum amount of data that Macie extracts and analyzes for this type of archive.</p></li> <li><p>ARCHIVE_TOTAL_DOCUMENTS_PROCESSED_OVER_LIMIT - The object is an archive file that contains more than the maximum number of files that Macie extracts and analyzes for this type of archive.</p></li> <li><p>FILE_EXCEEDS_SIZE_LIMIT - The storage size of the object exceeds the size quota for this type of file.</p></li> <li><p>INVALID_ENCRYPTION - The object is encrypted using server-side encryption but Macie isn’t allowed to use the key. Macie can’t decrypt and analyze the object.</p></li> <li><p>INVALID_KMS_KEY - The object is encrypted with an KMS key that was disabled or is being deleted. Macie can’t decrypt and analyze the object.</p></li> <li><p>INVALID_OBJECT_STATE - The object doesn’t use a supported Amazon S3 storage class. For more information, see <a href="https://docs.aws.amazon.com/macie/latest/user/data-classification.html">Discovering sensitive data</a> in the <i>Amazon Macie User Guide</i>.</p></li> <li><p>JSON_NESTING_LEVEL_OVER_LIMIT - The object contains JSON data and the nested depth of the data exceeds the quota for the number of nested levels that Macie analyzes for this type of file.</p></li> <li><p>MALFORMED_FILE - The object is a malformed or corrupted file. An error occurred when Macie attempted to detect the file’s type or extract data from the file.</p></li> <li><p>OBJECT_VERSION_MISMATCH - The object was changed while Macie was analyzing it.</p></li> <li><p>NO_SUCH_BUCKET_AVAILABLE - The object was in a bucket that was deleted shortly before or when Macie attempted to analyze the object.</p></li> <li><p>MALFORMED_OR_FILE_SIZE_EXCEEDS_LIMIT - The object is a Microsoft Office file that is malformed or exceeds the size quota for this type of file. If the file is malformed, an error occurred when Macie attempted to extract data from the file.</p></li> <li><p>OOXML_UNCOMPRESSED_SIZE_EXCEEDS_LIMIT - The object is an Office Open XML file that exceeds the size quota for this type of file.</p></li> <li><p>OOXML_UNCOMPRESSED_RATIO_EXCEEDS_LIMIT - The object is an Office Open XML file whose compression ratio exceeds the compression quota for this type of file.</p></li> <li><p>PERMISSION_DENIED - Macie isn’t allowed to access the object. The object’s permissions settings prevent Macie from analyzing the object.</p></li> <li><p>SOURCE_OBJECT_NO_LONGER_AVAILABLE - The object was deleted shortly before or when Macie attempted to analyze it.</p></li> <li><p>UNABLE_TO_PARSE_FILE - The object is a file that contains structured data and an error occurred when Macie attempted to parse the data.</p></li> <li><p>UNSUPPORTED_FILE_TYPE_EXCEPTION - The object is a file that uses an unsupported file or storage format. For more information, see <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-formats.html">Supported file and storage formats</a> in the <i>Amazon Macie User Guide</i>.</p></li></ul> <p>For information about sensitive data discovery quotas for files, see <a href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Amazon Macie quotas</a> in the <i>Amazon Macie User Guide</i>.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
@@ -11256,22 +11256,22 @@ pub mod classification_result_status {
         pub(crate) reason: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE - Amazon Macie successfully completed its analysis of the S3 object that the finding applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data in the S3 object that the finding applies to. For example, the object is an archive file that contains files in an unsupported format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object is a file in an unsupported format.</p></li></ul>
+        /// <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE - Amazon Macie successfully completed its analysis of the S3 object that the finding applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data in the S3 object that the finding applies to. For example, the object is an archive file that contains files in an unsupported format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object is a file that uses an unsupported format.</p></li></ul>
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
             self.code = Some(input.into());
             self
         }
-        /// <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE - Amazon Macie successfully completed its analysis of the S3 object that the finding applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data in the S3 object that the finding applies to. For example, the object is an archive file that contains files in an unsupported format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object is a file in an unsupported format.</p></li></ul>
+        /// <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE - Amazon Macie successfully completed its analysis of the S3 object that the finding applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data in the S3 object that the finding applies to. For example, the object is an archive file that contains files in an unsupported format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object is a file that uses an unsupported format.</p></li></ul>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
         }
-        /// <p>A brief description of the status of the finding. Amazon Macie uses this value to notify you of any errors, warnings, or considerations that might impact your analysis of the finding.</p>
+        /// <p>A brief description of the status of the finding. This value is null if the status (code) of the finding is COMPLETE.</p> <p>Amazon Macie uses this value to notify you of any errors, warnings, or considerations that might impact your analysis of the finding and the affected S3 object. Possible values are:</p> <ul><li><p>ARCHIVE_CONTAINS_UNPROCESSED_FILES - The object is an archive file and Macie extracted and analyzed only some or none of the files in the archive. To determine which files Macie analyzed, if any, you can refer to the corresponding sensitive data discovery result for the finding (ClassificationDetails.detailedResultsLocation).</p></li> <li><p>ARCHIVE_EXCEEDS_SIZE_LIMIT - The object is an archive file whose total storage size exceeds the size quota for this type of archive.</p></li> <li><p>ARCHIVE_NESTING_LEVEL_OVER_LIMIT - The object is an archive file whose nested depth exceeds the quota for the maximum number of nested levels that Macie analyzes for this type of archive.</p></li> <li><p>ARCHIVE_TOTAL_BYTES_EXTRACTED_OVER_LIMIT - The object is an archive file that exceeds the quota for the maximum amount of data that Macie extracts and analyzes for this type of archive.</p></li> <li><p>ARCHIVE_TOTAL_DOCUMENTS_PROCESSED_OVER_LIMIT - The object is an archive file that contains more than the maximum number of files that Macie extracts and analyzes for this type of archive.</p></li> <li><p>FILE_EXCEEDS_SIZE_LIMIT - The storage size of the object exceeds the size quota for this type of file.</p></li> <li><p>INVALID_ENCRYPTION - The object is encrypted using server-side encryption but Macie isn’t allowed to use the key. Macie can’t decrypt and analyze the object.</p></li> <li><p>INVALID_KMS_KEY - The object is encrypted with an KMS key that was disabled or is being deleted. Macie can’t decrypt and analyze the object.</p></li> <li><p>INVALID_OBJECT_STATE - The object doesn’t use a supported Amazon S3 storage class. For more information, see <a href="https://docs.aws.amazon.com/macie/latest/user/data-classification.html">Discovering sensitive data</a> in the <i>Amazon Macie User Guide</i>.</p></li> <li><p>JSON_NESTING_LEVEL_OVER_LIMIT - The object contains JSON data and the nested depth of the data exceeds the quota for the number of nested levels that Macie analyzes for this type of file.</p></li> <li><p>MALFORMED_FILE - The object is a malformed or corrupted file. An error occurred when Macie attempted to detect the file’s type or extract data from the file.</p></li> <li><p>OBJECT_VERSION_MISMATCH - The object was changed while Macie was analyzing it.</p></li> <li><p>NO_SUCH_BUCKET_AVAILABLE - The object was in a bucket that was deleted shortly before or when Macie attempted to analyze the object.</p></li> <li><p>MALFORMED_OR_FILE_SIZE_EXCEEDS_LIMIT - The object is a Microsoft Office file that is malformed or exceeds the size quota for this type of file. If the file is malformed, an error occurred when Macie attempted to extract data from the file.</p></li> <li><p>OOXML_UNCOMPRESSED_SIZE_EXCEEDS_LIMIT - The object is an Office Open XML file that exceeds the size quota for this type of file.</p></li> <li><p>OOXML_UNCOMPRESSED_RATIO_EXCEEDS_LIMIT - The object is an Office Open XML file whose compression ratio exceeds the compression quota for this type of file.</p></li> <li><p>PERMISSION_DENIED - Macie isn’t allowed to access the object. The object’s permissions settings prevent Macie from analyzing the object.</p></li> <li><p>SOURCE_OBJECT_NO_LONGER_AVAILABLE - The object was deleted shortly before or when Macie attempted to analyze it.</p></li> <li><p>UNABLE_TO_PARSE_FILE - The object is a file that contains structured data and an error occurred when Macie attempted to parse the data.</p></li> <li><p>UNSUPPORTED_FILE_TYPE_EXCEPTION - The object is a file that uses an unsupported file or storage format. For more information, see <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-formats.html">Supported file and storage formats</a> in the <i>Amazon Macie User Guide</i>.</p></li></ul> <p>For information about sensitive data discovery quotas for files, see <a href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Amazon Macie quotas</a> in the <i>Amazon Macie User Guide</i>.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.reason = Some(input.into());
             self
         }
-        /// <p>A brief description of the status of the finding. Amazon Macie uses this value to notify you of any errors, warnings, or considerations that might impact your analysis of the finding.</p>
+        /// <p>A brief description of the status of the finding. This value is null if the status (code) of the finding is COMPLETE.</p> <p>Amazon Macie uses this value to notify you of any errors, warnings, or considerations that might impact your analysis of the finding and the affected S3 object. Possible values are:</p> <ul><li><p>ARCHIVE_CONTAINS_UNPROCESSED_FILES - The object is an archive file and Macie extracted and analyzed only some or none of the files in the archive. To determine which files Macie analyzed, if any, you can refer to the corresponding sensitive data discovery result for the finding (ClassificationDetails.detailedResultsLocation).</p></li> <li><p>ARCHIVE_EXCEEDS_SIZE_LIMIT - The object is an archive file whose total storage size exceeds the size quota for this type of archive.</p></li> <li><p>ARCHIVE_NESTING_LEVEL_OVER_LIMIT - The object is an archive file whose nested depth exceeds the quota for the maximum number of nested levels that Macie analyzes for this type of archive.</p></li> <li><p>ARCHIVE_TOTAL_BYTES_EXTRACTED_OVER_LIMIT - The object is an archive file that exceeds the quota for the maximum amount of data that Macie extracts and analyzes for this type of archive.</p></li> <li><p>ARCHIVE_TOTAL_DOCUMENTS_PROCESSED_OVER_LIMIT - The object is an archive file that contains more than the maximum number of files that Macie extracts and analyzes for this type of archive.</p></li> <li><p>FILE_EXCEEDS_SIZE_LIMIT - The storage size of the object exceeds the size quota for this type of file.</p></li> <li><p>INVALID_ENCRYPTION - The object is encrypted using server-side encryption but Macie isn’t allowed to use the key. Macie can’t decrypt and analyze the object.</p></li> <li><p>INVALID_KMS_KEY - The object is encrypted with an KMS key that was disabled or is being deleted. Macie can’t decrypt and analyze the object.</p></li> <li><p>INVALID_OBJECT_STATE - The object doesn’t use a supported Amazon S3 storage class. For more information, see <a href="https://docs.aws.amazon.com/macie/latest/user/data-classification.html">Discovering sensitive data</a> in the <i>Amazon Macie User Guide</i>.</p></li> <li><p>JSON_NESTING_LEVEL_OVER_LIMIT - The object contains JSON data and the nested depth of the data exceeds the quota for the number of nested levels that Macie analyzes for this type of file.</p></li> <li><p>MALFORMED_FILE - The object is a malformed or corrupted file. An error occurred when Macie attempted to detect the file’s type or extract data from the file.</p></li> <li><p>OBJECT_VERSION_MISMATCH - The object was changed while Macie was analyzing it.</p></li> <li><p>NO_SUCH_BUCKET_AVAILABLE - The object was in a bucket that was deleted shortly before or when Macie attempted to analyze the object.</p></li> <li><p>MALFORMED_OR_FILE_SIZE_EXCEEDS_LIMIT - The object is a Microsoft Office file that is malformed or exceeds the size quota for this type of file. If the file is malformed, an error occurred when Macie attempted to extract data from the file.</p></li> <li><p>OOXML_UNCOMPRESSED_SIZE_EXCEEDS_LIMIT - The object is an Office Open XML file that exceeds the size quota for this type of file.</p></li> <li><p>OOXML_UNCOMPRESSED_RATIO_EXCEEDS_LIMIT - The object is an Office Open XML file whose compression ratio exceeds the compression quota for this type of file.</p></li> <li><p>PERMISSION_DENIED - Macie isn’t allowed to access the object. The object’s permissions settings prevent Macie from analyzing the object.</p></li> <li><p>SOURCE_OBJECT_NO_LONGER_AVAILABLE - The object was deleted shortly before or when Macie attempted to analyze it.</p></li> <li><p>UNABLE_TO_PARSE_FILE - The object is a file that contains structured data and an error occurred when Macie attempted to parse the data.</p></li> <li><p>UNSUPPORTED_FILE_TYPE_EXCEPTION - The object is a file that uses an unsupported file or storage format. For more information, see <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-formats.html">Supported file and storage formats</a> in the <i>Amazon Macie User Guide</i>.</p></li></ul> <p>For information about sensitive data discovery quotas for files, see <a href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Amazon Macie quotas</a> in the <i>Amazon Macie User Guide</i>.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -11296,7 +11296,7 @@ impl ClassificationResultStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SensitiveDataItem {
-    /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
+    /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
     pub category: std::option::Option<crate::model::SensitiveDataItemCategory>,
     /// <p>An array of objects, one for each type of sensitive data that was detected. Each object reports the number of occurrences of a specific type of sensitive data that was detected, and the location of up to 15 of those occurrences.</p>
     pub detections: std::option::Option<std::vec::Vec<crate::model::DefaultDetection>>,
@@ -11304,7 +11304,7 @@ pub struct SensitiveDataItem {
     pub total_count: i64,
 }
 impl SensitiveDataItem {
-    /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
+    /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
     pub fn category(&self) -> std::option::Option<&crate::model::SensitiveDataItemCategory> {
         self.category.as_ref()
     }
@@ -11337,12 +11337,12 @@ pub mod sensitive_data_item {
         pub(crate) total_count: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
+        /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
         pub fn category(mut self, input: crate::model::SensitiveDataItemCategory) -> Self {
             self.category = Some(input);
             self
         }
-        /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
+        /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
         pub fn set_category(
             mut self,
             input: std::option::Option<crate::model::SensitiveDataItemCategory>,
@@ -12283,6 +12283,141 @@ impl FindingCategory {
     }
 }
 impl AsRef<str> for FindingCategory {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies a severity level for findings that a custom data identifier produces. A severity level determines which severity is assigned to the findings, based on the number of occurrences of text that matches the custom data identifier's detection criteria.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SeverityLevel {
+    /// <p>The minimum number of occurrences of text that must match the custom data identifier's detection criteria in order to produce a finding with the specified severity (severity).</p>
+    pub occurrences_threshold: i64,
+    /// <p>The severity to assign to a finding if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold) and, if applicable, is less than the threshold for the next consecutive severity level for the custom data identifier.</p>
+    pub severity: std::option::Option<crate::model::DataIdentifierSeverity>,
+}
+impl SeverityLevel {
+    /// <p>The minimum number of occurrences of text that must match the custom data identifier's detection criteria in order to produce a finding with the specified severity (severity).</p>
+    pub fn occurrences_threshold(&self) -> i64 {
+        self.occurrences_threshold
+    }
+    /// <p>The severity to assign to a finding if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold) and, if applicable, is less than the threshold for the next consecutive severity level for the custom data identifier.</p>
+    pub fn severity(&self) -> std::option::Option<&crate::model::DataIdentifierSeverity> {
+        self.severity.as_ref()
+    }
+}
+impl std::fmt::Debug for SeverityLevel {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SeverityLevel");
+        formatter.field("occurrences_threshold", &self.occurrences_threshold);
+        formatter.field("severity", &self.severity);
+        formatter.finish()
+    }
+}
+/// See [`SeverityLevel`](crate::model::SeverityLevel)
+pub mod severity_level {
+    /// A builder for [`SeverityLevel`](crate::model::SeverityLevel)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) occurrences_threshold: std::option::Option<i64>,
+        pub(crate) severity: std::option::Option<crate::model::DataIdentifierSeverity>,
+    }
+    impl Builder {
+        /// <p>The minimum number of occurrences of text that must match the custom data identifier's detection criteria in order to produce a finding with the specified severity (severity).</p>
+        pub fn occurrences_threshold(mut self, input: i64) -> Self {
+            self.occurrences_threshold = Some(input);
+            self
+        }
+        /// <p>The minimum number of occurrences of text that must match the custom data identifier's detection criteria in order to produce a finding with the specified severity (severity).</p>
+        pub fn set_occurrences_threshold(mut self, input: std::option::Option<i64>) -> Self {
+            self.occurrences_threshold = input;
+            self
+        }
+        /// <p>The severity to assign to a finding if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold) and, if applicable, is less than the threshold for the next consecutive severity level for the custom data identifier.</p>
+        pub fn severity(mut self, input: crate::model::DataIdentifierSeverity) -> Self {
+            self.severity = Some(input);
+            self
+        }
+        /// <p>The severity to assign to a finding if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold) and, if applicable, is less than the threshold for the next consecutive severity level for the custom data identifier.</p>
+        pub fn set_severity(
+            mut self,
+            input: std::option::Option<crate::model::DataIdentifierSeverity>,
+        ) -> Self {
+            self.severity = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SeverityLevel`](crate::model::SeverityLevel)
+        pub fn build(self) -> crate::model::SeverityLevel {
+            crate::model::SeverityLevel {
+                occurrences_threshold: self.occurrences_threshold.unwrap_or_default(),
+                severity: self.severity,
+            }
+        }
+    }
+}
+impl SeverityLevel {
+    /// Creates a new builder-style object to manufacture [`SeverityLevel`](crate::model::SeverityLevel)
+    pub fn builder() -> crate::model::severity_level::Builder {
+        crate::model::severity_level::Builder::default()
+    }
+}
+
+/// <p>The severity of a finding, ranging from LOW, for least severe, to HIGH, for most severe. Valid values are:</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DataIdentifierSeverity {
+    #[allow(missing_docs)] // documentation missing in model
+    High,
+    #[allow(missing_docs)] // documentation missing in model
+    Low,
+    #[allow(missing_docs)] // documentation missing in model
+    Medium,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DataIdentifierSeverity {
+    fn from(s: &str) -> Self {
+        match s {
+            "HIGH" => DataIdentifierSeverity::High,
+            "LOW" => DataIdentifierSeverity::Low,
+            "MEDIUM" => DataIdentifierSeverity::Medium,
+            other => DataIdentifierSeverity::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DataIdentifierSeverity {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DataIdentifierSeverity::from(s))
+    }
+}
+impl DataIdentifierSeverity {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DataIdentifierSeverity::High => "HIGH",
+            DataIdentifierSeverity::Low => "LOW",
+            DataIdentifierSeverity::Medium => "MEDIUM",
+            DataIdentifierSeverity::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["HIGH", "LOW", "MEDIUM"]
+    }
+}
+impl AsRef<str> for DataIdentifierSeverity {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -13948,7 +14083,7 @@ impl AsRef<str> for ManagedDataIdentifierSelector {
     }
 }
 
-/// <p>Provides statistical data and other information about an S3 bucket that Amazon Macie monitors and analyzes for your account. If an error occurs when Macie attempts to retrieve and process information about the bucket or the bucket's objects, the value for most of these properties is null. Exceptions are accountId, bucketArn, bucketCreatedAt, bucketName, lastUpdated, and region. To identify the cause of the error, refer to the errorCode and errorMessage values.</p>
+/// <p>Provides statistical data and other information about an S3 bucket that Amazon Macie monitors and analyzes for your account. If an error occurs when Macie attempts to retrieve and process information about the bucket or the bucket's objects, the value for the versioning property is false and the value for most other properties is null. Exceptions are accountId, bucketArn, bucketCreatedAt, bucketName, lastUpdated, and region. To identify the cause of the error, refer to the errorCode and errorMessage values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketMetadata {
@@ -13960,7 +14095,7 @@ pub struct BucketMetadata {
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created.</p>
-    pub bucket_created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub bucket_created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the bucket.</p>
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
@@ -13974,7 +14109,7 @@ pub struct BucketMetadata {
     /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket, and, if so, the details of the job that ran most recently.</p>
     pub job_details: std::option::Option<crate::model::JobDetails>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the bucket.</p>
-    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total number of objects in the bucket.</p>
     pub object_count: i64,
     /// <p>The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.</p>
@@ -14020,7 +14155,7 @@ impl BucketMetadata {
         self.bucket_arn.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created.</p>
-    pub fn bucket_created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn bucket_created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.bucket_created_at.as_ref()
     }
     /// <p>The name of the bucket.</p>
@@ -14048,7 +14183,7 @@ impl BucketMetadata {
         self.job_details.as_ref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the bucket.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The total number of objects in the bucket.</p>
@@ -14167,14 +14302,14 @@ pub mod bucket_metadata {
         pub(crate) allows_unencrypted_object_uploads:
             std::option::Option<crate::model::AllowsUnencryptedObjectUploads>,
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
-        pub(crate) bucket_created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) bucket_created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) classifiable_object_count: std::option::Option<i64>,
         pub(crate) classifiable_size_in_bytes: std::option::Option<i64>,
         pub(crate) error_code: std::option::Option<crate::model::BucketMetadataErrorCode>,
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) job_details: std::option::Option<crate::model::JobDetails>,
-        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) object_count: std::option::Option<i64>,
         pub(crate) object_count_by_encryption_type:
             std::option::Option<crate::model::ObjectCountByEncryptionType>,
@@ -14231,14 +14366,14 @@ pub mod bucket_metadata {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created.</p>
-        pub fn bucket_created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn bucket_created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.bucket_created_at = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created.</p>
         pub fn set_bucket_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.bucket_created_at = input;
             self
@@ -14313,14 +14448,14 @@ pub mod bucket_metadata {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the bucket.</p>
-        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the bucket.</p>
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated = input;
             self
@@ -15329,7 +15464,7 @@ pub struct BatchGetCustomDataIdentifierSummary {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
     pub deleted: bool,
     /// <p>The custom description of the custom data identifier.</p>
@@ -15345,7 +15480,7 @@ impl BatchGetCustomDataIdentifierSummary {
         self.arn.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
@@ -15384,7 +15519,7 @@ pub mod batch_get_custom_data_identifier_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) deleted: std::option::Option<bool>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -15402,14 +15537,14 @@ pub mod batch_get_custom_data_identifier_summary {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self

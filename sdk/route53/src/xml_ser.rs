@@ -16,7 +16,7 @@ pub fn serialize_structure_crate_input_associate_vpc_with_hosted_zone_input(
         let inner_writer = scope
             .start_el("VPC")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_vpc(&var_2, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_vpc(var_2, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -32,7 +32,7 @@ pub fn serialize_structure_crate_input_change_resource_record_sets_input(
         let inner_writer = scope
             .start_el("ChangeBatch")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_change_batch(&var_3, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_change_batch(var_3, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -54,7 +54,7 @@ pub fn serialize_structure_crate_input_change_tags_for_resource_input(
                 let inner_writer = inner_writer
                     .start_el("Tag")
                     .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-                crate::xml_ser::serialize_structure_crate_model_tag(&list_item_5, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_tag(list_item_5, inner_writer)?
             }
         }
     }
@@ -94,7 +94,7 @@ pub fn serialize_structure_crate_input_create_health_check_input(
         let inner_writer = scope
             .start_el("HealthCheckConfig")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_health_check_config(&var_9, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_health_check_config(var_9, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -124,7 +124,7 @@ pub fn serialize_structure_crate_input_create_hosted_zone_input(
         let inner_writer = scope
             .start_el("HostedZoneConfig")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_hosted_zone_config(&var_12, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_hosted_zone_config(var_12, inner_writer)?
     }
     if let Some(var_13) = &input.name {
         let mut inner_writer = scope
@@ -137,7 +137,7 @@ pub fn serialize_structure_crate_input_create_hosted_zone_input(
         let inner_writer = scope
             .start_el("VPC")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_vpc(&var_14, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_vpc(var_14, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -346,7 +346,7 @@ pub fn serialize_structure_crate_input_create_vpc_association_authorization_inpu
         let inner_writer = scope
             .start_el("VPC")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_vpc(&var_34, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_vpc(var_34, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -362,7 +362,7 @@ pub fn serialize_structure_crate_input_delete_vpc_association_authorization_inpu
         let inner_writer = scope
             .start_el("VPC")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_vpc(&var_35, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_vpc(var_35, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -385,7 +385,7 @@ pub fn serialize_structure_crate_input_disassociate_vpc_from_hosted_zone_input(
         let inner_writer = scope
             .start_el("VPC")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_vpc(&var_37, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_vpc(var_37, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -426,7 +426,7 @@ pub fn serialize_structure_crate_input_update_health_check_input(
         let inner_writer = scope
             .start_el("AlarmIdentifier")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_alarm_identifier(&var_40, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_alarm_identifier(var_40, inner_writer)?
     }
     if let Some(var_41) = &input.child_health_checks {
         let mut inner_writer = scope
@@ -673,7 +673,7 @@ pub fn serialize_structure_crate_model_change_batch(
                 let inner_writer = inner_writer
                     .start_el("Change")
                     .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-                crate::xml_ser::serialize_structure_crate_model_change(&list_item_68, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_change(list_item_68, inner_writer)?
             }
         }
     }
@@ -836,7 +836,7 @@ pub fn serialize_structure_crate_model_health_check_config(
         let inner_writer = scope
             .start_el("AlarmIdentifier")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_alarm_identifier(&var_88, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_alarm_identifier(var_88, inner_writer)?
     }
     if let Some(var_89) = &input.insufficient_data_health_status {
         let mut inner_writer = scope
@@ -921,7 +921,7 @@ pub fn serialize_structure_crate_model_change(
         let inner_writer = scope
             .start_el("ResourceRecordSet")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_resource_record_set(&var_95, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_resource_record_set(var_95, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -972,7 +972,7 @@ pub fn serialize_structure_crate_model_resource_record_set(
         let inner_writer = scope
             .start_el("GeoLocation")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_geo_location(&var_101, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_geo_location(var_101, inner_writer)?
     }
     if let Some(var_102) = &input.failover {
         let mut inner_writer = scope
@@ -1006,7 +1006,7 @@ pub fn serialize_structure_crate_model_resource_record_set(
                     .start_el("ResourceRecord")
                     .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
                 crate::xml_ser::serialize_structure_crate_model_resource_record(
-                    &list_item_106,
+                    list_item_106,
                     inner_writer,
                 )?
             }
@@ -1016,7 +1016,7 @@ pub fn serialize_structure_crate_model_resource_record_set(
         let inner_writer = scope
             .start_el("AliasTarget")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_alias_target(&var_107, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_alias_target(var_107, inner_writer)?
     }
     if let Some(var_108) = &input.health_check_id {
         let mut inner_writer = scope

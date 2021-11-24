@@ -2377,9 +2377,9 @@ pub fn deser_structure_crate_model_option_status(
             s if s.matches("CreationDate") /* CreationDate com.amazonaws.cloudsearch#OptionStatus$CreationDate */ =>  {
                 let var_78 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudsearch#UpdateTimestamp`)"))
                         ?
@@ -2391,9 +2391,9 @@ pub fn deser_structure_crate_model_option_status(
             s if s.matches("UpdateDate") /* UpdateDate com.amazonaws.cloudsearch#OptionStatus$UpdateDate */ =>  {
                 let var_79 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudsearch#UpdateTimestamp`)"))
                         ?

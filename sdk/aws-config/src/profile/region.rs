@@ -17,14 +17,14 @@ use aws_types::region::Region;
 ///
 /// # Examples
 ///
-/// **Loads "us-west-2" as the region
+/// **Loads "us-west-2" as the region**
 /// ```ini
 /// [default]
 /// region = us-west-2
 /// ```
 ///
 /// **Loads `us-east-1` as the region _if and only if_ the `AWS_PROFILE` environment variable is set
-/// to `other`.
+/// to `other`.**
 ///
 /// ```ini
 /// [profile other]
@@ -73,7 +73,7 @@ impl Builder {
 impl ProfileFileRegionProvider {
     /// Create a new [ProfileFileRegionProvider]
     ///
-    /// To override the selected profile, set the `AWS_PROFILE` environment variable or use the [Builder].
+    /// To override the selected profile, set the `AWS_PROFILE` environment variable or use the [`Builder`].
     pub fn new() -> Self {
         Self {
             fs: Fs::real(),
@@ -82,7 +82,7 @@ impl ProfileFileRegionProvider {
         }
     }
 
-    /// [Builder] to construct a [ProfileFileRegionProvider]
+    /// [`Builder`] to construct a [`ProfileFileRegionProvider`]
     pub fn builder() -> Builder {
         Builder::default()
     }

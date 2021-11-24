@@ -114,7 +114,7 @@ mod test {
     async fn provide_credentials_fn_closure_can_borrow() {
         fn check_is_str_ref(_input: &str) {}
         async fn test_async_provider(input: String) -> credentials::Result {
-            Ok(Credentials::from_keys(&input, &input, None))
+            Ok(Credentials::new(&input, &input, None, None, "test"))
         }
 
         let things_to_borrow = vec!["one".to_string(), "two".to_string()];

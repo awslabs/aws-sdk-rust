@@ -2831,7 +2831,7 @@ pub struct DomainSummary {
     /// <p>
     /// A timestamp that contains the date and time the domain was created.
     /// </p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The key used to encrypt the domain.
     /// </p>
@@ -2878,7 +2878,7 @@ impl DomainSummary {
     /// <p>
     /// A timestamp that contains the date and time the domain was created.
     /// </p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>
@@ -2910,7 +2910,7 @@ pub mod domain_summary {
         pub(crate) owner: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DomainStatus>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) encryption_key: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3002,7 +3002,7 @@ pub mod domain_summary {
         /// <p>
         /// A timestamp that contains the date and time the domain was created.
         /// </p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
@@ -3011,7 +3011,7 @@ pub mod domain_summary {
         /// </p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -3189,7 +3189,7 @@ pub struct PackageVersionDescription {
     /// <p>
     /// A timestamp that contains the date and time the package version was published.
     /// </p>
-    pub published_time: std::option::Option<aws_smithy_types::Instant>,
+    pub published_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// Information about licenses associated with the package version.
     /// </p>
@@ -3322,7 +3322,7 @@ impl PackageVersionDescription {
     /// <p>
     /// A timestamp that contains the date and time the package version was published.
     /// </p>
-    pub fn published_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn published_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.published_time.as_ref()
     }
     /// <p>
@@ -3403,7 +3403,7 @@ pub mod package_version_description {
         pub(crate) summary: std::option::Option<std::string::String>,
         pub(crate) home_page: std::option::Option<std::string::String>,
         pub(crate) source_code_repository: std::option::Option<std::string::String>,
-        pub(crate) published_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) published_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) licenses: std::option::Option<std::vec::Vec<crate::model::LicenseInfo>>,
         pub(crate) revision: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::PackageVersionStatus>,
@@ -3610,7 +3610,7 @@ pub mod package_version_description {
         /// <p>
         /// A timestamp that contains the date and time the package version was published.
         /// </p>
-        pub fn published_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn published_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.published_time = Some(input);
             self
         }
@@ -3619,7 +3619,7 @@ pub mod package_version_description {
         /// </p>
         pub fn set_published_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.published_time = input;
             self
@@ -3881,7 +3881,7 @@ pub struct DomainDescription {
     /// <p>
     /// A timestamp that represents the date and time the domain was created.
     /// </p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The ARN of an AWS Key Management Service (AWS KMS) key associated with a domain. </p>
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>
@@ -3929,7 +3929,7 @@ impl DomainDescription {
     /// <p>
     /// A timestamp that represents the date and time the domain was created.
     /// </p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p> The ARN of an AWS Key Management Service (AWS KMS) key associated with a domain. </p>
@@ -3978,7 +3978,7 @@ pub mod domain_description {
         pub(crate) owner: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DomainStatus>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) encryption_key: std::option::Option<std::string::String>,
         pub(crate) repository_count: std::option::Option<i32>,
         pub(crate) asset_size_bytes: std::option::Option<i64>,
@@ -4059,7 +4059,7 @@ pub mod domain_description {
         /// <p>
         /// A timestamp that represents the date and time the domain was created.
         /// </p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
@@ -4068,7 +4068,7 @@ pub mod domain_description {
         /// </p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self

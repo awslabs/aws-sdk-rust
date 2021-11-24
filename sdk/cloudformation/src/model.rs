@@ -1886,7 +1886,7 @@ pub struct TypeVersionSummary {
     /// <p>The Amazon Resource Name (ARN) of the extension version.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>When the version was registered.</p>
-    pub time_created: std::option::Option<aws_smithy_types::Instant>,
+    pub time_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the extension version.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>For public extensions that have been activated for this account and region, the version
@@ -1926,7 +1926,7 @@ impl TypeVersionSummary {
         self.arn.as_deref()
     }
     /// <p>When the version was registered.</p>
-    pub fn time_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn time_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.time_created.as_ref()
     }
     /// <p>The description of the extension version.</p>
@@ -1970,7 +1970,7 @@ pub mod type_version_summary {
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) is_default_version: std::option::Option<bool>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) time_created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) time_created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) public_version_number: std::option::Option<std::string::String>,
     }
@@ -2036,14 +2036,14 @@ pub mod type_version_summary {
             self
         }
         /// <p>When the version was registered.</p>
-        pub fn time_created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn time_created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.time_created = Some(input);
             self
         }
         /// <p>When the version was registered.</p>
         pub fn set_time_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.time_created = input;
             self
@@ -2196,7 +2196,7 @@ pub struct TypeSummary {
     /// </li>
     /// </ul>
     /// <p>For all other extension types, CloudFormation returns <code>null</code>.</p>
-    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the extension.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID of the extension publisher, if the extension is published by a third party.
@@ -2277,7 +2277,7 @@ impl TypeSummary {
     /// </li>
     /// </ul>
     /// <p>For all other extension types, CloudFormation returns <code>null</code>.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The description of the extension.</p>
@@ -2367,7 +2367,7 @@ pub mod type_summary {
         pub(crate) type_name: std::option::Option<std::string::String>,
         pub(crate) default_version_id: std::option::Option<std::string::String>,
         pub(crate) type_arn: std::option::Option<std::string::String>,
-        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) publisher_id: std::option::Option<std::string::String>,
         pub(crate) original_type_name: std::option::Option<std::string::String>,
@@ -2451,7 +2451,7 @@ pub mod type_summary {
         /// </li>
         /// </ul>
         /// <p>For all other extension types, CloudFormation returns <code>null</code>.</p>
-        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated = Some(input);
             self
         }
@@ -2469,7 +2469,7 @@ pub mod type_summary {
         /// <p>For all other extension types, CloudFormation returns <code>null</code>.</p>
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated = input;
             self
@@ -3227,7 +3227,7 @@ pub struct StackSetSummary {
     /// <p>Most recent time when CloudFormation performed a drift detection operation on
     /// the stack set. This value will be <code>NULL</code> for any stack set on which drift
     /// detection has not yet been performed.</p>
-    pub last_drift_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_drift_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StackSetSummary {
     /// <p>The name of the stack set.</p>
@@ -3302,7 +3302,7 @@ impl StackSetSummary {
     /// <p>Most recent time when CloudFormation performed a drift detection operation on
     /// the stack set. This value will be <code>NULL</code> for any stack set on which drift
     /// detection has not yet been performed.</p>
-    pub fn last_drift_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_drift_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_drift_check_timestamp.as_ref()
     }
 }
@@ -3336,7 +3336,7 @@ pub mod stack_set_summary {
         pub(crate) auto_deployment: std::option::Option<crate::model::AutoDeployment>,
         pub(crate) permission_model: std::option::Option<crate::model::PermissionModels>,
         pub(crate) drift_status: std::option::Option<crate::model::StackDriftStatus>,
-        pub(crate) last_drift_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_drift_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the stack set.</p>
@@ -3509,7 +3509,7 @@ pub mod stack_set_summary {
         /// <p>Most recent time when CloudFormation performed a drift detection operation on
         /// the stack set. This value will be <code>NULL</code> for any stack set on which drift
         /// detection has not yet been performed.</p>
-        pub fn last_drift_check_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_drift_check_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_drift_check_timestamp = Some(input);
             self
         }
@@ -3518,7 +3518,7 @@ pub mod stack_set_summary {
         /// detection has not yet been performed.</p>
         pub fn set_last_drift_check_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_drift_check_timestamp = input;
             self
@@ -3720,11 +3720,11 @@ pub struct StackSetOperationSummary {
     /// themselves. This is because CloudFormation needs to perform preparatory work for the
     /// operation, such as dispatching the work to the requested Regions, before actually creating
     /// the first stacks.</p>
-    pub creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the stack set operation ended, across all accounts and Regions
     /// specified. Note that this doesn't necessarily mean that the stack set operation was
     /// successful, or even attempted, in each account or Region.</p>
-    pub end_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StackSetOperationSummary {
     /// <p>The unique ID of the stack set operation.</p>
@@ -3785,13 +3785,13 @@ impl StackSetOperationSummary {
     /// themselves. This is because CloudFormation needs to perform preparatory work for the
     /// operation, such as dispatching the work to the requested Regions, before actually creating
     /// the first stacks.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The time at which the stack set operation ended, across all accounts and Regions
     /// specified. Note that this doesn't necessarily mean that the stack set operation was
     /// successful, or even attempted, in each account or Region.</p>
-    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
 }
@@ -3815,8 +3815,8 @@ pub mod stack_set_operation_summary {
         pub(crate) operation_id: std::option::Option<std::string::String>,
         pub(crate) action: std::option::Option<crate::model::StackSetOperationAction>,
         pub(crate) status: std::option::Option<crate::model::StackSetOperationStatus>,
-        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The unique ID of the stack set operation.</p>
@@ -3942,7 +3942,7 @@ pub mod stack_set_operation_summary {
         /// themselves. This is because CloudFormation needs to perform preparatory work for the
         /// operation, such as dispatching the work to the requested Regions, before actually creating
         /// the first stacks.</p>
-        pub fn creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
@@ -3953,7 +3953,7 @@ pub mod stack_set_operation_summary {
         /// the first stacks.</p>
         pub fn set_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_timestamp = input;
             self
@@ -3961,7 +3961,7 @@ pub mod stack_set_operation_summary {
         /// <p>The time at which the stack set operation ended, across all accounts and Regions
         /// specified. Note that this doesn't necessarily mean that the stack set operation was
         /// successful, or even attempted, in each account or Region.</p>
-        pub fn end_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_timestamp = Some(input);
             self
         }
@@ -3970,7 +3970,7 @@ pub mod stack_set_operation_summary {
         /// successful, or even attempted, in each account or Region.</p>
         pub fn set_end_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_timestamp = input;
             self
@@ -4819,12 +4819,12 @@ pub struct StackSummary {
     /// <p>The template description of the template used to create the stack.</p>
     pub template_description: std::option::Option<std::string::String>,
     /// <p>The time the stack was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the stack was last updated. This field will only be returned if the stack
     /// has been updated at least once.</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the stack was deleted.</p>
-    pub deletion_time: std::option::Option<aws_smithy_types::Instant>,
+    pub deletion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the stack.</p>
     pub stack_status: std::option::Option<crate::model::StackStatus>,
     /// <p>Success/Failure message associated with the stack status.</p>
@@ -4860,16 +4860,16 @@ impl StackSummary {
         self.template_description.as_deref()
     }
     /// <p>The time the stack was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the stack was last updated. This field will only be returned if the stack
     /// has been updated at least once.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The time the stack was deleted.</p>
-    pub fn deletion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn deletion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deletion_time.as_ref()
     }
     /// <p>The current status of the stack.</p>
@@ -4931,9 +4931,9 @@ pub mod stack_summary {
         pub(crate) stack_id: std::option::Option<std::string::String>,
         pub(crate) stack_name: std::option::Option<std::string::String>,
         pub(crate) template_description: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) deletion_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) deletion_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) stack_status: std::option::Option<crate::model::StackStatus>,
         pub(crate) stack_status_reason: std::option::Option<std::string::String>,
         pub(crate) parent_id: std::option::Option<std::string::String>,
@@ -4976,21 +4976,21 @@ pub mod stack_summary {
             self
         }
         /// <p>The time the stack was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time the stack was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time the stack was last updated. This field will only be returned if the stack
         /// has been updated at least once.</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
@@ -4998,20 +4998,20 @@ pub mod stack_summary {
         /// has been updated at least once.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self
         }
         /// <p>The time the stack was deleted.</p>
-        pub fn deletion_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn deletion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deletion_time = Some(input);
             self
         }
         /// <p>The time the stack was deleted.</p>
         pub fn set_deletion_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.deletion_time = input;
             self
@@ -5157,7 +5157,7 @@ pub struct StackDriftInformationSummary {
     pub stack_drift_status: std::option::Option<crate::model::StackDriftStatus>,
     /// <p>Most recent time when a drift detection operation was initiated on the stack, or any
     /// of its individual resources that support drift detection.</p>
-    pub last_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StackDriftInformationSummary {
     /// <p>Status of the stack's actual configuration compared to its expected template
@@ -5189,7 +5189,7 @@ impl StackDriftInformationSummary {
     }
     /// <p>Most recent time when a drift detection operation was initiated on the stack, or any
     /// of its individual resources that support drift detection.</p>
-    pub fn last_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_check_timestamp.as_ref()
     }
 }
@@ -5208,7 +5208,7 @@ pub mod stack_drift_information_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_drift_status: std::option::Option<crate::model::StackDriftStatus>,
-        pub(crate) last_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Status of the stack's actual configuration compared to its expected template
@@ -5272,7 +5272,7 @@ pub mod stack_drift_information_summary {
         }
         /// <p>Most recent time when a drift detection operation was initiated on the stack, or any
         /// of its individual resources that support drift detection.</p>
-        pub fn last_check_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_check_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_check_timestamp = Some(input);
             self
         }
@@ -5280,7 +5280,7 @@ pub mod stack_drift_information_summary {
         /// of its individual resources that support drift detection.</p>
         pub fn set_last_check_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_check_timestamp = input;
             self
@@ -5481,7 +5481,7 @@ pub struct StackResourceSummary {
     /// Resource Types Reference</a> in the CloudFormation User Guide.)</p>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>Time the status was updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Current status of the resource.</p>
     pub resource_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>Success/failure message associated with the resource.</p>
@@ -5511,7 +5511,7 @@ impl StackResourceSummary {
         self.resource_type.as_deref()
     }
     /// <p>Time the status was updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>Current status of the resource.</p>
@@ -5560,7 +5560,7 @@ pub mod stack_resource_summary {
         pub(crate) logical_resource_id: std::option::Option<std::string::String>,
         pub(crate) physical_resource_id: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) resource_status: std::option::Option<crate::model::ResourceStatus>,
         pub(crate) resource_status_reason: std::option::Option<std::string::String>,
         pub(crate) drift_information:
@@ -5612,14 +5612,14 @@ pub mod stack_resource_summary {
             self
         }
         /// <p>Time the status was updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>Time the status was updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self
@@ -5900,7 +5900,7 @@ pub struct StackResourceDriftInformationSummary {
     pub stack_resource_drift_status: std::option::Option<crate::model::StackResourceDriftStatus>,
     /// <p>When CloudFormation last checked if the resource had drifted from its expected
     /// configuration.</p>
-    pub last_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StackResourceDriftInformationSummary {
     /// <p>Status of the resource's actual configuration compared to its expected
@@ -5938,7 +5938,7 @@ impl StackResourceDriftInformationSummary {
     }
     /// <p>When CloudFormation last checked if the resource had drifted from its expected
     /// configuration.</p>
-    pub fn last_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_check_timestamp.as_ref()
     }
 }
@@ -5961,7 +5961,7 @@ pub mod stack_resource_drift_information_summary {
     pub struct Builder {
         pub(crate) stack_resource_drift_status:
             std::option::Option<crate::model::StackResourceDriftStatus>,
-        pub(crate) last_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Status of the resource's actual configuration compared to its expected
@@ -6036,7 +6036,7 @@ pub mod stack_resource_drift_information_summary {
         }
         /// <p>When CloudFormation last checked if the resource had drifted from its expected
         /// configuration.</p>
-        pub fn last_check_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_check_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_check_timestamp = Some(input);
             self
         }
@@ -6044,7 +6044,7 @@ pub mod stack_resource_drift_information_summary {
         /// configuration.</p>
         pub fn set_last_check_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_check_timestamp = input;
             self
@@ -6371,7 +6371,7 @@ pub struct StackInstanceSummary {
     /// <p>Most recent time when CloudFormation performed a drift detection operation on
     /// the stack instance. This value will be <code>NULL</code> for any stack instance on which
     /// drift detection has not yet been performed.</p>
-    pub last_drift_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_drift_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StackInstanceSummary {
     /// <p>The name or unique ID of the stack set that the stack instance is associated
@@ -6475,7 +6475,7 @@ impl StackInstanceSummary {
     /// <p>Most recent time when CloudFormation performed a drift detection operation on
     /// the stack instance. This value will be <code>NULL</code> for any stack instance on which
     /// drift detection has not yet been performed.</p>
-    pub fn last_drift_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_drift_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_drift_check_timestamp.as_ref()
     }
 }
@@ -6514,7 +6514,7 @@ pub mod stack_instance_summary {
             std::option::Option<crate::model::StackInstanceComprehensiveStatus>,
         pub(crate) organizational_unit_id: std::option::Option<std::string::String>,
         pub(crate) drift_status: std::option::Option<crate::model::StackDriftStatus>,
-        pub(crate) last_drift_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_drift_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name or unique ID of the stack set that the stack instance is associated
@@ -6748,7 +6748,7 @@ pub mod stack_instance_summary {
         /// <p>Most recent time when CloudFormation performed a drift detection operation on
         /// the stack instance. This value will be <code>NULL</code> for any stack instance on which
         /// drift detection has not yet been performed.</p>
-        pub fn last_drift_check_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_drift_check_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_drift_check_timestamp = Some(input);
             self
         }
@@ -6757,7 +6757,7 @@ pub mod stack_instance_summary {
         /// drift detection has not yet been performed.</p>
         pub fn set_last_drift_check_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_drift_check_timestamp = input;
             self
@@ -7399,7 +7399,7 @@ pub struct ChangeSetSummary {
     /// <code>FAILED</code> state, CloudFormation shows the error message.</p>
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The start time when the change set was created, in UTC.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Descriptive information about the change set.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the current setting of <code>IncludeNestedStacks</code> for the change
@@ -7446,7 +7446,7 @@ impl ChangeSetSummary {
         self.status_reason.as_deref()
     }
     /// <p>The start time when the change set was created, in UTC.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Descriptive information about the change set.</p>
@@ -7498,7 +7498,7 @@ pub mod change_set_summary {
         pub(crate) execution_status: std::option::Option<crate::model::ExecutionStatus>,
         pub(crate) status: std::option::Option<crate::model::ChangeSetStatus>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) include_nested_stacks: std::option::Option<bool>,
         pub(crate) parent_change_set_id: std::option::Option<std::string::String>,
@@ -7603,14 +7603,14 @@ pub mod change_set_summary {
             self
         }
         /// <p>The start time when the change set was created, in UTC.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The start time when the change set was created, in UTC.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -8343,7 +8343,7 @@ pub struct StackResourceDrift {
     /// </ul>
     pub stack_resource_drift_status: std::option::Option<crate::model::StackResourceDriftStatus>,
     /// <p>Time at which CloudFormation performed drift detection on the stack resource.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains information about the module from which the resource was created, if the
     /// resource was created from a module included in the stack template.</p>
     pub module_info: std::option::Option<crate::model::ModuleInfo>,
@@ -8426,7 +8426,7 @@ impl StackResourceDrift {
         self.stack_resource_drift_status.as_ref()
     }
     /// <p>Time at which CloudFormation performed drift detection on the stack resource.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>Contains information about the module from which the resource was created, if the
@@ -8476,7 +8476,7 @@ pub mod stack_resource_drift {
             std::option::Option<std::vec::Vec<crate::model::PropertyDifference>>,
         pub(crate) stack_resource_drift_status:
             std::option::Option<crate::model::StackResourceDriftStatus>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) module_info: std::option::Option<crate::model::ModuleInfo>,
     }
     impl Builder {
@@ -8690,14 +8690,14 @@ pub mod stack_resource_drift {
             self
         }
         /// <p>Time at which CloudFormation performed drift detection on the stack resource.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>Time at which CloudFormation performed drift detection on the stack resource.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -9378,11 +9378,11 @@ pub struct StackSetOperation {
     /// themselves. This is because CloudFormation needs to perform preparatory work for the
     /// operation, such as dispatching the work to the requested Regions, before actually creating
     /// the first stacks.</p>
-    pub creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the stack set operation ended, across all accounts and Regions
     /// specified. Note that this doesn't necessarily mean that the stack set operation was
     /// successful, or even attempted, in each account or Region.</p>
-    pub end_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>[Service-managed permissions] The Organizations accounts affected by the stack
     /// operation.</p>
     pub deployment_targets: std::option::Option<crate::model::DeploymentTargets>,
@@ -9486,13 +9486,13 @@ impl StackSetOperation {
     /// themselves. This is because CloudFormation needs to perform preparatory work for the
     /// operation, such as dispatching the work to the requested Regions, before actually creating
     /// the first stacks.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The time at which the stack set operation ended, across all accounts and Regions
     /// specified. Note that this doesn't necessarily mean that the stack set operation was
     /// successful, or even attempted, in each account or Region.</p>
-    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
     /// <p>[Service-managed permissions] The Organizations accounts affected by the stack
@@ -9548,8 +9548,8 @@ pub mod stack_set_operation {
         pub(crate) retain_stacks: std::option::Option<bool>,
         pub(crate) administration_role_arn: std::option::Option<std::string::String>,
         pub(crate) execution_role_name: std::option::Option<std::string::String>,
-        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) deployment_targets: std::option::Option<crate::model::DeploymentTargets>,
         pub(crate) stack_set_drift_detection_details:
             std::option::Option<crate::model::StackSetDriftDetectionDetails>,
@@ -9760,7 +9760,7 @@ pub mod stack_set_operation {
         /// themselves. This is because CloudFormation needs to perform preparatory work for the
         /// operation, such as dispatching the work to the requested Regions, before actually creating
         /// the first stacks.</p>
-        pub fn creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
@@ -9771,7 +9771,7 @@ pub mod stack_set_operation {
         /// the first stacks.</p>
         pub fn set_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_timestamp = input;
             self
@@ -9779,7 +9779,7 @@ pub mod stack_set_operation {
         /// <p>The time at which the stack set operation ended, across all accounts and Regions
         /// specified. Note that this doesn't necessarily mean that the stack set operation was
         /// successful, or even attempted, in each account or Region.</p>
-        pub fn end_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_timestamp = Some(input);
             self
         }
@@ -9788,7 +9788,7 @@ pub mod stack_set_operation {
         /// successful, or even attempted, in each account or Region.</p>
         pub fn set_end_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_timestamp = input;
             self
@@ -9925,7 +9925,7 @@ pub struct StackSetDriftDetectionDetails {
     /// <p>Most recent time when CloudFormation performed a drift detection operation on
     /// the stack set. This value will be <code>NULL</code> for any stack set on which drift
     /// detection has not yet been performed.</p>
-    pub last_drift_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_drift_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total number of stack instances belonging to this stack set. </p>
     /// <p>The total number of stack instances is equal to the total of:</p>
     /// <ul>
@@ -10017,7 +10017,7 @@ impl StackSetDriftDetectionDetails {
     /// <p>Most recent time when CloudFormation performed a drift detection operation on
     /// the stack set. This value will be <code>NULL</code> for any stack set on which drift
     /// detection has not yet been performed.</p>
-    pub fn last_drift_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_drift_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_drift_check_timestamp.as_ref()
     }
     /// <p>The total number of stack instances belonging to this stack set. </p>
@@ -10101,7 +10101,7 @@ pub mod stack_set_drift_detection_details {
         pub(crate) drift_status: std::option::Option<crate::model::StackSetDriftStatus>,
         pub(crate) drift_detection_status:
             std::option::Option<crate::model::StackSetDriftDetectionStatus>,
-        pub(crate) last_drift_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_drift_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) total_stack_instances_count: std::option::Option<i32>,
         pub(crate) drifted_stack_instances_count: std::option::Option<i32>,
         pub(crate) in_sync_stack_instances_count: std::option::Option<i32>,
@@ -10235,7 +10235,7 @@ pub mod stack_set_drift_detection_details {
         /// <p>Most recent time when CloudFormation performed a drift detection operation on
         /// the stack set. This value will be <code>NULL</code> for any stack set on which drift
         /// detection has not yet been performed.</p>
-        pub fn last_drift_check_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_drift_check_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_drift_check_timestamp = Some(input);
             self
         }
@@ -10244,7 +10244,7 @@ pub mod stack_set_drift_detection_details {
         /// detection has not yet been performed.</p>
         pub fn set_last_drift_check_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_drift_check_timestamp = input;
             self
@@ -11041,12 +11041,12 @@ pub struct Stack {
     /// <p>A list of <code>Parameter</code> structures.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>The time at which the stack was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the stack was deleted.</p>
-    pub deletion_time: std::option::Option<aws_smithy_types::Instant>,
+    pub deletion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the stack was last updated. This field will only be returned if the stack
     /// has been updated at least once.</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and
     /// updating operations, and for the specified monitoring period afterwards.</p>
     pub rollback_configuration: std::option::Option<crate::model::RollbackConfiguration>,
@@ -11125,16 +11125,16 @@ impl Stack {
         self.parameters.as_deref()
     }
     /// <p>The time at which the stack was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the stack was deleted.</p>
-    pub fn deletion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn deletion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deletion_time.as_ref()
     }
     /// <p>The time the stack was last updated. This field will only be returned if the stack
     /// has been updated at least once.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and
@@ -11265,9 +11265,9 @@ pub mod stack {
         pub(crate) change_set_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) deletion_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) deletion_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) rollback_configuration: std::option::Option<crate::model::RollbackConfiguration>,
         pub(crate) stack_status: std::option::Option<crate::model::StackStatus>,
         pub(crate) stack_status_reason: std::option::Option<std::string::String>,
@@ -11347,34 +11347,34 @@ pub mod stack {
             self
         }
         /// <p>The time at which the stack was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time at which the stack was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time the stack was deleted.</p>
-        pub fn deletion_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn deletion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deletion_time = Some(input);
             self
         }
         /// <p>The time the stack was deleted.</p>
         pub fn set_deletion_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.deletion_time = input;
             self
         }
         /// <p>The time the stack was last updated. This field will only be returned if the stack
         /// has been updated at least once.</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
@@ -11382,7 +11382,7 @@ pub mod stack {
         /// has been updated at least once.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -11705,7 +11705,7 @@ pub struct StackDriftInformation {
     pub stack_drift_status: std::option::Option<crate::model::StackDriftStatus>,
     /// <p>Most recent time when a drift detection operation was initiated on the stack, or any
     /// of its individual resources that support drift detection.</p>
-    pub last_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StackDriftInformation {
     /// <p>Status of the stack's actual configuration compared to its expected template
@@ -11737,7 +11737,7 @@ impl StackDriftInformation {
     }
     /// <p>Most recent time when a drift detection operation was initiated on the stack, or any
     /// of its individual resources that support drift detection.</p>
-    pub fn last_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_check_timestamp.as_ref()
     }
 }
@@ -11756,7 +11756,7 @@ pub mod stack_drift_information {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_drift_status: std::option::Option<crate::model::StackDriftStatus>,
-        pub(crate) last_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Status of the stack's actual configuration compared to its expected template
@@ -11820,7 +11820,7 @@ pub mod stack_drift_information {
         }
         /// <p>Most recent time when a drift detection operation was initiated on the stack, or any
         /// of its individual resources that support drift detection.</p>
-        pub fn last_check_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_check_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_check_timestamp = Some(input);
             self
         }
@@ -11828,7 +11828,7 @@ pub mod stack_drift_information {
         /// of its individual resources that support drift detection.</p>
         pub fn set_last_check_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_check_timestamp = input;
             self
@@ -11977,7 +11977,7 @@ pub struct StackResource {
     /// Resource Types Reference</a> in the CloudFormation User Guide.)</p>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>Time the status was updated.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Current status of the resource.</p>
     pub resource_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>Success/failure message associated with the resource.</p>
@@ -12017,7 +12017,7 @@ impl StackResource {
         self.resource_type.as_deref()
     }
     /// <p>Time the status was updated.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>Current status of the resource.</p>
@@ -12075,7 +12075,7 @@ pub mod stack_resource {
         pub(crate) logical_resource_id: std::option::Option<std::string::String>,
         pub(crate) physical_resource_id: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) resource_status: std::option::Option<crate::model::ResourceStatus>,
         pub(crate) resource_status_reason: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -12148,14 +12148,14 @@ pub mod stack_resource {
             self
         }
         /// <p>Time the status was updated.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>Time the status was updated.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -12292,7 +12292,7 @@ pub struct StackResourceDriftInformation {
     pub stack_resource_drift_status: std::option::Option<crate::model::StackResourceDriftStatus>,
     /// <p>When CloudFormation last checked if the resource had drifted from its expected
     /// configuration.</p>
-    pub last_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StackResourceDriftInformation {
     /// <p>Status of the resource's actual configuration compared to its expected
@@ -12328,7 +12328,7 @@ impl StackResourceDriftInformation {
     }
     /// <p>When CloudFormation last checked if the resource had drifted from its expected
     /// configuration.</p>
-    pub fn last_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_check_timestamp.as_ref()
     }
 }
@@ -12351,7 +12351,7 @@ pub mod stack_resource_drift_information {
     pub struct Builder {
         pub(crate) stack_resource_drift_status:
             std::option::Option<crate::model::StackResourceDriftStatus>,
-        pub(crate) last_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Status of the resource's actual configuration compared to its expected
@@ -12422,7 +12422,7 @@ pub mod stack_resource_drift_information {
         }
         /// <p>When CloudFormation last checked if the resource had drifted from its expected
         /// configuration.</p>
-        pub fn last_check_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_check_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_check_timestamp = Some(input);
             self
         }
@@ -12430,7 +12430,7 @@ pub mod stack_resource_drift_information {
         /// configuration.</p>
         pub fn set_last_check_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_check_timestamp = input;
             self
@@ -12468,7 +12468,7 @@ pub struct StackResourceDetail {
     /// Resource Types Reference</a> in the CloudFormation User Guide.)</p>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>Time the status was updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Current status of the resource.</p>
     pub resource_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>Success/failure message associated with the resource.</p>
@@ -12512,7 +12512,7 @@ impl StackResourceDetail {
         self.resource_type.as_deref()
     }
     /// <p>Time the status was updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>Current status of the resource.</p>
@@ -12577,7 +12577,7 @@ pub mod stack_resource_detail {
         pub(crate) logical_resource_id: std::option::Option<std::string::String>,
         pub(crate) physical_resource_id: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) resource_status: std::option::Option<crate::model::ResourceStatus>,
         pub(crate) resource_status_reason: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -12651,14 +12651,14 @@ pub mod stack_resource_detail {
             self
         }
         /// <p>Time the status was updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>Time the status was updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self
@@ -12869,7 +12869,7 @@ pub struct StackInstance {
     /// <p>Most recent time when CloudFormation performed a drift detection operation on
     /// the stack instance. This value will be <code>NULL</code> for any stack instance on which
     /// drift detection has not yet been performed.</p>
-    pub last_drift_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_drift_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StackInstance {
     /// <p>The name or unique ID of the stack set that the stack instance is associated
@@ -12978,7 +12978,7 @@ impl StackInstance {
     /// <p>Most recent time when CloudFormation performed a drift detection operation on
     /// the stack instance. This value will be <code>NULL</code> for any stack instance on which
     /// drift detection has not yet been performed.</p>
-    pub fn last_drift_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_drift_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_drift_check_timestamp.as_ref()
     }
 }
@@ -13019,7 +13019,7 @@ pub mod stack_instance {
         pub(crate) status_reason: std::option::Option<std::string::String>,
         pub(crate) organizational_unit_id: std::option::Option<std::string::String>,
         pub(crate) drift_status: std::option::Option<crate::model::StackDriftStatus>,
-        pub(crate) last_drift_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_drift_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name or unique ID of the stack set that the stack instance is associated
@@ -13274,7 +13274,7 @@ pub mod stack_instance {
         /// <p>Most recent time when CloudFormation performed a drift detection operation on
         /// the stack instance. This value will be <code>NULL</code> for any stack instance on which
         /// drift detection has not yet been performed.</p>
-        pub fn last_drift_check_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_drift_check_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_drift_check_timestamp = Some(input);
             self
         }
@@ -13283,7 +13283,7 @@ pub mod stack_instance {
         /// drift detection has not yet been performed.</p>
         pub fn set_last_drift_check_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_drift_check_timestamp = input;
             self
@@ -13332,7 +13332,7 @@ pub struct StackEvent {
     /// Resource Types Reference</a> in the CloudFormation User Guide.)</p>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>Time the status was updated.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Current status of the resource.</p>
     pub resource_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>Success/failure message associated with the resource.</p>
@@ -13381,7 +13381,7 @@ impl StackEvent {
         self.resource_type.as_deref()
     }
     /// <p>Time the status was updated.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>Current status of the resource.</p>
@@ -13441,7 +13441,7 @@ pub mod stack_event {
         pub(crate) logical_resource_id: std::option::Option<std::string::String>,
         pub(crate) physical_resource_id: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) resource_status: std::option::Option<crate::model::ResourceStatus>,
         pub(crate) resource_status_reason: std::option::Option<std::string::String>,
         pub(crate) resource_properties: std::option::Option<std::string::String>,
@@ -13522,14 +13522,14 @@ pub mod stack_event {
             self
         }
         /// <p>Time the status was updated.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>Time the status was updated.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -15457,7 +15457,7 @@ pub struct TypeConfigurationDetails {
     /// <p>When the configuration data was last updated for this extension.</p>
     /// <p>If a configuration has not been set for a specified extension, CloudFormation returns
     /// <code>null</code>.</p>
-    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
     /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will
     /// be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
@@ -15489,7 +15489,7 @@ impl TypeConfigurationDetails {
     /// <p>When the configuration data was last updated for this extension.</p>
     /// <p>If a configuration has not been set for a specified extension, CloudFormation returns
     /// <code>null</code>.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
@@ -15530,7 +15530,7 @@ pub mod type_configuration_details {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) alias: std::option::Option<std::string::String>,
         pub(crate) configuration: std::option::Option<std::string::String>,
-        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) type_arn: std::option::Option<std::string::String>,
         pub(crate) type_name: std::option::Option<std::string::String>,
         pub(crate) is_default_configuration: std::option::Option<bool>,
@@ -15582,7 +15582,7 @@ pub mod type_configuration_details {
         /// <p>When the configuration data was last updated for this extension.</p>
         /// <p>If a configuration has not been set for a specified extension, CloudFormation returns
         /// <code>null</code>.</p>
-        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated = Some(input);
             self
         }
@@ -15591,7 +15591,7 @@ pub mod type_configuration_details {
         /// <code>null</code>.</p>
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated = input;
             self
