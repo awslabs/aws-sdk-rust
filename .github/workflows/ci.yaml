@@ -23,3 +23,18 @@ jobs:
         run: cargo test
         env:
           CARGO_INCREMENTAL: 'false'
+  check-manifests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: ${{ matrix.rust_version }}
+          default: true
+      # Pinned to the commit hash of v1.3.0
+      - uses: Swatinem/rust-cache@842ef286fff290e445b90b4002cc9807c3669641
+        with:
+          sharedKey: check-manifests
+      - name: check manifests
+        working-directory: tools/publisher
+        run: cargo run fix-manifests --check

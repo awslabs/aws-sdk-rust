@@ -13,18 +13,24 @@ use crate::fs::Fs;
 use crate::package::{discover_package_manifests, parse_version};
 use crate::repo::discover_repository;
 use crate::{REPO_CRATE_PATH, REPO_NAME};
-use anyhow::{Context, Result};
+use anyhow::{bail, Context, Result};
 use semver::Version;
 use std::collections::BTreeMap;
 use std::path::PathBuf;
 use tracing::info;
 
-pub async fn subcommand_fix_manifests() -> Result<()> {
+#[derive(Debug, Copy, Clone, Eq, PartialEq)]
+pub enum Mode {
+    Check,
+    Execute,
+}
+
+pub async fn subcommand_fix_manifests(mode: Mode) -> Result<()> {
     let repo = discover_repository(REPO_NAME, REPO_CRATE_PATH)?;
     let manifest_paths = discover_package_manifests(&repo.crates_root).await?;
     let mut manifests = read_manifests(Fs::Real, manifest_paths).await?;
     let versions = package_versions(&manifests)?;
-    fix_manifests(Fs::Real, &versions, &mut manifests).await?;
+    fix_manifests(Fs::Real, &versions, &mut manifests, mode).await?;
     Ok(())
 }
 
@@ -103,6 +109,7 @@ async fn fix_manifests(
     fs: Fs,
     versions: &BTreeMap<String, Version>,
     manifests: &mut Vec<Manifest>,
+    mode: Mode
 ) -> Result<()> {
     for manifest in manifests {
         let changed = fix_dep_sets(versions, &mut manifest.metadata)?;
@@ -113,8 +120,13 @@ async fn fix_manifests(
                     + &toml::to_string(&manifest.metadata).with_context(|| {
                         format!("failed to serialize to toml for {:?}", manifest.path)
                     })?;
-            fs.write_file(&manifest.path, contents.as_bytes()).await?;
-            info!("Changed {} dependencies in {:?}.", changed, manifest.path);
+            match mode {
+                Mode::Execute => {
+                    fs.write_file(&manifest.path, contents.as_bytes()).await?;
+                    info!("Changed {} dependencies in {:?}.", changed, manifest.path);
+                }
+                Mode::Check => bail!("{manifest:?} contained invalid versions", manifest=manifest.path)
+            }
         }
     }
     Ok(())
